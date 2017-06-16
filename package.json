@@ -1,0 +1,26 @@
+{
+  "name": "mixs",
+  "version": "1.0.0",
+  "description": "MIxS",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .json --ext .md",
+    "pretest": "npm run lint",
+    "test": "echo \"No tests\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GenomicsStandardsConsortium/MIxS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GenomicsStandardsConsortium/MIxS/issues"
+  },
+  "homepage": "https://github.com/GenomicsStandardsConsortium/MIxS#readme",
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-markdown": "^1.0.0-beta.6"
+  }
+}
