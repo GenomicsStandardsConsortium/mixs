@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "definitions": {
+    "term": {
+      "type": "object",
+      "required": ["term-id"],
+      "properties" : {
+      "term-id": {
+        "type": "string" 
+      }
+     }
+    },
+    "group": {}
+  },
+  "title": "mixs",
+  "type": "object",
+   "required": ["lat"],
+    "properties": {
+      "lat": {
+        "$ref": "#/definitions/term"
+        
+      }
+     
+    }
+}
