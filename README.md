@@ -19,6 +19,7 @@ Alternatively, you can use this excellent online validation tool https://jsonsch
 # Important Notes
 
  * Currently, we use schema version `draft-4` to encode the MIxS information model. It seems to be the most widely supportet version.
+ * We use [ajv: Another JSON Schema Validator](https://github.com/epoberezkin/ajv) because it seems to be the [fastet and most compliant JSON schema validator](https://survivejs.com/blog/ajv-interview/) currently available (as of 2017-08)
 
 
 # General Background
