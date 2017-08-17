@@ -3,18 +3,25 @@
 
 # Purpose
 
-Encode the MIxS Information Model in JSON Schema.
+Encode the MIxS Information Model in JSON Schema to better support extending the standard and creating specific profiles for specific use cases.
 
 # Validate
 
-Validate MIxS or any extension with e.g.
+Validate MIxS or any extension on the command line with e.g.
 
 ```
  docker run --rm --name ajv -v $(PWD):/ajv renzok/ajv -s mixs-schema.json -d mixs.json
 ```
-where $PWD is the current MIxS working directory.
+where `$(PWD)` is the current MIxS working directory containing `mixs-schema.json` and `mixs.json` files.
 
-# Background
+Alternatively, you can use this excellent online validation tool https://jsonschemalint.com/#/version/draft-04/markup/json
+
+# Important Notes
+
+ * Currently, we use schema version `draft-4` to encode the MIxS information model. It seems to be the most widely supportet version.
+
+
+# General Background
 Without specific guidelines, most genomic, metagenomic and marker gene sequences in databases are sparsely annotated with the information required to guide data integration, comparative studies and knowledge generation. Even with complex keyword searches, it is currently impossible to reliably retrieve sequences that have originated from certain environments or particular locations on Earth—for example, all sequences from ‘soil’ or ‘freshwater lakes’ in a certain region of the world. Because public databases of the International Nucleotide Sequence Database Collaboration (INSDC; comprising DNA Data Bank of Japan (DDBJ), the European Nucleotide Archive (EBI-ENA) and GenBank (http://www.insdc.org/)) depend on author-submitted information to enrich the value of sequence data sets, we argue that the only way to change the current practice is to establish a standard of reporting that requires contextual data to be deposited at the time of sequence submission. The adoption of such a standard would elevate the quality, accessibility and utility of information that can be collected from INSDC or any other data repository.
 
 The GSC has defined a set of core descriptors for genomes and metagenomes in the form of a MIGS/MIMS specification. MIGS/MIMS extends the minimum information already captured by the INSDC. The recently introduced MIMARKS now captures information about marker genes. Additionally, we also introduced ‘environmental packages’ that standardize sets of measurements and observations describing particular habitats that are applicable across all GSC checklists and beyond. We define ‘environment’ as any location in which a sample or organism is found, e.g., soil, air, water, human-associated, plant-associated or laboratory. The original MIGS/MIMS checklists included contextual data about the location from which a sample was isolated and how the sequence data were produced. However, standard descriptions for a more comprehensive range of environmental parameters, which would help to better contextualize a sample, were not included. The environmental packages presented here are relevant to any genome sequence of known origin and are designed to be used in combination with MIGS, MIMS and MIMARKS checklists.
