@@ -3,6 +3,8 @@ node_js:
   - '7'
 before_install: 
 - npm install ajv
+install:
+- ajv -s mixs-schema.json -d mixs.json
 cache:
   directories:
     - node_modules
