@@ -1,7 +1,8 @@
 language: node_js
 node_js:
-  - '6'
-before_install: if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+  - '7'
+before_install: 
+- npm install ajv
 cache:
   directories:
     - node_modules
