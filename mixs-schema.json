@@ -33,16 +33,21 @@
 	    }
         },
 	"fieldDefinitions": {
-	    "type": "object",
-	    "properties": {
-		"field": {
-		    "$ref": "#/definitions/fields"
-		},
-		"validation": {
-		    "type": "string",
-		},
-		"description": {
-		    "type": "string"
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"required": [ "field", "validation" ],
+		"uniqueItems": true,
+		"properties": {
+		    "field": {
+			"$ref": "#/definitions/fields"
+		    },
+		    "validation": {
+			"type": "string",
+		    },
+		    "description": {
+			"type": "string"
+		    }
 		}
 	    }
 	},
