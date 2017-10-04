@@ -1,26 +1,76 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-
+  "title": "mixs-core",
+  "description": "Core item definitions to be used by concrete mixs checklists, env packages and new extensions as well as profiles",
   "definitions": {
-    "term": {
+    "checklist-requirements": {
       "type": "object",
-      "required": ["term-id"],
-      "properties" : {
-      "term-id": {
-        "type": "string" 
+      "properties": {
+        "checklist": {
+          "type": "string",
+          "enum": [
+            "eukaryote",
+            "bacteria_archaea",
+            "plasmid",
+            "virus",
+            "organelle",
+            "metagenome",
+            "mimarks-survey",
+            "mimarks-specimen",
+            "metatranscriptome",
+            "mibig",
+            "misag",
+            "mimag"
+          ]
+        },
+        "requirement": {
+          "type": "string",
+          "enum": [
+            "m",
+            "o"
+          ]
+        }
       }
-     }
+    },
+    "checklist-item": {
+      "title": "Most general definition of a checklist item",
+      "type": "object",
+      "required": [
+        "item-id",
+        "label",
+        "expected-value",
+        "syntax",
+        "example",
+        "occurrence",
+        "section"
+      ],
+      "properties": {
+        "item-id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "definition": {
+          "type": "string"
+        },
+        "expected_value": {
+          "type": "string"
+        }
+      }
     },
     "group": {}
   },
-  "title": "mixs",
   "type": "object",
-   "required": ["lat"],
-    "properties": {
-      "lat": {
-        "$ref": "#/definitions/term"
-        
-      }
-     
+  "required": [
+    "submitted_to_insdc"
+  ],
+  "properties": {
+    "lat": {
+      "$ref": "#/definitions/checklist-item"
+    },
+    "submitted_to_insdc": {
+      "$ref": "#/definitions/checklist-item"
     }
+  }
 }
