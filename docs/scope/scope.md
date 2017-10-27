@@ -1,5 +1,5 @@
 ---
-title: MIxS Scope
+title: scope
 layout: page
 published: true
 ---
