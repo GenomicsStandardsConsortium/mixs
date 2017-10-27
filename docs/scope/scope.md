@@ -1,3 +1,9 @@
+---
+title: MIxS Scope
+layout: page
+published: true
+---
+
 The MIxS is a specification of sequence metadata descriptors. It consists of a core, checklist-specific metadata descriptors, and environment-specific descriptors.
 
 Throughout the development of MIGS, MIMS, MIMARKS, and various environmental packages, the GSC followed these criteria:
