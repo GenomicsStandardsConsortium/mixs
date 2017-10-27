@@ -1,6 +1,6 @@
 ---
-title: scope
-layout: page
+title: MIxS
+layout: default
 published: true
 ---
 
