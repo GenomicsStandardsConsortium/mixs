@@ -1,0 +1,16 @@
+{
+    "name": "MG-RAST MiXS",
+    "description": "MG-RAST Minimum Information about any (X) Sequence",
+    "contact": {
+        "organization": "Argonne National Laboratory",
+	"organization_abbrev": "ANL",
+	"url": "http://metagenomics.anl.gov",
+	"email": "info@mg-rast.org",
+	"firstname": "Folker",
+	"lastname": "Meyer"
+    },
+    "packages": [ "project", "sample", "library" ],
+    "hierarchy":  [
+	[ "project_name", "PI_email", "PI_firstname", "PI_lastname", "PI_organization", "PI_organization_country", "PI_organization_address", "latitude", "longitude", "country", "location", "collection_date", "collection_time", "collection_timezone", "sample_name", "metagenome_name", "investigation_type", "seq_meth" ]
+    ]
+}
