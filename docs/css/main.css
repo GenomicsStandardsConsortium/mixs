@@ -1,7 +1,3 @@
-body { 
-    margin: auto
-    width: 100%; }
-
 a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline; }
 
@@ -9,11 +5,14 @@ p {
     font-size: 1.2em; 
     color: #333; 
     margin: 50px;
+    font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+     text-align: justify;
 }
 
 h1, h2, h3, h4 { 
-    font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
-    margin: 50px;}
+	font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
+	margin: 50px;
+    }
 h1 { 
     font-size: 2em; 
     color: #333; 
@@ -30,10 +29,10 @@ nav ul, footer ul {
     padding: 40px; 
     background-color: #0f75bc; 
     margin: 0 0 0 0;
-}
+    }
 
 nav ul li, footer ul li { 
-    display: inline; 
+    display: inline;
     padding-left: 1.5em;
 }
 
@@ -44,18 +43,9 @@ nav li a, footer li a {
 
 footer {font-size: 1em; }
 
-#footer-images ul {
-  padding: 0;
-}
-
-#footer-images li {
-  list-style: none;
-  margin: 0 10px;
-  display: block;
-}
-
-#footer-images ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+div ul {
+	font-size: 1.2em; 
+    font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
+    list-style-type:circle;
+    margin: 50px; 
+    }
