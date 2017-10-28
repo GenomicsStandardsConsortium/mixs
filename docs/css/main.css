@@ -3,17 +3,35 @@ body { margin: 5px auto; width: 100%; }
 a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline; }
 
-p { font-size: 1.2em; line-height: 1.2em; color: #333; margin: 50px;}
+p { 
+    font-size: 1.2em; 
+    color: #333; 
+    margin: 50px;
+}
 
 h1, h2, h3, h4 { font-family: 'Helvetica', 'Arial', 'Sans-Serif'; margin: 50px;}
-h1 { font-size: 3em;  }
+h1 { 
+    font-size: 2em; 
+    color: #333; 
+    margin: 50px;
+}
 h2 { font-size: 2.7em; }
 h3 { font-size: 2.3em; }
 h4 { font-size: 1.9em; }
 
 nav ul, footer ul { font-size: 1em; font-family: 'Helvetica', 'Arial', 'Sans-Serif'; list-style: none; font-weight: bold;  
     padding: 30px; background-color: #0f75bc; }
-nav ul li, footer ul li { color: White; display: inline; margin-right: 10px; }
+
+nav ul li, footer ul li { 
+    display: inline; 
+    margin-right: 10px; 
+}
+
+nav li a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
 footer {font-size: 1em; }
 
