@@ -1,3 +1,39 @@
+<!DOCTYPE html>
 {% include header.html %}
-	{{ content }}
-{% include footer.html %}
+	<html>
+		<head>
+			<title>{{ page.title }}</title>
+			<!-- link to main stylesheet -->
+			<link rel="stylesheet" type="text/css" href="/mixs/css/style.css">
+			<link rel="stylesheet" type="text/css" href="/mixs/css/style-wide.css">
+			<link rel="stylesheet" type="text/css" href="/mixs/css/skel.css">
+		</head>
+		<body>
+			<nav>
+	    		<ul>
+<li><a href="/mixs">Home</a></li>
+<li><a href="/mixs/scope">Scope</a></li>
+<li><a href="/mixs/norm-references">Normative references</a></li>
+<li><a href="/mixs/mixs-cv">MIxS controlled vocabularies</a></li>
+<li><a href="/mixs/mixs-checklist">MIxS checklists</a></li>
+<li><a href="/mixs/mixs-package">MIxS environmental packages</a></li>
+<li><a href="/mixs/mixs-data-type">MIxS syntax data types</a></li>
+</ul>
+			</nav>
+			<div class="container">
+			
+			{{ content }}
+			
+			</div><!-- /.container -->
+  {% include footer.html %}
+  <footer>
+   <ul>
+   <li><a href="http://gensc.org">Genomic Standards Consortium</a></li>
+   <li><img src="/mixs/assets/images/full_gsc_logo_lrg.png" style="width:20%;float:right;align:center;background-color:white"></li>
+   </ul>
+  </footer>
+  </body>
+
+</html>
+
+
