@@ -1,1 +1,117 @@
+## Checklists
+As of release 5.0, the following checklists are under the MIxS umbrella:
+- _MIGS: Minimum information about a genome sequence_
+- _MIMS: Minimum information about a metagenome sequence_
+- _MIMARKS: Minimum information about a marker gene sequence_
+- _MISAG: Minimum information about a single amplified genome sequence_
+- _MIMAG: Minimum information about a metagenome-assembled genome sequence_
 
+MIGS and MIMARKS are further divided into additional subchecklists, based on the genome sequence in question, or the sequencing type.
+- _MIGS-EU: MIGS for eukaryotic genome sequences_
+- _MIGS-BA: MIGS for bacterial and archaeal genome sequences_
+- _MIGS-PL: MIGS for plasmid sequences_
+- _MIGS-VI: MIGS for viral genome sequences_
+- _MIGS-ORG: MIGS for organelle sequences_
+- _MIMARKS-SP: MIMARKS-survey  for marker gene sequences obtained directly from the environment_
+- _MIMARKS-SU: MIMARKS-specimen for marker gene sequences from cultured or voucher-identifiable specimens_
+
+## Core and specific descriptors
+The five checklists that are currently under MIxS share the same central set of core descriptors, which are:
+- **investigation type**
+- **project name**
+- **geographic location (latitude and longitude)**
+- **geographic location (country and/or sea,region)**
+- **collection date**
+- **environment (biome, feature, and material)**
+- **sequencing method**
+
+Each checklist is then defined by additional, sequence type-specific descriptors. Users of MIxS should first determine the type of genome or marker gene sequence that they have, and then proceed to complement the core descriptors with the checklist specific mandatory descriptors to achieve MIxS compliant metadata. These specific descriptors are summarized below for each checklist and subchecklist. Please note that this summary only includes minimum information for each sequence type, meaning that other conditional and optional descriptors are not included. 
+
+MIGS-EU
+- isolation and growth condition
+- assembly quality
+- assembly software
+- number of contigs
+
+MIGS-BA
+- number of replicons
+- reference for biomaterial
+- isolation and growth condition
+- assembly quality
+- assembly software
+- number of contigs
+
+MIGS-PL
+- propagation
+- isolation and growth condition
+- assembly software
+
+MIGS-VI
+- propagation
+- isolation and growth condition
+- assembly software
+
+MIGS-ORG
+- isolation and growth condition
+- assembly software
+
+MIMS
+
+MIMARKS-S
+- target gene
+
+MIMARKS-C
+- isolation and growth condition
+- target gene
+
+MISAG
+- taxonomic identity marker
+- assembly quality
+- assembly software
+- completeness score
+- completeness software
+- contamination score 
+- sorting technology
+- single cell lysis approach
+- WGA amplification approach
+
+MIMAG
+- taxonomic identity marker
+- assembly quality
+- assembly software
+- completeness score
+- completeness software
+- contamination score 
+- binning parameters
+- binning software
+
+## Legend (accessory elements)
+
+Each descriptor in MIxS checklists is complemented by accessory information that assists in correct usage and parsing of a descriptor.
+
+1. structured comment name: short name of a checklist descriptor. Consists of small case letters and underscores, and no spaces, desirable length no more than 30 characters.
+
+2. item: full name of a checklist descriptor; should be short but also illustrative of the descriptor's purpose
+
+3. description: an extended definition of the descriptor; including links to ontologies and other resources that can be used to fill in values for the descriptor
+
+4. example: examples of values for a descriptor
+
+5. expected value: short definition and/or expected value of a descriptor; expressed in simple terms, such as boolean, date and time, measurement value, or ontology name where applicable
+
+6. section: indicates which section (**should be one of: investigation, environment, mixs extension, nucleic acid sequence source, sequencing**) a descriptor belongs to
+
+7. checklist requirement (EU,BA,PL,VI,ORG,MIMARKS-SU,MIMARKS-SP,MISAG,MIMAG): information about whether a descriptor is:
+- _mandatory (M): descriptor must be present for compliance with the checklist__
+- _conditional mandatory (C): descriptor must be present for compliance with the checklist, but only when applicable to the study, i.e. if this item is not applicable for the study the metadata data will still be checklist compliant even if it is left out_
+- _optional (X): descriptor may be present, not mandatory for compliance with checklist_
+- _environment-dependent (E): descriptor must be present depending on the environment the original sample was obtained from_
+- _not applicable (-): descriptor is not applicable for a given checklist type_
+
+8. value syntax: a pseudo-code representation of the expected value of a given descriptor, for parsing purposes. if descriptor is of type enumeration, then the associated controlled vocabulary is also given here
+
+9. occurrence: indicates if a given descriptor may be used only once (1), multiple times (m), or none (0)
+
+10. position: position/pseudo-id of descriptor as it appears in ordered-lists of checklists descriptors
+
+11. preferred units: a unit suggestion if a descriptor is for a measurement value
