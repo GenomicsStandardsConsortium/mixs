@@ -1,1 +1,606 @@
+Whenever possible, MIxS metadata descriptors provide users a controlled vocabulary (CV) of terms as the value of a descriptor. A CV is an organized arrangement of words and phrases used to index content and/or to retrieve content through browsing or searching. The purpose of CVs is to organize information and to provide terminology to catalog and retrieve information. CVs promote consistency in preferred terms and the assignment of the same terms to similar content. While this might be restrictive, experience has shown that such CVs vastly enhance searching and automated retrieval of genomic datasets, as opposed to free text values. The CVs are dynamic, and are extended when required and requested.
 
+The list below is all the MIxS descriptors that require the use of a CV, and their subsequent terms:
+1. **environmental package CV**
+
+        air|built environment|host-associated|human-associated|human-skin|human-oral|
+        human-gut|human-vaginal|hydrocarbon resources-cores|hydrocarbon resources-fluids/swabs|
+        microbial mat/biofilm|misc environment|plant-associated|sediment|
+        soil|wastewater/sludge|water`
+---
+2. **observed biotic relationship CV**
+
+        free living|parasitism|commensalism|symbiotic|mutualism
+---
+3. **health or disease status of specific host at time of collection CV**
+
+        healthy|diseased|dead|disease-free|undetermined|recovering|resolving|
+        pre-existing condition|pathological|life threatening|congenital
+---
+4. **trophic level CV**
+
+        autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|
+        chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|
+        diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|
+        methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|
+        organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|
+        photosynthetic|phototroph
+---
+5. **relationship to oxygen CV**
+
+        aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|
+        obligate anaerobe
+---
+6. **taxa ID CV**
+
+       16S rRNA gene|multi-marker approach|other
+---		
+7. **assembly quality CV**
+
+       high|med|low
+---
+8. **completeness approach CV**		
+		
+       marker gene|reference based|other
+---
+9. **contamination screening input CV**
+
+       ref db|kmer|coverage|combination
+---
+10. **decontamination software CV**
+
+        checkm/refinem|anvi'o|prodege|bbtools:decontaminate.sh|acdc|combination
+---
+11. **sorting technology CV**
+
+        flow cytometric cell sorting|microfluidics|lazer-tweezing|optical manipulation|
+        micromanipulation|other
+---
+12. **single cell lysis approach CV**
+
+        chemical|enzymatic|physical|combination
+---
+13. **WGA amplication approach CV**
+
+        pcr based|mda based
+---
+14. **binning parameters CV**
+
+        homology search|kmer|coverage|codon usage|combination
+---
+15. **binning software CV**
+
+        metabat|maxbin|concoct|groupm|esom|metawatt|combination|other
+---
+16. **MAG coverage software CV**
+
+        bwa|bbmap|bowtie|other
+---
+17. **aerospace structure CV**
+
+        plane|glider
+---
+18. **architectural structure CV**
+
+        building|shed|home
+---
+19. **biological status CV**
+
+        wild|natural|semi-natural|inbred line|breeder's line|hybrid|clonal selection|mutant
+---
+20. **building occupancy type CV**
+	
+        office|market|restaurant|residence|school|residential|commercial|low rise|high rise|
+        wood framed|office|health care|school|airport|sports complex
+---
+21. **building setting CV**
+
+        urban|suburban|exurban|rural
+---
+22. **built structure setting CV**
+
+        urban|rural
+---
+23. **ceiling condition CV**
+
+        new|visible wear|needs repair|damaged|rupture
+---
+24. **ceiling finish material CV**
+
+        drywall|mineral fibre|tiles|PVC|plasterboard|metal|fiberglass|
+        stucco|mineral wool/calcium silicate|wood
+---
+25. **ceiling signs of water/mold CV**
+
+        presence of mold visible|no presence of mold visible
+---
+26. **ceiling structure CV**
+
+        wood frame|concrete
+---
+27. **ceiling texture CV**
+
+        crows feet|crows-foot stomp|double skip|hawk and trowel|knockdown|popcorn|
+        orange peel|rosebud stomp|Santa-Fe texture|skip trowel|smooth|stomp knockdown|swirl
+---
+28. **ceiling type CV**
+
+        cathedral|dropped|concave|barrel-shaped|coffered|cove|stretched
+---
+29. **current land use CV**
+
+        cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|
+        salt flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas
+        |small grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands 
+        (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands used for livestock 
+        grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub land
+        (e.g. mesquite,sage-brush,creosote bush,shrub, oak,eucalyptus)|successional shrub land (tree 
+        saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub crops (blueberries,nursery 
+        ornamentals,filberts)|vine crops (grapes)|conifers (e.g. pine,spruce,fir,cypress)|
+        hardwoods (e.g. oak,hickory,elm,aspen)|intermixed hardwood and conifers|tropical
+        (e.g. mangrove,palms)|rainforest (evergreen forest receiving >406 cm annual rainfall)|
+        swamp (permanent or semi-permanent water body dominated by woody plants)|crop trees 
+        (nuts,fruit,christmas trees,nursery trees)
+---
+30. **depositional environment CV**
+
+        Continental - Alluvial|Continental - Aeolian|Continental - Fluvial|
+        Continental - Lacustrine|Transitional - Deltaic|Transitional - Tidal|
+        Transitional - Lagoonal|Transitional - Beach|Transitional - Lake|Marine - Shallow|
+        Marine - Deep|Marine - Reef|Other - Evaporite|Other - Glacial|Other - Volcanic|other
+---
+31. **design, construction, and operation documents CV**
+
+        building information model|commissioning report|complaint logs|contract administration|
+        cost estimate|janitorial schedules or logs|maintenance plans|schedule|sections|
+        shop drawings|submittals|ventilation system|windows
+--- 
+32. **dominant hand CV**
+
+        left|right|ambidextrous
+---
+33. **door condition CV**
+	
+        damaged|needs repair|new|rupture|visible wear
+---
+34. **door direction of opening CV**
+
+        inward|outward|sideways
+---
+35. **door location CV**
+
+        north|south|east|west
+---
+36. **door material CV**
+	
+        aluminum|cellular PVC|engineered plastic|fiberboard|fiberglass|metal|
+        thermoplastic alloy|vinyl|wood|wood/plastic composite
+---
+37. **door movement CV**
+	
+        collapsible|folding|revolving|rolling shutter|sliding|swinging
+--- 
+38. **door signs of water/mold CV**
+	
+        presence of mold visible|no presence of mold visible
+---
+39. **door type CV**
+	
+        composite|metal|wooden
+---
+40. **door type, composite CV**
+	
+        metal covered|revolving|sliding|telescopic
+---
+41. **door type, metal CV**
+
+        collapsible|corrugated steel|hollow|rolling shutters|steel plate
+---
+42. **door type, wood CV**
+
+        bettened and ledged|battened|ledged and braced|battened|ledged and framed|battened|
+        ledged, braced and frame|framed and paneled|glashed or sash|flush|louvered|wire gauged
+---
+43. **drainage classification CV**
+	
+        very poorly|poorly|somewhat poorly|moderately well|well|excessively drained
+---
+44. **drawings CV**
+	
+        operation|as built|construction|bid|design|building navigation map|diagram|sketch
+---
+45. **filter type CV**
+	
+        particulate air filter|chemical air filter|low-MERV pleated media|HEPA|
+        electrostatic|gas-phase or ultraviolet air treatments
+---
+46. **fireplace type CV**
+	
+        gas burning|wood burning
+---
+47. **floor condition CV**
+	
+        new|visible wear|needs repair|damaged|rupture
+---
+48. **floor finish material CV**
+	
+        tile|wood strip or parquet|carpet|rug|laminate wood|lineoleum|vinyl composition tile|
+        sheet vinyl|stone|bamboo|cork|terrazo|concrete|none;specify unfinished|sealed|
+        clear finish|paint
+---
+49. **floor signs of water/mold CV**
+
+        mold odor|wet floor|water stains|wall discoloration|floor discoloration|
+        ceiling discoloration|peeling paint or wallpaper|bulging walls|condensation
+---
+50. **floor structure CV**
+
+        balcony|floating floor|glass floor|raised floor|sprung floor|wood-framed|concrete
+---
+51. **furniture CV**
+
+        cabinet|chair|desks
+---
+52. **gender of restroom CV**
+
+        male|female
+---
+53. **growth habit CV**
+
+        erect|semi-erect|spreading|prostrate
+--- 
+54. **growth media CV**
+
+        soil|liquid
+---
+55. **handidness CV**
+
+        ambidexterity|left handedness|mixed-handedness|right handedness
+---
+56. **heating and cooling system type CV**
+	
+        radiant system|heat pump|forced air system|steam forced heat|wood stove
+---
+57. **heating delivery locations CV**
+
+        north|south|east|west
+---
+58. **heating system delivery method CV**
+ 	
+        conductive|radiant
+---
+59. **history/tillage CV**
+	
+        drill|cutting disc|ridge till|strip tillage|zonal tillage|chisel|tined|mouldboard|
+        disc plough
+---
+60. **horizon CV**
+	
+        O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost
+---
+61. **host sex CV**
+
+        male|female|neuter|hermaphrodite|not determined
+---
+62. **hydrocarbon resource geological age CV**
+
+        Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|Neogene|
+        Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|Triassic|other
+---
+63. **hydrocarbon resource type CV**
+
+        Oil Reservoir|Gas Reservoir|Oil Sand|Coalbed|Shale|Tight Oil Reservoir|
+        Tight Gas Reservoir|other
+---
+64. **hydrocarbon type produced CV**
+
+        Oil|Gas-Condensate|Gas|Bitumen|Coalbed Methane|other
+---
+65. **indoor space CV**
+
+        bedroom|office|bathroom|foyer|kitchen|locker room|hallway|elevator
+---
+66. **indoor surface CV**
+
+        counter top|window|wall|cabinet|ceiling|door|shelving|vent cover
+---
+68. **interior wall condition CV**
+
+        new|visible wear|needs repair|damaged|rupture
+---
+69. **light type CV**
+
+        natural light|electric light|desk lamp|flourescent lights|natural light|none
+---
+70. **lithology CV**
+
+        Basement|Chalk|Chert|Coal|Conglomerate|Diatomite|Dolomite|Limestone|Sandstone|Shale|
+        Siltstone|Volcanic|other
+---
+71. **mechanical structure CV**
+	
+        subway|coach|carriage|elevator|escalator|boat|train|car|bus
+---
+72. **occupancy documentation CV**
+
+        automated count|estimate|manual count|videos
+---
+73. **organism count CV**
+
+        qPCR|ATP|MPN|other
+---
+74. **orientations of exterior wall CV**
+
+        north|south|east|west|northeast|southeast|southwest|northwest
+---
+75. **orientations of exterior window CV**
+
+        north|south|east|west|northeast|southeast|southwest|northwest
+---
+76. **oxygenation status of sample CV**
+
+        aerobic|anaerobic|other
+---
+77. **plant sex CV**
+
+        Androdioecious|Androecious|Androgynous|Androgynomonoecious|Andromonoecious|
+        Bisexual|Dichogamous|Diclinous|Dioecious|Gynodioecious|Gynoecious|Gynomonoecious|
+        Hermaphroditic|Imperfect|Monoclinous|Monoecious|Perfect|Polygamodioecious|
+        Polygamomonoecious|Polygamous|Protandrous|Protogynous|Subandroecious|Subdioecious|
+        Subgynoecious|Synoecious|Trimonoecious|Trioecious|Unisexual
+---
+78. **presence of pets, animals, or insects CV**
+	
+        cat|dog|rodent|snake|other
+---
+79. **profile position CV**
+
+        summit|shoulder|backslope|footslope|toeslope
+---
+80. **quadrant position CV**
+
+        North side|West side|South side|East side
+---
+81. **relative sampling location CV**
+
+        edge of car|center of car|under a seat
+---
+82. **room condition CV**
+
+        new|visible wear|needs repair|damaged|rupture|visible signs of mold/mildew
+---
+83. **room location in building CV**
+
+        corner room|interior room|exterior wall
+---
+84. **room sampling position CV**
+
+        north corner|south corner|west corner|east corner|northeast corner|
+        northwest corner|southeast corner|southwest corner|center
+---
+85. **room type CV**
+
+        attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|
+        mail room|private office|open office|stairwell|,restroom|lobby|vestibule|
+        mechanical or electrical room|data center|laboratory_wet|laboratory_dry|
+        gymnasium|natatorium|auditorium|lockers|cafe|warehouse
+--- 
+86. **rooms connected by a doorway CV**
+
+        attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|
+        mail room|office|stairwell
+---
+87. **sample capture status CV**
+
+        active surveillance in response to an outbreak|
+        active surveillance not initiated by an outbreak|
+        farm sample|market sample|other
+---
+88. **sample collection point CV**
+
+        well|test well|drilling rig|wellhead|separator|storage tank|other
+---
+89. **sample measured depth CV**
+
+        GL|DF|RT|KB|MSL|other
+---
+90. **sample subtype CV**
+
+        oil phase|water phase|biofilm|not applicable|other
+---
+91. **sample type CV**
+
+        core|rock trimmings|drill cuttings|piping section|coupon|pigging debris|solid deposit|
+        produced fluid|produced water|injected water|water from treatment plant|fresh water|
+        sea water|drilling fluid|procedural blank|positive control|negative control|other
+---
+92. **sampling day weather CV**
+
+        clear sky|cloudy|foggy|hail|rain|snow|sleet|sunny|windy
+---
+93. **sampling floor CV**
+
+        lobby|basement|1st floor|2nd floor|{integer} floor
+---
+94. **season CV**
+
+        Spring|Summer|Fall|Winter
+---
+95. **seasonal use CV**
+
+        Spring|Summer|Fall|Winter
+---
+96. **secondary and tertiary recovery methods CV**
+
+        Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|
+        Surfactant Addition|Not Applicable|other
+---
+97. **sediment type CV**
+
+        biogenous|cosmogenous|hydrogenous|lithogenous
+---
+98. **shading device condition CV**
+
+        damaged|needs repair|new|rupture|visible wear
+---
+99. **shading device location CV**
+
+        exterior|interior
+---
+100. **shading device signs of water/mold CV**
+
+         presence of mold visible|no presence of mold visible
+---
+101. **shading device type CV**
+
+         bahama shutters|exterior roll blind|gambrel awning|hood awning|
+         porchroller awning|sarasota shutters|slatted aluminum|solid aluminum awning|
+         sun screen|tree|trellis|venetian awning
+---
+102. **soil_taxonomic/FAO classification CV**
+
+         Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|
+         Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|
+         Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|
+         Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols
+---
+103. **source rock depositional environment CV**
+
+         Lacustine|Fluvioldeltaic|Fluviomarine|Marine|other
+---
+104. **source rock geological age CV**
+
+         Archean|Cambrian|Carboniferous|Cenozoic|Cretaceous|Devonian|Jurassic|Mesozoic|
+         Neogene|Ordovician|Paleogene|Paleozoic|Permian|Precambrian|Proterozoic|Silurian|
+         Triassic|other
+---
+105. **source rock kerogen type CV**
+
+         Type I|Type II|Type III|Type IV|other
+---
+106. **source rock lithology CV**
+
+          Clastic|Carbonate|Coal|Biosilicieous|other
+---
+107. **space typical state CV**
+
+           typically occupied|typically unoccupied
+---
+108. **special diet CV**
+
+           low carb|reduced calorie|vegetarian|other(to be specified)
+---
+109. **specifications CV**
+
+           operation|as built|construction|bid|design|photos
+---
+110. **substructure type CV**
+
+           crawlspace|slab on grade|basement
+---
+111. **surface material CV**
+
+           concrete|wood|stone|tile|plastic|glass|vinyl|metal|carpet|
+           stainless steel|paint|cinder blocks|hay bales|stucco|adobe
+---
+112. **surface-air contaminant CV**
+
+           dust|organic matter|particulate matter|volatile organic compounds|
+           biological contaminants|radon|nutrients|biocides
+---
+113. **tidal stage CV**
+
+           low tide|ebb tide|flood tide|high tide
+---
+114. **train line CV**
+
+           red|green|orange
+---
+115. **train station collection location CV**
+
+           south station above ground|south station underground|south station amtrak|
+           forest hills|riverside
+---
+116. **train stop collection location CV**
+
+           end|mid|downtown
+---
+117. **urine/collection method CV**
+
+           clean catch|catheter
+---
+118. **visual media CV**
+
+           photos|videos|commonly of the building|site context (adjacent buildings,
+           vegetation, terrain, streets)|interiors|equipment|3D scans
+---
+119. **wall construction type CV**
+
+           frame construction|joisted masonry|light noncombustible|masonry noncombustible|
+           modified fire resistive|fire resistive
+---
+120. **wall finish material CV**
+
+           plaster|gypsum plaster|veneer plaster|gypsum board|tile|terrazzo|
+           stone facing|acoustical treatment|wood|metal|masonry
+---
+121. **wall location CV**
+
+           north|south|east|west
+---
+122. **wall signs of water/mold CV**
+
+           presence of mold visible|no presence of mold visible
+---
+123. **wall surface treatment CV**
+
+           painted|wall paper|no treatment|paneling|stucco|fabric
+---
+124. **wall texture CV**
+
+           crows feet|crows-foot stomp||double skip|hawk and trowel|knockdown|popcorn|orange peel|rosebud stomp|Santa-Fe 
+           texture|skip trowel|smooth|stomp knockdown|swirl
+---
+125. **water feature type CV**
+
+           fountain|pool|standing feature|stream|waterfall
+---
+126. **weekday CV**
+
+           Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday
+---
+127. **window condition CV**
+
+           damaged|needs repair|new|rupture|visible wear
+---
+128. **window covering CV**
+
+           blinds|curtains|none
+---
+129. **window horizontal position CV**
+
+           left|middle|right
+---
+130. **window location CV**
+
+           north|south|east|west
+---
+131. **window material CV**
+
+           clad|fiberglass|metal|vinyl|wood
+---
+132. **window signs of water/mold CV**
+	
+           presence of mold visible|no presence of mold visible
+---
+133. **window status CV**
+
+           closed|open
+---
+134. **window type CV**
+
+           single-hung sash window|horizontal sash window|fixed window
+--- 
+135. **window vertical position CV**
+
+           bottom|middle|top|low|middle|high
