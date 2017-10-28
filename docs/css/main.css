@@ -1,8 +1,7 @@
-a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline; }
 
 p { 
-    font-size: 1.2em; 
+    font-size: 1em; 
     color: #333; 
     margin: 50px;
     font-family: 'Helvetica', 'Arial', 'Sans-Serif';
@@ -14,10 +13,10 @@ h1, h2, h3, h4 {
 	margin: 50px;
     }
 h1 { 
-    font-size: 2em; 
+    font-size: 1.5em; 
     color: #333; 
 }
-h2 { font-size: 2.7em; }
+h2 { font-size: 1.2em; }
 h3 { font-size: 2.3em; }
 h4 { font-size: 1.9em; }
 
@@ -44,8 +43,16 @@ nav li a, footer li a {
 footer {font-size: 1em; }
 
 div ul {
-	font-size: 1.2em; 
+	font-size: 1em; 
     font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
     list-style-type:circle;
     margin: 50px; 
+    line-height:150%;
+    }
+div ol {
+	font-size: 1em; 
+    font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
+    list-style-type:numeric;
+    margin: 50px;
+    line-height:150%;
     }
