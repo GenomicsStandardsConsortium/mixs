@@ -11,20 +11,24 @@ h2 { font-size: 2.7em; }
 h3 { font-size: 2.3em; }
 h4 { font-size: 1.9em; }
 
-nav ul, footer ul { font-size: 1em; font-family: 'Helvetica', 'Arial', 'Sans-Serif'; list-style: none; font-weight: bold;  border: 1px solid #0f75bc;
+nav ul, footer ul { font-size: 1em; font-family: 'Helvetica', 'Arial', 'Sans-Serif'; list-style: none; font-weight: bold;  
     padding: 30px; background-color: #0f75bc; }
-nav ul li, footer ul li { color: white; display: inline; margin-right: 10px; }
+nav ul li, footer ul li { color: White; display: inline; margin-right: 10px; }
 
-footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
+footer {font-size: 1em; }
 
-/* Blog */
-ul.posts { margin: 20px auto 40px; font-size: 1.5em; }
-ul.posts li { list-style: none; }
+#footer-images ul {
+  padding: 0;
+}
 
-/* CV */
-.cv { margin: 0px 0px 60px; }
-.cv h1 { font-size: 3em; }
-.cv h2 { font-size: 2em; }
-.cv address, .cv .download { font-family: 'Helvetica', 'Arial', 'Sans-Serif'; }
-.cv address, .cv p { font-size: 1.2em; }
-.cv .download { float: right; font-size: .8em; text-transform: uppercase; }
+#footer-images li {
+  list-style: none;
+  margin: 0 10px;
+  display: block;
+}
+
+#footer-images ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
