@@ -1,1 +1,50 @@
+---
+layout: default
+title: Data types
+---
 
+The data types are used to bridge the gap between the semantic concepts expressed by the MIxS descriptors and their possible technical implementation. The data types define the allowed value domain for the content, and any additional information components (attributes) needed in order to ensure its precise interpretation.
+Please note that not all data types fit into generic programming or database data types (such as {unit}), and are specific for MIxS checklists purposes.
+All data types defined in this document may also be combined in composite types to express the values of more complex MIxS descriptors.
+
+**[...|...]:** denotes an enumerated descriptor and its controlled vocabulary of values
+
+**{boolean}:** represents the values true and false
+
+**{dna}:** DNA or RNA sequence, can contain all IUPAC nucleic acid sequence characters
+
+**{DOI}:** persistent identifier or handle used to uniquely identify objects, consists of alphanumeric characters
+
+**{duration}:** duration of an event expressed in ISO 8601 duration syntax; PnYnMnDTnHnMnS. The P character marks this as a duration. This is followed by (optionally specified) sets of numbers (n) and units: nY for number of years, nM for number of months, and so on. If a set of numbers and units is missing, it is assumed to be zero
+
+**{float}:** variable unlimited length of single or double precision numeric type, expressed as a decimal number
+
+**{integer}:** signed or unsigned whole numbers
+
+**{NCBI taxid}:** NCBI taxonomy ID, consists only of numeric characters
+
+**{percentage}:** a number or ratio that represents a fraction of 100, no unit or symbol given
+
+**{PMID}:** unique identifier number used in PubMed, consists only of numeric characters
+
+**{Rn/start_time/end_time/duration}:** a (repeating) time interval and duration. R is a character that marks this as a recurring pattern. The first n is an optional number that limits the number of recurrences. Start and end times are expressed as a ISO 8601 timestamp. Duration is expressed as ISO 8601 duration syntax; PnYnMnDTnHnMnS.
+
+**{term}**: ontology term, consists of alphabetic characters
+
+**{text}:** variable unlimited length of alphanumeric strings
+
+**{timestamp}:** time, date, time and time, with or without time zone, conforms to ISO 8601 format:
+
+_Dates - [YYYY]-[MM]-[DD] > 1981-04-05_
+
+_Times - [hh]:[mm]:[ss] > 13:47:30_
+
+_Time zones - [hh]:[mm]:[ss]Z if in UTC (coordinated universal time) > 14:45:15Z OR [hh]:[mm]:[ss]+-[hh]:[mm] if has offset from UTC > 22:30+04_
+
+_Date and time - [YYYY]-[MM]-[DD]T[hh]:[mm] > 2007-04-05T14:30_
+
+**{unit}:** indicates the unit of a measurement value, in accordance with SI, can contain alphanumeric characters
+
+**{URL}:** a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it
+
+Different data types can be combined with a "semicolon (;)" to create composite data types (i.e. {text};{float} {unit};[qPCR|ATP|MPN|other]) or with a "vertical bar (|)" to indicate one or the other data type should be chosen (i.e. {PMID}|{DOI}|{URL}|{text}). 
