@@ -2,7 +2,7 @@ a:hover { text-decoration: underline; }
 
 p { 
     font-size: 1em; 
-    color: #333; 
+    color: DimGray; 
     margin: 10px 50px 10px 50px;
     font-family: 'Helvetica', 'Arial', 'Sans-Serif';
     text-align: justify;
@@ -14,17 +14,16 @@ h1, h2, h3, h4 {
     }
 h1 { 
     font-size: 1.5em; 
-    color: #333; 
+    color: DimGray; 
     margin: 20px 50px 10px 50px;
 
 }
 h2.a { 
 	font-size: 1.2em; 
-	color: #333;
+	color: DimGray;
 	font-style: italic;
 	margin: 20px 50px 10px 50px;
-	border-bottom: 2px;
-	border-color: #333;
+	border-bottom: 2px solid DimGray;
 }
 h3 { font-size: 2.3em; }
 h4 { font-size: 1.9em; }
@@ -58,6 +57,7 @@ div ul {
     margin: 10px 50px 10px 50px;
     line-height:150%;
     text-align: justify;
+    color: DimGray;
     }
 div ol {
 	font-size: 1em;
@@ -66,4 +66,6 @@ div ol {
     	margin: 10px 50px 10px 50px;
     	line-height:150%;
 	text-align: justify;
+	color: DimGray;
     }
+
