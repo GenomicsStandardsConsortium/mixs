@@ -2,52 +2,56 @@
 layout: default
 title: Packages
 ---
+<div class="blurb">
+<h1>MIxS Environmental Packages</h1>
+<h2 class="a">Packages</h2>
+<p>The original MIGS/MIMS checklists included contextual data about the location from which a sample was isolated and how the sequence data were produced. However, standard descriptions for a more comprehensive range of environmental parameters, which would help to better contextualize a sample, were not included. 
+As of release 5.0, the following environmental packages  are under the MIxS umbrella:<p/>
+<ul>
+<li>Air</li>
+<li>Built-environment</li>
+<li>Host-associated</li>
+<li>Human-associated</li>
+<li>Human-gut</li>
+<li>Human-oral</li>
+<li>Human-skin</li>
+<li>Human-vaginal</li>
+<li>Hydrocarbon resources-cores</li>
+<li>Hydrocarbon resources-fluids/swabs</li>
+<li>Microbial mat/biofilm</li>
+<li>Miscellaneous natural or artificial environment</li>
+<li>Plant-associated</li>
+<li>Sediment</li>
+<li>Soil</li>
+<li>Wastewater/sludge</li>
+<li>Water</li>
+  </ul>
+<p>Seventeen environmental packages provide a wealth of environmental and epidemiological contextual data fields for a complete description of sampling environments. The environmental packages can be combined with any of the MIxS checklists. The package names describe high-level habitat terms in order to be exhaustive. The miscellaneous natural or artificial environment package contains a generic set of parameters, and is included for any other habitat that does not fall into the other categories. Whenever needed, multiple packages may be used for the description of the environment.</p>
 
-## Packages
-The original MIGS/MIMS checklists included contextual data about the location from which a sample was isolated and how the sequence data were produced. However, standard descriptions for a more comprehensive range of environmental parameters, which would help to better contextualize a sample, were not included. 
-As of release 5.0, the following environmental packages  are under the MIxS umbrella:
-- Air
-- Built-environment
-- Host-associated 
-- Human-associated
-- Human-gut
-- Human-oral
-- Human-skin
-- Human-vaginal
-- Hydrocarbon resources-cores
-- Hydrocarbon resources-fluids/swabs
-- Microbial mat/biofilm
-- Miscellaneous natural or artificial environment
-- Plant-associated
-- Sediment
-- Soil
-- Wastewater/sludge
-- Water
+<h2 class="a">Legend (accessory elements)</h2>
+<p>As with the MIxS checklists, all descriptors in MIxS environmental packages are also complemented by accessory information that assists in correct usage and parsing of a descriptor.</p>
+<ol>
+<li>environmental package: name of the package descriptor belongs to; a descriptor may belong to multiple packages</li>
 
-Seventeen environmental packages provide a wealth of environmental and epidemiological contextual data fields for a complete description of sampling environments. The environmental packages can be combined with any of the MIxS checklists (Fig. 1 and Supplementary Results 2). The package names describe high-level habitat terms in order to be exhaustive. The miscellaneous natural or artificial environment package contains a generic set of parameters, and is included for any other habitat that does not fall into the other categories. Whenever needed, multiple packages may be used for the description of the environment.
+<li>structured comment name: short name of a package descriptor. Consists of small case letters and underscores, and no spaces, desirable length no more than 30 characters</li>
 
-## Legend (accessory elements)
-As with the MIxS checklists, all descriptors in MIxS environmental packages are also complemented by accessory information that assists in correct usage and parsing of a descriptor.
+<li>item: full name of a package descriptor; should be short but also illustrative of the descriptor's purpose</li>
 
-1. environmental package: name of the package descriptor belongs to; a descriptor may belong to multiple packages
+<li>definition: an extended definition of the descriptor; including links to ontologies and other resources that can be used to fill in values for the descriptor</li>
 
-2. structured comment name: short name of a package descriptor. Consists of small case letters and underscores, and no spaces, desirable length no more than 30 characters.
+<li>package requirement: certain descriptors are mandatory for some packages, for example ‘depth’ is mandatory when using packages water, sediment or soil:</li>
+ <ul>
+   <li><i>mandatory (M): descriptor must be present for compliance with the package</i></li>
+<li><i>onditional mandatory (C): descriptor must be present for compliance with the package, but only when applicable to the study, i.e. if this item is not applicable for the study the metadata data will still be compliant even if it is left out</i></li>
+<li><i>ptional (X): descriptor may or may not be present, not mandatory for compliance with checklist</i></li>
+<ul>
+<li>expected value: short definition and/or expected value of a descriptor; expressed in simple terms, such as boolean, date and time, measurement value, ontology name where applicable</li>
 
-3. item: full name of a package descriptor; should be short but also illustrative of the descriptor's purpose
+<li>value syntax: a pseudo-code representation of the expected value of a given descriptor, for parsing purposes. if descriptor is of type enumeration, then the associated controlled vocabulary is also given here</li>
 
-4. definition: an extended definition of the descriptor; including links to ontologies and other resources that can be used to fill in values for the descriptor
+<li>occurrence: indicates if a given descriptor may be used only once (1), multiple times (m), or none (0)</li>
 
-5. package requirement: certain descriptors are mandatory for some packages, for example ‘depth’ is mandatory when using packages water, sediment or soil:
-- _mandatory (M): descriptor must be present for compliance with the package_
-- _conditional mandatory (C): descriptor must be present for compliance with the package, but only when applicable to the study, i.e. if this item is not applicable for the study the metadata data will still be compliant even if it is left out_
-- _optional (X): descriptor may or may not be present, not mandatory for compliance with checklist_
+<li>position: position/pseudo-id of descriptor as it appears in ordered-lists of package descriptors</li>
 
-6. expected value: short definition and/or expected value of a descriptor; expressed in simple terms, such as boolean, date and time, measurement value, ontology name where applicable
-
-7. value syntax: a pseudo-code representation of the expected value of a given descriptor, for parsing purposes. if descriptor is of type enumeration, then the associated controlled vocabulary is also given here
-
-8. occurrence: indicates if a given descriptor may be used only once (1), multiple times (m), or none (0)
-
-9. position: position/pseudo-id of descriptor as it appears in ordered-lists of package descriptors
-
-10. preferred units: a unit suggestion if a descriptor is for a measurement value
+<li>preferred units: a unit suggestion if a descriptor is for a measurement value</li>
+  </ol>
