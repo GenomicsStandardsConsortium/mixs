@@ -131,23 +131,3 @@ tr:nth-child(even){background-color: #f2f2f2}
   transform: translate(-50%, -50%);
   color: white;
 }
-/* Three columns side by side */
-.column {
-    float: left;
-    width: 50%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-}
-
-/* Display the columns below each other instead of side by side on small screens */
-@media (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
-    }
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
