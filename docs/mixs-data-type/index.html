@@ -35,15 +35,15 @@ title: Data types
 <li><b>{text}:</b> variable unlimited length of alphanumeric strings</li>
 
 <li><b>{timestamp}:</b> time, date, time and time, with or without time zone, conforms to ISO 8601 format:
+<ul class="norm">
+  <li><i>Dates - [YYYY]-[MM]-[DD] > 1981-04-05</i></li>
 
-_Dates - [YYYY]-[MM]-[DD] > 1981-04-05_
+<li><i>Times - [hh]:[mm]:[ss] > 13:47:30</i></li>
 
-_Times - [hh]:[mm]:[ss] > 13:47:30_
+<li><i>Time zones - [hh]:[mm]:[ss]Z if in UTC (coordinated universal time) > 14:45:15Z OR [hh]:[mm]:[ss]+-[hh]:[mm] if has offset from UTC > 22:30+04</i></li>
 
-_Time zones - [hh]:[mm]:[ss]Z if in UTC (coordinated universal time) > 14:45:15Z OR [hh]:[mm]:[ss]+-[hh]:[mm] if has offset from UTC > 22:30+04_
-
-_Date and time - [YYYY]-[MM]-[DD]T[hh]:[mm] > 2007-04-05T14:30_
-
+<li><i>Date and time - [YYYY]-[MM]-[DD]T[hh]:[mm] > 2007-04-05T14:30</i></li>
+  </ul>
 <li><b>{unit}:</b> indicates the unit of a measurement value, in accordance with SI, can contain alphanumeric characters</li>
 
 <li><b>{URL}:</b> a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it</li>
