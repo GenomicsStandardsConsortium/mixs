@@ -131,3 +131,21 @@ tr:nth-child(even){background-color: #f2f2f2}
   transform: translate(-50%, -50%);
   color: white;
 }
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.column img {
+    margin-top: 12px;
+    width: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
