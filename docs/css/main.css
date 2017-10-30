@@ -51,28 +51,29 @@ nav ul {
     margin: 0 0 0 0;
     }
 
-footer ul { 
-    font-size: 1em; 
-    font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
-    list-style: none; 
-    font-weight: bold;  
-    padding: 20px; 
-    background-color: #0f75bc; 
-    margin: 0 0 0 0;
-    }
+.icon-bar {
+    width: 100%; /* Full-width */
+    background-color: #0f75bc; /* Dark-grey background */
+    overflow: auto; /* Overflow due to float */
+}
 
+.icon-bar a {
+    float: right; /* Float links side by side */
+    text-align: center; /* Center-align text */
+    padding: 12px 10px 0; /* Some top and bottom padding */
+    color: white; /* White text color */
+    font-size: 0.8em; /* Increased font size */
+}
 
-nav ul li, footer ul li { 
+nav ul li { 
     display: inline;
     padding-left: 1.5em;
 }
 
-nav li a, footer li a {
+nav li a {
     color: white;
     text-decoration: none;
 }
-
-footer {font-size: 1em; }
 
 div ul {
     font-size: 1em; 
