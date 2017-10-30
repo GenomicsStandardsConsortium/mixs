@@ -9,52 +9,101 @@ title: Checklists
 <div style="overflow-x:auto;">
   <table class="a">
     <tr>
-<td>MIGS:</td>
+<td>MIGS</td>
 <td>Minimum information about a genome sequence</td>
 </tr>
     <tr>
-<td>MIMS:</td>
+<td>MIMS</td>
 <td>Minimum information about a metagenome sequence</td>
 </tr>
     <tr>
-<td>MIMARKS:</td>
+<td>MIMARKS</td>
 <td>Minimum information about a marker gene sequence</td>
 </tr>
     <tr>
-<td>MISAG:</td>
+<td>MISAG</td>
 <td>Minimum information about a single amplified genome sequence</td>
 </tr>
     <tr>
-<td>MIMAG:</td>
+<td>MIMAG</td>
 <td>Minimum information about a metagenome-assembled genome sequence</td>
 </tr>
   </table>
 </div>
 <p>MIGS and MIMARKS are further divided into additional subchecklists, based on the genome sequence in question, or the sequencing type.</p>
-  <div style="overflow-x:auto;">
+<div style="overflow-x:auto;">
   <table class="a">
     <tr>
-- _MIGS-EU: MIGS for eukaryotic genome sequences_
-- _MIGS-BA: MIGS for bacterial and archaeal genome sequences_
-- _MIGS-PL: MIGS for plasmid sequences_
-- _MIGS-VI: MIGS for viral genome sequences_
-- _MIGS-ORG: MIGS for organelle sequences_
-- _MIMARKS-SP: MIMARKS-survey  for marker gene sequences obtained directly from the environment_
-- _MIMARKS-SU: MIMARKS-specimen for marker gene sequences from cultured or voucher-identifiable specimens_
+<td>MIGS-EU</td>
+<td>MIGS for eukaryotic genome sequences</td>
+</tr>
+<tr>
+<td>MIGS-BA</td>
+<td>MIGS for bacterial and archaeal genome sequences</td>
+</tr>
+<tr>
+<td>MIGS-PL</td>
+<td>MIGS for plasmid sequences</td>
+</tr>
+<tr>
+<td>MIGS-VI</td>
+<td>MIGS for viral genome sequences</td>
+</tr>
+<tr>
+<td>MIGS-ORG</td> 
+<td>MIGS for organelle sequences</td>
+</tr>
+<tr>
+<td>MIMARKS-SP</td>
+<td>MIMARKS-survey  for marker gene sequences obtained directly from the environment</td>
+</tr>
+<tr>
+<td>MIMARKS-SU</td>
+<td>MIMARKS-specimen for marker gene sequences from cultured or voucher-identifiable specimens</td>
 </tr>
   </table>
 </div>
-  <h2 class="a">Core and specific descriptors</h2>
-The five checklists that are currently under MIxS share the same central set of core descriptors, which are:
-- **investigation type**
-- **project name**
-- **geographic location (latitude and longitude)**
-- **geographic location (country and/or sea,region)**
-- **collection date**
-- **environment (biome, feature, and material)**
-- **sequencing method**
 
-Each checklist is then defined by additional, sequence type-specific descriptors. Users of MIxS should first determine the type of genome or marker gene sequence that they have, and then proceed to complement the core descriptors with the checklist specific mandatory descriptors to achieve MIxS compliant metadata. These specific descriptors are summarized below for each checklist and subchecklist. Please note that this summary only includes minimum information for each sequence type, meaning that other conditional and optional descriptors are not included. 
+<h2 class="a">Core and specific descriptors</h2>
+<p>The five checklists that are currently under MIxS share the same central set of core descriptors, which are:</p>
+<ul>
+<li><b>investigation type</b</li>
+<li><b>project name</b</li>
+<li><b>geographic location (latitude and longitude)</b</li>
+<li><b>geographic location (country and/or sea,region)</b</li>
+<li><b>collection date</b</li>
+<li><b>environment (biome, feature, and material)</b</li>
+<li><b>sequencing method</b</li>
+
+<p>Each checklist is then defined by additional, sequence type-specific descriptors. Users of MIxS should first determine the type of genome or marker gene sequence that they have, and then proceed to complement the core descriptors with the checklist specific mandatory descriptors to achieve MIxS compliant metadata. These specific descriptors are summarized below for each checklist and subchecklist. Please note that this summary only includes minimum information for each sequence type, meaning that other conditional and optional descriptors are not included. </p>
+<div style="overflow-x:auto;">
+  <table class="a">
+    <tr>
+<th>MIGS-EU</th>
+<th>MIGS-BA</th>
+<th>MIGS-PL</th>
+<th>MIGS-VI</th>
+<th>MIGS-ORG</th>
+<th>MIMS</th>
+<th>MIMAKRKS-S</th>
+<th>MIMARKS-C</th>
+<th>MISAG</th>
+<th>MIMAG</th>
+	</tr>
+    <tr>
+<td>isolation and growth condition</td>
+<td>number of replicons</td>
+<td>propagation</td>
+<td>propagation</td>
+<td>isolation and growth condition</td>
+<td></td>
+<td>target gene</td>
+<td>isolation and growth condition</td>
+<td>taxonomic identity marker</td>
+<td>taxonomic identity marker</td>
+</tr>
+</table>
+</div>
 
 MIGS-EU
 - isolation and growth condition
@@ -144,3 +193,4 @@ Each descriptor in MIxS checklists is complemented by accessory information that
 10. position: position/pseudo-id of descriptor as it appears in ordered-lists of checklists descriptors
 
 11. preferred units: a unit suggestion if a descriptor is for a measurement value
+</div>
