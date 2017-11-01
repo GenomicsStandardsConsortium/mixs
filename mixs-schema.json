@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "MIxS-core",
+  "description": "JSON Schema for validating the MIxS Standard in JSON model. It is explicitly not validating if data is complying to MIxS.",
+  "definitions": {
+    "checklist-names": {
+      "type": "string",
+      "enum": [
+        "eukaryote",
+        "bacteria_archaea",
+        "plasmid",
+        "virus",
+        "organelle",
+        "metagenome",
+        "mimarks-survey",
+        "mimarks-specimen",
+        "metatranscriptome",
+        "mibig",
+        "misag",
+        "mimag"
+      ]
+    },
+    "checklist-requirement": {
+      "type": "string",
+      "enum": [
+        "m",
+        "o"
+      ]
+    },
+    "checklist-item": {
+      "title": "Most general definition of a checklist item",
+      "type": "object",
+      "required": [
+        "item-id",
+        "label",
+        "expected-value",
+        "syntax",
+        "example",
+        "occurrence",
+        "section"
+      ],
+      "properties": {
+        "item-id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "definition": {
+          "type": "string"
+        },
+        "expected-value": {
+          "type": "string"
+        },
+        "syntax": {
+          "type": "string"
+        },
+        "example": {
+          "type": "string"
+        },
+        "occurrence": {
+          "type": "number"
+        },
+        "section": {
+          "type": "string"
+        }
+      }
+    },
+    "checklist": {
+      "type": "string"
+    },
+    "env-package": {
+      "type": "number"
+    },
+    "profile": {
+      "type": "boolean"
+    }
+  },
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "item-list": {
+      "description": "Core item definitions to be used by concrete mixs checklists, env packages and new extensions as well as profiles",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/checklist-item"
+      }
+    },
+    "checklist": {
+      "$ref": "#/definitions/checklist"
+    },
+    "env-package": {
+      "$ref": "#/definitions/env-package"
+    },
+    "profile": {
+      "$ref": "#/definitions/profile"
+    }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "item-list"
+      ]
+    },
+    {
+      "required": [
+        "checklist"
+      ]
+    },
+    {
+      "required": [
+        "env-package"
+      ]
+    },
+    {
+      "required": [
+        "profile"
+      ]
+    }
+  ]
+}
