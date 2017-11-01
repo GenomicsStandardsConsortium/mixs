@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/GenomicsStandardsConsortium/mixs.svg?branch=master)](https://travis-ci.org/GenomicsStandardsConsortium/mixs)
+
 # MIxS
 “Minimum Information about any (X) Sequence” (MIxS) specification
 
