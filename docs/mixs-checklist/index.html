@@ -9,138 +9,220 @@ title: Checklists
 <div style="overflow-x:auto;">
   <table class="a">
     <tr>
-<td>MIGS:</td>
+<td>MIGS</td>
 <td>Minimum information about a genome sequence</td>
 </tr>
     <tr>
-<td>MIMS:</td>
+<td>MIMS</td>
 <td>Minimum information about a metagenome sequence</td>
 </tr>
     <tr>
-<td>MIMARKS:</td>
+<td>MIMARKS</td>
 <td>Minimum information about a marker gene sequence</td>
 </tr>
     <tr>
-<td>MISAG:</td>
+<td>MISAG</td>
 <td>Minimum information about a single amplified genome sequence</td>
 </tr>
     <tr>
-<td>MIMAG:</td>
+<td>MIMAG</td>
 <td>Minimum information about a metagenome-assembled genome sequence</td>
 </tr>
   </table>
 </div>
 <p>MIGS and MIMARKS are further divided into additional subchecklists, based on the genome sequence in question, or the sequencing type.</p>
-  <div style="overflow-x:auto;">
+<div style="overflow-x:auto;">
   <table class="a">
     <tr>
-- _MIGS-EU: MIGS for eukaryotic genome sequences_
-- _MIGS-BA: MIGS for bacterial and archaeal genome sequences_
-- _MIGS-PL: MIGS for plasmid sequences_
-- _MIGS-VI: MIGS for viral genome sequences_
-- _MIGS-ORG: MIGS for organelle sequences_
-- _MIMARKS-SP: MIMARKS-survey  for marker gene sequences obtained directly from the environment_
-- _MIMARKS-SU: MIMARKS-specimen for marker gene sequences from cultured or voucher-identifiable specimens_
+<td>MIGS-EU</td>
+<td>MIGS for eukaryotic genome sequences</td>
+</tr>
+<tr>
+<td>MIGS-BA</td>
+<td>MIGS for bacterial and archaeal genome sequences</td>
+</tr>
+<tr>
+<td>MIGS-PL</td>
+<td>MIGS for plasmid sequences</td>
+</tr>
+<tr>
+<td>MIGS-VI</td>
+<td>MIGS for viral genome sequences</td>
+</tr>
+<tr>
+<td>MIGS-ORG</td> 
+<td>MIGS for organelle sequences</td>
+</tr>
+<tr>
+<td>MIMARKS-SP</td>
+<td>MIMARKS-survey  for marker gene sequences obtained directly from the environment</td>
+</tr>
+<tr>
+<td>MIMARKS-SU</td>
+<td>MIMARKS-specimen for marker gene sequences from cultured or voucher-identifiable specimens</td>
 </tr>
   </table>
 </div>
-  <h2 class="a">Core and specific descriptors</h2>
-The five checklists that are currently under MIxS share the same central set of core descriptors, which are:
-- **investigation type**
-- **project name**
-- **geographic location (latitude and longitude)**
-- **geographic location (country and/or sea,region)**
-- **collection date**
-- **environment (biome, feature, and material)**
-- **sequencing method**
 
-Each checklist is then defined by additional, sequence type-specific descriptors. Users of MIxS should first determine the type of genome or marker gene sequence that they have, and then proceed to complement the core descriptors with the checklist specific mandatory descriptors to achieve MIxS compliant metadata. These specific descriptors are summarized below for each checklist and subchecklist. Please note that this summary only includes minimum information for each sequence type, meaning that other conditional and optional descriptors are not included. 
+<h2 class="a">Core and specific descriptors</h2>
+<p>The five checklists that are currently under MIxS share the same central set of core descriptors, which are:</p>
+<ul class="norm">
+<li><b>investigation type</b></li>
+<li><b>project name</b></li>
+<li><b>geographic location (latitude and longitude)</b></li>
+<li><b>geographic location (country and/or sea,region)</b></li>
+<li><b>collection date</b></li>
+<li><b>environment (biome, feature, and material)</b></li>
+<li><b>sequencing method</b></li>
+</ul>
+<p>Each checklist is then defined by additional, sequence type-specific descriptors. Users of MIxS should first determine the type of genome or marker gene sequence that they have, and then proceed to complement the core descriptors with the checklist specific mandatory descriptors to achieve MIxS compliant metadata. These specific descriptors are summarized below for each checklist and subchecklist. Please note that this summary only includes minimum information for each sequence type, meaning that other conditional and optional descriptors are not included.</p>
+<div style="overflow-x:auto;">
+  <table class="a">
+    <tr>
+<th>MIGS-EU</th>
+<th>MIGS-BA</th>
+<th>MIGS-PL</th>
+<th>MIGS-VI</th>
+<th>MIGS-ORG</th>
+<th>MIMS</th>
+<th>MIMARKS-S</th>
+<th>MIMARKS-C</th>
+<th>MISAG</th>
+<th>MIMAG</th>
+	</tr>
+    <tr>
+<td>isolation and growth condition</td>
+<td>number of replicons</td>
+<td>propagation</td>
+<td>propagation</td>
+<td>isolation and growth condition</td>
+<td></td>
+<td>target gene</td>
+<td>isolation and growth condition</td>
+<td>taxonomic identity marker</td>
+<td>taxonomic identity marker</td>
+</tr>
+<tr>
+<td>assembly quality</td>
+<td>reference for biomaterial</td>
+<td>isolation and growth condition</td>
+<td>isolation and growth condition</td>
+<td>assembly software</td>
+<td></td>
+<td></td>
+<td>target gene</td>
+<td>assembly quality</td>
+<td>assembly quality</td>
+</tr>
+<tr>
+<td>assembly software</td>
+<td>isolation and growth condition</td>
+<td>assembly software</td>
+<td>assembly software</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>assembly software</td>
+<td>assembly software</td>
+</tr>
+<tr>
+<td>number of contigs</td>
+<td>assembly quality</td>
+<td>assembly software</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>completeness score</td>
+<td>completeness score</td>
+</tr>
+<tr>
+<td></td>
+<td>assembly software</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>completeness software</td>
+<td>completeness software</td>
+</tr>
+<tr>
+<td></td>
+<td>number of contigs</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>contamination score</td>
+<td>contamination score</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>sorting technology</td>
+<td>binning parameters</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>single cell lysis approach</td>
+<td>binning software</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>WGA amplification approach</td>
+<td></td>
+</tr>
+</table>
+</div>
 
-MIGS-EU
-- isolation and growth condition
-- assembly quality
-- assembly software
-- number of contigs
 
-MIGS-BA
-- number of replicons
-- reference for biomaterial
-- isolation and growth condition
-- assembly quality
-- assembly software
-- number of contigs
+<h2 class="a">Legend (accessory elements)</h2>
+<p>Each descriptor in MIxS checklists is complemented by accessory information that assists in correct usage and parsing of a descriptor.</p>
+<ol>
+<li>structured comment name: short name of a checklist descriptor. Consists of small case letters and underscores, and no spaces, desirable length no more than 30 characters.
 
-MIGS-PL
-- propagation
-- isolation and growth condition
-- assembly software
-
-MIGS-VI
-- propagation
-- isolation and growth condition
-- assembly software
-
-MIGS-ORG
-- isolation and growth condition
-- assembly software
-
-MIMS
-
-MIMARKS-S
-- target gene
-
-MIMARKS-C
-- isolation and growth condition
-- target gene
-
-MISAG
-- taxonomic identity marker
-- assembly quality
-- assembly software
-- completeness score
-- completeness software
-- contamination score 
-- sorting technology
-- single cell lysis approach
-- WGA amplification approach
-
-MIMAG
-- taxonomic identity marker
-- assembly quality
-- assembly software
-- completeness score
-- completeness software
-- contamination score 
-- binning parameters
-- binning software
-
-## Legend (accessory elements)
-
-Each descriptor in MIxS checklists is complemented by accessory information that assists in correct usage and parsing of a descriptor.
-
-1. structured comment name: short name of a checklist descriptor. Consists of small case letters and underscores, and no spaces, desirable length no more than 30 characters.
-
-2. item: full name of a checklist descriptor; should be short but also illustrative of the descriptor's purpose
-
-3. description: an extended definition of the descriptor; including links to ontologies and other resources that can be used to fill in values for the descriptor
-
-4. example: examples of values for a descriptor
-
-5. expected value: short definition and/or expected value of a descriptor; expressed in simple terms, such as boolean, date and time, measurement value, or ontology name where applicable
-
-6. section: indicates which section (**should be one of: investigation, environment, mixs extension, nucleic acid sequence source, sequencing**) a descriptor belongs to
-
-7. checklist requirement (EU,BA,PL,VI,ORG,MIMARKS-SU,MIMARKS-SP,MISAG,MIMAG): information about whether a descriptor is:
-- _mandatory (M): descriptor must be present for compliance with the checklist__
-- _conditional mandatory (C): descriptor must be present for compliance with the checklist, but only when applicable to the study, i.e. if this item is not applicable for the study the metadata data will still be checklist compliant even if it is left out_
-- _optional (X): descriptor may be present, not mandatory for compliance with checklist_
-- _environment-dependent (E): descriptor must be present depending on the environment the original sample was obtained from_
-- _not applicable (-): descriptor is not applicable for a given checklist type_
-
-8. value syntax: a pseudo-code representation of the expected value of a given descriptor, for parsing purposes. if descriptor is of type enumeration, then the associated controlled vocabulary is also given here
-
-9. occurrence: indicates if a given descriptor may be used only once (1), multiple times (m), or none (0)
-
-10. position: position/pseudo-id of descriptor as it appears in ordered-lists of checklists descriptors
-
-11. preferred units: a unit suggestion if a descriptor is for a measurement value
+<li>item: full name of a checklist descriptor; should be short but also illustrative of the descriptor's purpose</li>
+<li>description: an extended definition of the descriptor; including links to ontologies and other resources that can be used to fill in values for the descriptor</li>
+<li>example: examples of values for a descriptor</li>
+<li>expected value: short definition and/or expected value of a descriptor; expressed in simple terms, such as boolean, date and time, measurement value, or ontology name where applicable</li>
+<li>section: indicates which section <b>(should be one of: investigation, environment, mixs extension, nucleic acid sequence source, sequencing)</b> a descriptor belongs to</li>
+<li>checklist requirement (EU,BA,PL,VI,ORG,MIMARKS-SU,MIMARKS-SP,MISAG,MIMAG): information about whether a descriptor is:
+<ul class="norm">
+<li><i>mandatory (M): descriptor must be present for compliance with the checklist</i></li>
+<li><i>conditional mandatory (C): descriptor must be present for compliance with the checklist, but only when applicable to the study, i.e. if this item is not applicable for the study the metadata data will still be checklist compliant even if it is left out</i></li>
+<li><i>optional (X): descriptor may be present, not mandatory for compliance with checklist</i></li>
+<li><i>environment-dependent (E): descriptor must be present depending on the environment the original sample was obtained from</i></li>
+<li><i>not applicable (-): descriptor is not applicable for a given checklist type</i></li>
+</ul>
+<li>value syntax: a pseudo-code representation of the expected value of a given descriptor, for parsing purposes. If descriptor is of type enumeration, then the associated controlled vocabulary is also given here</li>
+<li>occurrence: indicates if a given descriptor may be used only once (1), multiple times (m), or none (0)</li>
+<li>position: position/pseudo-id of descriptor as it appears in ordered-lists of checklists descriptors</li>
+<li>preferred units: a unit suggestion if a descriptor is for a measurement value</li>
+</ol>
+</div>

@@ -75,7 +75,7 @@ nav li a {
     text-decoration: none;
 }
 
-div ul {
+ul.norm {
     font-size: 1em; 
     font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
     list-style-type:circle;
@@ -84,6 +84,15 @@ div ul {
     text-align: justify;
     color: #202020;
     }
+ul.synt {
+    list-style-type: none;
+    font-size: 1em; 
+    font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
+    margin: 10px 50px 10px 50px;
+    line-height:150%;
+    text-align: justify;
+    color: #202020;
+}
 div ol {
 	font-size: 1em;
 	font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
@@ -102,11 +111,32 @@ table.a {
     text-align: justify;
     line-height:150%;
 }
-
-th, td {
+td {
     text-align: left;
     padding: 8px;
     border: 1px solid #ddd;
 }
+th {
+    height: 80px;
+	text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
 tr:nth-child(even){background-color: #f2f2f2}
+.hero-image {
+  background-image: url("/mixs/assets/images/mixs.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
