@@ -1,0 +1,82 @@
+{
+    "name": "Lee_soil_metagenome",
+    "description": "Draft profile for NEON soil metagenomes",
+    "contact": {
+		"organization": "National Ecological Observatory Network",
+		"organization_abbrev": "NEON",
+		"url": "http://www.neonscience.org",
+		"email": "lstanish[at]battelleecology[dot]org",
+		"firstname": "Lee",
+		"lastname": "Stanish"
+    },
+    "packages": [
+	"soil",
+	"MIMS",
+	"sediment"
+    ],
+    "hierarchy": [
+	[
+	    "cur_vegetation",
+	    "cur_vegetation_meth",
+	    "horizon",
+	    "water_content_soil",
+	    "water_content_soil_meth",
+	    "samp_weight_dna_ext",
+	    "pool_dna_extracts",
+	    "store_cond",
+	    "ph (change to soil_ph?)",
+	    "tot_nitro",
+	    "tot_n_meth",
+	    "tot_c",
+	    "tot_c_units (new term)",
+	    "tot_c_meth",
+	    "microbial_biomass",
+	    "microbial_biomass_meth",
+	    "misc_param",
+	    "remarks",
+	    "dataQF",
+	    "project_description",
+	    "PI_organization_url",
+	    "email",
+	    "firstname",
+	    "lastname",
+	    "organization",
+	    "sample_id",
+	    "sampleTopDepth (new term)",
+	    "sampleBottomDepth (new term)",
+	    "elevation",
+	    "sample_size",
+	    "metagenome_taxonomy",
+	    "seq_center",
+	    "seq_make",
+	    "seq_model",
+	    "seq_chem",
+	    "seq_remarks"
+	],
+	[
+	    "sieving",
+	    "soil_type",
+	    "cur_land_use",
+	    "tillage",
+	    "fire",
+	    "flooding",
+	    "slope_aspect",
+	    "project_funding",
+	    "organization_country",
+	    "envo_release",
+	    "continent",
+	    "nucl_acid_ext"
+	],
+	[
+	    "tot_p (new term)",
+	    "tot_p_units (new term)",
+	    "tot_p_meth (new term)",
+	    "phosphate",
+	    "phosphate_units (new term)",
+	    "density (can we use as bulk density?)",
+	    "texture",
+	    "texture_meth",
+	    "ncbi_id"
+	]
+    ]
+}
