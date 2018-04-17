@@ -1,0 +1,6617 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "MiXS data",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [ "packages" ],
+    "properties": {
+        "packages": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"oneOf": [
+                    { "$ref": "#/definitions/project" },
+                    { "$ref": "#/definitions/sample" },
+                    { "$ref": "#/definitions/project" },
+                    { "$ref": "#/definitions/library-metagenome" },
+		    { "$ref": "#/definitions/library-mimarks-survey" },
+		    { "$ref": "#/definitions/library-metatranscriptome" },
+                    { "$ref": "#/definitions/air" },
+                    { "$ref": "#/definitions/built-environment" },
+                    { "$ref": "#/definitions/host-associated" },
+                    { "$ref": "#/definitions/human-associated" },
+                    { "$ref": "#/definitions/human-gut" },
+                    { "$ref": "#/definitions/human-oral" },
+                    { "$ref": "#/definitions/human-skin" },
+                    { "$ref": "#/definitions/human-vaginal" },
+                    { "$ref": "#/definitions/microbial-mat-biofilm" },
+                    { "$ref": "#/definitions/miscellaneous" },
+                    { "$ref": "#/definitions/plant-associated" },
+                    { "$ref": "#/definitions/sediment" },
+                    { "$ref": "#/definitions/soil" },
+                    { "$ref": "#/definitions/wastewater-sludge" },
+                    { "$ref": "#/definitions/water" }
+		]
+	    }
+        }
+    },
+    "definitions": {
+	"project": {
+	    "type": "object",
+	    "required": [ "project_name", "PI_email", "PI_firstname", "PI_lastname", "PI_organization", "PI_organization_country", "PI_organization_address" ],
+	    "properties": {
+                "project_name": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 0
+		},
+		"project_description": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 1
+		},
+		"project_funding": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 2
+		},
+	    	"pi_email": {
+		    "$ref": "#/types/email",
+		    "description": "",
+		    "label": "",
+		    "position": 3
+		},
+	    	"pi_firstname": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 4
+		},
+	    	"pi_lastname": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 5
+		},
+	    	"pi_organization": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 6
+		},
+	    	"pi_organization_country": {
+		    "$ref": "#/types/country",
+		    "description": "",
+		    "label": "",
+		    "position": 7
+		},
+	    	"pi_organization_address": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 8
+		},
+	    	"pi_organization_url": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 9
+		},
+	    	"email": {
+		    "$ref": "#/types/email",
+		    "description": "",
+		    "label": "",
+		    "position": 10
+		},
+	    	"firstname": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 11
+		},
+	    	"lastname": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 12
+		},
+	    	"organization": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 13
+		},
+	    	"organization_country": {
+		    "$ref": "#/types/country",
+		    "description": "",
+		    "label": "",
+		    "position": 14
+		},
+	    	"organization_address": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 15
+		},
+	    	"organization_url": {
+		    "$ref": "#/types/url",
+		    "description": "",
+		    "label": "",
+		    "position": 16
+		},
+	    	"submitted_to_insdc": {
+		    "type": "boolean",
+		    "description": "",
+		    "label": "",
+		    "position": 17
+		},
+	    	"envo_release": {
+		    "$ref": "#/types/date",
+		    "description": "",
+		    "label": "",
+		    "position": 18
+		},
+	    	"qiime_id": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 19
+		},
+	    	"vamps_id": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 20
+		},
+	    	"ncbi_id": {
+		    "type": "integer",
+		    "description": "",
+		    "label": "",
+		    "position": 21
+		},
+	    	"greengenes_id": {
+		    "type": "string",
+		    "description": "",
+		    "label": "",
+		    "position": 22
+		}
+	    }
+	},
+	"sample": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [ "sample_name", "lat_lon", "country", "location", "collection_date", "biome", "feature", "material", "env_package" ],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "lat_lon": {
+			"$ref": "#/types/geolocation",
+			"description": "",
+			"label": "",
+			"position": 1
+		    },
+		    "continent": {
+			"$ref": "#/types/country",
+			"description": "",
+			"label": "",
+			"position": 2
+		    },
+		    "country": {
+			"$ref": "#/types/country",
+			"description": "",
+			"label": "",
+			"position": 3
+		    },
+		    "location": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 4
+		    },
+		    "depth": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 5
+		    },
+		    "alt": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 6
+		    },
+		    "elev": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 7
+		    },
+		    "temperature": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 8
+		    },
+		    "ph": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 9
+		    },
+		    "collection_date": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 10
+		    },
+		    "experimental_factor": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 11
+		    },
+		    "isol_growth_condt": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 12
+		    },
+		    "samp_collect_device": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 13
+		    },
+		    "samp_size": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 14
+		    },
+		    "samp_mat_process": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 15
+		    },
+		    "sample_strategy": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 16
+		    },
+		    "metagenome_taxonomy": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 17
+		    },
+		    "biome": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 18
+		    },
+		    "feature": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 19
+		    },
+		    "material": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 20
+		    },
+		    "env_package": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 21
+		    }
+		}
+	    }
+	},
+	"library-metagenome": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "metagenome_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 1
+		    },
+		    "investigation_type": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 2
+		    },
+		    "seq_meth": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 3
+		    },
+		    "file_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 4
+		    },
+		    "file_checksum": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 5
+		    },
+		    "seq_quality_check": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 6
+		    },
+		    "seq_center": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 7
+		    },
+		    "seq_url": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 8
+		    },
+		    "seq_make": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 9
+		    },
+		    "seq_model": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 10
+		    },
+		    "seq_chem": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 11
+		    },
+		    "adapters": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 12
+		    },
+		    "assembly": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 13
+		    },
+		    "assembly_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 14
+		    },
+		    "nucl_acid_ext": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 15
+		    },
+		    "nucl_acid_amp": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 16
+		    },
+		    "lib_size": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 17
+		    },
+		    "lib_size_mean": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 18
+		    },
+		    "lib_type": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 19
+		    },
+		    "454_gasket_type": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 20
+		    },
+		    "454_regions": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 21
+		    },
+		    "pubmed_id": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 22
+		    },
+		    "gold_id": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 23
+		    }
+		}
+	    }
+	},
+	"library-mimarks-survey": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "metagenome_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 1
+		    },
+		    "investigation_type": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 2
+		    },
+		    "seq_meth": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 3
+		    },
+		    "target_gene": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 4
+		    },
+		    "file_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 5
+		    },
+		    "file_checksum": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 6
+		    },
+		    "seq_quality_check": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 7
+		    },
+		    "seq_center": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 8
+		    },
+		    "seq_url": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 9
+		    },
+		    "seq_make": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 10
+		    },
+		    "seq_model": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 11
+		    },
+		    "seq_chem": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 12
+		    },
+		    "seq_direction": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 13
+		    },
+		    "domain": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 14
+		    },
+		    "adapters": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 15
+		    },
+		    "target_subfragment": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 16
+		    },
+		    "forward_barcodes": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 17
+		    },
+		    "reverse_barcodes": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 18
+		    },
+		    "forward_primers": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 19
+		    },
+		    "reverse_primers": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 20
+		    },
+		    "thermocycler": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 21
+		    },
+		    "run_machine_type": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 22
+		    },
+		    "cloning_kit": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 23
+		    },
+		    "host_cells": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 24
+		    },
+		    "amp_polymerase": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 25
+		    },
+		    "cycle_count": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 26
+		    },
+		    "cycle_annealing_duration": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 27
+		    },
+		    "cycle_annealing_temp": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 28
+		    },
+		    "cycle_annealing_method": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 29
+		    },
+		    "cycle_denaturation_duration": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 30
+		    },
+		    "cycle_denaturation_temp": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 31
+		    },
+		    "cycle_extension_duration": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 32
+		    },
+		    "cycle_extension_temp": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 33
+		    },
+		    "denaturation_duration_initial": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 34
+		    },
+		    "denaturation_temp_initial": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 35
+		    },
+		    "extension_duration_final": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 36
+		    },
+		    "extension_temp_final": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 37
+		    },
+		    "forward_primer_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 38
+		    },
+		    "reverse_primer_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 39
+		    },
+		    "dATP_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 40
+		    },
+		    "dCTP_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 41
+		    },
+		    "dGTP_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 42
+		    },
+		    "dTTP_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 43
+		    },
+		    "gelatin_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 44
+		    },
+		    "BSA_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 45
+		    },
+		    "KCl_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 46
+		    },
+		    "MgCl2_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 47
+		    },
+		    "Tris_HCl_final_conc": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 48
+		    },
+		    "library_institute": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 49
+		    },
+		    "library_notes": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 50
+		    },
+		    "local_NAP_ids": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 51
+		    },
+		    "NAP_volume": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 52
+		    },
+		    "pcr_clean_up_kits": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 53
+		    },
+		    "pcr_clean_up_methods": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 54
+		    },
+		    "pcr_notes": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 55
+		    },
+		    "pcr_replicates": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 56
+		    },
+		    "pcr_buffer_pH": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 57
+		    },
+		    "pcr_volume": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 58
+		    },
+		    "polymerase_units": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 59
+		    },
+		    "tail_polymerase": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 60
+		    },
+		    "tail_duration": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 61
+		    },
+		    "tail_temp": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 62
+		    },
+		    "other_additives": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 63
+		    }
+		}
+	    }
+	},
+	"library-metatranscriptome": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "metagenome_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 1
+		    },
+		    "investigation_type": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 2
+		    },
+		    "seq_meth": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 3
+		    },
+		    "mrna_percent": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 4
+		    },
+		    "file_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 5
+		    },
+		    "file_checksum": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 6
+		    },
+		    "seq_quality_check": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 7
+		    },
+		    "seq_center": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 8
+		    },
+		    "seq_url": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 9
+		    },
+		    "seq_make": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 10
+		    },
+		    "seq_model": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 11
+		    },
+		    "seq_chem": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 12
+		    },
+		    "samp_isol_dur": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 13
+		    },
+		    "rrna_removal_meth": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 14
+		    },
+		    "rev_trans_meth": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 15
+		    },
+		    "cdna_purif_meth": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 16
+		    },
+		    "cdna_ampf_meth": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 17
+		    },
+		    "lib_size": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 18
+		    },
+		    "lib_size_mean": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 19
+		    },
+		    "lib_type": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 20
+		    },
+		    "454_gasket_type": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 21
+		    },
+		    "454_regions": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 22
+		    },
+		    "pubmed_id": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 23
+		    },
+		    "gold_id": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 24
+		    }
+		}
+	    }
+	},
+	"air": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "alt": {
+			"$ref": "#/measurements/height",
+			"description": "the altitude of the sample is the vertical distance between Earth's surface above sea level and the sampled position in the air",
+			"label": "altitude",
+			"position": 1
+		    },
+		    "elev": {
+			"$ref": "#/measurements/height",
+			"description": "the elevation of the sampling site as measured by the vertical distance from mean sea level",
+			"label": "elevation",
+			"position": 2
+		    },
+		    "barometric_press": {
+			"$ref": "#/measurements/pressure_a",
+			"description": "force per unit area exerted against a surface by the weight of air above that surface",
+			"label": "barometric pressure",
+			"position": 3
+		    },
+		    "carb_dioxide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "carbon dioxide (gas) amount or concentration at the time of sampling",
+			"label": "carbon dioxide",
+			"position": 4
+		    },
+		    "carb_monoxide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "carbon monoxide (gas) amount or concentration at the time of sampling",
+			"label": "carbon monoxide",
+			"position": 5
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 6
+		    },
+		    "humidity": {
+			"$ref": "#/measurements/concentration_g_m3",
+			"description": "amount of water vapour in the air, at the time of sampling",
+			"label": "humidity",
+			"position": 7
+		    },
+		    "methane": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "methane (gas) amount or concentration at the time of sampling",
+			"label": "methane",
+			"position": 8
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 9
+		    },
+		    "oxy_stat_samp": {
+			"enum": [ "aerobic", "anaerobic" ],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 10
+		    },
+		    "oxygen": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "oxygen (gas) amount or concentration at the time of sampling",
+			"label": "oxygen",
+			"position": 11
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 12
+		    },
+		    "pollutants": {
+			"type": "string",
+			"description": "pollutant types and, amount or concentrations measured at the time of sampling; can report multiple pollutants by entering numeric values preceded by name of pollutant",
+			"label": "pollutants",
+			"position": 13
+		    },
+		    "resp_part_matter": {
+			"type": "string",
+			"description": "concentration of substances that remain suspended in the air, and comprise mixtures of organic and inorganic substances (PM10 and PM2.5); can report multiple PM's by entering numeric values preceded by name of PM",
+			"label": "respirable particulate matter",
+			"position": 14
+		    },
+		    "samp_salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity of sample, i.e. measure of total salt concentration",
+			"label": "sample salinity",
+			"position": 15
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 16
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 17
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 18
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 19
+		    },
+		    "solar_irradiance": {
+			"$ref": "#/measurements/radiation",
+			"description": "the amount of solar energy that arrives at a specific area of a surface during a specific time interval",
+			"label": "solar irradiance",
+			"position": 20
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 21
+		    },
+		    "ventilation_rate": {
+			"$ref": "#/measurements/flow_rate",
+			"description": "ventilation rate of the system in the sampled premises",
+			"label": "ventilation rate",
+			"position": 22
+		    },
+		    "ventilation_type": {
+			"type": "string",
+			"description": "ventilation system used in the sampled premises",
+			"label": "ventilation type",
+			"position": 23
+		    },
+		    "volatile_org_comp": {
+			"type": "string",
+			"description": "concentration of carbon-based chemicals that easily evaporate at room temperature; can report multiple volatile organic compounds by entering numeric values preceded by name of compound",
+			"label": "volatile organic compounds",
+			"position": 24
+		    },
+		    "wind_direction": {
+			"$ref": "#/measurements/direction",
+			"description": "wind direction is the direction from which a wind originates",
+			"label": "wind direction",
+			"position": 25
+		    },
+		    "wind_speed": {
+			"$ref": "#/measurements/speed",
+			"description": "speed of wind measured at the time of sampling",
+			"label": "wind speed",
+			"position": 26
+		    }
+		}
+	    }
+	},
+	"built-environment": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "surf_material": {
+			"enum": ["concrete","wood","stone","tile","plastic","glass","vinyl","metal","carpet","stainless steel","paint","cinder blocks","hay bales","stucco","adobe"],
+			"description": "surface materials at the point of sampling",
+			"label": "surface material",
+			"position": 1
+		    },
+		    "surf_air_cont": {
+			"enum": ["dust","organic matter","particulate matter","volatile organic compounds","biological contaminants","radon","nutrients","biocides"],
+			"description": "contaminant identified on surface",
+			"label": "surface-air contaminant",
+			"position": 2
+		    },
+		    "rel_air_humidity": {
+			"$ref": "#/measurements/percent",
+			"description": "partial vapor and air pressure, density of the vapor and air, or by the actual mass of the vapor and air",
+			"label": "relative air humidity",
+			"position": 3
+		    },
+		    "abs_air_humidity": {
+			"$ref": "#/measurements/weight",
+			"description": "actual mass of water vapor - mh20 - present in the air water vapor mixture",
+			"label": "absolute air humidity",
+			"position": 4
+		    },
+		    "surf_humidity": {
+			"$ref": "#/measurements/percent",
+			"description": "surfaces: water activity as a function of air and material moisture",
+			"label": "surface humidity",
+			"position": 5
+		    },
+		    "air_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the air at the time of sampling",
+			"label": "air temperature",
+			"position": 6
+		    },
+		    "surf_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the surface at the time of sampling",
+			"label": "surface temperature",
+			"position": 7
+		    },
+		    "surf_moisture_ph": {
+			"$ref": "#/measurements/ph",
+			"description": "pH measurement of surface",
+			"label": "surface moisture pH",
+			"position": 8
+		    },
+		    "build_occup_type": {
+			"enum": ["airport","agricultural","commercial","educational","government","health care","high rise","industrial","low rise","market","military","office","parking","residential","restaurant","school","sports complex","storage","religious","transport","high rise","wood framed"],
+			"description": "the primary function for which a building or discrete part of a building is intended to be used",
+			"label": "building occupancy type",
+			"position": 9
+		    },
+		    "surf_moisture": {
+			"$ref": "#/measurements/concentration_g_m3",
+			"description": "water held on a surface",
+			"label": "surface moisture",
+			"position": 10
+		    },
+		    "dew_point": {
+			"$ref": "#/measurements/temperature",
+			"description": "the temperature to which a given parcel of humid air must be cooled, at constant barometric pressure, for water vapor to condense into water.",
+			"label": "dew point",
+			"position": 11
+		    },
+		    "carb_dioxide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "carbon dioxide (gas) amount or concentration at the time of sampling",
+			"label": "carbon dioxide",
+			"position": 12
+		    },
+		    "ventilation_type": {
+			"type": "string",
+			"description": "ventilation system used in the sampled premises",
+			"label": "ventilation type",
+			"position": 13
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 14
+		    },
+		    "indoor_space": {
+			"enum": ["bedroom","office","bathroom","foyer","kitchen","locker room","hallway","elevator"],
+			"description": "a distinguishable space within a structure, the purpose for which discrete areas of a building is used",
+			"label": "indoor space",
+			"position": 15
+		    },
+		    "indoor_surf": {
+			"enum": ["counter top","window","wall","cabinet","ceiling","door","shelving","vent cover"],
+			"description": "type of indoor surface",
+			"label": "indoor surface",
+			"position": 16
+		    },
+		    "filter_type": {
+			"enum": ["chemical air filter","electrostatic air treatment","gas-phase air treatment","HEPA filter","low-MERV pleated media","particulate air filter","ultraviolet air treatment"],
+			"description": "a device which removes solid particulates or airborne molecular contaminants",
+			"label": "filter type",
+			"position": 17
+		    },
+		    "heat_cool_type": {
+			"enum": ["radiant system","heat pump","forced air system","steam forced heat","wood stove"],
+			"description": "methods of conditioning or heating a room or building",
+			"label": "heating and cooling system type",
+			"position": 18
+		    },
+		    "substructure_type": {
+			"enum": ["crawlspace","slab on grade","basement"],
+			"description": "the substructure or under building is that largely hidden section of the building which is built off the foundations to the ground floor level",
+			"label": "substructure type",
+			"position": 19
+		    },
+		    "building_setting": {
+			"enum": ["exurban","rural","suburban","urban"],
+			"description": "a location (geography) where a building is set",
+			"label": "building setting",
+			"position": 20
+		    },
+		    "light_type": {
+			"enum": ["natural light","electric light","no light"],
+			"description": "application of light to achieve some practical or aesthetic effect. Lighting includes the use of both artificial light sources such as lamps and light fixtures, as well as natural illumination by capturing daylight. Can also include absence of light",
+			"label": "light type",
+			"position": 21
+		    },
+		    "samp_sort_meth": {
+			"type": "string",
+			"description": "method by which samples are sorted",
+			"label": "sample size sorting method",
+			"position": 22
+		    },
+		    "space_typ_state": {
+			"enum": ["typically occupied","typically unoccupied"],
+			"description": "customary or normal state of the space",
+			"label": "space typical state",
+			"position": 23
+		    },
+		    "typ_occupant_dens": {
+			"$ref": "#/measurements/concentration_num_m2",
+			"description": "customary or normal density of occupants",
+			"label": "typical occupant density",
+			"position": 24
+		    },
+		    "occup_samp": {
+			"$ref": "#/types/integer",
+			"description": "number of occupants present at time of sample within the given space",
+			"label": "occupancy at sampling",
+			"position": 25
+		    },
+		    "occupant_dens_samp": {
+			"$ref": "#/measurements/concentration_num_m2",
+			"description": "average number of occupants at time of sampling per square metre",
+			"label": "occupant density at sampling",
+			"position": 26
+		    }
+		}
+	    }
+	},
+	"host-associated": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "alt": {
+			"$ref": "#/measurements/height",
+			"description": "the altitude of the sample is the vertical distance between Earth's surface above sea level and the sampled position in the air",
+			"label": "altitude",
+			"position": 1
+		    },
+		    "depth": {
+			"$ref": "#/measurements/height",
+			"description": "depth is defined as the vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectivly. Depth can be reported as an interval for subsurface samples",
+			"label": "depth",
+			"position": 2
+		    },
+		    "elev": {
+			"$ref": "#/measurements/height",
+			"description": "the elevation of the sampling site as measured by the vertical distance from mean sea level",
+			"label": "elevation",
+			"position": 3
+		    },
+		    "common_name": {
+			"type": "string",
+			"description": "common name of the host, e.g. human",
+			"label": "common name",
+			"position": 4
+		    },
+		    "taxid": {
+			"$ref": "#/types/integer",
+			"description": "NCBI taxon id of the host, e.g. 9606",
+			"label": "taxid",
+			"position": 5
+		    },
+		    "subject_id": {
+			"type": "string",
+			"description": "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
+			"label": "subject id",
+			"position": 6
+		    },
+		    "age": {
+			"$ref": "#/types/timestamp",
+			"description": "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
+			"label": "age",
+			"position": 7
+		    },
+		    "life_stage": {
+			"type": "string",
+			"description": "description of life stage of host",
+			"label": "life stage",
+			"position": 8
+		    },
+		    "sex": {
+			"$ref": "#/enums/sex",
+			"description": "physical sex of the host",
+			"label": "sex",
+			"position": 9
+		    },
+		    "disease_stat": {
+			"type": "string",
+			"description": "list of diseases with which the host has been diagnosed; can include multiple diagnoses. the value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
+			"label": "disease status",
+			"position": 10
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 11
+		    },
+		    "body_habitat": {
+			"type": "string",
+			"description": "original body habitat where the sample was obtained from",
+			"label": "body habitat",
+			"position": 12
+		    },
+		    "body_site": {
+			"type": "string",
+			"description": "name of body site where the sample was obtained from",
+			"label": "body site",
+			"position": 13
+		    },
+		    "body_product": {
+			"type": "string",
+			"description": "substance produced by the body, e.g. stool, mucus, where the sample was obtained from",
+			"label": "body product",
+			"position": 14
+		    },
+		    "tot_mass": {
+			"$ref": "#/measurements/weight",
+			"description": "total mass of the host at collection, the unit depends on host",
+			"label": "total mass",
+			"position": 15
+		    },
+		    "height": {
+			"$ref": "#/measurements/height",
+			"description": "height of the subject",
+			"label": "height",
+			"position": 16
+		    },
+		    "length": {
+			"$ref": "#/measurements/height",
+			"description": "length of the subject",
+			"label": "length",
+			"position": 17
+		    },
+		    "diet": {
+			"type": "string",
+			"description": "type of diet depending on the host, for animals omnivore, herbivore etc., for humans high-fat, meditteranean etc.; can include multiple diet types",
+			"label": "diet",
+			"position": 18
+		    },
+		    "last_meal": {
+			"type": "string",
+			"description": "content of last meal and time since feeding; can include multiple values",
+			"label": "last meal",
+			"position": 19
+		    },
+		    "growth_cond": {
+			"type": "string",
+			"description": "literature reference giving growth conditions of the host",
+			"label": "growth conditions",
+			"position": 20
+		    },
+		    "substrate": {
+			"type": "string",
+			"description": "the growth substrate of the host",
+			"label": "substrate",
+			"position": 21
+		    },
+		    "family_relationship": {
+			"type": "string",
+			"description": "relationships to other hosts in the same study; can include multiple relationships",
+			"label": "family relationship",
+			"position": 22
+		    },
+		    "infra_specific_name": {
+			"type": "string",
+			"description": "taxonomic information about the host below subspecies level",
+			"label": "infra-specific name",
+			"position": 23
+		    },
+		    "infra_specific_rank": {
+			"type": "string",
+			"description": "taxonomic rank information about the host below subspecies level, such as variety, form, rank etc.",
+			"label": "infra-specific rank",
+			"position": 24
+		    },
+		    "genotype": {
+			"type": "string",
+			"description": "observed genotype",
+			"label": "genotype",
+			"position": 25
+		    },
+		    "phenotype": {
+			"type": "string",
+			"description": "phenotype of host. For Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO",
+			"label": "phenotype",
+			"position": 26
+		    },
+		    "body_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "core body temperature of the host when sample was collected",
+			"label": "body temperature",
+			"position": 27
+		    },
+		    "dry_mass": {
+			"$ref": "#/measurements/weight",
+			"description": "measurement of dry mass",
+			"label": "dry mass",
+			"position": 28
+		    },
+		    "blood_press_diast": {
+			"$ref": "#/measurements/pressure_mmm",
+			"description": "resting diastolic blood pressure, measured as mm mercury",
+			"label": "blood pressure diastolic",
+			"position": 29
+		    },
+		    "blood_press_syst": {
+			"$ref": "#/measurements/pressure_mmm",
+			"description": "resting systolic blood pressure, measured as mm mercury",
+			"label": "blood pressure systolic",
+			"position": 30
+		    },
+		    "color": {
+			"type": "string",
+			"description": "the color of host",
+			"label": "color",
+			"position": 31
+		    },
+		    "shape": {
+			"type": "string",
+			"description": "morphological shape of host",
+			"label": "shape",
+			"position": 32
+		    },
+		    "gravidity": {
+			"type": "string",
+			"description": "whether or not subject is gravid, and if yes date due or date post-conception, specifying which is used",
+			"label": "gravidity",
+			"position": 33
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 34
+		    },
+		    "samp_salinity": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "salinity of sample, i.e. measure of total salt concentration",
+			"label": "sample salinity",
+			"position": 35
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 36
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 37
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 38
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 39
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 40
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 41
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 42
+		    }
+		}
+	    }
+	},
+	"human-associated": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "subject_id": {
+			"type": "string",
+			"description": "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
+			"label": "subject id",
+			"position": 1
+		    },
+		    "age": {
+			"$ref": "#/types/duration",
+			"description": "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
+			"label": "age",
+			"position": 2
+		    },
+		    "sex": {
+			"$ref": "#/enums/sex",
+			"description": "physical sex of the host",
+			"label": "sex",
+			"position": 3
+		    },
+		    "disease_stat": {
+			"type": "string",
+			"description": "list of diseases with which the host has been diagnosed; can include multiple diagnoses. the value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
+			"label": "disease status",
+			"position": 4
+		    },
+		    "ihmc_medication_code": {
+			"type": "string",
+			"description": "can include multiple medication codes",
+			"label": "IHMC medication code",
+			"position": 5
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 6
+		    },
+		    "body_site": {
+			"type": "string",
+			"description": "name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...). For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+			"label": "body site",
+			"position": 7
+		    },
+		    "body_product": {
+			"type": "string",
+			"description": "substance produced by the body, e.g. stool, mucus, where the sample was obtained from. For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+			"label": "body product",
+			"position": 8
+		    },
+		    "tot_mass": {
+			"$ref": "#/measurements/weight",
+			"description": "total mass of the host at collection, the unit depends on host",
+			"label": "total mass",
+			"position": 9
+		    },
+		    "height": {
+			"$ref": "#/measurements/height",
+			"description": "the height of subject",
+			"label": "height",
+			"position": 10
+		    },
+		    "diet": {
+			"type": "string",
+			"description": "type of diet depending on the host, for animals omnivore, herbivore etc., for humans high-fat, meditteranean etc.; can include multiple diet types",
+			"label": "diet",
+			"position": 11
+		    },
+		    "last_meal": {
+			"type": "string",
+			"description": "content of last meal and time since feeding; can include multiple values",
+			"label": "last meal",
+			"position": 12
+		    },
+		    "family_relationship": {
+			"type": "string",
+			"description": "relationships to other hosts in the same study; can include multiple relationships",
+			"label": "family relationship",
+			"position": 13
+		    },
+		    "genotype": {
+			"type": "string",
+			"description": "observed genotype",
+			"label": "genotype",
+			"position": 14
+		    },
+		    "phenotype": {
+			"type": "string",
+			"description": "phenotype of host. For Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO",
+			"label": "phenotype",
+			"position": 15
+		    },
+		    "body_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "core body temperature of the host when sample was collected",
+			"label": "body temperature",
+			"position": 16
+		    },
+		    "smoker": {
+			"type": "boolean",
+			"description": "specification of smoking status",
+			"label": "smoker",
+			"position": 17
+		    },
+		    "hiv_stat": {
+			"type": "boolean",
+			"description": "HIV status of subject, if yes HAART initiation status should also be indicated as [YES or NO]",
+			"label": "HIV status",
+			"position": 18
+		    },
+		    "drug_usage": {
+			"type": "string",
+			"description": "any drug used by subject and the frequency of usage; can include multiple drugs used",
+			"label": "drug usage",
+			"position": 19
+		    },
+		    "body_mass_index": {
+			"$ref": "#/measurements/bmi",
+			"description": "body mass index, calculated as weight/(height)squared",
+			"label": "body-mass index",
+			"position": 20
+		    },
+		    "diet_last_six_month": {
+			"type": "string",
+			"description": "specification of major diet changes in the last six months, if yes the change should be specified",
+			"label": "major diet change in last six months",
+			"position": 21
+		    },
+		    "weight_loss_3_month": {
+			"type": "string",
+			"description": "specification of weight loss in the last three months, if yes should be further specified to include amount of weight loss",
+			"label": "weight loss in last three months",
+			"position": 22
+		    },
+		    "ihmc_ethnicity": {
+			"type": "string",
+			"description": "ethnicity of the subject",
+			"label": "IHMC ethnicity",
+			"position": 23
+		    },
+		    "occupation": {
+			"type": "string",
+			"description": "most frequent job performed by subject",
+			"label": "occupation",
+			"position": 24
+		    },
+		    "pet_farm_animal": {
+			"type": "string",
+			"description": "specification of presence of pets or farm animals in the environment of subject, if yes the animals should be specified; can include multiple animals present",
+			"label": "presence of pets or farm animals",
+			"position": 25
+		    },
+		    "travel_out_six_month": {
+			"type": "string",
+			"description": "specification of the countries travelled in the last six months; can include multiple travels",
+			"label": "travel outside the country in last six months",
+			"position": 26
+		    },
+		    "twin_sibling": {
+			"type": "boolean",
+			"description": "specification of twin sibling presence",
+			"label": "twin sibling presence",
+			"position": 27
+		    },
+		    "medic_hist_perform": {
+			"type": "boolean",
+			"description": "whether full medical history was collected",
+			"label": "medical history performed",
+			"position": 28
+		    },
+		    "study_complt_stat": {
+			"type": "string",
+			"description": "specification of study completion status, if no the reason should be specified",
+			"label": "study completion status",
+			"position": 29
+		    },
+		    "pulmonary_disord": {
+			"type": "string",
+			"description": "history of pulmonary disorders; can include multiple disorders",
+			"label": "lung/pulmonary disorder",
+			"position": 30
+		    },
+		    "nose_throat_disord": {
+			"type": "string",
+			"description": "history of nose-throat disorders; can include multiple disorders",
+			"label": "lung/nose-throat disorder",
+			"position": 31
+		    },
+		    "blood_blood_disord": {
+			"type": "string",
+			"description": "history of blood disorders; can include multiple disorders",
+			"label": "blood/blood disorder",
+			"position": 32
+		    },
+		    "pulse": {
+			"$ref": "#/measurements/frequency_bpm",
+			"description": "resting pulse, measured as beats per minute",
+			"label": "pulse",
+			"position": 33
+		    },
+		    "gestation_state": {
+			"type": "string",
+			"description": "specification of the gestation state",
+			"label": "amniotic fluid/gestation state",
+			"position": 34
+		    },
+		    "maternal_health_stat": {
+			"type": "string",
+			"description": "specification of the maternal health status",
+			"label": "amniotic fluid/maternal health status",
+			"position": 35
+		    },
+		    "foetal_health_stat": {
+			"type": "string",
+			"description": "specification of foetal health status, should also include abortion",
+			"label": "amniotic fluid/foetal health status",
+			"position": 36
+		    },
+		    "amniotic_fluid_color": {
+			"type": "string",
+			"description": "specification of the color of the amniotic fluid sample",
+			"label": "amniotic fluid/color",
+			"position": 37
+		    },
+		    "kidney_disord": {
+			"type": "string",
+			"description": "history of kidney disorders; can include multiple disorders",
+			"label": "urine/kidney disorder",
+			"position": 38
+		    },
+		    "urogenit_tract_disor": {
+			"type": "string",
+			"description": "history of urogenitaltract disorders; can include multiple disorders",
+			"label": "urine/urogenital tract disorder",
+			"position": 39
+		    },
+		    "urine_collect_meth": {
+			"enum": ["clean catch","catheter"],
+			"description": "specification of urine collection method",
+			"label": "urine/collection method",
+			"position": 40
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 41
+		    },
+		    "samp_salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity of sample, i.e. measure of total salt concentration",
+			"label": "sample salinity",
+			"position": 42
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 43
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 44
+		    },		    
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 45
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 46
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 47
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 48
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 49
+		    }
+		}
+	    }
+	},
+	"human-gut": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "gastrointest_disord": {
+			"type": "string",
+			"description": "history of gastrointestinal tract disorders; can include multiple disorders",
+			"label": "gastrointestinal tract disorder",
+			"position": 1
+		    },
+		    "liver_disord": {
+			"type": "string",
+			"description": "history of liver disorders; can include multiple disorders",
+			"label": "liver disorder",
+			"position": 2
+		    },
+		    "special_diet": {
+			"type": "string",
+			"description": "specification of special diet; can include multiple special diets",
+			"label": "special diet",
+			"position": 3
+		    },
+		    "subject_id": {
+			"type": "string",
+			"description": "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
+			"label": "subject id",
+			"position": 4
+		    },
+		    "age": {
+			"$ref": "#/types/duration",
+			"description": "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
+			"label": "age",
+			"position": 5
+		    },
+		    "sex": {
+			"$ref": "#/enums/sex",
+			"description": "physical sex of the host",
+			"label": "sex",
+			"position": 6
+		    },
+		    "disease_stat": {
+			"type": "string",
+			"description": "list of diseases with which the host has been diagnosed; can include multiple diagnoses. the value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
+			"label": "disease status",
+			"position": 7
+		    },
+		    "ihmc_medication_code": {
+			"type": "string",
+			"description": "can include multiple medication codes",
+			"label": "IHMC medication code",
+			"position": 8
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 9
+		    },
+		    "body_site": {
+			"type": "string",
+			"description": "name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...). For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+			"label": "body site",
+			"position": 10
+		    },
+		    "body_product": {
+			"type": "string",
+			"description": "substance produced by the body, e.g. stool, mucus, where the sample was obtained from. For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+			"label": "body product",
+			"position": 11
+		    },
+		    "tot_mass": {
+			"$ref": "#/measurements/weight",
+			"description": "total mass of the host at collection, the unit depends on host",
+			"label": "total mass",
+			"position": 12
+		    },
+		    "height": {
+			"$ref": "#/measurements/height",
+			"description": "the height of subject",
+			"label": "height",
+			"position": 13
+		    },
+		    "diet": {
+			"type": "string",
+			"description": "type of diet depending on the host, for animals omnivore, herbivore etc., for humans high-fat, meditteranean etc.; can include multiple diet types",
+			"label": "diet",
+			"position": 14
+		    },
+		    "last_meal": {
+			"type": "string",
+			"description": "content of last meal and time since feeding; can include multiple values",
+			"label": "last meal",
+			"position": 15
+		    },
+		    "family_relationship": {
+			"type": "string",
+			"description": "relationships to other hosts in the same study; can include multiple relationships",
+			"label": "family relationship",
+			"position": 16
+		    },
+		    "genotype": {
+			"type": "string",
+			"description": "observed genotype",
+			"label": "genotype",
+			"position": 17
+		    },
+		    "phenotype": {
+			"type": "string",
+			"description": "phenotype of host. For Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO",
+			"label": "phenotype",
+			"position": 18
+		    },
+		    "body_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "core body temperature of the host when sample was collected",
+			"label": "body temperature",
+			"position": 19
+		    },
+		    "body_mass_index": {
+			"$ref": "#/measurements/bmi",
+			"description": "body mass index, calculated as weight/(height)squared",
+			"label": "body-mass index",
+			"position": 20
+		    },
+		    "ihmc_ethnicity": {
+			"type": "string",
+			"description": "ethnicity of the subject",
+			"label": "IHMC ethnicity",
+			"position": 21
+		    },
+		    "occupation": {
+			"type": "string",
+			"description": "most frequent job performed by subject",
+			"label": "occupation",
+			"position": 22
+		    },
+		    "medic_hist_perform": {
+			"type": "boolean",
+			"description": "whether full medical history was collected",
+			"label": "medical history performed",
+			"position": 23
+		    },
+		    "pulse": {
+			"$ref": "#/measurements/frequency_bpm",
+			"description": "resting pulse, measured as beats per minute",
+			"label": "pulse",
+			"position": 24
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 25
+		    },
+		    "samp_salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity of sample, i.e. measure of total salt concentration",
+			"label": "sample salinity",
+			"position": 26
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 27
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 28
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 29
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 30
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 31
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 32
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 33
+		    }
+		}
+	    }
+	},
+	"human-oral": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "nose_mouth_teeth_throat_disord": {
+			"type": "string",
+			"description": "history of nose/mouth/teeth/throat disorders; can include multiple disorders",
+			"label": "nose/mouth/teeth/throat disorder",
+			"position": 1
+		    },
+		    "time_last_toothbrush": {
+			"$ref": "#/types/duration",
+			"description": "specification of the time since last toothbrushing",
+			"label": "time since last toothbrushing",
+			"position": 2
+		    },
+		    "subject_id": {
+			"type": "string",
+			"description": "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
+			"label": "subject id",
+			"position": 3
+		    },
+		    "age": {
+			"$ref": "#/types/duration",
+			"description": "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
+			"label": "age",
+			"position": 4
+		    },
+		    "sex": {
+			"$ref": "#/enums/sex",
+			"description": "physical sex of the host",
+			"label": "sex",
+			"position": 5
+		    },
+		    "disease_stat": {
+			"type": "string",
+			"description": "list of diseases with which the host has been diagnosed; can include multiple diagnoses. the value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
+			"label": "disease status",
+			"position": 6
+		    },
+		    "ihmc_medication_code": {
+			"type": "string",
+			"description": "can include multiple medication codes",
+			"label": "IHMC medication code",
+			"position": 7
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 8
+		    },
+		    "body_site": {
+			"type": "string",
+			"description": "name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...). For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+			"label": "body site",
+			"position": 9
+		    },
+		    "body_product": {
+			"type": "string",
+			"description": "substance produced by the body, e.g. stool, mucus, where the sample was obtained from. For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+			"label": "body product",
+			"position": 10
+		    },
+		    "tot_mass": {
+			"$ref": "#/measurements/weight",
+			"description": "total mass of the host at collection, the unit depends on host",
+			"label": "total mass",
+			"position": 11
+		    },
+		    "height": {
+			"$ref": "#/measurements/height",
+			"description": "the height of subject",
+			"label": "height",
+			"position": 12
+		    },
+		    "diet": {
+			"type": "string",
+			"description": "type of diet depending on the host, for animals omnivore, herbivore etc., for humans high-fat, meditteranean etc.; can include multiple diet types",
+			"label": "diet",
+			"position": 13
+		    },
+		    "last_meal": {
+			"type": "string",
+			"description": "content of last meal and time since feeding; can include multiple values",
+			"label": "last meal",
+			"position": 14
+		    },
+		    "family_relationship": {
+			"type": "string",
+			"description": "relationships to other hosts in the same study; can include multiple relationships",
+			"label": "family relationship",
+			"position": 15
+		    },
+		    "genotype": {
+			"type": "string",
+			"description": "observed genotype",
+			"label": "genotype",
+			"position": 16
+		    },
+		    "phenotype": {
+			"type": "string",
+			"description": "phenotype of host. For Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO",
+			"label": "phenotype",
+			"position": 17
+		    },
+		    "body_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "core body temperature of the host when sample was collected",
+			"label": "body temperature",
+			"position": 18
+		    },
+		    "body_mass_index": {
+			"$ref": "#/measurements/bmi",
+			"description": "body mass index, calculated as weight/(height)squared",
+			"label": "body-mass index",
+			"position": 19
+		    },
+		    "ihmc_ethnicity": {
+			"type": "string",
+			"description": "ethnicity of the subject",
+			"label": "IHMC ethnicity",
+			"position": 20
+		    },
+		    "occupation": {
+			"type": "string",
+			"description": "most frequent job performed by subject",
+			"label": "occupation",
+			"position": 21
+		    },
+		    "medic_hist_perform": {
+			"type": "boolean",
+			"description": "whether full medical history was collected",
+			"label": "medical history performed",
+			"position": 22
+		    },
+		    "pulse": {
+			"$ref": "#/measurements/frequency_bpm",
+			"description": "resting pulse, measured as beats per minute",
+			"label": "pulse",
+			"position": 23
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 24
+		    },
+		    "samp_salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity of sample, i.e. measure of total salt concentration",
+			"label": "sample salinity",
+			"position": 25
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 26
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 27
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 28
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 29
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 30
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 31
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 32
+		    }
+		}
+	    }
+	},
+	"human-skin": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "dermatology_disord": {
+			"type": "string",
+			"description": "history of dermatology disorders; can include multiple disorders",
+			"label": "dermatology disorder",
+			"position": 1
+		    },
+		    "time_since_last_wash": {
+			"type": "string",
+			"description": "specification of the time since last wash",
+			"label": "time since last wash",
+			"position": 2
+		    },
+		    "dominant_hand": {
+			"enum": ["left","right","ambidextrous"],
+			"description": "dominant hand of the subject",
+			"label": "dominant hand",
+			"position": 3
+		    },
+		    "subject_id": {
+			"type": "string",
+			"description": "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
+			"label": "subject id",
+			"position": 4
+		    },
+		    "age": {
+			"$ref": "#/types/duration",
+			"description": "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
+			"label": "age",
+			"position": 5
+		    },
+		    "sex": {
+			"$ref": "#/enums/sex",
+			"description": "physical sex of the host",
+			"label": "sex",
+			"position": 6
+		    },
+		    "disease_stat": {
+			"type": "string",
+			"description": "list of diseases with which the host has been diagnosed; can include multiple diagnoses. the value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
+			"label": "disease status",
+			"position": 7
+		    },
+		    "ihmc_medication_code": {
+			"type": "string",
+			"description": "can include multiple medication codes",
+			"label": "IHMC medication code",
+			"position": 8
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 9
+		    },
+		    "body_site": {
+			"type": "string",
+			"description": "name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...). For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+			"label": "body site",
+			"position": 10
+		    },
+		    "body_product": {
+			"type": "string",
+			"description": "substance produced by the body, e.g. stool, mucus, where the sample was obtained from. For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+			"label": "body product",
+			"position": 11
+		    },
+		    "tot_mass": {
+			"$ref": "#/measurements/weight",
+			"description": "total mass of the host at collection, the unit depends on host",
+			"label": "total mass",
+			"position": 12
+		    },
+		    "height": {
+			"$ref": "#/measurements/height",
+			"description": "the height of subject",
+			"label": "height",
+			"position": 13
+		    },
+		    "diet": {
+			"type": "string",
+			"description": "type of diet depending on the host, for animals omnivore, herbivore etc., for humans high-fat, meditteranean etc.; can include multiple diet types",
+			"label": "diet",
+			"position": 14
+		    },
+		    "last_meal": {
+			"type": "string",
+			"description": "content of last meal and time since feeding; can include multiple values",
+			"label": "last meal",
+			"position": 15
+		    },
+		    "family_relationship": {
+			"type": "string",
+			"description": "relationships to other hosts in the same study; can include multiple relationships",
+			"label": "family relationship",
+			"position": 16
+		    },
+		    "genotype": {
+			"type": "string",
+			"description": "observed genotype",
+			"label": "genotype",
+			"position": 17
+		    },
+		    "phenotype": {
+			"type": "string",
+			"description": "phenotype of host. For Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO",
+			"label": "phenotype",
+			"position": 18
+		    },
+		    "body_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "core body temperature of the host when sample was collected",
+			"label": "body temperature",
+			"position": 19
+		    },
+		    "body_mass_index": {
+			"$ref": "#/measurements/bmi",
+			"description": "body mass index, calculated as weight/(height)squared",
+			"label": "body-mass index",
+			"position": 20
+		    },
+		    "ihmc_ethnicity": {
+			"type": "string",
+			"description": "ethnicity of the subject",
+			"label": "IHMC ethnicity",
+			"position": 21
+		    },
+		    "occupation": {
+			"type": "string",
+			"description": "most frequent job performed by subject",
+			"label": "occupation",
+			"position": 22
+		    },
+		    "medic_hist_perform": {
+			"type": "boolean",
+			"description": "whether full medical history was collected",
+			"label": "medical history performed",
+			"position": 23
+		    },
+		    "pulse": {
+			"$ref": "#/measurements/frequency_bpm",
+			"description": "resting pulse, measured as beats per minute",
+			"label": "pulse",
+			"position": 24
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 25
+		    },
+		    "samp_salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity of sample, i.e. measure of total salt concentration",
+			"label": "sample salinity",
+			"position": 26
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 27
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 28
+		    },		    
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 29
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 30
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 31
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 32
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 33
+		    }
+		}
+	    }
+	},
+	"human-vaginal": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "menarche": {
+			"type": "string",
+			"description": "date of most recent menstruation",
+			"label": "menarche",
+			"position": 1
+		    },
+		    "sexual_act": {
+			"type": "string",
+			"description": "current sexual partner and frequency of sex",
+			"label": "sexual activity",
+			"position": 2
+		    },
+		    "pregnancy": {
+			"$ref": "#/types/timestamp",
+			"description": "date due of pregnancy",
+			"label": "pregnancy",
+			"position": 3
+		    },
+		    "douche": {
+			"$ref": "#/types/timestamp",
+			"description": "date of most recent douche",
+			"label": "douche",
+			"position": 4
+		    },
+		    "birth_control": {
+			"type": "string",
+			"description": "specification of birth control medication used",
+			"label": "birth control",
+			"position": 5
+		    },
+		    "menopause": {
+			"$ref": "#/types/timestamp",
+			"description": "date of onset of menopause",
+			"label": "menopause",
+			"position": 6
+		    },
+		    "hrt": {
+			"type": "string",
+			"description": "whether subject had hormone replacement theraphy, and if yes start date",
+			"label": "HRT",
+			"position": 7
+		    },
+		    "hysterectomy": {
+			"type": "boolean",
+			"description": "specification of whether hysterectomy was performed",
+			"label": "hysterectomy",
+			"position": 8
+		    },
+		    "gynecologic_disord": {
+			"type": "string",
+			"description": "history of gynecological disorders; can include multiple disorders",
+			"label": "gynecological disorder",
+			"position": 9
+		    },
+		    "urogenit_disord": {
+			"type": "string",
+			"description": "history of urogenital disorders, can include multiple disorders",
+			"label": "urogenital disorder",
+			"position": 10
+		    },
+		    "subject_id": {
+			"type": "string",
+			"description": "a unique identifier by which each subject can be referred to, de-identified, e.g. #131",
+			"label": "subject id",
+			"position": 11
+		    },
+		    "age": {
+			"$ref": "#/types/duration",
+			"description": "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
+			"label": "age",
+			"position": 12
+		    },
+		    "sex": {
+			"$ref": "#/enums/sex",
+			"description": "physical sex of the host",
+			"label": "sex",
+			"position": 13
+		    },
+		    "disease_stat": {
+			"type": "string",
+			"description": "list of diseases with which the host has been diagnosed; can include multiple diagnoses. the value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
+			"label": "disease status",
+			"position": 14
+		    },
+		    "ihmc_medication_code": {
+			"type": "string",
+			"description": "can include multiple medication codes",
+			"label": "IHMC medication code",
+			"position": 15
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 16
+		    },
+		    "body_site": {
+			"type": "string",
+			"description": "name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...). For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+			"label": "body site",
+			"position": 17
+		    },
+		    "body_product": {
+			"type": "string",
+			"description": "substance produced by the body, e.g. stool, mucus, where the sample was obtained from. For Foundational Model of Anatomy Ontology (FMA) (v 3.1) terms, please see http://purl.bioontology.org/ontology/FMA",
+			"label": "body product",
+			"position": 18
+		    },
+		    "tot_mass": {
+			"$ref": "#/measurements/weight",
+			"description": "total mass of the host at collection, the unit depends on host",
+			"label": "total mass",
+			"position": 19
+		    },
+		    "height": {
+			"$ref": "#/measurements/height",
+			"description": "the height of subject",
+			"label": "height",
+			"position": 20
+		    },
+		    "diet": {
+			"type": "string",
+			"description": "type of diet depending on the host, for animals omnivore, herbivore etc., for humans high-fat, meditteranean etc.; can include multiple diet types",
+			"label": "diet",
+			"position": 21
+		    },
+		    "last_meal": {
+			"type": "string",
+			"description": "content of last meal and time since feeding; can include multiple values",
+			"label": "last meal",
+			"position": 22
+		    },
+		    "family_relationship": {
+			"type": "string",
+			"description": "relationships to other hosts in the same study; can include multiple relationships",
+			"label": "family relationship",
+			"position": 23
+		    },
+		    "genotype": {
+			"type": "string",
+			"description": "observed genotype",
+			"label": "genotype",
+			"position": 24
+		    },
+		    "phenotype": {
+			"type": "string",
+			"description": "phenotype of host. For Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO",
+			"label": "phenotype",
+			"position": 25
+		    },
+		    "body_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "core body temperature of the host when sample was collected",
+			"label": "body temperature",
+			"position": 26
+		    },
+		    "body_mass_index": {
+			"$ref": "#/measurements/bmi",
+			"description": "body mass index, calculated as weight/(height)squared",
+			"label": "body-mass index",
+			"position": 27
+		    },
+		    "ihmc_ethnicity": {
+			"type": "string",
+			"description": "ethnicity of the subject",
+			"label": "IHMC ethnicity",
+			"position": 28
+		    },
+		    "occupation": {
+			"type": "string",
+			"description": "most frequent job performed by subject",
+			"label": "occupation",
+			"position": 29
+		    },
+		    "medic_hist_perform": {
+			"type": "boolean",
+			"description": "whether full medical history was collected",
+			"label": "medical history performed",
+			"position": 30
+		    },
+		    "pulse": {
+			"$ref": "#/measurements/frequency_bpm",
+			"description": "resting pulse, measured as beats per minute",
+			"label": "pulse",
+			"position": 31
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 32
+		    },
+		    "samp_salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity of sample, i.e. measure of total salt concentration",
+			"label": "sample salinity",
+			"position": 33
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 34
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 35
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 36
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 37
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 38
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 39
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 40
+		    }
+		}
+	    }
+	},
+	"microbial-mat-biofilm": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "alt": {
+			"$ref": "#/measurements/height",
+			"description": "the altitude of the sample is the vertical distance between Earth's surface above sea level and the sampled position in the air",
+			"label": "altitude",
+			"position": 1
+		    },
+		    "depth": {
+			"$ref": "#/measurements/height",
+			"description": "depth is defined as the vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectivly. Depth can be reported as an interval for subsurface samples",
+			"label": "depth",
+			"position": 2
+		    },
+		    "elev": {
+			"$ref": "#/measurements/height",
+			"description": "the elevation of the sampling site as measured by the vertical distance from mean sea level",
+			"label": "elevation",
+			"position": 3
+		    },
+		    "alkalinity": {
+			"$ref": "#/measurements/ph",
+			"description": "alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",
+			"label": "alkalinity",
+			"position": 4
+		    },
+		    "alkyl_diethers": {
+			"$ref": "#/measurements/concentration_m_l",
+			"description": "concentration of alkyl diethers",
+			"label": "alkyl diethers",
+			"position": 5
+		    },
+		    "aminopept_act": {
+			"$ref": "#/measurements/activity",
+			"description": "measurement of aminopeptidase activity",
+			"label": "aminopeptidase activity",
+			"position": 6
+		    },
+		    "ammonium": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of ammonium",
+			"label": "ammonium",
+			"position": 7
+		    },
+		    "bacteria_carb_prod": {
+			"$ref": "#/measurements/rate",
+			"description": "measurement of bacterial carbon production",
+			"label": "bacterial carbon production",
+			"position": 8
+		    },
+		    "biomass": {
+			"$ref": "#/measurements/weight",
+			"description": "amount of biomass; should include the name for the part of biomass measured, e.g. microbial, total. can include multiple measurements",
+			"label": "biomass",
+			"position": 9
+		    },
+		    "bishomohopanol": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "concentration of bishomohopanol",
+			"label": "bishomohopanol",
+			"position": 10
+		    },
+		    "bromide": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of bromide",
+			"label": "bromide",
+			"position": 11
+		    },
+		    "calcium": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "concentration of calcium",
+			"label": "calcium",
+			"position": 12
+		    },
+		    "carb_nitro_ratio": {
+			"$ref": "#/types/positive_float",
+			"description": "ratio of carbon to nitrogen",
+			"label": "carbon/nitrogen ratio",
+			"position": 13
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 14
+		    },
+		    "chloride": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "concentration of chloride",
+			"label": "chloride",
+			"position": 15
+		    },
+		    "chlorophyll": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "concentration of chlorophyll",
+			"label": "chlorophyll",
+			"position": 16
+		    },
+		    "diether_lipids": {
+			"type": "string",
+			"description": "concentration of diether lipids; can include multiple types of diether lipids",
+			"label": "diether lipids",
+			"position": 17
+		    },
+		    "diss_carb_dioxide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved carbon dioxide",
+			"label": "dissolved carbon dioxide",
+			"position": 18
+		    },
+		    "diss_hydrogen": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved hydrogen",
+			"label": "dissolved hydrogen",
+			"position": 19
+		    },
+		    "diss_inorg_carb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "dissolved inorganic carbon concentration",
+			"label": "dissolved inorganic carbon",
+			"position": 20
+		    },
+		    "diss_org_carb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved organic carbon",
+			"label": "dissolved organic carbon",
+			"position": 21
+		    },
+		    "diss_org_nitro": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "dissolved organic nitrogen concentration measured as; total dissolved nitrogen - NH4 - NO3 - NO2",
+			"label": "dissolved organic nitrogen",
+			"position": 22
+		    },
+		    "diss_oxygen": {
+			"$ref": "#/measurements/concentration_mm_kg",
+			"description": "concentration of dissolved oxygen",
+			"label": "dissolved oxygen",
+			"position": 23
+		    },
+		    "glucosidase_act": {
+			"$ref": "#/measurements/activity",
+			"description": "measurement of glucosidase activity",
+			"label": "glucosidase activity",
+			"position": 24
+		    },
+		    "magnesium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of magnesium",
+			"label": "magnesium",
+			"position": 25
+		    },
+		    "mean_frict_vel": {
+			"$ref": "#/measurements/speed_m_s",
+			"description": "measurement of mean friction velocity",
+			"label": "mean friction velocity",
+			"position": 26
+		    },
+		    "mean_peak_frict_vel": {
+			"$ref": "#/measurements/speed_m_s",
+			"description": "measurement of mean peak friction velocity",
+			"label": "mean peak friction velocity",
+			"position": 27
+		    },
+		    "methane": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "methane (gas) amount or concentration at the time of sampling",
+			"label": "methane",
+			"position": 28
+		    },
+		    "n_alkanes": {
+			"type": "string",
+			"description": "concentration of n-alkanes; can include multiple n-alkanes",
+			"label": "n-alkanes",
+			"position": 29
+		    },
+		    "nitrate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrate",
+			"label": "nitrate",
+			"position": 30
+		    },
+		    "nitrite": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrite",
+			"label": "nitrite",
+			"position": 31
+		    },
+		    "nitro": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrogen (total)",
+			"label": "nitrogen",
+			"position": 32
+		    },
+		    "org_carb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of organic carbon",
+			"label": "organic carbon",
+			"position": 33
+		    },
+		    "org_matter": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of organic matter",
+			"label": "organic matter",
+			"position": 34
+		    },
+		    "org_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of organic nitrogen",
+			"label": "organic nitrogen",
+			"position": 35
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 36
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 37
+		    },
+		    "part_org_carb": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of particulate organic carbon",
+			"label": "particulate organic carbon",
+			"position": 38
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 39
+		    },
+		    "petroleum_hydrocarb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of petroleum hydrocarbon",
+			"label": "petroleum hydrocarbon",
+			"position": 40
+		    },
+		    "ph": {
+			"$ref": "#/measurements/ph",
+			"description": "pH measurement",
+			"label": "pH",
+			"position": 41
+		    },
+		    "phaeopigments": {
+			"$ref": "#/measurements/concentration_mg_m3",
+			"description": "concentration of phaeopigments; can include multiple phaeopigments",
+			"label": "phaeopigments",
+			"position": 42
+		    },
+		    "phosphate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of phosphate",
+			"label": "phosphate",
+			"position": 43
+		    },
+		    "phosplipid_fatt_acid": {
+			"$ref": "#/measurements/concentration_m_l",
+			"description": "concentration of phospholipid fatty acids; can include multiple values",
+			"label": "phospholipid fatty acid",
+			"position": 44
+		    },
+		    "potassium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of potassium",
+			"label": "potassium",
+			"position": 45
+		    },
+		    "pressure": {
+			"$ref": "#/measurements/pressure_a",
+			"description": "pressure to which the sample is subject, in atmospheres",
+			"label": "pressure",
+			"position": 46
+		    },
+		    "redox_potential": {
+			"$ref": "#/measurements/potential",
+			"description": "redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential",
+			"label": "redox potential",
+			"position": 47
+		    },
+		    "salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity measurement",
+			"label": "salinity",
+			"position": 48
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 49
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 50
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 51
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 52
+		    },
+		    "silicate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of silicate",
+			"label": "silicate",
+			"position": 53
+		    },
+		    "sodium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "sodium concentration",
+			"label": "sodium",
+			"position": 54
+		    },
+		    "sulfate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of sulfate",
+			"label": "sulfate",
+			"position": 55
+		    },
+		    "sulfide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of sulfide",
+			"label": "sulfide",
+			"position": 56
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 57
+		    },
+		    "tot_carb": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "total carbon content",
+			"label": "total carbon",
+			"position": 58
+		    },
+		    "tot_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "total nitrogen content of the sample",
+			"label": "total nitrogen",
+			"position": 59
+		    },
+		    "tot_org_carb": {
+			"$ref": "#/measurements/concentration_g_kg",
+			"description": "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content",
+			"label": "total organic carbon",
+			"position": 60
+		    },
+		    "turbidity": {
+			"type": "string",
+			"description": "turbidity measurement",
+			"label": "turbidity",
+			"position": 61
+		    },
+		    "water_content": {
+			"$ref": "#/measurements/percent",
+			"description": "water content measurement",
+			"label": "water content",
+			"position": 62
+		    }
+		}
+	    }
+	},
+	"miscellaneous": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "alt": {
+			"$ref": "#/measurements/height",
+			"description": "the altitude of the sample is the vertical distance between Earth's surface above sea level and the sampled position in the air",
+			"label": "altitude",
+			"position": 1
+		    },
+		    "depth": {
+			"$ref": "#/measurements/height",
+			"description": "depth is defined as the vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectivly. Depth can be reported as an interval for subsurface samples",
+			"label": "depth",
+			"position": 2
+		    },
+		    "elev": {
+			"$ref": "#/measurements/height",
+			"description": "the elevation of the sampling site as measured by the vertical distance from mean sea level",
+			"label": "elevation",
+			"position": 3
+		    },
+		    "alkalinity": {
+			"$ref": "#/measurements/ph",
+			"description": "alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",
+			"label": "alkalinity",
+			"position": 4
+		    },
+		    "ammonium": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of ammonium",
+			"label": "ammonium",
+			"position": 5
+		    },
+		    "biomass": {
+			"$ref": "#/measurements/weight",
+			"description": "amount of biomass; should include the name for the part of biomass measured, e.g. microbial, total. can include multiple measurements",
+			"label": "biomass",
+			"position": 6
+		    },
+		    "bromide": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of bromide",
+			"label": "bromide",
+			"position": 7
+		    },
+		    "calcium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of calcium",
+			"label": "calcium",
+			"position": 8
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 9
+		    },
+		    "chloride": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "concentration of chloride",
+			"label": "chloride",
+			"position": 10
+		    },
+		    "chlorophyll": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of chlorophyll",
+			"label": "chlorophyll",
+			"position": 11
+		    },
+		    "density": {
+			"$ref": "#/measurements/concentration_g_m3",
+			"description": "density of sample",
+			"label": "density",
+			"position": 12
+		    },
+		    "diether_lipids": {
+			"$ref": "#/measurements/concentration_ng_l",
+			"description": "concentration of diether lipids; can include multiple types of diether lipids",
+			"label": "diether lipids",
+			"position": 13
+		    },
+		    "diss_carb_dioxide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved carbon dioxide",
+			"label": "dissolved carbon dioxide",
+			"position": 14
+		    },
+		    "diss_hydrogen": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved hydrogen",
+			"label": "dissolved hydrogen",
+			"position": 15
+		    },
+		    "diss_inorg_carb": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "dissolved inorganic carbon concentration",
+			"label": "dissolved inorganic carbon",
+			"position": 16
+		    },
+		    "diss_org_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "dissolved organic nitrogen concentration measured as; total dissolved nitrogen - NH4 - NO3 - NO2",
+			"label": "dissolved organic nitrogen",
+			"position": 17
+		    },
+		    "diss_oxygen": {
+			"$ref": "#/measurements/concentration_mm_kg",
+			"description": "concentration of dissolved oxygen",
+			"label": "dissolved oxygen",
+			"position": 18
+		    },
+		    "nitrate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrate",
+			"label": "nitrate",
+			"position": 19
+		    },
+		    "nitrite": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrite",
+			"label": "nitrite",
+			"position": 20
+		    },
+		    "nitro": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrogen (total)",
+			"label": "nitrogen",
+			"position": 21
+		    },
+		    "org_carb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of organic carbon",
+			"label": "organic carbon",
+			"position": 22
+		    },
+		    "org_matter": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of organic matter",
+			"label": "organic matter",
+			"position": 23
+		    },
+		    "org_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of organic nitrogen",
+			"label": "organic nitrogen",
+			"position": 24
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 25
+		    },
+		    "oxy_stat_samp": {
+			"enum": [ "aerobic", "anaerobic" ],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 26
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 27
+		    },
+		    "ph": {
+			"$ref": "#/measurements/ph",
+			"description": "pH measurement",
+			"label": "pH",
+			"position": 28
+		    },
+		    "phosphate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of phosphate",
+			"label": "phosphate",
+			"position": 29
+		    },
+		    "phosplipid_fatt_acid": {
+			"type": "string",
+			"description": "concentration of phospholipid fatty acids; can include multiple values",
+			"label": "phospholipid fatty acid",
+			"position": 30
+		    },
+		    "potassium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of potassium",
+			"label": "potassium",
+			"position": 31
+		    },
+		    "pressure": {
+			"$ref": "#/measurements/pressure_a",
+			"description": "pressure to which the sample is subject, in atmospheres",
+			"label": "pressure",
+			"position": 32
+		    },
+		    "salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity measurement",
+			"label": "salinity",
+			"position": 33
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 34
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 35
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 36
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 37
+		    },
+		    "silicate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 38
+		    },
+		    "sodium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "sodium concentration",
+			"label": "sodium",
+			"position": 39
+		    },
+		    "sulfate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of sulfate",
+			"label": "sulfate",
+			"position": 40
+		    },
+		    "sulfide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of sulfide",
+			"label": "sulfide",
+			"position": 41
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 42
+		    }
+		}
+	    }
+	},
+	"plant-associated": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "alt": {
+			"$ref": "#/measurements/height",
+			"description": "the altitude of the sample is the vertical distance between Earth's surface above sea level and the sampled position in the air",
+			"label": "altitude",
+			"position": 1
+		    },
+		    "depth": {
+			"$ref": "#/measurements/height",
+			"description": "depth is defined as the vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectivly. Depth can be reported as an interval for subsurface samples",
+			"label": "depth",
+			"position": 2
+		    },
+		    "elev": {
+			"$ref": "#/measurements/height",
+			"description": "the elevation of the sampling site as measured by the vertical distance from mean sea level",
+			"label": "elevation",
+			"position": 3
+		    },
+		    "air_temp_regm": {
+			"$ref": "#/measurements/temperature",
+			"description": "information about treatment involving an exposure to varying temperatures; should include the temperature, treatment duration, interval and total experimental duration; can include different temperature regimens",
+			"label": "air temperature regimen",
+			"position": 4
+		    },
+		    "antibiotic_regm": {
+			"type": "string",
+			"description": "information about treatment involving antibiotic administration; should include the name of antibiotic, amount administered, treatment duration, interval and total experimental duration; can include multiple antibiotic regimens",
+			"label": "antibiotic regimen",
+			"position": 5
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 6
+		    },
+		    "chem_mutagen": {
+			"type": "string",
+			"description": "treatment involving use of mutagens; should include the name of mutagen, amount administered, treatment duration, interval and total experimental duration; can include multiple mutagen regimens",
+			"label": "chemical mutagen",
+			"position": 7
+		    },
+		    "climate_environment": {
+			"type": "string",
+			"description": "treatment involving an exposure to a particular climate; can include multiple climates",
+			"label": "climate environment",
+			"position": 8
+		    },
+		    "fertilizer_regm": {
+			"type": "string",
+			"description": "information about treatment involving the use of fertilizers; should include the name fertilizer, amount administered, treatment duration, interval and total experimental duration; can include multiple fertilizer regimens",
+			"label": "fertilizer regimen",
+			"position": 9
+		    },
+		    "fungicide_regm": {
+			"type": "string",
+			"description": "information about treatment involving use of fungicides; should include the name of fungicide, amount administered, treatment duration, interval and total experimental duration; can include multiple fungicide regimens",
+			"label": "fungicide regimen",
+			"position": 10
+		    },
+		    "gaseous_environment": {
+			"type": "string",
+			"description": "use of conditions with differing gaseous environments; should include the name of gaseous compound, amount administered, treatment duration, interval and total experimental duration; can include multiple gaseous environment regimens",
+			"label": "gaseous environment",
+			"position": 11
+		    },
+		    "gravity": {
+			"type": "string",
+			"description": "information about treatment involving use of gravity factor to study various types of responses in presence, absence or modified levels of gravity; can include multiple treatments",
+			"label": "gravity",
+			"position": 12
+		    },
+		    "growth_hormone_regm": {
+			"type": "string",
+			"description": "information about treatment involving use of growth hormones; should include the name of growth hormone, amount administered, treatment duration, interval and total experimental duration; can include multiple growth hormone regimens",
+			"label": "growth hormone regimen",
+			"position": 13
+		    },
+		    "growth_med": {
+			"enum": ["soil","liquid"],
+			"description": "information about growth media for growing the plants or tissue cultured samples",
+			"label": "growth media",
+			"position": 14
+		    },
+		    "herbicide_regm": {
+			"type": "string",
+			"description": "information about treatment involving use of herbicides; information about treatment involving use of growth hormones; should include the name of herbicide, amount administered, treatment duration, interval and total experimental duration; can include multiple regimens",
+			"label": "herbicide regimen",
+			"position": 15
+		    },
+		    "age": {
+			"$ref": "#/types/duration",
+			"description": "age of host at the time of sampling; relevant scale depends on species and study, e.g. could be seconds for amoebae or centuries for trees",
+			"label": "age",
+			"position": 16
+		    },
+		    "common_name": {
+			"type": "string",
+			"description": "common name of the host, e.g. human",
+			"label": "common name",
+			"position": 17
+		    },
+		    "disease_stat": {
+			"type": "string",
+			"description": "list of diseases with which the host has been diagnosed; can include multiple diagnoses. the value of the field depends on host; for humans the terms should be chosen from DO (Disease Ontology) at http://www.disease-ontology.org, other hosts are free text",
+			"label": "disease status",
+			"position": 18
+		    },
+		    "dry_mass": {
+			"$ref": "#/measurements/weight",
+			"description": "measurement of dry mass",
+			"label": "dry mass",
+			"position": 19
+		    },
+		    "genotype": {
+			"type": "string",
+			"description": "observed genotype",
+			"label": "genotype",
+			"position": 20
+		    },
+		    "height": {
+			"$ref": "#/measurements/height",
+			"description": "the height of subject",
+			"label": "height",
+			"position": 21
+		    },
+		    "infra_specific_name": {
+			"type": "string",
+			"description": "taxonomic information about the host below subspecies level",
+			"label": "infra-specific name",
+			"position": 22
+		    },
+		    "infra_specific_rank": {
+			"type": "string",
+			"description": "taxonomic rank information about the host below subspecies level, such as variety, form, rank etc.",
+			"label": "infra-specific rank",
+			"position": 23
+		    },
+		    "length": {
+			"$ref": "#/measurements/height",
+			"description": "the length of subject",
+			"label": "length",
+			"position": 24
+		    },
+		    "life_stage": {
+			"type": "string",
+			"description": "description of life stage of host",
+			"label": "life stage",
+			"position": 25
+		    },
+		    "phenotype": {
+			"type": "string",
+			"description": "phenotype of host. For Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO",
+			"label": "phenotype",
+			"position": 26
+		    },
+		    "taxid": {
+			"type": "string",
+			"description": "NCBI taxon id of the host, e.g. 9606",
+			"label": "taxid",
+			"position": 27
+		    },
+		    "tot_mass": {
+			"$ref": "#/measurements/weight",
+			"description": "total mass of the host at collection, the unit depends on host",
+			"label": "total mass",
+			"position": 28
+		    },
+		    "wet_mass": {
+			"$ref": "#/measurements/weight",
+			"description": "measurement of wet mass",
+			"label": "wet mass",
+			"position": 29
+		    },
+		    "humidity_regm": {
+			"type": "string",
+			"description": "information about treatment involving an exposure to varying degree of humidity; information about treatment involving use of growth hormones; should include amount of humidity administered, treatment duration, interval and total experimental duration; can include multiple regimens",
+			"label": "humidity regimen",
+			"position": 30
+		    },
+		    "mechanical_damage": {
+			"type": "string",
+			"description": "information about any mechanical damage exerted on the plant; can include multiple damages and sites",
+			"label": "mechanical damage",
+			"position": 31
+		    },
+		    "mineral_nutr_regm": {
+			"type": "string",
+			"description": "information about treatment involving the use of mineral supplements; should include the name of mineral nutrient, amount administered, treatment duration, interval and total experimental duration; can include multiple mineral nutrient regimens",
+			"label": "mineral nutrient regimen",
+			"position": 32
+		    },
+		    "non_mineral_nutr_regm": {
+			"type": "string",
+			"description": "information about treatment involving the exposure of plant to non-mineral nutrient such as oxygen, hydrogen or carbon; should include the name of non-mineral nutrient, amount administered, treatment duration, interval and total experimental duration; can include multiple non-mineral nutrient regimens",
+			"label": "non-mineral nutrient regimen",
+			"position": 33
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 34
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 35
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 36
+		    },
+		    "pesticide_regm": {
+			"type": "string",
+			"description": "information about treatment involving use of insecticides; should include the name of pesticide, amount administered, treatment duration, interval and total experimental duration; can include multiple pesticide regimens",
+			"label": "pesticide regimen",
+			"position": 37
+		    },
+		    
+		    "ph_regm": {
+			"type": "string",
+			"description": "information about treatment involving exposure of plants to varying levels of pH of the growth media; can include multiple regimen",
+			"label": "pH regimen",
+			"position": 38
+		    },
+		    "plant_body_site": {
+			"type": "string",
+			"description": "name of body site that the sample was obtained from. For Plant Ontology (PO) (v 20) terms, see http://purl.bioontology.org/ontology/PO",
+			"label": "plant body site",
+			"position": 39
+		    },
+		    "plant_product": {
+			"type": "string",
+			"description": "substance produced by the plant, where the sample was obtained from",
+			"label": "plant product",
+			"position": 40
+		    },
+		    "radiation_regm": {
+			"type": "string",
+			"description": "information about treatment involving exposure of plant or a plant part to a particular radiation regimen; should include the radiation type, amount or intensity administered, treatment duration, interval and total experimental duration; can include multiple radiation regimens",
+			"label": "radiation regimen",
+			"position": 41
+		    },
+		    "rainfall_regm": {
+			"type": "string",
+			"description": "information about treatment involving an exposure to a given amount of rainfall; can include multiple regimens",
+			"label": "rainfall regimen",
+			"position": 42
+		    },
+		    "salt_regm": {
+			"type": "string",
+			"description": "information about treatment involving use of salts as supplement to liquid and soil growth media; should include the name of salt, amount administered, treatment duration, interval and total experimental duration; can include multiple salt regimens",
+			"label": "salt regimen",
+			"position": 43
+		    },
+		    "samp_salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity of sample, i.e. measure of total salt concentration",
+			"label": "sample salinity",
+			"position": 44
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 45
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 46
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 47
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 48
+		    },
+		    "season_environment": {
+			"type": "string",
+			"description": "treatment involving an exposure to a particular season (e.g. winter, summer, rabi, rainy etc.)",
+			"label": "seasonal environment",
+			"position": 49
+		    },
+		    "standing_water_regm": {
+			"type": "string",
+			"description": "treatment involving an exposure to standing water during a plant's life span, types can be flood water or standing water; can include multiple regimens",
+			"label": "standing water regimen",
+			"position": 50
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 51
+		    },
+		    "tiss_cult_growth_med": {
+			"type": "string",
+			"description": "description of plant tissue culture growth media used",
+			"label": "tissue culture growth media",
+			"position": 52
+		    },
+		    "water_temp_regm": {
+			"type": "string",
+			"description": "information about treatment involving an exposure to water with varying degree of temperature; can include multiple regimens",
+			"label": "water temperature regimen",
+			"position": 53
+		    },
+		    "watering_regm": {
+			"type": "string",
+			"description": "information about treatment involving an exposure to watering frequencies; can include multiple regimens",
+			"label": "watering regimen",
+			"position": 54
+		    }
+		}
+	    }
+	},
+	"sediment": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "alt": {
+			"$ref": "#/measurements/height",
+			"description": "the altitude of the sample is the vertical distance between Earth's surface above sea level and the sampled position in the air",
+			"label": "altitude",
+			"position": 1
+		    },
+		    "depth": {
+			"$ref": "#/measurements/height",
+			"description": "depth is defined as the vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectivly. Depth can be reported as an interval for subsurface samples",
+			"label": "depth",
+			"position": 2
+		    },
+		    "elev": {
+			"$ref": "#/measurements/height",
+			"description": "the elevation of the sampling site as measured by the vertical distance from mean sea level",
+			"label": "elevation",
+			"position": 3
+		    },
+		    "alkalinity": {
+			"$ref": "#/measurements/ph",
+			"description": "alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",
+			"label": "alkalinity",
+			"position": 4
+		    },
+		    "alkyl_diethers": {
+			"$ref": "#/measurements/concentration_m_l",
+			"description": "concentration of alkyl diethers",
+			"label": "alkyl diethers",
+			"position": 5
+		    },
+		    "aminopept_act": {
+			"$ref": "#/measurements/activity",
+			"description": "measurement of aminopeptidase activity",
+			"label": "aminopeptidase activity",
+			"position": 6
+		    },
+		    "ammonium": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of ammonium",
+			"label": "ammonium",
+			"position": 7
+		    },
+		    "bacteria_carb_prod": {
+			"$ref": "#/measurements/rate",
+			"description": "measurement of bacterial carbon production",
+			"label": "bacterial carbon production",
+			"position": 8
+		    },
+		    "biomass": {
+			"$ref": "#/measurements/weight",
+			"description": "amount of biomass; should include the name for the part of biomass measured, e.g. microbial, total. can include multiple measurements",
+			"label": "biomass",
+			"position": 9
+		    },
+		    "bishomohopanol": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of bishomohopanol",
+			"label": "bishomohopanol",
+			"position": 10
+		    },
+		    "bromide": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of bromide",
+			"label": "bromide",
+			"position": 11
+		    },
+		    "calcium": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "concentration of calcium",
+			"label": "calcium",
+			"position": 12
+		    },
+		    "carb_nitro_ratio": {
+			"$ref": "#/types/positive_float",
+			"description": "ratio of amount or concentrations of carbon to nitrogen",
+			"label": "carbon/nitrogen ratio",
+			"position": 13
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 14
+		    },
+		    "chloride": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "concentration of chloride",
+			"label": "chloride",
+			"position": 15
+		    },
+		    "chlorophyll": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of chlorophyll",
+			"label": "chlorophyll",
+			"position": 16
+		    },
+		    "density": {
+			"$ref": "#/measurements/concentration_g_m3",
+			"description": "density of sample",
+			"label": "density",
+			"position": 17
+		    },
+		    "diether_lipids": {
+			"$ref": "#/measurements/concentration_ng_l",
+			"description": "concentration of diether lipids; can include multiple types of diether lipids",
+			"label": "diether lipids",
+			"position": 18
+		    },
+		    "diss_carb_dioxide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved carbon dioxide",
+			"label": "dissolved carbon dioxide",
+			"position": 19
+		    },
+		    "diss_hydrogen": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved hydrogen",
+			"label": "dissolved hydrogen",
+			"position": 20
+		    },
+		    "diss_inorg_carb": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "dissolved inorganic carbon concentration",
+			"label": "dissolved inorganic carbon",
+			"position": 21
+		    },
+		    "diss_org_carb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved organic carbon",
+			"label": "dissolved organic carbon",
+			"position": 22
+		    },
+		    "diss_org_nitro": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "dissolved organic nitrogen concentration measured as; total dissolved nitrogen - NH4 - NO3 - NO2",
+			"label": "dissolved organic nitrogen",
+			"position": 23
+		    },
+		    "diss_oxygen": {
+			"$ref": "#/measurements/concentration_mm_kg",
+			"description": "concentration of dissolved oxygen",
+			"label": "dissolved oxygen",
+			"position": 24
+		    },
+		    "glucosidase_act": {
+			"$ref": "#/measurements/activity",
+			"description": "measurement of glucosidase activity",
+			"label": "glucosidase activity",
+			"position": 25
+		    },
+		    "magnesium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of magnesium",
+			"label": "magnesium",
+			"position": 26
+		    },
+		    "mean_frict_vel": {
+			"$ref": "#/measurements/speed_m_s",
+			"description": "measurement of mean friction velocity",
+			"label": "mean friction velocity",
+			"position": 27
+		    },
+		    "mean_peak_frict_vel": {
+			"$ref": "#/measurements/speed_m_s",
+			"description": "measurement of mean peak friction velocity",
+			"label": "mean peak friction velocity",
+			"position": 28
+		    },
+		    "methane": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "methane (gas) amount or concentration at the time of sampling",
+			"label": "methane",
+			"position": 29
+		    },
+		    "n_alkanes": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of n-alkanes; can include multiple n-alkanes",
+			"label": "n-alkanes",
+			"position": 30
+		    },
+		    "nitrate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrate",
+			"label": "nitrate",
+			"position": 31
+		    },
+		    "nitrite": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrite",
+			"label": "nitrite",
+			"position": 32
+		    },
+		    "nitro": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrogen (total)",
+			"label": "nitrogen",
+			"position": 33
+		    },
+		    "org_carb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of organic carbon",
+			"label": "organic carbon",
+			"position": 34
+		    },
+		    "org_matter": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of organic matter",
+			"label": "organic matter",
+			"position": 35
+		    },
+		    "org_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of organic nitrogen",
+			"label": "organic nitrogen",
+			"position": 36
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 37
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 38
+		    },
+		    "part_org_carb": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of particulate organic carbon",
+			"label": "particulate organic carbon",
+			"position": 39
+		    },
+		    "particle_class": {
+			"type": "string",
+			"description": "concentration of particulate organic carbon",
+			"label": "particulate organic carbon",
+			"position": 40
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 41
+		    },
+		    "petroleum_hydrocarb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of petroleum hydrocarbon",
+			"label": "petroleum hydrocarbon",
+			"position": 42
+		    },
+		    "ph": {
+			"$ref": "#/measurements/ph",
+			"description": "pH measurement",
+			"label": "pH",
+			"position": 43
+		    },
+		    "phaeopigments": {
+			"$ref": "#/measurements/concentration_mg_m3",
+			"description": "concentration of phaeopigments; can include multiple phaeopigments",
+			"label": "phaeopigments",
+			"position": 44
+		    },
+		    "phosphate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of phosphate",
+			"label": "phosphate",
+			"position": 45
+		    },
+		    "phosplipid_fatt_acid": {
+			"$ref": "#/measurements/concentration_m_l",
+			"description": "concentration of phospholipid fatty acids; can include multiple values",
+			"label": "phospholipid fatty acid",
+			"position": 46
+		    },
+		    "porosity": {
+			"$ref": "#/measurements/percent",
+			"description": "porosity of deposited sediment is volume of voids divided by the total volume of sample",
+			"label": "porosity",
+			"position": 47
+		    },
+		    "potassium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of potassium",
+			"label": "potassium",
+			"position": 48
+		    },
+		    "pressure": {
+			"$ref": "#/measurements/pressure_a",
+			"description": "pressure to which the sample is subject, in atmospheres",
+			"label": "pressure",
+			"position": 49
+		    },
+		    "redox_potential": {
+			"$ref": "#/measurements/potential",
+			"description": "redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential",
+			"label": "redox potential",
+			"position": 50
+		    },
+		    "salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity measurement",
+			"label": "salinity",
+			"position": 51
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 52
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 53
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 54
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 55
+		    },
+		    "sediment_type": {
+			"enum": ["biogenous","cosmogenous","hydrogenous","lithogenous"],
+			"description": "information about the sediment type based on major constituents",
+			"label": "sediment type",
+			"position": 56
+		    },
+		    "silicate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of silicate",
+			"label": "silicate",
+			"position": 57
+		    },
+		    "sodium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "sodium concentration",
+			"label": "sodium",
+			"position": 58
+		    },
+		    "sulfate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of sulfate",
+			"label": "sulfate",
+			"position": 59
+		    },
+		    "sulfide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of sulfide",
+			"label": "sulfide",
+			"position": 60
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 61
+		    },
+		    "tidal_stage": {
+			"enum": ["low","high"],
+			"description": "stage of tide",
+			"label": "tidal stage",
+			"position": 62
+		    },
+		    "tot_carb": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "total carbon content",
+			"label": "total carbon",
+			"position": 63
+		    },
+		    "tot_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "total nitrogen content of the sample",
+			"label": "total nitrogen",
+			"position": 64
+		    },
+		    "tot_org_carb": {
+			"$ref": "#/measurements/percent",
+			"description": "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content",
+			"label": "total organic carbon",
+			"position": 65
+		    },
+		    "turbidity": {
+			"type": "string",
+			"description": "turbidity measurement",
+			"label": "turbidity",
+			"position": 66
+		    },
+		    "water_content": {
+			"$ref": "#/measurements/percent",
+			"description": "water content measurement",
+			"label": "water content",
+			"position": 67
+		    }
+		}
+	    }
+	},
+	"soil": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "alt": {
+			"$ref": "#/measurements/height",
+			"description": "the altitude of the sample is the vertical distance between Earth's surface above sea level and the sampled position in the air",
+			"label": "altitude",
+			"position": 1
+		    },
+		    "depth": {
+			"$ref": "#/measurements/height",
+			"description": "depth is defined as the vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectivly. Depth can be reported as an interval for subsurface samples",
+			"label": "depth",
+			"position": 2
+		    },
+		    "elev": {
+			"$ref": "#/measurements/height",
+			"description": "the elevation of the sampling site as measured by the vertical distance from mean sea level",
+			"label": "elevation",
+			"position": 3
+		    },
+		    "cur_land_use": {
+			"enum": ["cities","farmstead","industrial areas","roads/railroads","rock","sand","gravel","mudflats","salt flats","badlands","permanent snow or ice","saline seeps","mines/quarries","oil waste areas","small grains","row crops","vegetable crops","horticultural plants (e.g. tulips)","marshlands (grass,sedges,rushes)","tundra (mosses,lichens)","rangeland","pastureland (grasslands used for livestock grazing)","hayland","meadows (grasses,alfalfa,fescue,bromegrass,timothy)","shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)","successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)","shrub crops (blueberries,nursery ornamentals,filberts)","vine crops (grapes)","conifers (e.g. pine,spruce,fir,cypress)","hardwoods (e.g. oak,hickory,elm,aspen)","intermixed hardwood and conifers","tropical (e.g. mangrove,palms)","rainforest (evergreen forest receiving >406 cm annual rainfall)","swamp (permanent or semi-permanent water body dominated by woody plants)","crop trees (nuts,fruit,christmas trees,nursery trees)"],
+			"description": "present state of sample site",
+			"label": "current land use",
+			"position": 4
+		    },
+		    "cur_vegetation": {
+			"type": "string",
+			"description": "vegetation classification from one or more standard classification systems, or agricultural crop",
+			"label": "current vegetation",
+			"position": 5
+		    },
+		    "cur_vegetation_meth": {
+			"type": "string",
+			"description": "reference or method used in vegetation classification",
+			"label": "current vegetation method",
+			"position": 6
+		    },
+		    "previous_land_use": {
+			"type": "string",
+			"description": "previous land use and dates",
+			"label": "history/previous land use",
+			"position": 7
+		    },
+		    "previous_land_use_meth": {
+			"type": "string",
+			"description": "reference or method used in determining previous land use and dates",
+			"label": "history/previous land use method",
+			"position": 8
+		    },
+		    "crop_rotation": {
+			"type": "string",
+			"description": "whether or not crop is rotated, and if yes, rotation schedule",
+			"label": "history/crop rotation",
+			"position": 9
+		    },
+		    "agrochem_addition": {
+			"type": "string",
+			"description": "addition of fertilizers, pesticides, etc. - amount and time of applications",
+			"label": "history/agrochemical additions",
+			"position": 10
+		    },
+		    "tillage": {
+			"enum": ["drill","cutting disc","ridge till","strip tillage","zonal tillage","chisel","tined","mouldboard","disc plough"],
+			"description": "note method(s) used for tilling",
+			"label": "history/tillage",
+			"position": 11
+		    },
+		    "fire": {
+			"$ref": "#/types/timestamp",
+			"description": "historical and/or physical evidence of fire",
+			"label": "history/fire",
+			"position": 12
+		    },
+		    "flooding": {
+			"$ref": "#/types/timestamp",
+			"description": "historical and/or physical evidence of flooding",
+			"label": "history/flooding",
+			"position": 13
+		    },
+		    "extreme_event": {
+			"$ref": "#/types/timestamp",
+			"description": "unusual physical events that may have affected microbial populations",
+			"label": "history/extreme events",
+			"position": 14
+		    },
+		    "horizon": {
+			"enum": ["O horizon","A horizon","E horizon","B horizon","C horizon","R layer","Permafrost"],
+			"description": "specific layer in the land area which measures parallel to the soil surface and possesses physical characteristics which differ from the layers above and beneath",
+			"label": "horizon",
+			"position": 15
+		    },
+		    "horizon_meth": {
+			"type": "string",
+			"description": "reference or method used in determining the horizon",
+			"label": "horizon method",
+			"position": 16
+		    },
+		    "sieving": {
+			"type": "string",
+			"description": "collection design of pooled samples and/or sieve size and amount of sample sieved",
+			"label": "composite design/sieving (if any)",
+			"position": 17
+		    },
+		    "water_content": {
+			"$ref": "#/measurements/percent",
+			"description": "water content measurement",
+			"label": "water content",
+			"position": 18
+		    },
+		    "water_content_soil_meth": {
+			"type": "string",
+			"description": "reference or method used in determining the water content of soil",
+			"label": "water content method",
+			"position": 19
+		    },
+		    "samp_weight_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 20
+		    },
+		    "pool_dna_extracts": {
+			"type": "string",
+			"description": "were multiple DNA extractions mixed? how many?",
+			"label": "pooling of DNA extracts (if done)",
+			"position": 21
+		    },
+		    "store_cond": {
+			"type": "string",
+			"description": "explain how and for how long the soil sample was stored before DNA extraction.",
+			"label": "storage conditions (fresh/frozen/other)",
+			"position": 22
+		    },
+		    "link_climate_info": {
+			"type": "string",
+			"description": "link to climate resource",
+			"label": "link to climate information",
+			"position": 23
+		    },
+		    "annual_season_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "mean annual and seasonal temperature",
+			"label": "mean annual and seasonal temperature",
+			"position": 24
+		    },
+		    "annual_season_precpt": {
+			"$ref": "#/measurements/height_mm",
+			"description": "mean annual and seasonal precipitation",
+			"label": "mean annual and seasonal precipitation",
+			"position": 25
+		    },
+		    "link_class_info": {
+			"type": "string",
+			"description": "link to digitized soil maps or other soil classification information",
+			"label": "link to classification information",
+			"position": 26
+		    },
+		    "fao_class": {
+			"type": "string",
+			"description": "soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups",
+			"label": "soil_taxonomic/FAO classification",
+			"position": 27
+		    },
+		    "local_class": {
+			"type": "string",
+			"description": "soil classification based on local soil classification system",
+			"label": "soil_taxonomic/local classification",
+			"position": 28
+		    },
+		    "local_class_meth": {
+			"type": "string",
+			"description": "reference or method used in determining the local soil classification",
+			"label": "soil_taxonomic/local classification method",
+			"position": 29
+		    },
+		    "soil_type": {
+			"type": "string",
+			"description": "soil series name or other lower-level classification",
+			"label": "soil type",
+			"position": 30
+		    },
+		    "soil_type_meth": {
+			"type": "string",
+			"description": "reference or method used in determining soil series name or other lower-level classification",
+			"label": "soil type method",
+			"position": 31
+		    },
+		    "slope_gradient": {
+			"$ref": "#/measurements/percent",
+			"description": "commonly called 'slope'. The angle between ground surface and a horizontal line (in percent). This is the direction that overland water would flow. This measure is usually taken with a hand level meter or clinometer",
+			"label": "slope gradient",
+			"position": 32
+		    },
+		    "slope_aspect": {
+			"$ref": "#/measurements/direction",
+			"description": "the direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees); e.g., NW or 315 degrees. This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration.",
+			"label": "slope aspect",
+			"position": 33
+		    },
+		    "profile_position": {
+			"enum": ["summit","shoulder","backslope","footslope","toeslope"],
+			"description": "cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas",
+			"label": "profile position",
+			"position": 34
+		    },
+		    "drainage_class": {
+			"enum": ["very poorly","poorly","somewhat poorly","moderately well","well","excessively drained"],
+			"description": "drainage classification from a standard system such as the USDA system",
+			"label": "drainage classification",
+			"position": 35
+		    },
+		    "texture": {
+			"type": "string",
+			"description": "the relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional.",
+			"label": "texture",
+			"position": 36
+		    },
+		    "texture_meth": {
+			"type": "string",
+			"description": "reference or method used in determining soil texture",
+			"label": "texture method",
+			"position": 37
+		    },
+		    "ph": {
+			"$ref": "#/measurements/ph",
+			"description": "pH measurement",
+			"label": "pH",
+			"position": 38
+		    },
+		    "ph_meth": {
+			"type": "string",
+			"description": "reference or method used in determining pH",
+			"label": "pH method",
+			"position": 39
+		    },
+		    "tot_org_carb": {
+			"$ref": "#/measurements/concentration_g_kg",
+			"description": "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content",
+			"label": "total organic carbon",
+			"position": 40
+		    },
+		    "tot_org_c_meth": {
+			"type": "string",
+			"description": "reference or method used in determining total organic carbon",
+			"label": "total organic carbon method",
+			"position": 41
+		    },
+		    "tot_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "total nitrogen content of the sample",
+			"label": "total nitrogen",
+			"position": 42
+		    },
+		    "tot_n_meth": {
+			"type": "string",
+			"description": "reference or method used in determining the total nitrogen",
+			"label": "total nitrogen method",
+			"position": 43
+		    },
+		    "microbial_biomass": {
+			"$ref": "#/measurements/weight",
+			"description": "the part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units",
+			"label": "microbial biomass",
+			"position": 44
+		    },
+		    "microbial_biomass_meth": {
+			"type": "string",
+			"description": "reference or method used in determining microbial biomass",
+			"label": "microbial biomass method",
+			"position": 45
+		    },
+		    "link_addit_analys": {
+			"type": "string",
+			"description": "link to additional analysis results performed on the sample",
+			"label": "links to additional analysis",
+			"position": 46
+		    },
+		    "extreme_salinity": {
+			"type": "string",
+			"description": "measured salinity",
+			"label": "extreme salinity",
+			"position": 47
+		    },
+		    "salinity_meth": {
+			"type": "string",
+			"description": "reference or method used in determining salinity",
+			"label": "salinity method",
+			"position": 48
+		    },
+		    "heavy_metals": {
+			"type": "string",
+			"description": "heavy metals present and concentrationsany drug used by subject and the frequency of usage; can include multiple heavy metals and concentrations",
+			"label": "heavy metals",
+			"position": 49
+		    },
+		    "heavy_metals_meth": {
+			"type": "string",
+			"description": "reference or method used in determining heavy metals",
+			"label": "heavy metals method",
+			"position": 50
+		    },
+		    "al_sat": {
+			"$ref": "#/measurements/percent",
+			"description": "aluminum saturation (esp. for tropical soils)",
+			"label": "Al saturation",
+			"position": 51
+		    },
+		    "al_sat_meth": {
+			"type": "string",
+			"description": "reference or method used in determining Al saturation",
+			"label": "Al saturation method",
+			"position": 52
+		    }
+		}
+	    }
+	},
+	"wastewater-sludge": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "depth": {
+			"$ref": "#/measurements/weight",
+			"description": "depth is defined as the vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectivly. Depth can be reported as an interval for subsurface samples",
+			"label": "depth",
+			"position": 1
+		    },
+		    "alkalinity": {
+			"$ref": "#/measurements/ph",
+			"description": "alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",
+			"label": "alkalinity",
+			"position": 2
+		    },
+		    "biochem_oxygen_dem": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "a measure of the relative oxygen-depletion effect of a waste contaminant",
+			"label": "biochemical oxygen demand",
+			"position": 3
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 4
+		    },
+		    "chem_oxygen_dem": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "a measure of the relative oxygen-depletion effect of a waste contaminant",
+			"label": "chemical oxygen demand",
+			"position": 5
+		    },
+		    "efficiency_percent": {
+			"$ref": "#/measurements/percent",
+			"description": "percentage of volatile solids removed from the anaerobic digestor",
+			"label": "efficiency percent",
+			"position": 6
+		    },
+		    "emulsions": {
+			"type": "string",
+			"description": "amount or concentration of substances such as paints, adhesives, mayonnaise, hair colorants, emulsified oils, etc.; can include multiple emulsion types",
+			"label": "emulsions",
+			"position": 7
+		    },
+		    "gaseous_substances": {
+			"type": "string",
+			"description": "amount or concentration of substances such as hydrogen sulfide, carbon dioxide, methane, etc.; can include multiple substances",
+			"label": "gaseous substances",
+			"position": 8
+		    },
+		    "indust_eff_percent": {
+			"$ref": "#/measurements/percent",
+			"description": "percentage of industrial effluents received by wastewater treatment plant",
+			"label": "industrial effluent percent",
+			"position": 9
+		    },
+		    "inorg_particles": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "concentration of particles such as sand, grit, metal particles, ceramics, etc.; can include multiple particles",
+			"label": "inorganic particles",
+			"position": 10
+		    },
+		    "nitrate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrate",
+			"label": "nitrate",
+			"position": 11
+		    },
+		    "org_particles": {
+			"type": "string",
+			"description": "concentration of particles such as faeces, hairs, food, vomit, paper fibers, plant material, humus, etc.",
+			"label": "organic particles",
+			"position": 12
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 13
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 14
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 15
+		    },
+		    "ph": {
+			"$ref": "#/measurements/ph",
+			"description": "pH measurement",
+			"label": "pH",
+			"position": 16
+		    },
+		    "phosphate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of phosphate",
+			"label": "phosphate",
+			"position": 17
+		    },
+		    "pre_treatment": {
+			"type": "string",
+			"description": "the process of pre-treatment removes materials that can be easily collected from the raw wastewater",
+			"label": "pre-treatment",
+			"position": 18
+		    },
+		    "primary_treatment": {
+			"type": "string",
+			"description": "the process to produce both a generally homogeneous liquid capable of being treated biologically and a sludge that can be separately treated or processed",
+			"label": "primary treatment",
+			"position": 19
+		    },
+		    "reactor_type": {
+			"type": "string",
+			"description": "anaerobic digesters can be designed and engineered to operate using a number of different process configurations, as batch or continuous, mesophilic, high solid or low solid, and single stage or multistage",
+			"label": "reactor type",
+			"position": 20
+		    },
+		    "samp_salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity of sample, i.e. measure of total salt concentration",
+			"label": "sample salinity",
+			"position": 21
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 22
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 23
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 24
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 25
+		    },
+		    "secondary_treatment": {
+			"type": "string",
+			"description": "the process for substantially degrading the biological content of the sewage",
+			"label": "secondary treatment",
+			"position": 26
+		    },
+		    "sewage_type": {
+			"type": "string",
+			"description": "type of wastewater treatment plant as municipial or industrial",
+			"label": "sewage type",
+			"position": 27
+		    },
+		    "sludge_retent_time": {
+			"$ref": "#/types/duration",
+			"description": "the time activated sludge remains in reactor",
+			"label": "sludge retention time",
+			"position": 28
+		    },
+		    "sodium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "sodium concentration",
+			"label": "sodium",
+			"position": 29
+		    },
+		    "soluble_inorg_mat": {
+			"type": "string",
+			"description": "concentration of substances such as ammonia, road-salt, sea-salt, cyanide, hydrogen sulfide, thiocyanates, thiosulfates, etc.",
+			"label": "soluble inorganic material",
+			"position": 30
+		    },
+		    "soluble_org_mat": {
+			"type": "string",
+			"description": "concentration of substances such as urea, fruit sugars, soluble proteins, drugs, pharmaceuticals, etc.",
+			"label": "soluble organic material",
+			"position": 31
+		    },
+		    "suspend_solids": {
+			"type": "string",
+			"description": "concentration of substances including a wide variety of material, such as silt, decaying plant and animal matter, etc,; can include multiple substances",
+			"label": "suspended solids",
+			"position": 32
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 33
+		    },
+		    "tertiary_treatment": {
+			"type": "string",
+			"description": "the process providing a final treatment stage to raise the effluent quality before it is discharged to the receiving environment",
+			"label": "tertiary treatment",
+			"position": 34
+		    },
+		    "tot_nitro": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "total nitrogen concentration of water samples, calculated by: total nitrogen = total dissolved nitrogen + particulate nitrogen. Can also be measured without filtering, reported as nitrogen",
+			"label": "total nitrogen",
+			"position": 35
+		    },
+		    "tot_phosphate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "total amount or concentration of phosphate",
+			"label": "total phosphate",
+			"position": 36
+		    },
+		    "wastewater_type": {
+			"type": "string",
+			"description": "the origin of wastewater such as human waste, rainfall, storm drains, etc.",
+			"label": "wastewater type",
+			"position": 37
+		    }
+		}
+	    }
+	},
+	"water": {
+	    "type": "array",
+	    "minItems": 1,
+	    "uniqueItems": true,
+	    "items": {
+		"type": "object",
+		"required": [],
+		"properties": {
+		    "sample_name": {
+			"type": "string",
+			"description": "",
+			"label": "",
+			"position": 0
+		    },
+		    "alt": {
+			"$ref": "#/measurements/height",
+			"description": "the altitude of the sample is the vertical distance between Earth's surface above sea level and the sampled position in the air",
+			"label": "altitude",
+			"position": 1
+		    },
+		    "depth": {
+			"$ref": "#/measurements/height",
+			"description": "depth is defined as the vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectivly. Depth can be reported as an interval for subsurface samples",
+			"label": "depth",
+			"position": 2
+		    },
+		    "elev": {
+			"$ref": "#/measurements/height",
+			"description": "the elevation of the sampling site as measured by the vertical distance from mean sea level",
+			"label": "elevation",
+			"position": 3
+		    },
+		    "alkalinity": {
+			"$ref": "#/measurements/ph",
+			"description": "alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",
+			"label": "alkalinity",
+			"position": 4
+		    },
+		    "alkyl_diethers": {
+			"$ref": "#/measurements/concentration_m_l",
+			"description": "concentration of alkyl diethers",
+			"label": "alkyl diethers",
+			"position": 5
+		    },
+		    "aminopept_act": {
+			"$ref": "#/measurements/activity",
+			"description": "measurement of aminopeptidase activity",
+			"label": "aminopeptidase activity",
+			"position": 6
+		    },
+		    "ammonium": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of ammonium",
+			"label": "ammonium",
+			"position": 7
+		    },
+		    "atmospheric_data": {
+			"type": "string",
+			"description": "measurement of atmospheric data; can include multiple data",
+			"label": "atmospheric data",
+			"position": 8
+		    },
+		    "bac_prod": {
+			"$ref": "#/measurements/activity_mg_m3_d",
+			"description": "bacterial production in the water column measured by isotope uptake",
+			"label": "bacterial production",
+			"position": 9
+		    },
+		    "bac_resp": {
+			"$ref": "#/measurements/activity_mg_m3_d",
+			"description": "measurement of bacterial resporation in the water column",
+			"label": "bacterial respiration",
+			"position": 10
+		    },
+		    "bacteria_carb_prod": {
+			"$ref": "#/measurements/rate",
+			"description": "measurement of bacterial carbon production",
+			"label": "bacterial carbon production",
+			"position": 11
+		    },
+		    "biomass": {
+			"$ref": "#/measurements/weight",
+			"description": "amount of biomass; should include the name for the part of biomass measured, e.g. microbial, total. can include multiple measurements",
+			"label": "biomass",
+			"position": 12
+		    },
+		    "bishomohopanol": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of bishomohopanol",
+			"label": "bishomohopanol",
+			"position": 13
+		    },
+		    "bromide": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of bromide",
+			"label": "bromide",
+			"position": 14
+		    },
+		    "calcium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of calcium",
+			"label": "calcium",
+			"position": 15
+		    },
+		    "carb_nitro_ratio": {
+			"$ref": "#/types/positive_float",
+			"description": "ratio of amount or concentrations of carbon to nitrogen",
+			"label": "carbon/nitrogen ratio",
+			"position": 16
+		    },
+		    "chem_administration": {
+			"type": "string",
+			"description": "list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI",
+			"label": "chemical administration",
+			"position": 17
+		    },
+		    "chloride": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "concentration of chloride",
+			"label": "chloride",
+			"position": 18
+		    },
+		    "chlorophyll": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of chlorophyll",
+			"label": "chlorophyll",
+			"position": 19
+		    },
+		    "conduc": {
+			"$ref": "#/measurements/conductivity",
+			"description": "electrical conductivity of water",
+			"label": "conductivity",
+			"position": 20
+		    },
+		    "density": {
+			"$ref": "#/measurements/concentration_g_m3",
+			"description": "density of sample",
+			"label": "density",
+			"position": 21
+		    },
+		    "diether_lipids": {
+			"$ref": "#/measurements/concentration_ng_l",
+			"description": "concentration of diether lipids; can include multiple types of diether lipids",
+			"label": "diether lipids",
+			"position": 22
+		    },
+		    "diss_carb_dioxide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved carbon dioxide",
+			"label": "dissolved carbon dioxide",
+			"position": 23
+		    },
+		    "diss_hydrogen": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved hydrogen",
+			"label": "dissolved hydrogen",
+			"position": 24
+		    },
+		    "diss_inorg_carb": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "dissolved inorganic carbon concentration",
+			"label": "dissolved inorganic carbon",
+			"position": 25
+		    },
+		    "diss_inorg_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of dissolved inorganic nitrogen",
+			"label": "dissolved inorganic nitrogen",
+			"position": 26
+		    },
+		    "diss_inorg_phosp": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of dissolved inorganic phosphorus",
+			"label": "dissolved inorganic phosphorus",
+			"position": 27
+		    },
+		    "diss_org_carb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of dissolved organic carbon",
+			"label": "dissolved organic carbon",
+			"position": 28
+		    },
+		    "diss_org_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "dissolved organic nitrogen concentration measured as; total dissolved nitrogen - NH4 - NO3 - NO2",
+			"label": "dissolved organic nitrogen",
+			"position": 29
+		    },
+		    "diss_oxygen": {
+			"$ref": "#/measurements/concentration_mm_kg",
+			"description": "concentration of dissolved oxygen",
+			"label": "dissolved oxygen",
+			"position": 30
+		    },
+		    "down_par": {
+			"$ref": "#/measurements/par",
+			"description": "visible waveband radiance and irradiance measurements in the water column",
+			"label": "downward PAR",
+			"position": 31
+		    },
+		    "fluor": {
+			"$ref": "#/measurements/concentration_mg_m3",
+			"description": "raw or converted fluorescence of water",
+			"label": "fluorescence",
+			"position": 32
+		    },
+		    "glucosidase_act": {
+			"$ref": "#/measurements/activity",
+			"description": "measurement of glucosidase activity",
+			"label": "glucosidase activity",
+			"position": 33
+		    },
+		    "light_intensity": {
+			"$ref": "#/measurements/light_intensity",
+			"description": "measurement of light intensity",
+			"label": "light intensity",
+			"position": 34
+		    },
+		    "magnesium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of magnesium",
+			"label": "magnesium",
+			"position": 35
+		    },
+		    "mean_frict_vel": {
+			"$ref": "#/measurements/speed_m_s",
+			"description": "measurement of mean friction velocity",
+			"label": "mean friction velocity",
+			"position": 36
+		    },
+		    "mean_peak_frict_vel": {
+			"$ref": "#/measurements/speed_m_s",
+			"description": "measurement of mean peak friction velocity",
+			"label": "mean peak friction velocity",
+			"position": 37
+		    },
+		    "n_alkanes": {
+			"type": "string",
+			"description": "concentration of n-alkanes; can include multiple n-alkanes",
+			"label": "n-alkanes",
+			"position": 38
+		    },
+		    "nitrate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrate",
+			"label": "nitrate",
+			"position": 39
+		    },
+		    "nitrite": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrite",
+			"label": "nitrite",
+			"position": 40
+		    },
+		    "nitro": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of nitrogen (total)",
+			"label": "nitrogen",
+			"position": 41
+		    },
+		    "org_carb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of organic carbon",
+			"label": "organic carbon",
+			"position": 42
+		    },
+		    "org_matter": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of organic matter",
+			"label": "organic matter",
+			"position": 43
+		    },
+		    "org_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of organic nitrogen",
+			"label": "organic nitrogen",
+			"position": 44
+		    },
+		    "organism_count": {
+			"$ref": "#/measurements/concentration_num_m3",
+			"description": "total count of any organism per gram or volume of sample, should include name of organism followed by count; can include multiple organism counts",
+			"label": "organism count",
+			"position": 45
+		    },
+		    "oxy_stat_samp": {
+			"enum": ["aerobic","anaerobic"],
+			"description": "oxygenation status of sample",
+			"label": "oxygenation status of sample",
+			"position": 46
+		    },
+		    "part_org_carb": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of particulate organic carbon",
+			"label": "particulate organic carbon",
+			"position": 47
+		    },
+		    "part_org_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "concentration of particulate organic nitrogen",
+			"label": "particulate organic nitrogen",
+			"position": 48
+		    },
+		    "perturbation": {
+			"type": "string",
+			"description": "type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation occurred; can include multiple perturbation types",
+			"label": "perturbation",
+			"position": 49
+		    },
+		    "petroleum_hydrocarb": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of petroleum hydrocarbon",
+			"label": "petroleum hydrocarbon",
+			"position": 50
+		    },
+		    "ph": {
+			"$ref": "#/measurements/ph",
+			"description": "pH measurement",
+			"label": "pH",
+			"position": 51
+		    },
+		    "phaeopigments": {
+			"type": "string",
+			"description": "concentration of phaeopigments; can include multiple phaeopigments",
+			"label": "phaeopigments",
+			"position": 52
+		    },
+		    "phosphate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of phosphate",
+			"label": "phosphate",
+			"position": 53
+		    },
+		    "phosplipid_fatt_acid": {
+			"$ref": "#/measurements/concentration_m_l",
+			"description": "concentration of phospholipid fatty acids; can include multiple values",
+			"label": "phospholipid fatty acid",
+			"position": 54
+		    },
+		    "photon_flux": {
+			"$ref": "#/measurements/par",
+			"description": "measurement of photon flux",
+			"label": "photon flux",
+			"position": 55
+		    },
+		    "potassium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "concentration of potassium",
+			"label": "potassium",
+			"position": 56
+		    },
+		    "pressure": {
+			"$ref": "#/measurements/pressure_a",
+			"description": "pressure to which the sample is subject, in atmospheres",
+			"label": "pressure",
+			"position": 57
+		    },
+		    "primary_prod": {
+			"$ref": "#/measurements/activity_mg_m3_d",
+			"description": "measurement of primary production",
+			"label": "primary production",
+			"position": 58
+		    },
+		    "redox_potential": {
+			"$ref": "#/measurements/potential",
+			"description": "redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential",
+			"label": "redox potential",
+			"position": 59
+		    },
+		    "salinity": {
+			"$ref": "#/measurements/percent",
+			"description": "salinity measurement",
+			"label": "salinity",
+			"position": 60
+		    },
+		    "samp_store_dur": {
+			"$ref": "#/types/duration",
+			"description": "duration for which sample was stored",
+			"label": "sample storage duration",
+			"position": 61
+		    },
+		    "samp_store_loc": {
+			"type": "string",
+			"description": "location at which sample was stored, usually name of a specific freezer/room",
+			"label": "sample storage location",
+			"position": 62
+		    },
+		    "samp_store_temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature at which sample was stored, e.g. -80 degree Celsius",
+			"label": "sample storage temperature",
+			"position": 63
+		    },
+		    "samp_vol_we_dna_ext": {
+			"type": "string",
+			"description": "volume (mL) or weight (g) of sample processed for DNA extraction",
+			"label": "sample volume or weight for DNA extraction",
+			"position": 64
+		    },
+		    "silicate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of silicate",
+			"label": "silicate",
+			"position": 65
+		    },
+		    "sodium": {
+			"$ref": "#/measurements/concentration_ppm",
+			"description": "sodium concentration",
+			"label": "sodium",
+			"position": 66
+		    },
+		    "soluble_react_phosp": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of soluble reactive phosphorus",
+			"label": "soluble reactive phosphorus",
+			"position": 67
+		    },
+		    "sulfate": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of sulfate",
+			"label": "sulfate",
+			"position": 68
+		    },
+		    "sulfide": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "concentration of sulfide",
+			"label": "sulfide",
+			"position": 69
+		    },
+		    "suspend_part_matter": {
+			"$ref": "#/measurements/concentration_mg_l",
+			"description": "concentration of suspended particulate matter",
+			"label": "suspended particulate matter",
+			"position": 70
+		    },
+		    "temp": {
+			"$ref": "#/measurements/temperature",
+			"description": "temperature of the sample at time of sampling",
+			"label": "temperature",
+			"position": 71
+		    },
+		    "tidal_stage": {
+			"enum": ["low","high"],
+			"description": "stage of tide",
+			"label": "tidal stage",
+			"position": 72
+		    },
+		    "tot_depth_water_col": {
+			"$ref": "#/measurements/height",
+			"description": "measurement of total depth of water column",
+			"label": "total depth of water column",
+			"position": 73
+		    },
+		    "tot_diss_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "total dissolved nitrogen concentration, reported as nitrogen, measured by: total dissolved nitrogen = NH4 + NO3NO2 + dissolved organic nitrogen",
+			"label": "total dissolved nitrogen",
+			"position": 74
+		    },
+		    "tot_inorg_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "total inorganic nitrogen content",
+			"label": "total inorganic nitrogen",
+			"position": 75
+		    },
+		    "tot_nitro": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "total nitrogen concentration of water samples, calculated by: total nitrogen = total dissolved nitrogen + particulate nitrogen. Can also be measured without filtering, reported as nitrogen",
+			"label": "total nitrogen",
+			"position": 76
+		    },
+		    "tot_part_carb": {
+			"$ref": "#/measurements/concentration_mig_l",
+			"description": "total particulate carbon content",
+			"label": "total particulate carbon",
+			"position": 77
+		    },
+		    "tot_phosp": {
+			"$ref": "#/measurements/concentration_mm_l",
+			"description": "total phosphorus concentration, calculated by: total phosphorus = total dissolved phosphorus + particulate phosphorus. Can also be measured without filtering, reported as phosphorus",
+			"label": "total phosphorus",
+			"position": 78
+		    },
+		    "water_current": {
+			"$ref": "#/measurements/current",
+			"description": "measurement of magnitude and direction of flow within a fluid",
+			"label": "water current",
+			"position": 79
+		    }
+		}
+	    }
+	}
+    },
+    "measurements": {
+	"bmi": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? kg\\/m²$",
+	    "unit": "kilogram per square metre",
+	    "symbol": "kg/m²"
+	},
+	"frequency_bpm": {
+	    "type": "string",
+	    "pattern": "^\\d+ bpm$",
+	    "unit": "beats per minute",
+	    "symbol": "bpm"
+	},
+	"height": {
+	    "type": "string",
+	    "pattern": "^-?\\d+(\\.\\d+)? m$",
+	    "unit": "meter",
+	    "symbol": "m"
+	},
+	"height_mm": {
+	    "type": "string",
+	    "pattern": "^-?\\d+(\\.\\d+)? m$",
+	    "unit": "meter",
+	    "symbol": "m"
+	},
+	"weight": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? kg$",
+	    "unit": "kilogram",
+	    "symbol": "kg"
+	},
+	"rate": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? ng\\/h$",
+	    "unit": "nanogram per hour",
+	    "symbol": "ng/h"
+	},
+	"ph": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? pH$",
+	    "unit": "potential of hydrogen",
+	    "symbol": "pH"
+	},
+	"par": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? μmol\\/m²\\/s$",
+	    "unit": "micromol per square metre per second",
+	    "symbol": "μmol/m²/s"
+	},
+	"temperature": {
+	    "type": "string",
+	    "pattern": "^-?\\d+(\\.\\d+)? °C$",
+	    "unit": "degrees celcius",
+	    "symbol": "°C"
+	},
+	"current": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? m³\\/s$",
+	    "unit": "cubic metres per second",
+	    "symbol": "m³/s"
+	},
+	"concentration_mg_l": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? mg\\/l$",
+	    "unit": "milligram per liter",
+	    "symbol": "mg/l"
+	},
+	"concentration_num_m3": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? num\\/m³$",
+	    "unit": "count per cubic metre",
+	    "symbol": "num/m³"
+	},
+	"concentration_num_m2": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? num\\/m²$",
+	    "unit": "count per square metre",
+	    "symbol": "num/m²"
+	},
+	"concentration_m_l": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? m\\/l$",
+	    "unit": "mol per liter",
+	    "symbol": "m/l"
+	},
+	"concentration_ppm": {
+	    "type": "string",
+	    "pattern": "^\\d+ ppm$",
+	    "unit": "parts per million",
+	    "symbol": "ppm"
+	},
+	"concentration_mm_l": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? µm\\/l$",
+	    "unit": "micromol per liter",
+	    "symbol": "µm/l"
+	},
+	"concentration_mig_l": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? µg\\/l$",
+	    "unit": "microgram per liter",
+	    "symbol": "µg/l"
+	},
+	"concentration_mm_kg": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? µm\\/kg$",
+	    "unit": "micromol per kilogram",
+	    "symbol": "µm/kg"
+	},
+	"concentration_g_kg": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? µg\\/kg$",
+	    "unit": "gram per kilogram",
+	    "symbol": "g/kg"
+	},
+	"concentration_g_m3": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? g\\/m³$",
+	    "unit": "gram per cubic metre",
+	    "symbol": "g/m³"
+	},
+	"concentration_mg_m3": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? mg\\/m³$",
+	    "unit": "milligram per cubic metre",
+	    "symbol": "mg/m³"
+	},
+	"concentration_ng_l": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? ng\\/l$",
+	    "unit": "nanogram per litre",
+	    "symbol": "ng/l"
+	},
+	"conductivity": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? mS\\/cm$",
+	    "unit": "milliSiemens per centimetre",
+	    "symbol": "mS/cm"
+	},
+	"light_intensity": {
+	    "type": "string",
+	    "pattern": "^\\d+ lux$",
+	    "unit": "lux",
+	    "symbol": "lux"
+	},
+	"potential": {
+	    "type": "string",
+	    "pattern": "^\\d+ mV$",
+	    "unit": "millivolt",
+	    "symbol": "mV"
+	},
+	"pressure_mmm": {
+	    "type": "string",
+	    "pattern": "^\\d+ mmHg$",
+	    "unit": "millimetres of Mercury",
+	    "symbol": "mmHg"
+	},
+	"pressure_a": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? atm$",
+	    "unit": "athmospheres",
+	    "symbol": "atm"
+	},
+	"percent": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? \\%$",
+	    "unit": "percent",
+	    "symbol": "%"
+	},
+	"speed": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? km\\/h$",
+	    "unit": "kilometres per hour",
+	    "symbol": "km/h"
+	},
+	"speed_m_s": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? m\\/s$",
+	    "unit": "metres per second",
+	    "symbol": "m/s"
+	},
+	"flow_rate": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? l\\/s$",
+	    "unit": "litres per second",
+	    "symbol": "l/s"
+	},
+	"radiation": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? w\\/m²\\/s$",
+	    "unit": "watts per square metre per second",
+	    "symbol": "w/m²/s"
+	},
+	"activity": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? m\\/l\\/h$",
+	    "unit": "mol per litre per h",
+	    "symbol": "m/l/h"
+	},
+	"activity_mg_m3_d": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? mg\\/m³\\/d$",
+	    "unit": "milligram per cubic metre per day",
+	    "symbol": "mg/m³/d"
+	},
+	"direction": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)? °$",
+	    "unit": "degrees",
+	    "symbol": "°"
+	}
+    },
+    "types": {
+	"integer": {
+	    "type": "string",
+	    "pattern": "^\\d+$"
+	},
+	"positive_float": {
+	    "type": "string",
+	    "pattern": "^\\d+(\\.\\d+)?$"
+	},
+	"continent": {
+	    "enum": [ { "$ref": "#/enums/continent" } ]
+	},
+	"country": {
+	    "enum": [ { "$ref": "#/enums/country/alpha2" } ]
+	},
+	"email": {
+	    "type": "string",
+	    "pattern": "^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])$"
+	},
+	"url": {
+	    "type": "string",
+	    "pattern": "^(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]\\.[^\\s]{2,})$"
+	},
+	"date": {
+	    "type": "string",
+	    "pattern": "^(?:\\d{4}-(?:(?:(?:(?:0[13578]|1[02])-(?:0[1-9]|[1-2][0-9]|3[01]))|(?:(?:0[469]|11)-(?:0[1-9]|[1-2][0-9]|30))|(?:02-(?:0[1-9]|1[0-9]|2[0-8]))))|(?:(?:\\d{2}(?:0[48]|[2468][048]|[13579][26]))|(?:(?:[02468][048])|[13579][26])00)-02\\/29)$"
+	},
+	"timestamp": {
+	    "type": "string",
+	    "pattern": "^((((19|20)([2468][048]|[13579][26]|0[48])|2000)-02-29|((19|20)[0-9]{2}-(0[4678]|1[02])-(0[1-9]|[12][0-9]|30)|(19|20)[0-9]{2}-(0[1359]|11)-(0[1-9]|[12][0-9]|3[01])|(19|20)[0-9]{2}-02-(0[1-9]|1[0-9]|2[0-8])))T([01][0-9]|2[0-3]):([012345][0-9]):([012345][0-9]))Z$"
+	},
+	"duration": {
+	    "type": "string",
+	    "pattern": "^P(?:(0+)Y)?(?:(0+)M)?(?:(\\d+)D)?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+(?:\\.\\d+)?)S)?)?$"
+	},
+	"geolocation": {
+	    "type": "string",
+	    "pattern": "^(?<lat>(-?(90|(\\d|[1-8]\\d)(\\.\\d{1,6}){0,1})))\\,{1}(?<long>(-?(180|(\\d|\\d\\d|1[0-7]\\d)(\\.\\d{1,6}){0,1})))$"
+	}
+    },
+    "enums": {
+	"sex": [
+	    "male",
+	    "female",
+	    "neutral",
+	    "hermaphrodite",
+	    "not determined"
+	],	 
+	"continent": [
+	    "Africa",
+ 	    "Asia",
+ 	    "Europe",
+ 	    "North America",
+ 	    "South America",
+ 	    "Antarctica",
+ 	    "Australia/Oceania"
+	],
+	"country": {
+	    "ISO": "ISO 3166-1",
+	    "names": [
+		"Afghanistan",
+		"Åland Islands",
+		"Albania",
+		"Algeria",
+		"American Samoa",
+		"Andorra",
+		"Angola",
+		"Anguilla",
+		"Antarctica",
+		"Antigua and Barbuda",
+		"Argentina",
+		"Armenia",
+		"Aruba",
+		"Australia",
+		"Austria",
+		"Azerbaijan",
+		"Bahamas",
+		"Bahrain",
+		"Bangladesh",
+		"Barbados",
+		"Belarus",
+		"Belgium",
+		"Belize",
+		"Benin",
+		"Bermuda",
+		"Bhutan",
+		"Bolivia (Plurinational State of)",
+		"Bonaire, Sint Eustatius and Saba",
+		"Bosnia and Herzegovina",
+		"Botswana",
+		"Bouvet Island",
+		"Brazil",
+		"British Indian Ocean Territory",
+		"Brunei Darussalam",
+		"Bulgaria",
+		"Burkina Faso",
+		"Burundi",
+		"Cabo Verde",
+		"Cambodia",
+		"Cameroon",
+		"Canada",
+		"Cayman Islands",
+		"Central African Republic",
+		"Chad",
+		"Chile",
+		"China",
+		"Christmas Island",
+		"Cocos (Keeling) Islands",
+		"Colombia",
+		"Comoros",
+		"Congo",
+		"Congo (Democratic Republic of the)",
+		"Cook Islands",
+		"Costa Rica",
+		"Côte d'Ivoire",
+		"Croatia",
+		"Cuba",
+		"Curaçao",
+		"Cyprus",
+		"Czechia",
+		"Denmark",
+		"Djibouti",
+		"Dominica",
+		"Dominican Republic",
+		"Ecuador",
+		"Egypt",
+		"El Salvador",
+		"Equatorial Guinea",
+		"Eritrea",
+		"Estonia",
+		"Ethiopia",
+		"Falkland Islands (Malvinas)",
+		"Faroe Islands",
+		"Fiji",
+		"Finland",
+		"France",
+		"French Guiana",
+		"French Polynesia",
+		"French Southern Territories",
+		"Gabon",
+		"Gambia",
+		"Georgia",
+		"Germany",
+		"Ghana",
+		"Gibraltar",
+		"Greece",
+		"Greenland",
+		"Grenada",
+		"Guadeloupe",
+		"Guam",
+		"Guatemala",
+		"Guernsey",
+		"Guinea",
+		"Guinea-Bissau",
+		"Guyana",
+		"Haiti",
+		"Heard Island and McDonald Islands",
+		"Holy See",
+		"Honduras",
+		"Hong Kong",
+		"Hungary",
+		"Iceland",
+		"India",
+		"Indonesia",
+		"Iran (Islamic Republic of)",
+		"Iraq",
+		"Ireland",
+		"Isle of Man",
+		"Israel",
+		"Italy",
+		"Jamaica",
+		"Japan",
+		"Jersey",
+		"Jordan",
+		"Kazakhstan",
+		"Kenya",
+		"Kiribati",
+		"Korea (Democratic People's Republic of)",
+		"Korea (Republic of)",
+		"Kuwait",
+		"Kyrgyzstan",
+		"Lao People's Democratic Republic",
+		"Latvia",
+		"Lebanon",
+		"Lesotho",
+		"Liberia",
+		"Libya",
+		"Liechtenstein",
+		"Lithuania",
+		"Luxembourg",
+		"Macao",
+		"Macedonia (the former Yugoslav Republic of)",
+		"Madagascar",
+		"Malawi",
+		"Malaysia",
+		"Maldives",
+		"Mali",
+		"Malta",
+		"Marshall Islands",
+		"Martinique",
+		"Mauritania",
+		"Mauritius",
+		"Mayotte",
+		"Mexico",
+		"Micronesia (Federated States of)",
+		"Moldova (Republic of)",
+		"Monaco",
+		"Mongolia",
+		"Montenegro",
+		"Montserrat",
+		"Morocco",
+		"Mozambique",
+		"Myanmar",
+		"Namibia",
+		"Nauru",
+		"Nepal",
+		"Netherlands",
+		"New Caledonia",
+		"New Zealand",
+		"Nicaragua",
+		"Niger",
+		"Nigeria",
+		"Niue",
+		"Norfolk Island",
+		"Northern Mariana Islands",
+		"Norway",
+		"Oman",
+		"Pakistan",
+		"Palau",
+		"Palestine, State of",
+		"Panama",
+		"Papua New Guinea",
+		"Paraguay",
+		"Peru",
+		"Philippines",
+		"Pitcairn",
+		"Poland",
+		"Portugal",
+		"Puerto Rico",
+		"Qatar",
+		"Réunion",
+		"Romania",
+		"Russian Federation",
+		"Rwanda",
+		"Saint Barthélemy",
+		"Saint Helena, Ascension and Tristan da Cunha",
+		"Saint Kitts and Nevis",
+		"Saint Lucia",
+		"Saint Martin (French part)",
+		"Saint Pierre and Miquelon",
+		"Saint Vincent and the Grenadines",
+		"Samoa",
+		"San Marino",
+		"Sao Tome and Principe",
+		"Saudi Arabia",
+		"Senegal",
+		"Serbia",
+		"Seychelles",
+		"Sierra Leone",
+		"Singapore",
+		"Sint Maarten (Dutch part)",
+		"Slovakia",
+		"Slovenia",
+		"Solomon Islands",
+		"Somalia",
+		"South Africa",
+		"South Georgia and the South Sandwich Islands",
+		"South Sudan",
+		"Spain",
+		"Sri Lanka",
+		"Sudan",
+		"Suriname",
+		"Svalbard and Jan Mayen",
+		"Swaziland",
+		"Sweden",
+		"Switzerland",
+		"Syrian Arab Republic",
+		"Taiwan, Province of China[a]",
+		"Tajikistan",
+		"Tanzania, United Republic of",
+		"Thailand",
+		"Timor-Leste",
+		"Togo",
+		"Tokelau",
+		"Tonga",
+		"Trinidad and Tobago",
+		"Tunisia",
+		"Turkey",
+		"Turkmenistan",
+		"Turks and Caicos Islands",
+		"Tuvalu",
+		"Uganda",
+		"Ukraine",
+		"United Arab Emirates",
+		"United Kingdom of Great Britain and Northern Ireland",
+		"United States of America",
+		"United States Minor Outlying Islands",
+		"Uruguay",
+		"Uzbekistan",
+		"Vanuatu",
+		"Venezuela (Bolivarian Republic of)",
+		"Viet Nam",
+		"Virgin Islands (British)",
+		"Virgin Islands (U.S.)",
+		"Wallis and Futuna",
+		"Western Sahara",
+		"Yemen",
+		"Zambia",
+		"Zimbabwe"
+	    ],
+	    "alpha2": [
+		"AF",
+		"AX",
+		"AL",
+		"DZ",
+		"AS",
+		"AD",
+		"AO",
+		"AI",
+		"AQ",
+		"AG",
+		"AR",
+		"AM",
+		"AW",
+		"AU",
+		"AT",
+		"AZ",
+		"BS",
+		"BH",
+		"BD",
+		"BB",
+		"BY",
+		"BE",
+		"BZ",
+		"BJ",
+		"BM",
+		"BT",
+		"BO",
+		"BQ",
+		"BA",
+		"BW",
+		"BV",
+		"BR",
+		"IO",
+		"BN",
+		"BG",
+		"BF",
+		"BI",
+		"CV",
+		"KH",
+		"CM",
+		"CA",
+		"KY",
+		"CF",
+		"TD",
+		"CL",
+		"CN",
+		"CX",
+		"CC",
+		"CO",
+		"KM",
+		"CG",
+		"CD",
+		"CK",
+		"CR",
+		"CI",
+		"HR",
+		"CU",
+		"CW",
+		"CY",
+		"CZ",
+		"DK",
+		"DJ",
+		"DM",
+		"DO",
+		"EC",
+		"EG",
+		"SV",
+		"GQ",
+		"ER",
+		"EE",
+		"ET",
+		"FK",
+		"FO",
+		"FJ",
+		"FI",
+		"FR",
+		"GF",
+		"PF",
+		"TF",
+		"GA",
+		"GM",
+		"GE",
+		"DE",
+		"GH",
+		"GI",
+		"GR",
+		"GL",
+		"GD",
+		"GP",
+		"GU",
+		"GT",
+		"GG",
+		"GN",
+		"GW",
+		"GY",
+		"HT",
+		"HM",
+		"VA",
+		"HN",
+		"HK",
+		"HU",
+		"IS",
+		"IN",
+		"ID",
+		"IR",
+		"IQ",
+		"IE",
+		"IM",
+		"IL",
+		"IT",
+		"JM",
+		"JP",
+		"JE",
+		"JO",
+		"KZ",
+		"KE",
+		"KI",
+		"KP",
+		"KR",
+		"KW",
+		"KG",
+		"LA",
+		"LV",
+		"LB",
+		"LS",
+		"LR",
+		"LY",
+		"LI",
+		"LT",
+		"LU",
+		"MO",
+		"MK",
+		"MG",
+		"MW",
+		"MY",
+		"MV",
+		"ML",
+		"MT",
+		"MH",
+		"MQ",
+		"MR",
+		"MU",
+		"YT",
+		"MX",
+		"FM",
+		"MD",
+		"MC",
+		"MN",
+		"ME",
+		"MS",
+		"MA",
+		"MZ",
+		"MM",
+		"NA",
+		"NR",
+		"NP",
+		"NL",
+		"NC",
+		"NZ",
+		"NI",
+		"NE",
+		"NG",
+		"NU",
+		"NF",
+		"MP",
+		"NO",
+		"OM",
+		"PK",
+		"PW",
+		"PS",
+		"PA",
+		"PG",
+		"PY",
+		"PE",
+		"PH",
+		"PN",
+		"PL",
+		"PT",
+		"PR",
+		"QA",
+		"RE",
+		"RO",
+		"RU",
+		"RW",
+		"BL",
+		"SH",
+		"KN",
+		"LC",
+		"MF",
+		"PM",
+		"VC",
+		"WS",
+		"SM",
+		"ST",
+		"SA",
+		"SN",
+		"RS",
+		"SC",
+		"SL",
+		"SG",
+		"SX",
+		"SK",
+		"SI",
+		"SB",
+		"SO",
+		"ZA",
+		"GS",
+		"SS",
+		"ES",
+		"LK",
+		"SD",
+		"SR",
+		"SJ",
+		"SZ",
+		"SE",
+		"CH",
+		"SY",
+		"TW",
+		"TJ",
+		"TZ",
+		"TH",
+		"TL",
+		"TG",
+		"TK",
+		"TO",
+		"TT",
+		"TN",
+		"TR",
+		"TM",
+		"TC",
+		"TV",
+		"UG",
+		"UA",
+		"AE",
+		"GB",
+		"US",
+		"UM",
+		"UY",
+		"UZ",
+		"VU",
+		"VE",
+		"VN",
+		"VG",
+		"VI",
+		"WF",
+		"EH",
+		"YE",
+		"ZM",
+		"ZW"
+	    ],
+	    "alpha3": [
+		"AFG",
+		"ALA",
+		"ALB",
+		"DZA",
+		"ASM",
+		"AND",
+		"AGO",
+		"AIA",
+		"ATA",
+		"ATG",
+		"ARG",
+		"ARM",
+		"ABW",
+		"AUS",
+		"AUT",
+		"AZE",
+		"BHS",
+		"BHR",
+		"BGD",
+		"BRB",
+		"BLR",
+		"BEL",
+		"BLZ",
+		"BEN",
+		"BMU",
+		"BTN",
+		"BOL",
+		"BES",
+		"BIH",
+		"BWA",
+		"BVT",
+		"BRA",
+		"IOT",
+		"BRN",
+		"BGR",
+		"BFA",
+		"BDI",
+		"CPV",
+		"KHM",
+		"CMR",
+		"CAN",
+		"CYM",
+		"CAF",
+		"TCD",
+		"CHL",
+		"CHN",
+		"CXR",
+		"CCK",
+		"COL",
+		"COM",
+		"COG",
+		"COD",
+		"COK",
+		"CRI",
+		"CIV",
+		"HRV",
+		"CUB",
+		"CUW",
+		"CYP",
+		"CZE",
+		"DNK",
+		"DJI",
+		"DMA",
+		"DOM",
+		"ECU",
+		"EGY",
+		"SLV",
+		"GNQ",
+		"ERI",
+		"EST",
+		"ETH",
+		"FLK",
+		"FRO",
+		"FJI",
+		"FIN",
+		"FRA",
+		"GUF",
+		"PYF",
+		"ATF",
+		"GAB",
+		"GMB",
+		"GEO",
+		"DEU",
+		"GHA",
+		"GIB",
+		"GRC",
+		"GRL",
+		"GRD",
+		"GLP",
+		"GUM",
+		"GTM",
+		"GGY",
+		"GIN",
+		"GNB",
+		"GUY",
+		"HTI",
+		"HMD",
+		"VAT",
+		"HND",
+		"HKG",
+		"HUN",
+		"ISL",
+		"IND",
+		"IDN",
+		"IRN",
+		"IRQ",
+		"IRL",
+		"IMN",
+		"ISR",
+		"ITA",
+		"JAM",
+		"JPN",
+		"JEY",
+		"JOR",
+		"KAZ",
+		"KEN",
+		"KIR",
+		"PRK",
+		"KOR",
+		"KWT",
+		"KGZ",
+		"LAO",
+		"LVA",
+		"LBN",
+		"LSO",
+		"LBR",
+		"LBY",
+		"LIE",
+		"LTU",
+		"LUX",
+		"MAC",
+		"MKD",
+		"MDG",
+		"MWI",
+		"MYS",
+		"MDV",
+		"MLI",
+		"MLT",
+		"MHL",
+		"MTQ",
+		"MRT",
+		"MUS",
+		"MYT",
+		"MEX",
+		"FSM",
+		"MDA",
+		"MCO",
+		"MNG",
+		"MNE",
+		"MSR",
+		"MAR",
+		"MOZ",
+		"MMR",
+		"NAM",
+		"NRU",
+		"NPL",
+		"NLD",
+		"NCL",
+		"NZL",
+		"NIC",
+		"NER",
+		"NGA",
+		"NIU",
+		"NFK",
+		"MNP",
+		"NOR",
+		"OMN",
+		"PAK",
+		"PLW",
+		"PSE",
+		"PAN",
+		"PNG",
+		"PRY",
+		"PER",
+		"PHL",
+		"PCN",
+		"POL",
+		"PRT",
+		"PRI",
+		"QAT",
+		"REU",
+		"ROU",
+		"RUS",
+		"RWA",
+		"BLM",
+		"SHN",
+		"KNA",
+		"LCA",
+		"MAF",
+		"SPM",
+		"VCT",
+		"WSM",
+		"SMR",
+		"STP",
+		"SAU",
+		"SEN",
+		"SRB",
+		"SYC",
+		"SLE",
+		"SGP",
+		"SXM",
+		"SVK",
+		"SVN",
+		"SLB",
+		"SOM",
+		"ZAF",
+		"SGS",
+		"SSD",
+		"ESP",
+		"LKA",
+		"SDN",
+		"SUR",
+		"SJM",
+		"SWZ",
+		"SWE",
+		"CHE",
+		"SYR",
+		"TWN",
+		"TJK",
+		"TZA",
+		"THA",
+		"TLS",
+		"TGO",
+		"TKL",
+		"TON",
+		"TTO",
+		"TUN",
+		"TUR",
+		"TKM",
+		"TCA",
+		"TUV",
+		"UGA",
+		"UKR",
+		"ARE",
+		"GBR",
+		"USA",
+		"UMI",
+		"URY",
+		"UZB",
+		"VUT",
+		"VEN",
+		"VNM",
+		"VGB",
+		"VIR",
+		"WLF",
+		"ESH",
+		"YEM",
+		"ZMB",
+		"ZWE"
+	    ],
+	    "numeric": [
+		"004",
+		"248",
+		"008",
+		"012",
+		"016",
+		"020",
+		"024",
+		"660",
+		"010",
+		"028",
+		"032",
+		"051",
+		"533",
+		"036",
+		"040",
+		"031",
+		"044",
+		"048",
+		"050",
+		"052",
+		"112",
+		"056",
+		"084",
+		"204",
+		"060",
+		"064",
+		"068",
+		"535",
+		"070",
+		"072",
+		"074",
+		"076",
+		"086",
+		"096",
+		"100",
+		"854",
+		"108",
+		"132",
+		"116",
+		"120",
+		"124",
+		"136",
+		"140",
+		"148",
+		"152",
+		"156",
+		"162",
+		"166",
+		"170",
+		"174",
+		"178",
+		"180",
+		"184",
+		"188",
+		"384",
+		"191",
+		"192",
+		"531",
+		"196",
+		"203",
+		"208",
+		"262",
+		"212",
+		"214",
+		"218",
+		"818",
+		"222",
+		"226",
+		"232",
+		"233",
+		"231",
+		"238",
+		"234",
+		"242",
+		"246",
+		"250",
+		"254",
+		"258",
+		"260",
+		"266",
+		"270",
+		"268",
+		"276",
+		"288",
+		"292",
+		"300",
+		"304",
+		"308",
+		"312",
+		"316",
+		"320",
+		"831",
+		"324",
+		"624",
+		"328",
+		"332",
+		"334",
+		"336",
+		"340",
+		"344",
+		"348",
+		"352",
+		"356",
+		"360",
+		"364",
+		"368",
+		"372",
+		"833",
+		"376",
+		"380",
+		"388",
+		"392",
+		"832",
+		"400",
+		"398",
+		"404",
+		"296",
+		"408",
+		"410",
+		"414",
+		"417",
+		"418",
+		"428",
+		"422",
+		"426",
+		"430",
+		"434",
+		"438",
+		"440",
+		"442",
+		"446",
+		"807",
+		"450",
+		"454",
+		"458",
+		"462",
+		"466",
+		"470",
+		"584",
+		"474",
+		"478",
+		"480",
+		"175",
+		"484",
+		"583",
+		"498",
+		"492",
+		"496",
+		"499",
+		"500",
+		"504",
+		"508",
+		"104",
+		"516",
+		"520",
+		"524",
+		"528",
+		"540",
+		"554",
+		"558",
+		"562",
+		"566",
+		"570",
+		"574",
+		"580",
+		"578",
+		"512",
+		"586",
+		"585",
+		"275",
+		"591",
+		"598",
+		"600",
+		"604",
+		"608",
+		"612",
+		"616",
+		"620",
+		"630",
+		"634",
+		"638",
+		"642",
+		"643",
+		"646",
+		"652",
+		"654",
+		"659",
+		"662",
+		"663",
+		"666",
+		"670",
+		"882",
+		"674",
+		"678",
+		"682",
+		"686",
+		"688",
+		"690",
+		"694",
+		"702",
+		"534",
+		"703",
+		"705",
+		"090",
+		"706",
+		"710",
+		"239",
+		"728",
+		"724",
+		"144",
+		"729",
+		"740",
+		"744",
+		"748",
+		"752",
+		"756",
+		"760",
+		"158",
+		"762",
+		"834",
+		"764",
+		"626",
+		"768",
+		"772",
+		"776",
+		"780",
+		"788",
+		"792",
+		"795",
+		"796",
+		"798",
+		"800",
+		"804",
+		"784",
+		"826",
+		"840",
+		"581",
+		"858",
+		"860",
+		"548",
+		"862",
+		"704",
+		"092",
+		"850",
+		"876",
+		"732",
+		"887",
+		"894",
+		"716"
+	    ]
+	}
+    }
+}
