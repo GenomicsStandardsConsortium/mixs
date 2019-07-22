@@ -11,4 +11,6 @@ To create a single entry point to all minimum information checklists from the GS
 
 The five checklists that are currently under MIxS share the same central set of core descriptors, but have checklist specific descriptors as well. Additionally, they enable a detailed description of environment through the use of optional environmental packages.
 
-All checklists in MIxS5 can be accessed using the Excel spreadsheet in this folder. Full instructions are on the first sheet, in yellow.
+All fuve checklists in MIxS 5 can be accessed using the Excel spreadsheet in this folder. Full instructions for understanding the file are on the first sheet, in yellow.
+
+The Environmental Packages that are part of MIxS 5 are also available for download from this directory.
