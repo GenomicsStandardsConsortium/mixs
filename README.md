@@ -7,3 +7,4 @@
 
 Store the Spreadsheet files for current MIxS releases
 
+The old content of this repository has moved to repo mixs-ng
