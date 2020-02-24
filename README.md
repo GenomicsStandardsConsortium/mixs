@@ -7,7 +7,7 @@
 
 Store the Spreadsheet files for current MIxS releases. This repo currently houses versions 4 and 5, and may house future versions. Older versions of the MIxS standard are available at https://github.com/GenomicsStandardsConsortium/mixs-legacy.
 
-**To request changes to the MIxS standards (up to and includeing v.5, released in 2019), please use the issue tracker in this repo.**
+**To request changes to the MIxS standards, please use the issue tracker in this repo.**
 
 The old content of this repository has moved to https://github.com/GenomicsStandardsConsortium/mixs-ng
 
