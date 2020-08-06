@@ -1,1 +1,1 @@
-MIxS 6 release notees
+MIxS 6 release notes
