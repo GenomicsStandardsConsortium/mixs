@@ -5,13 +5,14 @@
 
 # Purpose
 
-Store the Spreadsheet files for current MIxS releases. This repo currently houses versions 4 and 5, and may house future versions. Older versions of the MIxS standard are available at https://github.com/GenomicsStandardsConsortium/mixs-legacy.
+Store the Spreadsheet files for current MIxS releases. This repo houses all versions from v.4 onward. Older versions of the MIxS standard are available at https://github.com/GenomicsStandardsConsortium/mixs-legacy.
+
+Beginning with v.6, MIxSis being managed using the [https://linkml.io/](LinkML toolkit).
 
 **To request changes to the MIxS standards, please use the issue tracker in this repo.**
 
-The old content of this repository has moved to https://github.com/GenomicsStandardsConsortium/mixs-ng
 
-We are working to serve MIxS as RDF and JSON. The repo for that work is https://github.com/GenomicsStandardsConsortium/mixs-rdf.
+Out of date content of this repository has moved to https://github.com/GenomicsStandardsConsortium/mixs-ng
 
 
 # Reuse and citation of content on this repository
