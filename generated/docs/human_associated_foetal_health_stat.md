@@ -1,0 +1,44 @@
+
+# Slot: foetal_health_stat
+
+
+Specification of foetal health status, should also include abortion
+
+URI: [mixs.vocab:human_associated_foetal_health_stat](https://w3id.org/mixs/vocab/human_associated_foetal_health_stat)
+
+
+## Domain and Range
+
+[Human-associated](Human-associated.md) &#8594;  <sub>0..1</sub> [String](types/String.md)
+
+## Parents
+
+ *  is_a: [foetal_health_stat](foetal_health_stat.md)
+
+## Children
+
+
+## Used by
+
+ * [Human-associated](Human-associated.md)
+ * [Human-associatedMIGSBacteria](Human-associatedMIGSBacteria.md)
+ * [Human-associatedMIGSEukaryote](Human-associatedMIGSEukaryote.md)
+ * [Human-associatedMIGSOrg](Human-associatedMIGSOrg.md)
+ * [Human-associatedMIGSPlant](Human-associatedMIGSPlant.md)
+ * [Human-associatedMIGSVirus](Human-associatedMIGSVirus.md)
+ * [Human-associatedMIMAG](Human-associatedMIMAG.md)
+ * [Human-associatedMIMARKSSpecimen](Human-associatedMIMARKSSpecimen.md)
+ * [Human-associatedMIMARKSSurvey](Human-associatedMIMARKSSurvey.md)
+ * [Human-associatedMIMS](Human-associatedMIMS.md)
+ * [Human-associatedMISAG](Human-associatedMISAG.md)
+ * [Human-associatedMIUVIG](Human-associatedMIUVIG.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | amniotic fluid/foetal health status |
+| **Mappings:** | | MIXS:0000275 |
+| **Comments:** | | Expected value: health status |
+| **Examples:** | | Example(value='', description=None) |
+

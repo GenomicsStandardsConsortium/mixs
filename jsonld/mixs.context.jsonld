@@ -1,0 +1,2813 @@
+{
+   "_comments": "Auto generated from mixs.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-01-19T10:26:45\n    Schema: MIxS\n    \n    id: http://w3id.org/mixs\n    description: Minimal Information about any Sequence Standard\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "@context": {
+      "MIGS": "https://w3id.org/mixs/migs/",
+      "MIXS": "https://w3id.org/mixs/terms/",
+      "linkml": "https://w3id.org/linkml/",
+      "mixs.vocab": "https://w3id.org/mixs/vocab/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "@vocab": "https://w3id.org/mixs/vocab/",
+      "abs_air_humidity": {
+         "@type": "@id",
+         "@id": "MIXS:0000122"
+      },
+      "adapters": {
+         "@id": "MIXS:0000048"
+      },
+      "add_recov_method": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001009"
+      },
+      "additional_info": {
+         "@id": "MIXS:0000300"
+      },
+      "address": {
+         "@id": "MIXS:0000218"
+      },
+      "adj_room": {
+         "@id": "MIXS:0000219"
+      },
+      "aero_struc": {
+         "@id": "MIXS:0000773"
+      },
+      "agrochem_addition": {
+         "@id": "MIXS:0000639"
+      },
+      "air_particulate_matter_concentration": {
+         "@id": "MIXS:0000108"
+      },
+      "air_temp_regm": {
+         "@id": "MIXS:0000551"
+      },
+      "al_sat": {
+         "@type": "@id",
+         "@id": "MIXS:0000607"
+      },
+      "al_sat_meth": {
+         "@id": "MIXS:0000324"
+      },
+      "alkalinity": {
+         "@type": "@id",
+         "@id": "MIXS:0000421"
+      },
+      "alkalinity_method": {
+         "@id": "MIXS:0000298"
+      },
+      "alkyl_diethers": {
+         "@type": "@id",
+         "@id": "MIXS:0000490"
+      },
+      "alt": {
+         "@type": "@id",
+         "@id": "MIXS:0000094"
+      },
+      "aminopept_act": {
+         "@type": "@id",
+         "@id": "MIXS:0000172"
+      },
+      "ammonium": {
+         "@type": "@id",
+         "@id": "MIXS:0000427"
+      },
+      "amniotic_fluid_color": {
+         "@id": "MIXS:0000276"
+      },
+      "amount_light": {
+         "@type": "@id",
+         "@id": "MIXS:0000140"
+      },
+      "ances_data": {
+         "@id": "MIXS:0000247"
+      },
+      "annot": {
+         "@id": "MIXS:0000059"
+      },
+      "annual_precpt": {
+         "@type": "@id",
+         "@id": "MIXS:0000644"
+      },
+      "annual_temp": {
+         "@type": "@id",
+         "@id": "MIXS:0000642"
+      },
+      "antibiotic_regm": {
+         "@id": "MIXS:0000553"
+      },
+      "api": {
+         "@type": "@id",
+         "@id": "MIXS:0000157"
+      },
+      "arch_struc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000774"
+      },
+      "aromatics_pc": {
+         "@id": "MIXS:0000133"
+      },
+      "asphaltenes_pc": {
+         "@id": "MIXS:0000135"
+      },
+      "assembly_name": {
+         "@id": "MIXS:0000057"
+      },
+      "assembly_qual": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000056"
+      },
+      "assembly_software": {
+         "@id": "MIXS:0000058"
+      },
+      "associated_resource": {
+         "@id": "MIXS:0000091"
+      },
+      "atmospheric_data": {
+         "@id": "MIXS:0001097"
+      },
+      "avg_dew_point": {
+         "@type": "@id",
+         "@id": "MIXS:0000141"
+      },
+      "avg_occup": {
+         "@type": "xsd:double",
+         "@id": "MIXS:0000775"
+      },
+      "avg_temp": {
+         "@type": "@id",
+         "@id": "MIXS:0000142"
+      },
+      "bac_prod": {
+         "@type": "@id",
+         "@id": "MIXS:0000683"
+      },
+      "bac_resp": {
+         "@type": "@id",
+         "@id": "MIXS:0000684"
+      },
+      "bacteria_carb_prod": {
+         "@type": "@id",
+         "@id": "MIXS:0000173"
+      },
+      "barometric_press": {
+         "@type": "@id",
+         "@id": "MIXS:0000096"
+      },
+      "basin": {
+         "@id": "MIXS:0000290"
+      },
+      "bathroom_count": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000776"
+      },
+      "bedroom_count": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000777"
+      },
+      "benzene": {
+         "@type": "@id",
+         "@id": "MIXS:0000153"
+      },
+      "bin_param": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000077"
+      },
+      "bin_software": {
+         "@id": "MIXS:0000078"
+      },
+      "biochem_oxygen_dem": {
+         "@type": "@id",
+         "@id": "MIXS:0000653"
+      },
+      "biocide": {
+         "@id": "MIXS:0001011"
+      },
+      "biocide_admin_method": {
+         "@id": "MIXS:0000456"
+      },
+      "biol_stat": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000858"
+      },
+      "biomass": {
+         "@id": "MIXS:0000174"
+      },
+      "biotic_regm": {
+         "@id": "MIXS:0001038"
+      },
+      "biotic_relationship": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000028"
+      },
+      "birth_control": {
+         "@id": "MIXS:0000286"
+      },
+      "bishomohopanol": {
+         "@type": "@id",
+         "@id": "MIXS:0000175"
+      },
+      "blood_blood_disord": {
+         "@id": "MIXS:0000271"
+      },
+      "blood_press_diast": {
+         "@type": "@id",
+         "@id": "MIXS:0000258"
+      },
+      "blood_press_syst": {
+         "@type": "@id",
+         "@id": "MIXS:0000259"
+      },
+      "bromide": {
+         "@type": "@id",
+         "@id": "MIXS:0000176"
+      },
+      "build_docs": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000787"
+      },
+      "build_occup_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000761"
+      },
+      "building_setting": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000768"
+      },
+      "built_struc_age": {
+         "@type": "@id",
+         "@id": "MIXS:0000145"
+      },
+      "built_struc_set": {
+         "@id": "MIXS:0000778"
+      },
+      "built_struc_type": {
+         "@id": "MIXS:0000721"
+      },
+      "calcium": {
+         "@type": "@id",
+         "@id": "MIXS:0000432"
+      },
+      "carb_dioxide": {
+         "@type": "@id",
+         "@id": "MIXS:0000097"
+      },
+      "carb_monoxide": {
+         "@type": "@id",
+         "@id": "MIXS:0000098"
+      },
+      "carb_nitro_ratio": {
+         "@type": "@id",
+         "@id": "MIXS:0000310"
+      },
+      "ceil_area": {
+         "@type": "@id",
+         "@id": "MIXS:0000148"
+      },
+      "ceil_cond": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000779"
+      },
+      "ceil_finish_mat": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000780"
+      },
+      "ceil_struc": {
+         "@id": "MIXS:0000782"
+      },
+      "ceil_texture": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000783"
+      },
+      "ceil_thermal_mass": {
+         "@type": "@id",
+         "@id": "MIXS:0000143"
+      },
+      "ceil_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000784"
+      },
+      "ceil_water_mold": {
+         "@id": "MIXS:0000781"
+      },
+      "chem_administration": {
+         "@id": "MIXS:0000751"
+      },
+      "chem_mutagen": {
+         "@id": "MIXS:0000555"
+      },
+      "chem_oxygen_dem": {
+         "@type": "@id",
+         "@id": "MIXS:0000656"
+      },
+      "chem_treat_method": {
+         "@id": "MIXS:0000457"
+      },
+      "chem_treatment": {
+         "@id": "MIXS:0001012"
+      },
+      "chimera_check": {
+         "@id": "MIXS:0000052"
+      },
+      "chloride": {
+         "@type": "@id",
+         "@id": "MIXS:0000429"
+      },
+      "chlorophyll": {
+         "@type": "@id",
+         "@id": "MIXS:0000177"
+      },
+      "climate_environment": {
+         "@id": "MIXS:0001040"
+      },
+      "collection_date": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0000011"
+      },
+      "compl_appr": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000071"
+      },
+      "compl_score": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000069"
+      },
+      "compl_software": {
+         "@id": "MIXS:0000070"
+      },
+      "conduc": {
+         "@type": "@id",
+         "@id": "MIXS:0000692"
+      },
+      "contam_score": {
+         "@id": "MIXS:0000072"
+      },
+      "contam_screen_input": {
+         "@id": "MIXS:0000005"
+      },
+      "contam_screen_param": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000073"
+      },
+      "cool_syst_id": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000785"
+      },
+      "crop_rotation": {
+         "@id": "MIXS:0000318"
+      },
+      "cult_root_med": {
+         "@id": "MIXS:0001041"
+      },
+      "cur_land_use": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001080"
+      },
+      "cur_vegetation": {
+         "@id": "MIXS:0000312"
+      },
+      "cur_vegetation_meth": {
+         "@id": "MIXS:0000314"
+      },
+      "date_last_rain": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0000786"
+      },
+      "decontam_software": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000074"
+      },
+      "density": {
+         "@type": "@id",
+         "@id": "MIXS:0000435"
+      },
+      "depos_env": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000992"
+      },
+      "depth": {
+         "@type": "@id",
+         "@id": "MIXS:0000018"
+      },
+      "dermatology_disord": {
+         "@id": "MIXS:0000284"
+      },
+      "detec_type": {
+         "@id": "MIXS:0000084"
+      },
+      "dew_point": {
+         "@type": "@id",
+         "@id": "MIXS:0000129"
+      },
+      "diet_last_six_month": {
+         "@id": "MIXS:0000266"
+      },
+      "diether_lipids": {
+         "@id": "MIXS:0000178"
+      },
+      "diss_carb_dioxide": {
+         "@type": "@id",
+         "@id": "MIXS:0000436"
+      },
+      "diss_hydrogen": {
+         "@type": "@id",
+         "@id": "MIXS:0000179"
+      },
+      "diss_inorg_carb": {
+         "@type": "@id",
+         "@id": "MIXS:0000434"
+      },
+      "diss_inorg_nitro": {
+         "@type": "@id",
+         "@id": "MIXS:0000698"
+      },
+      "diss_inorg_phosp": {
+         "@type": "@id",
+         "@id": "MIXS:0000106"
+      },
+      "diss_iron": {
+         "@type": "@id",
+         "@id": "MIXS:0000139"
+      },
+      "diss_org_carb": {
+         "@type": "@id",
+         "@id": "MIXS:0000433"
+      },
+      "diss_org_nitro": {
+         "@type": "@id",
+         "@id": "MIXS:0000162"
+      },
+      "diss_oxygen": {
+         "@type": "@id",
+         "@id": "MIXS:0000119"
+      },
+      "diss_oxygen_fluid": {
+         "@type": "@id",
+         "@id": "MIXS:0000438"
+      },
+      "dominant_hand": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000944"
+      },
+      "door_comp_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000795"
+      },
+      "door_cond": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000788"
+      },
+      "door_direct": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000789"
+      },
+      "door_loc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000790"
+      },
+      "door_mat": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000791"
+      },
+      "door_move": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000792"
+      },
+      "door_size": {
+         "@type": "@id",
+         "@id": "MIXS:0000158"
+      },
+      "door_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000794"
+      },
+      "door_type_metal": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000796"
+      },
+      "door_type_wood": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000797"
+      },
+      "door_water_mold": {
+         "@id": "MIXS:0000793"
+      },
+      "douche": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0000967"
+      },
+      "down_par": {
+         "@type": "@id",
+         "@id": "MIXS:0000703"
+      },
+      "drainage_class": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001085"
+      },
+      "drawings": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000798"
+      },
+      "drug_usage": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000894"
+      },
+      "efficiency_percent": {
+         "@type": "@id",
+         "@id": "MIXS:0000657"
+      },
+      "elev": {
+         "@type": "@id",
+         "@id": "MIXS:0000093"
+      },
+      "elevator": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000799"
+      },
+      "emulsions": {
+         "@id": "MIXS:0000660"
+      },
+      "encoded_traits": {
+         "@id": "MIXS:0000034"
+      },
+      "env_broad_scale": {
+         "@id": "MIXS:0000012"
+      },
+      "env_local_scale": {
+         "@id": "MIXS:0000013"
+      },
+      "env_medium": {
+         "@id": "MIXS:0000014"
+      },
+      "env_package": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000019"
+      },
+      "escalator": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000800"
+      },
+      "estimated_size": {
+         "@id": "MIXS:0000024"
+      },
+      "ethnicity": {
+         "@id": "MIXS:0000895"
+      },
+      "ethylbenzene": {
+         "@type": "@id",
+         "@id": "MIXS:0000155"
+      },
+      "exp_duct": {
+         "@type": "@id",
+         "@id": "MIXS:0000144"
+      },
+      "exp_pipe": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000220"
+      },
+      "experimental_factor": {
+         "@id": "MIXS:0000008"
+      },
+      "ext_door": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000170"
+      },
+      "ext_wall_orient": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000817"
+      },
+      "ext_window_orient": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000818"
+      },
+      "extrachrom_elements": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000023"
+      },
+      "extreme_event": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0000320"
+      },
+      "extreme_salinity": {
+         "@type": "@id",
+         "@id": "MIXS:0000651"
+      },
+      "fao_class": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001083"
+      },
+      "feat_pred": {
+         "@id": "MIXS:0000061"
+      },
+      "fertilizer_regm": {
+         "@id": "MIXS:0000556"
+      },
+      "field": {
+         "@id": "MIXS:0000291"
+      },
+      "filter_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000765"
+      },
+      "fire": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0001086"
+      },
+      "fireplace_type": {
+         "@id": "MIXS:0000802"
+      },
+      "flooding": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0000319"
+      },
+      "floor_age": {
+         "@type": "@id",
+         "@id": "MIXS:0000164"
+      },
+      "floor_area": {
+         "@type": "@id",
+         "@id": "MIXS:0000165"
+      },
+      "floor_cond": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000803"
+      },
+      "floor_count": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000225"
+      },
+      "floor_finish_mat": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000804"
+      },
+      "floor_struc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000806"
+      },
+      "floor_thermal_mass": {
+         "@type": "@id",
+         "@id": "MIXS:0000166"
+      },
+      "floor_water_mold": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000805"
+      },
+      "fluor": {
+         "@type": "@id",
+         "@id": "MIXS:0000704"
+      },
+      "foetal_health_stat": {
+         "@id": "MIXS:0000275"
+      },
+      "freq_clean": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000226"
+      },
+      "freq_cook": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000227"
+      },
+      "fungicide_regm": {
+         "@id": "MIXS:0000557"
+      },
+      "furniture": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000807"
+      },
+      "gaseous_environment": {
+         "@id": "MIXS:0000558"
+      },
+      "gaseous_substances": {
+         "@id": "MIXS:0000661"
+      },
+      "gastrointest_disord": {
+         "@id": "MIXS:0000280"
+      },
+      "gender_restroom": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000808"
+      },
+      "genetic_mod": {
+         "@id": "MIXS:0000859"
+      },
+      "geo_loc_name": {
+         "@id": "MIXS:0000010"
+      },
+      "gestation_state": {
+         "@id": "MIXS:0000272"
+      },
+      "glucosidase_act": {
+         "@type": "@id",
+         "@id": "MIXS:0000137"
+      },
+      "gravidity": {
+         "@id": "MIXS:0000875"
+      },
+      "gravity": {
+         "@id": "MIXS:0000559"
+      },
+      "growth_facil": {
+         "@id": "MIXS:0001043"
+      },
+      "growth_habit": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001044"
+      },
+      "growth_hormone_regm": {
+         "@id": "MIXS:0000560"
+      },
+      "gynecologic_disord": {
+         "@id": "MIXS:0000288"
+      },
+      "hall_count": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000228"
+      },
+      "handidness": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000809"
+      },
+      "hc_produced": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000989"
+      },
+      "hcr": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000988"
+      },
+      "hcr_fw_salinity": {
+         "@type": "@id",
+         "@id": "MIXS:0000406"
+      },
+      "hcr_geol_age": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000993"
+      },
+      "hcr_pressure": {
+         "@id": "MIXS:0000395"
+      },
+      "hcr_temp": {
+         "@id": "MIXS:0000393"
+      },
+      "health_disease_stat": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000031"
+      },
+      "heat_cool_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000766"
+      },
+      "heat_deliv_loc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000810"
+      },
+      "heat_sys_deliv_meth": {
+         "@id": "MIXS:0000812"
+      },
+      "heat_system_id": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000833"
+      },
+      "heavy_metals": {
+         "@id": "MIXS:0000652"
+      },
+      "heavy_metals_meth": {
+         "@id": "MIXS:0000343"
+      },
+      "height_carper_fiber": {
+         "@type": "@id",
+         "@id": "MIXS:0000167"
+      },
+      "herbicide_regm": {
+         "@id": "MIXS:0000561"
+      },
+      "horizon_meth": {
+         "@id": "MIXS:0000321"
+      },
+      "host_age": {
+         "@type": "@id",
+         "@id": "MIXS:0000255"
+      },
+      "host_body_habitat": {
+         "@id": "MIXS:0000866"
+      },
+      "host_body_mass_index": {
+         "@type": "@id",
+         "@id": "MIXS:0000317"
+      },
+      "host_body_product": {
+         "@id": "MIXS:0000888"
+      },
+      "host_body_site": {
+         "@id": "MIXS:0000867"
+      },
+      "host_body_temp": {
+         "@type": "@id",
+         "@id": "MIXS:0000274"
+      },
+      "host_color": {
+         "@id": "MIXS:0000260"
+      },
+      "host_common_name": {
+         "@id": "MIXS:0000248"
+      },
+      "host_diet": {
+         "@id": "MIXS:0000869"
+      },
+      "host_disease_stat": {
+         "@id": "MIXS:0000031"
+      },
+      "host_dry_mass": {
+         "@type": "@id",
+         "@id": "MIXS:0000257"
+      },
+      "host_family_relation": {
+         "@id": "MIXS:0000872"
+      },
+      "host_genotype": {
+         "@id": "MIXS:0000365"
+      },
+      "host_growth_cond": {
+         "@id": "MIXS:0000871"
+      },
+      "host_height": {
+         "@type": "@id",
+         "@id": "MIXS:0000264"
+      },
+      "host_hiv_stat": {
+         "@id": "MIXS:0000265"
+      },
+      "host_infra_spec_name": {
+         "@id": "MIXS:0000253"
+      },
+      "host_infra_spec_rank": {
+         "@id": "MIXS:0000254"
+      },
+      "host_last_meal": {
+         "@id": "MIXS:0000870"
+      },
+      "host_length": {
+         "@type": "@id",
+         "@id": "MIXS:0000256"
+      },
+      "host_life_stage": {
+         "@id": "MIXS:0000251"
+      },
+      "host_occupation": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000896"
+      },
+      "host_phenotype": {
+         "@id": "MIXS:0000874"
+      },
+      "host_pred_appr": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000088"
+      },
+      "host_pred_est_acc": {
+         "@id": "MIXS:0000089"
+      },
+      "host_pulse": {
+         "@type": "@id",
+         "@id": "MIXS:0000333"
+      },
+      "host_sex": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000811"
+      },
+      "host_shape": {
+         "@id": "MIXS:0000261"
+      },
+      "host_spec_range": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000030"
+      },
+      "host_subject_id": {
+         "@id": "MIXS:0000861"
+      },
+      "host_subspecf_genlin": {
+         "@id": "MIXS:0001318"
+      },
+      "host_substrate": {
+         "@id": "MIXS:0000252"
+      },
+      "host_symbiont": {
+         "@id": "MIXS:0001298"
+      },
+      "host_taxid": {
+         "@id": "MIXS:0000250"
+      },
+      "host_tot_mass": {
+         "@type": "@id",
+         "@id": "MIXS:0000263"
+      },
+      "host_wet_mass": {
+         "@type": "@id",
+         "@id": "MIXS:0000567"
+      },
+      "hrt": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0000969"
+      },
+      "humidity": {
+         "@type": "@id",
+         "@id": "MIXS:0000100"
+      },
+      "humidity_regm": {
+         "@id": "MIXS:0000568"
+      },
+      "hysterectomy": {
+         "@id": "MIXS:0000287"
+      },
+      "ihmc_medication_code": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000884"
+      },
+      "indoor_space": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000763"
+      },
+      "indoor_surf": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000764"
+      },
+      "indust_eff_percent": {
+         "@type": "@id",
+         "@id": "MIXS:0000662"
+      },
+      "inorg_particles": {
+         "@id": "MIXS:0000664"
+      },
+      "inside_lux": {
+         "@type": "@id",
+         "@id": "MIXS:0000168"
+      },
+      "int_wall_cond": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000813"
+      },
+      "investigation_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000007"
+      },
+      "isol_growth_condt": {
+         "@id": "MIXS:0000003"
+      },
+      "iw_bt_date_well": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0001010"
+      },
+      "iwf": {
+         "@type": "@id",
+         "@id": "MIXS:0000455"
+      },
+      "kidney_disord": {
+         "@id": "MIXS:0000277"
+      },
+      "last_clean": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0000814"
+      },
+      "lat_lon": {
+         "@id": "MIXS:0000009"
+      },
+      "lib_layout": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000041"
+      },
+      "lib_reads_seqd": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000040"
+      },
+      "lib_screen": {
+         "@id": "MIXS:0000043"
+      },
+      "lib_size": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000039"
+      },
+      "lib_vector": {
+         "@id": "MIXS:0000042"
+      },
+      "light_intensity": {
+         "@type": "@id",
+         "@id": "MIXS:0000706"
+      },
+      "light_regm": {
+         "@id": "MIXS:0000569"
+      },
+      "light_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000769"
+      },
+      "link_addit_analys": {
+         "@id": "MIXS:0000340"
+      },
+      "link_class_info": {
+         "@id": "MIXS:0000329"
+      },
+      "link_climate_info": {
+         "@id": "MIXS:0000328"
+      },
+      "lithology": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000990"
+      },
+      "liver_disord": {
+         "@id": "MIXS:0000282"
+      },
+      "local_class": {
+         "@id": "MIXS:0000330"
+      },
+      "local_class_meth": {
+         "@id": "MIXS:0000331"
+      },
+      "mag_cov_software": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000080"
+      },
+      "magnesium": {
+         "@type": "@id",
+         "@id": "MIXS:0000431"
+      },
+      "maternal_health_stat": {
+         "@id": "MIXS:0000273"
+      },
+      "max_occup": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000229"
+      },
+      "mean_frict_vel": {
+         "@type": "@id",
+         "@id": "MIXS:0000498"
+      },
+      "mean_peak_frict_vel": {
+         "@type": "@id",
+         "@id": "MIXS:0000502"
+      },
+      "mech_struc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000815"
+      },
+      "mechanical_damage": {
+         "@id": "MIXS:0001052"
+      },
+      "medic_hist_perform": {
+         "@id": "MIXS:0000897"
+      },
+      "menarche": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0000965"
+      },
+      "menopause": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0000968"
+      },
+      "methane": {
+         "@type": "@id",
+         "@id": "MIXS:0000101"
+      },
+      "micro_biomass_meth": {
+         "@id": "MIXS:0000339"
+      },
+      "microbial_biomass": {
+         "@type": "@id",
+         "@id": "MIXS:0000650"
+      },
+      "mid": {
+         "@id": "MIXS:0000047"
+      },
+      "mineral_nutr_regm": {
+         "@id": "MIXS:0000570"
+      },
+      "misc_param": {
+         "@id": "MIXS:0000752"
+      },
+      "n_alkanes": {
+         "@id": "MIXS:0000503"
+      },
+      "neg_cont_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001321"
+      },
+      "nitrate": {
+         "@type": "@id",
+         "@id": "MIXS:0000425"
+      },
+      "nitrite": {
+         "@type": "@id",
+         "@id": "MIXS:0000426"
+      },
+      "nitro": {
+         "@type": "@id",
+         "@id": "MIXS:0000504"
+      },
+      "non_min_nutr_regm": {
+         "@id": "MIXS:0000571"
+      },
+      "nose_throat_disord": {
+         "@id": "MIXS:0000270"
+      },
+      "nucl_acid_amp": {
+         "@id": "MIXS:0000038"
+      },
+      "nucl_acid_ext": {
+         "@id": "MIXS:0000037"
+      },
+      "num_replicons": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000022"
+      },
+      "number_contig": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000060"
+      },
+      "number_pets": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000231"
+      },
+      "number_plants": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000230"
+      },
+      "number_resident": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000232"
+      },
+      "occup_density_samp": {
+         "@type": "xsd:double",
+         "@id": "MIXS:0000217"
+      },
+      "occup_document": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000816"
+      },
+      "occup_samp": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000772"
+      },
+      "org_carb": {
+         "@type": "@id",
+         "@id": "MIXS:0000508"
+      },
+      "org_count_qpcr_info": {
+         "@id": "MIXS:0000099"
+      },
+      "org_matter": {
+         "@type": "@id",
+         "@id": "MIXS:0000204"
+      },
+      "org_nitro": {
+         "@type": "@id",
+         "@id": "MIXS:0000205"
+      },
+      "org_particles": {
+         "@id": "MIXS:0000665"
+      },
+      "organism_count": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000103"
+      },
+      "otu_class_appr": {
+         "@id": "MIXS:0000085"
+      },
+      "otu_db": {
+         "@id": "MIXS:0000087"
+      },
+      "otu_seq_comp_appr": {
+         "@id": "MIXS:0000086"
+      },
+      "owc_tvdss": {
+         "@type": "@id",
+         "@id": "MIXS:0000405"
+      },
+      "oxy_stat_samp": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000753"
+      },
+      "oxygen": {
+         "@type": "@id",
+         "@id": "MIXS:0000104"
+      },
+      "part_org_carb": {
+         "@type": "@id",
+         "@id": "MIXS:0000515"
+      },
+      "part_org_nitro": {
+         "@type": "@id",
+         "@id": "MIXS:0000719"
+      },
+      "particle_class": {
+         "@id": "MIXS:0000206"
+      },
+      "pathogenicity": {
+         "@id": "MIXS:0000027"
+      },
+      "pcr_cond": {
+         "@id": "MIXS:0000049"
+      },
+      "pcr_primers": {
+         "@id": "MIXS:0000046"
+      },
+      "permeability": {
+         "@id": "MIXS:0000404"
+      },
+      "perturbation": {
+         "@id": "MIXS:0000754"
+      },
+      "pesticide_regm": {
+         "@id": "MIXS:0000573"
+      },
+      "pet_farm_animal": {
+         "@id": "MIXS:0000267"
+      },
+      "petroleum_hydrocarb": {
+         "@type": "@id",
+         "@id": "MIXS:0000516"
+      },
+      "ph": {
+         "@type": "xsd:double",
+         "@id": "MIXS:0001001"
+      },
+      "ph_meth": {
+         "@id": "MIXS:0001106"
+      },
+      "ph_regm": {
+         "@id": "MIXS:0001056"
+      },
+      "phaeopigments": {
+         "@id": "MIXS:0000180"
+      },
+      "phosphate": {
+         "@type": "@id",
+         "@id": "MIXS:0000505"
+      },
+      "phosplipid_fatt_acid": {
+         "@id": "MIXS:0000181"
+      },
+      "photon_flux": {
+         "@type": "@id",
+         "@id": "MIXS:0000725"
+      },
+      "plant_growth_med": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001057"
+      },
+      "plant_product": {
+         "@id": "MIXS:0001058"
+      },
+      "plant_sex": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001059"
+      },
+      "plant_struc": {
+         "@id": "MIXS:0001060"
+      },
+      "ploidy": {
+         "@id": "MIXS:0000021"
+      },
+      "pollutants": {
+         "@id": "MIXS:0000107"
+      },
+      "pool_dna_extracts": {
+         "@id": "MIXS:0000325"
+      },
+      "porosity": {
+         "@id": "MIXS:0000211"
+      },
+      "pos_cont_type": {
+         "@id": "MIXS:0001322"
+      },
+      "potassium": {
+         "@type": "@id",
+         "@id": "MIXS:0000430"
+      },
+      "pour_point": {
+         "@type": "@id",
+         "@id": "MIXS:0000127"
+      },
+      "pre_treatment": {
+         "@id": "MIXS:0000348"
+      },
+      "pred_genome_struc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000083"
+      },
+      "pred_genome_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000082"
+      },
+      "pregnancy": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0000966"
+      },
+      "pres_animal_insect": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000819"
+      },
+      "pressure": {
+         "@type": "@id",
+         "@id": "MIXS:0000412"
+      },
+      "prev_land_use_meth": {
+         "@id": "MIXS:0000316"
+      },
+      "previous_land_use": {
+         "@id": "MIXS:0000315"
+      },
+      "primary_prod": {
+         "@type": "@id",
+         "@id": "MIXS:0000728"
+      },
+      "primary_treatment": {
+         "@id": "MIXS:0000349"
+      },
+      "prod_rate": {
+         "@type": "@id",
+         "@id": "MIXS:0000452"
+      },
+      "prod_start_date": {
+         "@type": "xsd:date",
+         "@id": "MIXS:0001008"
+      },
+      "profile_position": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001084"
+      },
+      "project_name": {
+         "@id": "MIXS:0000092"
+      },
+      "propagation": {
+         "@id": "MIXS:0000033"
+      },
+      "pulmonary_disord": {
+         "@id": "MIXS:0000269"
+      },
+      "quad_pos": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000820"
+      },
+      "has_numeric_value": {
+         "@type": "xsd:double"
+      },
+      "radiation_regm": {
+         "@id": "MIXS:0000575"
+      },
+      "rainfall_regm": {
+         "@id": "MIXS:0000576"
+      },
+      "reactor_type": {
+         "@id": "MIXS:0000350"
+      },
+      "reassembly_bin": {
+         "@id": "MIXS:0000079"
+      },
+      "redox_potential": {
+         "@type": "@id",
+         "@id": "MIXS:0000182"
+      },
+      "ref_biomaterial": {
+         "@id": "MIXS:0000025"
+      },
+      "ref_db": {
+         "@id": "MIXS:0000062"
+      },
+      "rel_air_humidity": {
+         "@type": "@id",
+         "@id": "MIXS:0000121"
+      },
+      "rel_humidity_out": {
+         "@type": "@id",
+         "@id": "MIXS:0000188"
+      },
+      "rel_samp_loc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000821"
+      },
+      "rel_to_oxygen": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000015"
+      },
+      "reservoir": {
+         "@id": "MIXS:0000303"
+      },
+      "resins_pc": {
+         "@id": "MIXS:0000134"
+      },
+      "room_air_exch_rate": {
+         "@type": "@id",
+         "@id": "MIXS:0000169"
+      },
+      "room_architec_elem": {
+         "@id": "MIXS:0000233"
+      },
+      "room_condt": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000822"
+      },
+      "room_connected": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000826"
+      },
+      "room_count": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000234"
+      },
+      "room_dim": {
+         "@id": "MIXS:0000192"
+      },
+      "room_door_dist": {
+         "@id": "MIXS:0000193"
+      },
+      "room_door_share": {
+         "@id": "MIXS:0000242"
+      },
+      "room_hallway": {
+         "@id": "MIXS:0000238"
+      },
+      "room_loc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000823"
+      },
+      "room_moist_dam_hist": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000235"
+      },
+      "room_net_area": {
+         "@id": "MIXS:0000194"
+      },
+      "room_occup": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000236"
+      },
+      "room_samp_pos": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000824"
+      },
+      "room_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000825"
+      },
+      "room_vol": {
+         "@id": "MIXS:0000195"
+      },
+      "room_wall_share": {
+         "@id": "MIXS:0000243"
+      },
+      "room_window_count": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000237"
+      },
+      "root_cond": {
+         "@id": "MIXS:0001061"
+      },
+      "root_med_carbon": {
+         "@id": "MIXS:0000577"
+      },
+      "root_med_macronutr": {
+         "@id": "MIXS:0000578"
+      },
+      "root_med_micronutr": {
+         "@id": "MIXS:0000579"
+      },
+      "root_med_ph": {
+         "@type": "xsd:double",
+         "@id": "MIXS:0001062"
+      },
+      "root_med_regl": {
+         "@id": "MIXS:0000581"
+      },
+      "root_med_solid": {
+         "@id": "MIXS:0001063"
+      },
+      "root_med_suppl": {
+         "@id": "MIXS:0000580"
+      },
+      "salinity": {
+         "@type": "@id",
+         "@id": "MIXS:0000183"
+      },
+      "salinity_meth": {
+         "@id": "MIXS:0000341"
+      },
+      "salt_regm": {
+         "@id": "MIXS:0000582"
+      },
+      "samp_capt_status": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000860"
+      },
+      "samp_collec_device": {
+         "@id": "MIXS:0000002"
+      },
+      "samp_collec_method": {
+         "@id": "MIXS:0001225"
+      },
+      "samp_collect_point": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001015"
+      },
+      "samp_dis_stage": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000249"
+      },
+      "samp_floor": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000828"
+      },
+      "samp_loc_corr_rate": {
+         "@id": "MIXS:0000136"
+      },
+      "samp_mat_process": {
+         "@id": "MIXS:0000016"
+      },
+      "samp_md": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000413"
+      },
+      "samp_name": {
+         "@id": "MIXS:0001107"
+      },
+      "samp_preserv": {
+         "@id": "MIXS:0000463"
+      },
+      "samp_room_id": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000244"
+      },
+      "samp_salinity": {
+         "@type": "@id",
+         "@id": "MIXS:0000109"
+      },
+      "samp_size": {
+         "@type": "@id",
+         "@id": "MIXS:0000001"
+      },
+      "samp_sort_meth": {
+         "@id": "MIXS:0000216"
+      },
+      "samp_store_dur": {
+         "@id": "MIXS:0000116"
+      },
+      "samp_store_loc": {
+         "@id": "MIXS:0000755"
+      },
+      "samp_store_temp": {
+         "@type": "@id",
+         "@id": "MIXS:0000110"
+      },
+      "samp_subtype": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000999"
+      },
+      "samp_taxon_id": {
+         "@id": "MIXS:0001320"
+      },
+      "samp_time_out": {
+         "@type": "xsd:double",
+         "@id": "MIXS:0000196"
+      },
+      "samp_transport_cond": {
+         "@id": "MIXS:0000410"
+      },
+      "samp_tvdss": {
+         "@id": "MIXS:0000409"
+      },
+      "samp_type": {
+         "@id": "MIXS:0000998"
+      },
+      "samp_vol_we_dna_ext": {
+         "@type": "@id",
+         "@id": "MIXS:0000111"
+      },
+      "samp_weather": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000827"
+      },
+      "samp_well_name": {
+         "@id": "MIXS:0000296"
+      },
+      "saturates_pc": {
+         "@id": "MIXS:0000131"
+      },
+      "season": {
+         "@id": "MIXS:0000829"
+      },
+      "season_environment": {
+         "@id": "MIXS:0001068"
+      },
+      "season_precpt": {
+         "@type": "@id",
+         "@id": "MIXS:0000645"
+      },
+      "season_temp": {
+         "@type": "@id",
+         "@id": "MIXS:0000643"
+      },
+      "season_use": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000830"
+      },
+      "secondary_treatment": {
+         "@id": "MIXS:0000351"
+      },
+      "sediment_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001078"
+      },
+      "seq_meth": {
+         "@id": "MIXS:0000050"
+      },
+      "seq_quality_check": {
+         "@id": "MIXS:0000051"
+      },
+      "sewage_type": {
+         "@id": "MIXS:0000215"
+      },
+      "sexual_act": {
+         "@id": "MIXS:0000285"
+      },
+      "shad_dev_water_mold": {
+         "@id": "MIXS:0000834"
+      },
+      "shading_device_cond": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000831"
+      },
+      "shading_device_loc": {
+         "@id": "MIXS:0000832"
+      },
+      "shading_device_mat": {
+         "@id": "MIXS:0000245"
+      },
+      "shading_device_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000835"
+      },
+      "sieving": {
+         "@id": "MIXS:0000322"
+      },
+      "silicate": {
+         "@type": "@id",
+         "@id": "MIXS:0000184"
+      },
+      "sim_search_meth": {
+         "@id": "MIXS:0000063"
+      },
+      "single_cell_lysis_appr": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000076"
+      },
+      "single_cell_lysis_prot": {
+         "@id": "MIXS:0000054"
+      },
+      "size_frac": {
+         "@id": "MIXS:0000017"
+      },
+      "size_frac_low": {
+         "@type": "@id",
+         "@id": "MIXS:0000735"
+      },
+      "size_frac_up": {
+         "@type": "@id",
+         "@id": "MIXS:0000736"
+      },
+      "slope_aspect": {
+         "@type": "@id",
+         "@id": "MIXS:0000647"
+      },
+      "slope_gradient": {
+         "@type": "@id",
+         "@id": "MIXS:0000646"
+      },
+      "sludge_retent_time": {
+         "@type": "@id",
+         "@id": "MIXS:0000669"
+      },
+      "smoker": {
+         "@id": "MIXS:0000262"
+      },
+      "sodium": {
+         "@type": "@id",
+         "@id": "MIXS:0000428"
+      },
+      "soil_horizon": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001082"
+      },
+      "soil_text_measure": {
+         "@type": "@id",
+         "@id": "MIXS:0000335"
+      },
+      "soil_texture_meth": {
+         "@id": "MIXS:0000336"
+      },
+      "soil_type": {
+         "@id": "MIXS:0000332"
+      },
+      "soil_type_meth": {
+         "@id": "MIXS:0000334"
+      },
+      "solar_irradiance": {
+         "@type": "@id",
+         "@id": "MIXS:0000112"
+      },
+      "soluble_inorg_mat": {
+         "@id": "MIXS:0000672"
+      },
+      "soluble_org_mat": {
+         "@id": "MIXS:0000673"
+      },
+      "soluble_react_phosp": {
+         "@type": "@id",
+         "@id": "MIXS:0000738"
+      },
+      "sop": {
+         "@id": "MIXS:0000090"
+      },
+      "sort_tech": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000075"
+      },
+      "source_mat_id": {
+         "@id": "MIXS:0000026"
+      },
+      "source_uvig": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000035"
+      },
+      "space_typ_state": {
+         "@id": "MIXS:0000770"
+      },
+      "special_diet": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000905"
+      },
+      "specific": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000836"
+      },
+      "specific_host": {
+         "@id": "MIXS:0000029"
+      },
+      "specific_humidity": {
+         "@type": "@id",
+         "@id": "MIXS:0000214"
+      },
+      "sr_dep_env": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000996"
+      },
+      "sr_geol_age": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000997"
+      },
+      "sr_kerog_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000994"
+      },
+      "sr_lithology": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000995"
+      },
+      "standing_water_regm": {
+         "@id": "MIXS:0001069"
+      },
+      "store_cond": {
+         "@id": "MIXS:0000327"
+      },
+      "study_complt_stat": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000898"
+      },
+      "submitted_to_insdc": {
+         "@id": "MIXS:0000004"
+      },
+      "subspecf_gen_lin": {
+         "@id": "MIXS:0000020"
+      },
+      "substructure_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000767"
+      },
+      "sulfate": {
+         "@type": "@id",
+         "@id": "MIXS:0000423"
+      },
+      "sulfate_fw": {
+         "@type": "@id",
+         "@id": "MIXS:0000407"
+      },
+      "sulfide": {
+         "@type": "@id",
+         "@id": "MIXS:0000424"
+      },
+      "surf_air_cont": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000759"
+      },
+      "surf_humidity": {
+         "@type": "@id",
+         "@id": "MIXS:0000123"
+      },
+      "surf_material": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000758"
+      },
+      "surf_moisture": {
+         "@type": "@id",
+         "@id": "MIXS:0000128"
+      },
+      "surf_moisture_ph": {
+         "@type": "xsd:double",
+         "@id": "MIXS:0000760"
+      },
+      "surf_temp": {
+         "@type": "@id",
+         "@id": "MIXS:0000125"
+      },
+      "suspend_part_matter": {
+         "@type": "@id",
+         "@id": "MIXS:0000741"
+      },
+      "suspend_solids": {
+         "@id": "MIXS:0000150"
+      },
+      "tan": {
+         "@type": "@id",
+         "@id": "MIXS:0000120"
+      },
+      "target_gene": {
+         "@id": "MIXS:0000044"
+      },
+      "target_subfragment": {
+         "@id": "MIXS:0000045"
+      },
+      "tax_class": {
+         "@id": "MIXS:0000064"
+      },
+      "tax_ident": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000053"
+      },
+      "temp": {
+         "@type": "@id",
+         "@id": "MIXS:0000113"
+      },
+      "temp_out": {
+         "@type": "@id",
+         "@id": "MIXS:0000197"
+      },
+      "tertiary_treatment": {
+         "@id": "MIXS:0000352"
+      },
+      "tidal_stage": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000750"
+      },
+      "tillage": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0001081"
+      },
+      "time_last_toothbrush": {
+         "@id": "MIXS:0000924"
+      },
+      "time_since_last_wash": {
+         "@id": "MIXS:0000943"
+      },
+      "tiss_cult_growth_med": {
+         "@id": "MIXS:0001070"
+      },
+      "toluene": {
+         "@type": "@id",
+         "@id": "MIXS:0000154"
+      },
+      "tot_carb": {
+         "@type": "@id",
+         "@id": "MIXS:0000525"
+      },
+      "tot_depth_water_col": {
+         "@type": "@id",
+         "@id": "MIXS:0000634"
+      },
+      "tot_diss_nitro": {
+         "@type": "@id",
+         "@id": "MIXS:0000744"
+      },
+      "tot_inorg_nitro": {
+         "@type": "@id",
+         "@id": "MIXS:0000745"
+      },
+      "tot_iron": {
+         "@type": "@id",
+         "@id": "MIXS:0000105"
+      },
+      "tot_nitro": {
+         "@type": "@id",
+         "@id": "MIXS:0000102"
+      },
+      "tot_nitro_cont_meth": {
+         "@id": "MIXS:0000338"
+      },
+      "tot_nitro_content": {
+         "@type": "@id",
+         "@id": "MIXS:0000530"
+      },
+      "tot_org_c_meth": {
+         "@id": "MIXS:0000337"
+      },
+      "tot_org_carb": {
+         "@type": "@id",
+         "@id": "MIXS:0000533"
+      },
+      "tot_part_carb": {
+         "@type": "@id",
+         "@id": "MIXS:0000747"
+      },
+      "tot_phosp": {
+         "@type": "@id",
+         "@id": "MIXS:0000117"
+      },
+      "tot_phosphate": {
+         "@type": "@id",
+         "@id": "MIXS:0000689"
+      },
+      "tot_sulfur": {
+         "@type": "@id",
+         "@id": "MIXS:0000419"
+      },
+      "train_line": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000837"
+      },
+      "train_stat_loc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000838"
+      },
+      "train_stop_loc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000839"
+      },
+      "travel_out_six_month": {
+         "@id": "MIXS:0000268"
+      },
+      "trna_ext_software": {
+         "@id": "MIXS:0000068"
+      },
+      "trnas": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000067"
+      },
+      "trophic_level": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000032"
+      },
+      "turbidity": {
+         "@type": "@id",
+         "@id": "MIXS:0000191"
+      },
+      "tvdss_of_hcr_press": {
+         "@type": "@id",
+         "@id": "MIXS:0000397"
+      },
+      "tvdss_of_hcr_temp": {
+         "@type": "@id",
+         "@id": "MIXS:0000394"
+      },
+      "twin_sibling": {
+         "@id": "MIXS:0000326"
+      },
+      "typ_occup_density": {
+         "@type": "xsd:double",
+         "@id": "MIXS:0000771"
+      },
+      "urine_collect_meth": {
+         "@id": "MIXS:0000899"
+      },
+      "urogenit_disord": {
+         "@id": "MIXS:0000289"
+      },
+      "urogenit_tract_disor": {
+         "@id": "MIXS:0000278"
+      },
+      "ventilation_rate": {
+         "@type": "@id",
+         "@id": "MIXS:0000114"
+      },
+      "ventilation_type": {
+         "@id": "MIXS:0000756"
+      },
+      "vfa": {
+         "@type": "@id",
+         "@id": "MIXS:0000152"
+      },
+      "vfa_fw": {
+         "@type": "@id",
+         "@id": "MIXS:0000408"
+      },
+      "vir_ident_software": {
+         "@id": "MIXS:0000081"
+      },
+      "virus_enrich_appr": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000036"
+      },
+      "vis_media": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000840"
+      },
+      "viscosity": {
+         "@id": "MIXS:0000126"
+      },
+      "volatile_org_comp": {
+         "@id": "MIXS:0000115"
+      },
+      "wall_area": {
+         "@type": "@id",
+         "@id": "MIXS:0000198"
+      },
+      "wall_const_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000841"
+      },
+      "wall_finish_mat": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000842"
+      },
+      "wall_height": {
+         "@type": "@id",
+         "@id": "MIXS:0000221"
+      },
+      "wall_loc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000843"
+      },
+      "wall_surf_treatment": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000845"
+      },
+      "wall_texture": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000846"
+      },
+      "wall_thermal_mass": {
+         "@type": "@id",
+         "@id": "MIXS:0000222"
+      },
+      "wall_water_mold": {
+         "@id": "MIXS:0000844"
+      },
+      "wastewater_type": {
+         "@id": "MIXS:0000353"
+      },
+      "water_cont_soil_meth": {
+         "@id": "MIXS:0000323"
+      },
+      "water_content": {
+         "@type": "@id",
+         "@id": "MIXS:0000185"
+      },
+      "water_current": {
+         "@type": "@id",
+         "@id": "MIXS:0000203"
+      },
+      "water_cut": {
+         "@type": "@id",
+         "@id": "MIXS:0000454"
+      },
+      "water_feat_size": {
+         "@type": "@id",
+         "@id": "MIXS:0000223"
+      },
+      "water_feat_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000847"
+      },
+      "water_prod_rate": {
+         "@type": "@id",
+         "@id": "MIXS:0000453"
+      },
+      "water_temp_regm": {
+         "@id": "MIXS:0000590"
+      },
+      "watering_regm": {
+         "@id": "MIXS:0000591"
+      },
+      "weekday": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000848"
+      },
+      "weight_loss_3_month": {
+         "@id": "MIXS:0000295"
+      },
+      "wga_amp_appr": {
+         "@id": "MIXS:0000055"
+      },
+      "wga_amp_kit": {
+         "@id": "MIXS:0000006"
+      },
+      "win": {
+         "@id": "MIXS:0000297"
+      },
+      "wind_direction": {
+         "@id": "MIXS:0000757"
+      },
+      "wind_speed": {
+         "@type": "@id",
+         "@id": "MIXS:0000118"
+      },
+      "window_cond": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000849"
+      },
+      "window_cover": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000850"
+      },
+      "window_horiz_pos": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000851"
+      },
+      "window_loc": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000852"
+      },
+      "window_mat": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000853"
+      },
+      "window_open_freq": {
+         "@type": "xsd:integer",
+         "@id": "MIXS:0000246"
+      },
+      "window_size": {
+         "@id": "MIXS:0000224"
+      },
+      "window_status": {
+         "@id": "MIXS:0000855"
+      },
+      "window_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000856"
+      },
+      "window_vert_pos": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "MIXS:0000857"
+      },
+      "window_water_mold": {
+         "@id": "MIXS:0000854"
+      },
+      "x_16s_recover": {
+         "@id": "MIXS:0000065"
+      },
+      "x_16s_recover_software": {
+         "@id": "MIXS:0000066"
+      },
+      "xylene": {
+         "@type": "@id",
+         "@id": "MIXS:0000156"
+      }
+   }
+}

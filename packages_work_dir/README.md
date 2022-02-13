@@ -1,4 +1,4 @@
-This directory was used to store notes on upcoming MIxS packages. These packages have now been included in the MIxS 6 release.
+This directory was used to store notes on upcoming MIxS packages. These packages have now been included in the MIxS 6 release and this directory can probably be removed.
 
 ** New MIxS Packages
 
