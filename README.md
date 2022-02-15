@@ -1,8 +1,8 @@
-# MIxS
+# MIxS:
 
-“Minimum Information about any (X) Sequence” (MIxS) specification
+A specification for the **Minimum Information about any (X) Sequence** standard
 
-## Purpose
+## Purpose and Contents
 
 This repo contains computable artifacts that define the MIxS standard, versions 4 and later. _Older versions of the MIxS standard are available at https://github.com/GenomicsStandardsConsortium/mixs-legacy_
 
@@ -14,7 +14,7 @@ Beginning with version 6, MIxS is being managed using the [LinkML toolkit](https
 **To request changes to the MIxS standards, please use the issue tracker in this repo.**
 
 
-## Reuse and citation of content on this repository
+## Guidelines for the reuse and citation of content on this repository
 
 The MIxS standards and the content of this repo are freely available under the [Creative Commons 0 (open source)](https://creativecommons.org/share-your-work/public-domain/cc0/) agreement. 
 
