@@ -1,4 +1,3 @@
-
 """
 converts mixs6 spreadsheet
 
@@ -24,11 +23,11 @@ CORE_PACKAGE_NAME = 'core'
 CHECKLISTS = {'migs_eu':
                   {'name': 'MIGS eukaryote',
                    'fullname': 'Minimal Information about a Genome Sequence: eukaryote',
-                    'abbrev': 'MIGS.eu'},
+                   'abbrev': 'MIGS.eu'},
               'migs_ba':
                   {'name': 'MIGS bacteria',
                    'fullname': 'Minimal Information about a Genome Sequence: cultured bacteria/archaea',
-                    'abbrev': 'MIGS.ba'
+                   'abbrev': 'MIGS.ba'
                    },
               'migs_pl':
                   {'name': 'MIGS plant',
@@ -59,7 +58,7 @@ CHECKLISTS = {'migs_eu':
                    'fullname': 'Minimal Information about a Marker Specimen: survey',
                    'abbrev': 'MIMARKS.survey',
                    'see_also': [
-                        'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3367316'
+                       'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3367316'
                    ]},
               'misag': {
                   'name': 'MISAG',
@@ -77,7 +76,6 @@ CHECKLISTS = {'migs_eu':
                   'abbrev': 'MIUVIG'}
               }
 
-
 datatype_schema = {
     'classes':
         {'quantity value':
@@ -93,9 +91,10 @@ datatype_schema = {
                       'string_serialization': '{has numeric value} {has unit}'
                   }
               }
-            }
-        }
+              }
+         }
 }
+
 
 def safe(s: str) -> str:
     """
@@ -110,7 +109,8 @@ def safe(s: str) -> str:
         s = s.replace("/", "_")
     return s
 
-def parse_value_syntax(s: str, slot_name: str = "") -> Tuple[str,str]:
+
+def parse_value_syntax(s: str, slot_name: str = "") -> Tuple[str, str]:
     """
     Parses the 'value syntax' field from MIxS spreadsheets
 
@@ -129,6 +129,7 @@ def parse_value_syntax(s: str, slot_name: str = "") -> Tuple[str,str]:
     elif slot_name == 'depth':
         return None, 'quantity value'
     return pattern, range
+
 
 @dataclass
 class MIxS6Converter:
@@ -160,7 +161,7 @@ class MIxS6Converter:
         :param row:
         :return: tuple of id and definition dictionary
         """
-        action_column = next(k for k in row.keys() if k.startswith('Action'))
+        # action_column = next(k for k in row.keys() if k.startswith('Action'))
         s_id = row['Structured comment name']
         if s_id is None or s_id == '-':
             logging.error(f"Bad row: {row}")
@@ -182,13 +183,17 @@ class MIxS6Converter:
             return None, None
         comments = []
         annotations = {}
-       # for k in ('Expected value', 'Preferred unit', 'Occurrence', 'Position'): position was in editors's sheet but is not being used in MIxS 6. We may want to add it back at some point.
-       #  for k in ('Expected value', 'Preferred unit', 'Occurrence'):
-        for k in ('Expected value', 'Preferred unit'):
-            if k in row and row[k] != '':
-                comments.append(f'{k}: {row[k]}')
+        # position was in editors's sheet but is not being used in MIxS 6. We may want to add it back at some point.
+        # for k in ('Expected value', 'Preferred unit', 'Occurrence', 'Position'):
+        #     if k in row and row[k] != '':
+        #         comments.append(f'{k}: {row[k]}')
         multivalued = row.get('Occurrence', '') == 'm'
-        annotations['Occurrence'] = row.get('Occurrence', '')
+        if row.get('Expected value', '') != '':
+            annotations['expected_value'] = row.get('Expected value', '')
+        if row.get('Preferred unit', '') != '':
+            annotations['preferred_unit'] = row.get('Preferred unit', '')
+        if row.get('Occurrence', '') != '':
+            annotations['occurrence'] = row.get('Occurrence', '')
 
         # the column header is not consistent between sheets here
         # column headers are now unique as MIXS ID, but this still works
@@ -201,13 +206,13 @@ class MIxS6Converter:
             slot_uri = row['MIXS ID']
         else:
             None
-            #logging.error(f'No ID: {slot_uri}')
+            # logging.error(f'No ID: {slot_uri}')
         # workaround for https://github.com/GenomicsStandardsConsortium/mixs/issues/216
         # this issue has been fixed
-        #if slot_uri.startswith('Measure'):
+        # if slot_uri.startswith('Measure'):
         #    logging.error(f'Bad format for MIXS ID in {row} -- value given is {slot_uri}')
         #    slot_uri = 'MIXS:TODO1234'
-        
+
         # The GOLD mappings have been removed. If we want to add them back in, uncomment this section and readd the column.
         # exact_mappings = []
         # if 'MIGS ID (mapping to GOLD)' in row:
@@ -215,7 +220,7 @@ class MIxS6Converter:
 
         section = row['Section'] if 'Section' in row else 'environment'
         if section == '':
-            logging.warning(f'No section: {s_id}')
+            # logging.warning(f'No section: {s_id}')
             section = 'core'
         is_a = f'{section} field'
         pattern, range = parse_value_syntax(row['Value syntax'], s_name)
@@ -229,31 +234,30 @@ class MIxS6Converter:
                 {'value': row['Example']}
             ],
             'comments': comments,
-            "aliases": []
+            "aliases": [],
+            "annotations": annotations
         }
         slot["aliases"].append(s_name)
-        # 'aliases': [s_name]
-        # 'annotations': annotations
 
-        if (action_column and row[action_column] == 'deprecated term') or\
-                ('Discussion' in row and row['Discussion'] == 'remove'):
-            slot['deprecated'] = 'Deprecated in mixs6'
+        # if (action_column and row[action_column] == 'deprecated term') or \
+        #         ('Discussion' in row and row['Discussion'] == 'remove'):
+        #     slot['deprecated'] = 'Deprecated in mixs6'
 
-        #if len(exact_mappings) > 0:
+        # if len(exact_mappings) > 0:
         #    slot['exact_mappings'] = exact_mappings
         if pattern is not None:
             # slot['pattern'] = pattern
             slot['string_serialization'] = pattern
-       # the link to GH issues were removed. We may want to add them back in.
-       # LINK = 'Link to GH issue'
-       # if LINK in row:
-       #     url = row[LINK]
-       #     if url is not None and url.startswith("http"):
-       #         slot['see_also'] = url
+        # the link to GH issues were removed. We may want to add them back in.
+        # LINK = 'Link to GH issue'
+        # if LINK in row:
+        #     url = row[LINK]
+        #     if url is not None and url.startswith("http"):
+        #         slot['see_also'] = url
 
         s_id = safe(s_id)
         if pattern is not None and '|' in pattern:
-            vals = pattern.replace('[', '').replace(']','').split('|')
+            vals = pattern.replace('[', '').replace(']', '').split('|')
             vals = [v.strip() for v in vals]
             # remove entries like '[{PMID}|{DOI}|...]'
             vals = [v for v in vals if not v.startswith('{')]
@@ -285,7 +289,7 @@ class MIxS6Converter:
         """
         trim_strings = lambda x: x.strip() if isinstance(x, str) else x
         core_df = pd.read_csv(self.core_filename, sep="\t").fillna("").applymap(trim_strings)
-        pkg_df  = pd.read_csv(self.packages_filename, sep="\t").fillna("").applymap(trim_strings)
+        pkg_df = pd.read_csv(self.packages_filename, sep="\t").fillna("").applymap(trim_strings)
         slots = {
             'core field': {
                 'abstract': True,
@@ -333,13 +337,12 @@ class MIxS6Converter:
             'subsets': subsets
         }
 
-
         # TODO: make configurable whether this is in main schema or import
         rschema = new_schema('ranges')
-        for k,v in datatype_schema.items():
+        for k, v in datatype_schema.items():
             rschema[k] = v
         self.save_schema(rschema, 'ranges.yaml')
-        
+
         cls_slot_req = {}
         slot_cls_req = {}
 
@@ -377,7 +380,7 @@ class MIxS6Converter:
                         usage['required'] = False
                     elif cardinality == 'C':
                         usage['recommended'] = True
-                    #elif cardinality == '-':
+                    # elif cardinality == '-':
                     #    usage['comments'] = ['not applicable']
                     if usage != {}:
                         checklist_slot_usage[s_id] = usage
@@ -388,7 +391,7 @@ class MIxS6Converter:
                     info['abbrev']
                 ],
                 'see_also': info.get('see_also', []),
-                #'todos': ['add details here'],
+                # 'todos': ['add details here'],
                 'slots': list(checklist_slot_usage.keys()),
                 'slot_usage': checklist_slot_usage
             }
@@ -408,7 +411,7 @@ class MIxS6Converter:
                 env_packages.append(cn)
                 cls_slot_req[cn] = {}
                 classes[cn] = {
-                    #'is_a': CORE_PACKAGE_NAME,
+                    # 'is_a': CORE_PACKAGE_NAME,
                     'description': p,
                     'mappings': [],
                     'slots': list(core_env_slots),
@@ -434,7 +437,6 @@ class MIxS6Converter:
                 if s_id not in core_slots:
                     c['slots'].append(s_id)
 
-
         # n_cls = len(cls_slot_req.keys())
         # inf_core_slots = []
         # for s_id, s in slot_cls_req.items():
@@ -447,8 +449,6 @@ class MIxS6Converter:
         #     else:
         #         cmt = f"This field is used in: {len(s.keys())} packages: {packages_str}"
         #     slots[s_id]['comments'].append(cmt)
-
-
 
         for p in env_packages:
             for checklist, info in CHECKLISTS.items():
@@ -467,7 +467,6 @@ class MIxS6Converter:
             pschema['classes'] = {p: classes[p]}
             del classes[p]
             self.save_schema(pschema, f'{pname}.yaml')
-
 
         slot_schema = new_schema('terms')
         slot_schema['imports'].append('ranges')
@@ -488,7 +487,7 @@ class MIxS6Converter:
 
         core_schema = new_schema('core')
         core_schema['imports'].append('terms')
-        core_schema['classes'] = {'core': obj['classes']['core'] }
+        core_schema['classes'] = {'core': obj['classes']['core']}
         del obj['classes']['core']
         self.save_schema(core_schema, 'core.yaml')
 
@@ -499,6 +498,7 @@ class MIxS6Converter:
         self.save_schema(checklist_schema, 'checklists.yaml')
 
         return obj
+
 
 @click.command()
 def cli(**kwargs):
