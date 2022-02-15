@@ -127,6 +127,8 @@
 # ---------------------------------------
 # for seeding
 
+RUN=poetry run
+
 downloads/mixs6.tsv:
 	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
 downloads/mixs6_core.tsv:
