@@ -120,7 +120,7 @@
 #
 
 
-.PHONY: all clean
+.PHONY: all clean html_docs
 
 # ---------------------------------------
 # TSVs from google drive
@@ -147,6 +147,14 @@ all: clean model/schema/mixs.yaml generated
 generated: model/schema/mixs.yaml
 	$(RUN) gen-project --dir $@ $< 2>&1 | tee -a logs/linkml_artifact_generation.log
 
-
-html-docs:
+# slow
+# add log file
+# some pages not being created
+# be careful not to hose any existing GH ages content
+# how to add static content
+# usage of mkdocs.yml attributes like analytics, nav.Index, site_url, repo_url
+html_docs:
 	poetry run mkdocs build
+
+gh_docs:
+	poetry run mkdocs gh-deploy
