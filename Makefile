@@ -148,3 +148,5 @@ generated: model/schema/mixs.yaml
 	$(RUN) gen-project --dir $@ $< 2>&1 | tee -a logs/linkml_artifact_generation.log
 
 
+html-docs:
+	poetry run mkdocs build
