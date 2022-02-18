@@ -147,7 +147,6 @@ all: clean model/schema/mixs.yaml generated
 generated: model/schema/mixs.yaml
 	$(RUN) gen-project --dir $@ $< 2>&1 | tee -a logs/linkml_artifact_generation.log
 
-# slow
 # add log file
 # some pages not being created
 # be careful not to hose any existing GH ages content
