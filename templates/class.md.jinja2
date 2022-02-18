@@ -1,0 +1,47 @@
+# {{ gen.name(element) }}
+
+{{ element.description }}
+
+URI: {{ gen.uri_link(element) }}
+
+
+{% if schemaview.class_parents(element.name) %}
+
+## Inheritance
+
+{{ gen.inheritance_tree(element, mixins=True) }}
+{% else %}
+<!-- no inheritance hierarchy -->
+{% endif %}
+
+
+{% if schemaview.class_children(element.name, mixins=False) %}
+
+## Combinations
+
+{{ gen.inheritance_tree(element, mixins=True) }}
+{% else %}
+<!-- no inheritance hierarchy -->
+{% endif %}
+
+
+## Slots
+
+| MIxS ID | Name | Multiplicity | Description  | Pattern | Info |
+| ---  | ---  | --- | --- | --- | --- |
+{% for s in schemaview.class_induced_slots(element.name) -%}
+| {{ s.slot_uri }} | {{gen.link(s)}} | {{ gen.cardinality(s) }} {% if s.recommended %}RECOMMENDED{% endif %} | {{s.description}} | {{ s.string_serialization }} | . |
+{% endfor %}
+
+## Usages
+
+{% if schemaview.usage_index().get(element.name) %}
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+{% for usage in schemaview.usage_index().get(element.name) -%}
+| {{gen.link(usage.used_by)}} | {{gen.link(usage.slot)}} | {{usage.metaslot}} | {{usage.used }} |
+{% endfor %}
+{% endif %}
+
+{% include "common_metadata.md.jinja2" %}
+

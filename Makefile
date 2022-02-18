@@ -147,11 +147,10 @@ all: clean model/schema/mixs.yaml generated html_docs
 generated: model/schema/mixs.yaml
 	$(RUN) gen-project --dir $@ $< 2>&1 | tee -a logs/linkml_artifact_generation.log
 
-generated/docs: model/schema/mixs.yaml
-	$(RUN) poetry run gen-markdown model/schema/mixs.yaml \
-	--dir $@ -M slot=term -M class=package -M mixin=checklist -M enum=dropdown --no-mergeimports
+generated/docs/index.md: model/schema/mixs.yaml
+	$(RUN) poetry run gen-doc model/schema/mixs.yaml --template-directory $@
 
-cp_static_md: generated/docs
+cp_static_md: generated/docs/index.md
 	cp -R static_md/* $<
 
 # slow

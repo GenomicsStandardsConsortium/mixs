@@ -1,0 +1,30 @@
+# {{ schema.name }}
+
+{{ schema.description }}
+
+URI: {{ schema.id }}
+
+## Checklists
+
+{% for c in schemaview.all_classes().values() -%}
+{% if c.mixin %}
+* {{ gen.link(c) }}
+{% endif %}
+{% endfor %}
+
+## Packages
+
+{% for c in schemaview.all_classes().values() -%}
+{% if not c.mixin and not c.is_a %}
+* {{ gen.link(c) }}
+{% endif %}
+{% endfor %}
+
+
+## Combinations
+
+{% for c in schemaview.all_classes().values() -%}
+{% if not c.mixin and c.is_a %}
+* {{ gen.link(c) }}
+{% endif %}
+{% endfor %}
