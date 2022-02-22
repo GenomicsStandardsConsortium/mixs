@@ -120,7 +120,7 @@
 #
 
 
-.PHONY: all clean html_docs
+.PHONY: all clean html_docs cp_static_md
 
 # ---------------------------------------
 # TSVs from google drive
@@ -142,17 +142,23 @@ clean:
 	rm -rf downloads/*tsv
 	rm -rf model/schema/*yaml
 
-all: clean model/schema/mixs.yaml generated
+all: clean model/schema/mixs.yaml generated html_docs
 
 generated: model/schema/mixs.yaml
 	$(RUN) gen-project --dir $@ $< 2>&1 | tee -a logs/linkml_artifact_generation.log
+
+generated/docs/: model/schema/mixs.yaml
+	$(RUN) gen-doc $< --directory $@ --template-directory templates
+
+cp_static_md: generated/docs/
+	cp -R static_md/* $<
 
 # add log file
 # some pages not being created
 # be careful not to hose any existing GH ages content
 # how to add static content
 # usage of mkdocs.yml attributes like analytics, nav.Index, site_url, repo_url
-html_docs:
+html_docs: cp_static_md
 	poetry run mkdocs build
 
 gh_docs:
