@@ -153,7 +153,6 @@ generated/docs/: model/schema/mixs.yaml
 cp_static_md: generated/docs/
 	cp -R static_md/* $<
 
-# slow
 # add log file
 # some pages not being created
 # be careful not to hose any existing GH ages content
