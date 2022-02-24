@@ -1,5 +1,5 @@
 # Auto generated from mixs.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-15T12:47:41
+# Generation date: 2022-02-24T11:21:54
 # Schema: MIxS
 #
 # id: http://w3id.org/mixs
@@ -26,6 +26,7 @@ from linkml_runtime.linkml_model.types import Date, Double, Integer, String
 from linkml_runtime.utils.metamodelcore import XSDDate
 
 metamodel_version = "1.7.0"
+version = None
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
