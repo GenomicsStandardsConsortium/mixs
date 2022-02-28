@@ -97,12 +97,23 @@ This should be done in a branch. When ready for a release, artifacts are copied 
 
 TODO: add more details here.
 
+See makefile for details.
+
 
 ## Deploying Documentation
 
 TODO: describe the process of generating documentation.
 
-See the makefile for details for now.
+
+See the [makefile](https://github.com/GenomicsStandardsConsortium/mixs/blob/mixs6_release/Makefile) for details.
+
+LinkML uses gen-doc to create Markdown that gets converted to Markdown using Jinja templates
+
+To build new documentation, `use make mkdocs_html/index.html` (uses gen-doc) to create documents locally on your computer.
+
+Use `make gh_docs` to deploy the content to github pages.
+
+Creating the docs is part of `make all`, so it does not need to be envoked, but deploying them (gh_docs) is not.
 
 
 ## Making a PyPI release of the MIxS Schema
