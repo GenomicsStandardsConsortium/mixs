@@ -4,11 +4,15 @@ A specification for the **Minimum Information about any (X) Sequence** standard
 
 ## Purpose and Contents
 
-This repo contains computable artifacts that define the MIxS standard, versions 4 and later. _Older versions of the MIxS standard are available at https://github.com/GenomicsStandardsConsortium/mixs-legacy_
+This repo contains computable artifacts that define the MIxS standard, versions 6 and later. _Older versions of the MIxS standard are available at https://github.com/GenomicsStandardsConsortium/mixs-legacy_
 
-Versions 4 and 5 can be found in their respective folders
+Beginning with version 6, MIxS is being managed using the [LinkML toolkit](https://linkml.io/). LinkML uses YAML files to describe schemas and provides code to convert YAML to multiple other formats. 
 
-Beginning with version 6, MIxS is being managed using the [LinkML toolkit](https://linkml.io/). The location of the various LinkML artifacts is fortcoming.
+The latests stable version of the MIxS standard in various formats listed above are available in the [release](release) folder.  MIxS is currently Excel, Java, JSON-LD, JSON schema, OWL, protobuf, SCHACL, SHEX, and SQL schema.
+
+There is currently only one version of MIxS released in this repository (MIxS 6). When newer versions are released, links to older versions will be provided here.
+
+The standard can be browsed at https://genomicsstandardsconsortium.github.io/mixs/.
 
 
 **To request changes to the MIxS standards, please use the issue tracker in this repo.**
