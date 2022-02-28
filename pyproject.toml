@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "mixs-linkml"
+version = "0.1.0"
+description = "A LinkML (https://linkml.io/) model of the MIxS standard (https://gensc.org/mixs/)"
+authors = ["GSC"]
+license = "CC0"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+linkml = ">=1.1.13"
+pandas = "*"
+mkdocs = "*"
+
+[tool.poetry.dev-dependencies]
+pipenv-to-requirements = "*"
+tox = "*"
+tox-pipenv = "*"
+unittest2 = "*"
+nbconvert = "*"
+nbformat = "*"
+ipykernel = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
