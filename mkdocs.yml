@@ -1,11 +1,21 @@
 site_name: "MIxS"
+
 theme:
-  name: readthedocs
-  analytics:
-    gtag: G-2SYBSJVZ23
-docs_dir: target/docs
-site_dir: docs
+  name: mkdocs
+  nav_style: dark
+
+plugins:
+  - search
+
+docs_dir: generated/docs
+site_dir: mkdocs_html
+
 nav:
-  - Index: index.md
-site_url: https://cmungall.github.io/mixs-source/
-repo_url: https://github.com/cmungall/mixs-source
+  - About: index.md
+  - Introduction:
+    - Background: introduction/background.md
+    - Cite: introduction/citation.md
+    - Contents: introduction/contents.md
+
+site_url: https://genomicsstandardsconsortium.github.io/mixs/
+repo_url: https://github.com/GenomicsStandardsConsortium/mixs/
