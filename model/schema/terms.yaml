@@ -8833,7 +8833,7 @@ slots:
     slot_uri: MIXS:0001082
   horizon_meth:
     is_a: core field
-    title: horizon method
+    title: soil horizon method
     description: Reference or method used in determining the horizon
     range: string
     multivalued: false
@@ -8841,7 +8841,7 @@ slots:
     - value: ''
     comments: []
     aliases:
-    - horizon method
+    - soil horizon method
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
@@ -13597,23 +13597,24 @@ enums:
       Medium-quality draft genome: {}
       Low-quality draft genome: {}
       Genome fragment(s): {}
+  # MAM 2022-03-22 low;{percentage}: {}
   compl_score_enum:
     permissible_values:
       high: {}
       med: {}
-      low;{percentage}: {}
+      low: {}
   compl_appr_enum:
     permissible_values:
       marker gene: {}
       reference based: {}
       other: {}
+  # MAM 2022-03-22 combination;{text integer}: {}
   contam_screen_param_enum:
     permissible_values:
       ref db: {}
       kmer: {}
       coverage: {}
-      combination;{text: {}
-      integer}: {}
+      combination: {}
   decontam_software_enum:
     permissible_values:
       checkm/refinem: {}
@@ -13928,6 +13929,7 @@ enums:
       needs repair: {}
       damaged: {}
       rupture: {}
+  # MAM 2022-03-22 none;specify unfinished: {}
   floor_finish_mat_enum:
     permissible_values:
       tile: {}
@@ -13943,7 +13945,7 @@ enums:
       cork: {}
       terrazo: {}
       concrete: {}
-      none;specify unfinished: {}
+      none: {}
       sealed: {}
       clear finish: {}
       paint: {}
@@ -14044,13 +14046,14 @@ enums:
       southeast: {}
       southwest: {}
       northwest: {}
+  # MAM 2022-03-22 other;{integer}: {}
   pres_animal_insect_enum:
     permissible_values:
       cat: {}
       dog: {}
       rodent: {}
       snake: {}
-      other;{integer}: {}
+      other: {}
   quad_pos_enum:
     permissible_values:
       North side: {}
@@ -14493,6 +14496,7 @@ enums:
       KB: {}
       MSL: {}
       other: {}
+  # MAM 2022-03-22 add LinkML todo regarding previous other;{timestamp}: {}
   add_recov_method_enum:
     permissible_values:
       Water Injection: {}
@@ -14502,7 +14506,7 @@ enums:
       Polymer Addition: {}
       Surfactant Addition: {}
       Not Applicable: {}
-      other;{timestamp}: {}
+      other: {}
   samp_collect_point_enum:
     permissible_values:
       well: {}
@@ -14572,6 +14576,7 @@ enums:
       ebb tide: {}
       flood tide: {}
       high tide: {}
+  # MAM 2022-03-22 was rainforest (evergreen forest receiving >406 cm annual rainfall): {}
   cur_land_use_enum:
     permissible_values:
       cities: {}
@@ -14606,7 +14611,7 @@ enums:
       hardwoods (e.g. oak,hickory,elm,aspen): {}
       intermixed hardwood and conifers: {}
       tropical (e.g. mangrove,palms): {}
-      rainforest (evergreen forest receiving >406 cm annual rainfall): {}
+      rainforest (evergreen forest receiving greater than 406 cm annual rainfall): {}
       swamp (permanent or semi-permanent water body dominated by woody plants): {}
       crop trees (nuts,fruit,christmas trees,nursery trees): {}
   tillage_enum:
@@ -14728,14 +14733,19 @@ enums:
       present: {}
       positive: {}
       'yes': {}
+  # MAM 2022-03-15 GSheet says [best by|best if used by|freeze by||use by]; date
+  # this is a case of enum ; something else
+  # PLUS an empty permissible value!
+  # removed these lines:
+  #       ? ''
+  #    : {}
+  # use by; date: {}
   food_quality_date_enum:
     permissible_values:
       best by: {}
       best if used by: {}
       freeze by: {}
-      ? ''
-      : {}
-      use by; date: {}
+      use by: {}
   food_trace_list_enum:
     permissible_values:
       cheeses-other than hard cheeses: {}

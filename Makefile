@@ -13,24 +13,35 @@ all: clean generated/mixs.py mkdocs_html/index.html
 # for seeding
 
 clean:
-	rm -rf downloads/*tsv
+	#rm -rf downloads/*tsv
 	rm -rf generated/*
 	rm -rf logs/*
 	rm -rf mkdocs_html/
-	rm -rf model/schema/*yaml
+	#rm -rf model/schema/*yaml
 
-model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
-	$(RUN) python -m gsctools.mixs_converter  2>&1 | tee -a logs/sheet2linkml.log
+#model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
+#	$(RUN) python -m gsctools.mixs_converter  2>&1 | tee -a logs/sheet2linkml.log
+#
+#downloads/mixs6.tsv:
+#	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
+#downloads/mixs6_core.tsv:
+#	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
 
-downloads/mixs6.tsv:
-	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
-downloads/mixs6_core.tsv:
-	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
-
-# todo add owl back in and nmake it awesome
+# todo add owl back in and make it awesome
 # todo derive output path from target file name
+# 		--exclude owl \
+
 generated/mixs.py: model/schema/mixs.yaml
-	$(RUN) gen-project --exclude markdown --exclude owl --dir $(dir $@) $< 2>&1 | tee -a logs/linkml_artifact_generation.log
+	$(RUN) gen-project \
+		--exclude excel \
+		--exclude java \
+		--exclude markdown \
+		--dir $(dir $@) $< 2>&1 | tee -a logs/linkml_artifact_generation.log
+#	mkdir generated/excel
+#	$(RUN) gen-excel --output generated/excel/mixs.xlsx $<
+#	# skipping jinja --template_file
+#	mkdir generated/java
+#	$(RUN) gen-java --package mixs --output_directory generated/java $<
 
 ## ---------------------------------------
 ## MARKDOWN DOCS

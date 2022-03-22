@@ -51,6 +51,7 @@ classes:
     - fao_class
     - local_class
     - local_class_meth
+    - org_nitro
     - soil_type
     - soil_type_meth
     - slope_gradient
@@ -61,6 +62,7 @@ classes:
     - soil_texture_meth
     - ph
     - ph_meth
+    - org_matter
     - tot_org_carb
     - tot_org_c_meth
     - tot_nitro_content
@@ -139,6 +141,10 @@ classes:
         required: false
       local_class_meth:
         required: false
+      org_nitro:
+        required: false
+      temp:
+        required: false
       soil_type:
         required: false
       soil_type_meth:
@@ -158,6 +164,8 @@ classes:
       ph:
         required: false
       ph_meth:
+        required: false
+      org_matter:
         required: false
       tot_org_carb:
         required: false
