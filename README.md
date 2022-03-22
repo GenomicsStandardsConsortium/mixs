@@ -8,7 +8,7 @@ This repo contains computable artifacts that define the MIxS standard, versions 
 
 Beginning with version 6, MIxS is being managed using the [LinkML toolkit](https://linkml.io/). LinkML uses YAML files to describe schemas and provides code to convert YAML to multiple other formats. 
 
-The latests stable version of the MIxS standard in various formats listed above are available in the [release](release) folder.  MIxS is currently Excel, Java, JSON-LD, JSON schema, OWL, protobuf, SCHACL, SHEX, and SQL schema.
+The latests stable version of the MIxS standard in various formats listed above are available in the [release](release) folder.  MIxS is currently JSON-LD, JSON schema, OWL, protobuf, SCHACL, SHEX, and SQL schema. Java will be addde in a future release, as will Excel templates for data collection. To support existing implementers who have been using previous Excel-based versions of MIxS, we have provide a manually created [Excel workbook] (add link) with the same format as MIxS 5. However, for new adoptors, we highly recommend using one of the machine readable artifacts available in the [release](release) folder.
 
 There is currently only one version of MIxS released in this repository (MIxS 6). When newer versions are released, links to older versions will be provided here.
 
