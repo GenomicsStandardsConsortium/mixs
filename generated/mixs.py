@@ -1,5 +1,5 @@
 # Auto generated from mixs.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-22T08:43:18
+# Generation date: 2022-03-22T15:58:29
 # Schema: MIxS
 #
 # id: http://w3id.org/mixs
@@ -108,7 +108,7 @@ class MIGSEukaryote(YAMLRoot):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -295,8 +295,8 @@ class MIGSEukaryote(YAMLRoot):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -373,7 +373,7 @@ class MIGSBacteria(YAMLRoot):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -564,8 +564,8 @@ class MIGSBacteria(YAMLRoot):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -636,7 +636,7 @@ class MIGSPlant(YAMLRoot):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -803,8 +803,8 @@ class MIGSPlant(YAMLRoot):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -880,7 +880,7 @@ class MIGSVirus(YAMLRoot):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -1062,8 +1062,8 @@ class MIGSVirus(YAMLRoot):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -1131,7 +1131,7 @@ class MIGSOrg(YAMLRoot):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -1287,8 +1287,8 @@ class MIGSOrg(YAMLRoot):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -1908,7 +1908,7 @@ class MISAG(YAMLRoot):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -1948,7 +1948,7 @@ class MISAG(YAMLRoot):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -2023,8 +2023,8 @@ class MISAG(YAMLRoot):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -2153,8 +2153,8 @@ class MISAG(YAMLRoot):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -2199,7 +2199,7 @@ class MIMAG(YAMLRoot):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -2238,7 +2238,7 @@ class MIMAG(YAMLRoot):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -2313,8 +2313,8 @@ class MIMAG(YAMLRoot):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -2438,8 +2438,8 @@ class MIMAG(YAMLRoot):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -2525,7 +2525,7 @@ class MIUVIG(YAMLRoot):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -2746,8 +2746,8 @@ class MIUVIG(YAMLRoot):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -2889,12 +2889,12 @@ class Core(YAMLRoot):
     x_16s_recover_software: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_score: Optional[str] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
     single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
@@ -3131,8 +3131,8 @@ class Core(YAMLRoot):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -3146,8 +3146,8 @@ class Core(YAMLRoot):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -3452,7 +3452,7 @@ class AirMIGSEukaryote(Air):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -3614,8 +3614,8 @@ class AirMIGSEukaryote(Air):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -3693,7 +3693,7 @@ class AirMIGSBacteria(Air):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -3859,8 +3859,8 @@ class AirMIGSBacteria(Air):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -3931,7 +3931,7 @@ class AirMIGSPlant(Air):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -4073,8 +4073,8 @@ class AirMIGSPlant(Air):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -4151,7 +4151,7 @@ class AirMIGSVirus(Air):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -4308,8 +4308,8 @@ class AirMIGSVirus(Air):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -4377,7 +4377,7 @@ class AirMIGSOrg(Air):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -4508,8 +4508,8 @@ class AirMIGSOrg(Air):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -5049,7 +5049,7 @@ class AirMISAG(Air):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -5094,7 +5094,7 @@ class AirMISAG(Air):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -5129,8 +5129,8 @@ class AirMISAG(Air):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -5274,8 +5274,8 @@ class AirMISAG(Air):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -5315,7 +5315,7 @@ class AirMIMAG(Air):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -5359,7 +5359,7 @@ class AirMIMAG(Air):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -5394,8 +5394,8 @@ class AirMIMAG(Air):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -5534,8 +5534,8 @@ class AirMIMAG(Air):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -5621,7 +5621,7 @@ class AirMIUVIG(Air):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -5817,8 +5817,8 @@ class AirMIUVIG(Air):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -5998,7 +5998,7 @@ class BuiltEnvironment(YAMLRoot):
     ext_wall_orient: Optional[Union[str, "ExtWallOrientEnum"]] = None
     ext_window_orient: Optional[Union[str, "ExtWindowOrientEnum"]] = None
     rel_humidity_out: Optional[Union[dict, "QuantityValue"]] = None
-    pres_animal_insect: Optional[Union[str, "PresAnimalInsectEnum"]] = None
+    pres_animal_insect: Optional[str] = None
     quad_pos: Optional[Union[str, "QuadPosEnum"]] = None
     rel_samp_loc: Optional[Union[str, "RelSampLocEnum"]] = None
     room_air_exch_rate: Optional[Union[dict, "QuantityValue"]] = None
@@ -6436,8 +6436,8 @@ class BuiltEnvironment(YAMLRoot):
         if self.rel_humidity_out is not None and not isinstance(self.rel_humidity_out, QuantityValue):
             self.rel_humidity_out = QuantityValue(**as_dict(self.rel_humidity_out))
 
-        if self.pres_animal_insect is not None and not isinstance(self.pres_animal_insect, PresAnimalInsectEnum):
-            self.pres_animal_insect = PresAnimalInsectEnum(self.pres_animal_insect)
+        if self.pres_animal_insect is not None and not isinstance(self.pres_animal_insect, str):
+            self.pres_animal_insect = str(self.pres_animal_insect)
 
         if self.quad_pos is not None and not isinstance(self.quad_pos, QuadPosEnum):
             self.quad_pos = QuadPosEnum(self.quad_pos)
@@ -6705,7 +6705,7 @@ class BuiltEnvironmentMIGSEukaryote(BuiltEnvironment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -6870,8 +6870,8 @@ class BuiltEnvironmentMIGSEukaryote(BuiltEnvironment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -6965,7 +6965,7 @@ class BuiltEnvironmentMIGSBacteria(BuiltEnvironment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -7134,8 +7134,8 @@ class BuiltEnvironmentMIGSBacteria(BuiltEnvironment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -7223,7 +7223,7 @@ class BuiltEnvironmentMIGSPlant(BuiltEnvironment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -7368,8 +7368,8 @@ class BuiltEnvironmentMIGSPlant(BuiltEnvironment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -7462,7 +7462,7 @@ class BuiltEnvironmentMIGSVirus(BuiltEnvironment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -7622,8 +7622,8 @@ class BuiltEnvironmentMIGSVirus(BuiltEnvironment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -7708,7 +7708,7 @@ class BuiltEnvironmentMIGSOrg(BuiltEnvironment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -7842,8 +7842,8 @@ class BuiltEnvironmentMIGSOrg(BuiltEnvironment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -8458,7 +8458,7 @@ class BuiltEnvironmentMISAG(BuiltEnvironment):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -8504,7 +8504,7 @@ class BuiltEnvironmentMISAG(BuiltEnvironment):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -8539,8 +8539,8 @@ class BuiltEnvironmentMISAG(BuiltEnvironment):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -8687,8 +8687,8 @@ class BuiltEnvironmentMISAG(BuiltEnvironment):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -8744,7 +8744,7 @@ class BuiltEnvironmentMIMAG(BuiltEnvironment):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -8789,7 +8789,7 @@ class BuiltEnvironmentMIMAG(BuiltEnvironment):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -8824,8 +8824,8 @@ class BuiltEnvironmentMIMAG(BuiltEnvironment):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -8967,8 +8967,8 @@ class BuiltEnvironmentMIMAG(BuiltEnvironment):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -9071,7 +9071,7 @@ class BuiltEnvironmentMIUVIG(BuiltEnvironment):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -9270,8 +9270,8 @@ class BuiltEnvironmentMIUVIG(BuiltEnvironment):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -9646,7 +9646,7 @@ class Host-associatedMIGSEukaryote(Host-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -9805,8 +9805,8 @@ class Host-associatedMIGSEukaryote(Host-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -9882,7 +9882,7 @@ class Host-associatedMIGSBacteria(Host-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -10045,8 +10045,8 @@ class Host-associatedMIGSBacteria(Host-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -10117,7 +10117,7 @@ class Host-associatedMIGSPlant(Host-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -10259,8 +10259,8 @@ class Host-associatedMIGSPlant(Host-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -10335,7 +10335,7 @@ class Host-associatedMIGSVirus(Host-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -10489,8 +10489,8 @@ class Host-associatedMIGSVirus(Host-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -10557,7 +10557,7 @@ class Host-associatedMIGSOrg(Host-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -10688,8 +10688,8 @@ class Host-associatedMIGSOrg(Host-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -11228,7 +11228,7 @@ class Host-associatedMISAG(Host-associated):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -11273,7 +11273,7 @@ class Host-associatedMISAG(Host-associated):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -11308,8 +11308,8 @@ class Host-associatedMISAG(Host-associated):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -11453,8 +11453,8 @@ class Host-associatedMISAG(Host-associated):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -11494,7 +11494,7 @@ class Host-associatedMIMAG(Host-associated):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -11538,7 +11538,7 @@ class Host-associatedMIMAG(Host-associated):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -11573,8 +11573,8 @@ class Host-associatedMIMAG(Host-associated):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -11713,8 +11713,8 @@ class Host-associatedMIMAG(Host-associated):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -11799,7 +11799,7 @@ class Host-associatedMIUVIG(Host-associated):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -11992,8 +11992,8 @@ class Host-associatedMIUVIG(Host-associated):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -12401,7 +12401,7 @@ class Human-associatedMIGSEukaryote(Human-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -12560,8 +12560,8 @@ class Human-associatedMIGSEukaryote(Human-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -12637,7 +12637,7 @@ class Human-associatedMIGSBacteria(Human-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -12800,8 +12800,8 @@ class Human-associatedMIGSBacteria(Human-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -12872,7 +12872,7 @@ class Human-associatedMIGSPlant(Human-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -13014,8 +13014,8 @@ class Human-associatedMIGSPlant(Human-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -13090,7 +13090,7 @@ class Human-associatedMIGSVirus(Human-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -13244,8 +13244,8 @@ class Human-associatedMIGSVirus(Human-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -13313,7 +13313,7 @@ class Human-associatedMIGSOrg(Human-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -13444,8 +13444,8 @@ class Human-associatedMIGSOrg(Human-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -13984,7 +13984,7 @@ class Human-associatedMISAG(Human-associated):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -14029,7 +14029,7 @@ class Human-associatedMISAG(Human-associated):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -14064,8 +14064,8 @@ class Human-associatedMISAG(Human-associated):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -14209,8 +14209,8 @@ class Human-associatedMISAG(Human-associated):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -14250,7 +14250,7 @@ class Human-associatedMIMAG(Human-associated):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -14294,7 +14294,7 @@ class Human-associatedMIMAG(Human-associated):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -14329,8 +14329,8 @@ class Human-associatedMIMAG(Human-associated):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -14469,8 +14469,8 @@ class Human-associatedMIMAG(Human-associated):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -14555,7 +14555,7 @@ class Human-associatedMIUVIG(Human-associated):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -14748,8 +14748,8 @@ class Human-associatedMIUVIG(Human-associated):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -15087,7 +15087,7 @@ class Human-gutMIGSEukaryote(Human-gut):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -15246,8 +15246,8 @@ class Human-gutMIGSEukaryote(Human-gut):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -15323,7 +15323,7 @@ class Human-gutMIGSBacteria(Human-gut):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -15486,8 +15486,8 @@ class Human-gutMIGSBacteria(Human-gut):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -15557,7 +15557,7 @@ class Human-gutMIGSPlant(Human-gut):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -15699,8 +15699,8 @@ class Human-gutMIGSPlant(Human-gut):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -15775,7 +15775,7 @@ class Human-gutMIGSVirus(Human-gut):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -15929,8 +15929,8 @@ class Human-gutMIGSVirus(Human-gut):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -15997,7 +15997,7 @@ class Human-gutMIGSOrg(Human-gut):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -16128,8 +16128,8 @@ class Human-gutMIGSOrg(Human-gut):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -16665,7 +16665,7 @@ class Human-gutMISAG(Human-gut):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -16710,7 +16710,7 @@ class Human-gutMISAG(Human-gut):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -16745,8 +16745,8 @@ class Human-gutMISAG(Human-gut):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -16890,8 +16890,8 @@ class Human-gutMISAG(Human-gut):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -16931,7 +16931,7 @@ class Human-gutMIMAG(Human-gut):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -16975,7 +16975,7 @@ class Human-gutMIMAG(Human-gut):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -17010,8 +17010,8 @@ class Human-gutMIMAG(Human-gut):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -17150,8 +17150,8 @@ class Human-gutMIMAG(Human-gut):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -17235,7 +17235,7 @@ class Human-gutMIUVIG(Human-gut):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -17428,8 +17428,8 @@ class Human-gutMIUVIG(Human-gut):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -17762,7 +17762,7 @@ class Human-oralMIGSEukaryote(Human-oral):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -17921,8 +17921,8 @@ class Human-oralMIGSEukaryote(Human-oral):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -17998,7 +17998,7 @@ class Human-oralMIGSBacteria(Human-oral):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -18161,8 +18161,8 @@ class Human-oralMIGSBacteria(Human-oral):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -18232,7 +18232,7 @@ class Human-oralMIGSPlant(Human-oral):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -18374,8 +18374,8 @@ class Human-oralMIGSPlant(Human-oral):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -18450,7 +18450,7 @@ class Human-oralMIGSVirus(Human-oral):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -18604,8 +18604,8 @@ class Human-oralMIGSVirus(Human-oral):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -18672,7 +18672,7 @@ class Human-oralMIGSOrg(Human-oral):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -18803,8 +18803,8 @@ class Human-oralMIGSOrg(Human-oral):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -19340,7 +19340,7 @@ class Human-oralMISAG(Human-oral):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -19385,7 +19385,7 @@ class Human-oralMISAG(Human-oral):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -19420,8 +19420,8 @@ class Human-oralMISAG(Human-oral):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -19565,8 +19565,8 @@ class Human-oralMISAG(Human-oral):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -19606,7 +19606,7 @@ class Human-oralMIMAG(Human-oral):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -19650,7 +19650,7 @@ class Human-oralMIMAG(Human-oral):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -19685,8 +19685,8 @@ class Human-oralMIMAG(Human-oral):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -19825,8 +19825,8 @@ class Human-oralMIMAG(Human-oral):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -19911,7 +19911,7 @@ class Human-oralMIUVIG(Human-oral):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -20104,8 +20104,8 @@ class Human-oralMIUVIG(Human-oral):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -20442,7 +20442,7 @@ class Human-skinMIGSEukaryote(Human-skin):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -20601,8 +20601,8 @@ class Human-skinMIGSEukaryote(Human-skin):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -20678,7 +20678,7 @@ class Human-skinMIGSBacteria(Human-skin):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -20841,8 +20841,8 @@ class Human-skinMIGSBacteria(Human-skin):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -20912,7 +20912,7 @@ class Human-skinMIGSPlant(Human-skin):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -21054,8 +21054,8 @@ class Human-skinMIGSPlant(Human-skin):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -21130,7 +21130,7 @@ class Human-skinMIGSVirus(Human-skin):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -21284,8 +21284,8 @@ class Human-skinMIGSVirus(Human-skin):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -21352,7 +21352,7 @@ class Human-skinMIGSOrg(Human-skin):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -21483,8 +21483,8 @@ class Human-skinMIGSOrg(Human-skin):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -22020,7 +22020,7 @@ class Human-skinMISAG(Human-skin):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -22065,7 +22065,7 @@ class Human-skinMISAG(Human-skin):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -22100,8 +22100,8 @@ class Human-skinMISAG(Human-skin):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -22245,8 +22245,8 @@ class Human-skinMISAG(Human-skin):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -22286,7 +22286,7 @@ class Human-skinMIMAG(Human-skin):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -22330,7 +22330,7 @@ class Human-skinMIMAG(Human-skin):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -22365,8 +22365,8 @@ class Human-skinMIMAG(Human-skin):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -22505,8 +22505,8 @@ class Human-skinMIMAG(Human-skin):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -22591,7 +22591,7 @@ class Human-skinMIUVIG(Human-skin):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -22784,8 +22784,8 @@ class Human-skinMIUVIG(Human-skin):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -23155,7 +23155,7 @@ class Human-vaginalMIGSEukaryote(Human-vaginal):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -23314,8 +23314,8 @@ class Human-vaginalMIGSEukaryote(Human-vaginal):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -23391,7 +23391,7 @@ class Human-vaginalMIGSBacteria(Human-vaginal):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -23554,8 +23554,8 @@ class Human-vaginalMIGSBacteria(Human-vaginal):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -23625,7 +23625,7 @@ class Human-vaginalMIGSPlant(Human-vaginal):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -23767,8 +23767,8 @@ class Human-vaginalMIGSPlant(Human-vaginal):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -23843,7 +23843,7 @@ class Human-vaginalMIGSVirus(Human-vaginal):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -23997,8 +23997,8 @@ class Human-vaginalMIGSVirus(Human-vaginal):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -24065,7 +24065,7 @@ class Human-vaginalMIGSOrg(Human-vaginal):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -24196,8 +24196,8 @@ class Human-vaginalMIGSOrg(Human-vaginal):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -24736,7 +24736,7 @@ class Human-vaginalMISAG(Human-vaginal):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -24781,7 +24781,7 @@ class Human-vaginalMISAG(Human-vaginal):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -24816,8 +24816,8 @@ class Human-vaginalMISAG(Human-vaginal):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -24961,8 +24961,8 @@ class Human-vaginalMISAG(Human-vaginal):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -25002,7 +25002,7 @@ class Human-vaginalMIMAG(Human-vaginal):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -25046,7 +25046,7 @@ class Human-vaginalMIMAG(Human-vaginal):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -25081,8 +25081,8 @@ class Human-vaginalMIMAG(Human-vaginal):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -25221,8 +25221,8 @@ class Human-vaginalMIMAG(Human-vaginal):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -25307,7 +25307,7 @@ class Human-vaginalMIUVIG(Human-vaginal):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -25500,8 +25500,8 @@ class Human-vaginalMIUVIG(Human-vaginal):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -26034,7 +26034,7 @@ class HydrocarbonResources-coresMIGSEukaryote(HydrocarbonResources-cores):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -26196,8 +26196,8 @@ class HydrocarbonResources-coresMIGSEukaryote(HydrocarbonResources-cores):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -26283,7 +26283,7 @@ class HydrocarbonResources-coresMIGSBacteria(HydrocarbonResources-cores):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -26449,8 +26449,8 @@ class HydrocarbonResources-coresMIGSBacteria(HydrocarbonResources-cores):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -26530,7 +26530,7 @@ class HydrocarbonResources-coresMIGSPlant(HydrocarbonResources-cores):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -26672,8 +26672,8 @@ class HydrocarbonResources-coresMIGSPlant(HydrocarbonResources-cores):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -26758,7 +26758,7 @@ class HydrocarbonResources-coresMIGSVirus(HydrocarbonResources-cores):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -26915,8 +26915,8 @@ class HydrocarbonResources-coresMIGSVirus(HydrocarbonResources-cores):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -26993,7 +26993,7 @@ class HydrocarbonResources-coresMIGSOrg(HydrocarbonResources-cores):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -27124,8 +27124,8 @@ class HydrocarbonResources-coresMIGSOrg(HydrocarbonResources-cores):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -27700,7 +27700,7 @@ class HydrocarbonResources-coresMISAG(HydrocarbonResources-cores):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -27745,7 +27745,7 @@ class HydrocarbonResources-coresMISAG(HydrocarbonResources-cores):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -27780,8 +27780,8 @@ class HydrocarbonResources-coresMISAG(HydrocarbonResources-cores):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -27925,8 +27925,8 @@ class HydrocarbonResources-coresMISAG(HydrocarbonResources-cores):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -27975,7 +27975,7 @@ class HydrocarbonResources-coresMIMAG(HydrocarbonResources-cores):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -28019,7 +28019,7 @@ class HydrocarbonResources-coresMIMAG(HydrocarbonResources-cores):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -28054,8 +28054,8 @@ class HydrocarbonResources-coresMIMAG(HydrocarbonResources-cores):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -28194,8 +28194,8 @@ class HydrocarbonResources-coresMIMAG(HydrocarbonResources-cores):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -28290,7 +28290,7 @@ class HydrocarbonResources-coresMIUVIG(HydrocarbonResources-cores):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -28486,8 +28486,8 @@ class HydrocarbonResources-coresMIUVIG(HydrocarbonResources-cores):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -29052,7 +29052,7 @@ class HydrocarbonResources-fluidsSwabsMIGSEukaryote(HydrocarbonResources-fluidsS
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -29214,8 +29214,8 @@ class HydrocarbonResources-fluidsSwabsMIGSEukaryote(HydrocarbonResources-fluidsS
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -29305,7 +29305,7 @@ class HydrocarbonResources-fluidsSwabsMIGSBacteria(HydrocarbonResources-fluidsSw
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -29471,8 +29471,8 @@ class HydrocarbonResources-fluidsSwabsMIGSBacteria(HydrocarbonResources-fluidsSw
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -29556,7 +29556,7 @@ class HydrocarbonResources-fluidsSwabsMIGSPlant(HydrocarbonResources-fluidsSwabs
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -29698,8 +29698,8 @@ class HydrocarbonResources-fluidsSwabsMIGSPlant(HydrocarbonResources-fluidsSwabs
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -29788,7 +29788,7 @@ class HydrocarbonResources-fluidsSwabsMIGSVirus(HydrocarbonResources-fluidsSwabs
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -29945,8 +29945,8 @@ class HydrocarbonResources-fluidsSwabsMIGSVirus(HydrocarbonResources-fluidsSwabs
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -30027,7 +30027,7 @@ class HydrocarbonResources-fluidsSwabsMIGSOrg(HydrocarbonResources-fluidsSwabs):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -30158,8 +30158,8 @@ class HydrocarbonResources-fluidsSwabsMIGSOrg(HydrocarbonResources-fluidsSwabs):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -30750,7 +30750,7 @@ class HydrocarbonResources-fluidsSwabsMISAG(HydrocarbonResources-fluidsSwabs):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -30795,7 +30795,7 @@ class HydrocarbonResources-fluidsSwabsMISAG(HydrocarbonResources-fluidsSwabs):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -30830,8 +30830,8 @@ class HydrocarbonResources-fluidsSwabsMISAG(HydrocarbonResources-fluidsSwabs):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -30975,8 +30975,8 @@ class HydrocarbonResources-fluidsSwabsMISAG(HydrocarbonResources-fluidsSwabs):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -31029,7 +31029,7 @@ class HydrocarbonResources-fluidsSwabsMIMAG(HydrocarbonResources-fluidsSwabs):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -31073,7 +31073,7 @@ class HydrocarbonResources-fluidsSwabsMIMAG(HydrocarbonResources-fluidsSwabs):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -31108,8 +31108,8 @@ class HydrocarbonResources-fluidsSwabsMIMAG(HydrocarbonResources-fluidsSwabs):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -31248,8 +31248,8 @@ class HydrocarbonResources-fluidsSwabsMIMAG(HydrocarbonResources-fluidsSwabs):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -31348,7 +31348,7 @@ class HydrocarbonResources-fluidsSwabsMIUVIG(HydrocarbonResources-fluidsSwabs):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -31544,8 +31544,8 @@ class HydrocarbonResources-fluidsSwabsMIUVIG(HydrocarbonResources-fluidsSwabs):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -31981,7 +31981,7 @@ class MicrobialMatBiofilmMIGSEukaryote(MicrobialMatBiofilm):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -32143,8 +32143,8 @@ class MicrobialMatBiofilmMIGSEukaryote(MicrobialMatBiofilm):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -32221,7 +32221,7 @@ class MicrobialMatBiofilmMIGSBacteria(MicrobialMatBiofilm):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -32387,8 +32387,8 @@ class MicrobialMatBiofilmMIGSBacteria(MicrobialMatBiofilm):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -32459,7 +32459,7 @@ class MicrobialMatBiofilmMIGSPlant(MicrobialMatBiofilm):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -32601,8 +32601,8 @@ class MicrobialMatBiofilmMIGSPlant(MicrobialMatBiofilm):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -32678,7 +32678,7 @@ class MicrobialMatBiofilmMIGSVirus(MicrobialMatBiofilm):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -32835,8 +32835,8 @@ class MicrobialMatBiofilmMIGSVirus(MicrobialMatBiofilm):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -32904,7 +32904,7 @@ class MicrobialMatBiofilmMIGSOrg(MicrobialMatBiofilm):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -33035,8 +33035,8 @@ class MicrobialMatBiofilmMIGSOrg(MicrobialMatBiofilm):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -33575,7 +33575,7 @@ class MicrobialMatBiofilmMISAG(MicrobialMatBiofilm):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -33620,7 +33620,7 @@ class MicrobialMatBiofilmMISAG(MicrobialMatBiofilm):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -33655,8 +33655,8 @@ class MicrobialMatBiofilmMISAG(MicrobialMatBiofilm):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -33800,8 +33800,8 @@ class MicrobialMatBiofilmMISAG(MicrobialMatBiofilm):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -33841,7 +33841,7 @@ class MicrobialMatBiofilmMIMAG(MicrobialMatBiofilm):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -33885,7 +33885,7 @@ class MicrobialMatBiofilmMIMAG(MicrobialMatBiofilm):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -33920,8 +33920,8 @@ class MicrobialMatBiofilmMIMAG(MicrobialMatBiofilm):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -34060,8 +34060,8 @@ class MicrobialMatBiofilmMIMAG(MicrobialMatBiofilm):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -34147,7 +34147,7 @@ class MicrobialMatBiofilmMIUVIG(MicrobialMatBiofilm):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -34343,8 +34343,8 @@ class MicrobialMatBiofilmMIUVIG(MicrobialMatBiofilm):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -34702,7 +34702,7 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIGSEukaryote(MiscellaneousNatu
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -34864,8 +34864,8 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIGSEukaryote(MiscellaneousNatu
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -34942,7 +34942,7 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIGSBacteria(MiscellaneousNatur
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -35108,8 +35108,8 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIGSBacteria(MiscellaneousNatur
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -35180,7 +35180,7 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIGSPlant(MiscellaneousNaturalO
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -35322,8 +35322,8 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIGSPlant(MiscellaneousNaturalO
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -35399,7 +35399,7 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIGSVirus(MiscellaneousNaturalO
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -35556,8 +35556,8 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIGSVirus(MiscellaneousNaturalO
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -35625,7 +35625,7 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIGSOrg(MiscellaneousNaturalOrA
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -35756,8 +35756,8 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIGSOrg(MiscellaneousNaturalOrA
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -36297,7 +36297,7 @@ class MiscellaneousNaturalOrArtificialEnvironmentMISAG(MiscellaneousNaturalOrArt
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -36342,7 +36342,7 @@ class MiscellaneousNaturalOrArtificialEnvironmentMISAG(MiscellaneousNaturalOrArt
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -36377,8 +36377,8 @@ class MiscellaneousNaturalOrArtificialEnvironmentMISAG(MiscellaneousNaturalOrArt
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -36522,8 +36522,8 @@ class MiscellaneousNaturalOrArtificialEnvironmentMISAG(MiscellaneousNaturalOrArt
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -36563,7 +36563,7 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIMAG(MiscellaneousNaturalOrArt
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -36607,7 +36607,7 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIMAG(MiscellaneousNaturalOrArt
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -36642,8 +36642,8 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIMAG(MiscellaneousNaturalOrArt
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -36782,8 +36782,8 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIMAG(MiscellaneousNaturalOrArt
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -36869,7 +36869,7 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIUVIG(MiscellaneousNaturalOrAr
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -37065,8 +37065,8 @@ class MiscellaneousNaturalOrArtificialEnvironmentMIUVIG(MiscellaneousNaturalOrAr
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -37569,7 +37569,7 @@ class Plant-associatedMIGSEukaryote(Plant-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -37728,8 +37728,8 @@ class Plant-associatedMIGSEukaryote(Plant-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -37805,7 +37805,7 @@ class Plant-associatedMIGSBacteria(Plant-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -37968,8 +37968,8 @@ class Plant-associatedMIGSBacteria(Plant-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -38040,7 +38040,7 @@ class Plant-associatedMIGSPlant(Plant-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -38182,8 +38182,8 @@ class Plant-associatedMIGSPlant(Plant-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -38258,7 +38258,7 @@ class Plant-associatedMIGSVirus(Plant-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -38412,8 +38412,8 @@ class Plant-associatedMIGSVirus(Plant-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -38481,7 +38481,7 @@ class Plant-associatedMIGSOrg(Plant-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -38612,8 +38612,8 @@ class Plant-associatedMIGSOrg(Plant-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -39152,7 +39152,7 @@ class Plant-associatedMISAG(Plant-associated):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -39197,7 +39197,7 @@ class Plant-associatedMISAG(Plant-associated):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -39232,8 +39232,8 @@ class Plant-associatedMISAG(Plant-associated):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -39377,8 +39377,8 @@ class Plant-associatedMISAG(Plant-associated):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -39418,7 +39418,7 @@ class Plant-associatedMIMAG(Plant-associated):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -39462,7 +39462,7 @@ class Plant-associatedMIMAG(Plant-associated):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -39497,8 +39497,8 @@ class Plant-associatedMIMAG(Plant-associated):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -39637,8 +39637,8 @@ class Plant-associatedMIMAG(Plant-associated):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -39723,7 +39723,7 @@ class Plant-associatedMIUVIG(Plant-associated):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -39916,8 +39916,8 @@ class Plant-associatedMIUVIG(Plant-associated):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -40380,7 +40380,7 @@ class SedimentMIGSEukaryote(Sediment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -40542,8 +40542,8 @@ class SedimentMIGSEukaryote(Sediment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -40621,7 +40621,7 @@ class SedimentMIGSBacteria(Sediment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -40787,8 +40787,8 @@ class SedimentMIGSBacteria(Sediment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -40859,7 +40859,7 @@ class SedimentMIGSPlant(Sediment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -41001,8 +41001,8 @@ class SedimentMIGSPlant(Sediment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -41079,7 +41079,7 @@ class SedimentMIGSVirus(Sediment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -41236,8 +41236,8 @@ class SedimentMIGSVirus(Sediment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -41305,7 +41305,7 @@ class SedimentMIGSOrg(Sediment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -41436,8 +41436,8 @@ class SedimentMIGSOrg(Sediment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -41977,7 +41977,7 @@ class SedimentMISAG(Sediment):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -42022,7 +42022,7 @@ class SedimentMISAG(Sediment):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -42057,8 +42057,8 @@ class SedimentMISAG(Sediment):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -42202,8 +42202,8 @@ class SedimentMISAG(Sediment):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -42243,7 +42243,7 @@ class SedimentMIMAG(Sediment):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -42287,7 +42287,7 @@ class SedimentMIMAG(Sediment):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -42322,8 +42322,8 @@ class SedimentMIMAG(Sediment):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -42462,8 +42462,8 @@ class SedimentMIMAG(Sediment):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -42549,7 +42549,7 @@ class SedimentMIUVIG(Sediment):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -42745,8 +42745,8 @@ class SedimentMIUVIG(Sediment):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -43158,7 +43158,7 @@ class SoilMIGSEukaryote(Soil):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -43320,8 +43320,8 @@ class SoilMIGSEukaryote(Soil):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -43400,7 +43400,7 @@ class SoilMIGSBacteria(Soil):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -43566,8 +43566,8 @@ class SoilMIGSBacteria(Soil):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -43639,7 +43639,7 @@ class SoilMIGSPlant(Soil):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -43781,8 +43781,8 @@ class SoilMIGSPlant(Soil):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -43860,7 +43860,7 @@ class SoilMIGSVirus(Soil):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -44017,8 +44017,8 @@ class SoilMIGSVirus(Soil):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -44087,7 +44087,7 @@ class SoilMIGSOrg(Soil):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -44218,8 +44218,8 @@ class SoilMIGSOrg(Soil):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -44763,7 +44763,7 @@ class SoilMISAG(Soil):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -44808,7 +44808,7 @@ class SoilMISAG(Soil):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -44843,8 +44843,8 @@ class SoilMISAG(Soil):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -44988,8 +44988,8 @@ class SoilMISAG(Soil):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -45030,7 +45030,7 @@ class SoilMIMAG(Soil):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -45074,7 +45074,7 @@ class SoilMIMAG(Soil):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -45109,8 +45109,8 @@ class SoilMIMAG(Soil):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -45249,8 +45249,8 @@ class SoilMIMAG(Soil):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -45337,7 +45337,7 @@ class SoilMIUVIG(Soil):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -45533,8 +45533,8 @@ class SoilMIUVIG(Soil):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -45880,7 +45880,7 @@ class WastewaterSludgeMIGSEukaryote(WastewaterSludge):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -46042,8 +46042,8 @@ class WastewaterSludgeMIGSEukaryote(WastewaterSludge):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -46120,7 +46120,7 @@ class WastewaterSludgeMIGSBacteria(WastewaterSludge):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -46286,8 +46286,8 @@ class WastewaterSludgeMIGSBacteria(WastewaterSludge):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -46358,7 +46358,7 @@ class WastewaterSludgeMIGSPlant(WastewaterSludge):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -46500,8 +46500,8 @@ class WastewaterSludgeMIGSPlant(WastewaterSludge):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -46577,7 +46577,7 @@ class WastewaterSludgeMIGSVirus(WastewaterSludge):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -46734,8 +46734,8 @@ class WastewaterSludgeMIGSVirus(WastewaterSludge):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -46803,7 +46803,7 @@ class WastewaterSludgeMIGSOrg(WastewaterSludge):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -46934,8 +46934,8 @@ class WastewaterSludgeMIGSOrg(WastewaterSludge):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -47474,7 +47474,7 @@ class WastewaterSludgeMISAG(WastewaterSludge):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -47519,7 +47519,7 @@ class WastewaterSludgeMISAG(WastewaterSludge):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -47554,8 +47554,8 @@ class WastewaterSludgeMISAG(WastewaterSludge):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -47699,8 +47699,8 @@ class WastewaterSludgeMISAG(WastewaterSludge):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -47740,7 +47740,7 @@ class WastewaterSludgeMIMAG(WastewaterSludge):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -47784,7 +47784,7 @@ class WastewaterSludgeMIMAG(WastewaterSludge):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -47819,8 +47819,8 @@ class WastewaterSludgeMIMAG(WastewaterSludge):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -47959,8 +47959,8 @@ class WastewaterSludgeMIMAG(WastewaterSludge):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -48046,7 +48046,7 @@ class WastewaterSludgeMIUVIG(WastewaterSludge):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -48242,8 +48242,8 @@ class WastewaterSludgeMIUVIG(WastewaterSludge):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -48766,7 +48766,7 @@ class WaterMIGSEukaryote(Water):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -48928,8 +48928,8 @@ class WaterMIGSEukaryote(Water):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -49007,7 +49007,7 @@ class WaterMIGSBacteria(Water):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -49173,8 +49173,8 @@ class WaterMIGSBacteria(Water):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -49245,7 +49245,7 @@ class WaterMIGSPlant(Water):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -49387,8 +49387,8 @@ class WaterMIGSPlant(Water):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -49465,7 +49465,7 @@ class WaterMIGSVirus(Water):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -49622,8 +49622,8 @@ class WaterMIGSVirus(Water):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -49691,7 +49691,7 @@ class WaterMIGSOrg(Water):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -49822,8 +49822,8 @@ class WaterMIGSOrg(Water):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -50363,7 +50363,7 @@ class WaterMISAG(Water):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -50408,7 +50408,7 @@ class WaterMISAG(Water):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -50443,8 +50443,8 @@ class WaterMISAG(Water):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -50588,8 +50588,8 @@ class WaterMISAG(Water):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -50629,7 +50629,7 @@ class WaterMIMAG(Water):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -50673,7 +50673,7 @@ class WaterMIMAG(Water):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -50708,8 +50708,8 @@ class WaterMIMAG(Water):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -50848,8 +50848,8 @@ class WaterMIMAG(Water):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -50935,7 +50935,7 @@ class WaterMIUVIG(Water):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -51131,8 +51131,8 @@ class WaterMIUVIG(Water):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -51592,7 +51592,7 @@ class Symbiont-associatedMIGSEukaryote(Symbiont-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -51738,8 +51738,8 @@ class Symbiont-associatedMIGSEukaryote(Symbiont-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -51819,7 +51819,7 @@ class Symbiont-associatedMIGSBacteria(Symbiont-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -51969,8 +51969,8 @@ class Symbiont-associatedMIGSBacteria(Symbiont-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -52044,7 +52044,7 @@ class Symbiont-associatedMIGSPlant(Symbiont-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -52170,8 +52170,8 @@ class Symbiont-associatedMIGSPlant(Symbiont-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -52250,7 +52250,7 @@ class Symbiont-associatedMIGSVirus(Symbiont-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -52391,8 +52391,8 @@ class Symbiont-associatedMIGSVirus(Symbiont-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -52463,7 +52463,7 @@ class Symbiont-associatedMIGSOrg(Symbiont-associated):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -52578,8 +52578,8 @@ class Symbiont-associatedMIGSOrg(Symbiont-associated):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -53089,7 +53089,7 @@ class Symbiont-associatedMISAG(Symbiont-associated):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -53127,7 +53127,7 @@ class Symbiont-associatedMISAG(Symbiont-associated):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -53167,8 +53167,8 @@ class Symbiont-associatedMISAG(Symbiont-associated):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -53291,8 +53291,8 @@ class Symbiont-associatedMISAG(Symbiont-associated):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -53342,7 +53342,7 @@ class Symbiont-associatedMIMAG(Symbiont-associated):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -53379,7 +53379,7 @@ class Symbiont-associatedMIMAG(Symbiont-associated):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -53419,8 +53419,8 @@ class Symbiont-associatedMIMAG(Symbiont-associated):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -53538,8 +53538,8 @@ class Symbiont-associatedMIMAG(Symbiont-associated):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -53628,7 +53628,7 @@ class Symbiont-associatedMIUVIG(Symbiont-associated):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -53808,8 +53808,8 @@ class Symbiont-associatedMIUVIG(Symbiont-associated):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -53942,7 +53942,7 @@ class Food-humanFoods(YAMLRoot):
     food_prod: Optional[Union[str, List[str]]] = empty_list()
     food_prod_synonym: Optional[Union[str, List[str]]] = empty_list()
     food_product_qual: Optional[str] = None
-    food_quality_date: Optional[Union[str, "FoodQualityDateEnum"]] = None
+    food_quality_date: Optional[str] = None
     food_source: Optional[str] = None
     food_trace_list: Optional[Union[str, "FoodTraceListEnum"]] = None
     food_trav_mode: Optional[Union[str, List[str]]] = empty_list()
@@ -53973,7 +53973,7 @@ class Food-humanFoods(YAMLRoot):
     samp_transport_cont: Optional[Union[str, "SampTransportContEnum"]] = None
     samp_transport_dur: Optional[Union[dict, "QuantityValue"]] = None
     samp_transport_temp: Optional[str] = None
-    samp_purpose: Optional[Union[str, "SampPurposeEnum"]] = None
+    samp_purpose: Optional[str] = None
     sequencing_kit: Optional[str] = None
     sequencing_location: Optional[str] = None
     serovar_or_serotype: Optional[Union[str, List[str]]] = empty_list()
@@ -54228,8 +54228,8 @@ class Food-humanFoods(YAMLRoot):
         if self.food_product_qual is not None and not isinstance(self.food_product_qual, str):
             self.food_product_qual = str(self.food_product_qual)
 
-        if self.food_quality_date is not None and not isinstance(self.food_quality_date, FoodQualityDateEnum):
-            self.food_quality_date = FoodQualityDateEnum(self.food_quality_date)
+        if self.food_quality_date is not None and not isinstance(self.food_quality_date, str):
+            self.food_quality_date = str(self.food_quality_date)
 
         if self.food_source is not None and not isinstance(self.food_source, str):
             self.food_source = str(self.food_source)
@@ -54331,8 +54331,8 @@ class Food-humanFoods(YAMLRoot):
         if self.samp_transport_temp is not None and not isinstance(self.samp_transport_temp, str):
             self.samp_transport_temp = str(self.samp_transport_temp)
 
-        if self.samp_purpose is not None and not isinstance(self.samp_purpose, SampPurposeEnum):
-            self.samp_purpose = SampPurposeEnum(self.samp_purpose)
+        if self.samp_purpose is not None and not isinstance(self.samp_purpose, str):
+            self.samp_purpose = str(self.samp_purpose)
 
         if self.sequencing_kit is not None and not isinstance(self.sequencing_kit, str):
             self.sequencing_kit = str(self.sequencing_kit)
@@ -54474,7 +54474,7 @@ class Food-humanFoodsMIGSEukaryote(Food-humanFoods):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -54604,8 +54604,8 @@ class Food-humanFoodsMIGSEukaryote(Food-humanFoods):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -54682,7 +54682,7 @@ class Food-humanFoodsMIGSBacteria(Food-humanFoods):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -54816,8 +54816,8 @@ class Food-humanFoodsMIGSBacteria(Food-humanFoods):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -54888,7 +54888,7 @@ class Food-humanFoodsMIGSPlant(Food-humanFoods):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -54998,8 +54998,8 @@ class Food-humanFoodsMIGSPlant(Food-humanFoods):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -55075,7 +55075,7 @@ class Food-humanFoodsMIGSVirus(Food-humanFoods):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -55200,8 +55200,8 @@ class Food-humanFoodsMIGSVirus(Food-humanFoods):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -55269,7 +55269,7 @@ class Food-humanFoodsMIGSOrg(Food-humanFoods):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -55368,8 +55368,8 @@ class Food-humanFoodsMIGSOrg(Food-humanFoods):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -55821,7 +55821,7 @@ class Food-humanFoodsMISAG(Food-humanFoods):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -55857,7 +55857,7 @@ class Food-humanFoodsMISAG(Food-humanFoods):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -55887,8 +55887,8 @@ class Food-humanFoodsMISAG(Food-humanFoods):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -56005,8 +56005,8 @@ class Food-humanFoodsMISAG(Food-humanFoods):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -56055,7 +56055,7 @@ class Food-humanFoodsMIMAG(Food-humanFoods):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -56090,7 +56090,7 @@ class Food-humanFoodsMIMAG(Food-humanFoods):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -56120,8 +56120,8 @@ class Food-humanFoodsMIMAG(Food-humanFoods):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -56233,8 +56233,8 @@ class Food-humanFoodsMIMAG(Food-humanFoods):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -56320,7 +56320,7 @@ class Food-humanFoodsMIUVIG(Food-humanFoods):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -56484,8 +56484,8 @@ class Food-humanFoodsMIUVIG(Food-humanFoods):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -56568,7 +56568,7 @@ class Food-animalAndAnimalFeed(YAMLRoot):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -56621,7 +56621,7 @@ class Food-animalAndAnimalFeed(YAMLRoot):
     food_prior_contact: Optional[Union[str, List[str]]] = empty_list()
     food_prod_synonym: Optional[Union[str, List[str]]] = empty_list()
     food_product_qual: Optional[str] = None
-    food_quality_date: Optional[Union[str, "FoodQualityDateEnum"]] = None
+    food_quality_date: Optional[str] = None
     food_source_age: Optional[Union[dict, "QuantityValue"]] = None
     food_trace_list: Optional[Union[str, "FoodTraceListEnum"]] = None
     food_trav_mode: Optional[Union[str, List[str]]] = empty_list()
@@ -56731,8 +56731,8 @@ class Food-animalAndAnimalFeed(YAMLRoot):
 
         if self._is_empty(self.samp_purpose):
             self.MissingRequiredField("samp_purpose")
-        if not isinstance(self.samp_purpose, SampPurposeEnum):
-            self.samp_purpose = SampPurposeEnum(self.samp_purpose)
+        if not isinstance(self.samp_purpose, str):
+            self.samp_purpose = str(self.samp_purpose)
 
         if self._is_empty(self.samp_name):
             self.MissingRequiredField("samp_name")
@@ -56913,8 +56913,8 @@ class Food-animalAndAnimalFeed(YAMLRoot):
         if self.food_product_qual is not None and not isinstance(self.food_product_qual, str):
             self.food_product_qual = str(self.food_product_qual)
 
-        if self.food_quality_date is not None and not isinstance(self.food_quality_date, FoodQualityDateEnum):
-            self.food_quality_date = FoodQualityDateEnum(self.food_quality_date)
+        if self.food_quality_date is not None and not isinstance(self.food_quality_date, str):
+            self.food_quality_date = str(self.food_quality_date)
 
         if self.food_source_age is not None and not isinstance(self.food_source_age, QuantityValue):
             self.food_source_age = QuantityValue(**as_dict(self.food_source_age))
@@ -57089,7 +57089,7 @@ class Food-animalAndAnimalFeedMIGSEukaryote(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -57131,7 +57131,7 @@ class Food-animalAndAnimalFeedMIGSEukaryote(Food-animalAndAnimalFeed):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -57261,8 +57261,8 @@ class Food-animalAndAnimalFeedMIGSEukaryote(Food-animalAndAnimalFeed):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -57301,7 +57301,7 @@ class Food-animalAndAnimalFeedMIGSBacteria(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -57343,7 +57343,7 @@ class Food-animalAndAnimalFeedMIGSBacteria(Food-animalAndAnimalFeed):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -57477,8 +57477,8 @@ class Food-animalAndAnimalFeedMIGSBacteria(Food-animalAndAnimalFeed):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -57517,7 +57517,7 @@ class Food-animalAndAnimalFeedMIGSPlant(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -57553,7 +57553,7 @@ class Food-animalAndAnimalFeedMIGSPlant(Food-animalAndAnimalFeed):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -57663,8 +57663,8 @@ class Food-animalAndAnimalFeedMIGSPlant(Food-animalAndAnimalFeed):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -57703,7 +57703,7 @@ class Food-animalAndAnimalFeedMIGSVirus(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -57744,7 +57744,7 @@ class Food-animalAndAnimalFeedMIGSVirus(Food-animalAndAnimalFeed):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -57869,8 +57869,8 @@ class Food-animalAndAnimalFeedMIGSVirus(Food-animalAndAnimalFeed):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -57909,7 +57909,7 @@ class Food-animalAndAnimalFeedMIGSOrg(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -57942,7 +57942,7 @@ class Food-animalAndAnimalFeedMIGSOrg(Food-animalAndAnimalFeed):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -58041,8 +58041,8 @@ class Food-animalAndAnimalFeedMIGSOrg(Food-animalAndAnimalFeed):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -58080,7 +58080,7 @@ class Food-animalAndAnimalFeedMIMS(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -58232,7 +58232,7 @@ class Food-animalAndAnimalFeedMIMARKSSpecimen(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -58374,7 +58374,7 @@ class Food-animalAndAnimalFeedMIMARKSSurvey(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -58502,7 +58502,7 @@ class Food-animalAndAnimalFeedMISAG(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -58510,7 +58510,7 @@ class Food-animalAndAnimalFeedMISAG(Food-animalAndAnimalFeed):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -58546,7 +58546,7 @@ class Food-animalAndAnimalFeedMISAG(Food-animalAndAnimalFeed):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -58576,8 +58576,8 @@ class Food-animalAndAnimalFeedMISAG(Food-animalAndAnimalFeed):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -58694,8 +58694,8 @@ class Food-animalAndAnimalFeedMISAG(Food-animalAndAnimalFeed):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -58740,7 +58740,7 @@ class Food-animalAndAnimalFeedMIMAG(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -58748,7 +58748,7 @@ class Food-animalAndAnimalFeedMIMAG(Food-animalAndAnimalFeed):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -58783,7 +58783,7 @@ class Food-animalAndAnimalFeedMIMAG(Food-animalAndAnimalFeed):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -58813,8 +58813,8 @@ class Food-animalAndAnimalFeedMIMAG(Food-animalAndAnimalFeed):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -58926,8 +58926,8 @@ class Food-animalAndAnimalFeedMIMAG(Food-animalAndAnimalFeed):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -58972,7 +58972,7 @@ class Food-animalAndAnimalFeedMIUVIG(Food-animalAndAnimalFeed):
     food_product_type: Union[str, List[str]] = None
     IFSAC_category: Union[str, List[str]] = None
     intended_consumer: Union[str, List[str]] = None
-    samp_purpose: Union[str, "SampPurposeEnum"] = None
+    samp_purpose: str = None
     samp_name: str = None
     project_name: str = None
     seq_meth: str = None
@@ -59017,7 +59017,7 @@ class Food-animalAndAnimalFeedMIUVIG(Food-animalAndAnimalFeed):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -59181,8 +59181,8 @@ class Food-animalAndAnimalFeedMIUVIG(Food-animalAndAnimalFeed):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -59313,7 +59313,7 @@ class Food-foodProductionFacility(YAMLRoot):
     cult_result: Optional[Union[str, "CultResultEnum"]] = None
     cult_result_org: Optional[Union[str, List[str]]] = empty_list()
     samp_pooling: Optional[Union[str, List[str]]] = empty_list()
-    samp_purpose: Optional[Union[str, "SampPurposeEnum"]] = None
+    samp_purpose: Optional[str] = None
     samp_rep_tech: Optional[Union[dict, "QuantityValue"]] = None
     samp_rep_biol: Optional[Union[dict, "QuantityValue"]] = None
     samp_transport_cont: Optional[Union[str, "SampTransportContEnum"]] = None
@@ -59350,7 +59350,7 @@ class Food-foodProductionFacility(YAMLRoot):
     food_pack_medium: Optional[Union[str, List[str]]] = empty_list()
     food_prior_contact: Optional[Union[str, List[str]]] = empty_list()
     food_prod: Optional[Union[str, List[str]]] = empty_list()
-    food_quality_date: Optional[Union[str, "FoodQualityDateEnum"]] = None
+    food_quality_date: Optional[str] = None
     repository_name: Optional[Union[str, List[str]]] = empty_list()
     intended_consumer: Optional[Union[str, List[str]]] = empty_list()
     food_pack_integrity: Optional[Union[str, List[str]]] = empty_list()
@@ -59595,8 +59595,8 @@ class Food-foodProductionFacility(YAMLRoot):
             self.samp_pooling = [self.samp_pooling] if self.samp_pooling is not None else []
         self.samp_pooling = [v if isinstance(v, str) else str(v) for v in self.samp_pooling]
 
-        if self.samp_purpose is not None and not isinstance(self.samp_purpose, SampPurposeEnum):
-            self.samp_purpose = SampPurposeEnum(self.samp_purpose)
+        if self.samp_purpose is not None and not isinstance(self.samp_purpose, str):
+            self.samp_purpose = str(self.samp_purpose)
 
         if self.samp_rep_tech is not None and not isinstance(self.samp_rep_tech, QuantityValue):
             self.samp_rep_tech = QuantityValue(**as_dict(self.samp_rep_tech))
@@ -59726,8 +59726,8 @@ class Food-foodProductionFacility(YAMLRoot):
             self.food_prod = [self.food_prod] if self.food_prod is not None else []
         self.food_prod = [v if isinstance(v, str) else str(v) for v in self.food_prod]
 
-        if self.food_quality_date is not None and not isinstance(self.food_quality_date, FoodQualityDateEnum):
-            self.food_quality_date = FoodQualityDateEnum(self.food_quality_date)
+        if self.food_quality_date is not None and not isinstance(self.food_quality_date, str):
+            self.food_quality_date = str(self.food_quality_date)
 
         if not isinstance(self.repository_name, list):
             self.repository_name = [self.repository_name] if self.repository_name is not None else []
@@ -59831,7 +59831,7 @@ class Food-foodProductionFacilityMIGSEukaryote(Food-foodProductionFacility):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -59958,8 +59958,8 @@ class Food-foodProductionFacilityMIGSEukaryote(Food-foodProductionFacility):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -60041,7 +60041,7 @@ class Food-foodProductionFacilityMIGSBacteria(Food-foodProductionFacility):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -60172,8 +60172,8 @@ class Food-foodProductionFacilityMIGSBacteria(Food-foodProductionFacility):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -60249,7 +60249,7 @@ class Food-foodProductionFacilityMIGSPlant(Food-foodProductionFacility):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -60356,8 +60356,8 @@ class Food-foodProductionFacilityMIGSPlant(Food-foodProductionFacility):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -60438,7 +60438,7 @@ class Food-foodProductionFacilityMIGSVirus(Food-foodProductionFacility):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -60560,8 +60560,8 @@ class Food-foodProductionFacilityMIGSVirus(Food-foodProductionFacility):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -60634,7 +60634,7 @@ class Food-foodProductionFacilityMIGSOrg(Food-foodProductionFacility):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -60730,8 +60730,8 @@ class Food-foodProductionFacilityMIGSOrg(Food-foodProductionFacility):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -61203,7 +61203,7 @@ class Food-foodProductionFacilityMISAG(Food-foodProductionFacility):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -61239,7 +61239,7 @@ class Food-foodProductionFacilityMISAG(Food-foodProductionFacility):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -61269,8 +61269,8 @@ class Food-foodProductionFacilityMISAG(Food-foodProductionFacility):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -61387,8 +61387,8 @@ class Food-foodProductionFacilityMISAG(Food-foodProductionFacility):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -61443,7 +61443,7 @@ class Food-foodProductionFacilityMIMAG(Food-foodProductionFacility):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -61478,7 +61478,7 @@ class Food-foodProductionFacilityMIMAG(Food-foodProductionFacility):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -61508,8 +61508,8 @@ class Food-foodProductionFacilityMIMAG(Food-foodProductionFacility):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -61621,8 +61621,8 @@ class Food-foodProductionFacilityMIMAG(Food-foodProductionFacility):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -61714,7 +61714,7 @@ class Food-foodProductionFacilityMIUVIG(Food-foodProductionFacility):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -61878,8 +61878,8 @@ class Food-foodProductionFacilityMIUVIG(Food-foodProductionFacility):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -62060,7 +62060,7 @@ class Food-farmEnvironment(YAMLRoot):
     part_plant_animal: Optional[Union[str, List[str]]] = empty_list()
     plant_growth_med: Optional[Union[str, "PlantGrowthMedEnum"]] = None
     plant_reprod_crop: Optional[Union[Union[str, "PlantReprodCropEnum"], List[Union[str, "PlantReprodCropEnum"]]]] = empty_list()
-    samp_purpose: Optional[Union[str, "SampPurposeEnum"]] = None
+    samp_purpose: Optional[str] = None
     repository_name: Optional[Union[str, List[str]]] = empty_list()
     samp_pooling: Optional[Union[str, List[str]]] = empty_list()
     samp_source_mat_cat: Optional[str] = None
@@ -62086,7 +62086,7 @@ class Food-farmEnvironment(YAMLRoot):
     water_pH: Optional[float] = None
     water_source_shared: Optional[Union[Union[str, "WaterSourceSharedEnum"], List[Union[str, "WaterSourceSharedEnum"]]]] = empty_list()
     enrichment_protocol: Optional[str] = None
-    food_quality_date: Optional[Union[str, "FoodQualityDateEnum"]] = None
+    food_quality_date: Optional[str] = None
     animal_housing: Optional[Union[str, List[str]]] = empty_list()
     cult_isol_date: Optional[Union[str, XSDDate]] = None
     food_clean_proc: Optional[Union[Union[str, "FoodCleanProcEnum"], List[Union[str, "FoodCleanProcEnum"]]]] = empty_list()
@@ -62494,8 +62494,8 @@ class Food-farmEnvironment(YAMLRoot):
             self.plant_reprod_crop = [self.plant_reprod_crop] if self.plant_reprod_crop is not None else []
         self.plant_reprod_crop = [v if isinstance(v, PlantReprodCropEnum) else PlantReprodCropEnum(v) for v in self.plant_reprod_crop]
 
-        if self.samp_purpose is not None and not isinstance(self.samp_purpose, SampPurposeEnum):
-            self.samp_purpose = SampPurposeEnum(self.samp_purpose)
+        if self.samp_purpose is not None and not isinstance(self.samp_purpose, str):
+            self.samp_purpose = str(self.samp_purpose)
 
         if not isinstance(self.repository_name, list):
             self.repository_name = [self.repository_name] if self.repository_name is not None else []
@@ -62585,8 +62585,8 @@ class Food-farmEnvironment(YAMLRoot):
         if self.enrichment_protocol is not None and not isinstance(self.enrichment_protocol, str):
             self.enrichment_protocol = str(self.enrichment_protocol)
 
-        if self.food_quality_date is not None and not isinstance(self.food_quality_date, FoodQualityDateEnum):
-            self.food_quality_date = FoodQualityDateEnum(self.food_quality_date)
+        if self.food_quality_date is not None and not isinstance(self.food_quality_date, str):
+            self.food_quality_date = str(self.food_quality_date)
 
         if not isinstance(self.animal_housing, list):
             self.animal_housing = [self.animal_housing] if self.animal_housing is not None else []
@@ -62684,7 +62684,7 @@ class Food-farmEnvironmentMIGSEukaryote(Food-farmEnvironment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -62814,8 +62814,8 @@ class Food-farmEnvironmentMIGSEukaryote(Food-farmEnvironment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -62895,7 +62895,7 @@ class Food-farmEnvironmentMIGSBacteria(Food-farmEnvironment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -63029,8 +63029,8 @@ class Food-farmEnvironmentMIGSBacteria(Food-farmEnvironment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -63105,7 +63105,7 @@ class Food-farmEnvironmentMIGSPlant(Food-farmEnvironment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -63218,8 +63218,8 @@ class Food-farmEnvironmentMIGSPlant(Food-farmEnvironment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -63298,7 +63298,7 @@ class Food-farmEnvironmentMIGSVirus(Food-farmEnvironment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -63423,8 +63423,8 @@ class Food-farmEnvironmentMIGSVirus(Food-farmEnvironment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -63496,7 +63496,7 @@ class Food-farmEnvironmentMIGSOrg(Food-farmEnvironment):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
     sop: Optional[str] = None
@@ -63598,8 +63598,8 @@ class Food-farmEnvironmentMIGSOrg(Food-farmEnvironment):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -64075,7 +64075,7 @@ class Food-farmEnvironmentMISAG(Food-farmEnvironment):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -64112,7 +64112,7 @@ class Food-farmEnvironmentMISAG(Food-farmEnvironment):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -64142,8 +64142,8 @@ class Food-farmEnvironmentMISAG(Food-farmEnvironment):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -64263,8 +64263,8 @@ class Food-farmEnvironmentMISAG(Food-farmEnvironment):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -64316,7 +64316,7 @@ class Food-farmEnvironmentMIMAG(Food-farmEnvironment):
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
     assembly_software: str = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -64352,7 +64352,7 @@ class Food-farmEnvironmentMIMAG(Food-farmEnvironment):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -64382,8 +64382,8 @@ class Food-farmEnvironmentMIMAG(Food-farmEnvironment):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -64498,8 +64498,8 @@ class Food-farmEnvironmentMIMAG(Food-farmEnvironment):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -64588,7 +64588,7 @@ class Food-farmEnvironmentMIUVIG(Food-farmEnvironment):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -64752,8 +64752,8 @@ class Food-farmEnvironmentMIUVIG(Food-farmEnvironment):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -64891,7 +64891,7 @@ class Agriculture(YAMLRoot):
     texture: Optional[Union[dict, "QuantityValue"]] = None
     texture_meth: Optional[str] = None
     host_symbiont: Optional[Union[str, List[str]]] = empty_list()
-    pres_animal_insect: Optional[Union[str, "PresAnimalInsectEnum"]] = None
+    pres_animal_insect: Optional[str] = None
     plant_water_method: Optional[str] = None
     anim_water_method: Optional[Union[str, List[str]]] = empty_list()
     farm_water_source: Optional[Union[Union[str, "FarmWaterSourceEnum"], List[Union[str, "FarmWaterSourceEnum"]]]] = empty_list()
@@ -65290,8 +65290,8 @@ class Agriculture(YAMLRoot):
             self.host_symbiont = [self.host_symbiont] if self.host_symbiont is not None else []
         self.host_symbiont = [v if isinstance(v, str) else str(v) for v in self.host_symbiont]
 
-        if self.pres_animal_insect is not None and not isinstance(self.pres_animal_insect, PresAnimalInsectEnum):
-            self.pres_animal_insect = PresAnimalInsectEnum(self.pres_animal_insect)
+        if self.pres_animal_insect is not None and not isinstance(self.pres_animal_insect, str):
+            self.pres_animal_insect = str(self.pres_animal_insect)
 
         if self.plant_water_method is not None and not isinstance(self.plant_water_method, str):
             self.plant_water_method = str(self.plant_water_method)
@@ -65709,7 +65709,7 @@ class AgricultureMIGSEukaryote(Agriculture):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
 
@@ -65808,8 +65808,8 @@ class AgricultureMIGSEukaryote(Agriculture):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -65903,7 +65903,7 @@ class AgricultureMIGSBacteria(Agriculture):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
 
@@ -66006,8 +66006,8 @@ class AgricultureMIGSBacteria(Agriculture):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -66098,7 +66098,7 @@ class AgricultureMIGSPlant(Agriculture):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
 
@@ -66189,8 +66189,8 @@ class AgricultureMIGSPlant(Agriculture):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -66284,7 +66284,7 @@ class AgricultureMIGSVirus(Agriculture):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
 
@@ -66381,8 +66381,8 @@ class AgricultureMIGSVirus(Agriculture):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -66472,7 +66472,7 @@ class AgricultureMIGSOrg(Agriculture):
     ref_db: Optional[str] = None
     sim_search_meth: Optional[str] = None
     tax_class: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     associated_resource: Optional[str] = None
 
@@ -66558,8 +66558,8 @@ class AgricultureMIGSOrg(Agriculture):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -67061,7 +67061,7 @@ class AgricultureMISAG(Agriculture):
     project_name: str = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
@@ -67092,7 +67092,7 @@ class AgricultureMISAG(Agriculture):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     wga_amp_kit: Optional[str] = None
@@ -67126,8 +67126,8 @@ class AgricultureMISAG(Agriculture):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -67229,8 +67229,8 @@ class AgricultureMISAG(Agriculture):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -67307,7 +67307,7 @@ class AgricultureMIMAG(Agriculture):
     project_name: str = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     assembly_qual: Union[str, "AssemblyQualEnum"] = None
-    compl_score: Union[str, "ComplScoreEnum"] = None
+    compl_score: str = None
     compl_software: str = None
     contam_score: str = None
     bin_param: Union[str, "BinParamEnum"] = None
@@ -67337,7 +67337,7 @@ class AgricultureMIMAG(Agriculture):
     trna_ext_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     contam_screen_input: Optional[str] = None
-    contam_screen_param: Optional[Union[str, "ContamScreenParamEnum"]] = None
+    contam_screen_param: Optional[str] = None
     decontam_software: Optional[Union[str, "DecontamSoftwareEnum"]] = None
     reassembly_bin: Optional[str] = None
     mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
@@ -67371,8 +67371,8 @@ class AgricultureMIMAG(Agriculture):
 
         if self._is_empty(self.compl_score):
             self.MissingRequiredField("compl_score")
-        if not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self._is_empty(self.compl_software):
             self.MissingRequiredField("compl_software")
@@ -67469,8 +67469,8 @@ class AgricultureMIMAG(Agriculture):
         if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
             self.contam_screen_input = str(self.contam_screen_input)
 
-        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, ContamScreenParamEnum):
-            self.contam_screen_param = ContamScreenParamEnum(self.contam_screen_param)
+        if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
+            self.contam_screen_param = str(self.contam_screen_param)
 
         if self.decontam_software is not None and not isinstance(self.decontam_software, DecontamSoftwareEnum):
             self.decontam_software = DecontamSoftwareEnum(self.decontam_software)
@@ -67574,7 +67574,7 @@ class AgricultureMIUVIG(Agriculture):
     tax_class: Optional[str] = None
     trnas: Optional[int] = None
     trna_ext_software: Optional[str] = None
-    compl_score: Optional[Union[str, "ComplScoreEnum"]] = None
+    compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -67712,8 +67712,8 @@ class AgricultureMIUVIG(Agriculture):
         if self.trna_ext_software is not None and not isinstance(self.trna_ext_software, str):
             self.trna_ext_software = str(self.trna_ext_software)
 
-        if self.compl_score is not None and not isinstance(self.compl_score, ComplScoreEnum):
-            self.compl_score = ComplScoreEnum(self.compl_score)
+        if self.compl_score is not None and not isinstance(self.compl_score, str):
+            self.compl_score = str(self.compl_score)
 
         if self.compl_software is not None and not isinstance(self.compl_software, str):
             self.compl_software = str(self.compl_software)
@@ -68736,6 +68736,8 @@ class FloorFinishMatEnum(EnumDefinitionImpl):
                 PermissibleValue(text="sheet vinyl") )
         setattr(cls, "clear finish",
                 PermissibleValue(text="clear finish") )
+        setattr(cls, "none or unfinished",
+                PermissibleValue(text="none or unfinished") )
 
 class FloorWaterMoldEnum(EnumDefinitionImpl):
 
@@ -70943,7 +70945,8 @@ slots.trna_ext_software = Slot(uri=MIXS['0000068'], name="trna_ext_software", cu
                    model_uri=MIXS.VOCAB.trna_ext_software, domain=None, range=Optional[str])
 
 slots.compl_score = Slot(uri=MIXS['0000069'], name="compl_score", curie=MIXS.curie('0000069'),
-                   model_uri=MIXS.VOCAB.compl_score, domain=None, range=Optional[Union[str, "ComplScoreEnum"]])
+                   model_uri=MIXS.VOCAB.compl_score, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(high|med|low);(0|([0-9]{1,2})|100)%$'))
 
 slots.compl_software = Slot(uri=MIXS['0000070'], name="compl_software", curie=MIXS.curie('0000070'),
                    model_uri=MIXS.VOCAB.compl_software, domain=None, range=Optional[str])
@@ -70958,7 +70961,8 @@ slots.contam_screen_input = Slot(uri=MIXS['0000005'], name="contam_screen_input"
                    model_uri=MIXS.VOCAB.contam_screen_input, domain=None, range=Optional[str])
 
 slots.contam_screen_param = Slot(uri=MIXS['0000073'], name="contam_screen_param", curie=MIXS.curie('0000073'),
-                   model_uri=MIXS.VOCAB.contam_screen_param, domain=None, range=Optional[Union[str, "ContamScreenParamEnum"]])
+                   model_uri=MIXS.VOCAB.contam_screen_param, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(ref db|kmer|coverage|combination);.+'))
 
 slots.decontam_software = Slot(uri=MIXS['0000074'], name="decontam_software", curie=MIXS.curie('0000074'),
                    model_uri=MIXS.VOCAB.decontam_software, domain=None, range=Optional[Union[str, "DecontamSoftwareEnum"]])
@@ -71378,7 +71382,8 @@ slots.rel_humidity_out = Slot(uri=MIXS['0000188'], name="rel_humidity_out", curi
                    model_uri=MIXS.VOCAB.rel_humidity_out, domain=None, range=Optional[Union[dict, QuantityValue]])
 
 slots.pres_animal_insect = Slot(uri=MIXS['0000819'], name="pres_animal_insect", curie=MIXS.curie('0000819'),
-                   model_uri=MIXS.VOCAB.pres_animal_insect, domain=None, range=Optional[Union[str, "PresAnimalInsectEnum"]])
+                   model_uri=MIXS.VOCAB.pres_animal_insect, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(cat|dog|rodent|snake|other);\d+$'))
 
 slots.quad_pos = Slot(uri=MIXS['0000820'], name="quad_pos", curie=MIXS.curie('0000820'),
                    model_uri=MIXS.VOCAB.quad_pos, domain=None, range=Optional[Union[str, "QuadPosEnum"]])
@@ -72750,7 +72755,8 @@ slots.food_product_qual = Slot(uri=MIXS['0001213'], name="food_product_qual", cu
                    model_uri=MIXS.VOCAB.food_product_qual, domain=None, range=Optional[str])
 
 slots.food_quality_date = Slot(uri=MIXS['0001178'], name="food_quality_date", curie=MIXS.curie('0001178'),
-                   model_uri=MIXS.VOCAB.food_quality_date, domain=None, range=Optional[Union[str, "FoodQualityDateEnum"]])
+                   model_uri=MIXS.VOCAB.food_quality_date, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(best by|best if used by|freeze by||use by);(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'))
 
 slots.food_source = Slot(uri=MIXS['0001139'], name="food_source", curie=MIXS.curie('0001139'),
                    model_uri=MIXS.VOCAB.food_source, domain=None, range=Optional[str])
@@ -72843,7 +72849,7 @@ slots.samp_transport_temp = Slot(uri=MIXS['0001232'], name="samp_transport_temp"
                    model_uri=MIXS.VOCAB.samp_transport_temp, domain=None, range=Optional[str])
 
 slots.samp_purpose = Slot(uri=MIXS['0001151'], name="samp_purpose", curie=MIXS.curie('0001151'),
-                   model_uri=MIXS.VOCAB.samp_purpose, domain=None, range=Optional[Union[str, "SampPurposeEnum"]])
+                   model_uri=MIXS.VOCAB.samp_purpose, domain=None, range=Optional[str])
 
 slots.sequencing_kit = Slot(uri=MIXS['0001155'], name="sequencing_kit", curie=MIXS.curie('0001155'),
                    model_uri=MIXS.VOCAB.sequencing_kit, domain=None, range=Optional[str])
@@ -73278,7 +73284,8 @@ slots.MIGS_eukaryote_tax_class = Slot(uri=MIXS['0000064'], name="MIGS eukaryote_
                    model_uri=MIXS.VOCAB.MIGS_eukaryote_tax_class, domain=None, range=Optional[str])
 
 slots.MIGS_eukaryote_compl_score = Slot(uri=MIXS['0000069'], name="MIGS eukaryote_compl_score", curie=MIXS.curie('0000069'),
-                   model_uri=MIXS.VOCAB.MIGS_eukaryote_compl_score, domain=None, range=Optional[Union[str, "ComplScoreEnum"]])
+                   model_uri=MIXS.VOCAB.MIGS_eukaryote_compl_score, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(high|med|low);(0|([0-9]{1,2})|100)%$'))
 
 slots.MIGS_eukaryote_compl_software = Slot(uri=MIXS['0000070'], name="MIGS eukaryote_compl_software", curie=MIXS.curie('0000070'),
                    model_uri=MIXS.VOCAB.MIGS_eukaryote_compl_software, domain=None, range=Optional[str])
@@ -73443,7 +73450,8 @@ slots.MIGS_bacteria_tax_class = Slot(uri=MIXS['0000064'], name="MIGS bacteria_ta
                    model_uri=MIXS.VOCAB.MIGS_bacteria_tax_class, domain=None, range=Optional[str])
 
 slots.MIGS_bacteria_compl_score = Slot(uri=MIXS['0000069'], name="MIGS bacteria_compl_score", curie=MIXS.curie('0000069'),
-                   model_uri=MIXS.VOCAB.MIGS_bacteria_compl_score, domain=None, range=Optional[Union[str, "ComplScoreEnum"]])
+                   model_uri=MIXS.VOCAB.MIGS_bacteria_compl_score, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(high|med|low);(0|([0-9]{1,2})|100)%$'))
 
 slots.MIGS_bacteria_compl_software = Slot(uri=MIXS['0000070'], name="MIGS bacteria_compl_software", curie=MIXS.curie('0000070'),
                    model_uri=MIXS.VOCAB.MIGS_bacteria_compl_software, domain=None, range=Optional[str])
@@ -73590,7 +73598,8 @@ slots.MIGS_plant_tax_class = Slot(uri=MIXS['0000064'], name="MIGS plant_tax_clas
                    model_uri=MIXS.VOCAB.MIGS_plant_tax_class, domain=None, range=Optional[str])
 
 slots.MIGS_plant_compl_score = Slot(uri=MIXS['0000069'], name="MIGS plant_compl_score", curie=MIXS.curie('0000069'),
-                   model_uri=MIXS.VOCAB.MIGS_plant_compl_score, domain=None, range=Optional[Union[str, "ComplScoreEnum"]])
+                   model_uri=MIXS.VOCAB.MIGS_plant_compl_score, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(high|med|low);(0|([0-9]{1,2})|100)%$'))
 
 slots.MIGS_plant_compl_software = Slot(uri=MIXS['0000070'], name="MIGS plant_compl_software", curie=MIXS.curie('0000070'),
                    model_uri=MIXS.VOCAB.MIGS_plant_compl_software, domain=None, range=Optional[str])
@@ -73752,7 +73761,8 @@ slots.MIGS_virus_tax_class = Slot(uri=MIXS['0000064'], name="MIGS virus_tax_clas
                    model_uri=MIXS.VOCAB.MIGS_virus_tax_class, domain=None, range=Optional[str])
 
 slots.MIGS_virus_compl_score = Slot(uri=MIXS['0000069'], name="MIGS virus_compl_score", curie=MIXS.curie('0000069'),
-                   model_uri=MIXS.VOCAB.MIGS_virus_compl_score, domain=None, range=Optional[Union[str, "ComplScoreEnum"]])
+                   model_uri=MIXS.VOCAB.MIGS_virus_compl_score, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(high|med|low);(0|([0-9]{1,2})|100)%$'))
 
 slots.MIGS_virus_compl_software = Slot(uri=MIXS['0000070'], name="MIGS virus_compl_software", curie=MIXS.curie('0000070'),
                    model_uri=MIXS.VOCAB.MIGS_virus_compl_software, domain=None, range=Optional[str])
@@ -73890,7 +73900,8 @@ slots.MIGS_org_tax_class = Slot(uri=MIXS['0000064'], name="MIGS org_tax_class", 
                    model_uri=MIXS.VOCAB.MIGS_org_tax_class, domain=None, range=Optional[str])
 
 slots.MIGS_org_compl_score = Slot(uri=MIXS['0000069'], name="MIGS org_compl_score", curie=MIXS.curie('0000069'),
-                   model_uri=MIXS.VOCAB.MIGS_org_compl_score, domain=None, range=Optional[Union[str, "ComplScoreEnum"]])
+                   model_uri=MIXS.VOCAB.MIGS_org_compl_score, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(high|med|low);(0|([0-9]{1,2})|100)%$'))
 
 slots.MIGS_org_compl_software = Slot(uri=MIXS['0000070'], name="MIGS org_compl_software", curie=MIXS.curie('0000070'),
                    model_uri=MIXS.VOCAB.MIGS_org_compl_software, domain=None, range=Optional[str])
@@ -74385,7 +74396,8 @@ slots.MISAG_trna_ext_software = Slot(uri=MIXS['0000068'], name="MISAG_trna_ext_s
                    model_uri=MIXS.VOCAB.MISAG_trna_ext_software, domain=None, range=Optional[str])
 
 slots.MISAG_compl_score = Slot(uri=MIXS['0000069'], name="MISAG_compl_score", curie=MIXS.curie('0000069'),
-                   model_uri=MIXS.VOCAB.MISAG_compl_score, domain=None, range=Union[str, "ComplScoreEnum"])
+                   model_uri=MIXS.VOCAB.MISAG_compl_score, domain=None, range=str,
+                   pattern=re.compile(r'^(high|med|low);(0|([0-9]{1,2})|100)%$'))
 
 slots.MISAG_compl_software = Slot(uri=MIXS['0000070'], name="MISAG_compl_software", curie=MIXS.curie('0000070'),
                    model_uri=MIXS.VOCAB.MISAG_compl_software, domain=None, range=str)
@@ -74400,7 +74412,8 @@ slots.MISAG_contam_screen_input = Slot(uri=MIXS['0000005'], name="MISAG_contam_s
                    model_uri=MIXS.VOCAB.MISAG_contam_screen_input, domain=None, range=Optional[str])
 
 slots.MISAG_contam_screen_param = Slot(uri=MIXS['0000073'], name="MISAG_contam_screen_param", curie=MIXS.curie('0000073'),
-                   model_uri=MIXS.VOCAB.MISAG_contam_screen_param, domain=None, range=Optional[Union[str, "ContamScreenParamEnum"]])
+                   model_uri=MIXS.VOCAB.MISAG_contam_screen_param, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(ref db|kmer|coverage|combination);.+'))
 
 slots.MISAG_decontam_software = Slot(uri=MIXS['0000074'], name="MISAG_decontam_software", curie=MIXS.curie('0000074'),
                    model_uri=MIXS.VOCAB.MISAG_decontam_software, domain=None, range=Optional[Union[str, "DecontamSoftwareEnum"]])
@@ -74562,7 +74575,8 @@ slots.MIMAG_trna_ext_software = Slot(uri=MIXS['0000068'], name="MIMAG_trna_ext_s
                    model_uri=MIXS.VOCAB.MIMAG_trna_ext_software, domain=None, range=Optional[str])
 
 slots.MIMAG_compl_score = Slot(uri=MIXS['0000069'], name="MIMAG_compl_score", curie=MIXS.curie('0000069'),
-                   model_uri=MIXS.VOCAB.MIMAG_compl_score, domain=None, range=Union[str, "ComplScoreEnum"])
+                   model_uri=MIXS.VOCAB.MIMAG_compl_score, domain=None, range=str,
+                   pattern=re.compile(r'^(high|med|low);(0|([0-9]{1,2})|100)%$'))
 
 slots.MIMAG_compl_software = Slot(uri=MIXS['0000070'], name="MIMAG_compl_software", curie=MIXS.curie('0000070'),
                    model_uri=MIXS.VOCAB.MIMAG_compl_software, domain=None, range=str)
@@ -74577,7 +74591,8 @@ slots.MIMAG_contam_screen_input = Slot(uri=MIXS['0000005'], name="MIMAG_contam_s
                    model_uri=MIXS.VOCAB.MIMAG_contam_screen_input, domain=None, range=Optional[str])
 
 slots.MIMAG_contam_screen_param = Slot(uri=MIXS['0000073'], name="MIMAG_contam_screen_param", curie=MIXS.curie('0000073'),
-                   model_uri=MIXS.VOCAB.MIMAG_contam_screen_param, domain=None, range=Optional[Union[str, "ContamScreenParamEnum"]])
+                   model_uri=MIXS.VOCAB.MIMAG_contam_screen_param, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(ref db|kmer|coverage|combination);.+'))
 
 slots.MIMAG_decontam_software = Slot(uri=MIXS['0000074'], name="MIMAG_decontam_software", curie=MIXS.curie('0000074'),
                    model_uri=MIXS.VOCAB.MIMAG_decontam_software, domain=None, range=Optional[Union[str, "DecontamSoftwareEnum"]])
@@ -74751,7 +74766,8 @@ slots.MIUVIG_trna_ext_software = Slot(uri=MIXS['0000068'], name="MIUVIG_trna_ext
                    model_uri=MIXS.VOCAB.MIUVIG_trna_ext_software, domain=None, range=Optional[str])
 
 slots.MIUVIG_compl_score = Slot(uri=MIXS['0000069'], name="MIUVIG_compl_score", curie=MIXS.curie('0000069'),
-                   model_uri=MIXS.VOCAB.MIUVIG_compl_score, domain=None, range=Optional[Union[str, "ComplScoreEnum"]])
+                   model_uri=MIXS.VOCAB.MIUVIG_compl_score, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(high|med|low);(0|([0-9]{1,2})|100)%$'))
 
 slots.MIUVIG_compl_software = Slot(uri=MIXS['0000070'], name="MIUVIG_compl_software", curie=MIXS.curie('0000070'),
                    model_uri=MIXS.VOCAB.MIUVIG_compl_software, domain=None, range=Optional[str])
@@ -75204,7 +75220,8 @@ slots.built_environment_rel_humidity_out = Slot(uri=MIXS['0000188'], name="built
                    model_uri=MIXS.VOCAB.built_environment_rel_humidity_out, domain=BuiltEnvironment, range=Optional[Union[dict, "QuantityValue"]])
 
 slots.built_environment_pres_animal_insect = Slot(uri=MIXS['0000819'], name="built environment_pres_animal_insect", curie=MIXS.curie('0000819'),
-                   model_uri=MIXS.VOCAB.built_environment_pres_animal_insect, domain=BuiltEnvironment, range=Optional[Union[str, "PresAnimalInsectEnum"]])
+                   model_uri=MIXS.VOCAB.built_environment_pres_animal_insect, domain=BuiltEnvironment, range=Optional[str],
+                   pattern=re.compile(r'^(cat|dog|rodent|snake|other);\d+$'))
 
 slots.built_environment_quad_pos = Slot(uri=MIXS['0000820'], name="built environment_quad_pos", curie=MIXS.curie('0000820'),
                    model_uri=MIXS.VOCAB.built_environment_quad_pos, domain=BuiltEnvironment, range=Optional[Union[str, "QuadPosEnum"]])
@@ -78382,7 +78399,8 @@ slots.food_human_foods_food_product_qual = Slot(uri=MIXS['0001213'], name="food-
                    model_uri=MIXS.VOCAB.food_human_foods_food_product_qual, domain=Food-humanFoods, range=Optional[str])
 
 slots.food_human_foods_food_quality_date = Slot(uri=MIXS['0001178'], name="food-human foods_food_quality_date", curie=MIXS.curie('0001178'),
-                   model_uri=MIXS.VOCAB.food_human_foods_food_quality_date, domain=Food-humanFoods, range=Optional[Union[str, "FoodQualityDateEnum"]])
+                   model_uri=MIXS.VOCAB.food_human_foods_food_quality_date, domain=Food-humanFoods, range=Optional[str],
+                   pattern=re.compile(r'^(best by|best if used by|freeze by||use by);(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'))
 
 slots.food_human_foods_food_source = Slot(uri=MIXS['0001139'], name="food-human foods_food_source", curie=MIXS.curie('0001139'),
                    model_uri=MIXS.VOCAB.food_human_foods_food_source, domain=Food-humanFoods, range=Optional[str])
@@ -78475,7 +78493,7 @@ slots.food_human_foods_samp_transport_temp = Slot(uri=MIXS['0001232'], name="foo
                    model_uri=MIXS.VOCAB.food_human_foods_samp_transport_temp, domain=Food-humanFoods, range=Optional[str])
 
 slots.food_human_foods_samp_purpose = Slot(uri=MIXS['0001151'], name="food-human foods_samp_purpose", curie=MIXS.curie('0001151'),
-                   model_uri=MIXS.VOCAB.food_human_foods_samp_purpose, domain=Food-humanFoods, range=Optional[Union[str, "SampPurposeEnum"]])
+                   model_uri=MIXS.VOCAB.food_human_foods_samp_purpose, domain=Food-humanFoods, range=Optional[str])
 
 slots.food_human_foods_sequencing_kit = Slot(uri=MIXS['0001155'], name="food-human foods_sequencing_kit", curie=MIXS.curie('0001155'),
                    model_uri=MIXS.VOCAB.food_human_foods_sequencing_kit, domain=Food-humanFoods, range=Optional[str])
@@ -78619,7 +78637,7 @@ slots.food_animal_and_animal_feed_intended_consumer = Slot(uri=MIXS['0001144'], 
                    model_uri=MIXS.VOCAB.food_animal_and_animal_feed_intended_consumer, domain=Food-animalAndAnimalFeed, range=Union[str, List[str]])
 
 slots.food_animal_and_animal_feed_samp_purpose = Slot(uri=MIXS['0001151'], name="food-animal and animal feed_samp_purpose", curie=MIXS.curie('0001151'),
-                   model_uri=MIXS.VOCAB.food_animal_and_animal_feed_samp_purpose, domain=Food-animalAndAnimalFeed, range=Union[str, "SampPurposeEnum"])
+                   model_uri=MIXS.VOCAB.food_animal_and_animal_feed_samp_purpose, domain=Food-animalAndAnimalFeed, range=str)
 
 slots.food_animal_and_animal_feed_animal_am = Slot(uri=MIXS['0001243'], name="food-animal and animal feed_animal_am", curie=MIXS.curie('0001243'),
                    model_uri=MIXS.VOCAB.food_animal_and_animal_feed_animal_am, domain=Food-animalAndAnimalFeed, range=Optional[str])
@@ -78727,7 +78745,8 @@ slots.food_animal_and_animal_feed_food_product_qual = Slot(uri=MIXS['0001213'], 
                    model_uri=MIXS.VOCAB.food_animal_and_animal_feed_food_product_qual, domain=Food-animalAndAnimalFeed, range=Optional[str])
 
 slots.food_animal_and_animal_feed_food_quality_date = Slot(uri=MIXS['0001178'], name="food-animal and animal feed_food_quality_date", curie=MIXS.curie('0001178'),
-                   model_uri=MIXS.VOCAB.food_animal_and_animal_feed_food_quality_date, domain=Food-animalAndAnimalFeed, range=Optional[Union[str, "FoodQualityDateEnum"]])
+                   model_uri=MIXS.VOCAB.food_animal_and_animal_feed_food_quality_date, domain=Food-animalAndAnimalFeed, range=Optional[str],
+                   pattern=re.compile(r'^(best by|best if used by|freeze by||use by);(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'))
 
 slots.food_animal_and_animal_feed_food_source_age = Slot(uri=MIXS['0001251'], name="food-animal and animal feed_food_source_age", curie=MIXS.curie('0001251'),
                    model_uri=MIXS.VOCAB.food_animal_and_animal_feed_food_source_age, domain=Food-animalAndAnimalFeed, range=Optional[Union[dict, "QuantityValue"]])
@@ -79027,7 +79046,7 @@ slots.food_food_production_facility_samp_pooling = Slot(uri=MIXS['0001153'], nam
                    model_uri=MIXS.VOCAB.food_food_production_facility_samp_pooling, domain=Food-foodProductionFacility, range=Optional[Union[str, List[str]]])
 
 slots.food_food_production_facility_samp_purpose = Slot(uri=MIXS['0001151'], name="food-food production facility_samp_purpose", curie=MIXS.curie('0001151'),
-                   model_uri=MIXS.VOCAB.food_food_production_facility_samp_purpose, domain=Food-foodProductionFacility, range=Optional[Union[str, "SampPurposeEnum"]])
+                   model_uri=MIXS.VOCAB.food_food_production_facility_samp_purpose, domain=Food-foodProductionFacility, range=Optional[str])
 
 slots.food_food_production_facility_samp_rep_tech = Slot(uri=MIXS['0001227'], name="food-food production facility_samp_rep_tech", curie=MIXS.curie('0001227'),
                    model_uri=MIXS.VOCAB.food_food_production_facility_samp_rep_tech, domain=Food-foodProductionFacility, range=Optional[Union[dict, "QuantityValue"]])
@@ -79138,7 +79157,8 @@ slots.food_food_production_facility_food_prod = Slot(uri=MIXS['0001211'], name="
                    model_uri=MIXS.VOCAB.food_food_production_facility_food_prod, domain=Food-foodProductionFacility, range=Optional[Union[str, List[str]]])
 
 slots.food_food_production_facility_food_quality_date = Slot(uri=MIXS['0001178'], name="food-food production facility_food_quality_date", curie=MIXS.curie('0001178'),
-                   model_uri=MIXS.VOCAB.food_food_production_facility_food_quality_date, domain=Food-foodProductionFacility, range=Optional[Union[str, "FoodQualityDateEnum"]])
+                   model_uri=MIXS.VOCAB.food_food_production_facility_food_quality_date, domain=Food-foodProductionFacility, range=Optional[str],
+                   pattern=re.compile(r'^(best by|best if used by|freeze by||use by);(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'))
 
 slots.food_food_production_facility_repository_name = Slot(uri=MIXS['0001152'], name="food-food production facility_repository_name", curie=MIXS.curie('0001152'),
                    model_uri=MIXS.VOCAB.food_food_production_facility_repository_name, domain=Food-foodProductionFacility, range=Optional[Union[str, List[str]]])
@@ -79486,7 +79506,7 @@ slots.food_farm_environment_plant_reprod_crop = Slot(uri=MIXS['0001150'], name="
                    model_uri=MIXS.VOCAB.food_farm_environment_plant_reprod_crop, domain=Food-farmEnvironment, range=Optional[Union[Union[str, "PlantReprodCropEnum"], List[Union[str, "PlantReprodCropEnum"]]]])
 
 slots.food_farm_environment_samp_purpose = Slot(uri=MIXS['0001151'], name="food-farm environment_samp_purpose", curie=MIXS.curie('0001151'),
-                   model_uri=MIXS.VOCAB.food_farm_environment_samp_purpose, domain=Food-farmEnvironment, range=Optional[Union[str, "SampPurposeEnum"]])
+                   model_uri=MIXS.VOCAB.food_farm_environment_samp_purpose, domain=Food-farmEnvironment, range=Optional[str])
 
 slots.food_farm_environment_repository_name = Slot(uri=MIXS['0001152'], name="food-farm environment_repository_name", curie=MIXS.curie('0001152'),
                    model_uri=MIXS.VOCAB.food_farm_environment_repository_name, domain=Food-farmEnvironment, range=Optional[Union[str, List[str]]])
@@ -79567,7 +79587,8 @@ slots.food_farm_environment_enrichment_protocol = Slot(uri=MIXS['0001177'], name
                    model_uri=MIXS.VOCAB.food_farm_environment_enrichment_protocol, domain=Food-farmEnvironment, range=Optional[str])
 
 slots.food_farm_environment_food_quality_date = Slot(uri=MIXS['0001178'], name="food-farm environment_food_quality_date", curie=MIXS.curie('0001178'),
-                   model_uri=MIXS.VOCAB.food_farm_environment_food_quality_date, domain=Food-farmEnvironment, range=Optional[Union[str, "FoodQualityDateEnum"]])
+                   model_uri=MIXS.VOCAB.food_farm_environment_food_quality_date, domain=Food-farmEnvironment, range=Optional[str],
+                   pattern=re.compile(r'^(best by|best if used by|freeze by||use by);(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'))
 
 slots.food_farm_environment_IFSAC_category = Slot(uri=MIXS['0001179'], name="food-farm environment_IFSAC_category", curie=MIXS.curie('0001179'),
                    model_uri=MIXS.VOCAB.food_farm_environment_IFSAC_category, domain=Food-farmEnvironment, range=Union[str, List[str]])
@@ -79639,7 +79660,8 @@ slots.agriculture_host_disease_stat = Slot(uri=MIXS['0000031'], name="agricultur
                    model_uri=MIXS.VOCAB.agriculture_host_disease_stat, domain=Agriculture, range=Optional[str])
 
 slots.agriculture_pres_animal_insect = Slot(uri=MIXS['0000819'], name="agriculture_pres_animal_insect", curie=MIXS.curie('0000819'),
-                   model_uri=MIXS.VOCAB.agriculture_pres_animal_insect, domain=Agriculture, range=Optional[Union[str, "PresAnimalInsectEnum"]])
+                   model_uri=MIXS.VOCAB.agriculture_pres_animal_insect, domain=Agriculture, range=Optional[str],
+                   pattern=re.compile(r'^(cat|dog|rodent|snake|other);\d+$'))
 
 slots.agriculture_plant_water_method = Slot(uri=MIXS['0001111'], name="agriculture_plant_water_method", curie=MIXS.curie('0001111'),
                    model_uri=MIXS.VOCAB.agriculture_plant_water_method, domain=Agriculture, range=Optional[str])

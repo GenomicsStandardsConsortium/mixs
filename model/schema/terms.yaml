@@ -1238,7 +1238,9 @@ slots:
       compared to a closely related reference genome. High Quality Draft: >90%, Medium
       Quality Draft: >50%, and Low Quality Draft: < 50% should have the indicated
       completeness scores'
-    range: compl_score_enum
+    # range: compl_score_enum
+    range: string
+    pattern: ^(high|med|low);(0|([0-9]{1,2})|100)%$
     multivalued: false
     examples:
     - value: med;60%
@@ -1315,13 +1317,15 @@ slots:
       expected_value: enumeration
     string_serialization: '[reads| contigs]'
     slot_uri: MIXS:0000005
+  # MAM 2022-03-22 range was contam_screen_param_enum
   contam_screen_param:
     is_a: sequencing field
     title: contamination screening parameters
     description: Specific parameters used in the decontamination sofware, such as
       reference database, coverage, and kmers. Combinations of these parameters may
       also be used, i.e. kmer and coverage, or reference database and kmer
-    range: contam_screen_param_enum
+    range: string
+    pattern: ^(ref db|kmer|coverage|combination);.+
     multivalued: false
     examples:
     - value: kmer
@@ -3539,12 +3543,14 @@ slots:
       preferred_unit: gram of air, kilogram of air
       occurrence: '1'
     slot_uri: MIXS:0000188
+  # MAM 2022-03-22 range was pres_animal_insect_enum
   pres_animal_insect:
     is_a: core field
     title: presence of pets, animals, or insects
     description: The type and number of animals or insects present in the sampling
       space.
-    range: pres_animal_insect_enum
+    range: string
+    pattern: ^(cat|dog|rodent|snake|other);\d+$
     multivalued: false
     examples:
     - value: cat;5
@@ -8643,6 +8649,7 @@ slots:
       preferred_unit: meter
       occurrence: '1'
     slot_uri: MIXS:0000634
+  #
   cur_land_use:
     is_a: core field
     title: current land use
@@ -11328,6 +11335,7 @@ slots:
       occurrence: '1'
     string_serialization: '{termLabel} {[termID]}'
     slot_uri: MIXS:0001213
+  # MAM 2022-03-22 range was food_quality_date_enum
   food_quality_date:
     is_a: core field
     title: food quality date
@@ -11335,7 +11343,8 @@ slots:
       this date is not a reflection of safety unless used on infant formula this date
       is not a reflection of safety and is typically labeled on a food product as
       "best if used by," best by," "use by," or "freeze by."
-    range: food_quality_date_enum
+    range: string
+    pattern: ^(best by|best if used by|freeze by||use by);(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
     multivalued: false
     examples:
     - value: best by 2020-05-24
@@ -11886,11 +11895,12 @@ slots:
       occurrence: '1'
     string_serialization: '{float} {unit} {text}'
     slot_uri: MIXS:0001232
+  # MAM 2022-03-22 range was samp_purpose_enum
   samp_purpose:
     is_a: core field
     title: purpose of sampling
     description: The reason that the sample was collected.
-    range: samp_purpose_enum
+    range: string
     multivalued: false
     examples:
     - value: field trial
@@ -13951,6 +13961,7 @@ enums:
       sealed: {}
       clear finish: {}
       paint: {}
+      none or unfinished: {}
   floor_water_mold_enum:
     permissible_values:
       mold odor: {}

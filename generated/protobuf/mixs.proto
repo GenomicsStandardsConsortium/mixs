@@ -27,7 +27,7 @@ message Agriculture
   optional texture QuantityValue = 24
   optional textureMeth String = 25
   repeated hostSymbiont String = 26
-  optional presAnimalInsect PresAnimalInsectEnum = 27
+  optional presAnimalInsect String = 27
   optional plantWaterMethod String = 28
   repeated animWaterMethod String = 29
   repeated farmWaterSource FarmWaterSourceEnum = 30
@@ -197,7 +197,7 @@ message AgricultureMIGSBacteria
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -361,7 +361,7 @@ message AgricultureMIGSBacteria
   optional refDb String = 187
   optional simSearchMeth String = 188
   optional taxClass String = 189
-  optional complScore ComplScoreEnum = 190
+  optional complScore String = 190
   optional complSoftware String = 191
   optional associatedResource String = 192
  }
@@ -393,7 +393,7 @@ message AgricultureMIGSEukaryote
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -557,7 +557,7 @@ message AgricultureMIGSEukaryote
   optional refDb String = 187
   optional simSearchMeth String = 188
   optional taxClass String = 189
-  optional complScore ComplScoreEnum = 190
+  optional complScore String = 190
   optional complSoftware String = 191
   optional associatedResource String = 192
  }
@@ -589,7 +589,7 @@ message AgricultureMIGSOrg
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -750,7 +750,7 @@ message AgricultureMIGSOrg
   optional refDb String = 184
   optional simSearchMeth String = 185
   optional taxClass String = 186
-  optional complScore ComplScoreEnum = 187
+  optional complScore String = 187
   optional complSoftware String = 188
   optional associatedResource String = 189
  }
@@ -782,7 +782,7 @@ message AgricultureMIGSPlant
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -944,7 +944,7 @@ message AgricultureMIGSPlant
   optional refDb String = 185
   optional simSearchMeth String = 186
   optional taxClass String = 187
-  optional complScore ComplScoreEnum = 188
+  optional complScore String = 188
   optional complSoftware String = 189
   optional associatedResource String = 190
  }
@@ -976,7 +976,7 @@ message AgricultureMIGSVirus
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -1140,7 +1140,7 @@ message AgricultureMIGSVirus
   optional refDb String = 187
   optional simSearchMeth String = 188
   optional taxClass String = 189
-  optional complScore ComplScoreEnum = 190
+  optional complScore String = 190
   optional complSoftware String = 191
   optional associatedResource String = 192
  }
@@ -1172,7 +1172,7 @@ message AgricultureMIMAG
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -1336,12 +1336,12 @@ message AgricultureMIMAG
   optional x16sRecoverSoftware String = 187
   optional trnas Integer = 188
   optional trnaExtSoftware String = 189
-  complScore ComplScoreEnum = 190
+  complScore String = 190
   complSoftware String = 191
   optional complAppr ComplApprEnum = 192
   contamScore String = 193
   optional contamScreenInput String = 194
-  optional contamScreenParam ContamScreenParamEnum = 195
+  optional contamScreenParam String = 195
   optional decontamSoftware DecontamSoftwareEnum = 196
   binParam BinParamEnum = 197
   binSoftware String = 198
@@ -1377,7 +1377,7 @@ message AgricultureMIMARKSSpecimen
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -1559,7 +1559,7 @@ message AgricultureMIMARKSSurvey
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -1742,7 +1742,7 @@ message AgricultureMIMS
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -1931,7 +1931,7 @@ message AgricultureMISAG
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -2095,12 +2095,12 @@ message AgricultureMISAG
   optional x16sRecoverSoftware String = 187
   optional trnas Integer = 188
   optional trnaExtSoftware String = 189
-  complScore ComplScoreEnum = 190
+  complScore String = 190
   complSoftware String = 191
   optional complAppr ComplApprEnum = 192
   contamScore String = 193
   optional contamScreenInput String = 194
-  optional contamScreenParam ContamScreenParamEnum = 195
+  optional contamScreenParam String = 195
   optional decontamSoftware DecontamSoftwareEnum = 196
   sortTech SortTechEnum = 197
   singleCellLysisAppr SingleCellLysisApprEnum = 198
@@ -2137,7 +2137,7 @@ message AgricultureMIUVIG
   optional texture QuantityValue = 23
   optional textureMeth String = 24
   repeated hostSymbiont String = 25
-  optional presAnimalInsect PresAnimalInsectEnum = 26
+  optional presAnimalInsect String = 26
   optional plantWaterMethod String = 27
   repeated animWaterMethod String = 28
   repeated farmWaterSource FarmWaterSourceEnum = 29
@@ -2301,7 +2301,7 @@ message AgricultureMIUVIG
   optional taxClass String = 187
   optional trnas Integer = 188
   optional trnaExtSoftware String = 189
-  optional complScore ComplScoreEnum = 190
+  optional complScore String = 190
   optional complSoftware String = 191
   optional complAppr ComplApprEnum = 192
   optional sortTech SortTechEnum = 193
@@ -2445,7 +2445,7 @@ message AirMIGSBacteria
   optional refDb String = 76
   optional simSearchMeth String = 77
   optional taxClass String = 78
-  optional complScore ComplScoreEnum = 79
+  optional complScore String = 79
   optional complSoftware String = 80
   optional associatedResource String = 81
   optional sop String = 82
@@ -2531,7 +2531,7 @@ message AirMIGSEukaryote
   optional refDb String = 76
   optional simSearchMeth String = 77
   optional taxClass String = 78
-  optional complScore ComplScoreEnum = 79
+  optional complScore String = 79
   optional complSoftware String = 80
   optional associatedResource String = 81
   optional sop String = 82
@@ -2608,7 +2608,7 @@ message AirMIGSOrg
   optional refDb String = 67
   optional simSearchMeth String = 68
   optional taxClass String = 69
-  optional complScore ComplScoreEnum = 70
+  optional complScore String = 70
   optional complSoftware String = 71
   optional associatedResource String = 72
   optional sop String = 73
@@ -2688,7 +2688,7 @@ message AirMIGSPlant
   optional refDb String = 70
   optional simSearchMeth String = 71
   optional taxClass String = 72
-  optional complScore ComplScoreEnum = 73
+  optional complScore String = 73
   optional complSoftware String = 74
   optional associatedResource String = 75
   optional sop String = 76
@@ -2773,7 +2773,7 @@ message AirMIGSVirus
   optional refDb String = 75
   optional simSearchMeth String = 76
   optional taxClass String = 77
-  optional complScore ComplScoreEnum = 78
+  optional complScore String = 78
   optional complSoftware String = 79
   optional associatedResource String = 80
   optional sop String = 81
@@ -2853,12 +2853,12 @@ message AirMIMAG
   optional x16sRecoverSoftware String = 70
   optional trnas Integer = 71
   optional trnaExtSoftware String = 72
-  complScore ComplScoreEnum = 73
+  complScore String = 73
   complSoftware String = 74
   optional complAppr ComplApprEnum = 75
   contamScore String = 76
   optional contamScreenInput String = 77
-  optional contamScreenParam ContamScreenParamEnum = 78
+  optional contamScreenParam String = 78
   optional decontamSoftware DecontamSoftwareEnum = 79
   binParam BinParamEnum = 80
   binSoftware String = 81
@@ -3151,12 +3151,12 @@ message AirMISAG
   optional x16sRecoverSoftware String = 70
   optional trnas Integer = 71
   optional trnaExtSoftware String = 72
-  complScore ComplScoreEnum = 73
+  complScore String = 73
   complSoftware String = 74
   optional complAppr ComplApprEnum = 75
   contamScore String = 76
   optional contamScreenInput String = 77
-  optional contamScreenParam ContamScreenParamEnum = 78
+  optional contamScreenParam String = 78
   optional decontamSoftware DecontamSoftwareEnum = 79
   sortTech SortTechEnum = 80
   singleCellLysisAppr SingleCellLysisApprEnum = 81
@@ -3246,7 +3246,7 @@ message AirMIUVIG
   optional taxClass String = 75
   optional trnas Integer = 76
   optional trnaExtSoftware String = 77
-  optional complScore ComplScoreEnum = 78
+  optional complScore String = 78
   optional complSoftware String = 79
   optional complAppr ComplApprEnum = 80
   optional sortTech SortTechEnum = 81
@@ -3380,7 +3380,7 @@ message BuiltEnvironment
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -3555,7 +3555,7 @@ message BuiltEnvironmentMIGSBacteria
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -3662,7 +3662,7 @@ message BuiltEnvironmentMIGSBacteria
   optional refDb String = 212
   optional simSearchMeth String = 213
   optional taxClass String = 214
-  optional complScore ComplScoreEnum = 215
+  optional complScore String = 215
   optional complSoftware String = 216
   optional associatedResource String = 217
   optional sop String = 218
@@ -3777,7 +3777,7 @@ message BuiltEnvironmentMIGSEukaryote
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -3884,7 +3884,7 @@ message BuiltEnvironmentMIGSEukaryote
   optional refDb String = 212
   optional simSearchMeth String = 213
   optional taxClass String = 214
-  optional complScore ComplScoreEnum = 215
+  optional complScore String = 215
   optional complSoftware String = 216
   optional associatedResource String = 217
   optional sop String = 218
@@ -3999,7 +3999,7 @@ message BuiltEnvironmentMIGSOrg
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -4097,7 +4097,7 @@ message BuiltEnvironmentMIGSOrg
   optional refDb String = 203
   optional simSearchMeth String = 204
   optional taxClass String = 205
-  optional complScore ComplScoreEnum = 206
+  optional complScore String = 206
   optional complSoftware String = 207
   optional associatedResource String = 208
   optional sop String = 209
@@ -4212,7 +4212,7 @@ message BuiltEnvironmentMIGSPlant
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -4313,7 +4313,7 @@ message BuiltEnvironmentMIGSPlant
   optional refDb String = 206
   optional simSearchMeth String = 207
   optional taxClass String = 208
-  optional complScore ComplScoreEnum = 209
+  optional complScore String = 209
   optional complSoftware String = 210
   optional associatedResource String = 211
   optional sop String = 212
@@ -4428,7 +4428,7 @@ message BuiltEnvironmentMIGSVirus
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -4534,7 +4534,7 @@ message BuiltEnvironmentMIGSVirus
   optional refDb String = 211
   optional simSearchMeth String = 212
   optional taxClass String = 213
-  optional complScore ComplScoreEnum = 214
+  optional complScore String = 214
   optional complSoftware String = 215
   optional associatedResource String = 216
   optional sop String = 217
@@ -4649,7 +4649,7 @@ message BuiltEnvironmentMIMAG
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -4750,12 +4750,12 @@ message BuiltEnvironmentMIMAG
   optional x16sRecoverSoftware String = 206
   optional trnas Integer = 207
   optional trnaExtSoftware String = 208
-  complScore ComplScoreEnum = 209
+  complScore String = 209
   complSoftware String = 210
   optional complAppr ComplApprEnum = 211
   contamScore String = 212
   optional contamScreenInput String = 213
-  optional contamScreenParam ContamScreenParamEnum = 214
+  optional contamScreenParam String = 214
   optional decontamSoftware DecontamSoftwareEnum = 215
   binParam BinParamEnum = 216
   binSoftware String = 217
@@ -4874,7 +4874,7 @@ message BuiltEnvironmentMIMARKSSpecimen
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -5080,7 +5080,7 @@ message BuiltEnvironmentMIMARKSSurvey
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -5282,7 +5282,7 @@ message BuiltEnvironmentMIMS
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -5491,7 +5491,7 @@ message BuiltEnvironmentMISAG
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -5592,12 +5592,12 @@ message BuiltEnvironmentMISAG
   optional x16sRecoverSoftware String = 206
   optional trnas Integer = 207
   optional trnaExtSoftware String = 208
-  complScore ComplScoreEnum = 209
+  complScore String = 209
   complSoftware String = 210
   optional complAppr ComplApprEnum = 211
   contamScore String = 212
   optional contamScreenInput String = 213
-  optional contamScreenParam ContamScreenParamEnum = 214
+  optional contamScreenParam String = 214
   optional decontamSoftware DecontamSoftwareEnum = 215
   sortTech SortTechEnum = 216
   singleCellLysisAppr SingleCellLysisApprEnum = 217
@@ -5717,7 +5717,7 @@ message BuiltEnvironmentMIUVIG
   optional extWallOrient ExtWallOrientEnum = 105
   optional extWindowOrient ExtWindowOrientEnum = 106
   optional relHumidityOut QuantityValue = 107
-  optional presAnimalInsect PresAnimalInsectEnum = 108
+  optional presAnimalInsect String = 108
   optional quadPos QuadPosEnum = 109
   optional relSampLoc RelSampLocEnum = 110
   optional roomAirExchRate QuantityValue = 111
@@ -5823,7 +5823,7 @@ message BuiltEnvironmentMIUVIG
   optional taxClass String = 211
   optional trnas Integer = 212
   optional trnaExtSoftware String = 213
-  optional complScore ComplScoreEnum = 214
+  optional complScore String = 214
   optional complSoftware String = 215
   optional complAppr ComplApprEnum = 216
   optional sortTech SortTechEnum = 217
@@ -5921,12 +5921,12 @@ message Core
   optional x16sRecoverSoftware String = 69
   optional trnas Integer = 70
   optional trnaExtSoftware String = 71
-  optional complScore ComplScoreEnum = 72
+  optional complScore String = 72
   optional complSoftware String = 73
   optional complAppr ComplApprEnum = 74
   optional contamScore String = 75
   optional contamScreenInput String = 76
-  optional contamScreenParam ContamScreenParamEnum = 77
+  optional contamScreenParam String = 77
   optional decontamSoftware DecontamSoftwareEnum = 78
   optional sortTech SortTechEnum = 79
   optional singleCellLysisAppr SingleCellLysisApprEnum = 80
@@ -5978,7 +5978,7 @@ message Food-animalAndAnimalFeed
   optional foodSource String = 24
   repeated iFSACCategory String = 25
   repeated intendedConsumer String = 26
-  sampPurpose SampPurposeEnum = 27
+  sampPurpose String = 27
   optional animalAm String = 28
   optional animalAmDur String = 29
   optional animalAmFreq QuantityValue = 30
@@ -6014,7 +6014,7 @@ message Food-animalAndAnimalFeed
   repeated foodPriorContact String = 60
   repeated foodProdSynonym String = 61
   optional foodProductQual String = 62
-  optional foodQualityDate FoodQualityDateEnum = 63
+  optional foodQualityDate String = 63
   optional foodSourceAge QuantityValue = 64
   optional foodTraceList FoodTraceListEnum = 65
   repeated foodTravMode String = 66
@@ -6088,7 +6088,7 @@ message Food-animalAndAnimalFeedMIGSBacteria
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -6124,7 +6124,7 @@ message Food-animalAndAnimalFeedMIGSBacteria
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -6208,7 +6208,7 @@ message Food-animalAndAnimalFeedMIGSBacteria
   optional refDb String = 143
   optional simSearchMeth String = 144
   optional taxClass String = 145
-  optional complScore ComplScoreEnum = 146
+  optional complScore String = 146
   optional complSoftware String = 147
   optional associatedResource String = 148
   optional sop String = 149
@@ -6241,7 +6241,7 @@ message Food-animalAndAnimalFeedMIGSEukaryote
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -6277,7 +6277,7 @@ message Food-animalAndAnimalFeedMIGSEukaryote
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -6361,7 +6361,7 @@ message Food-animalAndAnimalFeedMIGSEukaryote
   optional refDb String = 143
   optional simSearchMeth String = 144
   optional taxClass String = 145
-  optional complScore ComplScoreEnum = 146
+  optional complScore String = 146
   optional complSoftware String = 147
   optional associatedResource String = 148
   optional sop String = 149
@@ -6394,7 +6394,7 @@ message Food-animalAndAnimalFeedMIGSOrg
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -6430,7 +6430,7 @@ message Food-animalAndAnimalFeedMIGSOrg
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -6505,7 +6505,7 @@ message Food-animalAndAnimalFeedMIGSOrg
   optional refDb String = 134
   optional simSearchMeth String = 135
   optional taxClass String = 136
-  optional complScore ComplScoreEnum = 137
+  optional complScore String = 137
   optional complSoftware String = 138
   optional associatedResource String = 139
   optional sop String = 140
@@ -6538,7 +6538,7 @@ message Food-animalAndAnimalFeedMIGSPlant
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -6574,7 +6574,7 @@ message Food-animalAndAnimalFeedMIGSPlant
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -6652,7 +6652,7 @@ message Food-animalAndAnimalFeedMIGSPlant
   optional refDb String = 137
   optional simSearchMeth String = 138
   optional taxClass String = 139
-  optional complScore ComplScoreEnum = 140
+  optional complScore String = 140
   optional complSoftware String = 141
   optional associatedResource String = 142
   optional sop String = 143
@@ -6685,7 +6685,7 @@ message Food-animalAndAnimalFeedMIGSVirus
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -6721,7 +6721,7 @@ message Food-animalAndAnimalFeedMIGSVirus
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -6804,7 +6804,7 @@ message Food-animalAndAnimalFeedMIGSVirus
   optional refDb String = 142
   optional simSearchMeth String = 143
   optional taxClass String = 144
-  optional complScore ComplScoreEnum = 145
+  optional complScore String = 145
   optional complSoftware String = 146
   optional associatedResource String = 147
   optional sop String = 148
@@ -6837,7 +6837,7 @@ message Food-animalAndAnimalFeedMIMAG
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -6873,7 +6873,7 @@ message Food-animalAndAnimalFeedMIMAG
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -6951,12 +6951,12 @@ message Food-animalAndAnimalFeedMIMAG
   optional x16sRecoverSoftware String = 137
   optional trnas Integer = 138
   optional trnaExtSoftware String = 139
-  complScore ComplScoreEnum = 140
+  complScore String = 140
   complSoftware String = 141
   optional complAppr ComplApprEnum = 142
   contamScore String = 143
   optional contamScreenInput String = 144
-  optional contamScreenParam ContamScreenParamEnum = 145
+  optional contamScreenParam String = 145
   optional decontamSoftware DecontamSoftwareEnum = 146
   binParam BinParamEnum = 147
   binSoftware String = 148
@@ -6993,7 +6993,7 @@ message Food-animalAndAnimalFeedMIMARKSSpecimen
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -7029,7 +7029,7 @@ message Food-animalAndAnimalFeedMIMARKSSpecimen
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -7130,7 +7130,7 @@ message Food-animalAndAnimalFeedMIMARKSSurvey
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -7166,7 +7166,7 @@ message Food-animalAndAnimalFeedMIMARKSSurvey
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -7263,7 +7263,7 @@ message Food-animalAndAnimalFeedMIMS
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -7299,7 +7299,7 @@ message Food-animalAndAnimalFeedMIMS
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -7403,7 +7403,7 @@ message Food-animalAndAnimalFeedMISAG
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -7439,7 +7439,7 @@ message Food-animalAndAnimalFeedMISAG
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -7517,12 +7517,12 @@ message Food-animalAndAnimalFeedMISAG
   optional x16sRecoverSoftware String = 137
   optional trnas Integer = 138
   optional trnaExtSoftware String = 139
-  complScore ComplScoreEnum = 140
+  complScore String = 140
   complSoftware String = 141
   optional complAppr ComplApprEnum = 142
   contamScore String = 143
   optional contamScreenInput String = 144
-  optional contamScreenParam ContamScreenParamEnum = 145
+  optional contamScreenParam String = 145
   optional decontamSoftware DecontamSoftwareEnum = 146
   sortTech SortTechEnum = 147
   singleCellLysisAppr SingleCellLysisApprEnum = 148
@@ -7560,7 +7560,7 @@ message Food-animalAndAnimalFeedMIUVIG
   optional foodSource String = 23
   repeated iFSACCategory String = 24
   repeated intendedConsumer String = 25
-  sampPurpose SampPurposeEnum = 26
+  sampPurpose String = 26
   optional animalAm String = 27
   optional animalAmDur String = 28
   optional animalAmFreq QuantityValue = 29
@@ -7596,7 +7596,7 @@ message Food-animalAndAnimalFeedMIUVIG
   repeated foodPriorContact String = 59
   repeated foodProdSynonym String = 60
   optional foodProductQual String = 61
-  optional foodQualityDate FoodQualityDateEnum = 62
+  optional foodQualityDate String = 62
   optional foodSourceAge QuantityValue = 63
   optional foodTraceList FoodTraceListEnum = 64
   repeated foodTravMode String = 65
@@ -7679,7 +7679,7 @@ message Food-animalAndAnimalFeedMIUVIG
   optional taxClass String = 142
   optional trnas Integer = 143
   optional trnaExtSoftware String = 144
-  optional complScore ComplScoreEnum = 145
+  optional complScore String = 145
   optional complSoftware String = 146
   optional complAppr ComplApprEnum = 147
   optional sortTech SortTechEnum = 148
@@ -7812,7 +7812,7 @@ message Food-farmEnvironment
   repeated partPlantAnimal String = 104
   optional plantGrowthMed PlantGrowthMedEnum = 105
   repeated plantReprodCrop PlantReprodCropEnum = 106
-  optional sampPurpose SampPurposeEnum = 107
+  optional sampPurpose String = 107
   repeated repositoryName String = 108
   repeated sampPooling String = 109
   optional sampSourceMatCat String = 110
@@ -7838,7 +7838,7 @@ message Food-farmEnvironment
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -7960,7 +7960,7 @@ message Food-farmEnvironmentMIGSBacteria
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -7987,7 +7987,7 @@ message Food-farmEnvironmentMIGSBacteria
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -8038,7 +8038,7 @@ message Food-farmEnvironmentMIGSBacteria
   optional refDb String = 181
   optional simSearchMeth String = 182
   optional taxClass String = 183
-  optional complScore ComplScoreEnum = 184
+  optional complScore String = 184
   optional complSoftware String = 185
   optional associatedResource String = 186
   optional sop String = 187
@@ -8151,7 +8151,7 @@ message Food-farmEnvironmentMIGSEukaryote
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -8178,7 +8178,7 @@ message Food-farmEnvironmentMIGSEukaryote
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -8229,7 +8229,7 @@ message Food-farmEnvironmentMIGSEukaryote
   optional refDb String = 181
   optional simSearchMeth String = 182
   optional taxClass String = 183
-  optional complScore ComplScoreEnum = 184
+  optional complScore String = 184
   optional complSoftware String = 185
   optional associatedResource String = 186
   optional sop String = 187
@@ -8342,7 +8342,7 @@ message Food-farmEnvironmentMIGSOrg
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -8369,7 +8369,7 @@ message Food-farmEnvironmentMIGSOrg
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -8412,7 +8412,7 @@ message Food-farmEnvironmentMIGSOrg
   optional refDb String = 173
   optional simSearchMeth String = 174
   optional taxClass String = 175
-  optional complScore ComplScoreEnum = 176
+  optional complScore String = 176
   optional complSoftware String = 177
   optional associatedResource String = 178
   optional sop String = 179
@@ -8525,7 +8525,7 @@ message Food-farmEnvironmentMIGSPlant
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -8552,7 +8552,7 @@ message Food-farmEnvironmentMIGSPlant
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -8598,7 +8598,7 @@ message Food-farmEnvironmentMIGSPlant
   optional refDb String = 176
   optional simSearchMeth String = 177
   optional taxClass String = 178
-  optional complScore ComplScoreEnum = 179
+  optional complScore String = 179
   optional complSoftware String = 180
   optional associatedResource String = 181
   optional sop String = 182
@@ -8711,7 +8711,7 @@ message Food-farmEnvironmentMIGSVirus
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -8738,7 +8738,7 @@ message Food-farmEnvironmentMIGSVirus
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -8788,7 +8788,7 @@ message Food-farmEnvironmentMIGSVirus
   optional refDb String = 180
   optional simSearchMeth String = 181
   optional taxClass String = 182
-  optional complScore ComplScoreEnum = 183
+  optional complScore String = 183
   optional complSoftware String = 184
   optional associatedResource String = 185
   optional sop String = 186
@@ -8901,7 +8901,7 @@ message Food-farmEnvironmentMIMAG
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -8928,7 +8928,7 @@ message Food-farmEnvironmentMIMAG
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -8974,12 +8974,12 @@ message Food-farmEnvironmentMIMAG
   optional x16sRecoverSoftware String = 176
   optional trnas Integer = 177
   optional trnaExtSoftware String = 178
-  complScore ComplScoreEnum = 179
+  complScore String = 179
   complSoftware String = 180
   optional complAppr ComplApprEnum = 181
   contamScore String = 182
   optional contamScreenInput String = 183
-  optional contamScreenParam ContamScreenParamEnum = 184
+  optional contamScreenParam String = 184
   optional decontamSoftware DecontamSoftwareEnum = 185
   binParam BinParamEnum = 186
   binSoftware String = 187
@@ -9096,7 +9096,7 @@ message Food-farmEnvironmentMIMARKSSpecimen
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -9123,7 +9123,7 @@ message Food-farmEnvironmentMIMARKSSpecimen
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -9272,7 +9272,7 @@ message Food-farmEnvironmentMIMARKSSurvey
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -9299,7 +9299,7 @@ message Food-farmEnvironmentMIMARKSSurvey
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -9444,7 +9444,7 @@ message Food-farmEnvironmentMIMS
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -9471,7 +9471,7 @@ message Food-farmEnvironmentMIMS
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -9623,7 +9623,7 @@ message Food-farmEnvironmentMISAG
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -9650,7 +9650,7 @@ message Food-farmEnvironmentMISAG
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -9696,12 +9696,12 @@ message Food-farmEnvironmentMISAG
   optional x16sRecoverSoftware String = 176
   optional trnas Integer = 177
   optional trnaExtSoftware String = 178
-  complScore ComplScoreEnum = 179
+  complScore String = 179
   complSoftware String = 180
   optional complAppr ComplApprEnum = 181
   contamScore String = 182
   optional contamScreenInput String = 183
-  optional contamScreenParam ContamScreenParamEnum = 184
+  optional contamScreenParam String = 184
   optional decontamSoftware DecontamSoftwareEnum = 185
   sortTech SortTechEnum = 186
   singleCellLysisAppr SingleCellLysisApprEnum = 187
@@ -9819,7 +9819,7 @@ message Food-farmEnvironmentMIUVIG
   repeated partPlantAnimal String = 103
   optional plantGrowthMed PlantGrowthMedEnum = 104
   repeated plantReprodCrop PlantReprodCropEnum = 105
-  optional sampPurpose SampPurposeEnum = 106
+  optional sampPurpose String = 106
   repeated repositoryName String = 107
   repeated sampPooling String = 108
   optional sampSourceMatCat String = 109
@@ -9846,7 +9846,7 @@ message Food-farmEnvironmentMIUVIG
   optional waterPH Double = 130
   repeated waterSourceShared WaterSourceSharedEnum = 131
   optional enrichmentProtocol String = 132
-  optional foodQualityDate FoodQualityDateEnum = 133
+  optional foodQualityDate String = 133
   repeated iFSACCategory String = 134
   repeated animalHousing String = 135
   optional cultIsolDate Date = 136
@@ -9896,7 +9896,7 @@ message Food-farmEnvironmentMIUVIG
   optional taxClass String = 180
   optional trnas Integer = 181
   optional trnaExtSoftware String = 182
-  optional complScore ComplScoreEnum = 183
+  optional complScore String = 183
   optional complSoftware String = 184
   optional complAppr ComplApprEnum = 185
   optional sortTech SortTechEnum = 186
@@ -9980,7 +9980,7 @@ message Food-foodProductionFacility
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -10017,7 +10017,7 @@ message Food-foodProductionFacility
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -10091,7 +10091,7 @@ message Food-foodProductionFacilityMIGSBacteria
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -10128,7 +10128,7 @@ message Food-foodProductionFacilityMIGSBacteria
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -10178,7 +10178,7 @@ message Food-foodProductionFacilityMIGSBacteria
   optional refDb String = 142
   optional simSearchMeth String = 143
   optional taxClass String = 144
-  optional complScore ComplScoreEnum = 145
+  optional complScore String = 145
   optional complSoftware String = 146
   optional associatedResource String = 147
   optional sop String = 148
@@ -10243,7 +10243,7 @@ message Food-foodProductionFacilityMIGSEukaryote
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -10280,7 +10280,7 @@ message Food-foodProductionFacilityMIGSEukaryote
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -10330,7 +10330,7 @@ message Food-foodProductionFacilityMIGSEukaryote
   optional refDb String = 142
   optional simSearchMeth String = 143
   optional taxClass String = 144
-  optional complScore ComplScoreEnum = 145
+  optional complScore String = 145
   optional complSoftware String = 146
   optional associatedResource String = 147
   optional sop String = 148
@@ -10395,7 +10395,7 @@ message Food-foodProductionFacilityMIGSOrg
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -10432,7 +10432,7 @@ message Food-foodProductionFacilityMIGSOrg
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -10473,7 +10473,7 @@ message Food-foodProductionFacilityMIGSOrg
   optional refDb String = 133
   optional simSearchMeth String = 134
   optional taxClass String = 135
-  optional complScore ComplScoreEnum = 136
+  optional complScore String = 136
   optional complSoftware String = 137
   optional associatedResource String = 138
   optional sop String = 139
@@ -10538,7 +10538,7 @@ message Food-foodProductionFacilityMIGSPlant
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -10575,7 +10575,7 @@ message Food-foodProductionFacilityMIGSPlant
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -10619,7 +10619,7 @@ message Food-foodProductionFacilityMIGSPlant
   optional refDb String = 136
   optional simSearchMeth String = 137
   optional taxClass String = 138
-  optional complScore ComplScoreEnum = 139
+  optional complScore String = 139
   optional complSoftware String = 140
   optional associatedResource String = 141
   optional sop String = 142
@@ -10684,7 +10684,7 @@ message Food-foodProductionFacilityMIGSVirus
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -10721,7 +10721,7 @@ message Food-foodProductionFacilityMIGSVirus
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -10770,7 +10770,7 @@ message Food-foodProductionFacilityMIGSVirus
   optional refDb String = 141
   optional simSearchMeth String = 142
   optional taxClass String = 143
-  optional complScore ComplScoreEnum = 144
+  optional complScore String = 144
   optional complSoftware String = 145
   optional associatedResource String = 146
   optional sop String = 147
@@ -10835,7 +10835,7 @@ message Food-foodProductionFacilityMIMAG
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -10872,7 +10872,7 @@ message Food-foodProductionFacilityMIMAG
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -10917,12 +10917,12 @@ message Food-foodProductionFacilityMIMAG
   optional x16sRecoverSoftware String = 137
   optional trnas Integer = 138
   optional trnaExtSoftware String = 139
-  complScore ComplScoreEnum = 140
+  complScore String = 140
   complSoftware String = 141
   optional complAppr ComplApprEnum = 142
   contamScore String = 143
   optional contamScreenInput String = 144
-  optional contamScreenParam ContamScreenParamEnum = 145
+  optional contamScreenParam String = 145
   optional decontamSoftware DecontamSoftwareEnum = 146
   binParam BinParamEnum = 147
   binSoftware String = 148
@@ -10991,7 +10991,7 @@ message Food-foodProductionFacilityMIMARKSSpecimen
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -11028,7 +11028,7 @@ message Food-foodProductionFacilityMIMARKSSpecimen
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -11128,7 +11128,7 @@ message Food-foodProductionFacilityMIMARKSSurvey
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -11165,7 +11165,7 @@ message Food-foodProductionFacilityMIMARKSSurvey
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -11260,7 +11260,7 @@ message Food-foodProductionFacilityMIMS
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -11297,7 +11297,7 @@ message Food-foodProductionFacilityMIMS
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -11400,7 +11400,7 @@ message Food-foodProductionFacilityMISAG
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -11437,7 +11437,7 @@ message Food-foodProductionFacilityMISAG
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -11482,12 +11482,12 @@ message Food-foodProductionFacilityMISAG
   optional x16sRecoverSoftware String = 137
   optional trnas Integer = 138
   optional trnaExtSoftware String = 139
-  complScore ComplScoreEnum = 140
+  complScore String = 140
   complSoftware String = 141
   optional complAppr ComplApprEnum = 142
   contamScore String = 143
   optional contamScreenInput String = 144
-  optional contamScreenParam ContamScreenParamEnum = 145
+  optional contamScreenParam String = 145
   optional decontamSoftware DecontamSoftwareEnum = 146
   sortTech SortTechEnum = 147
   singleCellLysisAppr SingleCellLysisApprEnum = 148
@@ -11557,7 +11557,7 @@ message Food-foodProductionFacilityMIUVIG
   optional cultResult CultResultEnum = 55
   repeated cultResultOrg String = 56
   repeated sampPooling String = 57
-  optional sampPurpose SampPurposeEnum = 58
+  optional sampPurpose String = 58
   optional sampRepTech QuantityValue = 59
   optional sampRepBiol QuantityValue = 60
   optional sampTransportCont SampTransportContEnum = 61
@@ -11594,7 +11594,7 @@ message Food-foodProductionFacilityMIUVIG
   repeated foodPackMedium String = 92
   repeated foodPriorContact String = 93
   repeated foodProd String = 94
-  optional foodQualityDate FoodQualityDateEnum = 95
+  optional foodQualityDate String = 95
   repeated repositoryName String = 96
   repeated intendedConsumer String = 97
   repeated foodPackIntegrity String = 98
@@ -11644,7 +11644,7 @@ message Food-foodProductionFacilityMIUVIG
   optional taxClass String = 142
   optional trnas Integer = 143
   optional trnaExtSoftware String = 144
-  optional complScore ComplScoreEnum = 145
+  optional complScore String = 145
   optional complSoftware String = 146
   optional complAppr ComplApprEnum = 147
   optional sortTech SortTechEnum = 148
@@ -11730,7 +11730,7 @@ message Food-humanFoods
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -11761,7 +11761,7 @@ message Food-humanFoods
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -11849,7 +11849,7 @@ message Food-humanFoodsMIGSBacteria
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -11880,7 +11880,7 @@ message Food-humanFoodsMIGSBacteria
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -11943,7 +11943,7 @@ message Food-humanFoodsMIGSBacteria
   optional refDb String = 151
   optional simSearchMeth String = 152
   optional taxClass String = 153
-  optional complScore ComplScoreEnum = 154
+  optional complScore String = 154
   optional complSoftware String = 155
   optional associatedResource String = 156
   optional sop String = 157
@@ -12010,7 +12010,7 @@ message Food-humanFoodsMIGSEukaryote
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -12041,7 +12041,7 @@ message Food-humanFoodsMIGSEukaryote
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -12104,7 +12104,7 @@ message Food-humanFoodsMIGSEukaryote
   optional refDb String = 151
   optional simSearchMeth String = 152
   optional taxClass String = 153
-  optional complScore ComplScoreEnum = 154
+  optional complScore String = 154
   optional complSoftware String = 155
   optional associatedResource String = 156
   optional sop String = 157
@@ -12171,7 +12171,7 @@ message Food-humanFoodsMIGSOrg
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -12202,7 +12202,7 @@ message Food-humanFoodsMIGSOrg
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -12256,7 +12256,7 @@ message Food-humanFoodsMIGSOrg
   optional refDb String = 142
   optional simSearchMeth String = 143
   optional taxClass String = 144
-  optional complScore ComplScoreEnum = 145
+  optional complScore String = 145
   optional complSoftware String = 146
   optional associatedResource String = 147
   optional sop String = 148
@@ -12323,7 +12323,7 @@ message Food-humanFoodsMIGSPlant
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -12354,7 +12354,7 @@ message Food-humanFoodsMIGSPlant
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -12411,7 +12411,7 @@ message Food-humanFoodsMIGSPlant
   optional refDb String = 145
   optional simSearchMeth String = 146
   optional taxClass String = 147
-  optional complScore ComplScoreEnum = 148
+  optional complScore String = 148
   optional complSoftware String = 149
   optional associatedResource String = 150
   optional sop String = 151
@@ -12478,7 +12478,7 @@ message Food-humanFoodsMIGSVirus
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -12509,7 +12509,7 @@ message Food-humanFoodsMIGSVirus
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -12571,7 +12571,7 @@ message Food-humanFoodsMIGSVirus
   optional refDb String = 150
   optional simSearchMeth String = 151
   optional taxClass String = 152
-  optional complScore ComplScoreEnum = 153
+  optional complScore String = 153
   optional complSoftware String = 154
   optional associatedResource String = 155
   optional sop String = 156
@@ -12638,7 +12638,7 @@ message Food-humanFoodsMIMAG
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -12669,7 +12669,7 @@ message Food-humanFoodsMIMAG
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -12726,12 +12726,12 @@ message Food-humanFoodsMIMAG
   optional x16sRecoverSoftware String = 145
   optional trnas Integer = 146
   optional trnaExtSoftware String = 147
-  complScore ComplScoreEnum = 148
+  complScore String = 148
   complSoftware String = 149
   optional complAppr ComplApprEnum = 150
   contamScore String = 151
   optional contamScreenInput String = 152
-  optional contamScreenParam ContamScreenParamEnum = 153
+  optional contamScreenParam String = 153
   optional decontamSoftware DecontamSoftwareEnum = 154
   binParam BinParamEnum = 155
   binSoftware String = 156
@@ -12802,7 +12802,7 @@ message Food-humanFoodsMIMARKSSpecimen
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -12833,7 +12833,7 @@ message Food-humanFoodsMIMARKSSpecimen
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -12947,7 +12947,7 @@ message Food-humanFoodsMIMARKSSurvey
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -12978,7 +12978,7 @@ message Food-humanFoodsMIMARKSSurvey
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -13088,7 +13088,7 @@ message Food-humanFoodsMIMS
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -13119,7 +13119,7 @@ message Food-humanFoodsMIMS
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -13236,7 +13236,7 @@ message Food-humanFoodsMISAG
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -13267,7 +13267,7 @@ message Food-humanFoodsMISAG
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -13324,12 +13324,12 @@ message Food-humanFoodsMISAG
   optional x16sRecoverSoftware String = 145
   optional trnas Integer = 146
   optional trnaExtSoftware String = 147
-  complScore ComplScoreEnum = 148
+  complScore String = 148
   complSoftware String = 149
   optional complAppr ComplApprEnum = 150
   contamScore String = 151
   optional contamScreenInput String = 152
-  optional contamScreenParam ContamScreenParamEnum = 153
+  optional contamScreenParam String = 153
   optional decontamSoftware DecontamSoftwareEnum = 154
   sortTech SortTechEnum = 155
   singleCellLysisAppr SingleCellLysisApprEnum = 156
@@ -13401,7 +13401,7 @@ message Food-humanFoodsMIUVIG
   repeated foodProd String = 57
   repeated foodProdSynonym String = 58
   optional foodProductQual String = 59
-  optional foodQualityDate FoodQualityDateEnum = 60
+  optional foodQualityDate String = 60
   optional foodSource String = 61
   optional foodTraceList FoodTraceListEnum = 62
   repeated foodTravMode String = 63
@@ -13432,7 +13432,7 @@ message Food-humanFoodsMIUVIG
   optional sampTransportCont SampTransportContEnum = 88
   optional sampTransportDur QuantityValue = 89
   optional sampTransportTemp String = 90
-  optional sampPurpose SampPurposeEnum = 91
+  optional sampPurpose String = 91
   optional sequencingKit String = 92
   optional sequencingLocation String = 93
   repeated serovarOrSerotype String = 94
@@ -13494,7 +13494,7 @@ message Food-humanFoodsMIUVIG
   optional taxClass String = 150
   optional trnas Integer = 151
   optional trnaExtSoftware String = 152
-  optional complScore ComplScoreEnum = 153
+  optional complScore String = 153
   optional complSoftware String = 154
   optional complAppr ComplApprEnum = 155
   optional sortTech SortTechEnum = 156
@@ -13678,7 +13678,7 @@ message Host-associatedMIGSBacteria
   optional refDb String = 95
   optional simSearchMeth String = 96
   optional taxClass String = 97
-  optional complScore ComplScoreEnum = 98
+  optional complScore String = 98
   optional complSoftware String = 99
   optional associatedResource String = 100
   optional sop String = 101
@@ -13783,7 +13783,7 @@ message Host-associatedMIGSEukaryote
   optional refDb String = 95
   optional simSearchMeth String = 96
   optional taxClass String = 97
-  optional complScore ComplScoreEnum = 98
+  optional complScore String = 98
   optional complSoftware String = 99
   optional associatedResource String = 100
   optional sop String = 101
@@ -13880,7 +13880,7 @@ message Host-associatedMIGSOrg
   optional refDb String = 87
   optional simSearchMeth String = 88
   optional taxClass String = 89
-  optional complScore ComplScoreEnum = 90
+  optional complScore String = 90
   optional complSoftware String = 91
   optional associatedResource String = 92
   optional sop String = 93
@@ -13980,7 +13980,7 @@ message Host-associatedMIGSPlant
   optional refDb String = 90
   optional simSearchMeth String = 91
   optional taxClass String = 92
-  optional complScore ComplScoreEnum = 93
+  optional complScore String = 93
   optional complSoftware String = 94
   optional associatedResource String = 95
   optional sop String = 96
@@ -14084,7 +14084,7 @@ message Host-associatedMIGSVirus
   optional refDb String = 94
   optional simSearchMeth String = 95
   optional taxClass String = 96
-  optional complScore ComplScoreEnum = 97
+  optional complScore String = 97
   optional complSoftware String = 98
   optional associatedResource String = 99
   optional sop String = 100
@@ -14184,12 +14184,12 @@ message Host-associatedMIMAG
   optional x16sRecoverSoftware String = 90
   optional trnas Integer = 91
   optional trnaExtSoftware String = 92
-  complScore ComplScoreEnum = 93
+  complScore String = 93
   complSoftware String = 94
   optional complAppr ComplApprEnum = 95
   contamScore String = 96
   optional contamScreenInput String = 97
-  optional contamScreenParam ContamScreenParamEnum = 98
+  optional contamScreenParam String = 98
   optional decontamSoftware DecontamSoftwareEnum = 99
   binParam BinParamEnum = 100
   binSoftware String = 101
@@ -14562,12 +14562,12 @@ message Host-associatedMISAG
   optional x16sRecoverSoftware String = 90
   optional trnas Integer = 91
   optional trnaExtSoftware String = 92
-  complScore ComplScoreEnum = 93
+  complScore String = 93
   complSoftware String = 94
   optional complAppr ComplApprEnum = 95
   contamScore String = 96
   optional contamScreenInput String = 97
-  optional contamScreenParam ContamScreenParamEnum = 98
+  optional contamScreenParam String = 98
   optional decontamSoftware DecontamSoftwareEnum = 99
   sortTech SortTechEnum = 100
   singleCellLysisAppr SingleCellLysisApprEnum = 101
@@ -14676,7 +14676,7 @@ message Host-associatedMIUVIG
   optional taxClass String = 94
   optional trnas Integer = 95
   optional trnaExtSoftware String = 96
-  optional complScore ComplScoreEnum = 97
+  optional complScore String = 97
   optional complSoftware String = 98
   optional complAppr ComplApprEnum = 99
   optional sortTech SortTechEnum = 100
@@ -14872,7 +14872,7 @@ message Human-associatedMIGSBacteria
   optional refDb String = 101
   optional simSearchMeth String = 102
   optional taxClass String = 103
-  optional complScore ComplScoreEnum = 104
+  optional complScore String = 104
   optional complSoftware String = 105
   optional associatedResource String = 106
   optional sop String = 107
@@ -14983,7 +14983,7 @@ message Human-associatedMIGSEukaryote
   optional refDb String = 101
   optional simSearchMeth String = 102
   optional taxClass String = 103
-  optional complScore ComplScoreEnum = 104
+  optional complScore String = 104
   optional complSoftware String = 105
   optional associatedResource String = 106
   optional sop String = 107
@@ -15086,7 +15086,7 @@ message Human-associatedMIGSOrg
   optional refDb String = 93
   optional simSearchMeth String = 94
   optional taxClass String = 95
-  optional complScore ComplScoreEnum = 96
+  optional complScore String = 96
   optional complSoftware String = 97
   optional associatedResource String = 98
   optional sop String = 99
@@ -15192,7 +15192,7 @@ message Human-associatedMIGSPlant
   optional refDb String = 96
   optional simSearchMeth String = 97
   optional taxClass String = 98
-  optional complScore ComplScoreEnum = 99
+  optional complScore String = 99
   optional complSoftware String = 100
   optional associatedResource String = 101
   optional sop String = 102
@@ -15302,7 +15302,7 @@ message Human-associatedMIGSVirus
   optional refDb String = 100
   optional simSearchMeth String = 101
   optional taxClass String = 102
-  optional complScore ComplScoreEnum = 103
+  optional complScore String = 103
   optional complSoftware String = 104
   optional associatedResource String = 105
   optional sop String = 106
@@ -15408,12 +15408,12 @@ message Human-associatedMIMAG
   optional x16sRecoverSoftware String = 96
   optional trnas Integer = 97
   optional trnaExtSoftware String = 98
-  complScore ComplScoreEnum = 99
+  complScore String = 99
   complSoftware String = 100
   optional complAppr ComplApprEnum = 101
   contamScore String = 102
   optional contamScreenInput String = 103
-  optional contamScreenParam ContamScreenParamEnum = 104
+  optional contamScreenParam String = 104
   optional decontamSoftware DecontamSoftwareEnum = 105
   binParam BinParamEnum = 106
   binSoftware String = 107
@@ -15810,12 +15810,12 @@ message Human-associatedMISAG
   optional x16sRecoverSoftware String = 96
   optional trnas Integer = 97
   optional trnaExtSoftware String = 98
-  complScore ComplScoreEnum = 99
+  complScore String = 99
   complSoftware String = 100
   optional complAppr ComplApprEnum = 101
   contamScore String = 102
   optional contamScreenInput String = 103
-  optional contamScreenParam ContamScreenParamEnum = 104
+  optional contamScreenParam String = 104
   optional decontamSoftware DecontamSoftwareEnum = 105
   sortTech SortTechEnum = 106
   singleCellLysisAppr SingleCellLysisApprEnum = 107
@@ -15930,7 +15930,7 @@ message Human-associatedMIUVIG
   optional taxClass String = 100
   optional trnas Integer = 101
   optional trnaExtSoftware String = 102
-  optional complScore ComplScoreEnum = 103
+  optional complScore String = 103
   optional complSoftware String = 104
   optional complAppr ComplApprEnum = 105
   optional sortTech SortTechEnum = 106
@@ -16094,7 +16094,7 @@ message Human-gutMIGSBacteria
   optional refDb String = 85
   optional simSearchMeth String = 86
   optional taxClass String = 87
-  optional complScore ComplScoreEnum = 88
+  optional complScore String = 88
   optional complSoftware String = 89
   optional associatedResource String = 90
   optional sop String = 91
@@ -16189,7 +16189,7 @@ message Human-gutMIGSEukaryote
   optional refDb String = 85
   optional simSearchMeth String = 86
   optional taxClass String = 87
-  optional complScore ComplScoreEnum = 88
+  optional complScore String = 88
   optional complSoftware String = 89
   optional associatedResource String = 90
   optional sop String = 91
@@ -16276,7 +16276,7 @@ message Human-gutMIGSOrg
   optional refDb String = 77
   optional simSearchMeth String = 78
   optional taxClass String = 79
-  optional complScore ComplScoreEnum = 80
+  optional complScore String = 80
   optional complSoftware String = 81
   optional associatedResource String = 82
   optional sop String = 83
@@ -16366,7 +16366,7 @@ message Human-gutMIGSPlant
   optional refDb String = 80
   optional simSearchMeth String = 81
   optional taxClass String = 82
-  optional complScore ComplScoreEnum = 83
+  optional complScore String = 83
   optional complSoftware String = 84
   optional associatedResource String = 85
   optional sop String = 86
@@ -16460,7 +16460,7 @@ message Human-gutMIGSVirus
   optional refDb String = 84
   optional simSearchMeth String = 85
   optional taxClass String = 86
-  optional complScore ComplScoreEnum = 87
+  optional complScore String = 87
   optional complSoftware String = 88
   optional associatedResource String = 89
   optional sop String = 90
@@ -16550,12 +16550,12 @@ message Human-gutMIMAG
   optional x16sRecoverSoftware String = 80
   optional trnas Integer = 81
   optional trnaExtSoftware String = 82
-  complScore ComplScoreEnum = 83
+  complScore String = 83
   complSoftware String = 84
   optional complAppr ComplApprEnum = 85
   contamScore String = 86
   optional contamScreenInput String = 87
-  optional contamScreenParam ContamScreenParamEnum = 88
+  optional contamScreenParam String = 88
   optional decontamSoftware DecontamSoftwareEnum = 89
   binParam BinParamEnum = 90
   binSoftware String = 91
@@ -16888,12 +16888,12 @@ message Human-gutMISAG
   optional x16sRecoverSoftware String = 80
   optional trnas Integer = 81
   optional trnaExtSoftware String = 82
-  complScore ComplScoreEnum = 83
+  complScore String = 83
   complSoftware String = 84
   optional complAppr ComplApprEnum = 85
   contamScore String = 86
   optional contamScreenInput String = 87
-  optional contamScreenParam ContamScreenParamEnum = 88
+  optional contamScreenParam String = 88
   optional decontamSoftware DecontamSoftwareEnum = 89
   sortTech SortTechEnum = 90
   singleCellLysisAppr SingleCellLysisApprEnum = 91
@@ -16992,7 +16992,7 @@ message Human-gutMIUVIG
   optional taxClass String = 84
   optional trnas Integer = 85
   optional trnaExtSoftware String = 86
-  optional complScore ComplScoreEnum = 87
+  optional complScore String = 87
   optional complSoftware String = 88
   optional complAppr ComplApprEnum = 89
   optional sortTech SortTechEnum = 90
@@ -17154,7 +17154,7 @@ message Human-oralMIGSBacteria
   optional refDb String = 84
   optional simSearchMeth String = 85
   optional taxClass String = 86
-  optional complScore ComplScoreEnum = 87
+  optional complScore String = 87
   optional complSoftware String = 88
   optional associatedResource String = 89
   optional sop String = 90
@@ -17248,7 +17248,7 @@ message Human-oralMIGSEukaryote
   optional refDb String = 84
   optional simSearchMeth String = 85
   optional taxClass String = 86
-  optional complScore ComplScoreEnum = 87
+  optional complScore String = 87
   optional complSoftware String = 88
   optional associatedResource String = 89
   optional sop String = 90
@@ -17334,7 +17334,7 @@ message Human-oralMIGSOrg
   optional refDb String = 76
   optional simSearchMeth String = 77
   optional taxClass String = 78
-  optional complScore ComplScoreEnum = 79
+  optional complScore String = 79
   optional complSoftware String = 80
   optional associatedResource String = 81
   optional sop String = 82
@@ -17423,7 +17423,7 @@ message Human-oralMIGSPlant
   optional refDb String = 79
   optional simSearchMeth String = 80
   optional taxClass String = 81
-  optional complScore ComplScoreEnum = 82
+  optional complScore String = 82
   optional complSoftware String = 83
   optional associatedResource String = 84
   optional sop String = 85
@@ -17516,7 +17516,7 @@ message Human-oralMIGSVirus
   optional refDb String = 83
   optional simSearchMeth String = 84
   optional taxClass String = 85
-  optional complScore ComplScoreEnum = 86
+  optional complScore String = 86
   optional complSoftware String = 87
   optional associatedResource String = 88
   optional sop String = 89
@@ -17605,12 +17605,12 @@ message Human-oralMIMAG
   optional x16sRecoverSoftware String = 79
   optional trnas Integer = 80
   optional trnaExtSoftware String = 81
-  complScore ComplScoreEnum = 82
+  complScore String = 82
   complSoftware String = 83
   optional complAppr ComplApprEnum = 84
   contamScore String = 85
   optional contamScreenInput String = 86
-  optional contamScreenParam ContamScreenParamEnum = 87
+  optional contamScreenParam String = 87
   optional decontamSoftware DecontamSoftwareEnum = 88
   binParam BinParamEnum = 89
   binSoftware String = 90
@@ -17939,12 +17939,12 @@ message Human-oralMISAG
   optional x16sRecoverSoftware String = 79
   optional trnas Integer = 80
   optional trnaExtSoftware String = 81
-  complScore ComplScoreEnum = 82
+  complScore String = 82
   complSoftware String = 83
   optional complAppr ComplApprEnum = 84
   contamScore String = 85
   optional contamScreenInput String = 86
-  optional contamScreenParam ContamScreenParamEnum = 87
+  optional contamScreenParam String = 87
   optional decontamSoftware DecontamSoftwareEnum = 88
   sortTech SortTechEnum = 89
   singleCellLysisAppr SingleCellLysisApprEnum = 90
@@ -18042,7 +18042,7 @@ message Human-oralMIUVIG
   optional taxClass String = 83
   optional trnas Integer = 84
   optional trnaExtSoftware String = 85
-  optional complScore ComplScoreEnum = 86
+  optional complScore String = 86
   optional complSoftware String = 87
   optional complAppr ComplApprEnum = 88
   optional sortTech SortTechEnum = 89
@@ -18206,7 +18206,7 @@ message Human-skinMIGSBacteria
   optional refDb String = 85
   optional simSearchMeth String = 86
   optional taxClass String = 87
-  optional complScore ComplScoreEnum = 88
+  optional complScore String = 88
   optional complSoftware String = 89
   optional associatedResource String = 90
   optional sop String = 91
@@ -18301,7 +18301,7 @@ message Human-skinMIGSEukaryote
   optional refDb String = 85
   optional simSearchMeth String = 86
   optional taxClass String = 87
-  optional complScore ComplScoreEnum = 88
+  optional complScore String = 88
   optional complSoftware String = 89
   optional associatedResource String = 90
   optional sop String = 91
@@ -18388,7 +18388,7 @@ message Human-skinMIGSOrg
   optional refDb String = 77
   optional simSearchMeth String = 78
   optional taxClass String = 79
-  optional complScore ComplScoreEnum = 80
+  optional complScore String = 80
   optional complSoftware String = 81
   optional associatedResource String = 82
   optional sop String = 83
@@ -18478,7 +18478,7 @@ message Human-skinMIGSPlant
   optional refDb String = 80
   optional simSearchMeth String = 81
   optional taxClass String = 82
-  optional complScore ComplScoreEnum = 83
+  optional complScore String = 83
   optional complSoftware String = 84
   optional associatedResource String = 85
   optional sop String = 86
@@ -18572,7 +18572,7 @@ message Human-skinMIGSVirus
   optional refDb String = 84
   optional simSearchMeth String = 85
   optional taxClass String = 86
-  optional complScore ComplScoreEnum = 87
+  optional complScore String = 87
   optional complSoftware String = 88
   optional associatedResource String = 89
   optional sop String = 90
@@ -18662,12 +18662,12 @@ message Human-skinMIMAG
   optional x16sRecoverSoftware String = 80
   optional trnas Integer = 81
   optional trnaExtSoftware String = 82
-  complScore ComplScoreEnum = 83
+  complScore String = 83
   complSoftware String = 84
   optional complAppr ComplApprEnum = 85
   contamScore String = 86
   optional contamScreenInput String = 87
-  optional contamScreenParam ContamScreenParamEnum = 88
+  optional contamScreenParam String = 88
   optional decontamSoftware DecontamSoftwareEnum = 89
   binParam BinParamEnum = 90
   binSoftware String = 91
@@ -19000,12 +19000,12 @@ message Human-skinMISAG
   optional x16sRecoverSoftware String = 80
   optional trnas Integer = 81
   optional trnaExtSoftware String = 82
-  complScore ComplScoreEnum = 83
+  complScore String = 83
   complSoftware String = 84
   optional complAppr ComplApprEnum = 85
   contamScore String = 86
   optional contamScreenInput String = 87
-  optional contamScreenParam ContamScreenParamEnum = 88
+  optional contamScreenParam String = 88
   optional decontamSoftware DecontamSoftwareEnum = 89
   sortTech SortTechEnum = 90
   singleCellLysisAppr SingleCellLysisApprEnum = 91
@@ -19104,7 +19104,7 @@ message Human-skinMIUVIG
   optional taxClass String = 84
   optional trnas Integer = 85
   optional trnaExtSoftware String = 86
-  optional complScore ComplScoreEnum = 87
+  optional complScore String = 87
   optional complSoftware String = 88
   optional complAppr ComplApprEnum = 89
   optional sortTech SortTechEnum = 90
@@ -19284,7 +19284,7 @@ message Human-vaginalMIGSBacteria
   optional refDb String = 93
   optional simSearchMeth String = 94
   optional taxClass String = 95
-  optional complScore ComplScoreEnum = 96
+  optional complScore String = 96
   optional complSoftware String = 97
   optional associatedResource String = 98
   optional sop String = 99
@@ -19387,7 +19387,7 @@ message Human-vaginalMIGSEukaryote
   optional refDb String = 93
   optional simSearchMeth String = 94
   optional taxClass String = 95
-  optional complScore ComplScoreEnum = 96
+  optional complScore String = 96
   optional complSoftware String = 97
   optional associatedResource String = 98
   optional sop String = 99
@@ -19482,7 +19482,7 @@ message Human-vaginalMIGSOrg
   optional refDb String = 85
   optional simSearchMeth String = 86
   optional taxClass String = 87
-  optional complScore ComplScoreEnum = 88
+  optional complScore String = 88
   optional complSoftware String = 89
   optional associatedResource String = 90
   optional sop String = 91
@@ -19580,7 +19580,7 @@ message Human-vaginalMIGSPlant
   optional refDb String = 88
   optional simSearchMeth String = 89
   optional taxClass String = 90
-  optional complScore ComplScoreEnum = 91
+  optional complScore String = 91
   optional complSoftware String = 92
   optional associatedResource String = 93
   optional sop String = 94
@@ -19682,7 +19682,7 @@ message Human-vaginalMIGSVirus
   optional refDb String = 92
   optional simSearchMeth String = 93
   optional taxClass String = 94
-  optional complScore ComplScoreEnum = 95
+  optional complScore String = 95
   optional complSoftware String = 96
   optional associatedResource String = 97
   optional sop String = 98
@@ -19780,12 +19780,12 @@ message Human-vaginalMIMAG
   optional x16sRecoverSoftware String = 88
   optional trnas Integer = 89
   optional trnaExtSoftware String = 90
-  complScore ComplScoreEnum = 91
+  complScore String = 91
   complSoftware String = 92
   optional complAppr ComplApprEnum = 93
   contamScore String = 94
   optional contamScreenInput String = 95
-  optional contamScreenParam ContamScreenParamEnum = 96
+  optional contamScreenParam String = 96
   optional decontamSoftware DecontamSoftwareEnum = 97
   binParam BinParamEnum = 98
   binSoftware String = 99
@@ -20150,12 +20150,12 @@ message Human-vaginalMISAG
   optional x16sRecoverSoftware String = 88
   optional trnas Integer = 89
   optional trnaExtSoftware String = 90
-  complScore ComplScoreEnum = 91
+  complScore String = 91
   complSoftware String = 92
   optional complAppr ComplApprEnum = 93
   contamScore String = 94
   optional contamScreenInput String = 95
-  optional contamScreenParam ContamScreenParamEnum = 96
+  optional contamScreenParam String = 96
   optional decontamSoftware DecontamSoftwareEnum = 97
   sortTech SortTechEnum = 98
   singleCellLysisAppr SingleCellLysisApprEnum = 99
@@ -20262,7 +20262,7 @@ message Human-vaginalMIUVIG
   optional taxClass String = 92
   optional trnas Integer = 93
   optional trnaExtSoftware String = 94
-  optional complScore ComplScoreEnum = 95
+  optional complScore String = 95
   optional complSoftware String = 96
   optional complAppr ComplApprEnum = 97
   optional sortTech SortTechEnum = 98
@@ -20515,7 +20515,7 @@ message HydrocarbonResources-coresMIGSBacteria
   optional refDb String = 130
   optional simSearchMeth String = 131
   optional taxClass String = 132
-  optional complScore ComplScoreEnum = 133
+  optional complScore String = 133
   optional complSoftware String = 134
   optional associatedResource String = 135
   optional sop String = 136
@@ -20655,7 +20655,7 @@ message HydrocarbonResources-coresMIGSEukaryote
   optional refDb String = 130
   optional simSearchMeth String = 131
   optional taxClass String = 132
-  optional complScore ComplScoreEnum = 133
+  optional complScore String = 133
   optional complSoftware String = 134
   optional associatedResource String = 135
   optional sop String = 136
@@ -20786,7 +20786,7 @@ message HydrocarbonResources-coresMIGSOrg
   optional refDb String = 121
   optional simSearchMeth String = 122
   optional taxClass String = 123
-  optional complScore ComplScoreEnum = 124
+  optional complScore String = 124
   optional complSoftware String = 125
   optional associatedResource String = 126
   optional sop String = 127
@@ -20920,7 +20920,7 @@ message HydrocarbonResources-coresMIGSPlant
   optional refDb String = 124
   optional simSearchMeth String = 125
   optional taxClass String = 126
-  optional complScore ComplScoreEnum = 127
+  optional complScore String = 127
   optional complSoftware String = 128
   optional associatedResource String = 129
   optional sop String = 130
@@ -21059,7 +21059,7 @@ message HydrocarbonResources-coresMIGSVirus
   optional refDb String = 129
   optional simSearchMeth String = 130
   optional taxClass String = 131
-  optional complScore ComplScoreEnum = 132
+  optional complScore String = 132
   optional complSoftware String = 133
   optional associatedResource String = 134
   optional sop String = 135
@@ -21193,12 +21193,12 @@ message HydrocarbonResources-coresMIMAG
   optional x16sRecoverSoftware String = 124
   optional trnas Integer = 125
   optional trnaExtSoftware String = 126
-  complScore ComplScoreEnum = 127
+  complScore String = 127
   complSoftware String = 128
   optional complAppr ComplApprEnum = 129
   contamScore String = 130
   optional contamScreenInput String = 131
-  optional contamScreenParam ContamScreenParamEnum = 132
+  optional contamScreenParam String = 132
   optional decontamSoftware DecontamSoftwareEnum = 133
   binParam BinParamEnum = 134
   binSoftware String = 135
@@ -21707,12 +21707,12 @@ message HydrocarbonResources-coresMISAG
   optional x16sRecoverSoftware String = 124
   optional trnas Integer = 125
   optional trnaExtSoftware String = 126
-  complScore ComplScoreEnum = 127
+  complScore String = 127
   complSoftware String = 128
   optional complAppr ComplApprEnum = 129
   contamScore String = 130
   optional contamScreenInput String = 131
-  optional contamScreenParam ContamScreenParamEnum = 132
+  optional contamScreenParam String = 132
   optional decontamSoftware DecontamSoftwareEnum = 133
   sortTech SortTechEnum = 134
   singleCellLysisAppr SingleCellLysisApprEnum = 135
@@ -21856,7 +21856,7 @@ message HydrocarbonResources-coresMIUVIG
   optional taxClass String = 129
   optional trnas Integer = 130
   optional trnaExtSoftware String = 131
-  optional complScore ComplScoreEnum = 132
+  optional complScore String = 132
   optional complSoftware String = 133
   optional complAppr ComplApprEnum = 134
   optional sortTech SortTechEnum = 135
@@ -22119,7 +22119,7 @@ message HydrocarbonResources-fluidsSwabsMIGSBacteria
   optional refDb String = 135
   optional simSearchMeth String = 136
   optional taxClass String = 137
-  optional complScore ComplScoreEnum = 138
+  optional complScore String = 138
   optional complSoftware String = 139
   optional associatedResource String = 140
   optional sop String = 141
@@ -22264,7 +22264,7 @@ message HydrocarbonResources-fluidsSwabsMIGSEukaryote
   optional refDb String = 135
   optional simSearchMeth String = 136
   optional taxClass String = 137
-  optional complScore ComplScoreEnum = 138
+  optional complScore String = 138
   optional complSoftware String = 139
   optional associatedResource String = 140
   optional sop String = 141
@@ -22400,7 +22400,7 @@ message HydrocarbonResources-fluidsSwabsMIGSOrg
   optional refDb String = 126
   optional simSearchMeth String = 127
   optional taxClass String = 128
-  optional complScore ComplScoreEnum = 129
+  optional complScore String = 129
   optional complSoftware String = 130
   optional associatedResource String = 131
   optional sop String = 132
@@ -22539,7 +22539,7 @@ message HydrocarbonResources-fluidsSwabsMIGSPlant
   optional refDb String = 129
   optional simSearchMeth String = 130
   optional taxClass String = 131
-  optional complScore ComplScoreEnum = 132
+  optional complScore String = 132
   optional complSoftware String = 133
   optional associatedResource String = 134
   optional sop String = 135
@@ -22683,7 +22683,7 @@ message HydrocarbonResources-fluidsSwabsMIGSVirus
   optional refDb String = 134
   optional simSearchMeth String = 135
   optional taxClass String = 136
-  optional complScore ComplScoreEnum = 137
+  optional complScore String = 137
   optional complSoftware String = 138
   optional associatedResource String = 139
   optional sop String = 140
@@ -22822,12 +22822,12 @@ message HydrocarbonResources-fluidsSwabsMIMAG
   optional x16sRecoverSoftware String = 129
   optional trnas Integer = 130
   optional trnaExtSoftware String = 131
-  complScore ComplScoreEnum = 132
+  complScore String = 132
   complSoftware String = 133
   optional complAppr ComplApprEnum = 134
   contamScore String = 135
   optional contamScreenInput String = 136
-  optional contamScreenParam ContamScreenParamEnum = 137
+  optional contamScreenParam String = 137
   optional decontamSoftware DecontamSoftwareEnum = 138
   binParam BinParamEnum = 139
   binSoftware String = 140
@@ -23356,12 +23356,12 @@ message HydrocarbonResources-fluidsSwabsMISAG
   optional x16sRecoverSoftware String = 129
   optional trnas Integer = 130
   optional trnaExtSoftware String = 131
-  complScore ComplScoreEnum = 132
+  complScore String = 132
   complSoftware String = 133
   optional complAppr ComplApprEnum = 134
   contamScore String = 135
   optional contamScreenInput String = 136
-  optional contamScreenParam ContamScreenParamEnum = 137
+  optional contamScreenParam String = 137
   optional decontamSoftware DecontamSoftwareEnum = 138
   sortTech SortTechEnum = 139
   singleCellLysisAppr SingleCellLysisApprEnum = 140
@@ -23510,7 +23510,7 @@ message HydrocarbonResources-fluidsSwabsMIUVIG
   optional taxClass String = 134
   optional trnas Integer = 135
   optional trnaExtSoftware String = 136
-  optional complScore ComplScoreEnum = 137
+  optional complScore String = 137
   optional complSoftware String = 138
   optional complAppr ComplApprEnum = 139
   optional sortTech SortTechEnum = 140
@@ -23725,7 +23725,7 @@ message MicrobialMatBiofilmMIGSBacteria
   optional refDb String = 111
   optional simSearchMeth String = 112
   optional taxClass String = 113
-  optional complScore ComplScoreEnum = 114
+  optional complScore String = 114
   optional complSoftware String = 115
   optional associatedResource String = 116
   optional sop String = 117
@@ -23846,7 +23846,7 @@ message MicrobialMatBiofilmMIGSEukaryote
   optional refDb String = 111
   optional simSearchMeth String = 112
   optional taxClass String = 113
-  optional complScore ComplScoreEnum = 114
+  optional complScore String = 114
   optional complSoftware String = 115
   optional associatedResource String = 116
   optional sop String = 117
@@ -23958,7 +23958,7 @@ message MicrobialMatBiofilmMIGSOrg
   optional refDb String = 102
   optional simSearchMeth String = 103
   optional taxClass String = 104
-  optional complScore ComplScoreEnum = 105
+  optional complScore String = 105
   optional complSoftware String = 106
   optional associatedResource String = 107
   optional sop String = 108
@@ -24073,7 +24073,7 @@ message MicrobialMatBiofilmMIGSPlant
   optional refDb String = 105
   optional simSearchMeth String = 106
   optional taxClass String = 107
-  optional complScore ComplScoreEnum = 108
+  optional complScore String = 108
   optional complSoftware String = 109
   optional associatedResource String = 110
   optional sop String = 111
@@ -24193,7 +24193,7 @@ message MicrobialMatBiofilmMIGSVirus
   optional refDb String = 110
   optional simSearchMeth String = 111
   optional taxClass String = 112
-  optional complScore ComplScoreEnum = 113
+  optional complScore String = 113
   optional complSoftware String = 114
   optional associatedResource String = 115
   optional sop String = 116
@@ -24308,12 +24308,12 @@ message MicrobialMatBiofilmMIMAG
   optional x16sRecoverSoftware String = 105
   optional trnas Integer = 106
   optional trnaExtSoftware String = 107
-  complScore ComplScoreEnum = 108
+  complScore String = 108
   complSoftware String = 109
   optional complAppr ComplApprEnum = 110
   contamScore String = 111
   optional contamScreenInput String = 112
-  optional contamScreenParam ContamScreenParamEnum = 113
+  optional contamScreenParam String = 113
   optional decontamSoftware DecontamSoftwareEnum = 114
   binParam BinParamEnum = 115
   binSoftware String = 116
@@ -24746,12 +24746,12 @@ message MicrobialMatBiofilmMISAG
   optional x16sRecoverSoftware String = 105
   optional trnas Integer = 106
   optional trnaExtSoftware String = 107
-  complScore ComplScoreEnum = 108
+  complScore String = 108
   complSoftware String = 109
   optional complAppr ComplApprEnum = 110
   contamScore String = 111
   optional contamScreenInput String = 112
-  optional contamScreenParam ContamScreenParamEnum = 113
+  optional contamScreenParam String = 113
   optional decontamSoftware DecontamSoftwareEnum = 114
   sortTech SortTechEnum = 115
   singleCellLysisAppr SingleCellLysisApprEnum = 116
@@ -24876,7 +24876,7 @@ message MicrobialMatBiofilmMIUVIG
   optional taxClass String = 110
   optional trnas Integer = 111
   optional trnaExtSoftware String = 112
-  optional complScore ComplScoreEnum = 113
+  optional complScore String = 113
   optional complSoftware String = 114
   optional complAppr ComplApprEnum = 115
   optional sortTech SortTechEnum = 116
@@ -25053,7 +25053,7 @@ message MiscellaneousNaturalOrArtificialEnvironmentMIGSBacteria
   optional refDb String = 92
   optional simSearchMeth String = 93
   optional taxClass String = 94
-  optional complScore ComplScoreEnum = 95
+  optional complScore String = 95
   optional complSoftware String = 96
   optional associatedResource String = 97
   optional sop String = 98
@@ -25155,7 +25155,7 @@ message MiscellaneousNaturalOrArtificialEnvironmentMIGSEukaryote
   optional refDb String = 92
   optional simSearchMeth String = 93
   optional taxClass String = 94
-  optional complScore ComplScoreEnum = 95
+  optional complScore String = 95
   optional complSoftware String = 96
   optional associatedResource String = 97
   optional sop String = 98
@@ -25248,7 +25248,7 @@ message MiscellaneousNaturalOrArtificialEnvironmentMIGSOrg
   optional refDb String = 83
   optional simSearchMeth String = 84
   optional taxClass String = 85
-  optional complScore ComplScoreEnum = 86
+  optional complScore String = 86
   optional complSoftware String = 87
   optional associatedResource String = 88
   optional sop String = 89
@@ -25344,7 +25344,7 @@ message MiscellaneousNaturalOrArtificialEnvironmentMIGSPlant
   optional refDb String = 86
   optional simSearchMeth String = 87
   optional taxClass String = 88
-  optional complScore ComplScoreEnum = 89
+  optional complScore String = 89
   optional complSoftware String = 90
   optional associatedResource String = 91
   optional sop String = 92
@@ -25445,7 +25445,7 @@ message MiscellaneousNaturalOrArtificialEnvironmentMIGSVirus
   optional refDb String = 91
   optional simSearchMeth String = 92
   optional taxClass String = 93
-  optional complScore ComplScoreEnum = 94
+  optional complScore String = 94
   optional complSoftware String = 95
   optional associatedResource String = 96
   optional sop String = 97
@@ -25541,12 +25541,12 @@ message MiscellaneousNaturalOrArtificialEnvironmentMIMAG
   optional x16sRecoverSoftware String = 86
   optional trnas Integer = 87
   optional trnaExtSoftware String = 88
-  complScore ComplScoreEnum = 89
+  complScore String = 89
   complSoftware String = 90
   optional complAppr ComplApprEnum = 91
   contamScore String = 92
   optional contamScreenInput String = 93
-  optional contamScreenParam ContamScreenParamEnum = 94
+  optional contamScreenParam String = 94
   optional decontamSoftware DecontamSoftwareEnum = 95
   binParam BinParamEnum = 96
   binSoftware String = 97
@@ -25903,12 +25903,12 @@ message MiscellaneousNaturalOrArtificialEnvironmentMISAG
   optional x16sRecoverSoftware String = 86
   optional trnas Integer = 87
   optional trnaExtSoftware String = 88
-  complScore ComplScoreEnum = 89
+  complScore String = 89
   complSoftware String = 90
   optional complAppr ComplApprEnum = 91
   contamScore String = 92
   optional contamScreenInput String = 93
-  optional contamScreenParam ContamScreenParamEnum = 94
+  optional contamScreenParam String = 94
   optional decontamSoftware DecontamSoftwareEnum = 95
   sortTech SortTechEnum = 96
   singleCellLysisAppr SingleCellLysisApprEnum = 97
@@ -26014,7 +26014,7 @@ message MiscellaneousNaturalOrArtificialEnvironmentMIUVIG
   optional taxClass String = 91
   optional trnas Integer = 92
   optional trnaExtSoftware String = 93
-  optional complScore ComplScoreEnum = 94
+  optional complScore String = 94
   optional complSoftware String = 95
   optional complAppr ComplApprEnum = 96
   optional sortTech SortTechEnum = 97
@@ -26250,7 +26250,7 @@ message Plant-associatedMIGSBacteria
   optional refDb String = 121
   optional simSearchMeth String = 122
   optional taxClass String = 123
-  optional complScore ComplScoreEnum = 124
+  optional complScore String = 124
   optional complSoftware String = 125
   optional associatedResource String = 126
   optional sop String = 127
@@ -26381,7 +26381,7 @@ message Plant-associatedMIGSEukaryote
   optional refDb String = 121
   optional simSearchMeth String = 122
   optional taxClass String = 123
-  optional complScore ComplScoreEnum = 124
+  optional complScore String = 124
   optional complSoftware String = 125
   optional associatedResource String = 126
   optional sop String = 127
@@ -26504,7 +26504,7 @@ message Plant-associatedMIGSOrg
   optional refDb String = 113
   optional simSearchMeth String = 114
   optional taxClass String = 115
-  optional complScore ComplScoreEnum = 116
+  optional complScore String = 116
   optional complSoftware String = 117
   optional associatedResource String = 118
   optional sop String = 119
@@ -26630,7 +26630,7 @@ message Plant-associatedMIGSPlant
   optional refDb String = 116
   optional simSearchMeth String = 117
   optional taxClass String = 118
-  optional complScore ComplScoreEnum = 119
+  optional complScore String = 119
   optional complSoftware String = 120
   optional associatedResource String = 121
   optional sop String = 122
@@ -26760,7 +26760,7 @@ message Plant-associatedMIGSVirus
   optional refDb String = 120
   optional simSearchMeth String = 121
   optional taxClass String = 122
-  optional complScore ComplScoreEnum = 123
+  optional complScore String = 123
   optional complSoftware String = 124
   optional associatedResource String = 125
   optional sop String = 126
@@ -26886,12 +26886,12 @@ message Plant-associatedMIMAG
   optional x16sRecoverSoftware String = 116
   optional trnas Integer = 117
   optional trnaExtSoftware String = 118
-  complScore ComplScoreEnum = 119
+  complScore String = 119
   complSoftware String = 120
   optional complAppr ComplApprEnum = 121
   contamScore String = 122
   optional contamScreenInput String = 123
-  optional contamScreenParam ContamScreenParamEnum = 124
+  optional contamScreenParam String = 124
   optional decontamSoftware DecontamSoftwareEnum = 125
   binParam BinParamEnum = 126
   binSoftware String = 127
@@ -27368,12 +27368,12 @@ message Plant-associatedMISAG
   optional x16sRecoverSoftware String = 116
   optional trnas Integer = 117
   optional trnaExtSoftware String = 118
-  complScore ComplScoreEnum = 119
+  complScore String = 119
   complSoftware String = 120
   optional complAppr ComplApprEnum = 121
   contamScore String = 122
   optional contamScreenInput String = 123
-  optional contamScreenParam ContamScreenParamEnum = 124
+  optional contamScreenParam String = 124
   optional decontamSoftware DecontamSoftwareEnum = 125
   sortTech SortTechEnum = 126
   singleCellLysisAppr SingleCellLysisApprEnum = 127
@@ -27508,7 +27508,7 @@ message Plant-associatedMIUVIG
   optional taxClass String = 120
   optional trnas Integer = 121
   optional trnaExtSoftware String = 122
-  optional complScore ComplScoreEnum = 123
+  optional complScore String = 123
   optional complSoftware String = 124
   optional complAppr ComplApprEnum = 125
   optional sortTech SortTechEnum = 126
@@ -27742,7 +27742,7 @@ message SedimentMIGSBacteria
   optional refDb String = 117
   optional simSearchMeth String = 118
   optional taxClass String = 119
-  optional complScore ComplScoreEnum = 120
+  optional complScore String = 120
   optional complSoftware String = 121
   optional associatedResource String = 122
   optional sop String = 123
@@ -27869,7 +27869,7 @@ message SedimentMIGSEukaryote
   optional refDb String = 117
   optional simSearchMeth String = 118
   optional taxClass String = 119
-  optional complScore ComplScoreEnum = 120
+  optional complScore String = 120
   optional complSoftware String = 121
   optional associatedResource String = 122
   optional sop String = 123
@@ -27987,7 +27987,7 @@ message SedimentMIGSOrg
   optional refDb String = 108
   optional simSearchMeth String = 109
   optional taxClass String = 110
-  optional complScore ComplScoreEnum = 111
+  optional complScore String = 111
   optional complSoftware String = 112
   optional associatedResource String = 113
   optional sop String = 114
@@ -28108,7 +28108,7 @@ message SedimentMIGSPlant
   optional refDb String = 111
   optional simSearchMeth String = 112
   optional taxClass String = 113
-  optional complScore ComplScoreEnum = 114
+  optional complScore String = 114
   optional complSoftware String = 115
   optional associatedResource String = 116
   optional sop String = 117
@@ -28234,7 +28234,7 @@ message SedimentMIGSVirus
   optional refDb String = 116
   optional simSearchMeth String = 117
   optional taxClass String = 118
-  optional complScore ComplScoreEnum = 119
+  optional complScore String = 119
   optional complSoftware String = 120
   optional associatedResource String = 121
   optional sop String = 122
@@ -28355,12 +28355,12 @@ message SedimentMIMAG
   optional x16sRecoverSoftware String = 111
   optional trnas Integer = 112
   optional trnaExtSoftware String = 113
-  complScore ComplScoreEnum = 114
+  complScore String = 114
   complSoftware String = 115
   optional complAppr ComplApprEnum = 116
   contamScore String = 117
   optional contamScreenInput String = 118
-  optional contamScreenParam ContamScreenParamEnum = 119
+  optional contamScreenParam String = 119
   optional decontamSoftware DecontamSoftwareEnum = 120
   binParam BinParamEnum = 121
   binSoftware String = 122
@@ -28817,12 +28817,12 @@ message SedimentMISAG
   optional x16sRecoverSoftware String = 111
   optional trnas Integer = 112
   optional trnaExtSoftware String = 113
-  complScore ComplScoreEnum = 114
+  complScore String = 114
   complSoftware String = 115
   optional complAppr ComplApprEnum = 116
   contamScore String = 117
   optional contamScreenInput String = 118
-  optional contamScreenParam ContamScreenParamEnum = 119
+  optional contamScreenParam String = 119
   optional decontamSoftware DecontamSoftwareEnum = 120
   sortTech SortTechEnum = 121
   singleCellLysisAppr SingleCellLysisApprEnum = 122
@@ -28953,7 +28953,7 @@ message SedimentMIUVIG
   optional taxClass String = 116
   optional trnas Integer = 117
   optional trnaExtSoftware String = 118
-  optional complScore ComplScoreEnum = 119
+  optional complScore String = 119
   optional complSoftware String = 120
   optional complAppr ComplApprEnum = 121
   optional sortTech SortTechEnum = 122
@@ -29156,7 +29156,7 @@ message SoilMIGSBacteria
   optional refDb String = 105
   optional simSearchMeth String = 106
   optional taxClass String = 107
-  optional complScore ComplScoreEnum = 108
+  optional complScore String = 108
   optional complSoftware String = 109
   optional associatedResource String = 110
   optional sop String = 111
@@ -29271,7 +29271,7 @@ message SoilMIGSEukaryote
   optional refDb String = 105
   optional simSearchMeth String = 106
   optional taxClass String = 107
-  optional complScore ComplScoreEnum = 108
+  optional complScore String = 108
   optional complSoftware String = 109
   optional associatedResource String = 110
   optional sop String = 111
@@ -29377,7 +29377,7 @@ message SoilMIGSOrg
   optional refDb String = 96
   optional simSearchMeth String = 97
   optional taxClass String = 98
-  optional complScore ComplScoreEnum = 99
+  optional complScore String = 99
   optional complSoftware String = 100
   optional associatedResource String = 101
   optional sop String = 102
@@ -29486,7 +29486,7 @@ message SoilMIGSPlant
   optional refDb String = 99
   optional simSearchMeth String = 100
   optional taxClass String = 101
-  optional complScore ComplScoreEnum = 102
+  optional complScore String = 102
   optional complSoftware String = 103
   optional associatedResource String = 104
   optional sop String = 105
@@ -29600,7 +29600,7 @@ message SoilMIGSVirus
   optional refDb String = 104
   optional simSearchMeth String = 105
   optional taxClass String = 106
-  optional complScore ComplScoreEnum = 107
+  optional complScore String = 107
   optional complSoftware String = 108
   optional associatedResource String = 109
   optional sop String = 110
@@ -29709,12 +29709,12 @@ message SoilMIMAG
   optional x16sRecoverSoftware String = 99
   optional trnas Integer = 100
   optional trnaExtSoftware String = 101
-  complScore ComplScoreEnum = 102
+  complScore String = 102
   complSoftware String = 103
   optional complAppr ComplApprEnum = 104
   contamScore String = 105
   optional contamScreenInput String = 106
-  optional contamScreenParam ContamScreenParamEnum = 107
+  optional contamScreenParam String = 107
   optional decontamSoftware DecontamSoftwareEnum = 108
   binParam BinParamEnum = 109
   binSoftware String = 110
@@ -30123,12 +30123,12 @@ message SoilMISAG
   optional x16sRecoverSoftware String = 99
   optional trnas Integer = 100
   optional trnaExtSoftware String = 101
-  complScore ComplScoreEnum = 102
+  complScore String = 102
   complSoftware String = 103
   optional complAppr ComplApprEnum = 104
   contamScore String = 105
   optional contamScreenInput String = 106
-  optional contamScreenParam ContamScreenParamEnum = 107
+  optional contamScreenParam String = 107
   optional decontamSoftware DecontamSoftwareEnum = 108
   sortTech SortTechEnum = 109
   singleCellLysisAppr SingleCellLysisApprEnum = 110
@@ -30247,7 +30247,7 @@ message SoilMIUVIG
   optional taxClass String = 104
   optional trnas Integer = 105
   optional trnaExtSoftware String = 106
-  optional complScore ComplScoreEnum = 107
+  optional complScore String = 107
   optional complSoftware String = 108
   optional complAppr ComplApprEnum = 109
   optional sortTech SortTechEnum = 110
@@ -30464,7 +30464,7 @@ message Symbiont-associatedMIGSBacteria
   optional refDb String = 112
   optional simSearchMeth String = 113
   optional taxClass String = 114
-  optional complScore ComplScoreEnum = 115
+  optional complScore String = 115
   optional complSoftware String = 116
   optional associatedResource String = 117
   optional sop String = 118
@@ -30586,7 +30586,7 @@ message Symbiont-associatedMIGSEukaryote
   optional refDb String = 112
   optional simSearchMeth String = 113
   optional taxClass String = 114
-  optional complScore ComplScoreEnum = 115
+  optional complScore String = 115
   optional complSoftware String = 116
   optional associatedResource String = 117
   optional sop String = 118
@@ -30699,7 +30699,7 @@ message Symbiont-associatedMIGSOrg
   optional refDb String = 103
   optional simSearchMeth String = 104
   optional taxClass String = 105
-  optional complScore ComplScoreEnum = 106
+  optional complScore String = 106
   optional complSoftware String = 107
   optional associatedResource String = 108
   optional sop String = 109
@@ -30815,7 +30815,7 @@ message Symbiont-associatedMIGSPlant
   optional refDb String = 106
   optional simSearchMeth String = 107
   optional taxClass String = 108
-  optional complScore ComplScoreEnum = 109
+  optional complScore String = 109
   optional complSoftware String = 110
   optional associatedResource String = 111
   optional sop String = 112
@@ -30936,7 +30936,7 @@ message Symbiont-associatedMIGSVirus
   optional refDb String = 111
   optional simSearchMeth String = 112
   optional taxClass String = 113
-  optional complScore ComplScoreEnum = 114
+  optional complScore String = 114
   optional complSoftware String = 115
   optional associatedResource String = 116
   optional sop String = 117
@@ -31052,12 +31052,12 @@ message Symbiont-associatedMIMAG
   optional x16sRecoverSoftware String = 106
   optional trnas Integer = 107
   optional trnaExtSoftware String = 108
-  complScore ComplScoreEnum = 109
+  complScore String = 109
   complSoftware String = 110
   optional complAppr ComplApprEnum = 111
   contamScore String = 112
   optional contamScreenInput String = 113
-  optional contamScreenParam ContamScreenParamEnum = 114
+  optional contamScreenParam String = 114
   optional decontamSoftware DecontamSoftwareEnum = 115
   binParam BinParamEnum = 116
   binSoftware String = 117
@@ -31494,12 +31494,12 @@ message Symbiont-associatedMISAG
   optional x16sRecoverSoftware String = 106
   optional trnas Integer = 107
   optional trnaExtSoftware String = 108
-  complScore ComplScoreEnum = 109
+  complScore String = 109
   complSoftware String = 110
   optional complAppr ComplApprEnum = 111
   contamScore String = 112
   optional contamScreenInput String = 113
-  optional contamScreenParam ContamScreenParamEnum = 114
+  optional contamScreenParam String = 114
   optional decontamSoftware DecontamSoftwareEnum = 115
   sortTech SortTechEnum = 116
   singleCellLysisAppr SingleCellLysisApprEnum = 117
@@ -31625,7 +31625,7 @@ message Symbiont-associatedMIUVIG
   optional taxClass String = 111
   optional trnas Integer = 112
   optional trnaExtSoftware String = 113
-  optional complScore ComplScoreEnum = 114
+  optional complScore String = 114
   optional complSoftware String = 115
   optional complAppr ComplApprEnum = 116
   optional sortTech SortTechEnum = 117
@@ -31794,7 +31794,7 @@ message WastewaterSludgeMIGSBacteria
   optional refDb String = 88
   optional simSearchMeth String = 89
   optional taxClass String = 90
-  optional complScore ComplScoreEnum = 91
+  optional complScore String = 91
   optional complSoftware String = 92
   optional associatedResource String = 93
   optional sop String = 94
@@ -31892,7 +31892,7 @@ message WastewaterSludgeMIGSEukaryote
   optional refDb String = 88
   optional simSearchMeth String = 89
   optional taxClass String = 90
-  optional complScore ComplScoreEnum = 91
+  optional complScore String = 91
   optional complSoftware String = 92
   optional associatedResource String = 93
   optional sop String = 94
@@ -31981,7 +31981,7 @@ message WastewaterSludgeMIGSOrg
   optional refDb String = 79
   optional simSearchMeth String = 80
   optional taxClass String = 81
-  optional complScore ComplScoreEnum = 82
+  optional complScore String = 82
   optional complSoftware String = 83
   optional associatedResource String = 84
   optional sop String = 85
@@ -32073,7 +32073,7 @@ message WastewaterSludgeMIGSPlant
   optional refDb String = 82
   optional simSearchMeth String = 83
   optional taxClass String = 84
-  optional complScore ComplScoreEnum = 85
+  optional complScore String = 85
   optional complSoftware String = 86
   optional associatedResource String = 87
   optional sop String = 88
@@ -32170,7 +32170,7 @@ message WastewaterSludgeMIGSVirus
   optional refDb String = 87
   optional simSearchMeth String = 88
   optional taxClass String = 89
-  optional complScore ComplScoreEnum = 90
+  optional complScore String = 90
   optional complSoftware String = 91
   optional associatedResource String = 92
   optional sop String = 93
@@ -32262,12 +32262,12 @@ message WastewaterSludgeMIMAG
   optional x16sRecoverSoftware String = 82
   optional trnas Integer = 83
   optional trnaExtSoftware String = 84
-  complScore ComplScoreEnum = 85
+  complScore String = 85
   complSoftware String = 86
   optional complAppr ComplApprEnum = 87
   contamScore String = 88
   optional contamScreenInput String = 89
-  optional contamScreenParam ContamScreenParamEnum = 90
+  optional contamScreenParam String = 90
   optional decontamSoftware DecontamSoftwareEnum = 91
   binParam BinParamEnum = 92
   binSoftware String = 93
@@ -32608,12 +32608,12 @@ message WastewaterSludgeMISAG
   optional x16sRecoverSoftware String = 82
   optional trnas Integer = 83
   optional trnaExtSoftware String = 84
-  complScore ComplScoreEnum = 85
+  complScore String = 85
   complSoftware String = 86
   optional complAppr ComplApprEnum = 87
   contamScore String = 88
   optional contamScreenInput String = 89
-  optional contamScreenParam ContamScreenParamEnum = 90
+  optional contamScreenParam String = 90
   optional decontamSoftware DecontamSoftwareEnum = 91
   sortTech SortTechEnum = 92
   singleCellLysisAppr SingleCellLysisApprEnum = 93
@@ -32715,7 +32715,7 @@ message WastewaterSludgeMIUVIG
   optional taxClass String = 87
   optional trnas Integer = 88
   optional trnaExtSoftware String = 89
-  optional complScore ComplScoreEnum = 90
+  optional complScore String = 90
   optional complSoftware String = 91
   optional complAppr ComplApprEnum = 92
   optional sortTech SortTechEnum = 93
@@ -32972,7 +32972,7 @@ message WaterMIGSBacteria
   optional refDb String = 132
   optional simSearchMeth String = 133
   optional taxClass String = 134
-  optional complScore ComplScoreEnum = 135
+  optional complScore String = 135
   optional complSoftware String = 136
   optional associatedResource String = 137
   optional sop String = 138
@@ -33114,7 +33114,7 @@ message WaterMIGSEukaryote
   optional refDb String = 132
   optional simSearchMeth String = 133
   optional taxClass String = 134
-  optional complScore ComplScoreEnum = 135
+  optional complScore String = 135
   optional complSoftware String = 136
   optional associatedResource String = 137
   optional sop String = 138
@@ -33247,7 +33247,7 @@ message WaterMIGSOrg
   optional refDb String = 123
   optional simSearchMeth String = 124
   optional taxClass String = 125
-  optional complScore ComplScoreEnum = 126
+  optional complScore String = 126
   optional complSoftware String = 127
   optional associatedResource String = 128
   optional sop String = 129
@@ -33383,7 +33383,7 @@ message WaterMIGSPlant
   optional refDb String = 126
   optional simSearchMeth String = 127
   optional taxClass String = 128
-  optional complScore ComplScoreEnum = 129
+  optional complScore String = 129
   optional complSoftware String = 130
   optional associatedResource String = 131
   optional sop String = 132
@@ -33524,7 +33524,7 @@ message WaterMIGSVirus
   optional refDb String = 131
   optional simSearchMeth String = 132
   optional taxClass String = 133
-  optional complScore ComplScoreEnum = 134
+  optional complScore String = 134
   optional complSoftware String = 135
   optional associatedResource String = 136
   optional sop String = 137
@@ -33660,12 +33660,12 @@ message WaterMIMAG
   optional x16sRecoverSoftware String = 126
   optional trnas Integer = 127
   optional trnaExtSoftware String = 128
-  complScore ComplScoreEnum = 129
+  complScore String = 129
   complSoftware String = 130
   optional complAppr ComplApprEnum = 131
   contamScore String = 132
   optional contamScreenInput String = 133
-  optional contamScreenParam ContamScreenParamEnum = 134
+  optional contamScreenParam String = 134
   optional decontamSoftware DecontamSoftwareEnum = 135
   binParam BinParamEnum = 136
   binSoftware String = 137
@@ -34182,12 +34182,12 @@ message WaterMISAG
   optional x16sRecoverSoftware String = 126
   optional trnas Integer = 127
   optional trnaExtSoftware String = 128
-  complScore ComplScoreEnum = 129
+  complScore String = 129
   complSoftware String = 130
   optional complAppr ComplApprEnum = 131
   contamScore String = 132
   optional contamScreenInput String = 133
-  optional contamScreenParam ContamScreenParamEnum = 134
+  optional contamScreenParam String = 134
   optional decontamSoftware DecontamSoftwareEnum = 135
   sortTech SortTechEnum = 136
   singleCellLysisAppr SingleCellLysisApprEnum = 137
@@ -34333,7 +34333,7 @@ message WaterMIUVIG
   optional taxClass String = 131
   optional trnas Integer = 132
   optional trnaExtSoftware String = 133
-  optional complScore ComplScoreEnum = 134
+  optional complScore String = 134
   optional complSoftware String = 135
   optional complAppr ComplApprEnum = 136
   optional sortTech SortTechEnum = 137
