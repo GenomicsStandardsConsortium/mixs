@@ -7075,6 +7075,7 @@ slots:
       preferred_unit: percent
       occurrence: '1'
     slot_uri: MIXS:0000455
+  # MAM 2022-03-22 previously range: add_recov_method_enum
   add_recov_method:
     is_a: core field
     title: secondary and tertiary recovery methods and start date
@@ -7082,7 +7083,7 @@ slots:
       for increase of hydrocarbon recovery from resource and start date for each one
       of them. If "other" is specified, please propose entry in "additional info"
       field
-    range: add_recov_method_enum
+    range: string
     multivalued: false
     examples:
     - value: Polymer Addition;2018-06-21T14:30Z
@@ -7093,6 +7094,7 @@ slots:
       expected_value: enumeration;timestamp
       occurrence: '1'
     slot_uri: MIXS:0001009
+    pattern: ^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other);([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
   iw_bt_date_well:
     is_a: core field
     title: injection water breakthrough date of specific well
@@ -14779,6 +14781,7 @@ enums:
       ? ''
       : {}
       vendor supplied container: {}
+  # MAM 2022-03-22 was research and development or {text}: {}
   samp_purpose_enum:
     permissible_values:
       active surveillance in response to an outbreak: {}
@@ -14794,7 +14797,7 @@ enums:
       passive surveillance: {}
       population based studies: {}
       research: {}
-      research and development or {text}: {}
+      research and development: {}
   animal_body_cond_enum:
     permissible_values:
       normal: {}

@@ -18,7 +18,6 @@ type Agriculture
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -175,7 +174,6 @@ type AgricultureMIGSBacteria implements MIGSBacteria
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -189,7 +187,7 @@ type AgricultureMIGSBacteria implements MIGSBacteria
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -372,7 +370,6 @@ type AgricultureMIGSEukaryote implements MIGSEukaryote
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -386,7 +383,7 @@ type AgricultureMIGSEukaryote implements MIGSEukaryote
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -569,7 +566,6 @@ type AgricultureMIGSOrg implements MIGSOrg
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -583,7 +579,7 @@ type AgricultureMIGSOrg implements MIGSOrg
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -763,7 +759,6 @@ type AgricultureMIGSPlant implements MIGSPlant
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -777,7 +772,7 @@ type AgricultureMIGSPlant implements MIGSPlant
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -958,7 +953,6 @@ type AgricultureMIGSVirus implements MIGSVirus
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -972,7 +966,7 @@ type AgricultureMIGSVirus implements MIGSVirus
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -1155,7 +1149,6 @@ type AgricultureMIMAG implements MIMAG
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -1169,7 +1162,7 @@ type AgricultureMIMAG implements MIMAG
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -1361,7 +1354,6 @@ type AgricultureMIMARKSSpecimen implements MIMARKSSpecimen
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -1375,7 +1367,7 @@ type AgricultureMIMARKSSpecimen implements MIMARKSSpecimen
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -1544,7 +1536,6 @@ type AgricultureMIMARKSSurvey implements MIMARKSSurvey
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -1558,7 +1549,7 @@ type AgricultureMIMARKSSurvey implements MIMARKSSurvey
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -1728,7 +1719,6 @@ type AgricultureMIMS implements MIMS
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -1742,7 +1732,7 @@ type AgricultureMIMS implements MIMS
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -1918,7 +1908,6 @@ type AgricultureMISAG implements MISAG
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -1932,7 +1921,7 @@ type AgricultureMISAG implements MISAG
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -2125,7 +2114,6 @@ type AgricultureMIUVIG implements MIUVIG
     latLon: String
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue!
     geoLocName: String
     collectionDate: Date
     envBroadScale: String
@@ -2139,7 +2127,7 @@ type AgricultureMIUVIG implements MIUVIG
     enrichmentProtocol: String
     libraryPrepKit: String
     sequencingLocation: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilPH: Double
     soilConductivity: QuantityValue
     relLocation: String
@@ -7835,7 +7823,6 @@ type Food-farmEnvironment
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -7871,7 +7858,6 @@ type Food-farmEnvironmentMIGSBacteria implements MIGSBacteria
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -7985,7 +7971,7 @@ type Food-farmEnvironmentMIGSBacteria implements MIGSBacteria
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -8063,7 +8049,6 @@ type Food-farmEnvironmentMIGSEukaryote implements MIGSEukaryote
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -8177,7 +8162,7 @@ type Food-farmEnvironmentMIGSEukaryote implements MIGSEukaryote
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -8255,7 +8240,6 @@ type Food-farmEnvironmentMIGSOrg implements MIGSOrg
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -8369,7 +8353,7 @@ type Food-farmEnvironmentMIGSOrg implements MIGSOrg
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -8439,7 +8423,6 @@ type Food-farmEnvironmentMIGSPlant implements MIGSPlant
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -8553,7 +8536,7 @@ type Food-farmEnvironmentMIGSPlant implements MIGSPlant
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -8626,7 +8609,6 @@ type Food-farmEnvironmentMIGSVirus implements MIGSVirus
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -8740,7 +8722,7 @@ type Food-farmEnvironmentMIGSVirus implements MIGSVirus
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -8817,7 +8799,6 @@ type Food-farmEnvironmentMIMAG implements MIMAG
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -8931,7 +8912,7 @@ type Food-farmEnvironmentMIMAG implements MIMAG
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -9013,7 +8994,6 @@ type Food-farmEnvironmentMIMARKSSpecimen implements MIMARKSSpecimen
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -9127,7 +9107,7 @@ type Food-farmEnvironmentMIMARKSSpecimen implements MIMARKSSpecimen
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -9190,7 +9170,6 @@ type Food-farmEnvironmentMIMARKSSurvey implements MIMARKSSurvey
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -9304,7 +9283,7 @@ type Food-farmEnvironmentMIMARKSSurvey implements MIMARKSSurvey
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -9363,7 +9342,6 @@ type Food-farmEnvironmentMIMS implements MIMS
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -9477,7 +9455,7 @@ type Food-farmEnvironmentMIMS implements MIMS
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -9543,7 +9521,6 @@ type Food-farmEnvironmentMISAG implements MISAG
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -9657,7 +9634,7 @@ type Food-farmEnvironmentMISAG implements MISAG
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -9740,7 +9717,6 @@ type Food-farmEnvironmentMIUVIG implements MIUVIG
     depth: QuantityValue!
     alt: QuantityValue
     elev: QuantityValue
-    temp: QuantityValue
     geoLocName: String!
     collectionDate: Date!
     envBroadScale: String!
@@ -9854,7 +9830,7 @@ type Food-farmEnvironmentMIUVIG implements MIUVIG
     soilPH: Double
     relLocation: String
     soilPorosity: String
-    soilTemp: [String]
+    temp: QuantityValue
     soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
@@ -21936,7 +21912,7 @@ type HydrocarbonResources-fluidsSwabs
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -22035,7 +22011,7 @@ type HydrocarbonResources-fluidsSwabsMIGSBacteria implements MIGSBacteria
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -22180,7 +22156,7 @@ type HydrocarbonResources-fluidsSwabsMIGSEukaryote implements MIGSEukaryote
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -22325,7 +22301,7 @@ type HydrocarbonResources-fluidsSwabsMIGSOrg implements MIGSOrg
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -22461,7 +22437,7 @@ type HydrocarbonResources-fluidsSwabsMIGSPlant implements MIGSPlant
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -22600,7 +22576,7 @@ type HydrocarbonResources-fluidsSwabsMIGSVirus implements MIGSVirus
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -22744,7 +22720,7 @@ type HydrocarbonResources-fluidsSwabsMIMAG implements MIMAG
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -22892,7 +22868,7 @@ type HydrocarbonResources-fluidsSwabsMIMARKSSpecimen implements MIMARKSSpecimen
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -23021,7 +22997,7 @@ type HydrocarbonResources-fluidsSwabsMIMARKSSurvey implements MIMARKSSurvey
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -23146,7 +23122,7 @@ type HydrocarbonResources-fluidsSwabsMIMS implements MIMS
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -23278,7 +23254,7 @@ type HydrocarbonResources-fluidsSwabsMISAG implements MISAG
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -23427,7 +23403,7 @@ type HydrocarbonResources-fluidsSwabsMIUVIG implements MIUVIG
     waterProdRate: QuantityValue
     waterCut: QuantityValue!
     iwf: QuantityValue!
-    addRecovMethod: AddRecovMethodEnum!
+    addRecovMethod: String!
     iwBtDateWell: Date
     biocide: String
     biocideAdminMethod: String
@@ -29649,6 +29625,7 @@ type Soil
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -29659,6 +29636,7 @@ type Soil
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -29716,6 +29694,7 @@ type SoilMIGSBacteria implements MIGSBacteria
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -29726,6 +29705,7 @@ type SoilMIGSBacteria implements MIGSBacteria
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -29829,6 +29809,7 @@ type SoilMIGSEukaryote implements MIGSEukaryote
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -29839,6 +29820,7 @@ type SoilMIGSEukaryote implements MIGSEukaryote
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -29942,6 +29924,7 @@ type SoilMIGSOrg implements MIGSOrg
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -29952,6 +29935,7 @@ type SoilMIGSOrg implements MIGSOrg
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -30046,6 +30030,7 @@ type SoilMIGSPlant implements MIGSPlant
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -30056,6 +30041,7 @@ type SoilMIGSPlant implements MIGSPlant
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -30153,6 +30139,7 @@ type SoilMIGSVirus implements MIGSVirus
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -30163,6 +30150,7 @@ type SoilMIGSVirus implements MIGSVirus
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -30265,6 +30253,7 @@ type SoilMIMAG implements MIMAG
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -30275,6 +30264,7 @@ type SoilMIMAG implements MIMAG
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -30381,6 +30371,7 @@ type SoilMIMARKSSpecimen implements MIMARKSSpecimen
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -30391,6 +30382,7 @@ type SoilMIMARKSSpecimen implements MIMARKSSpecimen
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -30478,6 +30470,7 @@ type SoilMIMARKSSurvey implements MIMARKSSurvey
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -30488,6 +30481,7 @@ type SoilMIMARKSSurvey implements MIMARKSSurvey
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -30571,6 +30565,7 @@ type SoilMIMS implements MIMS
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -30581,6 +30576,7 @@ type SoilMIMS implements MIMS
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -30671,6 +30667,7 @@ type SoilMISAG implements MISAG
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -30681,6 +30678,7 @@ type SoilMISAG implements MISAG
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue
@@ -30788,6 +30786,7 @@ type SoilMIUVIG implements MIUVIG
     faoClass: FaoClassEnum
     localClass: String
     localClassMeth: String
+    orgNitro: QuantityValue
     soilType: String
     soilTypeMeth: String
     slopeGradient: QuantityValue
@@ -30798,6 +30797,7 @@ type SoilMIUVIG implements MIUVIG
     soilTextureMeth: String
     ph: Double
     phMeth: String
+    orgMatter: QuantityValue
     totOrgCarb: QuantityValue
     totOrgCMeth: String
     totNitroContent: QuantityValue

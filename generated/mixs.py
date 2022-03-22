@@ -1,5 +1,5 @@
 # Auto generated from mixs.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-24T11:21:54
+# Generation date: 2022-03-22T08:43:18
 # Schema: MIxS
 #
 # id: http://w3id.org/mixs
@@ -28564,7 +28564,7 @@ class HydrocarbonResources-fluidsSwabs(YAMLRoot):
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -28687,8 +28687,8 @@ class HydrocarbonResources-fluidsSwabs(YAMLRoot):
 
         if self._is_empty(self.add_recov_method):
             self.MissingRequiredField("add_recov_method")
-        if not isinstance(self.add_recov_method, AddRecovMethodEnum):
-            self.add_recov_method = AddRecovMethodEnum(self.add_recov_method)
+        if not isinstance(self.add_recov_method, str):
+            self.add_recov_method = str(self.add_recov_method)
 
         if self._is_empty(self.samp_type):
             self.MissingRequiredField("samp_type")
@@ -28995,7 +28995,7 @@ class HydrocarbonResources-fluidsSwabsMIGSEukaryote(HydrocarbonResources-fluidsS
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -29248,7 +29248,7 @@ class HydrocarbonResources-fluidsSwabsMIGSBacteria(HydrocarbonResources-fluidsSw
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -29505,7 +29505,7 @@ class HydrocarbonResources-fluidsSwabsMIGSPlant(HydrocarbonResources-fluidsSwabs
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -29732,7 +29732,7 @@ class HydrocarbonResources-fluidsSwabsMIGSVirus(HydrocarbonResources-fluidsSwabs
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -29979,7 +29979,7 @@ class HydrocarbonResources-fluidsSwabsMIGSOrg(HydrocarbonResources-fluidsSwabs):
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -30191,7 +30191,7 @@ class HydrocarbonResources-fluidsSwabsMIMS(HydrocarbonResources-fluidsSwabs):
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -30384,7 +30384,7 @@ class HydrocarbonResources-fluidsSwabsMIMARKSSpecimen(HydrocarbonResources-fluid
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -30567,7 +30567,7 @@ class HydrocarbonResources-fluidsSwabsMIMARKSSurvey(HydrocarbonResources-fluidsS
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -30736,7 +30736,7 @@ class HydrocarbonResources-fluidsSwabsMISAG(HydrocarbonResources-fluidsSwabs):
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -31015,7 +31015,7 @@ class HydrocarbonResources-fluidsSwabsMIMAG(HydrocarbonResources-fluidsSwabs):
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -31288,7 +31288,7 @@ class HydrocarbonResources-fluidsSwabsMIUVIG(HydrocarbonResources-fluidsSwabs):
     basin: str = None
     water_cut: Union[dict, "QuantityValue"] = None
     iwf: Union[dict, "QuantityValue"] = None
-    add_recov_method: Union[str, "AddRecovMethodEnum"] = None
+    add_recov_method: str = None
     samp_type: str = None
     samp_collect_point: Union[str, "SampCollectPointEnum"] = None
     sulfate: Union[dict, "QuantityValue"] = None
@@ -42856,6 +42856,7 @@ class Soil(YAMLRoot):
     fao_class: Optional[Union[str, "FaoClassEnum"]] = None
     local_class: Optional[str] = None
     local_class_meth: Optional[str] = None
+    org_nitro: Optional[Union[dict, "QuantityValue"]] = None
     soil_type: Optional[str] = None
     soil_type_meth: Optional[str] = None
     slope_gradient: Optional[Union[dict, "QuantityValue"]] = None
@@ -42866,6 +42867,7 @@ class Soil(YAMLRoot):
     soil_texture_meth: Optional[str] = None
     ph: Optional[float] = None
     ph_meth: Optional[str] = None
+    org_matter: Optional[Union[dict, "QuantityValue"]] = None
     tot_org_carb: Optional[Union[dict, "QuantityValue"]] = None
     tot_org_c_meth: Optional[str] = None
     tot_nitro_content: Optional[Union[dict, "QuantityValue"]] = None
@@ -43009,6 +43011,9 @@ class Soil(YAMLRoot):
         if self.local_class_meth is not None and not isinstance(self.local_class_meth, str):
             self.local_class_meth = str(self.local_class_meth)
 
+        if self.org_nitro is not None and not isinstance(self.org_nitro, QuantityValue):
+            self.org_nitro = QuantityValue(**as_dict(self.org_nitro))
+
         if self.soil_type is not None and not isinstance(self.soil_type, str):
             self.soil_type = str(self.soil_type)
 
@@ -43038,6 +43043,9 @@ class Soil(YAMLRoot):
 
         if self.ph_meth is not None and not isinstance(self.ph_meth, str):
             self.ph_meth = str(self.ph_meth)
+
+        if self.org_matter is not None and not isinstance(self.org_matter, QuantityValue):
+            self.org_matter = QuantityValue(**as_dict(self.org_matter))
 
         if self.tot_org_carb is not None and not isinstance(self.tot_org_carb, QuantityValue):
             self.tot_org_carb = QuantityValue(**as_dict(self.tot_org_carb))
@@ -62064,7 +62072,6 @@ class Food-farmEnvironment(YAMLRoot):
     soil_pH: Optional[float] = None
     rel_location: Optional[str] = None
     soil_porosity: Optional[str] = None
-    soil_temp: Optional[Union[str, List[str]]] = empty_list()
     soil_texture_class: Optional[Union[str, "SoilTextureClassEnum"]] = None
     soil_texture_meth: Optional[str] = None
     soil_type: Optional[str] = None
@@ -62526,9 +62533,8 @@ class Food-farmEnvironment(YAMLRoot):
         if self.soil_porosity is not None and not isinstance(self.soil_porosity, str):
             self.soil_porosity = str(self.soil_porosity)
 
-        if not isinstance(self.soil_temp, list):
-            self.soil_temp = [self.soil_temp] if self.soil_temp is not None else []
-        self.soil_temp = [v if isinstance(v, str) else str(v) for v in self.soil_temp]
+        if self.temp is not None and not isinstance(self.temp, QuantityValue):
+            self.temp = QuantityValue(**as_dict(self.temp))
 
         if self.soil_texture_class is not None and not isinstance(self.soil_texture_class, SoilTextureClassEnum):
             self.soil_texture_class = SoilTextureClassEnum(self.soil_texture_class)
@@ -64877,7 +64883,6 @@ class Agriculture(YAMLRoot):
     enrichment_protocol: Optional[str] = None
     library_prep_kit: Optional[str] = None
     sequencing_location: Optional[str] = None
-    soil_temp: Optional[Union[str, List[str]]] = empty_list()
     soil_pH: Optional[float] = None
     soil_conductivity: Optional[Union[dict, "QuantityValue"]] = None
     rel_location: Optional[str] = None
@@ -65257,9 +65262,8 @@ class Agriculture(YAMLRoot):
         if self.sequencing_location is not None and not isinstance(self.sequencing_location, str):
             self.sequencing_location = str(self.sequencing_location)
 
-        if not isinstance(self.soil_temp, list):
-            self.soil_temp = [self.soil_temp] if self.soil_temp is not None else []
-        self.soil_temp = [v if isinstance(v, str) else str(v) for v in self.soil_temp]
+        if self.temp is not None and not isinstance(self.temp, QuantityValue):
+            self.temp = QuantityValue(**as_dict(self.temp))
 
         if self.soil_pH is not None and not isinstance(self.soil_pH, float):
             self.soil_pH = float(self.soil_pH)
@@ -65635,7 +65639,6 @@ class AgricultureMIGSEukaryote(Agriculture):
     class_name: ClassVar[str] = "agriculture MIGS eukaryote"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMIGSEukaryote
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -65830,7 +65833,6 @@ class AgricultureMIGSBacteria(Agriculture):
     class_name: ClassVar[str] = "agriculture MIGS bacteria"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMIGSBacteria
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -66028,7 +66030,6 @@ class AgricultureMIGSPlant(Agriculture):
     class_name: ClassVar[str] = "agriculture MIGS plant"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMIGSPlant
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -66213,7 +66214,6 @@ class AgricultureMIGSVirus(Agriculture):
     class_name: ClassVar[str] = "agriculture MIGS virus"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMIGSVirus
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -66405,7 +66405,6 @@ class AgricultureMIGSOrg(Agriculture):
     class_name: ClassVar[str] = "agriculture MIGS org"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMIGSOrg
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -66583,7 +66582,6 @@ class AgricultureMIMS(Agriculture):
     class_name: ClassVar[str] = "agriculture MIMS"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMIMS
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -66746,7 +66744,6 @@ class AgricultureMIMARKSSpecimen(Agriculture):
     class_name: ClassVar[str] = "agriculture MIMARKS specimen"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMIMARKSSpecimen
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -66880,7 +66877,6 @@ class AgricultureMIMARKSSurvey(Agriculture):
     class_name: ClassVar[str] = "agriculture MIMARKS survey"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMIMARKSSurvey
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -67018,7 +67014,6 @@ class AgricultureMISAG(Agriculture):
     class_name: ClassVar[str] = "agriculture MISAG"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMISAG
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -67265,7 +67260,6 @@ class AgricultureMIMAG(Agriculture):
     class_name: ClassVar[str] = "agriculture MIMAG"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMIMAG
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -67506,7 +67500,6 @@ class AgricultureMIUVIG(Agriculture):
     class_name: ClassVar[str] = "agriculture MIUVIG"
     class_model_uri: ClassVar[URIRef] = MIXS.VOCAB.AgricultureMIUVIG
 
-    temp: Union[dict, "QuantityValue"] = None
     chem_administration: Union[str, List[str]] = None
     Food_source: str = None
     depth: Union[dict, "QuantityValue"] = None
@@ -68005,15 +67998,11 @@ class ComplScoreEnum(EnumDefinitionImpl):
 
     high = PermissibleValue(text="high")
     med = PermissibleValue(text="med")
+    low = PermissibleValue(text="low")
 
     _defn = EnumDefinition(
         name="ComplScoreEnum",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "low;{percentage}",
-                PermissibleValue(text="low;{percentage}") )
 
 class ComplApprEnum(EnumDefinitionImpl):
 
@@ -68034,6 +68023,7 @@ class ContamScreenParamEnum(EnumDefinitionImpl):
 
     kmer = PermissibleValue(text="kmer")
     coverage = PermissibleValue(text="coverage")
+    combination = PermissibleValue(text="combination")
 
     _defn = EnumDefinition(
         name="ContamScreenParamEnum",
@@ -68043,10 +68033,6 @@ class ContamScreenParamEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "ref db",
                 PermissibleValue(text="ref db") )
-        setattr(cls, "combination;{text",
-                PermissibleValue(text="combination;{text") )
-        setattr(cls, "integer}",
-                PermissibleValue(text="integer}") )
 
 class DecontamSoftwareEnum(EnumDefinitionImpl):
 
@@ -68730,6 +68716,7 @@ class FloorFinishMatEnum(EnumDefinitionImpl):
     cork = PermissibleValue(text="cork")
     terrazo = PermissibleValue(text="terrazo")
     concrete = PermissibleValue(text="concrete")
+    none = PermissibleValue(text="none")
     sealed = PermissibleValue(text="sealed")
     paint = PermissibleValue(text="paint")
 
@@ -68747,8 +68734,6 @@ class FloorFinishMatEnum(EnumDefinitionImpl):
                 PermissibleValue(text="vinyl composition tile") )
         setattr(cls, "sheet vinyl",
                 PermissibleValue(text="sheet vinyl") )
-        setattr(cls, "none;specify unfinished",
-                PermissibleValue(text="none;specify unfinished") )
         setattr(cls, "clear finish",
                 PermissibleValue(text="clear finish") )
 
@@ -68956,15 +68941,11 @@ class PresAnimalInsectEnum(EnumDefinitionImpl):
     dog = PermissibleValue(text="dog")
     rodent = PermissibleValue(text="rodent")
     snake = PermissibleValue(text="snake")
+    other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
         name="PresAnimalInsectEnum",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "other;{integer}",
-                PermissibleValue(text="other;{integer}") )
 
 class QuadPosEnum(EnumDefinitionImpl):
 
@@ -69874,6 +69855,8 @@ class SampMdEnum(EnumDefinitionImpl):
 
 class AddRecovMethodEnum(EnumDefinitionImpl):
 
+    other = PermissibleValue(text="other")
+
     _defn = EnumDefinition(
         name="AddRecovMethodEnum",
     )
@@ -69894,8 +69877,6 @@ class AddRecovMethodEnum(EnumDefinitionImpl):
                 PermissibleValue(text="Surfactant Addition") )
         setattr(cls, "Not Applicable",
                 PermissibleValue(text="Not Applicable") )
-        setattr(cls, "other;{timestamp}",
-                PermissibleValue(text="other;{timestamp}") )
 
 class SampCollectPointEnum(EnumDefinitionImpl):
 
@@ -70082,8 +70063,8 @@ class CurLandUseEnum(EnumDefinitionImpl):
                 PermissibleValue(text="intermixed hardwood and conifers") )
         setattr(cls, "tropical (e.g. mangrove,palms)",
                 PermissibleValue(text="tropical (e.g. mangrove,palms)") )
-        setattr(cls, "rainforest (evergreen forest receiving >406 cm annual rainfall)",
-                PermissibleValue(text="rainforest (evergreen forest receiving >406 cm annual rainfall)") )
+        setattr(cls, "rainforest (evergreen forest receiving greater than 406 cm annual rainfall)",
+                PermissibleValue(text="rainforest (evergreen forest receiving greater than 406 cm annual rainfall)") )
         setattr(cls, "swamp (permanent or semi-permanent water body dominated by woody plants)",
                 PermissibleValue(text="swamp (permanent or semi-permanent water body dominated by woody plants)") )
         setattr(cls, "crop trees (nuts,fruit,christmas trees,nursery trees)",
@@ -70340,10 +70321,8 @@ class FoodQualityDateEnum(EnumDefinitionImpl):
                 PermissibleValue(text="best if used by") )
         setattr(cls, "freeze by",
                 PermissibleValue(text="freeze by") )
-        setattr(cls, "",
-                PermissibleValue(text="") )
-        setattr(cls, "use by; date",
-                PermissibleValue(text="use by; date") )
+        setattr(cls, "use by",
+                PermissibleValue(text="use by") )
 
 class FoodTraceListEnum(EnumDefinitionImpl):
 
@@ -70450,8 +70429,8 @@ class SampPurposeEnum(EnumDefinitionImpl):
                 PermissibleValue(text="passive surveillance") )
         setattr(cls, "population based studies",
                 PermissibleValue(text="population based studies") )
-        setattr(cls, "research and development or {text}",
-                PermissibleValue(text="research and development or {text}") )
+        setattr(cls, "research and development",
+                PermissibleValue(text="research and development") )
 
 class AnimalBodyCondEnum(EnumDefinitionImpl):
 
@@ -72038,7 +72017,8 @@ slots.iwf = Slot(uri=MIXS['0000455'], name="iwf", curie=MIXS.curie('0000455'),
                    model_uri=MIXS.VOCAB.iwf, domain=None, range=Optional[Union[dict, QuantityValue]])
 
 slots.add_recov_method = Slot(uri=MIXS['0001009'], name="add_recov_method", curie=MIXS.curie('0001009'),
-                   model_uri=MIXS.VOCAB.add_recov_method, domain=None, range=Optional[Union[str, "AddRecovMethodEnum"]])
+                   model_uri=MIXS.VOCAB.add_recov_method, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other);([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$'))
 
 slots.iw_bt_date_well = Slot(uri=MIXS['0001010'], name="iw_bt_date_well", curie=MIXS.curie('0001010'),
                    model_uri=MIXS.VOCAB.iw_bt_date_well, domain=None, range=Optional[Union[str, XSDDate]])
@@ -73069,8 +73049,8 @@ slots.rel_location = Slot(uri=MIXS['0001161'], name="rel_location", curie=MIXS.c
 slots.soil_porosity = Slot(uri=MIXS['0001162'], name="soil_porosity", curie=MIXS.curie('0001162'),
                    model_uri=MIXS.VOCAB.soil_porosity, domain=None, range=Optional[str])
 
-slots.soil_temp = Slot(uri=MIXS['0001163'], name="soil_temp", curie=MIXS.curie('0001163'),
-                   model_uri=MIXS.VOCAB.soil_temp, domain=None, range=Optional[Union[str, List[str]]])
+slots.soil_temp = Slot(uri=MIXS['0000113'], name="soil_temp", curie=MIXS.curie('0000113'),
+                   model_uri=MIXS.VOCAB.soil_temp, domain=Soil, range=Optional[Union[dict, "QuantityValue"]])
 
 slots.soil_texture_class = Slot(uri=MIXS['0001164'], name="soil_texture_class", curie=MIXS.curie('0001164'),
                    model_uri=MIXS.VOCAB.soil_texture_class, domain=None, range=Optional[Union[str, "SoilTextureClassEnum"]])
@@ -76496,7 +76476,8 @@ slots.hydrocarbon_resources_fluids_swabs_iwf = Slot(uri=MIXS['0000455'], name="h
                    model_uri=MIXS.VOCAB.hydrocarbon_resources_fluids_swabs_iwf, domain=HydrocarbonResources-fluidsSwabs, range=Union[dict, "QuantityValue"])
 
 slots.hydrocarbon_resources_fluids_swabs_add_recov_method = Slot(uri=MIXS['0001009'], name="hydrocarbon resources-fluids_swabs_add_recov_method", curie=MIXS.curie('0001009'),
-                   model_uri=MIXS.VOCAB.hydrocarbon_resources_fluids_swabs_add_recov_method, domain=HydrocarbonResources-fluidsSwabs, range=Union[str, "AddRecovMethodEnum"])
+                   model_uri=MIXS.VOCAB.hydrocarbon_resources_fluids_swabs_add_recov_method, domain=HydrocarbonResources-fluidsSwabs, range=str,
+                   pattern=re.compile(r'^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other);([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$'))
 
 slots.hydrocarbon_resources_fluids_swabs_iw_bt_date_well = Slot(uri=MIXS['0001010'], name="hydrocarbon resources-fluids_swabs_iw_bt_date_well", curie=MIXS.curie('0001010'),
                    model_uri=MIXS.VOCAB.hydrocarbon_resources_fluids_swabs_iw_bt_date_well, domain=HydrocarbonResources-fluidsSwabs, range=Optional[Union[str, XSDDate]])
@@ -77545,6 +77526,9 @@ slots.soil_local_class = Slot(uri=MIXS['0000330'], name="soil_local_class", curi
 slots.soil_local_class_meth = Slot(uri=MIXS['0000331'], name="soil_local_class_meth", curie=MIXS.curie('0000331'),
                    model_uri=MIXS.VOCAB.soil_local_class_meth, domain=Soil, range=Optional[str])
 
+slots.soil_org_nitro = Slot(uri=MIXS['0000205'], name="soil_org_nitro", curie=MIXS.curie('0000205'),
+                   model_uri=MIXS.VOCAB.soil_org_nitro, domain=Soil, range=Optional[Union[dict, "QuantityValue"]])
+
 slots.soil_soil_type = Slot(uri=MIXS['0000332'], name="soil_soil_type", curie=MIXS.curie('0000332'),
                    model_uri=MIXS.VOCAB.soil_soil_type, domain=Soil, range=Optional[str])
 
@@ -77574,6 +77558,9 @@ slots.soil_ph = Slot(uri=MIXS['0001001'], name="soil_ph", curie=MIXS.curie('0001
 
 slots.soil_ph_meth = Slot(uri=MIXS['0001106'], name="soil_ph_meth", curie=MIXS.curie('0001106'),
                    model_uri=MIXS.VOCAB.soil_ph_meth, domain=Soil, range=Optional[str])
+
+slots.soil_org_matter = Slot(uri=MIXS['0000204'], name="soil_org_matter", curie=MIXS.curie('0000204'),
+                   model_uri=MIXS.VOCAB.soil_org_matter, domain=Soil, range=Optional[Union[dict, "QuantityValue"]])
 
 slots.soil_tot_org_carb = Slot(uri=MIXS['0000533'], name="soil_tot_org_carb", curie=MIXS.curie('0000533'),
                    model_uri=MIXS.VOCAB.soil_tot_org_carb, domain=Soil, range=Optional[Union[dict, "QuantityValue"]])
@@ -79534,8 +79521,8 @@ slots.food_farm_environment_rel_location = Slot(uri=MIXS['0001161'], name="food-
 slots.food_farm_environment_soil_porosity = Slot(uri=MIXS['0001162'], name="food-farm environment_soil_porosity", curie=MIXS.curie('0001162'),
                    model_uri=MIXS.VOCAB.food_farm_environment_soil_porosity, domain=Food-farmEnvironment, range=Optional[str])
 
-slots.food_farm_environment_soil_temp = Slot(uri=MIXS['0001163'], name="food-farm environment_soil_temp", curie=MIXS.curie('0001163'),
-                   model_uri=MIXS.VOCAB.food_farm_environment_soil_temp, domain=Food-farmEnvironment, range=Optional[Union[str, List[str]]])
+slots.food_farm_environment_soil_temp = Slot(uri=MIXS['0000113'], name="food-farm environment_soil_temp", curie=MIXS.curie('0000113'),
+                   model_uri=MIXS.VOCAB.food_farm_environment_soil_temp, domain=Food-farmEnvironment, range=Optional[Union[dict, "QuantityValue"]])
 
 slots.food_farm_environment_soil_texture_class = Slot(uri=MIXS['0001164'], name="food-farm environment_soil_texture_class", curie=MIXS.curie('0001164'),
                    model_uri=MIXS.VOCAB.food_farm_environment_soil_texture_class, domain=Food-farmEnvironment, range=Optional[Union[str, "SoilTextureClassEnum"]])
@@ -79621,8 +79608,8 @@ slots.agriculture_library_prep_kit = Slot(uri=MIXS['0001145'], name="agriculture
 slots.agriculture_sequencing_location = Slot(uri=MIXS['0001156'], name="agriculture_sequencing_location", curie=MIXS.curie('0001156'),
                    model_uri=MIXS.VOCAB.agriculture_sequencing_location, domain=Agriculture, range=Optional[str])
 
-slots.agriculture_soil_temp = Slot(uri=MIXS['0001163'], name="agriculture_soil_temp", curie=MIXS.curie('0001163'),
-                   model_uri=MIXS.VOCAB.agriculture_soil_temp, domain=Agriculture, range=Optional[Union[str, List[str]]])
+slots.agriculture_soil_temp = Slot(uri=MIXS['0000113'], name="agriculture_soil_temp", curie=MIXS.curie('0000113'),
+                   model_uri=MIXS.VOCAB.agriculture_soil_temp, domain=Agriculture, range=Optional[Union[dict, "QuantityValue"]])
 
 slots.agriculture_soil_pH = Slot(uri=MIXS['0001160'], name="agriculture_soil_pH", curie=MIXS.curie('0001160'),
                    model_uri=MIXS.VOCAB.agriculture_soil_pH, domain=Agriculture, range=Optional[float])
