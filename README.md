@@ -2,21 +2,17 @@
 
 A specification for the **Minimum Information about any (X) Sequence** standard
 
-## Purpose and Contents
+## Repository Contents
 
 This repo contains computable artifacts that define the MIxS standard, versions 6 and later. _Older versions of the MIxS standard are available at https://github.com/GenomicsStandardsConsortium/mixs-legacy_
 
 Beginning with version 6, MIxS is being managed using the [LinkML toolkit](https://linkml.io/). LinkML uses YAML files to describe schemas and provides code to convert YAML to multiple other formats. 
 
-The latests stable version of the MIxS standard in various formats listed above are available in the [release](release) folder.  MIxS is currently available in GraphQL, JSON-LD, JSON schema, OWL, prefixmap, protobuf, SCHACL, SHEX, SQL schema and Python. Java will be addde in a future release, as will Excel templates for data collection. 
-
-There is currently only one version of MIxS released in this repository (MIxS 6). When newer versions are released, links to older versions will be provided here.
-
 ### How to access MIxS standards
 
-The standards can be browsed at https://genomicsstandardsconsortium.github.io/mixs/ or downloaded in machine readable formats from the [release](release) folder.
+The standards can be browsed at https://genomicsstandardsconsortium.github.io/mixs/. The latests stable version of the MIxS standard in various formatsdownloaded in machine readable formats from the [release](release) folder.  MIxS is currently available in GraphQL, JSON-LD, JSON schema, OWL, prefixmap, protobuf, SCHACL, SHEX, SQL schema and Python. Java will be addde in a future release, as will Excel templates for data collection. There is currently only one version of MIxS released in this repository (MIxS 6). When newer versions are released, links to older versions will be provided here
 
-To support existing implementers who have been using previous Excel-based versions of MIxS, we have provide a manually created [Excel workbook] (release/mixs6/xlsx) with the same format as MIxS 5. However, we highly recommend using one of the machine readable artifacts available in the [release](release) folder.
+To support existing implementers who have been using previous Excel-based versions of MIxS, we have provide a manually created [Excel workbook](release/excel) with the same format as MIxS 5. However, we highly recommend using one of the machine readable artifacts available in the [release](release) folder.
 
 MIxS is divided into checklists and packages.
 
@@ -29,6 +25,12 @@ Packages can be used in conjunction with any checklist, so, for example, you if 
 
 **To request changes to the MIxS standards, please use the [issue tracker](https://github.com/GenomicsStandardsConsortium/mixs/issues) in this repo.**
 
+### Other repository contents
+
+- [generated](generated) contains a working version of the MIxS artifacts. It is not stable and should not be used!
+- [doc_templates](doc_templates) contains jinja templates for the LinkML auto-generated documentation
+- [changelogs](changelogs) contains documents describing the changes with each release
+- [MAINTAINERS.md](MAINTAINERS.md) provides more technical details on the editing and release process
 
 ## Guidelines for the reuse and citation of content on this repository
 
