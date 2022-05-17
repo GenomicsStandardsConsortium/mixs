@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mixs-linkml"
-version = "0.1.3"
+version = "0.1.4"
 description = "A LinkML model for the MIxS standard"
 authors = ["GSC"]
 license = "CC0"
@@ -22,7 +22,8 @@ classifiers = [
 ]
 
 packages = [
-    { include = "generated" }
+    { include = "__init__.py", from = "mixs" },
+    { include = "mixs.py", from = "mixs" }
 ]
 
 [tool.poetry.dependencies]
