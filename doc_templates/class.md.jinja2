@@ -27,10 +27,10 @@ URI: {{ gen.uri_link(element) }}
 
 ## Slots
 
-| MIxS ID | Name | Multiplicity | Description  | Pattern | Info |
-| ---  | ---  | --- | --- | --- | --- |
+| MIxS ID | Name | Multiplicity | Description  | Pattern |
+| ---  | ---  | ---  | --- | --- |
 {% for s in schemaview.class_induced_slots(element.name) -%}
-| {{ s.slot_uri }} | {{gen.link(s)}} | {{ gen.cardinality(s) }} {% if s.recommended %}RECOMMENDED{% endif %} | {{s.description}} | {{ s.string_serialization }} | . |
+| {{gen.link(s)}} | {{ s.name }} | {{ gen.cardinality(s) }} {% if s.recommended %}RECOMMENDED{% endif %} | {{s.description}} | {{ s.string_serialization }} |
 {% endfor %}
 
 ## Usages
