@@ -1,6 +1,8 @@
 # {{ element.name }}
 
-## Name: {{ element.title }}
+{% if element.title is not none %}
+Name: {{ element.title }}
+{% endif %}
 
 MIxS ID: ```{{ gen.name(element) }}```
 
