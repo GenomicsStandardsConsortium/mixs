@@ -1,15 +1,35 @@
 [tool.poetry]
 name = "mixs-linkml"
-version = "0.1.1"
-description = "A LinkML (https://linkml.io/) model of the MIxS standard (https://gensc.org/mixs/)"
+version = "0.1.4"
+description = "A LinkML model for the MIxS standard"
 authors = ["GSC"]
 license = "CC0"
+
+readme = "README.md"
+
+homepage = "https://gensc.org/mixs/"
+repository = "https://github.com/GenomicsStandardsConsortium/mixs"
+documentation = "https://genomicsstandardsconsortium.github.io/mixs/"
+
+keywords = ["MIxS", "linkml", "schema", "data model"]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3 :: Only",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+]
+
+packages = [
+    { include = "__init__.py", from = "mixs" },
+    { include = "mixs.py", from = "mixs" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
 linkml = ">=1.1.13"
 pandas = "*"
-mkdocs = "*"
 
 [tool.poetry.dev-dependencies]
 pipenv-to-requirements = "*"
@@ -19,6 +39,8 @@ unittest2 = "*"
 nbconvert = "*"
 nbformat = "*"
 ipykernel = "*"
+mkdocs = "*"
+mkdocs-material = "^8.2.14"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
