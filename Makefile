@@ -5,7 +5,7 @@ RUN=poetry run
 .PHONY: all clean gh_docs docserve value_syntax_research
 
 # html_docs
-all: clean value_syntax_research model/schema/mixs.yaml generated/mixs.py mkdocs_html/index.html
+all: clean clean_diff_stuff alldiffs value_syntax_research model/schema/mixs.yaml generated/mixs.py mkdocs_html/index.html
 
 # ---------------------------------------
 # TSVs from google drive
@@ -74,5 +74,63 @@ docserve:
 gh_docs:
 	poetry run mkdocs gh-deploy
 
+# issue-413-sheet-diff
+.PHONY: gsc_vs_nmdc_packages gsc_vs_nmdc_core clean_diff_stuff all_diffs
+
+clean_diff_stuff:
+	rm -rf downloads/*sv
+
+alldiffs: clean clean_diff_stuff gsc_vs_nmdc_packages gsc_vs_nmdc_core
+
+# GSC: MIxS 6 term updates:MIxS6 Core- Final_clean
+#   https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/edit#gid=178015749
+# GSC: MIxS 6 term updates:MIxS6 packages - Final_clean
+#   https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/edit#gid=750683809
+
+# NMDC: NMDC copy of MIxS 6 term updates:
+#   https://docs.google.com/spreadsheets/d/1-ocpwjx6nkBod6aj4kcYeSB5NRlhXaYCcuk3ooX2OV4/edit#gid=178015749
+# NMDC MIxS 6 term updates:MIxS6 packages - Final_clean
+#   https://docs.google.com/spreadsheets/d/1-ocpwjx6nkBod6aj4kcYeSB5NRlhXaYCcuk3ooX2OV4/edit#gid=750683809
+
+#downloads/gsc_mixs6.tsv:
+#	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
+downloads/gsc_mixs6.csv:
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=csv&gid=750683809' > $@
+#downloads/gsc_mixs6_core.tsv:
+#	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
+downloads/gsc_mixs6_core.csv:
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=csv&gid=178015749' > $@
+
+#downloads/nmdc_mixs6.tsv:
+#	curl -L -s 'https://docs.google.com/spreadsheets/d/1-ocpwjx6nkBod6aj4kcYeSB5NRlhXaYCcuk3ooX2OV4/export?format=tsv&gid=750683809' > $@
+downloads/nmdc_mixs6.csv:
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1-ocpwjx6nkBod6aj4kcYeSB5NRlhXaYCcuk3ooX2OV4/export?format=csv&gid=750683809' > $@
+#downloads/nmdc_mixs6_core.tsv:
+#	curl -L -s 'https://docs.google.com/spreadsheets/d/1-ocpwjx6nkBod6aj4kcYeSB5NRlhXaYCcuk3ooX2OV4/export?format=tsv&gid=178015749' > $@
+downloads/nmdc_mixs6_core.csv:
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1-ocpwjx6nkBod6aj4kcYeSB5NRlhXaYCcuk3ooX2OV4/export?format=csv&gid=178015749' > $@
+
+gsc_vs_nmdc_packages: downloads/gsc_mixs6.csv downloads/nmdc_mixs6.csv
+	# colored display
+	csvdiff \
+		--primary-key 0,1 \
+		--format word-diff $^
+	# to file
+	csvdiff \
+		--primary-key 0,1 \
+		--format word-diff $^ > generated/gsc_vs_nmdc_packages.txt
+
+gsc_vs_nmdc_core: downloads/gsc_mixs6_core.csv downloads/nmdc_mixs6_core.csv
+	# colored display
+	csvdiff \
+		--primary-key 1 \
+		--format word-diff $^
+	# to file
+	csvdiff \
+		--primary-key 1 \
+		--format word-diff $^ > generated/gsc_vs_nmdc_core.txt
+# --format string         Available (rowmark|json|legacy-json|diff|word-diff|color-words) (default "diff")
+
 value_syntax_research: downloads/mixs6.tsv downloads/mixs6_core.tsv
 	poetry run python gsctools/value_syntaxes.py
+
