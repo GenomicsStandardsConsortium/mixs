@@ -122,10 +122,10 @@ gsc_vs_nmdc_packages: downloads/gsc_mixs6.csv downloads/nmdc_mixs6.csv
 gsc_vs_nmdc_core: downloads/gsc_mixs6_core.csv downloads/nmdc_mixs6_core.csv
 	# colored display
 	csvdiff \
-		--primary-key 0,1 \
+		--primary-key 1 \
 		--format word-diff $^
 	# to file
 	csvdiff \
-		--primary-key 0,1 \
+		--primary-key 1 \
 		--format word-diff $^ > generated/gsc_vs_nmdc_core.txt
 # --format string         Available (rowmark|json|legacy-json|diff|word-diff|color-words) (default "diff")
