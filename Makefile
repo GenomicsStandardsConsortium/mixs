@@ -2,7 +2,7 @@
 
 RUN=poetry run
 
-.PHONY: all clean gh_docs docserve
+.PHONY: all clean gh_docs docserve value_syntax_research
 
 # html_docs
 all: clean generated/mixs.py mkdocs_html/index.html
@@ -21,11 +21,11 @@ clean:
 
 #model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
 #	$(RUN) python -m gsctools.mixs_converter  2>&1 | tee -a logs/sheet2linkml.log
-#
-#downloads/mixs6.tsv:
-#	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
-#downloads/mixs6_core.tsv:
-#	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
+
+downloads/mixs6.tsv:
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
+downloads/mixs6_core.tsv:
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
 
 # todo add owl back in and make it awesome
 # todo derive output path from target file name
@@ -72,3 +72,6 @@ docserve:
 # exposes at https://GenomicsStandardsConsortium.github.io/mixs/
 gh_docs:
 	poetry run mkdocs gh-deploy
+
+value_syntax_research: downloads/mixs6.tsv downloads/mixs6_core.tsv
+	poetry run python gsctools/value_syntaxes.py
