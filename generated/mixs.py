@@ -1,5 +1,5 @@
 # Auto generated from mixs.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-07-05T14:37:29
+# Generation date: 2022-07-05T15:45:21
 # Schema: MIxS
 #
 # id: http://w3id.org/mixs
@@ -70761,6 +70761,9 @@ slots.mixs_extension_field = Slot(uri=MIXS.VOCAB.mixs_extension_field, name="mix
 
 slots.environment_field = Slot(uri=MIXS.VOCAB.environment_field, name="environment field", curie=MIXS.VOCAB.curie('environment_field'),
                    model_uri=MIXS.VOCAB.environment_field, domain=None, range=Optional[str])
+
+slots.package_field = Slot(uri=MIXS.VOCAB.package_field, name="package field", curie=MIXS.VOCAB.curie('package_field'),
+                   model_uri=MIXS.VOCAB.package_field, domain=None, range=Optional[str])
 
 slots.samp_name = Slot(uri=MIXS['0001107'], name="samp_name", curie=MIXS.curie('0001107'),
                    model_uri=MIXS.VOCAB.samp_name, domain=None, range=Optional[str])

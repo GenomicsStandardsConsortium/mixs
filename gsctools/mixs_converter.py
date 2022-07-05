@@ -218,10 +218,11 @@ class MIxS6Converter:
         # if 'MIGS ID (mapping to GOLD)' in row:
         #    exact_mappings.append(f'MIGS:{row["MIGS ID (mapping to GOLD)"]}')
 
-        section = row['Section'] if 'Section' in row else 'environment'
-        if section == '':
-            # logging.warning(f'No section: {s_id}')
-            section = 'core'
+        section = row['Section'] if 'Section' in row else 'package'
+        # if section == '':
+        #     # logging.warning(f'No section: {s_id}')
+        #     section = 'core'
+        # todo
         is_a = f'{section} field'
         pattern, range = parse_value_syntax(row['Value syntax'], s_name)
         slot = {
@@ -317,6 +318,9 @@ class MIxS6Converter:
             'environment field': {
                 'abstract': True,
                 'description': "field describing environmental aspect of a sample"
+            },
+            'package field': {
+                'abstract': True,
             }
         }
         classes = {}
@@ -435,6 +439,7 @@ class MIxS6Converter:
                     slots[s_id] = slot
                 else:
                     in_core_and_package = True
+                    # todo is this working?
                     slot['todos'] = ['this is in both core and packages']
 
                 if s_id not in slot_cls_req:
