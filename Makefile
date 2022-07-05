@@ -5,7 +5,7 @@ RUN=poetry run
 .PHONY: all clean gh_docs docserve
 
 # html_docs
-all: clean generated/mixs.py mkdocs_html/index.html
+all: clean model/schema/mixs.yaml generated/mixs.py mkdocs_html/index.html
 
 # ---------------------------------------
 # TSVs from google drive
@@ -17,22 +17,23 @@ clean:
 	rm -rf generated/*
 	rm -rf logs/*
 	rm -rf mkdocs_html/
-	#rm -rf model/schema/*yaml
+	rm -rf model/schema/*yaml
+	rm -rf downloads/*.*sv
 
-#model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
-#	$(RUN) python -m gsctools.mixs_converter  2>&1 | tee -a logs/sheet2linkml.log
-#
-#downloads/mixs6.tsv:
-#	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
-#downloads/mixs6_core.tsv:
-#	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
+model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
+	$(RUN) python -m gsctools.mixs_converter  2>&1 | tee -a logs/sheet2linkml.log
+
+downloads/mixs6.tsv:
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
+downloads/mixs6_core.tsv:
+	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
 
 # todo add owl back in and make it awesome
-# todo derive output path from target file name
 # 		--exclude owl \
 
 generated/mixs.py: model/schema/mixs.yaml
 	$(RUN) gen-project \
+ 		--exclude owl \
 		--exclude excel \
 		--exclude java \
 		--exclude markdown \

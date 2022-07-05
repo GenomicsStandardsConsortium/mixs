@@ -372,18 +372,19 @@ class MIxS6Converter:
                 # - optional (X)
                 # - environment-dependent (E)
                 # - or not applicable (-)
+                usage = {'annotations': [{"tag": "Cardinality", "value": cardinality}]}
                 if cardinality != 'E':
-                    usage = {}
-                    if cardinality == 'M':
-                        usage['required'] = True
-                    elif cardinality == 'X':
-                        usage['required'] = False
-                    elif cardinality == 'C':
-                        usage['recommended'] = True
-                    # elif cardinality == '-':
-                    #    usage['comments'] = ['not applicable']
-                    if usage != {}:
-                        checklist_slot_usage[s_id] = usage
+                    pass
+                if cardinality == 'M':
+                    usage['required'] = True
+                elif cardinality == 'X':
+                    pass
+                elif cardinality == 'C':
+                    usage['recommended'] = True
+                elif cardinality == '-':
+                    pass
+                if usage != {}:
+                    checklist_slot_usage[s_id] = usage
             classes[checklist_name] = {
                 'mixin': True,
                 'description': info['fullname'],
