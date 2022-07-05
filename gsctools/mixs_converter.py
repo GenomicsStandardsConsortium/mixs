@@ -298,9 +298,9 @@ class MIxS6Converter:
         core_df = pd.read_csv(self.core_filename, sep="\t").fillna("").applymap(trim_strings)
         pkg_df = pd.read_csv(self.packages_filename, sep="\t").fillna("").applymap(trim_strings)
         slots = {
-            'core field': {
+            'environment field': {
                 'abstract': True,
-                'description': "basic fields"
+                'description': "field describing environmental aspect of a sample"
             },
             'investigation field': {
                 'abstract': True,
@@ -312,16 +312,19 @@ class MIxS6Converter:
             'sequencing field': {
                 'abstract': True
             },
+            # take the place of the previous erroneous :core" is_a annotations
+            'package field': {
+                'abstract': True,
+            },
+            # todo do not expect to instantiate core field any more
+            'core field': {
+                'abstract': True,
+                'description': "basic fields"
+            },
+            # todo what the heck is extension?
             'mixs extension field': {
                 'abstract': True
             },
-            'environment field': {
-                'abstract': True,
-                'description': "field describing environmental aspect of a sample"
-            },
-            'package field': {
-                'abstract': True,
-            }
         }
         classes = {}
         subsets = {}

@@ -9,9 +9,9 @@ prefixes:
   MIXS: https://w3id.org/mixs/terms/
 default_prefix: mixs.vocab
 slots:
-  core field:
+  environment field:
     abstract: true
-    description: basic fields
+    description: field describing environmental aspect of a sample
   investigation field:
     abstract: true
     description: field describing aspect of the investigation/study to which the sample
@@ -20,12 +20,12 @@ slots:
     abstract: true
   sequencing field:
     abstract: true
-  mixs extension field:
-    abstract: true
-  environment field:
-    abstract: true
-    description: field describing environmental aspect of a sample
   package field:
+    abstract: true
+  core field:
+    abstract: true
+    description: basic fields
+  mixs extension field:
     abstract: true
   samp_name:
     is_a: investigation field
