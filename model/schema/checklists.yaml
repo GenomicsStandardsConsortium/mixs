@@ -1795,72 +1795,6 @@ classes:
         recommended: true
       sop:
         recommended: true
-  air MIGS eukaryote:
-    is_a: air
-    mixins:
-    - MIGS eukaryote
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      eukaryote with environmental package air'
-  air MIGS bacteria:
-    is_a: air
-    mixins:
-    - MIGS bacteria
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package air'
-  air MIGS plant:
-    is_a: air
-    mixins:
-    - MIGS plant
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      plant with environmental package air'
-  air MIGS virus:
-    is_a: air
-    mixins:
-    - MIGS virus
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package air'
-  air MIGS org:
-    is_a: air
-    mixins:
-    - MIGS org
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      org with environmental package air'
-  air MIMS:
-    is_a: air
-    mixins:
-    - MIMS
-    description: Combinatorial checklist Metagenome or Environmental with environmental
-      package air
-  air MIMARKS specimen:
-    is_a: air
-    mixins:
-    - MIMARKS specimen
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      specimen with environmental package air'
-  air MIMARKS survey:
-    is_a: air
-    mixins:
-    - MIMARKS survey
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      survey with environmental package air'
-  air MISAG:
-    is_a: air
-    mixins:
-    - MISAG
-    description: Combinatorial checklist Minimum Information About a Single Amplified
-      Genome with environmental package air
-  air MIMAG:
-    is_a: air
-    mixins:
-    - MIMAG
-    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
-      Genome with environmental package air
-  air MIUVIG:
-    is_a: air
-    mixins:
-    - MIUVIG
-    description: Combinatorial checklist Minimum Information About an Uncultivated
-      Virus Genome with environmental package air
   built environment MIGS eukaryote:
     is_a: built environment
     mixins:
@@ -1927,6 +1861,404 @@ classes:
     - MIUVIG
     description: Combinatorial checklist Minimum Information About an Uncultivated
       Virus Genome with environmental package built environment
+  food-food production facility MIGS eukaryote:
+    is_a: food-food production facility
+    mixins:
+    - MIGS eukaryote
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      eukaryote with environmental package food-food production facility'
+  food-food production facility MIGS bacteria:
+    is_a: food-food production facility
+    mixins:
+    - MIGS bacteria
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package food-food production facility'
+  food-food production facility MIGS plant:
+    is_a: food-food production facility
+    mixins:
+    - MIGS plant
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      plant with environmental package food-food production facility'
+  food-food production facility MIGS virus:
+    is_a: food-food production facility
+    mixins:
+    - MIGS virus
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package food-food production facility'
+  food-food production facility MIGS org:
+    is_a: food-food production facility
+    mixins:
+    - MIGS org
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      org with environmental package food-food production facility'
+  food-food production facility MIMS:
+    is_a: food-food production facility
+    mixins:
+    - MIMS
+    description: Combinatorial checklist Metagenome or Environmental with environmental
+      package food-food production facility
+  food-food production facility MIMARKS specimen:
+    is_a: food-food production facility
+    mixins:
+    - MIMARKS specimen
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      specimen with environmental package food-food production facility'
+  food-food production facility MIMARKS survey:
+    is_a: food-food production facility
+    mixins:
+    - MIMARKS survey
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      survey with environmental package food-food production facility'
+  food-food production facility MISAG:
+    is_a: food-food production facility
+    mixins:
+    - MISAG
+    description: Combinatorial checklist Minimum Information About a Single Amplified
+      Genome with environmental package food-food production facility
+  food-food production facility MIMAG:
+    is_a: food-food production facility
+    mixins:
+    - MIMAG
+    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
+      Genome with environmental package food-food production facility
+  food-food production facility MIUVIG:
+    is_a: food-food production facility
+    mixins:
+    - MIUVIG
+    description: Combinatorial checklist Minimum Information About an Uncultivated
+      Virus Genome with environmental package food-food production facility
+  food-human foods MIGS eukaryote:
+    is_a: food-human foods
+    mixins:
+    - MIGS eukaryote
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      eukaryote with environmental package food-human foods'
+  food-human foods MIGS bacteria:
+    is_a: food-human foods
+    mixins:
+    - MIGS bacteria
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package food-human foods'
+  food-human foods MIGS plant:
+    is_a: food-human foods
+    mixins:
+    - MIGS plant
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      plant with environmental package food-human foods'
+  food-human foods MIGS virus:
+    is_a: food-human foods
+    mixins:
+    - MIGS virus
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package food-human foods'
+  food-human foods MIGS org:
+    is_a: food-human foods
+    mixins:
+    - MIGS org
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      org with environmental package food-human foods'
+  food-human foods MIMS:
+    is_a: food-human foods
+    mixins:
+    - MIMS
+    description: Combinatorial checklist Metagenome or Environmental with environmental
+      package food-human foods
+  food-human foods MIMARKS specimen:
+    is_a: food-human foods
+    mixins:
+    - MIMARKS specimen
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      specimen with environmental package food-human foods'
+  food-human foods MIMARKS survey:
+    is_a: food-human foods
+    mixins:
+    - MIMARKS survey
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      survey with environmental package food-human foods'
+  food-human foods MISAG:
+    is_a: food-human foods
+    mixins:
+    - MISAG
+    description: Combinatorial checklist Minimum Information About a Single Amplified
+      Genome with environmental package food-human foods
+  food-human foods MIMAG:
+    is_a: food-human foods
+    mixins:
+    - MIMAG
+    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
+      Genome with environmental package food-human foods
+  food-human foods MIUVIG:
+    is_a: food-human foods
+    mixins:
+    - MIUVIG
+    description: Combinatorial checklist Minimum Information About an Uncultivated
+      Virus Genome with environmental package food-human foods
+  food-animal and animal feed MIGS eukaryote:
+    is_a: food-animal and animal feed
+    mixins:
+    - MIGS eukaryote
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      eukaryote with environmental package food-animal and animal feed'
+  food-animal and animal feed MIGS bacteria:
+    is_a: food-animal and animal feed
+    mixins:
+    - MIGS bacteria
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package food-animal and animal
+      feed'
+  food-animal and animal feed MIGS plant:
+    is_a: food-animal and animal feed
+    mixins:
+    - MIGS plant
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      plant with environmental package food-animal and animal feed'
+  food-animal and animal feed MIGS virus:
+    is_a: food-animal and animal feed
+    mixins:
+    - MIGS virus
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package food-animal and animal
+      feed'
+  food-animal and animal feed MIGS org:
+    is_a: food-animal and animal feed
+    mixins:
+    - MIGS org
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      org with environmental package food-animal and animal feed'
+  food-animal and animal feed MIMS:
+    is_a: food-animal and animal feed
+    mixins:
+    - MIMS
+    description: Combinatorial checklist Metagenome or Environmental with environmental
+      package food-animal and animal feed
+  food-animal and animal feed MIMARKS specimen:
+    is_a: food-animal and animal feed
+    mixins:
+    - MIMARKS specimen
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      specimen with environmental package food-animal and animal feed'
+  food-animal and animal feed MIMARKS survey:
+    is_a: food-animal and animal feed
+    mixins:
+    - MIMARKS survey
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      survey with environmental package food-animal and animal feed'
+  food-animal and animal feed MISAG:
+    is_a: food-animal and animal feed
+    mixins:
+    - MISAG
+    description: Combinatorial checklist Minimum Information About a Single Amplified
+      Genome with environmental package food-animal and animal feed
+  food-animal and animal feed MIMAG:
+    is_a: food-animal and animal feed
+    mixins:
+    - MIMAG
+    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
+      Genome with environmental package food-animal and animal feed
+  food-animal and animal feed MIUVIG:
+    is_a: food-animal and animal feed
+    mixins:
+    - MIUVIG
+    description: Combinatorial checklist Minimum Information About an Uncultivated
+      Virus Genome with environmental package food-animal and animal feed
+  food-farm environment MIGS eukaryote:
+    is_a: food-farm environment
+    mixins:
+    - MIGS eukaryote
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      eukaryote with environmental package food-farm environment'
+  food-farm environment MIGS bacteria:
+    is_a: food-farm environment
+    mixins:
+    - MIGS bacteria
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package food-farm environment'
+  food-farm environment MIGS plant:
+    is_a: food-farm environment
+    mixins:
+    - MIGS plant
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      plant with environmental package food-farm environment'
+  food-farm environment MIGS virus:
+    is_a: food-farm environment
+    mixins:
+    - MIGS virus
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package food-farm environment'
+  food-farm environment MIGS org:
+    is_a: food-farm environment
+    mixins:
+    - MIGS org
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      org with environmental package food-farm environment'
+  food-farm environment MIMS:
+    is_a: food-farm environment
+    mixins:
+    - MIMS
+    description: Combinatorial checklist Metagenome or Environmental with environmental
+      package food-farm environment
+  food-farm environment MIMARKS specimen:
+    is_a: food-farm environment
+    mixins:
+    - MIMARKS specimen
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      specimen with environmental package food-farm environment'
+  food-farm environment MIMARKS survey:
+    is_a: food-farm environment
+    mixins:
+    - MIMARKS survey
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      survey with environmental package food-farm environment'
+  food-farm environment MISAG:
+    is_a: food-farm environment
+    mixins:
+    - MISAG
+    description: Combinatorial checklist Minimum Information About a Single Amplified
+      Genome with environmental package food-farm environment
+  food-farm environment MIMAG:
+    is_a: food-farm environment
+    mixins:
+    - MIMAG
+    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
+      Genome with environmental package food-farm environment
+  food-farm environment MIUVIG:
+    is_a: food-farm environment
+    mixins:
+    - MIUVIG
+    description: Combinatorial checklist Minimum Information About an Uncultivated
+      Virus Genome with environmental package food-farm environment
+  symbiont-associated MIGS eukaryote:
+    is_a: symbiont-associated
+    mixins:
+    - MIGS eukaryote
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      eukaryote with environmental package symbiont-associated'
+  symbiont-associated MIGS bacteria:
+    is_a: symbiont-associated
+    mixins:
+    - MIGS bacteria
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package symbiont-associated'
+  symbiont-associated MIGS plant:
+    is_a: symbiont-associated
+    mixins:
+    - MIGS plant
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      plant with environmental package symbiont-associated'
+  symbiont-associated MIGS virus:
+    is_a: symbiont-associated
+    mixins:
+    - MIGS virus
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package symbiont-associated'
+  symbiont-associated MIGS org:
+    is_a: symbiont-associated
+    mixins:
+    - MIGS org
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      org with environmental package symbiont-associated'
+  symbiont-associated MIMS:
+    is_a: symbiont-associated
+    mixins:
+    - MIMS
+    description: Combinatorial checklist Metagenome or Environmental with environmental
+      package symbiont-associated
+  symbiont-associated MIMARKS specimen:
+    is_a: symbiont-associated
+    mixins:
+    - MIMARKS specimen
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      specimen with environmental package symbiont-associated'
+  symbiont-associated MIMARKS survey:
+    is_a: symbiont-associated
+    mixins:
+    - MIMARKS survey
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      survey with environmental package symbiont-associated'
+  symbiont-associated MISAG:
+    is_a: symbiont-associated
+    mixins:
+    - MISAG
+    description: Combinatorial checklist Minimum Information About a Single Amplified
+      Genome with environmental package symbiont-associated
+  symbiont-associated MIMAG:
+    is_a: symbiont-associated
+    mixins:
+    - MIMAG
+    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
+      Genome with environmental package symbiont-associated
+  symbiont-associated MIUVIG:
+    is_a: symbiont-associated
+    mixins:
+    - MIUVIG
+    description: Combinatorial checklist Minimum Information About an Uncultivated
+      Virus Genome with environmental package symbiont-associated
+  soil MIGS eukaryote:
+    is_a: soil
+    mixins:
+    - MIGS eukaryote
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      eukaryote with environmental package soil'
+  soil MIGS bacteria:
+    is_a: soil
+    mixins:
+    - MIGS bacteria
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package soil'
+  soil MIGS plant:
+    is_a: soil
+    mixins:
+    - MIGS plant
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      plant with environmental package soil'
+  soil MIGS virus:
+    is_a: soil
+    mixins:
+    - MIGS virus
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package soil'
+  soil MIGS org:
+    is_a: soil
+    mixins:
+    - MIGS org
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      org with environmental package soil'
+  soil MIMS:
+    is_a: soil
+    mixins:
+    - MIMS
+    description: Combinatorial checklist Metagenome or Environmental with environmental
+      package soil
+  soil MIMARKS specimen:
+    is_a: soil
+    mixins:
+    - MIMARKS specimen
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      specimen with environmental package soil'
+  soil MIMARKS survey:
+    is_a: soil
+    mixins:
+    - MIMARKS survey
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      survey with environmental package soil'
+  soil MISAG:
+    is_a: soil
+    mixins:
+    - MISAG
+    description: Combinatorial checklist Minimum Information About a Single Amplified
+      Genome with environmental package soil
+  soil MIMAG:
+    is_a: soil
+    mixins:
+    - MIMAG
+    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
+      Genome with environmental package soil
+  soil MIUVIG:
+    is_a: soil
+    mixins:
+    - MIUVIG
+    description: Combinatorial checklist Minimum Information About an Uncultivated
+      Virus Genome with environmental package soil
   host-associated MIGS eukaryote:
     is_a: host-associated
     mixins:
@@ -1993,6 +2325,204 @@ classes:
     - MIUVIG
     description: Combinatorial checklist Minimum Information About an Uncultivated
       Virus Genome with environmental package host-associated
+  plant-associated MIGS eukaryote:
+    is_a: plant-associated
+    mixins:
+    - MIGS eukaryote
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      eukaryote with environmental package plant-associated'
+  plant-associated MIGS bacteria:
+    is_a: plant-associated
+    mixins:
+    - MIGS bacteria
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package plant-associated'
+  plant-associated MIGS plant:
+    is_a: plant-associated
+    mixins:
+    - MIGS plant
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      plant with environmental package plant-associated'
+  plant-associated MIGS virus:
+    is_a: plant-associated
+    mixins:
+    - MIGS virus
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package plant-associated'
+  plant-associated MIGS org:
+    is_a: plant-associated
+    mixins:
+    - MIGS org
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      org with environmental package plant-associated'
+  plant-associated MIMS:
+    is_a: plant-associated
+    mixins:
+    - MIMS
+    description: Combinatorial checklist Metagenome or Environmental with environmental
+      package plant-associated
+  plant-associated MIMARKS specimen:
+    is_a: plant-associated
+    mixins:
+    - MIMARKS specimen
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      specimen with environmental package plant-associated'
+  plant-associated MIMARKS survey:
+    is_a: plant-associated
+    mixins:
+    - MIMARKS survey
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      survey with environmental package plant-associated'
+  plant-associated MISAG:
+    is_a: plant-associated
+    mixins:
+    - MISAG
+    description: Combinatorial checklist Minimum Information About a Single Amplified
+      Genome with environmental package plant-associated
+  plant-associated MIMAG:
+    is_a: plant-associated
+    mixins:
+    - MIMAG
+    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
+      Genome with environmental package plant-associated
+  plant-associated MIUVIG:
+    is_a: plant-associated
+    mixins:
+    - MIUVIG
+    description: Combinatorial checklist Minimum Information About an Uncultivated
+      Virus Genome with environmental package plant-associated
+  agriculture MIGS eukaryote:
+    is_a: agriculture
+    mixins:
+    - MIGS eukaryote
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      eukaryote with environmental package agriculture'
+  agriculture MIGS bacteria:
+    is_a: agriculture
+    mixins:
+    - MIGS bacteria
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package agriculture'
+  agriculture MIGS plant:
+    is_a: agriculture
+    mixins:
+    - MIGS plant
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      plant with environmental package agriculture'
+  agriculture MIGS virus:
+    is_a: agriculture
+    mixins:
+    - MIGS virus
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package agriculture'
+  agriculture MIGS org:
+    is_a: agriculture
+    mixins:
+    - MIGS org
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      org with environmental package agriculture'
+  agriculture MIMS:
+    is_a: agriculture
+    mixins:
+    - MIMS
+    description: Combinatorial checklist Metagenome or Environmental with environmental
+      package agriculture
+  agriculture MIMARKS specimen:
+    is_a: agriculture
+    mixins:
+    - MIMARKS specimen
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      specimen with environmental package agriculture'
+  agriculture MIMARKS survey:
+    is_a: agriculture
+    mixins:
+    - MIMARKS survey
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      survey with environmental package agriculture'
+  agriculture MISAG:
+    is_a: agriculture
+    mixins:
+    - MISAG
+    description: Combinatorial checklist Minimum Information About a Single Amplified
+      Genome with environmental package agriculture
+  agriculture MIMAG:
+    is_a: agriculture
+    mixins:
+    - MIMAG
+    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
+      Genome with environmental package agriculture
+  agriculture MIUVIG:
+    is_a: agriculture
+    mixins:
+    - MIUVIG
+    description: Combinatorial checklist Minimum Information About an Uncultivated
+      Virus Genome with environmental package agriculture
+  air MIGS eukaryote:
+    is_a: air
+    mixins:
+    - MIGS eukaryote
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      eukaryote with environmental package air'
+  air MIGS bacteria:
+    is_a: air
+    mixins:
+    - MIGS bacteria
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package air'
+  air MIGS plant:
+    is_a: air
+    mixins:
+    - MIGS plant
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      plant with environmental package air'
+  air MIGS virus:
+    is_a: air
+    mixins:
+    - MIGS virus
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      cultured bacteria/archaea with environmental package air'
+  air MIGS org:
+    is_a: air
+    mixins:
+    - MIGS org
+    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
+      org with environmental package air'
+  air MIMS:
+    is_a: air
+    mixins:
+    - MIMS
+    description: Combinatorial checklist Metagenome or Environmental with environmental
+      package air
+  air MIMARKS specimen:
+    is_a: air
+    mixins:
+    - MIMARKS specimen
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      specimen with environmental package air'
+  air MIMARKS survey:
+    is_a: air
+    mixins:
+    - MIMARKS survey
+    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
+      survey with environmental package air'
+  air MISAG:
+    is_a: air
+    mixins:
+    - MISAG
+    description: Combinatorial checklist Minimum Information About a Single Amplified
+      Genome with environmental package air
+  air MIMAG:
+    is_a: air
+    mixins:
+    - MIMAG
+    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
+      Genome with environmental package air
+  air MIUVIG:
+    is_a: air
+    mixins:
+    - MIUVIG
+    description: Combinatorial checklist Minimum Information About an Uncultivated
+      Virus Genome with environmental package air
   human-associated MIGS eukaryote:
     is_a: human-associated
     mixins:
@@ -2590,72 +3120,6 @@ classes:
     description: Combinatorial checklist Minimum Information About an Uncultivated
       Virus Genome with environmental package miscellaneous natural or artificial
       environment
-  plant-associated MIGS eukaryote:
-    is_a: plant-associated
-    mixins:
-    - MIGS eukaryote
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      eukaryote with environmental package plant-associated'
-  plant-associated MIGS bacteria:
-    is_a: plant-associated
-    mixins:
-    - MIGS bacteria
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package plant-associated'
-  plant-associated MIGS plant:
-    is_a: plant-associated
-    mixins:
-    - MIGS plant
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      plant with environmental package plant-associated'
-  plant-associated MIGS virus:
-    is_a: plant-associated
-    mixins:
-    - MIGS virus
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package plant-associated'
-  plant-associated MIGS org:
-    is_a: plant-associated
-    mixins:
-    - MIGS org
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      org with environmental package plant-associated'
-  plant-associated MIMS:
-    is_a: plant-associated
-    mixins:
-    - MIMS
-    description: Combinatorial checklist Metagenome or Environmental with environmental
-      package plant-associated
-  plant-associated MIMARKS specimen:
-    is_a: plant-associated
-    mixins:
-    - MIMARKS specimen
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      specimen with environmental package plant-associated'
-  plant-associated MIMARKS survey:
-    is_a: plant-associated
-    mixins:
-    - MIMARKS survey
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      survey with environmental package plant-associated'
-  plant-associated MISAG:
-    is_a: plant-associated
-    mixins:
-    - MISAG
-    description: Combinatorial checklist Minimum Information About a Single Amplified
-      Genome with environmental package plant-associated
-  plant-associated MIMAG:
-    is_a: plant-associated
-    mixins:
-    - MIMAG
-    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
-      Genome with environmental package plant-associated
-  plant-associated MIUVIG:
-    is_a: plant-associated
-    mixins:
-    - MIUVIG
-    description: Combinatorial checklist Minimum Information About an Uncultivated
-      Virus Genome with environmental package plant-associated
   sediment MIGS eukaryote:
     is_a: sediment
     mixins:
@@ -2722,72 +3186,6 @@ classes:
     - MIUVIG
     description: Combinatorial checklist Minimum Information About an Uncultivated
       Virus Genome with environmental package sediment
-  soil MIGS eukaryote:
-    is_a: soil
-    mixins:
-    - MIGS eukaryote
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      eukaryote with environmental package soil'
-  soil MIGS bacteria:
-    is_a: soil
-    mixins:
-    - MIGS bacteria
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package soil'
-  soil MIGS plant:
-    is_a: soil
-    mixins:
-    - MIGS plant
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      plant with environmental package soil'
-  soil MIGS virus:
-    is_a: soil
-    mixins:
-    - MIGS virus
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package soil'
-  soil MIGS org:
-    is_a: soil
-    mixins:
-    - MIGS org
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      org with environmental package soil'
-  soil MIMS:
-    is_a: soil
-    mixins:
-    - MIMS
-    description: Combinatorial checklist Metagenome or Environmental with environmental
-      package soil
-  soil MIMARKS specimen:
-    is_a: soil
-    mixins:
-    - MIMARKS specimen
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      specimen with environmental package soil'
-  soil MIMARKS survey:
-    is_a: soil
-    mixins:
-    - MIMARKS survey
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      survey with environmental package soil'
-  soil MISAG:
-    is_a: soil
-    mixins:
-    - MISAG
-    description: Combinatorial checklist Minimum Information About a Single Amplified
-      Genome with environmental package soil
-  soil MIMAG:
-    is_a: soil
-    mixins:
-    - MIMAG
-    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
-      Genome with environmental package soil
-  soil MIUVIG:
-    is_a: soil
-    mixins:
-    - MIUVIG
-    description: Combinatorial checklist Minimum Information About an Uncultivated
-      Virus Genome with environmental package soil
   wastewater_sludge MIGS eukaryote:
     is_a: wastewater_sludge
     mixins:
@@ -2920,403 +3318,5 @@ classes:
     - MIUVIG
     description: Combinatorial checklist Minimum Information About an Uncultivated
       Virus Genome with environmental package water
-  symbiont-associated MIGS eukaryote:
-    is_a: symbiont-associated
-    mixins:
-    - MIGS eukaryote
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      eukaryote with environmental package symbiont-associated'
-  symbiont-associated MIGS bacteria:
-    is_a: symbiont-associated
-    mixins:
-    - MIGS bacteria
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package symbiont-associated'
-  symbiont-associated MIGS plant:
-    is_a: symbiont-associated
-    mixins:
-    - MIGS plant
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      plant with environmental package symbiont-associated'
-  symbiont-associated MIGS virus:
-    is_a: symbiont-associated
-    mixins:
-    - MIGS virus
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package symbiont-associated'
-  symbiont-associated MIGS org:
-    is_a: symbiont-associated
-    mixins:
-    - MIGS org
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      org with environmental package symbiont-associated'
-  symbiont-associated MIMS:
-    is_a: symbiont-associated
-    mixins:
-    - MIMS
-    description: Combinatorial checklist Metagenome or Environmental with environmental
-      package symbiont-associated
-  symbiont-associated MIMARKS specimen:
-    is_a: symbiont-associated
-    mixins:
-    - MIMARKS specimen
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      specimen with environmental package symbiont-associated'
-  symbiont-associated MIMARKS survey:
-    is_a: symbiont-associated
-    mixins:
-    - MIMARKS survey
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      survey with environmental package symbiont-associated'
-  symbiont-associated MISAG:
-    is_a: symbiont-associated
-    mixins:
-    - MISAG
-    description: Combinatorial checklist Minimum Information About a Single Amplified
-      Genome with environmental package symbiont-associated
-  symbiont-associated MIMAG:
-    is_a: symbiont-associated
-    mixins:
-    - MIMAG
-    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
-      Genome with environmental package symbiont-associated
-  symbiont-associated MIUVIG:
-    is_a: symbiont-associated
-    mixins:
-    - MIUVIG
-    description: Combinatorial checklist Minimum Information About an Uncultivated
-      Virus Genome with environmental package symbiont-associated
-  food-human foods MIGS eukaryote:
-    is_a: food-human foods
-    mixins:
-    - MIGS eukaryote
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      eukaryote with environmental package food-human foods'
-  food-human foods MIGS bacteria:
-    is_a: food-human foods
-    mixins:
-    - MIGS bacteria
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package food-human foods'
-  food-human foods MIGS plant:
-    is_a: food-human foods
-    mixins:
-    - MIGS plant
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      plant with environmental package food-human foods'
-  food-human foods MIGS virus:
-    is_a: food-human foods
-    mixins:
-    - MIGS virus
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package food-human foods'
-  food-human foods MIGS org:
-    is_a: food-human foods
-    mixins:
-    - MIGS org
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      org with environmental package food-human foods'
-  food-human foods MIMS:
-    is_a: food-human foods
-    mixins:
-    - MIMS
-    description: Combinatorial checklist Metagenome or Environmental with environmental
-      package food-human foods
-  food-human foods MIMARKS specimen:
-    is_a: food-human foods
-    mixins:
-    - MIMARKS specimen
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      specimen with environmental package food-human foods'
-  food-human foods MIMARKS survey:
-    is_a: food-human foods
-    mixins:
-    - MIMARKS survey
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      survey with environmental package food-human foods'
-  food-human foods MISAG:
-    is_a: food-human foods
-    mixins:
-    - MISAG
-    description: Combinatorial checklist Minimum Information About a Single Amplified
-      Genome with environmental package food-human foods
-  food-human foods MIMAG:
-    is_a: food-human foods
-    mixins:
-    - MIMAG
-    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
-      Genome with environmental package food-human foods
-  food-human foods MIUVIG:
-    is_a: food-human foods
-    mixins:
-    - MIUVIG
-    description: Combinatorial checklist Minimum Information About an Uncultivated
-      Virus Genome with environmental package food-human foods
-  food-animal and animal feed MIGS eukaryote:
-    is_a: food-animal and animal feed
-    mixins:
-    - MIGS eukaryote
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      eukaryote with environmental package food-animal and animal feed'
-  food-animal and animal feed MIGS bacteria:
-    is_a: food-animal and animal feed
-    mixins:
-    - MIGS bacteria
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package food-animal and animal
-      feed'
-  food-animal and animal feed MIGS plant:
-    is_a: food-animal and animal feed
-    mixins:
-    - MIGS plant
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      plant with environmental package food-animal and animal feed'
-  food-animal and animal feed MIGS virus:
-    is_a: food-animal and animal feed
-    mixins:
-    - MIGS virus
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package food-animal and animal
-      feed'
-  food-animal and animal feed MIGS org:
-    is_a: food-animal and animal feed
-    mixins:
-    - MIGS org
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      org with environmental package food-animal and animal feed'
-  food-animal and animal feed MIMS:
-    is_a: food-animal and animal feed
-    mixins:
-    - MIMS
-    description: Combinatorial checklist Metagenome or Environmental with environmental
-      package food-animal and animal feed
-  food-animal and animal feed MIMARKS specimen:
-    is_a: food-animal and animal feed
-    mixins:
-    - MIMARKS specimen
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      specimen with environmental package food-animal and animal feed'
-  food-animal and animal feed MIMARKS survey:
-    is_a: food-animal and animal feed
-    mixins:
-    - MIMARKS survey
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      survey with environmental package food-animal and animal feed'
-  food-animal and animal feed MISAG:
-    is_a: food-animal and animal feed
-    mixins:
-    - MISAG
-    description: Combinatorial checklist Minimum Information About a Single Amplified
-      Genome with environmental package food-animal and animal feed
-  food-animal and animal feed MIMAG:
-    is_a: food-animal and animal feed
-    mixins:
-    - MIMAG
-    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
-      Genome with environmental package food-animal and animal feed
-  food-animal and animal feed MIUVIG:
-    is_a: food-animal and animal feed
-    mixins:
-    - MIUVIG
-    description: Combinatorial checklist Minimum Information About an Uncultivated
-      Virus Genome with environmental package food-animal and animal feed
-  food-food production facility MIGS eukaryote:
-    is_a: food-food production facility
-    mixins:
-    - MIGS eukaryote
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      eukaryote with environmental package food-food production facility'
-  food-food production facility MIGS bacteria:
-    is_a: food-food production facility
-    mixins:
-    - MIGS bacteria
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package food-food production facility'
-  food-food production facility MIGS plant:
-    is_a: food-food production facility
-    mixins:
-    - MIGS plant
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      plant with environmental package food-food production facility'
-  food-food production facility MIGS virus:
-    is_a: food-food production facility
-    mixins:
-    - MIGS virus
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package food-food production facility'
-  food-food production facility MIGS org:
-    is_a: food-food production facility
-    mixins:
-    - MIGS org
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      org with environmental package food-food production facility'
-  food-food production facility MIMS:
-    is_a: food-food production facility
-    mixins:
-    - MIMS
-    description: Combinatorial checklist Metagenome or Environmental with environmental
-      package food-food production facility
-  food-food production facility MIMARKS specimen:
-    is_a: food-food production facility
-    mixins:
-    - MIMARKS specimen
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      specimen with environmental package food-food production facility'
-  food-food production facility MIMARKS survey:
-    is_a: food-food production facility
-    mixins:
-    - MIMARKS survey
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      survey with environmental package food-food production facility'
-  food-food production facility MISAG:
-    is_a: food-food production facility
-    mixins:
-    - MISAG
-    description: Combinatorial checklist Minimum Information About a Single Amplified
-      Genome with environmental package food-food production facility
-  food-food production facility MIMAG:
-    is_a: food-food production facility
-    mixins:
-    - MIMAG
-    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
-      Genome with environmental package food-food production facility
-  food-food production facility MIUVIG:
-    is_a: food-food production facility
-    mixins:
-    - MIUVIG
-    description: Combinatorial checklist Minimum Information About an Uncultivated
-      Virus Genome with environmental package food-food production facility
-  food-farm environment MIGS eukaryote:
-    is_a: food-farm environment
-    mixins:
-    - MIGS eukaryote
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      eukaryote with environmental package food-farm environment'
-  food-farm environment MIGS bacteria:
-    is_a: food-farm environment
-    mixins:
-    - MIGS bacteria
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package food-farm environment'
-  food-farm environment MIGS plant:
-    is_a: food-farm environment
-    mixins:
-    - MIGS plant
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      plant with environmental package food-farm environment'
-  food-farm environment MIGS virus:
-    is_a: food-farm environment
-    mixins:
-    - MIGS virus
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package food-farm environment'
-  food-farm environment MIGS org:
-    is_a: food-farm environment
-    mixins:
-    - MIGS org
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      org with environmental package food-farm environment'
-  food-farm environment MIMS:
-    is_a: food-farm environment
-    mixins:
-    - MIMS
-    description: Combinatorial checklist Metagenome or Environmental with environmental
-      package food-farm environment
-  food-farm environment MIMARKS specimen:
-    is_a: food-farm environment
-    mixins:
-    - MIMARKS specimen
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      specimen with environmental package food-farm environment'
-  food-farm environment MIMARKS survey:
-    is_a: food-farm environment
-    mixins:
-    - MIMARKS survey
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      survey with environmental package food-farm environment'
-  food-farm environment MISAG:
-    is_a: food-farm environment
-    mixins:
-    - MISAG
-    description: Combinatorial checklist Minimum Information About a Single Amplified
-      Genome with environmental package food-farm environment
-  food-farm environment MIMAG:
-    is_a: food-farm environment
-    mixins:
-    - MIMAG
-    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
-      Genome with environmental package food-farm environment
-  food-farm environment MIUVIG:
-    is_a: food-farm environment
-    mixins:
-    - MIUVIG
-    description: Combinatorial checklist Minimum Information About an Uncultivated
-      Virus Genome with environmental package food-farm environment
-  agriculture MIGS eukaryote:
-    is_a: agriculture
-    mixins:
-    - MIGS eukaryote
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      eukaryote with environmental package agriculture'
-  agriculture MIGS bacteria:
-    is_a: agriculture
-    mixins:
-    - MIGS bacteria
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package agriculture'
-  agriculture MIGS plant:
-    is_a: agriculture
-    mixins:
-    - MIGS plant
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      plant with environmental package agriculture'
-  agriculture MIGS virus:
-    is_a: agriculture
-    mixins:
-    - MIGS virus
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      cultured bacteria/archaea with environmental package agriculture'
-  agriculture MIGS org:
-    is_a: agriculture
-    mixins:
-    - MIGS org
-    description: 'Combinatorial checklist Minimal Information about a Genome Sequence:
-      org with environmental package agriculture'
-  agriculture MIMS:
-    is_a: agriculture
-    mixins:
-    - MIMS
-    description: Combinatorial checklist Metagenome or Environmental with environmental
-      package agriculture
-  agriculture MIMARKS specimen:
-    is_a: agriculture
-    mixins:
-    - MIMARKS specimen
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      specimen with environmental package agriculture'
-  agriculture MIMARKS survey:
-    is_a: agriculture
-    mixins:
-    - MIMARKS survey
-    description: 'Combinatorial checklist Minimal Information about a Marker Specimen:
-      survey with environmental package agriculture'
-  agriculture MISAG:
-    is_a: agriculture
-    mixins:
-    - MISAG
-    description: Combinatorial checklist Minimum Information About a Single Amplified
-      Genome with environmental package agriculture
-  agriculture MIMAG:
-    is_a: agriculture
-    mixins:
-    - MIMAG
-    description: Combinatorial checklist Minimum Information About a Metagenome-Assembled
-      Genome with environmental package agriculture
-  agriculture MIUVIG:
-    is_a: agriculture
-    mixins:
-    - MIUVIG
-    description: Combinatorial checklist Minimum Information About an Uncultivated
-      Virus Genome with environmental package agriculture
 subsets: {}
 enums: {}
