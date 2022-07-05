@@ -247,7 +247,14 @@ class MIxS6Converter:
         #    slot['exact_mappings'] = exact_mappings
         if pattern is not None:
             # slot['pattern'] = pattern
-            slot['string_serialization'] = pattern
+            # slot['structured_pattern'] = pattern
+            slot['structured_pattern'] = {}
+            slot['structured_pattern']['syntax'] = pattern
+            slot['structured_pattern']['interpolated'] = False
+            slot['structured_pattern']['partial_match'] = False
+            # todo interpolated, partial_match
+            # todo NMDC sheets_and_friends will need to account for this change
+            # todo more ?
         # the link to GH issues were removed. We may want to add them back in.
         # LINK = 'Link to GH issue'
         # if LINK in row:
@@ -264,8 +271,7 @@ class MIxS6Converter:
             if len(vals) > 2:
                 enum_name = f'{s_id}_enum'
                 slot['range'] = enum_name
-                # slot['string_serialization'] = ''
-                del slot['string_serialization']
+                del slot['structured_pattern']
                 enums[enum_name] = {
                     'permissible_values': {v: {} for v in vals}
                 }

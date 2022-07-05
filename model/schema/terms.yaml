@@ -44,7 +44,10 @@ slots:
     - sample name
     annotations:
       expected_value: text
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001107
   samp_taxon_id:
     is_a: investigation field
@@ -61,7 +64,10 @@ slots:
     - Taxonomy ID of DNA sample
     annotations:
       expected_value: Taxonomy ID
-    string_serialization: '{text} [NCBI:txid]'
+    structured_pattern:
+      syntax: '{text} [NCBI:txid]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001320
   project_name:
     is_a: investigation field
@@ -75,7 +81,10 @@ slots:
     aliases:
     - project name
     annotations: {}
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000092
   experimental_factor:
     is_a: investigation field
@@ -95,7 +104,10 @@ slots:
     - experimental factor
     annotations:
       expected_value: text or EFO and/or OBI
-    string_serialization: '{termLabel} {[termID]}|{text}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000008
   lat_lon:
     is_a: environment field
@@ -111,7 +123,10 @@ slots:
     - geographic location (latitude and longitude)
     annotations:
       expected_value: decimal degrees,  limit to 8 decimal points
-    string_serialization: '{float} {float}'
+    structured_pattern:
+      syntax: '{float} {float}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000009
   depth:
     is_a: environment field
@@ -197,7 +212,10 @@ slots:
     annotations:
       expected_value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location
         name'
-    string_serialization: '{term}: {term}, {text}'
+    structured_pattern:
+      syntax: '{term}: {term}, {text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000010
   collection_date:
     is_a: environment field
@@ -243,7 +261,10 @@ slots:
     aliases:
     - positive control type
     annotations: {}
-    string_serialization: '{term} or {text}'
+    structured_pattern:
+      syntax: '{term} or {text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001322
   env_broad_scale:
     is_a: environment field
@@ -266,7 +287,10 @@ slots:
       expected_value: The major environment type(s) where the sample was collected.
         Recommend subclasses of biome [ENVO:00000428]. Multiple terms can be separated
         by one or more pipes.
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000012
   env_local_scale:
     is_a: environment field
@@ -291,7 +315,10 @@ slots:
     annotations:
       expected_value: Environmental entities having causal influences upon the entity
         at time of sampling.
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000013
   env_medium:
     is_a: environment field
@@ -315,7 +342,10 @@ slots:
     annotations:
       expected_value: The material displaced by the entity at time of sampling. Recommend
         subclasses of environmental material [ENVO:00010483].
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000014
   subspecf_gen_lin:
     is_a: nucleic acid sequence source field
@@ -335,7 +365,10 @@ slots:
     annotations:
       expected_value: Genetic lineage below lowest rank of NCBI taxonomy, which is
         subspecies, e.g. serovar, biotype, ecotype, variety, cultivar.
-    string_serialization: '{rank name}:{text}'
+    structured_pattern:
+      syntax: '{rank name}:{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000020
   ploidy:
     is_a: nucleic acid sequence source field
@@ -355,7 +388,10 @@ slots:
     - ploidy
     annotations:
       expected_value: PATO
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000021
   num_replicons:
     is_a: nucleic acid sequence source field
@@ -405,7 +441,10 @@ slots:
     - estimated size
     annotations:
       expected_value: number of base pairs
-    string_serialization: '{integer} bp'
+    structured_pattern:
+      syntax: '{integer} bp'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000024
   ref_biomaterial:
     is_a: nucleic acid sequence source field
@@ -421,7 +460,10 @@ slots:
     - reference for biomaterial
     annotations:
       expected_value: PMID, DOI or URL
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000025
   source_mat_id:
     is_a: nucleic acid sequence source field
@@ -448,7 +490,10 @@ slots:
     annotations:
       expected_value: 'for cultures of microorganisms: identifiers for two culture
         collections; for other material a unique arbitrary identifer'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000026
   pathogenicity:
     is_a: nucleic acid sequence source field
@@ -463,7 +508,10 @@ slots:
     - known pathogenicity
     annotations:
       expected_value: names of organisms that the entity is pathogenic to
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000027
   biotic_relationship:
     is_a: nucleic acid sequence source field
@@ -495,7 +543,10 @@ slots:
     - host scientific name
     annotations:
       expected_value: host scientific name, taxonomy ID
-    string_serialization: '{text}|{NCBI taxid}'
+    structured_pattern:
+      syntax: '{text}|{NCBI taxid}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000029
   host_spec_range:
     is_a: nucleic acid sequence source field
@@ -528,7 +579,10 @@ slots:
     - host disease status
     annotations:
       expected_value: disease name or Disease Ontology term
-    string_serialization: '{termLabel} {[termID]}|{text}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000031
   trophic_level:
     is_a: nucleic acid sequence source field
@@ -562,7 +616,10 @@ slots:
       expected_value: 'for virus: lytic, lysogenic, temperate, obligately lytic; for
         plasmid: incompatibility group; for eukaryote: asexual, sexual; other more
         specific values (e.g., incompatibility group) are allowed'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000033
   encoded_traits:
     is_a: nucleic acid sequence source field
@@ -578,7 +635,10 @@ slots:
     - encoded traits
     annotations:
       expected_value: 'for plasmid: antibiotic resistance; for phage: converting genes'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000034
   rel_to_oxygen:
     is_a: nucleic acid sequence source field
@@ -610,7 +670,10 @@ slots:
     - isolation and growth condition
     annotations:
       expected_value: PMID,DOI or URL
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000003
   samp_collec_device:
     is_a: nucleic acid sequence source field
@@ -627,7 +690,10 @@ slots:
     - sample collection device
     annotations:
       expected_value: device name
-    string_serialization: '{termLabel} {[termID]}|{text}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000002
   samp_collec_method:
     is_a: nucleic acid sequence source field
@@ -642,7 +708,10 @@ slots:
     - sample collection method
     annotations:
       expected_value: PMID,DOI,url , or text
-    string_serialization: '{PMID}|{DOI}|{URL}|{text}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001225
   samp_mat_process:
     is_a: nucleic acid sequence source field
@@ -659,7 +728,10 @@ slots:
     - sample material processing
     annotations:
       expected_value: text
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000016
   size_frac:
     is_a: nucleic acid sequence source field
@@ -674,7 +746,10 @@ slots:
     - size fraction selected
     annotations:
       expected_value: filter size value range
-    string_serialization: '{float}-{float} {unit}'
+    structured_pattern:
+      syntax: '{float}-{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000017
   samp_size:
     is_a: nucleic acid sequence source field
@@ -752,7 +827,10 @@ slots:
     - nucleic acid extraction
     annotations:
       expected_value: PMID, DOI or URL
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000037
   nucl_acid_amp:
     is_a: sequencing field
@@ -769,7 +847,10 @@ slots:
     - nucleic acid amplification
     annotations:
       expected_value: PMID, DOI or URL
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000038
   lib_size:
     is_a: sequencing field
@@ -827,7 +908,10 @@ slots:
     - library vector
     annotations:
       expected_value: vector
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000042
   lib_screen:
     is_a: sequencing field
@@ -843,7 +927,10 @@ slots:
     - library screening strategy
     annotations:
       expected_value: screening strategy name
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000043
   target_gene:
     is_a: sequencing field
@@ -858,7 +945,10 @@ slots:
     - target gene
     annotations:
       expected_value: gene name
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000044
   target_subfragment:
     is_a: sequencing field
@@ -874,7 +964,10 @@ slots:
     - target subfragment
     annotations:
       expected_value: gene fragment name
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000045
   pcr_primers:
     is_a: sequencing field
@@ -892,7 +985,10 @@ slots:
     - pcr primers
     annotations:
       expected_value: 'FWD: forward primer sequence;REV:reverse primer sequence'
-    string_serialization: FWD:{dna};REV:{dna}
+    structured_pattern:
+      syntax: FWD:{dna};REV:{dna}
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000046
   mid:
     is_a: sequencing field
@@ -909,7 +1005,10 @@ slots:
     - multiplex identifiers
     annotations:
       expected_value: multiplex identifier sequence
-    string_serialization: '{dna}'
+    structured_pattern:
+      syntax: '{dna}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000047
   adapters:
     is_a: sequencing field
@@ -926,7 +1025,10 @@ slots:
     - adapters
     annotations:
       expected_value: adapter A and B sequence
-    string_serialization: '{dna};{dna}'
+    structured_pattern:
+      syntax: '{dna};{dna}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000048
   pcr_cond:
     is_a: sequencing field
@@ -943,8 +1045,11 @@ slots:
     annotations:
       expected_value: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
         elongation:degrees_minutes;total cycles
-    string_serialization: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
-      elongation:degrees_minutes;total cycles
+    structured_pattern:
+      syntax: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
+        elongation:degrees_minutes;total cycles
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000049
   seq_meth:
     is_a: sequencing field
@@ -960,7 +1065,10 @@ slots:
     - sequencing method
     annotations:
       expected_value: Text or OBI
-    string_serialization: '{termLabel} {[termID]}|{text}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000050
   seq_quality_check:
     is_a: sequencing field
@@ -978,7 +1086,10 @@ slots:
     - sequence quality check
     annotations:
       expected_value: none or manually edited
-    string_serialization: '[none|manually edited]'
+    structured_pattern:
+      syntax: '[none|manually edited]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000051
   chimera_check:
     is_a: sequencing field
@@ -995,7 +1106,10 @@ slots:
     - chimera check software
     annotations:
       expected_value: name and version of software, parameters used
-    string_serialization: '{software};{version};{parameters}'
+    structured_pattern:
+      syntax: '{software};{version};{parameters}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000052
   tax_ident:
     is_a: sequencing field
@@ -1056,7 +1170,10 @@ slots:
     - assembly name
     annotations:
       expected_value: name and version of assembly
-    string_serialization: '{text} {text}'
+    structured_pattern:
+      syntax: '{text} {text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000057
   assembly_software:
     is_a: sequencing field
@@ -1071,7 +1188,10 @@ slots:
     - assembly software
     annotations:
       expected_value: name and version of software, parameters used
-    string_serialization: '{software};{version};{parameters}'
+    structured_pattern:
+      syntax: '{software};{version};{parameters}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000058
   annot:
     is_a: sequencing field
@@ -1088,7 +1208,10 @@ slots:
     - annotation
     annotations:
       expected_value: name of tool or pipeline used, or annotation source description
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000059
   number_contig:
     is_a: sequencing field
@@ -1119,7 +1242,10 @@ slots:
     - feature prediction
     annotations:
       expected_value: names and versions of software(s), parameters used
-    string_serialization: '{software};{version};{parameters}'
+    structured_pattern:
+      syntax: '{software};{version};{parameters}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000061
   ref_db:
     is_a: sequencing field
@@ -1136,7 +1262,10 @@ slots:
     - reference database(s)
     annotations:
       expected_value: names, versions, and references of databases
-    string_serialization: '{database};{version};{reference}'
+    structured_pattern:
+      syntax: '{database};{version};{reference}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000062
   sim_search_meth:
     is_a: sequencing field
@@ -1152,7 +1281,10 @@ slots:
     - similarity search method
     annotations:
       expected_value: names and versions of software(s), parameters used
-    string_serialization: '{software};{version};{parameters}'
+    structured_pattern:
+      syntax: '{software};{version};{parameters}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000063
   tax_class:
     is_a: sequencing field
@@ -1169,7 +1301,10 @@ slots:
     - taxonomic classification
     annotations:
       expected_value: classification method, database name, and other parameters
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000064
   x_16s_recover:
     is_a: sequencing field
@@ -1184,7 +1319,10 @@ slots:
     - 16S recovered
     annotations:
       expected_value: boolean
-    string_serialization: '{boolean}'
+    structured_pattern:
+      syntax: '{boolean}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000065
   x_16s_recover_software:
     is_a: sequencing field
@@ -1199,7 +1337,10 @@ slots:
     - 16S recovery software
     annotations:
       expected_value: names and versions of software(s), parameters used
-    string_serialization: '{software};{version};{parameters}'
+    structured_pattern:
+      syntax: '{software};{version};{parameters}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000066
   trnas:
     is_a: sequencing field
@@ -1228,7 +1369,10 @@ slots:
     - tRNA extraction software
     annotations:
       expected_value: names and versions of software(s), parameters used
-    string_serialization: '{software};{version};{parameters}'
+    structured_pattern:
+      syntax: '{software};{version};{parameters}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000068
   compl_score:
     is_a: sequencing field
@@ -1261,7 +1405,10 @@ slots:
     - completeness software
     annotations:
       expected_value: names and versions of software(s) used
-    string_serialization: '{software};{version}'
+    structured_pattern:
+      syntax: '{software};{version}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000070
   compl_appr:
     is_a: sequencing field
@@ -1298,7 +1445,10 @@ slots:
     - contamination score
     annotations:
       expected_value: value
-    string_serialization: '{float} percentage'
+    structured_pattern:
+      syntax: '{float} percentage'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000072
   contam_screen_input:
     is_a: sequencing field
@@ -1313,7 +1463,10 @@ slots:
     - contamination screening input
     annotations:
       expected_value: enumeration
-    string_serialization: '[reads| contigs]'
+    structured_pattern:
+      syntax: '[reads| contigs]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000005
   contam_screen_param:
     is_a: sequencing field
@@ -1387,7 +1540,10 @@ slots:
     - single cell or viral particle lysis kit protocol
     annotations:
       expected_value: kit, protocol name
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000054
   wga_amp_appr:
     is_a: sequencing field
@@ -1402,7 +1558,10 @@ slots:
     - WGA amplification approach
     annotations:
       expected_value: enumeration
-    string_serialization: '[pcr based|mda based]'
+    structured_pattern:
+      syntax: '[pcr based|mda based]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000055
   wga_amp_kit:
     is_a: sequencing field
@@ -1417,7 +1576,10 @@ slots:
     - WGA amplification kit
     annotations:
       expected_value: kit name
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000006
   bin_param:
     is_a: sequencing field
@@ -1448,7 +1610,10 @@ slots:
     - binning software
     annotations:
       expected_value: names and versions of software(s) used
-    string_serialization: '{software};{version}{PID}'
+    structured_pattern:
+      syntax: '{software};{version}{PID}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000078
   reassembly_bin:
     is_a: sequencing field
@@ -1464,7 +1629,10 @@ slots:
     - reassembly post binning
     annotations:
       expected_value: boolean
-    string_serialization: '{boolean}'
+    structured_pattern:
+      syntax: '{boolean}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000079
   mag_cov_software:
     is_a: sequencing field
@@ -1495,7 +1663,10 @@ slots:
     - viral identification software
     annotations:
       expected_value: software name, version and relevant parameters
-    string_serialization: '{software};{version};{parameters}'
+    structured_pattern:
+      syntax: '{software};{version};{parameters}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000081
   pred_genome_type:
     is_a: sequencing field
@@ -1538,7 +1709,10 @@ slots:
     - detection type
     annotations:
       expected_value: enumeration
-    string_serialization: '[independent sequence (UViG)|provirus (UpViG)]'
+    structured_pattern:
+      syntax: '[independent sequence (UViG)|provirus (UpViG)]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000084
   otu_class_appr:
     is_a: sequencing field
@@ -1556,7 +1730,10 @@ slots:
     - OTU classification approach
     annotations:
       expected_value: cutoffs and method used
-    string_serialization: '{ANI cutoff};{AF cutoff};{clustering method}'
+    structured_pattern:
+      syntax: '{ANI cutoff};{AF cutoff};{clustering method}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000085
   otu_seq_comp_appr:
     is_a: sequencing field
@@ -1572,7 +1749,10 @@ slots:
     - OTU sequence comparison approach
     annotations:
       expected_value: software name, version and relevant parameters
-    string_serialization: '{software};{version};{parameters}'
+    structured_pattern:
+      syntax: '{software};{version};{parameters}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000086
   otu_db:
     is_a: sequencing field
@@ -1588,7 +1768,10 @@ slots:
     - OTU database
     annotations:
       expected_value: database and version
-    string_serialization: '{database};{version}'
+    structured_pattern:
+      syntax: '{database};{version}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000087
   host_pred_appr:
     is_a: sequencing field
@@ -1619,7 +1802,10 @@ slots:
     - host prediction estimated accuracy
     annotations:
       expected_value: false discovery rate
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000089
   associated resource:
     is_a: sequencing field
@@ -1635,7 +1821,10 @@ slots:
     - relevant electronic resources
     annotations:
       expected_value: reference to resource
-    string_serialization: '{PMID} | {DOI} | {URL}'
+    structured_pattern:
+      syntax: '{PMID} | {DOI} | {URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000091
   sop:
     is_a: sequencing field
@@ -1651,7 +1840,10 @@ slots:
     - relevant standard operating procedures
     annotations:
       expected_value: reference to SOP
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000090
   freq_clean:
     is_a: environment field
@@ -1790,7 +1982,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[aerobic|anaerobic]'
+    structured_pattern:
+      syntax: '[aerobic|anaerobic]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000753
   gender_restroom:
     is_a: environment field
@@ -2310,7 +2505,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[clean catch|catheter]'
+    structured_pattern:
+      syntax: '[clean catch|catheter]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000899
   samp_weather:
     is_a: environment field
@@ -2342,7 +2540,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[closed|open]'
+    structured_pattern:
+      syntax: '[closed|open]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000855
   door_type_metal:
     is_a: environment field
@@ -2406,7 +2607,10 @@ slots:
     annotations:
       expected_value: type of life cycle of the symbiotic organism (host of the samples)
       occurrence: '1'
-    string_serialization: '[complex life cycle | simple life cycle]'
+    structured_pattern:
+      syntax: '[complex life cycle | simple life cycle]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001300
   door_type:
     is_a: environment field
@@ -2437,7 +2641,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[conductive|radiant]'
+    structured_pattern:
+      syntax: '[conductive|radiant]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000812
   depos_env:
     is_a: environment field
@@ -2746,7 +2953,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[exterior|interior]'
+    structured_pattern:
+      syntax: '[exterior|interior]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000832
   host_dependence:
     is_a: environment field
@@ -2762,7 +2972,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[facultative|obligate]'
+    structured_pattern:
+      syntax: '[facultative|obligate]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001315
   host_specificity:
     is_a: environment field
@@ -2856,7 +3069,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[gas burning|wood burning]'
+    structured_pattern:
+      syntax: '[gas burning|wood burning]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000802
   mode_transmission:
     is_a: environment field
@@ -3327,7 +3543,10 @@ slots:
     annotations:
       expected_value: enumeration;obstruction type; distance from sampling device
       occurrence: m
-    string_serialization: '[obstructed|unobstructed]; {text}; {measurement value}'
+    structured_pattern:
+      syntax: '[obstructed|unobstructed]; {text}; {measurement value}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001146
   build_occup_type:
     is_a: environment field
@@ -3492,7 +3711,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[plane|glider]'
+    structured_pattern:
+      syntax: '[plane|glider]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000773
   plant_reprod_crop:
     is_a: environment field
@@ -3539,7 +3761,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[presence of mold visible|no presence of mold visible]'
+    structured_pattern:
+      syntax: '[presence of mold visible|no presence of mold visible]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000781
   door_water_mold:
     is_a: environment field
@@ -3555,7 +3780,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[presence of mold visible|no presence of mold visible]'
+    structured_pattern:
+      syntax: '[presence of mold visible|no presence of mold visible]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000793
   shad_dev_water_mold:
     is_a: environment field
@@ -3571,7 +3799,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[presence of mold visible|no presence of mold visible]'
+    structured_pattern:
+      syntax: '[presence of mold visible|no presence of mold visible]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000834
   wall_water_mold:
     is_a: environment field
@@ -3587,7 +3818,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[presence of mold visible|no presence of mold visible]'
+    structured_pattern:
+      syntax: '[presence of mold visible|no presence of mold visible]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000844
   window_water_mold:
     is_a: environment field
@@ -3603,7 +3837,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[presence of mold visible|no presence of mold visible]'
+    structured_pattern:
+      syntax: '[presence of mold visible|no presence of mold visible]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000854
   heat_cool_type:
     is_a: environment field
@@ -3759,7 +3996,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[typically occupied|typically unoccupied]'
+    structured_pattern:
+      syntax: '[typically occupied|typically unoccupied]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000770
   built_struc_set:
     is_a: environment field
@@ -3776,7 +4016,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[urban|rural]'
+    structured_pattern:
+      syntax: '[urban|rural]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000778
   building_setting:
     is_a: environment field
@@ -3872,7 +4115,10 @@ slots:
     annotations:
       expected_value: enumeration
       occurrence: '1'
-    string_serialization: '[wood frame|concrete]'
+    structured_pattern:
+      syntax: '[wood frame|concrete]'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000782
   sieving:
     is_a: environment field
@@ -3889,7 +4135,10 @@ slots:
     annotations:
       expected_value: design name and/or size;amount
       occurrence: '1'
-    string_serialization: '{{text}|{float} {unit}};{float} {unit}'
+    structured_pattern:
+      syntax: '{{text}|{float} {unit}};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000322
   hysterectomy:
     is_a: environment field
@@ -3905,7 +4154,10 @@ slots:
     annotations:
       expected_value: hysterectomy status
       occurrence: '1'
-    string_serialization: '{boolean}'
+    structured_pattern:
+      syntax: '{boolean}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000287
   medic_hist_perform:
     is_a: environment field
@@ -3921,7 +4173,10 @@ slots:
     annotations:
       expected_value: true or false
       occurrence: '1'
-    string_serialization: '{boolean}'
+    structured_pattern:
+      syntax: '{boolean}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000897
   smoker:
     is_a: environment field
@@ -3937,7 +4192,10 @@ slots:
     annotations:
       expected_value: smoking status
       occurrence: '1'
-    string_serialization: '{boolean}'
+    structured_pattern:
+      syntax: '{boolean}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000262
   twin_sibling:
     is_a: environment field
@@ -3953,7 +4211,10 @@ slots:
     annotations:
       expected_value: presence status
       occurrence: '1'
-    string_serialization: '{boolean}'
+    structured_pattern:
+      syntax: '{boolean}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000326
   pool_dna_extracts:
     is_a: environment field
@@ -3970,7 +4231,10 @@ slots:
     annotations:
       expected_value: pooling status;number of pooled extracts
       occurrence: m
-    string_serialization: '{boolean},{integer}'
+    structured_pattern:
+      syntax: '{boolean},{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000325
   study_complt_stat:
     is_a: environment field
@@ -4004,7 +4268,10 @@ slots:
     annotations:
       expected_value: HIV status;HAART initiation status
       occurrence: '1'
-    string_serialization: '{boolean};{boolean}'
+    structured_pattern:
+      syntax: '{boolean};{boolean}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000265
   weight_loss_3_month:
     is_a: environment field
@@ -4022,7 +4289,10 @@ slots:
       expected_value: weight loss specification;measurement value
       preferred_unit: kilogram, gram
       occurrence: '1'
-    string_serialization: '{boolean};{float} {unit}'
+    structured_pattern:
+      syntax: '{boolean};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000295
   crop_rotation:
     is_a: environment field
@@ -4038,7 +4308,10 @@ slots:
     annotations:
       expected_value: crop rotation status;schedule
       occurrence: '1'
-    string_serialization: '{boolean};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{boolean};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000318
   diet_last_six_month:
     is_a: environment field
@@ -4055,7 +4328,10 @@ slots:
     annotations:
       expected_value: diet change;current diet
       occurrence: '1'
-    string_serialization: '{boolean};{text}'
+    structured_pattern:
+      syntax: '{boolean};{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000266
   pet_farm_animal:
     is_a: environment field
@@ -4073,7 +4349,10 @@ slots:
     annotations:
       expected_value: presence status;type of animal or pet
       occurrence: m
-    string_serialization: '{boolean};{text}'
+    structured_pattern:
+      syntax: '{boolean};{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000267
   gravidity:
     is_a: environment field
@@ -4090,7 +4369,10 @@ slots:
     annotations:
       expected_value: gravidity status;timestamp
       occurrence: '1'
-    string_serialization: '{boolean};{timestamp}'
+    structured_pattern:
+      syntax: '{boolean};{timestamp}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000875
   host_of_host_gravid:
     is_a: environment field
@@ -4107,7 +4389,10 @@ slots:
     annotations:
       expected_value: gravidity status;timestamp
       occurrence: '1'
-    string_serialization: '{boolean};{timestamp}'
+    structured_pattern:
+      syntax: '{boolean};{timestamp}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001333
   cons_food_stor_dur:
     is_a: environment field
@@ -4126,7 +4411,10 @@ slots:
       expected_value: duration
       preferred_unit: hours or days
       occurrence: '1'
-    string_serialization: '{duration}'
+    structured_pattern:
+      syntax: '{duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001195
   ferm_time:
     is_a: environment field
@@ -4143,7 +4431,10 @@ slots:
       expected_value: duration
       preferred_unit: days
       occurrence: '1'
-    string_serialization: '{duration}'
+    structured_pattern:
+      syntax: '{duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001192
   samp_stor_dur:
     is_a: environment field
@@ -4160,7 +4451,10 @@ slots:
     annotations:
       expected_value: duration
       occurrence: '1'
-    string_serialization: '{duration}'
+    structured_pattern:
+      syntax: '{duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000116
   samp_store_dur:
     is_a: environment field
@@ -4176,7 +4470,10 @@ slots:
     annotations:
       expected_value: duration
       occurrence: '1'
-    string_serialization: '{duration}'
+    structured_pattern:
+      syntax: '{duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000116
   time_last_toothbrush:
     is_a: environment field
@@ -4192,7 +4489,10 @@ slots:
     annotations:
       expected_value: duration
       occurrence: '1'
-    string_serialization: '{duration}'
+    structured_pattern:
+      syntax: '{duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000924
   time_since_last_wash:
     is_a: environment field
@@ -4208,7 +4508,10 @@ slots:
     annotations:
       expected_value: duration
       occurrence: '1'
-    string_serialization: '{duration}'
+    structured_pattern:
+      syntax: '{duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000943
   avg_occup:
     is_a: environment field
@@ -4413,7 +4716,10 @@ slots:
       expected_value: measurement value range
       preferred_unit: atmosphere, kilopascal
       occurrence: '1'
-    string_serialization: '{float} - {float} {unit}'
+    structured_pattern:
+      syntax: '{float} - {float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000395
   hcr_temp:
     is_a: environment field
@@ -4430,7 +4736,10 @@ slots:
       expected_value: measurement value range
       preferred_unit: degree Celsius
       occurrence: '1'
-    string_serialization: '{float} - {float} {unit}'
+    structured_pattern:
+      syntax: '{float} - {float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000393
   porosity:
     is_a: environment field
@@ -4448,7 +4757,10 @@ slots:
       expected_value: measurement value or range
       preferred_unit: percentage
       occurrence: '1'
-    string_serialization: '{float} - {float} {unit}'
+    structured_pattern:
+      syntax: '{float} - {float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000211
   samp_loc_corr_rate:
     is_a: environment field
@@ -4471,7 +4783,10 @@ slots:
       expected_value: measurement value range
       preferred_unit: millimeter per year
       occurrence: '1'
-    string_serialization: '{float} - {float} {unit}'
+    structured_pattern:
+      syntax: '{float} - {float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000136
   animal_am_dur:
     is_a: environment field
@@ -4488,7 +4803,10 @@ slots:
     annotations:
       expected_value: value
       occurrence: '1'
-    string_serialization: '{float} {day}'
+    structured_pattern:
+      syntax: '{float} {day}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001244
   abs_air_humidity:
     is_a: environment field
@@ -7425,7 +7743,10 @@ slots:
       expected_value: text or measurement value
       preferred_unit: degree Celsius
       occurrence: '1'
-    string_serialization: '{float} {unit} {text}'
+    structured_pattern:
+      syntax: '{float} {unit} {text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001232
   window_size:
     is_a: environment field
@@ -7442,7 +7763,10 @@ slots:
       expected_value: measurement value
       preferred_unit: inch, meter
       occurrence: '1'
-    string_serialization: '{float} {unit} x {float} {unit}'
+    structured_pattern:
+      syntax: '{float} {unit} x {float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000224
   samp_md:
     is_a: environment field
@@ -7481,7 +7805,10 @@ slots:
       expected_value: measurement value;measurement value
       preferred_unit: days;degree Celsius
       occurrence: '1'
-    string_serialization: '{float} {unit};{float} {unit}'
+    structured_pattern:
+      syntax: '{float} {unit};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000410
   viscosity:
     is_a: environment field
@@ -7500,7 +7827,10 @@ slots:
       expected_value: measurement value;measurement value
       preferred_unit: cP at degree Celsius
       occurrence: '1'
-    string_serialization: '{float} {unit};{float} {unit}'
+    structured_pattern:
+      syntax: '{float} {unit};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000126
   water_temp_regm:
     is_a: environment field
@@ -7520,7 +7850,10 @@ slots:
       expected_value: measurement value;treatment duration;interval;experimental duration
       preferred_unit: degree Celsius
       occurrence: m
-    string_serialization: '{float} {unit};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{float} {unit};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000590
   watering_regm:
     is_a: environment field
@@ -7540,7 +7873,10 @@ slots:
       expected_value: measurement value;treatment duration;interval;experimental duration
       preferred_unit: milliliter, liter
       occurrence: m
-    string_serialization: '{float} {unit};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{float} {unit};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000591
   air_temp_regm:
     is_a: environment field
@@ -7560,7 +7896,10 @@ slots:
       expected_value: temperature value;treatment interval and duration
       preferred_unit: meter
       occurrence: m
-    string_serialization: '{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000551
   gravity:
     is_a: environment field
@@ -7581,7 +7920,10 @@ slots:
       expected_value: gravity factor value;treatment interval and duration
       preferred_unit: meter per square second, g
       occurrence: m
-    string_serialization: '{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000559
   humidity_regm:
     is_a: environment field
@@ -7602,7 +7944,10 @@ slots:
       expected_value: humidity value;treatment interval and duration
       preferred_unit: gram per cubic meter
       occurrence: m
-    string_serialization: '{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000568
   rainfall_regm:
     is_a: environment field
@@ -7622,7 +7967,10 @@ slots:
       expected_value: measurement value;treatment interval and duration
       preferred_unit: millimeter
       occurrence: m
-    string_serialization: '{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000576
   biocide_admin_method:
     is_a: environment field
@@ -7641,7 +7989,10 @@ slots:
       expected_value: measurement value;frequency;duration;duration
       preferred_unit: milligram per liter
       occurrence: '1'
-    string_serialization: '{float} {unit};{Rn/start_time/end_time/duration};{duration}'
+    structured_pattern:
+      syntax: '{float} {unit};{Rn/start_time/end_time/duration};{duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000456
   chem_treat_method:
     is_a: environment field
@@ -7660,7 +8011,10 @@ slots:
       expected_value: measurement value;frequency;duration;duration
       preferred_unit: milligram per liter
       occurrence: '1'
-    string_serialization: '{float} {unit};{Rn/start_time/end_time/duration};{duration};{duration}'
+    structured_pattern:
+      syntax: '{float} {unit};{Rn/start_time/end_time/duration};{duration};{duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000457
   spikein_AMR:
     is_a: environment field
@@ -7679,7 +8033,10 @@ slots:
     annotations:
       expected_value: measurement value ARO:3004299
       occurrence: m
-    string_serialization: '{float} {unit};{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{float} {unit};{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001235
   cons_food_stor_temp:
     is_a: environment field
@@ -7697,7 +8054,10 @@ slots:
       expected_value: text or measurement value
       preferred_unit: degree Celsius
       occurrence: '1'
-    string_serialization: '{float} {unit}|{text}'
+    structured_pattern:
+      syntax: '{float} {unit}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001196
   host_number:
     is_a: environment field
@@ -7713,7 +8073,10 @@ slots:
     annotations:
       expected_value: count
       occurrence: '1'
-    string_serialization: '{float} m'
+    structured_pattern:
+      syntax: '{float} m'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001305
   ferm_chem_add_perc:
     is_a: environment field
@@ -7730,7 +8093,10 @@ slots:
       expected_value: value
       preferred_unit: percentage
       occurrence: m
-    string_serialization: '{float} percentage'
+    structured_pattern:
+      syntax: '{float} percentage'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001186
   ferm_headspace_oxy:
     is_a: environment field
@@ -7747,7 +8113,10 @@ slots:
       expected_value: value
       preferred_unit: percentage
       occurrence: '1'
-    string_serialization: '{float} percentage'
+    structured_pattern:
+      syntax: '{float} percentage'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001187
   samp_tvdss:
     is_a: environment field
@@ -7766,7 +8135,10 @@ slots:
       expected_value: measurement value or measurement value range
       preferred_unit: meter
       occurrence: '1'
-    string_serialization: '{float}-{float} {unit}'
+    structured_pattern:
+      syntax: '{float}-{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000409
   ph_regm:
     is_a: environment field
@@ -7785,7 +8157,10 @@ slots:
     annotations:
       expected_value: measurement value;treatment duration;interval;experimental duration
       occurrence: m
-    string_serialization: '{float};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{float};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001056
   crop_yield:
     is_a: environment field
@@ -7802,7 +8177,10 @@ slots:
       expected_value: measurement value
       preferred_unit: kilogram per metre square
       occurrence: '1'
-    string_serialization: '{float}{unit}'
+    structured_pattern:
+      syntax: '{float}{unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001116
   soil_temp:
     is_a: environment field
@@ -7819,7 +8197,10 @@ slots:
       expected_value: measurement value
       preferred_unit: degree Celsius
       occurrence: m
-    string_serialization: '{float}{unit}'
+    structured_pattern:
+      syntax: '{float}{unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001163
   water_frequency:
     is_a: environment field
@@ -7836,7 +8217,10 @@ slots:
       expected_value: rate
       preferred_unit: per day, per week, per month
       occurrence: '1'
-    string_serialization: '{float}{unit}'
+    structured_pattern:
+      syntax: '{float}{unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001174
   animal_group_size:
     is_a: environment field
@@ -8265,7 +8649,10 @@ slots:
       expected_value: measurement value range
       preferred_unit: mD
       occurrence: '1'
-    string_serialization: '{integer} - {integer} {unit}'
+    structured_pattern:
+      syntax: '{integer} - {integer} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000404
   cons_qty_purchased:
     is_a: environment field
@@ -8281,7 +8668,10 @@ slots:
     annotations:
       expected_value: measurement value
       occurrence: '1'
-    string_serialization: '{integer} {unit}'
+    structured_pattern:
+      syntax: '{integer} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001198
   room_door_dist:
     is_a: environment field
@@ -8299,7 +8689,10 @@ slots:
       expected_value: measurement value
       preferred_unit: meter
       occurrence: '1'
-    string_serialization: '{integer} {unit}'
+    structured_pattern:
+      syntax: '{integer} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000193
   room_net_area:
     is_a: environment field
@@ -8316,7 +8709,10 @@ slots:
       expected_value: measurement value
       preferred_unit: square feet, square meter
       occurrence: '1'
-    string_serialization: '{integer} {unit}'
+    structured_pattern:
+      syntax: '{integer} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000194
   room_vol:
     is_a: environment field
@@ -8333,7 +8729,10 @@ slots:
       expected_value: measurement value
       preferred_unit: cubic feet, cubic meter
       occurrence: '1'
-    string_serialization: '{integer} {unit}'
+    structured_pattern:
+      syntax: '{integer} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000195
   area_samp_size:
     is_a: environment field
@@ -8351,7 +8750,10 @@ slots:
       expected_value: measurement value
       preferred_unit: centimeter
       occurrence: '1'
-    string_serialization: '{integer} {unit} x {integer} {unit}'
+    structured_pattern:
+      syntax: '{integer} {unit} x {integer} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001255
   room_dim:
     is_a: environment field
@@ -8368,7 +8770,10 @@ slots:
       expected_value: measurement value
       preferred_unit: meter
       occurrence: '1'
-    string_serialization: '{integer} {unit} x {integer} {unit} x {integer} {unit}'
+    structured_pattern:
+      syntax: '{integer} {unit} x {integer} {unit} x {integer} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000192
   lot_number:
     is_a: environment field
@@ -8388,7 +8793,10 @@ slots:
     annotations:
       expected_value: lot number, item
       occurrence: m
-    string_serialization: '{integer}, {text}'
+    structured_pattern:
+      syntax: '{integer}, {text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001147
   address:
     is_a: environment field
@@ -8404,7 +8812,10 @@ slots:
     annotations:
       expected_value: value
       occurrence: '1'
-    string_serialization: '{integer}{text}'
+    structured_pattern:
+      syntax: '{integer}{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000218
   intended_consumer:
     is_a: environment field
@@ -8422,7 +8833,10 @@ slots:
     annotations:
       expected_value: FOODON_03510136 or NCBI taxid
       occurrence: m
-    string_serialization: '{integer}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{integer}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001144
   soil_porosity:
     is_a: environment field
@@ -8440,7 +8854,10 @@ slots:
       expected_value: percent porosity
       preferred_unit: percentage
       occurrence: '1'
-    string_serialization: '{percentage}'
+    structured_pattern:
+      syntax: '{percentage}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001162
   al_sat_meth:
     is_a: environment field
@@ -8456,7 +8873,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or URL
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000324
   cur_vegetation_meth:
     is_a: environment field
@@ -8472,7 +8892,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000314
   genetic_mod:
     is_a: environment field
@@ -8491,7 +8914,10 @@ slots:
     annotations:
       expected_value: PMID, DOI, or URL
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000859
   heavy_metals_meth:
     is_a: environment field
@@ -8507,7 +8933,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000343
   horizon_meth:
     is_a: environment field
@@ -8523,7 +8952,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000321
   link_addit_analys:
     is_a: environment field
@@ -8539,7 +8971,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000340
   link_class_info:
     is_a: environment field
@@ -8555,7 +8990,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000329
   link_climate_info:
     is_a: environment field
@@ -8571,7 +9009,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000328
   local_class_meth:
     is_a: environment field
@@ -8587,7 +9028,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000331
   micro_biomass_meth:
     is_a: environment field
@@ -8603,7 +9047,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000339
   ph_meth:
     is_a: environment field
@@ -8619,7 +9066,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001106
   prev_land_use_meth:
     is_a: environment field
@@ -8635,7 +9085,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000316
   salinity_meth:
     is_a: environment field
@@ -8651,7 +9104,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000341
   soil_texture_meth:
     is_a: environment field
@@ -8667,7 +9123,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000336
   soil_type_meth:
     is_a: environment field
@@ -8684,7 +9143,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000334
   texture_meth:
     is_a: environment field
@@ -8700,7 +9162,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000336
   tot_nitro_cont_meth:
     is_a: environment field
@@ -8716,7 +9181,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000338
   tot_org_c_meth:
     is_a: environment field
@@ -8732,7 +9200,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000337
   water_cont_soil_meth:
     is_a: environment field
@@ -8748,7 +9219,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000323
   enrichment_protocol:
     is_a: environment field
@@ -8766,7 +9240,10 @@ slots:
     annotations:
       expected_value: PMID,DOI,url or free text
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}|{text}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001177
   host_growth_cond:
     is_a: environment field
@@ -8782,7 +9259,10 @@ slots:
     annotations:
       expected_value: PMID,DOI,url or free text
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}|{text}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000871
   photosynt_activ_meth:
     is_a: environment field
@@ -8798,7 +9278,10 @@ slots:
     annotations:
       expected_value: PMID,DOI,url , or text
       occurrence: m
-    string_serialization: '{PMID}|{DOI}|{URL}|{text}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001336
   root_cond:
     is_a: environment field
@@ -8815,7 +9298,10 @@ slots:
     annotations:
       expected_value: PMID,DOI,url or free text
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}|{text}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001061
   samp_collect_method:
     is_a: environment field
@@ -8831,7 +9317,10 @@ slots:
     annotations:
       expected_value: PMID,DOI,url , or text
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}|{text}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001225
   sample_collec_method:
     is_a: environment field
@@ -8847,7 +9336,10 @@ slots:
     annotations:
       expected_value: PMID,DOI,url , or text
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}|{text}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001225
   tiss_cult_growth_med:
     is_a: environment field
@@ -8863,7 +9355,10 @@ slots:
     annotations:
       expected_value: PMID,DOI,url or free text
       occurrence: '1'
-    string_serialization: '{PMID}|{DOI}|{URL}|{text}'
+    structured_pattern:
+      syntax: '{PMID}|{DOI}|{URL}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001070
   microbial_biomass_meth:
     is_a: environment field
@@ -8879,7 +9374,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID|DOI|URL}'
+    structured_pattern:
+      syntax: '{PMID|DOI|URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000339
   previous_land_use_meth:
     is_a: environment field
@@ -8895,7 +9393,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID|DOI|URL}'
+    structured_pattern:
+      syntax: '{PMID|DOI|URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000316
   tot_n_meth:
     is_a: environment field
@@ -8911,7 +9412,10 @@ slots:
     annotations:
       expected_value: PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{PMID|DOI|URL}'
+    structured_pattern:
+      syntax: '{PMID|DOI|URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000338
   host_subspecf_genlin:
     is_a: environment field
@@ -8932,7 +9436,10 @@ slots:
       expected_value: Genetic lineage below lowest rank of NCBI taxonomy, which is
         subspecies, e.g. serovar, biotype, ecotype, variety, cultivar.
       occurrence: m
-    string_serialization: '{rank name}:{text}'
+    structured_pattern:
+      syntax: '{rank name}:{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001318
   assembly_quality:
     is_a: environment field
@@ -8947,7 +9454,10 @@ slots:
     - assembly quality
     annotations:
       expected_value: name and version of software, parameters used
-    string_serialization: '{software};{version};{parameters}'
+    structured_pattern:
+      syntax: '{software};{version};{parameters}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000058
   microb_start:
     is_a: environment field
@@ -8964,7 +9474,10 @@ slots:
     annotations:
       expected_value: FOODON:03544453
       occurrence: '1'
-    string_serialization: '{term label} {[termID]}|{text}'
+    structured_pattern:
+      syntax: '{term label} {[termID]}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001217
   plant_part_maturity:
     is_a: environment field
@@ -8982,7 +9495,10 @@ slots:
     annotations:
       expected_value: FOODON:03530050
       occurrence: '1'
-    string_serialization: '{term label}{term ID}'
+    structured_pattern:
+      syntax: '{term label}{term ID}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001120
   host_of_host_pheno:
     is_a: environment field
@@ -8999,7 +9515,10 @@ slots:
     annotations:
       expected_value: phenotype of the host of the symbiotic organism; PATO
       occurrence: '1'
-    string_serialization: '{term}'
+    structured_pattern:
+      syntax: '{term}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001332
   host_phenotype:
     is_a: environment field
@@ -9017,7 +9536,10 @@ slots:
     annotations:
       expected_value: symbiotic organism (host of the samples) specific phenotype
         ontology terms; OBA or PTO or free text
-    string_serialization: '{term}'
+    structured_pattern:
+      syntax: '{term}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000874
   food_dis_point:
     is_a: environment field
@@ -9038,7 +9560,10 @@ slots:
     annotations:
       expected_value: 'country: region, specific location (city)'
       occurrence: m
-    string_serialization: '{term}: {term}, {text}'
+    structured_pattern:
+      syntax: '{term}: {term}, {text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001203
   food_origin:
     is_a: environment field
@@ -9057,7 +9582,10 @@ slots:
     annotations:
       expected_value: 'country: region, specific location'
       occurrence: '1'
-    string_serialization: '{term}: {term}, {text}'
+    structured_pattern:
+      syntax: '{term}: {term}, {text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001207
   anim_water_method:
     is_a: environment field
@@ -9075,7 +9603,10 @@ slots:
     annotations:
       expected_value: EOL_0001653
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001115
   animal_feed_equip:
     is_a: environment field
@@ -9093,7 +9624,10 @@ slots:
     annotations:
       expected_value: EOL:0001757
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001113
   animal_housing:
     is_a: environment field
@@ -9110,7 +9644,10 @@ slots:
     annotations:
       expected_value: EOL:0001605
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001180
   env_monitoring_zone:
     is_a: environment field
@@ -9132,7 +9669,10 @@ slots:
     annotations:
       expected_value: ENVO
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001254
   farm_equip:
     is_a: environment field
@@ -9151,7 +9691,10 @@ slots:
     annotations:
       expected_value: AGRO:00000416
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001126
   farm_equip_shared:
     is_a: environment field
@@ -9169,7 +9712,10 @@ slots:
     annotations:
       expected_value: AGRO:00000416
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001123
   fertilizer_admin:
     is_a: environment field
@@ -9189,7 +9735,10 @@ slots:
     annotations:
       expected_value: AGRO_00002062
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001127
   food_name_status:
     is_a: environment field
@@ -9207,7 +9756,10 @@ slots:
     annotations:
       expected_value: FOODON:03530087
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001206
   food_prod:
     is_a: environment field
@@ -9227,7 +9779,10 @@ slots:
     annotations:
       expected_value: FOODON:03530206
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001211
   food_product_qual:
     is_a: environment field
@@ -9247,7 +9802,10 @@ slots:
     annotations:
       expected_value: FOODON:00002454
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001213
   food_source:
     is_a: environment field
@@ -9264,7 +9822,10 @@ slots:
     annotations:
       expected_value: FOODON term
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001139
   food_trav_mode:
     is_a: environment field
@@ -9284,7 +9845,10 @@ slots:
     annotations:
       expected_value: GENEPIO:0001064
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001137
   HACCP_term:
     is_a: environment field
@@ -9301,7 +9865,10 @@ slots:
     annotations:
       expected_value: FOODON:03530221
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001215
   host_body_product:
     is_a: environment field
@@ -9321,7 +9888,10 @@ slots:
       expected_value: body substance of the symbiotic organism (host of the samples)
         where the samples was obtained from; FMA or UBERON
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000868
   host_body_site:
     is_a: environment field
@@ -9340,7 +9910,10 @@ slots:
     annotations:
       expected_value: FMA or UBERON
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000867
   host_of_host_env_loc:
     is_a: environment field
@@ -9361,7 +9934,10 @@ slots:
     annotations:
       expected_value: UBERON term(s), multiple values can be separated by pipes.
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001325
   host_of_host_env_med:
     is_a: environment field
@@ -9387,7 +9963,10 @@ slots:
     annotations:
       expected_value: An ontology term for a material such as a tissue type or excreted
         substance.
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001326
   hygienic_area:
     is_a: environment field
@@ -9407,7 +9986,10 @@ slots:
     annotations:
       expected_value: ENVO
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001253
   plant_struc:
     is_a: environment field
@@ -9426,7 +10008,10 @@ slots:
     annotations:
       expected_value: PO
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001060
   plant_water_method:
     is_a: environment field
@@ -9444,7 +10029,10 @@ slots:
     annotations:
       expected_value: AGRO_00000006
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001111
   samp_source_mat_cat:
     is_a: environment field
@@ -9463,7 +10051,10 @@ slots:
     annotations:
       expected_value: GENEPIO:0001237
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001154
   samp_type:
     is_a: environment field
@@ -9484,7 +10075,10 @@ slots:
     annotations:
       expected_value: GENEPIO:0001246
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000998
   season:
     is_a: environment field
@@ -9502,7 +10096,10 @@ slots:
     annotations:
       expected_value: NCIT:C94729
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000829
   soil_cover:
     is_a: environment field
@@ -9519,7 +10116,10 @@ slots:
     annotations:
       expected_value: ENVO:00010483
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001159
   soil_type:
     is_a: environment field
@@ -9537,7 +10137,10 @@ slots:
     annotations:
       expected_value: ENVO_00001998
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000332
   spec_intended_cons:
     is_a: environment field
@@ -9555,7 +10158,10 @@ slots:
     annotations:
       expected_value: FOODON:03510136
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001234
   plant_growth_med:
     is_a: environment field
@@ -9593,7 +10199,10 @@ slots:
     annotations:
       expected_value: CHEBI;timestamp
       occurrence: m
-    string_serialization: '{termLabel} {[termID]};{timestamp}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]};{timestamp}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000751
   animal_intrusion:
     is_a: environment field
@@ -9614,7 +10223,10 @@ slots:
     annotations:
       expected_value: NCIT:C14250 or NCBI taxid
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}|{integer}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001114
   cult_result_org:
     is_a: environment field
@@ -9630,7 +10242,10 @@ slots:
     annotations:
       expected_value: NCIT:C14250 or NCBI taxid
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}|{integer}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001118
   cult_target:
     is_a: environment field
@@ -9648,7 +10263,10 @@ slots:
     annotations:
       expected_value: NCIT:C14250 or NCBI taxid or culture independent
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}|{integer}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001119
   microb_start_taxID:
     is_a: environment field
@@ -9666,7 +10284,10 @@ slots:
     annotations:
       expected_value: NCIT:C14250 or NCBI taxid
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}|{integer}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001222
   serovar_or_serotype:
     is_a: environment field
@@ -9685,7 +10306,10 @@ slots:
     annotations:
       expected_value: NCIT:C14250 or NCBI taxid
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}|{integer}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001157
   spikein_org:
     is_a: environment field
@@ -9704,7 +10328,10 @@ slots:
     annotations:
       expected_value: NCIT:C14250 or NCBI taxid
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}|{integer}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001167
   spikein_serovar:
     is_a: environment field
@@ -9723,7 +10350,10 @@ slots:
     annotations:
       expected_value: NCIT:C14250 or antigenic formula or serovar name
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}|{integer}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001168
   spikein_strain:
     is_a: environment field
@@ -9742,7 +10372,10 @@ slots:
     annotations:
       expected_value: NCIT:C14250 or NCBI taxid or text
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}|{integer}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001170
   host_of_host_disease:
     is_a: environment field
@@ -9761,7 +10394,10 @@ slots:
     annotations:
       expected_value: disease name or Disease Ontology term
       occurrence: m
-    string_serialization: '{termLabel} {[termID]}|{text}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001319
   samp_collect_device:
     is_a: environment field
@@ -9779,7 +10415,10 @@ slots:
     annotations:
       expected_value: device name
       occurrence: '1'
-    string_serialization: '{termLabel} {[termID]}|{text}'
+    structured_pattern:
+      syntax: '{termLabel} {[termID]}|{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000002
   adjacent_environment:
     is_a: environment field
@@ -9798,7 +10437,10 @@ slots:
     annotations:
       expected_value: ENVO_01001110 or ENVO_00000070
       occurrence: m
-    string_serialization: '{termLabel}{[termID]}'
+    structured_pattern:
+      syntax: '{termLabel}{[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001121
   additional_info:
     is_a: environment field
@@ -9815,7 +10457,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000300
   alkalinity_method:
     is_a: environment field
@@ -9831,7 +10476,10 @@ slots:
     annotations:
       expected_value: description of method
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000298
   amniotic_fluid_color:
     is_a: environment field
@@ -9847,7 +10495,10 @@ slots:
     annotations:
       expected_value: color
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000276
   ances_data:
     is_a: environment field
@@ -9865,7 +10516,10 @@ slots:
     annotations:
       expected_value: free text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000247
   animal_am:
     is_a: environment field
@@ -9882,7 +10536,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001243
   animal_am_route:
     is_a: environment field
@@ -9899,7 +10556,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001246
   animal_am_use:
     is_a: environment field
@@ -9916,7 +10576,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001247
   animal_diet:
     is_a: environment field
@@ -9939,7 +10602,10 @@ slots:
     annotations:
       expected_value: text or FOODON_03309997
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001130
   basin:
     is_a: environment field
@@ -9955,7 +10621,10 @@ slots:
     annotations:
       expected_value: name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000290
   biocide_used:
     is_a: environment field
@@ -9977,7 +10646,10 @@ slots:
       expected_value: commercial name of biocide, active ingredient in biocide or
         class of biocide
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001258
   biotic_regm:
     is_a: environment field
@@ -9994,7 +10666,10 @@ slots:
     annotations:
       expected_value: free text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001038
   birth_control:
     is_a: environment field
@@ -10010,7 +10685,10 @@ slots:
     annotations:
       expected_value: medication name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000286
   blood_blood_disord:
     is_a: environment field
@@ -10028,7 +10706,10 @@ slots:
     annotations:
       expected_value: disorder name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000271
   built_struc_type:
     is_a: environment field
@@ -10045,7 +10726,10 @@ slots:
     annotations:
       expected_value: free text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000721
   cur_vegetation:
     is_a: environment field
@@ -10062,7 +10746,10 @@ slots:
     annotations:
       expected_value: current vegetation type
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000312
   dermatology_disord:
     is_a: environment field
@@ -10080,7 +10767,10 @@ slots:
     annotations:
       expected_value: disorder name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000284
   ethnicity:
     is_a: environment field
@@ -10098,7 +10788,10 @@ slots:
     annotations:
       expected_value: text recommend from Wikipedia list
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000895
   farm_equip_san_freq:
     is_a: environment field
@@ -10115,7 +10808,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001125
   ferm_medium:
     is_a: environment field
@@ -10133,7 +10829,10 @@ slots:
     annotations:
       expected_value: growth medium
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001188
   ferm_vessel:
     is_a: environment field
@@ -10149,7 +10848,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001193
   field:
     is_a: environment field
@@ -10165,7 +10867,10 @@ slots:
     annotations:
       expected_value: name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000291
   foetal_health_stat:
     is_a: environment field
@@ -10181,7 +10886,10 @@ slots:
     annotations:
       expected_value: health status
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000275
   food_harvest_proc:
     is_a: environment field
@@ -10200,7 +10908,10 @@ slots:
     annotations:
       expected_value: free text
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001133
   food_prod_char:
     is_a: environment field
@@ -10217,7 +10928,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001136
   food_prod_synonym:
     is_a: environment field
@@ -10234,7 +10948,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001212
   Food_Product_type:
     is_a: environment field
@@ -10248,7 +10965,10 @@ slots:
     aliases:
     - Foodon product type
     annotations: {}
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001184
   Food_source:
     is_a: environment field
@@ -10264,7 +10984,10 @@ slots:
     - Food source
     annotations:
       expected_value: FOODON term
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001139
   gastrointest_disord:
     is_a: environment field
@@ -10283,7 +11006,10 @@ slots:
     annotations:
       expected_value: disorder name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000280
   gestation_state:
     is_a: environment field
@@ -10299,7 +11025,10 @@ slots:
     annotations:
       expected_value: gestation state
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000272
   growth_medium:
     is_a: environment field
@@ -10317,7 +11046,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001108
   gynecologic_disord:
     is_a: environment field
@@ -10335,7 +11067,10 @@ slots:
     annotations:
       expected_value: gynecological disorder
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000288
   host_body_habitat:
     is_a: environment field
@@ -10351,7 +11086,10 @@ slots:
     annotations:
       expected_value: free text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000866
   host_color:
     is_a: environment field
@@ -10367,7 +11105,10 @@ slots:
     annotations:
       expected_value: color
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000260
   host_common_name:
     is_a: environment field
@@ -10383,7 +11124,10 @@ slots:
     annotations:
       expected_value: common name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000248
   host_diet:
     is_a: environment field
@@ -10400,7 +11144,10 @@ slots:
     annotations:
       expected_value: diet type
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000869
   host_genotype:
     is_a: environment field
@@ -10416,7 +11163,10 @@ slots:
     annotations:
       expected_value: genotype
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000365
   host_infra_specific_name:
     is_a: environment field
@@ -10432,7 +11182,10 @@ slots:
     annotations:
       expected_value: name of the symbiotic organism (host of the samples)
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000253
   host_infra_specific_rank:
     is_a: environment field
@@ -10449,7 +11202,10 @@ slots:
     annotations:
       expected_value: rank of the symbiotic organism (host of the samples)
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000254
   host_life_stage:
     is_a: environment field
@@ -10465,7 +11221,10 @@ slots:
     annotations:
       expected_value: stage
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000251
   host_of_host_coinf:
     is_a: environment field
@@ -10487,7 +11246,10 @@ slots:
     annotations:
       expected_value: species name of coinfecting organism(s)
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001310
   host_of_host_geno:
     is_a: environment field
@@ -10503,7 +11265,10 @@ slots:
     annotations:
       expected_value: genotype
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001331
   host_of_host_infname:
     is_a: environment field
@@ -10520,7 +11285,10 @@ slots:
     annotations:
       expected_value: name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001329
   host_of_host_infrank:
     is_a: environment field
@@ -10537,7 +11305,10 @@ slots:
     annotations:
       expected_value: rank
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001330
   host_of_host_name:
     is_a: environment field
@@ -10552,7 +11323,10 @@ slots:
     - host of the symbiotic host common name
     annotations:
       expected_value: common name
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001324
   host_of_host_sub_id:
     is_a: environment field
@@ -10569,7 +11343,10 @@ slots:
     annotations:
       expected_value: unique identifier
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001327
   host_shape:
     is_a: environment field
@@ -10585,7 +11362,10 @@ slots:
     annotations:
       expected_value: shape
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000261
   host_subject_id:
     is_a: environment field
@@ -10601,7 +11381,10 @@ slots:
     annotations:
       expected_value: unique identifier
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000861
   host_substrate:
     is_a: environment field
@@ -10617,7 +11400,10 @@ slots:
     annotations:
       expected_value: substrate name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000252
   host_symbiont:
     is_a: environment field
@@ -10634,7 +11420,10 @@ slots:
     annotations:
       expected_value: species name or common name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001298
   IFSAC_category:
     is_a: environment field
@@ -10661,7 +11450,10 @@ slots:
     annotations:
       expected_value: IFSAC term
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001179
   kidney_disord:
     is_a: environment field
@@ -10679,7 +11471,10 @@ slots:
     annotations:
       expected_value: disorder name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000277
   library_prep_kit:
     is_a: environment field
@@ -10697,7 +11492,10 @@ slots:
     annotations:
       expected_value: name of library preparation kit
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001145
   liver_disord:
     is_a: environment field
@@ -10715,7 +11513,10 @@ slots:
     annotations:
       expected_value: disorder name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000282
   local_class:
     is_a: environment field
@@ -10731,7 +11532,10 @@ slots:
     annotations:
       expected_value: local classification name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000330
   maternal_health_stat:
     is_a: environment field
@@ -10747,7 +11551,10 @@ slots:
     annotations:
       expected_value: health status
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000273
   microb_start_prep:
     is_a: environment field
@@ -10764,7 +11571,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001220
   microb_start_source:
     is_a: environment field
@@ -10781,7 +11591,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001221
   nose_throat_disord:
     is_a: environment field
@@ -10800,7 +11613,10 @@ slots:
     annotations:
       expected_value: disorder name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000270
   nucl_acid_ext_kit:
     is_a: environment field
@@ -10817,7 +11633,10 @@ slots:
     annotations:
       expected_value: The name of an extraction kit
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001223
   plant_product:
     is_a: environment field
@@ -10833,7 +11652,10 @@ slots:
     annotations:
       expected_value: product name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001058
   pre_treatment:
     is_a: environment field
@@ -10850,7 +11672,10 @@ slots:
     annotations:
       expected_value: pre-treatment type
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000348
   primary_treatment:
     is_a: environment field
@@ -10868,7 +11693,10 @@ slots:
     annotations:
       expected_value: primary treatment type
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000349
   prod_label_claims:
     is_a: environment field
@@ -10886,7 +11714,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001337
   pulmonary_disord:
     is_a: environment field
@@ -10904,7 +11735,10 @@ slots:
     annotations:
       expected_value: disorder name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000269
   reactor_type:
     is_a: environment field
@@ -10922,7 +11756,10 @@ slots:
     annotations:
       expected_value: reactor type name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000350
   rel_location:
     is_a: environment field
@@ -10939,7 +11776,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001161
   repository_name:
     is_a: environment field
@@ -10957,7 +11797,10 @@ slots:
     annotations:
       expected_value: Institution
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001152
   reservoir:
     is_a: environment field
@@ -10973,7 +11816,10 @@ slots:
     annotations:
       expected_value: name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000303
   room_architec_elem:
     is_a: environment field
@@ -10990,7 +11836,10 @@ slots:
     annotations:
       expected_value: free text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000233
   root_med_solid:
     is_a: environment field
@@ -11007,7 +11856,10 @@ slots:
     annotations:
       expected_value: name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001063
   samp_pooling:
     is_a: environment field
@@ -11025,7 +11877,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001153
   samp_sort_meth:
     is_a: environment field
@@ -11044,7 +11899,10 @@ slots:
     annotations:
       expected_value: description of method
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000216
   samp_stor_loc:
     is_a: environment field
@@ -11061,7 +11919,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000755
   samp_store_loc:
     is_a: environment field
@@ -11077,7 +11938,10 @@ slots:
     annotations:
       expected_value: location name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000755
   samp_store_sol:
     is_a: environment field
@@ -11093,7 +11957,10 @@ slots:
     annotations:
       expected_value: solution name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001317
   samp_well_name:
     is_a: environment field
@@ -11109,7 +11976,10 @@ slots:
     annotations:
       expected_value: name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000296
   sample_name:
     is_a: environment field
@@ -11128,7 +11998,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001107
   secondary_treatment:
     is_a: environment field
@@ -11145,7 +12018,10 @@ slots:
     annotations:
       expected_value: secondary treatment type
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000351
   sequencing_kit:
     is_a: environment field
@@ -11165,7 +12041,10 @@ slots:
     annotations:
       expected_value: name of sequencing kit used
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001155
   sequencing_location:
     is_a: environment field
@@ -11182,7 +12061,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001156
   sewage_type:
     is_a: environment field
@@ -11198,7 +12080,10 @@ slots:
     annotations:
       expected_value: sewage type name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000215
   sexual_act:
     is_a: environment field
@@ -11214,7 +12099,10 @@ slots:
     annotations:
       expected_value: partner sex;frequency
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000285
   shading_device_mat:
     is_a: environment field
@@ -11230,7 +12118,10 @@ slots:
     annotations:
       expected_value: material name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000245
   tertiary_treatment:
     is_a: environment field
@@ -11247,7 +12138,10 @@ slots:
     annotations:
       expected_value: tertiary treatment type
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000352
   travel_out_six_month:
     is_a: environment field
@@ -11264,7 +12158,10 @@ slots:
     annotations:
       expected_value: country name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000268
   urogenit_disord:
     is_a: environment field
@@ -11283,7 +12180,10 @@ slots:
     annotations:
       expected_value: disorder name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000289
   urogenit_tract_disor:
     is_a: environment field
@@ -11301,7 +12201,10 @@ slots:
     annotations:
       expected_value: disorder name
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000278
   ventilation_type:
     is_a: environment field
@@ -11317,7 +12220,10 @@ slots:
     annotations:
       expected_value: ventilation type name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000756
   wastewater_type:
     is_a: environment field
@@ -11334,7 +12240,10 @@ slots:
     annotations:
       expected_value: wastewater type name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000353
   water_source_adjac:
     is_a: environment field
@@ -11353,7 +12262,10 @@ slots:
     annotations:
       expected_value: ENVO_01001110 or ENVO_00000070
       occurrence: m
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001122
   win:
     is_a: environment field
@@ -11372,7 +12284,10 @@ slots:
     annotations:
       expected_value: text
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000297
   wind_direction:
     is_a: environment field
@@ -11388,7 +12303,10 @@ slots:
     annotations:
       expected_value: wind direction name
       occurrence: '1'
-    string_serialization: '{text}'
+    structured_pattern:
+      syntax: '{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000757
   farm_equip_san:
     is_a: environment field
@@ -11408,7 +12326,10 @@ slots:
         active ingredient in sanitizer
       preferred_unit: parts per million
       occurrence: m
-    string_serialization: '{text} {float} {unit}'
+    structured_pattern:
+      syntax: '{text} {float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001124
   spikein_antibiotic:
     is_a: environment field
@@ -11426,7 +12347,10 @@ slots:
     annotations:
       expected_value: drug name; concentration
       occurrence: m
-    string_serialization: '{text} {integer}'
+    structured_pattern:
+      syntax: '{text} {integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001171
   spikein_metal:
     is_a: environment field
@@ -11444,7 +12368,10 @@ slots:
     annotations:
       expected_value: heavy metal name or chemical symbol; concentration
       occurrence: m
-    string_serialization: '{text} {integer}'
+    structured_pattern:
+      syntax: '{text} {integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001172
   host_last_meal:
     is_a: environment field
@@ -11461,7 +12388,10 @@ slots:
     annotations:
       expected_value: content;duration
       occurrence: m
-    string_serialization: '{text};{duration}'
+    structured_pattern:
+      syntax: '{text};{duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000870
   store_cond:
     is_a: environment field
@@ -11478,7 +12408,10 @@ slots:
     annotations:
       expected_value: storage condition type;duration
       occurrence: '1'
-    string_serialization: '{text};{duration}'
+    structured_pattern:
+      syntax: '{text};{duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000327
   air particulate matter concentration:
     is_a: environment field
@@ -11497,7 +12430,10 @@ slots:
       expected_value: particulate matter name;measurement value
       preferred_unit: microgram per cubic meter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000108
   air_PM_concen:
     is_a: environment field
@@ -11516,7 +12452,10 @@ slots:
       expected_value: particulate matter name;measurement value
       preferred_unit: micrograms per cubic meter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000108
   aromatics_pc:
     is_a: environment field
@@ -11537,7 +12476,10 @@ slots:
       expected_value: name;measurement value
       preferred_unit: percent
       occurrence: '1'
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000133
   asphaltenes_pc:
     is_a: environment field
@@ -11558,7 +12500,10 @@ slots:
       expected_value: name;measurement value
       preferred_unit: percent
       occurrence: '1'
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000135
   atmospheric_data:
     is_a: environment field
@@ -11574,7 +12519,10 @@ slots:
     annotations:
       expected_value: atmospheric data name;measurement value
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001097
   biomass:
     is_a: environment field
@@ -11592,7 +12540,10 @@ slots:
       expected_value: biomass type;measurement value
       preferred_unit: ton, kilogram, gram
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000174
   diether_lipids:
     is_a: environment field
@@ -11610,7 +12561,10 @@ slots:
       expected_value: diether lipid name;measurement value
       preferred_unit: nanogram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000178
   emulsions:
     is_a: environment field
@@ -11629,7 +12583,10 @@ slots:
       expected_value: emulsion name;measurement value
       preferred_unit: gram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000660
   gaseous_substances:
     is_a: environment field
@@ -11647,7 +12604,10 @@ slots:
       expected_value: gaseous substance name;measurement value
       preferred_unit: micromole per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000661
   heavy_metals:
     is_a: environment field
@@ -11665,7 +12625,10 @@ slots:
       expected_value: heavy metal name;measurement value unit
       preferred_unit: microgram per gram
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000652
   inorg_particles:
     is_a: environment field
@@ -11683,7 +12646,10 @@ slots:
       expected_value: inorganic particle name;measurement value
       preferred_unit: mole per liter, milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000664
   misc_param:
     is_a: environment field
@@ -11700,7 +12666,10 @@ slots:
     annotations:
       expected_value: parameter name;measurement value
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000752
   n_alkanes:
     is_a: environment field
@@ -11717,7 +12686,10 @@ slots:
       expected_value: n-alkane name;measurement value
       preferred_unit: micromole per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000503
   org_particles:
     is_a: environment field
@@ -11735,7 +12707,10 @@ slots:
       expected_value: particle name;measurement value
       preferred_unit: gram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000665
   organism_count:
     is_a: environment field
@@ -11755,7 +12730,10 @@ slots:
       expected_value: organism name;measurement value
       preferred_unit: number of organism per cubic meter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000103
   particle_class:
     is_a: environment field
@@ -11774,7 +12752,10 @@ slots:
       expected_value: particle name;measurement value
       preferred_unit: micrometer
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000206
   phaeopigments:
     is_a: environment field
@@ -11791,7 +12772,10 @@ slots:
       expected_value: phaeopigment name;measurement value
       preferred_unit: milligram per cubic meter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000180
   phosplipid_fatt_acid:
     is_a: environment field
@@ -11808,7 +12792,10 @@ slots:
       expected_value: phospholipid fatty acid name;measurement value
       preferred_unit: mole per gram, mole per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000181
   pollutants:
     is_a: environment field
@@ -11828,7 +12815,10 @@ slots:
       preferred_unit: gram, mole per liter, milligram per liter, microgram per cubic
         meter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000107
   resins_pc:
     is_a: environment field
@@ -11849,7 +12839,10 @@ slots:
       expected_value: name;measurement value
       preferred_unit: percent
       occurrence: '1'
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000134
   root_med_carbon:
     is_a: environment field
@@ -11866,7 +12859,10 @@ slots:
       expected_value: carbon source name;measurement value
       preferred_unit: milligram per liter
       occurrence: '1'
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000577
   root_med_macronutr:
     is_a: environment field
@@ -11884,7 +12880,10 @@ slots:
       expected_value: macronutrient name;measurement value
       preferred_unit: milligram per liter
       occurrence: '1'
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000578
   root_med_micronutr:
     is_a: environment field
@@ -11902,7 +12901,10 @@ slots:
       expected_value: micronutrient name;measurement value
       preferred_unit: milligram per liter
       occurrence: '1'
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000579
   root_med_regl:
     is_a: environment field
@@ -11920,7 +12922,10 @@ slots:
       expected_value: regulator name;measurement value
       preferred_unit: milligram per liter
       occurrence: '1'
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000581
   root_med_suppl:
     is_a: environment field
@@ -11939,7 +12944,10 @@ slots:
       expected_value: supplement name;measurement value
       preferred_unit: milligram per liter
       occurrence: '1'
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000580
   samp_preserv:
     is_a: environment field
@@ -11957,7 +12965,10 @@ slots:
       expected_value: name;measurement value
       preferred_unit: milliliter
       occurrence: '1'
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000463
   saturates_pc:
     is_a: environment field
@@ -11978,7 +12989,10 @@ slots:
       expected_value: name;measurement value
       preferred_unit: percent
       occurrence: '1'
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000131
   soluble_inorg_mat:
     is_a: environment field
@@ -11996,7 +13010,10 @@ slots:
       expected_value: soluble inorganic material name;measurement value
       preferred_unit: gram, microgram, mole per liter, gram per liter, parts per million
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000672
   soluble_org_mat:
     is_a: environment field
@@ -12014,7 +13031,10 @@ slots:
       expected_value: soluble organic material name;measurement value
       preferred_unit: gram, microgram, mole per liter, gram per liter, parts per million
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000673
   suspend_solids:
     is_a: environment field
@@ -12033,7 +13053,10 @@ slots:
       preferred_unit: gram, microgram, milligram per liter, mole per liter, gram per
         liter, part per million
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000150
   volatile_org_comp:
     is_a: environment field
@@ -12052,7 +13075,10 @@ slots:
       expected_value: volatile organic compound name;measurement value
       preferred_unit: microgram per cubic meter, parts per million, nanogram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000115
   spikein_count:
     is_a: environment field
@@ -12110,7 +13136,10 @@ slots:
       expected_value: exposure type;light intensity;light quality
       preferred_unit: lux; micrometer, nanometer, angstrom
       occurrence: '1'
-    string_serialization: '{text};{float} {unit};{float} {unit}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{float} {unit}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000569
   fungicide_regm:
     is_a: environment field
@@ -12131,7 +13160,10 @@ slots:
         duration
       preferred_unit: gram, mole per liter, milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000557
   gaseous_environment:
     is_a: environment field
@@ -12151,7 +13183,10 @@ slots:
         duration
       preferred_unit: micromole per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000558
   herbicide_regm:
     is_a: environment field
@@ -12173,7 +13208,10 @@ slots:
         duration
       preferred_unit: gram, mole per liter, milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000561
   non_mineral_nutr_regm:
     is_a: environment field
@@ -12195,7 +13233,10 @@ slots:
         duration;interval;experimental duration
       preferred_unit: gram, mole per liter, milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000571
   pesticide_regm:
     is_a: environment field
@@ -12217,7 +13258,10 @@ slots:
         duration
       preferred_unit: gram, mole per liter, milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000573
   salt_regm:
     is_a: environment field
@@ -12239,7 +13283,10 @@ slots:
         duration
       preferred_unit: gram, microgram, mole per liter, gram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000582
   antibiotic_regm:
     is_a: environment field
@@ -12260,7 +13307,10 @@ slots:
       expected_value: antibiotic name;antibiotic amount;treatment interval and duration
       preferred_unit: milligram
       occurrence: m
-    string_serialization: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000553
   chem_mutagen:
     is_a: environment field
@@ -12280,7 +13330,10 @@ slots:
       expected_value: mutagen name;mutagen amount;treatment interval and duration
       preferred_unit: milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000555
   fertilizer_regm:
     is_a: environment field
@@ -12301,7 +13354,10 @@ slots:
       expected_value: fertilizer name;fertilizer amount;treatment interval and duration
       preferred_unit: gram, mole per liter, milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000556
   growth_hormone_regm:
     is_a: environment field
@@ -12323,7 +13379,10 @@ slots:
         and duration
       preferred_unit: gram, mole per liter, milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000560
   mineral_nutr_regm:
     is_a: environment field
@@ -12345,7 +13404,10 @@ slots:
         and duration
       preferred_unit: gram, mole per liter, milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000570
   non_min_nutr_regm:
     is_a: environment field
@@ -12367,7 +13429,10 @@ slots:
         interval and duration
       preferred_unit: gram, mole per liter, milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000571
   radiation_regm:
     is_a: environment field
@@ -12389,7 +13454,10 @@ slots:
         duration
       preferred_unit: rad, gray
       occurrence: m
-    string_serialization: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000575
   agrochem_addition:
     is_a: environment field
@@ -12406,7 +13474,10 @@ slots:
       expected_value: agrochemical name;agrochemical amount;timestamp
       preferred_unit: gram, mole per liter, milligram per liter
       occurrence: m
-    string_serialization: '{text};{float} {unit};{timestamp}'
+    structured_pattern:
+      syntax: '{text};{float} {unit};{timestamp}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000639
   adj_room:
     is_a: environment field
@@ -12423,7 +13494,10 @@ slots:
     annotations:
       expected_value: room name;room number
       occurrence: '1'
-    string_serialization: '{text};{integer}'
+    structured_pattern:
+      syntax: '{text};{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000219
   room_door_share:
     is_a: environment field
@@ -12440,7 +13514,10 @@ slots:
     annotations:
       expected_value: room name;room number
       occurrence: '1'
-    string_serialization: '{text};{integer}'
+    structured_pattern:
+      syntax: '{text};{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000242
   room_hallway:
     is_a: environment field
@@ -12457,7 +13534,10 @@ slots:
     annotations:
       expected_value: room name;room number
       occurrence: '1'
-    string_serialization: '{text};{integer}'
+    structured_pattern:
+      syntax: '{text};{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000238
   room_wall_share:
     is_a: environment field
@@ -12474,7 +13554,10 @@ slots:
     annotations:
       expected_value: room name;room number
       occurrence: '1'
-    string_serialization: '{text};{integer}'
+    structured_pattern:
+      syntax: '{text};{integer}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000243
   drug_usage:
     is_a: environment field
@@ -12509,7 +13592,10 @@ slots:
     annotations:
       expected_value: perturbation type name;time interval
       occurrence: m
-    string_serialization: '{text};{interval}'
+    structured_pattern:
+      syntax: '{text};{interval}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000754
   climate_environment:
     is_a: environment field
@@ -12528,7 +13614,10 @@ slots:
     annotations:
       expected_value: climate name;treatment duration;interval;experimental duration
       occurrence: m
-    string_serialization: '{text};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{text};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001040
   season_environment:
     is_a: environment field
@@ -12548,7 +13637,10 @@ slots:
       expected_value: seasonal environment name;treatment duration;interval;experimental
         duration
       occurrence: m
-    string_serialization: '{text};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{text};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001068
   standing_water_regm:
     is_a: environment field
@@ -12568,7 +13660,10 @@ slots:
       expected_value: standing water type;treatment duration;interval;experimental
         duration
       occurrence: m
-    string_serialization: '{text};{period};{interval};{period}'
+    structured_pattern:
+      syntax: '{text};{period};{interval};{period}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001069
   host_family_relation:
     is_a: environment field
@@ -12585,7 +13680,10 @@ slots:
     annotations:
       expected_value: relationship type;arbitrary identifier
       occurrence: m
-    string_serialization: '{text};{text}'
+    structured_pattern:
+      syntax: '{text};{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000872
   host_family_relationship:
     is_a: environment field
@@ -12603,7 +13701,10 @@ slots:
       expected_value: Relationships to other symbiotic organisms (host od samples)
         in the same study; relationship type;arbitrary identifier
       occurrence: '1'
-    string_serialization: '{text};{text}'
+    structured_pattern:
+      syntax: '{text};{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000872
   host_of_host_fam_rel:
     is_a: environment field
@@ -12621,7 +13722,10 @@ slots:
     annotations:
       expected_value: relationship type;arbitrary identifier
       occurrence: m
-    string_serialization: '{text};{text}'
+    structured_pattern:
+      syntax: '{text};{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001328
   mechanical_damage:
     is_a: environment field
@@ -12638,7 +13742,10 @@ slots:
     annotations:
       expected_value: damage type;body site
       occurrence: m
-    string_serialization: '{text};{text}'
+    structured_pattern:
+      syntax: '{text};{text}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001052
   biocide:
     is_a: environment field
@@ -12655,7 +13762,10 @@ slots:
     annotations:
       expected_value: name;name;timestamp
       occurrence: '1'
-    string_serialization: '{text};{text};{timestamp}'
+    structured_pattern:
+      syntax: '{text};{text};{timestamp}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001011
   chem_treatment:
     is_a: environment field
@@ -12675,7 +13785,10 @@ slots:
     annotations:
       expected_value: name;name;timestamp
       occurrence: '1'
-    string_serialization: '{text};{text};{timestamp}'
+    structured_pattern:
+      syntax: '{text};{text};{timestamp}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001012
   previous_land_use:
     is_a: environment field
@@ -12691,7 +13804,10 @@ slots:
     annotations:
       expected_value: land use name;date
       occurrence: '1'
-    string_serialization: '{text};{timestamp}'
+    structured_pattern:
+      syntax: '{text};{timestamp}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000315
   org_count_qpcr_info:
     is_a: environment field
@@ -12714,8 +13830,11 @@ slots:
         elongation:degrees_minutes; total cycles
       preferred_unit: number of cells per gram (or ml or cm^2)
       occurrence: '1'
-    string_serialization: '{text};FWD:{dna};REV:{dna};initial denaturation:degrees_minutes;denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
-      elongation:degrees_minutes; total cycles'
+    structured_pattern:
+      syntax: '{text};FWD:{dna};REV:{dna};initial denaturation:degrees_minutes;denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
+        elongation:degrees_minutes; total cycles'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000099
   cult_root_med:
     is_a: environment field
@@ -12734,7 +13853,10 @@ slots:
     annotations:
       expected_value: name, PMID,DOI or url
       occurrence: '1'
-    string_serialization: '{text}|{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: '{text}|{PMID}|{DOI}|{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001041
   coll_site_geo_feat:
     is_a: environment field
@@ -12755,7 +13877,10 @@ slots:
     annotations:
       expected_value: ENVO:00000002 or ENVO:00000070
       occurrence: '1'
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001183
   dietary_claim_use:
     is_a: environment field
@@ -12776,7 +13901,10 @@ slots:
     annotations:
       expected_value: FOODON:03510023
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001199
   food_additive:
     is_a: environment field
@@ -12797,7 +13925,10 @@ slots:
     annotations:
       expected_value: FOODON:03412972
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001200
   food_allergen_label:
     is_a: environment field
@@ -12814,7 +13945,10 @@ slots:
     annotations:
       expected_value: FOODON:03510213
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001201
   food_contact_surf:
     is_a: environment field
@@ -12832,7 +13966,10 @@ slots:
     annotations:
       expected_value: FOODON:03500010
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001131
   food_contain_wrap:
     is_a: environment field
@@ -12851,7 +13988,10 @@ slots:
     annotations:
       expected_value: FOODON:03490100
       occurrence: '1'
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001132
   food_cooking_proc:
     is_a: environment field
@@ -12868,7 +14008,10 @@ slots:
     annotations:
       expected_value: FOODON:03450002
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001202
   food_dis_point_city:
     is_a: environment field
@@ -12888,7 +14031,10 @@ slots:
     - food distribution point geographic location (city)
     annotations:
       expected_value: GAZ:00000448
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001204
   food_ingredient:
     is_a: environment field
@@ -12908,7 +14054,10 @@ slots:
     annotations:
       expected_value: FOODON
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001205
   food_pack_integrity:
     is_a: environment field
@@ -12926,7 +14075,10 @@ slots:
     annotations:
       expected_value: FOODON:03530218
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001209
   food_pack_medium:
     is_a: environment field
@@ -12949,7 +14101,10 @@ slots:
     annotations:
       expected_value: FOODON:03480020
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001134
   food_preserv_proc:
     is_a: environment field
@@ -12967,7 +14122,10 @@ slots:
     annotations:
       expected_value: FOODON:03470107
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001135
   food_prior_contact:
     is_a: environment field
@@ -12987,7 +14145,10 @@ slots:
     annotations:
       expected_value: FOODON:03530077
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001210
   food_product_type:
     is_a: environment field
@@ -13010,7 +14171,10 @@ slots:
     annotations:
       expected_value: FOODON:00001002 or FOODON:03309997
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001184
   food_trav_vehic:
     is_a: environment field
@@ -13030,7 +14194,10 @@ slots:
     annotations:
       expected_value: ENVO:01000604
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001138
   food_treat_proc:
     is_a: environment field
@@ -13050,7 +14217,10 @@ slots:
     annotations:
       expected_value: FOODON:03460111
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001140
   growth_facil:
     is_a: environment field
@@ -13068,7 +14238,10 @@ slots:
     annotations:
       expected_value: free text or CO
       occurrence: '1'
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001043
   microb_cult_med:
     is_a: environment field
@@ -13088,7 +14261,10 @@ slots:
     annotations:
       expected_value: MICRO:0000067
       occurrence: '1'
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001216
   part_plant_animal:
     is_a: environment field
@@ -13106,7 +14282,10 @@ slots:
     annotations:
       expected_value: FOODON:03420116
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001149
   samp_stor_device:
     is_a: environment field
@@ -13124,7 +14303,10 @@ slots:
     annotations:
       expected_value: NCIT:C4318
       occurrence: '1'
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001228
   samp_stor_media:
     is_a: environment field
@@ -13145,7 +14327,10 @@ slots:
     annotations:
       expected_value: MICRO:0000067
       occurrence: '1'
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001229
   spikein_growth_med:
     is_a: environment field
@@ -13169,7 +14354,10 @@ slots:
     annotations:
       expected_value: MICRO:0000067
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001169
   ster_meth_samp_room:
     is_a: environment field
@@ -13188,7 +14376,10 @@ slots:
     annotations:
       expected_value: ENVO:01001026
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001259
   study_design:
     is_a: environment field
@@ -13209,7 +14400,10 @@ slots:
     annotations:
       expected_value: OBI:0500000
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001236
   study_tmnt:
     is_a: environment field
@@ -13230,7 +14424,10 @@ slots:
     annotations:
       expected_value: MCO:0000866
       occurrence: m
-    string_serialization: '{text}|{termLabel} {[termID]}'
+    structured_pattern:
+      syntax: '{text}|{termLabel} {[termID]}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0001240
   cons_purch_date:
     is_a: environment field
@@ -13494,7 +14691,10 @@ slots:
     annotations:
       expected_value: URL
       occurrence: m
-    string_serialization: '{URL}'
+    structured_pattern:
+      syntax: '{URL}'
+      interpolated: false
+      partial_match: false
     slot_uri: MIXS:0000091
 classes: {}
 subsets:

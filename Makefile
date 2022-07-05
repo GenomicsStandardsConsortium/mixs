@@ -2,10 +2,9 @@
 
 RUN=poetry run
 
-.PHONY: all clean gh_docs docserve
+.PHONY: all clean gh_docs docserve value_syntax_research
 
-# html_docs
-all: clean model/schema/mixs.yaml generated/mixs.py mkdocs_html/index.html
+all: clean value_syntax_research model/schema/mixs.yaml generated/mixs.py mkdocs_html/index.html
 
 # ---------------------------------------
 # TSVs from google drive
@@ -13,12 +12,11 @@ all: clean model/schema/mixs.yaml generated/mixs.py mkdocs_html/index.html
 # for seeding
 
 clean:
-	#rm -rf downloads/*tsv
+	rm -rf downloads/*.*sv
 	rm -rf generated/*
 	rm -rf logs/*
 	rm -rf mkdocs_html/
-	rm -rf model/schema/*yaml
-	rm -rf downloads/*.*sv
+	rm -rf model/schema/*.yaml
 
 model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
 	$(RUN) python -m gsctools.mixs_converter  2>&1 | tee -a logs/sheet2linkml.log
@@ -37,6 +35,7 @@ generated/mixs.py: model/schema/mixs.yaml
 		--exclude excel \
 		--exclude java \
 		--exclude markdown \
+		--exclude owl \
 		--dir $(dir $@) $< 2>&1 | tee -a logs/linkml_artifact_generation.log
 #	mkdir generated/excel
 #	$(RUN) gen-excel --output generated/excel/mixs.xlsx $<
@@ -73,3 +72,6 @@ docserve:
 # exposes at https://GenomicsStandardsConsortium.github.io/mixs/
 gh_docs:
 	poetry run mkdocs gh-deploy
+
+value_syntax_research: downloads/mixs6.tsv downloads/mixs6_core.tsv
+	poetry run python gsctools/value_syntaxes.py
