@@ -24,105 +24,111 @@ classes:
     - env_broad_scale
     - env_local_scale
     - env_medium
+    - oxy_stat_samp
+    - samp_store_dur
+    - ph
     - alkalinity
     - biochem_oxygen_dem
-    - chem_administration
     - chem_oxygen_dem
     - efficiency_percent
-    - emulsions
-    - gaseous_substances
     - indust_eff_percent
-    - inorg_particles
-    - misc_param
     - nitrate
-    - org_particles
-    - organism_count
-    - oxy_stat_samp
-    - ph
-    - perturbation
     - phosphate
+    - salinity
+    - samp_store_temp
+    - sludge_retent_time
+    - sodium
+    - tot_nitro
+    - tot_phosphate
+    - chem_administration
     - pre_treatment
     - primary_treatment
     - reactor_type
-    - salinity
-    - samp_store_dur
     - samp_store_loc
-    - samp_store_temp
     - secondary_treatment
     - sewage_type
-    - sludge_retent_time
-    - sodium
+    - tertiary_treatment
+    - wastewater_type
+    - emulsions
+    - gaseous_substances
+    - inorg_particles
+    - misc_param
+    - org_particles
     - soluble_inorg_mat
     - soluble_org_mat
     - suspend_solids
-    - tertiary_treatment
-    - tot_nitro
-    - tot_phosphate
-    - wastewater_type
+    - organism_count
+    - perturbation
     slot_usage:
-      samp_name:
-        required: true
-      project_name:
-        required: true
-      depth:
+      oxy_stat_samp:
+        required: false
+      samp_store_dur:
+        required: false
+      ph:
         required: false
       alkalinity:
         required: false
       biochem_oxygen_dem:
         required: false
-      chem_administration:
-        required: false
       chem_oxygen_dem:
+        required: false
+      depth:
         required: false
       efficiency_percent:
         required: false
-      emulsions:
-        required: false
-      gaseous_substances:
-        required: false
       indust_eff_percent:
-        required: false
-      inorg_particles:
-        required: false
-      misc_param:
         required: false
       nitrate:
         required: false
-      org_particles:
-        required: false
-      organism_count:
-        required: false
-      oxy_stat_samp:
-        required: false
-      ph:
-        required: false
-      perturbation:
-        required: false
       phosphate:
         required: false
-      pre_treatment:
-        required: false
-      primary_treatment:
-        required: false
-      reactor_type:
-        required: false
       salinity:
-        required: false
-      samp_store_dur:
-        required: false
-      samp_store_loc:
         required: false
       samp_store_temp:
         required: false
       samp_vol_we_dna_ext:
         required: false
+      sludge_retent_time:
+        required: false
+      sodium:
+        required: false
+      temp:
+        required: false
+      tot_nitro:
+        required: false
+      tot_phosphate:
+        required: false
+      chem_administration:
+        required: false
+      pre_treatment:
+        required: false
+      primary_treatment:
+        required: false
+      project_name:
+        required: true
+      reactor_type:
+        required: false
+      samp_name:
+        required: true
+      samp_store_loc:
+        required: false
       secondary_treatment:
         required: false
       sewage_type:
         required: false
-      sludge_retent_time:
+      tertiary_treatment:
         required: false
-      sodium:
+      wastewater_type:
+        required: false
+      emulsions:
+        required: false
+      gaseous_substances:
+        required: false
+      inorg_particles:
+        required: false
+      misc_param:
+        required: false
+      org_particles:
         required: false
       soluble_inorg_mat:
         required: false
@@ -130,15 +136,9 @@ classes:
         required: false
       suspend_solids:
         required: false
-      temp:
+      organism_count:
         required: false
-      tertiary_treatment:
-        required: false
-      tot_nitro:
-        required: false
-      tot_phosphate:
-        required: false
-      wastewater_type:
+      perturbation:
         required: false
 subsets: {}
 enums: {}

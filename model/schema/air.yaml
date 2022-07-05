@@ -24,67 +24,51 @@ classes:
     - env_broad_scale
     - env_local_scale
     - env_medium
+    - oxy_stat_samp
+    - samp_store_dur
     - barometric_press
     - carb_dioxide
     - carb_monoxide
-    - chem_administration
     - humidity
     - methane
-    - organism_count
     - oxygen
-    - oxy_stat_samp
-    - perturbation
-    - pollutants
-    - air particulate matter concentration
     - salinity
-    - samp_store_dur
-    - samp_store_loc
     - samp_store_temp
     - solar_irradiance
     - ventilation_rate
-    - ventilation_type
-    - volatile_org_comp
-    - wind_direction
     - wind_speed
+    - chem_administration
+    - samp_store_loc
+    - ventilation_type
+    - wind_direction
+    - air particulate matter concentration
     - misc_param
+    - pollutants
+    - volatile_org_comp
+    - organism_count
+    - perturbation
     slot_usage:
-      samp_name:
-        required: true
-      project_name:
-        required: true
+      oxy_stat_samp:
+        required: false
+      samp_store_dur:
+        required: false
       alt:
         required: true
-      elev:
-        required: false
       barometric_press:
         required: false
       carb_dioxide:
         required: false
       carb_monoxide:
         required: false
-      chem_administration:
+      elev:
         required: false
       humidity:
         required: false
       methane:
         required: false
-      organism_count:
-        required: false
       oxygen:
         required: false
-      oxy_stat_samp:
-        required: false
-      perturbation:
-        required: false
-      pollutants:
-        required: false
-      air particulate matter concentration:
-        required: false
       salinity:
-        required: false
-      samp_store_dur:
-        required: false
-      samp_store_loc:
         required: false
       samp_store_temp:
         required: false
@@ -96,15 +80,31 @@ classes:
         required: false
       ventilation_rate:
         required: false
-      ventilation_type:
+      wind_speed:
         required: false
-      volatile_org_comp:
+      chem_administration:
+        required: false
+      project_name:
+        required: true
+      samp_name:
+        required: true
+      samp_store_loc:
+        required: false
+      ventilation_type:
         required: false
       wind_direction:
         required: false
-      wind_speed:
+      air particulate matter concentration:
         required: false
       misc_param:
+        required: false
+      pollutants:
+        required: false
+      volatile_org_comp:
+        required: false
+      organism_count:
+        required: false
+      perturbation:
         required: false
 subsets: {}
 enums: {}

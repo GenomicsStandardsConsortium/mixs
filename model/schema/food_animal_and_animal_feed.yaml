@@ -24,202 +24,260 @@ classes:
     - env_broad_scale
     - env_local_scale
     - env_medium
-    - samp_collect_device
-    - organism_count
-    - spikein_count
-    - samp_stor_temp
-    - samp_stor_dur
-    - pool_dna_extracts
-    - samp_stor_loc
-    - samp_transport_cont
-    - perturbation
-    - coll_site_geo_feat
-    - food_origin
-    - food_prod
-    - food_product_type
-    - food_source
-    - IFSAC_category
-    - intended_consumer
+    - cult_result
     - samp_purpose
-    - animal_am
+    - food_quality_date
+    - samp_transport_cont
+    - samp_transport_cont
+    - animal_sex
+    - food_trace_list
+    - animal_body_cond
+    - pool_dna_extracts
+    - cons_food_stor_dur
+    - samp_stor_dur
+    - timepoint
     - animal_am_dur
     - animal_am_freq
-    - animal_am_route
-    - animal_am_use
-    - animal_body_cond
-    - animal_diet
-    - animal_feed_equip
-    - animal_group_size
-    - animal_housing
-    - animal_sex
     - bacterial_density
-    - cons_food_stor_dur
+    - food_pack_capacity
+    - food_source_age
+    - samp_rep_biol
+    - samp_rep_tech
+    - samp_stor_temp
+    - samp_transport_dur
+    - study_inc_dur
+    - study_inc_temp
+    - study_timecourse
+    - samp_transport_temp
+    - spikein_AMR
     - cons_food_stor_temp
-    - cons_purch_date
+    - animal_group_size
     - cons_qty_purchased
-    - cult_isol_date
-    - cult_result
+    - lot_number
+    - intended_consumer
+    - enrichment_protocol
+    - samp_collect_method
+    - food_dis_point
+    - food_origin
+    - animal_feed_equip
+    - animal_housing
+    - food_prod
+    - food_product_qual
+    - food_source
+    - food_trav_mode
+    - HACCP_term
+    - samp_source_mat_cat
     - cult_result_org
     - cult_target
-    - enrichment_protocol
+    - serovar_or_serotype
+    - spikein_org
+    - spikein_serovar
+    - spikein_strain
+    - samp_collect_device
+    - animal_am
+    - animal_am_route
+    - animal_am_use
+    - animal_diet
+    - food_prod_synonym
+    - IFSAC_category
+    - library_prep_kit
+    - repository_name
+    - samp_pooling
+    - samp_stor_loc
+    - sequencing_kit
+    - sequencing_location
+    - spikein_antibiotic
+    - spikein_metal
+    - misc_param
+    - organism_count
+    - spikein_count
+    - perturbation
+    - coll_site_geo_feat
     - food_additive
     - food_contact_surf
     - food_contain_wrap
     - food_cooking_proc
-    - food_dis_point
     - food_dis_point_city
     - food_ingredient
-    - food_pack_capacity
     - food_pack_integrity
     - food_pack_medium
     - food_preserv_proc
     - food_prior_contact
-    - food_prod_synonym
-    - food_product_qual
-    - food_quality_date
-    - food_source_age
-    - food_trace_list
-    - food_trav_mode
+    - food_product_type
     - food_trav_vehic
     - food_treat_proc
-    - HACCP_term
-    - library_prep_kit
-    - lot_number
     - microb_cult_med
     - part_plant_animal
-    - repository_name
-    - samp_collect_method
-    - samp_pooling
-    - samp_rep_biol
-    - samp_rep_tech
-    - samp_source_mat_cat
     - samp_stor_device
     - samp_stor_media
-    - samp_transport_cont
-    - samp_transport_dur
-    - samp_transport_temp
-    - sequencing_kit
-    - sequencing_location
-    - serovar_or_serotype
-    - spikein_AMR
-    - spikein_antibiotic
     - spikein_growth_med
-    - spikein_metal
-    - spikein_org
-    - spikein_serovar
-    - spikein_strain
     - study_design
-    - study_inc_dur
-    - study_inc_temp
-    - study_timecourse
     - study_tmnt
-    - timepoint
-    - misc_param
+    - cons_purch_date
+    - cult_isol_date
     slot_usage:
-      samp_name:
+      cult_result:
+        required: false
+      samp_purpose:
         required: true
-      project_name:
-        required: true
+      food_quality_date:
+        required: false
+      samp_transport_cont:
+        required: false
+      animal_sex:
+        required: false
+      food_trace_list:
+        required: false
+      animal_body_cond:
+        required: false
+      pool_dna_extracts:
+        required: false
+      cons_food_stor_dur:
+        required: false
+      samp_stor_dur:
+        required: false
+      timepoint:
+        required: false
+      animal_am_dur:
+        required: false
       lat_lon:
         required: true
+      animal_am_freq:
+        required: false
+      bacterial_density:
+        required: false
+      food_pack_capacity:
+        required: false
+      food_source_age:
+        required: false
+      samp_rep_biol:
+        required: false
+      samp_rep_tech:
+        required: false
+      samp_size:
+        required: false
+      samp_stor_temp:
+        required: false
+      samp_transport_dur:
+        required: false
+      samp_vol_we_dna_ext:
+        required: false
+      study_inc_dur:
+        required: false
+      study_inc_temp:
+        required: false
+      study_timecourse:
+        required: false
+      temp:
+        required: false
+      samp_transport_temp:
+        required: false
+      spikein_AMR:
+        required: false
+      cons_food_stor_temp:
+        required: false
+      animal_group_size:
+        required: false
+      cons_qty_purchased:
+        required: false
+      lot_number:
+        required: false
+      intended_consumer:
+        required: true
+      nucl_acid_ext:
+        required: false
+      enrichment_protocol:
+        required: false
+      samp_collect_method:
+        required: false
+      food_dis_point:
+        required: false
       geo_loc_name:
         required: true
-      collection_date:
+      food_origin:
         required: true
+      animal_feed_equip:
+        required: false
+      animal_housing:
+        required: false
       env_broad_scale:
         required: true
       env_local_scale:
         required: true
       env_medium:
         required: true
-      seq_meth:
-        required: true
-      samp_size:
-        required: false
-      samp_collect_device:
-        required: false
-      experimental_factor:
-        required: false
-      nucl_acid_ext:
-        required: false
-      organism_count:
-        required: false
-      spikein_count:
-        required: false
-      samp_stor_temp:
-        required: false
-      samp_stor_dur:
-        required: false
-      samp_vol_we_dna_ext:
-        required: false
-      pool_dna_extracts:
-        required: false
-      temp:
-        required: false
-      samp_stor_loc:
-        required: false
-      samp_transport_cont:
-        required: false
-      perturbation:
-        required: false
-      coll_site_geo_feat:
-        required: true
-      food_origin:
-        required: true
       food_prod:
         required: true
-      food_product_type:
-        required: true
+      food_product_qual:
+        required: false
       food_source:
         required: false
-      IFSAC_category:
-        required: true
-      intended_consumer:
-        required: true
-      samp_purpose:
-        required: true
-      animal_am:
+      food_trav_mode:
         required: false
-      animal_am_dur:
+      HACCP_term:
         required: false
-      animal_am_freq:
-        required: false
-      animal_am_route:
-        required: false
-      animal_am_use:
-        required: false
-      animal_body_cond:
-        required: false
-      animal_diet:
-        required: false
-      animal_feed_equip:
-        required: false
-      animal_group_size:
-        required: false
-      animal_housing:
-        required: false
-      animal_sex:
-        required: false
-      bacterial_density:
-        required: false
-      cons_food_stor_dur:
-        required: false
-      cons_food_stor_temp:
-        required: false
-      cons_purch_date:
-        required: false
-      cons_qty_purchased:
-        required: false
-      cult_isol_date:
-        required: false
-      cult_result:
+      samp_source_mat_cat:
         required: false
       cult_result_org:
         required: false
       cult_target:
         required: false
-      enrichment_protocol:
+      serovar_or_serotype:
         required: false
+      spikein_org:
+        required: false
+      spikein_serovar:
+        required: false
+      spikein_strain:
+        required: false
+      experimental_factor:
+        required: false
+      samp_collect_device:
+        required: false
+      seq_meth:
+        required: true
+      animal_am:
+        required: false
+      animal_am_route:
+        required: false
+      animal_am_use:
+        required: false
+      animal_diet:
+        required: false
+      food_prod_synonym:
+        required: false
+      IFSAC_category:
+        required: true
+      library_prep_kit:
+        required: false
+      project_name:
+        required: true
+      repository_name:
+        required: false
+      samp_name:
+        required: true
+      samp_pooling:
+        required: false
+      samp_stor_loc:
+        required: false
+      sequencing_kit:
+        required: false
+      sequencing_location:
+        required: false
+      spikein_antibiotic:
+        required: false
+      spikein_metal:
+        required: false
+      misc_param:
+        required: false
+      organism_count:
+        required: false
+      spikein_count:
+        required: false
+      perturbation:
+        required: false
+      coll_site_geo_feat:
+        required: true
       food_additive:
         required: false
       food_contact_surf:
@@ -228,13 +286,9 @@ classes:
         required: false
       food_cooking_proc:
         required: false
-      food_dis_point:
-        required: false
       food_dis_point_city:
         required: false
       food_ingredient:
-        required: false
-      food_pack_capacity:
         required: false
       food_pack_integrity:
         required: false
@@ -244,85 +298,31 @@ classes:
         required: false
       food_prior_contact:
         required: false
-      food_prod_synonym:
-        required: false
-      food_product_qual:
-        required: false
-      food_quality_date:
-        required: false
-      food_source_age:
-        required: false
-      food_trace_list:
-        required: false
-      food_trav_mode:
-        required: false
+      food_product_type:
+        required: true
       food_trav_vehic:
         required: false
       food_treat_proc:
-        required: false
-      HACCP_term:
-        required: false
-      library_prep_kit:
-        required: false
-      lot_number:
         required: false
       microb_cult_med:
         required: false
       part_plant_animal:
         required: false
-      repository_name:
-        required: false
-      samp_collect_method:
-        required: false
-      samp_pooling:
-        required: false
-      samp_rep_biol:
-        required: false
-      samp_rep_tech:
-        required: false
-      samp_source_mat_cat:
-        required: false
       samp_stor_device:
         required: false
       samp_stor_media:
         required: false
-      samp_transport_dur:
-        required: false
-      samp_transport_temp:
-        required: false
-      sequencing_kit:
-        required: false
-      sequencing_location:
-        required: false
-      serovar_or_serotype:
-        required: false
-      spikein_AMR:
-        required: false
-      spikein_antibiotic:
-        required: false
       spikein_growth_med:
-        required: false
-      spikein_metal:
-        required: false
-      spikein_org:
-        required: false
-      spikein_serovar:
-        required: false
-      spikein_strain:
         required: false
       study_design:
         required: false
-      study_inc_dur:
-        required: false
-      study_inc_temp:
-        required: false
-      study_timecourse:
-        required: false
       study_tmnt:
         required: false
-      timepoint:
+      collection_date:
+        required: true
+      cons_purch_date:
         required: false
-      misc_param:
+      cult_isol_date:
         required: false
 subsets: {}
 enums: {}

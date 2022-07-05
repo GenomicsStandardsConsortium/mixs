@@ -24,20 +24,20 @@ classes:
     - env_broad_scale
     - env_local_scale
     - env_medium
+    - oxy_stat_samp
+    - samp_store_dur
+    - ph
     - alkalinity
     - alkyl_diethers
     - aminopept_act
     - ammonium
     - bacteria_carb_prod
-    - biomass
     - bishomohopanol
     - bromide
     - calcium
     - carb_nitro_ratio
-    - chem_administration
     - chloride
     - chlorophyll
-    - diether_lipids
     - diss_carb_dioxide
     - diss_hydrogen
     - diss_inorg_carb
@@ -49,29 +49,19 @@ classes:
     - mean_frict_vel
     - mean_peak_frict_vel
     - methane
-    - misc_param
-    - n_alkanes
     - nitrate
     - nitrite
     - nitro
     - org_carb
     - org_matter
     - org_nitro
-    - organism_count
-    - oxy_stat_samp
-    - ph
     - part_org_carb
-    - perturbation
     - petroleum_hydrocarb
-    - phaeopigments
     - phosphate
-    - phosplipid_fatt_acid
     - potassium
     - pressure
     - redox_potential
     - salinity
-    - samp_store_dur
-    - samp_store_loc
     - samp_store_temp
     - silicate
     - sodium
@@ -82,14 +72,22 @@ classes:
     - tot_org_carb
     - turbidity
     - water_content
+    - chem_administration
+    - samp_store_loc
+    - biomass
+    - diether_lipids
+    - misc_param
+    - n_alkanes
+    - phaeopigments
+    - phosplipid_fatt_acid
+    - organism_count
+    - perturbation
     slot_usage:
-      samp_name:
-        required: true
-      project_name:
-        required: true
-      depth:
+      oxy_stat_samp:
         required: false
-      elev:
+      samp_store_dur:
+        required: false
+      ph:
         required: false
       alkalinity:
         required: false
@@ -101,8 +99,6 @@ classes:
         required: false
       bacteria_carb_prod:
         required: false
-      biomass:
-        required: false
       bishomohopanol:
         required: false
       bromide:
@@ -111,13 +107,11 @@ classes:
         required: false
       carb_nitro_ratio:
         required: false
-      chem_administration:
-        required: false
       chloride:
         required: false
       chlorophyll:
         required: false
-      diether_lipids:
+      depth:
         required: false
       diss_carb_dioxide:
         required: false
@@ -131,6 +125,8 @@ classes:
         required: false
       diss_oxygen:
         required: false
+      elev:
+        required: false
       glucosidase_act:
         required: false
       magnesium:
@@ -140,10 +136,6 @@ classes:
       mean_peak_frict_vel:
         required: false
       methane:
-        required: false
-      misc_param:
-        required: false
-      n_alkanes:
         required: false
       nitrate:
         required: false
@@ -157,23 +149,11 @@ classes:
         required: false
       org_nitro:
         required: false
-      organism_count:
-        required: false
-      oxy_stat_samp:
-        required: false
-      ph:
-        required: false
       part_org_carb:
-        required: false
-      perturbation:
         required: false
       petroleum_hydrocarb:
         required: false
-      phaeopigments:
-        required: false
       phosphate:
-        required: false
-      phosplipid_fatt_acid:
         required: false
       potassium:
         required: false
@@ -182,10 +162,6 @@ classes:
       redox_potential:
         required: false
       salinity:
-        required: false
-      samp_store_dur:
-        required: false
-      samp_store_loc:
         required: false
       samp_store_temp:
         required: false
@@ -210,6 +186,30 @@ classes:
       turbidity:
         required: false
       water_content:
+        required: false
+      chem_administration:
+        required: false
+      project_name:
+        required: true
+      samp_name:
+        required: true
+      samp_store_loc:
+        required: false
+      biomass:
+        required: false
+      diether_lipids:
+        required: false
+      misc_param:
+        required: false
+      n_alkanes:
+        required: false
+      phaeopigments:
+        required: false
+      phosplipid_fatt_acid:
+        required: false
+      organism_count:
+        required: false
+      perturbation:
         required: false
 subsets: {}
 enums: {}
