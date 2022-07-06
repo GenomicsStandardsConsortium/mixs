@@ -218,10 +218,11 @@ class MIxS6Converter:
         # if 'MIGS ID (mapping to GOLD)' in row:
         #    exact_mappings.append(f'MIGS:{row["MIGS ID (mapping to GOLD)"]}')
 
-        section = row['Section'] if 'Section' in row else 'environment'
-        if section == '':
-            # logging.warning(f'No section: {s_id}')
-            section = 'core'
+        section = row['Section'] if 'Section' in row else 'package'
+        # if section == '':
+        #     # logging.warning(f'No section: {s_id}')
+        #     section = 'core'
+        # todo
         is_a = f'{section} field'
         pattern, range = parse_value_syntax(row['Value syntax'], s_name)
         slot = {
@@ -297,9 +298,9 @@ class MIxS6Converter:
         core_df = pd.read_csv(self.core_filename, sep="\t").fillna("").applymap(trim_strings)
         pkg_df = pd.read_csv(self.packages_filename, sep="\t").fillna("").applymap(trim_strings)
         slots = {
-            'core field': {
+            'environment field': {
                 'abstract': True,
-                'description': "basic fields"
+                'description': "field describing environmental aspect of a sample"
             },
             'investigation field': {
                 'abstract': True,
@@ -311,13 +312,19 @@ class MIxS6Converter:
             'sequencing field': {
                 'abstract': True
             },
+            # take the place of the previous erroneous :core" is_a annotations
+            'package field': {
+                'abstract': True,
+            },
+            # todo do not expect to instantiate core field any more
+            'core field': {
+                'abstract': True,
+                'description': "basic fields"
+            },
+            # todo what the heck is extension?
             'mixs extension field': {
                 'abstract': True
             },
-            'environment field': {
-                'abstract': True,
-                'description': "field describing environmental aspect of a sample"
-            }
         }
         classes = {}
         subsets = {}
@@ -436,6 +443,7 @@ class MIxS6Converter:
                     slots[s_id] = slot
                 else:
                     in_core_and_package = True
+                    # todo is this working?
                     slot['todos'] = ['this is in both core and packages']
 
                 if s_id not in slot_cls_req:
