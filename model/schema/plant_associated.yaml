@@ -1,0 +1,248 @@
+id: http://w3id.org/mixs/plant_associated
+name: plant_associated
+imports:
+- linkml:types
+- terms
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mixs.vocab: https://w3id.org/mixs/vocab/
+  MIXS: https://w3id.org/mixs/terms/
+default_prefix: mixs.vocab
+slots: {}
+classes:
+  plant-associated:
+    description: plant-associated
+    mappings: []
+    slots:
+    - lat_lon
+    - depth
+    - alt
+    - elev
+    - temp
+    - geo_loc_name
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - samp_capt_status
+    - oxy_stat_samp
+    - plant_sex
+    - samp_dis_stage
+    - growth_habit
+    - biol_stat
+    - samp_store_dur
+    - root_med_ph
+    - host_age
+    - host_dry_mass
+    - host_height
+    - host_length
+    - host_tot_mass
+    - host_wet_mass
+    - salinity
+    - samp_store_temp
+    - air_temp_regm
+    - gravity
+    - humidity_regm
+    - rainfall_regm
+    - water_temp_regm
+    - watering_regm
+    - ph_regm
+    - host_taxid
+    - genetic_mod
+    - root_cond
+    - tiss_cult_growth_med
+    - host_subspecf_genlin
+    - plant_struc
+    - plant_growth_med
+    - chem_administration
+    - ances_data
+    - biotic_regm
+    - host_common_name
+    - host_genotype
+    - host_life_stage
+    - host_symbiont
+    - plant_product
+    - root_med_solid
+    - samp_store_loc
+    - misc_param
+    - misc_param
+    - root_med_carbon
+    - root_med_macronutr
+    - root_med_micronutr
+    - root_med_regl
+    - root_med_suppl
+    - organism_count
+    - light_regm
+    - antibiotic_regm
+    - chem_mutagen
+    - fertilizer_regm
+    - fungicide_regm
+    - gaseous_environment
+    - growth_hormone_regm
+    - herbicide_regm
+    - mineral_nutr_regm
+    - non_min_nutr_regm
+    - pesticide_regm
+    - radiation_regm
+    - salt_regm
+    - climate_environment
+    - perturbation
+    - season_environment
+    - standing_water_regm
+    - host_phenotype
+    - mechanical_damage
+    - cult_root_med
+    - growth_facil
+    slot_usage:
+      samp_capt_status:
+        required: false
+      oxy_stat_samp:
+        required: false
+      plant_sex:
+        required: false
+      samp_dis_stage:
+        required: false
+      growth_habit:
+        required: false
+      biol_stat:
+        required: false
+      samp_store_dur:
+        required: false
+      root_med_ph:
+        required: false
+      depth:
+        required: false
+      elev:
+        required: false
+      host_age:
+        required: false
+      host_dry_mass:
+        required: false
+      host_height:
+        required: false
+      host_length:
+        required: false
+      host_tot_mass:
+        required: false
+      host_wet_mass:
+        required: false
+      salinity:
+        required: false
+      samp_store_temp:
+        required: false
+      samp_vol_we_dna_ext:
+        required: false
+      temp:
+        required: false
+      air_temp_regm:
+        required: false
+      gravity:
+        required: false
+      humidity_regm:
+        required: false
+      rainfall_regm:
+        required: false
+      water_temp_regm:
+        required: false
+      watering_regm:
+        required: false
+      ph_regm:
+        required: false
+      host_taxid:
+        required: false
+      genetic_mod:
+        required: false
+      root_cond:
+        required: false
+      tiss_cult_growth_med:
+        required: false
+      host_subspecf_genlin:
+        required: false
+      plant_struc:
+        required: false
+      plant_growth_med:
+        required: false
+      chem_administration:
+        required: false
+      ances_data:
+        required: false
+      biotic_regm:
+        required: false
+      host_common_name:
+        required: false
+      host_genotype:
+        required: false
+      host_life_stage:
+        required: false
+      host_symbiont:
+        required: false
+      plant_product:
+        required: false
+      project_name:
+        required: true
+      root_med_solid:
+        required: false
+      samp_name:
+        required: true
+      samp_store_loc:
+        required: false
+      misc_param:
+        required: false
+      root_med_carbon:
+        required: false
+      root_med_macronutr:
+        required: false
+      root_med_micronutr:
+        required: false
+      root_med_regl:
+        required: false
+      root_med_suppl:
+        required: false
+      organism_count:
+        required: false
+      light_regm:
+        required: false
+      antibiotic_regm:
+        required: false
+      chem_mutagen:
+        required: false
+      fertilizer_regm:
+        required: false
+      fungicide_regm:
+        required: false
+      gaseous_environment:
+        required: false
+      growth_hormone_regm:
+        required: false
+      herbicide_regm:
+        required: false
+      mineral_nutr_regm:
+        required: false
+      non_min_nutr_regm:
+        required: false
+      pesticide_regm:
+        required: false
+      radiation_regm:
+        required: false
+      salt_regm:
+        required: false
+      climate_environment:
+        required: false
+      perturbation:
+        required: false
+      season_environment:
+        required: false
+      standing_water_regm:
+        required: false
+      host_phenotype:
+        required: false
+      mechanical_damage:
+        required: false
+      cult_root_med:
+        required: false
+      growth_facil:
+        required: false
+      host_disease_stat:
+        required: false
+subsets: {}
+enums: {}

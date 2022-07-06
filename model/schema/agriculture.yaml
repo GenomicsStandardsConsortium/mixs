@@ -1,0 +1,479 @@
+id: http://w3id.org/mixs/agriculture
+name: agriculture
+imports:
+- linkml:types
+- terms
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mixs.vocab: https://w3id.org/mixs/vocab/
+  MIXS: https://w3id.org/mixs/terms/
+default_prefix: mixs.vocab
+slots: {}
+classes:
+  agriculture:
+    description: agriculture
+    mappings: []
+    slots:
+    - lat_lon
+    - depth
+    - alt
+    - elev
+    - temp
+    - geo_loc_name
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - oxy_stat_samp
+    - pres_animal_insect
+    - cur_land_use
+    - tillage
+    - farm_water_source
+    - water_source_shared
+    - horizon
+    - profile_position
+    - drainage_class
+    - sieving
+    - pool_dna_extracts
+    - crop_rotation
+    - root_med_ph
+    - water_pH
+    - porosity
+    - annual_precpt
+    - annual_temp
+    - host_age
+    - host_dry_mass
+    - host_height
+    - host_length
+    - host_tot_mass
+    - humidity
+    - microbial_biomass
+    - photosynt_activ
+    - samp_stor_temp
+    - season_humidity
+    - season_precpt
+    - season_temp
+    - size_frac_low
+    - size_frac_up
+    - slope_aspect
+    - slope_gradient
+    - soil_depth
+    - solar_irradiance
+    - texture
+    - tot_car
+    - tot_nitro
+    - tot_org_carb
+    - tot_phos
+    - water_temp_regm
+    - watering_regm
+    - ph_regm
+    - crop_yield
+    - soil_temp
+    - host_taxid
+    - lot_number
+    - samp_store_dur
+    - texture_meth
+    - enrichment_protocol
+    - genetic_mod
+    - photosynt_activ_meth
+    - samp_collect_method
+    - cur_vegetation_meth
+    - heavy_metals_meth
+    - horizon_meth
+    - link_class_info
+    - link_climate_info
+    - local_class_meth
+    - microbial_biomass_meth
+    - ph_meth
+    - previous_land_use_meth
+    - soil_type_meth
+    - tot_n_meth
+    - tot_org_c_meth
+    - host_subspecf_genlin
+    - assembly_quality
+    - fao_class
+    - host_phenotype
+    - anim_water_method
+    - farm_equip
+    - fertilizer_admin
+    - food_prod
+    - food_trav_mode
+    - plant_struc
+    - plant_water_method
+    - season
+    - plant_growth_med
+    - chem_administration
+    - spikein_strain
+    - adjacent_environment
+    - ances_data
+    - cur_vegetation
+    - Food_Product_type
+    - Food_source
+    - host_common_name
+    - host_genotype
+    - host_life_stage
+    - host_symbiont
+    - library_prep_kit
+    - local_class
+    - plant_product
+    - samp_collect_device
+    - samp_store_loc
+    - sequencing_location
+    - soil_type
+    - misc_param
+    - root_med_carbon
+    - root_med_macronutr
+    - organism_count
+    - fungicide_regm
+    - gaseous_environment
+    - herbicide_regm
+    - non_mineral_nutr_regm
+    - pesticide_regm
+    - salt_regm
+    - agrochem_addition
+    - perturbation
+    - store_cond
+    - climate_environment
+    - season_environment
+    - standing_water_regm
+    - previous_land_use
+    - food_trav_vehic
+    - extreme_event
+    - fire
+    - flooding
+    - url
+    - soil_horizon
+    - cult_isol_date
+    - farm_equip_san
+    - farm_equip_shared
+    - food_harvest_proc
+    - rel_location
+    - samp_pooling
+    - soil_conductivity
+    - soil_cover
+    - soil_pH
+    slot_usage:
+      oxy_stat_samp:
+        required: false
+      trophic_level:
+        required: false
+      pres_animal_insect:
+        required: false
+      cur_land_use:
+        required: false
+      tillage:
+        required: false
+      assembly_software:
+        required: false
+      biotic_relationship:
+        required: false
+      farm_water_source:
+        required: false
+      water_source_shared:
+        required: false
+      seq_quality_check:
+        required: false
+      horizon:
+        required: false
+      lib_layout:
+        required: false
+      profile_position:
+        required: false
+      drainage_class:
+        required: false
+      sieving:
+        required: true
+      pool_dna_extracts:
+        required: true
+      crop_rotation:
+        required: false
+      mid:
+        required: true
+      adapters:
+        required: true
+      root_med_ph:
+        required: false
+      water_pH:
+        required: false
+      porosity:
+        required: false
+      annual_precpt:
+        required: false
+      annual_temp:
+        required: false
+      elev:
+        required: false
+      host_age:
+        required: true
+      host_dry_mass:
+        required: false
+      host_height:
+        required: true
+      host_length:
+        required: true
+      host_tot_mass:
+        required: true
+      humidity:
+        required: false
+      microbial_biomass:
+        required: true
+      photosynt_activ:
+        required: false
+      samp_size:
+        required: true
+      samp_stor_temp:
+        required: false
+      samp_vol_we_dna_ext:
+        required: true
+      season_humidity:
+        required: false
+      season_precpt:
+        required: false
+      season_temp:
+        required: false
+      size_frac_low:
+        required: false
+      size_frac_up:
+        required: false
+      slope_aspect:
+        required: false
+      slope_gradient:
+        required: false
+      soil_depth:
+        required: false
+      solar_irradiance:
+        required: false
+      temp:
+        required: true
+      texture:
+        required: false
+      tot_car:
+        required: false
+      tot_nitro:
+        required: false
+      tot_org_carb:
+        required: false
+      tot_phos:
+        required: false
+      water_temp_regm:
+        required: false
+      watering_regm:
+        required: false
+      ph_regm:
+        required: false
+      crop_yield:
+        required: false
+      soil_temp:
+        required: false
+      host_spec_range:
+        required: true
+      host_taxid:
+        required: true
+      lib_reads_seqd:
+        required: true
+      lib_size:
+        required: false
+      lot_number:
+        required: false
+      samp_store_dur:
+        required: true
+      texture_meth:
+        required: false
+      enrichment_protocol:
+        required: false
+      genetic_mod:
+        required: false
+      photosynt_activ_meth:
+        required: false
+      samp_collect_method:
+        required: false
+      cur_vegetation_meth:
+        required: false
+      heavy_metals_meth:
+        required: false
+      horizon_meth:
+        required: false
+      isol_growth_condt:
+        required: false
+      link_class_info:
+        required: false
+      link_climate_info:
+        required: false
+      local_class_meth:
+        required: false
+      microbial_biomass_meth:
+        required: true
+      nucl_acid_amp:
+        required: true
+      nucl_acid_ext:
+        required: true
+      ph_meth:
+        required: false
+      previous_land_use_meth:
+        required: false
+      soil_type_meth:
+        required: true
+      sop:
+        required: false
+      tot_n_meth:
+        required: false
+      tot_org_c_meth:
+        required: false
+      host_subspecf_genlin:
+        required: false
+      assembly_quality:
+        required: false
+      fao_class:
+        required: false
+      host_phenotype:
+        required: true
+      pathogenicity:
+        required: true
+      anim_water_method:
+        required: false
+      farm_equip:
+        required: false
+      fertilizer_admin:
+        required: false
+      food_prod:
+        required: false
+      food_trav_mode:
+        required: false
+      plant_struc:
+        required: false
+      plant_water_method:
+        required: false
+      season:
+        required: false
+      plant_growth_med:
+        required: false
+      chem_administration:
+        required: true
+      spikein_strain:
+        required: false
+      seq_meth:
+        required: true
+      adjacent_environment:
+        required: false
+      ances_data:
+        required: false
+      annot:
+        required: false
+      cur_vegetation:
+        required: false
+      Food_Product_type:
+        required: false
+      Food_source:
+        required: true
+      host_common_name:
+        required: true
+      host_genotype:
+        required: true
+      host_life_stage:
+        required: true
+      host_symbiont:
+        required: false
+      lib_screen:
+        required: true
+      lib_vector:
+        required: true
+      library_prep_kit:
+        required: false
+      local_class:
+        required: false
+      plant_product:
+        required: false
+      samp_collect_device:
+        required: true
+      samp_store_loc:
+        required: true
+      sequencing_location:
+        required: false
+      soil_type:
+        required: true
+      source_mat_id:
+        required: false
+      target_gene:
+        required: true
+      target_subfragment:
+        required: true
+      assembly_name:
+        required: true
+      chimera_check:
+        required: true
+      misc_param:
+        required: false
+      root_med_carbon:
+        required: false
+      root_med_macronutr:
+        required: false
+      organism_count:
+        required: false
+      fungicide_regm:
+        required: false
+      gaseous_environment:
+        required: false
+      herbicide_regm:
+        required: false
+      non_mineral_nutr_regm:
+        required: false
+      pesticide_regm:
+        required: false
+      salt_regm:
+        required: false
+      agrochem_addition:
+        required: false
+      perturbation:
+        required: false
+      store_cond:
+        required: true
+      climate_environment:
+        required: false
+      season_environment:
+        required: false
+      standing_water_regm:
+        required: false
+      previous_land_use:
+        required: false
+      specific_host:
+        required: true
+      food_trav_vehic:
+        required: false
+      host_disease_stat:
+        required: false
+      samp_mat_process:
+        required: true
+      extreme_event:
+        required: false
+      fire:
+        required: false
+      flooding:
+        required: false
+      url:
+        required: false
+      soil_horizon:
+        required: false
+      pcr_cond:
+        required: true
+      cult_isol_date:
+        required: false
+      farm_equip_san:
+        required: false
+      farm_equip_shared:
+        required: false
+      food_harvest_proc:
+        required: false
+      pcr_primers:
+        required: true
+      rel_location:
+        required: false
+      samp_pooling:
+        required: false
+      soil_conductivity:
+        required: false
+      soil_cover:
+        required: false
+      soil_pH:
+        required: false
+subsets: {}
+enums: {}
