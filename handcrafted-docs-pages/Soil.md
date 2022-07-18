@@ -1,0 +1,70 @@
+_mermaid diagram_
+
+_MIxS Google Sheet doesn't provide annotations for environment classes like soil_
+
+# checklist combinations:
+
+
+## Slots
+* agrochem_addition
+* al_sat
+* al_sat_meth
+* alt
+* annual_precpt
+* annual_temp
+* collection_date
+* crop_rotation
+* cur_land_use
+* cur_vegetation
+* cur_vegetation_meth
+* [depth](depth.md)
+* drainage_class
+* elev
+* env_broad_scale
+* env_local_scale
+* env_medium
+* extreme_event
+* fao_class
+* fire
+* flooding
+* geo_loc_name
+* heavy_metals
+* heavy_metals_meth
+* horizon_meth
+* lat_lon
+* link_addit_analys
+* link_class_info
+* link_climate_info
+* local_class
+* local_class_meth
+* micro_biomass_meth
+* microbial_biomass
+* misc_param
+* org_matter
+* org_nitro
+* ph
+* ph_meth
+* pool_dna_extracts
+* prev_land_use_meth
+* previous_land_use
+* profile_position
+* salinity_meth
+* season_precpt
+* season_temp
+* sieving
+* slope_aspect
+* slope_gradient
+* soil_horizon
+* soil_text_measure
+* soil_texture_meth
+* soil_type
+* soil_type_meth
+* store_cond
+* temp
+* tillage
+* tot_nitro_cont_meth
+* tot_nitro_content
+* tot_org_c_meth
+* tot_org_carb
+* water_cont_soil_meth
+* water_content
