@@ -75,6 +75,9 @@ gsc_vs_nmdc_core: downloads/gsc_mixs6_core.csv downloads/nmdc_mixs6_core.csv
 value_syntax_research: downloads/mixs6.tsv downloads/mixs6_core.tsv
 	$(RUN) python gsctools/value_syntaxes.py
 
+invariants_research:
+	$(RUN) python gsctools/invariants.py
+
 # todo add owl back in and make it awesome
 # 		--exclude owl \
 # todo what artifacts do we really want?
