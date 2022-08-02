@@ -1,17 +1,30 @@
 # todo document installation of poetry application and `poetry install`
 
 RUN=poetry run
+FORCES_README=""forces creation of this directory""
 
 .PHONY: all clean gh_docs docserve value_syntax_research gsc_vs_nmdc_packages gsc_vs_nmdc_core all_diffs
 
-all: clean alldiffs value_syntax_research model/schema/mixs.yaml generated/mixs.py mkdocs_html/index.html
+all: clean qc model/schema/mixs.yaml generated/mixs.py mkdocs_html/index.html
+
+qc: clean alldiffs value_syntax_research downloads/gsc_mixs6.csv invariants_research
 
 clean:
-	rm -rf downloads/*.*sv
+	rm -rf downloads/*
+	mkdir -p downloads
+	echo $(FORCES_README) > downloads/README.md
 	rm -rf generated/*
+	mkdir -p generated
+	echo $(FORCES_README) > generated/README.md
+	mkdir -p logs
 	rm -rf logs/*
+	echo $(FORCES_README) > logs/README.md
 	rm -rf mkdocs_html/
 	rm -rf model/schema/*.yaml
+	rm -rf schemasheets/output/*
+	mkdir -p schemasheets/output
+	echo $(FORCES_README) > schemasheets/output/README.md
+
 
 
 model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
@@ -75,8 +88,25 @@ gsc_vs_nmdc_core: downloads/gsc_mixs6_core.csv downloads/nmdc_mixs6_core.csv
 value_syntax_research: downloads/mixs6.tsv downloads/mixs6_core.tsv
 	$(RUN) python gsctools/value_syntaxes.py
 
-invariants_research:
+invariants_research: downloads/gsc_mixs6.csv
 	$(RUN) python gsctools/invariants.py
+
+schemasheets/output/core_template.yaml: schemasheets/templates/core_template.tsv
+	$(RUN) sheets2linkml \
+		--output $@ \
+		--name MIxS6_core $<
+
+
+schemasheets/output/packages_template.yaml: schemasheets/templates/packages_template.tsv
+	$(RUN) sheets2linkml \
+		--output $@ \
+		--name MIxS6_core $<
+
+test_by_viewing:
+	$(RUN) python gsctools/test_by_viewing.py
+
+schemasheets/output/core_template_generated.yaml: schemasheets/output/core_template.yaml
+	$(RUN) gen-yaml $< > $@
 
 # todo add owl back in and make it awesome
 # 		--exclude owl \
@@ -89,6 +119,23 @@ generated/mixs.py: model/schema/mixs.yaml
 		--exclude markdown \
 		--exclude owl \
 		--dir $(dir $@) $< 2>&1 | tee -a logs/linkml_artifact_generation.log
+
+# problems: escape numbers, dates, percentages, trues
+generated/MIxS6_from_gsheet_templates.yaml:
+	$(RUN) sheets2linkml \
+		--output $@ \
+		--gsheet-id 1zsxvjvifDcmkt72v9m1_VKa2m73_THDJapJYK6dqidw checklists combos core enums env_packages packages \
+			prefixes schema sections_as_slots utility_classes
+
+
+
+# problems: core packages
+generated/MIxS6_from_gsheet_templates_bad.yaml:
+	$(RUN) sheets2linkml \
+		--output $@ \
+		--gsheet-id 1zsxvjvifDcmkt72v9m1_VKa2m73_THDJapJYK6dqidw core_example_555_num
+
+
 #	mkdir generated/excel
 #	$(RUN) gen-excel --output generated/excel/mixs.xlsx $<
 #	# skipping jinja --template_file

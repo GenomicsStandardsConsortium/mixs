@@ -1,0 +1,2813 @@
+MIXS:0000002:
+  Definition:
+    agriculture: The device used to collect an environmental sample. This field accepts
+      terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
+      This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
+    food-animal and animal feed: The device used to collect an environmental sample.
+      This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
+      This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
+    food-farm environment: The device used to collect an environmental sample. This
+      field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
+      This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
+    food-food production facility: The device employed for collecting the sample.
+    food-human foods: The device used to collect an environmental sample. This field
+      accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
+      This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
+  Package item:
+    agriculture: sample collection device or method
+    food-animal and animal feed: sample collection device
+    food-farm environment: sample collection device
+    food-food production facility: sample collection device
+    food-human foods: sample collection device
+  Value syntax:
+    agriculture: '{text}'
+    food-animal and animal feed: '{termLabel} {[termID]}|{text}'
+    food-farm environment: '{termLabel} {[termID]}|{text}'
+    food-food production facility: '{text}'
+    food-human foods: '{termLabel} {[termID]}|{text}'
+MIXS:0000010:
+  Definition:
+    food-animal and animal feed: The geographical origin of the sample as defined
+      by the country or sea name followed by specific region name. Country or sea
+      names should be chosen from the INSDC country list (http://insdc.org/country.html),
+      or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ).
+    food-farm environment: The geographical origin of the sample as defined by the
+      country or sea name followed by specific region name. Country or sea names should
+      be chosen from the INSDC country list (http://insdc.org/country.html), or the
+      GAZ ontology  (http://purl.bioontology.org/ontology/GAZ).
+    food-food production facility: The geographical origin of the sample as defined
+      by the country or sea name followed by specific region name. Country or sea
+      names should be chosen from the INSDC country list (http://insdc.org/country.html),
+      or the GAZ ontology  (http://purl.bioontology.org/ontology/GAZ).
+    food-human foods: The geographical origin of the sample as defined by the country
+      or sea name followed by specific region name. Country or sea names should be
+      chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ
+      ontology  (http://purl.bioontology.org/ontology/GAZ).
+    symbiont-associated: The geographical origin of the sample as defined by the country
+      or sea name followed by specific region name. Country or sea names should be
+      chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ
+      ontology (http://purl.bioontology.org/ontology/GAZ).
+MIXS:0000012:
+  Definition:
+    food-animal and animal feed: "Report the major environmental system the sample\
+      \ or specimen came from. The system(s) identified should have a coarse spatial\
+      \ grain, to provide the general environmental context of where the sampling\
+      \ was done (e.g. in the desert or a rainforest). We recommend using subclasses\
+      \ of EnvO\u2019s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428.\
+      \ EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
+    food-farm environment: "Report the major environmental system the sample or specimen\
+      \ came from. The system(s) identified should have a coarse spatial grain, to\
+      \ provide the general environmental context of where the sampling was done (e.g.\
+      \ in the desert or a rainforest). We recommend using subclasses of EnvO\u2019\
+      s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation\
+      \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
+    food-food production facility: "Report the major environmental system the sample\
+      \ or specimen came from. The system(s) identified should have a coarse spatial\
+      \ grain, to provide the general environmental context of where the sampling\
+      \ was done (e.g. in the desert or a rainforest). We recommend using subclasses\
+      \ of EnvO\u2019s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428.\
+      \ EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
+    food-human foods: "Report the major environmental system the sample or specimen\
+      \ came from. The system(s) identified should have a coarse spatial grain, to\
+      \ provide the general environmental context of where the sampling was done (e.g.\
+      \ in the desert or a rainforest). We recommend using subclasses of EnvO\u2019\
+      s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation\
+      \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
+    symbiont-associated: "In this field, report which major environmental system your\
+      \ sample or specimen came from. The systems identified should have a coarse\
+      \ spatial grain, to provide the general environmental context of where the sampling\
+      \ was done (e.g. were you in the desert or a rainforest?). We recommend using\
+      \ subclasses of ENVO\u2019s biome class: http://purl.obolibrary.org/obo/ENVO_00000428.\
+      \ Format (one term): termLabel [termID], Format (multiple terms): termLabel\
+      \ [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water\
+      \ sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic\
+      \ epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the\
+      \ Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].\
+      \ If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html."
+MIXS:0000013:
+  Definition:
+    food-animal and animal feed: "Report the entity or entities which are in the sample\
+      \ or specimen\u2019s local vicinity and which you believe have significant causal\
+      \ influences on your sample or specimen. We recommend using EnvO terms which\
+      \ are of smaller spatial grain than your entry for env_broad_scale. Terms, such\
+      \ as anatomical sites, from other OBO Library ontologies which interoperate\
+      \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about\
+      \ how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
+    food-farm environment: "Report the entity or entities which are in the sample\
+      \ or specimen\u2019s local vicinity and which you believe have significant causal\
+      \ influences on your sample or specimen. We recommend using EnvO terms which\
+      \ are of smaller spatial grain than your entry for env_broad_scale. Terms, such\
+      \ as anatomical sites, from other OBO Library ontologies which interoperate\
+      \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about\
+      \ how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
+    food-food production facility: "Report the entity or entities which are in the\
+      \ sample or specimen\u2019s local vicinity and which you believe have significant\
+      \ causal influences on your sample or specimen. We recommend using EnvO terms\
+      \ which are of smaller spatial grain than your entry for env_broad_scale. Terms,\
+      \ such as anatomical sites, from other OBO Library ontologies which interoperate\
+      \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about\
+      \ how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
+    food-human foods: "Report the entity or entities which are in the sample or specimen\u2019\
+      s local vicinity and which you believe have significant causal influences on\
+      \ your sample or specimen. We recommend using EnvO terms which are of smaller\
+      \ spatial grain than your entry for env_broad_scale. Terms, such as anatomical\
+      \ sites, from other OBO Library ontologies which interoperate with EnvO (e.g.\
+      \ UBERON) are accepted in this field. EnvO documentation about how to use the\
+      \ field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
+    symbiont-associated: "In this field, report the entity or entities which are in\
+      \ your sample or specimen\u2019s local vicinity and which you believe have significant\
+      \ causal influences on your sample or specimen. Please use terms that are present\
+      \ in ENVO and which are of smaller spatial grain than your entry for env_broad_scale.\
+      \ Format (one term): termLabel [termID]; Format (multiple terms): termLabel\
+      \ [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a pooled\
+      \ sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb\
+      \ and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub\
+      \ layer [ENVO:01000336]. If needed, request new terms on the ENVO tracker, identified\
+      \ here: http://www.obofoundry.org/ontology/envo.html."
+MIXS:0000014:
+  Definition:
+    food-animal and animal feed: 'Report the environmental material(s) immediately
+      surrounding the sample or specimen at the time of sampling. We recommend using
+      subclasses of ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483).
+      EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference
+      mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+      (e.g. a tree, a leaf, a table top).'
+    food-farm environment: 'Report the environmental material(s) immediately surrounding
+      the sample or specimen at the time of sampling. We recommend using subclasses
+      of ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483).
+      EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference
+      mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+      (e.g. a tree, a leaf, a table top).'
+    food-food production facility: 'Report the environmental material(s) immediately
+      surrounding the sample or specimen at the time of sampling. We recommend using
+      subclasses of ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483).
+      EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference
+      mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+      (e.g. a tree, a leaf, a table top).'
+    food-human foods: 'Report the environmental material(s) immediately surrounding
+      the sample or specimen at the time of sampling. We recommend using subclasses
+      of ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483).
+      EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference
+      mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+      (e.g. a tree, a leaf, a table top).'
+    symbiont-associated: 'Report the environmental material(s) immediately surrounding
+      the sample or specimen at the time of sampling. We recommend using subclasses
+      of ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483).
+      EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference
+      mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+      (e.g. a tree, a leaf, a table top). If the sample collected is a symbiont and
+      the sequenced entity is a symbiont of that sampled symbiont, this field describes
+      the tissue or excretion of the symbiotic host organism, not the top-level host.
+
+      '
+MIXS:0000018:
+  Definition:
+    agriculture: The vertical distance below local surface, e.g. For sediment or soil
+      samples depth is measured from sediment or soil surface, respectively. Depth
+      can be reported as an interval for subsurface samples.
+    food-farm environment: The vertical distance below local surface, e.g. for sediment
+      or soil samples depth is measured from sediment or soil surface, respectively.
+      Depth can be reported as an interval for subsurface samples.
+    host-associated: The vertical distance below local surface, e.g. For sediment
+      or soil samples depth is measured from sediment or soil surface, respectively.
+      Depth can be reported as an interval for subsurface samples.
+    microbial mat/biofilm: The vertical distance below local surface, e.g. For sediment
+      or soil samples depth is measured from sediment or soil surface, respectively.
+      Depth can be reported as an interval for subsurface samples.
+    miscellaneous natural or artificial environment: The vertical distance below local
+      surface, e.g. For sediment or soil samples depth is measured from sediment or
+      soil surface, respectively. Depth can be reported as an interval for subsurface
+      samples.
+    plant-associated: The vertical distance below local surface, e.g. For sediment
+      or soil samples depth is measured from sediment or soil surface, respectively.
+      Depth can be reported as an interval for subsurface samples.
+    sediment: The vertical distance below local surface, e.g. For sediment or soil
+      samples depth is measured from sediment or soil surface, respectively. Depth
+      can be reported as an interval for subsurface samples.
+    soil: The vertical distance below local surface, e.g. For sediment or soil samples
+      depth is measured from sediment or soil surface, respectively. Depth can be
+      reported as an interval for subsurface samples.
+    symbiont-associated: The vertical distance below local surface, e.g. for sediment
+      or soil samples depth is measured from sediment or soil surface, respectively.
+      Depth can be reported as an interval for subsurface samples.
+    wastewater/sludge: The vertical distance below local surface, e.g. For sediment
+      or soil samples depth is measured from sediment or soil surface, respectively.
+      Depth can be reported as an interval for subsurface samples.
+    water: The vertical distance below local surface, e.g. For sediment or soil samples
+      depth is measured from sediment or soil surface, respectively. Depth can be
+      reported as an interval for subsurface samples.
+  Occurrence:
+    agriculture: ''
+    food-farm environment: '1'
+    host-associated: '1'
+    microbial mat/biofilm: '1'
+    miscellaneous natural or artificial environment: '1'
+    plant-associated: '1'
+    sediment: '1'
+    soil: '1'
+    symbiont-associated: '1'
+    wastewater/sludge: '1'
+    water: '1'
+  Package item:
+    agriculture: soil depth
+    food-farm environment: depth
+    host-associated: depth
+    microbial mat/biofilm: depth
+    miscellaneous natural or artificial environment: depth
+    plant-associated: depth
+    sediment: depth
+    soil: depth
+    symbiont-associated: depth
+    wastewater/sludge: depth
+    water: depth
+  Structured comment name:
+    agriculture: soil_depth
+    food-farm environment: depth
+    host-associated: depth
+    microbial mat/biofilm: depth
+    miscellaneous natural or artificial environment: depth
+    plant-associated: depth
+    sediment: depth
+    soil: depth
+    symbiont-associated: depth
+    wastewater/sludge: depth
+    water: depth
+MIXS:0000026:
+  Occurrence:
+    agriculture: m
+    symbiont-associated: ''
+MIXS:0000031:
+  Definition:
+    agriculture: List of diseases with which the host has been diagnosed; can include
+      multiple diagnoses. The value of the field depends on host; for humans the terms
+      should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org,
+      non-human host diseases are free text
+    food-farm environment: List of diseases with which the host has been diagnosed;
+      can include multiple diagnoses. The value of the field depends on host; for
+      humans the terms should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org,
+      non-human host diseases are free text.
+    host-associated: List of diseases with which the host has been diagnosed; can
+      include multiple diagnoses. The value of the field depends on host; for humans
+      the terms should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org,
+      non-human host diseases are free text
+    human-associated: List of diseases with which the host has been diagnosed; can
+      include multiple diagnoses. The terms should be chosen from the DO (Human Disease
+      Ontology) at https://www.disease-ontology.org.
+    human-gut: List of diseases with which the host has been diagnosed; can include
+      multiple diagnoses. The terms should be chosen from the DO (Human Disease Ontology)
+      at https://www.disease-ontology.org.
+    human-oral: List of diseases with which the host has been diagnosed; can include
+      multiple diagnoses. The terms should be chosen from the DO (Human Disease Ontology)
+      at https://www.disease-ontology.org.
+    human-skin: List of diseases with which the host has been diagnosed; can include
+      multiple diagnoses. The terms should be chosen from the DO (Human Disease Ontology)
+      at https://www.disease-ontology.org.
+    human-vaginal: List of diseases with which the host has been diagnosed; can include
+      multiple diagnoses. The terms should be chosen from the DO (Human Disease Ontology)
+      at https://www.disease-ontology.org.
+    plant-associated: List of diseases with which the host has been diagnosed; can
+      include multiple diagnoses. The value of the field depends on host; for humans
+      the terms should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org,
+      non-human host diseases are free text.
+  Occurrence:
+    agriculture: m
+    food-farm environment: '1'
+    host-associated: m
+    human-associated: m
+    human-gut: m
+    human-oral: m
+    human-skin: m
+    human-vaginal: m
+    plant-associated: m
+  Value syntax:
+    agriculture: '{text}|{termLabel} {[termID]}'
+    food-farm environment: '{text}|{termLabel} {[termID]}'
+    host-associated: '{termLabel} {[termID]}|{text}'
+    human-associated: '{termLabel} {[termID]}'
+    human-gut: '{termLabel} {[termID]}'
+    human-oral: '{termLabel} {[termID]}'
+    human-skin: '{termLabel} {[termID]}'
+    human-vaginal: '{termLabel} {[termID]}'
+    plant-associated: '{text}|{termLabel} {[termID]}'
+MIXS:0000037:
+  Definition:
+    agriculture: A link to a literature reference, electronic resource or a standard
+      operating procedure (SOP), that describes the material separation to recover
+      the nucleic acid fraction from a sample
+    food-animal and animal feed: A link to a literature reference, electronic resource
+      or a standard operating procedure (SOP), that describes the material separation
+      to recover the nucleic acid fraction from a sample.
+    food-farm environment: A link to a literature reference, electronic resource or
+      a standard operating procedure (SOP), that describes the material separation
+      to recover the nucleic acid fraction from a sample.
+    food-food production facility: A link to a literature reference, electronic resource
+      or a standard operating procedure (SOP), that describes the material separation
+      to recover the nucleic acid fraction from a sample.
+    food-human foods: A link to a literature reference, electronic resource or a standard
+      operating procedure (SOP), that describes the material separation to recover
+      the nucleic acid fraction from a sample.
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    food-animal and animal feed: '{PMID}|{DOI}|{URL}'
+    food-farm environment: '{PMID}|{DOI}|{URL}'
+    food-food production facility: '{PMID}|{DOI}|{URL}'
+    food-human foods: '{PMID}|{DOI}|{URL}'
+MIXS:0000050:
+  Occurrence:
+    agriculture: ''
+    food-animal and animal feed: '1'
+    food-farm environment: '1'
+    food-food production facility: '1'
+    food-human foods: '1'
+MIXS:0000093:
+  Definition:
+    agriculture: Elevation of the sampling site is its height above a fixed reference
+      point, most commonly the mean sea level. Elevation is mainly used when referring
+      to points on the earth's surface, while altitude is used for points above the
+      surface, such as an aircraft in flight or a spacecraft in orbit.
+    air: Elevation of the sampling site is its height above a fixed reference point,
+      most commonly the mean sea level. Elevation is mainly used when referring to
+      points on the earth's surface, while altitude is used for points above the surface,
+      such as an aircraft in flight or a spacecraft in orbit
+    host-associated: Elevation of the sampling site is its height above a fixed reference
+      point, most commonly the mean sea level. Elevation is mainly used when referring
+      to points on the earth's surface, while altitude is used for points above the
+      surface, such as an aircraft in flight or a spacecraft in orbit
+    hydrocarbon resources-cores: Elevation of the sampling site is its height above
+      a fixed reference point, most commonly the mean sea level. Elevation is mainly
+      used when referring to points on the earth's surface, while altitude is used
+      for points above the surface, such as an aircraft in flight or a spacecraft
+      in orbit
+    microbial mat/biofilm: Elevation of the sampling site is its height above a fixed
+      reference point, most commonly the mean sea level. Elevation is mainly used
+      when referring to points on the earth's surface, while altitude is used for
+      points above the surface, such as an aircraft in flight or a spacecraft in orbit
+    miscellaneous natural or artificial environment: Elevation of the sampling site
+      is its height above a fixed reference point, most commonly the mean sea level.
+      Elevation is mainly used when referring to points on the earth's surface, while
+      altitude is used for points above the surface, such as an aircraft in flight
+      or a spacecraft in orbit
+    plant-associated: Elevation of the sampling site is its height above a fixed reference
+      point, most commonly the mean sea level. Elevation is mainly used when referring
+      to points on the earth's surface, while altitude is used for points above the
+      surface, such as an aircraft in flight or a spacecraft in orbit
+    sediment: Elevation of the sampling site is its height above a fixed reference
+      point, most commonly the mean sea level. Elevation is mainly used when referring
+      to points on the earth's surface, while altitude is used for points above the
+      surface, such as an aircraft in flight or a spacecraft in orbit
+    soil: Elevation of the sampling site is its height above a fixed reference point,
+      most commonly the mean sea level. Elevation is mainly used when referring to
+      points on the earth's surface, while altitude is used for points above the surface,
+      such as an aircraft in flight or a spacecraft in orbit
+    symbiont-associated: Elevation of the sampling site is its height above a fixed
+      reference point, most commonly the mean sea level. Elevation is mainly used
+      when referring to points on the earth's surface, while altitude is used for
+      points above the surface, such as an aircraft in flight or a spacecraft in orbit.
+    water: Elevation of the sampling site is its height above a fixed reference point,
+      most commonly the mean sea level. Elevation is mainly used when referring to
+      points on the earth's surface, while altitude is used for points above the surface,
+      such as an aircraft in flight or a spacecraft in orbit
+  Occurrence:
+    agriculture: ''
+    air: '1'
+    host-associated: '1'
+    hydrocarbon resources-cores: '1'
+    microbial mat/biofilm: '1'
+    miscellaneous natural or artificial environment: '1'
+    plant-associated: '1'
+    sediment: '1'
+    soil: '1'
+    symbiont-associated: ''
+    water: '1'
+MIXS:0000094:
+  Definition:
+    air: Altitude is a term used to identify heights of objects such as airplanes,
+      space shuttles, rockets, atmospheric balloons and heights of places such as
+      atmospheric layers and clouds. It is used to measure the height of an object
+      which is above the earth's surface. In this context, the altitude measurement
+      is the vertical distance between the earth's surface above sea level and the
+      sampled position in the air
+    host-associated: "Altitude is a term used to identify heights of objects such\
+      \ as airplanes, space shuttles, rockets, atmospheric balloons and heights of\
+      \ places such as atmospheric layers and clouds. It is used to measure the height\
+      \ of an object which is above the earth\u201A\xC4\xF4s surface. In this context,\
+      \ the altitude measurement is the vertical distance between the earth's surface\
+      \ above sea level and the sampled position in the air"
+    miscellaneous natural or artificial environment: "Altitude is a term used to identify\
+      \ heights of objects such as airplanes, space shuttles, rockets, atmospheric\
+      \ balloons and heights of places such as atmospheric layers and clouds. It is\
+      \ used to measure the height of an object which is above the earth\u201A\xC4\
+      \xF4s surface. In this context, the altitude measurement is the vertical distance\
+      \ between the earth's surface above sea level and the sampled position in the\
+      \ air"
+    symbiont-associated: Altitude is a term used to identify heights of objects such
+      as airplanes, space shuttles, rockets, atmospheric balloons and heights of places
+      such as atmospheric layers and clouds. It is used to measure the height of an
+      object which is above the earth's surface. In this context, the altitude measurement
+      is the vertical distance between the earth's surface above sea level and the
+      sampled position in the air.
+MIXS:0000100:
+  Definition:
+    agriculture: Amount of water vapour in the air, at the time of sampling.
+    air: Amount of water vapour in the air, at the time of sampling
+    food-farm environment: Amount of water vapour in the air, at the time of sampling.
+MIXS:0000103:
+  Definition:
+    agriculture: 'Total cell count of any organism (or group of organisms) per gram,
+      volume or area of sample, should include name of organism followed by count.
+      The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should
+      also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    air: 'Total cell count of any organism (or group of organisms) per gram, volume
+      or area of sample, should include name of organism followed by count. The method
+      that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be
+      provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    built environment: 'Total cell count of any organism (or group of organisms) per
+      gram, volume or area of sample, should include name of organism followed by
+      count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.)
+      Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    food-animal and animal feed: 'Total cell count of any organism (or group of organisms)
+      per gram, volume or area of sample, should include name of organism followed
+      by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn,
+      etc.) should also be provided (example: total prokaryotes; 3.5e7 cells per ml;
+      qPCR).'
+    food-farm environment: 'Total cell count of any organism (or group of organisms)
+      per gram, volume or area of sample, should include name of organism followed
+      by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn,
+      etc.) should also be provided (example: total prokaryotes; 3.5e7 cells per ml;
+      qPCR).'
+    food-food production facility: 'Total cell count of any organism (or group of
+      organisms) per gram, volume or area of sample, should include name of organism
+      followed by count. The method that was used for the enumeration (e.g. qPCR,
+      atp, mpn, etc.) should also be provided. (example: total prokaryotes; 3.5e7
+      cells per ml; qPCR).'
+    food-human foods: 'Total cell count of any organism (or group of organisms) per
+      gram, volume or area of sample, should include name of organism followed by
+      count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.)
+      should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qPCR).'
+    host-associated: 'Total cell count of any organism (or group of organisms) per
+      gram, volume or area of sample, should include name of organism followed by
+      count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.)
+      Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    human-associated: 'Total cell count of any organism (or group of organisms) per
+      gram, volume or area of sample, should include name of organism followed by
+      count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.)
+      Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    human-gut: 'Total cell count of any organism (or group of organisms) per gram,
+      volume or area of sample, should include name of organism followed by count.
+      The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should
+      also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    human-oral: 'Total cell count of any organism (or group of organisms) per gram,
+      volume or area of sample, should include name of organism followed by count.
+      The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should
+      also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    human-skin: 'Total cell count of any organism (or group of organisms) per gram,
+      volume or area of sample, should include name of organism followed by count.
+      The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should
+      also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    human-vaginal: 'Total cell count of any organism (or group of organisms) per gram,
+      volume or area of sample, should include name of organism followed by count.
+      The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should
+      also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    hydrocarbon resources-cores: 'Total cell count of any organism (or group of organisms)
+      per gram, volume or area of sample, should include name of organism followed
+      by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn,
+      etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per
+      ml; qpcr)'
+    hydrocarbon resources-fluids/swabs: 'Total cell count of any organism (or group
+      of organisms) per gram, volume or area of sample, should include name of organism
+      followed by count. The method that was used for the enumeration (e.g. qPCR,
+      atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7
+      cells per ml; qpcr)'
+    microbial mat/biofilm: 'Total cell count of any organism (or group of organisms)
+      per gram, volume or area of sample, should include name of organism followed
+      by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn,
+      etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per
+      ml; qpcr)'
+    miscellaneous natural or artificial environment: 'Total cell count of any organism
+      (or group of organisms) per gram, volume or area of sample, should include name
+      of organism followed by count. The method that was used for the enumeration
+      (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes;
+      3.5e7 cells per ml; qpcr)'
+    plant-associated: 'Total cell count of any organism (or group of organisms) per
+      gram, volume or area of sample, should include name of organism followed by
+      count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.)
+      Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    sediment: 'Total cell count of any organism (or group of organisms) per gram,
+      volume or area of sample, should include name of organism followed by count.
+      The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should
+      also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    symbiont-associated: 'Total cell count of any organism (or group of organisms)
+      per gram, volume or area of sample, should include name of organism followed
+      by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn,
+      etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per
+      ml; qpcr).'
+    wastewater/sludge: 'Total cell count of any organism (or group of organisms) per
+      gram, volume or area of sample, should include name of organism followed by
+      count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.)
+      Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    water: 'Total cell count of any organism (or group of organisms) per gram, volume
+      or area of sample, should include name of organism followed by count. The method
+      that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be
+      provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+  Occurrence:
+    agriculture: ''
+    air: m
+    built environment: m
+    food-animal and animal feed: '1'
+    food-farm environment: '1'
+    food-food production facility: '1'
+    food-human foods: '1'
+    host-associated: m
+    human-associated: m
+    human-gut: m
+    human-oral: m
+    human-skin: m
+    human-vaginal: m
+    hydrocarbon resources-cores: m
+    hydrocarbon resources-fluids/swabs: m
+    microbial mat/biofilm: m
+    miscellaneous natural or artificial environment: m
+    plant-associated: m
+    sediment: m
+    symbiont-associated: m
+    wastewater/sludge: m
+    water: m
+  Package item:
+    agriculture: organism count
+    air: organism count
+    built environment: organism count
+    food-animal and animal feed: spike-in organism count
+    food-farm environment: spike-in organism count
+    food-food production facility: organism count
+    food-human foods: organism count
+    host-associated: organism count
+    human-associated: organism count
+    human-gut: organism count
+    human-oral: organism count
+    human-skin: organism count
+    human-vaginal: organism count
+    hydrocarbon resources-cores: organism count
+    hydrocarbon resources-fluids/swabs: organism count
+    microbial mat/biofilm: organism count
+    miscellaneous natural or artificial environment: organism count
+    plant-associated: organism count
+    sediment: organism count
+    symbiont-associated: organism count
+    wastewater/sludge: organism count
+    water: organism count
+  Structured comment name:
+    agriculture: organism_count
+    air: organism_count
+    built environment: organism_count
+    food-animal and animal feed: spikein_count
+    food-farm environment: spikein_count
+    food-food production facility: organism_count
+    food-human foods: organism_count
+    host-associated: organism_count
+    human-associated: organism_count
+    human-gut: organism_count
+    human-oral: organism_count
+    human-skin: organism_count
+    human-vaginal: organism_count
+    hydrocarbon resources-cores: organism_count
+    hydrocarbon resources-fluids/swabs: organism_count
+    microbial mat/biofilm: organism_count
+    miscellaneous natural or artificial environment: organism_count
+    plant-associated: organism_count
+    sediment: organism_count
+    symbiont-associated: organism_count
+    wastewater/sludge: organism_count
+    water: organism_count
+  Value syntax:
+    agriculture: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    air: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    built environment: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    food-animal and animal feed: '{text};{float} {unit};[ATP|MPN|qPCR|other]'
+    food-farm environment: '{text};{float} {unit};[ATP|MPN|qPCR|other]'
+    food-food production facility: '{text};{float} {unit};[ATP|MPN|qPCR|other]'
+    food-human foods: '{text};{float} {unit};[ATP|MPN|qPCR|other]'
+    host-associated: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    human-associated: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    human-gut: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    human-oral: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    human-skin: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    human-vaginal: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    hydrocarbon resources-cores: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    hydrocarbon resources-fluids/swabs: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    microbial mat/biofilm: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    miscellaneous natural or artificial environment: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    plant-associated: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    sediment: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    symbiont-associated: '{text};{float} {unit}'
+    wastewater/sludge: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+    water: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+MIXS:0000108:
+  Package item:
+    air: air_PM_concen
+    food-farm environment: air particulate matter concentration
+  Structured comment name:
+    air: air particulate matter concentration
+    food-farm environment: air_PM_concen
+MIXS:0000109:
+  Definition:
+    human-vaginal: Salinity is the total concentration of all dissolved salts in a
+      liquid or solid (in the form of an extract obtained by centrifugation) sample.
+      While salinity can be measured by a complete chemical analysis, this method
+      is difficult and time consuming. More often, it is instead derived from the
+      conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater
+    symbiont-associated: Salinity is the total concentration of all dissolved salts
+      in a liquid or solid (in the form of an extract obtained by centrifugation)
+      sample. While salinity can be measured by a complete chemical analysis, this
+      method is difficult and time consuming. More often, it is instead derived from
+      the conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater.
+MIXS:0000110:
+  Definition:
+    agriculture: Temperature at which sample was stored, e.g. -80 degree Celsius.
+    air: Temperature at which sample was stored, e.g. -80 degree Celsius
+    food-animal and animal feed: Temperature at which sample was stored, e.g. -80
+      degree Celsius.
+    food-farm environment: Temperature at which sample was stored, e.g. -80 degree
+      Celsius.
+    food-food production facility: Temperature at which sample was stored, e.g. -80
+      degree Celsius.
+    food-human foods: Temperature at which sample was stored, e.g. -80 degree Celsius.
+    host-associated: Temperature at which sample was stored, e.g. -80 degree Celsius
+    human-associated: Temperature at which sample was stored, e.g. -80 degree Celsius
+    human-gut: Temperature at which sample was stored, e.g. -80 degree Celsius
+    human-oral: Temperature at which sample was stored, e.g. -80 degree Celsius
+    human-skin: Temperature at which sample was stored, e.g. -80 degree Celsius
+    human-vaginal: Temperature at which sample was stored, e.g. -80 degree Celsius
+    hydrocarbon resources-cores: Temperature at which sample was stored, e.g. -80
+      degree Celsius
+    hydrocarbon resources-fluids/swabs: Temperature at which sample was stored, e.g.
+      -80 degree Celsius
+    microbial mat/biofilm: Temperature at which sample was stored, e.g. -80 degree
+      Celsius
+    miscellaneous natural or artificial environment: Temperature at which sample was
+      stored, e.g. -80 degree Celsius
+    plant-associated: Temperature at which sample was stored, e.g. -80 degree Celsius
+    sediment: Temperature at which sample was stored, e.g. -80 degree Celsius
+    symbiont-associated: Temperature at which sample was stored, e.g. -80 degree Celsius.
+    wastewater/sludge: Temperature at which sample was stored, e.g. -80 degree Celsius
+    water: Temperature at which sample was stored, e.g. -80 degree Celsius
+  Structured comment name:
+    agriculture: samp_stor_temp
+    air: samp_store_temp
+    food-animal and animal feed: samp_stor_temp
+    food-farm environment: samp_stor_temp
+    food-food production facility: samp_stor_temp
+    food-human foods: samp_stor_temp
+    host-associated: samp_store_temp
+    human-associated: samp_store_temp
+    human-gut: samp_store_temp
+    human-oral: samp_store_temp
+    human-skin: samp_store_temp
+    human-vaginal: samp_store_temp
+    hydrocarbon resources-cores: samp_store_temp
+    hydrocarbon resources-fluids/swabs: samp_store_temp
+    microbial mat/biofilm: samp_store_temp
+    miscellaneous natural or artificial environment: samp_store_temp
+    plant-associated: samp_store_temp
+    sediment: samp_store_temp
+    symbiont-associated: samp_store_temp
+    wastewater/sludge: samp_store_temp
+    water: samp_store_temp
+MIXS:0000111:
+  Definition:
+    agriculture: 'Volume (ml) or mass (g) of total collected sample processed for
+      DNA extraction. Note: total sample collected should be entered under the term
+      Sample Size (MIXS:0000001).'
+    air: 'Volume (ml) or mass (g) of total collected sample processed for DNA extraction.
+      Note: total sample collected should be entered under the term Sample Size (MIXS:0000001).'
+    food-animal and animal feed: 'Volume (ml) or mass (g) of total collected sample
+      processed for DNA extraction. Note: total sample collected should be entered
+      under the term Sample Size (MIXS:0000001).'
+    food-farm environment: 'Volume (ml) or mass (g) of total collected sample processed
+      for DNA extraction. Note: total sample collected should be entered under the
+      term Sample Size (MIXS:0000001).'
+    food-food production facility: 'Volume (ml) or mass (g) of total collected sample
+      processed for DNA extraction. Note: total sample collected should be entered
+      under the term Sample Size (MIXS:0000001).'
+    food-human foods: 'Volume (ml) or mass (g) of total collected sample processed
+      for DNA extraction. Note: total sample collected should be entered under the
+      term Sample Size (MIXS:0000001).'
+    host-associated: 'Volume (ml) or mass (g) of total collected sample processed
+      for DNA extraction. Note: total sample collected should be entered under the
+      term Sample Size (MIXS:0000001).'
+    human-associated: 'Volume (ml) or mass (g) of total collected sample processed
+      for DNA extraction. Note: total sample collected should be entered under the
+      term Sample Size (MIXS:0000001).'
+    human-gut: 'Volume (ml) or mass (g) of total collected sample processed for DNA
+      extraction. Note: total sample collected should be entered under the term Sample
+      Size (MIXS:0000001).'
+    human-oral: 'Volume (ml) or mass (g) of total collected sample processed for DNA
+      extraction. Note: total sample collected should be entered under the term Sample
+      Size (MIXS:0000001).'
+    human-skin: 'Volume (ml) or mass (g) of total collected sample processed for DNA
+      extraction. Note: total sample collected should be entered under the term Sample
+      Size (MIXS:0000001).'
+    human-vaginal: 'Volume (ml) or mass (g) of total collected sample processed for
+      DNA extraction. Note: total sample collected should be entered under the term
+      Sample Size (MIXS:0000001).'
+    hydrocarbon resources-cores: 'Volume (ml) or mass (g) of total collected sample
+      processed for DNA extraction. Note: total sample collected should be entered
+      under the term Sample Size (MIXS:0000001).'
+    hydrocarbon resources-fluids/swabs: 'Volume (ml) or mass (g) of total collected
+      sample processed for DNA extraction. Note: total sample collected should be
+      entered under the term Sample Size (MIXS:0000001).'
+    microbial mat/biofilm: 'Volume (ml) or mass (g) of total collected sample processed
+      for DNA extraction. Note: total sample collected should be entered under the
+      term Sample Size (MIXS:0000001).'
+    miscellaneous natural or artificial environment: 'Volume (ml) or mass (g) of total
+      collected sample processed for DNA extraction. Note: total sample collected
+      should be entered under the term Sample Size (MIXS:0000001).'
+    plant-associated: 'Volume (ml) or mass (g) of total collected sample processed
+      for DNA extraction. Note: total sample collected should be entered under the
+      term Sample Size (MIXS:0000001).'
+    sediment: 'Volume (ml) or mass (g) of total collected sample processed for DNA
+      extraction. Note: total sample collected should be entered under the term Sample
+      Size (MIXS:0000001).'
+    soil: 'Volume (ml) or mass (g) of total collected sample processed for DNA extraction.
+      Note: total sample collected should be entered under the term Sample Size (MIXS:0000001).'
+    symbiont-associated: Volume (ml), weight (g) of processed sample, or surface area
+      swabbed from sample for DNA extraction.
+    wastewater/sludge: 'Volume (ml) or mass (g) of total collected sample processed
+      for DNA extraction. Note: total sample collected should be entered under the
+      term Sample Size (MIXS:0000001).'
+    water: 'Volume (ml) or mass (g) of total collected sample processed for DNA extraction.
+      Note: total sample collected should be entered under the term Sample Size (MIXS:0000001).'
+MIXS:0000112:
+  Definition:
+    agriculture: The amount of solar energy that arrives at a specific area of a surface
+      during a specific time interval.
+    air: The amount of solar energy that arrives at a specific area of a surface during
+      a specific time interval
+    food-farm environment: The amount of solar energy that arrives at a specific area
+      of a surface during a specific time interval
+  Occurrence:
+    agriculture: m
+    air: '1'
+    food-farm environment: m
+  Package item:
+    agriculture: mean seasonal solar irradiance
+    air: solar irradiance
+    food-farm environment: mean seasonal solar irradiance
+MIXS:0000113:
+  Definition:
+    agriculture: Temperature of the sample at the time of sampling.
+    air: Temperature of the sample at the time of sampling
+    food-animal and animal feed: Temperature of the sample at the time of sampling.
+    food-farm environment: Temperature of the sample at the time of sampling.
+    food-human foods: Temperature of the sample at the time of sampling.
+    host-associated: Temperature of the sample at the time of sampling
+    human-associated: Temperature of the sample at the time of sampling
+    human-gut: Temperature of the sample at the time of sampling
+    human-oral: Temperature of the sample at the time of sampling
+    human-skin: Temperature of the sample at the time of sampling
+    human-vaginal: Temperature of the sample at the time of sampling
+    hydrocarbon resources-cores: Temperature of the sample at the time of sampling
+    hydrocarbon resources-fluids/swabs: Temperature of the sample at the time of sampling
+    microbial mat/biofilm: Temperature of the sample at the time of sampling
+    miscellaneous natural or artificial environment: Temperature of the sample at
+      the time of sampling
+    plant-associated: Temperature of the sample at the time of sampling
+    sediment: Temperature of the sample at the time of sampling
+    soil: Temperature of the sample at the time of sampling
+    symbiont-associated: Temperature of the sample at the time of sampling.
+    wastewater/sludge: Temperature of the sample at the time of sampling
+    water: Temperature of the sample at the time of sampling
+MIXS:0000114:
+  Definition:
+    air: Ventilation rate of the system in the sampled premises
+    food-farm environment: Ventilation rate of the system in the sampled premises.
+MIXS:0000116:
+  Definition:
+    agriculture: Duration for which the sample was stored
+    air: Duration for which the sample was stored
+    food-animal and animal feed: Duration for which the sample was stored. Indicate
+      the duration for which the sample was stored written in ISO 8601 format.
+    food-farm environment: Duration for which the sample was stored. Indicate the
+      duration for which the sample was stored written in ISO 8601 format.
+    food-food production facility: Duration for which the sample was stored. Indicate
+      the duration for which the sample was stored written in ISO 8601 format.
+    food-human foods: Duration for which the sample was stored. Indicate the duration
+      for which the sample was stored written in ISO 8601 format.
+    host-associated: Duration for which the sample was stored
+    human-associated: Duration for which the sample was stored
+    human-gut: Duration for which the sample was stored
+    human-oral: Duration for which the sample was stored
+    human-skin: Duration for which the sample was stored
+    human-vaginal: Duration for which the sample was stored
+    hydrocarbon resources-cores: Duration for which the sample was stored
+    hydrocarbon resources-fluids/swabs: Duration for which the sample was stored
+    microbial mat/biofilm: Duration for which the sample was stored
+    miscellaneous natural or artificial environment: Duration for which the sample
+      was stored
+    plant-associated: Duration for which the sample was stored
+    sediment: Duration for which the sample was stored
+    symbiont-associated: Duration for which the sample was stored.
+    wastewater/sludge: Duration for which the sample was stored
+    water: Duration for which the sample was stored
+  Structured comment name:
+    agriculture: samp_store_dur
+    air: samp_store_dur
+    food-animal and animal feed: samp_stor_dur
+    food-farm environment: samp_stor_dur
+    food-food production facility: samp_stor_dur
+    food-human foods: samp_stor_dur
+    host-associated: samp_store_dur
+    human-associated: samp_store_dur
+    human-gut: samp_store_dur
+    human-oral: samp_store_dur
+    human-skin: samp_store_dur
+    human-vaginal: samp_store_dur
+    hydrocarbon resources-cores: samp_store_dur
+    hydrocarbon resources-fluids/swabs: samp_store_dur
+    microbial mat/biofilm: samp_store_dur
+    miscellaneous natural or artificial environment: samp_store_dur
+    plant-associated: samp_store_dur
+    sediment: samp_store_dur
+    symbiont-associated: samp_store_dur
+    wastewater/sludge: samp_store_dur
+    water: samp_store_dur
+  Value syntax:
+    agriculture: '{interval}'
+    air: '{duration}'
+    food-animal and animal feed: '{duration}'
+    food-farm environment: '{duration}'
+    food-food production facility: '{duration}'
+    food-human foods: '{duration}'
+    host-associated: '{duration}'
+    human-associated: '{duration}'
+    human-gut: '{duration}'
+    human-oral: '{duration}'
+    human-skin: '{duration}'
+    human-vaginal: '{duration}'
+    hydrocarbon resources-cores: '{duration}'
+    hydrocarbon resources-fluids/swabs: '{duration}'
+    microbial mat/biofilm: '{duration}'
+    miscellaneous natural or artificial environment: '{duration}'
+    plant-associated: '{duration}'
+    sediment: '{duration}'
+    symbiont-associated: '{duration}'
+    wastewater/sludge: '{duration}'
+    water: '{duration}'
+MIXS:0000118:
+  Definition:
+    air: Speed of wind measured at the time of sampling
+    food-farm environment: speed of wind measured at the time of sampling.
+MIXS:0000124:
+  Definition:
+    built environment: Temperature of the air at the time of sampling
+    food-food production facility: Temperature of the air at the time of sampling.
+MIXS:0000183:
+  Definition:
+    air: The total concentration of all dissolved salts in a liquid or solid sample.
+      While salinity can be measured by a complete chemical analysis, this method
+      is difficult and time consuming. More often, it is instead derived from the
+      conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater.
+    food-farm environment: The total concentration of all dissolved salts in a liquid
+      or solid sample. While salinity can be measured by a complete chemical analysis,
+      this method is difficult and time consuming. More often, it is instead derived
+      from the conductivity measurement. This is known as practical salinity. These
+      derivations compare the specific conductance of the sample to a salinity standard
+      such as seawater.
+    host-associated: The total concentration of all dissolved salts in a liquid or
+      solid sample. While salinity can be measured by a complete chemical analysis,
+      this method is difficult and time consuming. More often, it is instead derived
+      from the conductivity measurement. This is known as practical salinity. These
+      derivations compare the specific conductance of the sample to a salinity standard
+      such as seawater.
+    human-associated: The total concentration of all dissolved salts in a liquid or
+      solid sample. While salinity can be measured by a complete chemical analysis,
+      this method is difficult and time consuming. More often, it is instead derived
+      from the conductivity measurement. This is known as practical salinity. These
+      derivations compare the specific conductance of the sample to a salinity standard
+      such as seawater.
+    human-gut: The total concentration of all dissolved salts in a liquid or solid
+      sample. While salinity can be measured by a complete chemical analysis, this
+      method is difficult and time consuming. More often, it is instead derived from
+      the conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater.
+    human-oral: The total concentration of all dissolved salts in a liquid or solid
+      sample. While salinity can be measured by a complete chemical analysis, this
+      method is difficult and time consuming. More often, it is instead derived from
+      the conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater.
+    human-skin: The total concentration of all dissolved salts in a liquid or solid
+      sample. While salinity can be measured by a complete chemical analysis, this
+      method is difficult and time consuming. More often, it is instead derived from
+      the conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater.
+    human-vaginal: The total concentration of all dissolved salts in a liquid or solid
+      sample. While salinity can be measured by a complete chemical analysis, this
+      method is difficult and time consuming. More often, it is instead derived from
+      the conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater.
+    hydrocarbon resources-cores: The total concentration of all dissolved salts in
+      a liquid or solid sample. While salinity can be measured by a complete chemical
+      analysis, this method is difficult and time consuming. More often, it is instead
+      derived from the conductivity measurement. This is known as practical salinity.
+      These derivations compare the specific conductance of the sample to a salinity
+      standard such as seawater.
+    hydrocarbon resources-fluids/swabs: The total concentration of all dissolved salts
+      in a liquid or solid sample. While salinity can be measured by a complete chemical
+      analysis, this method is difficult and time consuming. More often, it is instead
+      derived from the conductivity measurement. This is known as practical salinity.
+      These derivations compare the specific conductance of the sample to a salinity
+      standard such as seawater.
+    microbial mat/biofilm: The total concentration of all dissolved salts in a liquid
+      or solid sample. While salinity can be measured by a complete chemical analysis,
+      this method is difficult and time consuming. More often, it is instead derived
+      from the conductivity measurement. This is known as practical salinity. These
+      derivations compare the specific conductance of the sample to a salinity standard
+      such as seawater.
+    miscellaneous natural or artificial environment: The total concentration of all
+      dissolved salts in a liquid or solid sample. While salinity can be measured
+      by a complete chemical analysis, this method is difficult and time consuming.
+      More often, it is instead derived from the conductivity measurement. This is
+      known as practical salinity. These derivations compare the specific conductance
+      of the sample to a salinity standard such as seawater.
+    plant-associated: The total concentration of all dissolved salts in a liquid or
+      solid sample. While salinity can be measured by a complete chemical analysis,
+      this method is difficult and time consuming. More often, it is instead derived
+      from the conductivity measurement. This is known as practical salinity. These
+      derivations compare the specific conductance of the sample to a salinity standard
+      such as seawater.
+    sediment: The total concentration of all dissolved salts in a liquid or solid
+      sample. While salinity can be measured by a complete chemical analysis, this
+      method is difficult and time consuming. More often, it is instead derived from
+      the conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater.
+    wastewater/sludge: The total concentration of all dissolved salts in a liquid
+      or solid sample. While salinity can be measured by a complete chemical analysis,
+      this method is difficult and time consuming. More often, it is instead derived
+      from the conductivity measurement. This is known as practical salinity. These
+      derivations compare the specific conductance of the sample to a salinity standard
+      such as seawater.
+    water: Salinity is the total concentration of all dissolved salts in a water sample.
+      While salinity can be measured by a complete chemical analysis, this method
+      is difficult and time consuming. More often, it is instead derived from the
+      conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater
+MIXS:0000185:
+  Value syntax:
+    microbial mat/biofilm: '{float} {unit}'
+    sediment: '{float} {unit}'
+    soil: '{float}'
+MIXS:0000191:
+  Definition:
+    food-farm environment: Measure of the amount of cloudiness or haziness in water
+      caused by individual particles.
+    microbial mat/biofilm: Measure of the amount of cloudiness or haziness in water
+      caused by individual particles
+    sediment: Measure of the amount of cloudiness or haziness in water caused by individual
+      particles
+    water: Measure of the amount of cloudiness or haziness in water caused by individual
+      particles
+MIXS:0000211:
+  Definition:
+    agriculture: Porosity of deposited sediment is volume of voids divided by the
+      total volume of sample.
+    hydrocarbon resources-cores: Porosity of deposited sediment is volume of voids
+      divided by the total volume of sample
+    sediment: Porosity of deposited sediment is volume of voids divided by the total
+      volume of sample
+MIXS:0000226:
+  Value syntax:
+    built environment: '[ Daily| Weekly| Monthly| Quarterly | Annually| other]'
+    food-food production facility: '{text}'
+MIXS:0000244:
+  Definition:
+    built environment: Sampling room number. This ID should be consistent with the
+      designations on the building floor plans
+    food-food production facility: Sampling room number. This ID should be consistent
+      with the designations on the building floor plans.
+MIXS:0000247:
+  Definition:
+    agriculture: Information about either pedigree or other ancestral information
+      description (e.g. parental variety in case of mutant or selection), e.g. A/3*B
+      (meaning [(A x B) x B] x B)
+    food-farm environment: Information about either pedigree or other ancestral information
+      description (e.g. parental variety in case of mutant or selection), e.g. A/3*B
+      (meaning [(A x B) x B] x B).
+    host-associated: Information about either pedigree or other ancestral information
+      description (e.g. parental variety in case of mutant or selection), e.g. A/3*B
+      (meaning [(A x B) x B] x B)
+    plant-associated: Information about either pedigree or other ancestral information
+      description (e.g. parental variety in case of mutant or selection), e.g. A/3*B
+      (meaning [(A x B) x B] x B)
+MIXS:0000250:
+  Definition:
+    agriculture: NCBI taxon id of the host, e.g. 9606
+    food-farm environment: NCBI taxon id of the host, e.g. 9606.
+    host-associated: NCBI taxon id of the host, e.g. 9606
+    plant-associated: NCBI taxon id of the host, e.g. 9606
+    symbiont-associated: NCBI taxon id of the host.
+  Value syntax:
+    agriculture: '{integer}'
+    food-farm environment: '{NCBI taxid}'
+    host-associated: '{NCBI taxid}'
+    plant-associated: '{NCBI taxid}'
+    symbiont-associated: '{integer}'
+MIXS:0000251:
+  Definition:
+    agriculture: Description of life stage of host
+    host-associated: Description of life stage of host
+    plant-associated: Description of life stage of host
+    symbiont-associated: Description of life stage of host.
+MIXS:0000255:
+  Definition:
+    agriculture: Age of host at the time of sampling; relevant scale depends on species
+      and study, e.g. Could be seconds for amoebae or centuries for trees
+    food-farm environment: Age of host at the time of sampling; relevant scale depends
+      on species and study, e.g. Could be seconds for amoebae or centuries for trees.
+    host-associated: Age of host at the time of sampling; relevant scale depends on
+      species and study, e.g. Could be seconds for amoebae or centuries for trees
+    human-associated: Age of host at the time of sampling; relevant scale depends
+      on species and study, e.g. Could be seconds for amoebae or centuries for trees
+    human-gut: Age of host at the time of sampling; relevant scale depends on species
+      and study, e.g. Could be seconds for amoebae or centuries for trees
+    human-oral: Age of host at the time of sampling; relevant scale depends on species
+      and study, e.g. Could be seconds for amoebae or centuries for trees
+    human-skin: Age of host at the time of sampling; relevant scale depends on species
+      and study, e.g. Could be seconds for amoebae or centuries for trees
+    human-vaginal: Age of host at the time of sampling; relevant scale depends on
+      species and study, e.g. Could be seconds for amoebae or centuries for trees
+    plant-associated: Age of host at the time of sampling; relevant scale depends
+      on species and study, e.g. Could be seconds for amoebae or centuries for trees
+    symbiont-associated: Age of host at the time of sampling; relevant scale depends
+      on species and study, e.g. Could be seconds for amoebae or centuries for trees.
+MIXS:0000256:
+  Definition:
+    agriculture: The length of subject
+    food-farm environment: The length of subject.
+    host-associated: The length of subject
+    plant-associated: The length of subject.
+    symbiont-associated: The length of subject.
+MIXS:0000257:
+  Definition:
+    agriculture: Measurement of dry mass.
+    food-farm environment: Measurement of dry mass.
+    host-associated: Measurement of dry mass
+    plant-associated: Measurement of dry mass
+    symbiont-associated: Measurement of dry mass.
+MIXS:0000260:
+  Definition:
+    host-associated: The color of host
+    symbiont-associated: The color of host.
+MIXS:0000261:
+  Definition:
+    host-associated: Morphological shape of host
+    symbiont-associated: Morphological shape of host.
+MIXS:0000263:
+  Definition:
+    agriculture: Total mass of the host at collection, the unit depends on host
+    food-farm environment: Total mass of the host at collection, the unit depends
+      on host.
+    host-associated: Total mass of the host at collection, the unit depends on host
+    human-associated: Total mass of the host at collection, the unit depends on host
+    human-gut: Total mass of the host at collection, the unit depends on host
+    human-oral: Total mass of the host at collection, the unit depends on host
+    human-skin: Total mass of the host at collection, the unit depends on host
+    human-vaginal: Total mass of the host at collection, the unit depends on host
+    plant-associated: Total mass of the host at collection, the unit depends on host
+    symbiont-associated: Total mass of the host at collection, the unit depends on
+      host.
+MIXS:0000264:
+  Definition:
+    agriculture: The height of subject
+    food-farm environment: The height of subject.
+    host-associated: The height of subject
+    human-associated: The height of subject.
+    human-gut: The height of subject
+    human-oral: The height of subject
+    human-skin: The height of subject
+    human-vaginal: The height of subject
+    plant-associated: The height of subject
+    symbiont-associated: The height of subject.
+MIXS:0000310:
+  Value syntax:
+    microbial mat/biofilm: '{float} {unit}'
+    sediment: '{float} {unit}'
+    water: '{float}:{float}'
+MIXS:0000314:
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000315:
+  Definition:
+    agriculture: Previous land use and dates
+    food-farm environment: Previous land use and dates.
+    soil: Previous land use and dates
+MIXS:0000316:
+  Structured comment name:
+    agriculture: previous_land_use_meth
+    soil: prev_land_use_meth
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000318:
+  Definition:
+    agriculture: Whether or not crop is rotated, and if yes, rotation schedule
+    food-farm environment: Whether or not crop is rotated, and if yes, rotation schedule.
+    soil: Whether or not crop is rotated, and if yes, rotation schedule
+  Value syntax:
+    agriculture: '{boolean};Rn/{timestamp}/{period}'
+    food-farm environment: '{boolean};{Rn/start_time/end_time/duration}'
+    soil: '{boolean};{Rn/start_time/end_time/duration}'
+MIXS:0000321:
+  Package item:
+    agriculture: horizon method
+    soil: soil horizon method
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000322:
+  Package item:
+    agriculture: composite design/sieving (if any)
+    soil: composite design/sieving
+MIXS:0000325:
+  Definition:
+    agriculture: Indicate whether multiple DNA extractions were mixed. If the answer
+      yes, the number of extracts that were pooled should be given
+    food-animal and animal feed: Indicate whether multiple DNA extractions were mixed.
+      If the answer yes, the number of extracts that were pooled should be given.
+    food-food production facility: Indicate whether multiple DNA extractions were
+      mixed. If the answer yes, the number of extracts that were pooled should be
+      given.
+    food-human foods: Indicate whether multiple DNA extractions were mixed. If the
+      answer yes, the number of extracts that were pooled should be given.
+    soil: Indicate whether multiple DNA extractions were mixed. If the answer yes,
+      the number of extracts that were pooled should be given
+  Occurrence:
+    agriculture: '1'
+    food-animal and animal feed: m
+    food-food production facility: m
+    food-human foods: m
+    soil: '1'
+  Value syntax:
+    agriculture: '{boolean};{float} {unit}'
+    food-animal and animal feed: '{boolean},{integer}'
+    food-food production facility: '{boolean},{integer}'
+    food-human foods: '{boolean},{integer}'
+    soil: '{boolean};{integer}'
+MIXS:0000327:
+  Package item:
+    agriculture: storage conditions (fresh/frozen/other)
+    soil: storage conditions
+  Value syntax:
+    agriculture: '{text};{period}'
+    soil: '{text};{duration}'
+MIXS:0000328:
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000329:
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000331:
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000332:
+  Definition:
+    agriculture: Soil series name or other lower-level classification
+    food-farm environment: Description of the soil type or classification. This field
+      accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple
+      terms can be separated by pipes.
+    soil: Description of the soil type or classification. This field accepts terms
+      under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple terms can
+      be separated by pipes.
+  Occurrence:
+    agriculture: '1'
+    food-farm environment: m
+    soil: '1'
+  Value syntax:
+    agriculture: '{text}'
+    food-farm environment: '{termLabel} {[termID]}'
+    soil: '{termLabel} {[termID]}
+
+      '
+MIXS:0000334:
+  Definition:
+    agriculture: Reference or method used in determining soil series name or other
+      lower-level classification
+    food-farm environment: Reference or method used in determining soil series name
+      or other lower-level classification.
+    soil: Reference or method used in determining soil series name or other lower-level
+      classification
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    food-farm environment: '{PMID}|{DOI}|{URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000335:
+  Package item:
+    agriculture: texture
+    soil: soil texture measurement
+  Structured comment name:
+    agriculture: texture
+    soil: soil_text_measure
+MIXS:0000336:
+  Definition:
+    agriculture: Reference or method used in determining soil texture.
+    food-farm environment: Reference or method used in determining soil texture classification.
+    soil: Reference or method used in determining soil texture
+  Package item:
+    agriculture: texture method
+    food-farm environment: soil texture method
+    soil: soil texture method
+  Structured comment name:
+    agriculture: texture_meth
+    food-farm environment: soil_texture_meth
+    soil: soil_texture_meth
+MIXS:0000337:
+  Definition:
+    agriculture: Reference or method used in determining total organic carbon
+    food-farm environment: Reference or method used in determining total organic carbon.
+    soil: Reference or method used in determining total organic carbon
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    food-farm environment: '{PMID}|{DOI}|{URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000338:
+  Definition:
+    agriculture: Reference or method used in determining the total nitrogen
+    food-farm environment: Reference or method used in determining the total nitrogen.
+    soil: Reference or method used in determining the total nitrogen
+  Occurrence:
+    agriculture: '1'
+    food-farm environment: m
+    soil: '1'
+  Package item:
+    agriculture: total nitrogen method
+    food-farm environment: total nitrogen content method
+    soil: total nitrogen content method
+  Structured comment name:
+    agriculture: tot_n_meth
+    food-farm environment: tot_nitro_cont_meth
+    soil: tot_nitro_cont_meth
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    food-farm environment: '{PMID}|{DOI}|{URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000339:
+  Structured comment name:
+    agriculture: microbial_biomass_meth
+    soil: micro_biomass_meth
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000341:
+  Definition:
+    food-farm environment: Reference or method used in determining salinity.
+    soil: Reference or method used in determining salinity
+MIXS:0000343:
+  Package item:
+    agriculture: extreme_unusual_conditions
+    soil: extreme_unusual_properties/heavy metals method
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0000365:
+  Definition:
+    agriculture: Observed genotype
+    food-farm environment: Observed genotype.
+    host-associated: Observed genotype
+    human-associated: Observed genotype
+    human-gut: Observed genotype
+    human-oral: Observed genotype
+    human-skin: Observed genotype
+    human-vaginal: Observed genotype
+    plant-associated: Observed genotype
+    symbiont-associated: Observed genotype.
+  Occurrence:
+    agriculture: '1'
+    food-farm environment: '1'
+    host-associated: '1'
+    human-associated: '1'
+    human-gut: '1'
+    human-oral: '1'
+    human-skin: '1'
+    human-vaginal: '1'
+    plant-associated: '1'
+    symbiont-associated: ''
+MIXS:0000394:
+  Definition:
+    hydrocarbon resources-cores: True vertical depth subsea (TVDSS) of the hydrocarbon
+      resource where the original temperature was measured (e.g. 1345 m).
+    hydrocarbon resources-fluids/swabs: True vertical depth subsea (TVDSS) of the
+      hydrocarbon resource where the original temperature was measured (e.g. 1345
+      m)
+MIXS:0000397:
+  Definition:
+    hydrocarbon resources-cores: True vertical depth subsea (TVDSS) of the hydrocarbon
+      resource where the original pressure was measured (e.g. 1578 m).
+    hydrocarbon resources-fluids/swabs: True vertical depth subsea (TVDSS) of the
+      hydrocarbon resource where the original pressure was measured (e.g. 1578 m )
+MIXS:0000525:
+  Structured comment name:
+    agriculture: tot_car
+    microbial mat/biofilm: tot_carb
+    sediment: tot_carb
+MIXS:0000530:
+  Definition:
+    agriculture: Total nitrogen content of the sample
+    food-farm environment: Total nitrogen content of the sample.
+    microbial mat/biofilm: Total nitrogen content of the sample
+    sediment: Total nitrogen content of the sample
+    soil: Total nitrogen content of the sample
+  Occurrence:
+    agriculture: '1'
+    food-farm environment: m
+    microbial mat/biofilm: '1'
+    sediment: '1'
+    soil: '1'
+  Package item:
+    agriculture: total nitrogen
+    food-farm environment: total nitrogen content
+    microbial mat/biofilm: total nitrogen content
+    sediment: total nitrogen content
+    soil: total nitrogen content
+  Structured comment name:
+    agriculture: tot_nitro
+    food-farm environment: tot_nitro_content
+    microbial mat/biofilm: tot_nitro_content
+    sediment: tot_nitro_content
+    soil: tot_nitro_content
+MIXS:0000533:
+  Definition:
+    agriculture: 'Definition for soil: total organic carbon content of the soil, definition
+      otherwise: total organic carbon content'
+    food-farm environment: 'Definition for soil: total organic carbon content of the
+      soil, definition otherwise: total organic carbon content.'
+    microbial mat/biofilm: 'Definition for soil: total organic carbon content of the
+      soil, definition otherwise: total organic carbon content'
+    sediment: 'Definition for soil: total organic carbon content of the soil, definition
+      otherwise: total organic carbon content'
+    soil: 'Definition for soil: total organic carbon content of the soil, definition
+      otherwise: total organic carbon content'
+  Value syntax:
+    agriculture: '{float} {unit}'
+    food-farm environment: '{percentage}'
+    microbial mat/biofilm: '{float} {unit}'
+    sediment: '{float} {unit}'
+    soil: '{float} {unit}'
+MIXS:0000557:
+  Value syntax:
+    agriculture: '{text};{float} {unit};{period};{interval};{period}'
+    plant-associated: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+MIXS:0000558:
+  Value syntax:
+    agriculture: '{text};{float} {unit};{period};{interval};{period}'
+    plant-associated: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+MIXS:0000561:
+  Value syntax:
+    agriculture: '{text};{float} {unit};{period};{interval};{period}'
+    plant-associated: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+MIXS:0000571:
+  Structured comment name:
+    agriculture: non_mineral_nutr_regm
+    plant-associated: non_min_nutr_regm
+  Value syntax:
+    agriculture: '{text};{float} {unit};{period};{interval};{period}'
+    plant-associated: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+MIXS:0000573:
+  Value syntax:
+    agriculture: '{text};{float} {unit};{period};{interval};{period}'
+    plant-associated: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+MIXS:0000578:
+  Definition:
+    agriculture: "Measurement of the culture rooting medium macronutrients (N,P, K,\
+      \ Ca, Mg, S); e.g. KH2PO4 (170\xAC\u2020mg/L)."
+    food-farm environment: Measurement of the culture rooting medium macronutrients
+      (N,P, K, Ca, Mg, S); e.g. KH2PO4 (170 mg/L).
+    plant-associated: "Measurement of the culture rooting medium macronutrients (N,P,\
+      \ K, Ca, Mg, S); e.g. KH2PO4 (170\xAC\u2020mg/L)."
+MIXS:0000579:
+  Definition:
+    food-farm environment: Measurement of the culture rooting medium micronutrients
+      (Fe, Mn, Zn, B, Cu, Mo); e.g. H3BO3 (6.2 mg/L).
+    plant-associated: "Measurement of the culture rooting medium micronutrients (Fe,\
+      \ Mn, Zn, B, Cu, Mo); e.g. H3BO3 (6.2\xAC\u2020mg/L)."
+MIXS:0000582:
+  Value syntax:
+    agriculture: '{text};{float} {unit};{period};{interval};{period}'
+    plant-associated: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+MIXS:0000590:
+  Value syntax:
+    agriculture: '{float} {unit};{period};{interval};{period}'
+    plant-associated: '{float} {unit};{Rn/start_time/end_time/duration}'
+MIXS:0000591:
+  Value syntax:
+    agriculture: '{float} {unit};{period};{interval};{period}'
+    plant-associated: '{float} {unit};{Rn/start_time/end_time/duration}'
+MIXS:0000643:
+  Definition:
+    agriculture: Mean seasonal temperature
+    food-farm environment: Mean seasonal air temperature.
+    soil: Mean seasonal temperature
+  Package item:
+    agriculture: mean seasonal temperature
+    food-farm environment: mean seasonal air temperature
+    soil: mean seasonal temperature
+MIXS:0000645:
+  Occurrence:
+    agriculture: '1'
+    food-farm environment: m
+    soil: '1'
+MIXS:0000689:
+  Package item:
+    agriculture: total phosphorous
+    wastewater/sludge: total phosphate
+  Structured comment name:
+    agriculture: tot_phos
+    wastewater/sludge: tot_phosphate
+MIXS:0000692:
+  Definition:
+    food-farm environment: Electrical conductivity of water.
+    water: Electrical conductivity of water
+MIXS:0000735:
+  Definition:
+    agriculture: Refers to the mesh/pore size used to pre-filter/pre-sort the sample.
+      Materials larger than the size threshold are excluded from the sample
+    food-farm environment: Refers to the mesh/pore size used to pre-filter/pre-sort
+      the sample. Materials larger than the size threshold are excluded from the sample.
+    water: Refers to the mesh/pore size used to pre-filter/pre-sort the sample. Materials
+      larger than the size threshold are excluded from the sample
+MIXS:0000736:
+  Definition:
+    agriculture: Refers to the mesh/pore size used to retain the sample. Materials
+      smaller than the size threshold are excluded from the sample
+    food-farm environment: Refers to the mesh/pore size used to retain the sample.
+      Materials smaller than the size threshold are excluded from the sample.
+    water: Refers to the mesh/pore size used to retain the sample. Materials smaller
+      than the size threshold are excluded from the sample
+MIXS:0000751:
+  Definition:
+    agriculture: List of chemical compounds administered to the host or site where
+      sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can
+      include multiple compounds. For chemical entities of biological interest ontology
+      (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    air: List of chemical compounds administered to the host or site where sampling
+      occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include
+      multiple compounds. For chemical entities of biological interest ontology (chebi)
+      (v 163), http://purl.bioontology.org/ontology/chebi
+    food-farm environment: List of chemical compounds administered to the host or
+      site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air
+      filter); can include multiple compounds. For chemical entities of biological
+      interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi.
+    host-associated: List of chemical compounds administered to the host or site where
+      sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can
+      include multiple compounds. For chemical entities of biological interest ontology
+      (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    human-associated: List of chemical compounds administered to the host or site
+      where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter);
+      can include multiple compounds. For chemical entities of biological interest
+      ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    human-gut: List of chemical compounds administered to the host or site where sampling
+      occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include
+      multiple compounds. For chemical entities of biological interest ontology (chebi)
+      (v 163), http://purl.bioontology.org/ontology/chebi
+    human-oral: List of chemical compounds administered to the host or site where
+      sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can
+      include multiple compounds. For chemical entities of biological interest ontology
+      (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    human-skin: List of chemical compounds administered to the host or site where
+      sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can
+      include multiple compounds. For chemical entities of biological interest ontology
+      (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    human-vaginal: List of chemical compounds administered to the host or site where
+      sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can
+      include multiple compounds. For chemical entities of biological interest ontology
+      (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    microbial mat/biofilm: List of chemical compounds administered to the host or
+      site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air
+      filter); can include multiple compounds. For chemical entities of biological
+      interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    miscellaneous natural or artificial environment: List of chemical compounds administered
+      to the host or site where sampling occurred, and when (e.g. Antibiotics, n fertilizer,
+      air filter); can include multiple compounds. For chemical entities of biological
+      interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    plant-associated: List of chemical compounds administered to the host or site
+      where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter);
+      can include multiple compounds. For chemical entities of biological interest
+      ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    sediment: List of chemical compounds administered to the host or site where sampling
+      occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include
+      multiple compounds. For chemical entities of biological interest ontology (chebi)
+      (v 163), http://purl.bioontology.org/ontology/chebi
+    symbiont-associated: List of chemical compounds administered to the symbiont,
+      its host, or environment where sampling occurred, and when (e.g. antibiotics,
+      N fertilizer, air filter); can include multiple compounds. For Chemical Entities
+      of Biological Interest ontology (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI.
+    wastewater/sludge: List of chemical compounds administered to the host or site
+      where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter);
+      can include multiple compounds. For chemical entities of biological interest
+      ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    water: List of chemical compounds administered to the host or site where sampling
+      occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include
+      multiple compounds. For chemical entities of biological interest ontology (chebi)
+      (v 163), http://purl.bioontology.org/ontology/chebi
+MIXS:0000752:
+  Definition:
+    agriculture: Any other measurement performed or parameter collected, that is not
+      listed here
+    air: Any other measurement performed or parameter collected, that is not listed
+      here
+    food-animal and animal feed: Any other measurement performed or parameter collected,
+      that is not listed here.
+    food-farm environment: Any other measurement performed or parameter collected,
+      that is not listed here.
+    food-food production facility: Any other measurement performed or parameter collected,
+      that is not listed here.
+    food-human foods: Any other measurement performed or parameter collected, that
+      is not listed here.
+    host-associated: Any other measurement performed or parameter collected, that
+      is not listed here
+    human-associated: Any other measurement performed or parameter collected, that
+      is not listed here
+    human-gut: Any other measurement performed or parameter collected, that is not
+      listed here
+    human-oral: Any other measurement performed or parameter collected, that is not
+      listed here
+    human-skin: Any other measurement performed or parameter collected, that is not
+      listed here
+    human-vaginal: Any other measurement performed or parameter collected, that is
+      not listed here
+    hydrocarbon resources-cores: Any other measurement performed or parameter collected,
+      that is not listed here
+    hydrocarbon resources-fluids/swabs: Any other measurement performed or parameter
+      collected, that is not listed here
+    microbial mat/biofilm: Any other measurement performed or parameter collected,
+      that is not listed here
+    miscellaneous natural or artificial environment: Any other measurement performed
+      or parameter collected, that is not listed here
+    plant-associated: Any other measurement performed or parameter collected, that
+      is not listed here
+    sediment: Any other measurement performed or parameter collected, that is not
+      listed here
+    soil: Any other measurement performed or parameter collected, that is not listed
+      here
+    symbiont-associated: Any other measurement performed or parameter collected, that
+      is not listed here.
+    wastewater/sludge: Any other measurement performed or parameter collected, that
+      is not listed here
+    water: Any other measurement performed or parameter collected, that is not listed
+      here
+MIXS:0000753:
+  Definition:
+    agriculture: Oxygenation status of sample
+    air: Oxygenation status of sample
+    host-associated: Oxygenation status of sample
+    human-associated: Oxygenation status of sample
+    human-gut: Oxygenation status of sample
+    human-oral: Oxygenation status of sample
+    human-skin: Oxygenation status of sample
+    human-vaginal: Oxygenation status of sample
+    hydrocarbon resources-cores: Oxygenation status of sample
+    hydrocarbon resources-fluids/swabs: Oxygenation status of sample
+    microbial mat/biofilm: Oxygenation status of sample
+    miscellaneous natural or artificial environment: Oxygenation status of sample
+    plant-associated: Oxygenation status of sample
+    sediment: Oxygenation status of sample
+    symbiont-associated: Oxygenation status of sample.
+    wastewater/sludge: Oxygenation status of sample
+    water: Oxygenation status of sample
+  Value syntax:
+    agriculture: '[aerobic|anaerobic]'
+    air: '[aerobic|anaerobic|other]'
+    host-associated: '[aerobic|anaerobic|other]'
+    human-associated: '[aerobic|anaerobic|other]'
+    human-gut: '[aerobic|anaerobic|other]'
+    human-oral: '[aerobic|anaerobic|other]'
+    human-skin: '[aerobic|anaerobic|other]'
+    human-vaginal: '[aerobic|anaerobic|other]'
+    hydrocarbon resources-cores: '[aerobic|anaerobic|other]'
+    hydrocarbon resources-fluids/swabs: '[aerobic|anaerobic|other]'
+    microbial mat/biofilm: '[aerobic|anaerobic|other]'
+    miscellaneous natural or artificial environment: '[aerobic|anaerobic|other]'
+    plant-associated: '[aerobic|anaerobic|other]'
+    sediment: '[aerobic|anaerobic|other]'
+    symbiont-associated: '[aerobic|anaerobic]'
+    wastewater/sludge: '[aerobic|anaerobic|other]'
+    water: '[aerobic|anaerobic|other]'
+MIXS:0000754:
+  Definition:
+    agriculture: Type of perturbation, e.g. chemical administration, physical disturbance,
+      etc., coupled with perturbation regimen including how many times the perturbation
+      was repeated, how long each perturbation lasted, and the start and end time
+      of the entire perturbation period; can include multiple perturbation types
+    air: Type of perturbation, e.g. chemical administration, physical disturbance,
+      etc., coupled with perturbation regimen including how many times the perturbation
+      was repeated, how long each perturbation lasted, and the start and end time
+      of the entire perturbation period; can include multiple perturbation types
+    food-animal and animal feed: Type of perturbation, e.g. chemical administration,
+      physical disturbance, etc., coupled with perturbation regimen including how
+      many times the perturbation was repeated, how long each perturbation lasted,
+      and the start and end time of the entire perturbation period; can include multiple
+      perturbation types.
+    food-farm environment: Type of perturbation, e.g. chemical administration, physical
+      disturbance, etc., coupled with perturbation regimen including how many times
+      the perturbation was repeated, how long each perturbation lasted, and the start
+      and end time of the entire perturbation period; can include multiple perturbation
+      types.
+    food-human foods: Type of perturbation, e.g. chemical administration, physical
+      disturbance, etc., coupled with perturbation regimen including how many times
+      the perturbation was repeated, how long each perturbation lasted, and the start
+      and end time of the entire perturbation period; can include multiple perturbation
+      types.
+    host-associated: Type of perturbation, e.g. chemical administration, physical
+      disturbance, etc., coupled with perturbation regimen including how many times
+      the perturbation was repeated, how long each perturbation lasted, and the start
+      and end time of the entire perturbation period; can include multiple perturbation
+      types
+    human-associated: Type of perturbation, e.g. chemical administration, physical
+      disturbance, etc., coupled with perturbation regimen including how many times
+      the perturbation was repeated, how long each perturbation lasted, and the start
+      and end time of the entire perturbation period; can include multiple perturbation
+      types
+    human-gut: Type of perturbation, e.g. chemical administration, physical disturbance,
+      etc., coupled with perturbation regimen including how many times the perturbation
+      was repeated, how long each perturbation lasted, and the start and end time
+      of the entire perturbation period; can include multiple perturbation types
+    human-oral: Type of perturbation, e.g. chemical administration, physical disturbance,
+      etc., coupled with perturbation regimen including how many times the perturbation
+      was repeated, how long each perturbation lasted, and the start and end time
+      of the entire perturbation period; can include multiple perturbation types
+    human-skin: Type of perturbation, e.g. chemical administration, physical disturbance,
+      etc., coupled with perturbation regimen including how many times the perturbation
+      was repeated, how long each perturbation lasted, and the start and end time
+      of the entire perturbation period; can include multiple perturbation types
+    human-vaginal: Type of perturbation, e.g. chemical administration, physical disturbance,
+      etc., coupled with perturbation regimen including how many times the perturbation
+      was repeated, how long each perturbation lasted, and the start and end time
+      of the entire perturbation period; can include multiple perturbation types
+    microbial mat/biofilm: Type of perturbation, e.g. chemical administration, physical
+      disturbance, etc., coupled with perturbation regimen including how many times
+      the perturbation was repeated, how long each perturbation lasted, and the start
+      and end time of the entire perturbation period; can include multiple perturbation
+      types
+    miscellaneous natural or artificial environment: Type of perturbation, e.g. chemical
+      administration, physical disturbance, etc., coupled with perturbation regimen
+      including how many times the perturbation was repeated, how long each perturbation
+      lasted, and the start and end time of the entire perturbation period; can include
+      multiple perturbation types
+    plant-associated: Type of perturbation, e.g. chemical administration, physical
+      disturbance, etc., coupled with perturbation regimen including how many times
+      the perturbation was repeated, how long each perturbation lasted, and the start
+      and end time of the entire perturbation period; can include multiple perturbation
+      types
+    sediment: Type of perturbation, e.g. chemical administration, physical disturbance,
+      etc., coupled with perturbation regimen including how many times the perturbation
+      was repeated, how long each perturbation lasted, and the start and end time
+      of the entire perturbation period; can include multiple perturbation types
+    symbiont-associated: Type of perturbation, e.g. chemical administration, physical
+      disturbance, etc., coupled with perturbation regimen including how many times
+      the perturbation was repeated, how long each perturbation lasted, and the start
+      and end time of the entire perturbation period; can include multiple perturbation
+      types.
+    wastewater/sludge: Type of perturbation, e.g. chemical administration, physical
+      disturbance, etc., coupled with perturbation regimen including how many times
+      the perturbation was repeated, how long each perturbation lasted, and the start
+      and end time of the entire perturbation period; can include multiple perturbation
+      types
+    water: Type of perturbation, e.g. chemical administration, physical disturbance,
+      etc., coupled with perturbation regimen including how many times the perturbation
+      was repeated, how long each perturbation lasted, and the start and end time
+      of the entire perturbation period; can include multiple perturbation types
+  Value syntax:
+    agriculture: '{text};{interval}'
+    air: '{text};{Rn/start_time/end_time/duration}'
+    food-animal and animal feed: '{text};{Rn/start_time/end_time/duration}'
+    food-farm environment: '{text};{Rn/start_time/end_time/duration}'
+    food-human foods: '{text};{Rn/start_time/end_time/duration}'
+    host-associated: '{text};{Rn/start_time/end_time/duration}'
+    human-associated: '{text};{Rn/start_time/end_time/duration}'
+    human-gut: '{text};{Rn/start_time/end_time/duration}'
+    human-oral: '{text};{Rn/start_time/end_time/duration}'
+    human-skin: '{text};{Rn/start_time/end_time/duration}'
+    human-vaginal: '{text};{Rn/start_time/end_time/duration}'
+    microbial mat/biofilm: '{text};{Rn/start_time/end_time/duration}'
+    miscellaneous natural or artificial environment: '{text};{Rn/start_time/end_time/duration}'
+    plant-associated: '{text};{Rn/start_time/end_time/duration}'
+    sediment: '{text};{Rn/start_time/end_time/duration}'
+    symbiont-associated: '{text};{Rn/start_time/end_time/duration}'
+    wastewater/sludge: '{text};{Rn/start_time/end_time/duration}'
+    water: '{text};{Rn/start_time/end_time/duration}'
+MIXS:0000755:
+  Definition:
+    agriculture: Location at which sample was stored, usually name of a specific freezer/room
+    air: Location at which sample was stored, usually name of a specific freezer/room
+    food-animal and animal feed: Location at which sample was stored, usually name
+      of a specific freezer/room. Indicate the location name.
+    food-food production facility: Location at which sample was stored, usually name
+      of a specific freezer/room. Indicate the location name.
+    food-human foods: Location at which sample was stored, usually name of a specific
+      freezer/room. Indicate the location name.
+    host-associated: Location at which sample was stored, usually name of a specific
+      freezer/room
+    human-associated: Location at which sample was stored, usually name of a specific
+      freezer/room
+    human-gut: Location at which sample was stored, usually name of a specific freezer/room
+    human-oral: Location at which sample was stored, usually name of a specific freezer/room
+    human-skin: Location at which sample was stored, usually name of a specific freezer/room
+    human-vaginal: Location at which sample was stored, usually name of a specific
+      freezer/room
+    hydrocarbon resources-cores: Location at which sample was stored, usually name
+      of a specific freezer/room
+    hydrocarbon resources-fluids/swabs: Location at which sample was stored, usually
+      name of a specific freezer/room
+    microbial mat/biofilm: Location at which sample was stored, usually name of a
+      specific freezer/room
+    miscellaneous natural or artificial environment: Location at which sample was
+      stored, usually name of a specific freezer/room
+    plant-associated: Location at which sample was stored, usually name of a specific
+      freezer/room
+    sediment: Location at which sample was stored, usually name of a specific freezer/room
+    symbiont-associated: Location at which sample was stored, usually name of a specific
+      freezer/room.
+    wastewater/sludge: Location at which sample was stored, usually name of a specific
+      freezer/room
+    water: Location at which sample was stored, usually name of a specific freezer/room
+  Structured comment name:
+    agriculture: samp_store_loc
+    air: samp_store_loc
+    food-animal and animal feed: samp_stor_loc
+    food-food production facility: samp_stor_loc
+    food-human foods: samp_stor_loc
+    host-associated: samp_store_loc
+    human-associated: samp_store_loc
+    human-gut: samp_store_loc
+    human-oral: samp_store_loc
+    human-skin: samp_store_loc
+    human-vaginal: samp_store_loc
+    hydrocarbon resources-cores: samp_store_loc
+    hydrocarbon resources-fluids/swabs: samp_store_loc
+    microbial mat/biofilm: samp_store_loc
+    miscellaneous natural or artificial environment: samp_store_loc
+    plant-associated: samp_store_loc
+    sediment: samp_store_loc
+    symbiont-associated: samp_store_loc
+    wastewater/sludge: samp_store_loc
+    water: samp_store_loc
+MIXS:0000756:
+  Definition:
+    air: Ventilation system used in the sampled premises
+    built environment: Ventilation system used in the sampled premises
+    food-farm environment: Ventilation system used in the sampled premises.
+  Occurrence:
+    air: '1'
+    built environment: '1'
+    food-farm environment: m
+MIXS:0000757:
+  Definition:
+    air: Wind direction is the direction from which a wind originates
+    food-farm environment: Wind direction is the direction from which a wind originates.
+MIXS:0000758:
+  Definition:
+    built environment: Surface materials at the point of sampling
+    food-food production facility: Surface materials at the point of sampling.
+MIXS:0000764:
+  Definition:
+    built environment: Type of indoor surface
+    food-food production facility: Type of indoor surface.
+MIXS:0000828:
+  Definition:
+    built environment: The floor of the building, where the sampling room is located
+    food-food production facility: The floor of the building, where the sampling room
+      is located.
+MIXS:0000858:
+  Definition:
+    host-associated: The level of genome modification.
+    plant-associated: The level of genome modification
+MIXS:0000859:
+  Definition:
+    agriculture: Genetic modifications of the genome of an organism, which may occur
+      naturally by spontaneous mutation, or be introduced by some experimental means,
+      e.g. specification of a transgene or the gene knocked-out or details of transient
+      transfection.
+    food-farm environment: Genetic modifications of the genome of an organism, which
+      may occur naturally by spontaneous mutation, or be introduced by some experimental
+      means, e.g. specification of a transgene or the gene knocked-out or details
+      of transient transfection.
+    food-food production facility: Genetic modifications of the genome of an organism,
+      which may occur naturally by spontaneous mutation, or be introduced by some
+      experimental means, e.g. specification of a transgene or the gene knocked-out
+      or details of transient transfection.
+    food-human foods: Genetic modifications of the genome of an organism, which may
+      occur naturally by spontaneous mutation, or be introduced by some experimental
+      means, e.g. specification of a transgene or the gene knocked-out or details
+      of transient transfection.
+    host-associated: Genetic modifications of the genome of an organism, which may
+      occur naturally by spontaneous mutation, or be introduced by some experimental
+      means, e.g. specification of a transgene or the gene knocked-out or details
+      of transient transfection
+    plant-associated: Genetic modifications of the genome of an organism, which may
+      occur naturally by spontaneous mutation, or be introduced by some experimental
+      means, e.g. specification of a transgene or the gene knocked-out or details
+      of transient transfection
+  Occurrence:
+    agriculture: '1'
+    food-farm environment: m
+    food-food production facility: '1'
+    food-human foods: '1'
+    host-associated: '1'
+    plant-associated: '1'
+  Value syntax:
+    agriculture: '{PMID}|{DOI}|{URL}|{text}'
+    food-farm environment: '{PMID}|{DOI}|{URL}'
+    food-food production facility: '{PMID}|{DOI}|{URL}'
+    food-human foods: '{PMID}|{DOI}|{URL}'
+    host-associated: '{PMID}|{DOI}|{URL}|{text}'
+    plant-associated: '{PMID}|{DOI}|{URL}|{text}'
+MIXS:0000861:
+  Definition:
+    host-associated: 'A unique identifier by which each subject can be referred to,
+      de-identified. '
+    human-associated: 'A unique identifier by which each subject can be referred to,
+      de-identified. '
+    human-gut: 'A unique identifier by which each subject can be referred to, de-identified. '
+    human-oral: 'A unique identifier by which each subject can be referred to, de-identified. '
+    human-skin: 'A unique identifier by which each subject can be referred to, de-identified. '
+    human-vaginal: 'A unique identifier by which each subject can be referred to,
+      de-identified. '
+    symbiont-associated: A unique identifier by which each subject can be referred
+      to, de-identified.
+MIXS:0000866:
+  Definition:
+    host-associated: Original body habitat where the sample was obtained from
+    symbiont-associated: Original body habitat where the sample was obtained from.
+MIXS:0000867:
+  Definition:
+    host-associated: Name of body site where the sample was obtained from, such as
+      a specific organ or tissue (tongue, lung etc...). For foundational model of
+      anatomy ontology (fma) (v 4.11.0) or Uber-anatomy ontology (UBERON) (v releases/2014-06-15)
+      terms, please see http://purl.bioontology.org/ontology/FMA or http://purl.bioontology.org/ontology/UBERON
+    human-associated: Name of body site where the sample was obtained from, such as
+      a specific organ or tissue (tongue, lung etc...). For foundational model of
+      anatomy ontology (fma) (v 4.11.0) or Uber-anatomy ontology (UBERON) (v releases/2014-06-15)
+      terms, please see http://purl.bioontology.org/ontology/FMA or http://purl.bioontology.org/ontology/UBERON
+    human-gut: Name of body site where the sample was obtained from, such as a specific
+      organ or tissue (tongue, lung etc...). For foundational model of anatomy ontology
+      (fma) (v 4.11.0) or Uber-anatomy ontology (UBERON) (v releases/2014-06-15) terms,
+      please see http://purl.bioontology.org/ontology/FMA or http://purl.bioontology.org/ontology/UBERON
+    human-oral: Name of body site where the sample was obtained from, such as a specific
+      organ or tissue (tongue, lung etc...). For foundational model of anatomy ontology
+      (fma) (v 4.11.0) or Uber-anatomy ontology (UBERON) (v releases/2014-06-15) terms,
+      please see http://purl.bioontology.org/ontology/FMA or http://purl.bioontology.org/ontology/UBERON
+    human-skin: Name of body site where the sample was obtained from, such as a specific
+      organ or tissue (tongue, lung etc...). For foundational model of anatomy ontology
+      (fma) (v 4.11.0) or Uber-anatomy ontology (UBERON) (v releases/2014-06-15) terms,
+      please see http://purl.bioontology.org/ontology/FMA or http://purl.bioontology.org/ontology/UBERON
+    human-vaginal: Name of body site where the sample was obtained from, such as a
+      specific organ or tissue (tongue, lung etc...). For foundational model of anatomy
+      ontology (fma) (v 4.11.0) or Uber-anatomy ontology (UBERON) (v releases/2014-06-15)
+      terms, please see http://purl.bioontology.org/ontology/FMA or http://purl.bioontology.org/ontology/UBERON
+    symbiont-associated: Name of body site where the sample was obtained from, such
+      as a specific organ or tissue (tongue, lung etc...). For foundational model
+      of anatomy ontology (fma) (v 4.11.0) or Uber-anatomy ontology (UBERON) (v releases/2014-06-15)
+      terms, please see http://purl.bioontology.org/ontology/FMA or http://purl.bioontology.org/ontology/UBERON.
+MIXS:0000871:
+  Definition:
+    host-associated: Literature reference giving growth conditions of the host
+    symbiont-associated: Literature reference giving growth conditions of the host.
+MIXS:0000872:
+  Definition:
+    host-associated: Familial relationships to other hosts in the same study; can
+      include multiple relationships
+    human-associated: Relationships to other hosts in the same study; can include
+      multiple relationships
+    human-gut: Relationships to other hosts in the same study; can include multiple
+      relationships
+    human-oral: Relationships to other hosts in the same study; can include multiple
+      relationships
+    human-skin: Relationships to other hosts in the same study; can include multiple
+      relationships
+    human-vaginal: Relationships to other hosts in the same study; can include multiple
+      relationships
+    symbiont-associated: Relationships to other hosts in the same study; can include
+      multiple relationships.
+  Occurrence:
+    host-associated: m
+    human-associated: m
+    human-gut: m
+    human-oral: m
+    human-skin: m
+    human-vaginal: m
+    symbiont-associated: '1'
+  Structured comment name:
+    host-associated: host_family_relation
+    human-associated: host_family_relation
+    human-gut: host_family_relation
+    human-oral: host_family_relation
+    human-skin: host_family_relation
+    human-vaginal: host_family_relation
+    symbiont-associated: host_family_relationship
+MIXS:0000874:
+  Definition:
+    agriculture: Phenotype of human or other host. For phenotypic quality ontology
+      (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+      For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP
+    food-farm environment: Phenotype of human or other host. For phenotypic quality
+      ontology (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+      For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP
+    host-associated: Phenotype of human or other host. For phenotypic quality ontology
+      (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+      For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP
+    human-associated: Phenotype of human or other host. For phenotypic quality ontology
+      (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+      For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP
+    human-gut: Phenotype of human or other host. For phenotypic quality ontology (pato)
+      (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+      For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP
+    human-oral: Phenotype of human or other host. For phenotypic quality ontology
+      (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+      For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP
+    human-skin: Phenotype of human or other host. For phenotypic quality ontology
+      (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+      For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP
+    human-vaginal: Phenotype of human or other host. For phenotypic quality ontology
+      (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+      For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP
+    plant-associated: Phenotype of human or other host. For phenotypic quality ontology
+      (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+      For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP
+    symbiont-associated: Phenotype of human or other host. For phenotypic quality
+      ontology (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+      For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP.
+  Occurrence:
+    agriculture: '1'
+    food-farm environment: '1'
+    host-associated: '1'
+    human-associated: '1'
+    human-gut: '1'
+    human-oral: '1'
+    human-skin: '1'
+    human-vaginal: '1'
+    plant-associated: '1'
+    symbiont-associated: ''
+  Value syntax:
+    agriculture: '{term}'
+    food-farm environment: '{text};{termLabel} {[termID]}'
+    host-associated: '{termLabel} {[termID]}'
+    human-associated: '{termLabel} {[termID]}'
+    human-gut: '{termLabel} {[termID]}'
+    human-oral: '{termLabel} {[termID]}'
+    human-skin: '{termLabel} {[termID]}'
+    human-vaginal: '{termLabel} {[termID]}'
+    plant-associated: '{text};{termLabel} {[termID]}'
+    symbiont-associated: '{term}'
+MIXS:0000875:
+  Definition:
+    host-associated: Whether or not subject is gravid, and if yes date due or date
+      post-conception, specifying which is used
+    symbiont-associated: Whether or not subject is gravid, and if yes date due or
+      date post-conception, specifying which is used.
+MIXS:0000998:
+  Package item:
+    food-farm environment: sample type (host or environmental context)
+    food-food production facility: sample type
+    hydrocarbon resources-cores: sample type
+    hydrocarbon resources-fluids/swabs: sample type
+MIXS:0001001:
+  Definition:
+    food-farm environment: pH measurement of the sample, or liquid portion of sample,
+      or aqueous phase of the fluid.
+    hydrocarbon resources-cores: Ph measurement of the sample, or liquid portion of
+      sample, or aqueous phase of the fluid
+    hydrocarbon resources-fluids/swabs: Ph measurement of the sample, or liquid portion
+      of sample, or aqueous phase of the fluid
+    microbial mat/biofilm: Ph measurement of the sample, or liquid portion of sample,
+      or aqueous phase of the fluid
+    miscellaneous natural or artificial environment: Ph measurement of the sample,
+      or liquid portion of sample, or aqueous phase of the fluid
+    sediment: Ph measurement of the sample, or liquid portion of sample, or aqueous
+      phase of the fluid
+    soil: Ph measurement of the sample, or liquid portion of sample, or aqueous phase
+      of the fluid
+    wastewater/sludge: Ph measurement of the sample, or liquid portion of sample,
+      or aqueous phase of the fluid
+    water: Ph measurement of the sample, or liquid portion of sample, or aqueous phase
+      of the fluid
+MIXS:0001038:
+  Occurrence:
+    food-farm environment: m
+    plant-associated: '1'
+MIXS:0001040:
+  Value syntax:
+    agriculture: '{text};{period};{interval};{period}'
+    plant-associated: '{text};{Rn/start_time/end_time/duration}'
+MIXS:0001044:
+  Definition:
+    food-farm environment: Characteristic shape, appearance or growth form of a plant
+      species.
+    plant-associated: Characteristic shape, appearance or growth form of a plant species
+MIXS:0001052:
+  Definition:
+    food-farm environment: Information about any mechanical damage exerted on the
+      plant; can include multiple damages and sites.
+    plant-associated: Information about any mechanical damage exerted on the plant;
+      can include multiple damages and sites
+MIXS:0001056:
+  Value syntax:
+    agriculture: '{float};{period};{interval};{period}'
+    plant-associated: '{float};{Rn/start_time/end_time/duration}'
+MIXS:0001057:
+  Occurrence:
+    agriculture: '1'
+    food-farm environment: m
+    plant-associated: '1'
+MIXS:0001068:
+  Value syntax:
+    agriculture: '{text};{period};{interval};{period}'
+    plant-associated: '{text};{Rn/start_time/end_time/duration}'
+MIXS:0001069:
+  Value syntax:
+    agriculture: '{text};{period};{interval};{period}'
+    plant-associated: '{text};{Rn/start_time/end_time/duration}'
+MIXS:0001081:
+  Occurrence:
+    agriculture: m
+    food-farm environment: '1'
+    soil: m
+MIXS:0001082:
+  Package item:
+    agriculture: horizon
+    soil: soil horizon
+  Structured comment name:
+    agriculture: horizon
+    soil: soil_horizon
+MIXS:0001083:
+  Value syntax:
+    agriculture: '{term}'
+    soil: '[Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]'
+MIXS:0001106:
+  Definition:
+    agriculture: Reference or method used in determining ph
+    food-farm environment: Reference or method used in determining pH.
+    soil: Reference or method used in determining ph
+  Value syntax:
+    agriculture: '{PMID|DOI|URL}'
+    food-farm environment: '{PMID}|{DOI}|{URL}'
+    soil: '{PMID}|{DOI}|{URL}'
+MIXS:0001107:
+  Definition:
+    air: A local identifier or name that for the material sample used for extracting
+      nucleic acids, and subsequent sequencing. It can refer either to the original
+      material collected or to any derived sub-samples. It can have any format, but
+      we suggest that you make it concise, unique and consistent within your lab,
+      and as informative as possible. INSDC requires every sample name from a single
+      Submitter to be unique. Use of a globally unique identifier for the field source_mat_id
+      is recommended in addition to sample_name.
+    built environment: A local identifier or name that for the material sample used
+      for extracting nucleic acids, and subsequent sequencing. It can refer either
+      to the original material collected or to any derived sub-samples. It can have
+      any format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
+    food-animal and animal feed: A local identifier or name that for the material
+      sample used for extracting nucleic acids, and subsequent sequencing. It can
+      refer either to the original material collected or to any derived sub-samples.
+      It can have any format, but we suggest that you make it concise, unique and
+      consistent within your lab, and as informative as possible. INSDC requires every
+      sample name from a single Submitter to be unique. Use of a globally unique identifier
+      for the field source_mat_id is recommended in addition to sample_name.
+    food-farm environment: A local identifier or name that for the material sample
+      used for extracting nucleic acids, and subsequent sequencing. It can refer either
+      to the original material collected or to any derived sub-samples. It can have
+      any format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
+    food-food production facility: A local identifier or name that for the material
+      sample used for extracting nucleic acids, and subsequent sequencing. It can
+      refer either to the original material collected or to any derived sub-samples.
+      It can have any format, but we suggest that you make it concise, unique and
+      consistent within your lab, and as informative as possible. INSDC requires every
+      sample name from a single Submitter to be unique. Use of a globally unique identifier
+      for the field source_mat_id is recommended in addition to sample_name.
+    food-human foods: A local identifier or name that for the material sample used
+      for extracting nucleic acids, and subsequent sequencing. It can refer either
+      to the original material collected or to any derived sub-samples. It can have
+      any format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
+    host-associated: A local identifier or name that for the material sample used
+      for extracting nucleic acids, and subsequent sequencing. It can refer either
+      to the original material collected or to any derived sub-samples. It can have
+      any format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
+    human-associated: A local identifier or name that for the material sample used
+      for extracting nucleic acids, and subsequent sequencing. It can refer either
+      to the original material collected or to any derived sub-samples. It can have
+      any format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
+    human-gut: A local identifier or name that for the material sample used for extracting
+      nucleic acids, and subsequent sequencing. It can refer either to the original
+      material collected or to any derived sub-samples. It can have any format, but
+      we suggest that you make it concise, unique and consistent within your lab,
+      and as informative as possible. INSDC requires every sample name from a single
+      Submitter to be unique. Use of a globally unique identifier for the field source_mat_id
+      is recommended in addition to sample_name.
+    human-oral: A local identifier or name that for the material sample used for extracting
+      nucleic acids, and subsequent sequencing. It can refer either to the original
+      material collected or to any derived sub-samples. It can have any format, but
+      we suggest that you make it concise, unique and consistent within your lab,
+      and as informative as possible. INSDC requires every sample name from a single
+      Submitter to be unique. Use of a globally unique identifier for the field source_mat_id
+      is recommended in addition to sample_name.
+    human-skin: A local identifier or name that for the material sample used for extracting
+      nucleic acids, and subsequent sequencing. It can refer either to the original
+      material collected or to any derived sub-samples. It can have any format, but
+      we suggest that you make it concise, unique and consistent within your lab,
+      and as informative as possible. INSDC requires every sample name from a single
+      Submitter to be unique. Use of a globally unique identifier for the field source_mat_id
+      is recommended in addition to sample_name.
+    human-vaginal: A local identifier or name that for the material sample used for
+      extracting nucleic acids, and subsequent sequencing. It can refer either to
+      the original material collected or to any derived sub-samples. It can have any
+      format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
+    hydrocarbon resources-cores: A local identifier or name that for the material
+      sample used for extracting nucleic acids, and subsequent sequencing. It can
+      refer either to the original material collected or to any derived sub-samples.
+      It can have any format, but we suggest that you make it concise, unique and
+      consistent within your lab, and as informative as possible. INSDC requires every
+      sample name from a single Submitter to be unique. Use of a globally unique identifier
+      for the field source_mat_id is recommended in addition to sample_name.
+    hydrocarbon resources-fluids/swabs: A local identifier or name that for the material
+      sample used for extracting nucleic acids, and subsequent sequencing. It can
+      refer either to the original material collected or to any derived sub-samples.
+      It can have any format, but we suggest that you make it concise, unique and
+      consistent within your lab, and as informative as possible. INSDC requires every
+      sample name from a single Submitter to be unique. Use of a globally unique identifier
+      for the field source_mat_id is recommended in addition to sample_name.
+    microbial mat/biofilm: A local identifier or name that for the material sample
+      used for extracting nucleic acids, and subsequent sequencing. It can refer either
+      to the original material collected or to any derived sub-samples. It can have
+      any format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
+    miscellaneous natural or artificial environment: A local identifier or name that
+      for the material sample used for extracting nucleic acids, and subsequent sequencing.
+      It can refer either to the original material collected or to any derived sub-samples.
+      It can have any format, but we suggest that you make it concise, unique and
+      consistent within your lab, and as informative as possible. INSDC requires every
+      sample name from a single Submitter to be unique. Use of a globally unique identifier
+      for the field source_mat_id is recommended in addition to sample_name.
+    plant-associated: A local identifier or name that for the material sample used
+      for extracting nucleic acids, and subsequent sequencing. It can refer either
+      to the original material collected or to any derived sub-samples. It can have
+      any format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
+    sediment: A local identifier or name that for the material sample used for extracting
+      nucleic acids, and subsequent sequencing. It can refer either to the original
+      material collected or to any derived sub-samples. It can have any format, but
+      we suggest that you make it concise, unique and consistent within your lab,
+      and as informative as possible. INSDC requires every sample name from a single
+      Submitter to be unique. Use of a globally unique identifier for the field source_mat_id
+      is recommended in addition to sample_name.
+    soil: A local identifier or name that for the material sample used for extracting
+      nucleic acids, and subsequent sequencing. It can refer either to the original
+      material collected or to any derived sub-samples. It can have any format, but
+      we suggest that you make it concise, unique and consistent within your lab,
+      and as informative as possible. INSDC requires every sample name from a single
+      Submitter to be unique. Use of a globally unique identifier for the field source_mat_id
+      is recommended in addition to sample_name.
+    symbiont-associated: Sample Name is a name that you choose for the sample. It
+      can have any format, but we suggest that you make it concise, unique and consistent
+      within your lab, and as informative as possible. Every Sample Name from a single
+      Submitter must be unique.
+    wastewater/sludge: A local identifier or name that for the material sample used
+      for extracting nucleic acids, and subsequent sequencing. It can refer either
+      to the original material collected or to any derived sub-samples. It can have
+      any format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
+    water: A local identifier or name that for the material sample used for extracting
+      nucleic acids, and subsequent sequencing. It can refer either to the original
+      material collected or to any derived sub-samples. It can have any format, but
+      we suggest that you make it concise, unique and consistent within your lab,
+      and as informative as possible. INSDC requires every sample name from a single
+      Submitter to be unique. Use of a globally unique identifier for the field source_mat_id
+      is recommended in addition to sample_name.
+  Package item:
+    air: 'sample name '
+    built environment: 'sample name '
+    food-animal and animal feed: 'sample name '
+    food-farm environment: 'sample name '
+    food-food production facility: 'sample name '
+    food-human foods: 'sample name '
+    host-associated: 'sample name '
+    human-associated: 'sample name '
+    human-gut: 'sample name '
+    human-oral: 'sample name '
+    human-skin: 'sample name '
+    human-vaginal: 'sample name '
+    hydrocarbon resources-cores: 'sample name '
+    hydrocarbon resources-fluids/swabs: 'sample name '
+    microbial mat/biofilm: 'sample name '
+    miscellaneous natural or artificial environment: 'sample name '
+    plant-associated: 'sample name '
+    sediment: 'sample name '
+    soil: 'sample name '
+    symbiont-associated: sample name
+    wastewater/sludge: 'sample name '
+    water: 'sample name '
+  Structured comment name:
+    air: samp_name
+    built environment: samp_name
+    food-animal and animal feed: samp_name
+    food-farm environment: samp_name
+    food-food production facility: samp_name
+    food-human foods: samp_name
+    host-associated: samp_name
+    human-associated: samp_name
+    human-gut: samp_name
+    human-oral: samp_name
+    human-skin: samp_name
+    human-vaginal: samp_name
+    hydrocarbon resources-cores: samp_name
+    hydrocarbon resources-fluids/swabs: samp_name
+    microbial mat/biofilm: samp_name
+    miscellaneous natural or artificial environment: samp_name
+    plant-associated: samp_name
+    sediment: samp_name
+    soil: samp_name
+    symbiont-associated: sample_name
+    wastewater/sludge: samp_name
+    water: samp_name
+MIXS:0001113:
+  Definition:
+    food-animal and animal feed: Description of the feeding equipment used for livestock.
+      This field accepts terms listed under feed delivery (http://opendata.inra.fr/EOL/EOL_0001757).
+      Multiple terms can be separated by one or more pipes.
+    food-farm environment: Description of the feeding equipment used for livestock.
+      This field accepts terms listed under feed delivery (http://opendata.inra.fr/EOL/EOL_0001757).
+      Multiple terms can be separated by pipes.
+  Value syntax:
+    food-animal and animal feed: '{termLabel} {[termID]}'
+    food-farm environment: '{termLabel}{[termID]}'
+MIXS:0001118:
+  Value syntax:
+    food-animal and animal feed: '{termLabel} {[termID]}|{integer}'
+    food-farm environment: '{TermLabel} {[termID]}|{integer}'
+    food-food production facility: '{termLabel} {[termID]}|{integer}'
+    food-human foods: '{termLabel} {[termID]}|{integer}'
+MIXS:0001119:
+  Value syntax:
+    food-animal and animal feed: '{termLabel} {[termID]}|{integer}'
+    food-farm environment: '{TermLabel} {[termID]}|{integer}'
+    food-food production facility: '{termLabel} {[termID]}|{integer}'
+    food-human foods: '{termLabel} {[termID]}|{integer}'
+MIXS:0001123:
+  Definition:
+    agriculture: List of planting, growing or harvesting equipment shared with other
+      farms.
+    food-farm environment: List of planting, growing or harvesting equipment shared
+      with other farms. This field accepts terms listed under agricultural implement
+      (http://purl.obolibrary.org/obo/AGRO_00000416). Multiple terms can be separated
+      by pipes.
+  Occurrence:
+    agriculture: ''
+    food-farm environment: m
+  Value syntax:
+    agriculture: ''
+    food-farm environment: '{termLabel} {[termID]}'
+MIXS:0001124:
+  Definition:
+    agriculture: Method used to sanitize growing and harvesting equipment including
+      type and concentration of sanitizing solution and frequency of sanitization.
+    food-farm environment: Method used to sanitize growing and harvesting equipment.
+      This can including type and concentration of sanitizing solution.  Multiple
+      terms can be separated by one or more pipes.
+  Occurrence:
+    agriculture: ''
+    food-farm environment: m
+  Value syntax:
+    agriculture: ''
+    food-farm environment: '{text} {float} {unit}'
+MIXS:0001126:
+  Definition:
+    agriculture: List of equipment used for planting, fertilization, harvesting, irrigation,
+      land levelling, residue management, weeding or transplanting during the growing
+      season. This field accepts terms listed under agricultural implement (http://purl.obolibrary.org/obo/AGRO_00000416).
+      Multiple terms can be separated by pipes.
+    food-farm environment: List of equipment used for planting, fertilization, harvesting,
+      irrigation, land levelling, residue management, weeding or transplanting during
+      the growing season.  This field accepts terms listed under agricultural implement
+      (http://purl.obolibrary.org/obo/AGRO_00000416). Multiple terms can be separated
+      by pipes.
+  Occurrence:
+    agriculture: ''
+    food-farm environment: m
+MIXS:0001133:
+  Occurrence:
+    agriculture: ''
+    food-farm environment: m
+  Value syntax:
+    agriculture: ''
+    food-farm environment: '{text}'
+MIXS:0001137:
+  Definition:
+    agriculture: A descriptor for the method of movement of food commodity along the
+      food distribution system.  This field accepts terms listed under travel mode
+      (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descrptor is
+      not listed please use text to describe the mode of travel. Multiple terms can
+      be separated by one or more pipes.
+    food-animal and animal feed: A descriptor for the method of movement of food commodity
+      along the food distribution system.  This field accepts terms listed under travel
+      mode (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descrptor
+      is not listed please use text to describe the mode of travel. Multiple terms
+      can be separated by one or more pipes.
+    food-farm environment: A descriptor for the method of movement of food commodity
+      along the food distribution system.  This field accepts terms listed under travel
+      mode (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descrptor
+      is not listed please use text to describe the mode of travel. Multiple terms
+      can be separated by one or more pipes.
+    food-food production facility: A descriptor for the method of movement of food
+      commodity along the food distribution system. This field accepts terms listed
+      under travel mode (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper
+      descrptor is not listed please use text to describe the mode of travel. Multiple
+      terms can be separated by one or more pipes.
+    food-human foods: A descriptor for the method of movement of food commodity along
+      the food distribution system.  This field accepts terms listed under travel
+      mode (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descrptor
+      is not listed please use text to describe the mode of travel. Multiple terms
+      can be separated by one or more pipes.
+MIXS:0001138:
+  Package item:
+    agriculture: food shipping transportation vehicle
+    food-animal and animal feed: food shipping transportation vehicle
+    food-farm environment: Food shipping transportation vehicle
+    food-food production facility: food shipping transportation vehicle
+    food-human foods: Food shipping transportation vehicle
+MIXS:0001139:
+  Occurrence:
+    agriculture: ''
+    food-animal and animal feed: '1'
+    food-farm environment: '1'
+    food-food production facility: '1'
+    food-human foods: '1'
+  Package item:
+    agriculture: Food source
+    food-animal and animal feed: food source
+    food-farm environment: food source
+    food-food production facility: food source
+    food-human foods: food source
+  Structured comment name:
+    agriculture: Food_source
+    food-animal and animal feed: food_source
+    food-farm environment: food_source
+    food-food production facility: food_source
+    food-human foods: food_source
+  Value syntax:
+    agriculture: '{text}'
+    food-animal and animal feed: '{termLabel} {[termID]}'
+    food-farm environment: '{termLabel} {[termID]}'
+    food-food production facility: '{termLabel} {[termID]}'
+    food-human foods: '{termLabel} {[termID]}'
+MIXS:0001145:
+  Definition:
+    agriculture: Packaged kits (containing adapters, indexes, enzymes, buffers etc),
+      tailored for specific sequencing workflows, which allow the simplified preparation
+      of sequencing-ready libraries for small genomes, amplicons, and plasmids.
+    food-animal and animal feed: Packaged kits (containing adapters, indexes, enzymes,
+      buffers etc.), tailored for specific sequencing workflows, which allow the simplified
+      preparation of sequencing-ready libraries for small genomes, amplicons, and
+      plasmids.
+    food-farm environment: Packaged kits (containing adapters, indexes, enzymes, buffers
+      etc.), tailored for specific sequencing workflows, which allow the simplified
+      preparation of sequencing-ready libraries for small genomes, amplicons, and
+      plasmids.
+    food-food production facility: Packaged kits (containing adapters, indexes, enzymes,
+      buffers etc.), tailored for specific sequencing workflows, which allow the simplified
+      preparation of sequencing-ready libraries for small genomes, amplicons, and
+      plasmids.
+    food-human foods: Packaged kits (containing adapters, indexes, enzymes, buffers
+      etc.), tailored for specific sequencing workflows, which allow the simplified
+      preparation of sequencing-ready libraries for small genomes, amplicons, and
+      plasmids.
+MIXS:0001147:
+  Definition:
+    agriculture: 'A distinctive alpha-numeric identification code assigned by the
+      manufacturer or distributor to a specific quantity of manufactured material
+      or product within a batch. Synonym: Batch Number. The submitter should provide
+      lot number of the item followed by the item name for which the lot number was
+      provided.'
+    food-animal and animal feed: 'A distinctive alpha-numeric identification code
+      assigned by the manufacturer or distributor to a specific quantity of manufactured
+      material or product within a batch. Synonym: Batch Number.  The submitter should
+      provide lot number of the item followed by the item name for which the lot number
+      was provided.'
+    food-farm environment: 'A distinctive alpha-numeric identification code assigned
+      by the manufacturer or distributor to a specific quantity of manufactured material
+      or product within a batch. Synonym: Batch Number.  The submitter should provide
+      lot number of the item followed by the item name for which the lot number was
+      provided.'
+    food-food production facility: 'A distinctive alpha-numeric identification code
+      assigned by the manufacturer or distributor to a specific quantity of manufactured
+      material or product within a batch. Synonym: Batch Number.  The submitter should
+      provide lot number of the item followed by the item name for which the lot number
+      was provided.'
+    food-human foods: 'A distinctive alpha-numeric identification code assigned by
+      the manufacturer or distributor to a specific quantity of manufactured material
+      or product within a batch. Synonym: Batch Number.  The submitter should provide
+      lot number of the item followed by the item name for which the lot number was
+      provided.'
+  Occurrence:
+    agriculture: ''
+    food-animal and animal feed: m
+    food-farm environment: m
+    food-food production facility: m
+    food-human foods: m
+  Package item:
+    agriculture: lot_number
+    food-animal and animal feed: lot number
+    food-farm environment: lot number
+    food-food production facility: lot number
+    food-human foods: lot number
+MIXS:0001153:
+  Occurrence:
+    agriculture: ''
+    food-animal and animal feed: m
+    food-farm environment: m
+    food-food production facility: m
+    food-human foods: m
+  Value syntax:
+    agriculture: ''
+    food-animal and animal feed: '{text}'
+    food-farm environment: '{text}'
+    food-food production facility: '{text}'
+    food-human foods: '{text}'
+MIXS:0001154:
+  Definition:
+    food-animal and animal feed: This is the scientific role or category that the
+      subject organism or material has with respect to an investigation.  This field
+      accepts terms listed under specimen source material category (http://purl.obolibrary.org/obo/GENEPIO_0001237
+      or http://purl.obolibrary.org/obo/OBI_0100051).
+    food-farm environment: This is the scientific role or category that the subject
+      organism or material has with respect to an investigation.  This field accepts
+      terms listed under specimen source material category (http://purl.obolibrary.org/obo/GENEPIO_0001237
+      or http://purl.obolibrary.org/obo/OBI_0100051).
+    food-food production facility: This is the scientific role or category that the
+      subject organism or material has with respect to an investigation.  This field
+      accepts terms listed under specimen (http://purl.obolibrary.org/obo/GENEPIO_0001237
+      or http://purl.obolibrary.org/obo/OBI_0100051).
+    food-human foods: This is the scientific role or category that the subject organism
+      or material has with respect to an investigation.  This field accepts terms
+      listed under specimen source material category (http://purl.obolibrary.org/obo/GENEPIO_0001237
+      or http://purl.obolibrary.org/obo/OBI_0100051).
+MIXS:0001158:
+  Definition:
+    agriculture: Conductivity of some soil.
+    food-farm environment: Conductivity of soil at time of sampling.
+  Occurrence:
+    agriculture: ''
+    food-farm environment: '1'
+  Value syntax:
+    agriculture: ''
+    food-farm environment: '{float} {unit}'
+MIXS:0001159:
+  Definition:
+    agriculture: Description of the soil cover of the sampled soil and percent covered,
+      e.g., bare soil [ENVO:01001616], vegetation (type), manure, irrigation pipe,
+      etc.
+    food-farm environment: Description of the material covering the sampled soil.
+      This field accepts terms under ENVO:00010483, environmental material.
+  Occurrence:
+    agriculture: ''
+    food-farm environment: '1'
+  Value syntax:
+    agriculture: ''
+    food-farm environment: '{termLabel} {[termID]}'
+MIXS:0001160:
+  Definition:
+    agriculture: pH of some soil.
+    food-farm environment: The pH of soil at time of sampling.
+  Occurrence:
+    agriculture: ''
+    food-farm environment: '1'
+  Value syntax:
+    agriculture: ''
+    food-farm environment: '{float}'
+MIXS:0001161:
+  Definition:
+    agriculture: Location of sampled soil to other parts of the farm e.g. under crop
+      plant, near irrigation ditch, from the dirt road
+    food-farm environment: Location of sampled soil to other parts of the farm e.g.
+      under crop plant, near irrigation ditch, from the dirt road.
+  Occurrence:
+    agriculture: ''
+    food-farm environment: '1'
+  Value syntax:
+    agriculture: ''
+    food-farm environment: '{text}'
+MIXS:0001163:
+  Occurrence:
+    agriculture: '1'
+    food-farm environment: m
+MIXS:0001175:
+  Definition:
+    agriculture: The pH measurement of the sample, or liquid portion of sample, or
+      aqueous phase of the fluid.
+    food-farm environment: pH measurement of the sample, or liquid portion of sample,
+      or aqueous phase of the fluid.
+  Occurrence:
+    agriculture: ''
+    food-farm environment: '1'
+MIXS:0001177:
+  Definition:
+    agriculture: The microbiological workflow or protocol followed to test for the
+      presence or enumeration of the target microbial analyte(s). Please provide a
+      PubMed or DOI reference for published protocols.
+    food-animal and animal feed: The microbiological workflow or protocol followed
+      to test for the presence or enumeration of the target microbial analyte(s).
+      Please provide a PubMed or DOI reference for published protocols.
+    food-farm environment: The microbiological workflow or protocol followed to test
+      for the presence or enumeration of the target microbial analyte(s).  Please
+      provide a PubMed or DOI reference for published protocols.
+    food-food production facility: The microbiological workflow or protocol followed
+      to test for the presence or enumeration of the target microbial analyte(s).
+      Please provide a PubMed or DOI reference for published protocols.
+    food-human foods: The microbiological workflow or protocol followed to test for
+      the presence or enumeration of the target microbial analyte(s). Please provide
+      a PubMed or DOI reference for published protocols.
+MIXS:0001179:
+  Definition:
+    food-animal and animal feed: 'The IFSAC food categorization scheme has five distinct
+      levels to which foods can be assigned, depending upon the type of food. First,
+      foods are assigned to one of four food groups (aquatic animals, land animals,
+      plants, and other). Food groups include increasingly specific food categories;
+      dairy, eggs, meat and poultry, and game are in the land animal food group, and
+      the category meat and poultry is further subdivided into more specific categories
+      of meat (beef, pork, other meat) and poultry (chicken, turkey, other poultry).
+      Finally, foods are differentiated by differences in food processing (such as
+      pasteurized fluid dairy products, unpasteurized fluid dairy products, pasteurized
+      solid and semi-solid dairy products, and unpasteurized solid and semi-solid
+      dairy products. An IFSAC food category chart is available from https://www.cdc.gov/foodsafety/ifsac/projects/food-categorization-scheme.html
+      PMID: 28926300'
+    food-farm environment: 'The IFSAC food categorization scheme has five distinct
+      levels to which foods can be assigned, depending upon the type of food. First,
+      foods are assigned to one of four food groups (aquatic animals, land animals,
+      plants, and other). Food groups include increasingly specific food categories;
+      dairy, eggs, meat and poultry, and game are in the land animal food group, and
+      the category meat and poultry is further subdivided into more specific categories
+      of meat (beef, pork, other meat) and poultry (chicken, turkey, other poultry).
+      Finally, foods are differentiated by differences in food processing (such as
+      pasteurized fluid dairy products, unpasteurized fluid dairy products, pasteurized
+      solid and semi-solid dairy products, and unpasteurized solid and semi-solid
+      dairy products. An IFSAC food category chart is available from https://www.cdc.gov/foodsafety/ifsac/projects/food-categorization-scheme.html
+      PMID: 28926300.'
+    food-food production facility: 'The IFSAC food categorization scheme has five
+      distinct levels to which foods can be assigned, depending upon the type of food.
+      First, foods are assigned to one of four food groups (aquatic animals, land
+      animals, plants, and other). Food groups include increasingly specific food
+      categories; dairy, eggs, meat and poultry, and game are in the land animal food
+      group, and the category meat and poultry is further subdivided into more specific
+      categories of meat (beef, pork, other meat) and poultry (chicken, turkey, other
+      poultry). Finally, foods are differentiated by differences in food processing
+      (such as pasteurized fluid dairy products, unpasteurized fluid dairy products,
+      pasteurized solid and semi-solid dairy products, and unpasteurized solid and
+      semi-solid dairy products. An IFSAC food category chart is available from https://www.cdc.gov/foodsafety/ifsac/projects/food-categorization-scheme.html
+      PMID: 28926300.'
+    food-human foods: 'The IFSAC food categorization scheme has five distinct levels
+      to which foods can be assigned, depending upon the type of food. First, foods
+      are assigned to one of four food groups (aquatic animals, land animals, plants,
+      and other). Food groups include increasingly specific food categories; dairy,
+      eggs, meat and poultry, and game are in the land animal food group, and the
+      category meat and poultry is further subdivided into more specific categories
+      of meat (beef, pork, other meat) and poultry (chicken, turkey, other poultry).
+      Finally, foods are differentiated by differences in food processing (such as
+      pasteurized fluid dairy products, unpasteurized fluid dairy products, pasteurized
+      solid and semi-solid dairy products, and unpasteurized solid and semi-solid
+      dairy products. An IFSAC food category chart is available from https://www.cdc.gov/foodsafety/ifsac/projects/food-categorization-scheme.html
+      PMID: 28926300.'
+MIXS:0001181:
+  Definition:
+    agriculture: A culture isolation date is a date-time entity marking the end of
+      a process in which a sample is isolated as a single colony or non-mixture culture
+    food-animal and animal feed: A culture isolation date is a date-time entity marking
+      the end of a process in which a sample yields a positive result for the target
+      microbial analyte(s) in the form of an isolated colony or colonies.
+    food-farm environment: A culture isolation date is a date-time entity marking
+      the end of a process in which a sample yields a positive result for the target
+      microbial analyte(s) in the form of an isolated colony or colonies.
+    food-food production facility: A culture isolation date is a date-time entity
+      marking the end of a process in which a sample yields a positive result for
+      the target microbial analyte(s) in the form of an isolated colony or colonies.
+    food-human foods: A culture isolation date is a date-time entity marking the end
+      of a process in which a sample yields a positive result for the target microbial
+      analyte(s) in the form of an isolated colony or colonies.
+  Occurrence:
+    agriculture: ''
+    food-animal and animal feed: '1'
+    food-farm environment: '1'
+    food-food production facility: '1'
+    food-human foods: '1'
+  Value syntax:
+    agriculture: YYYY-MM-DD
+    food-animal and animal feed: '{timestamp}'
+    food-farm environment: '{timestamp}'
+    food-food production facility: '{timestamp}'
+    food-human foods: '{timestamp}'
+MIXS:0001184:
+  Definition:
+    agriculture: new food product categories and food products themselves
+    food-animal and animal feed: A food product type is a class of food products that
+      is differentiated by its food composition (e.g., single- or multi-ingredient),
+      processing and/or consumption characteristics. This does not include brand name
+      products but it may include generic food dish categories. This field accepts
+      terms under food product type (http://purl.obolibrary.org/obo/FOODON:03400361).
+      For terms related to food product for an animal, consult food product for animal
+      (http://purl.obolibrary.org/obo/FOODON_03309997). If the proper descriptor is
+      not listed please use text to describe the food type. Multiple terms can be
+      separated by one or more pipes.
+    food-farm environment: A food product type is a class of food products that is
+      differentiated by its food composition (e.g., single- or multi-ingredient),
+      processing and/or consumption characteristics. This does not include brand name
+      products but it may include generic food dish categories. This field accepts
+      terms under food product type (http://purl.obolibrary.org/obo/FOODON:03400361).
+      For terms related to food product for an animal, consult food product for animal
+      (http://purl.obolibrary.org/obo/FOODON_03309997). If the proper descriptor is
+      not listed please use text to describe the food type. Multiple terms can be
+      separated by one or more pipes.
+    food-food production facility: A food product type is a class of food products
+      that is differentiated by its food composition (e.g., single- or multi-ingredient),
+      processing and/or consumption characteristics. This does not include brand name
+      products but it may include generic food dish categories. This field accepts
+      terms under food product type (http://purl.obolibrary.org/obo/FOODON:03400361).
+      For terms related to food product for an animal, consult food product for animal
+      (http://purl.obolibrary.org/obo/FOODON_03309997). If the proper descriptor is
+      not listed please use text to describe the food type. Multiple terms can be
+      separated by one or more pipes.
+    food-human foods: A food product type is a class of food products that is differentiated
+      by its food composition (e.g., single- or multi-ingredient), processing and/or
+      consumption characteristics. This does not include brand name products but it
+      may include generic food dish categories. This field accepts terms under food
+      product type (http://purl.obolibrary.org/obo/FOODON:03400361). For terms related
+      to food product for an animal, consult food product for animal (http://purl.obolibrary.org/obo/FOODON_03309997).
+      If the proper descriptor is not listed please use text to describe the food
+      type. Multiple terms can be separated by one or more pipes.
+  Occurrence:
+    agriculture: ''
+    food-animal and animal feed: m
+    food-farm environment: m
+    food-food production facility: m
+    food-human foods: m
+  Package item:
+    agriculture: Foodon product type
+    food-animal and animal feed: food product type
+    food-farm environment: food product type
+    food-food production facility: food product type
+    food-human foods: food product type
+  Structured comment name:
+    agriculture: Food_Product_type
+    food-animal and animal feed: food_product_type
+    food-farm environment: food_product_type
+    food-food production facility: food_product_type
+    food-human foods: food_product_type
+  Value syntax:
+    agriculture: '{text}'
+    food-animal and animal feed: '{text}|{termLabel} {[termID]}'
+    food-farm environment: '{text}|{termLabel} {[termID]}'
+    food-food production facility: '{text}|{termLabel} {[termID]}'
+    food-human foods: '{text}|{termLabel} {[termID]}'
+MIXS:0001203:
+  Definition:
+    food-animal and animal feed: 'A reference to a place on the Earth, by its name
+      or by its geographical location that refers to a distribution point along the
+      food chain. This field accepts terms listed under geographic location (http://purl.obolibrary.org/obo/GAZ_00000448).
+      Reference: Adam Diamond, James Barham. Moving Food Along the Value Chain: Innovations
+      in Regional Food Distribution. U.S. Dept. of Agriculture, Agricultural Marketing
+      Service. Washington, DC. March 2012. <http://dx.doi.org/10.9752/MS045.03-2012>'
+    food-food production facility: 'A reference to a place on the Earth, by its name
+      or by its geographical location that refers to a distribution point along the
+      food chain. This field accepts terms listed under geographic location (http://purl.obolibrary.org/obo/GAZ_00000448).
+      Reference: Adam Diamond, James Barham. Moving Food Along the Value Chain: Innovations
+      in Regional Food Distribution. U.S. Dept. of Agriculture, Agricultural Marketing
+      Service. Washington, DC. March 2012. http://dx.doi.org/10.9752/MS045.03-2012.'
+    food-human foods: 'A reference to a place on the Earth, by its name or by its
+      geographical location that refers to a distribution point along the food chain.
+      This field accepts terms listed under geographic location (http://purl.obolibrary.org/obo/GAZ_00000448).
+      Reference: Adam Diamond, James Barham. Moving Food Along the Value Chain: Innovations
+      in Regional Food Distribution. U.S. Dept. of Agriculture, Agricultural Marketing
+      Service. Washington, DC. March 2012. http://dx.doi.org/10.9752/MS045.03-2012.'
+MIXS:0001204:
+  Occurrence:
+    food-animal and animal feed: ''
+    food-food production facility: m
+MIXS:0001207:
+  Value syntax:
+    food-animal and animal feed: '{term}:{term}, {text}'
+    food-food production facility: '{term}: {term}, {text}'
+    food-human foods: '{term}: {term}, {text}'
+MIXS:0001208:
+  Definition:
+    food-animal and animal feed: The maximum number of product units within a package.
+    food-food production facility: The maximum number of product units within a package.
+    food-human foods: The maximum number of product units within a package
+MIXS:0001211:
+  Definition:
+    agriculture: Descriptors of the food production system or of the agricultural
+      environment and growing conditions related to the farm production system, such
+      as wild caught, organic, free-range, industrial, dairy, beef, domestic or cultivated
+      food production. This field accepts terms listed under food production (http://purl.obolibrary.org/obo/FOODON_03530206).
+      Multiple terms may apply and can be separated by pipes.
+    food-animal and animal feed: Descriptors of the food production system or of the
+      agricultural environment and growing conditions related to the farm production
+      system, such as wild caught, organic, free-range, industrial, dairy, beef,  domestic
+      or cultivated food production. This field accepts terms listed under food production
+      (http://purl.obolibrary.org/obo/FOODON_03530206). Multiple terms may apply and
+      can be separated by pipes.
+    food-food production facility: Descriptors of the food production system or of
+      the agricultural environment and growing conditions related to the farm production
+      system, such as wild caught, organic, free-range, industrial, dairy, beef,  domestic
+      or cultivated food production. This field accepts terms listed under food production
+      (http://purl.obolibrary.org/obo/FOODON_03530206). Multiple terms may apply and
+      can be separated by pipes.
+    food-human foods: Descriptors of the food production system or of the agricultural
+      environment and growing conditions related to the farm production system, such
+      as wild caught, organic, free-range, industrial, dairy, beef,  domestic or cultivated
+      food production. This field accepts terms listed under food production (http://purl.obolibrary.org/obo/FOODON_03530206).
+      Multiple terms may apply and can be separated by pipes.
+MIXS:0001225:
+  Structured comment name:
+    agriculture: samp_collect_method
+    food-animal and animal feed: samp_collect_method
+    food-food production facility: samp_collect_method
+    food-human foods: sample_collec_method
+MIXS:0001298:
+  Definition:
+    host-associated: The taxonomic name of the organism(s) found living in mutualistic,
+      commensalistic, or parasitic symbiosis with the specific host.
+    human-associated: The taxonomic name of the organism(s) found living in mutualistic,
+      commensalistic, or parasitic symbiosis with the specific host. The sampled symbiont
+      can have its own symbionts. For example, parasites may have hyperparasites (=parasites
+      of the parasite).
+    human-gut: The taxonomic name of the organism(s) found living in mutualistic,
+      commensalistic, or parasitic symbiosis with the specific host. The sampled symbiont
+      can have its own symbionts. For example, parasites may have hyperparasites (=parasites
+      of the parasite).
+    human-oral: The taxonomic name of the organism(s) found living in mutualistic,
+      commensalistic, or parasitic symbiosis with the specific host. The sampled symbiont
+      can have its own symbionts. For example, parasites may have hyperparasites (=parasites
+      of the parasite).
+    human-skin: The taxonomic name of the organism(s) found living in mutualistic,
+      commensalistic, or parasitic symbiosis with the specific host. The sampled symbiont
+      can have its own symbionts. For example, parasites may have hyperparasites (=parasites
+      of the parasite).
+    human-vaginal: The taxonomic name of the organism(s) found living in mutualistic,
+      commensalistic, or parasitic symbiosis with the specific host. The sampled symbiont
+      can have its own symbionts. For example, parasites may have hyperparasites (=parasites
+      of the parasite).
+    plant-associated: The taxonomic name of the organism(s) found living in mutualistic,
+      commensalistic, or parasitic symbiosis with the specific host. The sampled symbiont
+      can have its own symbionts. For example, parasites may have hyperparasites (=parasites
+      of the parasite).
+MIXS:0001309:
+  Definition:
+    agriculture: 'The taxonomic name of the organism(s) found living in mutualistic,
+      commensalistic, or parasitic symbiosis with the specific host. For cases when
+      the specific host of the sample is a symbiont this field should refer to other
+      organisms it is associated with. E.g.: hyperparasite species X (parasite of
+      the parasite).'
+    symbiont-associated: 'The taxonomic name of the organism(s) found living in mutualistic,
+      commensalistic, or parasitic symbiosis with the specific host. For cases when
+      the specific host of the sample is a symbiont this field should refer to other
+      organisms it is associated with. E.g.: hyperparasite species X (parasite of
+      the parasite)'
+  Occurrence:
+    agriculture: '1'
+    symbiont-associated: ''
