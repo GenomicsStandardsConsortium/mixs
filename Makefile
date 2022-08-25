@@ -110,7 +110,7 @@ generated/docs/index.md: model/schema/mixs.yaml generated/mixs.py
 # instantaneous
 # (otherwise all of the introduction/ pages are 404)
 # don't start unless generated/docs/index.md is complete
-# determine the input path from the directory portion of generated/docs/index.md
+# determine the tsv_input path from the directory portion of generated/docs/index.md
 generated/docs/introduction/%.md: generated/docs/index.md
 	cp -R static_md/* $(dir $@)
 
