@@ -36,7 +36,7 @@ clean_simpler:
 	mkdir -p schemasheets/simple_test/target
 	echo $(DIR_CREATION_MSG) > schemasheets/simple_test/target/README.md
 
-simpler_testing: clean_simpler schemasheets/simple_test/target/test_mims_data.yaml
+simpler_testing: clean_simpler schemasheets/simple_test/target/test_mims_data.yaml schemasheets/simple_test/target/test_invalid_mims_data.csv
 
 schemasheets/simple_test/target/simple_test.yaml: schemasheets/simple_test/tsv_input/*.tsv
 	$(RUN) sheets2linkml \
@@ -57,4 +57,11 @@ schemasheets/simple_test/target/test_mims_data.yaml: schemasheets/simple_test/da
 		--output $@ --schema $(word 2,$^) \
 		--target-class Database \
 		--index-slot mims_set $<
+
+schemasheets/simple_test/target/test_invalid_mims_data.csv: schemasheets/simple_test/data/test_invalid_mims_data.yaml schemasheets/simple_test/target/simple_test_generated.yaml
+	! $(RUN) linkml-convert \
+		--output $@ --schema $(word 2,$^) \
+		--target-class Database \
+		--index-slot mims_set $<
+	@echo "Make rule will progress only if previous recipe fails."
 
