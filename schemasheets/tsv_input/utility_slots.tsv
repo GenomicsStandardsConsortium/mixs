@@ -1,0 +1,3 @@
+slot	domain	range	multivalued	inlined_as_list	description	todos
+> slot	domain	range	multivalued	inlined_as_list	description	todos
+mims_set	Database	mims			"this slot links a Database instance to 0 or more instances of class mims, each of which must bear the defined slots."	It looks like sheets2linkml handling of booleans is broken. May need to manually assert multivalued and inlined_as_list for now.
