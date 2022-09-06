@@ -1,0 +1,160 @@
+id: http://w3id.org/mixs/miscellaneous_natural_or_artificial_environment
+name: miscellaneous_natural_or_artificial_environment
+imports:
+- linkml:types
+- terms
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mixs.vocab: https://w3id.org/mixs/vocab/
+  MIXS: https://w3id.org/mixs/terms/
+default_prefix: mixs.vocab
+slots: {}
+classes:
+  miscellaneous natural or artificial environment:
+    description: miscellaneous natural or artificial environment
+    mappings: []
+    slots:
+    - lat_lon
+    - geo_loc_name
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - depth
+    - elev
+    - alt
+    - temp
+    - organism_count
+    - samp_store_temp
+    - samp_store_dur
+    - diss_oxygen
+    - diss_org_nitro
+    - biomass
+    - bromide
+    - chlorophyll
+    - diether_lipids
+    - diss_hydrogen
+    - phosplipid_fatt_acid
+    - salinity
+    - silicate
+    - water_current
+    - org_matter
+    - org_nitro
+    - pressure
+    - alkalinity
+    - sulfate
+    - sulfide
+    - nitrate
+    - nitrite
+    - ammonium
+    - sodium
+    - chloride
+    - potassium
+    - calcium
+    - diss_inorg_carb
+    - density
+    - diss_carb_dioxide
+    - nitro
+    - phosphate
+    - org_carb
+    - chem_administration
+    - misc_param
+    - oxy_stat_samp
+    - perturbation
+    - samp_store_loc
+    - ph
+    slot_usage:
+      depth:
+        required: false
+      project_name:
+        required: true
+      elev:
+        required: false
+      alt:
+        required: false
+      organism_count:
+        required: false
+      samp_store_temp:
+        required: false
+      samp_vol_we_dna_ext:
+        required: false
+      temp:
+        required: false
+      samp_store_dur:
+        required: false
+      diss_oxygen:
+        required: false
+      diss_org_nitro:
+        required: false
+      biomass:
+        required: false
+      bromide:
+        required: false
+      chlorophyll:
+        required: false
+      diether_lipids:
+        required: false
+      diss_hydrogen:
+        required: false
+      phosplipid_fatt_acid:
+        required: false
+      salinity:
+        required: false
+      silicate:
+        required: false
+      water_current:
+        required: false
+      org_matter:
+        required: false
+      org_nitro:
+        required: false
+      pressure:
+        required: false
+      alkalinity:
+        required: false
+      sulfate:
+        required: false
+      sulfide:
+        required: false
+      nitrate:
+        required: false
+      nitrite:
+        required: false
+      ammonium:
+        required: false
+      sodium:
+        required: false
+      chloride:
+        required: false
+      potassium:
+        required: false
+      calcium:
+        required: false
+      diss_inorg_carb:
+        required: false
+      density:
+        required: false
+      diss_carb_dioxide:
+        required: false
+      nitro:
+        required: false
+      phosphate:
+        required: false
+      org_carb:
+        required: false
+      chem_administration:
+        required: false
+      misc_param:
+        required: false
+      oxy_stat_samp:
+        required: false
+      perturbation:
+        required: false
+      samp_store_loc:
+        required: false
+      ph:
+        required: false
+      samp_name:
+        required: true
+subsets: {}
+enums: {}

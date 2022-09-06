@@ -1,0 +1,278 @@
+id: http://w3id.org/mixs/water
+name: water
+imports:
+- linkml:types
+- terms
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mixs.vocab: https://w3id.org/mixs/vocab/
+  MIXS: https://w3id.org/mixs/terms/
+default_prefix: mixs.vocab
+slots: {}
+classes:
+  water:
+    description: water
+    mappings: []
+    slots:
+    - lat_lon
+    - geo_loc_name
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - depth
+    - elev
+    - alt
+    - temp
+    - tot_nitro
+    - organism_count
+    - diss_inorg_phosp
+    - samp_store_temp
+    - samp_store_dur
+    - tot_phosp
+    - diss_oxygen
+    - glucosidase_act
+    - diss_org_nitro
+    - aminopept_act
+    - bacteria_carb_prod
+    - biomass
+    - bishomohopanol
+    - bromide
+    - chlorophyll
+    - diether_lipids
+    - diss_hydrogen
+    - phaeopigments
+    - phosplipid_fatt_acid
+    - redox_potential
+    - salinity
+    - silicate
+    - turbidity
+    - water_current
+    - org_matter
+    - org_nitro
+    - alkalinity_method
+    - carb_nitro_ratio
+    - pressure
+    - alkalinity
+    - sulfate
+    - sulfide
+    - nitrate
+    - nitrite
+    - ammonium
+    - sodium
+    - chloride
+    - potassium
+    - magnesium
+    - calcium
+    - diss_org_carb
+    - diss_inorg_carb
+    - density
+    - diss_carb_dioxide
+    - alkyl_diethers
+    - mean_frict_vel
+    - mean_peak_frict_vel
+    - n_alkanes
+    - nitro
+    - phosphate
+    - org_carb
+    - part_org_carb
+    - petroleum_hydrocarb
+    - tot_depth_water_col
+    - bac_prod
+    - bac_resp
+    - conduc
+    - diss_inorg_nitro
+    - down_par
+    - fluor
+    - light_intensity
+    - part_org_nitro
+    - photon_flux
+    - primary_prod
+    - size_frac_low
+    - size_frac_up
+    - soluble_react_phosp
+    - suspend_part_matter
+    - tot_diss_nitro
+    - tot_inorg_nitro
+    - tot_part_carb
+    - tidal_stage
+    - chem_administration
+    - misc_param
+    - oxy_stat_samp
+    - perturbation
+    - samp_store_loc
+    - ph
+    - atmospheric_data
+    slot_usage:
+      depth:
+        required: true
+      project_name:
+        required: true
+      elev:
+        required: false
+      tot_nitro:
+        required: false
+      organism_count:
+        required: false
+      diss_inorg_phosp:
+        required: false
+      samp_store_temp:
+        required: false
+      samp_vol_we_dna_ext:
+        required: false
+      temp:
+        required: false
+      samp_store_dur:
+        required: false
+      tot_phosp:
+        required: false
+      diss_oxygen:
+        required: false
+      glucosidase_act:
+        required: false
+      diss_org_nitro:
+        required: false
+      aminopept_act:
+        required: false
+      bacteria_carb_prod:
+        required: false
+      biomass:
+        required: false
+      bishomohopanol:
+        required: false
+      bromide:
+        required: false
+      chlorophyll:
+        required: false
+      diether_lipids:
+        required: false
+      diss_hydrogen:
+        required: false
+      phaeopigments:
+        required: false
+      phosplipid_fatt_acid:
+        required: false
+      redox_potential:
+        required: false
+      salinity:
+        required: false
+      silicate:
+        required: false
+      turbidity:
+        required: false
+      water_current:
+        required: false
+      org_matter:
+        required: false
+      org_nitro:
+        required: false
+      alkalinity_method:
+        required: false
+      carb_nitro_ratio:
+        required: false
+      pressure:
+        required: false
+      alkalinity:
+        required: false
+      sulfate:
+        required: false
+      sulfide:
+        required: false
+      nitrate:
+        required: false
+      nitrite:
+        required: false
+      ammonium:
+        required: false
+      sodium:
+        required: false
+      chloride:
+        required: false
+      potassium:
+        required: false
+      magnesium:
+        required: false
+      calcium:
+        required: false
+      diss_org_carb:
+        required: false
+      diss_inorg_carb:
+        required: false
+      density:
+        required: false
+      diss_carb_dioxide:
+        required: false
+      alkyl_diethers:
+        required: false
+      mean_frict_vel:
+        required: false
+      mean_peak_frict_vel:
+        required: false
+      n_alkanes:
+        required: false
+      nitro:
+        required: false
+      phosphate:
+        required: false
+      org_carb:
+        required: false
+      part_org_carb:
+        required: false
+      petroleum_hydrocarb:
+        required: false
+      tot_depth_water_col:
+        required: false
+      bac_prod:
+        required: false
+      bac_resp:
+        required: false
+      conduc:
+        required: false
+      diss_inorg_nitro:
+        required: false
+      down_par:
+        required: false
+      fluor:
+        required: false
+      light_intensity:
+        required: false
+      part_org_nitro:
+        required: false
+      photon_flux:
+        required: false
+      primary_prod:
+        required: false
+      size_frac_low:
+        required: false
+      size_frac_up:
+        required: false
+      soluble_react_phosp:
+        required: false
+      suspend_part_matter:
+        required: false
+      tot_diss_nitro:
+        required: false
+      tot_inorg_nitro:
+        required: false
+      tot_part_carb:
+        required: false
+      tidal_stage:
+        required: false
+      chem_administration:
+        required: false
+      misc_param:
+        required: false
+      oxy_stat_samp:
+        required: false
+      perturbation:
+        required: false
+      samp_store_loc:
+        required: false
+      ph:
+        required: false
+      atmospheric_data:
+        required: false
+      samp_name:
+        required: true
+subsets: {}
+enums: {}
