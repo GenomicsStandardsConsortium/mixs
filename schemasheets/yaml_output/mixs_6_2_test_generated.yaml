@@ -1,0 +1,3566 @@
+name: mixs_6_2_core_test
+description: Minimal Information about any Sequence Standard
+id: http://w3id.org/mixs
+prefixes:
+  MIXS:
+    prefix_prefix: MIXS
+    prefix_reference: https://w3id.org/gensc/terms/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  xsd:
+    prefix_prefix: xsd
+    prefix_reference: http://www.w3.org/2001/XMLSchema#
+  shex:
+    prefix_prefix: shex
+    prefix_reference: http://www.w3.org/ns/shex#
+default_prefix: MIXS
+default_range: string
+types:
+  string:
+    name: string
+    description: A character string
+    from_schema: https://w3id.org/linkml/types
+    base: str
+    uri: xsd:string
+  integer:
+    name: integer
+    description: An integer
+    from_schema: https://w3id.org/linkml/types
+    base: int
+    uri: xsd:integer
+  boolean:
+    name: boolean
+    description: A binary (true or false) value
+    from_schema: https://w3id.org/linkml/types
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    from_schema: https://w3id.org/linkml/types
+    base: float
+    uri: xsd:float
+  double:
+    name: double
+    description: A real number that conforms to the xsd:double specification
+    from_schema: https://w3id.org/linkml/types
+    base: float
+    uri: xsd:double
+  decimal:
+    name: decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
+    from_schema: https://w3id.org/linkml/types
+    base: Decimal
+    uri: xsd:decimal
+  time:
+    name: time
+    description: A time object represents a (local) time of day, independent of any
+      particular day
+    notes:
+    - URI is dateTime because OWL reasoners do not work with straight date or time
+    from_schema: https://w3id.org/linkml/types
+    base: XSDTime
+    uri: xsd:dateTime
+    repr: str
+  date:
+    name: date
+    description: a date (year, month and day) in an idealized calendar
+    notes:
+    - URI is dateTime because OWL reasoners don't work with straight date or time
+    from_schema: https://w3id.org/linkml/types
+    base: XSDDate
+    uri: xsd:date
+    repr: str
+  datetime:
+    name: datetime
+    description: The combination of a date and time
+    from_schema: https://w3id.org/linkml/types
+    base: XSDDateTime
+    uri: xsd:dateTime
+    repr: str
+  date_or_datetime:
+    name: date_or_datetime
+    description: Either a date or a datetime
+    from_schema: https://w3id.org/linkml/types
+    base: str
+    uri: linkml:DateOrDatetime
+    repr: str
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    from_schema: https://w3id.org/linkml/types
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  uri:
+    name: uri
+    description: a complete URI
+    from_schema: https://w3id.org/linkml/types
+    base: URI
+    uri: xsd:anyURI
+    repr: str
+  ncname:
+    name: ncname
+    description: Prefix part of CURIE
+    from_schema: https://w3id.org/linkml/types
+    base: NCName
+    uri: xsd:string
+    repr: str
+  objectidentifier:
+    name: objectidentifier
+    description: A URI or CURIE that represents an object in the model.
+    comments:
+    - Used for inheritence and type checking
+    from_schema: https://w3id.org/linkml/types
+    base: ElementIdentifier
+    uri: shex:iri
+    repr: str
+  nodeidentifier:
+    name: nodeidentifier
+    description: A URI, CURIE or BNODE that represents a node in a model.
+    from_schema: https://w3id.org/linkml/types
+    base: NodeIdentifier
+    uri: shex:nonLiteral
+    repr: str
+slots:
+  environment:
+    name: environment
+    description: 'this slot is abstract: it groups all environemnt slots and should
+      NOT be used directly'
+    title: environment
+    from_schema: http://w3id.org/mixs
+    is_a: mixs_term_section
+  investigation:
+    name: investigation
+    title: investigation
+    from_schema: http://w3id.org/mixs
+    is_a: mixs_term_section
+  nucleic_acid_sequence source:
+    name: nucleic_acid_sequence source
+    title: nucleic acid sequence source
+    from_schema: http://w3id.org/mixs
+    is_a: mixs_term_section
+  sequencing:
+    name: sequencing
+    title: sequencing
+    from_schema: http://w3id.org/mixs
+    is_a: mixs_term_section
+  mixs_term_section:
+    name: mixs_term_section
+    from_schema: http://w3id.org/mixs
+  soil_mims_set:
+    name: soil_mims_set
+    description: this slot links a Database instance to 0 or more instances of class
+      mims, each of which must bear the defined slots.
+    todos:
+    - It looks like sheets2linkml handling of booleans is broken. May need to manually
+      assert multivalued and inlined_as_list for now.
+    from_schema: http://w3id.org/mixs
+    domain: Database
+    multivalued: true
+    range: SoilMims
+    inlined_as_list: true
+  bin_param:
+    name: bin_param
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: The parameters that have been applied during the extraction of genomes
+      from metagenomic datasets
+    title: binning parameters
+    examples:
+    - value: anvi'o
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000077
+    slot_group: sequencing
+    required: true
+  bin_software:
+    name: bin_software
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: names and versions of software(s) used
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Tool(s) used for the extraction of genomes from metagenomic datasets,
+      where possible include a product ID (PID) of the tool(s) used.
+    title: binning software
+    examples:
+    - value: optical manipulation
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000078
+    slot_group: sequencing
+    required: false
+    recommended: true
+  biotic_relationship:
+    name: biotic_relationship
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-15
+    description: Description of relationship(s) between the subject organism and other
+      organism(s) it is associated with. E.g., parasite on species X; mutualist with
+      species Y. The target organism is the subject of the relationship, and the other
+      organism(s) is the object
+    title: observed biotic relationship
+    examples:
+    - value: human, animal, plant, fungi, bacteria
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000028
+    slot_group: nucleic_acid_sequence_source
+    required: false
+  chimera_check:
+    name: chimera_check
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name and version of software, parameters used
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Tool(s) used for chimera checking, including version number and parameters,
+      to discover and remove chimeric sequences. A chimeric sequence is comprised
+      of two or more phylogenetically distinct parent sequences.
+    title: chimera check software
+    examples:
+    - value: initial denaturation:94_3;annealing:50_1;elongation:72_1.5;final elongation:72_10;35
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000052
+    slot_group: sequencing
+  compl_appr:
+    name: compl_appr
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: text
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: The approach used to determine the completeness of a given genomic
+      assembly, which would typically make use of a set of conserved marker genes
+      or a closely related reference genome. For UViG completeness, include reference
+      genome or group used, and contig feature suggesting a complete genome
+    title: completeness approach
+    examples:
+    - value: infernal;v2;default parameters
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000071
+    slot_group: sequencing
+    required: true
+  compl_score:
+    name: compl_score
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: quality;percent completeness
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: 'Completeness score is typically based on either the fraction of
+      markers found as compared to a database or the percent of a genome found as
+      compared to a closely related reference genome. High Quality Draft: >90%, Medium
+      Quality Draft: >50%, and Low Quality Draft: < 50% should have the indicated
+      completeness scores'
+    title: completeness score
+    examples:
+    - value: rambl;v2;default parameters
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000069
+    slot_group: sequencing
+    required: false
+    recommended: true
+  compl_software:
+    name: compl_software
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: names and versions of software(s) used
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+    description: Tools used for completion estimate, i.e. checkm, anvi'o, busco
+    title: completeness software
+    examples:
+    - value: '18'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000070
+    slot_group: sequencing
+    required: false
+  contam_score:
+    name: contam_score
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: value
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: 'The contamination score is based on the fraction of single-copy
+      genes that are observed more than once in a query genome. The following scores
+      are acceptable for; High Quality Draft: < 5%, Medium Quality Draft: < 10%, Low
+      Quality Draft: < 10%. Contamination must be below 5% for a SAG or MAG to be
+      deposited into any of the public databases'
+    title: contamination score
+    examples:
+    - value: med;60%
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000072
+    slot_group: sequencing
+  contam_screen_input:
+    name: contam_screen_input
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: The type of sequence data used as input
+    title: contamination screening input
+    examples:
+    - value: contigs
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000005
+    slot_group: sequencing
+    required: true
+  contam_screen_param:
+    name: contam_screen_param
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration;value or name
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Specific parameters used in the decontamination sofware, such as
+      reference database, coverage, and kmers. Combinations of these parameters may
+      also be used, i.e. kmer and coverage, or reference database and kmer
+    title: contamination screening parameters
+    examples:
+    - value: checkm
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000073
+    slot_group: sequencing
+    required: false
+    recommended: true
+  decontam_software:
+    name: decontam_software
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Tool(s) used in contamination screening
+    title: decontamination software
+    examples:
+    - value: 'other: UViG length compared to the average length of reference genomes
+        from the P22virus genus (NCBI RefSeq v83)'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000074
+    slot_group: sequencing
+    required: false
+  detec_type:
+    name: detec_type
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: M
+    description: Type of UViG detection
+    title: detection type
+    examples:
+    - value: VirSorter; 1.0.4; Virome database, category 2
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000084
+    slot_group: sequencing
+  encoded_traits:
+    name: encoded_traits
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: 'for plasmid: antibiotic resistance; for phage: converting genes'
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Should include key traits like antibiotic resistance or xenobiotic
+      degradation phenotypes for plasmids, converting genes for phage
+    title: encoded traits
+    examples:
+    - value: rabies [DOID:11260]
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000034
+    slot_group: nucleic_acid_sequence_source
+    required: true
+  estimated_size:
+    name: estimated_size
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: number of base pairs
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+    description: The estimated size of the genome prior to sequencing. Of particular
+      importance in the sequencing of (eukaryotic) genome which could remain in draft
+      form for a long or unspecified period.
+    title: estimated size
+    examples:
+    - value: 300000 bp
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000024
+    slot_group: nucleic_acid_sequence_source
+    required: false
+    recommended: true
+  extrachrom_elements:
+    name: extrachrom_elements
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: number of extrachromosmal elements
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Do plasmids exist of significant phenotypic consequence (e.g. ones
+      that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids
+      (borrelia has 15+ plasmids)
+    title: extrachromosomal elements
+    examples:
+    - value: '5'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000023
+    slot_group: nucleic_acid_sequence_source
+    required: false
+  host_disease_stat:
+    name: host_disease_stat
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: disease name or Disease Ontology term
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: List of diseases with which the host has been diagnosed; can include
+      multiple diagnoses. The value of the field depends on host; for humans the terms
+      should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org,
+      non-human host diseases are free text
+    title: host disease status
+    examples:
+    - value: Gut Metagenome [NCBI:txid749906]
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000031
+    multivalued: true
+    slot_group: nucleic_acid_sequence_source
+  host_pred_appr:
+    name: host_pred_appr
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Tool or approach used for host prediction
+    title: host prediction approach
+    examples:
+    - value: 95% ANI;85% AF; greedy incremental clustering
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000088
+    slot_group: sequencing
+    required: true
+  host_pred_est_acc:
+    name: host_pred_est_acc
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: false discovery rate
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: For each tool or approach used for host prediction, estimated false
+      discovery rates should be included, either computed de novo or from the literature
+    title: host prediction estimated accuracy
+    examples:
+    - value: 'blastn;2.6.0+;e-value cutoff: 0.001'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000089
+    slot_group: sequencing
+    required: false
+    recommended: true
+  host_spec_range:
+    name: host_spec_range
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: NCBI taxid
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+    description: The range and diversity of host species that an organism is capable
+      of infecting, defined by NCBI taxonomy identifier.
+    title: host specificity or range
+    examples:
+    - value: swabbing
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000030
+    multivalued: true
+    slot_group: nucleic_acid_sequence_source
+    required: false
+  isol_growth_condt:
+    name: isol_growth_condt
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: PMID,DOI or URL
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-23
+    description: Publication reference in the form of pubmed ID (pmid), digital object
+      identifier (doi) or url for isolation and growth condition specifications of
+      the organism/material
+    title: isolation and growth condition
+    examples:
+    - value: 'doi: 10.1016/j.syapm.2018.01.009'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000003
+    slot_group: nucleic_acid_sequence_source
+  mag_cov_software:
+    name: mag_cov_software
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+    description: Tool(s) used to determine the genome coverage if coverage is used
+      as a binning parameter in the extraction of genomes from metagenomic datasets
+    title: MAG coverage software
+    examples:
+    - value: coverage and kmer
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000080
+    slot_group: sequencing
+    required: true
+  num_replicons:
+    name: num_replicons
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: 'for eukaryotes and bacteria: chromosomes (haploid count); for viruses:
+          segments'
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Reports the number of replicons in a nuclear genome of eukaryotes,
+      in the genome of a bacterium or archaea or the number of segments in a segmented
+      virus. Always applied to the haploid chromosome count of a eukaryote
+    title: number of replicons
+    examples:
+    - value: '2'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000022
+    slot_group: nucleic_acid_sequence_source
+    required: false
+    recommended: true
+  otu_class_appr:
+    name: otu_class_appr
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: cutoffs and method used
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Cutoffs and approach used when clustering �species-level� OTUs. Note
+      that results from standard 95% ANI / 85% AF clustering should be provided alongside
+      OTUS defined from another set of thresholds, even if the latter are the ones
+      primarily used during the analysis
+    title: OTU classification approach
+    examples:
+    - value: dsDNA
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000085
+    slot_group: sequencing
+    required: false
+  otu_db:
+    name: otu_db
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: database and version
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Reference database (i.e. sequences not generated as part of the current
+      study) used to cluster new genomes in "species-level" OTUs, if any
+    title: OTU database
+    examples:
+    - value: independent sequence (UViG)
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000087
+    slot_group: sequencing
+  otu_seq_comp_appr:
+    name: otu_seq_comp_appr
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: software name, version and relevant parameters
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Tool and thresholds used to compare sequences when computing "species-level"
+      OTUs
+    title: OTU sequence comparison approach
+    examples:
+    - value: non-segmented
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000086
+    slot_group: sequencing
+    required: true
+  pathogenicity:
+    name: pathogenicity
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: names of organisms that the entity is pathogenic to
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-14
+    description: To what is the entity pathogenic
+    title: known pathogenicity
+    examples:
+    - value: MPI012345
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000027
+    slot_group: nucleic_acid_sequence_source
+    required: false
+    recommended: true
+  pcr_cond:
+    name: pcr_cond
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
+          elongation:degrees_minutes;total cycles
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Description of reaction conditions and components of PCR in the form
+      of 'initial denaturation:94degC_1.5min; annealing=...'
+    title: pcr conditions
+    examples:
+    - value: FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000049
+    slot_group: sequencing
+    required: false
+  pcr_primers:
+    name: pcr_primers
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: 'FWD: forward primer sequence;REV:reverse primer sequence'
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: PCR primers that were used to amplify the sequence of the targeted
+      gene, locus or subfragment. This field should contain all the primers used for
+      a single PCR reaction if multiple forward or reverse primers are present in
+      a single PCR reaction. The primer sequence should be reported in uppercase letters
+    title: pcr primers
+    examples:
+    - value: enriched, screened, normalized
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000046
+    slot_group: sequencing
+  ploidy:
+    name: ploidy
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: PATO
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid,
+      triploid, tetraploid). It has implications for the downstream study of duplicated
+      gene and regions of the genomes (and perhaps for difficulties in assembly).
+      For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic
+      Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer
+      to http://purl.bioontology.org/ontology/PATO
+    title: ploidy
+    examples:
+    - value: allopolyploidy [PATO:0001379]
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000021
+    slot_group: nucleic_acid_sequence_source
+    required: true
+  pred_genome_struc:
+    name: pred_genome_struc
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: M
+    description: Expected structure of the viral genome
+    title: predicted genome structure
+    examples:
+    - value: bbmap
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000083
+    slot_group: sequencing
+    required: false
+    recommended: true
+  pred_genome_type:
+    name: pred_genome_type
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: M
+    description: Type of genome predicted for the UViG
+    title: predicted genome type
+    examples:
+    - value: 'no'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000082
+    slot_group: sequencing
+    required: false
+  propagation:
+    name: propagation
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: 'for virus: lytic, lysogenic, temperate, obligately lytic; for plasmid:
+          incompatibility group; for eukaryote: asexual, sexual; other more specific
+          values (e.g., incompatibility group) are allowed'
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: 'The type of reproduction from the parent stock. Values for this
+      field is specific to different taxa. For phage or virus: lytic/lysogenic/temperate/obligately
+      lytic. For plasmids: incompatibility group. For eukaryotes: sexual/asexual.'
+    title: propagation
+    examples:
+    - value: '9606'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000033
+    slot_group: nucleic_acid_sequence_source
+  reassembly_bin:
+    name: reassembly_bin
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: boolean
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Has an assembly been performed on a genome bin extracted from a metagenomic
+      assembly?
+    title: reassembly post binning
+    examples:
+    - value: enzymatic
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000079
+    slot_group: sequencing
+    required: true
+  seq_quality_check:
+    name: seq_quality_check
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: none or manually edited
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Indicate if the sequence has been called by automatic systems (none)
+      or undergone a manual editing procedure (e.g. by inspecting the raw data or
+      chromatograms). Applied only for sequences that are not submitted to SRA,ENA
+      or DRA
+    title: sequence quality check
+    examples:
+    - value: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000051
+    slot_group: sequencing
+    required: false
+    recommended: true
+  single_cell_lysis_appr:
+    name: single_cell_lysis_appr
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Method used to free DNA from interior of the cell(s) or particle(s)
+    title: single cell or viral particle lysis approach
+    examples:
+    - value: kmer
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000076
+    slot_group: sequencing
+    required: false
+  single_cell_lysis_prot:
+    name: single_cell_lysis_prot
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: kit, protocol name
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Name of the kit or standard protocol used for cell(s) or particle(s)
+      lysis
+    title: single cell or viral particle lysis kit protocol
+    examples:
+    - value: none
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000054
+    slot_group: sequencing
+  sort_tech:
+    name: sort_tech
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Method used to sort/isolate cells or particles of interest
+    title: sorting technology
+    examples:
+    - value: '0.01'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000075
+    slot_group: sequencing
+    required: true
+  source_uvig:
+    name: source_uvig
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: M
+    description: Type of dataset from which the UViG was obtained
+    title: source of UViGs
+    examples:
+    - value: heterotroph
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000035
+    slot_group: nucleic_acid_sequence_source
+    required: false
+    recommended: true
+  specific_host:
+    name: specific_host
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: host scientific name, taxonomy ID
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-16
+    description: Report the host's taxonomic name and/or NCBI taxonomy ID.
+    title: host scientific name
+    examples:
+    - value: free living
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000029
+    slot_group: nucleic_acid_sequence_source
+    required: false
+  subspecf_gen_lin:
+    name: subspecf_gen_lin
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: Genetic lineage below lowest rank of NCBI taxonomy, which is subspecies,
+          e.g. serovar, biotype, ecotype, variety, cultivar.
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Information about the genetic distinctness of the sequenced organism
+      below the subspecies level, e.g., serovar, serotype, biotype, ecotype, or any
+      relevant genetic typing schemes like Group I plasmid. Subspecies should not
+      be recorded in this term, but in the NCBI taxonomy. Supply both the lineage
+      name and the lineage rank separated by a colon, e.g., biovar:abc123.
+    title: subspecific genetic lineage
+    examples:
+    - value: serovar:Newport
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000020
+    slot_group: nucleic_acid_sequence_source
+  target_gene:
+    name: target_gene
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: gene name
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Targeted gene or locus name for marker gene studies
+    title: target gene
+    examples:
+    - value: paired
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000044
+    slot_group: sequencing
+    required: true
+  target_subfragment:
+    name: target_subfragment
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: gene fragment name
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Name of subfragment of a gene or locus. Important to e.g. identify
+      special regions on marker genes like V6 on 16S rRNA
+    title: target subfragment
+    examples:
+    - value: Bacteriophage P1
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000045
+    slot_group: sequencing
+    required: false
+    recommended: true
+  tax_ident:
+    name: tax_ident
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+    description: The phylogenetic marker(s) used to assign an organism name to the
+      SAG or MAG
+    title: taxonomic identity marker
+    examples:
+    - value: 454 Genome Sequencer FLX [OBI:0000702]
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000053
+    slot_group: sequencing
+    required: false
+  trna_ext_software:
+    name: trna_ext_software
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: names and versions of software(s), parameters used
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+    description: Tools used for tRNA identification
+    title: tRNA extraction software
+    examples:
+    - value: 'yes'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000068
+    slot_group: sequencing
+  trnas:
+    name: trnas
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: value from 0-21
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+    description: The total number of tRNAs identified from the SAG or MAG
+    title: number of standard tRNAs extracted
+    examples:
+    - value: vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification,
+        default parameters)
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000067
+    slot_group: sequencing
+    required: true
+  trophic_level:
+    name: trophic_level
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Trophic levels are the feeding position in a food chain. Microbes
+      can be a range of producers (e.g. chemolithotroph)
+    title: trophic level
+    examples:
+    - value: Homo sapiens and/or 9606
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000032
+    slot_group: nucleic_acid_sequence_source
+    required: false
+    recommended: true
+  vir_ident_software:
+    name: vir_ident_software
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: software name, version and relevant parameters
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: M
+    description: Tool(s) used for the identification of UViG as a viral genome, software
+      or protocol name including version number, parameters, and cutoffs used
+    title: viral identification software
+    examples:
+    - value: MetaCluster-TA (RRID:SCR_004599), MaxBin (biotools:maxbin)
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000081
+    slot_group: sequencing
+    required: false
+  virus_enrich_appr:
+    name: virus_enrich_appr
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: M
+    description: List of approaches used to enrich the sample for viruses, if any
+    title: virus enrichment approach
+    examples:
+    - value: lytic
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000036
+    slot_group: nucleic_acid_sequence_source
+  wga_amp_appr:
+    name: wga_amp_appr
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Method used to amplify genomic DNA in preparation for sequencing
+    title: WGA amplification approach
+    examples:
+    - value: uchime;v4.1;default parameters
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000055
+    slot_group: sequencing
+    required: true
+  wga_amp_kit:
+    name: wga_amp_kit
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: kit name
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Kit used to amplify genomic DNA in preparation for sequencing
+    title: WGA amplification kit
+    examples:
+    - value: qiagen repli-g
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000006
+    slot_group: sequencing
+    required: false
+    recommended: true
+  x_16s_recover:
+    name: x_16s_recover
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: boolean
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Can a 16S gene be recovered from the submitted SAG or MAG?
+    title: 16S recovered
+    examples:
+    - value: pVOGs;5;http://dmk-brain.ecn.uiowa.edu/pVOGs/ Grazziotin et al. 2017
+        doi:10.1093/nar/gkw975
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000065
+    slot_group: sequencing
+    required: false
+  x_16s_recover_software:
+    name: x_16s_recover_software
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: names and versions of software(s), parameters used
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: '-'
+    description: Tools used for 16S rRNA gene extraction
+    title: 16S recovery software
+    examples:
+    - value: HMMER3;3.1b2;hmmsearch, cutoff of 50 on score
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000066
+    slot_group: sequencing
+  adapters:
+    name: adapters
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: adapter A and B sequence
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Adapters provide priming sequences for both amplification and sequencing
+      of the sample-library fragments. Both adapters should be reported; in uppercase
+      letters
+    title: adapters
+    examples:
+    - value: V6, V9, ITS
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000048
+    slot_group: sequencing
+    required: true
+    recommended: true
+  annot:
+    name: annot
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name of tool or pipeline used, or annotation source description
+      cardinality:
+        tag: cardinality
+        value: X
+    description: Tool used for annotation, or for cases where annotation was provided
+      by a community jamboree or model organism database rather than by a specific
+      submitter
+    title: annotation
+    examples:
+    - value: High-quality draft genome
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000059
+    slot_group: sequencing
+    required: false
+    recommended: true
+  assembly_name:
+    name: assembly_name
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name and version of assembly
+      cardinality:
+        tag: cardinality
+        value: C
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-30
+    description: Name/version of the assembly provided by the submitter that is used
+      in the genome browsers and in the community
+    title: assembly name
+    examples:
+    - value: ambion single cell lysis kit
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000057
+    slot_group: sequencing
+    required: false
+    recommended: true
+  assembly_qual:
+    name: assembly_qual
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: M
+    description: 'The assembly quality category is based on sets of criteria outlined
+      for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated,
+      contiguous sequence per replicon without gaps or ambiguities with a consensus
+      error rate equivalent to Q50 or better. High Quality Draft:Multiple fragments
+      where gaps span repetitive regions. Presence of the 23S, 16S and 5S rRNA genes
+      and at least 18 tRNAs. Medium Quality Draft:Many fragments with little to no
+      review of assembly other than reporting of standard assembly statistics. Low
+      Quality Draft:Many fragments with little to no review of assembly other than
+      reporting of standard assembly statistics. Assembly statistics include, but
+      are not limited to total assembly size, number of contigs, contig N50/L50, and
+      maximum contig length. For MIUVIG; Finished: Single, validated, contiguous sequence
+      per replicon without gaps or ambiguities, with extensive manual review and editing
+      to annotate putative gene functions and transcriptional units. High-quality
+      draft genome: One or multiple fragments, totaling � 90% of the expected genome
+      or replicon sequence or predicted complete. Genome fragment(s): One or multiple
+      fragments, totalling < 90% of the expected genome or replicon sequence, or for
+      which no genome size could be estimated'
+    title: assembly quality
+    examples:
+    - value: 'other: rpoB gene'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000056
+    slot_group: sequencing
+    required: false
+    recommended: true
+  assembly_software:
+    name: assembly_software
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name and version of software, parameters used
+      cardinality:
+        tag: cardinality
+        value: M
+    description: Tool(s) used for assembly, including version number and parameters
+    title: assembly software
+    examples:
+    - value: mda based
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000058
+    slot_group: sequencing
+    required: true
+    recommended: true
+  associated resource:
+    name: associated resource
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: reference to resource
+      cardinality:
+        tag: cardinality
+        value: C
+    description: A related resource that is referenced, cited, or otherwise associated
+      to the sequence.
+    title: relevant electronic resources
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000091
+    multivalued: true
+    slot_group: sequencing
+    required: false
+    recommended: true
+  experimental_factor:
+    name: experimental_factor
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: text or EFO and/or OBI
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Experimental factors are essentially the variable aspects of an experiment
+      design which can be used to describe an experiment, or set of experiments, in
+      an increasingly detailed manner. This field accepts ontology terms from Experimental
+      Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For
+      a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO;
+      for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI
+    title: experimental factor
+    examples:
+    - value: time series design [EFO:EFO_0001779]
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000008
+    slot_group: investigation
+    required: false
+    recommended: true
+  lib_layout:
+    name: lib_layout
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Specify whether to expect single, paired, or other configuration
+      of reads
+    title: library layout
+    examples:
+    - value: https://phylogenomics.me/protocols/16s-pcr-protocol/
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000041
+    slot_group: sequencing
+    required: false
+    recommended: true
+  lib_reads_seqd:
+    name: lib_reads_seqd
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: number of reads sequenced
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Total number of clones sequenced from the library
+    title: library reads sequenced
+    examples:
+    - value: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000040
+    slot_group: sequencing
+    required: true
+    recommended: true
+  lib_screen:
+    name: lib_screen
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: screening strategy name
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Specific enrichment or screening methods applied before and/or after
+      creating libraries
+    title: library screening strategy
+    examples:
+    - value: '20'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000043
+    slot_group: sequencing
+    required: false
+    recommended: true
+  lib_size:
+    name: lib_size
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: number of clones
+      cardinality:
+        tag: cardinality
+        value: C
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-28
+    description: Total number of clones in the library prepared for the project
+    title: library size
+    examples:
+    - value: filtration + FeCl Precipitation + ultracentrifugation + DNAse
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000039
+    slot_group: sequencing
+    required: false
+    recommended: true
+  lib_vector:
+    name: lib_vector
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: vector
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Cloning vector type(s) used in construction of libraries
+    title: library vector
+    examples:
+    - value: '50'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000042
+    slot_group: sequencing
+    required: false
+    recommended: true
+  mid:
+    name: mid
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: multiplex identifier sequence
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Molecular barcodes, called Multiplex Identifiers (MIDs), that are
+      used to specifically tag unique samples in a sequencing run. Sequence should
+      be reported in uppercase letters
+    title: multiplex identifiers
+    examples:
+    - value: 16S rRNA, 18S rRNA, nif, amoA, rpo
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000047
+    slot_group: sequencing
+    required: true
+    recommended: true
+  neg_cont_type:
+    name: neg_cont_type
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration or text
+      cardinality:
+        tag: cardinality
+        value: C
+    description: The substance or equipment used as a negative control in an investigation
+    title: negative control type
+    examples:
+    - value: 1500 milliliter
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0001321
+    slot_group: investigation
+    required: false
+    recommended: true
+  nucl_acid_amp:
+    name: nucl_acid_amp
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: PMID, DOI or URL
+      cardinality:
+        tag: cardinality
+        value: C
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-27
+    description: A link to a literature reference, electronic resource or a standard
+      operating procedure (SOP), that describes the enzymatic amplification (PCR,
+      TMA, NASBA) of specific nucleic acids
+    title: nucleic acid amplification
+    examples:
+    - value: viral fraction metagenome (virome)
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000038
+    slot_group: sequencing
+    required: false
+    recommended: true
+  nucl_acid_ext:
+    name: nucl_acid_ext
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: PMID, DOI or URL
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: A link to a literature reference, electronic resource or a standard
+      operating procedure (SOP), that describes the material separation to recover
+      the nucleic acid fraction from a sample
+    title: nucleic acid extraction
+    examples:
+    - value: beta-lactamase class A
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000037
+    slot_group: sequencing
+    required: false
+    recommended: true
+  number_contig:
+    name: number_contig
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: value
+      cardinality:
+        tag: cardinality
+        value: M
+    description: Total number of contigs in the cleaned/submitted assembly that makes
+      up a given genome, SAG, MAG, or UViG
+    title: number of contigs
+    examples:
+    - value: HuRef, JCVI_ISG_i3_1.0
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000060
+    slot_group: sequencing
+    required: true
+    recommended: true
+  pos_cont_type:
+    name: pos_cont_type
+    annotations:
+      cardinality:
+        tag: cardinality
+        value: C
+    description: The substance, mixture, product, or apparatus used to verify that
+      a process which is part of an investigation delivers a true positive.
+    title: positive control type
+    examples:
+    - value: 25 degree Celsius
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0001322
+    slot_group: investigation
+    required: false
+    recommended: true
+  samp_collec_device:
+    name: samp_collec_device
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: device name
+      cardinality:
+        tag: cardinality
+        value: C
+    description: The device used to collect an environmental sample. This field accepts
+      terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
+      This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
+    title: sample collection device
+    examples:
+    - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000002
+    slot_group: nucleic_acid_sequence_source
+    required: false
+    recommended: true
+  samp_collec_method:
+    name: samp_collec_method
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: PMID,DOI,url , or text
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: The method employed for collecting the sample.
+    title: sample collection method
+    examples:
+    - value: 100 meter
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0001225
+    slot_group: nucleic_acid_sequence_source
+    required: false
+    recommended: true
+  samp_mat_process:
+    name: samp_mat_process
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: text
+      cardinality:
+        tag: cardinality
+        value: C
+    description: A brief description of any processing applied to the sample during
+      or after retrieving the sample from environment, or a link to the relevant protocol(s)
+      performed.
+    title: sample material processing
+    examples:
+    - value: filtering of seawater, storing samples in ethanol
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000016
+    slot_group: nucleic_acid_sequence_source
+    required: true
+    recommended: true
+  samp_size:
+    name: samp_size
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      cardinality:
+        tag: cardinality
+        value: C
+      preferred_unit:
+        tag: preferred_unit
+        value: millliter, gram, milligram, liter
+    description: The total amount or size (volume (ml), mass (g) or area (m2) ) of
+      sample collected.
+    title: amount or size of sample collected
+    examples:
+    - value: 5 liter
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000001
+    slot_group: nucleic_acid_sequence_source
+    required: false
+    recommended: true
+  sop:
+    name: sop
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: reference to SOP
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Standard operating procedures used in assembly and/or annotation
+      of genomes, metagenomes or environmental sequences
+    title: relevant standard operating procedures
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000090
+    multivalued: true
+    slot_group: sequencing
+    required: false
+    recommended: true
+  source_mat_id:
+    name: source_mat_id
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: 'for cultures of microorganisms: identifiers for two culture collections;
+          for other material a unique arbitrary identifer'
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-13
+    description: A unique identifier assigned to a material sample (as defined by
+      http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular
+      digital record of a material sample) used for extracting nucleic acids, and
+      subsequent sequencing. The identifier can refer either to the original material
+      collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher,
+      /bio_material, or /culture_collection may or may not share the same value as
+      the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id
+      may both contain 'UAM:Herps:14' , referring to both the specimen voucher and
+      sampled tissue with the same identifier. However, the /culture_collection qualifier
+      may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id
+      would refer to an identifier from some derived culture from which the nucleic
+      acids were extracted (e.g. xatc123 or ark:/2154/R2).
+    title: source material identifiers
+    examples:
+    - value: ISDsoil1
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000026
+    multivalued: true
+    slot_group: nucleic_acid_sequence_source
+    required: false
+    recommended: true
+  alt:
+    name: alt
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      cardinality:
+        tag: cardinality
+        value: E
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-4.4
+    description: Altitude is a term used to identify heights of objects such as airplanes,
+      space shuttles, rockets, atmospheric balloons and heights of places such as
+      atmospheric layers and clouds. It is used to measure the height of an object
+      which is above the earth's surface. In this context, the altitude measurement
+      is the vertical distance between the earth's surface above sea level and the
+      sampled position in the air
+    title: altitude
+    examples:
+    - value: 'CRISPR spacer match: 0 or 1 mismatches, estimated 8% FDR at the host
+        genus rank (Edwards et al. 2016 doi:10.1093/femsre/fuv048)'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000094
+    slot_group: environment
+    required: true
+    recommended: true
+  depth:
+    name: depth
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      cardinality:
+        tag: cardinality
+        value: E
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-4.3
+    description: The vertical distance below local surface, e.g. for sediment or soil
+      samples depth is measured from sediment or soil surface, respectively. Depth
+      can be reported as an interval for subsurface samples.
+    title: depth
+    examples:
+    - value: 10 meter
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000018
+    slot_group: environment
+    required: false
+    recommended: true
+  elev:
+    name: elev
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      cardinality:
+        tag: cardinality
+        value: E
+    description: Elevation of the sampling site is its height above a fixed reference
+      point, most commonly the mean sea level. Elevation is mainly used when referring
+      to points on the earth's surface, while altitude is used for points above the
+      surface, such as an aircraft in flight or a spacecraft in orbit.
+    title: elevation
+    examples:
+    - value: CRISPR spacer match
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000093
+    slot_group: environment
+    required: false
+    recommended: true
+  temp:
+    name: temp
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: E
+      preferred_unit:
+        tag: preferred_unit
+        value: degree Celsius
+    description: Temperature of the sample at the time of sampling.
+    title: temperature
+    examples:
+    - value: http://www.earthmicrobiome.org/
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000113
+    slot_group: environment
+    required: false
+    recommended: true
+  collection_date:
+    name: collection_date
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: date and time
+      cardinality:
+        tag: cardinality
+        value: M
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-5
+    description: 'The time of sampling, either as an instance (single point in time)
+      or interval. In case no exact time is available, the date/time can be right
+      truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10;
+      2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant'
+    title: collection date
+    examples:
+    - value: 2018-05-11T10:00:00+01:00; 2018-05-11
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000011
+    slot_group: environment
+    required: true
+  env_broad_scale:
+    name: env_broad_scale
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: The major environment type(s) where the sample was collected. Recommend
+          subclasses of biome [ENVO:00000428]. Multiple terms can be separated by
+          one or more pipes.
+      cardinality:
+        tag: cardinality
+        value: M
+    description: 'Report the major environmental system the sample or specimen came
+      from. The system(s) identified should have a coarse spatial grain, to provide
+      the general environmental context of where the sampling was done (e.g. in the
+      desert or a rainforest). We recommend using subclasses of EnvO�s biome class:
+      http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to
+      use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
+    title: broad-scale environmental context
+    examples:
+    - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
+        sample from the photic zone in middle of the Atlantic Ocean
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000012
+    slot_group: environment
+    required: false
+    recommended: true
+  env_local_scale:
+    name: env_local_scale
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: Environmental entities having causal influences upon the entity at
+          time of sampling.
+      cardinality:
+        tag: cardinality
+        value: M
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-6 (habitat)
+    description: 'Report the entity or entities which are in the sample or specimen�s
+      local vicinity and which you believe have significant causal influences on your
+      sample or specimen. We recommend using EnvO terms which are of smaller spatial
+      grain than your entry for env_broad_scale. Terms, such as anatomical sites,
+      from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON)
+      are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
+    title: local environmental context
+    examples:
+    - value: 'litter layer [ENVO:01000338]; Annotating a pooled sample taken from
+        various vegetation layers in a forest consider: canopy [ENVO:00000047]'
+    - value: herb and fern layer [ENVO:01000337]
+    - value: litter layer [ENVO:01000338]
+    - value: understory [01000335]
+    - value: shrub layer [ENVO:01000336].
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000013
+    slot_group: environment
+    required: false
+  env_medium:
+    name: env_medium
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: The material displaced by the entity at time of sampling. Recommend
+          subclasses of environmental material [ENVO:00010483].
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: M
+    description: 'Report the environmental material(s) immediately surrounding the
+      sample or specimen at the time of sampling. We recommend using subclasses of
+      ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO
+      documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference
+      mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+      (e.g. a tree, a leaf, a table top).'
+    title: environmental medium
+    examples:
+    - value: 'soil [ENVO:00001998]; Annotating a fish swimming in the upper 100 m
+        of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating
+        a duck on a pond consider: pond water [ENVO:00002228]'
+    - value: air [ENVO_00002005]
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000014
+    slot_group: environment
+    required: true
+  geo_loc_name:
+    name: geo_loc_name
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location
+          name'
+      cardinality:
+        tag: cardinality
+        value: M
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-4
+    description: The geographical origin of the sample as defined by the country or
+      sea name followed by specific region name. Country or sea names should be chosen
+      from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology
+      (http://purl.bioontology.org/ontology/GAZ)
+    title: geographic location (country and/or sea,region)
+    examples:
+    - value: 'USA: Maryland, Bethesda'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000010
+    slot_group: environment
+    required: true
+  lat_lon:
+    name: lat_lon
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: decimal degrees, limit to 8 decimal points
+      cardinality:
+        tag: cardinality
+        value: M
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-4.1 Latitude. MIGS-4.2 Longitude
+    description: The geographical origin of the sample as defined by latitude and
+      longitude. The values should be reported in decimal degrees and in WGS84 system
+    title: geographic location (latitude and longitude)
+    examples:
+    - value: 50.586825 6.408977
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000009
+    slot_group: environment
+    required: false
+    recommended: true
+  project_name:
+    name: project_name
+    annotations:
+      cardinality:
+        tag: cardinality
+        value: M
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-3
+    description: Name of the project within which the sequencing was organized
+    title: project name
+    examples:
+    - value: NCBI Viral RefSeq;83
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000092
+    slot_group: investigation
+    required: false
+  samp_name:
+    name: samp_name
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: text
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: M
+    description: A local identifier or name that for the material sample used for
+      extracting nucleic acids, and subsequent sequencing. It can refer either to
+      the original material collected or to any derived sub-samples. It can have any
+      format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name.
+    title: sample name
+    examples:
+    - value: Forest soil metagenome
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0001107
+    slot_group: investigation
+    required: true
+  samp_taxon_id:
+    name: samp_taxon_id
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: Taxonomy ID
+      cardinality:
+        tag: cardinality
+        value: M
+    description: NCBI taxon id of the sample. Maybe be a single taxon or mixed taxa
+      sample. Use 'synthetic metagenome� for mock community/positive controls, or
+      'blank sample' for negative controls.
+    title: Taxonomy ID of DNA sample
+    examples:
+    - value: 100 meter
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0001320
+    slot_group: investigation
+    required: true
+  seq_meth:
+    name: seq_meth
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: Text or OBI
+      cardinality:
+        tag: cardinality
+        value: M
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-29
+    description: Sequencing machine used. Where possible the term should be taken
+      from the OBI list of DNA sequencers (http://purl.obolibrary.org/obo/OBI_0400103).
+    title: sequencing method
+    examples:
+    - value: GTGAATAT
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000050
+    slot_group: sequencing
+    required: false
+    recommended: true
+  feat_pred:
+    name: feat_pred
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: names and versions of software(s), parameters used
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Method used to predict UViGs features such as ORFs, integration site,
+      etc.
+    title: feature prediction
+    examples:
+    - value: metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters otherwise
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000061
+    slot_group: sequencing
+    required: false
+  ref_biomaterial:
+    name: ref_biomaterial
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: PMID, DOI or URL
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: X
+    description: Primary publication if isolated before genome publication; otherwise,
+      primary genome report.
+    title: reference for biomaterial
+    examples:
+    - value: doi:10.1016/j.syapm.2018.01.009
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000025
+    slot_group: nucleic_acid_sequence_source
+    required: false
+  ref_db:
+    name: ref_db
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: names, versions, and references of databases
+      cardinality:
+        tag: cardinality
+        value: C
+    description: List of database(s) used for ORF annotation, along with version number
+      and reference to website or publication
+    title: reference database(s)
+    examples:
+    - value: prokka
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000062
+    slot_group: sequencing
+    required: true
+  rel_to_oxygen:
+    name: rel_to_oxygen
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      cardinality:
+        tag: cardinality
+        value: '-'
+      gold_migs_id:
+        tag: gold_migs_id
+        value: MIGS-22
+    description: Is this organism an aerobe, anaerobe? Please note that aerobic and
+      anaerobic are valid descriptors for microbial environments
+    title: relationship to oxygen
+    examples:
+    - value: aerobe
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000015
+    slot_group: nucleic_acid_sequence_source
+    required: false
+    recommended: true
+  samp_vol_we_dna_ext:
+    name: samp_vol_we_dna_ext
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      cardinality:
+        tag: cardinality
+        value: X
+      preferred_unit:
+        tag: preferred_unit
+        value: millliter, gram, milligram, square centimeter
+    description: 'Volume (ml) or mass (g) of total collected sample processed for
+      DNA extraction. Note: total sample collected should be entered under the term
+      Sample Size (MIXS:0000001).'
+    title: sample volume or weight for DNA extraction
+    examples:
+    - value: http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000111
+    slot_group: nucleic_acid_sequence_source
+    required: false
+  sim_search_meth:
+    name: sim_search_meth
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: names and versions of software(s), parameters used
+      inapplicable:
+        tag: inapplicable
+        value: 'true'
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Tool used to compare ORFs with database, along with version and cutoffs
+      used
+    title: similarity search method
+    examples:
+    - value: '40'
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000063
+    slot_group: sequencing
+    required: false
+  size_frac:
+    name: size_frac
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: filter size value range
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Filtering pore size used in sample preparation
+    title: size fraction selected
+    examples:
+    - value: 0-0.22 micrometer
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000017
+    slot_group: nucleic_acid_sequence_source
+    required: true
+  tax_class:
+    name: tax_class
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: classification method, database name, and other parameters
+      cardinality:
+        tag: cardinality
+        value: C
+    description: Method used for taxonomic classification, along with reference database
+      used, classification rank, and thresholds used to classify new genomes
+    title: taxonomic classification
+    examples:
+    - value: Prodigal;2.6.3;default parameters
+    from_schema: http://w3id.org/mixs
+    slot_uri: MIXS:0000064
+    slot_group: sequencing
+    required: false
+    recommended: true
+classes:
+  Agriculture:
+    name: Agriculture
+    description: agriculture
+    title: agriculture
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - agriculture
+    is_a: EnvPackage
+    class_uri: MIXS:0016018
+  Air:
+    name: Air
+    description: air
+    title: air
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - air
+    is_a: EnvPackage
+    class_uri: MIXS:0016000
+  BuiltEnvironment:
+    name: BuiltEnvironment
+    description: built environment
+    title: built environment
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - built_environment
+    is_a: EnvPackage
+    class_uri: MIXS:0016001
+  FoodAnimalAndAnimalFeed:
+    name: FoodAnimalAndAnimalFeed
+    description: food-animal and animal feed
+    title: food-animal and animal feed
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - food_animal_and_animal_feed
+    is_a: EnvPackage
+    class_uri: MIXS:0016019
+  FoodFarmEnvironment:
+    name: FoodFarmEnvironment
+    description: food-farm environment
+    title: food-farm environment
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - food_farm_environment
+    is_a: EnvPackage
+    class_uri: MIXS:0016020
+  FoodFoodProductionFacility:
+    name: FoodFoodProductionFacility
+    description: food-food production facility
+    title: food-food production facility
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - food_food_production_facility
+    is_a: EnvPackage
+    class_uri: MIXS:0016021
+  FoodHumanFoods:
+    name: FoodHumanFoods
+    description: food-human foods
+    title: food-human foods
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - food_human_foods
+    is_a: EnvPackage
+    class_uri: MIXS:0016022
+  HostAssociated:
+    name: HostAssociated
+    description: host-associated
+    title: host-associated
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - host_associated
+    is_a: EnvPackage
+    class_uri: MIXS:0016002
+  HumanAssociated:
+    name: HumanAssociated
+    description: human-associated
+    title: human-associated
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - human_associated
+    is_a: EnvPackage
+    class_uri: MIXS:0016003
+  HumanGut:
+    name: HumanGut
+    description: human-gut
+    title: human-gut
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - human_gut
+    is_a: EnvPackage
+    class_uri: MIXS:0016004
+  HumanOral:
+    name: HumanOral
+    description: human-oral
+    title: human-oral
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - human_oral
+    is_a: EnvPackage
+    class_uri: MIXS:0016005
+  HumanSkin:
+    name: HumanSkin
+    description: human-skin
+    title: human-skin
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - human_skin
+    is_a: EnvPackage
+    class_uri: MIXS:0016006
+  HumanVaginal:
+    name: HumanVaginal
+    description: human-vaginal
+    title: human-vaginal
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - human_vaginal
+    is_a: EnvPackage
+    class_uri: MIXS:0016007
+  HydrocarbonResourcesCores:
+    name: HydrocarbonResourcesCores
+    description: hydrocarbon resources-cores
+    title: hydrocarbon resources-cores
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - hydrocarbon_resources_cores
+    is_a: EnvPackage
+    class_uri: MIXS:0016015
+  HydrocarbonResourcesFluidsSwabs:
+    name: HydrocarbonResourcesFluidsSwabs
+    description: hydrocarbon resources-fluids/swabs
+    title: hydrocarbon resources-fluids_swabs
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - hydrocarbon_resources_fluids_swabs
+    is_a: EnvPackage
+    class_uri: MIXS:0016016
+  MicrobialMatBiofilm:
+    name: MicrobialMatBiofilm
+    description: microbial mat/biofilm
+    title: microbial mat_biofilm
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - microbial_mat_biofilm
+    is_a: EnvPackage
+    class_uri: MIXS:0016008
+  MiscellaneousNaturalOrArtificialEnvironment:
+    name: MiscellaneousNaturalOrArtificialEnvironment
+    description: miscellaneous natural or artificial environment
+    title: miscellaneous natural or artificial environment
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - miscellaneous_natural_or_artificial_environment
+    is_a: EnvPackage
+    class_uri: MIXS:0016009
+  PlantAssociated:
+    name: PlantAssociated
+    description: plant-associated
+    title: plant-associated
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - plant_associated
+    is_a: EnvPackage
+    class_uri: MIXS:0016010
+  Sediment:
+    name: Sediment
+    description: sediment
+    title: sediment
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - sediment
+    is_a: EnvPackage
+    class_uri: MIXS:0016011
+  Soil:
+    name: Soil
+    description: soil
+    title: soil
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - soil
+    is_a: EnvPackage
+    class_uri: MIXS:0016012
+  SymbiontAssociated:
+    name: SymbiontAssociated
+    description: symbiont-associated
+    title: symbiont-associated
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - symbiont_associated
+    is_a: EnvPackage
+    class_uri: MIXS:0016023
+  WastewaterSludge:
+    name: WastewaterSludge
+    description: wastewater/sludge
+    title: wastewater_sludge
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - wastewater_sludge
+    is_a: EnvPackage
+    class_uri: MIXS:0016013
+  Water:
+    name: Water
+    description: water
+    title: water
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - water
+    is_a: EnvPackage
+    class_uri: MIXS:0016014
+  EnvPackage:
+    name: EnvPackage
+    title: environmental package
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - env_package
+  core:
+    name: core
+    description: Core package. Do not use this directly, this is used to build other
+      packages.
+    title: core
+    todos:
+    - 'naming: pick a style that is clear about the type of the element. NMDC compatibility?'
+    comments:
+    - core is not actually asserted to be abstract by the output of https://github.com/GenomicsStandardsConsortium/mixs/blob/main/gsctools/mixs_converter.py
+    from_schema: http://w3id.org/mixs
+    abstract: true
+  QuantityValue:
+    name: QuantityValue
+    description: Used to record a measurement
+    title: quantity value
+    from_schema: http://w3id.org/mixs
+    aliases:
+    - measurement value
+    - quantity value
+  SoilMims:
+    name: SoilMims
+    title: Soil MIMS
+    from_schema: http://w3id.org/mixs
+    is_a: Soil
+    mixins:
+    - Mims
+  Database:
+    name: Database
+    comments:
+    - database comment
+    from_schema: http://w3id.org/mixs
+  Mims:
+    name: Mims
+    from_schema: http://w3id.org/mixs
+    slots:
+    - bin_param
+    - bin_software
+    - biotic_relationship
+    - chimera_check
+    - compl_appr
+    - compl_score
+    - compl_software
+    - contam_score
+    - contam_screen_input
+    - contam_screen_param
+    - decontam_software
+    - detec_type
+    - encoded_traits
+    - estimated_size
+    - extrachrom_elements
+    - host_disease_stat
+    - host_pred_appr
+    - host_pred_est_acc
+    - host_spec_range
+    - isol_growth_condt
+    - mag_cov_software
+    - num_replicons
+    - otu_class_appr
+    - otu_db
+    - otu_seq_comp_appr
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - pred_genome_struc
+    - pred_genome_type
+    - propagation
+    - reassembly_bin
+    - seq_quality_check
+    - single_cell_lysis_appr
+    - single_cell_lysis_prot
+    - sort_tech
+    - source_uvig
+    - specific_host
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - tax_ident
+    - trna_ext_software
+    - trnas
+    - trophic_level
+    - vir_ident_software
+    - virus_enrich_appr
+    - wga_amp_appr
+    - wga_amp_kit
+    - x_16s_recover
+    - x_16s_recover_software
+    - adapters
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - experimental_factor
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_size
+    - sop
+    - source_mat_id
+    - alt
+    - depth
+    - elev
+    - temp
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - project_name
+    - samp_name
+    - samp_taxon_id
+    - seq_meth
+    - feat_pred
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_vol_we_dna_ext
+    - sim_search_meth
+    - size_frac
+    - tax_class
+  Mimag:
+    name: Mimag
+    from_schema: http://w3id.org/mixs
+    slots:
+    - bin_param
+    - bin_software
+    - biotic_relationship
+    - chimera_check
+    - compl_appr
+    - compl_score
+    - compl_software
+    - contam_score
+    - contam_screen_input
+    - contam_screen_param
+    - decontam_software
+    - detec_type
+    - encoded_traits
+    - estimated_size
+    - extrachrom_elements
+    - host_disease_stat
+    - host_pred_appr
+    - host_pred_est_acc
+    - host_spec_range
+    - isol_growth_condt
+    - mag_cov_software
+    - num_replicons
+    - otu_class_appr
+    - otu_db
+    - otu_seq_comp_appr
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - pred_genome_struc
+    - pred_genome_type
+    - propagation
+    - reassembly_bin
+    - seq_quality_check
+    - single_cell_lysis_appr
+    - single_cell_lysis_prot
+    - sort_tech
+    - source_uvig
+    - specific_host
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - tax_ident
+    - trna_ext_software
+    - trnas
+    - trophic_level
+    - vir_ident_software
+    - virus_enrich_appr
+    - wga_amp_appr
+    - wga_amp_kit
+    - x_16s_recover
+    - x_16s_recover_software
+    - adapters
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - experimental_factor
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_size
+    - sop
+    - source_mat_id
+    - alt
+    - depth
+    - elev
+    - temp
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - project_name
+    - samp_name
+    - samp_taxon_id
+    - seq_meth
+    - feat_pred
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_vol_we_dna_ext
+    - sim_search_meth
+    - size_frac
+    - tax_class
+  MigsEu:
+    name: MigsEu
+    from_schema: http://w3id.org/mixs
+    slots:
+    - bin_param
+    - bin_software
+    - biotic_relationship
+    - chimera_check
+    - compl_appr
+    - compl_score
+    - compl_software
+    - contam_score
+    - contam_screen_input
+    - contam_screen_param
+    - decontam_software
+    - detec_type
+    - encoded_traits
+    - estimated_size
+    - extrachrom_elements
+    - host_disease_stat
+    - host_pred_appr
+    - host_pred_est_acc
+    - host_spec_range
+    - isol_growth_condt
+    - mag_cov_software
+    - num_replicons
+    - otu_class_appr
+    - otu_db
+    - otu_seq_comp_appr
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - pred_genome_struc
+    - pred_genome_type
+    - propagation
+    - reassembly_bin
+    - seq_quality_check
+    - single_cell_lysis_appr
+    - single_cell_lysis_prot
+    - sort_tech
+    - source_uvig
+    - specific_host
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - tax_ident
+    - trna_ext_software
+    - trnas
+    - trophic_level
+    - vir_ident_software
+    - virus_enrich_appr
+    - wga_amp_appr
+    - wga_amp_kit
+    - x_16s_recover
+    - x_16s_recover_software
+    - adapters
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - experimental_factor
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_size
+    - sop
+    - source_mat_id
+    - alt
+    - depth
+    - elev
+    - temp
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - project_name
+    - samp_name
+    - samp_taxon_id
+    - seq_meth
+    - feat_pred
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_vol_we_dna_ext
+    - sim_search_meth
+    - size_frac
+    - tax_class
+  MigsBa:
+    name: MigsBa
+    from_schema: http://w3id.org/mixs
+    slots:
+    - bin_param
+    - bin_software
+    - biotic_relationship
+    - chimera_check
+    - compl_appr
+    - compl_score
+    - compl_software
+    - contam_score
+    - contam_screen_input
+    - contam_screen_param
+    - decontam_software
+    - detec_type
+    - encoded_traits
+    - estimated_size
+    - extrachrom_elements
+    - host_disease_stat
+    - host_pred_appr
+    - host_pred_est_acc
+    - host_spec_range
+    - isol_growth_condt
+    - mag_cov_software
+    - num_replicons
+    - otu_class_appr
+    - otu_db
+    - otu_seq_comp_appr
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - pred_genome_struc
+    - pred_genome_type
+    - propagation
+    - reassembly_bin
+    - seq_quality_check
+    - single_cell_lysis_appr
+    - single_cell_lysis_prot
+    - sort_tech
+    - source_uvig
+    - specific_host
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - tax_ident
+    - trna_ext_software
+    - trnas
+    - trophic_level
+    - vir_ident_software
+    - virus_enrich_appr
+    - wga_amp_appr
+    - wga_amp_kit
+    - x_16s_recover
+    - x_16s_recover_software
+    - adapters
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - experimental_factor
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_size
+    - sop
+    - source_mat_id
+    - alt
+    - depth
+    - elev
+    - temp
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - project_name
+    - samp_name
+    - samp_taxon_id
+    - seq_meth
+    - feat_pred
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_vol_we_dna_ext
+    - sim_search_meth
+    - size_frac
+    - tax_class
+  MigsPl:
+    name: MigsPl
+    from_schema: http://w3id.org/mixs
+    slots:
+    - bin_param
+    - bin_software
+    - biotic_relationship
+    - chimera_check
+    - compl_appr
+    - compl_score
+    - compl_software
+    - contam_score
+    - contam_screen_input
+    - contam_screen_param
+    - decontam_software
+    - detec_type
+    - encoded_traits
+    - estimated_size
+    - extrachrom_elements
+    - host_disease_stat
+    - host_pred_appr
+    - host_pred_est_acc
+    - host_spec_range
+    - isol_growth_condt
+    - mag_cov_software
+    - num_replicons
+    - otu_class_appr
+    - otu_db
+    - otu_seq_comp_appr
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - pred_genome_struc
+    - pred_genome_type
+    - propagation
+    - reassembly_bin
+    - seq_quality_check
+    - single_cell_lysis_appr
+    - single_cell_lysis_prot
+    - sort_tech
+    - source_uvig
+    - specific_host
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - tax_ident
+    - trna_ext_software
+    - trnas
+    - trophic_level
+    - vir_ident_software
+    - virus_enrich_appr
+    - wga_amp_appr
+    - wga_amp_kit
+    - x_16s_recover
+    - x_16s_recover_software
+    - adapters
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - experimental_factor
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_size
+    - sop
+    - source_mat_id
+    - alt
+    - depth
+    - elev
+    - temp
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - project_name
+    - samp_name
+    - samp_taxon_id
+    - seq_meth
+    - feat_pred
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_vol_we_dna_ext
+    - sim_search_meth
+    - size_frac
+    - tax_class
+  MigsVi:
+    name: MigsVi
+    from_schema: http://w3id.org/mixs
+    slots:
+    - bin_param
+    - bin_software
+    - biotic_relationship
+    - chimera_check
+    - compl_appr
+    - compl_score
+    - compl_software
+    - contam_score
+    - contam_screen_input
+    - contam_screen_param
+    - decontam_software
+    - detec_type
+    - encoded_traits
+    - estimated_size
+    - extrachrom_elements
+    - host_disease_stat
+    - host_pred_appr
+    - host_pred_est_acc
+    - host_spec_range
+    - isol_growth_condt
+    - mag_cov_software
+    - num_replicons
+    - otu_class_appr
+    - otu_db
+    - otu_seq_comp_appr
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - pred_genome_struc
+    - pred_genome_type
+    - propagation
+    - reassembly_bin
+    - seq_quality_check
+    - single_cell_lysis_appr
+    - single_cell_lysis_prot
+    - sort_tech
+    - source_uvig
+    - specific_host
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - tax_ident
+    - trna_ext_software
+    - trnas
+    - trophic_level
+    - vir_ident_software
+    - virus_enrich_appr
+    - wga_amp_appr
+    - wga_amp_kit
+    - x_16s_recover
+    - x_16s_recover_software
+    - adapters
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - experimental_factor
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_size
+    - sop
+    - source_mat_id
+    - alt
+    - depth
+    - elev
+    - temp
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - project_name
+    - samp_name
+    - samp_taxon_id
+    - seq_meth
+    - feat_pred
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_vol_we_dna_ext
+    - sim_search_meth
+    - size_frac
+    - tax_class
+  MigsOrg:
+    name: MigsOrg
+    from_schema: http://w3id.org/mixs
+    slots:
+    - bin_param
+    - bin_software
+    - biotic_relationship
+    - chimera_check
+    - compl_appr
+    - compl_score
+    - compl_software
+    - contam_score
+    - contam_screen_input
+    - contam_screen_param
+    - decontam_software
+    - detec_type
+    - encoded_traits
+    - estimated_size
+    - extrachrom_elements
+    - host_disease_stat
+    - host_pred_appr
+    - host_pred_est_acc
+    - host_spec_range
+    - isol_growth_condt
+    - mag_cov_software
+    - num_replicons
+    - otu_class_appr
+    - otu_db
+    - otu_seq_comp_appr
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - pred_genome_struc
+    - pred_genome_type
+    - propagation
+    - reassembly_bin
+    - seq_quality_check
+    - single_cell_lysis_appr
+    - single_cell_lysis_prot
+    - sort_tech
+    - source_uvig
+    - specific_host
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - tax_ident
+    - trna_ext_software
+    - trnas
+    - trophic_level
+    - vir_ident_software
+    - virus_enrich_appr
+    - wga_amp_appr
+    - wga_amp_kit
+    - x_16s_recover
+    - x_16s_recover_software
+    - adapters
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - experimental_factor
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_size
+    - sop
+    - source_mat_id
+    - alt
+    - depth
+    - elev
+    - temp
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - project_name
+    - samp_name
+    - samp_taxon_id
+    - seq_meth
+    - feat_pred
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_vol_we_dna_ext
+    - sim_search_meth
+    - size_frac
+    - tax_class
+  MimarksS:
+    name: MimarksS
+    from_schema: http://w3id.org/mixs
+    slots:
+    - bin_param
+    - bin_software
+    - biotic_relationship
+    - chimera_check
+    - compl_appr
+    - compl_score
+    - compl_software
+    - contam_score
+    - contam_screen_input
+    - contam_screen_param
+    - decontam_software
+    - detec_type
+    - encoded_traits
+    - estimated_size
+    - extrachrom_elements
+    - host_disease_stat
+    - host_pred_appr
+    - host_pred_est_acc
+    - host_spec_range
+    - isol_growth_condt
+    - mag_cov_software
+    - num_replicons
+    - otu_class_appr
+    - otu_db
+    - otu_seq_comp_appr
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - pred_genome_struc
+    - pred_genome_type
+    - propagation
+    - reassembly_bin
+    - seq_quality_check
+    - single_cell_lysis_appr
+    - single_cell_lysis_prot
+    - sort_tech
+    - source_uvig
+    - specific_host
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - tax_ident
+    - trna_ext_software
+    - trnas
+    - trophic_level
+    - vir_ident_software
+    - virus_enrich_appr
+    - wga_amp_appr
+    - wga_amp_kit
+    - x_16s_recover
+    - x_16s_recover_software
+    - adapters
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - experimental_factor
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_size
+    - sop
+    - source_mat_id
+    - alt
+    - depth
+    - elev
+    - temp
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - project_name
+    - samp_name
+    - samp_taxon_id
+    - seq_meth
+    - feat_pred
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_vol_we_dna_ext
+    - sim_search_meth
+    - size_frac
+    - tax_class
+  Misag:
+    name: Misag
+    from_schema: http://w3id.org/mixs
+    slots:
+    - bin_param
+    - bin_software
+    - biotic_relationship
+    - chimera_check
+    - compl_appr
+    - compl_score
+    - compl_software
+    - contam_score
+    - contam_screen_input
+    - contam_screen_param
+    - decontam_software
+    - detec_type
+    - encoded_traits
+    - estimated_size
+    - extrachrom_elements
+    - host_disease_stat
+    - host_pred_appr
+    - host_pred_est_acc
+    - host_spec_range
+    - isol_growth_condt
+    - mag_cov_software
+    - num_replicons
+    - otu_class_appr
+    - otu_db
+    - otu_seq_comp_appr
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - pred_genome_struc
+    - pred_genome_type
+    - propagation
+    - reassembly_bin
+    - seq_quality_check
+    - single_cell_lysis_appr
+    - single_cell_lysis_prot
+    - sort_tech
+    - source_uvig
+    - specific_host
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - tax_ident
+    - trna_ext_software
+    - trnas
+    - trophic_level
+    - vir_ident_software
+    - virus_enrich_appr
+    - wga_amp_appr
+    - wga_amp_kit
+    - x_16s_recover
+    - x_16s_recover_software
+    - adapters
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - experimental_factor
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_size
+    - sop
+    - source_mat_id
+    - alt
+    - depth
+    - elev
+    - temp
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - project_name
+    - samp_name
+    - samp_taxon_id
+    - seq_meth
+    - feat_pred
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_vol_we_dna_ext
+    - sim_search_meth
+    - size_frac
+    - tax_class
+  Miuvig:
+    name: Miuvig
+    from_schema: http://w3id.org/mixs
+    slots:
+    - bin_param
+    - bin_software
+    - biotic_relationship
+    - chimera_check
+    - compl_appr
+    - compl_score
+    - compl_software
+    - contam_score
+    - contam_screen_input
+    - contam_screen_param
+    - decontam_software
+    - detec_type
+    - encoded_traits
+    - estimated_size
+    - extrachrom_elements
+    - host_disease_stat
+    - host_pred_appr
+    - host_pred_est_acc
+    - host_spec_range
+    - isol_growth_condt
+    - mag_cov_software
+    - num_replicons
+    - otu_class_appr
+    - otu_db
+    - otu_seq_comp_appr
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - pred_genome_struc
+    - pred_genome_type
+    - propagation
+    - reassembly_bin
+    - seq_quality_check
+    - single_cell_lysis_appr
+    - single_cell_lysis_prot
+    - sort_tech
+    - source_uvig
+    - specific_host
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - tax_ident
+    - trna_ext_software
+    - trnas
+    - trophic_level
+    - vir_ident_software
+    - virus_enrich_appr
+    - wga_amp_appr
+    - wga_amp_kit
+    - x_16s_recover
+    - x_16s_recover_software
+    - adapters
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - experimental_factor
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_size
+    - sop
+    - source_mat_id
+    - alt
+    - depth
+    - elev
+    - temp
+    - collection_date
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - project_name
+    - samp_name
+    - samp_taxon_id
+    - seq_meth
+    - feat_pred
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_vol_we_dna_ext
+    - sim_search_meth
+    - size_frac
+    - tax_class
+source_file: schemasheets/yaml_output/mixs_6_2_test.yaml
