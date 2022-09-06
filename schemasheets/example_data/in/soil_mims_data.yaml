@@ -1,0 +1,49 @@
+adapters: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+alt: 8000 meters
+annot: prokka
+assembly_name: HuRef
+assembly_qual: high_quality_draft_genome
+assembly_software: metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters otherwise
+associated_resource:
+  - http://www.earthmicrobiome.org/
+collection_date: 2018-05-11T10:00:00+01:00
+depth: 0.1 meters
+elev: 9000 meters
+env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+env_local_scale: litter layer [ENVO:01000338]
+env_medium: soil [ENVO:00001998]
+experimental_factor: time series design [EFO:EFO_0001779]
+feat_pred: Prodigal;2.6.3;default parameters
+geo_loc_name: "USA: Maryland, Bethesda"
+lat_lon: 50.586825 6.408977
+lib_layout: paired
+lib_reads_seqd: 20
+lib_screen: enriched
+lib_size: 50
+lib_vector: Bacteriophage P1
+mid: GTGAATAT
+neg_cont_type: distilled water
+nucl_acid_amp: https://phylogenomics.me/protocols/16s-pcr-protocol/
+nucl_acid_ext: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+number_contig: 40
+pos_cont_type: NO EXAMPLE
+project_name: Forest soil metagenome
+ref_biomaterial: doi:10.1016/j.syapm.2018.01.009
+ref_db: pVOGs;5;http://dmk-brain.ecn.uiowa.edu/pVOGs/ Grazziotin et al. 2017 doi:10.1093/nar/gkw975
+rel_to_oxygen: aerobe
+samp_collec_device: drag swab [GENEPIO:0002713]
+samp_collec_method: swabbing
+samp_mat_process: filtering of seawater
+samp_name: ISDsoil1
+samp_size: 5 liter
+samp_taxon_id: Gut Metagenome [NCBI:txid749906]
+samp_vol_we_dna_ext: 1500 milliliter
+seq_meth: 454 Genome Sequencer FLX [OBI:0000702]
+sim_search_meth: HMMER3;3.1b2;hmmsearch, cutoff of 50 on score
+size_frac: 0-0.22 micrometer
+sop:
+  - http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/
+source_mat_id:
+  - MPI012345
+tax_class: vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification, default parameters)
+temp: 25 degree Celsius

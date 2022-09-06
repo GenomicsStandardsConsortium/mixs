@@ -3,78 +3,34 @@ RUN=poetry run
 
 .PHONY: clean_schemasheets all_schemasheets
 
-all_schemasheets: clean_schemasheets schemasheets/yaml_output/mixs_6_2_test_generated.yaml
+all_schemasheets: clean_schemasheets schemasheets/example_data/out/mims_data.json
 
 clean_schemasheets:
-	rm -rf schemasheets/yaml_output/*
+	rm -rf schemasheets/example_data/out/mims_data.json
+	rm -rf schemasheets/yaml_output/mixs_from_schema_sheets.yaml
 	mkdir -p schemasheets/yaml_output
 	echo $(DIR_CREATION_MSG) > schemasheets/yaml_output/README.md
-	rm -rf schemasheets/test_mims_data.yaml
-	rm -rf schemasheets/test_schema_generated.yaml
+	mkdir -p schemasheets/example_data/out
+	echo $(DIR_CREATION_MSG) > schemasheets/example_data/out/README.md
 
-schemasheets/yaml_output/mixs_6_2_test.yaml: schemasheets/tsv_input/schema.tsv schemasheets/tsv_input/prefixes.tsv \
-schemasheets/tsv_input/env_package_classes.tsv schemasheets/tsv_input/utility_classes.tsv \
-schemasheets/tsv_input/sections_as_parent_slots.tsv schemasheets/tsv_input/utility_slots.tsv \
-schemasheets/tsv_input/core.tsv
-	# schemasheets/tsv_input/class_slot_assignments.tsv
-	#schemasheets/tsv_input/*tsv
-	# schemasheets/tsv_input/checklist_classes.tsv
-	# todo currently generates only one single yaml output per sheets2linkml run
-	#   would be nice to retain modularity
-	$(RUN) sheets2linkml \
-		--no-repair \
-		--unique-slots \
-		--output $@ $^
-
-schemasheets/yaml_output/mixs_6_2_test_generated.yaml: schemasheets/yaml_output/mixs_6_2_test.yaml
-	$(RUN) gen-linkml \
-		--no-materialize-attributes \
-		--format yaml \
-		--output $@ $<
-
-# simpler testing:
-
-.PHONY: clean_simpler simpler_testing
-
-clean_simpler:
-	rm -rf schemasheets/simple_test/target/*
-	mkdir -p schemasheets/simple_test/target
-	echo $(DIR_CREATION_MSG) > schemasheets/simple_test/target/README.md
-
-simpler_testing: clean_simpler schemasheets/simple_test/target/test_mims_data.yaml schemasheets/simple_test/target/test_invalid_mims_data.csv
-
-schemasheets/simple_test/target/simple_test.yaml: schemasheets/simple_test/tsv_input/*.tsv
-	$(RUN) sheets2linkml \
-		--no-repair \
-		--unique-slots \
-		--verbose \
-		--output $@ $^
-
-schemasheets/simple_test/target/simple_test_generated.yaml: schemasheets/simple_test/target/simple_test.yaml
-	$(RUN) gen-linkml \
-		--format yaml \
-		--verbose \
-		--no-materialize-attributes \
-		--output $@ $<
-
-schemasheets/simple_test/target/test_mims_data.yaml: schemasheets/simple_test/data/test_mims_data.tsv schemasheets/simple_test/target/simple_test_generated.yaml
-	$(RUN) linkml-convert \
-		--output $@ --schema $(word 2,$^) \
-		--target-class Database \
-		--index-slot mims_set $<
-
-schemasheets/simple_test/target/test_invalid_mims_data.csv: schemasheets/simple_test/data/test_invalid_mims_data.yaml schemasheets/simple_test/target/simple_test_generated.yaml
-	! $(RUN) linkml-convert \
-		--output $@ --schema $(word 2,$^) \
-		--target-class Database \
-		--index-slot mims_set $<
-	@echo "Make rule will progress only if previous recipe fails."
-
-
-schemasheets/soil_mims_data.json: schemasheets/soil_mims_data.yaml schemasheets/yaml_output/mixs_6_2_test_generated.yaml
-	$(RUN) linkml-convert \
-		--output $@ --schema $(word 2,$^) \
-		--target-class SoilMims $<
-
-schemasheets/tsv_input/data_dictionary.yaml: schemasheets/tsv_input/data_dictionary.tsv
+schemasheets/yaml_output/mixs_from_schema_sheets.yaml: \
+schemasheets/tsv_input/checklist_classes.tsv \
+schemasheets/tsv_input/core.tsv \
+schemasheets/tsv_input/core_enums.tsv \
+schemasheets/tsv_input/env_package_classes.tsv \
+schemasheets/tsv_input/prefixes.tsv \
+schemasheets/tsv_input/schema.tsv \
+schemasheets/tsv_input/utility_classes.tsv \
+schemasheets/tsv_input/utility_slots.tsv \
+schemasheets/tsv_input/packages_slots_used_by_soil.tsv \
+schemasheets/tsv_input/packages_soil_slot_usage.tsv
 	$(RUN) sheets2linkml --output $@ $^
+
+schemasheets/example_data/out/mims_data.json: schemasheets/example_data/in/soil_mims_data.yaml schemasheets/yaml_output/mixs_from_schema_sheets.yaml
+	$(RUN) linkml-convert \
+		--output $@ \
+		--schema $(word 2,$^) \
+		--target-class SoilMims \
+		$<
+
+# todo work on settings and structured patterns (gen-linkml expansion)

@@ -1,0 +1,56 @@
+Structured comment name	Package item	Definition	Expected value	Value syntax	Occurrence	MIXS ID
+> slot	title	description	ignore	ignore	multivalued	slot_uri
+>					"vmap: {1: False, m: True}"	
+agrochem_addition	history/agrochemical additions	"Addition of fertilizers, pesticides, etc. - amount and time of applications"	agrochemical name;agrochemical amount;timestamp	{text};{float} {unit};{timestamp}	m	MIXS:0000639
+al_sat	extreme_unusual_properties/Al saturation	Aluminum saturation (esp. For tropical soils)	measurement value	{float} {unit}	1	MIXS:0000607
+al_sat_meth	extreme_unusual_properties/Al saturation method	Reference or method used in determining Al saturation	"PMID,DOI or URL"	{PMID}|{DOI}|{URL}	1	MIXS:0000324
+annual_precpt	mean annual precipitation	"The average of all annual precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps."	measurement value	{float} {unit}	1	MIXS:0000644
+annual_temp	mean annual temperature	Mean annual temperature	measurement value	{float} {unit}	1	MIXS:0000642
+crop_rotation	history/crop rotation	"Whether or not crop is rotated, and if yes, rotation schedule"	crop rotation status;schedule	{boolean};{Rn/start_time/end_time/duration}	1	MIXS:0000318
+cur_land_use	current land use	Present state of sample site	enumeration	"[cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|salt flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas|small grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)|successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest receiving >406 cm annual rainfall)|swamp (permanent or semi-permanent water body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery trees)]"	1	MIXS:0001080
+cur_vegetation	current vegetation	"Vegetation classification from one or more standard classification systems, or agricultural crop"	current vegetation type	{text}	1	MIXS:0000312
+cur_vegetation_meth	current vegetation method	Reference or method used in vegetation classification	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000314
+drainage_class	drainage classification	Drainage classification from a standard system such as the USDA system	enumeration	[very poorly|poorly|somewhat poorly|moderately well|well|excessively drained]	1	MIXS:0001085
+extreme_event	history/extreme events	Unusual physical events that may have affected microbial populations	date	{timestamp}	1	MIXS:0000320
+fao_class	soil_taxonomic/FAO classification	Soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups	enumeration	[Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]	1	MIXS:0001083
+fire	history/fire	Historical and/or physical evidence of fire	date	{timestamp}	1	MIXS:0001086
+flooding	history/flooding	Historical and/or physical evidence of flooding	date	{timestamp}	1	MIXS:0000319
+heavy_metals	extreme_unusual_properties/heavy metals	"Heavy metals present in the sequenced sample and their concentrations. For multiple heavy metals and concentrations, add multiple copies of this field."	heavy metal name;measurement value unit	{text};{float} {unit}	m	MIXS:0000652
+heavy_metals_meth	extreme_unusual_properties/heavy metals method	Reference or method used in determining heavy metals	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000343
+horizon_meth	soil horizon method	Reference or method used in determining the horizon	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000321
+link_addit_analys	links to additional analysis	Link to additional analysis results performed on the sample	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000340
+link_class_info	link to classification information	Link to digitized soil maps or other soil classification information	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000329
+link_climate_info	link to climate information	Link to climate resource	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000328
+local_class	soil_taxonomic/local classification	Soil classification based on local soil classification system	local classification name	{text}	1	MIXS:0000330
+local_class_meth	soil_taxonomic/local classification method	Reference or method used in determining the local soil classification	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000331
+micro_biomass_meth	microbial biomass method	Reference or method used in determining microbial biomass	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000339
+microbial_biomass	microbial biomass	"The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units"	measurement value	{float} {unit}	1	MIXS:0000650
+misc_param	miscellaneous parameter	"Any other measurement performed or parameter collected, that is not listed here"	parameter name;measurement value	{text};{float} {unit}	m	MIXS:0000752
+org_matter	organic matter	Concentration of organic matter	measurement value	{float} {unit}	1	MIXS:0000204
+org_nitro	organic nitrogen	Concentration of organic nitrogen	measurement value	{float} {unit}	1	MIXS:0000205
+ph	pH	"Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid"	measurement value	{float}	1	MIXS:0001001
+ph_meth	pH method	Reference or method used in determining ph	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0001106
+pool_dna_extracts	pooling of DNA extracts (if done)	"Indicate whether multiple DNA extractions were mixed. If the answer yes, the number of extracts that were pooled should be given"	pooling status;number of pooled extracts	{boolean};{integer}	1	MIXS:0000325
+prev_land_use_meth	history/previous land use method	Reference or method used in determining previous land use and dates	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000316
+previous_land_use	history/previous land use	Previous land use and dates	land use name;date	{text};{timestamp}	1	MIXS:0000315
+profile_position	profile position	Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas	enumeration	[summit|shoulder|backslope|footslope|toeslope]	1	MIXS:0001084
+salinity_meth	salinity method	Reference or method used in determining salinity	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000341
+season_precpt	mean seasonal precipitation	"The average of all seasonal precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps."	measurement value	{float} {unit}	1	MIXS:0000645
+season_temp	mean seasonal temperature	Mean seasonal temperature	measurement value	{float} {unit}	1	MIXS:0000643
+sieving	composite design/sieving	Collection design of pooled samples and/or sieve size and amount of sample sieved	design name and/or size;amount	{{text}|{float} {unit}};{float} {unit}	1	MIXS:0000322
+slope_aspect	slope aspect	"The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees); e.g., nw or 315 degrees. This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration."	measurement value	{float} {unit}	1	MIXS:0000647
+slope_gradient	slope gradient	Commonly called 'slope'. The angle between ground surface and a horizontal line (in percent). This is the direction that overland water would flow. This measure is usually taken with a hand level meter or clinometer	measurement value	{float} {unit}	1	MIXS:0000646
+soil_horizon	soil horizon	Specific layer in the land area which measures parallel to the soil surface and possesses physical characteristics which differ from the layers above and beneath	enumeration	[O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost]	1	MIXS:0001082
+soil_text_measure	soil texture measurement	"The relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional."	measurement value	{float} {unit}	1	MIXS:0000335
+soil_texture_meth	soil texture method	Reference or method used in determining soil texture	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000336
+soil_type	soil type	Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998). Multiple terms can be separated by pipes.	ENVO_00001998	"{termLabel} {[termID]}
+"	1	MIXS:0000332
+soil_type_meth	soil type method	Reference or method used in determining soil series name or other lower-level classification	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000334
+store_cond	storage conditions	Explain how and for how long the soil sample was stored before DNA extraction (fresh/frozen/other).	storage condition type;duration	{text};{duration}	1	MIXS:0000327
+tillage	history/tillage	Note method(s) used for tilling	enumeration	[drill|cutting disc|ridge till|strip tillage|zonal tillage|chisel|tined|mouldboard|disc plough]	m	MIXS:0001081
+tot_nitro_cont_meth	total nitrogen content method	Reference or method used in determining the total nitrogen	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000338
+tot_nitro_content	total nitrogen content	Total nitrogen content of the sample	measurement value	{float} {unit}	1	MIXS:0000530
+tot_org_c_meth	total organic carbon method	Reference or method used in determining total organic carbon	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000337
+tot_org_carb	total organic carbon	"Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content"	measurement value	{float} {unit}	1	MIXS:0000533
+water_cont_soil_meth	water content method	Reference or method used in determining the water content of soil	"PMID,DOI or url"	{PMID}|{DOI}|{URL}	1	MIXS:0000323
+water_content	water content	Water content measurement	measurement value	{float}	1	MIXS:0000185
