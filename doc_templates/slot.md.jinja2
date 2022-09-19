@@ -1,9 +1,12 @@
-# {{ gen.name(element) }}
+# {{ element.name }}
+
+{% if element.title is not none %}
+Name: {{ element.title }}
+{% endif %}
+
+MIxS ID: ```{{ gen.name(element) }}```
 
 {{ element.description }}
-
-URI: {{ gen.uri(element) }}
-
 
 {% if schemaview.slot_parents(element.name) or schemaview.slot_children(element.name, mixins=False) %}
 

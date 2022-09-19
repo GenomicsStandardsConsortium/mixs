@@ -27,21 +27,10 @@ URI: {{ gen.uri_link(element) }}
 
 ## Slots
 
-| MIxS ID | Name | Multiplicity | Description  | Pattern | Info |
-| ---  | ---  | --- | --- | --- | --- |
+| MIxS ID | Name | Multiplicity | Description  | Pattern |
+| ---  | ---  | ---  | --- | --- |
 {% for s in schemaview.class_induced_slots(element.name) -%}
-| {{ s.slot_uri }} | {{gen.link(s)}} | {{ gen.cardinality(s) }} {% if s.recommended %}RECOMMENDED{% endif %} | {{s.description}} | {{ s.string_serialization }} | . |
+| {{gen.link(s)}} | {{ s.name }} | {{ gen.cardinality(s) }} {% if s.recommended %}RECOMMENDED{% endif %} | {{s.description}} | {{ s.string_serialization }} |
 {% endfor %}
-
-## Usages
-
-{% if schemaview.usage_index().get(element.name) %}
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-{% for usage in schemaview.usage_index().get(element.name) -%}
-| {{gen.link(usage.used_by)}} | {{gen.link(usage.slot)}} | {{usage.metaslot}} | {{usage.used }} |
-{% endfor %}
-{% endif %}
 
 {% include "common_metadata.md.jinja2" %}
-
