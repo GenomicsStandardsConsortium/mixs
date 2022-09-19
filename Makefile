@@ -50,7 +50,7 @@ generated/mixs.py: model/schema/mixs.yaml
 ## For help with mkdocs see https://www.mkdocs.org/.
 
 generated/docs/index.md: model/schema/mixs.yaml generated/mixs.py
-	$(RUN) gen-doc $< --directory $(dir $@) --template-directory doc_templates
+	$(RUN) gen-doc $< --directory $(dir $@) --template-directory doc_templates --use-slot-uris
 
 generated/docs/introduction/%.md: generated/docs/index.md
 	cp -R static_md/* $(dir $@)
