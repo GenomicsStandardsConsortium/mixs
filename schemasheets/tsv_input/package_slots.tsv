@@ -1,0 +1,731 @@
+Structured comment name	Package item	MIXS ID	aliases	notes
+> slot	ignore	slot_uri	aliases	notes
+>			"internal_separator: ""|"""	
+samp_size	amount or size of sample collected	MIXS:0000001		
+samp_collect_device	sample collection device	MIXS:0000002	sample collection device or method	
+isol_growth_condt	isolation and growth condition	MIXS:0000003		
+experimental_factor	experimental factor	MIXS:0000008		
+lat_lon	geographic location (latitude and longitude)	MIXS:0000009		
+geo_loc_name	"geographic location (country and/or sea,region)"	MIXS:0000010		
+collection_date	collection date	MIXS:0000011		
+env_broad_scale	broad-scale environmental context	MIXS:0000012		
+env_local_scale	local environmental context	MIXS:0000013		
+env_medium	environmental medium	MIXS:0000014		
+samp_mat_process	sample material processing	MIXS:0000016		
+depth	depth	MIXS:0000018	soil_depth|soil depth	
+subspecf_gen_lin	subspecific genetic lineage	MIXS:0000020		
+source_mat_id	source material identifiers	MIXS:0000026		
+pathogenicity	known pathogenicity	MIXS:0000027		
+biotic_relationship	observed biotic relationship	MIXS:0000028		
+specific_host	host scientific name	MIXS:0000029		
+host_spec_range	host specificity or range	MIXS:0000030		
+host_disease_stat	host disease status	MIXS:0000031		
+trophic_level	trophic level	MIXS:0000032		
+nucl_acid_ext	nucleic acid extraction	MIXS:0000037		
+nucl_acid_amp	nucleic acid amplification	MIXS:0000038		
+lib_size	library size	MIXS:0000039		
+lib_reads_seqd	library reads sequenced	MIXS:0000040		
+lib_layout	library layout	MIXS:0000041		
+lib_vector	library vector	MIXS:0000042		
+lib_screen	library screening strategy	MIXS:0000043		
+target_gene	target gene	MIXS:0000044		
+target_subfragment	target subfragment	MIXS:0000045		
+pcr_primers	pcr primers	MIXS:0000046		
+mid	multiplex identifiers	MIXS:0000047		
+adapters	adapters	MIXS:0000048		
+pcr_cond	pcr conditions	MIXS:0000049		
+seq_meth	sequencing method	MIXS:0000050		
+seq_quality_check	sequence quality check	MIXS:0000051		
+chimera_check	chimera check	MIXS:0000052		
+assembly_name	assembly name	MIXS:0000057		
+assembly_quality	assembly quality	MIXS:0000058		
+annot	annotation	MIXS:0000059		
+sop	relevant standard operating procedures	MIXS:0000090		
+url	relevant electronic resources	MIXS:0000091		
+project_name	project name	MIXS:0000092		
+elev	elevation	MIXS:0000093		
+alt	altitude	MIXS:0000094		
+barometric_press	barometric pressure	MIXS:0000096		
+carb_dioxide	carbon dioxide	MIXS:0000097		
+carb_monoxide	carbon monoxide	MIXS:0000098		
+org_count_qpcr_info	organism count qPCR information	MIXS:0000099		
+humidity	humidity	MIXS:0000100		
+methane	methane	MIXS:0000101		
+tot_nitro	total nitrogen concentration	MIXS:0000102		
+organism_count	organism count	MIXS:0000103	spikein_count|spike-in organism count	
+oxygen	oxygen	MIXS:0000104		
+tot_iron	total iron	MIXS:0000105		
+diss_inorg_phosp	dissolved inorganic phosphorus	MIXS:0000106		
+pollutants	pollutants	MIXS:0000107		
+air_PM_concen	air particulate matter concentration	MIXS:0000108	air particulate matter concentration|air_PM_concen	
+samp_salinity	sample salinity	MIXS:0000109		
+samp_store_temp	sample storage temperature	MIXS:0000110	samp_stor_temp	
+samp_vol_we_dna_ext	sample volume or weight for DNA extraction	MIXS:0000111		
+solar_irradiance	solar irradiance	MIXS:0000112	mean seasonal solar irradiance	
+temp	temperature	MIXS:0000113		
+ventilation_rate	ventilation rate	MIXS:0000114		
+volatile_org_comp	volatile organic compounds	MIXS:0000115		
+samp_store_dur	sample storage duration	MIXS:0000116	samp_stor_dur	
+tot_phosp	total phosphorus	MIXS:0000117		
+wind_speed	wind speed	MIXS:0000118		
+diss_oxygen	dissolved oxygen	MIXS:0000119		
+tan	total acid number	MIXS:0000120		
+rel_air_humidity	relative air humidity	MIXS:0000121		
+abs_air_humidity	absolute air humidity	MIXS:0000122		
+surf_humidity	surface humidity	MIXS:0000123		
+air_temp	air temperature	MIXS:0000124		
+surf_temp	surface temperature	MIXS:0000125		
+viscosity	viscosity	MIXS:0000126		
+pour_point	pour point	MIXS:0000127		
+surf_moisture	surface moisture	MIXS:0000128		
+dew_point	dew point	MIXS:0000129		
+saturates_pc	saturates wt%	MIXS:0000131		
+aromatics_pc	aromatics wt%	MIXS:0000133		
+resins_pc	resins wt%	MIXS:0000134		
+asphaltenes_pc	asphaltenes wt%	MIXS:0000135		
+samp_loc_corr_rate	corrosion rate at sample location	MIXS:0000136		
+glucosidase_act	glucosidase activity	MIXS:0000137		
+diss_iron	dissolved iron	MIXS:0000139		
+amount_light	amount of light	MIXS:0000140		
+avg_dew_point	average dew point	MIXS:0000141		
+avg_temp	average temperature	MIXS:0000142		
+ceil_thermal_mass	ceiling thermal mass	MIXS:0000143		
+exp_duct	exposed ductwork	MIXS:0000144		
+built_struc_age	built structure age	MIXS:0000145		
+ceil_area	ceiling area	MIXS:0000148		
+suspend_solids	suspended solids	MIXS:0000150		
+vfa	volatile fatty acids	MIXS:0000152		
+benzene	benzene	MIXS:0000153		
+toluene	toluene	MIXS:0000154		
+ethylbenzene	ethylbenzene	MIXS:0000155		
+xylene	xylene	MIXS:0000156		
+api	API gravity	MIXS:0000157		
+door_size	door area or size	MIXS:0000158		
+diss_org_nitro	dissolved organic nitrogen	MIXS:0000162		
+floor_age	floor age	MIXS:0000164		
+floor_area	floor area	MIXS:0000165		
+floor_thermal_mass	floor thermal mass	MIXS:0000166		
+height_carper_fiber	height carpet fiber mat	MIXS:0000167		
+inside_lux	inside lux light	MIXS:0000168		
+room_air_exch_rate	room air exchange rate	MIXS:0000169		
+ext_door	exterior door count	MIXS:0000170		
+aminopept_act	aminopeptidase activity	MIXS:0000172		
+bacteria_carb_prod	bacterial carbon production	MIXS:0000173		
+biomass	biomass	MIXS:0000174		
+bishomohopanol	bishomohopanol	MIXS:0000175		
+bromide	bromide	MIXS:0000176		
+chlorophyll	chlorophyll	MIXS:0000177		
+diether_lipids	diether lipids	MIXS:0000178		
+diss_hydrogen	dissolved hydrogen	MIXS:0000179		
+phaeopigments	phaeopigments	MIXS:0000180		
+phosplipid_fatt_acid	phospholipid fatty acid	MIXS:0000181		
+redox_potential	redox potential	MIXS:0000182		
+salinity	salinity	MIXS:0000183		
+silicate	silicate	MIXS:0000184		
+water_content	water content	MIXS:0000185		
+rel_humidity_out	outside relative humidity	MIXS:0000188		
+turbidity	turbidity	MIXS:0000191		
+room_dim	room dimensions	MIXS:0000192		
+room_door_dist	room door distance	MIXS:0000193		
+room_net_area	room net area	MIXS:0000194		
+room_vol	room volume	MIXS:0000195		
+samp_time_out	sampling time outside	MIXS:0000196		
+temp_out	temperature outside house	MIXS:0000197		
+wall_area	wall area	MIXS:0000198		
+water_current	water current	MIXS:0000203		
+org_matter	organic matter	MIXS:0000204		
+org_nitro	organic nitrogen	MIXS:0000205		
+particle_class	particle classification	MIXS:0000206		
+porosity	porosity	MIXS:0000211		
+specific_humidity	specific humidity	MIXS:0000214		
+sewage_type	sewage type	MIXS:0000215		
+samp_sort_meth	sample size sorting method	MIXS:0000216		
+occup_density_samp	occupant density at sampling	MIXS:0000217		
+address	address	MIXS:0000218		
+adj_room	adjacent rooms	MIXS:0000219		
+exp_pipe	exposed pipes	MIXS:0000220		
+wall_height	wall height	MIXS:0000221		
+wall_thermal_mass	wall thermal mass	MIXS:0000222		
+water_feat_size	water feature size	MIXS:0000223		
+window_size	window area/size	MIXS:0000224		
+floor_count	floor count	MIXS:0000225		
+freq_clean	frequency of cleaning	MIXS:0000226		
+freq_cook	frequency of cooking	MIXS:0000227		
+hall_count	hallway/corridor count	MIXS:0000228		
+max_occup	maximum occupancy	MIXS:0000229		
+number_plants	number of houseplants	MIXS:0000230		
+number_pets	number of pets	MIXS:0000231		
+number_resident	number of residents	MIXS:0000232		
+room_architec_elem	room architectural elements	MIXS:0000233		
+room_count	room count	MIXS:0000234		
+room_moist_dam_hist	room moisture damage or mold history	MIXS:0000235		
+room_occup	room occupancy	MIXS:0000236		
+room_window_count	room window count	MIXS:0000237		
+room_hallway	rooms that are on the same hallway	MIXS:0000238		
+room_door_share	rooms that share a door with sampling room	MIXS:0000242		
+room_wall_share	rooms that share a wall with sampling room	MIXS:0000243		
+samp_room_id	sampling room ID or name	MIXS:0000244		
+shading_device_mat	shading device material	MIXS:0000245		
+window_open_freq	window open frequency	MIXS:0000246		
+ances_data	ancestral data	MIXS:0000247		
+host_common_name	host common name	MIXS:0000248		
+samp_dis_stage	sample disease stage	MIXS:0000249		
+host_taxid	host taxid	MIXS:0000250		
+host_life_stage	host life stage	MIXS:0000251		
+host_substrate	host substrate	MIXS:0000252		
+host_infra_spec_name	host infra-specific name	MIXS:0000253		
+host_infra_spec_rank	host infra-specific rank	MIXS:0000254		
+host_age	host age	MIXS:0000255		
+host_length	host length	MIXS:0000256		
+host_dry_mass	host dry mass	MIXS:0000257		
+blood_press_diast	host blood pressure diastolic	MIXS:0000258		
+blood_press_syst	host blood pressure systolic	MIXS:0000259		
+host_color	host color	MIXS:0000260		
+host_shape	host shape	MIXS:0000261		
+smoker	smoker	MIXS:0000262		
+host_tot_mass	host total mass	MIXS:0000263		
+host_height	host height	MIXS:0000264		
+host_hiv_stat	host HIV status	MIXS:0000265		
+diet_last_six_month	major diet change in last six months	MIXS:0000266		
+pet_farm_animal	presence of pets or farm animals	MIXS:0000267		
+travel_out_six_month	travel outside the country in last six months	MIXS:0000268		
+pulmonary_disord	lung/pulmonary disorder	MIXS:0000269		
+blood_blood_disord	blood/blood disorder	MIXS:0000271		
+gestation_state	amniotic fluid/gestation state	MIXS:0000272		
+maternal_health_stat	amniotic fluid/maternal health status	MIXS:0000273		
+host_body_temp	host body temperature	MIXS:0000274		
+foetal_health_stat	amniotic fluid/foetal health status	MIXS:0000275		
+amniotic_fluid_color	amniotic fluid/color	MIXS:0000276		
+kidney_disord	urine/kidney disorder	MIXS:0000277		
+urogenit_tract_disor	urine/urogenital tract disorder	MIXS:0000278		
+gastrointest_disord	gastrointestinal tract disorder	MIXS:0000280		
+liver_disord	liver disorder	MIXS:0000282		
+dermatology_disord	dermatology disorder	MIXS:0000284		
+sexual_act	sexual activity	MIXS:0000285		
+birth_control	birth control	MIXS:0000286		
+hysterectomy	hysterectomy	MIXS:0000287		
+gynecologic_disord	gynecological disorder	MIXS:0000288		
+urogenit_disord	urogenital disorder	MIXS:0000289		
+basin	basin name	MIXS:0000290		
+field	field name	MIXS:0000291		
+weight_loss_3_month	weight loss in last three months	MIXS:0000295		
+samp_well_name	sample well name	MIXS:0000296		
+win	well identification number	MIXS:0000297		
+alkalinity_method	alkalinity method	MIXS:0000298		
+additional_info	additional info	MIXS:0000300		
+reservoir	reservoir name	MIXS:0000303		
+carb_nitro_ratio	carbon/nitrogen ratio	MIXS:0000310		
+cur_vegetation	current vegetation	MIXS:0000312		
+cur_vegetation_meth	current vegetation method	MIXS:0000314		
+previous_land_use	history/previous land use	MIXS:0000315		
+prev_land_use_meth	history/previous land use method	MIXS:0000316	previous_land_use_meth	
+host_body_mass_index	host body-mass index	MIXS:0000317		
+crop_rotation	history/crop rotation	MIXS:0000318		
+flooding	history/flooding	MIXS:0000319		
+extreme_event	history/extreme events	MIXS:0000320		
+horizon_meth	horizon method	MIXS:0000321	soil horizon method	
+sieving	composite design/sieving	MIXS:0000322	composite design/sieving (if any)	
+water_cont_soil_meth	water content method	MIXS:0000323		
+al_sat_meth	extreme_unusual_properties/Al saturation method	MIXS:0000324		
+pool_dna_extracts	pooling of DNA extracts (if done)	MIXS:0000325		
+twin_sibling	twin sibling presence	MIXS:0000326		
+store_cond	storage conditions	MIXS:0000327	storage conditions (fresh/frozen/other)	
+link_climate_info	link to climate information	MIXS:0000328		
+link_class_info	link to classification information	MIXS:0000329		
+local_class	soil_taxonomic/local classification	MIXS:0000330		
+local_class_meth	soil_taxonomic/local classification method	MIXS:0000331		
+soil_type	soil type	MIXS:0000332		
+host_pulse	host pulse	MIXS:0000333		
+soil_type_meth	soil type method	MIXS:0000334		
+texture	texture	MIXS:0000335	soil_text_measure|soil texture measurement	
+soil_texture_meth	soil texture method	MIXS:0000336	texture_meth|texture method	
+tot_org_c_meth	total organic carbon method	MIXS:0000337		
+tot_nitro_cont_meth	total nitrogen content method	MIXS:0000338	tot_n_meth|total nitrogen method	
+micro_biomass_meth	microbial biomass method	MIXS:0000339	microbial_biomass_meth	
+link_addit_analys	links to additional analysis	MIXS:0000340		
+salinity_meth	salinity method	MIXS:0000341		
+heavy_metals_meth	extreme_unusual_properties/heavy metals method	MIXS:0000343	extreme_unusual_conditions	
+pre_treatment	pre-treatment	MIXS:0000348		
+primary_treatment	primary treatment	MIXS:0000349		
+reactor_type	reactor type	MIXS:0000350		
+secondary_treatment	secondary treatment	MIXS:0000351		
+tertiary_treatment	tertiary treatment	MIXS:0000352		
+wastewater_type	wastewater type	MIXS:0000353		
+host_genotype	host genotype	MIXS:0000365		
+hcr_temp	hydrocarbon resource original temperature	MIXS:0000393		
+tvdss_of_hcr_temp	depth (TVDSS) of hydrocarbon resource temperature	MIXS:0000394		
+hcr_pressure	hydrocarbon resource original pressure	MIXS:0000395		
+tvdss_of_hcr_press	depth (TVDSS) of hydrocarbon resource pressure	MIXS:0000397		
+permeability	permeability	MIXS:0000404		
+owc_tvdss	oil water contact depth	MIXS:0000405		
+hcr_fw_salinity	formation water salinity	MIXS:0000406		
+sulfate_fw	sulfate in formation water	MIXS:0000407		
+vfa_fw	vfa in formation water	MIXS:0000408		
+samp_tvdss	sample true vertical depth subsea	MIXS:0000409		
+samp_transport_cond	sample transport conditions	MIXS:0000410		
+pressure	pressure	MIXS:0000412		
+samp_md	sample measured depth	MIXS:0000413		
+tot_sulfur	total sulfur	MIXS:0000419		
+alkalinity	alkalinity	MIXS:0000421		
+sulfate	sulfate	MIXS:0000423		
+sulfide	sulfide	MIXS:0000424		
+nitrate	nitrate	MIXS:0000425		
+nitrite	nitrite	MIXS:0000426		
+ammonium	ammonium	MIXS:0000427		
+sodium	sodium	MIXS:0000428		
+chloride	chloride	MIXS:0000429		
+potassium	potassium	MIXS:0000430		
+magnesium	magnesium	MIXS:0000431		
+calcium	calcium	MIXS:0000432		
+diss_org_carb	dissolved organic carbon	MIXS:0000433		
+diss_inorg_carb	dissolved inorganic carbon	MIXS:0000434		
+density	density	MIXS:0000435		
+diss_carb_dioxide	dissolved carbon dioxide	MIXS:0000436		
+diss_oxygen_fluid	dissolved oxygen in fluids	MIXS:0000438		
+prod_rate	production rate	MIXS:0000452		
+water_prod_rate	water production rate	MIXS:0000453		
+water_cut	water cut	MIXS:0000454		
+iwf	injection water fraction	MIXS:0000455		
+biocide_admin_method	biocide administration method	MIXS:0000456		
+chem_treat_method	chemical treatment method	MIXS:0000457		
+samp_preserv	preservative added to sample	MIXS:0000463		
+alkyl_diethers	alkyl diethers	MIXS:0000490		
+mean_frict_vel	mean friction velocity	MIXS:0000498		
+mean_peak_frict_vel	mean peak friction velocity	MIXS:0000502		
+n_alkanes	n-alkanes	MIXS:0000503		
+nitro	nitrogen	MIXS:0000504		
+phosphate	phosphate	MIXS:0000505		
+org_carb	organic carbon	MIXS:0000508		
+part_org_carb	particulate organic carbon	MIXS:0000515		
+petroleum_hydrocarb	petroleum hydrocarbon	MIXS:0000516		
+tot_carb	total carbon	MIXS:0000525	tot_car	
+tot_nitro_content	total nitrogen content	MIXS:0000530	tot_nitro|total nitrogen	
+tot_org_carb	total organic carbon	MIXS:0000533		
+air_temp_regm	air temperature regimen	MIXS:0000551		
+antibiotic_regm	antibiotic regimen	MIXS:0000553		
+chem_mutagen	chemical mutagen	MIXS:0000555		
+fertilizer_regm	fertilizer regimen	MIXS:0000556		
+fungicide_regm	fungicide regimen	MIXS:0000557		
+gaseous_environment	gaseous environment	MIXS:0000558		
+gravity	gravity	MIXS:0000559		
+growth_hormone_regm	growth hormone regimen	MIXS:0000560		
+herbicide_regm	herbicide regimen	MIXS:0000561		
+host_wet_mass	host wet mass	MIXS:0000567		
+humidity_regm	humidity regimen	MIXS:0000568		
+light_regm	light regimen	MIXS:0000569		
+mineral_nutr_regm	mineral nutrient regimen	MIXS:0000570		
+non_min_nutr_regm	non-mineral nutrient regimen	MIXS:0000571	non_mineral_nutr_regm	
+pesticide_regm	pesticide regimen	MIXS:0000573		
+radiation_regm	radiation regimen	MIXS:0000575		
+rainfall_regm	rainfall regimen	MIXS:0000576		
+root_med_carbon	rooting medium carbon	MIXS:0000577		
+root_med_macronutr	rooting medium macronutrients	MIXS:0000578		
+root_med_micronutr	rooting medium micronutrients	MIXS:0000579		
+root_med_suppl	rooting medium organic supplements	MIXS:0000580		
+root_med_regl	rooting medium regulators	MIXS:0000581		
+salt_regm	salt regimen	MIXS:0000582		
+water_temp_regm	water temperature regimen	MIXS:0000590		
+watering_regm	watering regimen	MIXS:0000591		
+al_sat	extreme_unusual_properties/Al saturation	MIXS:0000607		
+tot_depth_water_col	total depth of water column	MIXS:0000634		
+agrochem_addition	history/agrochemical additions	MIXS:0000639		
+annual_temp	mean annual temperature	MIXS:0000642		
+season_temp	mean seasonal temperature	MIXS:0000643	mean seasonal air temperature	
+annual_precpt	mean annual precipitation	MIXS:0000644		
+season_precpt	mean seasonal precipitation	MIXS:0000645		
+slope_gradient	slope gradient	MIXS:0000646		
+slope_aspect	slope aspect	MIXS:0000647		
+microbial_biomass	microbial biomass	MIXS:0000650		
+heavy_metals	extreme_unusual_properties/heavy metals	MIXS:0000652		
+biochem_oxygen_dem	biochemical oxygen demand	MIXS:0000653		
+chem_oxygen_dem	chemical oxygen demand	MIXS:0000656		
+efficiency_percent	efficiency percent	MIXS:0000657		
+emulsions	emulsions	MIXS:0000660		
+gaseous_substances	gaseous substances	MIXS:0000661		
+indust_eff_percent	industrial effluent percent	MIXS:0000662		
+inorg_particles	inorganic particles	MIXS:0000664		
+org_particles	organic particles	MIXS:0000665		
+sludge_retent_time	sludge retention time	MIXS:0000669		
+soluble_inorg_mat	soluble inorganic material	MIXS:0000672		
+soluble_org_mat	soluble organic material	MIXS:0000673		
+bac_prod	bacterial production	MIXS:0000683		
+bac_resp	bacterial respiration	MIXS:0000684		
+tot_phosphate	total phosphate	MIXS:0000689		
+conduc	conductivity	MIXS:0000692		
+diss_inorg_nitro	dissolved inorganic nitrogen	MIXS:0000698		
+down_par	downward PAR	MIXS:0000703		
+fluor	fluorescence	MIXS:0000704		
+light_intensity	light intensity	MIXS:0000706		
+part_org_nitro	particulate organic nitrogen	MIXS:0000719		
+built_struc_type	built structure type	MIXS:0000721		
+photon_flux	photon flux	MIXS:0000725		
+primary_prod	primary production	MIXS:0000728		
+size_frac_low	size-fraction lower threshold	MIXS:0000735		
+size_frac_up	size-fraction upper threshold	MIXS:0000736		
+soluble_react_phosp	soluble reactive phosphorus	MIXS:0000738		
+suspend_part_matter	suspended particulate matter	MIXS:0000741		
+tot_diss_nitro	total dissolved nitrogen	MIXS:0000744		
+tot_inorg_nitro	total inorganic nitrogen	MIXS:0000745		
+tot_part_carb	total particulate carbon	MIXS:0000747		
+tidal_stage	tidal stage	MIXS:0000750		
+chem_administration	chemical administration	MIXS:0000751		
+misc_param	miscellaneous parameter	MIXS:0000752		
+oxy_stat_samp	oxygenation status of sample	MIXS:0000753		
+perturbation	perturbation	MIXS:0000754		
+samp_store_loc	sample storage location	MIXS:0000755	samp_stor_loc	
+ventilation_type	ventilation type	MIXS:0000756		
+wind_direction	wind direction	MIXS:0000757		
+surf_material	surface material	MIXS:0000758		
+surf_air_cont	surface-air contaminant	MIXS:0000759		
+surf_moisture_ph	surface moisture pH	MIXS:0000760		
+build_occup_type	building occupancy type	MIXS:0000761		
+indoor_space	indoor space	MIXS:0000763		
+indoor_surf	indoor surface	MIXS:0000764		
+filter_type	filter type	MIXS:0000765		
+heat_cool_type	heating and cooling system type	MIXS:0000766		
+substructure_type	substructure type	MIXS:0000767		
+building_setting	building setting	MIXS:0000768		
+light_type	light type	MIXS:0000769		
+space_typ_state	space typical state	MIXS:0000770		
+typ_occup_density	typical occupant density	MIXS:0000771		
+occup_samp	occupancy at sampling	MIXS:0000772		
+aero_struc	aerospace structure	MIXS:0000773		
+arch_struc	architectural structure	MIXS:0000774		
+avg_occup	average daily occupancy	MIXS:0000775		
+bathroom_count	bathroom count	MIXS:0000776		
+bedroom_count	bedroom count	MIXS:0000777		
+built_struc_set	built structure setting	MIXS:0000778		
+ceil_cond	ceiling condition	MIXS:0000779		
+ceil_finish_mat	ceiling finish material	MIXS:0000780		
+ceil_water_mold	ceiling signs of water/mold	MIXS:0000781		
+ceil_struc	ceiling structure	MIXS:0000782		
+ceil_texture	ceiling texture	MIXS:0000783		
+ceil_type	ceiling type	MIXS:0000784		
+cool_syst_id	cooling system identifier	MIXS:0000785		
+date_last_rain	date last rain	MIXS:0000786		
+build_docs	"design, construction, and operation documents"	MIXS:0000787		
+door_cond	door condition	MIXS:0000788		
+door_direct	door direction of opening	MIXS:0000789		
+door_loc	door location	MIXS:0000790		
+door_mat	door material	MIXS:0000791		
+door_move	door movement	MIXS:0000792		
+door_water_mold	door signs of water/mold	MIXS:0000793		
+door_type	door type	MIXS:0000794		
+door_comp_type	"door type, composite"	MIXS:0000795		
+door_type_metal	"door type, metal"	MIXS:0000796		
+door_type_wood	"door type, wood"	MIXS:0000797		
+drawings	drawings	MIXS:0000798		
+elevator	elevator count	MIXS:0000799		
+escalator	escalator count	MIXS:0000800		
+fireplace_type	fireplace type	MIXS:0000802		
+floor_cond	floor condition	MIXS:0000803		
+floor_finish_mat	floor finish material	MIXS:0000804		
+floor_water_mold	floor signs of water/mold	MIXS:0000805		
+floor_struc	floor structure	MIXS:0000806		
+furniture	furniture	MIXS:0000807		
+gender_restroom	gender of restroom	MIXS:0000808		
+handidness	handidness	MIXS:0000809		
+heat_deliv_loc	heating delivery locations	MIXS:0000810		
+heat_sys_deliv_meth	heating system delivery method	MIXS:0000812		
+int_wall_cond	interior wall condition	MIXS:0000813		
+last_clean	last time swept/mopped/vacuumed	MIXS:0000814		
+mech_struc	mechanical structure	MIXS:0000815		
+occup_document	occupancy documentation	MIXS:0000816		
+ext_wall_orient	orientations of exterior wall	MIXS:0000817		
+ext_window_orient	orientations of exterior window	MIXS:0000818		
+pres_animal_insect	"presence of pets, animals, or insects"	MIXS:0000819		
+quad_pos	quadrant position	MIXS:0000820		
+rel_samp_loc	relative sampling location	MIXS:0000821		
+room_condt	room condition	MIXS:0000822		
+room_loc	room location in building	MIXS:0000823		
+room_samp_pos	room sampling position	MIXS:0000824		
+room_type	room type	MIXS:0000825		
+room_connected	rooms connected by a doorway	MIXS:0000826		
+samp_weather	sampling day weather	MIXS:0000827		
+samp_floor	sampling floor	MIXS:0000828		
+season	season	MIXS:0000829		
+season_use	seasonal use	MIXS:0000830		
+shading_device_cond	shading device condition	MIXS:0000831		
+shading_device_loc	shading device location	MIXS:0000832		
+heat_system_id	heating system identifier	MIXS:0000833		
+shad_dev_water_mold	shading device signs of water/mold	MIXS:0000834		
+shading_device_type	shading device type	MIXS:0000835		
+specific	specifications	MIXS:0000836		
+train_line	train line	MIXS:0000837		
+train_stat_loc	train station collection location	MIXS:0000838		
+train_stop_loc	train stop collection location	MIXS:0000839		
+vis_media	visual media	MIXS:0000840		
+wall_const_type	wall construction type	MIXS:0000841		
+wall_finish_mat	wall finish material	MIXS:0000842		
+wall_loc	wall location	MIXS:0000843		
+wall_water_mold	wall signs of water/mold	MIXS:0000844		
+wall_surf_treatment	wall surface treatment	MIXS:0000845		
+wall_texture	wall texture	MIXS:0000846		
+water_feat_type	water feature type	MIXS:0000847		
+weekday	weekday	MIXS:0000848		
+window_cond	window condition	MIXS:0000849		
+window_cover	window covering	MIXS:0000850		
+window_horiz_pos	window horizontal position	MIXS:0000851		
+window_loc	window location	MIXS:0000852		
+window_mat	window material	MIXS:0000853		
+window_water_mold	window signs of water/mold	MIXS:0000854		
+window_status	window status	MIXS:0000855		
+window_type	window type	MIXS:0000856		
+window_vert_pos	window vertical position	MIXS:0000857		
+biol_stat	biological status	MIXS:0000858		
+genetic_mod	genetic modification	MIXS:0000859		
+samp_capt_status	sample capture status	MIXS:0000860		
+host_subject_id	host subject id	MIXS:0000861		
+host_body_habitat	host body habitat	MIXS:0000866		
+host_body_site	host body site	MIXS:0000867		
+host_diet	host diet	MIXS:0000869		
+host_last_meal	host last meal	MIXS:0000870		
+host_growth_cond	host growth conditions	MIXS:0000871		
+host_family_relation	host family relationship	MIXS:0000872	host_family_relationship	
+host_phenotype	host phenotype	MIXS:0000874		
+gravidity	gravidity	MIXS:0000875		
+ihmc_medication_code	IHMC medication code	MIXS:0000884		
+drug_usage	drug usage	MIXS:0000894		
+ethnicity	ethnicity	MIXS:0000895		
+host_occupation	host occupation	MIXS:0000896		
+medic_hist_perform	medical history performed	MIXS:0000897		
+study_complt_stat	study completion status	MIXS:0000898		
+urine_collect_meth	urine/collection method	MIXS:0000899		
+special_diet	special diet	MIXS:0000905		
+time_last_toothbrush	time since last toothbrushing	MIXS:0000924		
+time_since_last_wash	time since last wash	MIXS:0000943		
+dominant_hand	dominant hand	MIXS:0000944		
+menarche	menarche	MIXS:0000965		
+pregnancy	pregnancy	MIXS:0000966		
+douche	douche	MIXS:0000967		
+menopause	menopause	MIXS:0000968		
+hrt	HRT	MIXS:0000969		
+hcr	hydrocarbon resource type	MIXS:0000988		
+hc_produced	hydrocarbon type produced	MIXS:0000989		
+lithology	lithology	MIXS:0000990		
+depos_env	depositional environment	MIXS:0000992		
+hcr_geol_age	hydrocarbon resource geological age	MIXS:0000993		
+sr_kerog_type	source rock kerogen type	MIXS:0000994		
+sr_lithology	source rock lithology	MIXS:0000995		
+sr_dep_env	source rock depositional environment	MIXS:0000996		
+sr_geol_age	source rock geological age	MIXS:0000997		
+samp_type	sample type	MIXS:0000998	sample type (host or environmental context)	
+samp_subtype	sample subtype	MIXS:0000999		
+ph	pH	MIXS:0001001		
+prod_start_date	production start date	MIXS:0001008		
+add_recov_method	secondary and tertiary recovery methods and start date	MIXS:0001009		
+iw_bt_date_well	injection water breakthrough date of specific well	MIXS:0001010		
+biocide	biocide administration	MIXS:0001011		
+chem_treatment	chemical treatment	MIXS:0001012		
+samp_collect_point	sample collection point	MIXS:0001015		
+biotic_regm	biotic regimen	MIXS:0001038		
+climate_environment	climate environment	MIXS:0001040		
+cult_root_med	culture rooting medium	MIXS:0001041		
+growth_facil	growth facility	MIXS:0001043		
+growth_habit	growth habit	MIXS:0001044		
+mechanical_damage	mechanical damage	MIXS:0001052		
+ph_regm	pH regimen	MIXS:0001056		
+plant_growth_med	plant growth medium	MIXS:0001057		
+plant_product	plant product	MIXS:0001058		
+plant_sex	plant sex	MIXS:0001059		
+plant_struc	plant structure	MIXS:0001060		
+root_cond	rooting conditions	MIXS:0001061		
+root_med_ph	rooting medium pH	MIXS:0001062		
+root_med_solid	rooting medium solidifier	MIXS:0001063		
+season_environment	seasonal environment	MIXS:0001068		
+standing_water_regm	standing water regimen	MIXS:0001069		
+tiss_cult_growth_med	tissue culture growth media	MIXS:0001070		
+sediment_type	sediment type	MIXS:0001078		
+cur_land_use	current land use	MIXS:0001080		
+tillage	history/tillage	MIXS:0001081		
+fao_class	soil_taxonomic/FAO classification	MIXS:0001083		
+profile_position	profile position	MIXS:0001084		
+drainage_class	drainage classification	MIXS:0001085		
+fire	history/fire	MIXS:0001086		
+atmospheric_data	atmospheric data	MIXS:0001097		
+ph_meth	pH method	MIXS:0001106		
+sample_name	sample name	MIXS:0001107	samp_name	
+growth_medium	growth medium	MIXS:0001108		
+farm_water_source	farm watering water source	MIXS:0001110		
+plant_water_method	plant water delivery method	MIXS:0001111		
+animal_feed_equip	animal feeding equipment	MIXS:0001113		
+animal_intrusion	animal intrusion near sample source	MIXS:0001114		
+anim_water_method	animal water delivery method	MIXS:0001115		
+crop_yield	crop yield	MIXS:0001116		
+cult_result	culture result	MIXS:0001117		
+cult_result_org	culture result organism	MIXS:0001118		
+cult_target	culture target microbial analyte	MIXS:0001119		
+plant_part_maturity	degree of plant part maturity	MIXS:0001120		
+adjacent_environment	environment adjacent to site	MIXS:0001121		
+water_source_adjac	environmental feature adjacent water source	MIXS:0001122		
+farm_equip_shared	equipment shared with other farms	MIXS:0001123		
+farm_equip_san	farm equipment sanitization	MIXS:0001124		
+farm_equip_san_freq	farm equipment sanitization frequency	MIXS:0001125		
+farm_equip	farm equipment used	MIXS:0001126		
+fertilizer_admin	fertilizer administration	MIXS:0001127		
+fertilizer_date	fertilizer administration date	MIXS:0001128		
+animal_group_size	food animal group size	MIXS:0001129		
+animal_diet	food animal source diet	MIXS:0001130		
+food_contact_surf	food contact surface	MIXS:0001131		
+food_contain_wrap	food container or wrapping	MIXS:0001132		
+food_harvest_proc	Food harvesting process	MIXS:0001133		
+food_pack_medium	food packing medium	MIXS:0001134		
+food_preserv_proc	food preservation process	MIXS:0001135		
+food_prod_char	food production characteristics	MIXS:0001136		
+food_trav_mode	food shipping transportation method	MIXS:0001137		
+food_trav_vehic	food shipping transportation vehicle	MIXS:0001138		
+Food_source	Food source	MIXS:0001139		
+food_treat_proc	food treatment process	MIXS:0001140		
+extr_weather_event	extreme weather event	MIXS:0001141		
+date_extr_weath	extreme weather date	MIXS:0001142		
+intended_consumer	intended consumer	MIXS:0001144		
+library_prep_kit	library preparation kit	MIXS:0001145		
+air_flow_impede	local air flow impediments	MIXS:0001146		
+lot_number	lot number	MIXS:0001147	lot_number	
+season_humidity	mean seasonal humidity	MIXS:0001148		
+part_plant_animal	part of plant or animal	MIXS:0001149		
+plant_reprod_crop	plant reproductive part	MIXS:0001150		
+samp_purpose	purpose of sampling	MIXS:0001151		
+repository_name	repository name	MIXS:0001152		
+samp_pooling	sample pooling	MIXS:0001153		
+samp_source_mat_cat	sample source material category	MIXS:0001154		
+sequencing_kit	sequencing kit	MIXS:0001155		
+sequencing_location	sequencing location	MIXS:0001156		
+serovar_or_serotype	serovar or serotype	MIXS:0001157		
+soil_conductivity	soil conductivity	MIXS:0001158		
+soil_cover	soil cover	MIXS:0001159		
+soil_pH	soil pH	MIXS:0001160		
+rel_location	relative location of sample	MIXS:0001161		
+soil_porosity	soil sediment porosity	MIXS:0001162		
+soil_temp	soil temperature	MIXS:0001163		
+soil_texture_class	soil texture classification	MIXS:0001164		
+spikein_org	spike in organism	MIXS:0001167		
+spikein_serovar	spike-in bacterial serovar or serotype	MIXS:0001168		
+spikein_growth_med	spike-in growth medium	MIXS:0001169		
+spikein_strain	spike-in microbial strain	MIXS:0001170		
+spikein_antibiotic	spike-in with antibiotics	MIXS:0001171		
+spikein_metal	spike-in with heavy metals	MIXS:0001172		
+timepoint	timepoint	MIXS:0001173		
+water_frequency	water delivery frequency	MIXS:0001174		
+water_pH	water pH	MIXS:0001175		
+water_source_shared	water source shared	MIXS:0001176		
+enrichment_protocol	enrichment protocol	MIXS:0001177		
+food_quality_date	food quality date	MIXS:0001178		
+IFSAC_category	Interagency Food Safety Analytics Collaboration (IFSAC) category	MIXS:0001179		
+animal_housing	animal housing system	MIXS:0001180		
+cult_isol_date	culture isolation date	MIXS:0001181		
+food_clean_proc	food cleaning process	MIXS:0001182		
+coll_site_geo_feat	collection site geographic feature	MIXS:0001183		
+food_product_type	food product type	MIXS:0001184	Food_Product_type|Foodon product type	
+ferm_chem_add	fermentation chemical additives	MIXS:0001185		
+ferm_chem_add_perc	fermentation chemical additives percentage	MIXS:0001186		
+ferm_headspace_oxy	fermentation headspace oxygen	MIXS:0001187		
+ferm_medium	fermentation medium	MIXS:0001188		
+ferm_pH	fermentation pH	MIXS:0001189		
+ferm_rel_humidity	fermentation relative humidity	MIXS:0001190		
+ferm_temp	fermentation temperature	MIXS:0001191		
+ferm_time	fermentation time	MIXS:0001192		
+ferm_vessel	fermentation vessel	MIXS:0001193		
+bacterial_density	bacteria density	MIXS:0001194		
+cons_food_stor_dur	food stored by consumer (storage duration)	MIXS:0001195		
+cons_food_stor_temp	food stored by consumer (storage temperature)	MIXS:0001196		
+cons_purch_date	purchase date	MIXS:0001197		
+cons_qty_purchased	quantity purchased	MIXS:0001198		
+dietary_claim_use	dietary claim or use	MIXS:0001199		
+food_additive	food additive	MIXS:0001200		
+food_allergen_label	food allergen labeling	MIXS:0001201		
+food_cooking_proc	food cooking process	MIXS:0001202		
+food_dis_point	food distribution point geographic location	MIXS:0001203		
+food_dis_point_city	food distribution point geographic location (city)	MIXS:0001204		
+food_ingredient	food ingredient	MIXS:0001205		
+food_name_status	food product name legal status	MIXS:0001206		
+food_origin	food product origin geographic location	MIXS:0001207		
+food_pack_capacity	food package capacity	MIXS:0001208		
+food_pack_integrity	food packing medium integrity	MIXS:0001209		
+food_prior_contact	material of contact prior to food packaging	MIXS:0001210		
+food_prod	food production system characteristics	MIXS:0001211		
+food_prod_synonym	food product synonym	MIXS:0001212		
+food_product_qual	food product by quality	MIXS:0001213		
+food_trace_list	food traceability list category	MIXS:0001214		
+HACCP_term	Hazard Analysis Critical Control Points (HACCP) guide food safety term	MIXS:0001215		
+microb_cult_med	microbiological culture medium	MIXS:0001216		
+microb_start	microbial starter	MIXS:0001217		
+microb_start_count	microbial starter organism count	MIXS:0001218		
+microb_start_inoc	microbial starter inoculation	MIXS:0001219		
+microb_start_prep	microbial starter preparation	MIXS:0001220		
+microb_start_source	microbial starter source	MIXS:0001221		
+microb_start_taxID	microbial starter NCBI taxonomy ID	MIXS:0001222		
+nucl_acid_ext_kit	nucleic acid extraction kit	MIXS:0001223		
+num_samp_collect	number of samples collected	MIXS:0001224		
+samp_collect_method	sample collection method	MIXS:0001225	sample_collec_method	
+samp_rep_biol	biological sample replicate	MIXS:0001226		
+samp_rep_tech	technical sample replicate	MIXS:0001227		
+samp_stor_device	sample storage device	MIXS:0001228		
+samp_stor_media	sample storage media	MIXS:0001229		
+samp_transport_cont	sample transport container	MIXS:0001230		
+samp_transport_dur	sample transport duration	MIXS:0001231		
+samp_transport_temp	sample transport temperature	MIXS:0001232		
+spec_intended_cons	specific intended consumer	MIXS:0001234		
+spikein_AMR	antimicrobial phenotype of spike-in bacteria	MIXS:0001235		
+study_design	study design	MIXS:0001236		
+study_inc_dur	study incubation duration	MIXS:0001237		
+study_inc_temp	study incubation temperature	MIXS:0001238		
+study_timecourse	time-course duration	MIXS:0001239		
+study_tmnt	study treatment	MIXS:0001240		
+animal_am	food animal antimicrobial	MIXS:0001243		
+animal_am_dur	food animal antimicrobial duration	MIXS:0001244		
+animal_am_freq	food animal antimicrobial frequency	MIXS:0001245		
+animal_am_route	food animal antimicrobial route of administration	MIXS:0001246		
+animal_am_use	food animal antimicrobial intended use	MIXS:0001247		
+animal_body_cond	food animal body condition	MIXS:0001248		
+animal_sex	food animal source sex category	MIXS:0001249		
+food_source_age	food source age	MIXS:0001251		
+facility_type	facility type	MIXS:0001252		
+hygienic_area	hygienic food production area	MIXS:0001253		
+env_monitoring_zone	food production environmental monitoring zone	MIXS:0001254		
+area_samp_size	area sampled size	MIXS:0001255		
+samp_surf_moisture	sample surface moisture	MIXS:0001256		
+samp_loc_condition	sample location condition	MIXS:0001257		
+biocide_used	biocide	MIXS:0001258		
+ster_meth_samp_room	sampling room sterilization method	MIXS:0001259		
+photosynt_activ	photosynthetic activity	MIXS:0001296		
+association_duration	duration of association with the host	MIXS:0001299		
+sym_life_cycle_type	symbiotic host organism life cycle type	MIXS:0001300		
+symbiont_host_role	host of the symbiont role	MIXS:0001303		
+host_number	host number individual	MIXS:0001305		
+host_of_host_taxid	host of the symbiotic host taxon id	MIXS:0001306		
+type_of_symbiosis	type of symbiosis	MIXS:0001307		
+host_specificity	host specificity	MIXS:0001308		
+host_of_host_coinf	observed coinfecting organisms in host of host	MIXS:0001310		
+mode_transmission	mode of transmission	MIXS:0001312		
+host_cellular_loc	host cellular location	MIXS:0001313		
+host_dependence	host dependence	MIXS:0001315		
+route_transmission	route of transmission	MIXS:0001316		
+samp_store_sol	sample storage solution	MIXS:0001317		
+host_subspecf_genlin	host subspecific genetic lineage	MIXS:0001318		
+host_of_host_disease	host of the symbiotic host disease status	MIXS:0001319		
+host_of_host_name	host of the symbiotic host common name	MIXS:0001324		
+host_of_host_env_loc	host of the symbiotic host local environmental context	MIXS:0001325		
+host_of_host_env_med	host of the symbiotic host environemental medium	MIXS:0001326		
+host_of_host_sub_id	host of the symbiotic host subject id	MIXS:0001327		
+host_of_host_fam_rel	host of the symbiotic host family relationship	MIXS:0001328		
+host_of_host_infname	host of the symbiotic host infra-specific name	MIXS:0001329		
+host_of_host_infrank	host of the symbiotic host infra-specific rank	MIXS:0001330		
+host_of_host_geno	host of the symbiotic host genotype	MIXS:0001331		
+host_of_host_pheno	host of the symbiotic host phenotype	MIXS:0001332		
+host_of_host_gravid	host of the symbiotic host gravidity	MIXS:0001333		
+host_of_host_totmass	host of the symbiotic host total mass	MIXS:0001334		
+spikein_count	spike-in organism count	MIXS:0001335		
+photosynt_activ_meth	photosynthetic activity method	MIXS:0001336		
+prod_label_claims	production labeling claims	MIXS:0001337		
+assembly_software_0000056	assembly software			conflicts with assembly_qual MIXS:0000056 from core sheet
+host_body_product_0000868	host body product			
+host_body_product_0000888	host body product			
+host_sex_0000811	host sex			
+host_sex_0000862	host sex			
+host_symbiont_0001298	observed host symbionts			
+host_symbiont_0001309	observed host symbionts			
+nose_throat_disord_0000270	lung/nose-throat disorder			
+nose_throat_disord_0000283	nose/mouth/teeth/throat disorder			
+soil_horizon_0001082	soil horizon		horizon|horizon	
+soil_horizon_0001291	soil horizon			

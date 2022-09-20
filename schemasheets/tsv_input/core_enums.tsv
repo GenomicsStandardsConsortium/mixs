@@ -1,153 +1,153 @@
-enum	title	permissible_value	description
-> enum	title	permissible_value	description
-assembly_qual_enum	Finished genome	finished_genome	
-assembly_qual_enum	Genome fragment(s)	genome_fragment_s	
-assembly_qual_enum	High-quality draft genome	high_quality_draft_genome	
-assembly_qual_enum	Low-quality draft genome	low_quality_draft_genome	
-assembly_qual_enum	Medium-quality draft genome	medium_quality_draft_genome	
-assembly_qual_enum			
-bin_param_enum	codon usage	codon_usage	
-bin_param_enum	combination	combination	
-bin_param_enum	coverage	coverage	
-bin_param_enum	homology search	homology_search	
-bin_param_enum	kmer	kmer	
-bin_param_enum			
-biotic_relationship_enum	commensal	commensal	
-biotic_relationship_enum	free living	free_living	
-biotic_relationship_enum	parasite	parasite	
-biotic_relationship_enum	symbiont	symbiont	
-biotic_relationship_enum			
-decontam_software_enum	acdc	acdc	
-decontam_software_enum	anvi'o	anvi_o	
-decontam_software_enum	bbtools:decontaminate.sh	bbtools_decontaminate_sh	
-decontam_software_enum	checkm/refinem	checkm_refinem	
-decontam_software_enum	combination	combination	
-decontam_software_enum	prodege	prodege	
-decontam_software_enum			
-detec_type_enum	independent sequence (UViG)	independent_sequence_uvig	
-detec_type_enum	provirus (UpViG)	provirus_upvig	
-detec_type_enum			
-host_pred_appr_enum	co-occurrence	co_occurrence	
-host_pred_appr_enum	combination	combination	
-host_pred_appr_enum	CRISPR spacer match	crispr_spacer_match	
-host_pred_appr_enum	host sequence similarity	host_sequence_similarity	
-host_pred_appr_enum	kmer similarity	kmer_similarity	
-host_pred_appr_enum	other	other	
-host_pred_appr_enum	provirus	provirus	
-host_pred_appr_enum			
-lib_layout_enum	other	other	
-lib_layout_enum	paired	paired	
-lib_layout_enum	single	single	
-lib_layout_enum	vector	vector	
-lib_layout_enum			
-mag_cov_software_enum	bbmap	bbmap	
-mag_cov_software_enum	bowtie	bowtie	
-mag_cov_software_enum	bwa	bwa	
-mag_cov_software_enum	other	other	
-mag_cov_software_enum			
-neg_cont_type_enum	distilled water	distilled_water	
-neg_cont_type_enum	DNA-free PCR mix	dna_free_pcr_mix	
-neg_cont_type_enum	empty collection device	empty_collection_device	
-neg_cont_type_enum	empty collection tube	empty_collection_tube	
-neg_cont_type_enum	phosphate buffer	phosphate_buffer	
-neg_cont_type_enum	sterile swab 	sterile_swab	
-neg_cont_type_enum	sterile syringe	sterile_syringe	
-neg_cont_type_enum			
-pred_genome_struc_enum	non-segmented	non_segmented	
-pred_genome_struc_enum	segmented	segmented	
-pred_genome_struc_enum	undetermined	undetermined	
-pred_genome_struc_enum			
-pred_genome_type_enum	DNA	dna	
-pred_genome_type_enum	dsDNA	dsdna	
-pred_genome_type_enum	dsRNA	dsrna	
-pred_genome_type_enum	mixed	mixed	
-pred_genome_type_enum	RNA	rna	
-pred_genome_type_enum	ssDNA	ssdna	
-pred_genome_type_enum	ssRNA	ssrna	
-pred_genome_type_enum	ssRNA (-)	ssrna_neg	
-pred_genome_type_enum	ssRNA (+)	ssrna_pos	
-pred_genome_type_enum	uncharacterized	uncharacterized	
-pred_genome_type_enum			
-rel_to_oxygen_enum	aerobe	aerobe	
-rel_to_oxygen_enum	anaerobe	anaerobe	
-rel_to_oxygen_enum	facultative	facultative	
-rel_to_oxygen_enum	microaerophilic	microaerophilic	
-rel_to_oxygen_enum	microanaerobe	microanaerobe	
-rel_to_oxygen_enum	obligate aerobe	obligate_aerobe	
-rel_to_oxygen_enum	obligate anaerobe	obligate_anaerobe	
-rel_to_oxygen_enum			
-single_cell_lysis_appr_enum	chemical	chemical	
-single_cell_lysis_appr_enum	combination	combination	
-single_cell_lysis_appr_enum	enzymatic	enzymatic	
-single_cell_lysis_appr_enum	physical	physical	
-single_cell_lysis_appr_enum			
-sort_tech_enum	flow cytometric cell sorting	flow_cytometric_cell_sorting	
-sort_tech_enum	laser-tweezing	laser_tweezing	
-sort_tech_enum	microfluidics	microfluidics	
-sort_tech_enum	micromanipulation	micromanipulation	
-sort_tech_enum	optical manipulation	optical_manipulation	
-sort_tech_enum	other	other	
-sort_tech_enum			
-source_uvig_enum	isolate microbial genome	isolate_microbial_genome	
-source_uvig_enum	metagenome (not viral targeted)	metagenome_not_viral_targeted	
-source_uvig_enum	metatranscriptome (not viral targeted)	metatranscriptome_not_viral_targeted	
-source_uvig_enum	microbial single amplified genome (SAG)	microbial_single_amplified_genome_sag	
-source_uvig_enum	other	other	
-source_uvig_enum	sequence-targeted metagenome	sequence_targeted_metagenome	
-source_uvig_enum	sequence-targeted RNA metagenome	sequence_targeted_rna_metagenome	
-source_uvig_enum	viral fraction metagenome (virome)	viral_fraction_metagenome_virome	
-source_uvig_enum	viral fraction RNA metagenome (RNA virome)	viral_fraction_rna_metagenome_rna_virome	
-source_uvig_enum	viral single amplified genome (vSAG)	viral_single_amplified_genome_vsag	
-source_uvig_enum			
-tax_ident_enum	multi-marker approach	multi_marker_approach	
-tax_ident_enum	other	other	
-tax_ident_enum	16S rRNA gene	x_16s_rrna_gene	
-tax_ident_enum			
-trophic_level_enum	autotroph	autotroph	
-trophic_level_enum	carboxydotroph	carboxydotroph	
-trophic_level_enum	chemoautolithotroph	chemoautolithotroph	
-trophic_level_enum	chemoautotroph	chemoautotroph	
-trophic_level_enum	chemoheterotroph	chemoheterotroph	
-trophic_level_enum	chemolithoautotroph	chemolithoautotroph	
-trophic_level_enum	chemolithotroph	chemolithotroph	
-trophic_level_enum	chemoorganoheterotroph	chemoorganoheterotroph	
-trophic_level_enum	chemoorganotroph	chemoorganotroph	
-trophic_level_enum	chemosynthetic	chemosynthetic	
-trophic_level_enum	chemotroph	chemotroph	
-trophic_level_enum	copiotroph	copiotroph	
-trophic_level_enum	diazotroph	diazotroph	
-trophic_level_enum	facultative	facultative	
-trophic_level_enum	heterotroph	heterotroph	
-trophic_level_enum	lithoautotroph	lithoautotroph	
-trophic_level_enum	lithoheterotroph	lithoheterotroph	
-trophic_level_enum	lithotroph	lithotroph	
-trophic_level_enum	methanotroph	methanotroph	
-trophic_level_enum	methylotroph	methylotroph	
-trophic_level_enum	mixotroph	mixotroph	
-trophic_level_enum	obligate	obligate	
-trophic_level_enum	oligotroph	oligotroph	
-trophic_level_enum	organoheterotroph	organoheterotroph	
-trophic_level_enum	organotroph	organotroph	
-trophic_level_enum	photoautotroph	photoautotroph	
-trophic_level_enum	photoheterotroph	photoheterotroph	
-trophic_level_enum	photolithoautotroph	photolithoautotroph	
-trophic_level_enum	photolithotroph	photolithotroph	
-trophic_level_enum	photosynthetic	photosynthetic	
-trophic_level_enum	phototroph	phototroph	
-trophic_level_enum			
-virus_enrich_appr_enum	centrifugation	centrifugation	
-virus_enrich_appr_enum	CsCl density gradient	cscl_density_gradient	
-virus_enrich_appr_enum	DNAse	dnase	
-virus_enrich_appr_enum	FeCl Precipitation	fecl_precipitation	
-virus_enrich_appr_enum	filtration	filtration	
-virus_enrich_appr_enum	none	none	
-virus_enrich_appr_enum	other	other	
-virus_enrich_appr_enum	PEG Precipitation	peg_precipitation	
-virus_enrich_appr_enum	RNAse	rnase	
-virus_enrich_appr_enum	targeted sequence capture	targeted_sequence_capture	
-virus_enrich_appr_enum	ultracentrifugation	ultracentrifugation	
-virus_enrich_appr_enum	ultrafiltration	ultrafiltration	
-virus_enrich_appr_enum			
-wga_amp_appr_enum	mda based	mda_based	
-wga_amp_appr_enum	pcr based	pcr_based	
-wga_amp_appr_enum			
+enum	title	permissible_value	description	meaning
+> enum	title	permissible_value	description	meaning
+assembly_qual_enum	Finished genome	finished_genome
+assembly_qual_enum	Genome fragment(s)	genome_fragment_s
+assembly_qual_enum	High-quality draft genome	high_quality_draft_genome
+assembly_qual_enum	Low-quality draft genome	low_quality_draft_genome
+assembly_qual_enum	Medium-quality draft genome	medium_quality_draft_genome
+assembly_qual_enum
+bin_param_enum	codon usage	codon_usage
+bin_param_enum	combination	combination
+bin_param_enum	coverage	coverage
+bin_param_enum	homology search	homology_search
+bin_param_enum	kmer	kmer
+bin_param_enum
+biotic_relationship_enum	commensal	commensal
+biotic_relationship_enum	free living	free_living
+biotic_relationship_enum	parasite	parasite
+biotic_relationship_enum	symbiont	symbiont
+biotic_relationship_enum
+decontam_software_enum	acdc	acdc
+decontam_software_enum	anvi'o	anvi_o
+decontam_software_enum	bbtools:decontaminate.sh	bbtools_decontaminate_sh
+decontam_software_enum	checkm/refinem	checkm_refinem
+decontam_software_enum	combination	combination
+decontam_software_enum	prodege	prodege
+decontam_software_enum
+detec_type_enum	independent sequence (UViG)	independent_sequence_uvig
+detec_type_enum	provirus (UpViG)	provirus_upvig
+detec_type_enum
+host_pred_appr_enum	co-occurrence	co_occurrence
+host_pred_appr_enum	combination	combination
+host_pred_appr_enum	CRISPR spacer match	crispr_spacer_match
+host_pred_appr_enum	host sequence similarity	host_sequence_similarity
+host_pred_appr_enum	kmer similarity	kmer_similarity
+host_pred_appr_enum	other	other
+host_pred_appr_enum	provirus	provirus
+host_pred_appr_enum
+lib_layout_enum	other	other
+lib_layout_enum	paired	paired
+lib_layout_enum	single	single
+lib_layout_enum	vector	vector
+lib_layout_enum
+mag_cov_software_enum	bbmap	bbmap
+mag_cov_software_enum	bowtie	bowtie
+mag_cov_software_enum	bwa	bwa
+mag_cov_software_enum	other	other
+mag_cov_software_enum
+neg_cont_type_enum	distilled water	distilled_water
+neg_cont_type_enum	DNA-free PCR mix	dna_free_pcr_mix
+neg_cont_type_enum	empty collection device	empty_collection_device
+neg_cont_type_enum	empty collection tube	empty_collection_tube
+neg_cont_type_enum	phosphate buffer	phosphate_buffer
+neg_cont_type_enum	sterile swab 	sterile_swab
+neg_cont_type_enum	sterile syringe	sterile_syringe
+neg_cont_type_enum
+pred_genome_struc_enum	non-segmented	non_segmented
+pred_genome_struc_enum	segmented	segmented
+pred_genome_struc_enum	undetermined	undetermined
+pred_genome_struc_enum
+pred_genome_type_enum	DNA	dna
+pred_genome_type_enum	dsDNA	dsdna
+pred_genome_type_enum	dsRNA	dsrna
+pred_genome_type_enum	mixed	mixed
+pred_genome_type_enum	RNA	rna
+pred_genome_type_enum	ssDNA	ssdna
+pred_genome_type_enum	ssRNA	ssrna
+pred_genome_type_enum	ssRNA (-)	ssrna_neg
+pred_genome_type_enum	ssRNA (+)	ssrna_pos
+pred_genome_type_enum	uncharacterized	uncharacterized
+pred_genome_type_enum
+rel_to_oxygen_enum	aerobe	aerobe
+rel_to_oxygen_enum	anaerobe	anaerobe
+rel_to_oxygen_enum	facultative	facultative
+rel_to_oxygen_enum	microaerophilic	microaerophilic
+rel_to_oxygen_enum	microanaerobe	microanaerobe
+rel_to_oxygen_enum	obligate aerobe	obligate_aerobe
+rel_to_oxygen_enum	obligate anaerobe	obligate_anaerobe
+rel_to_oxygen_enum
+single_cell_lysis_appr_enum	chemical	chemical
+single_cell_lysis_appr_enum	combination	combination
+single_cell_lysis_appr_enum	enzymatic	enzymatic
+single_cell_lysis_appr_enum	physical	physical
+single_cell_lysis_appr_enum
+sort_tech_enum	flow cytometric cell sorting	flow_cytometric_cell_sorting
+sort_tech_enum	laser-tweezing	laser_tweezing
+sort_tech_enum	microfluidics	microfluidics
+sort_tech_enum	micromanipulation	micromanipulation
+sort_tech_enum	optical manipulation	optical_manipulation
+sort_tech_enum	other	other
+sort_tech_enum
+source_uvig_enum	isolate microbial genome	isolate_microbial_genome
+source_uvig_enum	metagenome (not viral targeted)	metagenome_not_viral_targeted
+source_uvig_enum	metatranscriptome (not viral targeted)	metatranscriptome_not_viral_targeted
+source_uvig_enum	microbial single amplified genome (SAG)	microbial_single_amplified_genome_sag
+source_uvig_enum	other	other
+source_uvig_enum	sequence-targeted metagenome	sequence_targeted_metagenome
+source_uvig_enum	sequence-targeted RNA metagenome	sequence_targeted_rna_metagenome
+source_uvig_enum	viral fraction metagenome (virome)	viral_fraction_metagenome_virome
+source_uvig_enum	viral fraction RNA metagenome (RNA virome)	viral_fraction_rna_metagenome_rna_virome
+source_uvig_enum	viral single amplified genome (vSAG)	viral_single_amplified_genome_vsag
+source_uvig_enum
+tax_ident_enum	multi-marker approach	multi_marker_approach
+tax_ident_enum	other	other
+tax_ident_enum	16S rRNA gene	x_16s_rrna_gene
+tax_ident_enum
+trophic_level_enum	autotroph	autotroph
+trophic_level_enum	carboxydotroph	carboxydotroph
+trophic_level_enum	chemoautolithotroph	chemoautolithotroph
+trophic_level_enum	chemoautotroph	chemoautotroph
+trophic_level_enum	chemoheterotroph	chemoheterotroph
+trophic_level_enum	chemolithoautotroph	chemolithoautotroph
+trophic_level_enum	chemolithotroph	chemolithotroph
+trophic_level_enum	chemoorganoheterotroph	chemoorganoheterotroph
+trophic_level_enum	chemoorganotroph	chemoorganotroph
+trophic_level_enum	chemosynthetic	chemosynthetic
+trophic_level_enum	chemotroph	chemotroph
+trophic_level_enum	copiotroph	copiotroph
+trophic_level_enum	diazotroph	diazotroph
+trophic_level_enum	facultative	facultative
+trophic_level_enum	heterotroph	heterotroph
+trophic_level_enum	lithoautotroph	lithoautotroph
+trophic_level_enum	lithoheterotroph	lithoheterotroph
+trophic_level_enum	lithotroph	lithotroph
+trophic_level_enum	methanotroph	methanotroph
+trophic_level_enum	methylotroph	methylotroph
+trophic_level_enum	mixotroph	mixotroph
+trophic_level_enum	obligate	obligate
+trophic_level_enum	oligotroph	oligotroph
+trophic_level_enum	organoheterotroph	organoheterotroph
+trophic_level_enum	organotroph	organotroph
+trophic_level_enum	photoautotroph	photoautotroph
+trophic_level_enum	photoheterotroph	photoheterotroph
+trophic_level_enum	photolithoautotroph	photolithoautotroph
+trophic_level_enum	photolithotroph	photolithotroph
+trophic_level_enum	photosynthetic	photosynthetic
+trophic_level_enum	phototroph	phototroph
+trophic_level_enum
+virus_enrich_appr_enum	centrifugation	centrifugation
+virus_enrich_appr_enum	CsCl density gradient	cscl_density_gradient
+virus_enrich_appr_enum	DNAse	dnase
+virus_enrich_appr_enum	FeCl Precipitation	fecl_precipitation
+virus_enrich_appr_enum	filtration	filtration
+virus_enrich_appr_enum	none	none
+virus_enrich_appr_enum	other	other
+virus_enrich_appr_enum	PEG Precipitation	peg_precipitation
+virus_enrich_appr_enum	RNAse	rnase
+virus_enrich_appr_enum	targeted sequence capture	targeted_sequence_capture
+virus_enrich_appr_enum	ultracentrifugation	ultracentrifugation
+virus_enrich_appr_enum	ultrafiltration	ultrafiltration
+virus_enrich_appr_enum
+wga_amp_appr_enum	mda based	mda_based
+wga_amp_appr_enum	pcr based	pcr_based
+wga_amp_appr_enum
