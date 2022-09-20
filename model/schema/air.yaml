@@ -1,0 +1,110 @@
+id: http://w3id.org/mixs/air
+name: air
+imports:
+- linkml:types
+- terms
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mixs.vocab: https://w3id.org/mixs/vocab/
+  MIXS: https://w3id.org/mixs/terms/
+default_prefix: mixs.vocab
+slots: {}
+classes:
+  air:
+    description: air
+    mappings: []
+    slots:
+    - alt
+    - collection_date
+    - depth
+    - elev
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - geo_loc_name
+    - lat_lon
+    - temp
+    - oxy_stat_samp
+    - samp_store_dur
+    - barometric_press
+    - carb_dioxide
+    - carb_monoxide
+    - humidity
+    - methane
+    - oxygen
+    - salinity
+    - samp_store_temp
+    - solar_irradiance
+    - ventilation_rate
+    - wind_speed
+    - chem_administration
+    - samp_store_loc
+    - ventilation_type
+    - wind_direction
+    - air particulate matter concentration
+    - misc_param
+    - pollutants
+    - volatile_org_comp
+    - organism_count
+    - perturbation
+    slot_usage:
+      oxy_stat_samp:
+        required: false
+      samp_store_dur:
+        required: false
+      alt:
+        required: true
+      barometric_press:
+        required: false
+      carb_dioxide:
+        required: false
+      carb_monoxide:
+        required: false
+      elev:
+        required: false
+      humidity:
+        required: false
+      methane:
+        required: false
+      oxygen:
+        required: false
+      salinity:
+        required: false
+      samp_store_temp:
+        required: false
+      samp_vol_we_dna_ext:
+        required: false
+      solar_irradiance:
+        required: false
+      temp:
+        required: false
+      ventilation_rate:
+        required: false
+      wind_speed:
+        required: false
+      chem_administration:
+        required: false
+      project_name:
+        required: true
+      samp_name:
+        required: true
+      samp_store_loc:
+        required: false
+      ventilation_type:
+        required: false
+      wind_direction:
+        required: false
+      air particulate matter concentration:
+        required: false
+      misc_param:
+        required: false
+      pollutants:
+        required: false
+      volatile_org_comp:
+        required: false
+      organism_count:
+        required: false
+      perturbation:
+        required: false
+subsets: {}
+enums: {}
