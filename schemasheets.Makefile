@@ -26,9 +26,9 @@ clean_schemasheets:
 	mkdir -p schemasheets/tsv_output
 	echo $(DIR_CREATION_MSG) > schemasheets/tsv_output/README.md
 
-# skipping enums.tsv schema_settings.tsv subsets.tsv
-# schemasheets/tsv_input/packages_slots_used_by_soil.tsv \
-  #schemasheets/tsv_input/packages_soil_slot_usage.tsv \
+# skipping enums.tsv schema_settings.tsv subsets.tsv packages_slots_used_by_soil.tsv packages_soil_slot_usage.tsv
+
+# problematics package slots
 
   # assembly_software	assembly softwar	MIXS:0000056
   #    conflicts with assembly_qual MIXS:0000056 from core sheet
@@ -37,6 +37,7 @@ clean_schemasheets:
   # host_body_product	host body product	MIXS:0000888
   # soil_horizon	soil horizon	MIXS:0001082	horizon|horizon
   # host_symbiont	observed host symbionts	MIXS:0001298
+
 # todo work on settings and structured patterns (gen-linkml expansion)
 
 schemasheets/yaml_output/mixs_from_schema_sheets.yaml: \
@@ -45,7 +46,7 @@ schemasheets/tsv_input/combination_classes.tsv \
 schemasheets/tsv_input/core.tsv \
 schemasheets/tsv_input/core_enums.tsv \
 schemasheets/tsv_input/env_package_classes.tsv \
-schemasheets/tsv_input/packages_slot_usage.tsv \
+schemasheets/tsv_input/package_slot_usage.tsv \
 schemasheets/tsv_input/package_slots.tsv \
 schemasheets/tsv_input/prefixes.tsv \
 schemasheets/tsv_input/schema.tsv \
@@ -53,8 +54,6 @@ schemasheets/tsv_input/utility_classes.tsv \
 schemasheets/tsv_input/utility_slots.tsv
 	$(RUN) sheets2linkml --output $@ $^
 
-#schemasheets/yaml_output/mixs_from_schema_sheets_generated.yaml: schemasheets/yaml_output/mixs_from_schema_sheets.yaml
-#	$(RUN) gen-linkml --format yaml --output $@ $^
 
 # --materialize-patterns / --no-materialize-patterns
 schemasheets/yaml_output/mixs_from_schema_sheets_generated.yaml: schemasheets/yaml_output/mixs_from_schema_sheets.yaml
@@ -72,6 +71,7 @@ schemasheets/yaml_output/mixs_reference_merged.yaml: model/schema/mixs.yaml
 
 # todo gen-linkml not merging imports
 # Error: sort only works for scalars, got !!map
+# todo try deepdiff again for list order insensitivity, or sort and otherwise repair with python code
 schemasheets/yaml_output/mixs_reference_generated.yaml: schemasheets/yaml_output/mixs_reference_merged.yaml
 	$(RUN) gen-linkml \
 		--format yaml \
