@@ -4,7 +4,7 @@ RUN=poetry run
 
 .PHONY: all clean gh_docs docserve value_syntax_research gsc_vs_nmdc_packages gsc_vs_nmdc_core all_diffs
 
-all: clean alldiffs value_syntax_research model/schema/mixs.yaml generated/mixs.py mkdocs_html/index.html
+#all: clean alldiffs value_syntax_research model/schema/mixs.yaml generated/mixs.py mkdocs_html/index.html
 
 clean:
 	rm -rf downloads/*.*sv
