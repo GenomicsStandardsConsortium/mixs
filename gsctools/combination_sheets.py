@@ -6,7 +6,7 @@ from linkml_runtime import SchemaView
 # from linkml_runtime.dumpers import yaml_dumper
 
 schema_file = "../schemasheets/yaml_output/mixs_from_schema_sheets.yaml"
-tsv_output = "../schemasheets/tsv_input/combination_classes.tsv"
+tsv_output = "../schemasheets/tsv_input/generated/combination_classes.tsv"
 
 view = SchemaView(schema_file)
 
@@ -23,7 +23,7 @@ for current_env_package_name in env_package_names:
     for current_checklist_name in checklists_names:
         current_checklist = view.get_class(current_checklist_name)
         row_list.append(
-            {"class": f"{current_env_package_name}{current_checklist_name}",
+            {"class": f"{current_checklist_name}_{current_env_package_name}",
              "class_uri": "",
              "description": f"{current_checklist.description} with environmental package {current_env_package.description}",
              "is_a": current_env_package_name,
