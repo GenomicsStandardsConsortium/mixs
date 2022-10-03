@@ -8,8 +8,8 @@ clean_schemasheets \
 schemasheets/yaml_output/mixs_from_schema_sheets.yaml \
 schemasheets/lint_log.tsv \
 schemasheets/generated/mixs_from_schema_sheets_generated.yaml \
-schemasheets/generated/jsonschema/mixs_from_schema_sheets.schema.json \
-schemasheets/example_data/out/mims_soil_data.json
+schemasheets/generated/sqlschema/mixs_from_schema_sheets.sql \
+schemasheets/yaml_output/mixs_reference_merged.yaml
 
 clean_schemasheets:
 	rm -rf schemasheets/example_data/out/mims_data.json
@@ -35,6 +35,9 @@ clean_schemasheets:
 	echo $(DIR_CREATION_MSG) > schemasheets/example_data/out/README.md
 	mkdir -p schemasheets/tsv_output
 	echo $(DIR_CREATION_MSG) > schemasheets/tsv_output/README.md
+	rm -rf schemasheets/generated/*
+	echo $(DIR_CREATION_MSG) > schemasheets/generated/README.md
+
 
 # partial list of problematics package slots
 
@@ -47,8 +50,6 @@ clean_schemasheets:
   # host_symbiont	observed host symbionts	MIXS:0001298
 
 # todo work on settings and structured patterns (gen-linkml expansion)
-
-convenience: clean_schemasheets
 
 schemasheets/yaml_output/mixs_from_schema_sheets.yaml: \
 schemasheets/tsv_input/database_support/database_classes.tsv \
@@ -76,125 +77,168 @@ schemasheets/yaml_output/mixs_from_schema_sheets.yaml
 		--format yaml \
 		--no-materialize-attributes $^ > $@
 
-schemasheets/generated/jsonschema/mixs_from_schema_sheets.schema.json: \
+schemasheets/generated/sqlschema/mixs_from_schema_sheets.sql: \
 schemasheets/yaml_output/mixs_from_schema_sheets.yaml
-	$(RUN) gen-project --dir schemasheets/generated $<
+	$(RUN) gen-project \
+		--exclude excel \
+		--exclude markdown \
+		--dir schemasheets/generated $<
 
 
-schemasheets/example_data/out/mims_soil_data.json: \
+#gen_debug: \
+#schemasheets/yaml_output/mixs_from_schema_sheets.yaml
+#	mkdir -p schemasheets/generated/docs
+#	$(RUN) gen-project \
+#		--include markdown \
+#		--dir schemasheets/generated $<
+
+# INFO:root:Generating: excel
+  #  File "/Users/MAM/Library/Caches/pypoetry/virtualenvs/mixs-linkml-GchukLmP-py3.9/lib/python3.9/site-packages/openpyxl/workbook/child.py", line 93, in title
+  #    raise ValueError(msg)
+  #ValueError: Invalid character / found in sheet title
+
+# INFO:root:Generating: markdown
+  #  File "/Users/MAM/Library/Caches/pypoetry/virtualenvs/mixs-linkml-GchukLmP-py3.9/lib/python3.9/site-packages/linkml/generators/markdowngen.py", line 280, in visit_slot
+  #    with open(
+  #FileNotFoundError: [Errno 2] No such file or directory: 'schemasheets/generated/docs/hydrocarbon_resources_fluids/swabs_add_recov_method.md'
+
+schemasheets/yaml_output/mixs_from_schema_sheets_repaired.yaml: \
+schemasheets/tsv_input/database_support/database_classes.tsv \
+schemasheets/tsv_input/database_support/database_slots.tsv \
+schemasheets/tsv_input/original_headers_repairs/MIxS_6_term_updates_MIxS6_Core-Final_clean.tsv \
+schemasheets/tsv_input/original_headers_repairs/MIxS_6_term_updates_MIxS6_packages-Final_clean.tsv \
+schemasheets/tsv_input/repair_support/combo_classes_subset.tsv
+	$(RUN) sheets2linkml --output $@ $^
+
+schemasheets/tsv_input/generated/mixs_from_schema_sheets_repaired.py: schemasheets/yaml_output/mixs_from_schema_sheets_repaired.yaml
+	$(RUN) gen-python $< > $@
+
+schemasheets/example_data/out/mims_soil_data_via_repaired.json: \
 schemasheets/example_data/in/mims_soil_data.yaml \
-schemasheets/yaml_output/mixs_from_schema_sheets.yaml
+schemasheets/yaml_output/mixs_from_schema_sheets_repaired.yaml
 	$(RUN) linkml-convert \
 		--output $@ \
 		--schema $(word 2,$^) \
-		--target-class mims_soil \
-		$<
+		--target-class MimsSoil $<
 
+#   File "/Users/MAM/Library/Caches/pypoetry/virtualenvs/mixs-linkml-GchukLmP-py3.9/lib/python3.9/site-packages/linkml_runtime/utils/compile_python.py", line 30, in compile_python
+  #    spec = compile(python_txt, 'test', 'exec')
+  #  File "test", line 136
+  #    16s_recover: Optional[str] = None
+  #      ^
+  #SyntaxError: invalid syntax
 
-## --materialize-patterns / --no-materialize-patterns
-#schemasheets/yaml_output/mixs_from_schema_sheets_generated.yaml: schemasheets/yaml_output/mixs_from_schema_sheets.yaml
-#	$(RUN) gen-linkml \
-#		--format yaml \
-#		--no-materialize-attributes $^ | \
-#		yq 'del(.. | select(has("from_schema")).from_schema)' | \
-#		yq 'del(.. | select(has("source_file")).source_file)' | \
-#		yq '(... | select(type == "!!seq")) |= unique' > $@
-#
-#schemasheets/yaml_output/mixs_reference_merged.yaml: model/schema/mixs.yaml
-#	$(RUN) python gsctools/merge_view.py \
-#		--input_schema $< \
-#		--output $@
-#
-## todo gen-linkml not merging imports
-## Error: sort only works for scalars, got !!map
-## todo try deepdiff again for list order insensitivity, or sort and otherwise repair with python code
-#schemasheets/yaml_output/mixs_reference_generated.yaml: schemasheets/yaml_output/mixs_reference_merged.yaml
-#	$(RUN) gen-linkml \
-#		--format yaml \
-#		--mergeimports \
-#		--no-materialize-attributes $< > $@
-#
-#schemasheets/yaml_output/mixs_reference_no_explicit_falses.yaml: schemasheets/yaml_output/mixs_reference_generated.yaml
-#	cat $< | yq 'del(.. | select(. == false))' | yq 'del(.. | select(tag == "!!seq" and length == 0))' > $@
-#
-#schemasheets/yaml_output/mixs_reference_no_empty_slot_examples.yaml: schemasheets/yaml_output/mixs_reference_no_explicit_falses.yaml
-#	cat $< | yq '.slots |= (to_entries | map(select(.value.examples[].value != "")) | map(select(.value.examples | length >0)) | from_entries)' > $@
-#
-#
-## yq e 'del(.. | select(. == false))' input3
-#
-## todo
-## yq '.slots |= (to_entries | map(select(.value.examples[].value != "")) map(select(.value.examples | length >0)) | from_entries)' $< > $@
-#
-#
-##| \
+#   File "/Users/MAM/Library/Caches/pypoetry/virtualenvs/mixs-linkml-GchukLmP-py3.9/lib/python3.9/site-packages/linkml_runtime/utils/compile_python.py", line 30, in compile_python
+  #    spec = compile(python_txt, 'test', 'exec')
+  #  File "test", line 17860
+  #    class Food-animalAndAnimalFeed(EnvPackage):
+  #              ^
+  #SyntaxError: invalid syntax
+
+### --materialize-patterns / --no-materialize-patterns
+##schemasheets/yaml_output/mixs_from_schema_sheets_generated.yaml: schemasheets/yaml_output/mixs_from_schema_sheets.yaml
+##	$(RUN) gen-linkml \
+##		--format yaml \
+##		--no-materialize-attributes $^ | \
 ##		yq 'del(.. | select(has("from_schema")).from_schema)' | \
 ##		yq 'del(.. | select(has("source_file")).source_file)' | \
 ##		yq '(... | select(type == "!!seq")) |= unique' > $@
-#
-#
-#
-#schema_diff: schemasheets/yaml_output/mixs_reference_generated.yaml schemasheets/yaml_output/mixs_from_schema_sheets.yaml
-#	- jd --yaml $^
 
-#schemasheets/tsv_output/classes.tsv: schemasheets/yaml_output/mixs_from_schema_sheets.yaml
-#	$(RUN) linkml2sheets \
-#		--schema $< \
-#		--output-directory schemasheets/tsv_output schemasheets/templates/classes.tsv
-#
-##
-##schemasheets/tsv_output/slots.tsv: model/schema/mixs.yaml
-##	$(RUN) linkml2sheets \
-##		--schema $< \
-##		--output-directory schemasheets/tsv_output schemasheets/templates/slots.tsv
-##
-##schemasheets/yaml_output/classes_roundtrip.yaml: \
-##schemasheets/tsv_input/prefixes.tsv \
-##schemasheets/tsv_input/schema.tsv \
-##schemasheets/tsv_output/classes.tsv
-##	$(RUN) sheets2linkml $^ | \
-##	yq 'del(.. | select(has("from_schema")).from_schema)' | \
-##	yq 'del(.. | select(has("source_file")).source_file)' | \
-##	yq '(... | select(type == "!!seq")) |= unique' > $@
-##
-##schemasheets/yaml_output/slots_roundtrip.yaml: \
-##schemasheets/tsv_input/prefixes.tsv \
-##schemasheets/tsv_input/schema.tsv \
-##schemasheets/tsv_output/slots.tsv
-##	$(RUN) sheets2linkml $^ | \
-##	yq '(... | select(type == "!!seq")) |= unique' | \
-##	yq '.slots | to_entries | map(select(.value.examples[].value != "")) | map(select(.value.examples | length >0)) | from_entries ' | \
-##	yq 'del(.. | select(has("from_schema")).from_schema)' | \
-##	yq 'del(.. | select(has("source_file")).source_file)' | \
-##	egrep -v 'comments: \[\]' | egrep -v ': false' > $@
-##
-##schemasheets/yaml_output/reference_classes_only.yaml:
-##	$(RUN) python gsctools/classes_only.py | \
-##	yq 'del(.. | select(has("from_schema")).from_schema)' | \
-##	yq 'del(.. | select(has("source_file")).source_file)' | \
-##	yq '(... | select(type == "!!seq")) |= unique' > $@
-##
-##
-##schemasheets/yaml_output/reference_slots_only.yaml:
-##	$(RUN) python gsctools/slots_only.py > $@
-##
-### add annotations and structured_pattern
-##
-##schemasheets/yaml_output/reference_slots_only_generated.yaml: schemasheets/yaml_output/reference_slots_only.yaml
+schemasheets/yaml_output/mixs_reference_merged.yaml: model/schema/mixs.yaml
+	$(RUN) python gsctools/merge_view.py \
+		--input_schema $< \
+		--output $@
+
+### todo gen-linkml not merging imports
+### Error: sort only works for scalars, got !!map
+### todo try deepdiff again for list order insensitivity, or sort and otherwise repair with python code
+##schemasheets/yaml_output/mixs_reference_generated.yaml: schemasheets/yaml_output/mixs_reference_merged.yaml
 ##	$(RUN) gen-linkml \
 ##		--format yaml \
 ##		--mergeimports \
-##		--no-materialize-attributes $< | \
-##	yq '(... | select(type == "!!seq")) |= unique' | \
-##	yq '.slots | to_entries | map(select(.value.examples[].value != "")) | map(select(.value.examples | length >0)) | from_entries ' | \
-##	yq 'del(.. | select(has("from_schema")).from_schema)' | \
-##	yq 'del(.. | select(has("source_file")).source_file)' | \
-##	egrep -v 'comments: \[\]' | egrep -v ': false' > $@
+##		--no-materialize-attributes $< > $@
+##
+##schemasheets/yaml_output/mixs_reference_no_explicit_falses.yaml: schemasheets/yaml_output/mixs_reference_generated.yaml
+##	cat $< | yq 'del(.. | select(. == false))' | yq 'del(.. | select(tag == "!!seq" and length == 0))' > $@
+##
+##schemasheets/yaml_output/mixs_reference_no_empty_slot_examples.yaml: schemasheets/yaml_output/mixs_reference_no_explicit_falses.yaml
+##	cat $< | yq '.slots |= (to_entries | map(select(.value.examples[].value != "")) | map(select(.value.examples | length >0)) | from_entries)' > $@
 ##
 ##
-##classes_diff: schemasheets/yaml_output/reference_classes_only.yaml schemasheets/yaml_output/classes_roundtrip.yaml
-##	- jd --yaml $^
+### yq e 'del(.. | select(. == false))' input3
 ##
-##slots_diff: schemasheets/yaml_output/reference_slots_only_generated.yaml schemasheets/yaml_output/slots_roundtrip.yaml
+### todo
+### yq '.slots |= (to_entries | map(select(.value.examples[].value != "")) map(select(.value.examples | length >0)) | from_entries)' $< > $@
+##
+##
+###| \
+###		yq 'del(.. | select(has("from_schema")).from_schema)' | \
+###		yq 'del(.. | select(has("source_file")).source_file)' | \
+###		yq '(... | select(type == "!!seq")) |= unique' > $@
+##
+##
+##
+##schema_diff: schemasheets/yaml_output/mixs_reference_generated.yaml schemasheets/yaml_output/mixs_from_schema_sheets.yaml
 ##	- jd --yaml $^
 #
+##schemasheets/tsv_output/classes.tsv: schemasheets/yaml_output/mixs_from_schema_sheets.yaml
+##	$(RUN) linkml2sheets \
+##		--schema $< \
+##		--output-directory schemasheets/tsv_output schemasheets/templates/classes.tsv
+##
+###
+###schemasheets/tsv_output/slots.tsv: model/schema/mixs.yaml
+###	$(RUN) linkml2sheets \
+###		--schema $< \
+###		--output-directory schemasheets/tsv_output schemasheets/templates/slots.tsv
+###
+###schemasheets/yaml_output/classes_roundtrip.yaml: \
+###schemasheets/tsv_input/prefixes.tsv \
+###schemasheets/tsv_input/schema.tsv \
+###schemasheets/tsv_output/classes.tsv
+###	$(RUN) sheets2linkml $^ | \
+###	yq 'del(.. | select(has("from_schema")).from_schema)' | \
+###	yq 'del(.. | select(has("source_file")).source_file)' | \
+###	yq '(... | select(type == "!!seq")) |= unique' > $@
+###
+###schemasheets/yaml_output/slots_roundtrip.yaml: \
+###schemasheets/tsv_input/prefixes.tsv \
+###schemasheets/tsv_input/schema.tsv \
+###schemasheets/tsv_output/slots.tsv
+###	$(RUN) sheets2linkml $^ | \
+###	yq '(... | select(type == "!!seq")) |= unique' | \
+###	yq '.slots | to_entries | map(select(.value.examples[].value != "")) | map(select(.value.examples | length >0)) | from_entries ' | \
+###	yq 'del(.. | select(has("from_schema")).from_schema)' | \
+###	yq 'del(.. | select(has("source_file")).source_file)' | \
+###	egrep -v 'comments: \[\]' | egrep -v ': false' > $@
+###
+###schemasheets/yaml_output/reference_classes_only.yaml:
+###	$(RUN) python gsctools/classes_only.py | \
+###	yq 'del(.. | select(has("from_schema")).from_schema)' | \
+###	yq 'del(.. | select(has("source_file")).source_file)' | \
+###	yq '(... | select(type == "!!seq")) |= unique' > $@
+###
+###
+###schemasheets/yaml_output/reference_slots_only.yaml:
+###	$(RUN) python gsctools/slots_only.py > $@
+###
+#### add annotations and structured_pattern
+###
+###schemasheets/yaml_output/reference_slots_only_generated.yaml: schemasheets/yaml_output/reference_slots_only.yaml
+###	$(RUN) gen-linkml \
+###		--format yaml \
+###		--mergeimports \
+###		--no-materialize-attributes $< | \
+###	yq '(... | select(type == "!!seq")) |= unique' | \
+###	yq '.slots | to_entries | map(select(.value.examples[].value != "")) | map(select(.value.examples | length >0)) | from_entries ' | \
+###	yq 'del(.. | select(has("from_schema")).from_schema)' | \
+###	yq 'del(.. | select(has("source_file")).source_file)' | \
+###	egrep -v 'comments: \[\]' | egrep -v ': false' > $@
+###
+###
+###classes_diff: schemasheets/yaml_output/reference_classes_only.yaml schemasheets/yaml_output/classes_roundtrip.yaml
+###	- jd --yaml $^
+###
+###slots_diff: schemasheets/yaml_output/reference_slots_only_generated.yaml schemasheets/yaml_output/slots_roundtrip.yaml
+###	- jd --yaml $^
+##

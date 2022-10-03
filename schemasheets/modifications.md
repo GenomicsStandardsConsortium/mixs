@@ -126,6 +126,7 @@ Also:
 - Using annotations to models several other columns
 - For "Example" column, use `examples` with `internal_separator: "|"`
 - Include TSVs in `schemasheets/tsv_input/mixs_converter_inspired_additionals`
+- protect 16s... terms with initial x_
 
 
 ## To do
@@ -133,6 +134,7 @@ Also:
 - Many "Value syntax"es need to be broken into enumerations, but many of those are invalid in some way. Illegal characters, enum/pattern hybrids, etc.
 - Most of the "Definitions" are actually hybrids of `descriptions`, `examples`, `comments` etc.
 - Generate and assign compound class uris to combinations in `gsctools/combination_sheets.py`
+- resume diffs
 
 ## Questions
 
