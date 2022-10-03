@@ -1,16 +1,27 @@
-# {{ gen.name(element) }}
+# Enum: {{ gen.name(element) }}
 
 {{ element.description }}
 
 URI: {{ gen.uri(element) }}
 
+{% if element.permissible_values -%}
 ## Permissible Values
 
-| Value | Meaning | Description | Info |
-| --- | --- | --- | --- |
+| Value | Meaning | Description |
+| --- | --- | --- |
 {% for pv in element.permissible_values.values() -%}
-| {{pv.text}} | {{pv.meaning}} | {{pv.description}} | |
+| {{pv.text}} | {{pv.meaning}} | {{pv.description|enshorten}} |
 {% endfor %}
+{% else %}
+_This is a dynamic enum_
+{% endif %}
 
 {% include "common_metadata.md.jinja2" %}
 
+## LinkML Source
+
+<details>
+```yaml
+{{gen.yaml(element)}}
+```
+</details>
