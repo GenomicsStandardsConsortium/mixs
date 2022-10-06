@@ -34,9 +34,10 @@ URI: {{ gen.uri_link(element) }}
 | {{ gen.link(s) }} | {{ s.name }} | {{ gen.cardinality(s) }} <br/> {{ gen.link(s.range) }} | {{ s.description|enshorten }} |
 {% endfor %}
 
-## Usages
 
 {% if schemaview.usage_index().get(element.name) %}
+## Usages
+
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 {% for usage in schemaview.usage_index().get(element.name) -%}
