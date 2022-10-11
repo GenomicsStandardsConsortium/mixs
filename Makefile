@@ -83,9 +83,11 @@ schemasheets_all: \
 schemasheets_clean \
 schemasheets/logs/database_test_linting_log.tsv \
 schemasheets/generated/database_test_generated.sql \
+schemasheets/example_data/out/database.json schemasheets/example_data/out/database.db \
 validation_expected_pass validation_missing validation_extra bare_jsonschema
 
 schemasheets_clean:
+	rm -rf schemasheets/example_data/out/*
 	rm -rf schemasheets/generated/*
 	rm -rf schemasheets/logs/*
 	rm -rf schemasheets/yaml_out/*
@@ -151,5 +153,14 @@ schemasheets/generated/database_test_generated.yaml
 		--target-class Database $< \
 		--schema $(word 2,$^)
 
-bare_jsonschema: schemasheets/example_data/in/database_missing.json schemasheets/generated/jsonschema/database_test_generated.schema.json
+schemasheets/example_data/out/database.db: \
+schemasheets/generated/database_test_generated.yaml \
+schemasheets/example_data/in/database.yaml
+	$(RUN) linkml-sqldb dump --db $@ --schema $^
+	sqlite3 $@ ".header on" "select * from Mims"
+
+bare_jsonschema: \
+schemasheets/example_data/in/database_missing.json \
+schemasheets/generated/jsonschema/database_test_generated.schema.json
 	- ! jsonschema -i $^
+

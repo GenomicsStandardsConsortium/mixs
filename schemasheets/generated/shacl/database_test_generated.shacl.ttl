@@ -16,59 +16,141 @@ MIXS:Mims a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 32 ;
-            sh:path MIXS:samp_collec_device ],
+            sh:order 40 ;
+            sh:path MIXS:sim_search_meth ],
         [ sh:maxCount 1 ;
-            sh:order 43 ;
-            sh:path MIXS:source_mat_id ],
+            sh:order 26 ;
+            sh:path MIXS:number_contig ],
         [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 16 ;
-            sh:path MIXS:lat_lon ],
+            sh:order 38 ;
+            sh:path MIXS:samp_vol_we_dna_ext ],
         [ sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path MIXS:assembly_qual ],
-        [ sh:maxCount 1 ;
-            sh:order 27 ;
-            sh:path MIXS:pos_cont_type ],
+            sh:order 44 ;
+            sh:path MIXS:tax_class ],
         [ sh:maxCount 1 ;
             sh:order 8 ;
             sh:path MIXS:depth ],
         [ sh:maxCount 1 ;
-            sh:order 9 ;
-            sh:path MIXS:elev ],
+            sh:minCount 1 ;
+            sh:order 11 ;
+            sh:path MIXS:env_local_scale ],
         [ sh:maxCount 1 ;
-            sh:order 34 ;
-            sh:path MIXS:samp_mat_process ],
+            sh:order 23 ;
+            sh:path MIXS:neg_cont_type ],
+        [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path MIXS:annot ],
+        [ sh:maxCount 1 ;
+            sh:order 29 ;
+            sh:path MIXS:ref_biomaterial ],
+        [ sh:maxCount 1 ;
+            sh:order 19 ;
+            sh:path MIXS:lib_screen ],
         [ sh:maxCount 1 ;
             sh:order 18 ;
             sh:path MIXS:lib_reads_seqd ],
         [ sh:maxCount 1 ;
-            sh:order 42 ;
-            sh:path MIXS:sop ],
+            sh:order 0 ;
+            sh:path MIXS:adapters ],
+        [ sh:maxCount 1 ;
+            sh:order 20 ;
+            sh:path MIXS:lib_size ],
+        [ sh:maxCount 1 ;
+            sh:order 22 ;
+            sh:path MIXS:mid ],
+        [ sh:maxCount 1 ;
+            sh:order 24 ;
+            sh:path MIXS:nucl_acid_amp ],
+        [ sh:maxCount 1 ;
+            sh:order 43 ;
+            sh:path MIXS:source_mat_id ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path MIXS:alt ],
+        [ sh:maxCount 1 ;
+            sh:order 17 ;
+            sh:path MIXS:lib_layout ],
+        [ sh:maxCount 1 ;
+            sh:order 32 ;
+            sh:path MIXS:samp_collec_device ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 15 ;
+            sh:path MIXS:geo_loc_name ],
+        [ sh:maxCount 1 ;
+            sh:order 14 ;
+            sh:path MIXS:feat_pred ],
+        [ sh:maxCount 1 ;
+            sh:order 45 ;
+            sh:path MIXS:temp ],
+        [ sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path MIXS:assembly_qual ],
+        [ sh:maxCount 1 ;
+            sh:order 25 ;
+            sh:path MIXS:nucl_acid_ext ],
+        [ sh:maxCount 1 ;
+            sh:order 36 ;
+            sh:path MIXS:samp_size ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 7 ;
             sh:path MIXS:collection_date ],
         [ sh:maxCount 1 ;
-            sh:order 14 ;
-            sh:path MIXS:feat_pred ],
+            sh:minCount 1 ;
+            sh:order 35 ;
+            sh:path MIXS:samp_name ],
         [ sh:maxCount 1 ;
-            sh:order 44 ;
-            sh:path MIXS:tax_class ],
+            sh:order 9 ;
+            sh:path MIXS:elev ],
         [ sh:maxCount 1 ;
-            sh:order 40 ;
-            sh:path MIXS:sim_search_meth ],
+            sh:order 41 ;
+            sh:path MIXS:size_frac ],
         [ sh:maxCount 1 ;
-            sh:order 23 ;
-            sh:path MIXS:neg_cont_type ],
+            sh:minCount 1 ;
+            sh:order 37 ;
+            sh:path MIXS:samp_taxon_id ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 12 ;
             sh:path MIXS:env_medium ],
         [ sh:maxCount 1 ;
-            sh:order 17 ;
-            sh:path MIXS:lib_layout ],
+            sh:minCount 1 ;
+            sh:order 16 ;
+            sh:path MIXS:lat_lon ],
+        [ sh:maxCount 1 ;
+            sh:order 31 ;
+            sh:path MIXS:rel_to_oxygen ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 10 ;
+            sh:path MIXS:env_broad_scale ],
+        [ sh:maxCount 1 ;
+            sh:order 21 ;
+            sh:path MIXS:lib_vector ],
+        [ sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path MIXS:assembly_software ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 39 ;
+            sh:path MIXS:seq_meth ],
+        [ sh:maxCount 1 ;
+            sh:order 34 ;
+            sh:path MIXS:samp_mat_process ],
+        [ sh:maxCount 1 ;
+            sh:order 27 ;
+            sh:path MIXS:pos_cont_type ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 28 ;
+            sh:path MIXS:project_name ],
+        [ sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path MIXS:assembly_name ],
+        [ sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path MIXS:associated_resource ],
         [ sh:maxCount 1 ;
             sh:order 30 ;
             sh:path MIXS:ref_db ],
@@ -76,92 +158,10 @@ MIXS:Mims a sh:NodeShape ;
             sh:order 13 ;
             sh:path MIXS:experimental_factor ],
         [ sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path MIXS:assembly_software ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 10 ;
-            sh:path MIXS:env_broad_scale ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 39 ;
-            sh:path MIXS:seq_meth ],
-        [ sh:maxCount 1 ;
-            sh:order 29 ;
-            sh:path MIXS:ref_biomaterial ],
-        [ sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path MIXS:annot ],
+            sh:order 42 ;
+            sh:path MIXS:sop ],
         [ sh:maxCount 1 ;
             sh:order 33 ;
-            sh:path MIXS:samp_collec_method ],
-        [ sh:maxCount 1 ;
-            sh:order 22 ;
-            sh:path MIXS:mid ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path MIXS:adapters ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 35 ;
-            sh:path MIXS:samp_name ],
-        [ sh:maxCount 1 ;
-            sh:order 36 ;
-            sh:path MIXS:samp_size ],
-        [ sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path MIXS:associated_resource ],
-        [ sh:maxCount 1 ;
-            sh:order 24 ;
-            sh:path MIXS:nucl_acid_amp ],
-        [ sh:maxCount 1 ;
-            sh:order 45 ;
-            sh:path MIXS:temp ],
-        [ sh:maxCount 1 ;
-            sh:order 41 ;
-            sh:path MIXS:size_frac ],
-        [ sh:maxCount 1 ;
-            sh:order 19 ;
-            sh:path MIXS:lib_screen ],
-        [ sh:maxCount 1 ;
-            sh:order 21 ;
-            sh:path MIXS:lib_vector ],
-        [ sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path MIXS:assembly_name ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 37 ;
-            sh:path MIXS:samp_taxon_id ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 28 ;
-            sh:path MIXS:project_name ],
-        [ sh:maxCount 1 ;
-            sh:order 38 ;
-            sh:path MIXS:samp_vol_we_dna_ext ],
-        [ sh:maxCount 1 ;
-            sh:order 25 ;
-            sh:path MIXS:nucl_acid_ext ],
-        [ sh:maxCount 1 ;
-            sh:order 26 ;
-            sh:path MIXS:number_contig ],
-        [ sh:maxCount 1 ;
-            sh:order 20 ;
-            sh:path MIXS:lib_size ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path MIXS:alt ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 15 ;
-            sh:path MIXS:geo_loc_name ],
-        [ sh:maxCount 1 ;
-            sh:order 31 ;
-            sh:path MIXS:rel_to_oxygen ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 11 ;
-            sh:path MIXS:env_local_scale ] ;
+            sh:path MIXS:samp_collec_method ] ;
     sh:targetClass MIXS:Mims .
 
