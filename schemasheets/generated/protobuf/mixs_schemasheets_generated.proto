@@ -10,7 +10,7 @@ message Mims
   string assemblyName = 0
   string assemblyQual = 0
   string assemblySoftware = 0
-  string associatedResource = 0
+ repeated  string associatedResource = 0
   string collectionDate = 0
   string depth = 0
   string elev = 0
@@ -46,8 +46,8 @@ message Mims
   string seqMeth = 0
   string simSearchMeth = 0
   string sizeFrac = 0
-  string sop = 0
-  string sourceMatId = 0
+ repeated  string sop = 0
+ repeated  string sourceMatId = 0
   string taxClass = 0
   string temp = 0
  }

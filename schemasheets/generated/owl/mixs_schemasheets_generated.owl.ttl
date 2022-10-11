@@ -1,0 +1,3732 @@
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix MIXS: <https://example.com/mixs> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+MIXS: a owl:Ontology ;
+    rdfs:label "MIXS" ;
+    IAO:0000700 MIXS:ChecklistClass,
+        MIXS:Database ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    linkml:generation_date "2022-10-11T19:54:46" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "mixs_schemasheets_generated.yaml" ;
+    linkml:source_file_date "2022-10-11T19:54:10" ;
+    linkml:source_file_size 254550 .
+
+MIXS:MigsBa a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MigsBa" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000039 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000024 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000020 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000063 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000025 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000034 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000043 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000041 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000057 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000058 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000059 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000062 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000053 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000027 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000048 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000031 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000042 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000029 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000056 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000069 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000070 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000040 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000015 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000028 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000003 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000061 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000064 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000022 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000032 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000023 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000060 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000030 ],
+        MIXS:ChecklistClass,
+        linkml:mixin ;
+    skos:exactMatch MIXS:0010003 ;
+    MIXS:legacy_checklist_name "migs_ba" .
+
+MIXS:MigsEu a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MigsEu" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000053 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000056 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000025 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000064 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000040 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000023 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000070 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000069 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000059 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000024 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000058 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000003 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000027 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000032 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000020 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000042 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000060 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000022 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000048 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000061 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000033 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000029 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000063 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000021 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000043 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000030 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000057 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000028 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000031 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000041 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000039 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000062 ],
+        MIXS:ChecklistClass,
+        linkml:mixin ;
+    skos:exactMatch MIXS:0010002 ;
+    MIXS:legacy_checklist_name "migs_eu" .
+
+MIXS:MigsOrg a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MigsOrg" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000041 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000070 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000061 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000057 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000024 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000043 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000062 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000069 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000060 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000040 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000042 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000064 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000063 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000053 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000025 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000058 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000039 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000003 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000020 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000056 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000048 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000023 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000059 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        MIXS:ChecklistClass,
+        linkml:mixin ;
+    skos:exactMatch MIXS:0010006 ;
+    MIXS:legacy_checklist_name "migs_org" .
+
+MIXS:MigsPl a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MigsPl" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000030 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000056 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000062 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000020 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000025 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000024 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000058 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000064 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000033 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000059 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000063 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000041 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000039 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000070 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000061 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000034 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000003 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000060 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000057 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000053 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000042 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000040 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000043 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000069 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000029 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000048 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        MIXS:ChecklistClass,
+        linkml:mixin ;
+    skos:exactMatch MIXS:0010004 ;
+    MIXS:legacy_checklist_name "migs_pl" .
+
+MIXS:MigsVi a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MigsVi" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000022 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000029 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000053 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000025 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000031 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000042 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000058 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000061 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000033 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000043 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000027 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000024 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000060 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000056 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000070 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000041 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000059 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000069 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000040 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000020 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000034 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000064 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000048 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000036 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000057 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000063 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000039 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000003 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000062 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000030 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000028 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        MIXS:ChecklistClass,
+        linkml:mixin ;
+    skos:exactMatch MIXS:0010005 ;
+    MIXS:legacy_checklist_name "migs_vi" .
+
+MIXS:Mimag a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Mimag" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000066 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000039 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000048 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000063 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000047 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000077 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000061 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000071 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000062 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000005 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000017 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000058 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000059 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000064 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000015 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000067 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000080 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000025 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000041 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000053 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000040 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000072 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000057 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000078 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000069 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000060 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000042 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000074 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000073 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000056 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000068 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000079 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000065 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000043 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000070 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        MIXS:ChecklistClass,
+        linkml:mixin ;
+    skos:exactMatch MIXS:0010011 ;
+    MIXS:legacy_checklist_name "mimag" .
+
+MIXS:MimarksC a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MimarksC" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000046 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000032 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000015 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000028 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000052 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000049 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000020 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000003 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000045 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000023 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000044 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000051 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        MIXS:ChecklistClass,
+        linkml:mixin ;
+    skos:exactMatch MIXS:0010009 ;
+    MIXS:legacy_checklist_name "mimarks_c" .
+
+MIXS:MimarksS a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MimarksS" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000052 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000042 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000051 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000041 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000045 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000043 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000039 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000015 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000048 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000058 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000044 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000049 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000047 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000017 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000040 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000046 ],
+        MIXS:ChecklistClass,
+        linkml:mixin ;
+    skos:exactMatch MIXS:0010008 ;
+    MIXS:legacy_checklist_name "mimarks_s" .
+
+MIXS:Misag a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Misag" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000025 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000048 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000073 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000056 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000060 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000066 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000072 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000043 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000061 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000065 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000075 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000074 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000068 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000058 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000005 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000059 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000069 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000057 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000054 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000076 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000047 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000017 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000071 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000015 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000006 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000040 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000067 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000041 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000064 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000070 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000039 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000055 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000053 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000042 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000063 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000062 ],
+        MIXS:ChecklistClass,
+        linkml:mixin ;
+    skos:exactMatch MIXS:0010010 ;
+    MIXS:legacy_checklist_name "misag" .
+
+MIXS:Miuvig a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Miuvig" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000087 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000088 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000063 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000043 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000055 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000029 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000027 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000085 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000077 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000082 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000053 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000024 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000069 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000076 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000059 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000062 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000039 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000041 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000083 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000068 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000080 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000028 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000061 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000060 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000057 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000070 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000047 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000078 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000036 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000089 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000067 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000054 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000048 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000040 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000006 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000071 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000064 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000056 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000042 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000086 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000035 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000079 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000030 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000025 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000017 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000075 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000084 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000058 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000081 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000031 ],
+        MIXS:ChecklistClass,
+        linkml:mixin ;
+    skos:exactMatch MIXS:0010012 ;
+    MIXS:legacy_checklist_name "miuvig" .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+MIXS:Database a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Database" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom MIXS:Mims ;
+            owl:onProperty MIXS:mims_set ] .
+
+MIXS:Mims a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Mims" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000037 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000057 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000001 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000060 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000042 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000062 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000038 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001225 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001321 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000063 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000040 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000043 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000064 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000093 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000113 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000039 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000025 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000012 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001320 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000094 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000014 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000090 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000009 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000010 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000018 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000011 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000026 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000050 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty MIXS:0000091 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000061 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000092 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000017 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000041 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000111 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000047 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001322 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000002 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000048 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000016 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000059 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000008 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0001107 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000056 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000013 ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000015 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:0000058 ],
+        MIXS:ChecklistClass ;
+    skos:exactMatch MIXS:0010007 ;
+    MIXS:legacy_checklist_name "mims" .
+
+MIXS:mims_set a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mims_set" ;
+    rdfs:range linkml:String .
+
+MIXS:0000021 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ploidy" ;
+    dcterms:title "ploidy" ;
+    rdfs:range linkml:String ;
+    skos:definition "The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO" ;
+    skos:exactMatch MIXS:0000021 ;
+    MIXS:expected_value "PATO" ;
+    MIXS:structured_comment_name "ploidy" ;
+    MIXS:value_syntax "{termLabel} {[termID]}" ;
+    linkml:examples "Example(value='allopolyploidy [PATO:0001379]', description=None)" .
+
+MIXS:0000035 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "source_uvig" ;
+    dcterms:title "source of UViGs" ;
+    rdfs:range linkml:String ;
+    skos:definition "Type of dataset from which the UViG was obtained" ;
+    skos:exactMatch MIXS:0000035 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "source_uvig" ;
+    MIXS:value_syntax "[metagenome (not viral targeted)|viral fraction metagenome (virome)|sequence-targeted metagenome|metatranscriptome (not viral targeted)|viral fraction RNA metagenome (RNA virome)|sequence-targeted RNA metagenome|microbial single amplified genome (SAG)|viral single amplified genome (vSAG)|isolate microbial genome|other]" ;
+    linkml:examples "Example(value='viral fraction metagenome (virome)', description=None)" .
+
+MIXS:0000081 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "vir_ident_software" ;
+    dcterms:title "viral identification software" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tool(s) used for the identification of UViG as a viral genome, software or protocol name including version number, parameters, and cutoffs used" ;
+    skos:exactMatch MIXS:0000081 ;
+    MIXS:expected_value "software name, version and relevant parameters" ;
+    MIXS:structured_comment_name "vir_ident_software" ;
+    MIXS:value_syntax "{software};{version};{parameters}" ;
+    linkml:examples "Example(value='VirSorter; 1.0.4; Virome database, category 2', description=None)" .
+
+MIXS:0000082 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pred_genome_type" ;
+    dcterms:title "predicted genome type" ;
+    rdfs:range linkml:String ;
+    skos:definition "Type of genome predicted for the UViG" ;
+    skos:exactMatch MIXS:0000082 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "pred_genome_type" ;
+    MIXS:value_syntax "[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]" ;
+    linkml:examples "Example(value='dsDNA', description=None)" .
+
+MIXS:0000083 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pred_genome_struc" ;
+    dcterms:title "predicted genome structure" ;
+    rdfs:range linkml:String ;
+    skos:definition "Expected structure of the viral genome" ;
+    skos:exactMatch MIXS:0000083 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "pred_genome_struc" ;
+    MIXS:value_syntax "[segmented|non-segmented|undetermined]" ;
+    linkml:examples "Example(value='non-segmented', description=None)" .
+
+MIXS:0000084 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "detec_type" ;
+    dcterms:title "detection type" ;
+    rdfs:range linkml:String ;
+    skos:definition "Type of UViG detection" ;
+    skos:exactMatch MIXS:0000084 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "detec_type" ;
+    MIXS:value_syntax "[independent sequence (UViG)|provirus (UpViG)]" ;
+    linkml:examples "Example(value='independent sequence (UViG)', description=None)" .
+
+MIXS:0000085 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "otu_class_appr" ;
+    dcterms:title "OTU classification approach" ;
+    rdfs:range linkml:String ;
+    skos:definition "Cutoffs and approach used when clustering “species-level” OTUs. Note that results from standard 95% ANI / 85% AF clustering should be provided alongside OTUS defined from another set of thresholds, even if the latter are the ones primarily used during the analysis" ;
+    skos:exactMatch MIXS:0000085 ;
+    MIXS:expected_value "cutoffs and method used" ;
+    MIXS:structured_comment_name "otu_class_appr" ;
+    MIXS:value_syntax "{ANI cutoff};{AF cutoff};{clustering method}" ;
+    linkml:examples "Example(value='95% ANI;85% AF; greedy incremental clustering', description=None)" .
+
+MIXS:0000086 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "otu_seq_comp_appr" ;
+    dcterms:title "OTU sequence comparison approach" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tool and thresholds used to compare sequences when computing \"species-level\" OTUs" ;
+    skos:exactMatch MIXS:0000086 ;
+    MIXS:expected_value "software name, version and relevant parameters" ;
+    MIXS:structured_comment_name "otu_seq_comp_appr" ;
+    MIXS:value_syntax "{software};{version};{parameters}" ;
+    linkml:examples "Example(value='blastn;2.6.0+;e-value cutoff: 0.001', description=None)" .
+
+MIXS:0000087 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "otu_db" ;
+    dcterms:title "OTU database" ;
+    rdfs:range linkml:String ;
+    skos:definition "Reference database (i.e. sequences not generated as part of the current study) used to cluster new genomes in \"species-level\" OTUs, if any" ;
+    skos:exactMatch MIXS:0000087 ;
+    MIXS:expected_value "database and version" ;
+    MIXS:structured_comment_name "otu_db" ;
+    MIXS:value_syntax "{database};{version}" ;
+    linkml:examples "Example(value='NCBI Viral RefSeq;83', description=None)" .
+
+MIXS:0000088 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "host_pred_appr" ;
+    dcterms:title "host prediction approach" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tool or approach used for host prediction" ;
+    skos:exactMatch MIXS:0000088 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "host_pred_appr" ;
+    MIXS:value_syntax "[provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co-occurrence|combination|other]" ;
+    linkml:examples "Example(value='CRISPR spacer match', description=None)" .
+
+MIXS:0000089 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "host_pred_est_acc" ;
+    dcterms:title "host prediction estimated accuracy" ;
+    rdfs:range linkml:String ;
+    skos:definition "For each tool or approach used for host prediction, estimated false discovery rates should be included, either computed de novo or from the literature" ;
+    skos:exactMatch MIXS:0000089 ;
+    MIXS:expected_value "false discovery rate" ;
+    MIXS:structured_comment_name "host_pred_est_acc" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='CRISPR spacer match: 0 or 1 mismatches, estimated 8% FDR at the host genus rank (Edwards et al. 2016 doi:10.1093/femsre/fuv048)', description=None)" .
+
+MIXS:0000005 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contam_screen_input" ;
+    dcterms:title "contamination screening input" ;
+    rdfs:range linkml:String ;
+    skos:definition "The type of sequence data used as input" ;
+    skos:exactMatch MIXS:0000005 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "contam_screen_input" ;
+    MIXS:value_syntax "[reads| contigs]" ;
+    linkml:examples "Example(value='contigs', description=None)" .
+
+MIXS:0000006 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "wga_amp_kit" ;
+    dcterms:title "WGA amplification kit" ;
+    rdfs:range linkml:String ;
+    skos:definition "Kit used to amplify genomic DNA in preparation for sequencing" ;
+    skos:exactMatch MIXS:0000006 ;
+    MIXS:expected_value "kit name" ;
+    MIXS:structured_comment_name "wga_amp_kit" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='qiagen repli-g', description=None)" .
+
+MIXS:0000036 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "virus_enrich_appr" ;
+    dcterms:title "virus enrichment approach" ;
+    rdfs:range linkml:String ;
+    skos:definition "List of approaches used to enrich the sample for viruses, if any" ;
+    skos:exactMatch MIXS:0000036 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "virus_enrich_appr" ;
+    MIXS:value_syntax "[filtration|ultrafiltration|centrifugation|ultracentrifugation|PEG Precipitation|FeCl Precipitation|CsCl density gradient|DNAse|RNAse|targeted sequence capture|other|none]" ;
+    linkml:examples "Example(value='filtration + FeCl Precipitation + ultracentrifugation + DNAse', description=None)" .
+
+MIXS:0000044 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "target_gene" ;
+    dcterms:title "target gene" ;
+    rdfs:range linkml:String ;
+    skos:definition "Targeted gene or locus name for marker gene studies" ;
+    skos:exactMatch MIXS:0000044 ;
+    MIXS:expected_value "gene name" ;
+    MIXS:structured_comment_name "target_gene" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='16S rRNA, 18S rRNA, nif, amoA, rpo', description=None)" .
+
+MIXS:0000045 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "target_subfragment" ;
+    dcterms:title "target subfragment" ;
+    rdfs:range linkml:String ;
+    skos:definition "Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on 16S rRNA" ;
+    skos:exactMatch MIXS:0000045 ;
+    MIXS:expected_value "gene fragment name" ;
+    MIXS:structured_comment_name "target_subfragment" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='V6, V9, ITS', description=None)" .
+
+MIXS:0000046 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pcr_primers" ;
+    dcterms:title "pcr primers" ;
+    rdfs:range linkml:String ;
+    skos:definition "PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single PCR reaction. The primer sequence should be reported in uppercase letters" ;
+    skos:exactMatch MIXS:0000046 ;
+    MIXS:expected_value "FWD: forward primer sequence;REV:reverse primer sequence" ;
+    MIXS:structured_comment_name "pcr_primers" ;
+    MIXS:value_syntax "FWD:{dna};REV:{dna}" ;
+    linkml:examples "Example(value='FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT', description=None)" .
+
+MIXS:0000049 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pcr_cond" ;
+    dcterms:title "pcr conditions" ;
+    rdfs:range linkml:String ;
+    skos:definition "Description of reaction conditions and components of PCR in the form of 'initial denaturation:94degC_1.5min; annealing=...'" ;
+    skos:exactMatch MIXS:0000049 ;
+    MIXS:expected_value "initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles" ;
+    MIXS:structured_comment_name "pcr_cond" ;
+    MIXS:value_syntax "initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles" ;
+    linkml:examples "Example(value='initial denaturation:94_3;annealing:50_1;elongation:72_1.5;final elongation:72_10;35', description=None)" .
+
+MIXS:0000051 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "seq_quality_check" ;
+    dcterms:title "sequence quality check" ;
+    rdfs:range linkml:String ;
+    skos:definition "Indicate if the sequence has been called by automatic systems (none) or undergone a manual editing procedure (e.g. by inspecting the raw data or chromatograms). Applied only for sequences that are not submitted to SRA,ENA or DRA" ;
+    skos:exactMatch MIXS:0000051 ;
+    MIXS:expected_value "none or manually edited" ;
+    MIXS:structured_comment_name "seq_quality_check" ;
+    MIXS:value_syntax "[none|manually edited]" ;
+    linkml:examples "Example(value='none', description=None)" .
+
+MIXS:0000052 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "chimera_check" ;
+    dcterms:title "chimera check software" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tool(s) used for chimera checking, including version number and parameters, to discover and remove chimeric sequences. A chimeric sequence is comprised of two or more phylogenetically distinct parent sequences." ;
+    skos:exactMatch MIXS:0000052 ;
+    MIXS:expected_value "name and version of software, parameters used" ;
+    MIXS:structured_comment_name "chimera_check" ;
+    MIXS:value_syntax "{software};{version};{parameters}" ;
+    linkml:examples "Example(value='uchime;v4.1;default parameters', description=None)" .
+
+MIXS:0000054 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "single_cell_lysis_prot" ;
+    dcterms:title "single cell or viral particle lysis kit protocol" ;
+    rdfs:range linkml:String ;
+    skos:definition "Name of the kit or standard protocol used for cell(s) or particle(s) lysis" ;
+    skos:exactMatch MIXS:0000054 ;
+    MIXS:expected_value "kit, protocol name" ;
+    MIXS:structured_comment_name "single_cell_lysis_prot" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='ambion single cell lysis kit', description=None)" .
+
+MIXS:0000055 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "wga_amp_appr" ;
+    dcterms:title "WGA amplification approach" ;
+    rdfs:range linkml:String ;
+    skos:definition "Method used to amplify genomic DNA in preparation for sequencing" ;
+    skos:exactMatch MIXS:0000055 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "wga_amp_appr" ;
+    MIXS:value_syntax "[pcr based|mda based]" ;
+    linkml:examples "Example(value='mda based', description=None)" .
+
+MIXS:0000065 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_16s_recover" ;
+    dcterms:title "16S recovered" ;
+    rdfs:range linkml:String ;
+    skos:definition "Can a 16S gene be recovered from the submitted SAG or MAG?" ;
+    skos:exactMatch MIXS:0000065 ;
+    MIXS:expected_value "boolean" ;
+    MIXS:structured_comment_name "16s_recover" ;
+    MIXS:value_syntax "{boolean}" ;
+    linkml:examples "Example(value='yes', description=None)" .
+
+MIXS:0000066 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_16s_recover_software" ;
+    dcterms:title "16S recovery software" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tools used for 16S rRNA gene extraction" ;
+    skos:exactMatch MIXS:0000066 ;
+    MIXS:expected_value "names and versions of software(s), parameters used" ;
+    MIXS:structured_comment_name "16s_recover_software" ;
+    MIXS:value_syntax "{software};{version};{parameters}" ;
+    linkml:examples "Example(value='rambl;v2;default parameters', description=None)" .
+
+MIXS:0000072 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contam_score" ;
+    dcterms:title "contamination score" ;
+    rdfs:range linkml:String ;
+    skos:definition "The contamination score is based on the fraction of single-copy genes that are observed more than once in a query genome. The following scores are acceptable for; High Quality Draft: < 5%, Medium Quality Draft: < 10%, Low Quality Draft: < 10%. Contamination must be below 5% for a SAG or MAG to be deposited into any of the public databases" ;
+    skos:exactMatch MIXS:0000072 ;
+    MIXS:expected_value "value" ;
+    MIXS:structured_comment_name "contam_score" ;
+    MIXS:value_syntax "{float} percentage" ;
+    linkml:examples "Example(value='0.01', description=None)" .
+
+MIXS:0000073 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contam_screen_param" ;
+    dcterms:title "contamination screening parameters" ;
+    rdfs:range linkml:String ;
+    skos:definition "Specific parameters used in the decontamination sofware, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer" ;
+    skos:exactMatch MIXS:0000073 ;
+    MIXS:expected_value "enumeration;value or name" ;
+    MIXS:structured_comment_name "contam_screen_param" ;
+    MIXS:value_syntax "[ref db|kmer|coverage|combination];{text|integer}" ;
+    linkml:examples "Example(value='kmer', description=None)" .
+
+MIXS:0000074 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "decontam_software" ;
+    dcterms:title "decontamination software" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tool(s) used in contamination screening" ;
+    skos:exactMatch MIXS:0000074 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "decontam_software" ;
+    MIXS:value_syntax "[checkm/refinem|anvi'o|prodege|bbtools:decontaminate.sh|acdc|combination]" ;
+    linkml:examples "Example(value=\"anvi'o\", description=None)" .
+
+MIXS:0000075 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sort_tech" ;
+    dcterms:title "sorting technology" ;
+    rdfs:range linkml:String ;
+    skos:definition "Method used to sort/isolate cells or particles of interest" ;
+    skos:exactMatch MIXS:0000075 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "sort_tech" ;
+    MIXS:value_syntax "[flow cytometric cell sorting|microfluidics|lazer-tweezing|optical manipulation|micromanipulation|other]" ;
+    linkml:examples "Example(value='optical manipulation', description=None)" .
+
+MIXS:0000076 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "single_cell_lysis_appr" ;
+    dcterms:title "single cell or viral particle lysis approach" ;
+    rdfs:range linkml:String ;
+    skos:definition "Method used to free DNA from interior of the cell(s) or particle(s)" ;
+    skos:exactMatch MIXS:0000076 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "single_cell_lysis_appr" ;
+    MIXS:value_syntax "[chemical|enzymatic|physical|combination]" ;
+    linkml:examples "Example(value='enzymatic', description=None)" .
+
+MIXS:0000077 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "bin_param" ;
+    dcterms:title "binning parameters" ;
+    rdfs:range linkml:String ;
+    skos:definition "The parameters that have been applied during the extraction of genomes from metagenomic datasets" ;
+    skos:exactMatch MIXS:0000077 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "bin_param" ;
+    MIXS:value_syntax "[homology search|kmer|coverage|codon usage|combination]" ;
+    linkml:examples "Example(value='coverage and kmer', description=None)" .
+
+MIXS:0000078 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "bin_software" ;
+    dcterms:title "binning software" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tool(s) used for the extraction of genomes from metagenomic datasets, where possible include a product ID (PID) of the tool(s) used." ;
+    skos:exactMatch MIXS:0000078 ;
+    MIXS:expected_value "names and versions of software(s) used" ;
+    MIXS:structured_comment_name "bin_software" ;
+    MIXS:value_syntax "{software};{version}{PID}" ;
+    linkml:examples "Example(value='MetaCluster-TA (RRID:SCR_004599), MaxBin (biotools:maxbin)', description=None)" .
+
+MIXS:0000079 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "reassembly_bin" ;
+    dcterms:title "reassembly post binning" ;
+    rdfs:range linkml:String ;
+    skos:definition "Has an assembly been performed on a genome bin extracted from a metagenomic assembly?" ;
+    skos:exactMatch MIXS:0000079 ;
+    MIXS:expected_value "boolean" ;
+    MIXS:structured_comment_name "reassembly_bin" ;
+    MIXS:value_syntax "{boolean}" ;
+    linkml:examples "Example(value='no', description=None)" .
+
+MIXS:0000080 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mag_cov_software" ;
+    dcterms:title "MAG coverage software" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tool(s) used to determine the genome coverage if coverage is used as a binning parameter in the extraction of genomes from metagenomic datasets" ;
+    skos:exactMatch MIXS:0000080 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "mag_cov_software" ;
+    MIXS:value_syntax "[bwa|bbmap|bowtie|other]" ;
+    linkml:examples "Example(value='bbmap', description=None)" .
+
+MIXS:0000022 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "num_replicons" ;
+    dcterms:title "number of replicons" ;
+    rdfs:range linkml:String ;
+    skos:definition "Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote" ;
+    skos:exactMatch MIXS:0000022 ;
+    MIXS:expected_value "for eukaryotes and bacteria: chromosomes (haploid count); for viruses: segments" ;
+    MIXS:structured_comment_name "num_replicons" ;
+    MIXS:value_syntax "{integer}" ;
+    linkml:examples "Example(value='2', description=None)" .
+
+MIXS:0000032 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "trophic_level" ;
+    dcterms:title "trophic level" ;
+    rdfs:range linkml:String ;
+    skos:definition "Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph)" ;
+    skos:exactMatch MIXS:0000032 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "trophic_level" ;
+    MIXS:value_syntax "[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]" ;
+    linkml:examples "Example(value='heterotroph', description=None)" .
+
+MIXS:0000033 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "propagation" ;
+    dcterms:title "propagation" ;
+    rdfs:range linkml:String ;
+    skos:definition "The type of reproduction from the parent stock. Values for this field is specific to different taxa. For phage or virus: lytic/lysogenic/temperate/obligately lytic. For plasmids: incompatibility group. For eukaryotes: sexual/asexual." ;
+    skos:exactMatch MIXS:0000033 ;
+    MIXS:expected_value "for virus: lytic, lysogenic, temperate, obligately lytic; for plasmid: incompatibility group; for eukaryote: asexual, sexual; other more specific values (e.g., incompatibility group) are allowed" ;
+    MIXS:structured_comment_name "propagation" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='lytic', description=None)" .
+
+MIXS:0000034 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "encoded_traits" ;
+    dcterms:title "encoded traits" ;
+    rdfs:range linkml:String ;
+    skos:definition "Should include key traits like antibiotic resistance or xenobiotic degradation phenotypes for plasmids, converting genes for phage" ;
+    skos:exactMatch MIXS:0000034 ;
+    MIXS:expected_value "for plasmid: antibiotic resistance; for phage: converting genes" ;
+    MIXS:structured_comment_name "encoded_traits" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='beta-lactamase class A', description=None)" .
+
+MIXS:0000067 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "trnas" ;
+    dcterms:title "number of standard tRNAs extracted" ;
+    rdfs:range linkml:String ;
+    skos:definition "The total number of tRNAs identified from the SAG or MAG" ;
+    skos:exactMatch MIXS:0000067 ;
+    MIXS:expected_value "value from 0-21" ;
+    MIXS:structured_comment_name "trnas" ;
+    MIXS:value_syntax "{integer}" ;
+    linkml:examples "Example(value='18', description=None)" .
+
+MIXS:0000068 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "trna_ext_software" ;
+    dcterms:title "tRNA extraction software" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tools used for tRNA identification" ;
+    skos:exactMatch MIXS:0000068 ;
+    MIXS:expected_value "names and versions of software(s), parameters used" ;
+    MIXS:structured_comment_name "trna_ext_software" ;
+    MIXS:value_syntax "{software};{version};{parameters}" ;
+    linkml:examples "Example(value='infernal;v2;default parameters', description=None)" .
+
+MIXS:0000071 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "compl_appr" ;
+    dcterms:title "completeness approach" ;
+    rdfs:range linkml:String ;
+    skos:definition "The approach used to determine the completeness of a given genomic assembly, which would typically make use of a set of conserved marker genes or a closely related reference genome. For UViG completeness, include reference genome or group used, and contig feature suggesting a complete genome" ;
+    skos:exactMatch MIXS:0000071 ;
+    MIXS:expected_value "text" ;
+    MIXS:structured_comment_name "compl_appr" ;
+    MIXS:value_syntax "[marker gene|reference based|other]" ;
+    linkml:examples "Example(value='other: UViG length compared to the average length of reference genomes from the P22virus genus (NCBI RefSeq v83)', description=None)" .
+
+MIXS:0000023 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "extrachrom_elements" ;
+    dcterms:title "extrachromosomal elements" ;
+    rdfs:range linkml:String ;
+    skos:definition "Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids)" ;
+    skos:exactMatch MIXS:0000023 ;
+    MIXS:expected_value "number of extrachromosmal elements" ;
+    MIXS:structured_comment_name "extrachrom_elements" ;
+    MIXS:value_syntax "{integer}" ;
+    linkml:examples "Example(value='5', description=None)" .
+
+MIXS:0000027 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pathogenicity" ;
+    dcterms:title "known pathogenicity" ;
+    rdfs:range linkml:String ;
+    skos:definition "To what is the entity pathogenic" ;
+    skos:exactMatch MIXS:0000027 ;
+    MIXS:expected_value "names of organisms that the entity is pathogenic to" ;
+    MIXS:migs_id "MIGS-14" ;
+    MIXS:structured_comment_name "pathogenicity" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='human, animal, plant, fungi, bacteria', description=None)" .
+
+MIXS:0000031 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "host_disease_stat" ;
+    dcterms:title "host disease status" ;
+    rdfs:range linkml:String ;
+    skos:definition "List of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org, non-human host diseases are free text" ;
+    skos:exactMatch MIXS:0000031 ;
+    MIXS:expected_value "disease name or Disease Ontology term" ;
+    MIXS:structured_comment_name "host_disease_stat" ;
+    MIXS:value_syntax "{termLabel} {[termID]}|{text}" ;
+    linkml:examples "Example(value='rabies [DOID:11260]', description=None)" .
+
+MIXS:0000017 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "size_frac" ;
+    dcterms:title "size fraction selected" ;
+    rdfs:range linkml:String ;
+    skos:definition "Filtering pore size used in sample preparation" ;
+    skos:exactMatch MIXS:0000017 ;
+    MIXS:expected_value "filter size value range" ;
+    MIXS:structured_comment_name "size_frac" ;
+    MIXS:value_syntax "{float}-{float} {unit}" ;
+    linkml:examples "Example(value='0-0.22 micrometer', description=None)" .
+
+MIXS:0000028 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "biotic_relationship" ;
+    dcterms:title "observed biotic relationship" ;
+    rdfs:range linkml:String ;
+    skos:definition "Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object" ;
+    skos:exactMatch MIXS:0000028 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:migs_id "MIGS-15" ;
+    MIXS:structured_comment_name "biotic_relationship" ;
+    MIXS:value_syntax "[free living|parasitism|commensalism|symbiotic|mutualism]" ;
+    linkml:examples "Example(value='free living', description=None)" .
+
+MIXS:0000029 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "specific_host" ;
+    dcterms:title "host scientific name" ;
+    rdfs:range linkml:String ;
+    skos:definition "Report the host's taxonomic name and/or NCBI taxonomy ID." ;
+    skos:exactMatch MIXS:0000029 ;
+    MIXS:expected_value "host scientific name, taxonomy ID" ;
+    MIXS:migs_id "MIGS-16" ;
+    MIXS:structured_comment_name "specific_host" ;
+    MIXS:value_syntax "{text}|{NCBI taxid}" ;
+    linkml:examples "Example(value='Homo sapiens and/or 9606', description=None)" .
+
+MIXS:0000030 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "host_spec_range" ;
+    dcterms:title "host specificity or range" ;
+    rdfs:range linkml:String ;
+    skos:definition "The range and diversity of host species that an organism is capable of infecting, defined by NCBI taxonomy identifier." ;
+    skos:exactMatch MIXS:0000030 ;
+    MIXS:expected_value "NCBI taxid" ;
+    MIXS:structured_comment_name "host_spec_range" ;
+    MIXS:value_syntax "{integer}" ;
+    linkml:examples "Example(value='9606', description=None)" .
+
+MIXS:0000047 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mid" ;
+    dcterms:title "multiplex identifiers" ;
+    rdfs:range linkml:String ;
+    skos:definition "Molecular barcodes, called Multiplex Identifiers (MIDs), that are used to specifically tag unique samples in a sequencing run. Sequence should be reported in uppercase letters" ;
+    skos:exactMatch MIXS:0000047 ;
+    MIXS:expected_value "multiplex identifier sequence" ;
+    MIXS:structured_comment_name "mid" ;
+    MIXS:value_syntax "{dna}" ;
+    linkml:examples "Example(value='GTGAATAT', description=None)" .
+
+MIXS:0000003 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "isol_growth_condt" ;
+    dcterms:title "isolation and growth condition" ;
+    rdfs:range linkml:String ;
+    skos:definition "Publication reference in the form of pubmed ID (pmid), digital object identifier (doi) or url for isolation and growth condition specifications of the organism/material" ;
+    skos:exactMatch MIXS:0000003 ;
+    MIXS:expected_value "PMID,DOI or URL" ;
+    MIXS:migs_id "MIGS-23" ;
+    MIXS:structured_comment_name "isol_growth_condt" ;
+    MIXS:value_syntax "{PMID}|{DOI}|{URL}" ;
+    linkml:examples "Example(value='doi: 10.1016/j.syapm.2018.01.009', description=None)" .
+
+MIXS:0000015 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rel_to_oxygen" ;
+    dcterms:title "relationship to oxygen" ;
+    rdfs:range linkml:String ;
+    skos:definition "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments" ;
+    skos:exactMatch MIXS:0000015 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:migs_id "MIGS-22" ;
+    MIXS:structured_comment_name "rel_to_oxygen" ;
+    MIXS:value_syntax "[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|obligate anaerobe]" ;
+    linkml:examples "Example(value='aerobe', description=None)" .
+
+MIXS:0000020 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "subspecf_gen_lin" ;
+    dcterms:title "subspecific genetic lineage" ;
+    rdfs:range linkml:String ;
+    skos:definition "Information about the genetic distinctness of the sequenced organism below the subspecies level, e.g., serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group I plasmid. Subspecies should not be recorded in this term, but in the NCBI taxonomy. Supply both the lineage name and the lineage rank separated by a colon, e.g., biovar:abc123." ;
+    skos:exactMatch MIXS:0000020 ;
+    MIXS:expected_value "Genetic lineage below lowest rank of NCBI taxonomy, which is subspecies, e.g. serovar, biotype, ecotype, variety, cultivar." ;
+    MIXS:structured_comment_name "subspecf_gen_lin" ;
+    MIXS:value_syntax "{rank name}:{text}" ;
+    linkml:examples "Example(value='serovar:Newport', description=None)" .
+
+MIXS:0000024 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "estimated_size" ;
+    dcterms:title "estimated size" ;
+    rdfs:range linkml:String ;
+    skos:definition "The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period." ;
+    skos:exactMatch MIXS:0000024 ;
+    MIXS:expected_value "number of base pairs" ;
+    MIXS:structured_comment_name "estimated_size" ;
+    MIXS:value_syntax "{integer} bp" ;
+    linkml:examples "Example(value='300000 bp', description=None)" .
+
+MIXS:0000053 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "tax_ident" ;
+    dcterms:title "taxonomic identity marker" ;
+    rdfs:range linkml:String ;
+    skos:definition "The phylogenetic marker(s) used to assign an organism name to the SAG or MAG" ;
+    skos:exactMatch MIXS:0000053 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "tax_ident" ;
+    MIXS:value_syntax "[16S rRNA gene|multi-marker approach|other]" ;
+    linkml:examples "Example(value='other: rpoB gene', description=None)" .
+
+MIXS:0000069 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "compl_score" ;
+    dcterms:title "completeness score" ;
+    rdfs:range linkml:String ;
+    skos:definition "Completeness score is typically based on either the fraction of markers found as compared to a database or the percent of a genome found as compared to a closely related reference genome. High Quality Draft: >90%, Medium Quality Draft: >50%, and Low Quality Draft: < 50% should have the indicated completeness scores" ;
+    skos:exactMatch MIXS:0000069 ;
+    MIXS:expected_value "quality;percent completeness" ;
+    MIXS:structured_comment_name "compl_score" ;
+    MIXS:value_syntax "[high|med|low];{percentage}" ;
+    linkml:examples "Example(value='med;60%', description=None)" .
+
+MIXS:0000070 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "compl_software" ;
+    dcterms:title "completeness software" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tools used for completion estimate, i.e. checkm, anvi'o, busco" ;
+    skos:exactMatch MIXS:0000070 ;
+    MIXS:expected_value "names and versions of software(s) used" ;
+    MIXS:structured_comment_name "compl_software" ;
+    MIXS:value_syntax "{software};{version}" ;
+    linkml:examples "Example(value='checkm', description=None)" .
+
+MIXS:0000025 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ref_biomaterial" ;
+    dcterms:title "reference for biomaterial" ;
+    rdfs:range linkml:String ;
+    skos:definition "Primary publication if isolated before genome publication; otherwise, primary genome report." ;
+    skos:exactMatch MIXS:0000025 ;
+    MIXS:expected_value "PMID, DOI or URL" ;
+    MIXS:structured_comment_name "ref_biomaterial" ;
+    MIXS:value_syntax "{PMID}|{DOI}|{URL}" ;
+    linkml:examples "Example(value='doi:10.1016/j.syapm.2018.01.009', description=None)" .
+
+MIXS:0000056 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assembly_qual" ;
+    dcterms:title "assembly quality" ;
+    rdfs:range linkml:String ;
+    skos:definition "The assembly quality category is based on sets of criteria outlined for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities with a consensus error rate equivalent to Q50 or better. High Quality Draft:Multiple fragments where gaps span repetitive regions. Presence of the 23S, 16S and 5S rRNA genes and at least 18 tRNAs. Medium Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Low Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Assembly statistics include, but are not limited to total assembly size, number of contigs, contig N50/L50, and maximum contig length. For MIUVIG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities, with extensive manual review and editing to annotate putative gene functions and transcriptional units. High-quality draft genome: One or multiple fragments, totaling ≥ 90% of the expected genome or replicon sequence or predicted complete. Genome fragment(s): One or multiple fragments, totalling < 90% of the expected genome or replicon sequence, or for which no genome size could be estimated" ;
+    skos:exactMatch MIXS:0000056 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "assembly_qual" ;
+    MIXS:value_syntax "[Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality draft genome|Genome fragment(s)]" ;
+    linkml:examples "Example(value='High-quality draft genome', description=None)" .
+
+MIXS:0000057 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assembly_name" ;
+    dcterms:title "assembly name" ;
+    rdfs:range linkml:String ;
+    skos:definition "Name/version of the assembly provided by the submitter that is used in the genome browsers and in the community" ;
+    skos:exactMatch MIXS:0000057 ;
+    MIXS:expected_value "name and version of assembly" ;
+    MIXS:migs_id "MIGS-30" ;
+    MIXS:structured_comment_name "assembly_name" ;
+    MIXS:value_syntax "{text} {text}" ;
+    linkml:examples "Example(value='HuRef, JCVI_ISG_i3_1.0', description=None)" .
+
+MIXS:0000059 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annot" ;
+    dcterms:title "annotation" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tool used for annotation, or for cases where annotation was provided by a community jamboree or model organism database rather than by a specific submitter" ;
+    skos:exactMatch MIXS:0000059 ;
+    MIXS:expected_value "name of tool or pipeline used, or annotation source description" ;
+    MIXS:structured_comment_name "annot" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='prokka', description=None)" .
+
+MIXS:0000060 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "number_contig" ;
+    dcterms:title "number of contigs" ;
+    rdfs:range linkml:String ;
+    skos:definition "Total number of contigs in the cleaned/submitted assembly that makes up a given genome, SAG, MAG, or UViG" ;
+    skos:exactMatch MIXS:0000060 ;
+    MIXS:expected_value "value" ;
+    MIXS:structured_comment_name "number_contig" ;
+    MIXS:value_syntax "{integer}" ;
+    linkml:examples "Example(value='40', description=None)" .
+
+MIXS:0000061 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "feat_pred" ;
+    dcterms:title "feature prediction" ;
+    rdfs:range linkml:String ;
+    skos:definition "Method used to predict UViGs features such as ORFs, integration site, etc." ;
+    skos:exactMatch MIXS:0000061 ;
+    MIXS:expected_value "names and versions of software(s), parameters used" ;
+    MIXS:structured_comment_name "feat_pred" ;
+    MIXS:value_syntax "{software};{version};{parameters}" ;
+    linkml:examples "Example(value='Prodigal;2.6.3;default parameters', description=None)" .
+
+MIXS:0000062 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ref_db" ;
+    dcterms:title "reference database(s)" ;
+    rdfs:range linkml:String ;
+    skos:definition "List of database(s) used for ORF annotation, along with version number and reference to website or publication" ;
+    skos:exactMatch MIXS:0000062 ;
+    MIXS:expected_value "names, versions, and references of databases" ;
+    MIXS:structured_comment_name "ref_db" ;
+    MIXS:value_syntax "{database};{version};{reference}" ;
+    linkml:examples "Example(value='pVOGs;5;http://dmk-brain.ecn.uiowa.edu/pVOGs/ Grazziotin et al. 2017 doi:10.1093/nar/gkw975', description=None)" .
+
+MIXS:0000063 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sim_search_meth" ;
+    dcterms:title "similarity search method" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tool used to compare ORFs with database, along with version and cutoffs used" ;
+    skos:exactMatch MIXS:0000063 ;
+    MIXS:expected_value "names and versions of software(s), parameters used" ;
+    MIXS:structured_comment_name "sim_search_meth" ;
+    MIXS:value_syntax "{software};{version};{parameters}" ;
+    linkml:examples "Example(value='HMMER3;3.1b2;hmmsearch, cutoff of 50 on score', description=None)" .
+
+MIXS:0000064 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "tax_class" ;
+    dcterms:title "taxonomic classification" ;
+    rdfs:range linkml:String ;
+    skos:definition "Method used for taxonomic classification, along with reference database used, classification rank, and thresholds used to classify new genomes" ;
+    skos:exactMatch MIXS:0000064 ;
+    MIXS:expected_value "classification method, database name, and other parameters" ;
+    MIXS:structured_comment_name "tax_class" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification, default parameters)', description=None)" .
+
+MIXS:0000039 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lib_size" ;
+    dcterms:title "library size" ;
+    rdfs:range linkml:String ;
+    skos:definition "Total number of clones in the library prepared for the project" ;
+    skos:exactMatch MIXS:0000039 ;
+    MIXS:expected_value "number of clones" ;
+    MIXS:migs_id "MIGS-28" ;
+    MIXS:structured_comment_name "lib_size" ;
+    MIXS:value_syntax "{integer}" ;
+    linkml:examples "Example(value='50', description=None)" .
+
+MIXS:0000040 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lib_reads_seqd" ;
+    dcterms:title "library reads sequenced" ;
+    rdfs:range linkml:String ;
+    skos:definition "Total number of clones sequenced from the library" ;
+    skos:exactMatch MIXS:0000040 ;
+    MIXS:expected_value "number of reads sequenced" ;
+    MIXS:structured_comment_name "lib_reads_seqd" ;
+    MIXS:value_syntax "{integer}" ;
+    linkml:examples "Example(value='20', description=None)" .
+
+MIXS:0000041 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lib_layout" ;
+    dcterms:title "library layout" ;
+    rdfs:range linkml:String ;
+    skos:definition "Specify whether to expect single, paired, or other configuration of reads" ;
+    skos:exactMatch MIXS:0000041 ;
+    MIXS:expected_value "enumeration" ;
+    MIXS:structured_comment_name "lib_layout" ;
+    MIXS:value_syntax "[paired|single|vector|other]" ;
+    linkml:examples "Example(value='paired', description=None)" .
+
+MIXS:0000042 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lib_vector" ;
+    dcterms:title "library vector" ;
+    rdfs:range linkml:String ;
+    skos:definition "Cloning vector type(s) used in construction of libraries" ;
+    skos:exactMatch MIXS:0000042 ;
+    MIXS:expected_value "vector" ;
+    MIXS:structured_comment_name "lib_vector" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='Bacteriophage P1', description=None)" .
+
+MIXS:0000043 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lib_screen" ;
+    dcterms:title "library screening strategy" ;
+    rdfs:range linkml:String ;
+    skos:definition "Specific enrichment or screening methods applied before and/or after creating libraries" ;
+    skos:exactMatch MIXS:0000043 ;
+    MIXS:expected_value "screening strategy name" ;
+    MIXS:structured_comment_name "lib_screen" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='enriched, screened, normalized', description=None)" .
+
+MIXS:0000048 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "adapters" ;
+    dcterms:title "adapters" ;
+    rdfs:range linkml:String ;
+    skos:definition "Adapters provide priming sequences for both amplification and sequencing of the sample-library fragments. Both adapters should be reported; in uppercase letters" ;
+    skos:exactMatch MIXS:0000048 ;
+    MIXS:expected_value "adapter A and B sequence" ;
+    MIXS:structured_comment_name "adapters" ;
+    MIXS:value_syntax "{dna};{dna}" ;
+    linkml:examples "Example(value='AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT', description=None)" .
+
+MIXS:0000058 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assembly_software" ;
+    dcterms:title "assembly software" ;
+    rdfs:range linkml:String ;
+    skos:definition "Tool(s) used for assembly, including version number and parameters" ;
+    skos:exactMatch MIXS:0000058 ;
+    MIXS:expected_value "name and version of software, parameters used" ;
+    MIXS:structured_comment_name "assembly_software" ;
+    MIXS:value_syntax "{software};{version};{parameters}" ;
+    linkml:examples "Example(value='metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters otherwise', description=None)" .
+
+MIXS:0000001 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_size" ;
+    dcterms:title "amount or size of sample collected" ;
+    rdfs:range linkml:String ;
+    skos:definition "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected." ;
+    skos:exactMatch MIXS:0000001 ;
+    MIXS:expected_value "measurement value" ;
+    MIXS:preferred_unit "millliter, gram, milligram, liter" ;
+    MIXS:structured_comment_name "samp_size" ;
+    MIXS:value_syntax "{float} {unit}" ;
+    linkml:examples "Example(value='5 liter', description=None)" .
+
+MIXS:0000002 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_collec_device" ;
+    dcterms:title "sample collection device" ;
+    rdfs:range linkml:String ;
+    skos:definition "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)." ;
+    skos:exactMatch MIXS:0000002 ;
+    MIXS:expected_value "device name" ;
+    MIXS:structured_comment_name "samp_collec_device" ;
+    MIXS:value_syntax "{termLabel} {[termID]}|{text}" ;
+    linkml:examples "Example(value='swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]', description=None)" .
+
+MIXS:0000008 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "experimental_factor" ;
+    dcterms:title "experimental factor" ;
+    rdfs:range linkml:String ;
+    skos:definition "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI" ;
+    skos:exactMatch MIXS:0000008 ;
+    MIXS:expected_value "text or EFO and/or OBI" ;
+    MIXS:structured_comment_name "experimental_factor" ;
+    MIXS:value_syntax "{termLabel} {[termID]}|{text}" ;
+    linkml:examples "Example(value='time series design [EFO:EFO_0001779]', description=None)" .
+
+MIXS:0000009 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lat_lon" ;
+    dcterms:title "geographic location (latitude and longitude)" ;
+    rdfs:range linkml:String ;
+    skos:definition "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system" ;
+    skos:exactMatch MIXS:0000009 ;
+    MIXS:expected_value "decimal degrees,  limit to 8 decimal points" ;
+    MIXS:migs_id "MIGS-4.1 Latitude. MIGS-4.2 Longitude" ;
+    MIXS:structured_comment_name "lat_lon" ;
+    MIXS:value_syntax "{float} {float}" ;
+    linkml:examples "Example(value='50.586825 6.408977', description=None)" .
+
+MIXS:0000010 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "geo_loc_name" ;
+    dcterms:title "geographic location (country and/or sea,region)" ;
+    rdfs:range linkml:String ;
+    skos:definition "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)" ;
+    skos:exactMatch MIXS:0000010 ;
+    MIXS:expected_value "country or sea name (INSDC or GAZ): region(GAZ), specific location name" ;
+    MIXS:migs_id "MIGS-4" ;
+    MIXS:structured_comment_name "geo_loc_name" ;
+    MIXS:value_syntax "{term}: {term}, {text}" ;
+    linkml:examples "Example(value='USA: Maryland, Bethesda', description=None)" .
+
+MIXS:0000011 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "collection_date" ;
+    dcterms:title "collection date" ;
+    rdfs:range linkml:String ;
+    skos:definition "The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant" ;
+    skos:exactMatch MIXS:0000011 ;
+    MIXS:expected_value "date and time" ;
+    MIXS:migs_id "MIGS-5" ;
+    MIXS:structured_comment_name "collection_date" ;
+    MIXS:value_syntax "{timestamp}" ;
+    linkml:examples "Example(value='2018-05-11T10:00:00+01:00; 2018-05-11', description=None)" .
+
+MIXS:0000012 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "env_broad_scale" ;
+    dcterms:title "broad-scale environmental context" ;
+    rdfs:range linkml:String ;
+    skos:definition "Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS" ;
+    skos:exactMatch MIXS:0000012 ;
+    MIXS:expected_value "The major environment type(s) where the sample was collected. Recommend subclasses of biome [ENVO:00000428]. Multiple terms can be separated by one or more pipes." ;
+    MIXS:structured_comment_name "env_broad_scale" ;
+    MIXS:value_syntax "{termLabel} {[termID]}" ;
+    linkml:examples "Example(value='oceanic epipelagic zone biome [ENVO:01000033] for annotating a water sample from the photic zone in middle of the Atlantic Ocean', description=None)" .
+
+MIXS:0000013 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "env_local_scale" ;
+    dcterms:title "local environmental context" ;
+    rdfs:range linkml:String ;
+    skos:definition "Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS." ;
+    skos:exactMatch MIXS:0000013 ;
+    MIXS:expected_value "Environmental entities having causal influences upon the entity at time of sampling." ;
+    MIXS:migs_id "MIGS-6 (habitat)" ;
+    MIXS:structured_comment_name "env_local_scale" ;
+    MIXS:value_syntax "{termLabel} {[termID]}" ;
+    linkml:examples "Example(value='herb and fern layer [ENVO:01000337]', description=None)",
+        "Example(value='litter layer [ENVO:01000338]', description=None)",
+        "Example(value='litter layer [ENVO:01000338]; Annotating a pooled sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]', description=None)",
+        "Example(value='shrub layer [ENVO:01000336].', description=None)",
+        "Example(value='understory [01000335]', description=None)" .
+
+MIXS:0000014 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "env_medium" ;
+    dcterms:title "environmental medium" ;
+    rdfs:range linkml:String ;
+    skos:definition "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top)." ;
+    skos:exactMatch MIXS:0000014 ;
+    MIXS:expected_value "The material displaced by the entity at time of sampling. Recommend subclasses of environmental material [ENVO:00010483]." ;
+    MIXS:structured_comment_name "env_medium" ;
+    MIXS:value_syntax "{termLabel} {[termID]}" ;
+    linkml:examples "Example(value='air [ENVO_00002005]', description=None)",
+        "Example(value='soil [ENVO:00001998]; Annotating a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]', description=None)" .
+
+MIXS:0000016 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_mat_process" ;
+    dcterms:title "sample material processing" ;
+    rdfs:range linkml:String ;
+    skos:definition "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed." ;
+    skos:exactMatch MIXS:0000016 ;
+    MIXS:expected_value "text" ;
+    MIXS:structured_comment_name "samp_mat_process" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='filtering of seawater, storing samples in ethanol', description=None)" .
+
+MIXS:0000018 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "depth" ;
+    dcterms:title "depth" ;
+    rdfs:range linkml:String ;
+    skos:definition "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples." ;
+    skos:exactMatch MIXS:0000018 ;
+    MIXS:expected_value "measurement value" ;
+    MIXS:migs_id "MIGS-4.3" ;
+    MIXS:structured_comment_name "depth" ;
+    MIXS:value_syntax "{float} {unit}" ;
+    linkml:examples "Example(value='10 meter', description=None)" .
+
+MIXS:0000026 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "source_mat_id" ;
+    dcterms:title "source material identifiers" ;
+    rdfs:range linkml:String ;
+    skos:definition "A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain 'UAM:Herps:14' , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2)." ;
+    skos:exactMatch MIXS:0000026 ;
+    MIXS:expected_value "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer" ;
+    MIXS:migs_id "MIGS-13" ;
+    MIXS:structured_comment_name "source_mat_id" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='MPI012345', description=None)" .
+
+MIXS:0000037 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "nucl_acid_ext" ;
+    dcterms:title "nucleic acid extraction" ;
+    rdfs:range linkml:String ;
+    skos:definition "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the material separation to recover the nucleic acid fraction from a sample" ;
+    skos:exactMatch MIXS:0000037 ;
+    MIXS:expected_value "PMID, DOI or URL" ;
+    MIXS:structured_comment_name "nucl_acid_ext" ;
+    MIXS:value_syntax "{PMID}|{DOI}|{URL}" ;
+    linkml:examples "Example(value='https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf', description=None)" .
+
+MIXS:0000038 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "nucl_acid_amp" ;
+    dcterms:title "nucleic acid amplification" ;
+    rdfs:range linkml:String ;
+    skos:definition "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids" ;
+    skos:exactMatch MIXS:0000038 ;
+    MIXS:expected_value "PMID, DOI or URL" ;
+    MIXS:migs_id "MIGS-27" ;
+    MIXS:structured_comment_name "nucl_acid_amp" ;
+    MIXS:value_syntax "{PMID}|{DOI}|{URL}" ;
+    linkml:examples "Example(value='https://phylogenomics.me/protocols/16s-pcr-protocol/', description=None)" .
+
+MIXS:0000050 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "seq_meth" ;
+    dcterms:title "sequencing method" ;
+    rdfs:range linkml:String ;
+    skos:definition "Sequencing machine used. Where possible the term should be taken from the OBI list of DNA sequencers (http://purl.obolibrary.org/obo/OBI_0400103)." ;
+    skos:exactMatch MIXS:0000050 ;
+    MIXS:expected_value "Text or OBI" ;
+    MIXS:migs_id "MIGS-29" ;
+    MIXS:structured_comment_name "seq_meth" ;
+    MIXS:value_syntax "{termLabel} {[termID]}|{text}" ;
+    linkml:examples "Example(value='454 Genome Sequencer FLX [OBI:0000702]', description=None)" .
+
+MIXS:0000090 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sop" ;
+    dcterms:title "relevant standard operating procedures" ;
+    rdfs:range linkml:String ;
+    skos:definition "Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences" ;
+    skos:exactMatch MIXS:0000090 ;
+    MIXS:expected_value "reference to SOP" ;
+    MIXS:structured_comment_name "sop" ;
+    MIXS:value_syntax "{PMID}|{DOI}|{URL}" ;
+    linkml:examples "Example(value='http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/', description=None)" .
+
+MIXS:0000091 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "associated resource" ;
+    dcterms:title "relevant electronic resources" ;
+    rdfs:range linkml:String ;
+    skos:definition "A related resource that is referenced, cited, or otherwise associated to the sequence." ;
+    skos:exactMatch MIXS:0000091 ;
+    MIXS:expected_value "reference to resource" ;
+    MIXS:structured_comment_name "associated resource" ;
+    MIXS:value_syntax "{PMID} | {DOI} | {URL}" ;
+    linkml:examples "Example(value='http://www.earthmicrobiome.org/', description=None)" .
+
+MIXS:0000092 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "project_name" ;
+    dcterms:title "project name" ;
+    rdfs:range linkml:String ;
+    skos:definition "Name of the project within which the sequencing was organized" ;
+    skos:exactMatch MIXS:0000092 ;
+    MIXS:migs_id "MIGS-3" ;
+    MIXS:structured_comment_name "project_name" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='Forest soil metagenome', description=None)" .
+
+MIXS:0000093 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "elev" ;
+    dcterms:title "elevation" ;
+    rdfs:range linkml:String ;
+    skos:definition "Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit." ;
+    skos:exactMatch MIXS:0000093 ;
+    MIXS:expected_value "measurement value" ;
+    MIXS:structured_comment_name "elev" ;
+    MIXS:value_syntax "{float} {unit}" ;
+    linkml:examples "Example(value='100 meter', description=None)" .
+
+MIXS:0000094 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "alt" ;
+    dcterms:title "altitude" ;
+    rdfs:range linkml:String ;
+    skos:definition "Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air" ;
+    skos:exactMatch MIXS:0000094 ;
+    MIXS:expected_value "measurement value" ;
+    MIXS:migs_id "MIGS-4.4" ;
+    MIXS:structured_comment_name "alt" ;
+    MIXS:value_syntax "{float} {unit}" ;
+    linkml:examples "Example(value='100 meter', description=None)" .
+
+MIXS:0000111 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_vol_we_dna_ext" ;
+    dcterms:title "sample volume or weight for DNA extraction" ;
+    rdfs:range linkml:String ;
+    skos:definition "Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term Sample Size (MIXS:0000001)." ;
+    skos:exactMatch MIXS:0000111 ;
+    MIXS:expected_value "measurement value" ;
+    MIXS:preferred_unit "millliter, gram, milligram, square centimeter" ;
+    MIXS:structured_comment_name "samp_vol_we_dna_ext" ;
+    MIXS:value_syntax "{float} {unit}" ;
+    linkml:examples "Example(value='1500 milliliter', description=None)" .
+
+MIXS:0000113 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "temp" ;
+    dcterms:title "temperature" ;
+    rdfs:range linkml:String ;
+    skos:definition "Temperature of the sample at the time of sampling." ;
+    skos:exactMatch MIXS:0000113 ;
+    MIXS:expected_value "measurement value" ;
+    MIXS:preferred_unit "degree Celsius" ;
+    MIXS:structured_comment_name "temp" ;
+    MIXS:value_syntax "{float} {unit}" ;
+    linkml:examples "Example(value='25 degree Celsius', description=None)" .
+
+MIXS:0001107 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_name" ;
+    dcterms:title "sample name" ;
+    rdfs:range linkml:String ;
+    skos:definition "A local identifier or name that for the material sample used for extracting nucleic acids, and subsequent sequencing. It can refer either to the original material collected or to any derived sub-samples. It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible. INSDC requires every sample name from a single Submitter to be unique. Use of a globally unique identifier for the field source_mat_id is recommended in addition to sample_name." ;
+    skos:exactMatch MIXS:0001107 ;
+    MIXS:expected_value "text" ;
+    MIXS:structured_comment_name "samp_name" ;
+    MIXS:value_syntax "{text}" ;
+    linkml:examples "Example(value='ISDsoil1', description=None)" .
+
+MIXS:0001225 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_collec_method" ;
+    dcterms:title "sample collection method" ;
+    rdfs:range linkml:String ;
+    skos:definition "The method employed for collecting the sample." ;
+    skos:exactMatch MIXS:0001225 ;
+    MIXS:expected_value "PMID,DOI,url , or text" ;
+    MIXS:structured_comment_name "samp_collec_method" ;
+    MIXS:value_syntax "{PMID}|{DOI}|{URL}|{text}" ;
+    linkml:examples "Example(value='swabbing', description=None)" .
+
+MIXS:0001320 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_taxon_id" ;
+    dcterms:title "Taxonomy ID of DNA sample" ;
+    rdfs:range linkml:String ;
+    skos:definition "NCBI taxon id of the sample.  Maybe be a single taxon or mixed taxa sample. Use 'synthetic metagenome’ for mock community/positive controls, or 'blank sample' for negative controls." ;
+    skos:exactMatch MIXS:0001320 ;
+    MIXS:expected_value "Taxonomy ID" ;
+    MIXS:structured_comment_name "samp_taxon_id" ;
+    MIXS:value_syntax "{text} [NCBI:txid]" ;
+    linkml:examples "Example(value='Gut Metagenome [NCBI:txid749906]', description=None)" .
+
+MIXS:0001321 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "neg_cont_type" ;
+    dcterms:title "negative control type" ;
+    rdfs:range linkml:String ;
+    skos:definition "The substance or equipment used as a negative control in an investigation" ;
+    skos:exactMatch MIXS:0001321 ;
+    MIXS:expected_value "enumeration or text" ;
+    MIXS:structured_comment_name "neg_cont_type" ;
+    MIXS:value_syntax "[distilled water|phosphate buffer|empty collection device|empty collection tube|DNA-free PCR mix|sterile swab |sterile syringe]" .
+
+MIXS:0001322 a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pos_cont_type" ;
+    dcterms:title "positive control type" ;
+    rdfs:range linkml:String ;
+    skos:definition "The substance, mixture, product, or apparatus used to verify that a process which is part of an investigation delivers a true positive." ;
+    skos:exactMatch MIXS:0001322 ;
+    MIXS:structured_comment_name "pos_cont_type" ;
+    MIXS:value_syntax "{term} or {text}" .
+
+MIXS:ChecklistClass a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ChecklistClass" ;
+    dcterms:title "MIxS Checklist" ;
+    skos:definition "A class with slots assigned for the required, recommended, and optional metadata fields for a specific type sequence, such as genomes, metagenomes, or marker genes. The migs class, which models genomic sequences, is subdivided into checklists for specific taxa: eukaryotes, bacteria, viruses, and plants." .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
+
+

@@ -77,14 +77,14 @@ gh_docs:
 
 # ---------------------------------------
 
-.PHONY: schemasheets_clean schemasheets_all validation_expected_pass validation_missing validation_extra bare_jsonschema
+.PHONY: schemasheets_clean schemasheets_all validation_expected_pass validation_missing validation_extra bare_jsonschema_invalid
 
 schemasheets_all: \
 schemasheets_clean \
-schemasheets/logs/database_test_linting_log.tsv \
-schemasheets/generated/database_test_generated.sql \
-schemasheets/example_data/out/database.json schemasheets/example_data/out/database.db \
-validation_expected_pass validation_missing validation_extra bare_jsonschema
+schemasheets/logs/mixs_schemasheets_linting_log.tsv \
+schemasheets/generated/mixs_schemasheets_generated.sql \
+schemasheets/example_data/out/mixs_database.json schemasheets/example_data/out/mixs_database.db \
+validation_expected_pass validation_missing validation_extra bare_jsonschema_invalid
 
 schemasheets_clean:
 	rm -rf schemasheets/example_data/out/*
@@ -92,15 +92,21 @@ schemasheets_clean:
 	rm -rf schemasheets/logs/*
 	rm -rf schemasheets/yaml_out/*
 
-schemasheets/yaml_out/database_test.yaml: \
-schemasheets/tsv_in/database_test.tsv \
+schemasheets/yaml_out/mixs_schemasheets.yaml: \
+schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_classdefs.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_slot_assignments.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_slotdefs.tsv \
+schemasheets/tsv_in/mixs_prefixes.tsv \
 schemasheets/tsv_in/mixs_schema_annotations.tsv \
-schemasheets/tsv_in/mixs_prefixes.tsv
+schemasheets/tsv_in/mixs_utility.tsv
 	$(RUN) sheets2linkml --output $@ $^
+
+# schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_classdefs.tsv \
+# schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_slot_assignments.tsv \
 
 # --fix / --no-fix
 # see https://github.com/linkml/linkml/blob/main/linkml/linter/config/default.yaml
-schemasheets/logs/database_test_linting_log.tsv: schemasheets/yaml_out/database_test.yaml
+schemasheets/logs/mixs_schemasheets_linting_log.tsv: schemasheets/yaml_out/mixs_schemasheets.yaml
 	- $(RUN) linkml-lint \
 		--format tsv \
 		--output $@ $< \
@@ -110,57 +116,59 @@ schemasheets/logs/database_test_linting_log.tsv: schemasheets/yaml_out/database_
 #		--ignore-warnings
 
 # todo capture log?
-schemasheets/generated/database_test_generated.yaml: schemasheets/yaml_out/database_test.yaml
+schemasheets/generated/mixs_schemasheets_generated.yaml: schemasheets/yaml_out/mixs_schemasheets.yaml
 	$(RUN) gen-linkml \
 		--format yaml  \
 		--no-materialize-attributes $^ > $@
 
 # todo capture log?
-schemasheets/generated/database_test_generated.sql: \
-schemasheets/generated/database_test_generated.yaml
+schemasheets/generated/mixs_schemasheets_generated.sql: \
+schemasheets/generated/mixs_schemasheets_generated.yaml
 	$(RUN) gen-project \
+		--exclude excel \
 		--dir schemasheets/generated $<
 
 # todo excel has duplicate tabs
-#  sqlschema only models database class
+#  also slow
+#  sqlschema only models mixs_database class
 #  I didn't say that it was the tree_root
 
 validation_expected_pass: \
-schemasheets/generated/database_test_generated.yaml schemasheets/example_data/in/database.yaml
+schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mixs_database.yaml
 	$(RUN) linkml-validate \
 		--target-class Database \
 		--schema $^
 
 
 validation_missing: \
-schemasheets/generated/database_test_generated.yaml schemasheets/example_data/in/database_missing.yaml
+schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mixs_database_missing.yaml
 	! $(RUN) linkml-validate \
 		--target-class Database \
 		--schema $^
 
 
 validation_extra: \
-schemasheets/generated/database_test_generated.yaml schemasheets/example_data/in/database_extra.yaml
+schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mixs_database_extra.yaml
 	! $(RUN) linkml-validate \
 		--target-class Database \
 		--schema $^
 
-schemasheets/example_data/out/database.json: \
-schemasheets/example_data/in/database.yaml \
-schemasheets/generated/database_test_generated.yaml
+schemasheets/example_data/out/mixs_database.json: \
+schemasheets/example_data/in/mixs_database.yaml \
+schemasheets/generated/mixs_schemasheets_generated.yaml
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class Database $< \
 		--schema $(word 2,$^)
 
-schemasheets/example_data/out/database.db: \
-schemasheets/generated/database_test_generated.yaml \
-schemasheets/example_data/in/database.yaml
-	$(RUN) linkml-sqldb dump --db $@ --schema $^
+schemasheets/example_data/out/mixs_database.db: \
+schemasheets/generated/mixs_schemasheets_generated.yaml \
+schemasheets/example_data/in/mixs_database.yaml
+	$(RUN) linkml-sqldb dump --db $@ --target-class Database --schema $^
 	sqlite3 $@ ".header on" "select * from Mims"
 
-bare_jsonschema: \
-schemasheets/example_data/in/database_missing.json \
-schemasheets/generated/jsonschema/database_test_generated.schema.json
-	- ! jsonschema -i $^
+bare_jsonschema_invalid: \
+schemasheets/example_data/in/mixs_database_missing.json \
+schemasheets/generated/jsonschema/mixs_schemasheets_generated.schema.json
+	! jsonschema -i $^
 

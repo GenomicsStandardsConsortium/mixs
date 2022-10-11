@@ -1,0 +1,256 @@
+{
+   "$defs": {
+      "ChecklistClass": {
+         "additionalProperties": false,
+         "description": "A class with slots assigned for the required, recommended, and optional metadata fields for a specific type sequence, such as genomes, metagenomes, or marker genes. The migs class, which models genomic sequences, is subdivided into checklists for specific taxa: eukaryotes, bacteria, viruses, and plants.",
+         "properties": {},
+         "required": [],
+         "title": "ChecklistClass",
+         "type": "object"
+      },
+      "Database": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "mims_set": {
+               "items": {
+                  "$ref": "#/$defs/Mims"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "Database",
+         "type": "object"
+      },
+      "Mims": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "adapters": {
+               "description": "Adapters provide priming sequences for both amplification and sequencing of the sample-library fragments. Both adapters should be reported; in uppercase letters",
+               "type": "string"
+            },
+            "alt": {
+               "description": "Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air",
+               "type": "string"
+            },
+            "annot": {
+               "description": "Tool used for annotation, or for cases where annotation was provided by a community jamboree or model organism database rather than by a specific submitter",
+               "type": "string"
+            },
+            "assembly_name": {
+               "description": "Name/version of the assembly provided by the submitter that is used in the genome browsers and in the community",
+               "type": "string"
+            },
+            "assembly_qual": {
+               "description": "The assembly quality category is based on sets of criteria outlined for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities with a consensus error rate equivalent to Q50 or better. High Quality Draft:Multiple fragments where gaps span repetitive regions. Presence of the 23S, 16S and 5S rRNA genes and at least 18 tRNAs. Medium Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Low Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Assembly statistics include, but are not limited to total assembly size, number of contigs, contig N50/L50, and maximum contig length. For MIUVIG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities, with extensive manual review and editing to annotate putative gene functions and transcriptional units. High-quality draft genome: One or multiple fragments, totaling \u2265 90% of the expected genome or replicon sequence or predicted complete. Genome fragment(s): One or multiple fragments, totalling < 90% of the expected genome or replicon sequence, or for which no genome size could be estimated",
+               "type": "string"
+            },
+            "assembly_software": {
+               "description": "Tool(s) used for assembly, including version number and parameters",
+               "type": "string"
+            },
+            "associated_resource": {
+               "description": "A related resource that is referenced, cited, or otherwise associated to the sequence.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "collection_date": {
+               "description": "The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant",
+               "type": "string"
+            },
+            "depth": {
+               "description": "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
+               "type": "string"
+            },
+            "elev": {
+               "description": "Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit.",
+               "type": "string"
+            },
+            "env_broad_scale": {
+               "description": "Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO\u2019s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS",
+               "type": "string"
+            },
+            "env_local_scale": {
+               "description": "Report the entity or entities which are in the sample or specimen\u2019s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
+               "type": "string"
+            },
+            "env_medium": {
+               "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
+               "type": "string"
+            },
+            "experimental_factor": {
+               "description": "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI",
+               "type": "string"
+            },
+            "feat_pred": {
+               "description": "Method used to predict UViGs features such as ORFs, integration site, etc.",
+               "type": "string"
+            },
+            "geo_loc_name": {
+               "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+               "type": "string"
+            },
+            "lat_lon": {
+               "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
+               "type": "string"
+            },
+            "lib_layout": {
+               "description": "Specify whether to expect single, paired, or other configuration of reads",
+               "type": "string"
+            },
+            "lib_reads_seqd": {
+               "description": "Total number of clones sequenced from the library",
+               "type": "string"
+            },
+            "lib_screen": {
+               "description": "Specific enrichment or screening methods applied before and/or after creating libraries",
+               "type": "string"
+            },
+            "lib_size": {
+               "description": "Total number of clones in the library prepared for the project",
+               "type": "string"
+            },
+            "lib_vector": {
+               "description": "Cloning vector type(s) used in construction of libraries",
+               "type": "string"
+            },
+            "mid": {
+               "description": "Molecular barcodes, called Multiplex Identifiers (MIDs), that are used to specifically tag unique samples in a sequencing run. Sequence should be reported in uppercase letters",
+               "type": "string"
+            },
+            "neg_cont_type": {
+               "description": "The substance or equipment used as a negative control in an investigation",
+               "type": "string"
+            },
+            "nucl_acid_amp": {
+               "description": "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids",
+               "type": "string"
+            },
+            "nucl_acid_ext": {
+               "description": "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the material separation to recover the nucleic acid fraction from a sample",
+               "type": "string"
+            },
+            "number_contig": {
+               "description": "Total number of contigs in the cleaned/submitted assembly that makes up a given genome, SAG, MAG, or UViG",
+               "type": "string"
+            },
+            "pos_cont_type": {
+               "description": "The substance, mixture, product, or apparatus used to verify that a process which is part of an investigation delivers a true positive.",
+               "type": "string"
+            },
+            "project_name": {
+               "description": "Name of the project within which the sequencing was organized",
+               "type": "string"
+            },
+            "ref_biomaterial": {
+               "description": "Primary publication if isolated before genome publication; otherwise, primary genome report.",
+               "type": "string"
+            },
+            "ref_db": {
+               "description": "List of database(s) used for ORF annotation, along with version number and reference to website or publication",
+               "type": "string"
+            },
+            "rel_to_oxygen": {
+               "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
+               "type": "string"
+            },
+            "samp_collec_device": {
+               "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).",
+               "type": "string"
+            },
+            "samp_collec_method": {
+               "description": "The method employed for collecting the sample.",
+               "type": "string"
+            },
+            "samp_mat_process": {
+               "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
+               "type": "string"
+            },
+            "samp_name": {
+               "description": "A local identifier or name that for the material sample used for extracting nucleic acids, and subsequent sequencing. It can refer either to the original material collected or to any derived sub-samples. It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible. INSDC requires every sample name from a single Submitter to be unique. Use of a globally unique identifier for the field source_mat_id is recommended in addition to sample_name.",
+               "type": "string"
+            },
+            "samp_size": {
+               "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
+               "type": "string"
+            },
+            "samp_taxon_id": {
+               "description": "NCBI taxon id of the sample.  Maybe be a single taxon or mixed taxa sample. Use 'synthetic metagenome\u2019 for mock community/positive controls, or 'blank sample' for negative controls.",
+               "type": "string"
+            },
+            "samp_vol_we_dna_ext": {
+               "description": "Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term Sample Size (MIXS:0000001).",
+               "type": "string"
+            },
+            "seq_meth": {
+               "description": "Sequencing machine used. Where possible the term should be taken from the OBI list of DNA sequencers (http://purl.obolibrary.org/obo/OBI_0400103).",
+               "type": "string"
+            },
+            "sim_search_meth": {
+               "description": "Tool used to compare ORFs with database, along with version and cutoffs used",
+               "type": "string"
+            },
+            "size_frac": {
+               "description": "Filtering pore size used in sample preparation",
+               "type": "string"
+            },
+            "sop": {
+               "description": "Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source_mat_id": {
+               "description": "A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain 'UAM:Herps:14' , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2).",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "tax_class": {
+               "description": "Method used for taxonomic classification, along with reference database used, classification rank, and thresholds used to classify new genomes",
+               "type": "string"
+            },
+            "temp": {
+               "description": "Temperature of the sample at the time of sampling.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "collection_date",
+            "env_broad_scale",
+            "env_local_scale",
+            "env_medium",
+            "geo_loc_name",
+            "lat_lon",
+            "project_name",
+            "samp_name",
+            "samp_taxon_id",
+            "seq_meth"
+         ],
+         "title": "Mims",
+         "type": "object"
+      }
+   },
+   "$id": "https://example.com/mixs",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {
+      "mims_set": {
+         "items": {
+            "$ref": "#/$defs/Mims"
+         },
+         "type": "array"
+      }
+   },
+   "required": [],
+   "title": "MIXS",
+   "type": "object",
+   "version": null
+}

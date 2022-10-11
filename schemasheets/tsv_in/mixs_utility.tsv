@@ -1,5 +1,5 @@
-class	slot	range	multivalued	inlined_as_list
-> class	slot	range	multivalued	inlined_as_list
-Database
-	mims_set	mims	TRUE	TRUE
-Database	mims_set	mims	TRUE	TRUE
+class	slot	required	multivalued	inlined_as_list	range	Requirement	Cardinality	cardinality	recommended	tree_root
+> class	slot	required	multivalued	inlined_as_list	range	annotations	annotations	cardinality	recommended	tree_root
+>						inner_key: mixs_requirement_code	inner_key: cardinality_code			
+Database										TRUE
+Database	mims_set		TRUE	TRUE	Mims					
