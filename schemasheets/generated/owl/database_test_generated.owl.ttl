@@ -1,0 +1,727 @@
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix MIXS: <https://example.com/mixs> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+MIXS: a owl:Ontology ;
+    rdfs:label "MIXS" ;
+    IAO:0000700 MIXS:Database,
+        MIXS:Mims ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    linkml:generation_date "2022-10-11T18:10:08" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "database_test_generated.yaml" ;
+    linkml:source_file_date "2022-10-11T18:09:59" ;
+    linkml:source_file_size 22189 .
+
+MIXS:bin_param a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "bin_param" ;
+    rdfs:range linkml:String .
+
+MIXS:bin_software a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "bin_software" ;
+    rdfs:range linkml:String .
+
+MIXS:biotic_relationship a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "biotic_relationship" ;
+    rdfs:range linkml:String .
+
+MIXS:chimera_check a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "chimera_check" ;
+    rdfs:range linkml:String .
+
+MIXS:compl_appr a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "compl_appr" ;
+    rdfs:range linkml:String .
+
+MIXS:compl_score a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "compl_score" ;
+    rdfs:range linkml:String .
+
+MIXS:compl_software a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "compl_software" ;
+    rdfs:range linkml:String .
+
+MIXS:contam_score a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contam_score" ;
+    rdfs:range linkml:String .
+
+MIXS:contam_screen_input a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contam_screen_input" ;
+    rdfs:range linkml:String .
+
+MIXS:contam_screen_param a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contam_screen_param" ;
+    rdfs:range linkml:String .
+
+MIXS:decontam_software a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "decontam_software" ;
+    rdfs:range linkml:String .
+
+MIXS:detec_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "detec_type" ;
+    rdfs:range linkml:String .
+
+MIXS:encoded_traits a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "encoded_traits" ;
+    rdfs:range linkml:String .
+
+MIXS:estimated_size a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "estimated_size" ;
+    rdfs:range linkml:String .
+
+MIXS:extrachrom_elements a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "extrachrom_elements" ;
+    rdfs:range linkml:String .
+
+MIXS:host_disease_stat a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "host_disease_stat" ;
+    rdfs:range linkml:String .
+
+MIXS:host_pred_appr a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "host_pred_appr" ;
+    rdfs:range linkml:String .
+
+MIXS:host_pred_est_acc a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "host_pred_est_acc" ;
+    rdfs:range linkml:String .
+
+MIXS:host_spec_range a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "host_spec_range" ;
+    rdfs:range linkml:String .
+
+MIXS:isol_growth_condt a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "isol_growth_condt" ;
+    rdfs:range linkml:String .
+
+MIXS:mag_cov_software a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mag_cov_software" ;
+    rdfs:range linkml:String .
+
+MIXS:num_replicons a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "num_replicons" ;
+    rdfs:range linkml:String .
+
+MIXS:otu_class_appr a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "otu_class_appr" ;
+    rdfs:range linkml:String .
+
+MIXS:otu_db a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "otu_db" ;
+    rdfs:range linkml:String .
+
+MIXS:otu_seq_comp_appr a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "otu_seq_comp_appr" ;
+    rdfs:range linkml:String .
+
+MIXS:pathogenicity a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pathogenicity" ;
+    rdfs:range linkml:String .
+
+MIXS:pcr_cond a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pcr_cond" ;
+    rdfs:range linkml:String .
+
+MIXS:pcr_primers a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pcr_primers" ;
+    rdfs:range linkml:String .
+
+MIXS:ploidy a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ploidy" ;
+    rdfs:range linkml:String .
+
+MIXS:pred_genome_struc a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pred_genome_struc" ;
+    rdfs:range linkml:String .
+
+MIXS:pred_genome_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pred_genome_type" ;
+    rdfs:range linkml:String .
+
+MIXS:propagation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "propagation" ;
+    rdfs:range linkml:String .
+
+MIXS:reassembly_bin a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "reassembly_bin" ;
+    rdfs:range linkml:String .
+
+MIXS:seq_quality_check a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "seq_quality_check" ;
+    rdfs:range linkml:String .
+
+MIXS:single_cell_lysis_appr a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "single_cell_lysis_appr" ;
+    rdfs:range linkml:String .
+
+MIXS:single_cell_lysis_prot a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "single_cell_lysis_prot" ;
+    rdfs:range linkml:String .
+
+MIXS:sort_tech a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sort_tech" ;
+    rdfs:range linkml:String .
+
+MIXS:source_uvig a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "source_uvig" ;
+    rdfs:range linkml:String .
+
+MIXS:specific_host a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "specific_host" ;
+    rdfs:range linkml:String .
+
+MIXS:subspecf_gen_lin a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "subspecf_gen_lin" ;
+    rdfs:range linkml:String .
+
+MIXS:target_gene a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "target_gene" ;
+    rdfs:range linkml:String .
+
+MIXS:target_subfragment a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "target_subfragment" ;
+    rdfs:range linkml:String .
+
+MIXS:tax_ident a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "tax_ident" ;
+    rdfs:range linkml:String .
+
+MIXS:trna_ext_software a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "trna_ext_software" ;
+    rdfs:range linkml:String .
+
+MIXS:trnas a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "trnas" ;
+    rdfs:range linkml:String .
+
+MIXS:trophic_level a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "trophic_level" ;
+    rdfs:range linkml:String .
+
+MIXS:vir_ident_software a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "vir_ident_software" ;
+    rdfs:range linkml:String .
+
+MIXS:virus_enrich_appr a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "virus_enrich_appr" ;
+    rdfs:range linkml:String .
+
+MIXS:wga_amp_appr a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "wga_amp_appr" ;
+    rdfs:range linkml:String .
+
+MIXS:wga_amp_kit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "wga_amp_kit" ;
+    rdfs:range linkml:String .
+
+MIXS:x_16s_recover a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_16s_recover" ;
+    rdfs:range linkml:String .
+
+MIXS:x_16s_recover_software a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_16s_recover_software" ;
+    rdfs:range linkml:String .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+MIXS:Database a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Database" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom MIXS:Mims ;
+            owl:onProperty MIXS:mims_set ] .
+
+MIXS:adapters a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "adapters" ;
+    rdfs:range linkml:String .
+
+MIXS:alt a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "alt" ;
+    rdfs:range linkml:String .
+
+MIXS:annot a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "annot" ;
+    rdfs:range linkml:String .
+
+MIXS:assembly_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assembly_name" ;
+    rdfs:range linkml:String .
+
+MIXS:assembly_qual a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assembly_qual" ;
+    rdfs:range linkml:String .
+
+MIXS:assembly_software a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assembly_software" ;
+    rdfs:range linkml:String .
+
+MIXS:associated_resource a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "associated resource" ;
+    rdfs:range linkml:String .
+
+MIXS:collection_date a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "collection_date" ;
+    rdfs:range linkml:String .
+
+MIXS:depth a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "depth" ;
+    rdfs:range linkml:String .
+
+MIXS:elev a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "elev" ;
+    rdfs:range linkml:String .
+
+MIXS:env_broad_scale a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "env_broad_scale" ;
+    rdfs:range linkml:String .
+
+MIXS:env_local_scale a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "env_local_scale" ;
+    rdfs:range linkml:String .
+
+MIXS:env_medium a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "env_medium" ;
+    rdfs:range linkml:String .
+
+MIXS:experimental_factor a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "experimental_factor" ;
+    rdfs:range linkml:String .
+
+MIXS:feat_pred a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "feat_pred" ;
+    rdfs:range linkml:String .
+
+MIXS:geo_loc_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "geo_loc_name" ;
+    rdfs:range linkml:String .
+
+MIXS:lat_lon a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lat_lon" ;
+    rdfs:range linkml:String .
+
+MIXS:lib_layout a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lib_layout" ;
+    rdfs:range linkml:String .
+
+MIXS:lib_reads_seqd a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lib_reads_seqd" ;
+    rdfs:range linkml:String .
+
+MIXS:lib_screen a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lib_screen" ;
+    rdfs:range linkml:String .
+
+MIXS:lib_size a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lib_size" ;
+    rdfs:range linkml:String .
+
+MIXS:lib_vector a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "lib_vector" ;
+    rdfs:range linkml:String .
+
+MIXS:mid a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mid" ;
+    rdfs:range linkml:String .
+
+MIXS:mims_set a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mims_set" ;
+    rdfs:range linkml:String .
+
+MIXS:neg_cont_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "neg_cont_type" ;
+    rdfs:range linkml:String .
+
+MIXS:nucl_acid_amp a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "nucl_acid_amp" ;
+    rdfs:range linkml:String .
+
+MIXS:nucl_acid_ext a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "nucl_acid_ext" ;
+    rdfs:range linkml:String .
+
+MIXS:number_contig a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "number_contig" ;
+    rdfs:range linkml:String .
+
+MIXS:pos_cont_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pos_cont_type" ;
+    rdfs:range linkml:String .
+
+MIXS:project_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "project_name" ;
+    rdfs:range linkml:String .
+
+MIXS:ref_biomaterial a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ref_biomaterial" ;
+    rdfs:range linkml:String .
+
+MIXS:ref_db a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ref_db" ;
+    rdfs:range linkml:String .
+
+MIXS:rel_to_oxygen a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rel_to_oxygen" ;
+    rdfs:range linkml:String .
+
+MIXS:samp_collec_device a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_collec_device" ;
+    rdfs:range linkml:String .
+
+MIXS:samp_collec_method a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_collec_method" ;
+    rdfs:range linkml:String .
+
+MIXS:samp_mat_process a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_mat_process" ;
+    rdfs:range linkml:String .
+
+MIXS:samp_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_name" ;
+    rdfs:range linkml:String ;
+    MIXS:cardinality_code "M" ;
+    MIXS:mixs_requirement_code "M" .
+
+MIXS:samp_size a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_size" ;
+    rdfs:range linkml:String .
+
+MIXS:samp_taxon_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_taxon_id" ;
+    rdfs:range linkml:String .
+
+MIXS:samp_vol_we_dna_ext a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samp_vol_we_dna_ext" ;
+    rdfs:range linkml:String .
+
+MIXS:seq_meth a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "seq_meth" ;
+    rdfs:range linkml:String .
+
+MIXS:sim_search_meth a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sim_search_meth" ;
+    rdfs:range linkml:String .
+
+MIXS:size_frac a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "size_frac" ;
+    rdfs:range linkml:String .
+
+MIXS:sop a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sop" ;
+    rdfs:range linkml:String .
+
+MIXS:source_mat_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "source_mat_id" ;
+    rdfs:range linkml:String .
+
+MIXS:tax_class a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "tax_class" ;
+    rdfs:range linkml:String .
+
+MIXS:temp a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "temp" ;
+    rdfs:range linkml:String .
+
+MIXS:Mims a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Mims" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:sim_search_meth ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:number_contig ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:project_name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:ref_biomaterial ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:env_broad_scale ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:geo_loc_name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:annot ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:samp_collec_device ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:collection_date ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:tax_class ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:env_local_scale ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:nucl_acid_ext ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:assembly_software ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:temp ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:associated_resource ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:samp_mat_process ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:experimental_factor ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:lib_screen ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:mid ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:nucl_acid_amp ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:sop ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:elev ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:depth ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:assembly_qual ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:ref_db ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:adapters ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:pos_cont_type ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:seq_meth ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:lib_layout ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:assembly_name ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:env_medium ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:samp_taxon_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:source_mat_id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:samp_size ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:size_frac ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:lat_lon ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:samp_vol_we_dna_ext ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:lib_reads_seqd ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:lib_vector ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:rel_to_oxygen ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:samp_name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:feat_pred ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:lib_size ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:samp_collec_method ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:alt ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty MIXS:neg_cont_type ] .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
+
+

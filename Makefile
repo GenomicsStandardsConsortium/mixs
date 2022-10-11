@@ -33,10 +33,12 @@ clean:
 
 generated/mixs.py: model/schema/mixs.yaml
 	$(RUN) gen-project \
-		--exclude excel \
 		--exclude java \
 		--exclude markdown \
 		--dir $(dir $@) $< 2>&1 | tee -a logs/linkml_artifact_generation.log
+
+# 		--exclude excel \
+
 #	mkdir generated/excel
 #	$(RUN) gen-excel --output generated/excel/mixs.xlsx $<
 #	# skipping jinja --template_file
@@ -72,3 +74,82 @@ docserve:
 # exposes at https://GenomicsStandardsConsortium.github.io/mixs/
 gh_docs:
 	poetry run mkdocs gh-deploy
+
+# ---------------------------------------
+
+.PHONY: schemasheets_clean schemasheets_all validation_expected_pass validation_missing validation_extra bare_jsonschema
+
+schemasheets_all: \
+schemasheets_clean \
+schemasheets/logs/database_test_linting_log.tsv \
+schemasheets/generated/database_test_generated.sql \
+validation_expected_pass validation_missing validation_extra bare_jsonschema
+
+schemasheets_clean:
+	rm -rf schemasheets/generated/*
+	rm -rf schemasheets/logs/*
+	rm -rf schemasheets/yaml_out/*
+
+schemasheets/yaml_out/database_test.yaml: \
+schemasheets/tsv_in/database_test.tsv \
+schemasheets/tsv_in/mixs_schema_annotations.tsv \
+schemasheets/tsv_in/mixs_prefixes.tsv
+	$(RUN) sheets2linkml --output $@ $^
+
+# --fix / --no-fix
+# see https://github.com/linkml/linkml/blob/main/linkml/linter/config/default.yaml
+schemasheets/logs/database_test_linting_log.tsv: schemasheets/yaml_out/database_test.yaml
+	- $(RUN) linkml-lint \
+		--format tsv \
+		--output $@ $< \
+		--config schemasheets/configs/linter_config_default.yaml
+
+# \
+#		--ignore-warnings
+
+# todo capture log?
+schemasheets/generated/database_test_generated.yaml: schemasheets/yaml_out/database_test.yaml
+	$(RUN) gen-linkml \
+		--format yaml  \
+		--no-materialize-attributes $^ > $@
+
+# todo capture log?
+schemasheets/generated/database_test_generated.sql: \
+schemasheets/generated/database_test_generated.yaml
+	$(RUN) gen-project \
+		--dir schemasheets/generated $<
+
+# todo excel has duplicate tabs
+#  sqlschema only models database class
+#  I didn't say that it was the tree_root
+
+validation_expected_pass: \
+schemasheets/generated/database_test_generated.yaml schemasheets/example_data/in/database.yaml
+	$(RUN) linkml-validate \
+		--target-class Database \
+		--schema $^
+
+
+validation_missing: \
+schemasheets/generated/database_test_generated.yaml schemasheets/example_data/in/database_missing.yaml
+	! $(RUN) linkml-validate \
+		--target-class Database \
+		--schema $^
+
+
+validation_extra: \
+schemasheets/generated/database_test_generated.yaml schemasheets/example_data/in/database_extra.yaml
+	! $(RUN) linkml-validate \
+		--target-class Database \
+		--schema $^
+
+schemasheets/example_data/out/database.json: \
+schemasheets/example_data/in/database.yaml \
+schemasheets/generated/database_test_generated.yaml
+	$(RUN) linkml-convert \
+		--output $@ \
+		--target-class Database $< \
+		--schema $(word 2,$^)
+
+bare_jsonschema: schemasheets/example_data/in/database_missing.json schemasheets/generated/jsonschema/database_test_generated.schema.json
+	- ! jsonschema -i $^

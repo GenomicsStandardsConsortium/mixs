@@ -1,0 +1,53 @@
+message Database
+ {
+ repeated  mims mimsSet = 0
+ }
+message Mims
+ {
+  string adapters = 0
+  string alt = 0
+  string annot = 0
+  string assemblyName = 0
+  string assemblyQual = 0
+  string assemblySoftware = 0
+  string associatedResource = 0
+  string collectionDate = 0
+  string depth = 0
+  string elev = 0
+  string envBroadScale = 0
+  string envLocalScale = 0
+  string envMedium = 0
+  string experimentalFactor = 0
+  string featPred = 0
+  string geoLocName = 0
+  string latLon = 0
+  string libLayout = 0
+  string libReadsSeqd = 0
+  string libScreen = 0
+  string libSize = 0
+  string libVector = 0
+  string mid = 0
+  string negContType = 0
+  string nuclAcidAmp = 0
+  string nuclAcidExt = 0
+  string numberContig = 0
+  string posContType = 0
+  string projectName = 0
+  string refBiomaterial = 0
+  string refDb = 0
+  string relToOxygen = 0
+  string sampCollecDevice = 0
+  string sampCollecMethod = 0
+  string sampMatProcess = 0
+  string sampName = 0
+  string sampSize = 0
+  string sampTaxonId = 0
+  string sampVolWeDnaExt = 0
+  string seqMeth = 0
+  string simSearchMeth = 0
+  string sizeFrac = 0
+  string sop = 0
+  string sourceMatId = 0
+  string taxClass = 0
+  string temp = 0
+ }

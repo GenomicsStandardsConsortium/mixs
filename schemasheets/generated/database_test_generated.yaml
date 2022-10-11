@@ -1,0 +1,844 @@
+name: MIXS
+id: https://example.com/mixs
+imports:
+- linkml:types
+prefixes:
+  MIXS:
+    prefix_prefix: MIXS
+    prefix_reference: https://example.com/mixs
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+default_prefix: MIXS
+default_range: string
+slots:
+  mims_set:
+    name: mims_set
+    from_schema: https://example.com/mixs
+  samp_name:
+    name: samp_name
+    annotations:
+      mixs_requirement_code:
+        tag: mixs_requirement_code
+        value: M
+      cardinality_code:
+        tag: cardinality_code
+        value: M
+    from_schema: https://example.com/mixs
+    required: true
+  adapters:
+    name: adapters
+    from_schema: https://example.com/mixs
+  alt:
+    name: alt
+    from_schema: https://example.com/mixs
+  annot:
+    name: annot
+    from_schema: https://example.com/mixs
+  assembly_name:
+    name: assembly_name
+    from_schema: https://example.com/mixs
+  assembly_qual:
+    name: assembly_qual
+    from_schema: https://example.com/mixs
+  assembly_software:
+    name: assembly_software
+    from_schema: https://example.com/mixs
+  associated resource:
+    name: associated resource
+    from_schema: https://example.com/mixs
+  bin_param:
+    name: bin_param
+    from_schema: https://example.com/mixs
+  bin_software:
+    name: bin_software
+    from_schema: https://example.com/mixs
+  biotic_relationship:
+    name: biotic_relationship
+    from_schema: https://example.com/mixs
+  chimera_check:
+    name: chimera_check
+    from_schema: https://example.com/mixs
+  collection_date:
+    name: collection_date
+    from_schema: https://example.com/mixs
+  compl_appr:
+    name: compl_appr
+    from_schema: https://example.com/mixs
+  compl_score:
+    name: compl_score
+    from_schema: https://example.com/mixs
+  compl_software:
+    name: compl_software
+    from_schema: https://example.com/mixs
+  contam_score:
+    name: contam_score
+    from_schema: https://example.com/mixs
+  contam_screen_input:
+    name: contam_screen_input
+    from_schema: https://example.com/mixs
+  contam_screen_param:
+    name: contam_screen_param
+    from_schema: https://example.com/mixs
+  decontam_software:
+    name: decontam_software
+    from_schema: https://example.com/mixs
+  depth:
+    name: depth
+    from_schema: https://example.com/mixs
+  detec_type:
+    name: detec_type
+    from_schema: https://example.com/mixs
+  elev:
+    name: elev
+    from_schema: https://example.com/mixs
+  encoded_traits:
+    name: encoded_traits
+    from_schema: https://example.com/mixs
+  env_broad_scale:
+    name: env_broad_scale
+    from_schema: https://example.com/mixs
+  env_local_scale:
+    name: env_local_scale
+    from_schema: https://example.com/mixs
+  env_medium:
+    name: env_medium
+    from_schema: https://example.com/mixs
+  estimated_size:
+    name: estimated_size
+    from_schema: https://example.com/mixs
+  experimental_factor:
+    name: experimental_factor
+    from_schema: https://example.com/mixs
+  extrachrom_elements:
+    name: extrachrom_elements
+    from_schema: https://example.com/mixs
+  feat_pred:
+    name: feat_pred
+    from_schema: https://example.com/mixs
+  geo_loc_name:
+    name: geo_loc_name
+    from_schema: https://example.com/mixs
+  host_disease_stat:
+    name: host_disease_stat
+    from_schema: https://example.com/mixs
+  host_pred_appr:
+    name: host_pred_appr
+    from_schema: https://example.com/mixs
+  host_pred_est_acc:
+    name: host_pred_est_acc
+    from_schema: https://example.com/mixs
+  host_spec_range:
+    name: host_spec_range
+    from_schema: https://example.com/mixs
+  isol_growth_condt:
+    name: isol_growth_condt
+    from_schema: https://example.com/mixs
+  lat_lon:
+    name: lat_lon
+    from_schema: https://example.com/mixs
+  lib_layout:
+    name: lib_layout
+    from_schema: https://example.com/mixs
+  lib_reads_seqd:
+    name: lib_reads_seqd
+    from_schema: https://example.com/mixs
+  lib_screen:
+    name: lib_screen
+    from_schema: https://example.com/mixs
+  lib_size:
+    name: lib_size
+    from_schema: https://example.com/mixs
+  lib_vector:
+    name: lib_vector
+    from_schema: https://example.com/mixs
+  mag_cov_software:
+    name: mag_cov_software
+    from_schema: https://example.com/mixs
+  mid:
+    name: mid
+    from_schema: https://example.com/mixs
+  neg_cont_type:
+    name: neg_cont_type
+    from_schema: https://example.com/mixs
+  nucl_acid_amp:
+    name: nucl_acid_amp
+    from_schema: https://example.com/mixs
+  nucl_acid_ext:
+    name: nucl_acid_ext
+    from_schema: https://example.com/mixs
+  num_replicons:
+    name: num_replicons
+    from_schema: https://example.com/mixs
+  number_contig:
+    name: number_contig
+    from_schema: https://example.com/mixs
+  otu_class_appr:
+    name: otu_class_appr
+    from_schema: https://example.com/mixs
+  otu_db:
+    name: otu_db
+    from_schema: https://example.com/mixs
+  otu_seq_comp_appr:
+    name: otu_seq_comp_appr
+    from_schema: https://example.com/mixs
+  pathogenicity:
+    name: pathogenicity
+    from_schema: https://example.com/mixs
+  pcr_cond:
+    name: pcr_cond
+    from_schema: https://example.com/mixs
+  pcr_primers:
+    name: pcr_primers
+    from_schema: https://example.com/mixs
+  ploidy:
+    name: ploidy
+    from_schema: https://example.com/mixs
+  pos_cont_type:
+    name: pos_cont_type
+    from_schema: https://example.com/mixs
+  pred_genome_struc:
+    name: pred_genome_struc
+    from_schema: https://example.com/mixs
+  pred_genome_type:
+    name: pred_genome_type
+    from_schema: https://example.com/mixs
+  project_name:
+    name: project_name
+    from_schema: https://example.com/mixs
+  propagation:
+    name: propagation
+    from_schema: https://example.com/mixs
+  reassembly_bin:
+    name: reassembly_bin
+    from_schema: https://example.com/mixs
+  ref_biomaterial:
+    name: ref_biomaterial
+    from_schema: https://example.com/mixs
+  ref_db:
+    name: ref_db
+    from_schema: https://example.com/mixs
+  rel_to_oxygen:
+    name: rel_to_oxygen
+    from_schema: https://example.com/mixs
+  samp_collec_device:
+    name: samp_collec_device
+    from_schema: https://example.com/mixs
+  samp_collec_method:
+    name: samp_collec_method
+    from_schema: https://example.com/mixs
+  samp_mat_process:
+    name: samp_mat_process
+    from_schema: https://example.com/mixs
+  samp_size:
+    name: samp_size
+    from_schema: https://example.com/mixs
+  samp_taxon_id:
+    name: samp_taxon_id
+    from_schema: https://example.com/mixs
+  samp_vol_we_dna_ext:
+    name: samp_vol_we_dna_ext
+    from_schema: https://example.com/mixs
+  seq_meth:
+    name: seq_meth
+    from_schema: https://example.com/mixs
+  seq_quality_check:
+    name: seq_quality_check
+    from_schema: https://example.com/mixs
+  sim_search_meth:
+    name: sim_search_meth
+    from_schema: https://example.com/mixs
+  single_cell_lysis_appr:
+    name: single_cell_lysis_appr
+    from_schema: https://example.com/mixs
+  single_cell_lysis_prot:
+    name: single_cell_lysis_prot
+    from_schema: https://example.com/mixs
+  size_frac:
+    name: size_frac
+    from_schema: https://example.com/mixs
+  sop:
+    name: sop
+    from_schema: https://example.com/mixs
+  sort_tech:
+    name: sort_tech
+    from_schema: https://example.com/mixs
+  source_mat_id:
+    name: source_mat_id
+    from_schema: https://example.com/mixs
+  source_uvig:
+    name: source_uvig
+    from_schema: https://example.com/mixs
+  specific_host:
+    name: specific_host
+    from_schema: https://example.com/mixs
+  subspecf_gen_lin:
+    name: subspecf_gen_lin
+    from_schema: https://example.com/mixs
+  target_gene:
+    name: target_gene
+    from_schema: https://example.com/mixs
+  target_subfragment:
+    name: target_subfragment
+    from_schema: https://example.com/mixs
+  tax_class:
+    name: tax_class
+    from_schema: https://example.com/mixs
+  tax_ident:
+    name: tax_ident
+    from_schema: https://example.com/mixs
+  temp:
+    name: temp
+    from_schema: https://example.com/mixs
+  trna_ext_software:
+    name: trna_ext_software
+    from_schema: https://example.com/mixs
+  trnas:
+    name: trnas
+    from_schema: https://example.com/mixs
+  trophic_level:
+    name: trophic_level
+    from_schema: https://example.com/mixs
+  vir_ident_software:
+    name: vir_ident_software
+    from_schema: https://example.com/mixs
+  virus_enrich_appr:
+    name: virus_enrich_appr
+    from_schema: https://example.com/mixs
+  wga_amp_appr:
+    name: wga_amp_appr
+    from_schema: https://example.com/mixs
+  wga_amp_kit:
+    name: wga_amp_kit
+    from_schema: https://example.com/mixs
+  x_16s_recover:
+    name: x_16s_recover
+    from_schema: https://example.com/mixs
+  x_16s_recover_software:
+    name: x_16s_recover_software
+    from_schema: https://example.com/mixs
+classes:
+  Database:
+    name: Database
+    from_schema: https://example.com/mixs
+    slots:
+    - mims_set
+    slot_usage:
+      mims_set:
+        name: mims_set
+        multivalued: true
+        range: Mims
+        inlined_as_list: true
+  Mims:
+    name: Mims
+    from_schema: https://example.com/mixs
+    slots:
+    - adapters
+    - alt
+    - annot
+    - assembly_name
+    - assembly_qual
+    - assembly_software
+    - associated resource
+    - collection_date
+    - depth
+    - elev
+    - env_broad_scale
+    - env_local_scale
+    - env_medium
+    - experimental_factor
+    - feat_pred
+    - geo_loc_name
+    - lat_lon
+    - lib_layout
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - mid
+    - neg_cont_type
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - number_contig
+    - pos_cont_type
+    - project_name
+    - ref_biomaterial
+    - ref_db
+    - rel_to_oxygen
+    - samp_collec_device
+    - samp_collec_method
+    - samp_mat_process
+    - samp_name
+    - samp_size
+    - samp_taxon_id
+    - samp_vol_we_dna_ext
+    - seq_meth
+    - sim_search_meth
+    - size_frac
+    - sop
+    - source_mat_id
+    - tax_class
+    - temp
+    slot_usage:
+      adapters:
+        name: adapters
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      alt:
+        name: alt
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: E
+          cardinality_code:
+            tag: cardinality_code
+            value: E+
+        recommended: true
+      annot:
+        name: annot
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      assembly_name:
+        name: assembly_name
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      assembly_qual:
+        name: assembly_qual
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      assembly_software:
+        name: assembly_software
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      associated resource:
+        name: associated resource
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      collection_date:
+        name: collection_date
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: M
+          cardinality_code:
+            tag: cardinality_code
+            value: M
+        required: true
+      depth:
+        name: depth
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: E
+          cardinality_code:
+            tag: cardinality_code
+            value: E+
+        recommended: true
+      elev:
+        name: elev
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: E
+          cardinality_code:
+            tag: cardinality_code
+            value: E+
+        recommended: true
+      env_broad_scale:
+        name: env_broad_scale
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: M
+          cardinality_code:
+            tag: cardinality_code
+            value: M
+        required: true
+      env_local_scale:
+        name: env_local_scale
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: M
+          cardinality_code:
+            tag: cardinality_code
+            value: M
+        required: true
+      env_medium:
+        name: env_medium
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: M
+          cardinality_code:
+            tag: cardinality_code
+            value: M
+        required: true
+      experimental_factor:
+        name: experimental_factor
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      feat_pred:
+        name: feat_pred
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: X
+          cardinality_code:
+            tag: cardinality_code
+            value: O
+        required: false
+      geo_loc_name:
+        name: geo_loc_name
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: M
+          cardinality_code:
+            tag: cardinality_code
+            value: M
+        required: true
+      lat_lon:
+        name: lat_lon
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: M
+          cardinality_code:
+            tag: cardinality_code
+            value: M
+        required: true
+      lib_layout:
+        name: lib_layout
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      lib_reads_seqd:
+        name: lib_reads_seqd
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      lib_screen:
+        name: lib_screen
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      lib_size:
+        name: lib_size
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      lib_vector:
+        name: lib_vector
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      mid:
+        name: mid
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      neg_cont_type:
+        name: neg_cont_type
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      nucl_acid_amp:
+        name: nucl_acid_amp
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      nucl_acid_ext:
+        name: nucl_acid_ext
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      number_contig:
+        name: number_contig
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      pos_cont_type:
+        name: pos_cont_type
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      project_name:
+        name: project_name
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: M
+          cardinality_code:
+            tag: cardinality_code
+            value: M
+        required: true
+      ref_biomaterial:
+        name: ref_biomaterial
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: X
+          cardinality_code:
+            tag: cardinality_code
+            value: O
+        required: false
+      ref_db:
+        name: ref_db
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: X
+          cardinality_code:
+            tag: cardinality_code
+            value: O
+        required: false
+      rel_to_oxygen:
+        name: rel_to_oxygen
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: X
+          cardinality_code:
+            tag: cardinality_code
+            value: O
+        required: false
+      samp_collec_device:
+        name: samp_collec_device
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      samp_collec_method:
+        name: samp_collec_method
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      samp_mat_process:
+        name: samp_mat_process
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      samp_name:
+        name: samp_name
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: M
+          cardinality_code:
+            tag: cardinality_code
+            value: M
+        required: true
+      samp_size:
+        name: samp_size
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      samp_taxon_id:
+        name: samp_taxon_id
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: M
+          cardinality_code:
+            tag: cardinality_code
+            value: M
+        required: true
+      samp_vol_we_dna_ext:
+        name: samp_vol_we_dna_ext
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: X
+          cardinality_code:
+            tag: cardinality_code
+            value: O
+        required: false
+      seq_meth:
+        name: seq_meth
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: M
+          cardinality_code:
+            tag: cardinality_code
+            value: M
+        required: true
+      sim_search_meth:
+        name: sim_search_meth
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: X
+          cardinality_code:
+            tag: cardinality_code
+            value: O
+        required: false
+      size_frac:
+        name: size_frac
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: X
+          cardinality_code:
+            tag: cardinality_code
+            value: O
+        required: false
+      sop:
+        name: sop
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      source_mat_id:
+        name: source_mat_id
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: C
+          cardinality_code:
+            tag: cardinality_code
+            value: EM
+        recommended: true
+      tax_class:
+        name: tax_class
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: X
+          cardinality_code:
+            tag: cardinality_code
+            value: O
+        required: false
+      temp:
+        name: temp
+        annotations:
+          mixs_requirement_code:
+            tag: mixs_requirement_code
+            value: E
+          cardinality_code:
+            tag: cardinality_code
+            value: E+
+        recommended: true
+source_file: schemasheets/yaml_out/database_test.yaml
+

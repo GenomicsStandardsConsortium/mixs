@@ -1,0 +1,95 @@
+BASE <https://example.com/mixs/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+<https://example.com/mixsDatabase> CLOSED {
+    (  $<https://example.com/mixsDatabase_tes> <https://example.com/mixsmims_set> @<https://example.com/mixsMims> * ;
+       rdf:type [ <https://example.com/mixsDatabase> ] ?
+    )
+}
+
+<https://example.com/mixsMims> CLOSED {
+    (  $<https://example.com/mixsMims_tes> (  <https://example.com/mixsadapters> @linkml:String ? ;
+          <https://example.com/mixsalt> @linkml:String ? ;
+          <https://example.com/mixsannot> @linkml:String ? ;
+          <https://example.com/mixsassembly_name> @linkml:String ? ;
+          <https://example.com/mixsassembly_qual> @linkml:String ? ;
+          <https://example.com/mixsassembly_software> @linkml:String ? ;
+          <https://example.com/mixsassociated_resource> @linkml:String ? ;
+          <https://example.com/mixscollection_date> @linkml:String ;
+          <https://example.com/mixsdepth> @linkml:String ? ;
+          <https://example.com/mixselev> @linkml:String ? ;
+          <https://example.com/mixsenv_broad_scale> @linkml:String ;
+          <https://example.com/mixsenv_local_scale> @linkml:String ;
+          <https://example.com/mixsenv_medium> @linkml:String ;
+          <https://example.com/mixsexperimental_factor> @linkml:String ? ;
+          <https://example.com/mixsfeat_pred> @linkml:String ? ;
+          <https://example.com/mixsgeo_loc_name> @linkml:String ;
+          <https://example.com/mixslat_lon> @linkml:String ;
+          <https://example.com/mixslib_layout> @linkml:String ? ;
+          <https://example.com/mixslib_reads_seqd> @linkml:String ? ;
+          <https://example.com/mixslib_screen> @linkml:String ? ;
+          <https://example.com/mixslib_size> @linkml:String ? ;
+          <https://example.com/mixslib_vector> @linkml:String ? ;
+          <https://example.com/mixsmid> @linkml:String ? ;
+          <https://example.com/mixsneg_cont_type> @linkml:String ? ;
+          <https://example.com/mixsnucl_acid_amp> @linkml:String ? ;
+          <https://example.com/mixsnucl_acid_ext> @linkml:String ? ;
+          <https://example.com/mixsnumber_contig> @linkml:String ? ;
+          <https://example.com/mixspos_cont_type> @linkml:String ? ;
+          <https://example.com/mixsproject_name> @linkml:String ;
+          <https://example.com/mixsref_biomaterial> @linkml:String ? ;
+          <https://example.com/mixsref_db> @linkml:String ? ;
+          <https://example.com/mixsrel_to_oxygen> @linkml:String ? ;
+          <https://example.com/mixssamp_collec_device> @linkml:String ? ;
+          <https://example.com/mixssamp_collec_method> @linkml:String ? ;
+          <https://example.com/mixssamp_mat_process> @linkml:String ? ;
+          <https://example.com/mixssamp_name> @linkml:String ;
+          <https://example.com/mixssamp_size> @linkml:String ? ;
+          <https://example.com/mixssamp_taxon_id> @linkml:String ;
+          <https://example.com/mixssamp_vol_we_dna_ext> @linkml:String ? ;
+          <https://example.com/mixsseq_meth> @linkml:String ;
+          <https://example.com/mixssim_search_meth> @linkml:String ? ;
+          <https://example.com/mixssize_frac> @linkml:String ? ;
+          <https://example.com/mixssop> @linkml:String ? ;
+          <https://example.com/mixssource_mat_id> @linkml:String ? ;
+          <https://example.com/mixstax_class> @linkml:String ? ;
+          <https://example.com/mixstemp> @linkml:String ?
+       ) ;
+       rdf:type [ <https://example.com/mixsMims> ] ?
+    )
+}
+
+

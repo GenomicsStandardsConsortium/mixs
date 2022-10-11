@@ -21,15 +21,16 @@ classifiers = [
     "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
 ]
 
-packages = [
-    { include = "generated" }
-]
+#packages = [
+#    { include = "generated" }
+#]
 
 [tool.poetry.dependencies]
 python = "^3.9"
 linkml = ">=1.2.12"
 pandas = "*"
 mkdocs-material = "^8.3.5"
+schemasheets = "^0.1.16"
 
 [tool.poetry.dev-dependencies]
 pipenv-to-requirements = "*"
@@ -40,7 +41,6 @@ unittest2 = "*"
 nbconvert = "*"
 nbformat = "*"
 ipykernel = "*"
-mkdocs = "*"
 mkdocs-material = "^8.2.14"
 
 [build-system]
