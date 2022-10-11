@@ -6,10 +6,11 @@ RUN=poetry run
 all_schemasheets: \
 clean_schemasheets \
 schemasheets/yaml_output/mixs_from_schema_sheets.yaml \
-schemasheets/lint_log.tsv \
 schemasheets/generated/mixs_from_schema_sheets_generated.yaml \
 schemasheets/generated/sqlschema/mixs_from_schema_sheets.sql \
 schemasheets/yaml_output/mixs_reference_merged.yaml
+
+# schemasheets/lint_log.tsv \
 
 clean_schemasheets:
 	rm -rf schemasheets/example_data/out/mims_data.json
@@ -78,7 +79,7 @@ schemasheets/yaml_output/mixs_from_schema_sheets.yaml
 		--no-materialize-attributes $^ > $@
 
 schemasheets/generated/sqlschema/mixs_from_schema_sheets.sql: \
-schemasheets/yaml_output/mixs_from_schema_sheets.yaml
+schemasheets/generated/mixs_from_schema_sheets_generated.yaml
 	$(RUN) gen-project \
 		--exclude excel \
 		--exclude markdown \
@@ -242,3 +243,152 @@ schemasheets/yaml_output/mixs_reference_merged.yaml: model/schema/mixs.yaml
 ###slots_diff: schemasheets/yaml_output/reference_slots_only_generated.yaml schemasheets/yaml_output/slots_roundtrip.yaml
 ###	- jd --yaml $^
 ##
+
+.PHONY: mims_set_data_missing_validation mims_set_data_extra_validation
+
+all_reshaped: \
+clean_reshaped \
+schemasheets/logs/mixs_core_reshaped_linting_log.tsv \
+schemasheets/generated/sqlschema/mixs_core_reshaped.sql \
+mims_set_data_missing_validation \
+mims_set_data_extra_validation
+
+# todo excel and sqlddl artifacts look wierd
+#   direct jsonschema and linkml-validate not working as expected
+#   should I be setting tree root?
+
+clean_reshaped:
+	rm -rf schemasheets/yaml_output/mixs_core_reshaped.yaml
+	rm -rf schemasheets/logs/mixs_core_reshaped*
+	rm -rf schemasheets/generated/*
+	mkdir -p schemasheets/generated
+	mkdir -p schemasheets/logs
+	mkdir -p schemasheets/yaml_output
+	echo $(DIR_CREATION_MSG) > schemasheets/generated/README.md
+	echo $(DIR_CREATION_MSG) > schemasheets/logs/README.md
+	echo $(DIR_CREATION_MSG) > schemasheets/yaml_output/README.md
+
+# todo document how .../MIxS_6_term_updates_MIxS6_Core-Final_clean_slotdefs.tsv etc were generated
+schemasheets/yaml_output/mixs_core_reshaped.yaml: \
+schemasheets/tsv_input/original_headers_reshaped/MIxS_6_term_updates_MIxS6_Core-Final_clean_classdefs.tsv \
+schemasheets/tsv_input/original_headers_reshaped/MIxS_6_term_updates_MIxS6_Core-Final_clean_slot_assignments.tsv \
+schemasheets/tsv_input/original_headers_reshaped/MIxS_6_term_updates_MIxS6_Core-Final_clean_slotdefs.tsv \
+schemasheets/tsv_input/original_headers_reshaped/mixs_prefixes.tsv \
+schemasheets/tsv_input/original_headers_reshaped/mixs_schema_annotations.tsv \
+schemasheets/tsv_input/original_headers_reshaped/mixs_utility.tsv
+	$(RUN) sheets2linkml --output $@ $^ 2>&1 | tee schemasheets/logs/$(basename $(notdir $@)).log
+
+# --fix / --no-fix
+# see https://github.com/linkml/linkml/blob/main/linkml/linter/config/default.yaml
+schemasheets/logs/mixs_core_reshaped_linting_log.tsv: schemasheets/yaml_output/mixs_core_reshaped.yaml
+	- $(RUN) linkml-lint \
+		--format tsv \
+		--output $@ $< \
+		--config schemasheets/linter_config_default.yaml
+
+
+# todo capture log?
+schemasheets/generated/mixs_core_reshaped_generated.yaml: schemasheets/yaml_output/mixs_core_reshaped.yaml
+	$(RUN) gen-linkml \
+		--format yaml \
+		--no-materialize-attributes $^ > $@
+
+# todo capture log?
+schemasheets/generated/sqlschema/mixs_core_reshaped.sql: \
+schemasheets/generated/mixs_core_reshaped_generated.yaml
+	$(RUN) gen-project \
+		--dir schemasheets/generated $<
+
+mims_set_data_missing_validation: \
+schemasheets/generated/mixs_core_reshaped_generated.yaml schemasheets/example_data/in/mims_set_data_missing.json
+	! $(RUN) linkml-validate \
+		--target-class Database \
+		--schema $^
+
+mims_set_data_extra_validation: \
+schemasheets/generated/mixs_core_reshaped_generated.yaml schemasheets/example_data/in/mims_set_data_extra.json
+	! $(RUN) linkml-validate \
+		--target-class Database \
+		--schema $^
+
+mims_set_data_validation: \
+schemasheets/generated/mixs_core_reshaped_generated.yaml schemasheets/example_data/in/mims_set_data.json
+	$(RUN) linkml-validate \
+		--target-class Database \
+		--schema $^
+
+# jsonschema.exceptions.RefResolutionError: Unresolvable JSON pointer: '$defs/Mims'
+
+# additonal linkml-validate options
+ #  -m, --module TEXT               Path to python
+ #                                  datamodel module
+ #  -o, --output TEXT               Path to output
+ #                                  file
+ #  -f, --input-format [yaml|json|rdf|ttl|json-ld|csv|tsv]
+ #                                  Input format.
+ #                                  Inferred from
+ #                                  input suffix if
+ #                                  not specified
+ #  -C, --target-class TEXT         name of class in
+ #                                  datamodel that
+ #                                  the root node
+ #                                  instantiates
+ #  -S, --index-slot TEXT           top level slot.
+ #                                  Required for CSV
+ #                                  dumping/loading
+ #  -s, --schema TEXT               Path to schema
+ #                                  specified as
+ #                                  LinkML yaml
+
+# additional gen-project options
+  #  -A, --generator-arguments TEXT  yaml configuration for generators
+  #  -C, --config-file FILENAME      path to yaml configuration
+  #  -X, --exclude TEXT              list of artefacts to be excluded
+  #  -I, --include TEXT              list of artefacts to be included. If not
+  #                                  set, defaults to all
+  #  --mergeimports / --no-mergeimports
+  #                                  Merge imports into source file  [default:
+  #                                  mergeimports]
+
+# additional gen-linkml options
+  #  --materialize-patterns / --no-materialize-patterns
+  #                                  Materialize structured patterns as patterns
+  #                                  [default: no-materialize-patterns]
+  #  --materialize-attributes / --no-materialize-attributes
+  #                                  Materialize induced slots as attributes
+  #                                  [default: materialize-attributes]
+  #  --metadata / --no-metadata      Include metadata in output  [default:
+  #                                  metadata]
+  #  --useuris / --metauris          Include metadata in output  [default:
+  #                                  useuris]
+  #  -im, --importmap FILENAME       Import mapping file
+  #  --log_level [CRITICAL|ERROR|WARNING|INFO|DEBUG]
+  #                                  Logging level  [default: WARNING]
+  #  -v, --verbose                   verbosity
+  #  --mergeimports / --no-mergeimports
+  #                                  Merge imports into source file
+  #                                  (default=mergeimports)
+
+# Additional sheets2linkml Options:
+  #  -n, --name TEXT                 name of the
+  #                                  schema
+  #  --unique-slots / --no-unique-slots
+  #                                  All slots are
+  #                                  treated as
+  #                                  unique and top
+  #                                  level and do not
+  #                                  belong to the
+  #                                  specified class
+  #                                  [default: no-
+  #                                  unique-slots]
+  #  --repair / --no-repair          Auto-repair
+  #                                  schema
+  #                                  [default:
+  #                                  repair]
+  #  --gsheet-id TEXT                Google sheets
+  #                                  ID. If this is
+  #                                  specified then
+  #                                  the arguments
+  #                                  MUST be sheet
+  #                                  names
+  #  -v, --verbose

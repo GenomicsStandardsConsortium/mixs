@@ -1,0 +1,16 @@
+permissible_value	description	maps_to	min	opposite	interpretation	aliases	mixs_notation	code	max	uml
+mandatory	At least one value MUST be provided	required: true	1	optional	MUST	required	M	M		
+optional	A value MAY be provided	required: false	0	mandatory	MAY	permissible	X	O		
+recommended	A value SHOULD be provided	{required: false, recommended: true}	0	not_recommended	SHOULD	strongly suggested		R		
+not_recommended	Values are permitted, but SHOULD NOT be filled in	{required: false, recommended: false, recommended_against: true}	0	recommended	SHOULD NOT	recommended against		-R		
+applicable	union of optional and mandatory		0	not_applicable	MAY			O/M		
+not_applicable	A value MUST NOT be provided		0	applicable	MUST NOT		-	-	0	
+zero_or_one	not required, single-valued	{required: false, multivalued: false}	0		MUST, MAY			0..1	1	0..1
+exactly_one	required, single-valued	{required: true, multivalued: false}	1		MUST			1..1	1	1..1
+zero_to_many	not required, multi-valued	{required: false, multivalued: true}	0		MAY			0..*	*	0..*
+one_to_many	required, multi-valued	{required: true, multivalued: true}	1		MUST, MAY			1..*	*	1..*
+single_valued	not multi-valued	multivalued: false		multi-valued	MAY		1	SV	1	
+multi_valued	multi-valued	multivalued: true		single-valued	MAY		m	MV	*	
+conditional	A qualifier on cardinalities that indicates the interpretation is context-dependent	conditional: true					E	E+		
+unconditional	A qualifier on cardinalities that indicates the interpretation is context-independent	conditional: false						E-		
+conditional_mandatory		{required: true, conditional: true}					C	EM		
