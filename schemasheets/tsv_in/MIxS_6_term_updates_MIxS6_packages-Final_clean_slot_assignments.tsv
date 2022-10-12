@@ -1,0 +1,1758 @@
+Environmental package	Structured comment name	Example	Requirement	schemasheets cardinality	cardinality	recommended	github ticket
+> class	slot	examples	annotations	annotations	cardinality	recommended	annotations
+>		"internal_separator: ""|"""	inner_key: mixs_cardinality_code	inner_key: cardinality_code			inner_key: github_ticket
+>							
+Agriculture	adapters		M				
+Agriculture	adjacent_environment	estuarine biome [ENVO:01000020]	X				#212
+Agriculture	agrochem_addition		X				
+Agriculture	ances_data	A/3*B	X				
+Agriculture	anim_water_method	water trough [EOL:0001618]	X				
+Agriculture	annot		C				
+Agriculture	annual_precpt		X				#226
+Agriculture	annual_temp	12.5 degree Celsius	X				#225
+Agriculture	assembly_name	"HuRef, JCVI_ISG_i3_1.0"	M				
+Agriculture	assembly_quality	"metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters otherwise"					
+Agriculture	assembly_software	High-quality draft genome					
+Agriculture	biotic_relationship		C				#168
+Agriculture	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	M				
+Agriculture	chimera_check		M				
+Agriculture	climate_environment		C				
+Agriculture	crop_rotation		C				
+Agriculture	crop_yield	570 kilogram per metre square	X				
+Agriculture	cult_isol_date	2/26/20	X				
+Agriculture	cur_land_use		X				
+Agriculture	cur_vegetation		C				
+Agriculture	cur_vegetation_meth		C				
+Agriculture	drainage_class		C				
+Agriculture	elev	100 meter	X				
+Agriculture	enrichment_protocol	BAM Chapter 4: Enumeration of Escherichia coli and the Coliform Bacteria	C				
+Agriculture	extreme_event		C				
+Agriculture	fao_class		C				
+Agriculture	farm_equip	combine harvester [AGRO:00000473]	X				
+Agriculture	farm_equip_san		X				
+Agriculture	farm_equip_shared		X				
+Agriculture	farm_water_source	water well (ENVO:01000002)	C				
+Agriculture	fertilizer_admin	fish emulsion [AGRO:00000082]	X				
+Agriculture	fire		C				
+Agriculture	flooding		C				
+Agriculture	food_harvest_proc		X				
+Agriculture	food_prod	organic plant cultivation [FOODON:03530253]	X				
+Agriculture	food_product_type	delicatessen salad; FOODON:03316276	X				
+Agriculture	food_source	red swamp crayfish; FOODON:03412231	M				#252
+Agriculture	food_trav_mode	train travel [GENEPIO:0001060]	X				#229
+Agriculture	food_trav_vehic	aircraft [ENVO:01001488]|car [ENVO:01000605]	X				#229
+Agriculture	fungicide_regm		C				
+Agriculture	gaseous_environment		C				
+Agriculture	genetic_mod	aox1A transgenic	X				
+Agriculture	heavy_metals_meth		C				
+Agriculture	herbicide_regm		C				
+Agriculture	horizon		C				
+Agriculture	horizon_meth		C				
+Agriculture	host_age		M				
+Agriculture	host_common_name		M				
+Agriculture	host_disease_stat	downy mildew	C				
+Agriculture	host_dry_mass	500 gram	X				
+Agriculture	host_genotype		M				
+Agriculture	host_height		M				
+Agriculture	host_length		M				
+Agriculture	host_life_stage		M				
+Agriculture	host_phenotype		M				
+Agriculture	host_spec_range		M				
+Agriculture	host_subspecf_genlin	"serovar:Newport, variety:glabrum, cultivar: Red Delicious"	X				#227 & #256
+Agriculture	host_symbiont	Paragordius varius	X				#224 & #175
+Agriculture	host_taxid	9606	M				
+Agriculture	host_tot_mass		M				
+Agriculture	humidity	30% relative humidity	C				
+Agriculture	isol_growth_condt		X				
+Agriculture	lib_layout	paired	C				#231
+Agriculture	lib_reads_seqd		M				
+Agriculture	lib_screen	"enriched, screened, normalized"	M				
+Agriculture	lib_size		X				
+Agriculture	lib_vector		M				
+Agriculture	library_prep_kit	"llumina DNA Prep, (M) Tagmentation"	X				
+Agriculture	link_class_info		X				
+Agriculture	link_climate_info		X				
+Agriculture	local_class		C				
+Agriculture	local_class_meth		C				
+Agriculture	lot_number	"1239ABC01A, split Cornish hens"	X				
+Agriculture	microbial_biomass		M				
+Agriculture	microbial_biomass_meth		M				
+Agriculture	mid		M				
+Agriculture	misc_param		X				
+Agriculture	non_mineral_nutr_regm		C				
+Agriculture	nucl_acid_amp		M				
+Agriculture	nucl_acid_ext		M				
+Agriculture	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	C				
+Agriculture	oxy_stat_samp		C				
+Agriculture	pathogenicity	"human, animal, plant, fungi, bacteria"	M				
+Agriculture	pcr_cond		M				
+Agriculture	pcr_primers	FWD: forward primer sequence REV:reverse primer sequence	M				
+Agriculture	perturbation		C				
+Agriculture	pesticide_regm		C				
+Agriculture	ph_meth		C				
+Agriculture	ph_regm		C				
+Agriculture	photosynt_activ	μmol CO2 m-2 s-1	C				#223
+Agriculture	photosynt_activ_meth		C				#223
+Agriculture	plant_growth_med	hydroponic plant culture media [EO:0007067]	X				#217 & #165
+Agriculture	plant_product		C				
+Agriculture	plant_struc	epidermis [PO:0005679]	C				#230
+Agriculture	plant_water_method	drip irrigation process [AGRO:00000056]	C				
+Agriculture	pool_dna_extracts		M				
+Agriculture	porosity		X				
+Agriculture	pres_animal_insect	cat;5	X				"couldnt this also be covered by the ""observed host symbiont"" field?"
+Agriculture	previous_land_use		C				
+Agriculture	previous_land_use_meth		C				
+Agriculture	profile_position		C				
+Agriculture	rel_location	furrow	C				
+Agriculture	root_med_carbon	sucrose	X				
+Agriculture	root_med_macronutr	KH2PO4;170¬†milligram per liter	X				
+Agriculture	root_med_ph	7.5	X				
+Agriculture	salt_regm		C				
+Agriculture	samp_collect_device	"biopsy, niskin bottle, push core"	M				
+Agriculture	samp_collect_method	environmental swab sampling	X				
+Agriculture	samp_mat_process	"filtering of seawater, storing samples in ethanol"	M				
+Agriculture	samp_pooling		C				
+Agriculture	samp_size		M				
+Agriculture	samp_stor_temp	-80 degree Celsius	X				
+Agriculture	samp_store_dur		M				
+Agriculture	samp_store_loc		M				
+Agriculture	samp_vol_we_dna_ext		M				
+Agriculture	season	autumn [NCIT:C94733]	X				
+Agriculture	season_environment		C				
+Agriculture	season_humidity	25%	X				
+Agriculture	season_precpt		X				#226
+Agriculture	season_temp	18 degree Celsius	X				#225
+Agriculture	seq_meth	454 Genome Sequencer FLX [OBI:0000702]	M				
+Agriculture	seq_quality_check		X				
+Agriculture	sequencing_location	University of Maryland Genomics Resource Center	X				
+Agriculture	sieving		M				
+Agriculture	size_frac_low	0.2 micrometer	X				
+Agriculture	size_frac_up	20 micrometer	X				
+Agriculture	slope_aspect		C				
+Agriculture	slope_gradient		C				
+Agriculture	soil_conductivity		X				
+Agriculture	soil_cover		C				
+Agriculture	soil_depth	5 cm	C				
+Agriculture	soil_horizon	[O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost]	C				#218
+Agriculture	soil_p_h		X				
+Agriculture	soil_temp	25 degrees Celsius	X				
+Agriculture	soil_type		M				
+Agriculture	soil_type_meth		M				
+Agriculture	solar_irradiance	1.36 kilowatts per square meter per day	X				#209
+Agriculture	sop		X				
+Agriculture	source_mat_id		X				
+Agriculture	specific_host	Homo sapiens and/or 9606	M				
+Agriculture	spikein_strain	169963	X				#228
+Agriculture	standing_water_regm		C				
+Agriculture	store_cond		M				
+Agriculture	target_gene	"16S rRNA, 18S rRNA, nif, amoA, rpo"	M				
+Agriculture	target_subfragment	"V6, V9, ITS"	M				
+Agriculture	temp		M				
+Agriculture	texture		X				
+Agriculture	texture_meth		X				
+Agriculture	tillage		C				
+Agriculture	tot_car		C				
+Agriculture	tot_n_meth		C				
+Agriculture	tot_nitro		C				
+Agriculture	tot_org_c_meth		C				
+Agriculture	tot_org_carb		C				
+Agriculture	tot_phos		C				
+Agriculture	trophic_level		C				
+Agriculture	url		C				
+Agriculture	water_p_h	7.2	X				
+Agriculture	water_source_shared	no sharing	X				
+Agriculture	water_temp_regm		C				
+Agriculture	watering_regm		C				
+Air	air_particulate_matter_concentration	PM2.5;10 microgram per cubic meter	X				
+Air	alt	100 meter	M				
+Air	barometric_press	5 millibar	X				
+Air	carb_dioxide	410 parts per million	X				
+Air	carb_monoxide	0.1 parts per million	X				
+Air	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+Air	elev	100 meter	C				
+Air	humidity	25 gram per cubic meter	X				
+Air	methane	1800 parts per billion	X				
+Air	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+Air	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+Air	oxy_stat_samp	aerobic	X				
+Air	oxygen	600 parts per million	X				
+Air	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+Air	pollutants	lead;0.15 microgram per cubic meter	X				
+Air	project_name	Forest soil metagenome	M				
+Air	salinity	25 practical salinity unit	X				
+Air	samp_name	ISDsoil1	M				
+Air	samp_store_dur	P1Y6M	X				
+Air	samp_store_loc	Freezer no:5	X				
+Air	samp_store_temp	-80 degree Celsius	X				
+Air	samp_vol_we_dna_ext	1500 milliliter	X				
+Air	solar_irradiance	1.36 kilowatts per square meter per day	X				
+Air	temp	25 degree Celsius	X				
+Air	ventilation_rate	750 cubic meter per minute	X				
+Air	ventilation_type	Operable windows	X				
+Air	volatile_org_comp	formaldehyde;500 nanogram per liter	X				
+Air	wind_direction	Northwest	X				
+Air	wind_speed	21 kilometer per hour	X				
+BuiltEnvironment	abs_air_humidity	9 gram per gram	M				
+BuiltEnvironment	address		X				
+BuiltEnvironment	adj_room		X				
+BuiltEnvironment	aero_struc	plane	X				
+BuiltEnvironment	air_temp	20 degree Celsius	M				
+BuiltEnvironment	amount_light		X				
+BuiltEnvironment	arch_struc	shed	X				
+BuiltEnvironment	avg_dew_point	25.5 degree Celsius	X				
+BuiltEnvironment	avg_occup	2	X				
+BuiltEnvironment	avg_temp	12.5 degree Celsius	X				
+BuiltEnvironment	bathroom_count	1	X				
+BuiltEnvironment	bedroom_count	2	X				
+BuiltEnvironment	build_docs	maintenance plans	X				
+BuiltEnvironment	build_occup_type	market	M				
+BuiltEnvironment	building_setting	rural	M				
+BuiltEnvironment	built_struc_age	15	X				
+BuiltEnvironment	built_struc_set	rural	X				
+BuiltEnvironment	built_struc_type		X				
+BuiltEnvironment	carb_dioxide	410 parts per million	M				
+BuiltEnvironment	ceil_area	25 square meter	X				
+BuiltEnvironment	ceil_cond	damaged	X				
+BuiltEnvironment	ceil_finish_mat	stucco	X				
+BuiltEnvironment	ceil_struc	concrete	X				
+BuiltEnvironment	ceil_texture	popcorn	X				
+BuiltEnvironment	ceil_thermal_mass		X				
+BuiltEnvironment	ceil_type	coffered	X				
+BuiltEnvironment	ceil_water_mold	presence of mold visible	X				
+BuiltEnvironment	cool_syst_id	12345	X				
+BuiltEnvironment	date_last_rain	2018-05-11:T14:30Z	X				
+BuiltEnvironment	dew_point	22 degree Celsius	X				
+BuiltEnvironment	door_comp_type	revolving	X				
+BuiltEnvironment	door_cond	new	X				
+BuiltEnvironment	door_direct	inward	X				
+BuiltEnvironment	door_loc	north	X				
+BuiltEnvironment	door_mat	wood	X				
+BuiltEnvironment	door_move	swinging	X				
+BuiltEnvironment	door_size	2.5 square meter	X				
+BuiltEnvironment	door_type	wooden	X				
+BuiltEnvironment	door_type_metal	hollow	X				
+BuiltEnvironment	door_type_wood	battened	X				
+BuiltEnvironment	door_water_mold	presence of mold visible	X				
+BuiltEnvironment	drawings	sketch	X				
+BuiltEnvironment	elevator	2	X				
+BuiltEnvironment	escalator	4	X				
+BuiltEnvironment	exp_duct		X				
+BuiltEnvironment	exp_pipe		X				
+BuiltEnvironment	ext_door		X				
+BuiltEnvironment	ext_wall_orient	northwest	X				
+BuiltEnvironment	ext_window_orient	southwest	X				
+BuiltEnvironment	filter_type	HEPA	M				
+BuiltEnvironment	fireplace_type	wood burning	X				
+BuiltEnvironment	floor_age		X				
+BuiltEnvironment	floor_area		X				
+BuiltEnvironment	floor_cond	new	X				
+BuiltEnvironment	floor_count		X				
+BuiltEnvironment	floor_finish_mat	carpet	X				
+BuiltEnvironment	floor_struc	concrete	X				
+BuiltEnvironment	floor_thermal_mass		X				
+BuiltEnvironment	floor_water_mold	ceiling discoloration	X				
+BuiltEnvironment	freq_clean		X				#206
+BuiltEnvironment	freq_cook		X				
+BuiltEnvironment	furniture	chair	X				
+BuiltEnvironment	gender_restroom	male	X				
+BuiltEnvironment	hall_count		X				
+BuiltEnvironment	handidness	right handedness	X				
+BuiltEnvironment	heat_cool_type	heat pump	M				
+BuiltEnvironment	heat_deliv_loc	north	X				
+BuiltEnvironment	heat_sys_deliv_meth	radiant	X				
+BuiltEnvironment	heat_system_id		X				
+BuiltEnvironment	height_carper_fiber		X				
+BuiltEnvironment	indoor_space	foyer	M				
+BuiltEnvironment	indoor_surf	wall	E				
+BuiltEnvironment	inside_lux		X				
+BuiltEnvironment	int_wall_cond	damaged	X				
+BuiltEnvironment	last_clean	2018-05-11:T14:30Z	X				
+BuiltEnvironment	light_type	desk lamp	M				
+BuiltEnvironment	max_occup		X				
+BuiltEnvironment	mech_struc	elevator	X				
+BuiltEnvironment	number_pets		X				
+BuiltEnvironment	number_plants		X				
+BuiltEnvironment	number_resident		X				
+BuiltEnvironment	occup_density_samp		M				
+BuiltEnvironment	occup_document	estimate	X				
+BuiltEnvironment	occup_samp	10	M				
+BuiltEnvironment	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	M				
+BuiltEnvironment	pres_animal_insect	cat;5	X				
+BuiltEnvironment	project_name	Forest soil metagenome	M				
+BuiltEnvironment	quad_pos	West side	X				
+BuiltEnvironment	rel_air_humidity	80%	M				
+BuiltEnvironment	rel_humidity_out	12 per kilogram of air	X				
+BuiltEnvironment	rel_samp_loc	center of car	X				
+BuiltEnvironment	room_air_exch_rate		X				
+BuiltEnvironment	room_architec_elem		X				
+BuiltEnvironment	room_condt	new	X				
+BuiltEnvironment	room_connected	office	X				
+BuiltEnvironment	room_count		X				
+BuiltEnvironment	room_dim		X				
+BuiltEnvironment	room_door_dist		X				
+BuiltEnvironment	room_door_share		X				
+BuiltEnvironment	room_hallway		X				
+BuiltEnvironment	room_loc	interior room	X				
+BuiltEnvironment	room_moist_dam_hist		X				
+BuiltEnvironment	room_net_area		X				
+BuiltEnvironment	room_occup		X				
+BuiltEnvironment	room_samp_pos	south corner	X				
+BuiltEnvironment	room_type	bathroom	X				
+BuiltEnvironment	room_vol		X				
+BuiltEnvironment	room_wall_share		X				
+BuiltEnvironment	room_window_count		X				
+BuiltEnvironment	samp_floor	4th floor	X				
+BuiltEnvironment	samp_name	ISDsoil1	M				
+BuiltEnvironment	samp_room_id		X				
+BuiltEnvironment	samp_sort_meth		X				
+BuiltEnvironment	samp_time_out		X				
+BuiltEnvironment	samp_weather	foggy	X				
+BuiltEnvironment	season	autumn [NCIT:C94733]	X				
+BuiltEnvironment	season_use	Winter	X				
+BuiltEnvironment	shad_dev_water_mold	no presence of mold visible	X				
+BuiltEnvironment	shading_device_cond	new	X				
+BuiltEnvironment	shading_device_loc	exterior	X				
+BuiltEnvironment	shading_device_mat		X				
+BuiltEnvironment	shading_device_type	slatted aluminum awning	X				
+BuiltEnvironment	space_typ_state	typically occupied	M				
+BuiltEnvironment	specific	construction	X				
+BuiltEnvironment	specific_humidity	15 per kilogram of air	X				
+BuiltEnvironment	substructure_type	basement	X				
+BuiltEnvironment	surf_air_cont	radon	E				
+BuiltEnvironment	surf_humidity	10%	E				
+BuiltEnvironment	surf_material	wood	E				
+BuiltEnvironment	surf_moisture	0.01 gram per square meter	E				
+BuiltEnvironment	surf_moisture_ph	7	E				
+BuiltEnvironment	surf_temp	15 degree Celsius	E				
+BuiltEnvironment	temp_out	5 degree Celsius	X				
+BuiltEnvironment	train_line	red	X				
+BuiltEnvironment	train_stat_loc	forest hills	X				
+BuiltEnvironment	train_stop_loc	end	X				
+BuiltEnvironment	typ_occup_density	25	M				
+BuiltEnvironment	ventilation_type	Operable windows	M				
+BuiltEnvironment	vis_media	3D scans	X				
+BuiltEnvironment	wall_area		X				
+BuiltEnvironment	wall_const_type	fire resistive	X				
+BuiltEnvironment	wall_finish_mat	wood	X				
+BuiltEnvironment	wall_height		X				
+BuiltEnvironment	wall_loc	north	X				
+BuiltEnvironment	wall_surf_treatment	paneling	X				
+BuiltEnvironment	wall_texture	popcorn	X				
+BuiltEnvironment	wall_thermal_mass		X				
+BuiltEnvironment	wall_water_mold	no presence of mold visible	X				
+BuiltEnvironment	water_feat_size		X				
+BuiltEnvironment	water_feat_type	stream	X				
+BuiltEnvironment	weekday	Sunday	X				
+BuiltEnvironment	window_cond	rupture	X				
+BuiltEnvironment	window_cover	curtains	X				
+BuiltEnvironment	window_horiz_pos	middle	X				
+BuiltEnvironment	window_loc	west	X				
+BuiltEnvironment	window_mat	wood	X				
+BuiltEnvironment	window_open_freq		X				
+BuiltEnvironment	window_size		X				
+BuiltEnvironment	window_status	open	X				
+BuiltEnvironment	window_type	fixed window	X				
+BuiltEnvironment	window_vert_pos	middle	X				
+BuiltEnvironment	window_water_mold	no presence of mold visible	X				
+FoodAnimalAndAnimalFeed	animal_am	tetracycline	X				
+FoodAnimalAndAnimalFeed	animal_am_dur	3 days	X				
+FoodAnimalAndAnimalFeed	animal_am_freq	once daily	X				
+FoodAnimalAndAnimalFeed	animal_am_route	oral-feed	X				
+FoodAnimalAndAnimalFeed	animal_am_use	shipping fever	X				
+FoodAnimalAndAnimalFeed	animal_body_cond	under conditioned	X				
+FoodAnimalAndAnimalFeed	animal_diet	Hay [FOODON:03301763]	X				
+FoodAnimalAndAnimalFeed	animal_feed_equip	self feeding [EOL:0001645]| straight feed trough [EOL:0001661]	X				
+FoodAnimalAndAnimalFeed	animal_group_size	80	X				
+FoodAnimalAndAnimalFeed	animal_housing	pen rearing system [EOL:0001636]	X				
+FoodAnimalAndAnimalFeed	animal_sex	castrated male	X				
+FoodAnimalAndAnimalFeed	bacterial_density	10 colony forming units per gram dry weight	X				
+FoodAnimalAndAnimalFeed	coll_site_geo_feat	grocery store [GENEPIO:0001020]	M				
+FoodAnimalAndAnimalFeed	collection_date	2018-05-11T10:00:00+01:00	M				
+FoodAnimalAndAnimalFeed	cons_food_stor_dur	P5D	X				
+FoodAnimalAndAnimalFeed	cons_food_stor_temp	4 degree Celsius	X				
+FoodAnimalAndAnimalFeed	cons_purch_date	11/30/19	X				
+FoodAnimalAndAnimalFeed	cons_qty_purchased	5 cans	X				
+FoodAnimalAndAnimalFeed	cult_isol_date	2018-05-11T10:00:00+01:00	X				
+FoodAnimalAndAnimalFeed	cult_result	positive	X				
+FoodAnimalAndAnimalFeed	cult_result_org	Listeria monocytogenes [NCIT:C86502]	X				
+FoodAnimalAndAnimalFeed	cult_target	Listeria monocytogenes [NCIT:C86502]	X				
+FoodAnimalAndAnimalFeed	enrichment_protocol	BAM Chapter 4: Enumeration of Escherichia coli and the Coliform Bacteria	X				
+FoodAnimalAndAnimalFeed	env_broad_scale	forest biome [ENVO:01000174]	M				
+FoodAnimalAndAnimalFeed	env_local_scale	litter layer [ENVO:01000338]	M				
+FoodAnimalAndAnimalFeed	env_medium	soil [ENVO:00001998]	M				
+FoodAnimalAndAnimalFeed	experimental_factor	time series design [EFO:0001779]	X				
+FoodAnimalAndAnimalFeed	food_additive	xanthan gum [FOODON:03413321]	X				
+FoodAnimalAndAnimalFeed	food_contact_surf	cellulose acetate [FOODON:03500034]	X				
+FoodAnimalAndAnimalFeed	food_contain_wrap	Plastic shrink-pack [FOODON:03490137]	X				
+FoodAnimalAndAnimalFeed	food_cooking_proc	food blanching [FOODON:03470175]	X				
+FoodAnimalAndAnimalFeed	food_dis_point	"USA:Delmarva, Peninsula"	X				
+FoodAnimalAndAnimalFeed	food_dis_point_city	Atlanta[GAZ:00004445]	X				
+FoodAnimalAndAnimalFeed	food_ingredient	bean (whole) [FOODON:00002753]	X				
+FoodAnimalAndAnimalFeed	food_origin	"USA:Delmarva, Peninsula"	M				
+FoodAnimalAndAnimalFeed	food_pack_capacity	454 grams	X				
+FoodAnimalAndAnimalFeed	food_pack_integrity	food packing medium compromised [FOODON:00002517]	X				
+FoodAnimalAndAnimalFeed	food_pack_medium	packed in fruit juice [FOODON:03480039]	X				
+FoodAnimalAndAnimalFeed	food_preserv_proc	food slow freezing [FOODON:03470128]	X				
+FoodAnimalAndAnimalFeed	food_prior_contact	processed in stainless steel container [FOODON:03530081]	X				
+FoodAnimalAndAnimalFeed	food_prod	organic plant cultivation [FOODON:03530253]	M				
+FoodAnimalAndAnimalFeed	food_prod_synonym	pinot gris	X				
+FoodAnimalAndAnimalFeed	food_product_qual	raw [FOODON:03311126]	X				
+FoodAnimalAndAnimalFeed	food_product_type	"shrimp (peeled, deep-frozen) [FOODON:03317171]"	M				
+FoodAnimalAndAnimalFeed	food_quality_date	best by 2020-05-24	X				
+FoodAnimalAndAnimalFeed	food_source	giant tiger prawn [FOODON:03412612]	X				#252
+FoodAnimalAndAnimalFeed	food_source_age	P6M	X				
+FoodAnimalAndAnimalFeed	food_trace_list	tropical tree fruits	X				
+FoodAnimalAndAnimalFeed	food_trav_mode	train travel [GENEPIO:0001060]	X				
+FoodAnimalAndAnimalFeed	food_trav_vehic	aircraft [ENVO:01001488]|car [ENVO:01000605]	X				
+FoodAnimalAndAnimalFeed	food_treat_proc	gluten removal process [FOODON:03460750]	X				
+FoodAnimalAndAnimalFeed	geo_loc_name	"USA: Maryland, Bethesda"	M				
+FoodAnimalAndAnimalFeed	haccp_term	tetrodotoxic poisoning [FOODON:03530249]	X				
+FoodAnimalAndAnimalFeed	ifsac_category	Plants:Produce:Vegetables:Herbs:Dried Herbs	M				
+FoodAnimalAndAnimalFeed	intended_consumer	9606 o rsenior as food consumer [FOODON:03510254] 	M				
+FoodAnimalAndAnimalFeed	lat_lon	50.586825 6.408977	M				
+FoodAnimalAndAnimalFeed	library_prep_kit	Illumina DNA Prep	X				
+FoodAnimalAndAnimalFeed	lot_number	"1239ABC01A, split Cornish hens"	X				
+FoodAnimalAndAnimalFeed	microb_cult_med	brain heart infusion agar [MICRO:0000566]	X				
+FoodAnimalAndAnimalFeed	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+FoodAnimalAndAnimalFeed	nucl_acid_ext	https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf	X				
+FoodAnimalAndAnimalFeed	organism_count	total prokaryotes;3.5e7 colony forming units per milliliter;qPCR	X				
+FoodAnimalAndAnimalFeed	part_plant_animal	chuck [FOODON:03530021]	X				
+FoodAnimalAndAnimalFeed	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+FoodAnimalAndAnimalFeed	pool_dna_extracts	"yes, 5"	X				
+FoodAnimalAndAnimalFeed	project_name	Forest soil metagenome	M				 
+FoodAnimalAndAnimalFeed	repository_name	FDA CFSAN Microbiology Laboratories	X				
+FoodAnimalAndAnimalFeed	samp_collect_device	"swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]"	X				
+FoodAnimalAndAnimalFeed	samp_collect_method	environmental swab sampling	X				
+FoodAnimalAndAnimalFeed	samp_name	ISDsoil1	M				
+FoodAnimalAndAnimalFeed	samp_pooling	5uL of extracted genomic DNA from 5 leaves were pooled	X				
+FoodAnimalAndAnimalFeed	samp_purpose	field trial	M				
+FoodAnimalAndAnimalFeed	samp_rep_biol	6 replicates	X				
+FoodAnimalAndAnimalFeed	samp_rep_tech	10 replicates	X				
+FoodAnimalAndAnimalFeed	samp_size	5 liters	X				
+FoodAnimalAndAnimalFeed	samp_source_mat_cat	environmental (swab or sampling) [GENEPIO:0001732]	X				
+FoodAnimalAndAnimalFeed	samp_stor_device	Whirl Pak sampling bag [GENEPIO:0002122]	X				
+FoodAnimalAndAnimalFeed	samp_stor_dur	P1Y6M	X				
+FoodAnimalAndAnimalFeed	samp_stor_loc	freezer 5	X				
+FoodAnimalAndAnimalFeed	samp_stor_media	peptone water medium [MICRO:0000548]	X				
+FoodAnimalAndAnimalFeed	samp_stor_temp	-80 degree Celsius	X				
+FoodAnimalAndAnimalFeed	samp_transport_cont	cooler	X				
+FoodAnimalAndAnimalFeed	samp_transport_cont	cooler	X				
+FoodAnimalAndAnimalFeed	samp_transport_dur	P10D	X				
+FoodAnimalAndAnimalFeed	samp_transport_temp	4 degree Celsius	X				
+FoodAnimalAndAnimalFeed	samp_vol_we_dna_ext	1500 milliliter	X				
+FoodAnimalAndAnimalFeed	seq_meth	454 Genome Sequencer FLX [OBI:0000702]	M				
+FoodAnimalAndAnimalFeed	sequencing_kit	NextSeq 500/550 High Output Kit v2.5 (75 Cycles)	X				
+FoodAnimalAndAnimalFeed	sequencing_location	University of Maryland Genomics Resource Center	X				
+FoodAnimalAndAnimalFeed	serovar_or_serotype	Escherichia coli strain O157:H7 [NCIT:C86883]	X				
+FoodAnimalAndAnimalFeed	spikein_amr	wild type [ARO:3004432]	X				
+FoodAnimalAndAnimalFeed	spikein_antibiotic	Tetracycline at 5 mg/ml	X				
+FoodAnimalAndAnimalFeed	spikein_count	total prokaryotes;3.5e7 colony forming units per milliliter;qPCR	X				
+FoodAnimalAndAnimalFeed	spikein_growth_med	LB broth [MCO:0000036]	X				
+FoodAnimalAndAnimalFeed	spikein_metal	Cd at 20 ppm	X				
+FoodAnimalAndAnimalFeed	spikein_org	Listeria monocytogenes [NCIT:C86502]|28901	X				
+FoodAnimalAndAnimalFeed	spikein_serovar	Escherichia coli strain O157:H7 [NCIT:C86883]|83334	X				
+FoodAnimalAndAnimalFeed	spikein_strain	169963	X				
+FoodAnimalAndAnimalFeed	study_design	in vitro design [OBI:0001285]	X				
+FoodAnimalAndAnimalFeed	study_inc_dur	P24H	X				
+FoodAnimalAndAnimalFeed	study_inc_temp	37 degree Celsius	X				
+FoodAnimalAndAnimalFeed	study_timecourse	2 days post inoculation	X				
+FoodAnimalAndAnimalFeed	study_tmnt	"Factor A|spike-in|levels high, medium, low"	X				
+FoodAnimalAndAnimalFeed	temp	25 degree Celsius	X				
+FoodAnimalAndAnimalFeed	timepoint	P24H	X				
+FoodFarmEnvironment	adjacent_environment	estuarine biome [ENVO:01000020]	X				
+FoodFarmEnvironment	air_flow_impede	obstructed;hay bales; 2 m	X				
+FoodFarmEnvironment	air_pm_concen	PM2.5;10 microgram per cubic meter	X				
+FoodFarmEnvironment	ances_data	A/3*B	X				
+FoodFarmEnvironment	anim_water_method	water trough [EOL:0001618]	X				
+FoodFarmEnvironment	animal_diet	Hay [FOODON_03301763]	X				
+FoodFarmEnvironment	animal_feed_equip	self feeding [EOL:0001645]| straight feed trough [EOL:0001661]	X				
+FoodFarmEnvironment	animal_group_size	80	X				
+FoodFarmEnvironment	animal_housing	pen rearing system [EOL:0001636]	X				
+FoodFarmEnvironment	animal_intrusion	Thripidae [NCBITaxon:45053]	X				
+FoodFarmEnvironment	biotic_regm	sample inoculated with Rhizobium spp. Culture	M				
+FoodFarmEnvironment	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	M				
+FoodFarmEnvironment	collection_date	2018-05-11T10:00:00+01:00	M				
+FoodFarmEnvironment	conduc	10 milliSiemens per centimeter	X				
+FoodFarmEnvironment	crop_rotation	yes;R2/2017-01-01/2018-12-31/P6M	X				
+FoodFarmEnvironment	crop_yield	570 kilogram per metre square	X				
+FoodFarmEnvironment	cult_isol_date	2018-05-11T10:00:00+01:00	X				
+FoodFarmEnvironment	cult_result	positive	X				
+FoodFarmEnvironment	cult_result_org	Listeria monocytogenes [NCIT:C86502]	X				
+FoodFarmEnvironment	cult_target	Listeria monocytogenes [NCIT:C86502]	X				
+FoodFarmEnvironment	date_extr_weath	2018-05-11:T14:30Z	X				
+FoodFarmEnvironment	depth	10 meter	M				
+FoodFarmEnvironment	enrichment_protocol	BAM Chapter 4: Enumeration of Escherichia coli and the Coliform Bacteria	X				
+FoodFarmEnvironment	env_broad_scale	forest biome [ENVO:01000174]	M				
+FoodFarmEnvironment	env_local_scale	litter layer [ENVO:01000338]	M				
+FoodFarmEnvironment	env_medium	soil [ENVO:00001998]	M				
+FoodFarmEnvironment	extr_weather_event	hail	X				
+FoodFarmEnvironment	farm_equip	combine harvester [AGRO:00000473]	X				
+FoodFarmEnvironment	farm_equip_san	"hot water pressure wash, hypochlorite solution, 50 parts per million"	X				
+FoodFarmEnvironment	farm_equip_san_freq	Biweekly	X				
+FoodFarmEnvironment	farm_equip_shared	combine harvester [AGRO:00000473]	X				
+FoodFarmEnvironment	farm_water_source	water well (ENVO:01000002)	C				
+FoodFarmEnvironment	fertilizer_admin	fish emulsion [AGRO:00000082]	X				
+FoodFarmEnvironment	fertilizer_date	2018-05-11T10:00:00+01:00	X				
+FoodFarmEnvironment	food_clean_proc	rinsed with water|scrubbed with brush	X				
+FoodFarmEnvironment	food_contact_surf	cellulose acetate [FOODON:03500034]	X				
+FoodFarmEnvironment	food_contain_wrap	Plastic shrink-pack [FOODON:03490137]	X				
+FoodFarmEnvironment	food_harvest_proc	hand-picked	X				
+FoodFarmEnvironment	food_pack_medium	vacuum-packed [FOODON:03480027]	X				
+FoodFarmEnvironment	food_preserv_proc	food slow freezing [FOODON:03470128]	X				
+FoodFarmEnvironment	food_prod_char	wild caught	X				
+FoodFarmEnvironment	food_product_type	"shrimp (peeled, deep-frozen) [FOODON:03317171]"	M				
+FoodFarmEnvironment	food_quality_date	best by 2020-05-24	X				
+FoodFarmEnvironment	food_source	giant tiger prawn [FOODON:03412612]	X				#252
+FoodFarmEnvironment	food_trav_mode	train travel [GENEPIO:0001060]	X				
+FoodFarmEnvironment	food_trav_vehic	aircraft [ENVO:01001488]|car [ENVO:01000605]	X				
+FoodFarmEnvironment	food_treat_proc	gluten removal process [FOODON:03460750]	X				
+FoodFarmEnvironment	genetic_mod	aox1A transgenic	X				
+FoodFarmEnvironment	geo_loc_name	"USA: Maryland, Bethesda"	M				
+FoodFarmEnvironment	growth_habit	spreading	X				
+FoodFarmEnvironment	growth_medium	LB broth	X				
+FoodFarmEnvironment	host_age	10 days	X				
+FoodFarmEnvironment	host_disease_stat	downy mildew	C				
+FoodFarmEnvironment	host_dry_mass	500 gram	X				
+FoodFarmEnvironment	host_genotype	Ts	X				 
+FoodFarmEnvironment	host_height	1 meter	X				
+FoodFarmEnvironment	host_length	1 meter	X				
+FoodFarmEnvironment	host_phenotype	seed pod; green [PATO:0000320]	X				
+FoodFarmEnvironment	host_subspecf_genlin	"serovar:Newport, variety:glabrum, cultivar: Red Delicious"	X				#227 & #256
+FoodFarmEnvironment	host_taxid	4530	X				
+FoodFarmEnvironment	host_tot_mass	2500 gram	X				
+FoodFarmEnvironment	humidity	30% relative humidity	X				
+FoodFarmEnvironment	ifsac_category	Plants:Produce:Vegetables:Herbs:Dried Herbs	M				
+FoodFarmEnvironment	intended_consumer	9606 o rsenior as food consumer [FOODON:03510254] 	X				
+FoodFarmEnvironment	lat_lon	50.586825 6.408977	M				
+FoodFarmEnvironment	library_prep_kit	Illumina DNA Prep	X				
+FoodFarmEnvironment	lot_number	"1239ABC01A, split Cornish hens"	X				
+FoodFarmEnvironment	mechanical_damage	pruning;bark	X				
+FoodFarmEnvironment	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+FoodFarmEnvironment	nucl_acid_ext	https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf	X				
+FoodFarmEnvironment	organism_count	total prokaryotes;3.5e7 colony forming units per milliliter;qPCR	X				
+FoodFarmEnvironment	part_plant_animal	chuck [FOODON:03530021]	X				
+FoodFarmEnvironment	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				 
+FoodFarmEnvironment	ph	7.2	X				
+FoodFarmEnvironment	ph_meth	https://www.epa.gov/sites/production/files/2015-12/documents/9040c.pdf	X				
+FoodFarmEnvironment	plant_growth_med	soil	X				
+FoodFarmEnvironment	plant_part_maturity	ripe or mature [FOODON:03530052]	X				
+FoodFarmEnvironment	plant_reprod_crop	seedling	X				
+FoodFarmEnvironment	plant_water_method	drip irrigation process [AGRO:00000056]	C				
+FoodFarmEnvironment	previous_land_use	fallow; 2018-05-11:T14:30Z	X				
+FoodFarmEnvironment	prod_label_claims	free range	X				#298
+FoodFarmEnvironment	project_name	Forest soil metagenome	M				
+FoodFarmEnvironment	rel_location	furrow	X				
+FoodFarmEnvironment	repository_name	FDA CFSAN Microbiology Laboratories	X				
+FoodFarmEnvironment	root_cond	http://himedialabs.com/TD/PT158.pdf	X				
+FoodFarmEnvironment	root_med_carbon	sucrose	X				
+FoodFarmEnvironment	root_med_macronutr	KH2PO4;170¬†milligram per liter	X				
+FoodFarmEnvironment	root_med_micronutr	H3BO3;6.2¬†milligram per liter	X				
+FoodFarmEnvironment	root_med_ph	7.5	X				
+FoodFarmEnvironment	salinity	25 practical salinity unit	X				
+FoodFarmEnvironment	salinity_meth	PMID: 22895776	X				
+FoodFarmEnvironment	samp_collect_device	"swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]"	X				
+FoodFarmEnvironment	samp_name	ISDsoil1	M				
+FoodFarmEnvironment	samp_pooling	5uL of extracted genomic DNA from 5 leaves were pooled	X				
+FoodFarmEnvironment	samp_purpose	field trial	X				
+FoodFarmEnvironment	samp_size	5 liters	X				
+FoodFarmEnvironment	samp_source_mat_cat	environmental (swab or sampling) [GENEPIO:0001732]	X				
+FoodFarmEnvironment	samp_stor_dur	P1Y6M	X				
+FoodFarmEnvironment	samp_stor_temp	-80 degree Celsius	X				
+FoodFarmEnvironment	samp_type	built environment sample [GENEPIO:0001248]	M				 
+FoodFarmEnvironment	samp_vol_we_dna_ext	1500 milliliter	X				
+FoodFarmEnvironment	season	autumn [NCIT:C94733]	X				
+FoodFarmEnvironment	season_humidity	25%	X				
+FoodFarmEnvironment	season_precpt	75 millimeters	X				
+FoodFarmEnvironment	season_temp	18 degree Celsius	X				
+FoodFarmEnvironment	seq_meth	454 Genome Sequencer FLX [OBI:0000702]	M				
+FoodFarmEnvironment	sequencing_kit	NextSeq 500/550 High Output Kit v2.5 (75 Cycles)	X				
+FoodFarmEnvironment	sequencing_location	University of Maryland Genomics Resource Center	X				
+FoodFarmEnvironment	serovar_or_serotype	Escherichia coli strain O157:H7 [NCIT:C86883]	X				
+FoodFarmEnvironment	size_frac_low	0.2 micrometer	X				
+FoodFarmEnvironment	size_frac_up	20 micrometer	X				
+FoodFarmEnvironment	soil_conductivity	10 milliSiemens per centimeter	X				
+FoodFarmEnvironment	soil_cover	bare soil [ENVO01001616]	X				
+FoodFarmEnvironment	soil_p_h	7.2	X				
+FoodFarmEnvironment	soil_porosity	20%	X				
+FoodFarmEnvironment	soil_temp	25 degrees Celsius	X				
+FoodFarmEnvironment	soil_texture_class	silty clay loam	X				
+FoodFarmEnvironment	soil_texture_meth	https://uwlab.soils.wisc.edu/wp-content/uploads/sites/17/2015/09/particle_size.pdf (hydrometer method)	X				
+FoodFarmEnvironment	soil_type	plinthosol [ENVO:00002250]	X				
+FoodFarmEnvironment	soil_type_meth	Frederick series; Weikert series	X				
+FoodFarmEnvironment	solar_irradiance	1.36 kilowatts per square meter per day	X				
+FoodFarmEnvironment	spikein_antibiotic	Tetracycline at 5 mg/ml	X				
+FoodFarmEnvironment	spikein_count	total prokaryotes;3.5e7 colony forming units per milliliter;qPCR	X				maybe MIXS:0001335
+FoodFarmEnvironment	spikein_growth_med	LB broth [MCO:0000036]	X				
+FoodFarmEnvironment	spikein_metal	Cd at 20 ppm	X				
+FoodFarmEnvironment	spikein_org	Listeria monocytogenes [NCIT:C86502]|28901	X				
+FoodFarmEnvironment	spikein_serovar	Escherichia coli strain O157:H7 [NCIT:C86883]|83334	X				
+FoodFarmEnvironment	spikein_strain	169963	X				
+FoodFarmEnvironment	temp	25 degree Celsius	X				
+FoodFarmEnvironment	tillage	chisel	X				
+FoodFarmEnvironment	timepoint	P24H	X				
+FoodFarmEnvironment	tot_nitro_cont_meth	https://currentprotocols.onlinelibrary.wiley.com/doi/abs/10.1002/0471142913.fab0102s00	X				
+FoodFarmEnvironment	tot_nitro_content	35 milligrams Nitrogen per kilogram of soil	X				
+FoodFarmEnvironment	tot_org_c_meth	https://www.epa.gov/sites/production/files/2015-12/documents/9060a.pdf	X				
+FoodFarmEnvironment	tot_org_carb	2%	X				
+FoodFarmEnvironment	turbidity	0.3 nephelometric turbidity units	X				
+FoodFarmEnvironment	ventilation_rate	750 cubic meter per minute	X				
+FoodFarmEnvironment	ventilation_type	Operable windows	X				
+FoodFarmEnvironment	water_frequency	2 per day	X				
+FoodFarmEnvironment	water_p_h	7.2	X				
+FoodFarmEnvironment	water_source_adjac	feedlot [ENVO:01000627]	X				
+FoodFarmEnvironment	water_source_shared	no sharing	X				
+FoodFarmEnvironment	wind_direction	0 degrees; Northwest	X				
+FoodFarmEnvironment	wind_speed	1.6 kilometers per hour	X				
+FoodFoodProductionFacility	air_temp	4 degree Celsius	X				
+FoodFoodProductionFacility	area_samp_size	12 centimeter x 12 centimeter	X				
+FoodFoodProductionFacility	avg_occup	6	X				
+FoodFoodProductionFacility	bacterial_density	10 colony forming units per gram dry weight	X				
+FoodFoodProductionFacility	biocide_used	Quaternary ammonium compound|SterBac	X				
+FoodFoodProductionFacility	coll_site_geo_feat	grocery store [GENEPIO:0001020]	M				
+FoodFoodProductionFacility	collection_date	2018-05-11T10:00:00+01:00	M				
+FoodFoodProductionFacility	cult_isol_date	2018-05-11T10:00:00+01:00	X				
+FoodFoodProductionFacility	cult_result	positive	X				
+FoodFoodProductionFacility	cult_result_org	Listeria monocytogenes [NCIT:C86502]	X				
+FoodFoodProductionFacility	cult_target	Listeria monocytogenes [NCIT:C86502]	X				
+FoodFoodProductionFacility	dietary_claim_use	No preservatives [FOODON:03510113]	X				
+FoodFoodProductionFacility	enrichment_protocol	BAM Chapter 4: Enumeration of Escherichia coli and the Coliform Bacteria	X				
+FoodFoodProductionFacility	env_broad_scale	forest biome [ENVO:01000174]	M				
+FoodFoodProductionFacility	env_local_scale	litter layer [ENVO:01000338]	M				
+FoodFoodProductionFacility	env_medium	soil [ENVO:00001998]	M				
+FoodFoodProductionFacility	env_monitoring_zone	Zone 1	X				
+FoodFoodProductionFacility	experimental_factor	time series design [EFO:EFO_0001779]	X				
+FoodFoodProductionFacility	facility_type	manufacturing-processing	X				
+FoodFoodProductionFacility	food_additive	xanthan gum [FOODON_03413321]	X				
+FoodFoodProductionFacility	food_allergen_label	food allergen labelling about crustaceans and products thereof [FOODON:03510215]	X				
+FoodFoodProductionFacility	food_contact_surf	cellulose acetate [FOODON:03500034]	M				
+FoodFoodProductionFacility	food_contain_wrap	Plastic shrink-pack [FOODON:03490137]	X				
+FoodFoodProductionFacility	food_cooking_proc	food blanching [FOODON:03470175]	X				
+FoodFoodProductionFacility	food_dis_point	"USA: Delmarva, Peninsula"	X				
+FoodFoodProductionFacility	food_dis_point_city	Atlanta[GAZ:00004445]	X				
+FoodFoodProductionFacility	food_ingredient	bean (whole) [FOODON:00002753]	X				
+FoodFoodProductionFacility	food_name_status	protected geographic indication [FOODON:03530256]	X				
+FoodFoodProductionFacility	food_origin	"USA: Delmarva, Peninsula"	X				
+FoodFoodProductionFacility	food_pack_capacity	454 grams	X				
+FoodFoodProductionFacility	food_pack_integrity	food packing medium compromised [FOODON:00002517]	X				
+FoodFoodProductionFacility	food_pack_medium	vacuum-packed [FOODON:03480027]	X				
+FoodFoodProductionFacility	food_preserv_proc	food slow freezing [FOODON:03470128]	X				
+FoodFoodProductionFacility	food_prior_contact	processed in stainless steel container [FOODON:03530081]	X				
+FoodFoodProductionFacility	food_prod	organic plant cultivation [FOODON:03530253]	X				
+FoodFoodProductionFacility	food_prod_char	wild caught	X				
+FoodFoodProductionFacility	food_prod_synonym	pinot gris	X				
+FoodFoodProductionFacility	food_product_qual	raw [FOODON:03311126]	M				
+FoodFoodProductionFacility	food_product_type	"shrimp (peeled, deep-frozen) [FOODON:03317171]"	M				
+FoodFoodProductionFacility	food_quality_date	best by 2020-05-24	X				
+FoodFoodProductionFacility	food_source	giant tiger prawn [FOODON:03412612]	X				#252
+FoodFoodProductionFacility	food_trace_list	tropical tree fruits	X				
+FoodFoodProductionFacility	food_trav_mode	train travel [GENEPIO:0001060]	X				
+FoodFoodProductionFacility	food_trav_vehic	aircraft [ENVO:01001488]|car [ENVO:01000605]	X				
+FoodFoodProductionFacility	food_treat_proc	gluten removal process [FOODON:03460750]	X				
+FoodFoodProductionFacility	freq_clean	Daily	X				
+FoodFoodProductionFacility	genetic_mod	aox1A transgenic	X				
+FoodFoodProductionFacility	geo_loc_name	"USA: Maryland, Bethesda"	M				
+FoodFoodProductionFacility	haccp_term	tetrodotoxic poisoning [FOODON:03530249]	X				
+FoodFoodProductionFacility	hygienic_area	Low Hygiene Area	X				
+FoodFoodProductionFacility	ifsac_category	Plants:Produce:Vegetables:Herbs:Dried Herbs	M				
+FoodFoodProductionFacility	indoor_surf	wall	X				
+FoodFoodProductionFacility	intended_consumer	9606 o rsenior as food consumer [FOODON:03510254] 	X				
+FoodFoodProductionFacility	lat_lon	50.586825 6.408977	M				
+FoodFoodProductionFacility	library_prep_kit	Illumina DNA Prep	X				
+FoodFoodProductionFacility	lot_number	"1239ABC01A, split Cornish hens"	X				
+FoodFoodProductionFacility	microb_cult_med	brain heart infusion agar [MICRO:0000566]	X				
+FoodFoodProductionFacility	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+FoodFoodProductionFacility	nucl_acid_ext	https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf	X				
+FoodFoodProductionFacility	nucl_acid_ext_kit	Qiagen PowerSoil Kit	X				
+FoodFoodProductionFacility	num_samp_collect	116 samples	X				
+FoodFoodProductionFacility	organism_count	total prokaryotes;3.5e7 colony forming units per milliliter;qPCR	X				
+FoodFoodProductionFacility	part_plant_animal	chuck [FOODON:03530021]	X				
+FoodFoodProductionFacility	pool_dna_extracts	"yes, 5"	X				
+FoodFoodProductionFacility	prod_label_claims	free range	X				#298
+FoodFoodProductionFacility	project_name	Forest soil metagenome	M				
+FoodFoodProductionFacility	repository_name	FDA CFSAN Microbiology Laboratories	X				
+FoodFoodProductionFacility	room_dim	4 meter x 4 meter x 4 meter	X				
+FoodFoodProductionFacility	samp_collect_device	"biopsy, niskin bottle, push core"	X				
+FoodFoodProductionFacility	samp_collect_method	environmental swab sampling	X				
+FoodFoodProductionFacility	samp_floor	4th floor	X				
+FoodFoodProductionFacility	samp_loc_condition	new	X				
+FoodFoodProductionFacility	samp_name	ISDsoil1	M				
+FoodFoodProductionFacility	samp_pooling	5uL of extracted genomic DNA from 5 leaves were pooled	X				
+FoodFoodProductionFacility	samp_purpose	field trial	X				
+FoodFoodProductionFacility	samp_rep_biol	6 replicates	X				
+FoodFoodProductionFacility	samp_rep_tech	10 replicates	X				
+FoodFoodProductionFacility	samp_room_id		X				
+FoodFoodProductionFacility	samp_size	5 liters	X				
+FoodFoodProductionFacility	samp_source_mat_cat	environmental swab specimen [OBI:0002613]	M				
+FoodFoodProductionFacility	samp_stor_device	Whirl Pak sampling bag [GENEPIO:0002122]	M				
+FoodFoodProductionFacility	samp_stor_dur	P1Y6M	X				
+FoodFoodProductionFacility	samp_stor_loc	freezer 5	X				
+FoodFoodProductionFacility	samp_stor_media	peptone water medium [MICRO:0000548]	M				
+FoodFoodProductionFacility	samp_stor_temp	-80 degree Celsius	X				
+FoodFoodProductionFacility	samp_surf_moisture	submerged	X				
+FoodFoodProductionFacility	samp_transport_cont	cooler	X				
+FoodFoodProductionFacility	samp_transport_dur	P10D	X				
+FoodFoodProductionFacility	samp_transport_temp	4 degree Celsius	X				
+FoodFoodProductionFacility	samp_type	built environment sample [GENEPIO:0001248]	M				#208
+FoodFoodProductionFacility	samp_vol_we_dna_ext	1500 milliliter	X				
+FoodFoodProductionFacility	seq_meth	454 Genome Sequencer FLX [OBI:0000702]	M				
+FoodFoodProductionFacility	sequencing_kit	NextSeq 500/550 High Output Kit v2.5 (75 Cycles)	X				
+FoodFoodProductionFacility	sequencing_location	University of Maryland Genomics Resource Center	X				
+FoodFoodProductionFacility	spec_intended_cons	senior as food consumer [FOODON:03510254]	X				
+FoodFoodProductionFacility	ster_meth_samp_room	ultraviolet radiation [ENVO:21001216]|infrared radiation [ENVO:21001214]	X				
+FoodFoodProductionFacility	study_design	in vitro design [OBI:0001285]	X				
+FoodFoodProductionFacility	study_inc_dur	P24H	X				
+FoodFoodProductionFacility	study_inc_temp	37 degree Celsius	X				
+FoodFoodProductionFacility	study_timecourse	2 days post inoculation	X				
+FoodFoodProductionFacility	study_tmnt	"Factor A|spike-in|levels high, medium, low"	X				
+FoodFoodProductionFacility	subspecf_gen_lin	serovar:Newport					#256
+FoodFoodProductionFacility	surf_material	wood	X				
+FoodFoodProductionFacility	timepoint	P24H	X				
+FoodHumanFoods	bacterial_density	10 colony forming units per gram dry weight	X				
+FoodHumanFoods	coll_site_geo_feat	grocery store [ENVO:01000984]	M				
+FoodHumanFoods	collection_date	2018-05-11T10:00:00+01:00	M				
+FoodHumanFoods	cons_food_stor_dur	P5D	X				
+FoodHumanFoods	cons_food_stor_temp	4 degree Celsius	X				
+FoodHumanFoods	cons_purch_date	11/30/19	X				
+FoodHumanFoods	cons_qty_purchased	5 cans	X				
+FoodHumanFoods	cult_isol_date	2018-05-11T10:00:00+01:00	X				
+FoodHumanFoods	cult_result	positive	X				
+FoodHumanFoods	cult_result_org	Listeria monocytogenes [NCIT:C86502]	X				
+FoodHumanFoods	cult_target	Listeria monocytogenes [NCIT:C86502]	X				
+FoodHumanFoods	dietary_claim_use	No preservatives [FOODON:03510113]	X				
+FoodHumanFoods	enrichment_protocol	BAM Chapter 4: Enumeration of Escherichia coli and the Coliform Bacteria	X				
+FoodHumanFoods	env_broad_scale	oceanic epipelagic zone biome [ENVO:01000033] for annotating a water sample from the photic zone in middle of the Atlantic Ocean	M				
+FoodHumanFoods	env_local_scale	litter layer [ENVO:01000338]; Annotating a pooled sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336].	M				
+FoodHumanFoods	env_medium	"soil [ENVO:00001998]; Annotating a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]|air [ENVO_00002005]"	M				
+FoodHumanFoods	experimental_factor	time series design [EFO:0001779]	X				
+FoodHumanFoods	ferm_chem_add	salt	C				
+FoodHumanFoods	ferm_chem_add_perc	1%	C				
+FoodHumanFoods	ferm_headspace_oxy	5%	C				
+FoodHumanFoods	ferm_medium	molasses	C				
+FoodHumanFoods	ferm_p_h	4.5	C				
+FoodHumanFoods	ferm_rel_humidity	95% RH	C				
+FoodHumanFoods	ferm_temp	22 degrees Celsius	C				
+FoodHumanFoods	ferm_time	P10D	C				
+FoodHumanFoods	ferm_vessel	steel drum	C				
+FoodHumanFoods	food_additive	xanthan gum [FOODON:03413321]	X				
+FoodHumanFoods	food_allergen_label	food allergen labelling about crustaceans and products thereof [FOODON:03510215]	X				
+FoodHumanFoods	food_contact_surf	cellulose acetate [FOODON:03500034]	X				
+FoodHumanFoods	food_contain_wrap	Plastic shrink-pack [FOODON:03490137]	X				
+FoodHumanFoods	food_cooking_proc	food blanching [FOODON:03470175]	X				
+FoodHumanFoods	food_dis_point	"USA: Delmarva Peninsula or USA: Georgia, Atlanta [GAZ:00004445]"	X				
+FoodHumanFoods	food_ingredient	bean (whole) [FOODON:00002753]	X				
+FoodHumanFoods	food_name_status	protected geographic indication [FOODON:03530256]	X				
+FoodHumanFoods	food_origin	"USA: Delmarva, Peninsula"	X				
+FoodHumanFoods	food_pack_capacity	454 grams	X				
+FoodHumanFoods	food_pack_integrity	food packing medium compromised [FOODON:00002517]	X				
+FoodHumanFoods	food_pack_medium	vacuum-packed[FOODON:03480027]	X				
+FoodHumanFoods	food_preserv_proc	food slow freezing [FOODON:03470128]	X				
+FoodHumanFoods	food_prior_contact	processed in stainless steel container [FOODON:03530081]	X				
+FoodHumanFoods	food_prod	organic plant cultivation [FOODON:03530253]	X				
+FoodHumanFoods	food_prod_synonym	pinot gris	X				
+FoodHumanFoods	food_product_qual	raw [FOODON:03311126]	X				
+FoodHumanFoods	food_product_type	"shrimp (peeled, deep-frozen) [FOODON:03317171]"	M				
+FoodHumanFoods	food_quality_date	best by 2020-05-24	X				
+FoodHumanFoods	food_source	giant tiger prawn [FOODON:03412612]	X				#252
+FoodHumanFoods	food_trace_list	tropical tree fruits	X				
+FoodHumanFoods	food_trav_mode	train travel [GENEPIO:0001060]	X				
+FoodHumanFoods	food_trav_vehic	aircraft [ENVO:01001488]|car [ENVO:01000605]	X				
+FoodHumanFoods	food_treat_proc	gluten removal process [FOODON:03460750]	X				
+FoodHumanFoods	genetic_mod	aox1A transgenic	X				
+FoodHumanFoods	geo_loc_name	"USA: Maryland, Bethesda"	M				
+FoodHumanFoods	haccp_term	tetrodotoxic poisoning [FOODON:03530249]	X				
+FoodHumanFoods	ifsac_category	Plants:Produce:Vegetables:Herbs:Dried Herbs	M				
+FoodHumanFoods	intended_consumer	9606 o rsenior as food consumer [FOODON:03510254] 	X				
+FoodHumanFoods	lat_lon	50.586825 6.408977	M				
+FoodHumanFoods	library_prep_kit	Illumina DNA Prep	X				
+FoodHumanFoods	lot_number	"1239ABC01A, split Cornish hens"	X				
+FoodHumanFoods	microb_cult_med	brain heart infusion agar [MICRO:0000566]	X				
+FoodHumanFoods	microb_start	starter cultures [FOODON:03544454]	X				
+FoodHumanFoods	microb_start_count	total prokaryotes;3.5e9 colony forming units per milliliter;spread plate	X				
+FoodHumanFoods	microb_start_inoc	100 milligrams	X				
+FoodHumanFoods	microb_start_prep	"liquid starter culture, propagated 3 cycles in milk prior to inoculation"	X				
+FoodHumanFoods	microb_start_source	"backslopped, GetCulture"	X				
+FoodHumanFoods	microb_start_tax_id	Lactobacillus rhamnosus [NCIT:C123495]	X				
+FoodHumanFoods	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+FoodHumanFoods	nucl_acid_ext	https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf	X				
+FoodHumanFoods	nucl_acid_ext_kit	Qiagen PowerSoil Kit	X				
+FoodHumanFoods	num_samp_collect	116 samples	X				
+FoodHumanFoods	organism_count	total prokaryotes;3.5e7 colony forming units per milliliter;qPCR	X				
+FoodHumanFoods	part_plant_animal	chuck [FOODON:03530021]	X				
+FoodHumanFoods	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+FoodHumanFoods	pool_dna_extracts	"yes, 5"	X				
+FoodHumanFoods	project_name	Forest soil metagenome	M				
+FoodHumanFoods	repository_name	FDA CFSAN Microbiology Laboratories	X				
+FoodHumanFoods	samp_collect_device	"swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]"	X				
+FoodHumanFoods	samp_name	ISDsoil1	M				
+FoodHumanFoods	samp_pooling	5uL of extracted genomic DNA from 5 leaves were pooled	X				
+FoodHumanFoods	samp_purpose	field trial	X				
+FoodHumanFoods	samp_rep_biol	6 replicates	X				
+FoodHumanFoods	samp_rep_tech	10 replicates	X				
+FoodHumanFoods	samp_size	5 liters	X				
+FoodHumanFoods	samp_source_mat_cat	environmental (swab or sampling) [GENEPIO:0001732]	X				
+FoodHumanFoods	samp_stor_device	Whirl Pak sampling bag [GENEPIO:0002122]	X				
+FoodHumanFoods	samp_stor_dur	P1Y6M	X				
+FoodHumanFoods	samp_stor_loc	freezer 5	X				
+FoodHumanFoods	samp_stor_media	peptone water medium [MICRO:0000548]	X				
+FoodHumanFoods	samp_stor_temp	-80 degree Celsius	X				
+FoodHumanFoods	samp_transport_cont	cooler	X				
+FoodHumanFoods	samp_transport_dur	P10D	X				
+FoodHumanFoods	samp_transport_temp	4 degree Celsius	X				
+FoodHumanFoods	samp_vol_we_dna_ext	1500 milliliter	X				
+FoodHumanFoods	sample_collec_method	environmental swab sampling	X				
+FoodHumanFoods	seq_meth	454 Genome Sequencer FLX [OBI:0000702]	M				
+FoodHumanFoods	sequencing_kit	NextSeq 500/550 High Output Kit v2.5 (75 Cycles)	X				
+FoodHumanFoods	sequencing_location	University of Maryland Genomics Resource Center	X				
+FoodHumanFoods	serovar_or_serotype	Escherichia coli strain O157:H7 [NCIT:C86883]	X				
+FoodHumanFoods	spikein_amr	wild type [ARO:3004432]	X				
+FoodHumanFoods	spikein_antibiotic	Tetracycline at 5 mg/ml	X				
+FoodHumanFoods	spikein_count	total prokaryotes;3.5e7 colony forming units per milliliter;qPCR	X				
+FoodHumanFoods	spikein_growth_med	LB broth [MCO:0000036]	X				
+FoodHumanFoods	spikein_metal	Cd at 20 ppm	X				
+FoodHumanFoods	spikein_org	Listeria monocytogenes [NCIT:C86502]|28901	X				
+FoodHumanFoods	spikein_serovar	Escherichia coli strain O157:H7 [NCIT:C86883]|83334	X				
+FoodHumanFoods	spikein_strain	169963	X				
+FoodHumanFoods	study_design	in vitro design [OBI:0001285]	X				
+FoodHumanFoods	study_inc_dur	P24H	X				
+FoodHumanFoods	study_inc_temp	37 degree Celsius	X				
+FoodHumanFoods	study_timecourse	2 days post inoculation	X				
+FoodHumanFoods	study_tmnt	"Factor A|spike-in|levels high, medium, low"	X				
+FoodHumanFoods	temp	25 degree Celsius	X				
+FoodHumanFoods	timepoint	P24H	X				
+HostAssociated	alt	100 meter	C				
+HostAssociated	ances_data	A/3*B	X				
+HostAssociated	biol_stat	natural	X				
+HostAssociated	blood_press_diast		X				
+HostAssociated	blood_press_syst		X				
+HostAssociated	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+HostAssociated	depth	10 meter	C				
+HostAssociated	elev	100 meter	C				
+HostAssociated	genetic_mod	aox1A transgenic	X				
+HostAssociated	gravidity	yes;due date:2018-05-11	X				
+HostAssociated	host_age	10 days	X				
+HostAssociated	host_body_habitat	nasopharynx	X				
+HostAssociated	host_body_product	Portion of mucus [fma66938]	X				
+HostAssociated	host_body_site	gill [UBERON:0002535]	X				
+HostAssociated	host_body_temp	15 degree Celsius	X				
+HostAssociated	host_color		X				
+HostAssociated	host_common_name	human	X				
+HostAssociated	host_diet	herbivore	X				
+HostAssociated	host_disease_stat	rabies [DOID:11260]	X				
+HostAssociated	host_dry_mass	500 gram	X				
+HostAssociated	host_family_relation	offspring;Mussel25	X				
+HostAssociated	host_genotype	C57BL/6	X				
+HostAssociated	host_growth_cond	https://academic.oup.com/icesjms/article/68/2/349/617247	X				
+HostAssociated	host_height	0.1 meter	X				
+HostAssociated	host_last_meal	corn feed;P2H	X				
+HostAssociated	host_length	1 meter	X				
+HostAssociated	host_life_stage	adult	X				
+HostAssociated	host_phenotype	elongated [PATO:0001154]	X				
+HostAssociated	host_sex	non-binary	X				
+HostAssociated	host_shape	round	X				
+HostAssociated	host_subject_id	MPI123	X				
+HostAssociated	host_subspecf_genlin	"serovar:Newport, variety:glabrum, cultivar: Red Delicious"	X				#227 & #256
+HostAssociated	host_substrate	rock	X				
+HostAssociated	host_symbiont	flukeworms	X				
+HostAssociated	host_taxid	7955	X				
+HostAssociated	host_tot_mass	2500 gram	X				
+HostAssociated	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+HostAssociated	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+HostAssociated	oxy_stat_samp	aerobic	X				
+HostAssociated	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+HostAssociated	project_name	Forest soil metagenome	M				
+HostAssociated	salinity	25 practical salinity unit	X				
+HostAssociated	samp_capt_status	farm sample	X				
+HostAssociated	samp_dis_stage	infection	X				
+HostAssociated	samp_name	ISDsoil1	M				
+HostAssociated	samp_store_dur	P1Y6M	X				
+HostAssociated	samp_store_loc	Freezer no:5	X				
+HostAssociated	samp_store_temp	-80 degree Celsius	X				
+HostAssociated	samp_vol_we_dna_ext	1500 milliliter	X				
+HostAssociated	temp	25 degree Celsius	X				
+HumanAssociated	amniotic_fluid_color		X				
+HumanAssociated	blood_blood_disord		X				
+HumanAssociated	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+HumanAssociated	diet_last_six_month	yes;vegetarian diet	X				
+HumanAssociated	drug_usage	Lipitor;2/day	X				
+HumanAssociated	ethnicity	native american	X				
+HumanAssociated	foetal_health_stat		X				
+HumanAssociated	gestation_state		X				
+HumanAssociated	host_age	30 years	X				
+HumanAssociated	host_body_mass_index	22 kilogram per square meter	X				
+HumanAssociated	host_body_product	Portion of mucus [fma66938]	X				
+HumanAssociated	host_body_site	Lung parenchyma [fma27360]	X				
+HumanAssociated	host_body_temp	36.5 degree Celsius	X				
+HumanAssociated	host_diet	high-fat	X				
+HumanAssociated	host_disease_stat	measles [DOID:8622]	X				
+HumanAssociated	host_family_relation	mother;ID298	X				
+HumanAssociated	host_genotype	ST1	X				
+HumanAssociated	host_height	1.75 meter	X				
+HumanAssociated	host_hiv_stat	yes;yes	X				
+HumanAssociated	host_last_meal	french fries;P5H30M	X				
+HumanAssociated	host_occupation	veterinary	X				
+HumanAssociated	host_phenotype	Tinnitus [HP:0000360]	X				
+HumanAssociated	host_pulse	65 beats per minute	X				
+HumanAssociated	host_sex	non-binary	X				
+HumanAssociated	host_subject_id	MPI123	X				
+HumanAssociated	host_symbiont	flukeworms	X				
+HumanAssociated	host_tot_mass	65 kilogram	X				
+HumanAssociated	ihmc_medication_code	810	X				
+HumanAssociated	kidney_disord		X				
+HumanAssociated	maternal_health_stat		X				
+HumanAssociated	medic_hist_perform	TRUE	X				
+HumanAssociated	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+HumanAssociated	nose_throat_disord		X				
+HumanAssociated	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+HumanAssociated	oxy_stat_samp	aerobic	X				
+HumanAssociated	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+HumanAssociated	pet_farm_animal	yes; 5 cats	X				
+HumanAssociated	project_name	Forest soil metagenome	M				
+HumanAssociated	pulmonary_disord		X				
+HumanAssociated	salinity	25 practical salinity unit	X				
+HumanAssociated	samp_name	ISDsoil1	M				
+HumanAssociated	samp_store_dur	P1Y6M	X				
+HumanAssociated	samp_store_loc	Freezer no:5	X				
+HumanAssociated	samp_store_temp	-80 degree Celsius	X				
+HumanAssociated	samp_vol_we_dna_ext	1500 milliliter	X				
+HumanAssociated	smoker	yes	X				
+HumanAssociated	study_complt_stat	no;non-compliance	X				
+HumanAssociated	temp	25 degree Celsius	X				
+HumanAssociated	travel_out_six_month		X				
+HumanAssociated	twin_sibling	yes	X				
+HumanAssociated	urine_collect_meth	catheter	X				
+HumanAssociated	urogenit_tract_disor		X				
+HumanAssociated	weight_loss_3_month	yes;5 kilogram	X				
+HumanGut	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+HumanGut	ethnicity	native american	X				
+HumanGut	gastrointest_disord		X				
+HumanGut	host_age	30 years	X				
+HumanGut	host_body_mass_index	22 kilogram per square meter	X				
+HumanGut	host_body_product	Portion of mucus [fma66938]	X				
+HumanGut	host_body_site	Wall of gut [fma45653]	X				
+HumanGut	host_body_temp	36.5 degree Celsius	X				
+HumanGut	host_diet	high-fat	X				
+HumanGut	host_disease_stat	measles [DOID:8622]	X				
+HumanGut	host_family_relation	mother;ID298	X				
+HumanGut	host_genotype	ST1	X				
+HumanGut	host_height	1.75 meter	X				
+HumanGut	host_last_meal	french fries;P5H30M	X				
+HumanGut	host_occupation	veterinary	X				
+HumanGut	host_phenotype	Tinnitus [HP:0000360]	X				
+HumanGut	host_pulse	65 beats per minute	X				
+HumanGut	host_sex	non-binary	X				
+HumanGut	host_subject_id	MPI123	X				
+HumanGut	host_symbiont	flukeworms	X				
+HumanGut	host_tot_mass	65 kilogram	X				
+HumanGut	ihmc_medication_code	810	X				
+HumanGut	liver_disord		X				
+HumanGut	medic_hist_perform	TRUE	X				
+HumanGut	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+HumanGut	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+HumanGut	oxy_stat_samp	aerobic	X				
+HumanGut	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+HumanGut	project_name	Forest soil metagenome	M				
+HumanGut	salinity	25 practical salinity unit	X				
+HumanGut	samp_name	ISDsoil1	M				
+HumanGut	samp_store_dur	P1Y6M	X				
+HumanGut	samp_store_loc	Freezer no:5	X				
+HumanGut	samp_store_temp	-80 degree Celsius	X				
+HumanGut	samp_vol_we_dna_ext	1500 milliliter	X				
+HumanGut	special_diet	other:vegan	X				
+HumanGut	temp	25 degree Celsius	X				
+HumanOral	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+HumanOral	ethnicity	native american	X				
+HumanOral	host_age	30 years	X				
+HumanOral	host_body_mass_index	22 kilogram per square meter	X				
+HumanOral	host_body_product	Portion of mucus [fma66938]	X				
+HumanOral	host_body_site	Epithelium of tongue [fma284658]	X				
+HumanOral	host_body_temp	36.5 degree Celsius	X				
+HumanOral	host_diet	high-fat	X				
+HumanOral	host_disease_stat	measles [DOID:8622]	X				
+HumanOral	host_family_relation	mother;ID298	X				
+HumanOral	host_genotype	ST1	X				
+HumanOral	host_height	1.75 meter	X				
+HumanOral	host_last_meal	french fries;P5H30M	X				
+HumanOral	host_occupation	veterinary	X				
+HumanOral	host_phenotype	Tinnitus [HP:0000360]	X				
+HumanOral	host_pulse	65 beats per minute	X				
+HumanOral	host_sex	non-binary	X				
+HumanOral	host_subject_id	MPI123	X				
+HumanOral	host_symbiont	flukeworms	X				
+HumanOral	host_tot_mass	65 kilogram	X				
+HumanOral	ihmc_medication_code	810	X				
+HumanOral	medic_hist_perform	TRUE	X				
+HumanOral	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+HumanOral	nose_throat_disord		X				
+HumanOral	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+HumanOral	oxy_stat_samp	aerobic	X				
+HumanOral	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+HumanOral	project_name	Forest soil metagenome	M				
+HumanOral	salinity	25 practical salinity unit	X				
+HumanOral	samp_name	ISDsoil1	M				
+HumanOral	samp_store_dur	P1Y6M	X				
+HumanOral	samp_store_loc	Freezer no:5	X				
+HumanOral	samp_store_temp	-80 degree Celsius	X				
+HumanOral	samp_vol_we_dna_ext	1500 milliliter	X				
+HumanOral	temp	25 degree Celsius	X				
+HumanOral	time_last_toothbrush	P2H45M	X				
+HumanSkin	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+HumanSkin	dermatology_disord		X				
+HumanSkin	dominant_hand	right	X				
+HumanSkin	ethnicity	native american	X				
+HumanSkin	host_age	30 years	X				
+HumanSkin	host_body_mass_index	22 kilogram per square meter	X				
+HumanSkin	host_body_product	Portion of mucus [fma66938]	X				
+HumanSkin	host_body_site	Skin of palm of left hand [fma38303]	X				
+HumanSkin	host_body_temp	36.5 degree Celsius	X				
+HumanSkin	host_diet	high-fat	X				
+HumanSkin	host_disease_stat	measles [DOID:8622]	X				
+HumanSkin	host_family_relation	mother;ID298	X				
+HumanSkin	host_genotype	ST1	X				
+HumanSkin	host_height	1.75 meter	X				
+HumanSkin	host_last_meal	french fries;P5H30M	X				
+HumanSkin	host_occupation	veterinary	X				
+HumanSkin	host_phenotype	Tinnitus [HP:0000360]	X				
+HumanSkin	host_pulse	65 beats per minute	X				
+HumanSkin	host_sex	non-binary	X				
+HumanSkin	host_subject_id	MPI123	X				
+HumanSkin	host_symbiont	flukeworms	X				
+HumanSkin	host_tot_mass	65 kilogram	X				
+HumanSkin	ihmc_medication_code	810	X				
+HumanSkin	medic_hist_perform	TRUE	X				
+HumanSkin	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+HumanSkin	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+HumanSkin	oxy_stat_samp	aerobic	X				
+HumanSkin	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+HumanSkin	project_name	Forest soil metagenome	M				
+HumanSkin	salinity	25 practical salinity unit	X				
+HumanSkin	samp_name	ISDsoil1	M				
+HumanSkin	samp_store_dur	P1Y6M	X				
+HumanSkin	samp_store_loc	Freezer no:5	X				
+HumanSkin	samp_store_temp	-80 degree Celsius	X				
+HumanSkin	samp_vol_we_dna_ext	1500 milliliter	X				
+HumanSkin	temp	25 degree Celsius	X				
+HumanSkin	time_since_last_wash	P1D	X				
+HumanVaginal	birth_control		X				
+HumanVaginal	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+HumanVaginal	douche	5/11/18	X				
+HumanVaginal	ethnicity	native american	X				
+HumanVaginal	gynecologic_disord		X				
+HumanVaginal	host_age	30 years	X				
+HumanVaginal	host_body_mass_index	22 kilogram per square meter	X				
+HumanVaginal	host_body_product	Portion of mucus [fma66938]	X				
+HumanVaginal	host_body_site	Ectocervix [fma86484]	X				
+HumanVaginal	host_body_temp	36.5 degree Celsius	X				
+HumanVaginal	host_diet	high-fat	X				
+HumanVaginal	host_disease_stat	measles [DOID:8622]	X				
+HumanVaginal	host_family_relation	mother;ID298	X				
+HumanVaginal	host_genotype	ST1	X				
+HumanVaginal	host_height	1.75 meter	X				
+HumanVaginal	host_last_meal	french fries;P5H30M	X				
+HumanVaginal	host_occupation	veterinary	X				
+HumanVaginal	host_phenotype	Tinnitus [HP:0000360]	X				
+HumanVaginal	host_pulse	65 beats per minute	X				
+HumanVaginal	host_sex	non-binary	X				
+HumanVaginal	host_subject_id	MPI123	X				
+HumanVaginal	host_symbiont	flukeworms	X				
+HumanVaginal	host_tot_mass	65 kilogram	X				
+HumanVaginal	hrt	5/11/18	X				
+HumanVaginal	hysterectomy	no	X				
+HumanVaginal	ihmc_medication_code	810	X				
+HumanVaginal	medic_hist_perform	TRUE	X				
+HumanVaginal	menarche	5/11/18	X				
+HumanVaginal	menopause	5/11/18	X				
+HumanVaginal	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+HumanVaginal	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+HumanVaginal	oxy_stat_samp	aerobic	X				
+HumanVaginal	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+HumanVaginal	pregnancy	5/11/18	X				
+HumanVaginal	project_name	Forest soil metagenome	M				
+HumanVaginal	salinity	25 practical salinity unit	X				
+HumanVaginal	samp_name	ISDsoil1	M				
+HumanVaginal	samp_salinity	1 milligram per liter	X				TRUE
+HumanVaginal	samp_store_dur	P1Y6M	X				
+HumanVaginal	samp_store_loc	Freezer no:5	X				
+HumanVaginal	samp_store_temp	-80 degree Celsius	X				
+HumanVaginal	samp_vol_we_dna_ext	1500 milliliter	X				
+HumanVaginal	sexual_act		X				
+HumanVaginal	temp	25 degree Celsius	X				
+HumanVaginal	urogenit_disord		X				
+HydrocarbonResourcesCores	additional_info		X				
+HydrocarbonResourcesCores	alkalinity	50 milligram per liter	X				
+HydrocarbonResourcesCores	alkalinity_method	titration	X				
+HydrocarbonResourcesCores	ammonium	1.5 milligram per liter	C				
+HydrocarbonResourcesCores	api		M				
+HydrocarbonResourcesCores	aromatics_pc		C				
+HydrocarbonResourcesCores	asphaltenes_pc		C				
+HydrocarbonResourcesCores	basin		M				
+HydrocarbonResourcesCores	benzene		C				
+HydrocarbonResourcesCores	calcium	0.2 micromole per liter	X				
+HydrocarbonResourcesCores	chloride	5000 milligram per liter	X				
+HydrocarbonResourcesCores	density	1000 kilogram per cubic meter	X				
+HydrocarbonResourcesCores	depos_env	Continental - Alluvial	C				
+HydrocarbonResourcesCores	diss_carb_dioxide	5 milligram per liter	X				
+HydrocarbonResourcesCores	diss_inorg_carb	2059 micromole per kilogram	X				
+HydrocarbonResourcesCores	diss_inorg_phosp	56.5 micromole per liter	C				
+HydrocarbonResourcesCores	diss_iron		C				
+HydrocarbonResourcesCores	diss_org_carb	197 micromole per liter	X				
+HydrocarbonResourcesCores	diss_oxygen_fluid		X				
+HydrocarbonResourcesCores	elev	100 meter	X				
+HydrocarbonResourcesCores	ethylbenzene		C				
+HydrocarbonResourcesCores	field		C				
+HydrocarbonResourcesCores	hc_produced	Gas	M				
+HydrocarbonResourcesCores	hcr	Oil Sand	M				
+HydrocarbonResourcesCores	hcr_fw_salinity		C				
+HydrocarbonResourcesCores	hcr_geol_age	Silurian	C				
+HydrocarbonResourcesCores	hcr_pressure		X				
+HydrocarbonResourcesCores	hcr_temp	150-295 degree Celsius	M				
+HydrocarbonResourcesCores	lithology	Volcanic	C				
+HydrocarbonResourcesCores	magnesium	52.8 micromole per kilogram	X				
+HydrocarbonResourcesCores	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+HydrocarbonResourcesCores	nitrate	65 micromole per liter	C				
+HydrocarbonResourcesCores	nitrite	0.5 micromole per liter	C				
+HydrocarbonResourcesCores	org_count_qpcr_info		X				
+HydrocarbonResourcesCores	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	C				
+HydrocarbonResourcesCores	owc_tvdss		X				
+HydrocarbonResourcesCores	oxy_stat_samp	aerobic	X				
+HydrocarbonResourcesCores	permeability		X				
+HydrocarbonResourcesCores	ph	7.2	C				
+HydrocarbonResourcesCores	porosity		X				
+HydrocarbonResourcesCores	potassium	463 milligram per liter	X				
+HydrocarbonResourcesCores	pour_point		X				
+HydrocarbonResourcesCores	pressure	50 atmosphere	X				
+HydrocarbonResourcesCores	project_name	Forest soil metagenome	M				
+HydrocarbonResourcesCores	reservoir		C				
+HydrocarbonResourcesCores	resins_pc		C				
+HydrocarbonResourcesCores	salinity	25 practical salinity unit	X				
+HydrocarbonResourcesCores	samp_md	1534 meter;MSL	X				
+HydrocarbonResourcesCores	samp_name	ISDsoil1	M				
+HydrocarbonResourcesCores	samp_store_dur	P1Y6M	X				
+HydrocarbonResourcesCores	samp_store_loc	Freezer no:5	X				
+HydrocarbonResourcesCores	samp_store_temp	-80 degree Celsius	X				
+HydrocarbonResourcesCores	samp_subtype	biofilm	C				
+HydrocarbonResourcesCores	samp_transport_cond	5 days;-20 degree Celsius	X				
+HydrocarbonResourcesCores	samp_tvdss		C				
+HydrocarbonResourcesCores	samp_type	built environment sample [GENEPIO:0001248]	M				
+HydrocarbonResourcesCores	samp_vol_we_dna_ext	1500 milliliter	C				
+HydrocarbonResourcesCores	samp_well_name		C				
+HydrocarbonResourcesCores	saturates_pc		C				
+HydrocarbonResourcesCores	sodium	10.5 milligram per liter	X				
+HydrocarbonResourcesCores	sr_dep_env	Marine	X				
+HydrocarbonResourcesCores	sr_geol_age	Silurian	X				
+HydrocarbonResourcesCores	sr_kerog_type	Type IV	X				
+HydrocarbonResourcesCores	sr_lithology	Coal	X				
+HydrocarbonResourcesCores	sulfate	5 micromole per liter	C				
+HydrocarbonResourcesCores	sulfate_fw		M				
+HydrocarbonResourcesCores	sulfide	2 micromole per liter	C				
+HydrocarbonResourcesCores	suspend_solids		X				
+HydrocarbonResourcesCores	tan		C				
+HydrocarbonResourcesCores	temp	25 degree Celsius	M				
+HydrocarbonResourcesCores	toluene		C				
+HydrocarbonResourcesCores	tot_iron		C				
+HydrocarbonResourcesCores	tot_nitro	50 micromole per liter	X				
+HydrocarbonResourcesCores	tot_phosp	0.03 milligram per liter	X				
+HydrocarbonResourcesCores	tot_sulfur		C				
+HydrocarbonResourcesCores	tvdss_of_hcr_press		X				
+HydrocarbonResourcesCores	tvdss_of_hcr_temp		X				
+HydrocarbonResourcesCores	vfa		C				
+HydrocarbonResourcesCores	vfa_fw		M				
+HydrocarbonResourcesCores	viscosity		X				
+HydrocarbonResourcesCores	win		C				
+HydrocarbonResourcesCores	xylene		C				
+HydrocarbonResourcesFluidsSwabs	add_recov_method	Polymer Addition;2018-06-21T14:30Z	M				
+HydrocarbonResourcesFluidsSwabs	additional_info		X				
+HydrocarbonResourcesFluidsSwabs	alkalinity	50 milligram per liter	X				
+HydrocarbonResourcesFluidsSwabs	alkalinity_method	titration	X				
+HydrocarbonResourcesFluidsSwabs	ammonium	1.5 milligram per liter	C				
+HydrocarbonResourcesFluidsSwabs	api		M				
+HydrocarbonResourcesFluidsSwabs	aromatics_pc		C				
+HydrocarbonResourcesFluidsSwabs	asphaltenes_pc		C				
+HydrocarbonResourcesFluidsSwabs	basin		M				
+HydrocarbonResourcesFluidsSwabs	benzene		C				
+HydrocarbonResourcesFluidsSwabs	biocide	ALPHA 1427;Baker Hughes;2008-01-23	C				
+HydrocarbonResourcesFluidsSwabs	biocide_admin_method		C				
+HydrocarbonResourcesFluidsSwabs	calcium	0.2 micromole per liter	X				
+HydrocarbonResourcesFluidsSwabs	chem_treat_method		X				
+HydrocarbonResourcesFluidsSwabs	chem_treatment	ACCENT 1125;DOW;2010-11-17	X				
+HydrocarbonResourcesFluidsSwabs	chloride	5000 milligram per liter	X				
+HydrocarbonResourcesFluidsSwabs	density	1000 kilogram per cubic meter	X				
+HydrocarbonResourcesFluidsSwabs	depos_env	Marine - Reef	C				
+HydrocarbonResourcesFluidsSwabs	diss_carb_dioxide	5 milligram per liter	X				
+HydrocarbonResourcesFluidsSwabs	diss_inorg_carb	2059 micromole per kilogram	X				
+HydrocarbonResourcesFluidsSwabs	diss_inorg_phosp	56.5 micromole per liter	C				
+HydrocarbonResourcesFluidsSwabs	diss_iron		C				
+HydrocarbonResourcesFluidsSwabs	diss_org_carb	197 micromole per liter	X				
+HydrocarbonResourcesFluidsSwabs	diss_oxygen_fluid		X				
+HydrocarbonResourcesFluidsSwabs	ethylbenzene		C				
+HydrocarbonResourcesFluidsSwabs	field		C				
+HydrocarbonResourcesFluidsSwabs	hc_produced	Gas	M				
+HydrocarbonResourcesFluidsSwabs	hcr	Oil Sand	M				
+HydrocarbonResourcesFluidsSwabs	hcr_fw_salinity		C				
+HydrocarbonResourcesFluidsSwabs	hcr_geol_age	Silurian	C				
+HydrocarbonResourcesFluidsSwabs	hcr_pressure		X				
+HydrocarbonResourcesFluidsSwabs	hcr_temp	150-295 degree Celsius	C				
+HydrocarbonResourcesFluidsSwabs	iw_bt_date_well	5/11/18	X				
+HydrocarbonResourcesFluidsSwabs	iwf		M				
+HydrocarbonResourcesFluidsSwabs	lithology	Volcanic	C				
+HydrocarbonResourcesFluidsSwabs	magnesium	52.8 micromole per kilogram	X				
+HydrocarbonResourcesFluidsSwabs	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+HydrocarbonResourcesFluidsSwabs	nitrate	65 micromole per liter	M				
+HydrocarbonResourcesFluidsSwabs	nitrite	0.5 micromole per liter	C				
+HydrocarbonResourcesFluidsSwabs	org_count_qpcr_info		X				
+HydrocarbonResourcesFluidsSwabs	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	C				
+HydrocarbonResourcesFluidsSwabs	oxy_stat_samp	aerobic	X				
+HydrocarbonResourcesFluidsSwabs	ph	7.2	C				
+HydrocarbonResourcesFluidsSwabs	potassium	463 milligram per liter	X				
+HydrocarbonResourcesFluidsSwabs	pour_point		X				
+HydrocarbonResourcesFluidsSwabs	pressure	50 atmosphere	X				
+HydrocarbonResourcesFluidsSwabs	prod_rate		C				
+HydrocarbonResourcesFluidsSwabs	prod_start_date	5/11/18	C				
+HydrocarbonResourcesFluidsSwabs	project_name	Forest soil metagenome	M				
+HydrocarbonResourcesFluidsSwabs	reservoir		C				
+HydrocarbonResourcesFluidsSwabs	resins_pc		C				
+HydrocarbonResourcesFluidsSwabs	salinity	25 practical salinity unit	X				
+HydrocarbonResourcesFluidsSwabs	samp_collect_point	well	M				
+HydrocarbonResourcesFluidsSwabs	samp_loc_corr_rate		C				
+HydrocarbonResourcesFluidsSwabs	samp_name	ISDsoil1	M				
+HydrocarbonResourcesFluidsSwabs	samp_preserv		X				
+HydrocarbonResourcesFluidsSwabs	samp_store_dur	P1Y6M	X				
+HydrocarbonResourcesFluidsSwabs	samp_store_loc	Freezer no:5	X				
+HydrocarbonResourcesFluidsSwabs	samp_store_temp	-80 degree Celsius	X				
+HydrocarbonResourcesFluidsSwabs	samp_subtype	biofilm	C				
+HydrocarbonResourcesFluidsSwabs	samp_transport_cond	5 days;-20 degree Celsius	X				
+HydrocarbonResourcesFluidsSwabs	samp_type	built environment sample [GENEPIO:0001248]	M				
+HydrocarbonResourcesFluidsSwabs	samp_vol_we_dna_ext	1500 milliliter	C				
+HydrocarbonResourcesFluidsSwabs	samp_well_name		C				
+HydrocarbonResourcesFluidsSwabs	saturates_pc		C				
+HydrocarbonResourcesFluidsSwabs	sodium	10.5 milligram per liter	X				
+HydrocarbonResourcesFluidsSwabs	sulfate	5 micromole per liter	M				
+HydrocarbonResourcesFluidsSwabs	sulfate_fw		C				
+HydrocarbonResourcesFluidsSwabs	sulfide	2 micromole per liter	M				
+HydrocarbonResourcesFluidsSwabs	suspend_solids		X				
+HydrocarbonResourcesFluidsSwabs	tan		C				
+HydrocarbonResourcesFluidsSwabs	temp	25 degree Celsius	M				
+HydrocarbonResourcesFluidsSwabs	toluene		C				
+HydrocarbonResourcesFluidsSwabs	tot_iron		C				
+HydrocarbonResourcesFluidsSwabs	tot_nitro	50 micromole per liter	X				
+HydrocarbonResourcesFluidsSwabs	tot_phosp	0.03 milligram per liter	X				
+HydrocarbonResourcesFluidsSwabs	tot_sulfur		C				
+HydrocarbonResourcesFluidsSwabs	tvdss_of_hcr_press		X				
+HydrocarbonResourcesFluidsSwabs	tvdss_of_hcr_temp		X				
+HydrocarbonResourcesFluidsSwabs	vfa		C				
+HydrocarbonResourcesFluidsSwabs	vfa_fw		C				
+HydrocarbonResourcesFluidsSwabs	viscosity		X				
+HydrocarbonResourcesFluidsSwabs	water_cut		M				
+HydrocarbonResourcesFluidsSwabs	water_prod_rate		C				
+HydrocarbonResourcesFluidsSwabs	win		C				
+HydrocarbonResourcesFluidsSwabs	xylene		C				
+MicrobialMatBiofilm	alkalinity	50 milligram per liter	X				
+MicrobialMatBiofilm	alkyl_diethers	0.005 mole per liter	X				
+MicrobialMatBiofilm	aminopept_act	0.269 mole per liter per hour	X				
+MicrobialMatBiofilm	ammonium	1.5 milligram per liter	X				
+MicrobialMatBiofilm	bacteria_carb_prod	2.53 microgram per liter per hour	X				
+MicrobialMatBiofilm	biomass	total;20 gram	X				
+MicrobialMatBiofilm	bishomohopanol	14 microgram per liter	X				
+MicrobialMatBiofilm	bromide	0.05 parts per million	X				
+MicrobialMatBiofilm	calcium	0.2 micromole per liter	X				
+MicrobialMatBiofilm	carb_nitro_ratio	0.417361111	X				
+MicrobialMatBiofilm	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+MicrobialMatBiofilm	chloride	5000 milligram per liter	X				
+MicrobialMatBiofilm	chlorophyll	5 milligram per cubic meter	X				
+MicrobialMatBiofilm	depth	10 meter	C				
+MicrobialMatBiofilm	diether_lipids	0.2 nanogram per liter	X				
+MicrobialMatBiofilm	diss_carb_dioxide	5 milligram per liter	X				
+MicrobialMatBiofilm	diss_hydrogen	0.3 micromole per liter	X				
+MicrobialMatBiofilm	diss_inorg_carb	2059 micromole per kilogram	X				
+MicrobialMatBiofilm	diss_org_carb	197 micromole per liter	X				
+MicrobialMatBiofilm	diss_org_nitro	0.05 micromole per liter	X				
+MicrobialMatBiofilm	diss_oxygen	175 micromole per kilogram	X				
+MicrobialMatBiofilm	elev	100 meter	C				
+MicrobialMatBiofilm	glucosidase_act	5 mol per liter per hour	X				
+MicrobialMatBiofilm	magnesium	52.8 micromole per kilogram	X				
+MicrobialMatBiofilm	mean_frict_vel	0.5 meter per second	X				
+MicrobialMatBiofilm	mean_peak_frict_vel	1 meter per second	X				
+MicrobialMatBiofilm	methane	0.15 micromole per liter	X				
+MicrobialMatBiofilm	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+MicrobialMatBiofilm	n_alkanes	n-hexadecane;100 milligram per liter	X				
+MicrobialMatBiofilm	nitrate	65 micromole per liter	X				
+MicrobialMatBiofilm	nitrite	0.5 micromole per liter	X				
+MicrobialMatBiofilm	nitro	4.2 micromole per liter	X				
+MicrobialMatBiofilm	org_carb	1.5 microgram per liter	X				
+MicrobialMatBiofilm	org_matter	1.75 milligram per cubic meter	X				
+MicrobialMatBiofilm	org_nitro	4 micromole per liter	X				
+MicrobialMatBiofilm	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+MicrobialMatBiofilm	oxy_stat_samp	aerobic	X				
+MicrobialMatBiofilm	part_org_carb	1.92 micromole per liter	X				
+MicrobialMatBiofilm	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+MicrobialMatBiofilm	petroleum_hydrocarb	0.05 micromole per liter	X				
+MicrobialMatBiofilm	ph	7.2	X				
+MicrobialMatBiofilm	phaeopigments	2.5 milligram per cubic meter	X				
+MicrobialMatBiofilm	phosphate	0.7 micromole per liter	X				
+MicrobialMatBiofilm	phosplipid_fatt_acid	2.98 milligram per liter	X				
+MicrobialMatBiofilm	potassium	463 milligram per liter	X				
+MicrobialMatBiofilm	pressure	50 atmosphere	X				
+MicrobialMatBiofilm	project_name	Forest soil metagenome	M				
+MicrobialMatBiofilm	redox_potential	300 millivolt	X				
+MicrobialMatBiofilm	salinity	25 practical salinity unit	X				
+MicrobialMatBiofilm	samp_name	ISDsoil1	M				
+MicrobialMatBiofilm	samp_store_dur	P1Y6M	X				
+MicrobialMatBiofilm	samp_store_loc	Freezer no:5	X				
+MicrobialMatBiofilm	samp_store_temp	-80 degree Celsius	X				
+MicrobialMatBiofilm	samp_vol_we_dna_ext	1500 milliliter	X				
+MicrobialMatBiofilm	silicate	0.05 micromole per liter	X				
+MicrobialMatBiofilm	sodium	10.5 milligram per liter	X				
+MicrobialMatBiofilm	sulfate	5 micromole per liter	X				
+MicrobialMatBiofilm	sulfide	2 micromole per liter	X				
+MicrobialMatBiofilm	temp	25 degree Celsius	X				
+MicrobialMatBiofilm	tot_carb		X				
+MicrobialMatBiofilm	tot_nitro_content		X				
+MicrobialMatBiofilm	tot_org_carb		X				
+MicrobialMatBiofilm	turbidity	0.3 nephelometric turbidity units	X				
+MicrobialMatBiofilm	water_content		X				
+MiscellaneousNaturalOrArtificialEnvironment	alkalinity	50 milligram per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	alt	100 meter	C				
+MiscellaneousNaturalOrArtificialEnvironment	ammonium	1.5 milligram per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	biomass	total;20 gram	X				
+MiscellaneousNaturalOrArtificialEnvironment	bromide	0.05 parts per million	X				
+MiscellaneousNaturalOrArtificialEnvironment	calcium	0.2 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+MiscellaneousNaturalOrArtificialEnvironment	chloride	5000 milligram per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	chlorophyll	5 milligram per cubic meter	X				
+MiscellaneousNaturalOrArtificialEnvironment	density	1000 kilogram per cubic meter	X				
+MiscellaneousNaturalOrArtificialEnvironment	depth	10 meter	C				
+MiscellaneousNaturalOrArtificialEnvironment	diether_lipids	0.2 nanogram per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	diss_carb_dioxide	5 milligram per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	diss_hydrogen	0.3 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	diss_inorg_carb	2059 micromole per kilogram	X				
+MiscellaneousNaturalOrArtificialEnvironment	diss_org_nitro	0.05 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	diss_oxygen	175 micromole per kilogram	X				
+MiscellaneousNaturalOrArtificialEnvironment	elev	100 meter	C				
+MiscellaneousNaturalOrArtificialEnvironment	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+MiscellaneousNaturalOrArtificialEnvironment	nitrate	65 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	nitrite	0.5 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	nitro	4.2 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	org_carb	1.5 microgram per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	org_matter	1.75 milligram per cubic meter	X				
+MiscellaneousNaturalOrArtificialEnvironment	org_nitro	4 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+MiscellaneousNaturalOrArtificialEnvironment	oxy_stat_samp	aerobic	X				
+MiscellaneousNaturalOrArtificialEnvironment	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+MiscellaneousNaturalOrArtificialEnvironment	ph	7.2	X				
+MiscellaneousNaturalOrArtificialEnvironment	phosphate	0.7 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	phosplipid_fatt_acid	2.98 milligram per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	potassium	463 milligram per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	pressure	50 atmosphere	X				
+MiscellaneousNaturalOrArtificialEnvironment	project_name	Forest soil metagenome	M				
+MiscellaneousNaturalOrArtificialEnvironment	salinity	25 practical salinity unit	X				
+MiscellaneousNaturalOrArtificialEnvironment	samp_name	ISDsoil1	M				
+MiscellaneousNaturalOrArtificialEnvironment	samp_store_dur	P1Y6M	X				
+MiscellaneousNaturalOrArtificialEnvironment	samp_store_loc	Freezer no:5	X				
+MiscellaneousNaturalOrArtificialEnvironment	samp_store_temp	-80 degree Celsius	X				
+MiscellaneousNaturalOrArtificialEnvironment	samp_vol_we_dna_ext	1500 milliliter	X				
+MiscellaneousNaturalOrArtificialEnvironment	silicate	0.05 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	sodium	10.5 milligram per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	sulfate	5 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	sulfide	2 micromole per liter	X				
+MiscellaneousNaturalOrArtificialEnvironment	temp	25 degree Celsius	X				
+MiscellaneousNaturalOrArtificialEnvironment	water_current	10 cubic meter per second	X				
+PlantAssociated	air_temp_regm	25 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	ances_data	A/3*B	X				
+PlantAssociated	antibiotic_regm	penicillin;5 milligram;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	biol_stat	natural	X				
+PlantAssociated	biotic_regm	sample inoculated with Rhizobium spp. Culture	X				
+PlantAssociated	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+PlantAssociated	chem_mutagen	nitrous acid;0.5 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	climate_environment	tropical climate;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	cult_root_med	http://himedialabs.com/TD/PT158.pdf	X				
+PlantAssociated	depth	10 meter	C				
+PlantAssociated	elev	100 meter	C				
+PlantAssociated	fertilizer_regm	urea;0.6 milligram per liter;R2/2018-05-11:T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	fungicide_regm	bifonazole;1 mole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	gaseous_environment	nitric oxide;0.5 micromole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	genetic_mod	aox1A transgenic	X				
+PlantAssociated	gravity	12 g;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	growth_facil	Growth chamber [CO_715:0000189]	X				
+PlantAssociated	growth_habit	spreading	X				
+PlantAssociated	growth_hormone_regm	abscisic acid;0.5 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	herbicide_regm	atrazine;10 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	host_age	10 days	X				
+PlantAssociated	host_common_name	rice	X				
+PlantAssociated	host_disease_stat	downy mildew	X				
+PlantAssociated	host_dry_mass	500 gram	X				
+PlantAssociated	host_genotype	Ts	X				
+PlantAssociated	host_height	1 meter	X				
+PlantAssociated	host_length	1 meter	X				
+PlantAssociated	host_life_stage	adult	X				
+PlantAssociated	host_phenotype	seed pod; green [PATO:0000320]	X				
+PlantAssociated	host_subspecf_genlin	"serovar:Newport, variety:glabrum, cultivar: Red Delicious"	X				#227 & #256
+PlantAssociated	host_symbiont	flukeworms	X				
+PlantAssociated	host_taxid	4530	X				
+PlantAssociated	host_tot_mass	2500 gram	X				
+PlantAssociated	host_wet_mass	1500 gram	X				
+PlantAssociated	humidity_regm	25 gram per cubic meter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	light_regm	incandescant light;10 lux;450 nanometer	X				
+PlantAssociated	mechanical_damage	pruning;bark	X				
+PlantAssociated	mineral_nutr_regm	potassium;15 gram;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+PlantAssociated	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+PlantAssociated	non_min_nutr_regm	carbon dioxide;10 mole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+PlantAssociated	oxy_stat_samp	aerobic	X				
+PlantAssociated	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+PlantAssociated	pesticide_regm	pyrethrum;0.6 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	ph_regm	7.6;R2/2018-05-11:T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	plant_growth_med	hydroponic plant culture media [EO:0007067]	X				
+PlantAssociated	plant_product	xylem sap [PO:0025539]	X				
+PlantAssociated	plant_sex	Hermaphroditic	X				
+PlantAssociated	plant_struc	epidermis [PO:0005679]	X				
+PlantAssociated	project_name	Forest soil metagenome	M				
+PlantAssociated	radiation_regm	gamma radiation;60 gray;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	rainfall_regm	15 millimeter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	root_cond	http://himedialabs.com/TD/PT158.pdf	X				
+PlantAssociated	root_med_carbon	sucrose	X				
+PlantAssociated	root_med_macronutr	KH2PO4;170¬†milligram per liter	X				
+PlantAssociated	root_med_micronutr	H3BO3;6.2¬†milligram per liter	X				
+PlantAssociated	root_med_ph	7.5	X				
+PlantAssociated	root_med_regl	abscisic acid;0.75 milligram per liter	X				
+PlantAssociated	root_med_solid	agar	X				
+PlantAssociated	root_med_suppl	nicotinic acid;0.5 milligram per liter	X				
+PlantAssociated	salinity	25 practical salinity unit	X				
+PlantAssociated	salt_regm	NaCl;5 gram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	samp_capt_status	farm sample	X				
+PlantAssociated	samp_dis_stage	infection	X				
+PlantAssociated	samp_name	ISDsoil1	M				
+PlantAssociated	samp_store_dur	P1Y6M	X				
+PlantAssociated	samp_store_loc	Freezer no:5	X				
+PlantAssociated	samp_store_temp	-80 degree Celsius	X				
+PlantAssociated	samp_vol_we_dna_ext	1500 milliliter	X				
+PlantAssociated	season_environment	rainy;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	standing_water_regm	standing water;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	temp	25 degree Celsius	X				
+PlantAssociated	tiss_cult_growth_med	https://link.springer.com/content/pdf/10.1007/BF02796489.pdf	X				
+PlantAssociated	water_temp_regm	15 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+PlantAssociated	watering_regm	1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M	X				
+Sediment	alkalinity	50 milligram per liter	X				
+Sediment	alkyl_diethers	0.005 mole per liter	X				
+Sediment	aminopept_act	0.269 mole per liter per hour	X				
+Sediment	ammonium	1.5 milligram per liter	X				
+Sediment	bacteria_carb_prod	2.53 microgram per liter per hour	X				
+Sediment	biomass	total;20 gram	X				
+Sediment	bishomohopanol	14 microgram per liter	X				
+Sediment	bromide	0.05 parts per million	X				
+Sediment	calcium	0.2 micromole per liter	X				
+Sediment	carb_nitro_ratio	0.417361111	X				
+Sediment	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+Sediment	chloride	5000 milligram per liter	X				
+Sediment	chlorophyll	5 milligram per cubic meter	X				
+Sediment	density	1000 kilogram per cubic meter	X				
+Sediment	depth	10 meter	M				
+Sediment	diether_lipids	0.2 nanogram per liter	X				
+Sediment	diss_carb_dioxide	5 milligram per liter	X				
+Sediment	diss_hydrogen	0.3 micromole per liter	X				
+Sediment	diss_inorg_carb	2059 micromole per kilogram	X				
+Sediment	diss_org_carb	197 micromole per liter	X				
+Sediment	diss_org_nitro	0.05 micromole per liter	X				
+Sediment	diss_oxygen	175 micromole per kilogram	X				
+Sediment	elev	100 meter	C				
+Sediment	glucosidase_act	5 mol per liter per hour	X				
+Sediment	magnesium	52.8 micromole per kilogram	X				
+Sediment	mean_frict_vel	0.5 meter per second	X				
+Sediment	mean_peak_frict_vel	1 meter per second	X				
+Sediment	methane	0.15 micromole per liter	X				
+Sediment	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+Sediment	n_alkanes	n-hexadecane;100 milligram per liter	X				
+Sediment	nitrate	65 micromole per liter	X				
+Sediment	nitrite	0.5 micromole per liter	X				
+Sediment	nitro	4.2 micromole per liter	X				
+Sediment	org_carb	1.5 microgram per liter	X				
+Sediment	org_matter	1.75 milligram per cubic meter	X				
+Sediment	org_nitro	4 micromole per liter	X				
+Sediment	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+Sediment	oxy_stat_samp	aerobic	X				
+Sediment	part_org_carb	1.92 micromole per liter	X				
+Sediment	particle_class		X				
+Sediment	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+Sediment	petroleum_hydrocarb	0.05 micromole per liter	X				
+Sediment	ph	7.2	X				
+Sediment	phaeopigments	2.5 milligram per cubic meter	X				
+Sediment	phosphate	0.7 micromole per liter	X				
+Sediment	phosplipid_fatt_acid	2.98 milligram per liter	X				
+Sediment	porosity		X				
+Sediment	potassium	463 milligram per liter	X				
+Sediment	pressure	50 atmosphere	X				
+Sediment	project_name	Forest soil metagenome	M				
+Sediment	redox_potential	300 millivolt	X				
+Sediment	salinity	25 practical salinity unit	X				
+Sediment	samp_name	ISDsoil1	M				
+Sediment	samp_store_dur	P1Y6M	X				
+Sediment	samp_store_loc	Freezer no:5	X				
+Sediment	samp_store_temp	-80 degree Celsius	X				
+Sediment	samp_vol_we_dna_ext	1500 milliliter	X				
+Sediment	sediment_type	biogenous	X				
+Sediment	silicate	0.05 micromole per liter	X				
+Sediment	sodium	10.5 milligram per liter	X				
+Sediment	sulfate	5 micromole per liter	X				
+Sediment	sulfide	2 micromole per liter	X				
+Sediment	temp	25 degree Celsius	X				
+Sediment	tidal_stage	high tide	X				
+Sediment	tot_carb		X				
+Sediment	tot_depth_water_col	500 meter	X				
+Sediment	tot_nitro_content		X				
+Sediment	tot_org_carb		X				
+Sediment	turbidity	0.3 nephelometric turbidity units	X				
+Sediment	water_content		X				
+Soil	agrochem_addition	roundup;5 milligram per liter;2018-06-21	X				
+Soil	al_sat		X				
+Soil	al_sat_meth		X				
+Soil	annual_precpt		X				
+Soil	annual_temp	12.5 degree Celsius	X				
+Soil	crop_rotation	yes;R2/2017-01-01/2018-12-31/P6M	X				
+Soil	cur_land_use	conifers	X				
+Soil	cur_vegetation		X				
+Soil	cur_vegetation_meth		X				
+Soil	depth	10 meter	M				
+Soil	drainage_class	well	X				
+Soil	elev	100 meter	M				
+Soil	extreme_event		X				
+Soil	fao_class	Luvisols	X				
+Soil	fire		X				
+Soil	flooding		X				
+Soil	heavy_metals	mercury;0.09 micrograms per gram	X				
+Soil	heavy_metals_meth		X				
+Soil	horizon_meth		X				
+Soil	link_addit_analys		X				
+Soil	link_class_info		X				
+Soil	link_climate_info		X				
+Soil	local_class		X				
+Soil	local_class_meth		X				
+Soil	micro_biomass_meth		X				
+Soil	microbial_biomass		X				
+Soil	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+Soil	org_matter	1.75 milligram per cubic meter	X				
+Soil	org_nitro	4 micromole per liter	X				
+Soil	ph	7.2	X				
+Soil	ph_meth		X				
+Soil	pool_dna_extracts	yes;5	X				
+Soil	prev_land_use_meth		X				
+Soil	previous_land_use		X				
+Soil	profile_position	summit	X				
+Soil	project_name	Forest soil metagenome	M				
+Soil	salinity_meth		X				
+Soil	samp_name	ISDsoil1	M				
+Soil	samp_vol_we_dna_ext	1500 milliliter	X				
+Soil	season_precpt		X				
+Soil	season_temp	18 degree Celsius	X				
+Soil	sieving		X				
+Soil	slope_aspect		X				
+Soil	slope_gradient		X				
+Soil	soil_horizon	A horizon	X				
+Soil	soil_text_measure		X				
+Soil	soil_texture_meth		X				
+Soil	soil_type	plinthosol [ENVO:00002250]	X				
+Soil	soil_type_meth		X				
+Soil	store_cond	-20 degree Celsius freezer;P2Y10D	X				
+Soil	temp	25 degree Celsius	X				
+Soil	tillage	chisel	X				
+Soil	tot_nitro_cont_meth		X				
+Soil	tot_nitro_content		X				
+Soil	tot_org_c_meth		X				
+Soil	tot_org_carb		X				
+Soil	water_cont_soil_meth		X				
+Soil	water_content		X				
+SymbiontAssociated	alt	100 meter	C				
+SymbiontAssociated	association_duration		X				#181
+SymbiontAssociated	chem_administration		X				
+SymbiontAssociated	collection_date	2018-05-11T10:00:00+01:00; 2018-05-11	M				
+SymbiontAssociated	depth	10 meter	C				
+SymbiontAssociated	elev	100 meter	C				
+SymbiontAssociated	env_broad_scale	forest biome [ENVO:01000174]	M				
+SymbiontAssociated	env_local_scale	litter layer [ENVO:01000338]	M				
+SymbiontAssociated	env_medium	intestine environment [ENVO:2100002]	M				
+SymbiontAssociated	geo_loc_name	"USA: Maryland, Bethesda"	M				
+SymbiontAssociated	gravidity		X				
+SymbiontAssociated	host_age		X				
+SymbiontAssociated	host_body_habitat	anterior end of a tapeworm	X				
+SymbiontAssociated	host_body_product	Portion of mucus [fma66938]	X				
+SymbiontAssociated	host_body_site	scolex [UBERON:0015119]	X				
+SymbiontAssociated	host_cellular_loc	extracellular	C				#179
+SymbiontAssociated	host_color		X				
+SymbiontAssociated	host_common_name	trematode	X				
+SymbiontAssociated	host_dependence	obligate	M				#169
+SymbiontAssociated	host_dry_mass		X				
+SymbiontAssociated	host_family_relationship	clone;P15	X				
+SymbiontAssociated	host_genotype		X				
+SymbiontAssociated	host_growth_cond		X				
+SymbiontAssociated	host_height		X				
+SymbiontAssociated	host_infra_specific_name		X				
+SymbiontAssociated	host_infra_specific_rank		X				
+SymbiontAssociated	host_length		X				
+SymbiontAssociated	host_life_stage	redia	M				
+SymbiontAssociated	host_number	3	X				#174
+SymbiontAssociated	host_of_host_coinf	Maritrema novaezealandense	X				#182
+SymbiontAssociated	host_of_host_disease	rabies [DOID:11260]	X				#186
+SymbiontAssociated	host_of_host_env_loc	small intestine[uberon:0002108]	X				#197
+SymbiontAssociated	host_of_host_env_med	feces[uberon:0001988]	X				#198
+SymbiontAssociated	host_of_host_fam_rel		X				#187
+SymbiontAssociated	host_of_host_geno		X				#190
+SymbiontAssociated	host_of_host_gravid		X				#192
+SymbiontAssociated	host_of_host_infname		X				#188
+SymbiontAssociated	host_of_host_infrank		X				#189
+SymbiontAssociated	host_of_host_name	snail	X				#183
+SymbiontAssociated	host_of_host_pheno		X				#191
+SymbiontAssociated	host_of_host_sub_id	H3	X				#185
+SymbiontAssociated	host_of_host_taxid	145637	X				#184
+SymbiontAssociated	host_of_host_totmass		X				#193
+SymbiontAssociated	host_phenotype	soldier	X				
+SymbiontAssociated	host_sex		X				
+SymbiontAssociated	host_shape		X				
+SymbiontAssociated	host_specificity	species-specific	C				#176
+SymbiontAssociated	host_subject_id	P14	X				
+SymbiontAssociated	host_substrate		X				
+SymbiontAssociated	host_symbiont	Paragordius varius	X				#175
+SymbiontAssociated	host_taxid	395013	X				
+SymbiontAssociated	host_tot_mass		X				
+SymbiontAssociated	lat_lon	50.586825 6.408977	M				
+SymbiontAssociated	misc_param		X				
+SymbiontAssociated	mode_transmission	horizontal:castrator	C				#172
+SymbiontAssociated	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+SymbiontAssociated	oxy_stat_samp	aerobic	X				
+SymbiontAssociated	perturbation		X				
+SymbiontAssociated	project_name	Forest soil metagenome	M				
+SymbiontAssociated	route_transmission		X				#173
+SymbiontAssociated	samp_salinity	1 milligram per liter	X				
+SymbiontAssociated	samp_store_dur	P1Y6M	X				
+SymbiontAssociated	samp_store_loc	Freezer no:5	X				
+SymbiontAssociated	samp_store_sol	5% ethanol	X				#194
+SymbiontAssociated	samp_store_temp		X				
+SymbiontAssociated	samp_vol_we_dna_ext		X				
+SymbiontAssociated	sample_name	ISDsoil1	M				
+SymbiontAssociated	source_mat_id	MPI012345	X				
+SymbiontAssociated	sym_life_cycle_type	complex life cycle	M				#171
+SymbiontAssociated	symbiont_host_role	intermediate	C				#177
+SymbiontAssociated	temp	25 degree Celsius	X				
+SymbiontAssociated	type_of_symbiosis	parasitic	C				#170
+WastewaterSludge	alkalinity	50 milligram per liter	X				
+WastewaterSludge	biochem_oxygen_dem		X				
+WastewaterSludge	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+WastewaterSludge	chem_oxygen_dem		X				
+WastewaterSludge	depth	10 meter	C				
+WastewaterSludge	efficiency_percent		X				
+WastewaterSludge	emulsions		X				
+WastewaterSludge	gaseous_substances		X				
+WastewaterSludge	indust_eff_percent		X				
+WastewaterSludge	inorg_particles		X				
+WastewaterSludge	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+WastewaterSludge	nitrate	65 micromole per liter	X				
+WastewaterSludge	org_particles		X				
+WastewaterSludge	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+WastewaterSludge	oxy_stat_samp	aerobic	X				
+WastewaterSludge	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+WastewaterSludge	ph	7.2	X				
+WastewaterSludge	phosphate	0.7 micromole per liter	X				
+WastewaterSludge	pre_treatment		X				
+WastewaterSludge	primary_treatment		X				
+WastewaterSludge	project_name	Forest soil metagenome	M				
+WastewaterSludge	reactor_type		X				
+WastewaterSludge	salinity	25 practical salinity unit	X				
+WastewaterSludge	samp_name	ISDsoil1	M				
+WastewaterSludge	samp_store_dur	P1Y6M	X				
+WastewaterSludge	samp_store_loc	Freezer no:5	X				
+WastewaterSludge	samp_store_temp	-80 degree Celsius	X				
+WastewaterSludge	samp_vol_we_dna_ext	1500 milliliter	X				
+WastewaterSludge	secondary_treatment		X				
+WastewaterSludge	sewage_type		X				
+WastewaterSludge	sludge_retent_time		X				
+WastewaterSludge	sodium	10.5 milligram per liter	X				
+WastewaterSludge	soluble_inorg_mat		X				
+WastewaterSludge	soluble_org_mat		X				
+WastewaterSludge	suspend_solids		X				
+WastewaterSludge	temp	25 degree Celsius	X				
+WastewaterSludge	tertiary_treatment		X				
+WastewaterSludge	tot_nitro	50 micromole per liter	X				
+WastewaterSludge	tot_phosphate		X				
+WastewaterSludge	wastewater_type		X				
+Water	alkalinity	50 milligram per liter	X				
+Water	alkalinity_method	titration	X				
+Water	alkyl_diethers	0.005 mole per liter	X				
+Water	aminopept_act	0.269 mole per liter per hour	X				
+Water	ammonium	1.5 milligram per liter	X				
+Water	atmospheric_data	wind speed;9 knots	X				
+Water	bac_prod	5 milligram per cubic meter per day	X				
+Water	bac_resp	300 micromole oxygen per liter per hour	X				
+Water	bacteria_carb_prod	2.53 microgram per liter per hour	X				
+Water	biomass	total;20 gram	X				
+Water	bishomohopanol	14 microgram per liter	X				
+Water	bromide	0.05 parts per million	X				
+Water	calcium	0.2 micromole per liter	X				
+Water	carb_nitro_ratio	0.417361111	X				
+Water	chem_administration	agar [CHEBI:2509];2018-05-11T20:00Z	X				
+Water	chloride	5000 milligram per liter	X				
+Water	chlorophyll	5 milligram per cubic meter	X				
+Water	conduc	10 milliSiemens per centimeter	X				
+Water	density	1000 kilogram per cubic meter	X				
+Water	depth	10 meter	M				
+Water	diether_lipids	0.2 nanogram per liter	X				
+Water	diss_carb_dioxide	5 milligram per liter	X				
+Water	diss_hydrogen	0.3 micromole per liter	X				
+Water	diss_inorg_carb	2059 micromole per kilogram	X				
+Water	diss_inorg_nitro	761 micromole per liter	X				
+Water	diss_inorg_phosp	56.5 micromole per liter	X				
+Water	diss_org_carb	197 micromole per liter	X				
+Water	diss_org_nitro	0.05 micromole per liter	X				
+Water	diss_oxygen	175 micromole per kilogram	X				
+Water	down_par	28.71 microEinstein per square meter per second	X				
+Water	elev	100 meter	C				
+Water	fluor	2.5 volts	X				
+Water	glucosidase_act	5 mol per liter per hour	X				
+Water	light_intensity	0.3 lux	X				
+Water	magnesium	52.8 micromole per kilogram	X				
+Water	mean_frict_vel	0.5 meter per second	X				
+Water	mean_peak_frict_vel	1 meter per second	X				
+Water	misc_param	Bicarbonate ion concentration;2075 micromole per kilogram	X				
+Water	n_alkanes	n-hexadecane;100 milligram per liter	X				
+Water	nitrate	65 micromole per liter	X				
+Water	nitrite	0.5 micromole per liter	X				
+Water	nitro	4.2 micromole per liter	X				
+Water	org_carb	1.5 microgram per liter	X				
+Water	org_matter	1.75 milligram per cubic meter	X				
+Water	org_nitro	4 micromole per liter	X				
+Water	organism_count	total prokaryotes;3.5e7 cells per milliliter;qPCR	X				
+Water	oxy_stat_samp	aerobic	X				
+Water	part_org_carb	1.92 micromole per liter	X				
+Water	part_org_nitro	0.3 micromole per liter	X				
+Water	perturbation	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M	X				
+Water	petroleum_hydrocarb	0.05 micromole per liter	X				
+Water	ph	7.2	X				
+Water	phaeopigments	2.5 milligram per cubic meter	X				
+Water	phosphate	0.7 micromole per liter	X				
+Water	phosplipid_fatt_acid	2.98 milligram per liter	X				
+Water	photon_flux	3.926 micromole photons per second per square meter	X				
+Water	potassium	463 milligram per liter	X				
+Water	pressure	50 atmosphere	X				
+Water	primary_prod	100 milligram per cubic meter per day	X				
+Water	project_name	Forest soil metagenome	M				
+Water	redox_potential	300 millivolt	X				
+Water	salinity	25 practical salinity unit	X				
+Water	samp_name	ISDsoil1	M				
+Water	samp_store_dur	P1Y6M	X				
+Water	samp_store_loc	Freezer no:5	X				
+Water	samp_store_temp	-80 degree Celsius	X				
+Water	samp_vol_we_dna_ext	1500 milliliter	X				
+Water	silicate	0.05 micromole per liter	X				
+Water	size_frac_low	0.2 micrometer	X				
+Water	size_frac_up	20 micrometer	X				
+Water	sodium	10.5 milligram per liter	X				
+Water	soluble_react_phosp	0.1 milligram per liter	X				
+Water	sulfate	5 micromole per liter	X				
+Water	sulfide	2 micromole per liter	X				
+Water	suspend_part_matter	0.5 milligram per liter	X				
+Water	temp	25 degree Celsius	X				
+Water	tidal_stage	high tide	X				
+Water	tot_depth_water_col	500 meter	X				
+Water	tot_diss_nitro	40 microgram per liter	X				
+Water	tot_inorg_nitro	40 microgram per liter	X				
+Water	tot_nitro	50 micromole per liter	X				
+Water	tot_part_carb	35 micromole per liter	X				
+Water	tot_phosp	0.03 milligram per liter	X				
+Water	turbidity	0.3 nephelometric turbidity units	X				
+Water	water_current	10 cubic meter per second	X				

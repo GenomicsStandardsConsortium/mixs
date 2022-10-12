@@ -1,11 +1,155 @@
 {
-   "_comments": "Auto generated from mixs_schemasheets_generated.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-10-11T19:54:18\n    Schema: MIXS\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://example.com/mixs\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from mixs_schemasheets_generated.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-10-11T23:52:13\n    Schema: MIXS\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://example.com/mixs\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "MIXS": {
          "@id": "https://example.com/mixs",
          "@prefix": true
       },
       "linkml": "https://w3id.org/linkml/",
-      "@vocab": "https://example.com/mixs"
+      "@vocab": "https://example.com/mixs",
+      "animal_group_size": {
+         "@type": "xsd:integer"
+      },
+      "avg_occup": {
+         "@type": "xsd:float"
+      },
+      "bathroom_count": {
+         "@type": "xsd:integer"
+      },
+      "bedroom_count": {
+         "@type": "xsd:integer"
+      },
+      "cool_syst_id": {
+         "@type": "xsd:integer"
+      },
+      "elevator": {
+         "@type": "xsd:integer"
+      },
+      "escalator": {
+         "@type": "xsd:integer"
+      },
+      "exp_pipe": {
+         "@type": "xsd:integer"
+      },
+      "ext_door": {
+         "@type": "xsd:integer"
+      },
+      "extrachrom_elements": {
+         "@type": "xsd:integer"
+      },
+      "ferm_ph": {
+         "@type": "xsd:float"
+      },
+      "floor_count": {
+         "@type": "xsd:integer"
+      },
+      "freq_cook": {
+         "@type": "xsd:integer"
+      },
+      "hall_count": {
+         "@type": "xsd:integer"
+      },
+      "heat_system_id": {
+         "@type": "xsd:integer"
+      },
+      "host_occupation": {
+         "@type": "xsd:integer"
+      },
+      "host_of_host_taxid": {
+         "@type": "xsd:integer"
+      },
+      "host_spec_range": {
+         "@type": "xsd:integer"
+      },
+      "hysterectomy": {
+         "@type": "xsd:boolean"
+      },
+      "ihmc_medication_code": {
+         "@type": "xsd:integer"
+      },
+      "lib_reads_seqd": {
+         "@type": "xsd:integer"
+      },
+      "lib_size": {
+         "@type": "xsd:integer"
+      },
+      "max_occup": {
+         "@type": "xsd:integer"
+      },
+      "medic_hist_perform": {
+         "@type": "xsd:boolean"
+      },
+      "num_replicons": {
+         "@type": "xsd:integer"
+      },
+      "number_contig": {
+         "@type": "xsd:integer"
+      },
+      "number_pets": {
+         "@type": "xsd:integer"
+      },
+      "number_plants": {
+         "@type": "xsd:integer"
+      },
+      "number_resident": {
+         "@type": "xsd:integer"
+      },
+      "occup_density_samp": {
+         "@type": "xsd:float"
+      },
+      "occup_samp": {
+         "@type": "xsd:integer"
+      },
+      "ph": {
+         "@type": "xsd:float"
+      },
+      "reassembly_bin": {
+         "@type": "xsd:boolean"
+      },
+      "room_count": {
+         "@type": "xsd:integer"
+      },
+      "room_moist_dam_hist": {
+         "@type": "xsd:integer"
+      },
+      "room_occup": {
+         "@type": "xsd:integer"
+      },
+      "room_window_count": {
+         "@type": "xsd:integer"
+      },
+      "root_med_ph": {
+         "@type": "xsd:float"
+      },
+      "samp_time_out": {
+         "@type": "xsd:float"
+      },
+      "smoker": {
+         "@type": "xsd:boolean"
+      },
+      "surf_moisture_ph": {
+         "@type": "xsd:float"
+      },
+      "timepoint": {
+         "@type": "xsd:float"
+      },
+      "trnas": {
+         "@type": "xsd:integer"
+      },
+      "twin_sibling": {
+         "@type": "xsd:boolean"
+      },
+      "typ_occup_density": {
+         "@type": "xsd:float"
+      },
+      "water_content": {
+         "@type": "xsd:float"
+      },
+      "window_open_freq": {
+         "@type": "xsd:integer"
+      },
+      "x_16s_recover": {
+         "@type": "xsd:boolean"
+      }
    }
 }

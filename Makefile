@@ -96,13 +96,16 @@ schemasheets/yaml_out/mixs_schemasheets.yaml: \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_classdefs.tsv \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_slot_assignments.tsv \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_slotdefs.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_classdefs.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slot_assignments.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_selected_shared.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_soil.tsv \
 schemasheets/tsv_in/mixs_prefixes.tsv \
 schemasheets/tsv_in/mixs_schema_annotations.tsv \
 schemasheets/tsv_in/mixs_utility.tsv
 	$(RUN) sheets2linkml --output $@ $^
 
-# schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_classdefs.tsv \
-# schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_slot_assignments.tsv \
+# schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_soil_slotdefs.tsv \
 
 # --fix / --no-fix
 # see https://github.com/linkml/linkml/blob/main/linkml/linter/config/default.yaml
