@@ -84,13 +84,15 @@ schemasheets_clean \
 schemasheets/logs/mixs_schemasheets_linting_log.tsv \
 schemasheets/generated/mixs_schemasheets_generated.sql \
 schemasheets/example_data/out/mixs_database.json schemasheets/example_data/out/mixs_database.db \
-validation_expected_pass validation_missing validation_extra bare_jsonschema_invalid
+validation_expected_pass validation_missing validation_extra bare_jsonschema_invalid \
+schemasheets/example_data/out/mims_soil_set_database.ttl
 
 schemasheets_clean:
 	rm -rf schemasheets/example_data/out/*
 	rm -rf schemasheets/generated/*
 	rm -rf schemasheets/logs/*
 	rm -rf schemasheets/yaml_out/*
+	rm -rf schemasheets/mkdocs_html/*
 
 schemasheets/yaml_out/mixs_schemasheets.yaml: \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_classdefs.tsv \
@@ -98,14 +100,14 @@ schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_slot_assignments.
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_slotdefs.tsv \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_classdefs.tsv \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slot_assignments.tsv \
-schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_selected_shared.tsv \
-schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_soil.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_conflicting_defer_to_soil.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_non_conflicting_shared.tsv \
 schemasheets/tsv_in/mixs_prefixes.tsv \
 schemasheets/tsv_in/mixs_schema_annotations.tsv \
 schemasheets/tsv_in/mixs_utility.tsv
 	$(RUN) sheets2linkml --output $@ $^
 
-# schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_soil_slotdefs.tsv \
+# schemasheets/tsv_in/enums_generated_keep.tsv \
 
 # --fix / --no-fix
 # see https://github.com/linkml/linkml/blob/main/linkml/linter/config/default.yaml
@@ -157,12 +159,12 @@ schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_dat
 		--schema $^
 
 schemasheets/example_data/out/mixs_database.json: \
-schemasheets/example_data/in/mixs_database.yaml \
-schemasheets/generated/mixs_schemasheets_generated.yaml
+schemasheets/generated/mixs_schemasheets_generated.yaml \
+schemasheets/example_data/in/mixs_database.yaml
 	$(RUN) linkml-convert \
 		--output $@ \
-		--target-class Database $< \
-		--schema $(word 2,$^)
+		--target-class Database \
+		--schema $^
 
 schemasheets/example_data/out/mixs_database.db: \
 schemasheets/generated/mixs_schemasheets_generated.yaml \
@@ -175,3 +177,54 @@ schemasheets/example_data/in/mixs_database_missing.json \
 schemasheets/generated/jsonschema/mixs_schemasheets_generated.schema.json
 	! jsonschema -i $^
 
+#schemasheets/example_data/out/mims_soil_set_database.yaml: \
+#schemasheets/generated/mixs_schemasheets_generated.yaml \
+#schemasheets/example_data/in/MimsSoil_data.tsv.minimal
+#	$(RUN) linkml-convert \
+#		--output $@ \
+#		--target-class Database \
+#		--index-slot mims_soil_set \
+#		--schema $^
+
+schemasheets/example_data/out/mims_soil_set_database.ttl: \
+schemasheets/generated/mixs_schemasheets_generated.yaml \
+schemasheets/example_data/in/mims_soil_set_database.yaml
+	$(RUN) linkml-convert \
+		--output $@ \
+		--target-class Database \
+		--index-slot mims_soil_set \
+		--schema $^
+
+#csv/tsv
+#json
+#json-ld
+#rdf/ttl
+#yml/yaml
+
+# added xsd prefix for converting non-string values to rdf/ttl
+# datetime ranges incompatible with sqlite dump
+# may not be possible to convert to or from csv or tsv due to multivalued slots (even is they're not populated?!)
+# schemasheets will compile slots starting with digits and generators don't complain either
+#   but the jsonschema utility won't validate against the generated jsonschema
+# expected problems with enum/pv names/texts
+# gen-linkml not merging (for example the "free" linkml:types
+# date_or_datetime not implemented yet, and might have some disadvantageous
+# what patterns in the schema or data break which tools?
+# no good regex for lat_lon?
+# multivalued slots with scalar values might be repaired in some situations but don't count on it
+
+all_owl_enums: clean_owl_enums schemasheets/generated/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.owl.ttl
+
+clean_owl_enums:
+	rm -f schemasheets/yaml_out/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.yaml
+	rm -f schemasheets/generated/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.owl.ttl
+
+schemasheets/yaml_out/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.yaml: \
+schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.tsv
+	$(RUN) sheets2linkml $< > $@
+
+schemasheets/generated/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.owl.ttl: \
+schemasheets/yaml_out/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.yaml
+	$(RUN) gen-owl \
+		--format ttl \
+		--output $@ $<

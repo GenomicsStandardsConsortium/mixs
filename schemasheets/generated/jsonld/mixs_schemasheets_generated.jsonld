@@ -11,6 +11,10 @@
       "prefix_reference": "https://example.com/mixs"
     },
     {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    },
+    {
       "prefix_prefix": "linkml",
       "prefix_reference": "https://w3id.org/linkml/"
     }
@@ -322,6 +326,7 @@
       ],
       "slot_group": "sequencing",
       "range": "string",
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -382,6 +387,7 @@
       ],
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -1059,6 +1065,7 @@
       ],
       "slot_group": "sequencing",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ %$",
       "@type": "SlotDefinition"
     },
     {
@@ -1251,6 +1258,7 @@
       ],
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -1354,6 +1362,7 @@
       ],
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -1453,6 +1462,7 @@
       ],
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -1530,6 +1540,7 @@
       ],
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -1590,6 +1601,7 @@
       ],
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -1636,6 +1648,7 @@
       ],
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]+ +bp$",
       "@type": "SlotDefinition"
     },
     {
@@ -2140,6 +2153,7 @@
       ],
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -2488,6 +2502,7 @@
       ],
       "slot_group": "sequencing",
       "range": "string",
+      "pattern": "^[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -2997,6 +3012,7 @@
       ],
       "slot_group": "sequencing",
       "range": "string",
+      "pattern": "^FWD:[ACGTacgt]+;REV:[ACGTacgt]$",
       "@type": "SlotDefinition"
     },
     {
@@ -3038,6 +3054,7 @@
       ],
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -3693,7 +3710,6 @@
       ],
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -3755,6 +3771,7 @@
       ],
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -3884,6 +3901,7 @@
       ],
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -4166,6 +4184,7 @@
       ],
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]*\\.?[0-9]+-[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -4719,6 +4738,7 @@
       ],
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -27583,6 +27603,30 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "soil_set",
+      "definition_uri": "https://example.com/mixssoil_set",
+      "from_schema": "https://example.com/mixs",
+      "slot_uri": "https://example.com/mixssoil_set",
+      "owner": "Database",
+      "domain_of": [
+        "Database"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mims_soil_set",
+      "definition_uri": "https://example.com/mixsmims_soil_set",
+      "from_schema": "https://example.com/mixs",
+      "slot_uri": "https://example.com/mixsmims_soil_set",
+      "owner": "Database",
+      "domain_of": [
+        "Database"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "MigsBa_adapters",
       "definition_uri": "https://example.com/mixsadapters",
       "annotations": [
@@ -27622,6 +27666,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -27664,6 +27709,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -28083,6 +28129,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -28125,6 +28172,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -28208,6 +28256,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -28266,6 +28315,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -28312,6 +28362,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -28353,6 +28404,7 @@
       "usage_slot_name": "estimated_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]+ +bp$",
       "@type": "SlotDefinition"
     },
     {
@@ -28688,6 +28740,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -29507,7 +29560,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -29549,6 +29601,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -29632,6 +29685,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -30010,6 +30064,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -30094,6 +30149,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -30136,6 +30192,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -30554,6 +30611,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -30596,6 +30654,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -30638,6 +30697,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -30696,6 +30756,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -30742,6 +30803,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -30783,6 +30845,7 @@
       "usage_slot_name": "estimated_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]+ +bp$",
       "@type": "SlotDefinition"
     },
     {
@@ -31116,6 +31179,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -31607,6 +31671,7 @@
       "usage_slot_name": "ploidy",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -31974,7 +32039,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -32016,6 +32080,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -32099,6 +32164,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -32476,6 +32542,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -32560,6 +32627,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -32602,6 +32670,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -32978,6 +33047,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -33020,6 +33090,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -33062,6 +33133,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -33120,6 +33192,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -33166,6 +33239,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -33207,6 +33281,7 @@
       "usage_slot_name": "estimated_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]+ +bp$",
       "@type": "SlotDefinition"
     },
     {
@@ -33457,6 +33532,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -34148,7 +34224,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -34190,6 +34265,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -34273,6 +34349,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -34609,6 +34686,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -34651,6 +34729,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -34693,6 +34772,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -35069,6 +35149,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -35111,6 +35192,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -35195,6 +35277,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -35253,6 +35336,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -35299,6 +35383,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -35340,6 +35425,7 @@
       "usage_slot_name": "estimated_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]+ +bp$",
       "@type": "SlotDefinition"
     },
     {
@@ -35590,6 +35676,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -36323,7 +36410,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -36365,6 +36451,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -36448,6 +36535,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -36826,6 +36914,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -36868,6 +36957,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -36910,6 +37000,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -37327,6 +37418,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -37369,6 +37461,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -37453,6 +37546,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -37511,6 +37605,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -37557,6 +37652,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -37598,6 +37694,7 @@
       "usage_slot_name": "estimated_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]+ +bp$",
       "@type": "SlotDefinition"
     },
     {
@@ -37892,6 +37989,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -38709,7 +38807,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -38751,6 +38848,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -38834,6 +38932,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -39212,6 +39311,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -39378,6 +39478,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -39420,6 +39521,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -39923,6 +40025,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ %$",
       "@type": "SlotDefinition"
     },
     {
@@ -40088,6 +40191,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -40130,6 +40234,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -40172,6 +40277,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -40230,6 +40336,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -40276,6 +40383,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -40443,6 +40551,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -40736,6 +40845,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -41307,7 +41417,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -41350,6 +41459,7 @@
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -41433,6 +41543,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -41557,6 +41668,7 @@
       "usage_slot_name": "size_frac",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]*\\.?[0-9]+-[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -41768,6 +41880,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -41892,6 +42005,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -42103,6 +42217,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -42145,6 +42260,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -42187,6 +42303,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -42245,6 +42362,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -42291,6 +42409,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -42499,6 +42618,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -42703,6 +42823,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^FWD:[ACGTacgt]+;REV:[ACGTacgt]$",
       "@type": "SlotDefinition"
     },
     {
@@ -42989,7 +43110,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -43031,6 +43151,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -43114,6 +43235,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -43452,6 +43574,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -43536,6 +43659,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -43578,6 +43702,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -43789,6 +43914,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -43831,6 +43957,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -43873,6 +44000,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -43931,6 +44059,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -43977,6 +44106,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -44103,6 +44233,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -44355,6 +44486,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -44559,6 +44691,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^FWD:[ACGTacgt]+;REV:[ACGTacgt]$",
       "@type": "SlotDefinition"
     },
     {
@@ -44846,7 +44979,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -44889,6 +45021,7 @@
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -44972,6 +45105,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -45097,6 +45231,7 @@
       "usage_slot_name": "size_frac",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]*\\.?[0-9]+-[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -45309,6 +45444,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -45433,6 +45569,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -45475,6 +45612,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -45894,6 +46032,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ %$",
       "@type": "SlotDefinition"
     },
     {
@@ -46059,6 +46198,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -46101,6 +46241,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -46143,6 +46284,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -46201,6 +46343,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -46247,6 +46390,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -46414,6 +46558,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -46666,6 +46811,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -47196,7 +47342,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -47239,6 +47384,7 @@
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -47322,6 +47468,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -47529,6 +47676,7 @@
       "usage_slot_name": "size_frac",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]*\\.?[0-9]+-[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -47782,6 +47930,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -47989,6 +48138,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -48031,6 +48181,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -48575,6 +48726,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -48659,6 +48811,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -48701,6 +48854,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -48759,6 +48913,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -48805,6 +48960,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -48846,6 +49002,7 @@
       "usage_slot_name": "estimated_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]+ +bp$",
       "@type": "SlotDefinition"
     },
     {
@@ -49183,6 +49340,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -49476,6 +49634,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -50260,7 +50419,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -50303,6 +50461,7 @@
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -50386,6 +50545,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -50596,6 +50756,7 @@
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
       "recommended": true,
+      "pattern": "^[0-9]*\\.?[0-9]+-[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -50932,6 +51093,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -51224,6 +51386,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -51266,6 +51429,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -51561,6 +51725,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -51603,6 +51768,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -51645,6 +51811,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -51703,6 +51870,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -51749,6 +51917,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -51916,6 +52085,7 @@
       "slot_group": "environment",
       "range": "string",
       "required": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -52168,6 +52338,7 @@
       "slot_group": "sequencing",
       "range": "string",
       "recommended": true,
+      "pattern": "^[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -52699,7 +52870,6 @@
       "slot_group": "investigation",
       "range": "string",
       "required": true,
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -52742,6 +52912,7 @@
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -52825,6 +52996,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -52949,6 +53121,7 @@
       "usage_slot_name": "size_frac",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[0-9]*\\.?[0-9]+-[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -53118,6 +53291,7 @@
       "slot_group": "environment",
       "range": "string",
       "recommended": true,
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -53154,6 +53328,7 @@
       "usage_slot_name": "adapters",
       "slot_group": "sequencing",
       "range": "string",
+      "pattern": "^[ACGTacgt]+;[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -53886,6 +54061,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -55482,6 +55658,7 @@
       "usage_slot_name": "mid",
       "slot_group": "sequencing",
       "range": "string",
+      "pattern": "^[ACGTacgt]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -55770,6 +55947,7 @@
       "usage_slot_name": "pcr_primers",
       "slot_group": "sequencing",
       "range": "string",
+      "pattern": "^FWD:[ACGTacgt]+;REV:[ACGTacgt]$",
       "@type": "SlotDefinition"
     },
     {
@@ -56571,6 +56749,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -56685,6 +56864,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -57703,6 +57883,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -58180,6 +58361,7 @@
       "usage_slot_name": "alt",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -58351,6 +58533,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -58715,7 +58898,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -58842,6 +59024,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -58908,6 +59091,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -62719,7 +62903,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -65263,6 +65446,7 @@
       "usage_slot_name": "env_broad_scale",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -65299,6 +65483,7 @@
       "usage_slot_name": "env_local_scale",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -65335,6 +65520,7 @@
       "usage_slot_name": "env_medium",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -66365,6 +66551,7 @@
       "usage_slot_name": "lat_lon",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -66831,7 +67018,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -67003,6 +67189,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -67334,6 +67521,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -67992,6 +68180,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -68777,6 +68966,7 @@
       "usage_slot_name": "depth",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -68843,6 +69033,7 @@
       "usage_slot_name": "env_broad_scale",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -68879,6 +69070,7 @@
       "usage_slot_name": "env_local_scale",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -68915,6 +69107,7 @@
       "usage_slot_name": "env_medium",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -70218,6 +70411,7 @@
       "usage_slot_name": "lat_lon",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -71156,7 +71350,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -71258,6 +71451,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -71414,6 +71608,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -72376,6 +72571,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -73359,6 +73555,7 @@
       "usage_slot_name": "env_broad_scale",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -73395,6 +73592,7 @@
       "usage_slot_name": "env_local_scale",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -73431,6 +73629,7 @@
       "usage_slot_name": "env_medium",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -74729,6 +74928,7 @@
       "usage_slot_name": "lat_lon",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -75377,7 +75577,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -75573,6 +75772,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -75975,6 +76175,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -76928,6 +77129,7 @@
       "usage_slot_name": "env_broad_scale",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -76980,6 +77182,7 @@
       "usage_slot_name": "env_local_scale",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -77020,6 +77223,7 @@
       "usage_slot_name": "env_medium",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -78398,6 +78602,7 @@
       "usage_slot_name": "lat_lon",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -79115,7 +79320,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -79287,6 +79491,7 @@
       "usage_slot_name": "samp_size",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -79618,6 +79823,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -80306,6 +80512,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -80377,6 +80584,7 @@
       "usage_slot_name": "alt",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -80561,6 +80769,7 @@
       "usage_slot_name": "depth",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -80597,6 +80806,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -81758,7 +81968,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -81885,6 +82094,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -81921,6 +82131,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -83231,7 +83442,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -83358,6 +83568,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -83464,6 +83675,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -84627,7 +84839,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -84754,6 +84965,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -84826,6 +85038,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -85788,7 +86001,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -85915,6 +86127,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -85951,6 +86164,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -86989,7 +87203,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -87116,6 +87329,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -87152,6 +87366,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -88394,7 +88609,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -88556,6 +88770,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -88621,6 +88836,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -89289,6 +89505,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -90211,7 +90428,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -90467,6 +90683,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -90894,6 +91111,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -93006,7 +93224,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -93262,6 +93479,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -93549,6 +93767,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -94429,6 +94648,7 @@
       "usage_slot_name": "depth",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -94701,6 +94921,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -95635,7 +95856,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -95762,6 +95982,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -95938,6 +96159,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -96150,6 +96372,7 @@
       "usage_slot_name": "alt",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -96457,6 +96680,7 @@
       "usage_slot_name": "depth",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -96694,6 +96918,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -97287,7 +97512,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -97414,6 +97638,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -97590,6 +97815,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -97954,6 +98180,7 @@
       "usage_slot_name": "depth",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -97990,6 +98217,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -99758,7 +99986,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -99885,6 +100112,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -99981,6 +100209,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -100578,6 +100807,7 @@
       "usage_slot_name": "depth",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -100850,6 +101080,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -101838,7 +102069,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -101965,6 +102195,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -102176,6 +102407,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -102709,6 +102941,7 @@
       "usage_slot_name": "depth",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -102780,6 +103013,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -103598,7 +103832,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -103635,6 +103868,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -104014,6 +104248,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -104260,6 +104495,7 @@
       "usage_slot_name": "alt",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -104390,6 +104626,7 @@
       "usage_slot_name": "depth",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -104426,6 +104663,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -104462,6 +104700,7 @@
       "usage_slot_name": "env_broad_scale",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -104498,6 +104737,7 @@
       "usage_slot_name": "env_local_scale",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -104534,6 +104774,7 @@
       "usage_slot_name": "env_medium",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -105938,6 +106179,7 @@
       "usage_slot_name": "lat_lon",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +[-+]?[0-9]*\\.?[0-9]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -106352,6 +106594,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -106535,6 +106778,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -106734,6 +106978,7 @@
       "usage_slot_name": "depth",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -107327,7 +107572,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -107454,6 +107698,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -107702,6 +107947,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -108492,6 +108738,7 @@
       "usage_slot_name": "depth",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -108864,6 +109111,7 @@
       "usage_slot_name": "elev",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -109938,7 +110186,6 @@
       "usage_slot_name": "samp_name",
       "slot_group": "investigation",
       "range": "string",
-      "pattern": "^[aeiou]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -110065,6 +110312,7 @@
       "usage_slot_name": "samp_vol_we_dna_ext",
       "slot_group": "nucleic_acid_sequence_source",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -110371,6 +110619,7 @@
       "usage_slot_name": "temp",
       "slot_group": "environment",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -110699,6 +110948,46 @@
       "is_usage_slot": true,
       "usage_slot_name": "mims_set",
       "range": "Mims",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Database_soil_set",
+      "definition_uri": "https://example.com/mixssoil_set",
+      "from_schema": "https://example.com/mixs",
+      "is_a": "soil_set",
+      "domain": "Database",
+      "slot_uri": "https://example.com/mixssoil_set",
+      "multivalued": true,
+      "alias": "soil_set",
+      "owner": "Database",
+      "domain_of": [
+        "Database"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "soil_set",
+      "range": "Soil",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Database_mims_soil_set",
+      "definition_uri": "https://example.com/mixsmims_soil_set",
+      "from_schema": "https://example.com/mixs",
+      "is_a": "mims_soil_set",
+      "domain": "Database",
+      "slot_uri": "https://example.com/mixsmims_soil_set",
+      "multivalued": true,
+      "alias": "mims_soil_set",
+      "owner": "Database",
+      "domain_of": [
+        "Database"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "mims_soil_set",
+      "range": "MimsSoil",
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -113849,19 +114138,133 @@
       "definition_uri": "https://example.com/mixsDatabase",
       "from_schema": "https://example.com/mixs",
       "slots": [
-        "Database_mims_set"
+        "Database_mims_set",
+        "Database_soil_set",
+        "Database_mims_soil_set"
       ],
       "slot_usage": {},
       "class_uri": "https://example.com/mixsDatabase",
       "tree_root": true,
       "@type": "ClassDefinition"
+    },
+    {
+      "name": "MimsSoil",
+      "definition_uri": "https://example.com/mixsMimsSoil",
+      "from_schema": "https://example.com/mixs",
+      "is_a": "Soil",
+      "mixins": [
+        "Mims"
+      ],
+      "slots": [
+        "Soil_agrochem_addition",
+        "Soil_al_sat",
+        "Soil_al_sat_meth",
+        "Soil_annual_precpt",
+        "Soil_annual_temp",
+        "Soil_crop_rotation",
+        "Soil_cur_land_use",
+        "Soil_cur_vegetation",
+        "Soil_cur_vegetation_meth",
+        "Soil_depth",
+        "Soil_drainage_class",
+        "Soil_elev",
+        "Soil_extreme_event",
+        "Soil_fao_class",
+        "Soil_fire",
+        "Soil_flooding",
+        "Soil_heavy_metals",
+        "Soil_heavy_metals_meth",
+        "Soil_horizon_meth",
+        "Soil_link_addit_analys",
+        "Soil_link_class_info",
+        "Soil_link_climate_info",
+        "Soil_local_class",
+        "Soil_local_class_meth",
+        "Soil_micro_biomass_meth",
+        "Soil_microbial_biomass",
+        "Soil_misc_param",
+        "Soil_org_matter",
+        "Soil_org_nitro",
+        "Soil_ph",
+        "Soil_ph_meth",
+        "Soil_pool_dna_extracts",
+        "Soil_prev_land_use_meth",
+        "Soil_previous_land_use",
+        "Soil_profile_position",
+        "Soil_project_name",
+        "Soil_salinity_meth",
+        "Soil_samp_name",
+        "Soil_samp_vol_we_dna_ext",
+        "Soil_season_precpt",
+        "Soil_season_temp",
+        "Soil_sieving",
+        "Soil_slope_aspect",
+        "Soil_slope_gradient",
+        "Soil_soil_horizon",
+        "Soil_soil_text_measure",
+        "Soil_soil_texture_meth",
+        "Soil_soil_type",
+        "Soil_soil_type_meth",
+        "Soil_store_cond",
+        "Soil_temp",
+        "Soil_tillage",
+        "Soil_tot_nitro_cont_meth",
+        "Soil_tot_nitro_content",
+        "Soil_tot_org_c_meth",
+        "Soil_tot_org_carb",
+        "Soil_water_cont_soil_meth",
+        "Soil_water_content",
+        "Mims_adapters",
+        "Mims_alt",
+        "Mims_annot",
+        "Mims_assembly_name",
+        "Mims_assembly_qual",
+        "Mims_assembly_software",
+        "Mims_associated_resource",
+        "Mims_collection_date",
+        "Mims_env_broad_scale",
+        "Mims_env_local_scale",
+        "Mims_env_medium",
+        "Mims_experimental_factor",
+        "Mims_feat_pred",
+        "Mims_geo_loc_name",
+        "Mims_lat_lon",
+        "Mims_lib_layout",
+        "Mims_lib_reads_seqd",
+        "Mims_lib_screen",
+        "Mims_lib_size",
+        "Mims_lib_vector",
+        "Mims_mid",
+        "Mims_neg_cont_type",
+        "Mims_nucl_acid_amp",
+        "Mims_nucl_acid_ext",
+        "Mims_number_contig",
+        "Mims_pos_cont_type",
+        "Mims_ref_biomaterial",
+        "Mims_ref_db",
+        "Mims_rel_to_oxygen",
+        "Mims_samp_collec_device",
+        "Mims_samp_collec_method",
+        "Mims_samp_mat_process",
+        "Mims_samp_size",
+        "Mims_samp_taxon_id",
+        "Mims_seq_meth",
+        "Mims_sim_search_meth",
+        "Mims_size_frac",
+        "Mims_sop",
+        "Mims_source_mat_id",
+        "Mims_tax_class"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/mixsMimsSoil",
+      "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "mixs_schemasheets_generated.yaml",
-  "source_file_date": "2022-10-11T23:51:53",
-  "source_file_size": 1035300,
-  "generation_date": "2022-10-11T23:52:23",
+  "source_file_date": "2022-10-13T12:51:14",
+  "source_file_size": 1036629,
+  "generation_date": "2022-10-13T12:51:47",
   "@type": "SchemaDefinition",
   "@context": [
     "schemasheets/generated/jsonld/mixs_schemasheets_generated.context.jsonld",

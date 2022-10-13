@@ -362,6 +362,8 @@ message BuiltEnvironment
 message Database
  {
  repeated  mims mimsSet = 0
+ repeated  soil soilSet = 0
+ repeated  mimsSoil mimsSoilSet = 0
  }
 message FoodAnimalAndAnimalFeed
  {
@@ -1404,6 +1406,107 @@ message Mims
  repeated  string sourceMatId = 0
   string taxClass = 0
   string temp = 0
+ }
+message MimsSoil
+ {
+ repeated  string agrochemAddition = 0
+  string alSat = 0
+  string alSatMeth = 0
+  string annualPrecpt = 0
+  string annualTemp = 0
+  string cropRotation = 0
+  string curLandUse = 0
+  string curVegetation = 0
+  string curVegetationMeth = 0
+  string depth = 0
+  string drainageClass = 0
+  string elev = 0
+  string extremeEvent = 0
+  string faoClass = 0
+  string fire = 0
+  string flooding = 0
+ repeated  string heavyMetals = 0
+  string heavyMetalsMeth = 0
+  string horizonMeth = 0
+  string linkAdditAnalys = 0
+  string linkClassInfo = 0
+  string linkClimateInfo = 0
+  string localClass = 0
+  string localClassMeth = 0
+  string microBiomassMeth = 0
+  string microbialBiomass = 0
+ repeated  string miscParam = 0
+  string orgMatter = 0
+  string orgNitro = 0
+  float ph = 0
+  string phMeth = 0
+  string poolDnaExtracts = 0
+  string prevLandUseMeth = 0
+  string previousLandUse = 0
+  string profilePosition = 0
+  string projectName = 0
+  string salinityMeth = 0
+  string sampName = 0
+  string sampVolWeDnaExt = 0
+  string seasonPrecpt = 0
+  string seasonTemp = 0
+  string sieving = 0
+  string slopeAspect = 0
+  string slopeGradient = 0
+  string soilHorizon = 0
+  string soilTextMeasure = 0
+  string soilTextureMeth = 0
+  string soilType = 0
+  string soilTypeMeth = 0
+  string storeCond = 0
+  string temp = 0
+ repeated  string tillage = 0
+  string totNitroContMeth = 0
+  string totNitroContent = 0
+  string totOrgCMeth = 0
+  string totOrgCarb = 0
+  string waterContSoilMeth = 0
+  float waterContent = 0
+  string adapters = 0
+  string alt = 0
+  string annot = 0
+  string assemblyName = 0
+  string assemblyQual = 0
+  string assemblySoftware = 0
+ repeated  string associatedResource = 0
+  string collectionDate = 0
+  string envBroadScale = 0
+  string envLocalScale = 0
+  string envMedium = 0
+  string experimentalFactor = 0
+  string featPred = 0
+  string geoLocName = 0
+  string latLon = 0
+  string libLayout = 0
+  integer libReadsSeqd = 0
+  string libScreen = 0
+  integer libSize = 0
+  string libVector = 0
+  string mid = 0
+  string negContType = 0
+  string nuclAcidAmp = 0
+  string nuclAcidExt = 0
+  integer numberContig = 0
+  string posContType = 0
+  string refBiomaterial = 0
+  string refDb = 0
+  string relToOxygen = 0
+  string sampCollecDevice = 0
+  string sampCollecMethod = 0
+  string sampMatProcess = 0
+  string sampSize = 0
+  string sampTaxonId = 0
+  string seqMeth = 0
+  string simSearchMeth = 0
+  string sizeFrac = 0
+ repeated  string sop = 0
+ repeated  string sourceMatId = 0
+  string taxClass = 0
  }
 message MiscellaneousNaturalOrArtificialEnvironment
  {

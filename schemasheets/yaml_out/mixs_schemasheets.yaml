@@ -6,6 +6,9 @@ prefixes:
   MIXS:
     prefix_prefix: MIXS
     prefix_reference: https://example.com/mixs
+  xsd:
+    prefix_prefix: xsd
+    prefix_reference: http://www.w3.org/2001/XMLSchema#
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
@@ -72,6 +75,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000048
     slot_group: sequencing
+    pattern: ^[ACGTacgt]+;[ACGTacgt]+$
   alt:
     name: alt
     annotations:
@@ -99,6 +103,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000094
     slot_group: environment
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   annot:
     name: annot
     annotations:
@@ -144,6 +149,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000057
     slot_group: sequencing
+    range: string
   assembly_qual:
     name: assembly_qual
     annotations:
@@ -419,6 +425,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000072
     slot_group: sequencing
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ %$
   contam_screen_input:
     name: contam_screen_input
     annotations:
@@ -502,6 +509,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000018
     slot_group: environment
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   detec_type:
     name: detec_type
     annotations:
@@ -543,6 +551,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000093
     slot_group: environment
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   encoded_traits:
     name: encoded_traits
     annotations:
@@ -590,6 +599,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000012
     slot_group: environment
+    pattern: ^\S+.* \[\S+:\S+]$
   env_local_scale:
     name: env_local_scale
     annotations:
@@ -623,6 +633,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000013
     slot_group: environment
+    pattern: ^\S+.* \[\S+:\S+]$
   env_medium:
     name: env_medium
     annotations:
@@ -652,6 +663,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000014
     slot_group: environment
+    pattern: ^\S+.* \[\S+:\S+]$
   estimated_size:
     name: estimated_size
     annotations:
@@ -673,6 +685,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000024
     slot_group: nucleic acid sequence source
+    pattern: ^[0-9]+ +bp$
   experimental_factor:
     name: experimental_factor
     annotations:
@@ -898,6 +911,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000009
     slot_group: environment
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$
   lib_layout:
     name: lib_layout
     annotations:
@@ -1043,6 +1057,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000047
     slot_group: sequencing
+    pattern: ^[ACGTacgt]+$
   neg_cont_type:
     name: neg_cont_type
     annotations:
@@ -1279,6 +1294,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000046
     slot_group: sequencing
+    pattern: ^FWD:[ACGTacgt]+;REV:[ACGTacgt]$
   ploidy:
     name: ploidy
     annotations:
@@ -1303,6 +1319,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000021
     slot_group: nucleic acid sequence source
+    pattern: ^\S+.* \[\S+:\S+]$
   pos_cont_type:
     name: pos_cont_type
     annotations:
@@ -1318,6 +1335,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001322
     slot_group: investigation
+    range: string
   pred_genome_struc:
     name: pred_genome_struc
     annotations:
@@ -1574,7 +1592,6 @@ slots:
     slot_uri: MIXS:0001107
     slot_group: investigation
     range: string
-    pattern: ^[aeiou]+$
   samp_size:
     name: samp_size
     annotations:
@@ -1598,6 +1615,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000001
     slot_group: nucleic acid sequence source
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   samp_taxon_id:
     name: samp_taxon_id
     annotations:
@@ -1643,6 +1661,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000111
     slot_group: nucleic acid sequence source
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   seq_meth:
     name: seq_meth
     annotations:
@@ -1767,6 +1786,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000017
     slot_group: nucleic acid sequence source
+    pattern: ^[0-9]*\.?[0-9]+-[0-9]*\.?[0-9]+ +\S.*$
   sop:
     name: sop
     annotations:
@@ -1888,6 +1908,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000029
     slot_group: nucleic acid sequence source
+    range: string
   subspecf_gen_lin:
     name: subspecf_gen_lin
     annotations:
@@ -2017,6 +2038,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000113
     slot_group: environment
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   trna_ext_software:
     name: trna_ext_software
     annotations:
@@ -12944,6 +12966,12 @@ slots:
     range: float
   mims_set:
     name: mims_set
+    from_schema: https://example.com/mixs
+  soil_set:
+    name: soil_set
+    from_schema: https://example.com/mixs
+  mims_soil_set:
+    name: mims_soil_set
     from_schema: https://example.com/mixs
 classes:
   MigsBa:
@@ -35402,10 +35430,28 @@ classes:
     from_schema: https://example.com/mixs
     slots:
     - mims_set
+    - soil_set
+    - mims_soil_set
     slot_usage:
       mims_set:
         name: mims_set
         multivalued: true
         range: Mims
         inlined_as_list: true
+      soil_set:
+        name: soil_set
+        multivalued: true
+        range: Soil
+        inlined_as_list: true
+      mims_soil_set:
+        name: mims_soil_set
+        multivalued: true
+        range: MimsSoil
+        inlined_as_list: true
     tree_root: true
+  MimsSoil:
+    name: MimsSoil
+    from_schema: https://example.com/mixs
+    is_a: Soil
+    mixins:
+    - Mims

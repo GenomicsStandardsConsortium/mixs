@@ -422,7 +422,10 @@ linkml:Nodeidentifier NONLITERAL
 )
 
 <https://example.com/mixsDatabase> CLOSED {
-    (  $<https://example.com/mixsDatabase_tes> <https://example.com/mixsmims_set> @<https://example.com/mixsMims> * ;
+    (  $<https://example.com/mixsDatabase_tes> (  <https://example.com/mixsmims_set> @<https://example.com/mixsMims> * ;
+          <https://example.com/mixssoil_set> @<https://example.com/mixsSoil> * ;
+          <https://example.com/mixsmims_soil_set> @<https://example.com/mixsMimsSoil> *
+       ) ;
        rdf:type [ <https://example.com/mixsDatabase> ] ?
     )
 }
@@ -2043,6 +2046,56 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<https://example.com/mixsMimsSoil> CLOSED {
+    (  $<https://example.com/mixsMimsSoil_tes> (  &<https://example.com/mixsSoil_tes> ;
+          rdf:type [ <https://example.com/mixs0016012> ] ? ;
+          &<https://example.com/mixsMims_tes> ;
+          rdf:type [ <https://example.com/mixs0010007> ] ? ;
+          <https://example.com/mixs0000048> @linkml:String ? ;
+          <https://example.com/mixs0000094> @linkml:String ? ;
+          <https://example.com/mixs0000059> @linkml:String ? ;
+          <https://example.com/mixs0000057> @linkml:String ? ;
+          <https://example.com/mixs0000056> @linkml:String ? ;
+          <https://example.com/mixs0000058> @linkml:String ? ;
+          <https://example.com/mixs0000091> @linkml:String * ;
+          <https://example.com/mixs0000011> @linkml:String ;
+          <https://example.com/mixs0000012> @linkml:String ;
+          <https://example.com/mixs0000013> @linkml:String ;
+          <https://example.com/mixs0000014> @linkml:String ;
+          <https://example.com/mixs0000008> @linkml:String ? ;
+          <https://example.com/mixs0000061> @linkml:String ? ;
+          <https://example.com/mixs0000010> @linkml:String ;
+          <https://example.com/mixs0000009> @linkml:String ;
+          <https://example.com/mixs0000041> @linkml:String ? ;
+          <https://example.com/mixs0000040> @linkml:Integer ? ;
+          <https://example.com/mixs0000043> @linkml:String ? ;
+          <https://example.com/mixs0000039> @linkml:Integer ? ;
+          <https://example.com/mixs0000042> @linkml:String ? ;
+          <https://example.com/mixs0000047> @linkml:String ? ;
+          <https://example.com/mixs0001321> @linkml:String ? ;
+          <https://example.com/mixs0000038> @linkml:String ? ;
+          <https://example.com/mixs0000037> @linkml:String ? ;
+          <https://example.com/mixs0000060> @linkml:Integer ? ;
+          <https://example.com/mixs0001322> @linkml:String ? ;
+          <https://example.com/mixs0000025> @linkml:String ? ;
+          <https://example.com/mixs0000062> @linkml:String ? ;
+          <https://example.com/mixs0000015> @linkml:String ? ;
+          <https://example.com/mixs0000002> @linkml:String ? ;
+          <https://example.com/mixs0001225> @linkml:String ? ;
+          <https://example.com/mixs0000016> @linkml:String ? ;
+          <https://example.com/mixs0000001> @linkml:String ? ;
+          <https://example.com/mixs0001320> @linkml:String ;
+          <https://example.com/mixs0000050> @linkml:String ;
+          <https://example.com/mixs0000063> @linkml:String ? ;
+          <https://example.com/mixs0000017> @linkml:String ? ;
+          <https://example.com/mixs0000090> @linkml:String * ;
+          <https://example.com/mixs0000026> @linkml:String * ;
+          <https://example.com/mixs0000064> @linkml:String ?
+       ) ;
+       rdf:type [ <https://example.com/mixsMimsSoil> ] ?
+    )
+}
+
 <https://example.com/mixsMisag> {
     (  $<https://example.com/mixsMisag_tes> (  &<https://example.com/mixsChecklistClass_tes> ;
           rdf:type [ <https://example.com/mixsChecklistClass> ] ? ;
@@ -2415,71 +2468,73 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<https://example.com/mixsSoil> CLOSED {
-    (  $<https://example.com/mixsSoil_tes> (  &<https://example.com/mixsEnvPackageClass_tes> ;
-          rdf:type [ <https://example.com/mixsEnvPackageClass> ] ? ;
-          <https://example.com/mixs0000639> @linkml:String * ;
-          <https://example.com/mixs0000607> @linkml:String ? ;
-          <https://example.com/mixs0000324> @linkml:String ? ;
-          <https://example.com/mixs0000644> @linkml:String ? ;
-          <https://example.com/mixs0000642> @linkml:String ? ;
-          <https://example.com/mixs0000318> @linkml:String ? ;
-          <https://example.com/mixs0001080> @linkml:String ? ;
-          <https://example.com/mixs0000312> @linkml:String ? ;
-          <https://example.com/mixs0000314> @linkml:String ? ;
-          <https://example.com/mixs0000018> @linkml:String ? ;
-          <https://example.com/mixs0001085> @linkml:String ? ;
-          <https://example.com/mixs0000093> @linkml:String ? ;
-          <https://example.com/mixs0000320> @linkml:String ? ;
-          <https://example.com/mixs0001083> @linkml:String ? ;
-          <https://example.com/mixs0001086> @linkml:String ? ;
-          <https://example.com/mixs0000319> @linkml:String ? ;
-          <https://example.com/mixs0000652> @linkml:String * ;
-          <https://example.com/mixs0000343> @linkml:String ? ;
-          <https://example.com/mixs0000321> @linkml:String ? ;
-          <https://example.com/mixs0000340> @linkml:String ? ;
-          <https://example.com/mixs0000329> @linkml:String ? ;
-          <https://example.com/mixs0000328> @linkml:String ? ;
-          <https://example.com/mixs0000330> @linkml:String ? ;
-          <https://example.com/mixs0000331> @linkml:String ? ;
-          <https://example.com/mixs0000339> @linkml:String ? ;
-          <https://example.com/mixs0000650> @linkml:String ? ;
-          <https://example.com/mixs0000752> @linkml:String * ;
-          <https://example.com/mixs0000204> @linkml:String ? ;
-          <https://example.com/mixs0000205> @linkml:String ? ;
-          <https://example.com/mixs0001001> @linkml:Float ? ;
-          <https://example.com/mixs0001106> @linkml:String ? ;
-          <https://example.com/mixs0000325> @linkml:String ? ;
-          <https://example.com/mixs0000316> @linkml:String ? ;
-          <https://example.com/mixs0000315> @linkml:String ? ;
-          <https://example.com/mixs0001084> @linkml:String ? ;
-          <https://example.com/mixs0000092> @linkml:String ? ;
-          <https://example.com/mixs0000341> @linkml:String ? ;
-          <https://example.com/mixs0001107> @linkml:String ? ;
-          <https://example.com/mixs0000111> @linkml:String ? ;
-          <https://example.com/mixs0000645> @linkml:String ? ;
-          <https://example.com/mixs0000643> @linkml:String ? ;
-          <https://example.com/mixs0000322> @linkml:String ? ;
-          <https://example.com/mixs0000647> @linkml:String ? ;
-          <https://example.com/mixs0000646> @linkml:String ? ;
-          <https://example.com/mixs0001291> @linkml:String ? ;
-          <https://example.com/mixs0000335> @linkml:String ? ;
-          <https://example.com/mixs0000336> @linkml:String ? ;
-          <https://example.com/mixs0000332> @linkml:String ? ;
-          <https://example.com/mixs0000334> @linkml:String ? ;
-          <https://example.com/mixs0000327> @linkml:String ? ;
-          <https://example.com/mixs0000113> @linkml:String ? ;
-          <https://example.com/mixs0001081> @linkml:String * ;
-          <https://example.com/mixs0000338> @linkml:String ? ;
-          <https://example.com/mixs0000530> @linkml:String ? ;
-          <https://example.com/mixs0000337> @linkml:String ? ;
-          <https://example.com/mixs0000533> @linkml:String ? ;
-          <https://example.com/mixs0000323> @linkml:String ? ;
-          <https://example.com/mixs0000185> @linkml:Float ?
-       ) ;
-       rdf:type [ <https://example.com/mixs0016012> ] ?
-    )
-}
+<https://example.com/mixsSoil>  (
+    CLOSED {
+       (  $<https://example.com/mixsSoil_tes> (  &<https://example.com/mixsEnvPackageClass_tes> ;
+             rdf:type [ <https://example.com/mixsEnvPackageClass> ] ? ;
+             <https://example.com/mixs0000639> @linkml:String * ;
+             <https://example.com/mixs0000607> @linkml:String ? ;
+             <https://example.com/mixs0000324> @linkml:String ? ;
+             <https://example.com/mixs0000644> @linkml:String ? ;
+             <https://example.com/mixs0000642> @linkml:String ? ;
+             <https://example.com/mixs0000318> @linkml:String ? ;
+             <https://example.com/mixs0001080> @linkml:String ? ;
+             <https://example.com/mixs0000312> @linkml:String ? ;
+             <https://example.com/mixs0000314> @linkml:String ? ;
+             <https://example.com/mixs0000018> @linkml:String ? ;
+             <https://example.com/mixs0001085> @linkml:String ? ;
+             <https://example.com/mixs0000093> @linkml:String ? ;
+             <https://example.com/mixs0000320> @linkml:String ? ;
+             <https://example.com/mixs0001083> @linkml:String ? ;
+             <https://example.com/mixs0001086> @linkml:String ? ;
+             <https://example.com/mixs0000319> @linkml:String ? ;
+             <https://example.com/mixs0000652> @linkml:String * ;
+             <https://example.com/mixs0000343> @linkml:String ? ;
+             <https://example.com/mixs0000321> @linkml:String ? ;
+             <https://example.com/mixs0000340> @linkml:String ? ;
+             <https://example.com/mixs0000329> @linkml:String ? ;
+             <https://example.com/mixs0000328> @linkml:String ? ;
+             <https://example.com/mixs0000330> @linkml:String ? ;
+             <https://example.com/mixs0000331> @linkml:String ? ;
+             <https://example.com/mixs0000339> @linkml:String ? ;
+             <https://example.com/mixs0000650> @linkml:String ? ;
+             <https://example.com/mixs0000752> @linkml:String * ;
+             <https://example.com/mixs0000204> @linkml:String ? ;
+             <https://example.com/mixs0000205> @linkml:String ? ;
+             <https://example.com/mixs0001001> @linkml:Float ? ;
+             <https://example.com/mixs0001106> @linkml:String ? ;
+             <https://example.com/mixs0000325> @linkml:String ? ;
+             <https://example.com/mixs0000316> @linkml:String ? ;
+             <https://example.com/mixs0000315> @linkml:String ? ;
+             <https://example.com/mixs0001084> @linkml:String ? ;
+             <https://example.com/mixs0000092> @linkml:String ? ;
+             <https://example.com/mixs0000341> @linkml:String ? ;
+             <https://example.com/mixs0001107> @linkml:String ? ;
+             <https://example.com/mixs0000111> @linkml:String ? ;
+             <https://example.com/mixs0000645> @linkml:String ? ;
+             <https://example.com/mixs0000643> @linkml:String ? ;
+             <https://example.com/mixs0000322> @linkml:String ? ;
+             <https://example.com/mixs0000647> @linkml:String ? ;
+             <https://example.com/mixs0000646> @linkml:String ? ;
+             <https://example.com/mixs0001291> @linkml:String ? ;
+             <https://example.com/mixs0000335> @linkml:String ? ;
+             <https://example.com/mixs0000336> @linkml:String ? ;
+             <https://example.com/mixs0000332> @linkml:String ? ;
+             <https://example.com/mixs0000334> @linkml:String ? ;
+             <https://example.com/mixs0000327> @linkml:String ? ;
+             <https://example.com/mixs0000113> @linkml:String ? ;
+             <https://example.com/mixs0001081> @linkml:String * ;
+             <https://example.com/mixs0000338> @linkml:String ? ;
+             <https://example.com/mixs0000530> @linkml:String ? ;
+             <https://example.com/mixs0000337> @linkml:String ? ;
+             <https://example.com/mixs0000533> @linkml:String ? ;
+             <https://example.com/mixs0000323> @linkml:String ? ;
+             <https://example.com/mixs0000185> @linkml:Float ?
+          ) ;
+          rdf:type [ <https://example.com/mixs0016012> ] ?
+       )
+    } OR @<https://example.com/mixsMimsSoil>
+)
 
 <https://example.com/mixsSymbiontAssociated> CLOSED {
     (  $<https://example.com/mixsSymbiontAssociated_tes> (  &<https://example.com/mixsEnvPackageClass_tes> ;

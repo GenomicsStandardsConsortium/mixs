@@ -1,0 +1,121 @@
+enum	permissible_values	suspect	single
+> slot_enum	annotations	TRUE	TRUE
+>_enum	inner_key: value_syntax	TRUE	TRUE
+adapters_enum	{dna};{dna}	TRUE	TRUE
+alt_enum	{float} {unit}	TRUE	TRUE
+annot_enum	{text}	TRUE	TRUE
+assembly_name_enum	{text} {text}	TRUE	TRUE
+assembly_software_enum	{software};{version};{parameters}	TRUE	TRUE
+bin_software_enum	{software};{version}{PID}	TRUE	TRUE
+chimera_check_enum	{software};{version};{parameters}	TRUE	TRUE
+collection_date_enum	{timestamp}	TRUE	TRUE
+compl_software_enum	{software};{version}	TRUE	TRUE
+contam_score_enum	{float} percentage	TRUE	TRUE
+depth_enum	{float} {unit}	TRUE	TRUE
+elev_enum	{float} {unit}	TRUE	TRUE
+encoded_traits_enum	{text}	TRUE	TRUE
+env_broad_scale_enum	{termLabel} {termID}	TRUE	TRUE
+env_local_scale_enum	{termLabel} {termID}	TRUE	TRUE
+env_medium_enum	{termLabel} {termID}	TRUE	TRUE
+estimated_size_enum	{integer} bp	TRUE	TRUE
+extrachrom_elements_enum	{integer}	TRUE	TRUE
+feat_pred_enum	{software};{version};{parameters}	TRUE	TRUE
+geo_loc_name_enum	"{term}: {term}, {text}"	TRUE	TRUE
+host_pred_est_acc_enum	{text}	TRUE	TRUE
+host_spec_range_enum	{integer}	TRUE	TRUE
+lat_lon_enum	{float} {float}	TRUE	TRUE
+lib_reads_seqd_enum	{integer}	TRUE	TRUE
+lib_screen_enum	{text}	TRUE	TRUE
+lib_size_enum	{integer}	TRUE	TRUE
+lib_vector_enum	{text}	TRUE	TRUE
+mid_enum	{dna}	TRUE	TRUE
+num_replicons_enum	{integer}	TRUE	TRUE
+number_contig_enum	{integer}	TRUE	TRUE
+otu_class_appr_enum	{ANI cutoff};{AF cutoff};{clustering method}	TRUE	TRUE
+otu_db_enum	{database};{version}	TRUE	TRUE
+otu_seq_comp_appr_enum	{software};{version};{parameters}	TRUE	TRUE
+pathogenicity_enum	{text}	TRUE	TRUE
+pcr_cond_enum	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	TRUE	TRUE
+pcr_primers_enum	FWD:{dna};REV:{dna}	TRUE	TRUE
+ploidy_enum	{termLabel} {termID}	TRUE	TRUE
+pos_cont_type_enum	{term} or {text}	TRUE	TRUE
+project_name_enum	{text}	TRUE	TRUE
+propagation_enum	{text}	TRUE	TRUE
+reassembly_bin_enum	{boolean}	TRUE	TRUE
+ref_db_enum	{database};{version};{reference}	TRUE	TRUE
+samp_mat_process_enum	{text}	TRUE	TRUE
+samp_name_enum	{text}	TRUE	TRUE
+samp_size_enum	{float} {unit}	TRUE	TRUE
+samp_taxon_id_enum	{text} NCBI:txid	TRUE	TRUE
+samp_vol_we_dna_ext_enum	{float} {unit}	TRUE	TRUE
+sim_search_meth_enum	{software};{version};{parameters}	TRUE	TRUE
+single_cell_lysis_prot_enum	{text}	TRUE	TRUE
+size_frac_enum	{float}-{float} {unit}	TRUE	TRUE
+source_mat_id_enum	{text}	TRUE	TRUE
+subspecf_gen_lin_enum	{rank name}:{text}	TRUE	TRUE
+target_gene_enum	{text}	TRUE	TRUE
+target_subfragment_enum	{text}	TRUE	TRUE
+tax_class_enum	{text}	TRUE	TRUE
+temp_enum	{float} {unit}	TRUE	TRUE
+trna_ext_software_enum	{software};{version};{parameters}	TRUE	TRUE
+trnas_enum	{integer}	TRUE	TRUE
+vir_ident_software_enum	{software};{version};{parameters}	TRUE	TRUE
+wga_amp_kit_enum	{text}	TRUE	TRUE
+x_16s_recover_enum	{boolean}	TRUE	TRUE
+x_16s_recover_software_enum	{software};{version};{parameters}	TRUE	TRUE
+associated_resource_enum	{DOI}	TRUE	FALSE
+associated_resource_enum	{PMID}	TRUE	FALSE
+associated_resource_enum	{URL}	TRUE	FALSE
+compl_score_enum	high	TRUE	FALSE
+compl_score_enum	low;{percentage}	TRUE	FALSE
+compl_score_enum	med	TRUE	FALSE
+contam_screen_param_enum	combination;{text	TRUE	FALSE
+contam_screen_param_enum	coverage	TRUE	FALSE
+contam_screen_param_enum	integer}	TRUE	FALSE
+contam_screen_param_enum	kmer	TRUE	FALSE
+contam_screen_param_enum	ref db	TRUE	FALSE
+decontam_software_enum	acdc	TRUE	FALSE
+decontam_software_enum	anvi'o	TRUE	FALSE
+decontam_software_enum	bbtools:decontaminate.sh	TRUE	FALSE
+decontam_software_enum	checkm/refinem	TRUE	FALSE
+decontam_software_enum	combination	TRUE	FALSE
+decontam_software_enum	prodege	TRUE	FALSE
+experimental_factor_enum	{termLabel} {termID}	TRUE	FALSE
+experimental_factor_enum	{text}	TRUE	FALSE
+host_disease_stat_enum	{termLabel} {termID}	TRUE	FALSE
+host_disease_stat_enum	{text}	TRUE	FALSE
+isol_growth_condt_enum	{DOI}	TRUE	FALSE
+isol_growth_condt_enum	{PMID}	TRUE	FALSE
+isol_growth_condt_enum	{URL}	TRUE	FALSE
+nucl_acid_amp_enum	{DOI}	TRUE	FALSE
+nucl_acid_amp_enum	{PMID}	TRUE	FALSE
+nucl_acid_amp_enum	{URL}	TRUE	FALSE
+nucl_acid_ext_enum	{DOI}	TRUE	FALSE
+nucl_acid_ext_enum	{PMID}	TRUE	FALSE
+nucl_acid_ext_enum	{URL}	TRUE	FALSE
+pred_genome_type_enum	DNA	TRUE	FALSE
+pred_genome_type_enum	dsDNA	TRUE	FALSE
+pred_genome_type_enum	dsRNA	TRUE	FALSE
+pred_genome_type_enum	mixed	TRUE	FALSE
+pred_genome_type_enum	RNA	TRUE	FALSE
+pred_genome_type_enum	ssDNA	TRUE	FALSE
+pred_genome_type_enum	ssRNA	TRUE	FALSE
+pred_genome_type_enum	ssRNA (-)	TRUE	FALSE
+pred_genome_type_enum	ssRNA (+)	TRUE	FALSE
+pred_genome_type_enum	uncharacterized	TRUE	FALSE
+ref_biomaterial_enum	{DOI}	TRUE	FALSE
+ref_biomaterial_enum	{PMID}	TRUE	FALSE
+ref_biomaterial_enum	{URL}	TRUE	FALSE
+samp_collec_device_enum	{termLabel} {termID}	TRUE	FALSE
+samp_collec_device_enum	{text}	TRUE	FALSE
+samp_collec_method_enum	{DOI}	TRUE	FALSE
+samp_collec_method_enum	{PMID}	TRUE	FALSE
+samp_collec_method_enum	{text}	TRUE	FALSE
+samp_collec_method_enum	{URL}	TRUE	FALSE
+seq_meth_enum	{termLabel} {termID}	TRUE	FALSE
+seq_meth_enum	{text}	TRUE	FALSE
+sop_enum	{DOI}	TRUE	FALSE
+sop_enum	{PMID}	TRUE	FALSE
+sop_enum	{URL}	TRUE	FALSE
+specific_host_enum	{NCBI taxid}	TRUE	FALSE
+specific_host_enum	{text}	TRUE	FALSE

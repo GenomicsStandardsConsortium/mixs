@@ -1,0 +1,530 @@
+mims_soil_set:
+  - collection_date: 2018-05-11T10:00:00+01:00 # each new record starts with a hyphen, indented two chars below the set name
+    env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+    env_local_scale: litter layer [ENVO:01000338]
+    env_medium: soil [ENVO:00001998]
+    geo_loc_name: 'USA: Maryland, Bethesda' # careful with unquoted strings containing colons
+    lat_lon: 50.586825 6.408977
+    samp_name: minimal
+    samp_taxon_id: Gut Metagenome [NCBI:txid749906]
+    seq_meth: 454 Genome Sequencer FLX [OBI:0000702]
+  - collection_date: 2018-05-11T10:00:00+01:00
+    env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+    env_local_scale: litter layer [ENVO:01000338]
+    env_medium: soil [ENVO:00001998]
+    geo_loc_name: 'USA: Maryland, Bethesda'
+    lat_lon: 50.586825 6.408977
+    samp_name: minimal_dupe
+    samp_taxon_id: Gut Metagenome [NCBI:txid749906]
+    seq_meth: 454 Genome Sequencer FLX [OBI:0000702]
+  - adapters: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+    agrochem_addition: # multivalued
+      - first
+      - second
+    al_sat:
+    al_sat_meth:
+    alt: 100 meter
+    annot: prokka
+    annual_precpt:
+    annual_temp:
+    assembly_name: HuRef, JCVI_ISG_i3_1.0
+    assembly_qual: High-quality draft genome
+    assembly_software: metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters
+      otherwise
+    associated_resource: # multivalued
+      - http://www.earthmicrobiome.org/
+      - https://www.ncbi.nlm.nih.gov/assembly/GCA_000006945.1/
+    collection_date: 2018-05-11T10:00:00+01:00 # required
+    crop_rotation:
+    cur_land_use: enumeration
+    cur_vegetation:
+    cur_vegetation_meth:
+    depth: 10 meter
+    drainage_class: enum
+    elev: 100 meter
+    env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033] # required
+    env_local_scale: litter layer [ENVO:01000338] # required
+    env_medium: soil [ENVO:00001998] # required
+    experimental_factor: time series design [EFO:EFO_0001779]
+    extreme_event: 2018-05-11T10:00:00+01:00
+    fao_class: enum
+    feat_pred: Prodigal;2.6.3;default parameters
+    fire: 2018-05-11T10:00:00+01:00
+    flooding: 2018-05-11T10:00:00+01:00
+    geo_loc_name: 'USA: Maryland, Bethesda' # required
+    heavy_metals: # multivalued
+      - arsenic
+      - cadmium
+    heavy_metals_meth:
+    horizon_meth:
+    lat_lon: 50.586825 6.408977 # required
+    lib_layout: paired
+    lib_reads_seqd: 20
+    lib_screen: enriched, screened, normalized
+    lib_size: 50
+    lib_vector: Bacteriophage P1
+    link_addit_analys:
+    link_class_info:
+    link_climate_info:
+    local_class:
+    local_class_meth:
+    micro_biomass_meth:
+    microbial_biomass: 123 units
+    mid: GTGAATAT
+    misc_param: # multivalued
+      - something
+      - everything
+      - nothing
+    neg_cont_type: distilled water
+    nucl_acid_amp:
+    nucl_acid_ext: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+    number_contig: 40
+    org_matter: 123 units
+    org_nitro: 123 units
+    ph: 7.5
+    ph_meth:
+    pool_dna_extracts:
+    pos_cont_type:
+    prev_land_use_meth:
+    previous_land_use:
+    profile_position: enum
+    project_name: Forest soil metagenome
+    ref_biomaterial: doi:10.1016/j.syapm.2018.01.009
+    ref_db: pVOGs;5;http://dmk-brain.ecn.uiowa.edu/pVOGs/ Grazziotin et al. 2017 doi:10.1093/nar/gkw975
+    rel_to_oxygen: aerobe
+    salinity_meth:
+    samp_collec_device: drag swab [GENEPIO:0002713]
+    samp_collec_method: swabbing
+    samp_mat_process: filtering of seawater
+    samp_name: ISDsoil1 # required
+    samp_size: 5 liter
+    samp_taxon_id: Gut Metagenome [NCBI:txid749906] # required
+    samp_vol_we_dna_ext: 1500 milliliter
+    season_precpt: 123 units
+    season_temp: 123 units
+    seq_meth: 454 Genome Sequencer FLX [OBI:0000702] # required
+    sieving:
+    sim_search_meth: HMMER3;3.1b2;hmmsearch, cutoff of 50 on score
+    size_frac: 0-0.22 micrometer
+    slope_aspect: 315 degrees
+    slope_gradient: 123 units
+    soil_horizon: enum
+    soil_text_measure:
+    soil_texture_meth:
+    soil_type:
+    soil_type_meth:
+    sop: # multivalued
+      - http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/
+      - http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/16s/
+    source_mat_id:
+      - MPI012345
+      - MPI012346
+    store_cond:
+    tax_class: vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification,
+      default parameters)
+    temp: 25 degree Celsius
+    tillage:
+      - plow
+      - rake
+    tot_nitro_cont_meth:
+    tot_nitro_content: 123 units
+    tot_org_c_meth:
+    tot_org_carb: 123 units
+    water_cont_soil_meth:
+    water_content: 1.23
+#  - adapters: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+#    al_sat:
+#    al_sat_meth:
+#    alt: 101 meter
+#    annot: prokka
+#    annual_precpt:
+#    annual_temp:
+#    assembly_name: HuRef, JCVI_ISG_i3_1.0
+#    assembly_qual: High-quality draft genome
+#    assembly_software: metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters
+#      otherwise
+#    collection_date: 2018-05-11
+#    crop_rotation:
+#    cur_land_use: enumeration
+#    cur_vegetation:
+#    cur_vegetation_meth:
+#    depth: 11 meter
+#    drainage_class: enum
+#    elev: 101 meter
+#    env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+#    env_local_scale: herb and fern layer [ENVO:01000337]
+#    env_medium: ocean water [ENVO:00002151]
+#    experimental_factor: time series design [EFO:EFO_0001779]
+#    extreme_event: 2018-05-11
+#    fao_class: enum
+#    feat_pred: Prodigal;2.6.3;default parameters
+#    fire: 2018-05-11
+#    flooding: 2018-05-11
+#    geo_loc_name: 'USA: Maryland, Bethesda'
+#    heavy_metals_meth:
+#    horizon_meth:
+#    lat_lon: 50.586825 6.408978
+#    lib_layout: paired
+#    lib_reads_seqd: 20
+#    lib_screen: enriched, screened, normalized
+#    lib_size: 50
+#    lib_vector: Bacteriophage P2
+#    link_addit_analys:
+#    link_class_info:
+#    link_climate_info:
+#    local_class:
+#    local_class_meth:
+#    micro_biomass_meth:
+#    microbial_biomass: 124 units
+#    mid: GTGAATAT
+#    neg_cont_type: DNA-free PCR mix
+#    nucl_acid_amp:
+#    nucl_acid_ext: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+#    number_contig: 40
+#    org_matter: 124 units
+#    org_nitro: 124 units
+#    ph: 7.5
+#    ph_meth:
+#    pool_dna_extracts:
+#    pos_cont_type:
+#    prev_land_use_meth:
+#    previous_land_use:
+#    profile_position: enum
+#    project_name: Forest soil metagenome
+#    ref_biomaterial: doi:10.1016/j.syapm.2018.01.009
+#    ref_db: pVOGs;5;http://dmk-brain.ecn.uiowa.edu/pVOGs/ Grazziotin et al. 2017 doi:10.1093/nar/gkw975
+#    rel_to_oxygen: aerobe
+#    salinity_meth:
+#    samp_collec_device: push core
+#    samp_collec_method: swabbing
+#    samp_mat_process: storing samples in ethanol
+#    samp_name: ISDsoil2
+#    samp_size: 6 liter
+#    samp_taxon_id: Gut Metagenome [NCBI:txid749906]
+#    samp_vol_we_dna_ext: 1501 milliliter
+#    season_precpt: 124 units
+#    season_temp: 124 units
+#    seq_meth: 455 Genome Sequencer FLX [OBI:0000702]
+#    sieving:
+#    sim_search_meth: HMMER3;3.1b2;hmmsearch, cutoff of 50 on score
+#    size_frac: 0-0.22 micrometer
+#    slope_aspect: 315 degrees
+#    slope_gradient: 124 units
+#    soil_horizon: enum
+#    soil_text_measure:
+#    soil_texture_meth:
+#    soil_type:
+#    soil_type_meth:
+#    source_mat_id:
+#      - MPI012346
+#    store_cond:
+#    tax_class: vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification,
+#      default parameters)
+#    temp: 26 degree Celsius
+#    tillage: enum
+#    tot_nitro_cont_meth:
+#    tot_nitro_content: 124 units
+#    tot_org_c_meth:
+#    tot_org_carb: 124 units
+#    water_cont_soil_meth:
+#    water_content: 1.23
+##  - adapters: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+##    agrochem_addition: ''
+##    al_sat: ''
+##    al_sat_meth: ''
+##    alt: 102 meter
+##    annot: prokka
+##    annual_precpt: ''
+##    annual_temp: ''
+##    assembly_name: HuRef, JCVI_ISG_i3_1.0
+##    assembly_qual: High-quality draft genome
+##    assembly_software: metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters
+##      otherwise
+##    associated_resource: http://www.earthmicrobiome.org/
+##    collection_date: '2018-05-12'
+##    crop_rotation: ''
+##    cur_land_use: enumeration
+##    cur_vegetation: ''
+##    cur_vegetation_meth: ''
+##    depth: 12 meter
+##    drainage_class: enum
+##    elev: 102 meter
+##    env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+##    env_local_scale: shrub layer [ENVO:01000336]
+##    env_medium: water [ENVO:00002228]
+##    experimental_factor: time series design [EFO:EFO_0001779]
+##    extreme_event: '2018-05-12'
+##    fao_class: enum
+##    feat_pred: Prodigal;2.6.3;default parameters
+##    fire: '2018-05-12'
+##    flooding: '2018-05-12'
+##    geo_loc_name: 'USA: Maryland, Bethesda'
+##    heavy_metals: ''
+##    heavy_metals_meth: ''
+##    horizon_meth: ''
+##    lat_lon: 50.586825 6.408979
+##    lib_layout: paired
+##    lib_reads_seqd: '20'
+##    lib_screen: enriched, screened, normalized
+##    lib_size: '50'
+##    lib_vector: Bacteriophage P3
+##    link_addit_analys: ''
+##    link_class_info: ''
+##    link_climate_info: ''
+##    local_class: ''
+##    local_class_meth: ''
+##    micro_biomass_meth: ''
+##    microbial_biomass: 125 units
+##    mid: GTGAATAT
+##    misc_param: ''
+##    neg_cont_type: empty collection device
+##    nucl_acid_amp: ''
+##    nucl_acid_ext: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+##    number_contig: '40'
+##    org_matter: 125 units
+##    org_nitro: 125 units
+##    ph: '7.5'
+##    ph_meth: ''
+##    pool_dna_extracts: ''
+##    pos_cont_type: ''
+##    prev_land_use_meth: ''
+##    previous_land_use: ''
+##    profile_position: enum
+##    project_name: Forest soil metagenome
+##    ref_biomaterial: doi:10.1016/j.syapm.2018.01.009
+##    ref_db: pVOGs;5;http://dmk-brain.ecn.uiowa.edu/pVOGs/ Grazziotin et al. 2017 doi:10.1093/nar/gkw975
+##    rel_to_oxygen: aerobe
+##    salinity_meth: ''
+##    samp_collec_device: niskin bottle
+##    samp_collec_method: swabbing
+##    samp_mat_process: storing samples in ethanol
+##    samp_name: ISDsoil3
+##    samp_size: 7 liter
+##    samp_taxon_id: Gut Metagenome [NCBI:txid749906]
+##    samp_vol_we_dna_ext: 1502 milliliter
+##    season_precpt: 125 units
+##    season_temp: 125 units
+##    seq_meth: 456 Genome Sequencer FLX [OBI:0000702]
+##    sieving: ''
+##    sim_search_meth: HMMER3;3.1b2;hmmsearch, cutoff of 50 on score
+##    size_frac: 0-0.22 micrometer
+##    slope_aspect: 315 degrees
+##    slope_gradient: 125 units
+##    soil_horizon: enum
+##    soil_text_measure: ''
+##    soil_texture_meth: ''
+##    soil_type: ''
+##    soil_type_meth: ''
+##    sop: http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/
+##    source_mat_id: MPI012347
+##    store_cond: ''
+##    tax_class: vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification,
+##      default parameters)
+##    temp: 27 degree Celsius
+##    tillage: enum
+##    tot_nitro_cont_meth: ''
+##    tot_nitro_content: 125 units
+##    tot_org_c_meth: ''
+##    tot_org_carb: 125 units
+##    water_cont_soil_meth: ''
+##    water_content: '1.23'
+##  - adapters: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+##    agrochem_addition: ''
+##    al_sat: ''
+##    al_sat_meth: ''
+##    alt: 103 meter
+##    annot: prokka
+##    annual_precpt: ''
+##    annual_temp: ''
+##    assembly_name: HuRef, JCVI_ISG_i3_1.0
+##    assembly_qual: High-quality draft genome
+##    assembly_software: metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters
+##      otherwise
+##    associated_resource: http://www.earthmicrobiome.org/
+##    collection_date: '2018-05-13'
+##    crop_rotation: ''
+##    cur_land_use: enumeration
+##    cur_vegetation: ''
+##    cur_vegetation_meth: ''
+##    depth: 13 meter
+##    drainage_class: enum
+##    elev: 103 meter
+##    env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+##    env_local_scale: shrub layer [ENVO:01000336]
+##    env_medium: water [ENVO:00002228]
+##    experimental_factor: time series design [EFO:EFO_0001779]
+##    extreme_event: '2018-05-13'
+##    fao_class: enum
+##    feat_pred: Prodigal;2.6.3;default parameters
+##    fire: '2018-05-13'
+##    flooding: '2018-05-13'
+##    geo_loc_name: 'USA: Maryland, Bethesda'
+##    heavy_metals: ''
+##    heavy_metals_meth: ''
+##    horizon_meth: ''
+##    lat_lon: 50.586825 6.408980
+##    lib_layout: paired
+##    lib_reads_seqd: '20'
+##    lib_screen: enriched, screened, normalized
+##    lib_size: '50'
+##    lib_vector: Bacteriophage P4
+##    link_addit_analys: ''
+##    link_class_info: ''
+##    link_climate_info: ''
+##    local_class: ''
+##    local_class_meth: ''
+##    micro_biomass_meth: ''
+##    microbial_biomass: 126 units
+##    mid: GTGAATAT
+##    misc_param: ''
+##    neg_cont_type: empty collection tube
+##    nucl_acid_amp: ''
+##    nucl_acid_ext: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+##    number_contig: '40'
+##    org_matter: 126 units
+##    org_nitro: 126 units
+##    ph: '7.5'
+##    ph_meth: ''
+##    pool_dna_extracts: ''
+##    pos_cont_type: ''
+##    prev_land_use_meth: ''
+##    previous_land_use: ''
+##    profile_position: enum
+##    project_name: Forest soil metagenome
+##    ref_biomaterial: doi:10.1016/j.syapm.2018.01.009
+##    ref_db: pVOGs;5;http://dmk-brain.ecn.uiowa.edu/pVOGs/ Grazziotin et al. 2017 doi:10.1093/nar/gkw975
+##    rel_to_oxygen: aerobe
+##    salinity_meth: ''
+##    samp_collec_device: biopsy
+##    samp_collec_method: swabbing
+##    samp_mat_process: storing samples in ethanol
+##    samp_name: ISDsoil4
+##    samp_size: 8 liter
+##    samp_taxon_id: Gut Metagenome [NCBI:txid749906]
+##    samp_vol_we_dna_ext: 1503 milliliter
+##    season_precpt: 126 units
+##    season_temp: 126 units
+##    seq_meth: 457 Genome Sequencer FLX [OBI:0000702]
+##    sieving: ''
+##    sim_search_meth: HMMER3;3.1b2;hmmsearch, cutoff of 50 on score
+##    size_frac: 0-0.22 micrometer
+##    slope_aspect: 315 degrees
+##    slope_gradient: 126 units
+##    soil_horizon: enum
+##    soil_text_measure: ''
+##    soil_texture_meth: ''
+##    soil_type: ''
+##    soil_type_meth: ''
+##    sop: http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/
+##    source_mat_id: MPI012348
+##    store_cond: ''
+##    tax_class: vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification,
+##      default parameters)
+##    temp: 28 degree Celsius
+##    tillage: enum
+##    tot_nitro_cont_meth: ''
+##    tot_nitro_content: 126 units
+##    tot_org_c_meth: ''
+##    tot_org_carb: 126 units
+##    water_cont_soil_meth: ''
+##    water_content: '1.23'
+##  - adapters: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+##    agrochem_addition: ''
+##    al_sat: ''
+##    al_sat_meth: ''
+##    alt: 104 meter
+##    annot: prokka
+##    annual_precpt: ''
+##    annual_temp: ''
+##    assembly_name: HuRef, JCVI_ISG_i3_1.0
+##    assembly_qual: High-quality draft genome
+##    assembly_software: metaSPAdes;3.11.0;kmer set 21,33,55,77,99,121, default parameters
+##      otherwise
+##    associated_resource: http://www.earthmicrobiome.org/
+##    collection_date: '2018-05-14'
+##    crop_rotation: ''
+##    cur_land_use: enumeration
+##    cur_vegetation: ''
+##    cur_vegetation_meth: ''
+##    depth: 14 meter
+##    drainage_class: enum
+##    elev: 104 meter
+##    env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+##    env_local_scale: shrub layer [ENVO:01000336]
+##    env_medium: water [ENVO:00002228]
+##    experimental_factor: time series design [EFO:EFO_0001779]
+##    extreme_event: '2018-05-14'
+##    fao_class: enum
+##    feat_pred: Prodigal;2.6.3;default parameters
+##    fire: '2018-05-14'
+##    flooding: '2018-05-14'
+##    geo_loc_name: 'USA: Maryland, Bethesda'
+##    heavy_metals: ''
+##    heavy_metals_meth: ''
+##    horizon_meth: ''
+##    lat_lon: 50.586825 6.408981
+##    lib_layout: paired
+##    lib_reads_seqd: '20'
+##    lib_screen: enriched, screened, normalized
+##    lib_size: '50'
+##    lib_vector: Bacteriophage P5
+##    link_addit_analys: ''
+##    link_class_info: ''
+##    link_climate_info: ''
+##    local_class: ''
+##    local_class_meth: ''
+##    micro_biomass_meth: ''
+##    microbial_biomass: 127 units
+##    mid: GTGAATAT
+##    misc_param: ''
+##    neg_cont_type: phosphate buffer
+##    nucl_acid_amp: ''
+##    nucl_acid_ext: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+##    number_contig: '40'
+##    org_matter: 127 units
+##    org_nitro: 127 units
+##    ph: '7.5'
+##    ph_meth: ''
+##    pool_dna_extracts: ''
+##    pos_cont_type: ''
+##    prev_land_use_meth: ''
+##    previous_land_use: ''
+##    profile_position: enum
+##    project_name: Forest soil metagenome
+##    ref_biomaterial: doi:10.1016/j.syapm.2018.01.009
+##    ref_db: pVOGs;5;http://dmk-brain.ecn.uiowa.edu/pVOGs/ Grazziotin et al. 2017 doi:10.1093/nar/gkw975
+##    rel_to_oxygen: aerobe
+##    salinity_meth: ''
+##    samp_collec_device: swab
+##    samp_collec_method: swabbing
+##    samp_mat_process: storing samples in ethanol
+##    samp_name: ISDsoil5
+##    samp_size: 9 liter
+##    samp_taxon_id: Gut Metagenome [NCBI:txid749906]
+##    samp_vol_we_dna_ext: 1504 milliliter
+##    season_precpt: 127 units
+##    season_temp: 127 units
+##    seq_meth: 458 Genome Sequencer FLX [OBI:0000702]
+##    sieving: ''
+##    sim_search_meth: HMMER3;3.1b2;hmmsearch, cutoff of 50 on score
+##    size_frac: 0-0.22 micrometer
+##    slope_aspect: 315 degrees
+##    slope_gradient: 127 units
+##    soil_horizon: enum
+##    soil_text_measure: ''
+##    soil_texture_meth: ''
+##    soil_type: ''
+##    soil_type_meth: ''
+##    sop: http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/
+##    source_mat_id: MPI012349
+##    store_cond: ''
+##    tax_class: vConTACT vContact2 (references from NCBI RefSeq v83, genus rank classification,
+##      default parameters)
+##    temp: 29 degree Celsius
+##    tillage: enum
+##    tot_nitro_cont_meth: ''
+##    tot_nitro_content: 127 units
+##    tot_org_c_meth: ''
+##    tot_org_carb: 127 units
+##    water_cont_soil_meth: ''
+##    water_content: '1.23'

@@ -369,6 +369,8 @@ type ChecklistClass
 type Database
   {
     mimsSet: [Mims]
+    soilSet: [Soil]
+    mimsSoilSet: [MimsSoil]
   }
 
 type EnvPackageClass
@@ -1884,6 +1886,108 @@ type Mims
     sourceMatId: [String]
     taxClass: String
     temp: String
+  }
+
+type MimsSoil implements Mims
+  {
+    agrochemAddition: [String]
+    alSat: String
+    alSatMeth: String
+    annualPrecpt: String
+    annualTemp: String
+    cropRotation: String
+    curLandUse: String
+    curVegetation: String
+    curVegetationMeth: String
+    depth: String
+    drainageClass: String
+    elev: String
+    extremeEvent: String
+    faoClass: String
+    fire: String
+    flooding: String
+    heavyMetals: [String]
+    heavyMetalsMeth: String
+    horizonMeth: String
+    linkAdditAnalys: String
+    linkClassInfo: String
+    linkClimateInfo: String
+    localClass: String
+    localClassMeth: String
+    microBiomassMeth: String
+    microbialBiomass: String
+    miscParam: [String]
+    orgMatter: String
+    orgNitro: String
+    ph: Float
+    phMeth: String
+    poolDnaExtracts: String
+    prevLandUseMeth: String
+    previousLandUse: String
+    profilePosition: String
+    projectName: String
+    salinityMeth: String
+    sampName: String
+    sampVolWeDnaExt: String
+    seasonPrecpt: String
+    seasonTemp: String
+    sieving: String
+    slopeAspect: String
+    slopeGradient: String
+    soilHorizon: String
+    soilTextMeasure: String
+    soilTextureMeth: String
+    soilType: String
+    soilTypeMeth: String
+    storeCond: String
+    temp: String
+    tillage: [String]
+    totNitroContMeth: String
+    totNitroContent: String
+    totOrgCMeth: String
+    totOrgCarb: String
+    waterContSoilMeth: String
+    waterContent: Float
+    adapters: String
+    alt: String
+    annot: String
+    assemblyName: String
+    assemblyQual: String
+    assemblySoftware: String
+    associatedResource: [String]
+    collectionDate: String!
+    envBroadScale: String!
+    envLocalScale: String!
+    envMedium: String!
+    experimentalFactor: String
+    featPred: String
+    geoLocName: String!
+    latLon: String!
+    libLayout: String
+    libReadsSeqd: Integer
+    libScreen: String
+    libSize: Integer
+    libVector: String
+    mid: String
+    negContType: String
+    nuclAcidAmp: String
+    nuclAcidExt: String
+    numberContig: Integer
+    posContType: String
+    refBiomaterial: String
+    refDb: String
+    relToOxygen: String
+    sampCollecDevice: String
+    sampCollecMethod: String
+    sampMatProcess: String
+    sampSize: String
+    sampTaxonId: String!
+    seqMeth: String!
+    simSearchMeth: String
+    sizeFrac: String
+    sop: [String]
+    sourceMatId: [String]
+    taxClass: String
   }
 
 interface Misag

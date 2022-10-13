@@ -1,0 +1,246 @@
+enum	permissible_values	suspect	single
+> slot_enum	annotations	True	True
+>_enum	inner_key: value_syntax	True	True
+assembly_qual_enum	Finished genome	True	False
+assembly_qual_enum	Genome fragment(s)	True	False
+assembly_qual_enum	High-quality draft genome	True	False
+assembly_qual_enum	Low-quality draft genome	True	False
+assembly_qual_enum	Medium-quality draft genome	True	False
+bin_param_enum	codon usage	False	False
+bin_param_enum	combination	False	False
+bin_param_enum	coverage	False	False
+bin_param_enum	homology search	False	False
+bin_param_enum	kmer	False	False
+biotic_relationship_enum	commensalism	False	False
+biotic_relationship_enum	free living	False	False
+biotic_relationship_enum	mutualism	False	False
+biotic_relationship_enum	parasitism	False	False
+biotic_relationship_enum	symbiotic	False	False
+reassembly_bin_enum	{boolean}	True	True
+x_16s_recover_enum	{boolean}	True	True
+compl_appr_enum	marker gene	False	False
+compl_appr_enum	other	False	False
+compl_appr_enum	reference based	False	False
+contam_screen_input_enum	contigs	False	False
+contam_screen_input_enum	reads	False	False
+decontam_software_enum	acdc	True	False
+decontam_software_enum	anvi'o	True	False
+decontam_software_enum	bbtools:decontaminate.sh	True	False
+decontam_software_enum	checkm/refinem	True	False
+decontam_software_enum	combination	True	False
+decontam_software_enum	prodege	True	False
+detec_type_enum	independent sequence (UViG)	True	False
+detec_type_enum	provirus (UpViG)	True	False
+host_pred_appr_enum	CRISPR spacer match	False	False
+host_pred_appr_enum	co-occurrence	False	False
+host_pred_appr_enum	combination	False	False
+host_pred_appr_enum	host sequence similarity	False	False
+host_pred_appr_enum	kmer similarity	False	False
+host_pred_appr_enum	other	False	False
+host_pred_appr_enum	provirus	False	False
+extrachrom_elements_enum	{integer}	True	True
+host_spec_range_enum	{integer}	True	True
+lib_reads_seqd_enum	{integer}	True	True
+lib_size_enum	{integer}	True	True
+num_replicons_enum	{integer}	True	True
+number_contig_enum	{integer}	True	True
+trnas_enum	{integer}	True	True
+lib_layout_enum	other	False	False
+lib_layout_enum	paired	False	False
+lib_layout_enum	single	False	False
+lib_layout_enum	vector	False	False
+mag_cov_software_enum	bbmap	False	False
+mag_cov_software_enum	bowtie	False	False
+mag_cov_software_enum	bwa	False	False
+mag_cov_software_enum	other	False	False
+neg_cont_type_enum	DNA-free PCR mix	False	False
+neg_cont_type_enum	distilled water	False	False
+neg_cont_type_enum	empty collection device	False	False
+neg_cont_type_enum	empty collection tube	False	False
+neg_cont_type_enum	phosphate buffer	False	False
+neg_cont_type_enum	sterile swab	False	False
+neg_cont_type_enum	sterile syringe	False	False
+pred_genome_struc_enum	non-segmented	False	False
+pred_genome_struc_enum	segmented	False	False
+pred_genome_struc_enum	undetermined	False	False
+rel_to_oxygen_enum	aerobe	False	False
+rel_to_oxygen_enum	anaerobe	False	False
+rel_to_oxygen_enum	facultative	False	False
+rel_to_oxygen_enum	microaerophilic	False	False
+rel_to_oxygen_enum	microanaerobe	False	False
+rel_to_oxygen_enum	obligate aerobe	False	False
+rel_to_oxygen_enum	obligate anaerobe	False	False
+seq_quality_check_enum	manually edited	False	False
+seq_quality_check_enum	none	False	False
+single_cell_lysis_appr_enum	chemical	False	False
+single_cell_lysis_appr_enum	combination	False	False
+single_cell_lysis_appr_enum	enzymatic	False	False
+single_cell_lysis_appr_enum	physical	False	False
+sort_tech_enum	flow cytometric cell sorting	False	False
+sort_tech_enum	lazer-tweezing	False	False
+sort_tech_enum	microfluidics	False	False
+sort_tech_enum	micromanipulation	False	False
+sort_tech_enum	optical manipulation	False	False
+sort_tech_enum	other	False	False
+source_uvig_enum	isolate microbial genome	True	False
+source_uvig_enum	metagenome (not viral targeted)	True	False
+source_uvig_enum	metatranscriptome (not viral targeted)	True	False
+source_uvig_enum	microbial single amplified genome (SAG)	True	False
+source_uvig_enum	other	True	False
+source_uvig_enum	sequence-targeted RNA metagenome	True	False
+source_uvig_enum	sequence-targeted metagenome	True	False
+source_uvig_enum	viral fraction RNA metagenome (RNA virome)	True	False
+source_uvig_enum	viral fraction metagenome (virome)	True	False
+source_uvig_enum	viral single amplified genome (vSAG)	True	False
+annot_enum	{text}	True	True
+assembly_name_enum	{text} {text}	True	True
+encoded_traits_enum	{text}	True	True
+host_pred_est_acc_enum	{text}	True	True
+lib_screen_enum	{text}	True	True
+lib_vector_enum	{text}	True	True
+pathogenicity_enum	{text}	True	True
+pos_cont_type_enum	{term} or {text}	True	True
+project_name_enum	{text}	True	True
+propagation_enum	{text}	True	True
+samp_mat_process_enum	{text}	True	True
+samp_name_enum	{text}	True	True
+single_cell_lysis_prot_enum	{text}	True	True
+source_mat_id_enum	{text}	True	True
+specific_host_enum	{NCBI taxid}	True	False
+specific_host_enum	{text}	True	False
+target_gene_enum	{text}	True	True
+target_subfragment_enum	{text}	True	True
+tax_class_enum	{text}	True	True
+wga_amp_kit_enum	{text}	True	True
+tax_ident_enum	16S rRNA gene	False	False
+tax_ident_enum	multi-marker approach	False	False
+tax_ident_enum	other	False	False
+trophic_level_enum	autotroph	False	False
+trophic_level_enum	autotroph	False	False
+trophic_level_enum	carboxydotroph	False	False
+trophic_level_enum	chemoautolithotroph	False	False
+trophic_level_enum	chemoautotroph	False	False
+trophic_level_enum	chemoheterotroph	False	False
+trophic_level_enum	chemolithoautotroph	False	False
+trophic_level_enum	chemolithotroph	False	False
+trophic_level_enum	chemoorganoheterotroph	False	False
+trophic_level_enum	chemoorganotroph	False	False
+trophic_level_enum	chemosynthetic	False	False
+trophic_level_enum	chemotroph	False	False
+trophic_level_enum	copiotroph	False	False
+trophic_level_enum	diazotroph	False	False
+trophic_level_enum	facultative	False	False
+trophic_level_enum	heterotroph	False	False
+trophic_level_enum	lithoautotroph	False	False
+trophic_level_enum	lithoheterotroph	False	False
+trophic_level_enum	lithotroph	False	False
+trophic_level_enum	methanotroph	False	False
+trophic_level_enum	methylotroph	False	False
+trophic_level_enum	mixotroph	False	False
+trophic_level_enum	obligate	False	False
+trophic_level_enum	oligotroph	False	False
+trophic_level_enum	organoheterotroph	False	False
+trophic_level_enum	organotroph	False	False
+trophic_level_enum	photoautotroph	False	False
+trophic_level_enum	photoheterotroph	False	False
+trophic_level_enum	photolithoautotroph	False	False
+trophic_level_enum	photolithotroph	False	False
+trophic_level_enum	photosynthetic	False	False
+trophic_level_enum	phototroph	False	False
+virus_enrich_appr_enum	CsCl density gradient	False	False
+virus_enrich_appr_enum	DNAse	False	False
+virus_enrich_appr_enum	FeCl Precipitation	False	False
+virus_enrich_appr_enum	PEG Precipitation	False	False
+virus_enrich_appr_enum	RNAse	False	False
+virus_enrich_appr_enum	centrifugation	False	False
+virus_enrich_appr_enum	filtration	False	False
+virus_enrich_appr_enum	none	False	False
+virus_enrich_appr_enum	other	False	False
+virus_enrich_appr_enum	targeted sequence capture	False	False
+virus_enrich_appr_enum	ultracentrifugation	False	False
+virus_enrich_appr_enum	ultrafiltration	False	False
+wga_amp_appr_enum	mda based	False	False
+wga_amp_appr_enum	pcr based	False	False
+contam_score_enum	{float} percentage	True	True
+lat_lon_enum	{float} {float}	True	True
+alt_enum	{float} {unit}	True	True
+depth_enum	{float} {unit}	True	True
+elev_enum	{float} {unit}	True	True
+samp_size_enum	{float} {unit}	True	True
+samp_vol_we_dna_ext_enum	{float} {unit}	True	True
+temp_enum	{float} {unit}	True	True
+size_frac_enum	{float}-{float} {unit}	True	True
+estimated_size_enum	{integer} bp	True	True
+adapters_enum	{dna};{dna}	True	True
+mid_enum	{dna}	True	True
+env_broad_scale_enum	{termLabel} {termID}	True	True
+env_local_scale_enum	{termLabel} {termID}	True	True
+env_medium_enum	{termLabel} {termID}	True	True
+ploidy_enum	{termLabel} {termID}	True	True
+pcr_primers_enum	FWD:{dna};REV:{dna}	True	True
+assembly_software_enum	{software};{version};{parameters}	True	True
+associated_resource_enum	{DOI}	True	False
+associated_resource_enum	{PMID}	True	False
+associated_resource_enum	{URL}	True	False
+bin_software_enum	{software};{version}{PID}	True	True
+chimera_check_enum	{software};{version};{parameters}	True	True
+collection_date_enum	{timestamp}	True	True
+compl_score_enum	high	True	False
+compl_score_enum	low;{percentage}	True	False
+compl_score_enum	med	True	False
+compl_software_enum	{software};{version}	True	True
+contam_screen_param_enum	combination;{text	True	False
+contam_screen_param_enum	coverage	True	False
+contam_screen_param_enum	integer}	True	False
+contam_screen_param_enum	kmer	True	False
+contam_screen_param_enum	ref db	True	False
+experimental_factor_enum	{termLabel} {termID}	True	False
+experimental_factor_enum	{text}	True	False
+feat_pred_enum	{software};{version};{parameters}	True	True
+geo_loc_name_enum	{term}: {term}, {text}	True	True
+host_disease_stat_enum	{termLabel} {termID}	True	False
+host_disease_stat_enum	{text}	True	False
+isol_growth_condt_enum	{DOI}	True	False
+isol_growth_condt_enum	{PMID}	True	False
+isol_growth_condt_enum	{URL}	True	False
+nucl_acid_amp_enum	{DOI}	True	False
+nucl_acid_amp_enum	{PMID}	True	False
+nucl_acid_amp_enum	{URL}	True	False
+nucl_acid_ext_enum	{DOI}	True	False
+nucl_acid_ext_enum	{PMID}	True	False
+nucl_acid_ext_enum	{URL}	True	False
+otu_class_appr_enum	{ANI cutoff};{AF cutoff};{clustering method}	True	True
+otu_db_enum	{database};{version}	True	True
+otu_seq_comp_appr_enum	{software};{version};{parameters}	True	True
+pcr_cond_enum	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	True	True
+pred_genome_type_enum	DNA	True	False
+pred_genome_type_enum	RNA	True	False
+pred_genome_type_enum	dsDNA	True	False
+pred_genome_type_enum	dsRNA	True	False
+pred_genome_type_enum	mixed	True	False
+pred_genome_type_enum	ssDNA	True	False
+pred_genome_type_enum	ssRNA	True	False
+pred_genome_type_enum	ssRNA (+)	True	False
+pred_genome_type_enum	ssRNA (-)	True	False
+pred_genome_type_enum	uncharacterized	True	False
+ref_biomaterial_enum	{DOI}	True	False
+ref_biomaterial_enum	{PMID}	True	False
+ref_biomaterial_enum	{URL}	True	False
+ref_db_enum	{database};{version};{reference}	True	True
+samp_collec_device_enum	{termLabel} {termID}	True	False
+samp_collec_device_enum	{text}	True	False
+samp_collec_method_enum	{DOI}	True	False
+samp_collec_method_enum	{PMID}	True	False
+samp_collec_method_enum	{URL}	True	False
+samp_collec_method_enum	{text}	True	False
+samp_taxon_id_enum	{text} NCBI:txid	True	True
+seq_meth_enum	{termLabel} {termID}	True	False
+seq_meth_enum	{text}	True	False
+sim_search_meth_enum	{software};{version};{parameters}	True	True
+sop_enum	{DOI}	True	False
+sop_enum	{PMID}	True	False
+sop_enum	{URL}	True	False
+subspecf_gen_lin_enum	{rank name}:{text}	True	True
+trna_ext_software_enum	{software};{version};{parameters}	True	True
+vir_ident_software_enum	{software};{version};{parameters}	True	True
+x_16s_recover_software_enum	{software};{version};{parameters}	True	True
