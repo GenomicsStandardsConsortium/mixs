@@ -2603,6 +2603,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000077
     slot_group: sequencing
+    range: bin_param_enum
   bin_software:
     name: bin_software
     annotations:
@@ -2648,6 +2649,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000028
     slot_group: nucleic acid sequence source
+    range: biotic_relationship_enum
   chimera_check:
     name: chimera_check
     annotations:
@@ -2717,6 +2719,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000071
     slot_group: sequencing
+    range: compl_appr_enum
   compl_score:
     name: compl_score
     annotations:
@@ -2802,6 +2805,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000005
     slot_group: sequencing
+    range: contam_screen_input_enum
   contam_screen_param:
     name: contam_screen_param
     annotations:
@@ -3067,6 +3071,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000008
     slot_group: investigation
+    range: string
   extrachrom_elements:
     name: extrachrom_elements
     annotations:
@@ -3158,6 +3163,7 @@ slots:
     slot_uri: MIXS:0000031
     multivalued: true
     slot_group: nucleic acid sequence source
+    range: string
   host_pred_appr:
     name: host_pred_appr
     annotations:
@@ -3177,6 +3183,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000088
     slot_group: sequencing
+    range: host_pred_appr_enum
   host_pred_est_acc:
     name: host_pred_est_acc
     annotations:
@@ -3289,6 +3296,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000041
     slot_group: sequencing
+    range: lib_layout_enum
   lib_reads_seqd:
     name: lib_reads_seqd
     annotations:
@@ -3393,6 +3401,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000080
     slot_group: sequencing
+    range: mag_cov_software_enum
   mid:
     name: mid
     annotations:
@@ -3433,6 +3442,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001321
     slot_group: investigation
+    range: neg_cont_type_enum
   nucl_acid_amp:
     name: nucl_acid_amp
     annotations:
@@ -3712,6 +3722,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000083
     slot_group: sequencing
+    range: pred_genome_struc_enum
   pred_genome_type:
     name: pred_genome_type
     annotations:
@@ -3861,6 +3872,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000015
     slot_group: nucleic acid sequence source
+    range: rel_to_oxygen_enum
   samp_collec_device:
     name: samp_collec_device
     annotations:
@@ -3882,6 +3894,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000002
     slot_group: nucleic acid sequence source
+    range: string
   samp_collec_method:
     name: samp_collec_method
     annotations:
@@ -3901,6 +3914,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001225
     slot_group: nucleic acid sequence source
+    range: string
   samp_mat_process:
     name: samp_mat_process
     annotations:
@@ -4042,6 +4056,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000050
     slot_group: sequencing
+    range: string
   seq_quality_check:
     name: seq_quality_check
     annotations:
@@ -4064,6 +4079,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000051
     slot_group: sequencing
+    range: seq_quality_check_enum
   sim_search_meth:
     name: sim_search_meth
     annotations:
@@ -4103,6 +4119,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000076
     slot_group: sequencing
+    range: single_cell_lysis_appr_enum
   single_cell_lysis_prot:
     name: single_cell_lysis_prot
     annotations:
@@ -4185,6 +4202,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000075
     slot_group: sequencing
+    range: sort_tech_enum
   source_mat_id:
     name: source_mat_id
     annotations:
@@ -4373,6 +4391,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000053
     slot_group: sequencing
+    range: tax_ident_enum
   temp:
     name: temp
     annotations:
@@ -4455,6 +4474,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000032
     slot_group: nucleic acid sequence source
+    range: trophic_level_enum
   vir_ident_software:
     name: vir_ident_software
     annotations:
@@ -4496,6 +4516,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000036
     slot_group: nucleic acid sequence source
+    range: virus_enrich_appr_enum
   wga_amp_appr:
     name: wga_amp_appr
     annotations:
@@ -4515,6 +4536,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000055
     slot_group: sequencing
+    range: wga_amp_appr_enum
   wga_amp_kit:
     name: wga_amp_kit
     annotations:
@@ -4762,6 +4784,7 @@ slots:
     title: drainage classification
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001085
+    range: drainage_class_enum
   enrichment_protocol:
     name: enrichment_protocol
     from_schema: https://example.com/mixs
@@ -4798,6 +4821,7 @@ slots:
     title: soil_taxonomic/FAO classification
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001083
+    range: fao_class_enum
   farm_equip:
     name: farm_equip
     from_schema: https://example.com/mixs
@@ -4826,6 +4850,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001110
     multivalued: true
+    range: farm_water_source_enum
   fertilizer_admin:
     name: fertilizer_admin
     annotations:
@@ -5335,6 +5360,7 @@ slots:
     title: profile position
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001084
+    range: profile_position_enum
   rel_location:
     name: rel_location
     from_schema: https://example.com/mixs
@@ -5440,6 +5466,7 @@ slots:
     title: mean seasonal precipitation
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000645
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   season_temp:
     name: season_temp
     annotations:
@@ -5459,6 +5486,7 @@ slots:
     title: mean seasonal temperature
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000643
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   sequencing_location:
     name: sequencing_location
     annotations:
@@ -5494,6 +5522,7 @@ slots:
     title: composite design/sieving
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000322
+    range: string
   size_frac_low:
     name: size_frac_low
     from_schema: https://example.com/mixs
@@ -5596,6 +5625,7 @@ slots:
     title: soil type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000332
+    pattern: ^\S+.* \[\S+:\S+]$
   soil_type_meth:
     name: soil_type_meth
     annotations:
@@ -5680,6 +5710,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001081
     multivalued: true
+    range: tillage_enum
   tot_car:
     name: tot_car
     from_schema: https://example.com/mixs
@@ -5743,6 +5774,7 @@ slots:
     title: total organic carbon
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000533
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   tot_phos:
     name: tot_phos
     from_schema: https://example.com/mixs
@@ -5770,6 +5802,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001176
     multivalued: true
+    range: water_source_shared_enum
   water_temp_regm:
     name: water_temp_regm
     from_schema: https://example.com/mixs
@@ -6008,6 +6041,7 @@ slots:
     title: aerospace structure
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000773
+    range: aero_struc_enum
   air_temp:
     name: air_temp
     from_schema: https://example.com/mixs
@@ -6048,6 +6082,7 @@ slots:
     title: architectural structure
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000774
+    range: arch_struc_enum
   avg_dew_point:
     name: avg_dew_point
     annotations:
@@ -6158,6 +6193,7 @@ slots:
     title: design, construction, and operation documents
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000787
+    range: build_docs_enum
   build_occup_type:
     name: build_occup_type
     annotations:
@@ -6177,6 +6213,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000761
     multivalued: true
+    range: build_occup_type_enum
   building_setting:
     name: building_setting
     annotations:
@@ -6193,6 +6230,7 @@ slots:
     title: building setting
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000768
+    range: building_setting_enum
   built_struc_age:
     name: built_struc_age
     annotations:
@@ -6229,6 +6267,7 @@ slots:
     title: built structure setting
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000778
+    range: built_struc_set_enum
   built_struc_type:
     name: built_struc_type
     annotations:
@@ -6283,6 +6322,7 @@ slots:
     title: ceiling condition
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000779
+    range: ceil_cond_enum
   ceil_finish_mat:
     name: ceil_finish_mat
     annotations:
@@ -6300,6 +6340,7 @@ slots:
     title: ceiling finish material
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000780
+    range: ceil_finish_mat_enum
   ceil_struc:
     name: ceil_struc
     annotations:
@@ -6316,6 +6357,7 @@ slots:
     title: ceiling structure
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000782
+    range: ceil_struc_enum
   ceil_texture:
     name: ceil_texture
     annotations:
@@ -6333,6 +6375,7 @@ slots:
     title: ceiling texture
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000783
+    range: ceil_texture_enum
   ceil_thermal_mass:
     name: ceil_thermal_mass
     annotations:
@@ -6371,6 +6414,7 @@ slots:
     title: ceiling type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000784
+    range: ceil_type_enum
   ceil_water_mold:
     name: ceil_water_mold
     annotations:
@@ -6387,6 +6431,7 @@ slots:
     title: ceiling signs of water/mold
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000781
+    range: ceil_water_mold_enum
   cool_syst_id:
     name: cool_syst_id
     annotations:
@@ -6456,6 +6501,7 @@ slots:
     title: door type, composite
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000795
+    range: door_comp_type_enum
   door_cond:
     name: door_cond
     annotations:
@@ -6472,6 +6518,7 @@ slots:
     title: door condition
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000788
+    range: door_cond_enum
   door_direct:
     name: door_direct
     annotations:
@@ -6488,6 +6535,7 @@ slots:
     title: door direction of opening
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000789
+    range: door_direct_enum
   door_loc:
     name: door_loc
     annotations:
@@ -6504,6 +6552,7 @@ slots:
     title: door location
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000790
+    range: door_loc_enum
   door_mat:
     name: door_mat
     annotations:
@@ -6521,6 +6570,7 @@ slots:
     title: door material
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000791
+    range: door_mat_enum
   door_move:
     name: door_move
     annotations:
@@ -6537,6 +6587,7 @@ slots:
     title: door movement
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000792
+    range: door_move_enum
   door_size:
     name: door_size
     annotations:
@@ -6572,6 +6623,7 @@ slots:
     title: door type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000794
+    range: door_type_enum
   door_type_metal:
     name: door_type_metal
     annotations:
@@ -6588,6 +6640,7 @@ slots:
     title: door type, metal
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000796
+    range: door_type_metal_enum
   door_type_wood:
     name: door_type_wood
     annotations:
@@ -6606,6 +6659,7 @@ slots:
     title: door type, wood
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000797
+    range: door_type_wood_enum
   door_water_mold:
     name: door_water_mold
     annotations:
@@ -6622,6 +6676,7 @@ slots:
     title: door signs of water/mold
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000793
+    range: door_water_mold_enum
   drawings:
     name: drawings
     annotations:
@@ -6639,6 +6694,7 @@ slots:
     title: drawings
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000798
+    range: drawings_enum
   elevator:
     name: elevator
     annotations:
@@ -6742,6 +6798,7 @@ slots:
     title: orientations of exterior wall
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000817
+    range: drawings_enum
   ext_window_orient:
     name: ext_window_orient
     annotations:
@@ -6758,6 +6815,7 @@ slots:
     title: orientations of exterior window
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000818
+    range: ext_window_orient_enum
   filter_type:
     name: filter_type
     annotations:
@@ -6776,6 +6834,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000765
     multivalued: true
+    range: filter_type_enum
   fireplace_type:
     name: fireplace_type
     annotations:
@@ -6792,6 +6851,7 @@ slots:
     title: fireplace type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000802
+    range: fireplace_type_enum
   floor_age:
     name: floor_age
     annotations:
@@ -6847,6 +6907,7 @@ slots:
     title: floor condition
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000803
+    range: floor_cond_enum
   floor_count:
     name: floor_count
     annotations:
@@ -6936,6 +6997,7 @@ slots:
     title: floor signs of water/mold
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000805
+    range: floor_water_mold_enum
   freq_clean:
     name: freq_clean
     from_schema: https://example.com/mixs
@@ -6972,6 +7034,7 @@ slots:
     title: furniture
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000807
+    range: furniture_enum
   gender_restroom:
     name: gender_restroom
     annotations:
@@ -6988,6 +7051,7 @@ slots:
     title: gender of restroom
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000808
+    range: gender_restroom_enum
   hall_count:
     name: hall_count
     annotations:
@@ -7021,6 +7085,7 @@ slots:
     title: handidness
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000809
+    range: handidness_enum
   heat_cool_type:
     name: heat_cool_type
     annotations:
@@ -7039,6 +7104,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000766
     multivalued: true
+    range: heat_cool_type_enum
   heat_deliv_loc:
     name: heat_deliv_loc
     annotations:
@@ -7071,6 +7137,7 @@ slots:
     title: heating system delivery method
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000812
+    range: heat_sys_deliv_meth_enum
   heat_system_id:
     name: heat_system_id
     annotations:
@@ -7124,6 +7191,7 @@ slots:
     title: indoor space
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000763
+    range: indoor_space_enum
   indoor_surf:
     name: indoor_surf
     from_schema: https://example.com/mixs
@@ -7163,6 +7231,7 @@ slots:
     title: interior wall condition
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000813
+    range: int_wall_cond_enum
   last_clean:
     name: last_clean
     annotations:
@@ -7200,6 +7269,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000769
     multivalued: true
+    range: light_type_enum
   max_occup:
     name: max_occup
     annotations:
@@ -7233,6 +7303,7 @@ slots:
     title: mechanical structure
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000815
+    range: mech_struc_enum
   number_pets:
     name: number_pets
     annotations:
@@ -7317,6 +7388,7 @@ slots:
     title: occupancy documentation
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000816
+    range: occup_document_enum
   occup_samp:
     name: occup_samp
     annotations:
@@ -7350,6 +7422,7 @@ slots:
     title: quadrant position
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000820
+    range: quad_pos_enum
   rel_air_humidity:
     name: rel_air_humidity
     annotations:
@@ -7405,6 +7478,7 @@ slots:
     title: relative sampling location
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000821
+    range: rel_samp_loc_enum
   room_air_exch_rate:
     name: room_air_exch_rate
     annotations:
@@ -7458,6 +7532,7 @@ slots:
     title: room condition
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000822
+    range: rel_samp_loc_enum
   room_connected:
     name: room_connected
     annotations:
@@ -7475,6 +7550,7 @@ slots:
     title: rooms connected by a doorway
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000826
+    range: room_connected_enum
   room_count:
     name: room_count
     annotations:
@@ -7582,6 +7658,7 @@ slots:
     title: room location in building
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000823
+    range: room_loc_enum
   room_moist_dam_hist:
     name: room_moist_dam_hist
     annotations:
@@ -7654,6 +7731,7 @@ slots:
     title: room sampling position
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000824
+    range: room_samp_pos_enum
   room_type:
     name: room_type
     annotations:
@@ -7673,6 +7751,7 @@ slots:
     title: room type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000825
+    range: room_type_enum
   room_vol:
     name: room_vol
     annotations:
@@ -7789,6 +7868,7 @@ slots:
     title: sampling day weather
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000827
+    range: samp_weather_enum
   season_use:
     name: season_use
     annotations:
@@ -7805,6 +7885,7 @@ slots:
     title: seasonal use
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000830
+    range: season_use_enum
   shad_dev_water_mold:
     name: shad_dev_water_mold
     annotations:
@@ -7821,6 +7902,7 @@ slots:
     title: shading device signs of water/mold
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000834
+    range: shad_dev_water_mold_enum
   shading_device_cond:
     name: shading_device_cond
     annotations:
@@ -7837,6 +7919,7 @@ slots:
     title: shading device condition
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000831
+    range: shading_device_cond_enum
   shading_device_loc:
     name: shading_device_loc
     annotations:
@@ -7853,6 +7936,7 @@ slots:
     title: shading device location
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000832
+    range: shading_device_loc_enum
   shading_device_mat:
     name: shading_device_mat
     annotations:
@@ -7888,6 +7972,7 @@ slots:
     title: shading device type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000835
+    range: shading_device_type_enum
   space_typ_state:
     name: space_typ_state
     annotations:
@@ -7904,6 +7989,7 @@ slots:
     title: space typical state
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000770
+    range: space_typ_state_enum
   specific:
     name: specific
     annotations:
@@ -7921,6 +8007,7 @@ slots:
     title: specifications
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000836
+    range: specific_enum
   specific_humidity:
     name: specific_humidity
     annotations:
@@ -7960,6 +8047,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000767
     multivalued: true
+    range: substructure_type_enum
   surf_air_cont:
     name: surf_air_cont
     annotations:
@@ -7978,6 +8066,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000759
     multivalued: true
+    range: surf_air_cont_enum
   surf_humidity:
     name: surf_humidity
     annotations:
@@ -8107,6 +8196,7 @@ slots:
     title: train station collection location
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000838
+    range: train_stat_loc_enum
   train_stop_loc:
     name: train_stop_loc
     annotations:
@@ -8123,6 +8213,7 @@ slots:
     title: train stop collection location
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000839
+    range: train_stop_loc_enum
   typ_occup_density:
     name: typ_occup_density
     annotations:
@@ -8194,6 +8285,7 @@ slots:
     title: wall construction type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000841
+    range: wall_const_type_enum
   wall_finish_mat:
     name: wall_finish_mat
     annotations:
@@ -8211,6 +8303,7 @@ slots:
     title: wall finish material
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000842
+    range: wall_finish_mat_enum
   wall_height:
     name: wall_height
     annotations:
@@ -8246,6 +8339,7 @@ slots:
     title: wall location
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000843
+    range: wall_loc_enum
   wall_surf_treatment:
     name: wall_surf_treatment
     annotations:
@@ -8262,6 +8356,7 @@ slots:
     title: wall surface treatment
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000845
+    range: wall_surf_treatment_enum
   wall_texture:
     name: wall_texture
     annotations:
@@ -8279,6 +8374,7 @@ slots:
     title: wall texture
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000846
+    range: wall_texture_enum
   wall_thermal_mass:
     name: wall_thermal_mass
     annotations:
@@ -8316,6 +8412,7 @@ slots:
     title: wall signs of water/mold
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000844
+    range: wall_water_mold_enum
   water_feat_size:
     name: water_feat_size
     annotations:
@@ -8351,6 +8448,7 @@ slots:
     title: water feature type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000847
+    range: water_feat_type_enum
   weekday:
     name: weekday
     annotations:
@@ -8367,6 +8465,7 @@ slots:
     title: weekday
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000848
+    range: weekday_enum
   window_cond:
     name: window_cond
     annotations:
@@ -8383,6 +8482,7 @@ slots:
     title: window condition
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000849
+    range: window_cond_enum
   window_cover:
     name: window_cover
     annotations:
@@ -8415,6 +8515,7 @@ slots:
     title: window horizontal position
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000851
+    range: window_horiz_pos_enum
   window_loc:
     name: window_loc
     annotations:
@@ -8431,6 +8532,7 @@ slots:
     title: window location
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000852
+    range: window_loc_enum
   window_mat:
     name: window_mat
     annotations:
@@ -8447,6 +8549,7 @@ slots:
     title: window material
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000853
+    range: window_loc_enum
   window_open_freq:
     name: window_open_freq
     annotations:
@@ -8500,6 +8603,7 @@ slots:
     title: window status
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000855
+    range: window_status_enum
   window_type:
     name: window_type
     annotations:
@@ -8516,6 +8620,7 @@ slots:
     title: window type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000856
+    range: window_type_enum
   window_vert_pos:
     name: window_vert_pos
     annotations:
@@ -8532,6 +8637,7 @@ slots:
     title: window vertical position
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000857
+    range: window_vert_pos_enum
   window_water_mold:
     name: window_water_mold
     annotations:
@@ -8548,6 +8654,7 @@ slots:
     title: window signs of water/mold
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000854
+    range: window_water_mold_enum
   animal_am:
     name: animal_am
     annotations:
@@ -8865,6 +8972,7 @@ slots:
     title: culture result
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001117
+    range: cult_result_enum
   cult_result_org:
     name: cult_result_org
     annotations:
@@ -9199,6 +9307,7 @@ slots:
     title: food traceability list category
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001214
+    range: food_trace_list_enum
   food_treat_proc:
     name: food_treat_proc
     annotations:
@@ -9438,6 +9547,7 @@ slots:
     title: sample transport  container
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001230
+    range: samp_transport_cont_enum
   samp_transport_dur:
     name: samp_transport_dur
     annotations:
@@ -9877,6 +9987,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001141
     multivalued: true
+    range: extr_weather_event_enum
   farm_equip_san_freq:
     name: farm_equip_san_freq
     annotations:
@@ -9932,6 +10043,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001182
     multivalued: true
+    range: food_clean_proc_enum
   food_prod_char:
     name: food_prod_char
     annotations:
@@ -10031,6 +10143,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001150
     multivalued: true
+    range: plant_reprod_crop_enum
   prod_label_claims:
     name: prod_label_claims
     annotations:
@@ -10129,6 +10242,7 @@ slots:
     title: soil texture classification
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001164
+    range: soil_texture_class_enum
   soil_texture_meth:
     name: soil_texture_meth
     annotations:
@@ -10180,6 +10294,7 @@ slots:
     title: total nitrogen content
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000530
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   turbidity:
     name: turbidity
     from_schema: https://example.com/mixs
@@ -10331,6 +10446,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001252
     multivalued: true
+    range: facility_type_enum
   food_allergen_label:
     name: food_allergen_label
     annotations:
@@ -10439,6 +10555,7 @@ slots:
     title: sample location condition
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001257
+    range: samp_loc_condition_enum
   samp_surf_moisture:
     name: samp_surf_moisture
     annotations:
@@ -10458,6 +10575,7 @@ slots:
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001256
     multivalued: true
+    range: samp_subtype_enum
   spec_intended_cons:
     name: spec_intended_cons
     annotations:
@@ -10898,6 +11016,7 @@ slots:
     title: sample capture status
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000860
+    range: samp_capt_status_enum
   samp_dis_stage:
     name: samp_dis_stage
     annotations:
@@ -10915,6 +11034,7 @@ slots:
     title: sample disease stage
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000249
+    range: samp_dis_stage_enum
   amniotic_fluid_color:
     name: amniotic_fluid_color
     annotations:
@@ -11314,6 +11434,7 @@ slots:
     title: urine/collection method
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000899
+    range: urine_collect_meth_enum
   urogenit_tract_disor:
     name: urogenit_tract_disor
     annotations:
@@ -11464,6 +11585,7 @@ slots:
     title: dominant hand
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000944
+    range: dominant_hand_enum
   time_since_last_wash:
     name: time_since_last_wash
     annotations:
@@ -12055,6 +12177,7 @@ slots:
     title: hydrocarbon resource type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000988
+    range: hcr_enum
   hcr_fw_salinity:
     name: hcr_fw_salinity
     annotations:
@@ -12092,6 +12215,7 @@ slots:
     title: hydrocarbon resource geological age
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000993
+    range: hcr_geol_age_enum
   hcr_pressure:
     name: hcr_pressure
     annotations:
@@ -12147,6 +12271,7 @@ slots:
     title: lithology
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000990
+    range: lithology_enum
   magnesium:
     name: magnesium
     annotations:
@@ -12380,6 +12505,7 @@ slots:
     title: sample subtype
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000999
+    range: samp_subtype_enum
   samp_transport_cond:
     name: samp_transport_cond
     annotations:
@@ -12497,6 +12623,7 @@ slots:
     title: source rock depositional environment
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000996
+    range: sr_dep_env_enum
   sr_geol_age:
     name: sr_geol_age
     annotations:
@@ -12514,6 +12641,7 @@ slots:
     title: source rock geological age
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000997
+    range: sr_geol_age_enum
   sr_kerog_type:
     name: sr_kerog_type
     annotations:
@@ -12534,6 +12662,7 @@ slots:
     title: source rock kerogen type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000994
+    range: sr_kerog_type_enum
   sr_lithology:
     name: sr_lithology
     annotations:
@@ -12551,6 +12680,7 @@ slots:
     title: source rock lithology
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000995
+    range: sr_lithology_enum
   sulfate:
     name: sulfate
     annotations:
@@ -13021,6 +13151,7 @@ slots:
     title: sample collection point
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001015
+    range: samp_collect_point_enum
   samp_loc_corr_rate:
     name: samp_loc_corr_rate
     annotations:
@@ -13374,6 +13505,7 @@ slots:
     title: organic matter
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000204
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   org_nitro:
     name: org_nitro
     annotations:
@@ -13393,6 +13525,7 @@ slots:
     title: organic nitrogen
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000205
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   part_org_carb:
     name: part_org_carb
     from_schema: https://example.com/mixs
@@ -13825,6 +13958,7 @@ slots:
     title: plant sex
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001059
+    range: plant_sex_enum
   radiation_regm:
     name: radiation_regm
     annotations:
@@ -13985,6 +14119,7 @@ slots:
     title: sediment type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001078
+    range: sediment_type_enum
   tidal_stage:
     name: tidal_stage
     annotations:
@@ -14001,6 +14136,7 @@ slots:
     title: tidal stage
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000750
+    range: tidal_stage_enum
   tot_depth_water_col:
     name: tot_depth_water_col
     annotations:
@@ -14143,6 +14279,7 @@ slots:
     title: soil texture measurement
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0000335
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
   water_cont_soil_meth:
     name: water_cont_soil_meth
     annotations:
@@ -14198,6 +14335,7 @@ slots:
     title: host cellular location
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001313
+    range: host_cellular_loc_enum
   host_dependence:
     name: host_dependence
     annotations:
@@ -14214,6 +14352,7 @@ slots:
     title: host dependence
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001315
+    range: host_dependence_enum
   host_family_relationship:
     name: host_family_relationship
     from_schema: https://example.com/mixs
@@ -14551,6 +14690,7 @@ slots:
     title: host specificity
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001308
+    range: host_specificity_enum
   mode_transmission:
     name: mode_transmission
     annotations:
@@ -14569,6 +14709,7 @@ slots:
     title: mode of transmission
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001312
+    range: mode_transmission_enum
   route_transmission:
     name: route_transmission
     annotations:
@@ -14588,6 +14729,7 @@ slots:
     title: route of transmission
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001316
+    range: route_transmission_enum
   samp_store_sol:
     name: samp_store_sol
     annotations:
@@ -14626,6 +14768,7 @@ slots:
     title: symbiotic host organism life cycle type
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001300
+    range: sym_life_cycle_type_enum
   symbiont_host_role:
     name: symbiont_host_role
     annotations:
@@ -14643,6 +14786,7 @@ slots:
     title: host of the symbiont role
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001303
+    range: symbiont_host_role_enum
   type_of_symbiosis:
     name: type_of_symbiosis
     annotations:
@@ -14660,6 +14804,7 @@ slots:
     title: type of symbiosis
     from_schema: https://example.com/mixs
     slot_uri: MIXS:0001307
+    range: type_of_symbiosis_enum
   biochem_oxygen_dem:
     name: biochem_oxygen_dem
     annotations:

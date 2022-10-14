@@ -1,5 +1,5 @@
 # Auto generated from mixs_schemasheets_generated.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-14T11:53:05
+# Generation date: 2022-10-14T13:54:12
 # Schema: MIXS
 #
 # id: https://example.com/mixs
@@ -88,7 +88,7 @@ class MigsBa(ChecklistClass):
     annot: Optional[str] = None
     assembly_name: Optional[str] = None
     associated_resource: Optional[Union[str, List[str]]] = empty_list()
-    biotic_relationship: Optional[str] = None
+    biotic_relationship: Optional[Union[str, "BioticRelationshipEnum"]] = None
     compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     depth: Optional[str] = None
@@ -100,18 +100,18 @@ class MigsBa(ChecklistClass):
     feat_pred: Optional[str] = None
     host_disease_stat: Optional[Union[str, List[str]]] = empty_list()
     host_spec_range: Optional[Union[int, List[int]]] = empty_list()
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     pathogenicity: Optional[str] = None
     pos_cont_type: Optional[str] = None
     ref_db: Optional[str] = None
-    rel_to_oxygen: Optional[str] = None
+    rel_to_oxygen: Optional[Union[str, "RelToOxygenEnum"]] = None
     samp_collec_device: Optional[str] = None
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
@@ -123,9 +123,9 @@ class MigsBa(ChecklistClass):
     specific_host: Optional[str] = None
     subspecf_gen_lin: Optional[str] = None
     tax_class: Optional[str] = None
-    tax_ident: Optional[str] = None
+    tax_ident: Optional[Union[str, "TaxIdentEnum"]] = None
     temp: Optional[str] = None
-    trophic_level: Optional[str] = None
+    trophic_level: Optional[Union[str, "TrophicLevelEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.assembly_qual):
@@ -224,8 +224,8 @@ class MigsBa(ChecklistClass):
             self.associated_resource = [self.associated_resource] if self.associated_resource is not None else []
         self.associated_resource = [v if isinstance(v, str) else str(v) for v in self.associated_resource]
 
-        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, str):
-            self.biotic_relationship = str(self.biotic_relationship)
+        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, BioticRelationshipEnum):
+            self.biotic_relationship = BioticRelationshipEnum(self.biotic_relationship)
 
         if self.compl_score is not None and not isinstance(self.compl_score, str):
             self.compl_score = str(self.compl_score)
@@ -262,8 +262,8 @@ class MigsBa(ChecklistClass):
             self.host_spec_range = [self.host_spec_range] if self.host_spec_range is not None else []
         self.host_spec_range = [v if isinstance(v, int) else int(v) for v in self.host_spec_range]
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -277,8 +277,8 @@ class MigsBa(ChecklistClass):
         if self.lib_vector is not None and not isinstance(self.lib_vector, str):
             self.lib_vector = str(self.lib_vector)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -295,8 +295,8 @@ class MigsBa(ChecklistClass):
         if self.ref_db is not None and not isinstance(self.ref_db, str):
             self.ref_db = str(self.ref_db)
 
-        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, str):
-            self.rel_to_oxygen = str(self.rel_to_oxygen)
+        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, RelToOxygenEnum):
+            self.rel_to_oxygen = RelToOxygenEnum(self.rel_to_oxygen)
 
         if self.samp_collec_device is not None and not isinstance(self.samp_collec_device, str):
             self.samp_collec_device = str(self.samp_collec_device)
@@ -333,14 +333,14 @@ class MigsBa(ChecklistClass):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.tax_ident is not None and not isinstance(self.tax_ident, str):
-            self.tax_ident = str(self.tax_ident)
+        if self.tax_ident is not None and not isinstance(self.tax_ident, TaxIdentEnum):
+            self.tax_ident = TaxIdentEnum(self.tax_ident)
 
         if self.temp is not None and not isinstance(self.temp, str):
             self.temp = str(self.temp)
 
-        if self.trophic_level is not None and not isinstance(self.trophic_level, str):
-            self.trophic_level = str(self.trophic_level)
+        if self.trophic_level is not None and not isinstance(self.trophic_level, TrophicLevelEnum):
+            self.trophic_level = TrophicLevelEnum(self.trophic_level)
 
         super().__post_init__(**kwargs)
 
@@ -373,7 +373,7 @@ class MigsEu(ChecklistClass):
     annot: Optional[str] = None
     assembly_name: Optional[str] = None
     associated_resource: Optional[Union[str, List[str]]] = empty_list()
-    biotic_relationship: Optional[str] = None
+    biotic_relationship: Optional[Union[str, "BioticRelationshipEnum"]] = None
     compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     depth: Optional[str] = None
@@ -384,12 +384,12 @@ class MigsEu(ChecklistClass):
     feat_pred: Optional[str] = None
     host_disease_stat: Optional[Union[str, List[str]]] = empty_list()
     host_spec_range: Optional[Union[int, List[int]]] = empty_list()
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     num_replicons: Optional[int] = None
@@ -410,9 +410,9 @@ class MigsEu(ChecklistClass):
     specific_host: Optional[str] = None
     subspecf_gen_lin: Optional[str] = None
     tax_class: Optional[str] = None
-    tax_ident: Optional[str] = None
+    tax_ident: Optional[Union[str, "TaxIdentEnum"]] = None
     temp: Optional[str] = None
-    trophic_level: Optional[str] = None
+    trophic_level: Optional[Union[str, "TrophicLevelEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.assembly_qual):
@@ -501,8 +501,8 @@ class MigsEu(ChecklistClass):
             self.associated_resource = [self.associated_resource] if self.associated_resource is not None else []
         self.associated_resource = [v if isinstance(v, str) else str(v) for v in self.associated_resource]
 
-        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, str):
-            self.biotic_relationship = str(self.biotic_relationship)
+        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, BioticRelationshipEnum):
+            self.biotic_relationship = BioticRelationshipEnum(self.biotic_relationship)
 
         if self.compl_score is not None and not isinstance(self.compl_score, str):
             self.compl_score = str(self.compl_score)
@@ -536,8 +536,8 @@ class MigsEu(ChecklistClass):
             self.host_spec_range = [self.host_spec_range] if self.host_spec_range is not None else []
         self.host_spec_range = [v if isinstance(v, int) else int(v) for v in self.host_spec_range]
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -551,8 +551,8 @@ class MigsEu(ChecklistClass):
         if self.lib_vector is not None and not isinstance(self.lib_vector, str):
             self.lib_vector = str(self.lib_vector)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -616,14 +616,14 @@ class MigsEu(ChecklistClass):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.tax_ident is not None and not isinstance(self.tax_ident, str):
-            self.tax_ident = str(self.tax_ident)
+        if self.tax_ident is not None and not isinstance(self.tax_ident, TaxIdentEnum):
+            self.tax_ident = TaxIdentEnum(self.tax_ident)
 
         if self.temp is not None and not isinstance(self.temp, str):
             self.temp = str(self.temp)
 
-        if self.trophic_level is not None and not isinstance(self.trophic_level, str):
-            self.trophic_level = str(self.trophic_level)
+        if self.trophic_level is not None and not isinstance(self.trophic_level, TrophicLevelEnum):
+            self.trophic_level = TrophicLevelEnum(self.trophic_level)
 
         super().__post_init__(**kwargs)
 
@@ -663,12 +663,12 @@ class MigsOrg(ChecklistClass):
     experimental_factor: Optional[str] = None
     extrachrom_elements: Optional[int] = None
     feat_pred: Optional[str] = None
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     number_contig: Optional[int] = None
@@ -685,7 +685,7 @@ class MigsOrg(ChecklistClass):
     source_mat_id: Optional[Union[str, List[str]]] = empty_list()
     subspecf_gen_lin: Optional[str] = None
     tax_class: Optional[str] = None
-    tax_ident: Optional[str] = None
+    tax_ident: Optional[Union[str, "TaxIdentEnum"]] = None
     temp: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -792,8 +792,8 @@ class MigsOrg(ChecklistClass):
         if self.feat_pred is not None and not isinstance(self.feat_pred, str):
             self.feat_pred = str(self.feat_pred)
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -807,8 +807,8 @@ class MigsOrg(ChecklistClass):
         if self.lib_vector is not None and not isinstance(self.lib_vector, str):
             self.lib_vector = str(self.lib_vector)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -860,8 +860,8 @@ class MigsOrg(ChecklistClass):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.tax_ident is not None and not isinstance(self.tax_ident, str):
-            self.tax_ident = str(self.tax_ident)
+        if self.tax_ident is not None and not isinstance(self.tax_ident, TaxIdentEnum):
+            self.tax_ident = TaxIdentEnum(self.tax_ident)
 
         if self.temp is not None and not isinstance(self.temp, str):
             self.temp = str(self.temp)
@@ -906,12 +906,12 @@ class MigsPl(ChecklistClass):
     experimental_factor: Optional[str] = None
     feat_pred: Optional[str] = None
     host_spec_range: Optional[Union[int, List[int]]] = empty_list()
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     number_contig: Optional[int] = None
@@ -929,7 +929,7 @@ class MigsPl(ChecklistClass):
     specific_host: Optional[str] = None
     subspecf_gen_lin: Optional[str] = None
     tax_class: Optional[str] = None
-    tax_ident: Optional[str] = None
+    tax_ident: Optional[Union[str, "TaxIdentEnum"]] = None
     temp: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1045,8 +1045,8 @@ class MigsPl(ChecklistClass):
             self.host_spec_range = [self.host_spec_range] if self.host_spec_range is not None else []
         self.host_spec_range = [v if isinstance(v, int) else int(v) for v in self.host_spec_range]
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -1060,8 +1060,8 @@ class MigsPl(ChecklistClass):
         if self.lib_vector is not None and not isinstance(self.lib_vector, str):
             self.lib_vector = str(self.lib_vector)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -1116,8 +1116,8 @@ class MigsPl(ChecklistClass):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.tax_ident is not None and not isinstance(self.tax_ident, str):
-            self.tax_ident = str(self.tax_ident)
+        if self.tax_ident is not None and not isinstance(self.tax_ident, TaxIdentEnum):
+            self.tax_ident = TaxIdentEnum(self.tax_ident)
 
         if self.temp is not None and not isinstance(self.temp, str):
             self.temp = str(self.temp)
@@ -1153,7 +1153,7 @@ class MigsVi(ChecklistClass):
     assembly_name: Optional[str] = None
     assembly_qual: Optional[str] = None
     associated_resource: Optional[Union[str, List[str]]] = empty_list()
-    biotic_relationship: Optional[str] = None
+    biotic_relationship: Optional[Union[str, "BioticRelationshipEnum"]] = None
     compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     depth: Optional[str] = None
@@ -1164,12 +1164,12 @@ class MigsVi(ChecklistClass):
     feat_pred: Optional[str] = None
     host_disease_stat: Optional[Union[str, List[str]]] = empty_list()
     host_spec_range: Optional[Union[int, List[int]]] = empty_list()
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     num_replicons: Optional[int] = None
@@ -1189,9 +1189,9 @@ class MigsVi(ChecklistClass):
     specific_host: Optional[str] = None
     subspecf_gen_lin: Optional[str] = None
     tax_class: Optional[str] = None
-    tax_ident: Optional[str] = None
+    tax_ident: Optional[Union[str, "TaxIdentEnum"]] = None
     temp: Optional[str] = None
-    virus_enrich_appr: Optional[str] = None
+    virus_enrich_appr: Optional[Union[str, "VirusEnrichApprEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.assembly_software):
@@ -1278,8 +1278,8 @@ class MigsVi(ChecklistClass):
             self.associated_resource = [self.associated_resource] if self.associated_resource is not None else []
         self.associated_resource = [v if isinstance(v, str) else str(v) for v in self.associated_resource]
 
-        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, str):
-            self.biotic_relationship = str(self.biotic_relationship)
+        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, BioticRelationshipEnum):
+            self.biotic_relationship = BioticRelationshipEnum(self.biotic_relationship)
 
         if self.compl_score is not None and not isinstance(self.compl_score, str):
             self.compl_score = str(self.compl_score)
@@ -1313,8 +1313,8 @@ class MigsVi(ChecklistClass):
             self.host_spec_range = [self.host_spec_range] if self.host_spec_range is not None else []
         self.host_spec_range = [v if isinstance(v, int) else int(v) for v in self.host_spec_range]
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -1328,8 +1328,8 @@ class MigsVi(ChecklistClass):
         if self.lib_vector is not None and not isinstance(self.lib_vector, str):
             self.lib_vector = str(self.lib_vector)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -1390,14 +1390,14 @@ class MigsVi(ChecklistClass):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.tax_ident is not None and not isinstance(self.tax_ident, str):
-            self.tax_ident = str(self.tax_ident)
+        if self.tax_ident is not None and not isinstance(self.tax_ident, TaxIdentEnum):
+            self.tax_ident = TaxIdentEnum(self.tax_ident)
 
         if self.temp is not None and not isinstance(self.temp, str):
             self.temp = str(self.temp)
 
-        if self.virus_enrich_appr is not None and not isinstance(self.virus_enrich_appr, str):
-            self.virus_enrich_appr = str(self.virus_enrich_appr)
+        if self.virus_enrich_appr is not None and not isinstance(self.virus_enrich_appr, VirusEnrichApprEnum):
+            self.virus_enrich_appr = VirusEnrichApprEnum(self.virus_enrich_appr)
 
         super().__post_init__(**kwargs)
 
@@ -1413,7 +1413,7 @@ class Mimag(ChecklistClass):
 
     assembly_qual: str = None
     assembly_software: str = None
-    bin_param: str = None
+    bin_param: Union[str, "BinParamEnum"] = None
     bin_software: str = None
     collection_date: str = None
     compl_score: str = None
@@ -1428,7 +1428,7 @@ class Mimag(ChecklistClass):
     samp_name: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    tax_ident: str = None
+    tax_ident: Union[str, "TaxIdentEnum"] = None
     x_16s_recover: Optional[Union[bool, Bool]] = None
     x_16s_recover_software: Optional[str] = None
     adapters: Optional[str] = None
@@ -1436,22 +1436,22 @@ class Mimag(ChecklistClass):
     annot: Optional[str] = None
     assembly_name: Optional[str] = None
     associated_resource: Optional[Union[str, List[str]]] = empty_list()
-    compl_appr: Optional[str] = None
-    contam_screen_input: Optional[str] = None
+    compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
+    contam_screen_input: Optional[Union[str, "ContamScreenInputEnum"]] = None
     contam_screen_param: Optional[str] = None
     decontam_software: Optional[str] = None
     depth: Optional[str] = None
     elev: Optional[str] = None
     experimental_factor: Optional[str] = None
     feat_pred: Optional[str] = None
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
-    mag_cov_software: Optional[str] = None
+    mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
     mid: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     number_contig: Optional[int] = None
@@ -1459,7 +1459,7 @@ class Mimag(ChecklistClass):
     reassembly_bin: Optional[Union[bool, Bool]] = None
     ref_biomaterial: Optional[str] = None
     ref_db: Optional[str] = None
-    rel_to_oxygen: Optional[str] = None
+    rel_to_oxygen: Optional[Union[str, "RelToOxygenEnum"]] = None
     samp_collec_device: Optional[str] = None
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
@@ -1487,8 +1487,8 @@ class Mimag(ChecklistClass):
 
         if self._is_empty(self.bin_param):
             self.MissingRequiredField("bin_param")
-        if not isinstance(self.bin_param, str):
-            self.bin_param = str(self.bin_param)
+        if not isinstance(self.bin_param, BinParamEnum):
+            self.bin_param = BinParamEnum(self.bin_param)
 
         if self._is_empty(self.bin_software):
             self.MissingRequiredField("bin_software")
@@ -1562,8 +1562,8 @@ class Mimag(ChecklistClass):
 
         if self._is_empty(self.tax_ident):
             self.MissingRequiredField("tax_ident")
-        if not isinstance(self.tax_ident, str):
-            self.tax_ident = str(self.tax_ident)
+        if not isinstance(self.tax_ident, TaxIdentEnum):
+            self.tax_ident = TaxIdentEnum(self.tax_ident)
 
         if self.x_16s_recover is not None and not isinstance(self.x_16s_recover, Bool):
             self.x_16s_recover = Bool(self.x_16s_recover)
@@ -1587,11 +1587,11 @@ class Mimag(ChecklistClass):
             self.associated_resource = [self.associated_resource] if self.associated_resource is not None else []
         self.associated_resource = [v if isinstance(v, str) else str(v) for v in self.associated_resource]
 
-        if self.compl_appr is not None and not isinstance(self.compl_appr, str):
-            self.compl_appr = str(self.compl_appr)
+        if self.compl_appr is not None and not isinstance(self.compl_appr, ComplApprEnum):
+            self.compl_appr = ComplApprEnum(self.compl_appr)
 
-        if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
-            self.contam_screen_input = str(self.contam_screen_input)
+        if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, ContamScreenInputEnum):
+            self.contam_screen_input = ContamScreenInputEnum(self.contam_screen_input)
 
         if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
             self.contam_screen_param = str(self.contam_screen_param)
@@ -1611,8 +1611,8 @@ class Mimag(ChecklistClass):
         if self.feat_pred is not None and not isinstance(self.feat_pred, str):
             self.feat_pred = str(self.feat_pred)
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -1626,14 +1626,14 @@ class Mimag(ChecklistClass):
         if self.lib_vector is not None and not isinstance(self.lib_vector, str):
             self.lib_vector = str(self.lib_vector)
 
-        if self.mag_cov_software is not None and not isinstance(self.mag_cov_software, str):
-            self.mag_cov_software = str(self.mag_cov_software)
+        if self.mag_cov_software is not None and not isinstance(self.mag_cov_software, MagCovSoftwareEnum):
+            self.mag_cov_software = MagCovSoftwareEnum(self.mag_cov_software)
 
         if self.mid is not None and not isinstance(self.mid, str):
             self.mid = str(self.mid)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -1656,8 +1656,8 @@ class Mimag(ChecklistClass):
         if self.ref_db is not None and not isinstance(self.ref_db, str):
             self.ref_db = str(self.ref_db)
 
-        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, str):
-            self.rel_to_oxygen = str(self.rel_to_oxygen)
+        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, RelToOxygenEnum):
+            self.rel_to_oxygen = RelToOxygenEnum(self.rel_to_oxygen)
 
         if self.samp_collec_device is not None and not isinstance(self.samp_collec_device, str):
             self.samp_collec_device = str(self.samp_collec_device)
@@ -1726,31 +1726,31 @@ class MimarksC(ChecklistClass):
     target_gene: str = None
     alt: Optional[str] = None
     associated_resource: Optional[Union[str, List[str]]] = empty_list()
-    biotic_relationship: Optional[str] = None
+    biotic_relationship: Optional[Union[str, "BioticRelationshipEnum"]] = None
     chimera_check: Optional[str] = None
     depth: Optional[str] = None
     elev: Optional[str] = None
     experimental_factor: Optional[str] = None
     extrachrom_elements: Optional[int] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     pcr_cond: Optional[str] = None
     pcr_primers: Optional[str] = None
     pos_cont_type: Optional[str] = None
-    rel_to_oxygen: Optional[str] = None
+    rel_to_oxygen: Optional[Union[str, "RelToOxygenEnum"]] = None
     samp_collec_device: Optional[str] = None
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     samp_vol_we_dna_ext: Optional[str] = None
-    seq_quality_check: Optional[str] = None
+    seq_quality_check: Optional[Union[str, "SeqQualityCheckEnum"]] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
     source_mat_id: Optional[Union[str, List[str]]] = empty_list()
     subspecf_gen_lin: Optional[str] = None
     target_subfragment: Optional[str] = None
     temp: Optional[str] = None
-    trophic_level: Optional[str] = None
+    trophic_level: Optional[Union[str, "TrophicLevelEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.collection_date):
@@ -1820,8 +1820,8 @@ class MimarksC(ChecklistClass):
             self.associated_resource = [self.associated_resource] if self.associated_resource is not None else []
         self.associated_resource = [v if isinstance(v, str) else str(v) for v in self.associated_resource]
 
-        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, str):
-            self.biotic_relationship = str(self.biotic_relationship)
+        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, BioticRelationshipEnum):
+            self.biotic_relationship = BioticRelationshipEnum(self.biotic_relationship)
 
         if self.chimera_check is not None and not isinstance(self.chimera_check, str):
             self.chimera_check = str(self.chimera_check)
@@ -1838,8 +1838,8 @@ class MimarksC(ChecklistClass):
         if self.extrachrom_elements is not None and not isinstance(self.extrachrom_elements, int):
             self.extrachrom_elements = int(self.extrachrom_elements)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -1856,8 +1856,8 @@ class MimarksC(ChecklistClass):
         if self.pos_cont_type is not None and not isinstance(self.pos_cont_type, str):
             self.pos_cont_type = str(self.pos_cont_type)
 
-        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, str):
-            self.rel_to_oxygen = str(self.rel_to_oxygen)
+        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, RelToOxygenEnum):
+            self.rel_to_oxygen = RelToOxygenEnum(self.rel_to_oxygen)
 
         if self.samp_collec_device is not None and not isinstance(self.samp_collec_device, str):
             self.samp_collec_device = str(self.samp_collec_device)
@@ -1874,8 +1874,8 @@ class MimarksC(ChecklistClass):
         if self.samp_vol_we_dna_ext is not None and not isinstance(self.samp_vol_we_dna_ext, str):
             self.samp_vol_we_dna_ext = str(self.samp_vol_we_dna_ext)
 
-        if self.seq_quality_check is not None and not isinstance(self.seq_quality_check, str):
-            self.seq_quality_check = str(self.seq_quality_check)
+        if self.seq_quality_check is not None and not isinstance(self.seq_quality_check, SeqQualityCheckEnum):
+            self.seq_quality_check = SeqQualityCheckEnum(self.seq_quality_check)
 
         if not isinstance(self.sop, list):
             self.sop = [self.sop] if self.sop is not None else []
@@ -1894,8 +1894,8 @@ class MimarksC(ChecklistClass):
         if self.temp is not None and not isinstance(self.temp, str):
             self.temp = str(self.temp)
 
-        if self.trophic_level is not None and not isinstance(self.trophic_level, str):
-            self.trophic_level = str(self.trophic_level)
+        if self.trophic_level is not None and not isinstance(self.trophic_level, TrophicLevelEnum):
+            self.trophic_level = TrophicLevelEnum(self.trophic_level)
 
         super().__post_init__(**kwargs)
 
@@ -1928,25 +1928,25 @@ class MimarksS(ChecklistClass):
     depth: Optional[str] = None
     elev: Optional[str] = None
     experimental_factor: Optional[str] = None
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
     mid: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     pcr_cond: Optional[str] = None
     pcr_primers: Optional[str] = None
     pos_cont_type: Optional[str] = None
-    rel_to_oxygen: Optional[str] = None
+    rel_to_oxygen: Optional[Union[str, "RelToOxygenEnum"]] = None
     samp_collec_device: Optional[str] = None
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     samp_vol_we_dna_ext: Optional[str] = None
-    seq_quality_check: Optional[str] = None
+    seq_quality_check: Optional[Union[str, "SeqQualityCheckEnum"]] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
     source_mat_id: Optional[Union[str, List[str]]] = empty_list()
@@ -2034,8 +2034,8 @@ class MimarksS(ChecklistClass):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -2052,8 +2052,8 @@ class MimarksS(ChecklistClass):
         if self.mid is not None and not isinstance(self.mid, str):
             self.mid = str(self.mid)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -2070,8 +2070,8 @@ class MimarksS(ChecklistClass):
         if self.pos_cont_type is not None and not isinstance(self.pos_cont_type, str):
             self.pos_cont_type = str(self.pos_cont_type)
 
-        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, str):
-            self.rel_to_oxygen = str(self.rel_to_oxygen)
+        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, RelToOxygenEnum):
+            self.rel_to_oxygen = RelToOxygenEnum(self.rel_to_oxygen)
 
         if self.samp_collec_device is not None and not isinstance(self.samp_collec_device, str):
             self.samp_collec_device = str(self.samp_collec_device)
@@ -2088,8 +2088,8 @@ class MimarksS(ChecklistClass):
         if self.samp_vol_we_dna_ext is not None and not isinstance(self.samp_vol_we_dna_ext, str):
             self.samp_vol_we_dna_ext = str(self.samp_vol_we_dna_ext)
 
-        if self.seq_quality_check is not None and not isinstance(self.seq_quality_check, str):
-            self.seq_quality_check = str(self.seq_quality_check)
+        if self.seq_quality_check is not None and not isinstance(self.seq_quality_check, SeqQualityCheckEnum):
+            self.seq_quality_check = SeqQualityCheckEnum(self.seq_quality_check)
 
         if self.size_frac is not None and not isinstance(self.size_frac, str):
             self.size_frac = str(self.size_frac)
@@ -2135,10 +2135,10 @@ class Misag(ChecklistClass):
     samp_name: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: str = None
-    sort_tech: str = None
-    tax_ident: str = None
-    wga_amp_appr: str = None
+    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    sort_tech: Union[str, "SortTechEnum"] = None
+    tax_ident: Union[str, "TaxIdentEnum"] = None
+    wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
     x_16s_recover: Optional[Union[bool, Bool]] = None
     x_16s_recover_software: Optional[str] = None
     adapters: Optional[str] = None
@@ -2146,28 +2146,28 @@ class Misag(ChecklistClass):
     annot: Optional[str] = None
     assembly_name: Optional[str] = None
     associated_resource: Optional[Union[str, List[str]]] = empty_list()
-    compl_appr: Optional[str] = None
-    contam_screen_input: Optional[str] = None
+    compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
+    contam_screen_input: Optional[Union[str, "ContamScreenInputEnum"]] = None
     contam_screen_param: Optional[str] = None
     decontam_software: Optional[str] = None
     depth: Optional[str] = None
     elev: Optional[str] = None
     experimental_factor: Optional[str] = None
     feat_pred: Optional[str] = None
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
     mid: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     number_contig: Optional[int] = None
     pos_cont_type: Optional[str] = None
     ref_biomaterial: Optional[str] = None
     ref_db: Optional[str] = None
-    rel_to_oxygen: Optional[str] = None
+    rel_to_oxygen: Optional[Union[str, "RelToOxygenEnum"]] = None
     samp_collec_device: Optional[str] = None
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
@@ -2262,23 +2262,23 @@ class Misag(ChecklistClass):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, str):
-            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
+            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
-        if not isinstance(self.sort_tech, str):
-            self.sort_tech = str(self.sort_tech)
+        if not isinstance(self.sort_tech, SortTechEnum):
+            self.sort_tech = SortTechEnum(self.sort_tech)
 
         if self._is_empty(self.tax_ident):
             self.MissingRequiredField("tax_ident")
-        if not isinstance(self.tax_ident, str):
-            self.tax_ident = str(self.tax_ident)
+        if not isinstance(self.tax_ident, TaxIdentEnum):
+            self.tax_ident = TaxIdentEnum(self.tax_ident)
 
         if self._is_empty(self.wga_amp_appr):
             self.MissingRequiredField("wga_amp_appr")
-        if not isinstance(self.wga_amp_appr, str):
-            self.wga_amp_appr = str(self.wga_amp_appr)
+        if not isinstance(self.wga_amp_appr, WgaAmpApprEnum):
+            self.wga_amp_appr = WgaAmpApprEnum(self.wga_amp_appr)
 
         if self.x_16s_recover is not None and not isinstance(self.x_16s_recover, Bool):
             self.x_16s_recover = Bool(self.x_16s_recover)
@@ -2302,11 +2302,11 @@ class Misag(ChecklistClass):
             self.associated_resource = [self.associated_resource] if self.associated_resource is not None else []
         self.associated_resource = [v if isinstance(v, str) else str(v) for v in self.associated_resource]
 
-        if self.compl_appr is not None and not isinstance(self.compl_appr, str):
-            self.compl_appr = str(self.compl_appr)
+        if self.compl_appr is not None and not isinstance(self.compl_appr, ComplApprEnum):
+            self.compl_appr = ComplApprEnum(self.compl_appr)
 
-        if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, str):
-            self.contam_screen_input = str(self.contam_screen_input)
+        if self.contam_screen_input is not None and not isinstance(self.contam_screen_input, ContamScreenInputEnum):
+            self.contam_screen_input = ContamScreenInputEnum(self.contam_screen_input)
 
         if self.contam_screen_param is not None and not isinstance(self.contam_screen_param, str):
             self.contam_screen_param = str(self.contam_screen_param)
@@ -2326,8 +2326,8 @@ class Misag(ChecklistClass):
         if self.feat_pred is not None and not isinstance(self.feat_pred, str):
             self.feat_pred = str(self.feat_pred)
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -2344,8 +2344,8 @@ class Misag(ChecklistClass):
         if self.mid is not None and not isinstance(self.mid, str):
             self.mid = str(self.mid)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -2365,8 +2365,8 @@ class Misag(ChecklistClass):
         if self.ref_db is not None and not isinstance(self.ref_db, str):
             self.ref_db = str(self.ref_db)
 
-        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, str):
-            self.rel_to_oxygen = str(self.rel_to_oxygen)
+        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, RelToOxygenEnum):
+            self.rel_to_oxygen = RelToOxygenEnum(self.rel_to_oxygen)
 
         if self.samp_collec_device is not None and not isinstance(self.samp_collec_device, str):
             self.samp_collec_device = str(self.samp_collec_device)
@@ -2437,7 +2437,7 @@ class Miuvig(ChecklistClass):
     geo_loc_name: str = None
     lat_lon: str = None
     number_contig: int = None
-    pred_genome_struc: str = None
+    pred_genome_struc: Union[str, "PredGenomeStrucEnum"] = None
     pred_genome_type: str = None
     project_name: str = None
     samp_name: str = None
@@ -2445,16 +2445,16 @@ class Miuvig(ChecklistClass):
     seq_meth: str = None
     source_uvig: str = None
     vir_ident_software: str = None
-    virus_enrich_appr: str = None
+    virus_enrich_appr: Union[str, "VirusEnrichApprEnum"] = None
     adapters: Optional[str] = None
     alt: Optional[str] = None
     annot: Optional[str] = None
     assembly_name: Optional[str] = None
     associated_resource: Optional[Union[str, List[str]]] = empty_list()
-    bin_param: Optional[str] = None
+    bin_param: Optional[Union[str, "BinParamEnum"]] = None
     bin_software: Optional[str] = None
-    biotic_relationship: Optional[str] = None
-    compl_appr: Optional[str] = None
+    biotic_relationship: Optional[Union[str, "BioticRelationshipEnum"]] = None
+    compl_appr: Optional[Union[str, "ComplApprEnum"]] = None
     compl_score: Optional[str] = None
     compl_software: Optional[str] = None
     depth: Optional[str] = None
@@ -2463,17 +2463,17 @@ class Miuvig(ChecklistClass):
     experimental_factor: Optional[str] = None
     feat_pred: Optional[str] = None
     host_disease_stat: Optional[Union[str, List[str]]] = empty_list()
-    host_pred_appr: Optional[str] = None
+    host_pred_appr: Optional[Union[str, "HostPredApprEnum"]] = None
     host_pred_est_acc: Optional[str] = None
     host_spec_range: Optional[Union[int, List[int]]] = empty_list()
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
-    mag_cov_software: Optional[str] = None
+    mag_cov_software: Optional[Union[str, "MagCovSoftwareEnum"]] = None
     mid: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     otu_class_appr: Optional[str] = None
@@ -2490,19 +2490,19 @@ class Miuvig(ChecklistClass):
     samp_size: Optional[str] = None
     samp_vol_we_dna_ext: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[str] = None
+    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
-    sort_tech: Optional[str] = None
+    sort_tech: Optional[Union[str, "SortTechEnum"]] = None
     source_mat_id: Optional[Union[str, List[str]]] = empty_list()
     specific_host: Optional[str] = None
     tax_class: Optional[str] = None
-    tax_ident: Optional[str] = None
+    tax_ident: Optional[Union[str, "TaxIdentEnum"]] = None
     temp: Optional[str] = None
     trna_ext_software: Optional[str] = None
     trnas: Optional[int] = None
-    wga_amp_appr: Optional[str] = None
+    wga_amp_appr: Optional[Union[str, "WgaAmpApprEnum"]] = None
     wga_amp_kit: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -2558,8 +2558,8 @@ class Miuvig(ChecklistClass):
 
         if self._is_empty(self.pred_genome_struc):
             self.MissingRequiredField("pred_genome_struc")
-        if not isinstance(self.pred_genome_struc, str):
-            self.pred_genome_struc = str(self.pred_genome_struc)
+        if not isinstance(self.pred_genome_struc, PredGenomeStrucEnum):
+            self.pred_genome_struc = PredGenomeStrucEnum(self.pred_genome_struc)
 
         if self._is_empty(self.pred_genome_type):
             self.MissingRequiredField("pred_genome_type")
@@ -2598,8 +2598,8 @@ class Miuvig(ChecklistClass):
 
         if self._is_empty(self.virus_enrich_appr):
             self.MissingRequiredField("virus_enrich_appr")
-        if not isinstance(self.virus_enrich_appr, str):
-            self.virus_enrich_appr = str(self.virus_enrich_appr)
+        if not isinstance(self.virus_enrich_appr, VirusEnrichApprEnum):
+            self.virus_enrich_appr = VirusEnrichApprEnum(self.virus_enrich_appr)
 
         if self.adapters is not None and not isinstance(self.adapters, str):
             self.adapters = str(self.adapters)
@@ -2617,17 +2617,17 @@ class Miuvig(ChecklistClass):
             self.associated_resource = [self.associated_resource] if self.associated_resource is not None else []
         self.associated_resource = [v if isinstance(v, str) else str(v) for v in self.associated_resource]
 
-        if self.bin_param is not None and not isinstance(self.bin_param, str):
-            self.bin_param = str(self.bin_param)
+        if self.bin_param is not None and not isinstance(self.bin_param, BinParamEnum):
+            self.bin_param = BinParamEnum(self.bin_param)
 
         if self.bin_software is not None and not isinstance(self.bin_software, str):
             self.bin_software = str(self.bin_software)
 
-        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, str):
-            self.biotic_relationship = str(self.biotic_relationship)
+        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, BioticRelationshipEnum):
+            self.biotic_relationship = BioticRelationshipEnum(self.biotic_relationship)
 
-        if self.compl_appr is not None and not isinstance(self.compl_appr, str):
-            self.compl_appr = str(self.compl_appr)
+        if self.compl_appr is not None and not isinstance(self.compl_appr, ComplApprEnum):
+            self.compl_appr = ComplApprEnum(self.compl_appr)
 
         if self.compl_score is not None and not isinstance(self.compl_score, str):
             self.compl_score = str(self.compl_score)
@@ -2654,8 +2654,8 @@ class Miuvig(ChecklistClass):
             self.host_disease_stat = [self.host_disease_stat] if self.host_disease_stat is not None else []
         self.host_disease_stat = [v if isinstance(v, str) else str(v) for v in self.host_disease_stat]
 
-        if self.host_pred_appr is not None and not isinstance(self.host_pred_appr, str):
-            self.host_pred_appr = str(self.host_pred_appr)
+        if self.host_pred_appr is not None and not isinstance(self.host_pred_appr, HostPredApprEnum):
+            self.host_pred_appr = HostPredApprEnum(self.host_pred_appr)
 
         if self.host_pred_est_acc is not None and not isinstance(self.host_pred_est_acc, str):
             self.host_pred_est_acc = str(self.host_pred_est_acc)
@@ -2664,8 +2664,8 @@ class Miuvig(ChecklistClass):
             self.host_spec_range = [self.host_spec_range] if self.host_spec_range is not None else []
         self.host_spec_range = [v if isinstance(v, int) else int(v) for v in self.host_spec_range]
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -2679,14 +2679,14 @@ class Miuvig(ChecklistClass):
         if self.lib_vector is not None and not isinstance(self.lib_vector, str):
             self.lib_vector = str(self.lib_vector)
 
-        if self.mag_cov_software is not None and not isinstance(self.mag_cov_software, str):
-            self.mag_cov_software = str(self.mag_cov_software)
+        if self.mag_cov_software is not None and not isinstance(self.mag_cov_software, MagCovSoftwareEnum):
+            self.mag_cov_software = MagCovSoftwareEnum(self.mag_cov_software)
 
         if self.mid is not None and not isinstance(self.mid, str):
             self.mid = str(self.mid)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -2736,8 +2736,8 @@ class Miuvig(ChecklistClass):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
-            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
+            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -2749,8 +2749,8 @@ class Miuvig(ChecklistClass):
             self.sop = [self.sop] if self.sop is not None else []
         self.sop = [v if isinstance(v, str) else str(v) for v in self.sop]
 
-        if self.sort_tech is not None and not isinstance(self.sort_tech, str):
-            self.sort_tech = str(self.sort_tech)
+        if self.sort_tech is not None and not isinstance(self.sort_tech, SortTechEnum):
+            self.sort_tech = SortTechEnum(self.sort_tech)
 
         if not isinstance(self.source_mat_id, list):
             self.source_mat_id = [self.source_mat_id] if self.source_mat_id is not None else []
@@ -2762,8 +2762,8 @@ class Miuvig(ChecklistClass):
         if self.tax_class is not None and not isinstance(self.tax_class, str):
             self.tax_class = str(self.tax_class)
 
-        if self.tax_ident is not None and not isinstance(self.tax_ident, str):
-            self.tax_ident = str(self.tax_ident)
+        if self.tax_ident is not None and not isinstance(self.tax_ident, TaxIdentEnum):
+            self.tax_ident = TaxIdentEnum(self.tax_ident)
 
         if self.temp is not None and not isinstance(self.temp, str):
             self.temp = str(self.temp)
@@ -2774,8 +2774,8 @@ class Miuvig(ChecklistClass):
         if self.trnas is not None and not isinstance(self.trnas, int):
             self.trnas = int(self.trnas)
 
-        if self.wga_amp_appr is not None and not isinstance(self.wga_amp_appr, str):
-            self.wga_amp_appr = str(self.wga_amp_appr)
+        if self.wga_amp_appr is not None and not isinstance(self.wga_amp_appr, WgaAmpApprEnum):
+            self.wga_amp_appr = WgaAmpApprEnum(self.wga_amp_appr)
 
         if self.wga_amp_kit is not None and not isinstance(self.wga_amp_kit, str):
             self.wga_amp_kit = str(self.wga_amp_kit)
@@ -2813,20 +2813,20 @@ class Mims(ChecklistClass):
     elev: Optional[str] = None
     experimental_factor: Optional[str] = None
     feat_pred: Optional[str] = None
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
     mid: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     number_contig: Optional[int] = None
     pos_cont_type: Optional[str] = None
     ref_biomaterial: Optional[str] = None
     ref_db: Optional[str] = None
-    rel_to_oxygen: Optional[str] = None
+    rel_to_oxygen: Optional[Union[str, "RelToOxygenEnum"]] = None
     samp_collec_device: Optional[str] = None
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
@@ -2924,8 +2924,8 @@ class Mims(ChecklistClass):
         if self.feat_pred is not None and not isinstance(self.feat_pred, str):
             self.feat_pred = str(self.feat_pred)
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -2942,8 +2942,8 @@ class Mims(ChecklistClass):
         if self.mid is not None and not isinstance(self.mid, str):
             self.mid = str(self.mid)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -2963,8 +2963,8 @@ class Mims(ChecklistClass):
         if self.ref_db is not None and not isinstance(self.ref_db, str):
             self.ref_db = str(self.ref_db)
 
-        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, str):
-            self.rel_to_oxygen = str(self.rel_to_oxygen)
+        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, RelToOxygenEnum):
+            self.rel_to_oxygen = RelToOxygenEnum(self.rel_to_oxygen)
 
         if self.samp_collec_device is not None and not isinstance(self.samp_collec_device, str):
             self.samp_collec_device = str(self.samp_collec_device)
@@ -3037,7 +3037,7 @@ class Agriculture(EnvPackageClass):
     assembly_name: Optional[str] = None
     assembly_quality: Optional[str] = None
     assembly_software: Optional[str] = None
-    biotic_relationship: Optional[str] = None
+    biotic_relationship: Optional[Union[str, "BioticRelationshipEnum"]] = None
     chem_administration: Optional[str] = None
     chimera_check: Optional[str] = None
     climate_environment: Optional[str] = None
@@ -3047,15 +3047,15 @@ class Agriculture(EnvPackageClass):
     cur_land_use: Optional[str] = None
     cur_vegetation: Optional[str] = None
     cur_vegetation_meth: Optional[str] = None
-    drainage_class: Optional[str] = None
+    drainage_class: Optional[Union[str, "DrainageClassEnum"]] = None
     elev: Optional[str] = None
     enrichment_protocol: Optional[str] = None
     extreme_event: Optional[str] = None
-    fao_class: Optional[str] = None
+    fao_class: Optional[Union[str, "FaoClassEnum"]] = None
     farm_equip: Optional[str] = None
     farm_equip_san: Optional[str] = None
     farm_equip_shared: Optional[str] = None
-    farm_water_source: Optional[Union[str, List[str]]] = empty_list()
+    farm_water_source: Optional[Union[Union[str, "FarmWaterSourceEnum"], List[Union[str, "FarmWaterSourceEnum"]]]] = empty_list()
     fertilizer_admin: Optional[str] = None
     fire: Optional[str] = None
     flooding: Optional[str] = None
@@ -3088,7 +3088,7 @@ class Agriculture(EnvPackageClass):
     host_tot_mass: Optional[str] = None
     humidity: Optional[str] = None
     isol_growth_condt: Optional[str] = None
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
@@ -3126,7 +3126,7 @@ class Agriculture(EnvPackageClass):
     pres_animal_insect: Optional[str] = None
     previous_land_use: Optional[str] = None
     previous_land_use_meth: Optional[str] = None
-    profile_position: Optional[str] = None
+    profile_position: Optional[Union[str, "ProfilePositionEnum"]] = None
     rel_location: Optional[str] = None
     root_med_carbon: Optional[str] = None
     root_med_macronutr: Optional[str] = None
@@ -3147,7 +3147,7 @@ class Agriculture(EnvPackageClass):
     season_precpt: Optional[str] = None
     season_temp: Optional[str] = None
     seq_meth: Optional[str] = None
-    seq_quality_check: Optional[str] = None
+    seq_quality_check: Optional[Union[str, "SeqQualityCheckEnum"]] = None
     sequencing_location: Optional[str] = None
     sieving: Optional[str] = None
     size_frac_low: Optional[str] = None
@@ -3174,17 +3174,17 @@ class Agriculture(EnvPackageClass):
     temp: Optional[str] = None
     texture: Optional[str] = None
     texture_meth: Optional[str] = None
-    tillage: Optional[Union[str, List[str]]] = empty_list()
+    tillage: Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]] = empty_list()
     tot_car: Optional[str] = None
     tot_n_meth: Optional[str] = None
     tot_nitro: Optional[str] = None
     tot_org_c_meth: Optional[str] = None
     tot_org_carb: Optional[str] = None
     tot_phos: Optional[str] = None
-    trophic_level: Optional[str] = None
+    trophic_level: Optional[Union[str, "TrophicLevelEnum"]] = None
     url: Optional[str] = None
     water_p_h: Optional[str] = None
-    water_source_shared: Optional[Union[str, List[str]]] = empty_list()
+    water_source_shared: Optional[Union[Union[str, "WaterSourceSharedEnum"], List[Union[str, "WaterSourceSharedEnum"]]]] = empty_list()
     water_temp_regm: Optional[str] = None
     watering_regm: Optional[str] = None
 
@@ -3225,8 +3225,8 @@ class Agriculture(EnvPackageClass):
         if self.assembly_software is not None and not isinstance(self.assembly_software, str):
             self.assembly_software = str(self.assembly_software)
 
-        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, str):
-            self.biotic_relationship = str(self.biotic_relationship)
+        if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, BioticRelationshipEnum):
+            self.biotic_relationship = BioticRelationshipEnum(self.biotic_relationship)
 
         if self.chem_administration is not None and not isinstance(self.chem_administration, str):
             self.chem_administration = str(self.chem_administration)
@@ -3255,8 +3255,8 @@ class Agriculture(EnvPackageClass):
         if self.cur_vegetation_meth is not None and not isinstance(self.cur_vegetation_meth, str):
             self.cur_vegetation_meth = str(self.cur_vegetation_meth)
 
-        if self.drainage_class is not None and not isinstance(self.drainage_class, str):
-            self.drainage_class = str(self.drainage_class)
+        if self.drainage_class is not None and not isinstance(self.drainage_class, DrainageClassEnum):
+            self.drainage_class = DrainageClassEnum(self.drainage_class)
 
         if self.elev is not None and not isinstance(self.elev, str):
             self.elev = str(self.elev)
@@ -3267,8 +3267,8 @@ class Agriculture(EnvPackageClass):
         if self.extreme_event is not None and not isinstance(self.extreme_event, str):
             self.extreme_event = str(self.extreme_event)
 
-        if self.fao_class is not None and not isinstance(self.fao_class, str):
-            self.fao_class = str(self.fao_class)
+        if self.fao_class is not None and not isinstance(self.fao_class, FaoClassEnum):
+            self.fao_class = FaoClassEnum(self.fao_class)
 
         if self.farm_equip is not None and not isinstance(self.farm_equip, str):
             self.farm_equip = str(self.farm_equip)
@@ -3281,7 +3281,7 @@ class Agriculture(EnvPackageClass):
 
         if not isinstance(self.farm_water_source, list):
             self.farm_water_source = [self.farm_water_source] if self.farm_water_source is not None else []
-        self.farm_water_source = [v if isinstance(v, str) else str(v) for v in self.farm_water_source]
+        self.farm_water_source = [v if isinstance(v, FarmWaterSourceEnum) else FarmWaterSourceEnum(v) for v in self.farm_water_source]
 
         if self.fertilizer_admin is not None and not isinstance(self.fertilizer_admin, str):
             self.fertilizer_admin = str(self.fertilizer_admin)
@@ -3383,8 +3383,8 @@ class Agriculture(EnvPackageClass):
         if self.isol_growth_condt is not None and not isinstance(self.isol_growth_condt, str):
             self.isol_growth_condt = str(self.isol_growth_condt)
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -3500,8 +3500,8 @@ class Agriculture(EnvPackageClass):
         if self.previous_land_use_meth is not None and not isinstance(self.previous_land_use_meth, str):
             self.previous_land_use_meth = str(self.previous_land_use_meth)
 
-        if self.profile_position is not None and not isinstance(self.profile_position, str):
-            self.profile_position = str(self.profile_position)
+        if self.profile_position is not None and not isinstance(self.profile_position, ProfilePositionEnum):
+            self.profile_position = ProfilePositionEnum(self.profile_position)
 
         if self.rel_location is not None and not isinstance(self.rel_location, str):
             self.rel_location = str(self.rel_location)
@@ -3563,8 +3563,8 @@ class Agriculture(EnvPackageClass):
         if self.seq_meth is not None and not isinstance(self.seq_meth, str):
             self.seq_meth = str(self.seq_meth)
 
-        if self.seq_quality_check is not None and not isinstance(self.seq_quality_check, str):
-            self.seq_quality_check = str(self.seq_quality_check)
+        if self.seq_quality_check is not None and not isinstance(self.seq_quality_check, SeqQualityCheckEnum):
+            self.seq_quality_check = SeqQualityCheckEnum(self.seq_quality_check)
 
         if self.sequencing_location is not None and not isinstance(self.sequencing_location, str):
             self.sequencing_location = str(self.sequencing_location)
@@ -3649,7 +3649,7 @@ class Agriculture(EnvPackageClass):
 
         if not isinstance(self.tillage, list):
             self.tillage = [self.tillage] if self.tillage is not None else []
-        self.tillage = [v if isinstance(v, str) else str(v) for v in self.tillage]
+        self.tillage = [v if isinstance(v, TillageEnum) else TillageEnum(v) for v in self.tillage]
 
         if self.tot_car is not None and not isinstance(self.tot_car, str):
             self.tot_car = str(self.tot_car)
@@ -3669,8 +3669,8 @@ class Agriculture(EnvPackageClass):
         if self.tot_phos is not None and not isinstance(self.tot_phos, str):
             self.tot_phos = str(self.tot_phos)
 
-        if self.trophic_level is not None and not isinstance(self.trophic_level, str):
-            self.trophic_level = str(self.trophic_level)
+        if self.trophic_level is not None and not isinstance(self.trophic_level, TrophicLevelEnum):
+            self.trophic_level = TrophicLevelEnum(self.trophic_level)
 
         if self.url is not None and not isinstance(self.url, str):
             self.url = str(self.url)
@@ -3680,7 +3680,7 @@ class Agriculture(EnvPackageClass):
 
         if not isinstance(self.water_source_shared, list):
             self.water_source_shared = [self.water_source_shared] if self.water_source_shared is not None else []
-        self.water_source_shared = [v if isinstance(v, str) else str(v) for v in self.water_source_shared]
+        self.water_source_shared = [v if isinstance(v, WaterSourceSharedEnum) else WaterSourceSharedEnum(v) for v in self.water_source_shared]
 
         if self.water_temp_regm is not None and not isinstance(self.water_temp_regm, str):
             self.water_temp_regm = str(self.water_temp_regm)
@@ -3836,109 +3836,109 @@ class BuiltEnvironment(EnvPackageClass):
     abs_air_humidity: Optional[str] = None
     address: Optional[str] = None
     adj_room: Optional[str] = None
-    aero_struc: Optional[str] = None
+    aero_struc: Optional[Union[str, "AeroStrucEnum"]] = None
     air_temp: Optional[str] = None
     amount_light: Optional[str] = None
-    arch_struc: Optional[str] = None
+    arch_struc: Optional[Union[str, "ArchStrucEnum"]] = None
     avg_dew_point: Optional[str] = None
     avg_occup: Optional[float] = None
     avg_temp: Optional[str] = None
     bathroom_count: Optional[int] = None
     bedroom_count: Optional[int] = None
-    build_docs: Optional[str] = None
-    build_occup_type: Optional[Union[str, List[str]]] = empty_list()
-    building_setting: Optional[str] = None
+    build_docs: Optional[Union[str, "BuildDocsEnum"]] = None
+    build_occup_type: Optional[Union[Union[str, "BuildOccupTypeEnum"], List[Union[str, "BuildOccupTypeEnum"]]]] = empty_list()
+    building_setting: Optional[Union[str, "BuildingSettingEnum"]] = None
     built_struc_age: Optional[str] = None
-    built_struc_set: Optional[str] = None
+    built_struc_set: Optional[Union[str, "BuiltStrucSetEnum"]] = None
     built_struc_type: Optional[str] = None
     carb_dioxide: Optional[str] = None
     ceil_area: Optional[str] = None
-    ceil_cond: Optional[str] = None
-    ceil_finish_mat: Optional[str] = None
-    ceil_struc: Optional[str] = None
-    ceil_texture: Optional[str] = None
+    ceil_cond: Optional[Union[str, "CeilCondEnum"]] = None
+    ceil_finish_mat: Optional[Union[str, "CeilFinishMatEnum"]] = None
+    ceil_struc: Optional[Union[str, "CeilStrucEnum"]] = None
+    ceil_texture: Optional[Union[str, "CeilTextureEnum"]] = None
     ceil_thermal_mass: Optional[str] = None
-    ceil_type: Optional[str] = None
-    ceil_water_mold: Optional[str] = None
+    ceil_type: Optional[Union[str, "CeilTypeEnum"]] = None
+    ceil_water_mold: Optional[Union[str, "CeilWaterMoldEnum"]] = None
     cool_syst_id: Optional[int] = None
     date_last_rain: Optional[str] = None
     dew_point: Optional[str] = None
-    door_comp_type: Optional[str] = None
-    door_cond: Optional[str] = None
-    door_direct: Optional[str] = None
-    door_loc: Optional[str] = None
-    door_mat: Optional[str] = None
-    door_move: Optional[str] = None
+    door_comp_type: Optional[Union[str, "DoorCompTypeEnum"]] = None
+    door_cond: Optional[Union[str, "DoorCondEnum"]] = None
+    door_direct: Optional[Union[str, "DoorDirectEnum"]] = None
+    door_loc: Optional[Union[str, "DoorLocEnum"]] = None
+    door_mat: Optional[Union[str, "DoorMatEnum"]] = None
+    door_move: Optional[Union[str, "DoorMoveEnum"]] = None
     door_size: Optional[str] = None
-    door_type: Optional[str] = None
-    door_type_metal: Optional[str] = None
-    door_type_wood: Optional[str] = None
-    door_water_mold: Optional[str] = None
-    drawings: Optional[str] = None
+    door_type: Optional[Union[str, "DoorTypeEnum"]] = None
+    door_type_metal: Optional[Union[str, "DoorTypeMetalEnum"]] = None
+    door_type_wood: Optional[Union[str, "DoorTypeWoodEnum"]] = None
+    door_water_mold: Optional[Union[str, "DoorWaterMoldEnum"]] = None
+    drawings: Optional[Union[str, "DrawingsEnum"]] = None
     elevator: Optional[int] = None
     escalator: Optional[int] = None
     exp_duct: Optional[str] = None
     exp_pipe: Optional[int] = None
     ext_door: Optional[int] = None
-    ext_wall_orient: Optional[str] = None
-    ext_window_orient: Optional[str] = None
-    filter_type: Optional[Union[str, List[str]]] = empty_list()
-    fireplace_type: Optional[str] = None
+    ext_wall_orient: Optional[Union[str, "DrawingsEnum"]] = None
+    ext_window_orient: Optional[Union[str, "ExtWindowOrientEnum"]] = None
+    filter_type: Optional[Union[Union[str, "FilterTypeEnum"], List[Union[str, "FilterTypeEnum"]]]] = empty_list()
+    fireplace_type: Optional[Union[str, "FireplaceTypeEnum"]] = None
     floor_age: Optional[str] = None
     floor_area: Optional[str] = None
-    floor_cond: Optional[str] = None
+    floor_cond: Optional[Union[str, "FloorCondEnum"]] = None
     floor_count: Optional[int] = None
     floor_finish_mat: Optional[str] = None
     floor_struc: Optional[str] = None
     floor_thermal_mass: Optional[str] = None
-    floor_water_mold: Optional[str] = None
+    floor_water_mold: Optional[Union[str, "FloorWaterMoldEnum"]] = None
     freq_clean: Optional[str] = None
     freq_cook: Optional[int] = None
-    furniture: Optional[str] = None
-    gender_restroom: Optional[str] = None
+    furniture: Optional[Union[str, "FurnitureEnum"]] = None
+    gender_restroom: Optional[Union[str, "GenderRestroomEnum"]] = None
     hall_count: Optional[int] = None
-    handidness: Optional[str] = None
-    heat_cool_type: Optional[Union[str, List[str]]] = empty_list()
+    handidness: Optional[Union[str, "HandidnessEnum"]] = None
+    heat_cool_type: Optional[Union[Union[str, "HeatCoolTypeEnum"], List[Union[str, "HeatCoolTypeEnum"]]]] = empty_list()
     heat_deliv_loc: Optional[str] = None
-    heat_sys_deliv_meth: Optional[str] = None
+    heat_sys_deliv_meth: Optional[Union[str, "HeatSysDelivMethEnum"]] = None
     heat_system_id: Optional[int] = None
     height_carper_fiber: Optional[str] = None
-    indoor_space: Optional[str] = None
+    indoor_space: Optional[Union[str, "IndoorSpaceEnum"]] = None
     indoor_surf: Optional[str] = None
     inside_lux: Optional[str] = None
-    int_wall_cond: Optional[str] = None
+    int_wall_cond: Optional[Union[str, "IntWallCondEnum"]] = None
     last_clean: Optional[str] = None
-    light_type: Optional[Union[str, List[str]]] = empty_list()
+    light_type: Optional[Union[Union[str, "LightTypeEnum"], List[Union[str, "LightTypeEnum"]]]] = empty_list()
     max_occup: Optional[int] = None
-    mech_struc: Optional[str] = None
+    mech_struc: Optional[Union[str, "MechStrucEnum"]] = None
     number_pets: Optional[int] = None
     number_plants: Optional[int] = None
     number_resident: Optional[int] = None
     occup_density_samp: Optional[float] = None
-    occup_document: Optional[str] = None
+    occup_document: Optional[Union[str, "OccupDocumentEnum"]] = None
     occup_samp: Optional[int] = None
     organism_count: Optional[str] = None
     pres_animal_insect: Optional[str] = None
     project_name: Optional[str] = None
-    quad_pos: Optional[str] = None
+    quad_pos: Optional[Union[str, "QuadPosEnum"]] = None
     rel_air_humidity: Optional[str] = None
     rel_humidity_out: Optional[str] = None
-    rel_samp_loc: Optional[str] = None
+    rel_samp_loc: Optional[Union[str, "RelSampLocEnum"]] = None
     room_air_exch_rate: Optional[str] = None
     room_architec_elem: Optional[str] = None
-    room_condt: Optional[str] = None
-    room_connected: Optional[str] = None
+    room_condt: Optional[Union[str, "RelSampLocEnum"]] = None
+    room_connected: Optional[Union[str, "RoomConnectedEnum"]] = None
     room_count: Optional[int] = None
     room_dim: Optional[str] = None
     room_door_dist: Optional[str] = None
     room_door_share: Optional[str] = None
     room_hallway: Optional[str] = None
-    room_loc: Optional[str] = None
+    room_loc: Optional[Union[str, "RoomLocEnum"]] = None
     room_moist_dam_hist: Optional[int] = None
     room_net_area: Optional[str] = None
     room_occup: Optional[int] = None
-    room_samp_pos: Optional[str] = None
-    room_type: Optional[str] = None
+    room_samp_pos: Optional[Union[str, "RoomSampPosEnum"]] = None
+    room_type: Optional[Union[str, "RoomTypeEnum"]] = None
     room_vol: Optional[str] = None
     room_wall_share: Optional[str] = None
     room_window_count: Optional[int] = None
@@ -3947,19 +3947,19 @@ class BuiltEnvironment(EnvPackageClass):
     samp_room_id: Optional[str] = None
     samp_sort_meth: Optional[Union[str, List[str]]] = empty_list()
     samp_time_out: Optional[float] = None
-    samp_weather: Optional[str] = None
+    samp_weather: Optional[Union[str, "SampWeatherEnum"]] = None
     season: Optional[str] = None
-    season_use: Optional[str] = None
-    shad_dev_water_mold: Optional[str] = None
-    shading_device_cond: Optional[str] = None
-    shading_device_loc: Optional[str] = None
+    season_use: Optional[Union[str, "SeasonUseEnum"]] = None
+    shad_dev_water_mold: Optional[Union[str, "ShadDevWaterMoldEnum"]] = None
+    shading_device_cond: Optional[Union[str, "ShadingDeviceCondEnum"]] = None
+    shading_device_loc: Optional[Union[str, "ShadingDeviceLocEnum"]] = None
     shading_device_mat: Optional[str] = None
-    shading_device_type: Optional[str] = None
-    space_typ_state: Optional[str] = None
-    specific: Optional[str] = None
+    shading_device_type: Optional[Union[str, "ShadingDeviceTypeEnum"]] = None
+    space_typ_state: Optional[Union[str, "SpaceTypStateEnum"]] = None
+    specific: Optional[Union[str, "SpecificEnum"]] = None
     specific_humidity: Optional[str] = None
-    substructure_type: Optional[Union[str, List[str]]] = empty_list()
-    surf_air_cont: Optional[Union[str, List[str]]] = empty_list()
+    substructure_type: Optional[Union[Union[str, "SubstructureTypeEnum"], List[Union[str, "SubstructureTypeEnum"]]]] = empty_list()
+    surf_air_cont: Optional[Union[Union[str, "SurfAirContEnum"], List[Union[str, "SurfAirContEnum"]]]] = empty_list()
     surf_humidity: Optional[str] = None
     surf_material: Optional[str] = None
     surf_moisture: Optional[str] = None
@@ -3967,34 +3967,34 @@ class BuiltEnvironment(EnvPackageClass):
     surf_temp: Optional[str] = None
     temp_out: Optional[str] = None
     train_line: Optional[str] = None
-    train_stat_loc: Optional[str] = None
-    train_stop_loc: Optional[str] = None
+    train_stat_loc: Optional[Union[str, "TrainStatLocEnum"]] = None
+    train_stop_loc: Optional[Union[str, "TrainStopLocEnum"]] = None
     typ_occup_density: Optional[float] = None
     ventilation_type: Optional[str] = None
     vis_media: Optional[str] = None
     wall_area: Optional[str] = None
-    wall_const_type: Optional[str] = None
-    wall_finish_mat: Optional[str] = None
+    wall_const_type: Optional[Union[str, "WallConstTypeEnum"]] = None
+    wall_finish_mat: Optional[Union[str, "WallFinishMatEnum"]] = None
     wall_height: Optional[str] = None
-    wall_loc: Optional[str] = None
-    wall_surf_treatment: Optional[str] = None
-    wall_texture: Optional[str] = None
+    wall_loc: Optional[Union[str, "WallLocEnum"]] = None
+    wall_surf_treatment: Optional[Union[str, "WallSurfTreatmentEnum"]] = None
+    wall_texture: Optional[Union[str, "WallTextureEnum"]] = None
     wall_thermal_mass: Optional[str] = None
-    wall_water_mold: Optional[str] = None
+    wall_water_mold: Optional[Union[str, "WallWaterMoldEnum"]] = None
     water_feat_size: Optional[str] = None
-    water_feat_type: Optional[str] = None
-    weekday: Optional[str] = None
-    window_cond: Optional[str] = None
+    water_feat_type: Optional[Union[str, "WaterFeatTypeEnum"]] = None
+    weekday: Optional[Union[str, "WeekdayEnum"]] = None
+    window_cond: Optional[Union[str, "WindowCondEnum"]] = None
     window_cover: Optional[str] = None
-    window_horiz_pos: Optional[str] = None
-    window_loc: Optional[str] = None
-    window_mat: Optional[str] = None
+    window_horiz_pos: Optional[Union[str, "WindowHorizPosEnum"]] = None
+    window_loc: Optional[Union[str, "WindowLocEnum"]] = None
+    window_mat: Optional[Union[str, "WindowLocEnum"]] = None
     window_open_freq: Optional[int] = None
     window_size: Optional[str] = None
-    window_status: Optional[str] = None
-    window_type: Optional[str] = None
-    window_vert_pos: Optional[str] = None
-    window_water_mold: Optional[str] = None
+    window_status: Optional[Union[str, "WindowStatusEnum"]] = None
+    window_type: Optional[Union[str, "WindowTypeEnum"]] = None
+    window_vert_pos: Optional[Union[str, "WindowVertPosEnum"]] = None
+    window_water_mold: Optional[Union[str, "WindowWaterMoldEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.abs_air_humidity is not None and not isinstance(self.abs_air_humidity, str):
@@ -4006,8 +4006,8 @@ class BuiltEnvironment(EnvPackageClass):
         if self.adj_room is not None and not isinstance(self.adj_room, str):
             self.adj_room = str(self.adj_room)
 
-        if self.aero_struc is not None and not isinstance(self.aero_struc, str):
-            self.aero_struc = str(self.aero_struc)
+        if self.aero_struc is not None and not isinstance(self.aero_struc, AeroStrucEnum):
+            self.aero_struc = AeroStrucEnum(self.aero_struc)
 
         if self.air_temp is not None and not isinstance(self.air_temp, str):
             self.air_temp = str(self.air_temp)
@@ -4015,8 +4015,8 @@ class BuiltEnvironment(EnvPackageClass):
         if self.amount_light is not None and not isinstance(self.amount_light, str):
             self.amount_light = str(self.amount_light)
 
-        if self.arch_struc is not None and not isinstance(self.arch_struc, str):
-            self.arch_struc = str(self.arch_struc)
+        if self.arch_struc is not None and not isinstance(self.arch_struc, ArchStrucEnum):
+            self.arch_struc = ArchStrucEnum(self.arch_struc)
 
         if self.avg_dew_point is not None and not isinstance(self.avg_dew_point, str):
             self.avg_dew_point = str(self.avg_dew_point)
@@ -4033,21 +4033,21 @@ class BuiltEnvironment(EnvPackageClass):
         if self.bedroom_count is not None and not isinstance(self.bedroom_count, int):
             self.bedroom_count = int(self.bedroom_count)
 
-        if self.build_docs is not None and not isinstance(self.build_docs, str):
-            self.build_docs = str(self.build_docs)
+        if self.build_docs is not None and not isinstance(self.build_docs, BuildDocsEnum):
+            self.build_docs = BuildDocsEnum(self.build_docs)
 
         if not isinstance(self.build_occup_type, list):
             self.build_occup_type = [self.build_occup_type] if self.build_occup_type is not None else []
-        self.build_occup_type = [v if isinstance(v, str) else str(v) for v in self.build_occup_type]
+        self.build_occup_type = [v if isinstance(v, BuildOccupTypeEnum) else BuildOccupTypeEnum(v) for v in self.build_occup_type]
 
-        if self.building_setting is not None and not isinstance(self.building_setting, str):
-            self.building_setting = str(self.building_setting)
+        if self.building_setting is not None and not isinstance(self.building_setting, BuildingSettingEnum):
+            self.building_setting = BuildingSettingEnum(self.building_setting)
 
         if self.built_struc_age is not None and not isinstance(self.built_struc_age, str):
             self.built_struc_age = str(self.built_struc_age)
 
-        if self.built_struc_set is not None and not isinstance(self.built_struc_set, str):
-            self.built_struc_set = str(self.built_struc_set)
+        if self.built_struc_set is not None and not isinstance(self.built_struc_set, BuiltStrucSetEnum):
+            self.built_struc_set = BuiltStrucSetEnum(self.built_struc_set)
 
         if self.built_struc_type is not None and not isinstance(self.built_struc_type, str):
             self.built_struc_type = str(self.built_struc_type)
@@ -4058,26 +4058,26 @@ class BuiltEnvironment(EnvPackageClass):
         if self.ceil_area is not None and not isinstance(self.ceil_area, str):
             self.ceil_area = str(self.ceil_area)
 
-        if self.ceil_cond is not None and not isinstance(self.ceil_cond, str):
-            self.ceil_cond = str(self.ceil_cond)
+        if self.ceil_cond is not None and not isinstance(self.ceil_cond, CeilCondEnum):
+            self.ceil_cond = CeilCondEnum(self.ceil_cond)
 
-        if self.ceil_finish_mat is not None and not isinstance(self.ceil_finish_mat, str):
-            self.ceil_finish_mat = str(self.ceil_finish_mat)
+        if self.ceil_finish_mat is not None and not isinstance(self.ceil_finish_mat, CeilFinishMatEnum):
+            self.ceil_finish_mat = CeilFinishMatEnum(self.ceil_finish_mat)
 
-        if self.ceil_struc is not None and not isinstance(self.ceil_struc, str):
-            self.ceil_struc = str(self.ceil_struc)
+        if self.ceil_struc is not None and not isinstance(self.ceil_struc, CeilStrucEnum):
+            self.ceil_struc = CeilStrucEnum(self.ceil_struc)
 
-        if self.ceil_texture is not None and not isinstance(self.ceil_texture, str):
-            self.ceil_texture = str(self.ceil_texture)
+        if self.ceil_texture is not None and not isinstance(self.ceil_texture, CeilTextureEnum):
+            self.ceil_texture = CeilTextureEnum(self.ceil_texture)
 
         if self.ceil_thermal_mass is not None and not isinstance(self.ceil_thermal_mass, str):
             self.ceil_thermal_mass = str(self.ceil_thermal_mass)
 
-        if self.ceil_type is not None and not isinstance(self.ceil_type, str):
-            self.ceil_type = str(self.ceil_type)
+        if self.ceil_type is not None and not isinstance(self.ceil_type, CeilTypeEnum):
+            self.ceil_type = CeilTypeEnum(self.ceil_type)
 
-        if self.ceil_water_mold is not None and not isinstance(self.ceil_water_mold, str):
-            self.ceil_water_mold = str(self.ceil_water_mold)
+        if self.ceil_water_mold is not None and not isinstance(self.ceil_water_mold, CeilWaterMoldEnum):
+            self.ceil_water_mold = CeilWaterMoldEnum(self.ceil_water_mold)
 
         if self.cool_syst_id is not None and not isinstance(self.cool_syst_id, int):
             self.cool_syst_id = int(self.cool_syst_id)
@@ -4088,41 +4088,41 @@ class BuiltEnvironment(EnvPackageClass):
         if self.dew_point is not None and not isinstance(self.dew_point, str):
             self.dew_point = str(self.dew_point)
 
-        if self.door_comp_type is not None and not isinstance(self.door_comp_type, str):
-            self.door_comp_type = str(self.door_comp_type)
+        if self.door_comp_type is not None and not isinstance(self.door_comp_type, DoorCompTypeEnum):
+            self.door_comp_type = DoorCompTypeEnum(self.door_comp_type)
 
-        if self.door_cond is not None and not isinstance(self.door_cond, str):
-            self.door_cond = str(self.door_cond)
+        if self.door_cond is not None and not isinstance(self.door_cond, DoorCondEnum):
+            self.door_cond = DoorCondEnum(self.door_cond)
 
-        if self.door_direct is not None and not isinstance(self.door_direct, str):
-            self.door_direct = str(self.door_direct)
+        if self.door_direct is not None and not isinstance(self.door_direct, DoorDirectEnum):
+            self.door_direct = DoorDirectEnum(self.door_direct)
 
-        if self.door_loc is not None and not isinstance(self.door_loc, str):
-            self.door_loc = str(self.door_loc)
+        if self.door_loc is not None and not isinstance(self.door_loc, DoorLocEnum):
+            self.door_loc = DoorLocEnum(self.door_loc)
 
-        if self.door_mat is not None and not isinstance(self.door_mat, str):
-            self.door_mat = str(self.door_mat)
+        if self.door_mat is not None and not isinstance(self.door_mat, DoorMatEnum):
+            self.door_mat = DoorMatEnum(self.door_mat)
 
-        if self.door_move is not None and not isinstance(self.door_move, str):
-            self.door_move = str(self.door_move)
+        if self.door_move is not None and not isinstance(self.door_move, DoorMoveEnum):
+            self.door_move = DoorMoveEnum(self.door_move)
 
         if self.door_size is not None and not isinstance(self.door_size, str):
             self.door_size = str(self.door_size)
 
-        if self.door_type is not None and not isinstance(self.door_type, str):
-            self.door_type = str(self.door_type)
+        if self.door_type is not None and not isinstance(self.door_type, DoorTypeEnum):
+            self.door_type = DoorTypeEnum(self.door_type)
 
-        if self.door_type_metal is not None and not isinstance(self.door_type_metal, str):
-            self.door_type_metal = str(self.door_type_metal)
+        if self.door_type_metal is not None and not isinstance(self.door_type_metal, DoorTypeMetalEnum):
+            self.door_type_metal = DoorTypeMetalEnum(self.door_type_metal)
 
-        if self.door_type_wood is not None and not isinstance(self.door_type_wood, str):
-            self.door_type_wood = str(self.door_type_wood)
+        if self.door_type_wood is not None and not isinstance(self.door_type_wood, DoorTypeWoodEnum):
+            self.door_type_wood = DoorTypeWoodEnum(self.door_type_wood)
 
-        if self.door_water_mold is not None and not isinstance(self.door_water_mold, str):
-            self.door_water_mold = str(self.door_water_mold)
+        if self.door_water_mold is not None and not isinstance(self.door_water_mold, DoorWaterMoldEnum):
+            self.door_water_mold = DoorWaterMoldEnum(self.door_water_mold)
 
-        if self.drawings is not None and not isinstance(self.drawings, str):
-            self.drawings = str(self.drawings)
+        if self.drawings is not None and not isinstance(self.drawings, DrawingsEnum):
+            self.drawings = DrawingsEnum(self.drawings)
 
         if self.elevator is not None and not isinstance(self.elevator, int):
             self.elevator = int(self.elevator)
@@ -4139,18 +4139,18 @@ class BuiltEnvironment(EnvPackageClass):
         if self.ext_door is not None and not isinstance(self.ext_door, int):
             self.ext_door = int(self.ext_door)
 
-        if self.ext_wall_orient is not None and not isinstance(self.ext_wall_orient, str):
-            self.ext_wall_orient = str(self.ext_wall_orient)
+        if self.ext_wall_orient is not None and not isinstance(self.ext_wall_orient, DrawingsEnum):
+            self.ext_wall_orient = DrawingsEnum(self.ext_wall_orient)
 
-        if self.ext_window_orient is not None and not isinstance(self.ext_window_orient, str):
-            self.ext_window_orient = str(self.ext_window_orient)
+        if self.ext_window_orient is not None and not isinstance(self.ext_window_orient, ExtWindowOrientEnum):
+            self.ext_window_orient = ExtWindowOrientEnum(self.ext_window_orient)
 
         if not isinstance(self.filter_type, list):
             self.filter_type = [self.filter_type] if self.filter_type is not None else []
-        self.filter_type = [v if isinstance(v, str) else str(v) for v in self.filter_type]
+        self.filter_type = [v if isinstance(v, FilterTypeEnum) else FilterTypeEnum(v) for v in self.filter_type]
 
-        if self.fireplace_type is not None and not isinstance(self.fireplace_type, str):
-            self.fireplace_type = str(self.fireplace_type)
+        if self.fireplace_type is not None and not isinstance(self.fireplace_type, FireplaceTypeEnum):
+            self.fireplace_type = FireplaceTypeEnum(self.fireplace_type)
 
         if self.floor_age is not None and not isinstance(self.floor_age, str):
             self.floor_age = str(self.floor_age)
@@ -4158,8 +4158,8 @@ class BuiltEnvironment(EnvPackageClass):
         if self.floor_area is not None and not isinstance(self.floor_area, str):
             self.floor_area = str(self.floor_area)
 
-        if self.floor_cond is not None and not isinstance(self.floor_cond, str):
-            self.floor_cond = str(self.floor_cond)
+        if self.floor_cond is not None and not isinstance(self.floor_cond, FloorCondEnum):
+            self.floor_cond = FloorCondEnum(self.floor_cond)
 
         if self.floor_count is not None and not isinstance(self.floor_count, int):
             self.floor_count = int(self.floor_count)
@@ -4173,8 +4173,8 @@ class BuiltEnvironment(EnvPackageClass):
         if self.floor_thermal_mass is not None and not isinstance(self.floor_thermal_mass, str):
             self.floor_thermal_mass = str(self.floor_thermal_mass)
 
-        if self.floor_water_mold is not None and not isinstance(self.floor_water_mold, str):
-            self.floor_water_mold = str(self.floor_water_mold)
+        if self.floor_water_mold is not None and not isinstance(self.floor_water_mold, FloorWaterMoldEnum):
+            self.floor_water_mold = FloorWaterMoldEnum(self.floor_water_mold)
 
         if self.freq_clean is not None and not isinstance(self.freq_clean, str):
             self.freq_clean = str(self.freq_clean)
@@ -4182,27 +4182,27 @@ class BuiltEnvironment(EnvPackageClass):
         if self.freq_cook is not None and not isinstance(self.freq_cook, int):
             self.freq_cook = int(self.freq_cook)
 
-        if self.furniture is not None and not isinstance(self.furniture, str):
-            self.furniture = str(self.furniture)
+        if self.furniture is not None and not isinstance(self.furniture, FurnitureEnum):
+            self.furniture = FurnitureEnum(self.furniture)
 
-        if self.gender_restroom is not None and not isinstance(self.gender_restroom, str):
-            self.gender_restroom = str(self.gender_restroom)
+        if self.gender_restroom is not None and not isinstance(self.gender_restroom, GenderRestroomEnum):
+            self.gender_restroom = GenderRestroomEnum(self.gender_restroom)
 
         if self.hall_count is not None and not isinstance(self.hall_count, int):
             self.hall_count = int(self.hall_count)
 
-        if self.handidness is not None and not isinstance(self.handidness, str):
-            self.handidness = str(self.handidness)
+        if self.handidness is not None and not isinstance(self.handidness, HandidnessEnum):
+            self.handidness = HandidnessEnum(self.handidness)
 
         if not isinstance(self.heat_cool_type, list):
             self.heat_cool_type = [self.heat_cool_type] if self.heat_cool_type is not None else []
-        self.heat_cool_type = [v if isinstance(v, str) else str(v) for v in self.heat_cool_type]
+        self.heat_cool_type = [v if isinstance(v, HeatCoolTypeEnum) else HeatCoolTypeEnum(v) for v in self.heat_cool_type]
 
         if self.heat_deliv_loc is not None and not isinstance(self.heat_deliv_loc, str):
             self.heat_deliv_loc = str(self.heat_deliv_loc)
 
-        if self.heat_sys_deliv_meth is not None and not isinstance(self.heat_sys_deliv_meth, str):
-            self.heat_sys_deliv_meth = str(self.heat_sys_deliv_meth)
+        if self.heat_sys_deliv_meth is not None and not isinstance(self.heat_sys_deliv_meth, HeatSysDelivMethEnum):
+            self.heat_sys_deliv_meth = HeatSysDelivMethEnum(self.heat_sys_deliv_meth)
 
         if self.heat_system_id is not None and not isinstance(self.heat_system_id, int):
             self.heat_system_id = int(self.heat_system_id)
@@ -4210,8 +4210,8 @@ class BuiltEnvironment(EnvPackageClass):
         if self.height_carper_fiber is not None and not isinstance(self.height_carper_fiber, str):
             self.height_carper_fiber = str(self.height_carper_fiber)
 
-        if self.indoor_space is not None and not isinstance(self.indoor_space, str):
-            self.indoor_space = str(self.indoor_space)
+        if self.indoor_space is not None and not isinstance(self.indoor_space, IndoorSpaceEnum):
+            self.indoor_space = IndoorSpaceEnum(self.indoor_space)
 
         if self.indoor_surf is not None and not isinstance(self.indoor_surf, str):
             self.indoor_surf = str(self.indoor_surf)
@@ -4219,21 +4219,21 @@ class BuiltEnvironment(EnvPackageClass):
         if self.inside_lux is not None and not isinstance(self.inside_lux, str):
             self.inside_lux = str(self.inside_lux)
 
-        if self.int_wall_cond is not None and not isinstance(self.int_wall_cond, str):
-            self.int_wall_cond = str(self.int_wall_cond)
+        if self.int_wall_cond is not None and not isinstance(self.int_wall_cond, IntWallCondEnum):
+            self.int_wall_cond = IntWallCondEnum(self.int_wall_cond)
 
         if self.last_clean is not None and not isinstance(self.last_clean, str):
             self.last_clean = str(self.last_clean)
 
         if not isinstance(self.light_type, list):
             self.light_type = [self.light_type] if self.light_type is not None else []
-        self.light_type = [v if isinstance(v, str) else str(v) for v in self.light_type]
+        self.light_type = [v if isinstance(v, LightTypeEnum) else LightTypeEnum(v) for v in self.light_type]
 
         if self.max_occup is not None and not isinstance(self.max_occup, int):
             self.max_occup = int(self.max_occup)
 
-        if self.mech_struc is not None and not isinstance(self.mech_struc, str):
-            self.mech_struc = str(self.mech_struc)
+        if self.mech_struc is not None and not isinstance(self.mech_struc, MechStrucEnum):
+            self.mech_struc = MechStrucEnum(self.mech_struc)
 
         if self.number_pets is not None and not isinstance(self.number_pets, int):
             self.number_pets = int(self.number_pets)
@@ -4247,8 +4247,8 @@ class BuiltEnvironment(EnvPackageClass):
         if self.occup_density_samp is not None and not isinstance(self.occup_density_samp, float):
             self.occup_density_samp = float(self.occup_density_samp)
 
-        if self.occup_document is not None and not isinstance(self.occup_document, str):
-            self.occup_document = str(self.occup_document)
+        if self.occup_document is not None and not isinstance(self.occup_document, OccupDocumentEnum):
+            self.occup_document = OccupDocumentEnum(self.occup_document)
 
         if self.occup_samp is not None and not isinstance(self.occup_samp, int):
             self.occup_samp = int(self.occup_samp)
@@ -4262,8 +4262,8 @@ class BuiltEnvironment(EnvPackageClass):
         if self.project_name is not None and not isinstance(self.project_name, str):
             self.project_name = str(self.project_name)
 
-        if self.quad_pos is not None and not isinstance(self.quad_pos, str):
-            self.quad_pos = str(self.quad_pos)
+        if self.quad_pos is not None and not isinstance(self.quad_pos, QuadPosEnum):
+            self.quad_pos = QuadPosEnum(self.quad_pos)
 
         if self.rel_air_humidity is not None and not isinstance(self.rel_air_humidity, str):
             self.rel_air_humidity = str(self.rel_air_humidity)
@@ -4271,8 +4271,8 @@ class BuiltEnvironment(EnvPackageClass):
         if self.rel_humidity_out is not None and not isinstance(self.rel_humidity_out, str):
             self.rel_humidity_out = str(self.rel_humidity_out)
 
-        if self.rel_samp_loc is not None and not isinstance(self.rel_samp_loc, str):
-            self.rel_samp_loc = str(self.rel_samp_loc)
+        if self.rel_samp_loc is not None and not isinstance(self.rel_samp_loc, RelSampLocEnum):
+            self.rel_samp_loc = RelSampLocEnum(self.rel_samp_loc)
 
         if self.room_air_exch_rate is not None and not isinstance(self.room_air_exch_rate, str):
             self.room_air_exch_rate = str(self.room_air_exch_rate)
@@ -4280,11 +4280,11 @@ class BuiltEnvironment(EnvPackageClass):
         if self.room_architec_elem is not None and not isinstance(self.room_architec_elem, str):
             self.room_architec_elem = str(self.room_architec_elem)
 
-        if self.room_condt is not None and not isinstance(self.room_condt, str):
-            self.room_condt = str(self.room_condt)
+        if self.room_condt is not None and not isinstance(self.room_condt, RelSampLocEnum):
+            self.room_condt = RelSampLocEnum(self.room_condt)
 
-        if self.room_connected is not None and not isinstance(self.room_connected, str):
-            self.room_connected = str(self.room_connected)
+        if self.room_connected is not None and not isinstance(self.room_connected, RoomConnectedEnum):
+            self.room_connected = RoomConnectedEnum(self.room_connected)
 
         if self.room_count is not None and not isinstance(self.room_count, int):
             self.room_count = int(self.room_count)
@@ -4301,8 +4301,8 @@ class BuiltEnvironment(EnvPackageClass):
         if self.room_hallway is not None and not isinstance(self.room_hallway, str):
             self.room_hallway = str(self.room_hallway)
 
-        if self.room_loc is not None and not isinstance(self.room_loc, str):
-            self.room_loc = str(self.room_loc)
+        if self.room_loc is not None and not isinstance(self.room_loc, RoomLocEnum):
+            self.room_loc = RoomLocEnum(self.room_loc)
 
         if self.room_moist_dam_hist is not None and not isinstance(self.room_moist_dam_hist, int):
             self.room_moist_dam_hist = int(self.room_moist_dam_hist)
@@ -4313,11 +4313,11 @@ class BuiltEnvironment(EnvPackageClass):
         if self.room_occup is not None and not isinstance(self.room_occup, int):
             self.room_occup = int(self.room_occup)
 
-        if self.room_samp_pos is not None and not isinstance(self.room_samp_pos, str):
-            self.room_samp_pos = str(self.room_samp_pos)
+        if self.room_samp_pos is not None and not isinstance(self.room_samp_pos, RoomSampPosEnum):
+            self.room_samp_pos = RoomSampPosEnum(self.room_samp_pos)
 
-        if self.room_type is not None and not isinstance(self.room_type, str):
-            self.room_type = str(self.room_type)
+        if self.room_type is not None and not isinstance(self.room_type, RoomTypeEnum):
+            self.room_type = RoomTypeEnum(self.room_type)
 
         if self.room_vol is not None and not isinstance(self.room_vol, str):
             self.room_vol = str(self.room_vol)
@@ -4344,46 +4344,46 @@ class BuiltEnvironment(EnvPackageClass):
         if self.samp_time_out is not None and not isinstance(self.samp_time_out, float):
             self.samp_time_out = float(self.samp_time_out)
 
-        if self.samp_weather is not None and not isinstance(self.samp_weather, str):
-            self.samp_weather = str(self.samp_weather)
+        if self.samp_weather is not None and not isinstance(self.samp_weather, SampWeatherEnum):
+            self.samp_weather = SampWeatherEnum(self.samp_weather)
 
         if self.season is not None and not isinstance(self.season, str):
             self.season = str(self.season)
 
-        if self.season_use is not None and not isinstance(self.season_use, str):
-            self.season_use = str(self.season_use)
+        if self.season_use is not None and not isinstance(self.season_use, SeasonUseEnum):
+            self.season_use = SeasonUseEnum(self.season_use)
 
-        if self.shad_dev_water_mold is not None and not isinstance(self.shad_dev_water_mold, str):
-            self.shad_dev_water_mold = str(self.shad_dev_water_mold)
+        if self.shad_dev_water_mold is not None and not isinstance(self.shad_dev_water_mold, ShadDevWaterMoldEnum):
+            self.shad_dev_water_mold = ShadDevWaterMoldEnum(self.shad_dev_water_mold)
 
-        if self.shading_device_cond is not None and not isinstance(self.shading_device_cond, str):
-            self.shading_device_cond = str(self.shading_device_cond)
+        if self.shading_device_cond is not None and not isinstance(self.shading_device_cond, ShadingDeviceCondEnum):
+            self.shading_device_cond = ShadingDeviceCondEnum(self.shading_device_cond)
 
-        if self.shading_device_loc is not None and not isinstance(self.shading_device_loc, str):
-            self.shading_device_loc = str(self.shading_device_loc)
+        if self.shading_device_loc is not None and not isinstance(self.shading_device_loc, ShadingDeviceLocEnum):
+            self.shading_device_loc = ShadingDeviceLocEnum(self.shading_device_loc)
 
         if self.shading_device_mat is not None and not isinstance(self.shading_device_mat, str):
             self.shading_device_mat = str(self.shading_device_mat)
 
-        if self.shading_device_type is not None and not isinstance(self.shading_device_type, str):
-            self.shading_device_type = str(self.shading_device_type)
+        if self.shading_device_type is not None and not isinstance(self.shading_device_type, ShadingDeviceTypeEnum):
+            self.shading_device_type = ShadingDeviceTypeEnum(self.shading_device_type)
 
-        if self.space_typ_state is not None and not isinstance(self.space_typ_state, str):
-            self.space_typ_state = str(self.space_typ_state)
+        if self.space_typ_state is not None and not isinstance(self.space_typ_state, SpaceTypStateEnum):
+            self.space_typ_state = SpaceTypStateEnum(self.space_typ_state)
 
-        if self.specific is not None and not isinstance(self.specific, str):
-            self.specific = str(self.specific)
+        if self.specific is not None and not isinstance(self.specific, SpecificEnum):
+            self.specific = SpecificEnum(self.specific)
 
         if self.specific_humidity is not None and not isinstance(self.specific_humidity, str):
             self.specific_humidity = str(self.specific_humidity)
 
         if not isinstance(self.substructure_type, list):
             self.substructure_type = [self.substructure_type] if self.substructure_type is not None else []
-        self.substructure_type = [v if isinstance(v, str) else str(v) for v in self.substructure_type]
+        self.substructure_type = [v if isinstance(v, SubstructureTypeEnum) else SubstructureTypeEnum(v) for v in self.substructure_type]
 
         if not isinstance(self.surf_air_cont, list):
             self.surf_air_cont = [self.surf_air_cont] if self.surf_air_cont is not None else []
-        self.surf_air_cont = [v if isinstance(v, str) else str(v) for v in self.surf_air_cont]
+        self.surf_air_cont = [v if isinstance(v, SurfAirContEnum) else SurfAirContEnum(v) for v in self.surf_air_cont]
 
         if self.surf_humidity is not None and not isinstance(self.surf_humidity, str):
             self.surf_humidity = str(self.surf_humidity)
@@ -4406,11 +4406,11 @@ class BuiltEnvironment(EnvPackageClass):
         if self.train_line is not None and not isinstance(self.train_line, str):
             self.train_line = str(self.train_line)
 
-        if self.train_stat_loc is not None and not isinstance(self.train_stat_loc, str):
-            self.train_stat_loc = str(self.train_stat_loc)
+        if self.train_stat_loc is not None and not isinstance(self.train_stat_loc, TrainStatLocEnum):
+            self.train_stat_loc = TrainStatLocEnum(self.train_stat_loc)
 
-        if self.train_stop_loc is not None and not isinstance(self.train_stop_loc, str):
-            self.train_stop_loc = str(self.train_stop_loc)
+        if self.train_stop_loc is not None and not isinstance(self.train_stop_loc, TrainStopLocEnum):
+            self.train_stop_loc = TrainStopLocEnum(self.train_stop_loc)
 
         if self.typ_occup_density is not None and not isinstance(self.typ_occup_density, float):
             self.typ_occup_density = float(self.typ_occup_density)
@@ -4424,53 +4424,53 @@ class BuiltEnvironment(EnvPackageClass):
         if self.wall_area is not None and not isinstance(self.wall_area, str):
             self.wall_area = str(self.wall_area)
 
-        if self.wall_const_type is not None and not isinstance(self.wall_const_type, str):
-            self.wall_const_type = str(self.wall_const_type)
+        if self.wall_const_type is not None and not isinstance(self.wall_const_type, WallConstTypeEnum):
+            self.wall_const_type = WallConstTypeEnum(self.wall_const_type)
 
-        if self.wall_finish_mat is not None and not isinstance(self.wall_finish_mat, str):
-            self.wall_finish_mat = str(self.wall_finish_mat)
+        if self.wall_finish_mat is not None and not isinstance(self.wall_finish_mat, WallFinishMatEnum):
+            self.wall_finish_mat = WallFinishMatEnum(self.wall_finish_mat)
 
         if self.wall_height is not None and not isinstance(self.wall_height, str):
             self.wall_height = str(self.wall_height)
 
-        if self.wall_loc is not None and not isinstance(self.wall_loc, str):
-            self.wall_loc = str(self.wall_loc)
+        if self.wall_loc is not None and not isinstance(self.wall_loc, WallLocEnum):
+            self.wall_loc = WallLocEnum(self.wall_loc)
 
-        if self.wall_surf_treatment is not None and not isinstance(self.wall_surf_treatment, str):
-            self.wall_surf_treatment = str(self.wall_surf_treatment)
+        if self.wall_surf_treatment is not None and not isinstance(self.wall_surf_treatment, WallSurfTreatmentEnum):
+            self.wall_surf_treatment = WallSurfTreatmentEnum(self.wall_surf_treatment)
 
-        if self.wall_texture is not None and not isinstance(self.wall_texture, str):
-            self.wall_texture = str(self.wall_texture)
+        if self.wall_texture is not None and not isinstance(self.wall_texture, WallTextureEnum):
+            self.wall_texture = WallTextureEnum(self.wall_texture)
 
         if self.wall_thermal_mass is not None and not isinstance(self.wall_thermal_mass, str):
             self.wall_thermal_mass = str(self.wall_thermal_mass)
 
-        if self.wall_water_mold is not None and not isinstance(self.wall_water_mold, str):
-            self.wall_water_mold = str(self.wall_water_mold)
+        if self.wall_water_mold is not None and not isinstance(self.wall_water_mold, WallWaterMoldEnum):
+            self.wall_water_mold = WallWaterMoldEnum(self.wall_water_mold)
 
         if self.water_feat_size is not None and not isinstance(self.water_feat_size, str):
             self.water_feat_size = str(self.water_feat_size)
 
-        if self.water_feat_type is not None and not isinstance(self.water_feat_type, str):
-            self.water_feat_type = str(self.water_feat_type)
+        if self.water_feat_type is not None and not isinstance(self.water_feat_type, WaterFeatTypeEnum):
+            self.water_feat_type = WaterFeatTypeEnum(self.water_feat_type)
 
-        if self.weekday is not None and not isinstance(self.weekday, str):
-            self.weekday = str(self.weekday)
+        if self.weekday is not None and not isinstance(self.weekday, WeekdayEnum):
+            self.weekday = WeekdayEnum(self.weekday)
 
-        if self.window_cond is not None and not isinstance(self.window_cond, str):
-            self.window_cond = str(self.window_cond)
+        if self.window_cond is not None and not isinstance(self.window_cond, WindowCondEnum):
+            self.window_cond = WindowCondEnum(self.window_cond)
 
         if self.window_cover is not None and not isinstance(self.window_cover, str):
             self.window_cover = str(self.window_cover)
 
-        if self.window_horiz_pos is not None and not isinstance(self.window_horiz_pos, str):
-            self.window_horiz_pos = str(self.window_horiz_pos)
+        if self.window_horiz_pos is not None and not isinstance(self.window_horiz_pos, WindowHorizPosEnum):
+            self.window_horiz_pos = WindowHorizPosEnum(self.window_horiz_pos)
 
-        if self.window_loc is not None and not isinstance(self.window_loc, str):
-            self.window_loc = str(self.window_loc)
+        if self.window_loc is not None and not isinstance(self.window_loc, WindowLocEnum):
+            self.window_loc = WindowLocEnum(self.window_loc)
 
-        if self.window_mat is not None and not isinstance(self.window_mat, str):
-            self.window_mat = str(self.window_mat)
+        if self.window_mat is not None and not isinstance(self.window_mat, WindowLocEnum):
+            self.window_mat = WindowLocEnum(self.window_mat)
 
         if self.window_open_freq is not None and not isinstance(self.window_open_freq, int):
             self.window_open_freq = int(self.window_open_freq)
@@ -4478,17 +4478,17 @@ class BuiltEnvironment(EnvPackageClass):
         if self.window_size is not None and not isinstance(self.window_size, str):
             self.window_size = str(self.window_size)
 
-        if self.window_status is not None and not isinstance(self.window_status, str):
-            self.window_status = str(self.window_status)
+        if self.window_status is not None and not isinstance(self.window_status, WindowStatusEnum):
+            self.window_status = WindowStatusEnum(self.window_status)
 
-        if self.window_type is not None and not isinstance(self.window_type, str):
-            self.window_type = str(self.window_type)
+        if self.window_type is not None and not isinstance(self.window_type, WindowTypeEnum):
+            self.window_type = WindowTypeEnum(self.window_type)
 
-        if self.window_vert_pos is not None and not isinstance(self.window_vert_pos, str):
-            self.window_vert_pos = str(self.window_vert_pos)
+        if self.window_vert_pos is not None and not isinstance(self.window_vert_pos, WindowVertPosEnum):
+            self.window_vert_pos = WindowVertPosEnum(self.window_vert_pos)
 
-        if self.window_water_mold is not None and not isinstance(self.window_water_mold, str):
-            self.window_water_mold = str(self.window_water_mold)
+        if self.window_water_mold is not None and not isinstance(self.window_water_mold, WindowWaterMoldEnum):
+            self.window_water_mold = WindowWaterMoldEnum(self.window_water_mold)
 
         super().__post_init__(**kwargs)
 
@@ -4521,7 +4521,7 @@ class FoodAnimalAndAnimalFeed(EnvPackageClass):
     cons_purch_date: Optional[str] = None
     cons_qty_purchased: Optional[str] = None
     cult_isol_date: Optional[str] = None
-    cult_result: Optional[str] = None
+    cult_result: Optional[Union[str, "CultResultEnum"]] = None
     cult_result_org: Optional[Union[str, List[str]]] = empty_list()
     cult_target: Optional[Union[str, List[str]]] = empty_list()
     enrichment_protocol: Optional[str] = None
@@ -4549,7 +4549,7 @@ class FoodAnimalAndAnimalFeed(EnvPackageClass):
     food_quality_date: Optional[str] = None
     food_source: Optional[str] = None
     food_source_age: Optional[str] = None
-    food_trace_list: Optional[str] = None
+    food_trace_list: Optional[Union[str, "FoodTraceListEnum"]] = None
     food_trav_mode: Optional[str] = None
     food_trav_vehic: Optional[Union[str, List[str]]] = empty_list()
     food_treat_proc: Optional[Union[str, List[str]]] = empty_list()
@@ -4583,7 +4583,7 @@ class FoodAnimalAndAnimalFeed(EnvPackageClass):
     samp_stor_loc: Optional[str] = None
     samp_stor_media: Optional[str] = None
     samp_stor_temp: Optional[str] = None
-    samp_transport_cont: Optional[str] = None
+    samp_transport_cont: Optional[Union[str, "SampTransportContEnum"]] = None
     samp_transport_dur: Optional[str] = None
     samp_transport_temp: Optional[str] = None
     samp_vol_we_dna_ext: Optional[str] = None
@@ -4667,8 +4667,8 @@ class FoodAnimalAndAnimalFeed(EnvPackageClass):
         if self.cult_isol_date is not None and not isinstance(self.cult_isol_date, str):
             self.cult_isol_date = str(self.cult_isol_date)
 
-        if self.cult_result is not None and not isinstance(self.cult_result, str):
-            self.cult_result = str(self.cult_result)
+        if self.cult_result is not None and not isinstance(self.cult_result, CultResultEnum):
+            self.cult_result = CultResultEnum(self.cult_result)
 
         if not isinstance(self.cult_result_org, list):
             self.cult_result_org = [self.cult_result_org] if self.cult_result_org is not None else []
@@ -4762,8 +4762,8 @@ class FoodAnimalAndAnimalFeed(EnvPackageClass):
         if self.food_source_age is not None and not isinstance(self.food_source_age, str):
             self.food_source_age = str(self.food_source_age)
 
-        if self.food_trace_list is not None and not isinstance(self.food_trace_list, str):
-            self.food_trace_list = str(self.food_trace_list)
+        if self.food_trace_list is not None and not isinstance(self.food_trace_list, FoodTraceListEnum):
+            self.food_trace_list = FoodTraceListEnum(self.food_trace_list)
 
         if self.food_trav_mode is not None and not isinstance(self.food_trav_mode, str):
             self.food_trav_mode = str(self.food_trav_mode)
@@ -4871,8 +4871,8 @@ class FoodAnimalAndAnimalFeed(EnvPackageClass):
         if self.samp_stor_temp is not None and not isinstance(self.samp_stor_temp, str):
             self.samp_stor_temp = str(self.samp_stor_temp)
 
-        if self.samp_transport_cont is not None and not isinstance(self.samp_transport_cont, str):
-            self.samp_transport_cont = str(self.samp_transport_cont)
+        if self.samp_transport_cont is not None and not isinstance(self.samp_transport_cont, SampTransportContEnum):
+            self.samp_transport_cont = SampTransportContEnum(self.samp_transport_cont)
 
         if self.samp_transport_dur is not None and not isinstance(self.samp_transport_dur, str):
             self.samp_transport_dur = str(self.samp_transport_dur)
@@ -4979,7 +4979,7 @@ class FoodFarmEnvironment(EnvPackageClass):
     crop_rotation: Optional[str] = None
     crop_yield: Optional[str] = None
     cult_isol_date: Optional[str] = None
-    cult_result: Optional[str] = None
+    cult_result: Optional[Union[str, "CultResultEnum"]] = None
     cult_result_org: Optional[Union[str, List[str]]] = empty_list()
     cult_target: Optional[Union[str, List[str]]] = empty_list()
     date_extr_weath: Optional[Union[str, List[str]]] = empty_list()
@@ -4988,15 +4988,15 @@ class FoodFarmEnvironment(EnvPackageClass):
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
-    extr_weather_event: Optional[Union[str, List[str]]] = empty_list()
+    extr_weather_event: Optional[Union[Union[str, "ExtrWeatherEventEnum"], List[Union[str, "ExtrWeatherEventEnum"]]]] = empty_list()
     farm_equip: Optional[str] = None
     farm_equip_san: Optional[str] = None
     farm_equip_san_freq: Optional[str] = None
     farm_equip_shared: Optional[str] = None
-    farm_water_source: Optional[Union[str, List[str]]] = empty_list()
+    farm_water_source: Optional[Union[Union[str, "FarmWaterSourceEnum"], List[Union[str, "FarmWaterSourceEnum"]]]] = empty_list()
     fertilizer_admin: Optional[str] = None
     fertilizer_date: Optional[str] = None
-    food_clean_proc: Optional[Union[str, List[str]]] = empty_list()
+    food_clean_proc: Optional[Union[Union[str, "FoodCleanProcEnum"], List[Union[str, "FoodCleanProcEnum"]]]] = empty_list()
     food_contact_surf: Optional[Union[str, List[str]]] = empty_list()
     food_contain_wrap: Optional[str] = None
     food_harvest_proc: Optional[str] = None
@@ -5039,7 +5039,7 @@ class FoodFarmEnvironment(EnvPackageClass):
     ph_meth: Optional[str] = None
     plant_growth_med: Optional[str] = None
     plant_part_maturity: Optional[str] = None
-    plant_reprod_crop: Optional[Union[str, List[str]]] = empty_list()
+    plant_reprod_crop: Optional[Union[Union[str, "PlantReprodCropEnum"], List[Union[str, "PlantReprodCropEnum"]]]] = empty_list()
     plant_water_method: Optional[str] = None
     previous_land_use: Optional[str] = None
     prod_label_claims: Optional[Union[str, List[str]]] = empty_list()
@@ -5078,7 +5078,7 @@ class FoodFarmEnvironment(EnvPackageClass):
     soil_p_h: Optional[str] = None
     soil_porosity: Optional[str] = None
     soil_temp: Optional[str] = None
-    soil_texture_class: Optional[str] = None
+    soil_texture_class: Optional[Union[str, "SoilTextureClassEnum"]] = None
     soil_texture_meth: Optional[str] = None
     soil_type: Optional[str] = None
     soil_type_meth: Optional[str] = None
@@ -5091,7 +5091,7 @@ class FoodFarmEnvironment(EnvPackageClass):
     spikein_serovar: Optional[Union[str, List[str]]] = empty_list()
     spikein_strain: Optional[Union[str, List[str]]] = empty_list()
     temp: Optional[str] = None
-    tillage: Optional[Union[str, List[str]]] = empty_list()
+    tillage: Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]] = empty_list()
     timepoint: Optional[float] = None
     tot_nitro_cont_meth: Optional[str] = None
     tot_nitro_content: Optional[str] = None
@@ -5103,7 +5103,7 @@ class FoodFarmEnvironment(EnvPackageClass):
     water_frequency: Optional[str] = None
     water_p_h: Optional[str] = None
     water_source_adjac: Optional[Union[str, List[str]]] = empty_list()
-    water_source_shared: Optional[Union[str, List[str]]] = empty_list()
+    water_source_shared: Optional[Union[Union[str, "WaterSourceSharedEnum"], List[Union[str, "WaterSourceSharedEnum"]]]] = empty_list()
     wind_direction: Optional[str] = None
     wind_speed: Optional[str] = None
 
@@ -5165,8 +5165,8 @@ class FoodFarmEnvironment(EnvPackageClass):
         if self.cult_isol_date is not None and not isinstance(self.cult_isol_date, str):
             self.cult_isol_date = str(self.cult_isol_date)
 
-        if self.cult_result is not None and not isinstance(self.cult_result, str):
-            self.cult_result = str(self.cult_result)
+        if self.cult_result is not None and not isinstance(self.cult_result, CultResultEnum):
+            self.cult_result = CultResultEnum(self.cult_result)
 
         if not isinstance(self.cult_result_org, list):
             self.cult_result_org = [self.cult_result_org] if self.cult_result_org is not None else []
@@ -5197,7 +5197,7 @@ class FoodFarmEnvironment(EnvPackageClass):
 
         if not isinstance(self.extr_weather_event, list):
             self.extr_weather_event = [self.extr_weather_event] if self.extr_weather_event is not None else []
-        self.extr_weather_event = [v if isinstance(v, str) else str(v) for v in self.extr_weather_event]
+        self.extr_weather_event = [v if isinstance(v, ExtrWeatherEventEnum) else ExtrWeatherEventEnum(v) for v in self.extr_weather_event]
 
         if self.farm_equip is not None and not isinstance(self.farm_equip, str):
             self.farm_equip = str(self.farm_equip)
@@ -5213,7 +5213,7 @@ class FoodFarmEnvironment(EnvPackageClass):
 
         if not isinstance(self.farm_water_source, list):
             self.farm_water_source = [self.farm_water_source] if self.farm_water_source is not None else []
-        self.farm_water_source = [v if isinstance(v, str) else str(v) for v in self.farm_water_source]
+        self.farm_water_source = [v if isinstance(v, FarmWaterSourceEnum) else FarmWaterSourceEnum(v) for v in self.farm_water_source]
 
         if self.fertilizer_admin is not None and not isinstance(self.fertilizer_admin, str):
             self.fertilizer_admin = str(self.fertilizer_admin)
@@ -5223,7 +5223,7 @@ class FoodFarmEnvironment(EnvPackageClass):
 
         if not isinstance(self.food_clean_proc, list):
             self.food_clean_proc = [self.food_clean_proc] if self.food_clean_proc is not None else []
-        self.food_clean_proc = [v if isinstance(v, str) else str(v) for v in self.food_clean_proc]
+        self.food_clean_proc = [v if isinstance(v, FoodCleanProcEnum) else FoodCleanProcEnum(v) for v in self.food_clean_proc]
 
         if not isinstance(self.food_contact_surf, list):
             self.food_contact_surf = [self.food_contact_surf] if self.food_contact_surf is not None else []
@@ -5364,7 +5364,7 @@ class FoodFarmEnvironment(EnvPackageClass):
 
         if not isinstance(self.plant_reprod_crop, list):
             self.plant_reprod_crop = [self.plant_reprod_crop] if self.plant_reprod_crop is not None else []
-        self.plant_reprod_crop = [v if isinstance(v, str) else str(v) for v in self.plant_reprod_crop]
+        self.plant_reprod_crop = [v if isinstance(v, PlantReprodCropEnum) else PlantReprodCropEnum(v) for v in self.plant_reprod_crop]
 
         if self.plant_water_method is not None and not isinstance(self.plant_water_method, str):
             self.plant_water_method = str(self.plant_water_method)
@@ -5483,8 +5483,8 @@ class FoodFarmEnvironment(EnvPackageClass):
         if self.soil_temp is not None and not isinstance(self.soil_temp, str):
             self.soil_temp = str(self.soil_temp)
 
-        if self.soil_texture_class is not None and not isinstance(self.soil_texture_class, str):
-            self.soil_texture_class = str(self.soil_texture_class)
+        if self.soil_texture_class is not None and not isinstance(self.soil_texture_class, SoilTextureClassEnum):
+            self.soil_texture_class = SoilTextureClassEnum(self.soil_texture_class)
 
         if self.soil_texture_meth is not None and not isinstance(self.soil_texture_meth, str):
             self.soil_texture_meth = str(self.soil_texture_meth)
@@ -5530,7 +5530,7 @@ class FoodFarmEnvironment(EnvPackageClass):
 
         if not isinstance(self.tillage, list):
             self.tillage = [self.tillage] if self.tillage is not None else []
-        self.tillage = [v if isinstance(v, str) else str(v) for v in self.tillage]
+        self.tillage = [v if isinstance(v, TillageEnum) else TillageEnum(v) for v in self.tillage]
 
         if self.timepoint is not None and not isinstance(self.timepoint, float):
             self.timepoint = float(self.timepoint)
@@ -5568,7 +5568,7 @@ class FoodFarmEnvironment(EnvPackageClass):
 
         if not isinstance(self.water_source_shared, list):
             self.water_source_shared = [self.water_source_shared] if self.water_source_shared is not None else []
-        self.water_source_shared = [v if isinstance(v, str) else str(v) for v in self.water_source_shared]
+        self.water_source_shared = [v if isinstance(v, WaterSourceSharedEnum) else WaterSourceSharedEnum(v) for v in self.water_source_shared]
 
         if self.wind_direction is not None and not isinstance(self.wind_direction, str):
             self.wind_direction = str(self.wind_direction)
@@ -5596,7 +5596,7 @@ class FoodFoodProductionFacility(EnvPackageClass):
     coll_site_geo_feat: Optional[str] = None
     collection_date: Optional[str] = None
     cult_isol_date: Optional[str] = None
-    cult_result: Optional[str] = None
+    cult_result: Optional[Union[str, "CultResultEnum"]] = None
     cult_result_org: Optional[Union[str, List[str]]] = empty_list()
     cult_target: Optional[Union[str, List[str]]] = empty_list()
     dietary_claim_use: Optional[Union[str, List[str]]] = empty_list()
@@ -5606,7 +5606,7 @@ class FoodFoodProductionFacility(EnvPackageClass):
     env_medium: Optional[str] = None
     env_monitoring_zone: Optional[str] = None
     experimental_factor: Optional[str] = None
-    facility_type: Optional[Union[str, List[str]]] = empty_list()
+    facility_type: Optional[Union[Union[str, "FacilityTypeEnum"], List[Union[str, "FacilityTypeEnum"]]]] = empty_list()
     food_additive: Optional[Union[str, List[str]]] = empty_list()
     food_allergen_label: Optional[Union[str, List[str]]] = empty_list()
     food_contact_surf: Optional[Union[str, List[str]]] = empty_list()
@@ -5629,7 +5629,7 @@ class FoodFoodProductionFacility(EnvPackageClass):
     food_product_type: Optional[str] = None
     food_quality_date: Optional[str] = None
     food_source: Optional[str] = None
-    food_trace_list: Optional[str] = None
+    food_trace_list: Optional[Union[str, "FoodTraceListEnum"]] = None
     food_trav_mode: Optional[str] = None
     food_trav_vehic: Optional[Union[str, List[str]]] = empty_list()
     food_treat_proc: Optional[Union[str, List[str]]] = empty_list()
@@ -5659,7 +5659,7 @@ class FoodFoodProductionFacility(EnvPackageClass):
     samp_collect_device: Optional[str] = None
     samp_collect_method: Optional[str] = None
     samp_floor: Optional[str] = None
-    samp_loc_condition: Optional[str] = None
+    samp_loc_condition: Optional[Union[str, "SampLocConditionEnum"]] = None
     samp_name: Optional[str] = None
     samp_pooling: Optional[str] = None
     samp_purpose: Optional[str] = None
@@ -5673,8 +5673,8 @@ class FoodFoodProductionFacility(EnvPackageClass):
     samp_stor_loc: Optional[str] = None
     samp_stor_media: Optional[str] = None
     samp_stor_temp: Optional[str] = None
-    samp_surf_moisture: Optional[Union[str, List[str]]] = empty_list()
-    samp_transport_cont: Optional[str] = None
+    samp_surf_moisture: Optional[Union[Union[str, "SampSubtypeEnum"], List[Union[str, "SampSubtypeEnum"]]]] = empty_list()
+    samp_transport_cont: Optional[Union[str, "SampTransportContEnum"]] = None
     samp_transport_dur: Optional[str] = None
     samp_transport_temp: Optional[str] = None
     samp_type: Optional[str] = None
@@ -5719,8 +5719,8 @@ class FoodFoodProductionFacility(EnvPackageClass):
         if self.cult_isol_date is not None and not isinstance(self.cult_isol_date, str):
             self.cult_isol_date = str(self.cult_isol_date)
 
-        if self.cult_result is not None and not isinstance(self.cult_result, str):
-            self.cult_result = str(self.cult_result)
+        if self.cult_result is not None and not isinstance(self.cult_result, CultResultEnum):
+            self.cult_result = CultResultEnum(self.cult_result)
 
         if not isinstance(self.cult_result_org, list):
             self.cult_result_org = [self.cult_result_org] if self.cult_result_org is not None else []
@@ -5754,7 +5754,7 @@ class FoodFoodProductionFacility(EnvPackageClass):
 
         if not isinstance(self.facility_type, list):
             self.facility_type = [self.facility_type] if self.facility_type is not None else []
-        self.facility_type = [v if isinstance(v, str) else str(v) for v in self.facility_type]
+        self.facility_type = [v if isinstance(v, FacilityTypeEnum) else FacilityTypeEnum(v) for v in self.facility_type]
 
         if not isinstance(self.food_additive, list):
             self.food_additive = [self.food_additive] if self.food_additive is not None else []
@@ -5833,8 +5833,8 @@ class FoodFoodProductionFacility(EnvPackageClass):
         if self.food_source is not None and not isinstance(self.food_source, str):
             self.food_source = str(self.food_source)
 
-        if self.food_trace_list is not None and not isinstance(self.food_trace_list, str):
-            self.food_trace_list = str(self.food_trace_list)
+        if self.food_trace_list is not None and not isinstance(self.food_trace_list, FoodTraceListEnum):
+            self.food_trace_list = FoodTraceListEnum(self.food_trace_list)
 
         if self.food_trav_mode is not None and not isinstance(self.food_trav_mode, str):
             self.food_trav_mode = str(self.food_trav_mode)
@@ -5932,8 +5932,8 @@ class FoodFoodProductionFacility(EnvPackageClass):
         if self.samp_floor is not None and not isinstance(self.samp_floor, str):
             self.samp_floor = str(self.samp_floor)
 
-        if self.samp_loc_condition is not None and not isinstance(self.samp_loc_condition, str):
-            self.samp_loc_condition = str(self.samp_loc_condition)
+        if self.samp_loc_condition is not None and not isinstance(self.samp_loc_condition, SampLocConditionEnum):
+            self.samp_loc_condition = SampLocConditionEnum(self.samp_loc_condition)
 
         if self.samp_name is not None and not isinstance(self.samp_name, str):
             self.samp_name = str(self.samp_name)
@@ -5976,10 +5976,10 @@ class FoodFoodProductionFacility(EnvPackageClass):
 
         if not isinstance(self.samp_surf_moisture, list):
             self.samp_surf_moisture = [self.samp_surf_moisture] if self.samp_surf_moisture is not None else []
-        self.samp_surf_moisture = [v if isinstance(v, str) else str(v) for v in self.samp_surf_moisture]
+        self.samp_surf_moisture = [v if isinstance(v, SampSubtypeEnum) else SampSubtypeEnum(v) for v in self.samp_surf_moisture]
 
-        if self.samp_transport_cont is not None and not isinstance(self.samp_transport_cont, str):
-            self.samp_transport_cont = str(self.samp_transport_cont)
+        if self.samp_transport_cont is not None and not isinstance(self.samp_transport_cont, SampTransportContEnum):
+            self.samp_transport_cont = SampTransportContEnum(self.samp_transport_cont)
 
         if self.samp_transport_dur is not None and not isinstance(self.samp_transport_dur, str):
             self.samp_transport_dur = str(self.samp_transport_dur)
@@ -6056,7 +6056,7 @@ class FoodHumanFoods(EnvPackageClass):
     cons_purch_date: Optional[str] = None
     cons_qty_purchased: Optional[str] = None
     cult_isol_date: Optional[str] = None
-    cult_result: Optional[str] = None
+    cult_result: Optional[Union[str, "CultResultEnum"]] = None
     cult_result_org: Optional[Union[str, List[str]]] = empty_list()
     cult_target: Optional[Union[str, List[str]]] = empty_list()
     dietary_claim_use: Optional[Union[str, List[str]]] = empty_list()
@@ -6094,7 +6094,7 @@ class FoodHumanFoods(EnvPackageClass):
     food_product_type: Optional[str] = None
     food_quality_date: Optional[str] = None
     food_source: Optional[str] = None
-    food_trace_list: Optional[str] = None
+    food_trace_list: Optional[Union[str, "FoodTraceListEnum"]] = None
     food_trav_mode: Optional[str] = None
     food_trav_vehic: Optional[Union[str, List[str]]] = empty_list()
     food_treat_proc: Optional[Union[str, List[str]]] = empty_list()
@@ -6136,7 +6136,7 @@ class FoodHumanFoods(EnvPackageClass):
     samp_stor_loc: Optional[str] = None
     samp_stor_media: Optional[str] = None
     samp_stor_temp: Optional[str] = None
-    samp_transport_cont: Optional[str] = None
+    samp_transport_cont: Optional[Union[str, "SampTransportContEnum"]] = None
     samp_transport_dur: Optional[str] = None
     samp_transport_temp: Optional[str] = None
     samp_vol_we_dna_ext: Optional[str] = None
@@ -6186,8 +6186,8 @@ class FoodHumanFoods(EnvPackageClass):
         if self.cult_isol_date is not None and not isinstance(self.cult_isol_date, str):
             self.cult_isol_date = str(self.cult_isol_date)
 
-        if self.cult_result is not None and not isinstance(self.cult_result, str):
-            self.cult_result = str(self.cult_result)
+        if self.cult_result is not None and not isinstance(self.cult_result, CultResultEnum):
+            self.cult_result = CultResultEnum(self.cult_result)
 
         if not isinstance(self.cult_result_org, list):
             self.cult_result_org = [self.cult_result_org] if self.cult_result_org is not None else []
@@ -6315,8 +6315,8 @@ class FoodHumanFoods(EnvPackageClass):
         if self.food_source is not None and not isinstance(self.food_source, str):
             self.food_source = str(self.food_source)
 
-        if self.food_trace_list is not None and not isinstance(self.food_trace_list, str):
-            self.food_trace_list = str(self.food_trace_list)
+        if self.food_trace_list is not None and not isinstance(self.food_trace_list, FoodTraceListEnum):
+            self.food_trace_list = FoodTraceListEnum(self.food_trace_list)
 
         if self.food_trav_mode is not None and not isinstance(self.food_trav_mode, str):
             self.food_trav_mode = str(self.food_trav_mode)
@@ -6449,8 +6449,8 @@ class FoodHumanFoods(EnvPackageClass):
         if self.samp_stor_temp is not None and not isinstance(self.samp_stor_temp, str):
             self.samp_stor_temp = str(self.samp_stor_temp)
 
-        if self.samp_transport_cont is not None and not isinstance(self.samp_transport_cont, str):
-            self.samp_transport_cont = str(self.samp_transport_cont)
+        if self.samp_transport_cont is not None and not isinstance(self.samp_transport_cont, SampTransportContEnum):
+            self.samp_transport_cont = SampTransportContEnum(self.samp_transport_cont)
 
         if self.samp_transport_dur is not None and not isinstance(self.samp_transport_dur, str):
             self.samp_transport_dur = str(self.samp_transport_dur)
@@ -6585,8 +6585,8 @@ class HostAssociated(EnvPackageClass):
     perturbation: Optional[str] = None
     project_name: Optional[str] = None
     salinity: Optional[str] = None
-    samp_capt_status: Optional[str] = None
-    samp_dis_stage: Optional[str] = None
+    samp_capt_status: Optional[Union[str, "SampCaptStatusEnum"]] = None
+    samp_dis_stage: Optional[Union[str, "SampDisStageEnum"]] = None
     samp_name: Optional[str] = None
     samp_store_dur: Optional[str] = None
     samp_store_loc: Optional[str] = None
@@ -6725,11 +6725,11 @@ class HostAssociated(EnvPackageClass):
         if self.salinity is not None and not isinstance(self.salinity, str):
             self.salinity = str(self.salinity)
 
-        if self.samp_capt_status is not None and not isinstance(self.samp_capt_status, str):
-            self.samp_capt_status = str(self.samp_capt_status)
+        if self.samp_capt_status is not None and not isinstance(self.samp_capt_status, SampCaptStatusEnum):
+            self.samp_capt_status = SampCaptStatusEnum(self.samp_capt_status)
 
-        if self.samp_dis_stage is not None and not isinstance(self.samp_dis_stage, str):
-            self.samp_dis_stage = str(self.samp_dis_stage)
+        if self.samp_dis_stage is not None and not isinstance(self.samp_dis_stage, SampDisStageEnum):
+            self.samp_dis_stage = SampDisStageEnum(self.samp_dis_stage)
 
         if self.samp_name is not None and not isinstance(self.samp_name, str):
             self.samp_name = str(self.samp_name)
@@ -6811,7 +6811,7 @@ class HumanAssociated(EnvPackageClass):
     temp: Optional[str] = None
     travel_out_six_month: Optional[Union[str, List[str]]] = empty_list()
     twin_sibling: Optional[Union[bool, Bool]] = None
-    urine_collect_meth: Optional[str] = None
+    urine_collect_meth: Optional[Union[str, "UrineCollectMethEnum"]] = None
     urogenit_tract_disor: Optional[Union[str, List[str]]] = empty_list()
     weight_loss_3_month: Optional[str] = None
 
@@ -6977,8 +6977,8 @@ class HumanAssociated(EnvPackageClass):
         if self.twin_sibling is not None and not isinstance(self.twin_sibling, Bool):
             self.twin_sibling = Bool(self.twin_sibling)
 
-        if self.urine_collect_meth is not None and not isinstance(self.urine_collect_meth, str):
-            self.urine_collect_meth = str(self.urine_collect_meth)
+        if self.urine_collect_meth is not None and not isinstance(self.urine_collect_meth, UrineCollectMethEnum):
+            self.urine_collect_meth = UrineCollectMethEnum(self.urine_collect_meth)
 
         if not isinstance(self.urogenit_tract_disor, list):
             self.urogenit_tract_disor = [self.urogenit_tract_disor] if self.urogenit_tract_disor is not None else []
@@ -7334,7 +7334,7 @@ class HumanSkin(EnvPackageClass):
 
     chem_administration: Optional[str] = None
     dermatology_disord: Optional[Union[str, List[str]]] = empty_list()
-    dominant_hand: Optional[str] = None
+    dominant_hand: Optional[Union[str, "DominantHandEnum"]] = None
     ethnicity: Optional[Union[str, List[str]]] = empty_list()
     host_age: Optional[str] = None
     host_body_mass_index: Optional[str] = None
@@ -7378,8 +7378,8 @@ class HumanSkin(EnvPackageClass):
             self.dermatology_disord = [self.dermatology_disord] if self.dermatology_disord is not None else []
         self.dermatology_disord = [v if isinstance(v, str) else str(v) for v in self.dermatology_disord]
 
-        if self.dominant_hand is not None and not isinstance(self.dominant_hand, str):
-            self.dominant_hand = str(self.dominant_hand)
+        if self.dominant_hand is not None and not isinstance(self.dominant_hand, DominantHandEnum):
+            self.dominant_hand = DominantHandEnum(self.dominant_hand)
 
         if not isinstance(self.ethnicity, list):
             self.ethnicity = [self.ethnicity] if self.ethnicity is not None else []
@@ -7724,12 +7724,12 @@ class HydrocarbonResourcesCores(EnvPackageClass):
     ethylbenzene: Optional[str] = None
     field: Optional[str] = None
     hc_produced: Optional[str] = None
-    hcr: Optional[str] = None
+    hcr: Optional[Union[str, "HcrEnum"]] = None
     hcr_fw_salinity: Optional[str] = None
-    hcr_geol_age: Optional[str] = None
+    hcr_geol_age: Optional[Union[str, "HcrGeolAgeEnum"]] = None
     hcr_pressure: Optional[str] = None
     hcr_temp: Optional[str] = None
-    lithology: Optional[str] = None
+    lithology: Optional[Union[str, "LithologyEnum"]] = None
     magnesium: Optional[str] = None
     misc_param: Optional[Union[str, List[str]]] = empty_list()
     nitrate: Optional[str] = None
@@ -7753,7 +7753,7 @@ class HydrocarbonResourcesCores(EnvPackageClass):
     samp_store_dur: Optional[str] = None
     samp_store_loc: Optional[str] = None
     samp_store_temp: Optional[str] = None
-    samp_subtype: Optional[str] = None
+    samp_subtype: Optional[Union[str, "SampSubtypeEnum"]] = None
     samp_transport_cond: Optional[str] = None
     samp_tvdss: Optional[str] = None
     samp_type: Optional[str] = None
@@ -7761,10 +7761,10 @@ class HydrocarbonResourcesCores(EnvPackageClass):
     samp_well_name: Optional[str] = None
     saturates_pc: Optional[str] = None
     sodium: Optional[str] = None
-    sr_dep_env: Optional[str] = None
-    sr_geol_age: Optional[str] = None
-    sr_kerog_type: Optional[str] = None
-    sr_lithology: Optional[str] = None
+    sr_dep_env: Optional[Union[str, "SrDepEnvEnum"]] = None
+    sr_geol_age: Optional[Union[str, "SrGeolAgeEnum"]] = None
+    sr_kerog_type: Optional[Union[str, "SrKerogTypeEnum"]] = None
+    sr_lithology: Optional[Union[str, "SrLithologyEnum"]] = None
     sulfate: Optional[str] = None
     sulfate_fw: Optional[str] = None
     sulfide: Optional[str] = None
@@ -7854,14 +7854,14 @@ class HydrocarbonResourcesCores(EnvPackageClass):
         if self.hc_produced is not None and not isinstance(self.hc_produced, str):
             self.hc_produced = str(self.hc_produced)
 
-        if self.hcr is not None and not isinstance(self.hcr, str):
-            self.hcr = str(self.hcr)
+        if self.hcr is not None and not isinstance(self.hcr, HcrEnum):
+            self.hcr = HcrEnum(self.hcr)
 
         if self.hcr_fw_salinity is not None and not isinstance(self.hcr_fw_salinity, str):
             self.hcr_fw_salinity = str(self.hcr_fw_salinity)
 
-        if self.hcr_geol_age is not None and not isinstance(self.hcr_geol_age, str):
-            self.hcr_geol_age = str(self.hcr_geol_age)
+        if self.hcr_geol_age is not None and not isinstance(self.hcr_geol_age, HcrGeolAgeEnum):
+            self.hcr_geol_age = HcrGeolAgeEnum(self.hcr_geol_age)
 
         if self.hcr_pressure is not None and not isinstance(self.hcr_pressure, str):
             self.hcr_pressure = str(self.hcr_pressure)
@@ -7869,8 +7869,8 @@ class HydrocarbonResourcesCores(EnvPackageClass):
         if self.hcr_temp is not None and not isinstance(self.hcr_temp, str):
             self.hcr_temp = str(self.hcr_temp)
 
-        if self.lithology is not None and not isinstance(self.lithology, str):
-            self.lithology = str(self.lithology)
+        if self.lithology is not None and not isinstance(self.lithology, LithologyEnum):
+            self.lithology = LithologyEnum(self.lithology)
 
         if self.magnesium is not None and not isinstance(self.magnesium, str):
             self.magnesium = str(self.magnesium)
@@ -7942,8 +7942,8 @@ class HydrocarbonResourcesCores(EnvPackageClass):
         if self.samp_store_temp is not None and not isinstance(self.samp_store_temp, str):
             self.samp_store_temp = str(self.samp_store_temp)
 
-        if self.samp_subtype is not None and not isinstance(self.samp_subtype, str):
-            self.samp_subtype = str(self.samp_subtype)
+        if self.samp_subtype is not None and not isinstance(self.samp_subtype, SampSubtypeEnum):
+            self.samp_subtype = SampSubtypeEnum(self.samp_subtype)
 
         if self.samp_transport_cond is not None and not isinstance(self.samp_transport_cond, str):
             self.samp_transport_cond = str(self.samp_transport_cond)
@@ -7966,17 +7966,17 @@ class HydrocarbonResourcesCores(EnvPackageClass):
         if self.sodium is not None and not isinstance(self.sodium, str):
             self.sodium = str(self.sodium)
 
-        if self.sr_dep_env is not None and not isinstance(self.sr_dep_env, str):
-            self.sr_dep_env = str(self.sr_dep_env)
+        if self.sr_dep_env is not None and not isinstance(self.sr_dep_env, SrDepEnvEnum):
+            self.sr_dep_env = SrDepEnvEnum(self.sr_dep_env)
 
-        if self.sr_geol_age is not None and not isinstance(self.sr_geol_age, str):
-            self.sr_geol_age = str(self.sr_geol_age)
+        if self.sr_geol_age is not None and not isinstance(self.sr_geol_age, SrGeolAgeEnum):
+            self.sr_geol_age = SrGeolAgeEnum(self.sr_geol_age)
 
-        if self.sr_kerog_type is not None and not isinstance(self.sr_kerog_type, str):
-            self.sr_kerog_type = str(self.sr_kerog_type)
+        if self.sr_kerog_type is not None and not isinstance(self.sr_kerog_type, SrKerogTypeEnum):
+            self.sr_kerog_type = SrKerogTypeEnum(self.sr_kerog_type)
 
-        if self.sr_lithology is not None and not isinstance(self.sr_lithology, str):
-            self.sr_lithology = str(self.sr_lithology)
+        if self.sr_lithology is not None and not isinstance(self.sr_lithology, SrLithologyEnum):
+            self.sr_lithology = SrLithologyEnum(self.sr_lithology)
 
         if self.sulfate is not None and not isinstance(self.sulfate, str):
             self.sulfate = str(self.sulfate)
@@ -8072,14 +8072,14 @@ class HydrocarbonResourcesFluidsSwabs(EnvPackageClass):
     ethylbenzene: Optional[str] = None
     field: Optional[str] = None
     hc_produced: Optional[str] = None
-    hcr: Optional[str] = None
+    hcr: Optional[Union[str, "HcrEnum"]] = None
     hcr_fw_salinity: Optional[str] = None
-    hcr_geol_age: Optional[str] = None
+    hcr_geol_age: Optional[Union[str, "HcrGeolAgeEnum"]] = None
     hcr_pressure: Optional[str] = None
     hcr_temp: Optional[str] = None
     iw_bt_date_well: Optional[str] = None
     iwf: Optional[str] = None
-    lithology: Optional[str] = None
+    lithology: Optional[Union[str, "LithologyEnum"]] = None
     magnesium: Optional[str] = None
     misc_param: Optional[Union[str, List[str]]] = empty_list()
     nitrate: Optional[str] = None
@@ -8097,14 +8097,14 @@ class HydrocarbonResourcesFluidsSwabs(EnvPackageClass):
     reservoir: Optional[str] = None
     resins_pc: Optional[str] = None
     salinity: Optional[str] = None
-    samp_collect_point: Optional[str] = None
+    samp_collect_point: Optional[Union[str, "SampCollectPointEnum"]] = None
     samp_loc_corr_rate: Optional[str] = None
     samp_name: Optional[str] = None
     samp_preserv: Optional[str] = None
     samp_store_dur: Optional[str] = None
     samp_store_loc: Optional[str] = None
     samp_store_temp: Optional[str] = None
-    samp_subtype: Optional[str] = None
+    samp_subtype: Optional[Union[str, "SampSubtypeEnum"]] = None
     samp_transport_cond: Optional[str] = None
     samp_type: Optional[str] = None
     samp_vol_we_dna_ext: Optional[str] = None
@@ -8214,14 +8214,14 @@ class HydrocarbonResourcesFluidsSwabs(EnvPackageClass):
         if self.hc_produced is not None and not isinstance(self.hc_produced, str):
             self.hc_produced = str(self.hc_produced)
 
-        if self.hcr is not None and not isinstance(self.hcr, str):
-            self.hcr = str(self.hcr)
+        if self.hcr is not None and not isinstance(self.hcr, HcrEnum):
+            self.hcr = HcrEnum(self.hcr)
 
         if self.hcr_fw_salinity is not None and not isinstance(self.hcr_fw_salinity, str):
             self.hcr_fw_salinity = str(self.hcr_fw_salinity)
 
-        if self.hcr_geol_age is not None and not isinstance(self.hcr_geol_age, str):
-            self.hcr_geol_age = str(self.hcr_geol_age)
+        if self.hcr_geol_age is not None and not isinstance(self.hcr_geol_age, HcrGeolAgeEnum):
+            self.hcr_geol_age = HcrGeolAgeEnum(self.hcr_geol_age)
 
         if self.hcr_pressure is not None and not isinstance(self.hcr_pressure, str):
             self.hcr_pressure = str(self.hcr_pressure)
@@ -8235,8 +8235,8 @@ class HydrocarbonResourcesFluidsSwabs(EnvPackageClass):
         if self.iwf is not None and not isinstance(self.iwf, str):
             self.iwf = str(self.iwf)
 
-        if self.lithology is not None and not isinstance(self.lithology, str):
-            self.lithology = str(self.lithology)
+        if self.lithology is not None and not isinstance(self.lithology, LithologyEnum):
+            self.lithology = LithologyEnum(self.lithology)
 
         if self.magnesium is not None and not isinstance(self.magnesium, str):
             self.magnesium = str(self.magnesium)
@@ -8290,8 +8290,8 @@ class HydrocarbonResourcesFluidsSwabs(EnvPackageClass):
         if self.salinity is not None and not isinstance(self.salinity, str):
             self.salinity = str(self.salinity)
 
-        if self.samp_collect_point is not None and not isinstance(self.samp_collect_point, str):
-            self.samp_collect_point = str(self.samp_collect_point)
+        if self.samp_collect_point is not None and not isinstance(self.samp_collect_point, SampCollectPointEnum):
+            self.samp_collect_point = SampCollectPointEnum(self.samp_collect_point)
 
         if self.samp_loc_corr_rate is not None and not isinstance(self.samp_loc_corr_rate, str):
             self.samp_loc_corr_rate = str(self.samp_loc_corr_rate)
@@ -8311,8 +8311,8 @@ class HydrocarbonResourcesFluidsSwabs(EnvPackageClass):
         if self.samp_store_temp is not None and not isinstance(self.samp_store_temp, str):
             self.samp_store_temp = str(self.samp_store_temp)
 
-        if self.samp_subtype is not None and not isinstance(self.samp_subtype, str):
-            self.samp_subtype = str(self.samp_subtype)
+        if self.samp_subtype is not None and not isinstance(self.samp_subtype, SampSubtypeEnum):
+            self.samp_subtype = SampSubtypeEnum(self.samp_subtype)
 
         if self.samp_transport_cond is not None and not isinstance(self.samp_transport_cond, str):
             self.samp_transport_cond = str(self.samp_transport_cond)
@@ -8927,7 +8927,7 @@ class PlantAssociated(EnvPackageClass):
     ph_regm: Optional[str] = None
     plant_growth_med: Optional[str] = None
     plant_product: Optional[str] = None
-    plant_sex: Optional[str] = None
+    plant_sex: Optional[Union[str, "PlantSexEnum"]] = None
     plant_struc: Optional[str] = None
     project_name: Optional[str] = None
     radiation_regm: Optional[Union[str, List[str]]] = empty_list()
@@ -8942,8 +8942,8 @@ class PlantAssociated(EnvPackageClass):
     root_med_suppl: Optional[str] = None
     salinity: Optional[str] = None
     salt_regm: Optional[str] = None
-    samp_capt_status: Optional[str] = None
-    samp_dis_stage: Optional[str] = None
+    samp_capt_status: Optional[Union[str, "SampCaptStatusEnum"]] = None
+    samp_dis_stage: Optional[Union[str, "SampDisStageEnum"]] = None
     samp_name: Optional[str] = None
     samp_store_dur: Optional[str] = None
     samp_store_loc: Optional[str] = None
@@ -9109,8 +9109,8 @@ class PlantAssociated(EnvPackageClass):
         if self.plant_product is not None and not isinstance(self.plant_product, str):
             self.plant_product = str(self.plant_product)
 
-        if self.plant_sex is not None and not isinstance(self.plant_sex, str):
-            self.plant_sex = str(self.plant_sex)
+        if self.plant_sex is not None and not isinstance(self.plant_sex, PlantSexEnum):
+            self.plant_sex = PlantSexEnum(self.plant_sex)
 
         if self.plant_struc is not None and not isinstance(self.plant_struc, str):
             self.plant_struc = str(self.plant_struc)
@@ -9156,11 +9156,11 @@ class PlantAssociated(EnvPackageClass):
         if self.salt_regm is not None and not isinstance(self.salt_regm, str):
             self.salt_regm = str(self.salt_regm)
 
-        if self.samp_capt_status is not None and not isinstance(self.samp_capt_status, str):
-            self.samp_capt_status = str(self.samp_capt_status)
+        if self.samp_capt_status is not None and not isinstance(self.samp_capt_status, SampCaptStatusEnum):
+            self.samp_capt_status = SampCaptStatusEnum(self.samp_capt_status)
 
-        if self.samp_dis_stage is not None and not isinstance(self.samp_dis_stage, str):
-            self.samp_dis_stage = str(self.samp_dis_stage)
+        if self.samp_dis_stage is not None and not isinstance(self.samp_dis_stage, SampDisStageEnum):
+            self.samp_dis_stage = SampDisStageEnum(self.samp_dis_stage)
 
         if self.samp_name is not None and not isinstance(self.samp_name, str):
             self.samp_name = str(self.samp_name)
@@ -9264,13 +9264,13 @@ class Sediment(EnvPackageClass):
     samp_store_loc: Optional[str] = None
     samp_store_temp: Optional[str] = None
     samp_vol_we_dna_ext: Optional[str] = None
-    sediment_type: Optional[str] = None
+    sediment_type: Optional[Union[str, "SedimentTypeEnum"]] = None
     silicate: Optional[str] = None
     sodium: Optional[str] = None
     sulfate: Optional[str] = None
     sulfide: Optional[str] = None
     temp: Optional[str] = None
-    tidal_stage: Optional[str] = None
+    tidal_stage: Optional[Union[str, "TidalStageEnum"]] = None
     tot_carb: Optional[str] = None
     tot_depth_water_col: Optional[str] = None
     tot_nitro_content: Optional[str] = None
@@ -9455,8 +9455,8 @@ class Sediment(EnvPackageClass):
         if self.samp_vol_we_dna_ext is not None and not isinstance(self.samp_vol_we_dna_ext, str):
             self.samp_vol_we_dna_ext = str(self.samp_vol_we_dna_ext)
 
-        if self.sediment_type is not None and not isinstance(self.sediment_type, str):
-            self.sediment_type = str(self.sediment_type)
+        if self.sediment_type is not None and not isinstance(self.sediment_type, SedimentTypeEnum):
+            self.sediment_type = SedimentTypeEnum(self.sediment_type)
 
         if self.silicate is not None and not isinstance(self.silicate, str):
             self.silicate = str(self.silicate)
@@ -9473,8 +9473,8 @@ class Sediment(EnvPackageClass):
         if self.temp is not None and not isinstance(self.temp, str):
             self.temp = str(self.temp)
 
-        if self.tidal_stage is not None and not isinstance(self.tidal_stage, str):
-            self.tidal_stage = str(self.tidal_stage)
+        if self.tidal_stage is not None and not isinstance(self.tidal_stage, TidalStageEnum):
+            self.tidal_stage = TidalStageEnum(self.tidal_stage)
 
         if self.tot_carb is not None and not isinstance(self.tot_carb, str):
             self.tot_carb = str(self.tot_carb)
@@ -9516,10 +9516,10 @@ class Soil(EnvPackageClass):
     cur_vegetation: Optional[str] = None
     cur_vegetation_meth: Optional[str] = None
     depth: Optional[str] = None
-    drainage_class: Optional[str] = None
+    drainage_class: Optional[Union[str, "DrainageClassEnum"]] = None
     elev: Optional[str] = None
     extreme_event: Optional[str] = None
-    fao_class: Optional[str] = None
+    fao_class: Optional[Union[str, "FaoClassEnum"]] = None
     fire: Optional[str] = None
     flooding: Optional[str] = None
     heavy_metals: Optional[Union[str, List[str]]] = empty_list()
@@ -9540,7 +9540,7 @@ class Soil(EnvPackageClass):
     pool_dna_extracts: Optional[str] = None
     prev_land_use_meth: Optional[str] = None
     previous_land_use: Optional[str] = None
-    profile_position: Optional[str] = None
+    profile_position: Optional[Union[str, "ProfilePositionEnum"]] = None
     project_name: Optional[str] = None
     salinity_meth: Optional[str] = None
     samp_name: Optional[str] = None
@@ -9557,7 +9557,7 @@ class Soil(EnvPackageClass):
     soil_type_meth: Optional[str] = None
     store_cond: Optional[str] = None
     temp: Optional[str] = None
-    tillage: Optional[Union[str, List[str]]] = empty_list()
+    tillage: Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]] = empty_list()
     tot_nitro_cont_meth: Optional[str] = None
     tot_nitro_content: Optional[str] = None
     tot_org_c_meth: Optional[str] = None
@@ -9597,8 +9597,8 @@ class Soil(EnvPackageClass):
         if self.depth is not None and not isinstance(self.depth, str):
             self.depth = str(self.depth)
 
-        if self.drainage_class is not None and not isinstance(self.drainage_class, str):
-            self.drainage_class = str(self.drainage_class)
+        if self.drainage_class is not None and not isinstance(self.drainage_class, DrainageClassEnum):
+            self.drainage_class = DrainageClassEnum(self.drainage_class)
 
         if self.elev is not None and not isinstance(self.elev, str):
             self.elev = str(self.elev)
@@ -9606,8 +9606,8 @@ class Soil(EnvPackageClass):
         if self.extreme_event is not None and not isinstance(self.extreme_event, str):
             self.extreme_event = str(self.extreme_event)
 
-        if self.fao_class is not None and not isinstance(self.fao_class, str):
-            self.fao_class = str(self.fao_class)
+        if self.fao_class is not None and not isinstance(self.fao_class, FaoClassEnum):
+            self.fao_class = FaoClassEnum(self.fao_class)
 
         if self.fire is not None and not isinstance(self.fire, str):
             self.fire = str(self.fire)
@@ -9671,8 +9671,8 @@ class Soil(EnvPackageClass):
         if self.previous_land_use is not None and not isinstance(self.previous_land_use, str):
             self.previous_land_use = str(self.previous_land_use)
 
-        if self.profile_position is not None and not isinstance(self.profile_position, str):
-            self.profile_position = str(self.profile_position)
+        if self.profile_position is not None and not isinstance(self.profile_position, ProfilePositionEnum):
+            self.profile_position = ProfilePositionEnum(self.profile_position)
 
         if self.project_name is not None and not isinstance(self.project_name, str):
             self.project_name = str(self.project_name)
@@ -9724,7 +9724,7 @@ class Soil(EnvPackageClass):
 
         if not isinstance(self.tillage, list):
             self.tillage = [self.tillage] if self.tillage is not None else []
-        self.tillage = [v if isinstance(v, str) else str(v) for v in self.tillage]
+        self.tillage = [v if isinstance(v, TillageEnum) else TillageEnum(v) for v in self.tillage]
 
         if self.tot_nitro_cont_meth is not None and not isinstance(self.tot_nitro_cont_meth, str):
             self.tot_nitro_cont_meth = str(self.tot_nitro_cont_meth)
@@ -9771,10 +9771,10 @@ class SymbiontAssociated(EnvPackageClass):
     host_body_habitat: Optional[str] = None
     host_body_product: Optional[str] = None
     host_body_site: Optional[str] = None
-    host_cellular_loc: Optional[str] = None
+    host_cellular_loc: Optional[Union[str, "HostCellularLocEnum"]] = None
     host_color: Optional[str] = None
     host_common_name: Optional[str] = None
-    host_dependence: Optional[str] = None
+    host_dependence: Optional[Union[str, "HostDependenceEnum"]] = None
     host_dry_mass: Optional[str] = None
     host_family_relationship: Optional[str] = None
     host_genotype: Optional[str] = None
@@ -9802,7 +9802,7 @@ class SymbiontAssociated(EnvPackageClass):
     host_phenotype: Optional[str] = None
     host_sex: Optional[str] = None
     host_shape: Optional[str] = None
-    host_specificity: Optional[str] = None
+    host_specificity: Optional[Union[str, "HostSpecificityEnum"]] = None
     host_subject_id: Optional[str] = None
     host_substrate: Optional[str] = None
     host_symbiont: Optional[str] = None
@@ -9810,12 +9810,12 @@ class SymbiontAssociated(EnvPackageClass):
     host_tot_mass: Optional[str] = None
     lat_lon: Optional[str] = None
     misc_param: Optional[Union[str, List[str]]] = empty_list()
-    mode_transmission: Optional[str] = None
+    mode_transmission: Optional[Union[str, "ModeTransmissionEnum"]] = None
     organism_count: Optional[str] = None
     oxy_stat_samp: Optional[str] = None
     perturbation: Optional[str] = None
     project_name: Optional[str] = None
-    route_transmission: Optional[str] = None
+    route_transmission: Optional[Union[str, "RouteTransmissionEnum"]] = None
     samp_salinity: Optional[str] = None
     samp_store_dur: Optional[str] = None
     samp_store_loc: Optional[str] = None
@@ -9824,10 +9824,10 @@ class SymbiontAssociated(EnvPackageClass):
     samp_vol_we_dna_ext: Optional[str] = None
     sample_name: Optional[str] = None
     source_mat_id: Optional[Union[str, List[str]]] = empty_list()
-    sym_life_cycle_type: Optional[str] = None
-    symbiont_host_role: Optional[str] = None
+    sym_life_cycle_type: Optional[Union[str, "SymLifeCycleTypeEnum"]] = None
+    symbiont_host_role: Optional[Union[str, "SymbiontHostRoleEnum"]] = None
     temp: Optional[str] = None
-    type_of_symbiosis: Optional[str] = None
+    type_of_symbiosis: Optional[Union[str, "TypeOfSymbiosisEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.alt is not None and not isinstance(self.alt, str):
@@ -9875,8 +9875,8 @@ class SymbiontAssociated(EnvPackageClass):
         if self.host_body_site is not None and not isinstance(self.host_body_site, str):
             self.host_body_site = str(self.host_body_site)
 
-        if self.host_cellular_loc is not None and not isinstance(self.host_cellular_loc, str):
-            self.host_cellular_loc = str(self.host_cellular_loc)
+        if self.host_cellular_loc is not None and not isinstance(self.host_cellular_loc, HostCellularLocEnum):
+            self.host_cellular_loc = HostCellularLocEnum(self.host_cellular_loc)
 
         if self.host_color is not None and not isinstance(self.host_color, str):
             self.host_color = str(self.host_color)
@@ -9884,8 +9884,8 @@ class SymbiontAssociated(EnvPackageClass):
         if self.host_common_name is not None and not isinstance(self.host_common_name, str):
             self.host_common_name = str(self.host_common_name)
 
-        if self.host_dependence is not None and not isinstance(self.host_dependence, str):
-            self.host_dependence = str(self.host_dependence)
+        if self.host_dependence is not None and not isinstance(self.host_dependence, HostDependenceEnum):
+            self.host_dependence = HostDependenceEnum(self.host_dependence)
 
         if self.host_dry_mass is not None and not isinstance(self.host_dry_mass, str):
             self.host_dry_mass = str(self.host_dry_mass)
@@ -9971,8 +9971,8 @@ class SymbiontAssociated(EnvPackageClass):
         if self.host_shape is not None and not isinstance(self.host_shape, str):
             self.host_shape = str(self.host_shape)
 
-        if self.host_specificity is not None and not isinstance(self.host_specificity, str):
-            self.host_specificity = str(self.host_specificity)
+        if self.host_specificity is not None and not isinstance(self.host_specificity, HostSpecificityEnum):
+            self.host_specificity = HostSpecificityEnum(self.host_specificity)
 
         if self.host_subject_id is not None and not isinstance(self.host_subject_id, str):
             self.host_subject_id = str(self.host_subject_id)
@@ -9996,8 +9996,8 @@ class SymbiontAssociated(EnvPackageClass):
             self.misc_param = [self.misc_param] if self.misc_param is not None else []
         self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
 
-        if self.mode_transmission is not None and not isinstance(self.mode_transmission, str):
-            self.mode_transmission = str(self.mode_transmission)
+        if self.mode_transmission is not None and not isinstance(self.mode_transmission, ModeTransmissionEnum):
+            self.mode_transmission = ModeTransmissionEnum(self.mode_transmission)
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
@@ -10011,8 +10011,8 @@ class SymbiontAssociated(EnvPackageClass):
         if self.project_name is not None and not isinstance(self.project_name, str):
             self.project_name = str(self.project_name)
 
-        if self.route_transmission is not None and not isinstance(self.route_transmission, str):
-            self.route_transmission = str(self.route_transmission)
+        if self.route_transmission is not None and not isinstance(self.route_transmission, RouteTransmissionEnum):
+            self.route_transmission = RouteTransmissionEnum(self.route_transmission)
 
         if self.samp_salinity is not None and not isinstance(self.samp_salinity, str):
             self.samp_salinity = str(self.samp_salinity)
@@ -10039,17 +10039,17 @@ class SymbiontAssociated(EnvPackageClass):
             self.source_mat_id = [self.source_mat_id] if self.source_mat_id is not None else []
         self.source_mat_id = [v if isinstance(v, str) else str(v) for v in self.source_mat_id]
 
-        if self.sym_life_cycle_type is not None and not isinstance(self.sym_life_cycle_type, str):
-            self.sym_life_cycle_type = str(self.sym_life_cycle_type)
+        if self.sym_life_cycle_type is not None and not isinstance(self.sym_life_cycle_type, SymLifeCycleTypeEnum):
+            self.sym_life_cycle_type = SymLifeCycleTypeEnum(self.sym_life_cycle_type)
 
-        if self.symbiont_host_role is not None and not isinstance(self.symbiont_host_role, str):
-            self.symbiont_host_role = str(self.symbiont_host_role)
+        if self.symbiont_host_role is not None and not isinstance(self.symbiont_host_role, SymbiontHostRoleEnum):
+            self.symbiont_host_role = SymbiontHostRoleEnum(self.symbiont_host_role)
 
         if self.temp is not None and not isinstance(self.temp, str):
             self.temp = str(self.temp)
 
-        if self.type_of_symbiosis is not None and not isinstance(self.type_of_symbiosis, str):
-            self.type_of_symbiosis = str(self.type_of_symbiosis)
+        if self.type_of_symbiosis is not None and not isinstance(self.type_of_symbiosis, TypeOfSymbiosisEnum):
+            self.type_of_symbiosis = TypeOfSymbiosisEnum(self.type_of_symbiosis)
 
         super().__post_init__(**kwargs)
 
@@ -10321,7 +10321,7 @@ class Water(EnvPackageClass):
     sulfide: Optional[str] = None
     suspend_part_matter: Optional[str] = None
     temp: Optional[str] = None
-    tidal_stage: Optional[str] = None
+    tidal_stage: Optional[Union[str, "TidalStageEnum"]] = None
     tot_depth_water_col: Optional[str] = None
     tot_diss_nitro: Optional[str] = None
     tot_inorg_nitro: Optional[str] = None
@@ -10565,8 +10565,8 @@ class Water(EnvPackageClass):
         if self.temp is not None and not isinstance(self.temp, str):
             self.temp = str(self.temp)
 
-        if self.tidal_stage is not None and not isinstance(self.tidal_stage, str):
-            self.tidal_stage = str(self.tidal_stage)
+        if self.tidal_stage is not None and not isinstance(self.tidal_stage, TidalStageEnum):
+            self.tidal_stage = TidalStageEnum(self.tidal_stage)
 
         if self.tot_depth_water_col is not None and not isinstance(self.tot_depth_water_col, str):
             self.tot_depth_water_col = str(self.tot_depth_water_col)
@@ -10650,20 +10650,20 @@ class MimsSoil(Soil):
     associated_resource: Optional[Union[str, List[str]]] = empty_list()
     experimental_factor: Optional[str] = None
     feat_pred: Optional[str] = None
-    lib_layout: Optional[str] = None
+    lib_layout: Optional[Union[str, "LibLayoutEnum"]] = None
     lib_reads_seqd: Optional[int] = None
     lib_screen: Optional[str] = None
     lib_size: Optional[int] = None
     lib_vector: Optional[str] = None
     mid: Optional[str] = None
-    neg_cont_type: Optional[str] = None
+    neg_cont_type: Optional[Union[str, "NegContTypeEnum"]] = None
     nucl_acid_amp: Optional[str] = None
     nucl_acid_ext: Optional[str] = None
     number_contig: Optional[int] = None
     pos_cont_type: Optional[str] = None
     ref_biomaterial: Optional[str] = None
     ref_db: Optional[str] = None
-    rel_to_oxygen: Optional[str] = None
+    rel_to_oxygen: Optional[Union[str, "RelToOxygenEnum"]] = None
     samp_collec_device: Optional[str] = None
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
@@ -10743,8 +10743,8 @@ class MimsSoil(Soil):
         if self.feat_pred is not None and not isinstance(self.feat_pred, str):
             self.feat_pred = str(self.feat_pred)
 
-        if self.lib_layout is not None and not isinstance(self.lib_layout, str):
-            self.lib_layout = str(self.lib_layout)
+        if self.lib_layout is not None and not isinstance(self.lib_layout, LibLayoutEnum):
+            self.lib_layout = LibLayoutEnum(self.lib_layout)
 
         if self.lib_reads_seqd is not None and not isinstance(self.lib_reads_seqd, int):
             self.lib_reads_seqd = int(self.lib_reads_seqd)
@@ -10761,8 +10761,8 @@ class MimsSoil(Soil):
         if self.mid is not None and not isinstance(self.mid, str):
             self.mid = str(self.mid)
 
-        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, str):
-            self.neg_cont_type = str(self.neg_cont_type)
+        if self.neg_cont_type is not None and not isinstance(self.neg_cont_type, NegContTypeEnum):
+            self.neg_cont_type = NegContTypeEnum(self.neg_cont_type)
 
         if self.nucl_acid_amp is not None and not isinstance(self.nucl_acid_amp, str):
             self.nucl_acid_amp = str(self.nucl_acid_amp)
@@ -10782,8 +10782,8 @@ class MimsSoil(Soil):
         if self.ref_db is not None and not isinstance(self.ref_db, str):
             self.ref_db = str(self.ref_db)
 
-        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, str):
-            self.rel_to_oxygen = str(self.rel_to_oxygen)
+        if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, RelToOxygenEnum):
+            self.rel_to_oxygen = RelToOxygenEnum(self.rel_to_oxygen)
 
         if self.samp_collec_device is not None and not isinstance(self.samp_collec_device, str):
             self.samp_collec_device = str(self.samp_collec_device)
@@ -13333,13 +13333,13 @@ slots.associated_resource = Slot(uri=MIXS['0000091'], name="associated_resource"
                    model_uri=MIXS.associated_resource, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.bin_param = Slot(uri=MIXS['0000077'], name="bin_param", curie=MIXS.curie('0000077'),
-                   model_uri=MIXS.bin_param, domain=None, range=Optional[str])
+                   model_uri=MIXS.bin_param, domain=None, range=Optional[Union[str, "BinParamEnum"]])
 
 slots.bin_software = Slot(uri=MIXS['0000078'], name="bin_software", curie=MIXS.curie('0000078'),
                    model_uri=MIXS.bin_software, domain=None, range=Optional[str])
 
 slots.biotic_relationship = Slot(uri=MIXS['0000028'], name="biotic_relationship", curie=MIXS.curie('0000028'),
-                   model_uri=MIXS.biotic_relationship, domain=None, range=Optional[str])
+                   model_uri=MIXS.biotic_relationship, domain=None, range=Optional[Union[str, "BioticRelationshipEnum"]])
 
 slots.chimera_check = Slot(uri=MIXS['0000052'], name="chimera_check", curie=MIXS.curie('0000052'),
                    model_uri=MIXS.chimera_check, domain=None, range=Optional[str])
@@ -13348,7 +13348,7 @@ slots.collection_date = Slot(uri=MIXS['0000011'], name="collection_date", curie=
                    model_uri=MIXS.collection_date, domain=None, range=Optional[str])
 
 slots.compl_appr = Slot(uri=MIXS['0000071'], name="compl_appr", curie=MIXS.curie('0000071'),
-                   model_uri=MIXS.compl_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.compl_appr, domain=None, range=Optional[Union[str, "ComplApprEnum"]])
 
 slots.compl_score = Slot(uri=MIXS['0000069'], name="compl_score", curie=MIXS.curie('0000069'),
                    model_uri=MIXS.compl_score, domain=None, range=Optional[str])
@@ -13361,7 +13361,7 @@ slots.contam_score = Slot(uri=MIXS['0000072'], name="contam_score", curie=MIXS.c
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ %$'))
 
 slots.contam_screen_input = Slot(uri=MIXS['0000005'], name="contam_screen_input", curie=MIXS.curie('0000005'),
-                   model_uri=MIXS.contam_screen_input, domain=None, range=Optional[str])
+                   model_uri=MIXS.contam_screen_input, domain=None, range=Optional[Union[str, "ContamScreenInputEnum"]])
 
 slots.contam_screen_param = Slot(uri=MIXS['0000073'], name="contam_screen_param", curie=MIXS.curie('0000073'),
                    model_uri=MIXS.contam_screen_param, domain=None, range=Optional[str])
@@ -13415,7 +13415,7 @@ slots.host_disease_stat = Slot(uri=MIXS['0000031'], name="host_disease_stat", cu
                    model_uri=MIXS.host_disease_stat, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.host_pred_appr = Slot(uri=MIXS['0000088'], name="host_pred_appr", curie=MIXS.curie('0000088'),
-                   model_uri=MIXS.host_pred_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.host_pred_appr, domain=None, range=Optional[Union[str, "HostPredApprEnum"]])
 
 slots.host_pred_est_acc = Slot(uri=MIXS['0000089'], name="host_pred_est_acc", curie=MIXS.curie('0000089'),
                    model_uri=MIXS.host_pred_est_acc, domain=None, range=Optional[str])
@@ -13431,7 +13431,7 @@ slots.lat_lon = Slot(uri=MIXS['0000009'], name="lat_lon", curie=MIXS.curie('0000
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.lib_layout = Slot(uri=MIXS['0000041'], name="lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.lib_layout, domain=None, range=Optional[str])
+                   model_uri=MIXS.lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.lib_reads_seqd = Slot(uri=MIXS['0000040'], name="lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.lib_reads_seqd, domain=None, range=Optional[int])
@@ -13446,14 +13446,14 @@ slots.lib_vector = Slot(uri=MIXS['0000042'], name="lib_vector", curie=MIXS.curie
                    model_uri=MIXS.lib_vector, domain=None, range=Optional[str])
 
 slots.mag_cov_software = Slot(uri=MIXS['0000080'], name="mag_cov_software", curie=MIXS.curie('0000080'),
-                   model_uri=MIXS.mag_cov_software, domain=None, range=Optional[str])
+                   model_uri=MIXS.mag_cov_software, domain=None, range=Optional[Union[str, "MagCovSoftwareEnum"]])
 
 slots.mid = Slot(uri=MIXS['0000047'], name="mid", curie=MIXS.curie('0000047'),
                    model_uri=MIXS.mid, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[ACGTacgt]+$'))
 
 slots.neg_cont_type = Slot(uri=MIXS['0001321'], name="neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.nucl_acid_amp = Slot(uri=MIXS['0000038'], name="nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.nucl_acid_amp, domain=None, range=Optional[str])
@@ -13494,7 +13494,7 @@ slots.pos_cont_type = Slot(uri=MIXS['0001322'], name="pos_cont_type", curie=MIXS
                    model_uri=MIXS.pos_cont_type, domain=None, range=Optional[str])
 
 slots.pred_genome_struc = Slot(uri=MIXS['0000083'], name="pred_genome_struc", curie=MIXS.curie('0000083'),
-                   model_uri=MIXS.pred_genome_struc, domain=None, range=Optional[str])
+                   model_uri=MIXS.pred_genome_struc, domain=None, range=Optional[Union[str, "PredGenomeStrucEnum"]])
 
 slots.pred_genome_type = Slot(uri=MIXS['0000082'], name="pred_genome_type", curie=MIXS.curie('0000082'),
                    model_uri=MIXS.pred_genome_type, domain=None, range=Optional[str])
@@ -13515,7 +13515,7 @@ slots.ref_db = Slot(uri=MIXS['0000062'], name="ref_db", curie=MIXS.curie('000006
                    model_uri=MIXS.ref_db, domain=None, range=Optional[str])
 
 slots.rel_to_oxygen = Slot(uri=MIXS['0000015'], name="rel_to_oxygen", curie=MIXS.curie('0000015'),
-                   model_uri=MIXS.rel_to_oxygen, domain=None, range=Optional[str])
+                   model_uri=MIXS.rel_to_oxygen, domain=None, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.samp_collec_device = Slot(uri=MIXS['0000002'], name="samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=MIXS.samp_collec_device, domain=None, range=Optional[str])
@@ -13544,13 +13544,13 @@ slots.seq_meth = Slot(uri=MIXS['0000050'], name="seq_meth", curie=MIXS.curie('00
                    model_uri=MIXS.seq_meth, domain=None, range=Optional[str])
 
 slots.seq_quality_check = Slot(uri=MIXS['0000051'], name="seq_quality_check", curie=MIXS.curie('0000051'),
-                   model_uri=MIXS.seq_quality_check, domain=None, range=Optional[str])
+                   model_uri=MIXS.seq_quality_check, domain=None, range=Optional[Union[str, "SeqQualityCheckEnum"]])
 
 slots.sim_search_meth = Slot(uri=MIXS['0000063'], name="sim_search_meth", curie=MIXS.curie('0000063'),
                    model_uri=MIXS.sim_search_meth, domain=None, range=Optional[str])
 
 slots.single_cell_lysis_appr = Slot(uri=MIXS['0000076'], name="single_cell_lysis_appr", curie=MIXS.curie('0000076'),
-                   model_uri=MIXS.single_cell_lysis_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.single_cell_lysis_appr, domain=None, range=Optional[Union[str, "SingleCellLysisApprEnum"]])
 
 slots.single_cell_lysis_prot = Slot(uri=MIXS['0000054'], name="single_cell_lysis_prot", curie=MIXS.curie('0000054'),
                    model_uri=MIXS.single_cell_lysis_prot, domain=None, range=Optional[str])
@@ -13563,7 +13563,7 @@ slots.sop = Slot(uri=MIXS['0000090'], name="sop", curie=MIXS.curie('0000090'),
                    model_uri=MIXS.sop, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.sort_tech = Slot(uri=MIXS['0000075'], name="sort_tech", curie=MIXS.curie('0000075'),
-                   model_uri=MIXS.sort_tech, domain=None, range=Optional[str])
+                   model_uri=MIXS.sort_tech, domain=None, range=Optional[Union[str, "SortTechEnum"]])
 
 slots.source_mat_id = Slot(uri=MIXS['0000026'], name="source_mat_id", curie=MIXS.curie('0000026'),
                    model_uri=MIXS.source_mat_id, domain=None, range=Optional[Union[str, List[str]]])
@@ -13587,7 +13587,7 @@ slots.tax_class = Slot(uri=MIXS['0000064'], name="tax_class", curie=MIXS.curie('
                    model_uri=MIXS.tax_class, domain=None, range=Optional[str])
 
 slots.tax_ident = Slot(uri=MIXS['0000053'], name="tax_ident", curie=MIXS.curie('0000053'),
-                   model_uri=MIXS.tax_ident, domain=None, range=Optional[str])
+                   model_uri=MIXS.tax_ident, domain=None, range=Optional[Union[str, "TaxIdentEnum"]])
 
 slots.temp = Slot(uri=MIXS['0000113'], name="temp", curie=MIXS.curie('0000113'),
                    model_uri=MIXS.temp, domain=None, range=Optional[str],
@@ -13600,16 +13600,16 @@ slots.trnas = Slot(uri=MIXS['0000067'], name="trnas", curie=MIXS.curie('0000067'
                    model_uri=MIXS.trnas, domain=None, range=Optional[int])
 
 slots.trophic_level = Slot(uri=MIXS['0000032'], name="trophic_level", curie=MIXS.curie('0000032'),
-                   model_uri=MIXS.trophic_level, domain=None, range=Optional[str])
+                   model_uri=MIXS.trophic_level, domain=None, range=Optional[Union[str, "TrophicLevelEnum"]])
 
 slots.vir_ident_software = Slot(uri=MIXS['0000081'], name="vir_ident_software", curie=MIXS.curie('0000081'),
                    model_uri=MIXS.vir_ident_software, domain=None, range=Optional[str])
 
 slots.virus_enrich_appr = Slot(uri=MIXS['0000036'], name="virus_enrich_appr", curie=MIXS.curie('0000036'),
-                   model_uri=MIXS.virus_enrich_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.virus_enrich_appr, domain=None, range=Optional[Union[str, "VirusEnrichApprEnum"]])
 
 slots.wga_amp_appr = Slot(uri=MIXS['0000055'], name="wga_amp_appr", curie=MIXS.curie('0000055'),
-                   model_uri=MIXS.wga_amp_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.wga_amp_appr, domain=None, range=Optional[Union[str, "WgaAmpApprEnum"]])
 
 slots.wga_amp_kit = Slot(uri=MIXS['0000006'], name="wga_amp_kit", curie=MIXS.curie('0000006'),
                    model_uri=MIXS.wga_amp_kit, domain=None, range=Optional[str])
@@ -13660,7 +13660,7 @@ slots.cur_vegetation_meth = Slot(uri=MIXS['0000314'], name="cur_vegetation_meth"
                    model_uri=MIXS.cur_vegetation_meth, domain=None, range=Optional[str])
 
 slots.drainage_class = Slot(uri=MIXS['0001085'], name="drainage_class", curie=MIXS.curie('0001085'),
-                   model_uri=MIXS.drainage_class, domain=None, range=Optional[str])
+                   model_uri=MIXS.drainage_class, domain=None, range=Optional[Union[str, "DrainageClassEnum"]])
 
 slots.enrichment_protocol = Slot(uri=MIXS.enrichment_protocol, name="enrichment_protocol", curie=MIXS.curie('enrichment_protocol'),
                    model_uri=MIXS.enrichment_protocol, domain=None, range=Optional[str])
@@ -13669,7 +13669,7 @@ slots.extreme_event = Slot(uri=MIXS['0000320'], name="extreme_event", curie=MIXS
                    model_uri=MIXS.extreme_event, domain=None, range=Optional[str])
 
 slots.fao_class = Slot(uri=MIXS['0001083'], name="fao_class", curie=MIXS.curie('0001083'),
-                   model_uri=MIXS.fao_class, domain=None, range=Optional[str])
+                   model_uri=MIXS.fao_class, domain=None, range=Optional[Union[str, "FaoClassEnum"]])
 
 slots.farm_equip = Slot(uri=MIXS.farm_equip, name="farm_equip", curie=MIXS.curie('farm_equip'),
                    model_uri=MIXS.farm_equip, domain=None, range=Optional[str])
@@ -13681,7 +13681,7 @@ slots.farm_equip_shared = Slot(uri=MIXS.farm_equip_shared, name="farm_equip_shar
                    model_uri=MIXS.farm_equip_shared, domain=None, range=Optional[str])
 
 slots.farm_water_source = Slot(uri=MIXS['0001110'], name="farm_water_source", curie=MIXS.curie('0001110'),
-                   model_uri=MIXS.farm_water_source, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.farm_water_source, domain=None, range=Optional[Union[Union[str, "FarmWaterSourceEnum"], List[Union[str, "FarmWaterSourceEnum"]]]])
 
 slots.fertilizer_admin = Slot(uri=MIXS['0001127'], name="fertilizer_admin", curie=MIXS.curie('0001127'),
                    model_uri=MIXS.fertilizer_admin, domain=None, range=Optional[str])
@@ -13852,7 +13852,7 @@ slots.previous_land_use_meth = Slot(uri=MIXS.previous_land_use_meth, name="previ
                    model_uri=MIXS.previous_land_use_meth, domain=None, range=Optional[str])
 
 slots.profile_position = Slot(uri=MIXS['0001084'], name="profile_position", curie=MIXS.curie('0001084'),
-                   model_uri=MIXS.profile_position, domain=None, range=Optional[str])
+                   model_uri=MIXS.profile_position, domain=None, range=Optional[Union[str, "ProfilePositionEnum"]])
 
 slots.rel_location = Slot(uri=MIXS.rel_location, name="rel_location", curie=MIXS.curie('rel_location'),
                    model_uri=MIXS.rel_location, domain=None, range=Optional[str])
@@ -13897,10 +13897,12 @@ slots.season_humidity = Slot(uri=MIXS['0001148'], name="season_humidity", curie=
                    model_uri=MIXS.season_humidity, domain=None, range=Optional[str])
 
 slots.season_precpt = Slot(uri=MIXS['0000645'], name="season_precpt", curie=MIXS.curie('0000645'),
-                   model_uri=MIXS.season_precpt, domain=None, range=Optional[str])
+                   model_uri=MIXS.season_precpt, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.season_temp = Slot(uri=MIXS['0000643'], name="season_temp", curie=MIXS.curie('0000643'),
-                   model_uri=MIXS.season_temp, domain=None, range=Optional[str])
+                   model_uri=MIXS.season_temp, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.sequencing_location = Slot(uri=MIXS['0001156'], name="sequencing_location", curie=MIXS.curie('0001156'),
                    model_uri=MIXS.sequencing_location, domain=None, range=Optional[str])
@@ -13939,7 +13941,8 @@ slots.soil_temp = Slot(uri=MIXS.soil_temp, name="soil_temp", curie=MIXS.curie('s
                    model_uri=MIXS.soil_temp, domain=None, range=Optional[str])
 
 slots.soil_type = Slot(uri=MIXS['0000332'], name="soil_type", curie=MIXS.curie('0000332'),
-                   model_uri=MIXS.soil_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.soil_type, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
 slots.soil_type_meth = Slot(uri=MIXS['0000334'], name="soil_type_meth", curie=MIXS.curie('0000334'),
                    model_uri=MIXS.soil_type_meth, domain=None, range=Optional[str])
@@ -13963,7 +13966,7 @@ slots.texture_meth = Slot(uri=MIXS.texture_meth, name="texture_meth", curie=MIXS
                    model_uri=MIXS.texture_meth, domain=None, range=Optional[str])
 
 slots.tillage = Slot(uri=MIXS['0001081'], name="tillage", curie=MIXS.curie('0001081'),
-                   model_uri=MIXS.tillage, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.tillage, domain=None, range=Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]])
 
 slots.tot_car = Slot(uri=MIXS.tot_car, name="tot_car", curie=MIXS.curie('tot_car'),
                    model_uri=MIXS.tot_car, domain=None, range=Optional[str])
@@ -13978,7 +13981,8 @@ slots.tot_org_c_meth = Slot(uri=MIXS['0000337'], name="tot_org_c_meth", curie=MI
                    model_uri=MIXS.tot_org_c_meth, domain=None, range=Optional[str])
 
 slots.tot_org_carb = Slot(uri=MIXS['0000533'], name="tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=MIXS.tot_org_carb, domain=None, range=Optional[str])
+                   model_uri=MIXS.tot_org_carb, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.tot_phos = Slot(uri=MIXS.tot_phos, name="tot_phos", curie=MIXS.curie('tot_phos'),
                    model_uri=MIXS.tot_phos, domain=None, range=Optional[str])
@@ -13990,7 +13994,7 @@ slots.water_p_h = Slot(uri=MIXS.water_p_h, name="water_p_h", curie=MIXS.curie('w
                    model_uri=MIXS.water_p_h, domain=None, range=Optional[str])
 
 slots.water_source_shared = Slot(uri=MIXS['0001176'], name="water_source_shared", curie=MIXS.curie('0001176'),
-                   model_uri=MIXS.water_source_shared, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.water_source_shared, domain=None, range=Optional[Union[Union[str, "WaterSourceSharedEnum"], List[Union[str, "WaterSourceSharedEnum"]]]])
 
 slots.water_temp_regm = Slot(uri=MIXS.water_temp_regm, name="water_temp_regm", curie=MIXS.curie('water_temp_regm'),
                    model_uri=MIXS.water_temp_regm, domain=None, range=Optional[str])
@@ -14050,7 +14054,7 @@ slots.adj_room = Slot(uri=MIXS['0000219'], name="adj_room", curie=MIXS.curie('00
                    model_uri=MIXS.adj_room, domain=None, range=Optional[str])
 
 slots.aero_struc = Slot(uri=MIXS['0000773'], name="aero_struc", curie=MIXS.curie('0000773'),
-                   model_uri=MIXS.aero_struc, domain=None, range=Optional[str])
+                   model_uri=MIXS.aero_struc, domain=None, range=Optional[Union[str, "AeroStrucEnum"]])
 
 slots.air_temp = Slot(uri=MIXS.air_temp, name="air_temp", curie=MIXS.curie('air_temp'),
                    model_uri=MIXS.air_temp, domain=None, range=Optional[str])
@@ -14059,7 +14063,7 @@ slots.amount_light = Slot(uri=MIXS['0000140'], name="amount_light", curie=MIXS.c
                    model_uri=MIXS.amount_light, domain=None, range=Optional[str])
 
 slots.arch_struc = Slot(uri=MIXS['0000774'], name="arch_struc", curie=MIXS.curie('0000774'),
-                   model_uri=MIXS.arch_struc, domain=None, range=Optional[str])
+                   model_uri=MIXS.arch_struc, domain=None, range=Optional[Union[str, "ArchStrucEnum"]])
 
 slots.avg_dew_point = Slot(uri=MIXS['0000141'], name="avg_dew_point", curie=MIXS.curie('0000141'),
                    model_uri=MIXS.avg_dew_point, domain=None, range=Optional[str])
@@ -14077,19 +14081,19 @@ slots.bedroom_count = Slot(uri=MIXS['0000777'], name="bedroom_count", curie=MIXS
                    model_uri=MIXS.bedroom_count, domain=None, range=Optional[int])
 
 slots.build_docs = Slot(uri=MIXS['0000787'], name="build_docs", curie=MIXS.curie('0000787'),
-                   model_uri=MIXS.build_docs, domain=None, range=Optional[str])
+                   model_uri=MIXS.build_docs, domain=None, range=Optional[Union[str, "BuildDocsEnum"]])
 
 slots.build_occup_type = Slot(uri=MIXS['0000761'], name="build_occup_type", curie=MIXS.curie('0000761'),
-                   model_uri=MIXS.build_occup_type, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.build_occup_type, domain=None, range=Optional[Union[Union[str, "BuildOccupTypeEnum"], List[Union[str, "BuildOccupTypeEnum"]]]])
 
 slots.building_setting = Slot(uri=MIXS['0000768'], name="building_setting", curie=MIXS.curie('0000768'),
-                   model_uri=MIXS.building_setting, domain=None, range=Optional[str])
+                   model_uri=MIXS.building_setting, domain=None, range=Optional[Union[str, "BuildingSettingEnum"]])
 
 slots.built_struc_age = Slot(uri=MIXS['0000145'], name="built_struc_age", curie=MIXS.curie('0000145'),
                    model_uri=MIXS.built_struc_age, domain=None, range=Optional[str])
 
 slots.built_struc_set = Slot(uri=MIXS['0000778'], name="built_struc_set", curie=MIXS.curie('0000778'),
-                   model_uri=MIXS.built_struc_set, domain=None, range=Optional[str])
+                   model_uri=MIXS.built_struc_set, domain=None, range=Optional[Union[str, "BuiltStrucSetEnum"]])
 
 slots.built_struc_type = Slot(uri=MIXS['0000721'], name="built_struc_type", curie=MIXS.curie('0000721'),
                    model_uri=MIXS.built_struc_type, domain=None, range=Optional[str])
@@ -14098,25 +14102,25 @@ slots.ceil_area = Slot(uri=MIXS['0000148'], name="ceil_area", curie=MIXS.curie('
                    model_uri=MIXS.ceil_area, domain=None, range=Optional[str])
 
 slots.ceil_cond = Slot(uri=MIXS['0000779'], name="ceil_cond", curie=MIXS.curie('0000779'),
-                   model_uri=MIXS.ceil_cond, domain=None, range=Optional[str])
+                   model_uri=MIXS.ceil_cond, domain=None, range=Optional[Union[str, "CeilCondEnum"]])
 
 slots.ceil_finish_mat = Slot(uri=MIXS['0000780'], name="ceil_finish_mat", curie=MIXS.curie('0000780'),
-                   model_uri=MIXS.ceil_finish_mat, domain=None, range=Optional[str])
+                   model_uri=MIXS.ceil_finish_mat, domain=None, range=Optional[Union[str, "CeilFinishMatEnum"]])
 
 slots.ceil_struc = Slot(uri=MIXS['0000782'], name="ceil_struc", curie=MIXS.curie('0000782'),
-                   model_uri=MIXS.ceil_struc, domain=None, range=Optional[str])
+                   model_uri=MIXS.ceil_struc, domain=None, range=Optional[Union[str, "CeilStrucEnum"]])
 
 slots.ceil_texture = Slot(uri=MIXS['0000783'], name="ceil_texture", curie=MIXS.curie('0000783'),
-                   model_uri=MIXS.ceil_texture, domain=None, range=Optional[str])
+                   model_uri=MIXS.ceil_texture, domain=None, range=Optional[Union[str, "CeilTextureEnum"]])
 
 slots.ceil_thermal_mass = Slot(uri=MIXS['0000143'], name="ceil_thermal_mass", curie=MIXS.curie('0000143'),
                    model_uri=MIXS.ceil_thermal_mass, domain=None, range=Optional[str])
 
 slots.ceil_type = Slot(uri=MIXS['0000784'], name="ceil_type", curie=MIXS.curie('0000784'),
-                   model_uri=MIXS.ceil_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.ceil_type, domain=None, range=Optional[Union[str, "CeilTypeEnum"]])
 
 slots.ceil_water_mold = Slot(uri=MIXS['0000781'], name="ceil_water_mold", curie=MIXS.curie('0000781'),
-                   model_uri=MIXS.ceil_water_mold, domain=None, range=Optional[str])
+                   model_uri=MIXS.ceil_water_mold, domain=None, range=Optional[Union[str, "CeilWaterMoldEnum"]])
 
 slots.cool_syst_id = Slot(uri=MIXS['0000785'], name="cool_syst_id", curie=MIXS.curie('0000785'),
                    model_uri=MIXS.cool_syst_id, domain=None, range=Optional[int])
@@ -14128,40 +14132,40 @@ slots.dew_point = Slot(uri=MIXS['0000129'], name="dew_point", curie=MIXS.curie('
                    model_uri=MIXS.dew_point, domain=None, range=Optional[str])
 
 slots.door_comp_type = Slot(uri=MIXS['0000795'], name="door_comp_type", curie=MIXS.curie('0000795'),
-                   model_uri=MIXS.door_comp_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.door_comp_type, domain=None, range=Optional[Union[str, "DoorCompTypeEnum"]])
 
 slots.door_cond = Slot(uri=MIXS['0000788'], name="door_cond", curie=MIXS.curie('0000788'),
-                   model_uri=MIXS.door_cond, domain=None, range=Optional[str])
+                   model_uri=MIXS.door_cond, domain=None, range=Optional[Union[str, "DoorCondEnum"]])
 
 slots.door_direct = Slot(uri=MIXS['0000789'], name="door_direct", curie=MIXS.curie('0000789'),
-                   model_uri=MIXS.door_direct, domain=None, range=Optional[str])
+                   model_uri=MIXS.door_direct, domain=None, range=Optional[Union[str, "DoorDirectEnum"]])
 
 slots.door_loc = Slot(uri=MIXS['0000790'], name="door_loc", curie=MIXS.curie('0000790'),
-                   model_uri=MIXS.door_loc, domain=None, range=Optional[str])
+                   model_uri=MIXS.door_loc, domain=None, range=Optional[Union[str, "DoorLocEnum"]])
 
 slots.door_mat = Slot(uri=MIXS['0000791'], name="door_mat", curie=MIXS.curie('0000791'),
-                   model_uri=MIXS.door_mat, domain=None, range=Optional[str])
+                   model_uri=MIXS.door_mat, domain=None, range=Optional[Union[str, "DoorMatEnum"]])
 
 slots.door_move = Slot(uri=MIXS['0000792'], name="door_move", curie=MIXS.curie('0000792'),
-                   model_uri=MIXS.door_move, domain=None, range=Optional[str])
+                   model_uri=MIXS.door_move, domain=None, range=Optional[Union[str, "DoorMoveEnum"]])
 
 slots.door_size = Slot(uri=MIXS['0000158'], name="door_size", curie=MIXS.curie('0000158'),
                    model_uri=MIXS.door_size, domain=None, range=Optional[str])
 
 slots.door_type = Slot(uri=MIXS['0000794'], name="door_type", curie=MIXS.curie('0000794'),
-                   model_uri=MIXS.door_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.door_type, domain=None, range=Optional[Union[str, "DoorTypeEnum"]])
 
 slots.door_type_metal = Slot(uri=MIXS['0000796'], name="door_type_metal", curie=MIXS.curie('0000796'),
-                   model_uri=MIXS.door_type_metal, domain=None, range=Optional[str])
+                   model_uri=MIXS.door_type_metal, domain=None, range=Optional[Union[str, "DoorTypeMetalEnum"]])
 
 slots.door_type_wood = Slot(uri=MIXS['0000797'], name="door_type_wood", curie=MIXS.curie('0000797'),
-                   model_uri=MIXS.door_type_wood, domain=None, range=Optional[str])
+                   model_uri=MIXS.door_type_wood, domain=None, range=Optional[Union[str, "DoorTypeWoodEnum"]])
 
 slots.door_water_mold = Slot(uri=MIXS['0000793'], name="door_water_mold", curie=MIXS.curie('0000793'),
-                   model_uri=MIXS.door_water_mold, domain=None, range=Optional[str])
+                   model_uri=MIXS.door_water_mold, domain=None, range=Optional[Union[str, "DoorWaterMoldEnum"]])
 
 slots.drawings = Slot(uri=MIXS['0000798'], name="drawings", curie=MIXS.curie('0000798'),
-                   model_uri=MIXS.drawings, domain=None, range=Optional[str])
+                   model_uri=MIXS.drawings, domain=None, range=Optional[Union[str, "DrawingsEnum"]])
 
 slots.elevator = Slot(uri=MIXS['0000799'], name="elevator", curie=MIXS.curie('0000799'),
                    model_uri=MIXS.elevator, domain=None, range=Optional[int])
@@ -14179,16 +14183,16 @@ slots.ext_door = Slot(uri=MIXS['0000170'], name="ext_door", curie=MIXS.curie('00
                    model_uri=MIXS.ext_door, domain=None, range=Optional[int])
 
 slots.ext_wall_orient = Slot(uri=MIXS['0000817'], name="ext_wall_orient", curie=MIXS.curie('0000817'),
-                   model_uri=MIXS.ext_wall_orient, domain=None, range=Optional[str])
+                   model_uri=MIXS.ext_wall_orient, domain=None, range=Optional[Union[str, "DrawingsEnum"]])
 
 slots.ext_window_orient = Slot(uri=MIXS['0000818'], name="ext_window_orient", curie=MIXS.curie('0000818'),
-                   model_uri=MIXS.ext_window_orient, domain=None, range=Optional[str])
+                   model_uri=MIXS.ext_window_orient, domain=None, range=Optional[Union[str, "ExtWindowOrientEnum"]])
 
 slots.filter_type = Slot(uri=MIXS['0000765'], name="filter_type", curie=MIXS.curie('0000765'),
-                   model_uri=MIXS.filter_type, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.filter_type, domain=None, range=Optional[Union[Union[str, "FilterTypeEnum"], List[Union[str, "FilterTypeEnum"]]]])
 
 slots.fireplace_type = Slot(uri=MIXS['0000802'], name="fireplace_type", curie=MIXS.curie('0000802'),
-                   model_uri=MIXS.fireplace_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.fireplace_type, domain=None, range=Optional[Union[str, "FireplaceTypeEnum"]])
 
 slots.floor_age = Slot(uri=MIXS['0000164'], name="floor_age", curie=MIXS.curie('0000164'),
                    model_uri=MIXS.floor_age, domain=None, range=Optional[str])
@@ -14197,7 +14201,7 @@ slots.floor_area = Slot(uri=MIXS['0000165'], name="floor_area", curie=MIXS.curie
                    model_uri=MIXS.floor_area, domain=None, range=Optional[str])
 
 slots.floor_cond = Slot(uri=MIXS['0000803'], name="floor_cond", curie=MIXS.curie('0000803'),
-                   model_uri=MIXS.floor_cond, domain=None, range=Optional[str])
+                   model_uri=MIXS.floor_cond, domain=None, range=Optional[Union[str, "FloorCondEnum"]])
 
 slots.floor_count = Slot(uri=MIXS['0000225'], name="floor_count", curie=MIXS.curie('0000225'),
                    model_uri=MIXS.floor_count, domain=None, range=Optional[int])
@@ -14212,7 +14216,7 @@ slots.floor_thermal_mass = Slot(uri=MIXS['0000166'], name="floor_thermal_mass", 
                    model_uri=MIXS.floor_thermal_mass, domain=None, range=Optional[str])
 
 slots.floor_water_mold = Slot(uri=MIXS['0000805'], name="floor_water_mold", curie=MIXS.curie('0000805'),
-                   model_uri=MIXS.floor_water_mold, domain=None, range=Optional[str])
+                   model_uri=MIXS.floor_water_mold, domain=None, range=Optional[Union[str, "FloorWaterMoldEnum"]])
 
 slots.freq_clean = Slot(uri=MIXS.freq_clean, name="freq_clean", curie=MIXS.curie('freq_clean'),
                    model_uri=MIXS.freq_clean, domain=None, range=Optional[str])
@@ -14221,25 +14225,25 @@ slots.freq_cook = Slot(uri=MIXS['0000227'], name="freq_cook", curie=MIXS.curie('
                    model_uri=MIXS.freq_cook, domain=None, range=Optional[int])
 
 slots.furniture = Slot(uri=MIXS['0000807'], name="furniture", curie=MIXS.curie('0000807'),
-                   model_uri=MIXS.furniture, domain=None, range=Optional[str])
+                   model_uri=MIXS.furniture, domain=None, range=Optional[Union[str, "FurnitureEnum"]])
 
 slots.gender_restroom = Slot(uri=MIXS['0000808'], name="gender_restroom", curie=MIXS.curie('0000808'),
-                   model_uri=MIXS.gender_restroom, domain=None, range=Optional[str])
+                   model_uri=MIXS.gender_restroom, domain=None, range=Optional[Union[str, "GenderRestroomEnum"]])
 
 slots.hall_count = Slot(uri=MIXS['0000228'], name="hall_count", curie=MIXS.curie('0000228'),
                    model_uri=MIXS.hall_count, domain=None, range=Optional[int])
 
 slots.handidness = Slot(uri=MIXS['0000809'], name="handidness", curie=MIXS.curie('0000809'),
-                   model_uri=MIXS.handidness, domain=None, range=Optional[str])
+                   model_uri=MIXS.handidness, domain=None, range=Optional[Union[str, "HandidnessEnum"]])
 
 slots.heat_cool_type = Slot(uri=MIXS['0000766'], name="heat_cool_type", curie=MIXS.curie('0000766'),
-                   model_uri=MIXS.heat_cool_type, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.heat_cool_type, domain=None, range=Optional[Union[Union[str, "HeatCoolTypeEnum"], List[Union[str, "HeatCoolTypeEnum"]]]])
 
 slots.heat_deliv_loc = Slot(uri=MIXS['0000810'], name="heat_deliv_loc", curie=MIXS.curie('0000810'),
                    model_uri=MIXS.heat_deliv_loc, domain=None, range=Optional[str])
 
 slots.heat_sys_deliv_meth = Slot(uri=MIXS['0000812'], name="heat_sys_deliv_meth", curie=MIXS.curie('0000812'),
-                   model_uri=MIXS.heat_sys_deliv_meth, domain=None, range=Optional[str])
+                   model_uri=MIXS.heat_sys_deliv_meth, domain=None, range=Optional[Union[str, "HeatSysDelivMethEnum"]])
 
 slots.heat_system_id = Slot(uri=MIXS['0000833'], name="heat_system_id", curie=MIXS.curie('0000833'),
                    model_uri=MIXS.heat_system_id, domain=None, range=Optional[int])
@@ -14248,7 +14252,7 @@ slots.height_carper_fiber = Slot(uri=MIXS['0000167'], name="height_carper_fiber"
                    model_uri=MIXS.height_carper_fiber, domain=None, range=Optional[str])
 
 slots.indoor_space = Slot(uri=MIXS['0000763'], name="indoor_space", curie=MIXS.curie('0000763'),
-                   model_uri=MIXS.indoor_space, domain=None, range=Optional[str])
+                   model_uri=MIXS.indoor_space, domain=None, range=Optional[Union[str, "IndoorSpaceEnum"]])
 
 slots.indoor_surf = Slot(uri=MIXS.indoor_surf, name="indoor_surf", curie=MIXS.curie('indoor_surf'),
                    model_uri=MIXS.indoor_surf, domain=None, range=Optional[str])
@@ -14257,19 +14261,19 @@ slots.inside_lux = Slot(uri=MIXS['0000168'], name="inside_lux", curie=MIXS.curie
                    model_uri=MIXS.inside_lux, domain=None, range=Optional[str])
 
 slots.int_wall_cond = Slot(uri=MIXS['0000813'], name="int_wall_cond", curie=MIXS.curie('0000813'),
-                   model_uri=MIXS.int_wall_cond, domain=None, range=Optional[str])
+                   model_uri=MIXS.int_wall_cond, domain=None, range=Optional[Union[str, "IntWallCondEnum"]])
 
 slots.last_clean = Slot(uri=MIXS['0000814'], name="last_clean", curie=MIXS.curie('0000814'),
                    model_uri=MIXS.last_clean, domain=None, range=Optional[str])
 
 slots.light_type = Slot(uri=MIXS['0000769'], name="light_type", curie=MIXS.curie('0000769'),
-                   model_uri=MIXS.light_type, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.light_type, domain=None, range=Optional[Union[Union[str, "LightTypeEnum"], List[Union[str, "LightTypeEnum"]]]])
 
 slots.max_occup = Slot(uri=MIXS['0000229'], name="max_occup", curie=MIXS.curie('0000229'),
                    model_uri=MIXS.max_occup, domain=None, range=Optional[int])
 
 slots.mech_struc = Slot(uri=MIXS['0000815'], name="mech_struc", curie=MIXS.curie('0000815'),
-                   model_uri=MIXS.mech_struc, domain=None, range=Optional[str])
+                   model_uri=MIXS.mech_struc, domain=None, range=Optional[Union[str, "MechStrucEnum"]])
 
 slots.number_pets = Slot(uri=MIXS['0000231'], name="number_pets", curie=MIXS.curie('0000231'),
                    model_uri=MIXS.number_pets, domain=None, range=Optional[int])
@@ -14284,13 +14288,13 @@ slots.occup_density_samp = Slot(uri=MIXS['0000217'], name="occup_density_samp", 
                    model_uri=MIXS.occup_density_samp, domain=None, range=Optional[float])
 
 slots.occup_document = Slot(uri=MIXS['0000816'], name="occup_document", curie=MIXS.curie('0000816'),
-                   model_uri=MIXS.occup_document, domain=None, range=Optional[str])
+                   model_uri=MIXS.occup_document, domain=None, range=Optional[Union[str, "OccupDocumentEnum"]])
 
 slots.occup_samp = Slot(uri=MIXS['0000772'], name="occup_samp", curie=MIXS.curie('0000772'),
                    model_uri=MIXS.occup_samp, domain=None, range=Optional[int])
 
 slots.quad_pos = Slot(uri=MIXS['0000820'], name="quad_pos", curie=MIXS.curie('0000820'),
-                   model_uri=MIXS.quad_pos, domain=None, range=Optional[str])
+                   model_uri=MIXS.quad_pos, domain=None, range=Optional[Union[str, "QuadPosEnum"]])
 
 slots.rel_air_humidity = Slot(uri=MIXS['0000121'], name="rel_air_humidity", curie=MIXS.curie('0000121'),
                    model_uri=MIXS.rel_air_humidity, domain=None, range=Optional[str])
@@ -14299,7 +14303,7 @@ slots.rel_humidity_out = Slot(uri=MIXS['0000188'], name="rel_humidity_out", curi
                    model_uri=MIXS.rel_humidity_out, domain=None, range=Optional[str])
 
 slots.rel_samp_loc = Slot(uri=MIXS['0000821'], name="rel_samp_loc", curie=MIXS.curie('0000821'),
-                   model_uri=MIXS.rel_samp_loc, domain=None, range=Optional[str])
+                   model_uri=MIXS.rel_samp_loc, domain=None, range=Optional[Union[str, "RelSampLocEnum"]])
 
 slots.room_air_exch_rate = Slot(uri=MIXS['0000169'], name="room_air_exch_rate", curie=MIXS.curie('0000169'),
                    model_uri=MIXS.room_air_exch_rate, domain=None, range=Optional[str])
@@ -14308,10 +14312,10 @@ slots.room_architec_elem = Slot(uri=MIXS['0000233'], name="room_architec_elem", 
                    model_uri=MIXS.room_architec_elem, domain=None, range=Optional[str])
 
 slots.room_condt = Slot(uri=MIXS['0000822'], name="room_condt", curie=MIXS.curie('0000822'),
-                   model_uri=MIXS.room_condt, domain=None, range=Optional[str])
+                   model_uri=MIXS.room_condt, domain=None, range=Optional[Union[str, "RelSampLocEnum"]])
 
 slots.room_connected = Slot(uri=MIXS['0000826'], name="room_connected", curie=MIXS.curie('0000826'),
-                   model_uri=MIXS.room_connected, domain=None, range=Optional[str])
+                   model_uri=MIXS.room_connected, domain=None, range=Optional[Union[str, "RoomConnectedEnum"]])
 
 slots.room_count = Slot(uri=MIXS['0000234'], name="room_count", curie=MIXS.curie('0000234'),
                    model_uri=MIXS.room_count, domain=None, range=Optional[int])
@@ -14329,7 +14333,7 @@ slots.room_hallway = Slot(uri=MIXS['0000238'], name="room_hallway", curie=MIXS.c
                    model_uri=MIXS.room_hallway, domain=None, range=Optional[str])
 
 slots.room_loc = Slot(uri=MIXS['0000823'], name="room_loc", curie=MIXS.curie('0000823'),
-                   model_uri=MIXS.room_loc, domain=None, range=Optional[str])
+                   model_uri=MIXS.room_loc, domain=None, range=Optional[Union[str, "RoomLocEnum"]])
 
 slots.room_moist_dam_hist = Slot(uri=MIXS['0000235'], name="room_moist_dam_hist", curie=MIXS.curie('0000235'),
                    model_uri=MIXS.room_moist_dam_hist, domain=None, range=Optional[int])
@@ -14341,10 +14345,10 @@ slots.room_occup = Slot(uri=MIXS['0000236'], name="room_occup", curie=MIXS.curie
                    model_uri=MIXS.room_occup, domain=None, range=Optional[int])
 
 slots.room_samp_pos = Slot(uri=MIXS['0000824'], name="room_samp_pos", curie=MIXS.curie('0000824'),
-                   model_uri=MIXS.room_samp_pos, domain=None, range=Optional[str])
+                   model_uri=MIXS.room_samp_pos, domain=None, range=Optional[Union[str, "RoomSampPosEnum"]])
 
 slots.room_type = Slot(uri=MIXS['0000825'], name="room_type", curie=MIXS.curie('0000825'),
-                   model_uri=MIXS.room_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.room_type, domain=None, range=Optional[Union[str, "RoomTypeEnum"]])
 
 slots.room_vol = Slot(uri=MIXS['0000195'], name="room_vol", curie=MIXS.curie('0000195'),
                    model_uri=MIXS.room_vol, domain=None, range=Optional[str])
@@ -14368,40 +14372,40 @@ slots.samp_time_out = Slot(uri=MIXS['0000196'], name="samp_time_out", curie=MIXS
                    model_uri=MIXS.samp_time_out, domain=None, range=Optional[float])
 
 slots.samp_weather = Slot(uri=MIXS['0000827'], name="samp_weather", curie=MIXS.curie('0000827'),
-                   model_uri=MIXS.samp_weather, domain=None, range=Optional[str])
+                   model_uri=MIXS.samp_weather, domain=None, range=Optional[Union[str, "SampWeatherEnum"]])
 
 slots.season_use = Slot(uri=MIXS['0000830'], name="season_use", curie=MIXS.curie('0000830'),
-                   model_uri=MIXS.season_use, domain=None, range=Optional[str])
+                   model_uri=MIXS.season_use, domain=None, range=Optional[Union[str, "SeasonUseEnum"]])
 
 slots.shad_dev_water_mold = Slot(uri=MIXS['0000834'], name="shad_dev_water_mold", curie=MIXS.curie('0000834'),
-                   model_uri=MIXS.shad_dev_water_mold, domain=None, range=Optional[str])
+                   model_uri=MIXS.shad_dev_water_mold, domain=None, range=Optional[Union[str, "ShadDevWaterMoldEnum"]])
 
 slots.shading_device_cond = Slot(uri=MIXS['0000831'], name="shading_device_cond", curie=MIXS.curie('0000831'),
-                   model_uri=MIXS.shading_device_cond, domain=None, range=Optional[str])
+                   model_uri=MIXS.shading_device_cond, domain=None, range=Optional[Union[str, "ShadingDeviceCondEnum"]])
 
 slots.shading_device_loc = Slot(uri=MIXS['0000832'], name="shading_device_loc", curie=MIXS.curie('0000832'),
-                   model_uri=MIXS.shading_device_loc, domain=None, range=Optional[str])
+                   model_uri=MIXS.shading_device_loc, domain=None, range=Optional[Union[str, "ShadingDeviceLocEnum"]])
 
 slots.shading_device_mat = Slot(uri=MIXS['0000245'], name="shading_device_mat", curie=MIXS.curie('0000245'),
                    model_uri=MIXS.shading_device_mat, domain=None, range=Optional[str])
 
 slots.shading_device_type = Slot(uri=MIXS['0000835'], name="shading_device_type", curie=MIXS.curie('0000835'),
-                   model_uri=MIXS.shading_device_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.shading_device_type, domain=None, range=Optional[Union[str, "ShadingDeviceTypeEnum"]])
 
 slots.space_typ_state = Slot(uri=MIXS['0000770'], name="space_typ_state", curie=MIXS.curie('0000770'),
-                   model_uri=MIXS.space_typ_state, domain=None, range=Optional[str])
+                   model_uri=MIXS.space_typ_state, domain=None, range=Optional[Union[str, "SpaceTypStateEnum"]])
 
 slots.specific = Slot(uri=MIXS['0000836'], name="specific", curie=MIXS.curie('0000836'),
-                   model_uri=MIXS.specific, domain=None, range=Optional[str])
+                   model_uri=MIXS.specific, domain=None, range=Optional[Union[str, "SpecificEnum"]])
 
 slots.specific_humidity = Slot(uri=MIXS['0000214'], name="specific_humidity", curie=MIXS.curie('0000214'),
                    model_uri=MIXS.specific_humidity, domain=None, range=Optional[str])
 
 slots.substructure_type = Slot(uri=MIXS['0000767'], name="substructure_type", curie=MIXS.curie('0000767'),
-                   model_uri=MIXS.substructure_type, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.substructure_type, domain=None, range=Optional[Union[Union[str, "SubstructureTypeEnum"], List[Union[str, "SubstructureTypeEnum"]]]])
 
 slots.surf_air_cont = Slot(uri=MIXS['0000759'], name="surf_air_cont", curie=MIXS.curie('0000759'),
-                   model_uri=MIXS.surf_air_cont, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.surf_air_cont, domain=None, range=Optional[Union[Union[str, "SurfAirContEnum"], List[Union[str, "SurfAirContEnum"]]]])
 
 slots.surf_humidity = Slot(uri=MIXS['0000123'], name="surf_humidity", curie=MIXS.curie('0000123'),
                    model_uri=MIXS.surf_humidity, domain=None, range=Optional[str])
@@ -14425,10 +14429,10 @@ slots.train_line = Slot(uri=MIXS['0000837'], name="train_line", curie=MIXS.curie
                    model_uri=MIXS.train_line, domain=None, range=Optional[str])
 
 slots.train_stat_loc = Slot(uri=MIXS['0000838'], name="train_stat_loc", curie=MIXS.curie('0000838'),
-                   model_uri=MIXS.train_stat_loc, domain=None, range=Optional[str])
+                   model_uri=MIXS.train_stat_loc, domain=None, range=Optional[Union[str, "TrainStatLocEnum"]])
 
 slots.train_stop_loc = Slot(uri=MIXS['0000839'], name="train_stop_loc", curie=MIXS.curie('0000839'),
-                   model_uri=MIXS.train_stop_loc, domain=None, range=Optional[str])
+                   model_uri=MIXS.train_stop_loc, domain=None, range=Optional[Union[str, "TrainStopLocEnum"]])
 
 slots.typ_occup_density = Slot(uri=MIXS['0000771'], name="typ_occup_density", curie=MIXS.curie('0000771'),
                    model_uri=MIXS.typ_occup_density, domain=None, range=Optional[float])
@@ -14440,52 +14444,52 @@ slots.wall_area = Slot(uri=MIXS['0000198'], name="wall_area", curie=MIXS.curie('
                    model_uri=MIXS.wall_area, domain=None, range=Optional[str])
 
 slots.wall_const_type = Slot(uri=MIXS['0000841'], name="wall_const_type", curie=MIXS.curie('0000841'),
-                   model_uri=MIXS.wall_const_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.wall_const_type, domain=None, range=Optional[Union[str, "WallConstTypeEnum"]])
 
 slots.wall_finish_mat = Slot(uri=MIXS['0000842'], name="wall_finish_mat", curie=MIXS.curie('0000842'),
-                   model_uri=MIXS.wall_finish_mat, domain=None, range=Optional[str])
+                   model_uri=MIXS.wall_finish_mat, domain=None, range=Optional[Union[str, "WallFinishMatEnum"]])
 
 slots.wall_height = Slot(uri=MIXS['0000221'], name="wall_height", curie=MIXS.curie('0000221'),
                    model_uri=MIXS.wall_height, domain=None, range=Optional[str])
 
 slots.wall_loc = Slot(uri=MIXS['0000843'], name="wall_loc", curie=MIXS.curie('0000843'),
-                   model_uri=MIXS.wall_loc, domain=None, range=Optional[str])
+                   model_uri=MIXS.wall_loc, domain=None, range=Optional[Union[str, "WallLocEnum"]])
 
 slots.wall_surf_treatment = Slot(uri=MIXS['0000845'], name="wall_surf_treatment", curie=MIXS.curie('0000845'),
-                   model_uri=MIXS.wall_surf_treatment, domain=None, range=Optional[str])
+                   model_uri=MIXS.wall_surf_treatment, domain=None, range=Optional[Union[str, "WallSurfTreatmentEnum"]])
 
 slots.wall_texture = Slot(uri=MIXS['0000846'], name="wall_texture", curie=MIXS.curie('0000846'),
-                   model_uri=MIXS.wall_texture, domain=None, range=Optional[str])
+                   model_uri=MIXS.wall_texture, domain=None, range=Optional[Union[str, "WallTextureEnum"]])
 
 slots.wall_thermal_mass = Slot(uri=MIXS['0000222'], name="wall_thermal_mass", curie=MIXS.curie('0000222'),
                    model_uri=MIXS.wall_thermal_mass, domain=None, range=Optional[str])
 
 slots.wall_water_mold = Slot(uri=MIXS['0000844'], name="wall_water_mold", curie=MIXS.curie('0000844'),
-                   model_uri=MIXS.wall_water_mold, domain=None, range=Optional[str])
+                   model_uri=MIXS.wall_water_mold, domain=None, range=Optional[Union[str, "WallWaterMoldEnum"]])
 
 slots.water_feat_size = Slot(uri=MIXS['0000223'], name="water_feat_size", curie=MIXS.curie('0000223'),
                    model_uri=MIXS.water_feat_size, domain=None, range=Optional[str])
 
 slots.water_feat_type = Slot(uri=MIXS['0000847'], name="water_feat_type", curie=MIXS.curie('0000847'),
-                   model_uri=MIXS.water_feat_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.water_feat_type, domain=None, range=Optional[Union[str, "WaterFeatTypeEnum"]])
 
 slots.weekday = Slot(uri=MIXS['0000848'], name="weekday", curie=MIXS.curie('0000848'),
-                   model_uri=MIXS.weekday, domain=None, range=Optional[str])
+                   model_uri=MIXS.weekday, domain=None, range=Optional[Union[str, "WeekdayEnum"]])
 
 slots.window_cond = Slot(uri=MIXS['0000849'], name="window_cond", curie=MIXS.curie('0000849'),
-                   model_uri=MIXS.window_cond, domain=None, range=Optional[str])
+                   model_uri=MIXS.window_cond, domain=None, range=Optional[Union[str, "WindowCondEnum"]])
 
 slots.window_cover = Slot(uri=MIXS['0000850'], name="window_cover", curie=MIXS.curie('0000850'),
                    model_uri=MIXS.window_cover, domain=None, range=Optional[str])
 
 slots.window_horiz_pos = Slot(uri=MIXS['0000851'], name="window_horiz_pos", curie=MIXS.curie('0000851'),
-                   model_uri=MIXS.window_horiz_pos, domain=None, range=Optional[str])
+                   model_uri=MIXS.window_horiz_pos, domain=None, range=Optional[Union[str, "WindowHorizPosEnum"]])
 
 slots.window_loc = Slot(uri=MIXS['0000852'], name="window_loc", curie=MIXS.curie('0000852'),
-                   model_uri=MIXS.window_loc, domain=None, range=Optional[str])
+                   model_uri=MIXS.window_loc, domain=None, range=Optional[Union[str, "WindowLocEnum"]])
 
 slots.window_mat = Slot(uri=MIXS['0000853'], name="window_mat", curie=MIXS.curie('0000853'),
-                   model_uri=MIXS.window_mat, domain=None, range=Optional[str])
+                   model_uri=MIXS.window_mat, domain=None, range=Optional[Union[str, "WindowLocEnum"]])
 
 slots.window_open_freq = Slot(uri=MIXS['0000246'], name="window_open_freq", curie=MIXS.curie('0000246'),
                    model_uri=MIXS.window_open_freq, domain=None, range=Optional[int])
@@ -14494,16 +14498,16 @@ slots.window_size = Slot(uri=MIXS['0000224'], name="window_size", curie=MIXS.cur
                    model_uri=MIXS.window_size, domain=None, range=Optional[str])
 
 slots.window_status = Slot(uri=MIXS['0000855'], name="window_status", curie=MIXS.curie('0000855'),
-                   model_uri=MIXS.window_status, domain=None, range=Optional[str])
+                   model_uri=MIXS.window_status, domain=None, range=Optional[Union[str, "WindowStatusEnum"]])
 
 slots.window_type = Slot(uri=MIXS['0000856'], name="window_type", curie=MIXS.curie('0000856'),
-                   model_uri=MIXS.window_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.window_type, domain=None, range=Optional[Union[str, "WindowTypeEnum"]])
 
 slots.window_vert_pos = Slot(uri=MIXS['0000857'], name="window_vert_pos", curie=MIXS.curie('0000857'),
-                   model_uri=MIXS.window_vert_pos, domain=None, range=Optional[str])
+                   model_uri=MIXS.window_vert_pos, domain=None, range=Optional[Union[str, "WindowVertPosEnum"]])
 
 slots.window_water_mold = Slot(uri=MIXS['0000854'], name="window_water_mold", curie=MIXS.curie('0000854'),
-                   model_uri=MIXS.window_water_mold, domain=None, range=Optional[str])
+                   model_uri=MIXS.window_water_mold, domain=None, range=Optional[Union[str, "WindowWaterMoldEnum"]])
 
 slots.animal_am = Slot(uri=MIXS['0001243'], name="animal_am", curie=MIXS.curie('0001243'),
                    model_uri=MIXS.animal_am, domain=None, range=Optional[str])
@@ -14557,7 +14561,7 @@ slots.cons_qty_purchased = Slot(uri=MIXS['0001198'], name="cons_qty_purchased", 
                    model_uri=MIXS.cons_qty_purchased, domain=None, range=Optional[str])
 
 slots.cult_result = Slot(uri=MIXS['0001117'], name="cult_result", curie=MIXS.curie('0001117'),
-                   model_uri=MIXS.cult_result, domain=None, range=Optional[str])
+                   model_uri=MIXS.cult_result, domain=None, range=Optional[Union[str, "CultResultEnum"]])
 
 slots.cult_result_org = Slot(uri=MIXS['0001118'], name="cult_result_org", curie=MIXS.curie('0001118'),
                    model_uri=MIXS.cult_result_org, domain=None, range=Optional[Union[str, List[str]]])
@@ -14617,7 +14621,7 @@ slots.food_source_age = Slot(uri=MIXS['0001251'], name="food_source_age", curie=
                    model_uri=MIXS.food_source_age, domain=None, range=Optional[str])
 
 slots.food_trace_list = Slot(uri=MIXS['0001214'], name="food_trace_list", curie=MIXS.curie('0001214'),
-                   model_uri=MIXS.food_trace_list, domain=None, range=Optional[str])
+                   model_uri=MIXS.food_trace_list, domain=None, range=Optional[Union[str, "FoodTraceListEnum"]])
 
 slots.food_treat_proc = Slot(uri=MIXS['0001140'], name="food_treat_proc", curie=MIXS.curie('0001140'),
                    model_uri=MIXS.food_treat_proc, domain=None, range=Optional[Union[str, List[str]]])
@@ -14665,7 +14669,7 @@ slots.samp_stor_media = Slot(uri=MIXS['0001229'], name="samp_stor_media", curie=
                    model_uri=MIXS.samp_stor_media, domain=None, range=Optional[str])
 
 slots.samp_transport_cont = Slot(uri=MIXS['0001230'], name="samp_transport_cont", curie=MIXS.curie('0001230'),
-                   model_uri=MIXS.samp_transport_cont, domain=None, range=Optional[str])
+                   model_uri=MIXS.samp_transport_cont, domain=None, range=Optional[Union[str, "SampTransportContEnum"]])
 
 slots.samp_transport_dur = Slot(uri=MIXS['0001231'], name="samp_transport_dur", curie=MIXS.curie('0001231'),
                    model_uri=MIXS.samp_transport_dur, domain=None, range=Optional[str])
@@ -14737,7 +14741,7 @@ slots.date_extr_weath = Slot(uri=MIXS['0001142'], name="date_extr_weath", curie=
                    model_uri=MIXS.date_extr_weath, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.extr_weather_event = Slot(uri=MIXS['0001141'], name="extr_weather_event", curie=MIXS.curie('0001141'),
-                   model_uri=MIXS.extr_weather_event, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.extr_weather_event, domain=None, range=Optional[Union[Union[str, "ExtrWeatherEventEnum"], List[Union[str, "ExtrWeatherEventEnum"]]]])
 
 slots.farm_equip_san_freq = Slot(uri=MIXS['0001125'], name="farm_equip_san_freq", curie=MIXS.curie('0001125'),
                    model_uri=MIXS.farm_equip_san_freq, domain=None, range=Optional[str])
@@ -14746,7 +14750,7 @@ slots.fertilizer_date = Slot(uri=MIXS['0001128'], name="fertilizer_date", curie=
                    model_uri=MIXS.fertilizer_date, domain=None, range=Optional[str])
 
 slots.food_clean_proc = Slot(uri=MIXS['0001182'], name="food_clean_proc", curie=MIXS.curie('0001182'),
-                   model_uri=MIXS.food_clean_proc, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.food_clean_proc, domain=None, range=Optional[Union[Union[str, "FoodCleanProcEnum"], List[Union[str, "FoodCleanProcEnum"]]]])
 
 slots.food_prod_char = Slot(uri=MIXS['0001136'], name="food_prod_char", curie=MIXS.curie('0001136'),
                    model_uri=MIXS.food_prod_char, domain=None, range=Optional[Union[str, List[str]]])
@@ -14767,7 +14771,7 @@ slots.plant_part_maturity = Slot(uri=MIXS['0001120'], name="plant_part_maturity"
                    model_uri=MIXS.plant_part_maturity, domain=None, range=Optional[str])
 
 slots.plant_reprod_crop = Slot(uri=MIXS['0001150'], name="plant_reprod_crop", curie=MIXS.curie('0001150'),
-                   model_uri=MIXS.plant_reprod_crop, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.plant_reprod_crop, domain=None, range=Optional[Union[Union[str, "PlantReprodCropEnum"], List[Union[str, "PlantReprodCropEnum"]]]])
 
 slots.prod_label_claims = Slot(uri=MIXS['0001337'], name="prod_label_claims", curie=MIXS.curie('0001337'),
                    model_uri=MIXS.prod_label_claims, domain=None, range=Optional[Union[str, List[str]]])
@@ -14788,7 +14792,7 @@ slots.soil_porosity = Slot(uri=MIXS['0001162'], name="soil_porosity", curie=MIXS
                    model_uri=MIXS.soil_porosity, domain=None, range=Optional[str])
 
 slots.soil_texture_class = Slot(uri=MIXS['0001164'], name="soil_texture_class", curie=MIXS.curie('0001164'),
-                   model_uri=MIXS.soil_texture_class, domain=None, range=Optional[str])
+                   model_uri=MIXS.soil_texture_class, domain=None, range=Optional[Union[str, "SoilTextureClassEnum"]])
 
 slots.soil_texture_meth = Slot(uri=MIXS['0000336'], name="soil_texture_meth", curie=MIXS.curie('0000336'),
                    model_uri=MIXS.soil_texture_meth, domain=None, range=Optional[str])
@@ -14797,7 +14801,8 @@ slots.tot_nitro_cont_meth = Slot(uri=MIXS['0000338'], name="tot_nitro_cont_meth"
                    model_uri=MIXS.tot_nitro_cont_meth, domain=None, range=Optional[str])
 
 slots.tot_nitro_content = Slot(uri=MIXS['0000530'], name="tot_nitro_content", curie=MIXS.curie('0000530'),
-                   model_uri=MIXS.tot_nitro_content, domain=None, range=Optional[str])
+                   model_uri=MIXS.tot_nitro_content, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.turbidity = Slot(uri=MIXS.turbidity, name="turbidity", curie=MIXS.curie('turbidity'),
                    model_uri=MIXS.turbidity, domain=None, range=Optional[str])
@@ -14821,7 +14826,7 @@ slots.env_monitoring_zone = Slot(uri=MIXS['0001254'], name="env_monitoring_zone"
                    model_uri=MIXS.env_monitoring_zone, domain=None, range=Optional[str])
 
 slots.facility_type = Slot(uri=MIXS['0001252'], name="facility_type", curie=MIXS.curie('0001252'),
-                   model_uri=MIXS.facility_type, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.facility_type, domain=None, range=Optional[Union[Union[str, "FacilityTypeEnum"], List[Union[str, "FacilityTypeEnum"]]]])
 
 slots.food_allergen_label = Slot(uri=MIXS['0001201'], name="food_allergen_label", curie=MIXS.curie('0001201'),
                    model_uri=MIXS.food_allergen_label, domain=None, range=Optional[Union[str, List[str]]])
@@ -14839,10 +14844,10 @@ slots.num_samp_collect = Slot(uri=MIXS['0001224'], name="num_samp_collect", curi
                    model_uri=MIXS.num_samp_collect, domain=None, range=Optional[str])
 
 slots.samp_loc_condition = Slot(uri=MIXS['0001257'], name="samp_loc_condition", curie=MIXS.curie('0001257'),
-                   model_uri=MIXS.samp_loc_condition, domain=None, range=Optional[str])
+                   model_uri=MIXS.samp_loc_condition, domain=None, range=Optional[Union[str, "SampLocConditionEnum"]])
 
 slots.samp_surf_moisture = Slot(uri=MIXS['0001256'], name="samp_surf_moisture", curie=MIXS.curie('0001256'),
-                   model_uri=MIXS.samp_surf_moisture, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.samp_surf_moisture, domain=None, range=Optional[Union[Union[str, "SampSubtypeEnum"], List[Union[str, "SampSubtypeEnum"]]]])
 
 slots.spec_intended_cons = Slot(uri=MIXS['0001234'], name="spec_intended_cons", curie=MIXS.curie('0001234'),
                    model_uri=MIXS.spec_intended_cons, domain=None, range=Optional[Union[str, List[str]]])
@@ -14950,10 +14955,10 @@ slots.host_substrate = Slot(uri=MIXS.host_substrate, name="host_substrate", curi
                    model_uri=MIXS.host_substrate, domain=None, range=Optional[str])
 
 slots.samp_capt_status = Slot(uri=MIXS['0000860'], name="samp_capt_status", curie=MIXS.curie('0000860'),
-                   model_uri=MIXS.samp_capt_status, domain=None, range=Optional[str])
+                   model_uri=MIXS.samp_capt_status, domain=None, range=Optional[Union[str, "SampCaptStatusEnum"]])
 
 slots.samp_dis_stage = Slot(uri=MIXS['0000249'], name="samp_dis_stage", curie=MIXS.curie('0000249'),
-                   model_uri=MIXS.samp_dis_stage, domain=None, range=Optional[str])
+                   model_uri=MIXS.samp_dis_stage, domain=None, range=Optional[Union[str, "SampDisStageEnum"]])
 
 slots.amniotic_fluid_color = Slot(uri=MIXS['0000276'], name="amniotic_fluid_color", curie=MIXS.curie('0000276'),
                    model_uri=MIXS.amniotic_fluid_color, domain=None, range=Optional[str])
@@ -15022,7 +15027,7 @@ slots.twin_sibling = Slot(uri=MIXS['0000326'], name="twin_sibling", curie=MIXS.c
                    model_uri=MIXS.twin_sibling, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.urine_collect_meth = Slot(uri=MIXS['0000899'], name="urine_collect_meth", curie=MIXS.curie('0000899'),
-                   model_uri=MIXS.urine_collect_meth, domain=None, range=Optional[str])
+                   model_uri=MIXS.urine_collect_meth, domain=None, range=Optional[Union[str, "UrineCollectMethEnum"]])
 
 slots.urogenit_tract_disor = Slot(uri=MIXS['0000278'], name="urogenit_tract_disor", curie=MIXS.curie('0000278'),
                    model_uri=MIXS.urogenit_tract_disor, domain=None, range=Optional[Union[str, List[str]]])
@@ -15046,7 +15051,7 @@ slots.dermatology_disord = Slot(uri=MIXS['0000284'], name="dermatology_disord", 
                    model_uri=MIXS.dermatology_disord, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.dominant_hand = Slot(uri=MIXS['0000944'], name="dominant_hand", curie=MIXS.curie('0000944'),
-                   model_uri=MIXS.dominant_hand, domain=None, range=Optional[str])
+                   model_uri=MIXS.dominant_hand, domain=None, range=Optional[Union[str, "DominantHandEnum"]])
 
 slots.time_since_last_wash = Slot(uri=MIXS['0000943'], name="time_since_last_wash", curie=MIXS.curie('0000943'),
                    model_uri=MIXS.time_since_last_wash, domain=None, range=Optional[str])
@@ -15151,13 +15156,13 @@ slots.hc_produced = Slot(uri=MIXS['0000989'], name="hc_produced", curie=MIXS.cur
                    model_uri=MIXS.hc_produced, domain=None, range=Optional[str])
 
 slots.hcr = Slot(uri=MIXS['0000988'], name="hcr", curie=MIXS.curie('0000988'),
-                   model_uri=MIXS.hcr, domain=None, range=Optional[str])
+                   model_uri=MIXS.hcr, domain=None, range=Optional[Union[str, "HcrEnum"]])
 
 slots.hcr_fw_salinity = Slot(uri=MIXS['0000406'], name="hcr_fw_salinity", curie=MIXS.curie('0000406'),
                    model_uri=MIXS.hcr_fw_salinity, domain=None, range=Optional[str])
 
 slots.hcr_geol_age = Slot(uri=MIXS['0000993'], name="hcr_geol_age", curie=MIXS.curie('0000993'),
-                   model_uri=MIXS.hcr_geol_age, domain=None, range=Optional[str])
+                   model_uri=MIXS.hcr_geol_age, domain=None, range=Optional[Union[str, "HcrGeolAgeEnum"]])
 
 slots.hcr_pressure = Slot(uri=MIXS['0000395'], name="hcr_pressure", curie=MIXS.curie('0000395'),
                    model_uri=MIXS.hcr_pressure, domain=None, range=Optional[str])
@@ -15166,7 +15171,7 @@ slots.hcr_temp = Slot(uri=MIXS['0000393'], name="hcr_temp", curie=MIXS.curie('00
                    model_uri=MIXS.hcr_temp, domain=None, range=Optional[str])
 
 slots.lithology = Slot(uri=MIXS['0000990'], name="lithology", curie=MIXS.curie('0000990'),
-                   model_uri=MIXS.lithology, domain=None, range=Optional[str])
+                   model_uri=MIXS.lithology, domain=None, range=Optional[Union[str, "LithologyEnum"]])
 
 slots.magnesium = Slot(uri=MIXS['0000431'], name="magnesium", curie=MIXS.curie('0000431'),
                    model_uri=MIXS.magnesium, domain=None, range=Optional[str])
@@ -15205,7 +15210,7 @@ slots.samp_md = Slot(uri=MIXS['0000413'], name="samp_md", curie=MIXS.curie('0000
                    model_uri=MIXS.samp_md, domain=None, range=Optional[str])
 
 slots.samp_subtype = Slot(uri=MIXS['0000999'], name="samp_subtype", curie=MIXS.curie('0000999'),
-                   model_uri=MIXS.samp_subtype, domain=None, range=Optional[str])
+                   model_uri=MIXS.samp_subtype, domain=None, range=Optional[Union[str, "SampSubtypeEnum"]])
 
 slots.samp_transport_cond = Slot(uri=MIXS['0000410'], name="samp_transport_cond", curie=MIXS.curie('0000410'),
                    model_uri=MIXS.samp_transport_cond, domain=None, range=Optional[str])
@@ -15223,16 +15228,16 @@ slots.sodium = Slot(uri=MIXS['0000428'], name="sodium", curie=MIXS.curie('000042
                    model_uri=MIXS.sodium, domain=None, range=Optional[str])
 
 slots.sr_dep_env = Slot(uri=MIXS['0000996'], name="sr_dep_env", curie=MIXS.curie('0000996'),
-                   model_uri=MIXS.sr_dep_env, domain=None, range=Optional[str])
+                   model_uri=MIXS.sr_dep_env, domain=None, range=Optional[Union[str, "SrDepEnvEnum"]])
 
 slots.sr_geol_age = Slot(uri=MIXS['0000997'], name="sr_geol_age", curie=MIXS.curie('0000997'),
-                   model_uri=MIXS.sr_geol_age, domain=None, range=Optional[str])
+                   model_uri=MIXS.sr_geol_age, domain=None, range=Optional[Union[str, "SrGeolAgeEnum"]])
 
 slots.sr_kerog_type = Slot(uri=MIXS['0000994'], name="sr_kerog_type", curie=MIXS.curie('0000994'),
-                   model_uri=MIXS.sr_kerog_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.sr_kerog_type, domain=None, range=Optional[Union[str, "SrKerogTypeEnum"]])
 
 slots.sr_lithology = Slot(uri=MIXS['0000995'], name="sr_lithology", curie=MIXS.curie('0000995'),
-                   model_uri=MIXS.sr_lithology, domain=None, range=Optional[str])
+                   model_uri=MIXS.sr_lithology, domain=None, range=Optional[Union[str, "SrLithologyEnum"]])
 
 slots.sulfate = Slot(uri=MIXS['0000423'], name="sulfate", curie=MIXS.curie('0000423'),
                    model_uri=MIXS.sulfate, domain=None, range=Optional[str])
@@ -15310,7 +15315,7 @@ slots.prod_start_date = Slot(uri=MIXS['0001008'], name="prod_start_date", curie=
                    model_uri=MIXS.prod_start_date, domain=None, range=Optional[str])
 
 slots.samp_collect_point = Slot(uri=MIXS['0001015'], name="samp_collect_point", curie=MIXS.curie('0001015'),
-                   model_uri=MIXS.samp_collect_point, domain=None, range=Optional[str])
+                   model_uri=MIXS.samp_collect_point, domain=None, range=Optional[Union[str, "SampCollectPointEnum"]])
 
 slots.samp_loc_corr_rate = Slot(uri=MIXS['0000136'], name="samp_loc_corr_rate", curie=MIXS.curie('0000136'),
                    model_uri=MIXS.samp_loc_corr_rate, domain=None, range=Optional[str])
@@ -15379,10 +15384,12 @@ slots.org_carb = Slot(uri=MIXS.org_carb, name="org_carb", curie=MIXS.curie('org_
                    model_uri=MIXS.org_carb, domain=None, range=Optional[str])
 
 slots.org_matter = Slot(uri=MIXS['0000204'], name="org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=MIXS.org_matter, domain=None, range=Optional[str])
+                   model_uri=MIXS.org_matter, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.org_nitro = Slot(uri=MIXS['0000205'], name="org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=MIXS.org_nitro, domain=None, range=Optional[str])
+                   model_uri=MIXS.org_nitro, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.part_org_carb = Slot(uri=MIXS.part_org_carb, name="part_org_carb", curie=MIXS.curie('part_org_carb'),
                    model_uri=MIXS.part_org_carb, domain=None, range=Optional[str])
@@ -15454,7 +15461,7 @@ slots.non_min_nutr_regm = Slot(uri=MIXS.non_min_nutr_regm, name="non_min_nutr_re
                    model_uri=MIXS.non_min_nutr_regm, domain=None, range=Optional[str])
 
 slots.plant_sex = Slot(uri=MIXS['0001059'], name="plant_sex", curie=MIXS.curie('0001059'),
-                   model_uri=MIXS.plant_sex, domain=None, range=Optional[str])
+                   model_uri=MIXS.plant_sex, domain=None, range=Optional[Union[str, "PlantSexEnum"]])
 
 slots.radiation_regm = Slot(uri=MIXS['0000575'], name="radiation_regm", curie=MIXS.curie('0000575'),
                    model_uri=MIXS.radiation_regm, domain=None, range=Optional[Union[str, List[str]]])
@@ -15478,10 +15485,10 @@ slots.particle_class = Slot(uri=MIXS['0000206'], name="particle_class", curie=MI
                    model_uri=MIXS.particle_class, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.sediment_type = Slot(uri=MIXS['0001078'], name="sediment_type", curie=MIXS.curie('0001078'),
-                   model_uri=MIXS.sediment_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.sediment_type, domain=None, range=Optional[Union[str, "SedimentTypeEnum"]])
 
 slots.tidal_stage = Slot(uri=MIXS['0000750'], name="tidal_stage", curie=MIXS.curie('0000750'),
-                   model_uri=MIXS.tidal_stage, domain=None, range=Optional[str])
+                   model_uri=MIXS.tidal_stage, domain=None, range=Optional[Union[str, "TidalStageEnum"]])
 
 slots.tot_depth_water_col = Slot(uri=MIXS['0000634'], name="tot_depth_water_col", curie=MIXS.curie('0000634'),
                    model_uri=MIXS.tot_depth_water_col, domain=None, range=Optional[str])
@@ -15505,7 +15512,8 @@ slots.prev_land_use_meth = Slot(uri=MIXS['0000316'], name="prev_land_use_meth", 
                    model_uri=MIXS.prev_land_use_meth, domain=None, range=Optional[str])
 
 slots.soil_text_measure = Slot(uri=MIXS['0000335'], name="soil_text_measure", curie=MIXS.curie('0000335'),
-                   model_uri=MIXS.soil_text_measure, domain=None, range=Optional[str])
+                   model_uri=MIXS.soil_text_measure, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.water_cont_soil_meth = Slot(uri=MIXS['0000323'], name="water_cont_soil_meth", curie=MIXS.curie('0000323'),
                    model_uri=MIXS.water_cont_soil_meth, domain=None, range=Optional[str])
@@ -15514,10 +15522,10 @@ slots.association_duration = Slot(uri=MIXS['0001299'], name="association_duratio
                    model_uri=MIXS.association_duration, domain=None, range=Optional[str])
 
 slots.host_cellular_loc = Slot(uri=MIXS['0001313'], name="host_cellular_loc", curie=MIXS.curie('0001313'),
-                   model_uri=MIXS.host_cellular_loc, domain=None, range=Optional[str])
+                   model_uri=MIXS.host_cellular_loc, domain=None, range=Optional[Union[str, "HostCellularLocEnum"]])
 
 slots.host_dependence = Slot(uri=MIXS['0001315'], name="host_dependence", curie=MIXS.curie('0001315'),
-                   model_uri=MIXS.host_dependence, domain=None, range=Optional[str])
+                   model_uri=MIXS.host_dependence, domain=None, range=Optional[Union[str, "HostDependenceEnum"]])
 
 slots.host_family_relationship = Slot(uri=MIXS.host_family_relationship, name="host_family_relationship", curie=MIXS.curie('host_family_relationship'),
                    model_uri=MIXS.host_family_relationship, domain=None, range=Optional[str])
@@ -15574,13 +15582,13 @@ slots.host_of_host_totmass = Slot(uri=MIXS['0001334'], name="host_of_host_totmas
                    model_uri=MIXS.host_of_host_totmass, domain=None, range=Optional[str])
 
 slots.host_specificity = Slot(uri=MIXS['0001308'], name="host_specificity", curie=MIXS.curie('0001308'),
-                   model_uri=MIXS.host_specificity, domain=None, range=Optional[str])
+                   model_uri=MIXS.host_specificity, domain=None, range=Optional[Union[str, "HostSpecificityEnum"]])
 
 slots.mode_transmission = Slot(uri=MIXS['0001312'], name="mode_transmission", curie=MIXS.curie('0001312'),
-                   model_uri=MIXS.mode_transmission, domain=None, range=Optional[str])
+                   model_uri=MIXS.mode_transmission, domain=None, range=Optional[Union[str, "ModeTransmissionEnum"]])
 
 slots.route_transmission = Slot(uri=MIXS['0001316'], name="route_transmission", curie=MIXS.curie('0001316'),
-                   model_uri=MIXS.route_transmission, domain=None, range=Optional[str])
+                   model_uri=MIXS.route_transmission, domain=None, range=Optional[Union[str, "RouteTransmissionEnum"]])
 
 slots.samp_store_sol = Slot(uri=MIXS['0001317'], name="samp_store_sol", curie=MIXS.curie('0001317'),
                    model_uri=MIXS.samp_store_sol, domain=None, range=Optional[str])
@@ -15589,13 +15597,13 @@ slots.sample_name = Slot(uri=MIXS.sample_name, name="sample_name", curie=MIXS.cu
                    model_uri=MIXS.sample_name, domain=None, range=Optional[str])
 
 slots.sym_life_cycle_type = Slot(uri=MIXS['0001300'], name="sym_life_cycle_type", curie=MIXS.curie('0001300'),
-                   model_uri=MIXS.sym_life_cycle_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.sym_life_cycle_type, domain=None, range=Optional[Union[str, "SymLifeCycleTypeEnum"]])
 
 slots.symbiont_host_role = Slot(uri=MIXS['0001303'], name="symbiont_host_role", curie=MIXS.curie('0001303'),
-                   model_uri=MIXS.symbiont_host_role, domain=None, range=Optional[str])
+                   model_uri=MIXS.symbiont_host_role, domain=None, range=Optional[Union[str, "SymbiontHostRoleEnum"]])
 
 slots.type_of_symbiosis = Slot(uri=MIXS['0001307'], name="type_of_symbiosis", curie=MIXS.curie('0001307'),
-                   model_uri=MIXS.type_of_symbiosis, domain=None, range=Optional[str])
+                   model_uri=MIXS.type_of_symbiosis, domain=None, range=Optional[Union[str, "TypeOfSymbiosisEnum"]])
 
 slots.biochem_oxygen_dem = Slot(uri=MIXS['0000653'], name="biochem_oxygen_dem", curie=MIXS.curie('0000653'),
                    model_uri=MIXS.biochem_oxygen_dem, domain=None, range=Optional[str])
@@ -15735,7 +15743,7 @@ slots.MigsBa_associated_resource = Slot(uri=MIXS['0000091'], name="MigsBa_associ
                    model_uri=MIXS.MigsBa_associated_resource, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.MigsBa_biotic_relationship = Slot(uri=MIXS['0000028'], name="MigsBa_biotic_relationship", curie=MIXS.curie('0000028'),
-                   model_uri=MIXS.MigsBa_biotic_relationship, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsBa_biotic_relationship, domain=None, range=Optional[Union[str, "BioticRelationshipEnum"]])
 
 slots.MigsBa_collection_date = Slot(uri=MIXS['0000011'], name="MigsBa_collection_date", curie=MIXS.curie('0000011'),
                    model_uri=MIXS.MigsBa_collection_date, domain=None, range=str)
@@ -15799,7 +15807,7 @@ slots.MigsBa_lat_lon = Slot(uri=MIXS['0000009'], name="MigsBa_lat_lon", curie=MI
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.MigsBa_lib_layout = Slot(uri=MIXS['0000041'], name="MigsBa_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.MigsBa_lib_layout, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsBa_lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.MigsBa_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="MigsBa_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.MigsBa_lib_reads_seqd, domain=None, range=Optional[int])
@@ -15814,7 +15822,7 @@ slots.MigsBa_lib_vector = Slot(uri=MIXS['0000042'], name="MigsBa_lib_vector", cu
                    model_uri=MIXS.MigsBa_lib_vector, domain=None, range=Optional[str])
 
 slots.MigsBa_neg_cont_type = Slot(uri=MIXS['0001321'], name="MigsBa_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.MigsBa_neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsBa_neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.MigsBa_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="MigsBa_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.MigsBa_nucl_acid_amp, domain=None, range=Optional[str])
@@ -15844,7 +15852,7 @@ slots.MigsBa_ref_db = Slot(uri=MIXS['0000062'], name="MigsBa_ref_db", curie=MIXS
                    model_uri=MIXS.MigsBa_ref_db, domain=None, range=Optional[str])
 
 slots.MigsBa_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="MigsBa_rel_to_oxygen", curie=MIXS.curie('0000015'),
-                   model_uri=MIXS.MigsBa_rel_to_oxygen, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsBa_rel_to_oxygen, domain=None, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.MigsBa_samp_collec_device = Slot(uri=MIXS['0000002'], name="MigsBa_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=MIXS.MigsBa_samp_collec_device, domain=None, range=Optional[str])
@@ -15891,14 +15899,14 @@ slots.MigsBa_tax_class = Slot(uri=MIXS['0000064'], name="MigsBa_tax_class", curi
                    model_uri=MIXS.MigsBa_tax_class, domain=None, range=Optional[str])
 
 slots.MigsBa_tax_ident = Slot(uri=MIXS['0000053'], name="MigsBa_tax_ident", curie=MIXS.curie('0000053'),
-                   model_uri=MIXS.MigsBa_tax_ident, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsBa_tax_ident, domain=None, range=Optional[Union[str, "TaxIdentEnum"]])
 
 slots.MigsBa_temp = Slot(uri=MIXS['0000113'], name="MigsBa_temp", curie=MIXS.curie('0000113'),
                    model_uri=MIXS.MigsBa_temp, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MigsBa_trophic_level = Slot(uri=MIXS['0000032'], name="MigsBa_trophic_level", curie=MIXS.curie('0000032'),
-                   model_uri=MIXS.MigsBa_trophic_level, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsBa_trophic_level, domain=None, range=Optional[Union[str, "TrophicLevelEnum"]])
 
 slots.MigsEu_adapters = Slot(uri=MIXS['0000048'], name="MigsEu_adapters", curie=MIXS.curie('0000048'),
                    model_uri=MIXS.MigsEu_adapters, domain=None, range=Optional[str],
@@ -15924,7 +15932,7 @@ slots.MigsEu_associated_resource = Slot(uri=MIXS['0000091'], name="MigsEu_associ
                    model_uri=MIXS.MigsEu_associated_resource, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.MigsEu_biotic_relationship = Slot(uri=MIXS['0000028'], name="MigsEu_biotic_relationship", curie=MIXS.curie('0000028'),
-                   model_uri=MIXS.MigsEu_biotic_relationship, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsEu_biotic_relationship, domain=None, range=Optional[Union[str, "BioticRelationshipEnum"]])
 
 slots.MigsEu_collection_date = Slot(uri=MIXS['0000011'], name="MigsEu_collection_date", curie=MIXS.curie('0000011'),
                    model_uri=MIXS.MigsEu_collection_date, domain=None, range=str)
@@ -15985,7 +15993,7 @@ slots.MigsEu_lat_lon = Slot(uri=MIXS['0000009'], name="MigsEu_lat_lon", curie=MI
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.MigsEu_lib_layout = Slot(uri=MIXS['0000041'], name="MigsEu_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.MigsEu_lib_layout, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsEu_lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.MigsEu_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="MigsEu_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.MigsEu_lib_reads_seqd, domain=None, range=Optional[int])
@@ -16000,7 +16008,7 @@ slots.MigsEu_lib_vector = Slot(uri=MIXS['0000042'], name="MigsEu_lib_vector", cu
                    model_uri=MIXS.MigsEu_lib_vector, domain=None, range=Optional[str])
 
 slots.MigsEu_neg_cont_type = Slot(uri=MIXS['0001321'], name="MigsEu_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.MigsEu_neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsEu_neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.MigsEu_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="MigsEu_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.MigsEu_nucl_acid_amp, domain=None, range=Optional[str])
@@ -16081,14 +16089,14 @@ slots.MigsEu_tax_class = Slot(uri=MIXS['0000064'], name="MigsEu_tax_class", curi
                    model_uri=MIXS.MigsEu_tax_class, domain=None, range=Optional[str])
 
 slots.MigsEu_tax_ident = Slot(uri=MIXS['0000053'], name="MigsEu_tax_ident", curie=MIXS.curie('0000053'),
-                   model_uri=MIXS.MigsEu_tax_ident, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsEu_tax_ident, domain=None, range=Optional[Union[str, "TaxIdentEnum"]])
 
 slots.MigsEu_temp = Slot(uri=MIXS['0000113'], name="MigsEu_temp", curie=MIXS.curie('0000113'),
                    model_uri=MIXS.MigsEu_temp, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MigsEu_trophic_level = Slot(uri=MIXS['0000032'], name="MigsEu_trophic_level", curie=MIXS.curie('0000032'),
-                   model_uri=MIXS.MigsEu_trophic_level, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsEu_trophic_level, domain=None, range=Optional[Union[str, "TrophicLevelEnum"]])
 
 slots.MigsOrg_adapters = Slot(uri=MIXS['0000048'], name="MigsOrg_adapters", curie=MIXS.curie('0000048'),
                    model_uri=MIXS.MigsOrg_adapters, domain=None, range=Optional[str],
@@ -16166,7 +16174,7 @@ slots.MigsOrg_lat_lon = Slot(uri=MIXS['0000009'], name="MigsOrg_lat_lon", curie=
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.MigsOrg_lib_layout = Slot(uri=MIXS['0000041'], name="MigsOrg_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.MigsOrg_lib_layout, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsOrg_lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.MigsOrg_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="MigsOrg_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.MigsOrg_lib_reads_seqd, domain=None, range=Optional[int])
@@ -16181,7 +16189,7 @@ slots.MigsOrg_lib_vector = Slot(uri=MIXS['0000042'], name="MigsOrg_lib_vector", 
                    model_uri=MIXS.MigsOrg_lib_vector, domain=None, range=Optional[str])
 
 slots.MigsOrg_neg_cont_type = Slot(uri=MIXS['0001321'], name="MigsOrg_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.MigsOrg_neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsOrg_neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.MigsOrg_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="MigsOrg_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.MigsOrg_nucl_acid_amp, domain=None, range=Optional[str])
@@ -16246,7 +16254,7 @@ slots.MigsOrg_tax_class = Slot(uri=MIXS['0000064'], name="MigsOrg_tax_class", cu
                    model_uri=MIXS.MigsOrg_tax_class, domain=None, range=Optional[str])
 
 slots.MigsOrg_tax_ident = Slot(uri=MIXS['0000053'], name="MigsOrg_tax_ident", curie=MIXS.curie('0000053'),
-                   model_uri=MIXS.MigsOrg_tax_ident, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsOrg_tax_ident, domain=None, range=Optional[Union[str, "TaxIdentEnum"]])
 
 slots.MigsOrg_temp = Slot(uri=MIXS['0000113'], name="MigsOrg_temp", curie=MIXS.curie('0000113'),
                    model_uri=MIXS.MigsOrg_temp, domain=None, range=Optional[str],
@@ -16331,7 +16339,7 @@ slots.MigsPl_lat_lon = Slot(uri=MIXS['0000009'], name="MigsPl_lat_lon", curie=MI
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.MigsPl_lib_layout = Slot(uri=MIXS['0000041'], name="MigsPl_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.MigsPl_lib_layout, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsPl_lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.MigsPl_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="MigsPl_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.MigsPl_lib_reads_seqd, domain=None, range=Optional[int])
@@ -16346,7 +16354,7 @@ slots.MigsPl_lib_vector = Slot(uri=MIXS['0000042'], name="MigsPl_lib_vector", cu
                    model_uri=MIXS.MigsPl_lib_vector, domain=None, range=Optional[str])
 
 slots.MigsPl_neg_cont_type = Slot(uri=MIXS['0001321'], name="MigsPl_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.MigsPl_neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsPl_neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.MigsPl_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="MigsPl_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.MigsPl_nucl_acid_amp, domain=None, range=Optional[str])
@@ -16417,7 +16425,7 @@ slots.MigsPl_tax_class = Slot(uri=MIXS['0000064'], name="MigsPl_tax_class", curi
                    model_uri=MIXS.MigsPl_tax_class, domain=None, range=Optional[str])
 
 slots.MigsPl_tax_ident = Slot(uri=MIXS['0000053'], name="MigsPl_tax_ident", curie=MIXS.curie('0000053'),
-                   model_uri=MIXS.MigsPl_tax_ident, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsPl_tax_ident, domain=None, range=Optional[Union[str, "TaxIdentEnum"]])
 
 slots.MigsPl_temp = Slot(uri=MIXS['0000113'], name="MigsPl_temp", curie=MIXS.curie('0000113'),
                    model_uri=MIXS.MigsPl_temp, domain=None, range=Optional[str],
@@ -16447,7 +16455,7 @@ slots.MigsVi_associated_resource = Slot(uri=MIXS['0000091'], name="MigsVi_associ
                    model_uri=MIXS.MigsVi_associated_resource, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.MigsVi_biotic_relationship = Slot(uri=MIXS['0000028'], name="MigsVi_biotic_relationship", curie=MIXS.curie('0000028'),
-                   model_uri=MIXS.MigsVi_biotic_relationship, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsVi_biotic_relationship, domain=None, range=Optional[Union[str, "BioticRelationshipEnum"]])
 
 slots.MigsVi_collection_date = Slot(uri=MIXS['0000011'], name="MigsVi_collection_date", curie=MIXS.curie('0000011'),
                    model_uri=MIXS.MigsVi_collection_date, domain=None, range=str)
@@ -16508,7 +16516,7 @@ slots.MigsVi_lat_lon = Slot(uri=MIXS['0000009'], name="MigsVi_lat_lon", curie=MI
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.MigsVi_lib_layout = Slot(uri=MIXS['0000041'], name="MigsVi_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.MigsVi_lib_layout, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsVi_lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.MigsVi_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="MigsVi_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.MigsVi_lib_reads_seqd, domain=None, range=Optional[int])
@@ -16523,7 +16531,7 @@ slots.MigsVi_lib_vector = Slot(uri=MIXS['0000042'], name="MigsVi_lib_vector", cu
                    model_uri=MIXS.MigsVi_lib_vector, domain=None, range=Optional[str])
 
 slots.MigsVi_neg_cont_type = Slot(uri=MIXS['0001321'], name="MigsVi_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.MigsVi_neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsVi_neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.MigsVi_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="MigsVi_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.MigsVi_nucl_acid_amp, domain=None, range=Optional[str])
@@ -16600,14 +16608,14 @@ slots.MigsVi_tax_class = Slot(uri=MIXS['0000064'], name="MigsVi_tax_class", curi
                    model_uri=MIXS.MigsVi_tax_class, domain=None, range=Optional[str])
 
 slots.MigsVi_tax_ident = Slot(uri=MIXS['0000053'], name="MigsVi_tax_ident", curie=MIXS.curie('0000053'),
-                   model_uri=MIXS.MigsVi_tax_ident, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsVi_tax_ident, domain=None, range=Optional[Union[str, "TaxIdentEnum"]])
 
 slots.MigsVi_temp = Slot(uri=MIXS['0000113'], name="MigsVi_temp", curie=MIXS.curie('0000113'),
                    model_uri=MIXS.MigsVi_temp, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MigsVi_virus_enrich_appr = Slot(uri=MIXS['0000036'], name="MigsVi_virus_enrich_appr", curie=MIXS.curie('0000036'),
-                   model_uri=MIXS.MigsVi_virus_enrich_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.MigsVi_virus_enrich_appr, domain=None, range=Optional[Union[str, "VirusEnrichApprEnum"]])
 
 slots.Mimag_x_16s_recover = Slot(uri=MIXS['0000065'], name="Mimag_x_16s_recover", curie=MIXS.curie('0000065'),
                    model_uri=MIXS.Mimag_x_16s_recover, domain=None, range=Optional[Union[bool, Bool]])
@@ -16639,7 +16647,7 @@ slots.Mimag_associated_resource = Slot(uri=MIXS['0000091'], name="Mimag_associat
                    model_uri=MIXS.Mimag_associated_resource, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.Mimag_bin_param = Slot(uri=MIXS['0000077'], name="Mimag_bin_param", curie=MIXS.curie('0000077'),
-                   model_uri=MIXS.Mimag_bin_param, domain=None, range=str)
+                   model_uri=MIXS.Mimag_bin_param, domain=None, range=Union[str, "BinParamEnum"])
 
 slots.Mimag_bin_software = Slot(uri=MIXS['0000078'], name="Mimag_bin_software", curie=MIXS.curie('0000078'),
                    model_uri=MIXS.Mimag_bin_software, domain=None, range=str)
@@ -16648,7 +16656,7 @@ slots.Mimag_collection_date = Slot(uri=MIXS['0000011'], name="Mimag_collection_d
                    model_uri=MIXS.Mimag_collection_date, domain=None, range=str)
 
 slots.Mimag_compl_appr = Slot(uri=MIXS['0000071'], name="Mimag_compl_appr", curie=MIXS.curie('0000071'),
-                   model_uri=MIXS.Mimag_compl_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.Mimag_compl_appr, domain=None, range=Optional[Union[str, "ComplApprEnum"]])
 
 slots.Mimag_compl_score = Slot(uri=MIXS['0000069'], name="Mimag_compl_score", curie=MIXS.curie('0000069'),
                    model_uri=MIXS.Mimag_compl_score, domain=None, range=str)
@@ -16661,7 +16669,7 @@ slots.Mimag_contam_score = Slot(uri=MIXS['0000072'], name="Mimag_contam_score", 
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ %$'))
 
 slots.Mimag_contam_screen_input = Slot(uri=MIXS['0000005'], name="Mimag_contam_screen_input", curie=MIXS.curie('0000005'),
-                   model_uri=MIXS.Mimag_contam_screen_input, domain=None, range=Optional[str])
+                   model_uri=MIXS.Mimag_contam_screen_input, domain=None, range=Optional[Union[str, "ContamScreenInputEnum"]])
 
 slots.Mimag_contam_screen_param = Slot(uri=MIXS['0000073'], name="Mimag_contam_screen_param", curie=MIXS.curie('0000073'),
                    model_uri=MIXS.Mimag_contam_screen_param, domain=None, range=Optional[str])
@@ -16703,7 +16711,7 @@ slots.Mimag_lat_lon = Slot(uri=MIXS['0000009'], name="Mimag_lat_lon", curie=MIXS
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.Mimag_lib_layout = Slot(uri=MIXS['0000041'], name="Mimag_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.Mimag_lib_layout, domain=None, range=Optional[str])
+                   model_uri=MIXS.Mimag_lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.Mimag_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="Mimag_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.Mimag_lib_reads_seqd, domain=None, range=Optional[int])
@@ -16718,14 +16726,14 @@ slots.Mimag_lib_vector = Slot(uri=MIXS['0000042'], name="Mimag_lib_vector", curi
                    model_uri=MIXS.Mimag_lib_vector, domain=None, range=Optional[str])
 
 slots.Mimag_mag_cov_software = Slot(uri=MIXS['0000080'], name="Mimag_mag_cov_software", curie=MIXS.curie('0000080'),
-                   model_uri=MIXS.Mimag_mag_cov_software, domain=None, range=Optional[str])
+                   model_uri=MIXS.Mimag_mag_cov_software, domain=None, range=Optional[Union[str, "MagCovSoftwareEnum"]])
 
 slots.Mimag_mid = Slot(uri=MIXS['0000047'], name="Mimag_mid", curie=MIXS.curie('0000047'),
                    model_uri=MIXS.Mimag_mid, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[ACGTacgt]+$'))
 
 slots.Mimag_neg_cont_type = Slot(uri=MIXS['0001321'], name="Mimag_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.Mimag_neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.Mimag_neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.Mimag_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="Mimag_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.Mimag_nucl_acid_amp, domain=None, range=Optional[str])
@@ -16752,7 +16760,7 @@ slots.Mimag_ref_db = Slot(uri=MIXS['0000062'], name="Mimag_ref_db", curie=MIXS.c
                    model_uri=MIXS.Mimag_ref_db, domain=None, range=Optional[str])
 
 slots.Mimag_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="Mimag_rel_to_oxygen", curie=MIXS.curie('0000015'),
-                   model_uri=MIXS.Mimag_rel_to_oxygen, domain=None, range=Optional[str])
+                   model_uri=MIXS.Mimag_rel_to_oxygen, domain=None, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.Mimag_samp_collec_device = Slot(uri=MIXS['0000002'], name="Mimag_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=MIXS.Mimag_samp_collec_device, domain=None, range=Optional[str])
@@ -16797,7 +16805,7 @@ slots.Mimag_tax_class = Slot(uri=MIXS['0000064'], name="Mimag_tax_class", curie=
                    model_uri=MIXS.Mimag_tax_class, domain=None, range=Optional[str])
 
 slots.Mimag_tax_ident = Slot(uri=MIXS['0000053'], name="Mimag_tax_ident", curie=MIXS.curie('0000053'),
-                   model_uri=MIXS.Mimag_tax_ident, domain=None, range=str)
+                   model_uri=MIXS.Mimag_tax_ident, domain=None, range=Union[str, "TaxIdentEnum"])
 
 slots.Mimag_temp = Slot(uri=MIXS['0000113'], name="Mimag_temp", curie=MIXS.curie('0000113'),
                    model_uri=MIXS.Mimag_temp, domain=None, range=Optional[str],
@@ -16817,7 +16825,7 @@ slots.MimarksC_associated_resource = Slot(uri=MIXS['0000091'], name="MimarksC_as
                    model_uri=MIXS.MimarksC_associated_resource, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.MimarksC_biotic_relationship = Slot(uri=MIXS['0000028'], name="MimarksC_biotic_relationship", curie=MIXS.curie('0000028'),
-                   model_uri=MIXS.MimarksC_biotic_relationship, domain=None, range=Optional[str])
+                   model_uri=MIXS.MimarksC_biotic_relationship, domain=None, range=Optional[Union[str, "BioticRelationshipEnum"]])
 
 slots.MimarksC_chimera_check = Slot(uri=MIXS['0000052'], name="MimarksC_chimera_check", curie=MIXS.curie('0000052'),
                    model_uri=MIXS.MimarksC_chimera_check, domain=None, range=Optional[str])
@@ -16862,7 +16870,7 @@ slots.MimarksC_lat_lon = Slot(uri=MIXS['0000009'], name="MimarksC_lat_lon", curi
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.MimarksC_neg_cont_type = Slot(uri=MIXS['0001321'], name="MimarksC_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.MimarksC_neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.MimarksC_neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.MimarksC_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="MimarksC_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.MimarksC_nucl_acid_amp, domain=None, range=Optional[str])
@@ -16884,7 +16892,7 @@ slots.MimarksC_project_name = Slot(uri=MIXS['0000092'], name="MimarksC_project_n
                    model_uri=MIXS.MimarksC_project_name, domain=None, range=str)
 
 slots.MimarksC_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="MimarksC_rel_to_oxygen", curie=MIXS.curie('0000015'),
-                   model_uri=MIXS.MimarksC_rel_to_oxygen, domain=None, range=Optional[str])
+                   model_uri=MIXS.MimarksC_rel_to_oxygen, domain=None, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.MimarksC_samp_collec_device = Slot(uri=MIXS['0000002'], name="MimarksC_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=MIXS.MimarksC_samp_collec_device, domain=None, range=Optional[str])
@@ -16913,7 +16921,7 @@ slots.MimarksC_seq_meth = Slot(uri=MIXS['0000050'], name="MimarksC_seq_meth", cu
                    model_uri=MIXS.MimarksC_seq_meth, domain=None, range=str)
 
 slots.MimarksC_seq_quality_check = Slot(uri=MIXS['0000051'], name="MimarksC_seq_quality_check", curie=MIXS.curie('0000051'),
-                   model_uri=MIXS.MimarksC_seq_quality_check, domain=None, range=Optional[str])
+                   model_uri=MIXS.MimarksC_seq_quality_check, domain=None, range=Optional[Union[str, "SeqQualityCheckEnum"]])
 
 slots.MimarksC_sop = Slot(uri=MIXS['0000090'], name="MimarksC_sop", curie=MIXS.curie('0000090'),
                    model_uri=MIXS.MimarksC_sop, domain=None, range=Optional[Union[str, List[str]]])
@@ -16935,7 +16943,7 @@ slots.MimarksC_temp = Slot(uri=MIXS['0000113'], name="MimarksC_temp", curie=MIXS
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MimarksC_trophic_level = Slot(uri=MIXS['0000032'], name="MimarksC_trophic_level", curie=MIXS.curie('0000032'),
-                   model_uri=MIXS.MimarksC_trophic_level, domain=None, range=Optional[str])
+                   model_uri=MIXS.MimarksC_trophic_level, domain=None, range=Optional[Union[str, "TrophicLevelEnum"]])
 
 slots.MimarksS_adapters = Slot(uri=MIXS['0000048'], name="MimarksS_adapters", curie=MIXS.curie('0000048'),
                    model_uri=MIXS.MimarksS_adapters, domain=None, range=Optional[str],
@@ -16988,7 +16996,7 @@ slots.MimarksS_lat_lon = Slot(uri=MIXS['0000009'], name="MimarksS_lat_lon", curi
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.MimarksS_lib_layout = Slot(uri=MIXS['0000041'], name="MimarksS_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.MimarksS_lib_layout, domain=None, range=Optional[str])
+                   model_uri=MIXS.MimarksS_lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.MimarksS_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="MimarksS_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.MimarksS_lib_reads_seqd, domain=None, range=Optional[int])
@@ -17007,7 +17015,7 @@ slots.MimarksS_mid = Slot(uri=MIXS['0000047'], name="MimarksS_mid", curie=MIXS.c
                    pattern=re.compile(r'^[ACGTacgt]+$'))
 
 slots.MimarksS_neg_cont_type = Slot(uri=MIXS['0001321'], name="MimarksS_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.MimarksS_neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.MimarksS_neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.MimarksS_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="MimarksS_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.MimarksS_nucl_acid_amp, domain=None, range=Optional[str])
@@ -17029,7 +17037,7 @@ slots.MimarksS_project_name = Slot(uri=MIXS['0000092'], name="MimarksS_project_n
                    model_uri=MIXS.MimarksS_project_name, domain=None, range=str)
 
 slots.MimarksS_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="MimarksS_rel_to_oxygen", curie=MIXS.curie('0000015'),
-                   model_uri=MIXS.MimarksS_rel_to_oxygen, domain=None, range=Optional[str])
+                   model_uri=MIXS.MimarksS_rel_to_oxygen, domain=None, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.MimarksS_samp_collec_device = Slot(uri=MIXS['0000002'], name="MimarksS_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=MIXS.MimarksS_samp_collec_device, domain=None, range=Optional[str])
@@ -17058,7 +17066,7 @@ slots.MimarksS_seq_meth = Slot(uri=MIXS['0000050'], name="MimarksS_seq_meth", cu
                    model_uri=MIXS.MimarksS_seq_meth, domain=None, range=str)
 
 slots.MimarksS_seq_quality_check = Slot(uri=MIXS['0000051'], name="MimarksS_seq_quality_check", curie=MIXS.curie('0000051'),
-                   model_uri=MIXS.MimarksS_seq_quality_check, domain=None, range=Optional[str])
+                   model_uri=MIXS.MimarksS_seq_quality_check, domain=None, range=Optional[Union[str, "SeqQualityCheckEnum"]])
 
 slots.MimarksS_size_frac = Slot(uri=MIXS['0000017'], name="MimarksS_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=MIXS.MimarksS_size_frac, domain=None, range=Optional[str],
@@ -17113,7 +17121,7 @@ slots.Misag_collection_date = Slot(uri=MIXS['0000011'], name="Misag_collection_d
                    model_uri=MIXS.Misag_collection_date, domain=None, range=str)
 
 slots.Misag_compl_appr = Slot(uri=MIXS['0000071'], name="Misag_compl_appr", curie=MIXS.curie('0000071'),
-                   model_uri=MIXS.Misag_compl_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.Misag_compl_appr, domain=None, range=Optional[Union[str, "ComplApprEnum"]])
 
 slots.Misag_compl_score = Slot(uri=MIXS['0000069'], name="Misag_compl_score", curie=MIXS.curie('0000069'),
                    model_uri=MIXS.Misag_compl_score, domain=None, range=str)
@@ -17126,7 +17134,7 @@ slots.Misag_contam_score = Slot(uri=MIXS['0000072'], name="Misag_contam_score", 
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ %$'))
 
 slots.Misag_contam_screen_input = Slot(uri=MIXS['0000005'], name="Misag_contam_screen_input", curie=MIXS.curie('0000005'),
-                   model_uri=MIXS.Misag_contam_screen_input, domain=None, range=Optional[str])
+                   model_uri=MIXS.Misag_contam_screen_input, domain=None, range=Optional[Union[str, "ContamScreenInputEnum"]])
 
 slots.Misag_contam_screen_param = Slot(uri=MIXS['0000073'], name="Misag_contam_screen_param", curie=MIXS.curie('0000073'),
                    model_uri=MIXS.Misag_contam_screen_param, domain=None, range=Optional[str])
@@ -17168,7 +17176,7 @@ slots.Misag_lat_lon = Slot(uri=MIXS['0000009'], name="Misag_lat_lon", curie=MIXS
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.Misag_lib_layout = Slot(uri=MIXS['0000041'], name="Misag_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.Misag_lib_layout, domain=None, range=Optional[str])
+                   model_uri=MIXS.Misag_lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.Misag_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="Misag_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.Misag_lib_reads_seqd, domain=None, range=Optional[int])
@@ -17187,7 +17195,7 @@ slots.Misag_mid = Slot(uri=MIXS['0000047'], name="Misag_mid", curie=MIXS.curie('
                    pattern=re.compile(r'^[ACGTacgt]+$'))
 
 slots.Misag_neg_cont_type = Slot(uri=MIXS['0001321'], name="Misag_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.Misag_neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.Misag_neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.Misag_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="Misag_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.Misag_nucl_acid_amp, domain=None, range=Optional[str])
@@ -17211,7 +17219,7 @@ slots.Misag_ref_db = Slot(uri=MIXS['0000062'], name="Misag_ref_db", curie=MIXS.c
                    model_uri=MIXS.Misag_ref_db, domain=None, range=Optional[str])
 
 slots.Misag_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="Misag_rel_to_oxygen", curie=MIXS.curie('0000015'),
-                   model_uri=MIXS.Misag_rel_to_oxygen, domain=None, range=Optional[str])
+                   model_uri=MIXS.Misag_rel_to_oxygen, domain=None, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.Misag_samp_collec_device = Slot(uri=MIXS['0000002'], name="Misag_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=MIXS.Misag_samp_collec_device, domain=None, range=Optional[str])
@@ -17243,7 +17251,7 @@ slots.Misag_sim_search_meth = Slot(uri=MIXS['0000063'], name="Misag_sim_search_m
                    model_uri=MIXS.Misag_sim_search_meth, domain=None, range=Optional[str])
 
 slots.Misag_single_cell_lysis_appr = Slot(uri=MIXS['0000076'], name="Misag_single_cell_lysis_appr", curie=MIXS.curie('0000076'),
-                   model_uri=MIXS.Misag_single_cell_lysis_appr, domain=None, range=str)
+                   model_uri=MIXS.Misag_single_cell_lysis_appr, domain=None, range=Union[str, "SingleCellLysisApprEnum"])
 
 slots.Misag_single_cell_lysis_prot = Slot(uri=MIXS['0000054'], name="Misag_single_cell_lysis_prot", curie=MIXS.curie('0000054'),
                    model_uri=MIXS.Misag_single_cell_lysis_prot, domain=None, range=Optional[str])
@@ -17256,7 +17264,7 @@ slots.Misag_sop = Slot(uri=MIXS['0000090'], name="Misag_sop", curie=MIXS.curie('
                    model_uri=MIXS.Misag_sop, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.Misag_sort_tech = Slot(uri=MIXS['0000075'], name="Misag_sort_tech", curie=MIXS.curie('0000075'),
-                   model_uri=MIXS.Misag_sort_tech, domain=None, range=str)
+                   model_uri=MIXS.Misag_sort_tech, domain=None, range=Union[str, "SortTechEnum"])
 
 slots.Misag_source_mat_id = Slot(uri=MIXS['0000026'], name="Misag_source_mat_id", curie=MIXS.curie('0000026'),
                    model_uri=MIXS.Misag_source_mat_id, domain=None, range=Optional[Union[str, List[str]]])
@@ -17265,7 +17273,7 @@ slots.Misag_tax_class = Slot(uri=MIXS['0000064'], name="Misag_tax_class", curie=
                    model_uri=MIXS.Misag_tax_class, domain=None, range=Optional[str])
 
 slots.Misag_tax_ident = Slot(uri=MIXS['0000053'], name="Misag_tax_ident", curie=MIXS.curie('0000053'),
-                   model_uri=MIXS.Misag_tax_ident, domain=None, range=str)
+                   model_uri=MIXS.Misag_tax_ident, domain=None, range=Union[str, "TaxIdentEnum"])
 
 slots.Misag_temp = Slot(uri=MIXS['0000113'], name="Misag_temp", curie=MIXS.curie('0000113'),
                    model_uri=MIXS.Misag_temp, domain=None, range=Optional[str],
@@ -17278,7 +17286,7 @@ slots.Misag_trnas = Slot(uri=MIXS['0000067'], name="Misag_trnas", curie=MIXS.cur
                    model_uri=MIXS.Misag_trnas, domain=None, range=Optional[int])
 
 slots.Misag_wga_amp_appr = Slot(uri=MIXS['0000055'], name="Misag_wga_amp_appr", curie=MIXS.curie('0000055'),
-                   model_uri=MIXS.Misag_wga_amp_appr, domain=None, range=str)
+                   model_uri=MIXS.Misag_wga_amp_appr, domain=None, range=Union[str, "WgaAmpApprEnum"])
 
 slots.Misag_wga_amp_kit = Slot(uri=MIXS['0000006'], name="Misag_wga_amp_kit", curie=MIXS.curie('0000006'),
                    model_uri=MIXS.Misag_wga_amp_kit, domain=None, range=Optional[str])
@@ -17307,19 +17315,19 @@ slots.Miuvig_associated_resource = Slot(uri=MIXS['0000091'], name="Miuvig_associ
                    model_uri=MIXS.Miuvig_associated_resource, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.Miuvig_bin_param = Slot(uri=MIXS['0000077'], name="Miuvig_bin_param", curie=MIXS.curie('0000077'),
-                   model_uri=MIXS.Miuvig_bin_param, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_bin_param, domain=None, range=Optional[Union[str, "BinParamEnum"]])
 
 slots.Miuvig_bin_software = Slot(uri=MIXS['0000078'], name="Miuvig_bin_software", curie=MIXS.curie('0000078'),
                    model_uri=MIXS.Miuvig_bin_software, domain=None, range=Optional[str])
 
 slots.Miuvig_biotic_relationship = Slot(uri=MIXS['0000028'], name="Miuvig_biotic_relationship", curie=MIXS.curie('0000028'),
-                   model_uri=MIXS.Miuvig_biotic_relationship, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_biotic_relationship, domain=None, range=Optional[Union[str, "BioticRelationshipEnum"]])
 
 slots.Miuvig_collection_date = Slot(uri=MIXS['0000011'], name="Miuvig_collection_date", curie=MIXS.curie('0000011'),
                    model_uri=MIXS.Miuvig_collection_date, domain=None, range=str)
 
 slots.Miuvig_compl_appr = Slot(uri=MIXS['0000071'], name="Miuvig_compl_appr", curie=MIXS.curie('0000071'),
-                   model_uri=MIXS.Miuvig_compl_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_compl_appr, domain=None, range=Optional[Union[str, "ComplApprEnum"]])
 
 slots.Miuvig_compl_score = Slot(uri=MIXS['0000069'], name="Miuvig_compl_score", curie=MIXS.curie('0000069'),
                    model_uri=MIXS.Miuvig_compl_score, domain=None, range=Optional[str])
@@ -17367,7 +17375,7 @@ slots.Miuvig_host_disease_stat = Slot(uri=MIXS['0000031'], name="Miuvig_host_dis
                    model_uri=MIXS.Miuvig_host_disease_stat, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.Miuvig_host_pred_appr = Slot(uri=MIXS['0000088'], name="Miuvig_host_pred_appr", curie=MIXS.curie('0000088'),
-                   model_uri=MIXS.Miuvig_host_pred_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_host_pred_appr, domain=None, range=Optional[Union[str, "HostPredApprEnum"]])
 
 slots.Miuvig_host_pred_est_acc = Slot(uri=MIXS['0000089'], name="Miuvig_host_pred_est_acc", curie=MIXS.curie('0000089'),
                    model_uri=MIXS.Miuvig_host_pred_est_acc, domain=None, range=Optional[str])
@@ -17380,7 +17388,7 @@ slots.Miuvig_lat_lon = Slot(uri=MIXS['0000009'], name="Miuvig_lat_lon", curie=MI
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.Miuvig_lib_layout = Slot(uri=MIXS['0000041'], name="Miuvig_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.Miuvig_lib_layout, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.Miuvig_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="Miuvig_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.Miuvig_lib_reads_seqd, domain=None, range=Optional[int])
@@ -17395,14 +17403,14 @@ slots.Miuvig_lib_vector = Slot(uri=MIXS['0000042'], name="Miuvig_lib_vector", cu
                    model_uri=MIXS.Miuvig_lib_vector, domain=None, range=Optional[str])
 
 slots.Miuvig_mag_cov_software = Slot(uri=MIXS['0000080'], name="Miuvig_mag_cov_software", curie=MIXS.curie('0000080'),
-                   model_uri=MIXS.Miuvig_mag_cov_software, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_mag_cov_software, domain=None, range=Optional[Union[str, "MagCovSoftwareEnum"]])
 
 slots.Miuvig_mid = Slot(uri=MIXS['0000047'], name="Miuvig_mid", curie=MIXS.curie('0000047'),
                    model_uri=MIXS.Miuvig_mid, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[ACGTacgt]+$'))
 
 slots.Miuvig_neg_cont_type = Slot(uri=MIXS['0001321'], name="Miuvig_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.Miuvig_neg_cont_type, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.Miuvig_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="Miuvig_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.Miuvig_nucl_acid_amp, domain=None, range=Optional[str])
@@ -17429,7 +17437,7 @@ slots.Miuvig_pos_cont_type = Slot(uri=MIXS['0001322'], name="Miuvig_pos_cont_typ
                    model_uri=MIXS.Miuvig_pos_cont_type, domain=None, range=Optional[str])
 
 slots.Miuvig_pred_genome_struc = Slot(uri=MIXS['0000083'], name="Miuvig_pred_genome_struc", curie=MIXS.curie('0000083'),
-                   model_uri=MIXS.Miuvig_pred_genome_struc, domain=None, range=str)
+                   model_uri=MIXS.Miuvig_pred_genome_struc, domain=None, range=Union[str, "PredGenomeStrucEnum"])
 
 slots.Miuvig_pred_genome_type = Slot(uri=MIXS['0000082'], name="Miuvig_pred_genome_type", curie=MIXS.curie('0000082'),
                    model_uri=MIXS.Miuvig_pred_genome_type, domain=None, range=str)
@@ -17476,7 +17484,7 @@ slots.Miuvig_sim_search_meth = Slot(uri=MIXS['0000063'], name="Miuvig_sim_search
                    model_uri=MIXS.Miuvig_sim_search_meth, domain=None, range=Optional[str])
 
 slots.Miuvig_single_cell_lysis_appr = Slot(uri=MIXS['0000076'], name="Miuvig_single_cell_lysis_appr", curie=MIXS.curie('0000076'),
-                   model_uri=MIXS.Miuvig_single_cell_lysis_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_single_cell_lysis_appr, domain=None, range=Optional[Union[str, "SingleCellLysisApprEnum"]])
 
 slots.Miuvig_single_cell_lysis_prot = Slot(uri=MIXS['0000054'], name="Miuvig_single_cell_lysis_prot", curie=MIXS.curie('0000054'),
                    model_uri=MIXS.Miuvig_single_cell_lysis_prot, domain=None, range=Optional[str])
@@ -17489,7 +17497,7 @@ slots.Miuvig_sop = Slot(uri=MIXS['0000090'], name="Miuvig_sop", curie=MIXS.curie
                    model_uri=MIXS.Miuvig_sop, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.Miuvig_sort_tech = Slot(uri=MIXS['0000075'], name="Miuvig_sort_tech", curie=MIXS.curie('0000075'),
-                   model_uri=MIXS.Miuvig_sort_tech, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_sort_tech, domain=None, range=Optional[Union[str, "SortTechEnum"]])
 
 slots.Miuvig_source_mat_id = Slot(uri=MIXS['0000026'], name="Miuvig_source_mat_id", curie=MIXS.curie('0000026'),
                    model_uri=MIXS.Miuvig_source_mat_id, domain=None, range=Optional[Union[str, List[str]]])
@@ -17504,7 +17512,7 @@ slots.Miuvig_tax_class = Slot(uri=MIXS['0000064'], name="Miuvig_tax_class", curi
                    model_uri=MIXS.Miuvig_tax_class, domain=None, range=Optional[str])
 
 slots.Miuvig_tax_ident = Slot(uri=MIXS['0000053'], name="Miuvig_tax_ident", curie=MIXS.curie('0000053'),
-                   model_uri=MIXS.Miuvig_tax_ident, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_tax_ident, domain=None, range=Optional[Union[str, "TaxIdentEnum"]])
 
 slots.Miuvig_temp = Slot(uri=MIXS['0000113'], name="Miuvig_temp", curie=MIXS.curie('0000113'),
                    model_uri=MIXS.Miuvig_temp, domain=None, range=Optional[str],
@@ -17520,10 +17528,10 @@ slots.Miuvig_vir_ident_software = Slot(uri=MIXS['0000081'], name="Miuvig_vir_ide
                    model_uri=MIXS.Miuvig_vir_ident_software, domain=None, range=str)
 
 slots.Miuvig_virus_enrich_appr = Slot(uri=MIXS['0000036'], name="Miuvig_virus_enrich_appr", curie=MIXS.curie('0000036'),
-                   model_uri=MIXS.Miuvig_virus_enrich_appr, domain=None, range=str)
+                   model_uri=MIXS.Miuvig_virus_enrich_appr, domain=None, range=Union[str, "VirusEnrichApprEnum"])
 
 slots.Miuvig_wga_amp_appr = Slot(uri=MIXS['0000055'], name="Miuvig_wga_amp_appr", curie=MIXS.curie('0000055'),
-                   model_uri=MIXS.Miuvig_wga_amp_appr, domain=None, range=Optional[str])
+                   model_uri=MIXS.Miuvig_wga_amp_appr, domain=None, range=Optional[Union[str, "WgaAmpApprEnum"]])
 
 slots.Miuvig_wga_amp_kit = Slot(uri=MIXS['0000006'], name="Miuvig_wga_amp_kit", curie=MIXS.curie('0000006'),
                    model_uri=MIXS.Miuvig_wga_amp_kit, domain=None, range=Optional[str])
@@ -17588,7 +17596,7 @@ slots.Mims_lat_lon = Slot(uri=MIXS['0000009'], name="Mims_lat_lon", curie=MIXS.c
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.Mims_lib_layout = Slot(uri=MIXS['0000041'], name="Mims_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.Mims_lib_layout, domain=Mims, range=Optional[str])
+                   model_uri=MIXS.Mims_lib_layout, domain=Mims, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.Mims_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="Mims_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.Mims_lib_reads_seqd, domain=Mims, range=Optional[int])
@@ -17607,7 +17615,7 @@ slots.Mims_mid = Slot(uri=MIXS['0000047'], name="Mims_mid", curie=MIXS.curie('00
                    pattern=re.compile(r'^[ACGTacgt]+$'))
 
 slots.Mims_neg_cont_type = Slot(uri=MIXS['0001321'], name="Mims_neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.Mims_neg_cont_type, domain=Mims, range=Optional[str])
+                   model_uri=MIXS.Mims_neg_cont_type, domain=Mims, range=Optional[Union[str, "NegContTypeEnum"]])
 
 slots.Mims_nucl_acid_amp = Slot(uri=MIXS['0000038'], name="Mims_nucl_acid_amp", curie=MIXS.curie('0000038'),
                    model_uri=MIXS.Mims_nucl_acid_amp, domain=Mims, range=Optional[str])
@@ -17631,7 +17639,7 @@ slots.Mims_ref_db = Slot(uri=MIXS['0000062'], name="Mims_ref_db", curie=MIXS.cur
                    model_uri=MIXS.Mims_ref_db, domain=Mims, range=Optional[str])
 
 slots.Mims_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="Mims_rel_to_oxygen", curie=MIXS.curie('0000015'),
-                   model_uri=MIXS.Mims_rel_to_oxygen, domain=Mims, range=Optional[str])
+                   model_uri=MIXS.Mims_rel_to_oxygen, domain=Mims, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.Mims_samp_collec_device = Slot(uri=MIXS['0000002'], name="Mims_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=MIXS.Mims_samp_collec_device, domain=Mims, range=Optional[str])
@@ -17714,7 +17722,7 @@ slots.Agriculture_assembly_software = Slot(uri=MIXS['0000058'], name="Agricultur
                    model_uri=MIXS.Agriculture_assembly_software, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_biotic_relationship = Slot(uri=MIXS['0000028'], name="Agriculture_biotic_relationship", curie=MIXS.curie('0000028'),
-                   model_uri=MIXS.Agriculture_biotic_relationship, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_biotic_relationship, domain=Agriculture, range=Optional[Union[str, "BioticRelationshipEnum"]])
 
 slots.Agriculture_chem_administration = Slot(uri=MIXS.chem_administration, name="Agriculture_chem_administration", curie=MIXS.curie('chem_administration'),
                    model_uri=MIXS.Agriculture_chem_administration, domain=Agriculture, range=Optional[str])
@@ -17744,7 +17752,7 @@ slots.Agriculture_cur_vegetation_meth = Slot(uri=MIXS['0000314'], name="Agricult
                    model_uri=MIXS.Agriculture_cur_vegetation_meth, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_drainage_class = Slot(uri=MIXS['0001085'], name="Agriculture_drainage_class", curie=MIXS.curie('0001085'),
-                   model_uri=MIXS.Agriculture_drainage_class, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_drainage_class, domain=Agriculture, range=Optional[Union[str, "DrainageClassEnum"]])
 
 slots.Agriculture_elev = Slot(uri=MIXS['0000093'], name="Agriculture_elev", curie=MIXS.curie('0000093'),
                    model_uri=MIXS.Agriculture_elev, domain=Agriculture, range=Optional[str],
@@ -17757,7 +17765,7 @@ slots.Agriculture_extreme_event = Slot(uri=MIXS['0000320'], name="Agriculture_ex
                    model_uri=MIXS.Agriculture_extreme_event, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_fao_class = Slot(uri=MIXS['0001083'], name="Agriculture_fao_class", curie=MIXS.curie('0001083'),
-                   model_uri=MIXS.Agriculture_fao_class, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_fao_class, domain=Agriculture, range=Optional[Union[str, "FaoClassEnum"]])
 
 slots.Agriculture_farm_equip = Slot(uri=MIXS.farm_equip, name="Agriculture_farm_equip", curie=MIXS.curie('farm_equip'),
                    model_uri=MIXS.Agriculture_farm_equip, domain=Agriculture, range=Optional[str])
@@ -17769,7 +17777,7 @@ slots.Agriculture_farm_equip_shared = Slot(uri=MIXS.farm_equip_shared, name="Agr
                    model_uri=MIXS.Agriculture_farm_equip_shared, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_farm_water_source = Slot(uri=MIXS['0001110'], name="Agriculture_farm_water_source", curie=MIXS.curie('0001110'),
-                   model_uri=MIXS.Agriculture_farm_water_source, domain=Agriculture, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.Agriculture_farm_water_source, domain=Agriculture, range=Optional[Union[Union[str, "FarmWaterSourceEnum"], List[Union[str, "FarmWaterSourceEnum"]]]])
 
 slots.Agriculture_fertilizer_admin = Slot(uri=MIXS['0001127'], name="Agriculture_fertilizer_admin", curie=MIXS.curie('0001127'),
                    model_uri=MIXS.Agriculture_fertilizer_admin, domain=Agriculture, range=Optional[str])
@@ -17868,7 +17876,7 @@ slots.Agriculture_isol_growth_condt = Slot(uri=MIXS['0000003'], name="Agricultur
                    model_uri=MIXS.Agriculture_isol_growth_condt, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_lib_layout = Slot(uri=MIXS['0000041'], name="Agriculture_lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.Agriculture_lib_layout, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_lib_layout, domain=Agriculture, range=Optional[Union[str, "LibLayoutEnum"]])
 
 slots.Agriculture_lib_reads_seqd = Slot(uri=MIXS['0000040'], name="Agriculture_lib_reads_seqd", curie=MIXS.curie('0000040'),
                    model_uri=MIXS.Agriculture_lib_reads_seqd, domain=Agriculture, range=Optional[int])
@@ -17984,7 +17992,7 @@ slots.Agriculture_previous_land_use_meth = Slot(uri=MIXS.previous_land_use_meth,
                    model_uri=MIXS.Agriculture_previous_land_use_meth, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_profile_position = Slot(uri=MIXS['0001084'], name="Agriculture_profile_position", curie=MIXS.curie('0001084'),
-                   model_uri=MIXS.Agriculture_profile_position, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_profile_position, domain=Agriculture, range=Optional[Union[str, "ProfilePositionEnum"]])
 
 slots.Agriculture_rel_location = Slot(uri=MIXS.rel_location, name="Agriculture_rel_location", curie=MIXS.curie('rel_location'),
                    model_uri=MIXS.Agriculture_rel_location, domain=Agriculture, range=Optional[str])
@@ -18040,16 +18048,18 @@ slots.Agriculture_season_humidity = Slot(uri=MIXS['0001148'], name="Agriculture_
                    model_uri=MIXS.Agriculture_season_humidity, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_season_precpt = Slot(uri=MIXS['0000645'], name="Agriculture_season_precpt", curie=MIXS.curie('0000645'),
-                   model_uri=MIXS.Agriculture_season_precpt, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_season_precpt, domain=Agriculture, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Agriculture_season_temp = Slot(uri=MIXS['0000643'], name="Agriculture_season_temp", curie=MIXS.curie('0000643'),
-                   model_uri=MIXS.Agriculture_season_temp, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_season_temp, domain=Agriculture, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Agriculture_seq_meth = Slot(uri=MIXS['0000050'], name="Agriculture_seq_meth", curie=MIXS.curie('0000050'),
                    model_uri=MIXS.Agriculture_seq_meth, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_seq_quality_check = Slot(uri=MIXS['0000051'], name="Agriculture_seq_quality_check", curie=MIXS.curie('0000051'),
-                   model_uri=MIXS.Agriculture_seq_quality_check, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_seq_quality_check, domain=Agriculture, range=Optional[Union[str, "SeqQualityCheckEnum"]])
 
 slots.Agriculture_sequencing_location = Slot(uri=MIXS['0001156'], name="Agriculture_sequencing_location", curie=MIXS.curie('0001156'),
                    model_uri=MIXS.Agriculture_sequencing_location, domain=Agriculture, range=Optional[str])
@@ -18088,7 +18098,8 @@ slots.Agriculture_soil_temp = Slot(uri=MIXS.soil_temp, name="Agriculture_soil_te
                    model_uri=MIXS.Agriculture_soil_temp, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_soil_type = Slot(uri=MIXS['0000332'], name="Agriculture_soil_type", curie=MIXS.curie('0000332'),
-                   model_uri=MIXS.Agriculture_soil_type, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_soil_type, domain=Agriculture, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
 slots.Agriculture_soil_type_meth = Slot(uri=MIXS['0000334'], name="Agriculture_soil_type_meth", curie=MIXS.curie('0000334'),
                    model_uri=MIXS.Agriculture_soil_type_meth, domain=Agriculture, range=Optional[str])
@@ -18131,7 +18142,7 @@ slots.Agriculture_texture_meth = Slot(uri=MIXS.texture_meth, name="Agriculture_t
                    model_uri=MIXS.Agriculture_texture_meth, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_tillage = Slot(uri=MIXS['0001081'], name="Agriculture_tillage", curie=MIXS.curie('0001081'),
-                   model_uri=MIXS.Agriculture_tillage, domain=Agriculture, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.Agriculture_tillage, domain=Agriculture, range=Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]])
 
 slots.Agriculture_tot_car = Slot(uri=MIXS.tot_car, name="Agriculture_tot_car", curie=MIXS.curie('tot_car'),
                    model_uri=MIXS.Agriculture_tot_car, domain=Agriculture, range=Optional[str])
@@ -18146,13 +18157,14 @@ slots.Agriculture_tot_org_c_meth = Slot(uri=MIXS['0000337'], name="Agriculture_t
                    model_uri=MIXS.Agriculture_tot_org_c_meth, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_tot_org_carb = Slot(uri=MIXS['0000533'], name="Agriculture_tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=MIXS.Agriculture_tot_org_carb, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_tot_org_carb, domain=Agriculture, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Agriculture_tot_phos = Slot(uri=MIXS.tot_phos, name="Agriculture_tot_phos", curie=MIXS.curie('tot_phos'),
                    model_uri=MIXS.Agriculture_tot_phos, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_trophic_level = Slot(uri=MIXS['0000032'], name="Agriculture_trophic_level", curie=MIXS.curie('0000032'),
-                   model_uri=MIXS.Agriculture_trophic_level, domain=Agriculture, range=Optional[str])
+                   model_uri=MIXS.Agriculture_trophic_level, domain=Agriculture, range=Optional[Union[str, "TrophicLevelEnum"]])
 
 slots.Agriculture_url = Slot(uri=MIXS.url, name="Agriculture_url", curie=MIXS.curie('url'),
                    model_uri=MIXS.Agriculture_url, domain=Agriculture, range=Optional[str])
@@ -18161,7 +18173,7 @@ slots.Agriculture_water_p_h = Slot(uri=MIXS.water_p_h, name="Agriculture_water_p
                    model_uri=MIXS.Agriculture_water_p_h, domain=Agriculture, range=Optional[str])
 
 slots.Agriculture_water_source_shared = Slot(uri=MIXS['0001176'], name="Agriculture_water_source_shared", curie=MIXS.curie('0001176'),
-                   model_uri=MIXS.Agriculture_water_source_shared, domain=Agriculture, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.Agriculture_water_source_shared, domain=Agriculture, range=Optional[Union[Union[str, "WaterSourceSharedEnum"], List[Union[str, "WaterSourceSharedEnum"]]]])
 
 slots.Agriculture_water_temp_regm = Slot(uri=MIXS.water_temp_regm, name="Agriculture_water_temp_regm", curie=MIXS.curie('water_temp_regm'),
                    model_uri=MIXS.Agriculture_water_temp_regm, domain=Agriculture, range=Optional[str])
@@ -18270,7 +18282,7 @@ slots.BuiltEnvironment_adj_room = Slot(uri=MIXS['0000219'], name="BuiltEnvironme
                    model_uri=MIXS.BuiltEnvironment_adj_room, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_aero_struc = Slot(uri=MIXS['0000773'], name="BuiltEnvironment_aero_struc", curie=MIXS.curie('0000773'),
-                   model_uri=MIXS.BuiltEnvironment_aero_struc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_aero_struc, domain=BuiltEnvironment, range=Optional[Union[str, "AeroStrucEnum"]])
 
 slots.BuiltEnvironment_air_temp = Slot(uri=MIXS.air_temp, name="BuiltEnvironment_air_temp", curie=MIXS.curie('air_temp'),
                    model_uri=MIXS.BuiltEnvironment_air_temp, domain=BuiltEnvironment, range=Optional[str])
@@ -18279,7 +18291,7 @@ slots.BuiltEnvironment_amount_light = Slot(uri=MIXS['0000140'], name="BuiltEnvir
                    model_uri=MIXS.BuiltEnvironment_amount_light, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_arch_struc = Slot(uri=MIXS['0000774'], name="BuiltEnvironment_arch_struc", curie=MIXS.curie('0000774'),
-                   model_uri=MIXS.BuiltEnvironment_arch_struc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_arch_struc, domain=BuiltEnvironment, range=Optional[Union[str, "ArchStrucEnum"]])
 
 slots.BuiltEnvironment_avg_dew_point = Slot(uri=MIXS['0000141'], name="BuiltEnvironment_avg_dew_point", curie=MIXS.curie('0000141'),
                    model_uri=MIXS.BuiltEnvironment_avg_dew_point, domain=BuiltEnvironment, range=Optional[str])
@@ -18297,19 +18309,19 @@ slots.BuiltEnvironment_bedroom_count = Slot(uri=MIXS['0000777'], name="BuiltEnvi
                    model_uri=MIXS.BuiltEnvironment_bedroom_count, domain=BuiltEnvironment, range=Optional[int])
 
 slots.BuiltEnvironment_build_docs = Slot(uri=MIXS['0000787'], name="BuiltEnvironment_build_docs", curie=MIXS.curie('0000787'),
-                   model_uri=MIXS.BuiltEnvironment_build_docs, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_build_docs, domain=BuiltEnvironment, range=Optional[Union[str, "BuildDocsEnum"]])
 
 slots.BuiltEnvironment_build_occup_type = Slot(uri=MIXS['0000761'], name="BuiltEnvironment_build_occup_type", curie=MIXS.curie('0000761'),
-                   model_uri=MIXS.BuiltEnvironment_build_occup_type, domain=BuiltEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.BuiltEnvironment_build_occup_type, domain=BuiltEnvironment, range=Optional[Union[Union[str, "BuildOccupTypeEnum"], List[Union[str, "BuildOccupTypeEnum"]]]])
 
 slots.BuiltEnvironment_building_setting = Slot(uri=MIXS['0000768'], name="BuiltEnvironment_building_setting", curie=MIXS.curie('0000768'),
-                   model_uri=MIXS.BuiltEnvironment_building_setting, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_building_setting, domain=BuiltEnvironment, range=Optional[Union[str, "BuildingSettingEnum"]])
 
 slots.BuiltEnvironment_built_struc_age = Slot(uri=MIXS['0000145'], name="BuiltEnvironment_built_struc_age", curie=MIXS.curie('0000145'),
                    model_uri=MIXS.BuiltEnvironment_built_struc_age, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_built_struc_set = Slot(uri=MIXS['0000778'], name="BuiltEnvironment_built_struc_set", curie=MIXS.curie('0000778'),
-                   model_uri=MIXS.BuiltEnvironment_built_struc_set, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_built_struc_set, domain=BuiltEnvironment, range=Optional[Union[str, "BuiltStrucSetEnum"]])
 
 slots.BuiltEnvironment_built_struc_type = Slot(uri=MIXS['0000721'], name="BuiltEnvironment_built_struc_type", curie=MIXS.curie('0000721'),
                    model_uri=MIXS.BuiltEnvironment_built_struc_type, domain=BuiltEnvironment, range=Optional[str])
@@ -18321,25 +18333,25 @@ slots.BuiltEnvironment_ceil_area = Slot(uri=MIXS['0000148'], name="BuiltEnvironm
                    model_uri=MIXS.BuiltEnvironment_ceil_area, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_ceil_cond = Slot(uri=MIXS['0000779'], name="BuiltEnvironment_ceil_cond", curie=MIXS.curie('0000779'),
-                   model_uri=MIXS.BuiltEnvironment_ceil_cond, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_ceil_cond, domain=BuiltEnvironment, range=Optional[Union[str, "CeilCondEnum"]])
 
 slots.BuiltEnvironment_ceil_finish_mat = Slot(uri=MIXS['0000780'], name="BuiltEnvironment_ceil_finish_mat", curie=MIXS.curie('0000780'),
-                   model_uri=MIXS.BuiltEnvironment_ceil_finish_mat, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_ceil_finish_mat, domain=BuiltEnvironment, range=Optional[Union[str, "CeilFinishMatEnum"]])
 
 slots.BuiltEnvironment_ceil_struc = Slot(uri=MIXS['0000782'], name="BuiltEnvironment_ceil_struc", curie=MIXS.curie('0000782'),
-                   model_uri=MIXS.BuiltEnvironment_ceil_struc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_ceil_struc, domain=BuiltEnvironment, range=Optional[Union[str, "CeilStrucEnum"]])
 
 slots.BuiltEnvironment_ceil_texture = Slot(uri=MIXS['0000783'], name="BuiltEnvironment_ceil_texture", curie=MIXS.curie('0000783'),
-                   model_uri=MIXS.BuiltEnvironment_ceil_texture, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_ceil_texture, domain=BuiltEnvironment, range=Optional[Union[str, "CeilTextureEnum"]])
 
 slots.BuiltEnvironment_ceil_thermal_mass = Slot(uri=MIXS['0000143'], name="BuiltEnvironment_ceil_thermal_mass", curie=MIXS.curie('0000143'),
                    model_uri=MIXS.BuiltEnvironment_ceil_thermal_mass, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_ceil_type = Slot(uri=MIXS['0000784'], name="BuiltEnvironment_ceil_type", curie=MIXS.curie('0000784'),
-                   model_uri=MIXS.BuiltEnvironment_ceil_type, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_ceil_type, domain=BuiltEnvironment, range=Optional[Union[str, "CeilTypeEnum"]])
 
 slots.BuiltEnvironment_ceil_water_mold = Slot(uri=MIXS['0000781'], name="BuiltEnvironment_ceil_water_mold", curie=MIXS.curie('0000781'),
-                   model_uri=MIXS.BuiltEnvironment_ceil_water_mold, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_ceil_water_mold, domain=BuiltEnvironment, range=Optional[Union[str, "CeilWaterMoldEnum"]])
 
 slots.BuiltEnvironment_cool_syst_id = Slot(uri=MIXS['0000785'], name="BuiltEnvironment_cool_syst_id", curie=MIXS.curie('0000785'),
                    model_uri=MIXS.BuiltEnvironment_cool_syst_id, domain=BuiltEnvironment, range=Optional[int])
@@ -18351,40 +18363,40 @@ slots.BuiltEnvironment_dew_point = Slot(uri=MIXS['0000129'], name="BuiltEnvironm
                    model_uri=MIXS.BuiltEnvironment_dew_point, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_door_comp_type = Slot(uri=MIXS['0000795'], name="BuiltEnvironment_door_comp_type", curie=MIXS.curie('0000795'),
-                   model_uri=MIXS.BuiltEnvironment_door_comp_type, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_door_comp_type, domain=BuiltEnvironment, range=Optional[Union[str, "DoorCompTypeEnum"]])
 
 slots.BuiltEnvironment_door_cond = Slot(uri=MIXS['0000788'], name="BuiltEnvironment_door_cond", curie=MIXS.curie('0000788'),
-                   model_uri=MIXS.BuiltEnvironment_door_cond, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_door_cond, domain=BuiltEnvironment, range=Optional[Union[str, "DoorCondEnum"]])
 
 slots.BuiltEnvironment_door_direct = Slot(uri=MIXS['0000789'], name="BuiltEnvironment_door_direct", curie=MIXS.curie('0000789'),
-                   model_uri=MIXS.BuiltEnvironment_door_direct, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_door_direct, domain=BuiltEnvironment, range=Optional[Union[str, "DoorDirectEnum"]])
 
 slots.BuiltEnvironment_door_loc = Slot(uri=MIXS['0000790'], name="BuiltEnvironment_door_loc", curie=MIXS.curie('0000790'),
-                   model_uri=MIXS.BuiltEnvironment_door_loc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_door_loc, domain=BuiltEnvironment, range=Optional[Union[str, "DoorLocEnum"]])
 
 slots.BuiltEnvironment_door_mat = Slot(uri=MIXS['0000791'], name="BuiltEnvironment_door_mat", curie=MIXS.curie('0000791'),
-                   model_uri=MIXS.BuiltEnvironment_door_mat, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_door_mat, domain=BuiltEnvironment, range=Optional[Union[str, "DoorMatEnum"]])
 
 slots.BuiltEnvironment_door_move = Slot(uri=MIXS['0000792'], name="BuiltEnvironment_door_move", curie=MIXS.curie('0000792'),
-                   model_uri=MIXS.BuiltEnvironment_door_move, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_door_move, domain=BuiltEnvironment, range=Optional[Union[str, "DoorMoveEnum"]])
 
 slots.BuiltEnvironment_door_size = Slot(uri=MIXS['0000158'], name="BuiltEnvironment_door_size", curie=MIXS.curie('0000158'),
                    model_uri=MIXS.BuiltEnvironment_door_size, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_door_type = Slot(uri=MIXS['0000794'], name="BuiltEnvironment_door_type", curie=MIXS.curie('0000794'),
-                   model_uri=MIXS.BuiltEnvironment_door_type, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_door_type, domain=BuiltEnvironment, range=Optional[Union[str, "DoorTypeEnum"]])
 
 slots.BuiltEnvironment_door_type_metal = Slot(uri=MIXS['0000796'], name="BuiltEnvironment_door_type_metal", curie=MIXS.curie('0000796'),
-                   model_uri=MIXS.BuiltEnvironment_door_type_metal, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_door_type_metal, domain=BuiltEnvironment, range=Optional[Union[str, "DoorTypeMetalEnum"]])
 
 slots.BuiltEnvironment_door_type_wood = Slot(uri=MIXS['0000797'], name="BuiltEnvironment_door_type_wood", curie=MIXS.curie('0000797'),
-                   model_uri=MIXS.BuiltEnvironment_door_type_wood, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_door_type_wood, domain=BuiltEnvironment, range=Optional[Union[str, "DoorTypeWoodEnum"]])
 
 slots.BuiltEnvironment_door_water_mold = Slot(uri=MIXS['0000793'], name="BuiltEnvironment_door_water_mold", curie=MIXS.curie('0000793'),
-                   model_uri=MIXS.BuiltEnvironment_door_water_mold, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_door_water_mold, domain=BuiltEnvironment, range=Optional[Union[str, "DoorWaterMoldEnum"]])
 
 slots.BuiltEnvironment_drawings = Slot(uri=MIXS['0000798'], name="BuiltEnvironment_drawings", curie=MIXS.curie('0000798'),
-                   model_uri=MIXS.BuiltEnvironment_drawings, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_drawings, domain=BuiltEnvironment, range=Optional[Union[str, "DrawingsEnum"]])
 
 slots.BuiltEnvironment_elevator = Slot(uri=MIXS['0000799'], name="BuiltEnvironment_elevator", curie=MIXS.curie('0000799'),
                    model_uri=MIXS.BuiltEnvironment_elevator, domain=BuiltEnvironment, range=Optional[int])
@@ -18402,16 +18414,16 @@ slots.BuiltEnvironment_ext_door = Slot(uri=MIXS['0000170'], name="BuiltEnvironme
                    model_uri=MIXS.BuiltEnvironment_ext_door, domain=BuiltEnvironment, range=Optional[int])
 
 slots.BuiltEnvironment_ext_wall_orient = Slot(uri=MIXS['0000817'], name="BuiltEnvironment_ext_wall_orient", curie=MIXS.curie('0000817'),
-                   model_uri=MIXS.BuiltEnvironment_ext_wall_orient, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_ext_wall_orient, domain=BuiltEnvironment, range=Optional[Union[str, "DrawingsEnum"]])
 
 slots.BuiltEnvironment_ext_window_orient = Slot(uri=MIXS['0000818'], name="BuiltEnvironment_ext_window_orient", curie=MIXS.curie('0000818'),
-                   model_uri=MIXS.BuiltEnvironment_ext_window_orient, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_ext_window_orient, domain=BuiltEnvironment, range=Optional[Union[str, "ExtWindowOrientEnum"]])
 
 slots.BuiltEnvironment_filter_type = Slot(uri=MIXS['0000765'], name="BuiltEnvironment_filter_type", curie=MIXS.curie('0000765'),
-                   model_uri=MIXS.BuiltEnvironment_filter_type, domain=BuiltEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.BuiltEnvironment_filter_type, domain=BuiltEnvironment, range=Optional[Union[Union[str, "FilterTypeEnum"], List[Union[str, "FilterTypeEnum"]]]])
 
 slots.BuiltEnvironment_fireplace_type = Slot(uri=MIXS['0000802'], name="BuiltEnvironment_fireplace_type", curie=MIXS.curie('0000802'),
-                   model_uri=MIXS.BuiltEnvironment_fireplace_type, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_fireplace_type, domain=BuiltEnvironment, range=Optional[Union[str, "FireplaceTypeEnum"]])
 
 slots.BuiltEnvironment_floor_age = Slot(uri=MIXS['0000164'], name="BuiltEnvironment_floor_age", curie=MIXS.curie('0000164'),
                    model_uri=MIXS.BuiltEnvironment_floor_age, domain=BuiltEnvironment, range=Optional[str])
@@ -18420,7 +18432,7 @@ slots.BuiltEnvironment_floor_area = Slot(uri=MIXS['0000165'], name="BuiltEnviron
                    model_uri=MIXS.BuiltEnvironment_floor_area, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_floor_cond = Slot(uri=MIXS['0000803'], name="BuiltEnvironment_floor_cond", curie=MIXS.curie('0000803'),
-                   model_uri=MIXS.BuiltEnvironment_floor_cond, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_floor_cond, domain=BuiltEnvironment, range=Optional[Union[str, "FloorCondEnum"]])
 
 slots.BuiltEnvironment_floor_count = Slot(uri=MIXS['0000225'], name="BuiltEnvironment_floor_count", curie=MIXS.curie('0000225'),
                    model_uri=MIXS.BuiltEnvironment_floor_count, domain=BuiltEnvironment, range=Optional[int])
@@ -18435,7 +18447,7 @@ slots.BuiltEnvironment_floor_thermal_mass = Slot(uri=MIXS['0000166'], name="Buil
                    model_uri=MIXS.BuiltEnvironment_floor_thermal_mass, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_floor_water_mold = Slot(uri=MIXS['0000805'], name="BuiltEnvironment_floor_water_mold", curie=MIXS.curie('0000805'),
-                   model_uri=MIXS.BuiltEnvironment_floor_water_mold, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_floor_water_mold, domain=BuiltEnvironment, range=Optional[Union[str, "FloorWaterMoldEnum"]])
 
 slots.BuiltEnvironment_freq_clean = Slot(uri=MIXS.freq_clean, name="BuiltEnvironment_freq_clean", curie=MIXS.curie('freq_clean'),
                    model_uri=MIXS.BuiltEnvironment_freq_clean, domain=BuiltEnvironment, range=Optional[str])
@@ -18444,25 +18456,25 @@ slots.BuiltEnvironment_freq_cook = Slot(uri=MIXS['0000227'], name="BuiltEnvironm
                    model_uri=MIXS.BuiltEnvironment_freq_cook, domain=BuiltEnvironment, range=Optional[int])
 
 slots.BuiltEnvironment_furniture = Slot(uri=MIXS['0000807'], name="BuiltEnvironment_furniture", curie=MIXS.curie('0000807'),
-                   model_uri=MIXS.BuiltEnvironment_furniture, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_furniture, domain=BuiltEnvironment, range=Optional[Union[str, "FurnitureEnum"]])
 
 slots.BuiltEnvironment_gender_restroom = Slot(uri=MIXS['0000808'], name="BuiltEnvironment_gender_restroom", curie=MIXS.curie('0000808'),
-                   model_uri=MIXS.BuiltEnvironment_gender_restroom, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_gender_restroom, domain=BuiltEnvironment, range=Optional[Union[str, "GenderRestroomEnum"]])
 
 slots.BuiltEnvironment_hall_count = Slot(uri=MIXS['0000228'], name="BuiltEnvironment_hall_count", curie=MIXS.curie('0000228'),
                    model_uri=MIXS.BuiltEnvironment_hall_count, domain=BuiltEnvironment, range=Optional[int])
 
 slots.BuiltEnvironment_handidness = Slot(uri=MIXS['0000809'], name="BuiltEnvironment_handidness", curie=MIXS.curie('0000809'),
-                   model_uri=MIXS.BuiltEnvironment_handidness, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_handidness, domain=BuiltEnvironment, range=Optional[Union[str, "HandidnessEnum"]])
 
 slots.BuiltEnvironment_heat_cool_type = Slot(uri=MIXS['0000766'], name="BuiltEnvironment_heat_cool_type", curie=MIXS.curie('0000766'),
-                   model_uri=MIXS.BuiltEnvironment_heat_cool_type, domain=BuiltEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.BuiltEnvironment_heat_cool_type, domain=BuiltEnvironment, range=Optional[Union[Union[str, "HeatCoolTypeEnum"], List[Union[str, "HeatCoolTypeEnum"]]]])
 
 slots.BuiltEnvironment_heat_deliv_loc = Slot(uri=MIXS['0000810'], name="BuiltEnvironment_heat_deliv_loc", curie=MIXS.curie('0000810'),
                    model_uri=MIXS.BuiltEnvironment_heat_deliv_loc, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_heat_sys_deliv_meth = Slot(uri=MIXS['0000812'], name="BuiltEnvironment_heat_sys_deliv_meth", curie=MIXS.curie('0000812'),
-                   model_uri=MIXS.BuiltEnvironment_heat_sys_deliv_meth, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_heat_sys_deliv_meth, domain=BuiltEnvironment, range=Optional[Union[str, "HeatSysDelivMethEnum"]])
 
 slots.BuiltEnvironment_heat_system_id = Slot(uri=MIXS['0000833'], name="BuiltEnvironment_heat_system_id", curie=MIXS.curie('0000833'),
                    model_uri=MIXS.BuiltEnvironment_heat_system_id, domain=BuiltEnvironment, range=Optional[int])
@@ -18471,7 +18483,7 @@ slots.BuiltEnvironment_height_carper_fiber = Slot(uri=MIXS['0000167'], name="Bui
                    model_uri=MIXS.BuiltEnvironment_height_carper_fiber, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_indoor_space = Slot(uri=MIXS['0000763'], name="BuiltEnvironment_indoor_space", curie=MIXS.curie('0000763'),
-                   model_uri=MIXS.BuiltEnvironment_indoor_space, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_indoor_space, domain=BuiltEnvironment, range=Optional[Union[str, "IndoorSpaceEnum"]])
 
 slots.BuiltEnvironment_indoor_surf = Slot(uri=MIXS.indoor_surf, name="BuiltEnvironment_indoor_surf", curie=MIXS.curie('indoor_surf'),
                    model_uri=MIXS.BuiltEnvironment_indoor_surf, domain=BuiltEnvironment, range=Optional[str])
@@ -18480,19 +18492,19 @@ slots.BuiltEnvironment_inside_lux = Slot(uri=MIXS['0000168'], name="BuiltEnviron
                    model_uri=MIXS.BuiltEnvironment_inside_lux, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_int_wall_cond = Slot(uri=MIXS['0000813'], name="BuiltEnvironment_int_wall_cond", curie=MIXS.curie('0000813'),
-                   model_uri=MIXS.BuiltEnvironment_int_wall_cond, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_int_wall_cond, domain=BuiltEnvironment, range=Optional[Union[str, "IntWallCondEnum"]])
 
 slots.BuiltEnvironment_last_clean = Slot(uri=MIXS['0000814'], name="BuiltEnvironment_last_clean", curie=MIXS.curie('0000814'),
                    model_uri=MIXS.BuiltEnvironment_last_clean, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_light_type = Slot(uri=MIXS['0000769'], name="BuiltEnvironment_light_type", curie=MIXS.curie('0000769'),
-                   model_uri=MIXS.BuiltEnvironment_light_type, domain=BuiltEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.BuiltEnvironment_light_type, domain=BuiltEnvironment, range=Optional[Union[Union[str, "LightTypeEnum"], List[Union[str, "LightTypeEnum"]]]])
 
 slots.BuiltEnvironment_max_occup = Slot(uri=MIXS['0000229'], name="BuiltEnvironment_max_occup", curie=MIXS.curie('0000229'),
                    model_uri=MIXS.BuiltEnvironment_max_occup, domain=BuiltEnvironment, range=Optional[int])
 
 slots.BuiltEnvironment_mech_struc = Slot(uri=MIXS['0000815'], name="BuiltEnvironment_mech_struc", curie=MIXS.curie('0000815'),
-                   model_uri=MIXS.BuiltEnvironment_mech_struc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_mech_struc, domain=BuiltEnvironment, range=Optional[Union[str, "MechStrucEnum"]])
 
 slots.BuiltEnvironment_number_pets = Slot(uri=MIXS['0000231'], name="BuiltEnvironment_number_pets", curie=MIXS.curie('0000231'),
                    model_uri=MIXS.BuiltEnvironment_number_pets, domain=BuiltEnvironment, range=Optional[int])
@@ -18507,7 +18519,7 @@ slots.BuiltEnvironment_occup_density_samp = Slot(uri=MIXS['0000217'], name="Buil
                    model_uri=MIXS.BuiltEnvironment_occup_density_samp, domain=BuiltEnvironment, range=Optional[float])
 
 slots.BuiltEnvironment_occup_document = Slot(uri=MIXS['0000816'], name="BuiltEnvironment_occup_document", curie=MIXS.curie('0000816'),
-                   model_uri=MIXS.BuiltEnvironment_occup_document, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_occup_document, domain=BuiltEnvironment, range=Optional[Union[str, "OccupDocumentEnum"]])
 
 slots.BuiltEnvironment_occup_samp = Slot(uri=MIXS['0000772'], name="BuiltEnvironment_occup_samp", curie=MIXS.curie('0000772'),
                    model_uri=MIXS.BuiltEnvironment_occup_samp, domain=BuiltEnvironment, range=Optional[int])
@@ -18522,7 +18534,7 @@ slots.BuiltEnvironment_project_name = Slot(uri=MIXS['0000092'], name="BuiltEnvir
                    model_uri=MIXS.BuiltEnvironment_project_name, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_quad_pos = Slot(uri=MIXS['0000820'], name="BuiltEnvironment_quad_pos", curie=MIXS.curie('0000820'),
-                   model_uri=MIXS.BuiltEnvironment_quad_pos, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_quad_pos, domain=BuiltEnvironment, range=Optional[Union[str, "QuadPosEnum"]])
 
 slots.BuiltEnvironment_rel_air_humidity = Slot(uri=MIXS['0000121'], name="BuiltEnvironment_rel_air_humidity", curie=MIXS.curie('0000121'),
                    model_uri=MIXS.BuiltEnvironment_rel_air_humidity, domain=BuiltEnvironment, range=Optional[str])
@@ -18531,7 +18543,7 @@ slots.BuiltEnvironment_rel_humidity_out = Slot(uri=MIXS['0000188'], name="BuiltE
                    model_uri=MIXS.BuiltEnvironment_rel_humidity_out, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_rel_samp_loc = Slot(uri=MIXS['0000821'], name="BuiltEnvironment_rel_samp_loc", curie=MIXS.curie('0000821'),
-                   model_uri=MIXS.BuiltEnvironment_rel_samp_loc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_rel_samp_loc, domain=BuiltEnvironment, range=Optional[Union[str, "RelSampLocEnum"]])
 
 slots.BuiltEnvironment_room_air_exch_rate = Slot(uri=MIXS['0000169'], name="BuiltEnvironment_room_air_exch_rate", curie=MIXS.curie('0000169'),
                    model_uri=MIXS.BuiltEnvironment_room_air_exch_rate, domain=BuiltEnvironment, range=Optional[str])
@@ -18540,10 +18552,10 @@ slots.BuiltEnvironment_room_architec_elem = Slot(uri=MIXS['0000233'], name="Buil
                    model_uri=MIXS.BuiltEnvironment_room_architec_elem, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_room_condt = Slot(uri=MIXS['0000822'], name="BuiltEnvironment_room_condt", curie=MIXS.curie('0000822'),
-                   model_uri=MIXS.BuiltEnvironment_room_condt, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_room_condt, domain=BuiltEnvironment, range=Optional[Union[str, "RelSampLocEnum"]])
 
 slots.BuiltEnvironment_room_connected = Slot(uri=MIXS['0000826'], name="BuiltEnvironment_room_connected", curie=MIXS.curie('0000826'),
-                   model_uri=MIXS.BuiltEnvironment_room_connected, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_room_connected, domain=BuiltEnvironment, range=Optional[Union[str, "RoomConnectedEnum"]])
 
 slots.BuiltEnvironment_room_count = Slot(uri=MIXS['0000234'], name="BuiltEnvironment_room_count", curie=MIXS.curie('0000234'),
                    model_uri=MIXS.BuiltEnvironment_room_count, domain=BuiltEnvironment, range=Optional[int])
@@ -18561,7 +18573,7 @@ slots.BuiltEnvironment_room_hallway = Slot(uri=MIXS['0000238'], name="BuiltEnvir
                    model_uri=MIXS.BuiltEnvironment_room_hallway, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_room_loc = Slot(uri=MIXS['0000823'], name="BuiltEnvironment_room_loc", curie=MIXS.curie('0000823'),
-                   model_uri=MIXS.BuiltEnvironment_room_loc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_room_loc, domain=BuiltEnvironment, range=Optional[Union[str, "RoomLocEnum"]])
 
 slots.BuiltEnvironment_room_moist_dam_hist = Slot(uri=MIXS['0000235'], name="BuiltEnvironment_room_moist_dam_hist", curie=MIXS.curie('0000235'),
                    model_uri=MIXS.BuiltEnvironment_room_moist_dam_hist, domain=BuiltEnvironment, range=Optional[int])
@@ -18573,10 +18585,10 @@ slots.BuiltEnvironment_room_occup = Slot(uri=MIXS['0000236'], name="BuiltEnviron
                    model_uri=MIXS.BuiltEnvironment_room_occup, domain=BuiltEnvironment, range=Optional[int])
 
 slots.BuiltEnvironment_room_samp_pos = Slot(uri=MIXS['0000824'], name="BuiltEnvironment_room_samp_pos", curie=MIXS.curie('0000824'),
-                   model_uri=MIXS.BuiltEnvironment_room_samp_pos, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_room_samp_pos, domain=BuiltEnvironment, range=Optional[Union[str, "RoomSampPosEnum"]])
 
 slots.BuiltEnvironment_room_type = Slot(uri=MIXS['0000825'], name="BuiltEnvironment_room_type", curie=MIXS.curie('0000825'),
-                   model_uri=MIXS.BuiltEnvironment_room_type, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_room_type, domain=BuiltEnvironment, range=Optional[Union[str, "RoomTypeEnum"]])
 
 slots.BuiltEnvironment_room_vol = Slot(uri=MIXS['0000195'], name="BuiltEnvironment_room_vol", curie=MIXS.curie('0000195'),
                    model_uri=MIXS.BuiltEnvironment_room_vol, domain=BuiltEnvironment, range=Optional[str])
@@ -18603,43 +18615,43 @@ slots.BuiltEnvironment_samp_time_out = Slot(uri=MIXS['0000196'], name="BuiltEnvi
                    model_uri=MIXS.BuiltEnvironment_samp_time_out, domain=BuiltEnvironment, range=Optional[float])
 
 slots.BuiltEnvironment_samp_weather = Slot(uri=MIXS['0000827'], name="BuiltEnvironment_samp_weather", curie=MIXS.curie('0000827'),
-                   model_uri=MIXS.BuiltEnvironment_samp_weather, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_samp_weather, domain=BuiltEnvironment, range=Optional[Union[str, "SampWeatherEnum"]])
 
 slots.BuiltEnvironment_season = Slot(uri=MIXS.season, name="BuiltEnvironment_season", curie=MIXS.curie('season'),
                    model_uri=MIXS.BuiltEnvironment_season, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_season_use = Slot(uri=MIXS['0000830'], name="BuiltEnvironment_season_use", curie=MIXS.curie('0000830'),
-                   model_uri=MIXS.BuiltEnvironment_season_use, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_season_use, domain=BuiltEnvironment, range=Optional[Union[str, "SeasonUseEnum"]])
 
 slots.BuiltEnvironment_shad_dev_water_mold = Slot(uri=MIXS['0000834'], name="BuiltEnvironment_shad_dev_water_mold", curie=MIXS.curie('0000834'),
-                   model_uri=MIXS.BuiltEnvironment_shad_dev_water_mold, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_shad_dev_water_mold, domain=BuiltEnvironment, range=Optional[Union[str, "ShadDevWaterMoldEnum"]])
 
 slots.BuiltEnvironment_shading_device_cond = Slot(uri=MIXS['0000831'], name="BuiltEnvironment_shading_device_cond", curie=MIXS.curie('0000831'),
-                   model_uri=MIXS.BuiltEnvironment_shading_device_cond, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_shading_device_cond, domain=BuiltEnvironment, range=Optional[Union[str, "ShadingDeviceCondEnum"]])
 
 slots.BuiltEnvironment_shading_device_loc = Slot(uri=MIXS['0000832'], name="BuiltEnvironment_shading_device_loc", curie=MIXS.curie('0000832'),
-                   model_uri=MIXS.BuiltEnvironment_shading_device_loc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_shading_device_loc, domain=BuiltEnvironment, range=Optional[Union[str, "ShadingDeviceLocEnum"]])
 
 slots.BuiltEnvironment_shading_device_mat = Slot(uri=MIXS['0000245'], name="BuiltEnvironment_shading_device_mat", curie=MIXS.curie('0000245'),
                    model_uri=MIXS.BuiltEnvironment_shading_device_mat, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_shading_device_type = Slot(uri=MIXS['0000835'], name="BuiltEnvironment_shading_device_type", curie=MIXS.curie('0000835'),
-                   model_uri=MIXS.BuiltEnvironment_shading_device_type, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_shading_device_type, domain=BuiltEnvironment, range=Optional[Union[str, "ShadingDeviceTypeEnum"]])
 
 slots.BuiltEnvironment_space_typ_state = Slot(uri=MIXS['0000770'], name="BuiltEnvironment_space_typ_state", curie=MIXS.curie('0000770'),
-                   model_uri=MIXS.BuiltEnvironment_space_typ_state, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_space_typ_state, domain=BuiltEnvironment, range=Optional[Union[str, "SpaceTypStateEnum"]])
 
 slots.BuiltEnvironment_specific = Slot(uri=MIXS['0000836'], name="BuiltEnvironment_specific", curie=MIXS.curie('0000836'),
-                   model_uri=MIXS.BuiltEnvironment_specific, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_specific, domain=BuiltEnvironment, range=Optional[Union[str, "SpecificEnum"]])
 
 slots.BuiltEnvironment_specific_humidity = Slot(uri=MIXS['0000214'], name="BuiltEnvironment_specific_humidity", curie=MIXS.curie('0000214'),
                    model_uri=MIXS.BuiltEnvironment_specific_humidity, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_substructure_type = Slot(uri=MIXS['0000767'], name="BuiltEnvironment_substructure_type", curie=MIXS.curie('0000767'),
-                   model_uri=MIXS.BuiltEnvironment_substructure_type, domain=BuiltEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.BuiltEnvironment_substructure_type, domain=BuiltEnvironment, range=Optional[Union[Union[str, "SubstructureTypeEnum"], List[Union[str, "SubstructureTypeEnum"]]]])
 
 slots.BuiltEnvironment_surf_air_cont = Slot(uri=MIXS['0000759'], name="BuiltEnvironment_surf_air_cont", curie=MIXS.curie('0000759'),
-                   model_uri=MIXS.BuiltEnvironment_surf_air_cont, domain=BuiltEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.BuiltEnvironment_surf_air_cont, domain=BuiltEnvironment, range=Optional[Union[Union[str, "SurfAirContEnum"], List[Union[str, "SurfAirContEnum"]]]])
 
 slots.BuiltEnvironment_surf_humidity = Slot(uri=MIXS['0000123'], name="BuiltEnvironment_surf_humidity", curie=MIXS.curie('0000123'),
                    model_uri=MIXS.BuiltEnvironment_surf_humidity, domain=BuiltEnvironment, range=Optional[str])
@@ -18663,10 +18675,10 @@ slots.BuiltEnvironment_train_line = Slot(uri=MIXS['0000837'], name="BuiltEnviron
                    model_uri=MIXS.BuiltEnvironment_train_line, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_train_stat_loc = Slot(uri=MIXS['0000838'], name="BuiltEnvironment_train_stat_loc", curie=MIXS.curie('0000838'),
-                   model_uri=MIXS.BuiltEnvironment_train_stat_loc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_train_stat_loc, domain=BuiltEnvironment, range=Optional[Union[str, "TrainStatLocEnum"]])
 
 slots.BuiltEnvironment_train_stop_loc = Slot(uri=MIXS['0000839'], name="BuiltEnvironment_train_stop_loc", curie=MIXS.curie('0000839'),
-                   model_uri=MIXS.BuiltEnvironment_train_stop_loc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_train_stop_loc, domain=BuiltEnvironment, range=Optional[Union[str, "TrainStopLocEnum"]])
 
 slots.BuiltEnvironment_typ_occup_density = Slot(uri=MIXS['0000771'], name="BuiltEnvironment_typ_occup_density", curie=MIXS.curie('0000771'),
                    model_uri=MIXS.BuiltEnvironment_typ_occup_density, domain=BuiltEnvironment, range=Optional[float])
@@ -18681,52 +18693,52 @@ slots.BuiltEnvironment_wall_area = Slot(uri=MIXS['0000198'], name="BuiltEnvironm
                    model_uri=MIXS.BuiltEnvironment_wall_area, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_wall_const_type = Slot(uri=MIXS['0000841'], name="BuiltEnvironment_wall_const_type", curie=MIXS.curie('0000841'),
-                   model_uri=MIXS.BuiltEnvironment_wall_const_type, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_wall_const_type, domain=BuiltEnvironment, range=Optional[Union[str, "WallConstTypeEnum"]])
 
 slots.BuiltEnvironment_wall_finish_mat = Slot(uri=MIXS['0000842'], name="BuiltEnvironment_wall_finish_mat", curie=MIXS.curie('0000842'),
-                   model_uri=MIXS.BuiltEnvironment_wall_finish_mat, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_wall_finish_mat, domain=BuiltEnvironment, range=Optional[Union[str, "WallFinishMatEnum"]])
 
 slots.BuiltEnvironment_wall_height = Slot(uri=MIXS['0000221'], name="BuiltEnvironment_wall_height", curie=MIXS.curie('0000221'),
                    model_uri=MIXS.BuiltEnvironment_wall_height, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_wall_loc = Slot(uri=MIXS['0000843'], name="BuiltEnvironment_wall_loc", curie=MIXS.curie('0000843'),
-                   model_uri=MIXS.BuiltEnvironment_wall_loc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_wall_loc, domain=BuiltEnvironment, range=Optional[Union[str, "WallLocEnum"]])
 
 slots.BuiltEnvironment_wall_surf_treatment = Slot(uri=MIXS['0000845'], name="BuiltEnvironment_wall_surf_treatment", curie=MIXS.curie('0000845'),
-                   model_uri=MIXS.BuiltEnvironment_wall_surf_treatment, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_wall_surf_treatment, domain=BuiltEnvironment, range=Optional[Union[str, "WallSurfTreatmentEnum"]])
 
 slots.BuiltEnvironment_wall_texture = Slot(uri=MIXS['0000846'], name="BuiltEnvironment_wall_texture", curie=MIXS.curie('0000846'),
-                   model_uri=MIXS.BuiltEnvironment_wall_texture, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_wall_texture, domain=BuiltEnvironment, range=Optional[Union[str, "WallTextureEnum"]])
 
 slots.BuiltEnvironment_wall_thermal_mass = Slot(uri=MIXS['0000222'], name="BuiltEnvironment_wall_thermal_mass", curie=MIXS.curie('0000222'),
                    model_uri=MIXS.BuiltEnvironment_wall_thermal_mass, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_wall_water_mold = Slot(uri=MIXS['0000844'], name="BuiltEnvironment_wall_water_mold", curie=MIXS.curie('0000844'),
-                   model_uri=MIXS.BuiltEnvironment_wall_water_mold, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_wall_water_mold, domain=BuiltEnvironment, range=Optional[Union[str, "WallWaterMoldEnum"]])
 
 slots.BuiltEnvironment_water_feat_size = Slot(uri=MIXS['0000223'], name="BuiltEnvironment_water_feat_size", curie=MIXS.curie('0000223'),
                    model_uri=MIXS.BuiltEnvironment_water_feat_size, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_water_feat_type = Slot(uri=MIXS['0000847'], name="BuiltEnvironment_water_feat_type", curie=MIXS.curie('0000847'),
-                   model_uri=MIXS.BuiltEnvironment_water_feat_type, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_water_feat_type, domain=BuiltEnvironment, range=Optional[Union[str, "WaterFeatTypeEnum"]])
 
 slots.BuiltEnvironment_weekday = Slot(uri=MIXS['0000848'], name="BuiltEnvironment_weekday", curie=MIXS.curie('0000848'),
-                   model_uri=MIXS.BuiltEnvironment_weekday, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_weekday, domain=BuiltEnvironment, range=Optional[Union[str, "WeekdayEnum"]])
 
 slots.BuiltEnvironment_window_cond = Slot(uri=MIXS['0000849'], name="BuiltEnvironment_window_cond", curie=MIXS.curie('0000849'),
-                   model_uri=MIXS.BuiltEnvironment_window_cond, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_window_cond, domain=BuiltEnvironment, range=Optional[Union[str, "WindowCondEnum"]])
 
 slots.BuiltEnvironment_window_cover = Slot(uri=MIXS['0000850'], name="BuiltEnvironment_window_cover", curie=MIXS.curie('0000850'),
                    model_uri=MIXS.BuiltEnvironment_window_cover, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_window_horiz_pos = Slot(uri=MIXS['0000851'], name="BuiltEnvironment_window_horiz_pos", curie=MIXS.curie('0000851'),
-                   model_uri=MIXS.BuiltEnvironment_window_horiz_pos, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_window_horiz_pos, domain=BuiltEnvironment, range=Optional[Union[str, "WindowHorizPosEnum"]])
 
 slots.BuiltEnvironment_window_loc = Slot(uri=MIXS['0000852'], name="BuiltEnvironment_window_loc", curie=MIXS.curie('0000852'),
-                   model_uri=MIXS.BuiltEnvironment_window_loc, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_window_loc, domain=BuiltEnvironment, range=Optional[Union[str, "WindowLocEnum"]])
 
 slots.BuiltEnvironment_window_mat = Slot(uri=MIXS['0000853'], name="BuiltEnvironment_window_mat", curie=MIXS.curie('0000853'),
-                   model_uri=MIXS.BuiltEnvironment_window_mat, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_window_mat, domain=BuiltEnvironment, range=Optional[Union[str, "WindowLocEnum"]])
 
 slots.BuiltEnvironment_window_open_freq = Slot(uri=MIXS['0000246'], name="BuiltEnvironment_window_open_freq", curie=MIXS.curie('0000246'),
                    model_uri=MIXS.BuiltEnvironment_window_open_freq, domain=BuiltEnvironment, range=Optional[int])
@@ -18735,16 +18747,16 @@ slots.BuiltEnvironment_window_size = Slot(uri=MIXS['0000224'], name="BuiltEnviro
                    model_uri=MIXS.BuiltEnvironment_window_size, domain=BuiltEnvironment, range=Optional[str])
 
 slots.BuiltEnvironment_window_status = Slot(uri=MIXS['0000855'], name="BuiltEnvironment_window_status", curie=MIXS.curie('0000855'),
-                   model_uri=MIXS.BuiltEnvironment_window_status, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_window_status, domain=BuiltEnvironment, range=Optional[Union[str, "WindowStatusEnum"]])
 
 slots.BuiltEnvironment_window_type = Slot(uri=MIXS['0000856'], name="BuiltEnvironment_window_type", curie=MIXS.curie('0000856'),
-                   model_uri=MIXS.BuiltEnvironment_window_type, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_window_type, domain=BuiltEnvironment, range=Optional[Union[str, "WindowTypeEnum"]])
 
 slots.BuiltEnvironment_window_vert_pos = Slot(uri=MIXS['0000857'], name="BuiltEnvironment_window_vert_pos", curie=MIXS.curie('0000857'),
-                   model_uri=MIXS.BuiltEnvironment_window_vert_pos, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_window_vert_pos, domain=BuiltEnvironment, range=Optional[Union[str, "WindowVertPosEnum"]])
 
 slots.BuiltEnvironment_window_water_mold = Slot(uri=MIXS['0000854'], name="BuiltEnvironment_window_water_mold", curie=MIXS.curie('0000854'),
-                   model_uri=MIXS.BuiltEnvironment_window_water_mold, domain=BuiltEnvironment, range=Optional[str])
+                   model_uri=MIXS.BuiltEnvironment_window_water_mold, domain=BuiltEnvironment, range=Optional[Union[str, "WindowWaterMoldEnum"]])
 
 slots.FoodAnimalAndAnimalFeed_animal_am = Slot(uri=MIXS['0001243'], name="FoodAnimalAndAnimalFeed_animal_am", curie=MIXS.curie('0001243'),
                    model_uri=MIXS.FoodAnimalAndAnimalFeed_animal_am, domain=FoodAnimalAndAnimalFeed, range=Optional[str])
@@ -18804,7 +18816,7 @@ slots.FoodAnimalAndAnimalFeed_cult_isol_date = Slot(uri=MIXS.cult_isol_date, nam
                    model_uri=MIXS.FoodAnimalAndAnimalFeed_cult_isol_date, domain=FoodAnimalAndAnimalFeed, range=Optional[str])
 
 slots.FoodAnimalAndAnimalFeed_cult_result = Slot(uri=MIXS['0001117'], name="FoodAnimalAndAnimalFeed_cult_result", curie=MIXS.curie('0001117'),
-                   model_uri=MIXS.FoodAnimalAndAnimalFeed_cult_result, domain=FoodAnimalAndAnimalFeed, range=Optional[str])
+                   model_uri=MIXS.FoodAnimalAndAnimalFeed_cult_result, domain=FoodAnimalAndAnimalFeed, range=Optional[Union[str, "CultResultEnum"]])
 
 slots.FoodAnimalAndAnimalFeed_cult_result_org = Slot(uri=MIXS['0001118'], name="FoodAnimalAndAnimalFeed_cult_result_org", curie=MIXS.curie('0001118'),
                    model_uri=MIXS.FoodAnimalAndAnimalFeed_cult_result_org, domain=FoodAnimalAndAnimalFeed, range=Optional[Union[str, List[str]]])
@@ -18891,7 +18903,7 @@ slots.FoodAnimalAndAnimalFeed_food_source_age = Slot(uri=MIXS['0001251'], name="
                    model_uri=MIXS.FoodAnimalAndAnimalFeed_food_source_age, domain=FoodAnimalAndAnimalFeed, range=Optional[str])
 
 slots.FoodAnimalAndAnimalFeed_food_trace_list = Slot(uri=MIXS['0001214'], name="FoodAnimalAndAnimalFeed_food_trace_list", curie=MIXS.curie('0001214'),
-                   model_uri=MIXS.FoodAnimalAndAnimalFeed_food_trace_list, domain=FoodAnimalAndAnimalFeed, range=Optional[str])
+                   model_uri=MIXS.FoodAnimalAndAnimalFeed_food_trace_list, domain=FoodAnimalAndAnimalFeed, range=Optional[Union[str, "FoodTraceListEnum"]])
 
 slots.FoodAnimalAndAnimalFeed_food_trav_mode = Slot(uri=MIXS.food_trav_mode, name="FoodAnimalAndAnimalFeed_food_trav_mode", curie=MIXS.curie('food_trav_mode'),
                    model_uri=MIXS.FoodAnimalAndAnimalFeed_food_trav_mode, domain=FoodAnimalAndAnimalFeed, range=Optional[str])
@@ -18995,7 +19007,7 @@ slots.FoodAnimalAndAnimalFeed_samp_stor_temp = Slot(uri=MIXS.samp_stor_temp, nam
                    model_uri=MIXS.FoodAnimalAndAnimalFeed_samp_stor_temp, domain=FoodAnimalAndAnimalFeed, range=Optional[str])
 
 slots.FoodAnimalAndAnimalFeed_samp_transport_cont = Slot(uri=MIXS['0001230'], name="FoodAnimalAndAnimalFeed_samp_transport_cont", curie=MIXS.curie('0001230'),
-                   model_uri=MIXS.FoodAnimalAndAnimalFeed_samp_transport_cont, domain=FoodAnimalAndAnimalFeed, range=Optional[str])
+                   model_uri=MIXS.FoodAnimalAndAnimalFeed_samp_transport_cont, domain=FoodAnimalAndAnimalFeed, range=Optional[Union[str, "SampTransportContEnum"]])
 
 slots.FoodAnimalAndAnimalFeed_samp_transport_dur = Slot(uri=MIXS['0001231'], name="FoodAnimalAndAnimalFeed_samp_transport_dur", curie=MIXS.curie('0001231'),
                    model_uri=MIXS.FoodAnimalAndAnimalFeed_samp_transport_dur, domain=FoodAnimalAndAnimalFeed, range=Optional[str])
@@ -19117,7 +19129,7 @@ slots.FoodFarmEnvironment_cult_isol_date = Slot(uri=MIXS.cult_isol_date, name="F
                    model_uri=MIXS.FoodFarmEnvironment_cult_isol_date, domain=FoodFarmEnvironment, range=Optional[str])
 
 slots.FoodFarmEnvironment_cult_result = Slot(uri=MIXS['0001117'], name="FoodFarmEnvironment_cult_result", curie=MIXS.curie('0001117'),
-                   model_uri=MIXS.FoodFarmEnvironment_cult_result, domain=FoodFarmEnvironment, range=Optional[str])
+                   model_uri=MIXS.FoodFarmEnvironment_cult_result, domain=FoodFarmEnvironment, range=Optional[Union[str, "CultResultEnum"]])
 
 slots.FoodFarmEnvironment_cult_result_org = Slot(uri=MIXS['0001118'], name="FoodFarmEnvironment_cult_result_org", curie=MIXS.curie('0001118'),
                    model_uri=MIXS.FoodFarmEnvironment_cult_result_org, domain=FoodFarmEnvironment, range=Optional[Union[str, List[str]]])
@@ -19148,7 +19160,7 @@ slots.FoodFarmEnvironment_env_medium = Slot(uri=MIXS['0000014'], name="FoodFarmE
                    pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
 slots.FoodFarmEnvironment_extr_weather_event = Slot(uri=MIXS['0001141'], name="FoodFarmEnvironment_extr_weather_event", curie=MIXS.curie('0001141'),
-                   model_uri=MIXS.FoodFarmEnvironment_extr_weather_event, domain=FoodFarmEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.FoodFarmEnvironment_extr_weather_event, domain=FoodFarmEnvironment, range=Optional[Union[Union[str, "ExtrWeatherEventEnum"], List[Union[str, "ExtrWeatherEventEnum"]]]])
 
 slots.FoodFarmEnvironment_farm_equip = Slot(uri=MIXS.farm_equip, name="FoodFarmEnvironment_farm_equip", curie=MIXS.curie('farm_equip'),
                    model_uri=MIXS.FoodFarmEnvironment_farm_equip, domain=FoodFarmEnvironment, range=Optional[str])
@@ -19163,7 +19175,7 @@ slots.FoodFarmEnvironment_farm_equip_shared = Slot(uri=MIXS.farm_equip_shared, n
                    model_uri=MIXS.FoodFarmEnvironment_farm_equip_shared, domain=FoodFarmEnvironment, range=Optional[str])
 
 slots.FoodFarmEnvironment_farm_water_source = Slot(uri=MIXS['0001110'], name="FoodFarmEnvironment_farm_water_source", curie=MIXS.curie('0001110'),
-                   model_uri=MIXS.FoodFarmEnvironment_farm_water_source, domain=FoodFarmEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.FoodFarmEnvironment_farm_water_source, domain=FoodFarmEnvironment, range=Optional[Union[Union[str, "FarmWaterSourceEnum"], List[Union[str, "FarmWaterSourceEnum"]]]])
 
 slots.FoodFarmEnvironment_fertilizer_admin = Slot(uri=MIXS['0001127'], name="FoodFarmEnvironment_fertilizer_admin", curie=MIXS.curie('0001127'),
                    model_uri=MIXS.FoodFarmEnvironment_fertilizer_admin, domain=FoodFarmEnvironment, range=Optional[str])
@@ -19172,7 +19184,7 @@ slots.FoodFarmEnvironment_fertilizer_date = Slot(uri=MIXS['0001128'], name="Food
                    model_uri=MIXS.FoodFarmEnvironment_fertilizer_date, domain=FoodFarmEnvironment, range=Optional[str])
 
 slots.FoodFarmEnvironment_food_clean_proc = Slot(uri=MIXS['0001182'], name="FoodFarmEnvironment_food_clean_proc", curie=MIXS.curie('0001182'),
-                   model_uri=MIXS.FoodFarmEnvironment_food_clean_proc, domain=FoodFarmEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.FoodFarmEnvironment_food_clean_proc, domain=FoodFarmEnvironment, range=Optional[Union[Union[str, "FoodCleanProcEnum"], List[Union[str, "FoodCleanProcEnum"]]]])
 
 slots.FoodFarmEnvironment_food_contact_surf = Slot(uri=MIXS['0001131'], name="FoodFarmEnvironment_food_contact_surf", curie=MIXS.curie('0001131'),
                    model_uri=MIXS.FoodFarmEnvironment_food_contact_surf, domain=FoodFarmEnvironment, range=Optional[Union[str, List[str]]])
@@ -19302,7 +19314,7 @@ slots.FoodFarmEnvironment_plant_part_maturity = Slot(uri=MIXS['0001120'], name="
                    model_uri=MIXS.FoodFarmEnvironment_plant_part_maturity, domain=FoodFarmEnvironment, range=Optional[str])
 
 slots.FoodFarmEnvironment_plant_reprod_crop = Slot(uri=MIXS['0001150'], name="FoodFarmEnvironment_plant_reprod_crop", curie=MIXS.curie('0001150'),
-                   model_uri=MIXS.FoodFarmEnvironment_plant_reprod_crop, domain=FoodFarmEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.FoodFarmEnvironment_plant_reprod_crop, domain=FoodFarmEnvironment, range=Optional[Union[Union[str, "PlantReprodCropEnum"], List[Union[str, "PlantReprodCropEnum"]]]])
 
 slots.FoodFarmEnvironment_plant_water_method = Slot(uri=MIXS['0001111'], name="FoodFarmEnvironment_plant_water_method", curie=MIXS.curie('0001111'),
                    model_uri=MIXS.FoodFarmEnvironment_plant_water_method, domain=FoodFarmEnvironment, range=Optional[str])
@@ -19382,10 +19394,12 @@ slots.FoodFarmEnvironment_season_humidity = Slot(uri=MIXS['0001148'], name="Food
                    model_uri=MIXS.FoodFarmEnvironment_season_humidity, domain=FoodFarmEnvironment, range=Optional[str])
 
 slots.FoodFarmEnvironment_season_precpt = Slot(uri=MIXS['0000645'], name="FoodFarmEnvironment_season_precpt", curie=MIXS.curie('0000645'),
-                   model_uri=MIXS.FoodFarmEnvironment_season_precpt, domain=FoodFarmEnvironment, range=Optional[str])
+                   model_uri=MIXS.FoodFarmEnvironment_season_precpt, domain=FoodFarmEnvironment, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.FoodFarmEnvironment_season_temp = Slot(uri=MIXS['0000643'], name="FoodFarmEnvironment_season_temp", curie=MIXS.curie('0000643'),
-                   model_uri=MIXS.FoodFarmEnvironment_season_temp, domain=FoodFarmEnvironment, range=Optional[str])
+                   model_uri=MIXS.FoodFarmEnvironment_season_temp, domain=FoodFarmEnvironment, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.FoodFarmEnvironment_seq_meth = Slot(uri=MIXS['0000050'], name="FoodFarmEnvironment_seq_meth", curie=MIXS.curie('0000050'),
                    model_uri=MIXS.FoodFarmEnvironment_seq_meth, domain=FoodFarmEnvironment, range=Optional[str])
@@ -19421,13 +19435,14 @@ slots.FoodFarmEnvironment_soil_temp = Slot(uri=MIXS.soil_temp, name="FoodFarmEnv
                    model_uri=MIXS.FoodFarmEnvironment_soil_temp, domain=FoodFarmEnvironment, range=Optional[str])
 
 slots.FoodFarmEnvironment_soil_texture_class = Slot(uri=MIXS['0001164'], name="FoodFarmEnvironment_soil_texture_class", curie=MIXS.curie('0001164'),
-                   model_uri=MIXS.FoodFarmEnvironment_soil_texture_class, domain=FoodFarmEnvironment, range=Optional[str])
+                   model_uri=MIXS.FoodFarmEnvironment_soil_texture_class, domain=FoodFarmEnvironment, range=Optional[Union[str, "SoilTextureClassEnum"]])
 
 slots.FoodFarmEnvironment_soil_texture_meth = Slot(uri=MIXS['0000336'], name="FoodFarmEnvironment_soil_texture_meth", curie=MIXS.curie('0000336'),
                    model_uri=MIXS.FoodFarmEnvironment_soil_texture_meth, domain=FoodFarmEnvironment, range=Optional[str])
 
 slots.FoodFarmEnvironment_soil_type = Slot(uri=MIXS['0000332'], name="FoodFarmEnvironment_soil_type", curie=MIXS.curie('0000332'),
-                   model_uri=MIXS.FoodFarmEnvironment_soil_type, domain=FoodFarmEnvironment, range=Optional[str])
+                   model_uri=MIXS.FoodFarmEnvironment_soil_type, domain=FoodFarmEnvironment, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
 slots.FoodFarmEnvironment_soil_type_meth = Slot(uri=MIXS['0000334'], name="FoodFarmEnvironment_soil_type_meth", curie=MIXS.curie('0000334'),
                    model_uri=MIXS.FoodFarmEnvironment_soil_type_meth, domain=FoodFarmEnvironment, range=Optional[str])
@@ -19461,7 +19476,7 @@ slots.FoodFarmEnvironment_temp = Slot(uri=MIXS['0000113'], name="FoodFarmEnviron
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.FoodFarmEnvironment_tillage = Slot(uri=MIXS['0001081'], name="FoodFarmEnvironment_tillage", curie=MIXS.curie('0001081'),
-                   model_uri=MIXS.FoodFarmEnvironment_tillage, domain=FoodFarmEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.FoodFarmEnvironment_tillage, domain=FoodFarmEnvironment, range=Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]])
 
 slots.FoodFarmEnvironment_timepoint = Slot(uri=MIXS['0001173'], name="FoodFarmEnvironment_timepoint", curie=MIXS.curie('0001173'),
                    model_uri=MIXS.FoodFarmEnvironment_timepoint, domain=FoodFarmEnvironment, range=Optional[float])
@@ -19470,13 +19485,15 @@ slots.FoodFarmEnvironment_tot_nitro_cont_meth = Slot(uri=MIXS['0000338'], name="
                    model_uri=MIXS.FoodFarmEnvironment_tot_nitro_cont_meth, domain=FoodFarmEnvironment, range=Optional[str])
 
 slots.FoodFarmEnvironment_tot_nitro_content = Slot(uri=MIXS['0000530'], name="FoodFarmEnvironment_tot_nitro_content", curie=MIXS.curie('0000530'),
-                   model_uri=MIXS.FoodFarmEnvironment_tot_nitro_content, domain=FoodFarmEnvironment, range=Optional[str])
+                   model_uri=MIXS.FoodFarmEnvironment_tot_nitro_content, domain=FoodFarmEnvironment, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.FoodFarmEnvironment_tot_org_c_meth = Slot(uri=MIXS['0000337'], name="FoodFarmEnvironment_tot_org_c_meth", curie=MIXS.curie('0000337'),
                    model_uri=MIXS.FoodFarmEnvironment_tot_org_c_meth, domain=FoodFarmEnvironment, range=Optional[str])
 
 slots.FoodFarmEnvironment_tot_org_carb = Slot(uri=MIXS['0000533'], name="FoodFarmEnvironment_tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=MIXS.FoodFarmEnvironment_tot_org_carb, domain=FoodFarmEnvironment, range=Optional[str])
+                   model_uri=MIXS.FoodFarmEnvironment_tot_org_carb, domain=FoodFarmEnvironment, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.FoodFarmEnvironment_turbidity = Slot(uri=MIXS.turbidity, name="FoodFarmEnvironment_turbidity", curie=MIXS.curie('turbidity'),
                    model_uri=MIXS.FoodFarmEnvironment_turbidity, domain=FoodFarmEnvironment, range=Optional[str])
@@ -19497,7 +19514,7 @@ slots.FoodFarmEnvironment_water_source_adjac = Slot(uri=MIXS['0001122'], name="F
                    model_uri=MIXS.FoodFarmEnvironment_water_source_adjac, domain=FoodFarmEnvironment, range=Optional[Union[str, List[str]]])
 
 slots.FoodFarmEnvironment_water_source_shared = Slot(uri=MIXS['0001176'], name="FoodFarmEnvironment_water_source_shared", curie=MIXS.curie('0001176'),
-                   model_uri=MIXS.FoodFarmEnvironment_water_source_shared, domain=FoodFarmEnvironment, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.FoodFarmEnvironment_water_source_shared, domain=FoodFarmEnvironment, range=Optional[Union[Union[str, "WaterSourceSharedEnum"], List[Union[str, "WaterSourceSharedEnum"]]]])
 
 slots.FoodFarmEnvironment_wind_direction = Slot(uri=MIXS.wind_direction, name="FoodFarmEnvironment_wind_direction", curie=MIXS.curie('wind_direction'),
                    model_uri=MIXS.FoodFarmEnvironment_wind_direction, domain=FoodFarmEnvironment, range=Optional[str])
@@ -19530,7 +19547,7 @@ slots.FoodFoodProductionFacility_cult_isol_date = Slot(uri=MIXS.cult_isol_date, 
                    model_uri=MIXS.FoodFoodProductionFacility_cult_isol_date, domain=FoodFoodProductionFacility, range=Optional[str])
 
 slots.FoodFoodProductionFacility_cult_result = Slot(uri=MIXS['0001117'], name="FoodFoodProductionFacility_cult_result", curie=MIXS.curie('0001117'),
-                   model_uri=MIXS.FoodFoodProductionFacility_cult_result, domain=FoodFoodProductionFacility, range=Optional[str])
+                   model_uri=MIXS.FoodFoodProductionFacility_cult_result, domain=FoodFoodProductionFacility, range=Optional[Union[str, "CultResultEnum"]])
 
 slots.FoodFoodProductionFacility_cult_result_org = Slot(uri=MIXS['0001118'], name="FoodFoodProductionFacility_cult_result_org", curie=MIXS.curie('0001118'),
                    model_uri=MIXS.FoodFoodProductionFacility_cult_result_org, domain=FoodFoodProductionFacility, range=Optional[Union[str, List[str]]])
@@ -19563,7 +19580,7 @@ slots.FoodFoodProductionFacility_experimental_factor = Slot(uri=MIXS['0000008'],
                    model_uri=MIXS.FoodFoodProductionFacility_experimental_factor, domain=FoodFoodProductionFacility, range=Optional[str])
 
 slots.FoodFoodProductionFacility_facility_type = Slot(uri=MIXS['0001252'], name="FoodFoodProductionFacility_facility_type", curie=MIXS.curie('0001252'),
-                   model_uri=MIXS.FoodFoodProductionFacility_facility_type, domain=FoodFoodProductionFacility, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.FoodFoodProductionFacility_facility_type, domain=FoodFoodProductionFacility, range=Optional[Union[Union[str, "FacilityTypeEnum"], List[Union[str, "FacilityTypeEnum"]]]])
 
 slots.FoodFoodProductionFacility_food_additive = Slot(uri=MIXS['0001200'], name="FoodFoodProductionFacility_food_additive", curie=MIXS.curie('0001200'),
                    model_uri=MIXS.FoodFoodProductionFacility_food_additive, domain=FoodFoodProductionFacility, range=Optional[Union[str, List[str]]])
@@ -19632,7 +19649,7 @@ slots.FoodFoodProductionFacility_food_source = Slot(uri=MIXS.food_source, name="
                    model_uri=MIXS.FoodFoodProductionFacility_food_source, domain=FoodFoodProductionFacility, range=Optional[str])
 
 slots.FoodFoodProductionFacility_food_trace_list = Slot(uri=MIXS['0001214'], name="FoodFoodProductionFacility_food_trace_list", curie=MIXS.curie('0001214'),
-                   model_uri=MIXS.FoodFoodProductionFacility_food_trace_list, domain=FoodFoodProductionFacility, range=Optional[str])
+                   model_uri=MIXS.FoodFoodProductionFacility_food_trace_list, domain=FoodFoodProductionFacility, range=Optional[Union[str, "FoodTraceListEnum"]])
 
 slots.FoodFoodProductionFacility_food_trav_mode = Slot(uri=MIXS.food_trav_mode, name="FoodFoodProductionFacility_food_trav_mode", curie=MIXS.curie('food_trav_mode'),
                    model_uri=MIXS.FoodFoodProductionFacility_food_trav_mode, domain=FoodFoodProductionFacility, range=Optional[str])
@@ -19723,7 +19740,7 @@ slots.FoodFoodProductionFacility_samp_floor = Slot(uri=MIXS.samp_floor, name="Fo
                    model_uri=MIXS.FoodFoodProductionFacility_samp_floor, domain=FoodFoodProductionFacility, range=Optional[str])
 
 slots.FoodFoodProductionFacility_samp_loc_condition = Slot(uri=MIXS['0001257'], name="FoodFoodProductionFacility_samp_loc_condition", curie=MIXS.curie('0001257'),
-                   model_uri=MIXS.FoodFoodProductionFacility_samp_loc_condition, domain=FoodFoodProductionFacility, range=Optional[str])
+                   model_uri=MIXS.FoodFoodProductionFacility_samp_loc_condition, domain=FoodFoodProductionFacility, range=Optional[Union[str, "SampLocConditionEnum"]])
 
 slots.FoodFoodProductionFacility_samp_name = Slot(uri=MIXS['0001107'], name="FoodFoodProductionFacility_samp_name", curie=MIXS.curie('0001107'),
                    model_uri=MIXS.FoodFoodProductionFacility_samp_name, domain=FoodFoodProductionFacility, range=Optional[str])
@@ -19766,10 +19783,10 @@ slots.FoodFoodProductionFacility_samp_stor_temp = Slot(uri=MIXS.samp_stor_temp, 
                    model_uri=MIXS.FoodFoodProductionFacility_samp_stor_temp, domain=FoodFoodProductionFacility, range=Optional[str])
 
 slots.FoodFoodProductionFacility_samp_surf_moisture = Slot(uri=MIXS['0001256'], name="FoodFoodProductionFacility_samp_surf_moisture", curie=MIXS.curie('0001256'),
-                   model_uri=MIXS.FoodFoodProductionFacility_samp_surf_moisture, domain=FoodFoodProductionFacility, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.FoodFoodProductionFacility_samp_surf_moisture, domain=FoodFoodProductionFacility, range=Optional[Union[Union[str, "SampSubtypeEnum"], List[Union[str, "SampSubtypeEnum"]]]])
 
 slots.FoodFoodProductionFacility_samp_transport_cont = Slot(uri=MIXS['0001230'], name="FoodFoodProductionFacility_samp_transport_cont", curie=MIXS.curie('0001230'),
-                   model_uri=MIXS.FoodFoodProductionFacility_samp_transport_cont, domain=FoodFoodProductionFacility, range=Optional[str])
+                   model_uri=MIXS.FoodFoodProductionFacility_samp_transport_cont, domain=FoodFoodProductionFacility, range=Optional[Union[str, "SampTransportContEnum"]])
 
 slots.FoodFoodProductionFacility_samp_transport_dur = Slot(uri=MIXS['0001231'], name="FoodFoodProductionFacility_samp_transport_dur", curie=MIXS.curie('0001231'),
                    model_uri=MIXS.FoodFoodProductionFacility_samp_transport_dur, domain=FoodFoodProductionFacility, range=Optional[str])
@@ -19848,7 +19865,7 @@ slots.FoodHumanFoods_cult_isol_date = Slot(uri=MIXS.cult_isol_date, name="FoodHu
                    model_uri=MIXS.FoodHumanFoods_cult_isol_date, domain=FoodHumanFoods, range=Optional[str])
 
 slots.FoodHumanFoods_cult_result = Slot(uri=MIXS['0001117'], name="FoodHumanFoods_cult_result", curie=MIXS.curie('0001117'),
-                   model_uri=MIXS.FoodHumanFoods_cult_result, domain=FoodHumanFoods, range=Optional[str])
+                   model_uri=MIXS.FoodHumanFoods_cult_result, domain=FoodHumanFoods, range=Optional[Union[str, "CultResultEnum"]])
 
 slots.FoodHumanFoods_cult_result_org = Slot(uri=MIXS['0001118'], name="FoodHumanFoods_cult_result_org", curie=MIXS.curie('0001118'),
                    model_uri=MIXS.FoodHumanFoods_cult_result_org, domain=FoodHumanFoods, range=Optional[Union[str, List[str]]])
@@ -19965,7 +19982,7 @@ slots.FoodHumanFoods_food_source = Slot(uri=MIXS.food_source, name="FoodHumanFoo
                    model_uri=MIXS.FoodHumanFoods_food_source, domain=FoodHumanFoods, range=Optional[str])
 
 slots.FoodHumanFoods_food_trace_list = Slot(uri=MIXS['0001214'], name="FoodHumanFoods_food_trace_list", curie=MIXS.curie('0001214'),
-                   model_uri=MIXS.FoodHumanFoods_food_trace_list, domain=FoodHumanFoods, range=Optional[str])
+                   model_uri=MIXS.FoodHumanFoods_food_trace_list, domain=FoodHumanFoods, range=Optional[Union[str, "FoodTraceListEnum"]])
 
 slots.FoodHumanFoods_food_trav_mode = Slot(uri=MIXS.food_trav_mode, name="FoodHumanFoods_food_trav_mode", curie=MIXS.curie('food_trav_mode'),
                    model_uri=MIXS.FoodHumanFoods_food_trav_mode, domain=FoodHumanFoods, range=Optional[str])
@@ -20093,7 +20110,7 @@ slots.FoodHumanFoods_samp_stor_temp = Slot(uri=MIXS.samp_stor_temp, name="FoodHu
                    model_uri=MIXS.FoodHumanFoods_samp_stor_temp, domain=FoodHumanFoods, range=Optional[str])
 
 slots.FoodHumanFoods_samp_transport_cont = Slot(uri=MIXS['0001230'], name="FoodHumanFoods_samp_transport_cont", curie=MIXS.curie('0001230'),
-                   model_uri=MIXS.FoodHumanFoods_samp_transport_cont, domain=FoodHumanFoods, range=Optional[str])
+                   model_uri=MIXS.FoodHumanFoods_samp_transport_cont, domain=FoodHumanFoods, range=Optional[Union[str, "SampTransportContEnum"]])
 
 slots.FoodHumanFoods_samp_transport_dur = Slot(uri=MIXS['0001231'], name="FoodHumanFoods_samp_transport_dur", curie=MIXS.curie('0001231'),
                    model_uri=MIXS.FoodHumanFoods_samp_transport_dur, domain=FoodHumanFoods, range=Optional[str])
@@ -20296,10 +20313,10 @@ slots.HostAssociated_salinity = Slot(uri=MIXS.salinity, name="HostAssociated_sal
                    model_uri=MIXS.HostAssociated_salinity, domain=HostAssociated, range=Optional[str])
 
 slots.HostAssociated_samp_capt_status = Slot(uri=MIXS['0000860'], name="HostAssociated_samp_capt_status", curie=MIXS.curie('0000860'),
-                   model_uri=MIXS.HostAssociated_samp_capt_status, domain=HostAssociated, range=Optional[str])
+                   model_uri=MIXS.HostAssociated_samp_capt_status, domain=HostAssociated, range=Optional[Union[str, "SampCaptStatusEnum"]])
 
 slots.HostAssociated_samp_dis_stage = Slot(uri=MIXS['0000249'], name="HostAssociated_samp_dis_stage", curie=MIXS.curie('0000249'),
-                   model_uri=MIXS.HostAssociated_samp_dis_stage, domain=HostAssociated, range=Optional[str])
+                   model_uri=MIXS.HostAssociated_samp_dis_stage, domain=HostAssociated, range=Optional[Union[str, "SampDisStageEnum"]])
 
 slots.HostAssociated_samp_name = Slot(uri=MIXS['0001107'], name="HostAssociated_samp_name", curie=MIXS.curie('0001107'),
                    model_uri=MIXS.HostAssociated_samp_name, domain=HostAssociated, range=Optional[str])
@@ -20474,7 +20491,7 @@ slots.HumanAssociated_twin_sibling = Slot(uri=MIXS['0000326'], name="HumanAssoci
                    model_uri=MIXS.HumanAssociated_twin_sibling, domain=HumanAssociated, range=Optional[Union[bool, Bool]])
 
 slots.HumanAssociated_urine_collect_meth = Slot(uri=MIXS['0000899'], name="HumanAssociated_urine_collect_meth", curie=MIXS.curie('0000899'),
-                   model_uri=MIXS.HumanAssociated_urine_collect_meth, domain=HumanAssociated, range=Optional[str])
+                   model_uri=MIXS.HumanAssociated_urine_collect_meth, domain=HumanAssociated, range=Optional[Union[str, "UrineCollectMethEnum"]])
 
 slots.HumanAssociated_urogenit_tract_disor = Slot(uri=MIXS['0000278'], name="HumanAssociated_urogenit_tract_disor", curie=MIXS.curie('0000278'),
                    model_uri=MIXS.HumanAssociated_urogenit_tract_disor, domain=HumanAssociated, range=Optional[Union[str, List[str]]])
@@ -20712,7 +20729,7 @@ slots.HumanSkin_dermatology_disord = Slot(uri=MIXS['0000284'], name="HumanSkin_d
                    model_uri=MIXS.HumanSkin_dermatology_disord, domain=HumanSkin, range=Optional[Union[str, List[str]]])
 
 slots.HumanSkin_dominant_hand = Slot(uri=MIXS['0000944'], name="HumanSkin_dominant_hand", curie=MIXS.curie('0000944'),
-                   model_uri=MIXS.HumanSkin_dominant_hand, domain=HumanSkin, range=Optional[str])
+                   model_uri=MIXS.HumanSkin_dominant_hand, domain=HumanSkin, range=Optional[Union[str, "DominantHandEnum"]])
 
 slots.HumanSkin_ethnicity = Slot(uri=MIXS['0000895'], name="HumanSkin_ethnicity", curie=MIXS.curie('0000895'),
                    model_uri=MIXS.HumanSkin_ethnicity, domain=HumanSkin, range=Optional[Union[str, List[str]]])
@@ -21026,13 +21043,13 @@ slots.HydrocarbonResourcesCores_hc_produced = Slot(uri=MIXS['0000989'], name="Hy
                    model_uri=MIXS.HydrocarbonResourcesCores_hc_produced, domain=HydrocarbonResourcesCores, range=Optional[str])
 
 slots.HydrocarbonResourcesCores_hcr = Slot(uri=MIXS['0000988'], name="HydrocarbonResourcesCores_hcr", curie=MIXS.curie('0000988'),
-                   model_uri=MIXS.HydrocarbonResourcesCores_hcr, domain=HydrocarbonResourcesCores, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesCores_hcr, domain=HydrocarbonResourcesCores, range=Optional[Union[str, "HcrEnum"]])
 
 slots.HydrocarbonResourcesCores_hcr_fw_salinity = Slot(uri=MIXS['0000406'], name="HydrocarbonResourcesCores_hcr_fw_salinity", curie=MIXS.curie('0000406'),
                    model_uri=MIXS.HydrocarbonResourcesCores_hcr_fw_salinity, domain=HydrocarbonResourcesCores, range=Optional[str])
 
 slots.HydrocarbonResourcesCores_hcr_geol_age = Slot(uri=MIXS['0000993'], name="HydrocarbonResourcesCores_hcr_geol_age", curie=MIXS.curie('0000993'),
-                   model_uri=MIXS.HydrocarbonResourcesCores_hcr_geol_age, domain=HydrocarbonResourcesCores, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesCores_hcr_geol_age, domain=HydrocarbonResourcesCores, range=Optional[Union[str, "HcrGeolAgeEnum"]])
 
 slots.HydrocarbonResourcesCores_hcr_pressure = Slot(uri=MIXS['0000395'], name="HydrocarbonResourcesCores_hcr_pressure", curie=MIXS.curie('0000395'),
                    model_uri=MIXS.HydrocarbonResourcesCores_hcr_pressure, domain=HydrocarbonResourcesCores, range=Optional[str])
@@ -21041,7 +21058,7 @@ slots.HydrocarbonResourcesCores_hcr_temp = Slot(uri=MIXS['0000393'], name="Hydro
                    model_uri=MIXS.HydrocarbonResourcesCores_hcr_temp, domain=HydrocarbonResourcesCores, range=Optional[str])
 
 slots.HydrocarbonResourcesCores_lithology = Slot(uri=MIXS['0000990'], name="HydrocarbonResourcesCores_lithology", curie=MIXS.curie('0000990'),
-                   model_uri=MIXS.HydrocarbonResourcesCores_lithology, domain=HydrocarbonResourcesCores, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesCores_lithology, domain=HydrocarbonResourcesCores, range=Optional[Union[str, "LithologyEnum"]])
 
 slots.HydrocarbonResourcesCores_magnesium = Slot(uri=MIXS['0000431'], name="HydrocarbonResourcesCores_magnesium", curie=MIXS.curie('0000431'),
                    model_uri=MIXS.HydrocarbonResourcesCores_magnesium, domain=HydrocarbonResourcesCores, range=Optional[str])
@@ -21113,7 +21130,7 @@ slots.HydrocarbonResourcesCores_samp_store_temp = Slot(uri=MIXS.samp_store_temp,
                    model_uri=MIXS.HydrocarbonResourcesCores_samp_store_temp, domain=HydrocarbonResourcesCores, range=Optional[str])
 
 slots.HydrocarbonResourcesCores_samp_subtype = Slot(uri=MIXS['0000999'], name="HydrocarbonResourcesCores_samp_subtype", curie=MIXS.curie('0000999'),
-                   model_uri=MIXS.HydrocarbonResourcesCores_samp_subtype, domain=HydrocarbonResourcesCores, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesCores_samp_subtype, domain=HydrocarbonResourcesCores, range=Optional[Union[str, "SampSubtypeEnum"]])
 
 slots.HydrocarbonResourcesCores_samp_transport_cond = Slot(uri=MIXS['0000410'], name="HydrocarbonResourcesCores_samp_transport_cond", curie=MIXS.curie('0000410'),
                    model_uri=MIXS.HydrocarbonResourcesCores_samp_transport_cond, domain=HydrocarbonResourcesCores, range=Optional[str])
@@ -21138,16 +21155,16 @@ slots.HydrocarbonResourcesCores_sodium = Slot(uri=MIXS['0000428'], name="Hydroca
                    model_uri=MIXS.HydrocarbonResourcesCores_sodium, domain=HydrocarbonResourcesCores, range=Optional[str])
 
 slots.HydrocarbonResourcesCores_sr_dep_env = Slot(uri=MIXS['0000996'], name="HydrocarbonResourcesCores_sr_dep_env", curie=MIXS.curie('0000996'),
-                   model_uri=MIXS.HydrocarbonResourcesCores_sr_dep_env, domain=HydrocarbonResourcesCores, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesCores_sr_dep_env, domain=HydrocarbonResourcesCores, range=Optional[Union[str, "SrDepEnvEnum"]])
 
 slots.HydrocarbonResourcesCores_sr_geol_age = Slot(uri=MIXS['0000997'], name="HydrocarbonResourcesCores_sr_geol_age", curie=MIXS.curie('0000997'),
-                   model_uri=MIXS.HydrocarbonResourcesCores_sr_geol_age, domain=HydrocarbonResourcesCores, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesCores_sr_geol_age, domain=HydrocarbonResourcesCores, range=Optional[Union[str, "SrGeolAgeEnum"]])
 
 slots.HydrocarbonResourcesCores_sr_kerog_type = Slot(uri=MIXS['0000994'], name="HydrocarbonResourcesCores_sr_kerog_type", curie=MIXS.curie('0000994'),
-                   model_uri=MIXS.HydrocarbonResourcesCores_sr_kerog_type, domain=HydrocarbonResourcesCores, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesCores_sr_kerog_type, domain=HydrocarbonResourcesCores, range=Optional[Union[str, "SrKerogTypeEnum"]])
 
 slots.HydrocarbonResourcesCores_sr_lithology = Slot(uri=MIXS['0000995'], name="HydrocarbonResourcesCores_sr_lithology", curie=MIXS.curie('0000995'),
-                   model_uri=MIXS.HydrocarbonResourcesCores_sr_lithology, domain=HydrocarbonResourcesCores, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesCores_sr_lithology, domain=HydrocarbonResourcesCores, range=Optional[Union[str, "SrLithologyEnum"]])
 
 slots.HydrocarbonResourcesCores_sulfate = Slot(uri=MIXS['0000423'], name="HydrocarbonResourcesCores_sulfate", curie=MIXS.curie('0000423'),
                    model_uri=MIXS.HydrocarbonResourcesCores_sulfate, domain=HydrocarbonResourcesCores, range=Optional[str])
@@ -21286,13 +21303,13 @@ slots.HydrocarbonResourcesFluidsSwabs_hc_produced = Slot(uri=MIXS['0000989'], na
                    model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_hc_produced, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
 
 slots.HydrocarbonResourcesFluidsSwabs_hcr = Slot(uri=MIXS['0000988'], name="HydrocarbonResourcesFluidsSwabs_hcr", curie=MIXS.curie('0000988'),
-                   model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_hcr, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_hcr, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[Union[str, "HcrEnum"]])
 
 slots.HydrocarbonResourcesFluidsSwabs_hcr_fw_salinity = Slot(uri=MIXS['0000406'], name="HydrocarbonResourcesFluidsSwabs_hcr_fw_salinity", curie=MIXS.curie('0000406'),
                    model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_hcr_fw_salinity, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
 
 slots.HydrocarbonResourcesFluidsSwabs_hcr_geol_age = Slot(uri=MIXS['0000993'], name="HydrocarbonResourcesFluidsSwabs_hcr_geol_age", curie=MIXS.curie('0000993'),
-                   model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_hcr_geol_age, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_hcr_geol_age, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[Union[str, "HcrGeolAgeEnum"]])
 
 slots.HydrocarbonResourcesFluidsSwabs_hcr_pressure = Slot(uri=MIXS['0000395'], name="HydrocarbonResourcesFluidsSwabs_hcr_pressure", curie=MIXS.curie('0000395'),
                    model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_hcr_pressure, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
@@ -21307,7 +21324,7 @@ slots.HydrocarbonResourcesFluidsSwabs_iwf = Slot(uri=MIXS['0000455'], name="Hydr
                    model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_iwf, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
 
 slots.HydrocarbonResourcesFluidsSwabs_lithology = Slot(uri=MIXS['0000990'], name="HydrocarbonResourcesFluidsSwabs_lithology", curie=MIXS.curie('0000990'),
-                   model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_lithology, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_lithology, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[Union[str, "LithologyEnum"]])
 
 slots.HydrocarbonResourcesFluidsSwabs_magnesium = Slot(uri=MIXS['0000431'], name="HydrocarbonResourcesFluidsSwabs_magnesium", curie=MIXS.curie('0000431'),
                    model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_magnesium, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
@@ -21361,7 +21378,7 @@ slots.HydrocarbonResourcesFluidsSwabs_salinity = Slot(uri=MIXS.salinity, name="H
                    model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_salinity, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
 
 slots.HydrocarbonResourcesFluidsSwabs_samp_collect_point = Slot(uri=MIXS['0001015'], name="HydrocarbonResourcesFluidsSwabs_samp_collect_point", curie=MIXS.curie('0001015'),
-                   model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_samp_collect_point, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_samp_collect_point, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[Union[str, "SampCollectPointEnum"]])
 
 slots.HydrocarbonResourcesFluidsSwabs_samp_loc_corr_rate = Slot(uri=MIXS['0000136'], name="HydrocarbonResourcesFluidsSwabs_samp_loc_corr_rate", curie=MIXS.curie('0000136'),
                    model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_samp_loc_corr_rate, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
@@ -21382,7 +21399,7 @@ slots.HydrocarbonResourcesFluidsSwabs_samp_store_temp = Slot(uri=MIXS.samp_store
                    model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_samp_store_temp, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
 
 slots.HydrocarbonResourcesFluidsSwabs_samp_subtype = Slot(uri=MIXS['0000999'], name="HydrocarbonResourcesFluidsSwabs_samp_subtype", curie=MIXS.curie('0000999'),
-                   model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_samp_subtype, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
+                   model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_samp_subtype, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[Union[str, "SampSubtypeEnum"]])
 
 slots.HydrocarbonResourcesFluidsSwabs_samp_transport_cond = Slot(uri=MIXS['0000410'], name="HydrocarbonResourcesFluidsSwabs_samp_transport_cond", curie=MIXS.curie('0000410'),
                    model_uri=MIXS.HydrocarbonResourcesFluidsSwabs_samp_transport_cond, domain=HydrocarbonResourcesFluidsSwabs, range=Optional[str])
@@ -21566,10 +21583,12 @@ slots.MicrobialMatBiofilm_org_carb = Slot(uri=MIXS.org_carb, name="MicrobialMatB
                    model_uri=MIXS.MicrobialMatBiofilm_org_carb, domain=MicrobialMatBiofilm, range=Optional[str])
 
 slots.MicrobialMatBiofilm_org_matter = Slot(uri=MIXS['0000204'], name="MicrobialMatBiofilm_org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=MIXS.MicrobialMatBiofilm_org_matter, domain=MicrobialMatBiofilm, range=Optional[str])
+                   model_uri=MIXS.MicrobialMatBiofilm_org_matter, domain=MicrobialMatBiofilm, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MicrobialMatBiofilm_org_nitro = Slot(uri=MIXS['0000205'], name="MicrobialMatBiofilm_org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=MIXS.MicrobialMatBiofilm_org_nitro, domain=MicrobialMatBiofilm, range=Optional[str])
+                   model_uri=MIXS.MicrobialMatBiofilm_org_nitro, domain=MicrobialMatBiofilm, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MicrobialMatBiofilm_organism_count = Slot(uri=MIXS.organism_count, name="MicrobialMatBiofilm_organism_count", curie=MIXS.curie('organism_count'),
                    model_uri=MIXS.MicrobialMatBiofilm_organism_count, domain=MicrobialMatBiofilm, range=Optional[str])
@@ -21649,10 +21668,12 @@ slots.MicrobialMatBiofilm_tot_carb = Slot(uri=MIXS.tot_carb, name="MicrobialMatB
                    model_uri=MIXS.MicrobialMatBiofilm_tot_carb, domain=MicrobialMatBiofilm, range=Optional[str])
 
 slots.MicrobialMatBiofilm_tot_nitro_content = Slot(uri=MIXS['0000530'], name="MicrobialMatBiofilm_tot_nitro_content", curie=MIXS.curie('0000530'),
-                   model_uri=MIXS.MicrobialMatBiofilm_tot_nitro_content, domain=MicrobialMatBiofilm, range=Optional[str])
+                   model_uri=MIXS.MicrobialMatBiofilm_tot_nitro_content, domain=MicrobialMatBiofilm, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MicrobialMatBiofilm_tot_org_carb = Slot(uri=MIXS['0000533'], name="MicrobialMatBiofilm_tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=MIXS.MicrobialMatBiofilm_tot_org_carb, domain=MicrobialMatBiofilm, range=Optional[str])
+                   model_uri=MIXS.MicrobialMatBiofilm_tot_org_carb, domain=MicrobialMatBiofilm, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MicrobialMatBiofilm_turbidity = Slot(uri=MIXS.turbidity, name="MicrobialMatBiofilm_turbidity", curie=MIXS.curie('turbidity'),
                    model_uri=MIXS.MicrobialMatBiofilm_turbidity, domain=MicrobialMatBiofilm, range=Optional[str])
@@ -21733,10 +21754,12 @@ slots.MiscellaneousNaturalOrArtificialEnvironment_org_carb = Slot(uri=MIXS.org_c
                    model_uri=MIXS.MiscellaneousNaturalOrArtificialEnvironment_org_carb, domain=MiscellaneousNaturalOrArtificialEnvironment, range=Optional[str])
 
 slots.MiscellaneousNaturalOrArtificialEnvironment_org_matter = Slot(uri=MIXS['0000204'], name="MiscellaneousNaturalOrArtificialEnvironment_org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=MIXS.MiscellaneousNaturalOrArtificialEnvironment_org_matter, domain=MiscellaneousNaturalOrArtificialEnvironment, range=Optional[str])
+                   model_uri=MIXS.MiscellaneousNaturalOrArtificialEnvironment_org_matter, domain=MiscellaneousNaturalOrArtificialEnvironment, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscellaneousNaturalOrArtificialEnvironment_org_nitro = Slot(uri=MIXS['0000205'], name="MiscellaneousNaturalOrArtificialEnvironment_org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=MIXS.MiscellaneousNaturalOrArtificialEnvironment_org_nitro, domain=MiscellaneousNaturalOrArtificialEnvironment, range=Optional[str])
+                   model_uri=MIXS.MiscellaneousNaturalOrArtificialEnvironment_org_nitro, domain=MiscellaneousNaturalOrArtificialEnvironment, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscellaneousNaturalOrArtificialEnvironment_organism_count = Slot(uri=MIXS.organism_count, name="MiscellaneousNaturalOrArtificialEnvironment_organism_count", curie=MIXS.curie('organism_count'),
                    model_uri=MIXS.MiscellaneousNaturalOrArtificialEnvironment_organism_count, domain=MiscellaneousNaturalOrArtificialEnvironment, range=Optional[str])
@@ -21947,7 +21970,7 @@ slots.PlantAssociated_plant_product = Slot(uri=MIXS['0001058'], name="PlantAssoc
                    model_uri=MIXS.PlantAssociated_plant_product, domain=PlantAssociated, range=Optional[str])
 
 slots.PlantAssociated_plant_sex = Slot(uri=MIXS['0001059'], name="PlantAssociated_plant_sex", curie=MIXS.curie('0001059'),
-                   model_uri=MIXS.PlantAssociated_plant_sex, domain=PlantAssociated, range=Optional[str])
+                   model_uri=MIXS.PlantAssociated_plant_sex, domain=PlantAssociated, range=Optional[Union[str, "PlantSexEnum"]])
 
 slots.PlantAssociated_plant_struc = Slot(uri=MIXS['0001060'], name="PlantAssociated_plant_struc", curie=MIXS.curie('0001060'),
                    model_uri=MIXS.PlantAssociated_plant_struc, domain=PlantAssociated, range=Optional[str])
@@ -21992,10 +22015,10 @@ slots.PlantAssociated_salt_regm = Slot(uri=MIXS.salt_regm, name="PlantAssociated
                    model_uri=MIXS.PlantAssociated_salt_regm, domain=PlantAssociated, range=Optional[str])
 
 slots.PlantAssociated_samp_capt_status = Slot(uri=MIXS['0000860'], name="PlantAssociated_samp_capt_status", curie=MIXS.curie('0000860'),
-                   model_uri=MIXS.PlantAssociated_samp_capt_status, domain=PlantAssociated, range=Optional[str])
+                   model_uri=MIXS.PlantAssociated_samp_capt_status, domain=PlantAssociated, range=Optional[Union[str, "SampCaptStatusEnum"]])
 
 slots.PlantAssociated_samp_dis_stage = Slot(uri=MIXS['0000249'], name="PlantAssociated_samp_dis_stage", curie=MIXS.curie('0000249'),
-                   model_uri=MIXS.PlantAssociated_samp_dis_stage, domain=PlantAssociated, range=Optional[str])
+                   model_uri=MIXS.PlantAssociated_samp_dis_stage, domain=PlantAssociated, range=Optional[Union[str, "SampDisStageEnum"]])
 
 slots.PlantAssociated_samp_name = Slot(uri=MIXS['0001107'], name="PlantAssociated_samp_name", curie=MIXS.curie('0001107'),
                    model_uri=MIXS.PlantAssociated_samp_name, domain=PlantAssociated, range=Optional[str])
@@ -22137,10 +22160,12 @@ slots.Sediment_org_carb = Slot(uri=MIXS.org_carb, name="Sediment_org_carb", curi
                    model_uri=MIXS.Sediment_org_carb, domain=Sediment, range=Optional[str])
 
 slots.Sediment_org_matter = Slot(uri=MIXS['0000204'], name="Sediment_org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=MIXS.Sediment_org_matter, domain=Sediment, range=Optional[str])
+                   model_uri=MIXS.Sediment_org_matter, domain=Sediment, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Sediment_org_nitro = Slot(uri=MIXS['0000205'], name="Sediment_org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=MIXS.Sediment_org_nitro, domain=Sediment, range=Optional[str])
+                   model_uri=MIXS.Sediment_org_nitro, domain=Sediment, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Sediment_organism_count = Slot(uri=MIXS.organism_count, name="Sediment_organism_count", curie=MIXS.curie('organism_count'),
                    model_uri=MIXS.Sediment_organism_count, domain=Sediment, range=Optional[str])
@@ -22207,7 +22232,7 @@ slots.Sediment_samp_vol_we_dna_ext = Slot(uri=MIXS['0000111'], name="Sediment_sa
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Sediment_sediment_type = Slot(uri=MIXS['0001078'], name="Sediment_sediment_type", curie=MIXS.curie('0001078'),
-                   model_uri=MIXS.Sediment_sediment_type, domain=Sediment, range=Optional[str])
+                   model_uri=MIXS.Sediment_sediment_type, domain=Sediment, range=Optional[Union[str, "SedimentTypeEnum"]])
 
 slots.Sediment_silicate = Slot(uri=MIXS['0000184'], name="Sediment_silicate", curie=MIXS.curie('0000184'),
                    model_uri=MIXS.Sediment_silicate, domain=Sediment, range=Optional[str])
@@ -22226,7 +22251,7 @@ slots.Sediment_temp = Slot(uri=MIXS['0000113'], name="Sediment_temp", curie=MIXS
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Sediment_tidal_stage = Slot(uri=MIXS['0000750'], name="Sediment_tidal_stage", curie=MIXS.curie('0000750'),
-                   model_uri=MIXS.Sediment_tidal_stage, domain=Sediment, range=Optional[str])
+                   model_uri=MIXS.Sediment_tidal_stage, domain=Sediment, range=Optional[Union[str, "TidalStageEnum"]])
 
 slots.Sediment_tot_carb = Slot(uri=MIXS.tot_carb, name="Sediment_tot_carb", curie=MIXS.curie('tot_carb'),
                    model_uri=MIXS.Sediment_tot_carb, domain=Sediment, range=Optional[str])
@@ -22235,10 +22260,12 @@ slots.Sediment_tot_depth_water_col = Slot(uri=MIXS['0000634'], name="Sediment_to
                    model_uri=MIXS.Sediment_tot_depth_water_col, domain=Sediment, range=Optional[str])
 
 slots.Sediment_tot_nitro_content = Slot(uri=MIXS['0000530'], name="Sediment_tot_nitro_content", curie=MIXS.curie('0000530'),
-                   model_uri=MIXS.Sediment_tot_nitro_content, domain=Sediment, range=Optional[str])
+                   model_uri=MIXS.Sediment_tot_nitro_content, domain=Sediment, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Sediment_tot_org_carb = Slot(uri=MIXS['0000533'], name="Sediment_tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=MIXS.Sediment_tot_org_carb, domain=Sediment, range=Optional[str])
+                   model_uri=MIXS.Sediment_tot_org_carb, domain=Sediment, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Sediment_turbidity = Slot(uri=MIXS.turbidity, name="Sediment_turbidity", curie=MIXS.curie('turbidity'),
                    model_uri=MIXS.Sediment_turbidity, domain=Sediment, range=Optional[str])
@@ -22278,7 +22305,7 @@ slots.Soil_depth = Slot(uri=MIXS['0000018'], name="Soil_depth", curie=MIXS.curie
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Soil_drainage_class = Slot(uri=MIXS['0001085'], name="Soil_drainage_class", curie=MIXS.curie('0001085'),
-                   model_uri=MIXS.Soil_drainage_class, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_drainage_class, domain=Soil, range=Optional[Union[str, "DrainageClassEnum"]])
 
 slots.Soil_elev = Slot(uri=MIXS['0000093'], name="Soil_elev", curie=MIXS.curie('0000093'),
                    model_uri=MIXS.Soil_elev, domain=Soil, range=Optional[str],
@@ -22288,7 +22315,7 @@ slots.Soil_extreme_event = Slot(uri=MIXS['0000320'], name="Soil_extreme_event", 
                    model_uri=MIXS.Soil_extreme_event, domain=Soil, range=Optional[str])
 
 slots.Soil_fao_class = Slot(uri=MIXS['0001083'], name="Soil_fao_class", curie=MIXS.curie('0001083'),
-                   model_uri=MIXS.Soil_fao_class, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_fao_class, domain=Soil, range=Optional[Union[str, "FaoClassEnum"]])
 
 slots.Soil_fire = Slot(uri=MIXS['0001086'], name="Soil_fire", curie=MIXS.curie('0001086'),
                    model_uri=MIXS.Soil_fire, domain=Soil, range=Optional[str])
@@ -22330,10 +22357,12 @@ slots.Soil_misc_param = Slot(uri=MIXS['0000752'], name="Soil_misc_param", curie=
                    model_uri=MIXS.Soil_misc_param, domain=Soil, range=Optional[Union[str, List[str]]])
 
 slots.Soil_org_matter = Slot(uri=MIXS['0000204'], name="Soil_org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=MIXS.Soil_org_matter, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_org_matter, domain=Soil, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Soil_org_nitro = Slot(uri=MIXS['0000205'], name="Soil_org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=MIXS.Soil_org_nitro, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_org_nitro, domain=Soil, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Soil_ph = Slot(uri=MIXS['0001001'], name="Soil_ph", curie=MIXS.curie('0001001'),
                    model_uri=MIXS.Soil_ph, domain=Soil, range=Optional[float])
@@ -22351,7 +22380,7 @@ slots.Soil_previous_land_use = Slot(uri=MIXS['0000315'], name="Soil_previous_lan
                    model_uri=MIXS.Soil_previous_land_use, domain=Soil, range=Optional[str])
 
 slots.Soil_profile_position = Slot(uri=MIXS['0001084'], name="Soil_profile_position", curie=MIXS.curie('0001084'),
-                   model_uri=MIXS.Soil_profile_position, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_profile_position, domain=Soil, range=Optional[Union[str, "ProfilePositionEnum"]])
 
 slots.Soil_project_name = Slot(uri=MIXS['0000092'], name="Soil_project_name", curie=MIXS.curie('0000092'),
                    model_uri=MIXS.Soil_project_name, domain=Soil, range=Optional[str])
@@ -22367,10 +22396,12 @@ slots.Soil_samp_vol_we_dna_ext = Slot(uri=MIXS['0000111'], name="Soil_samp_vol_w
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Soil_season_precpt = Slot(uri=MIXS['0000645'], name="Soil_season_precpt", curie=MIXS.curie('0000645'),
-                   model_uri=MIXS.Soil_season_precpt, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_season_precpt, domain=Soil, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Soil_season_temp = Slot(uri=MIXS['0000643'], name="Soil_season_temp", curie=MIXS.curie('0000643'),
-                   model_uri=MIXS.Soil_season_temp, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_season_temp, domain=Soil, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Soil_sieving = Slot(uri=MIXS['0000322'], name="Soil_sieving", curie=MIXS.curie('0000322'),
                    model_uri=MIXS.Soil_sieving, domain=Soil, range=Optional[str])
@@ -22385,13 +22416,15 @@ slots.Soil_soil_horizon = Slot(uri=MIXS['0001291'], name="Soil_soil_horizon", cu
                    model_uri=MIXS.Soil_soil_horizon, domain=Soil, range=Optional[str])
 
 slots.Soil_soil_text_measure = Slot(uri=MIXS['0000335'], name="Soil_soil_text_measure", curie=MIXS.curie('0000335'),
-                   model_uri=MIXS.Soil_soil_text_measure, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_soil_text_measure, domain=Soil, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Soil_soil_texture_meth = Slot(uri=MIXS['0000336'], name="Soil_soil_texture_meth", curie=MIXS.curie('0000336'),
                    model_uri=MIXS.Soil_soil_texture_meth, domain=Soil, range=Optional[str])
 
 slots.Soil_soil_type = Slot(uri=MIXS['0000332'], name="Soil_soil_type", curie=MIXS.curie('0000332'),
-                   model_uri=MIXS.Soil_soil_type, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_soil_type, domain=Soil, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
 slots.Soil_soil_type_meth = Slot(uri=MIXS['0000334'], name="Soil_soil_type_meth", curie=MIXS.curie('0000334'),
                    model_uri=MIXS.Soil_soil_type_meth, domain=Soil, range=Optional[str])
@@ -22404,19 +22437,21 @@ slots.Soil_temp = Slot(uri=MIXS['0000113'], name="Soil_temp", curie=MIXS.curie('
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Soil_tillage = Slot(uri=MIXS['0001081'], name="Soil_tillage", curie=MIXS.curie('0001081'),
-                   model_uri=MIXS.Soil_tillage, domain=Soil, range=Optional[Union[str, List[str]]])
+                   model_uri=MIXS.Soil_tillage, domain=Soil, range=Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]])
 
 slots.Soil_tot_nitro_cont_meth = Slot(uri=MIXS['0000338'], name="Soil_tot_nitro_cont_meth", curie=MIXS.curie('0000338'),
                    model_uri=MIXS.Soil_tot_nitro_cont_meth, domain=Soil, range=Optional[str])
 
 slots.Soil_tot_nitro_content = Slot(uri=MIXS['0000530'], name="Soil_tot_nitro_content", curie=MIXS.curie('0000530'),
-                   model_uri=MIXS.Soil_tot_nitro_content, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_tot_nitro_content, domain=Soil, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Soil_tot_org_c_meth = Slot(uri=MIXS['0000337'], name="Soil_tot_org_c_meth", curie=MIXS.curie('0000337'),
                    model_uri=MIXS.Soil_tot_org_c_meth, domain=Soil, range=Optional[str])
 
 slots.Soil_tot_org_carb = Slot(uri=MIXS['0000533'], name="Soil_tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=MIXS.Soil_tot_org_carb, domain=Soil, range=Optional[str])
+                   model_uri=MIXS.Soil_tot_org_carb, domain=Soil, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Soil_water_cont_soil_meth = Slot(uri=MIXS['0000323'], name="Soil_water_cont_soil_meth", curie=MIXS.curie('0000323'),
                    model_uri=MIXS.Soil_water_cont_soil_meth, domain=Soil, range=Optional[str])
@@ -22476,7 +22511,7 @@ slots.SymbiontAssociated_host_body_site = Slot(uri=MIXS.host_body_site, name="Sy
                    model_uri=MIXS.SymbiontAssociated_host_body_site, domain=SymbiontAssociated, range=Optional[str])
 
 slots.SymbiontAssociated_host_cellular_loc = Slot(uri=MIXS['0001313'], name="SymbiontAssociated_host_cellular_loc", curie=MIXS.curie('0001313'),
-                   model_uri=MIXS.SymbiontAssociated_host_cellular_loc, domain=SymbiontAssociated, range=Optional[str])
+                   model_uri=MIXS.SymbiontAssociated_host_cellular_loc, domain=SymbiontAssociated, range=Optional[Union[str, "HostCellularLocEnum"]])
 
 slots.SymbiontAssociated_host_color = Slot(uri=MIXS.host_color, name="SymbiontAssociated_host_color", curie=MIXS.curie('host_color'),
                    model_uri=MIXS.SymbiontAssociated_host_color, domain=SymbiontAssociated, range=Optional[str])
@@ -22485,7 +22520,7 @@ slots.SymbiontAssociated_host_common_name = Slot(uri=MIXS.host_common_name, name
                    model_uri=MIXS.SymbiontAssociated_host_common_name, domain=SymbiontAssociated, range=Optional[str])
 
 slots.SymbiontAssociated_host_dependence = Slot(uri=MIXS['0001315'], name="SymbiontAssociated_host_dependence", curie=MIXS.curie('0001315'),
-                   model_uri=MIXS.SymbiontAssociated_host_dependence, domain=SymbiontAssociated, range=Optional[str])
+                   model_uri=MIXS.SymbiontAssociated_host_dependence, domain=SymbiontAssociated, range=Optional[Union[str, "HostDependenceEnum"]])
 
 slots.SymbiontAssociated_host_dry_mass = Slot(uri=MIXS.host_dry_mass, name="SymbiontAssociated_host_dry_mass", curie=MIXS.curie('host_dry_mass'),
                    model_uri=MIXS.SymbiontAssociated_host_dry_mass, domain=SymbiontAssociated, range=Optional[str])
@@ -22569,7 +22604,7 @@ slots.SymbiontAssociated_host_shape = Slot(uri=MIXS.host_shape, name="SymbiontAs
                    model_uri=MIXS.SymbiontAssociated_host_shape, domain=SymbiontAssociated, range=Optional[str])
 
 slots.SymbiontAssociated_host_specificity = Slot(uri=MIXS['0001308'], name="SymbiontAssociated_host_specificity", curie=MIXS.curie('0001308'),
-                   model_uri=MIXS.SymbiontAssociated_host_specificity, domain=SymbiontAssociated, range=Optional[str])
+                   model_uri=MIXS.SymbiontAssociated_host_specificity, domain=SymbiontAssociated, range=Optional[Union[str, "HostSpecificityEnum"]])
 
 slots.SymbiontAssociated_host_subject_id = Slot(uri=MIXS.host_subject_id, name="SymbiontAssociated_host_subject_id", curie=MIXS.curie('host_subject_id'),
                    model_uri=MIXS.SymbiontAssociated_host_subject_id, domain=SymbiontAssociated, range=Optional[str])
@@ -22594,7 +22629,7 @@ slots.SymbiontAssociated_misc_param = Slot(uri=MIXS['0000752'], name="SymbiontAs
                    model_uri=MIXS.SymbiontAssociated_misc_param, domain=SymbiontAssociated, range=Optional[Union[str, List[str]]])
 
 slots.SymbiontAssociated_mode_transmission = Slot(uri=MIXS['0001312'], name="SymbiontAssociated_mode_transmission", curie=MIXS.curie('0001312'),
-                   model_uri=MIXS.SymbiontAssociated_mode_transmission, domain=SymbiontAssociated, range=Optional[str])
+                   model_uri=MIXS.SymbiontAssociated_mode_transmission, domain=SymbiontAssociated, range=Optional[Union[str, "ModeTransmissionEnum"]])
 
 slots.SymbiontAssociated_organism_count = Slot(uri=MIXS.organism_count, name="SymbiontAssociated_organism_count", curie=MIXS.curie('organism_count'),
                    model_uri=MIXS.SymbiontAssociated_organism_count, domain=SymbiontAssociated, range=Optional[str])
@@ -22609,7 +22644,7 @@ slots.SymbiontAssociated_project_name = Slot(uri=MIXS['0000092'], name="Symbiont
                    model_uri=MIXS.SymbiontAssociated_project_name, domain=SymbiontAssociated, range=Optional[str])
 
 slots.SymbiontAssociated_route_transmission = Slot(uri=MIXS['0001316'], name="SymbiontAssociated_route_transmission", curie=MIXS.curie('0001316'),
-                   model_uri=MIXS.SymbiontAssociated_route_transmission, domain=SymbiontAssociated, range=Optional[str])
+                   model_uri=MIXS.SymbiontAssociated_route_transmission, domain=SymbiontAssociated, range=Optional[Union[str, "RouteTransmissionEnum"]])
 
 slots.SymbiontAssociated_samp_salinity = Slot(uri=MIXS.samp_salinity, name="SymbiontAssociated_samp_salinity", curie=MIXS.curie('samp_salinity'),
                    model_uri=MIXS.SymbiontAssociated_samp_salinity, domain=SymbiontAssociated, range=Optional[str])
@@ -22637,17 +22672,17 @@ slots.SymbiontAssociated_source_mat_id = Slot(uri=MIXS['0000026'], name="Symbion
                    model_uri=MIXS.SymbiontAssociated_source_mat_id, domain=SymbiontAssociated, range=Optional[Union[str, List[str]]])
 
 slots.SymbiontAssociated_sym_life_cycle_type = Slot(uri=MIXS['0001300'], name="SymbiontAssociated_sym_life_cycle_type", curie=MIXS.curie('0001300'),
-                   model_uri=MIXS.SymbiontAssociated_sym_life_cycle_type, domain=SymbiontAssociated, range=Optional[str])
+                   model_uri=MIXS.SymbiontAssociated_sym_life_cycle_type, domain=SymbiontAssociated, range=Optional[Union[str, "SymLifeCycleTypeEnum"]])
 
 slots.SymbiontAssociated_symbiont_host_role = Slot(uri=MIXS['0001303'], name="SymbiontAssociated_symbiont_host_role", curie=MIXS.curie('0001303'),
-                   model_uri=MIXS.SymbiontAssociated_symbiont_host_role, domain=SymbiontAssociated, range=Optional[str])
+                   model_uri=MIXS.SymbiontAssociated_symbiont_host_role, domain=SymbiontAssociated, range=Optional[Union[str, "SymbiontHostRoleEnum"]])
 
 slots.SymbiontAssociated_temp = Slot(uri=MIXS['0000113'], name="SymbiontAssociated_temp", curie=MIXS.curie('0000113'),
                    model_uri=MIXS.SymbiontAssociated_temp, domain=SymbiontAssociated, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SymbiontAssociated_type_of_symbiosis = Slot(uri=MIXS['0001307'], name="SymbiontAssociated_type_of_symbiosis", curie=MIXS.curie('0001307'),
-                   model_uri=MIXS.SymbiontAssociated_type_of_symbiosis, domain=SymbiontAssociated, range=Optional[str])
+                   model_uri=MIXS.SymbiontAssociated_type_of_symbiosis, domain=SymbiontAssociated, range=Optional[Union[str, "TypeOfSymbiosisEnum"]])
 
 slots.WastewaterSludge_alkalinity = Slot(uri=MIXS['0000421'], name="WastewaterSludge_alkalinity", curie=MIXS.curie('0000421'),
                    model_uri=MIXS.WastewaterSludge_alkalinity, domain=WastewaterSludge, range=Optional[str])
@@ -22904,10 +22939,12 @@ slots.Water_org_carb = Slot(uri=MIXS.org_carb, name="Water_org_carb", curie=MIXS
                    model_uri=MIXS.Water_org_carb, domain=Water, range=Optional[str])
 
 slots.Water_org_matter = Slot(uri=MIXS['0000204'], name="Water_org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=MIXS.Water_org_matter, domain=Water, range=Optional[str])
+                   model_uri=MIXS.Water_org_matter, domain=Water, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Water_org_nitro = Slot(uri=MIXS['0000205'], name="Water_org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=MIXS.Water_org_nitro, domain=Water, range=Optional[str])
+                   model_uri=MIXS.Water_org_nitro, domain=Water, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Water_organism_count = Slot(uri=MIXS.organism_count, name="Water_organism_count", curie=MIXS.curie('organism_count'),
                    model_uri=MIXS.Water_organism_count, domain=Water, range=Optional[str])
@@ -23005,7 +23042,7 @@ slots.Water_temp = Slot(uri=MIXS['0000113'], name="Water_temp", curie=MIXS.curie
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.Water_tidal_stage = Slot(uri=MIXS['0000750'], name="Water_tidal_stage", curie=MIXS.curie('0000750'),
-                   model_uri=MIXS.Water_tidal_stage, domain=Water, range=Optional[str])
+                   model_uri=MIXS.Water_tidal_stage, domain=Water, range=Optional[Union[str, "TidalStageEnum"]])
 
 slots.Water_tot_depth_water_col = Slot(uri=MIXS['0000634'], name="Water_tot_depth_water_col", curie=MIXS.curie('0000634'),
                    model_uri=MIXS.Water_tot_depth_water_col, domain=Water, range=Optional[str])

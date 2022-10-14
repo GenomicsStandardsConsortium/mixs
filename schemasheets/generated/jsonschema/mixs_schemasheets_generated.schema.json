@@ -66,8 +66,8 @@
                "type": "string"
             },
             "biotic_relationship": {
-               "description": "Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object",
-               "type": "string"
+               "$ref": "#/$defs/BioticRelationshipEnum",
+               "description": "Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object"
             },
             "chem_administration": {
                "type": "string"
@@ -103,8 +103,8 @@
                "type": "string"
             },
             "drainage_class": {
-               "description": "Drainage classification from a standard system such as the USDA system",
-               "type": "string"
+               "$ref": "#/$defs/DrainageClassEnum",
+               "description": "Drainage classification from a standard system such as the USDA system"
             },
             "elev": {
                "description": "Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit.",
@@ -119,8 +119,8 @@
                "type": "string"
             },
             "fao_class": {
-               "description": "Soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups",
-               "type": "string"
+               "$ref": "#/$defs/FaoClassEnum",
+               "description": "Soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups"
             },
             "farm_equip": {
                "type": "string"
@@ -134,7 +134,7 @@
             "farm_water_source": {
                "description": "Source of water used on the farm for irrigation of crops or watering of livestock.",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/FarmWaterSourceEnum"
                },
                "type": "array"
             },
@@ -257,8 +257,8 @@
                "type": "string"
             },
             "lib_layout": {
-               "description": "Specify whether to expect single, paired, or other configuration of reads",
-               "type": "string"
+               "$ref": "#/$defs/LibLayoutEnum",
+               "description": "Specify whether to expect single, paired, or other configuration of reads"
             },
             "lib_reads_seqd": {
                "description": "Total number of clones sequenced from the library",
@@ -408,8 +408,8 @@
                "type": "string"
             },
             "profile_position": {
-               "description": "Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas",
-               "type": "string"
+               "$ref": "#/$defs/ProfilePositionEnum",
+               "description": "Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas"
             },
             "rel_location": {
                "type": "string"
@@ -472,10 +472,12 @@
             },
             "season_precpt": {
                "description": "The average of all seasonal precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps.",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "season_temp": {
                "description": "Mean seasonal temperature",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "seq_meth": {
@@ -483,8 +485,8 @@
                "type": "string"
             },
             "seq_quality_check": {
-               "description": "Indicate if the sequence has been called by automatic systems (none) or undergone a manual editing procedure (e.g. by inspecting the raw data or chromatograms). Applied only for sequences that are not submitted to SRA,ENA or DRA",
-               "type": "string"
+               "$ref": "#/$defs/SeqQualityCheckEnum",
+               "description": "Indicate if the sequence has been called by automatic systems (none) or undergone a manual editing procedure (e.g. by inspecting the raw data or chromatograms). Applied only for sequences that are not submitted to SRA,ENA or DRA"
             },
             "sequencing_location": {
                "description": "The location the sequencing run was performed. Indicate the name of the lab or core facility where samples were sequenced.",
@@ -529,6 +531,7 @@
             },
             "soil_type": {
                "description": "Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple terms can be separated by pipes.",
+               "pattern": "^\\S+.* \\[\\S+:\\S+]$",
                "type": "string"
             },
             "soil_type_meth": {
@@ -592,7 +595,7 @@
             "tillage": {
                "description": "Note method(s) used for tilling",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/TillageEnum"
                },
                "type": "array"
             },
@@ -612,14 +615,15 @@
             },
             "tot_org_carb": {
                "description": "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "tot_phos": {
                "type": "string"
             },
             "trophic_level": {
-               "description": "Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph)",
-               "type": "string"
+               "$ref": "#/$defs/TrophicLevelEnum",
+               "description": "Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph)"
             },
             "url": {
                "type": "string"
@@ -630,7 +634,7 @@
             "water_source_shared": {
                "description": "Other users sharing access to the same water source. Multiple terms can be separated by one or more pipes.",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/WaterSourceSharedEnum"
                },
                "type": "array"
             },
@@ -891,8 +895,8 @@
                "type": "string"
             },
             "aero_struc": {
-               "description": "Aerospace structures typically consist of thin plates with stiffeners for the external surfaces, bulkheads and frames to support the shape and fasteners such as welds, rivets, screws and bolts to hold the components together",
-               "type": "string"
+               "$ref": "#/$defs/AeroStrucEnum",
+               "description": "Aerospace structures typically consist of thin plates with stiffeners for the external surfaces, bulkheads and frames to support the shape and fasteners such as welds, rivets, screws and bolts to hold the components together"
             },
             "air_temp": {
                "type": "string"
@@ -902,8 +906,8 @@
                "type": "string"
             },
             "arch_struc": {
-               "description": "An architectural structure is a human-made, free-standing, immobile outdoor construction",
-               "type": "string"
+               "$ref": "#/$defs/ArchStrucEnum",
+               "description": "An architectural structure is a human-made, free-standing, immobile outdoor construction"
             },
             "avg_dew_point": {
                "description": "The average of dew point measures taken at the beginning of every hour over a 24 hour period on the sampling day",
@@ -926,27 +930,27 @@
                "type": "integer"
             },
             "build_docs": {
-               "description": "The building design, construction and operation documents",
-               "type": "string"
+               "$ref": "#/$defs/BuildDocsEnum",
+               "description": "The building design, construction and operation documents"
             },
             "build_occup_type": {
                "description": "The primary function for which a building or discrete part of a building is intended to be used",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/BuildOccupTypeEnum"
                },
                "type": "array"
             },
             "building_setting": {
-               "description": "A location (geography) where a building is set",
-               "type": "string"
+               "$ref": "#/$defs/BuildingSettingEnum",
+               "description": "A location (geography) where a building is set"
             },
             "built_struc_age": {
                "description": "The age of the built structure since construction",
                "type": "string"
             },
             "built_struc_set": {
-               "description": "The characterization of the location of the built structure as high or low human density",
-               "type": "string"
+               "$ref": "#/$defs/BuiltStrucSetEnum",
+               "description": "The characterization of the location of the built structure as high or low human density"
             },
             "built_struc_type": {
                "description": "A physical structure that is a body or assemblage of bodies in space to form a system capable of supporting loads",
@@ -961,32 +965,32 @@
                "type": "string"
             },
             "ceil_cond": {
-               "description": "The physical condition of the ceiling at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas",
-               "type": "string"
+               "$ref": "#/$defs/CeilCondEnum",
+               "description": "The physical condition of the ceiling at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas"
             },
             "ceil_finish_mat": {
-               "description": "The type of material used to finish a ceiling",
-               "type": "string"
+               "$ref": "#/$defs/CeilFinishMatEnum",
+               "description": "The type of material used to finish a ceiling"
             },
             "ceil_struc": {
-               "description": "The construction format of the ceiling",
-               "type": "string"
+               "$ref": "#/$defs/CeilStrucEnum",
+               "description": "The construction format of the ceiling"
             },
             "ceil_texture": {
-               "description": "The feel, appearance, or consistency of a ceiling surface",
-               "type": "string"
+               "$ref": "#/$defs/CeilTextureEnum",
+               "description": "The feel, appearance, or consistency of a ceiling surface"
             },
             "ceil_thermal_mass": {
                "description": "The ability of the ceiling to provide inertia against temperature fluctuations. Generally this means concrete that is exposed. A metal deck that supports a concrete slab will act thermally as long as it is exposed to room air flow",
                "type": "string"
             },
             "ceil_type": {
-               "description": "The type of ceiling according to the ceiling's appearance or construction",
-               "type": "string"
+               "$ref": "#/$defs/CeilTypeEnum",
+               "description": "The type of ceiling according to the ceiling's appearance or construction"
             },
             "ceil_water_mold": {
-               "description": "Signs of the presence of mold or mildew on the ceiling",
-               "type": "string"
+               "$ref": "#/$defs/CeilWaterMoldEnum",
+               "description": "Signs of the presence of mold or mildew on the ceiling"
             },
             "cool_syst_id": {
                "description": "The cooling system identifier",
@@ -1001,52 +1005,52 @@
                "type": "string"
             },
             "door_comp_type": {
-               "description": "The composite type of the door",
-               "type": "string"
+               "$ref": "#/$defs/DoorCompTypeEnum",
+               "description": "The composite type of the door"
             },
             "door_cond": {
-               "description": "The phsical condition of the door",
-               "type": "string"
+               "$ref": "#/$defs/DoorCondEnum",
+               "description": "The phsical condition of the door"
             },
             "door_direct": {
-               "description": "The direction the door opens",
-               "type": "string"
+               "$ref": "#/$defs/DoorDirectEnum",
+               "description": "The direction the door opens"
             },
             "door_loc": {
-               "description": "The relative location of the door in the room",
-               "type": "string"
+               "$ref": "#/$defs/DoorLocEnum",
+               "description": "The relative location of the door in the room"
             },
             "door_mat": {
-               "description": "The material the door is composed of",
-               "type": "string"
+               "$ref": "#/$defs/DoorMatEnum",
+               "description": "The material the door is composed of"
             },
             "door_move": {
-               "description": "The type of movement of the door",
-               "type": "string"
+               "$ref": "#/$defs/DoorMoveEnum",
+               "description": "The type of movement of the door"
             },
             "door_size": {
                "description": "The size of the door",
                "type": "string"
             },
             "door_type": {
-               "description": "The type of door material",
-               "type": "string"
+               "$ref": "#/$defs/DoorTypeEnum",
+               "description": "The type of door material"
             },
             "door_type_metal": {
-               "description": "The type of metal door",
-               "type": "string"
+               "$ref": "#/$defs/DoorTypeMetalEnum",
+               "description": "The type of metal door"
             },
             "door_type_wood": {
-               "description": "The type of wood door",
-               "type": "string"
+               "$ref": "#/$defs/DoorTypeWoodEnum",
+               "description": "The type of wood door"
             },
             "door_water_mold": {
-               "description": "Signs of the presence of mold or mildew on a door",
-               "type": "string"
+               "$ref": "#/$defs/DoorWaterMoldEnum",
+               "description": "Signs of the presence of mold or mildew on a door"
             },
             "drawings": {
-               "description": "The buildings architectural drawings; if design is chosen, indicate phase-conceptual, schematic, design development, and construction documents",
-               "type": "string"
+               "$ref": "#/$defs/DrawingsEnum",
+               "description": "The buildings architectural drawings; if design is chosen, indicate phase-conceptual, schematic, design development, and construction documents"
             },
             "elevator": {
                "description": "The number of elevators within the built structure",
@@ -1069,23 +1073,23 @@
                "type": "integer"
             },
             "ext_wall_orient": {
-               "description": "The orientation of the exterior wall",
-               "type": "string"
+               "$ref": "#/$defs/DrawingsEnum",
+               "description": "The orientation of the exterior wall"
             },
             "ext_window_orient": {
-               "description": "The compass direction the exterior window of the room is facing",
-               "type": "string"
+               "$ref": "#/$defs/ExtWindowOrientEnum",
+               "description": "The compass direction the exterior window of the room is facing"
             },
             "filter_type": {
                "description": "A device which removes solid particulates or airborne molecular contaminants",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/FilterTypeEnum"
                },
                "type": "array"
             },
             "fireplace_type": {
-               "description": "A firebox with chimney",
-               "type": "string"
+               "$ref": "#/$defs/FireplaceTypeEnum",
+               "description": "A firebox with chimney"
             },
             "floor_age": {
                "description": "The time period since installment of the carpet or flooring",
@@ -1096,8 +1100,8 @@
                "type": "string"
             },
             "floor_cond": {
-               "description": "The physical condition of the floor at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas",
-               "type": "string"
+               "$ref": "#/$defs/FloorCondEnum",
+               "description": "The physical condition of the floor at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas"
             },
             "floor_count": {
                "description": "The number of floors in the building, including basements and mechanical penthouse",
@@ -1116,8 +1120,8 @@
                "type": "string"
             },
             "floor_water_mold": {
-               "description": "Signs of the presence of mold or mildew in a room",
-               "type": "string"
+               "$ref": "#/$defs/FloorWaterMoldEnum",
+               "description": "Signs of the presence of mold or mildew in a room"
             },
             "freq_clean": {
                "type": "string"
@@ -1127,25 +1131,25 @@
                "type": "integer"
             },
             "furniture": {
-               "description": "The types of furniture present in the sampled room",
-               "type": "string"
+               "$ref": "#/$defs/FurnitureEnum",
+               "description": "The types of furniture present in the sampled room"
             },
             "gender_restroom": {
-               "description": "The gender type of the restroom",
-               "type": "string"
+               "$ref": "#/$defs/GenderRestroomEnum",
+               "description": "The gender type of the restroom"
             },
             "hall_count": {
                "description": "The total count of hallways and cooridors in the built structure",
                "type": "integer"
             },
             "handidness": {
-               "description": "The handidness of the individual sampled",
-               "type": "string"
+               "$ref": "#/$defs/HandidnessEnum",
+               "description": "The handidness of the individual sampled"
             },
             "heat_cool_type": {
                "description": "Methods of conditioning or heating a room or building",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/HeatCoolTypeEnum"
                },
                "type": "array"
             },
@@ -1154,8 +1158,8 @@
                "type": "string"
             },
             "heat_sys_deliv_meth": {
-               "description": "The method by which the heat is delivered through the system",
-               "type": "string"
+               "$ref": "#/$defs/HeatSysDelivMethEnum",
+               "description": "The method by which the heat is delivered through the system"
             },
             "heat_system_id": {
                "description": "The heating system identifier",
@@ -1166,8 +1170,8 @@
                "type": "string"
             },
             "indoor_space": {
-               "description": "A distinguishable space within a structure, the purpose for which discrete areas of a building is used",
-               "type": "string"
+               "$ref": "#/$defs/IndoorSpaceEnum",
+               "description": "A distinguishable space within a structure, the purpose for which discrete areas of a building is used"
             },
             "indoor_surf": {
                "type": "string"
@@ -1177,8 +1181,8 @@
                "type": "string"
             },
             "int_wall_cond": {
-               "description": "The physical condition of the wall at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas",
-               "type": "string"
+               "$ref": "#/$defs/IntWallCondEnum",
+               "description": "The physical condition of the wall at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas"
             },
             "last_clean": {
                "description": "The last time the floor was cleaned (swept, mopped, vacuumed)",
@@ -1187,7 +1191,7 @@
             "light_type": {
                "description": "Application of light to achieve some practical or aesthetic effect. Lighting includes the use of both artificial light sources such as lamps and light fixtures, as well as natural illumination by capturing daylight. Can also include absence of light",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/LightTypeEnum"
                },
                "type": "array"
             },
@@ -1196,8 +1200,8 @@
                "type": "integer"
             },
             "mech_struc": {
-               "description": "mechanical structure: a moving structure",
-               "type": "string"
+               "$ref": "#/$defs/MechStrucEnum",
+               "description": "mechanical structure: a moving structure"
             },
             "number_pets": {
                "description": "The number of pets residing in the sampled space",
@@ -1216,8 +1220,8 @@
                "type": "number"
             },
             "occup_document": {
-               "description": "The type of documentation of occupancy",
-               "type": "string"
+               "$ref": "#/$defs/OccupDocumentEnum",
+               "description": "The type of documentation of occupancy"
             },
             "occup_samp": {
                "description": "Number of occupants present at time of sample within the given space",
@@ -1235,8 +1239,8 @@
                "type": "string"
             },
             "quad_pos": {
-               "description": "The quadrant position of the sampling room within the building",
-               "type": "string"
+               "$ref": "#/$defs/QuadPosEnum",
+               "description": "The quadrant position of the sampling room within the building"
             },
             "rel_air_humidity": {
                "description": "Partial vapor and air pressure, density of the vapor and air, or by the actual mass of the vapor and air",
@@ -1247,8 +1251,8 @@
                "type": "string"
             },
             "rel_samp_loc": {
-               "description": "The sampling location within the train car",
-               "type": "string"
+               "$ref": "#/$defs/RelSampLocEnum",
+               "description": "The sampling location within the train car"
             },
             "room_air_exch_rate": {
                "description": "The rate at which outside air replaces indoor air in a given space",
@@ -1259,12 +1263,12 @@
                "type": "string"
             },
             "room_condt": {
-               "description": "The condition of the room at the time of sampling",
-               "type": "string"
+               "$ref": "#/$defs/RelSampLocEnum",
+               "description": "The condition of the room at the time of sampling"
             },
             "room_connected": {
-               "description": "List of rooms connected to the sampling room by a doorway",
-               "type": "string"
+               "$ref": "#/$defs/RoomConnectedEnum",
+               "description": "List of rooms connected to the sampling room by a doorway"
             },
             "room_count": {
                "description": "The total count of rooms in the built structure including all room types",
@@ -1287,8 +1291,8 @@
                "type": "string"
             },
             "room_loc": {
-               "description": "The position of the room within the building",
-               "type": "string"
+               "$ref": "#/$defs/RoomLocEnum",
+               "description": "The position of the room within the building"
             },
             "room_moist_dam_hist": {
                "description": "The history of moisture damage or mold in the past 12 months. Number of events of moisture damage or mold observed",
@@ -1303,12 +1307,12 @@
                "type": "integer"
             },
             "room_samp_pos": {
-               "description": "The horizontal sampling position in the room relative to architectural elements",
-               "type": "string"
+               "$ref": "#/$defs/RoomSampPosEnum",
+               "description": "The horizontal sampling position in the room relative to architectural elements"
             },
             "room_type": {
-               "description": "The main purpose or activity of the sampling room. A room is any distinguishable space within a structure",
-               "type": "string"
+               "$ref": "#/$defs/RoomTypeEnum",
+               "description": "The main purpose or activity of the sampling room. A room is any distinguishable space within a structure"
             },
             "room_vol": {
                "description": "Volume of sampling room",
@@ -1344,43 +1348,43 @@
                "type": "number"
             },
             "samp_weather": {
-               "description": "The weather on the sampling day",
-               "type": "string"
+               "$ref": "#/$defs/SampWeatherEnum",
+               "description": "The weather on the sampling day"
             },
             "season": {
                "type": "string"
             },
             "season_use": {
-               "description": "The seasons the space is occupied",
-               "type": "string"
+               "$ref": "#/$defs/SeasonUseEnum",
+               "description": "The seasons the space is occupied"
             },
             "shad_dev_water_mold": {
-               "description": "Signs of the presence of mold or mildew on the shading device",
-               "type": "string"
+               "$ref": "#/$defs/ShadDevWaterMoldEnum",
+               "description": "Signs of the presence of mold or mildew on the shading device"
             },
             "shading_device_cond": {
-               "description": "The physical condition of the shading device at the time of sampling",
-               "type": "string"
+               "$ref": "#/$defs/ShadingDeviceCondEnum",
+               "description": "The physical condition of the shading device at the time of sampling"
             },
             "shading_device_loc": {
-               "description": "The location of the shading device in relation to the built structure",
-               "type": "string"
+               "$ref": "#/$defs/ShadingDeviceLocEnum",
+               "description": "The location of the shading device in relation to the built structure"
             },
             "shading_device_mat": {
                "description": "The material the shading device is composed of",
                "type": "string"
             },
             "shading_device_type": {
-               "description": "The type of shading device",
-               "type": "string"
+               "$ref": "#/$defs/ShadingDeviceTypeEnum",
+               "description": "The type of shading device"
             },
             "space_typ_state": {
-               "description": "Customary or normal state of the space",
-               "type": "string"
+               "$ref": "#/$defs/SpaceTypStateEnum",
+               "description": "Customary or normal state of the space"
             },
             "specific": {
-               "description": "The building specifications. If design is chosen, indicate phase: conceptual, schematic, design development, construction documents",
-               "type": "string"
+               "$ref": "#/$defs/SpecificEnum",
+               "description": "The building specifications. If design is chosen, indicate phase: conceptual, schematic, design development, construction documents"
             },
             "specific_humidity": {
                "description": "The mass of water vapour in a unit mass of moist air, usually expressed as grams of vapour per kilogram of air, or, in air conditioning, as grains per pound.",
@@ -1389,14 +1393,14 @@
             "substructure_type": {
                "description": "The substructure or under building is that largely hidden section of the building which is built off the foundations to the ground floor level",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/SubstructureTypeEnum"
                },
                "type": "array"
             },
             "surf_air_cont": {
                "description": "Contaminant identified on surface",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/SurfAirContEnum"
                },
                "type": "array"
             },
@@ -1428,12 +1432,12 @@
                "type": "string"
             },
             "train_stat_loc": {
-               "description": "The train station collection location",
-               "type": "string"
+               "$ref": "#/$defs/TrainStatLocEnum",
+               "description": "The train station collection location"
             },
             "train_stop_loc": {
-               "description": "The train stop collection location",
-               "type": "string"
+               "$ref": "#/$defs/TrainStopLocEnum",
+               "description": "The train stop collection location"
             },
             "typ_occup_density": {
                "description": "Customary or normal density of occupants",
@@ -1451,68 +1455,68 @@
                "type": "string"
             },
             "wall_const_type": {
-               "description": "The building class of the wall defined by the composition of the building elements and fire-resistance rating.",
-               "type": "string"
+               "$ref": "#/$defs/WallConstTypeEnum",
+               "description": "The building class of the wall defined by the composition of the building elements and fire-resistance rating."
             },
             "wall_finish_mat": {
-               "description": "The material utilized to finish the outer most layer of the wall",
-               "type": "string"
+               "$ref": "#/$defs/WallFinishMatEnum",
+               "description": "The material utilized to finish the outer most layer of the wall"
             },
             "wall_height": {
                "description": "The average height of the walls in the sampled room",
                "type": "string"
             },
             "wall_loc": {
-               "description": "The relative location of the wall within the room",
-               "type": "string"
+               "$ref": "#/$defs/WallLocEnum",
+               "description": "The relative location of the wall within the room"
             },
             "wall_surf_treatment": {
-               "description": "The surface treatment of interior wall",
-               "type": "string"
+               "$ref": "#/$defs/WallSurfTreatmentEnum",
+               "description": "The surface treatment of interior wall"
             },
             "wall_texture": {
-               "description": "The feel, appearance, or consistency of a wall surface",
-               "type": "string"
+               "$ref": "#/$defs/WallTextureEnum",
+               "description": "The feel, appearance, or consistency of a wall surface"
             },
             "wall_thermal_mass": {
                "description": "The ability of the wall to provide inertia against temperature fluctuations. Generally this means concrete or concrete block that is either exposed or covered only with paint",
                "type": "string"
             },
             "wall_water_mold": {
-               "description": "Signs of the presence of mold or mildew on a wall",
-               "type": "string"
+               "$ref": "#/$defs/WallWaterMoldEnum",
+               "description": "Signs of the presence of mold or mildew on a wall"
             },
             "water_feat_size": {
                "description": "The size of the water feature",
                "type": "string"
             },
             "water_feat_type": {
-               "description": "The type of water feature present within the building being sampled",
-               "type": "string"
+               "$ref": "#/$defs/WaterFeatTypeEnum",
+               "description": "The type of water feature present within the building being sampled"
             },
             "weekday": {
-               "description": "The day of the week when sampling occurred",
-               "type": "string"
+               "$ref": "#/$defs/WeekdayEnum",
+               "description": "The day of the week when sampling occurred"
             },
             "window_cond": {
-               "description": "The physical condition of the window at the time of sampling",
-               "type": "string"
+               "$ref": "#/$defs/WindowCondEnum",
+               "description": "The physical condition of the window at the time of sampling"
             },
             "window_cover": {
                "description": "The type of window covering",
                "type": "string"
             },
             "window_horiz_pos": {
-               "description": "The horizontal position of the window on the wall",
-               "type": "string"
+               "$ref": "#/$defs/WindowHorizPosEnum",
+               "description": "The horizontal position of the window on the wall"
             },
             "window_loc": {
-               "description": "The relative location of the window within the room",
-               "type": "string"
+               "$ref": "#/$defs/WindowLocEnum",
+               "description": "The relative location of the window within the room"
             },
             "window_mat": {
-               "description": "The type of material used to finish a window",
-               "type": "string"
+               "$ref": "#/$defs/WindowLocEnum",
+               "description": "The type of material used to finish a window"
             },
             "window_open_freq": {
                "description": "The number of times windows are opened per week",
@@ -1523,20 +1527,20 @@
                "type": "string"
             },
             "window_status": {
-               "description": "Defines whether the windows were open or closed during environmental testing",
-               "type": "string"
+               "$ref": "#/$defs/WindowStatusEnum",
+               "description": "Defines whether the windows were open or closed during environmental testing"
             },
             "window_type": {
-               "description": "The type of windows",
-               "type": "string"
+               "$ref": "#/$defs/WindowTypeEnum",
+               "description": "The type of windows"
             },
             "window_vert_pos": {
-               "description": "The vertical position of the window on the wall",
-               "type": "string"
+               "$ref": "#/$defs/WindowVertPosEnum",
+               "description": "The vertical position of the window on the wall"
             },
             "window_water_mold": {
-               "description": "Signs of the presence of mold or mildew on the window.",
-               "type": "string"
+               "$ref": "#/$defs/WindowWaterMoldEnum",
+               "description": "Signs of the presence of mold or mildew on the window."
             }
          },
          "required": [],
@@ -2163,8 +2167,8 @@
                "type": "string"
             },
             "cult_result": {
-               "description": "Any result of a bacterial culture experiment reported as a binary assessment such as positive/negative, active/inactive.",
-               "type": "string"
+               "$ref": "#/$defs/CultResultEnum",
+               "description": "Any result of a bacterial culture experiment reported as a binary assessment such as positive/negative, active/inactive."
             },
             "cult_result_org": {
                "description": "Taxonomic information about the cultured organism(s).",
@@ -2303,8 +2307,8 @@
                "type": "string"
             },
             "food_trace_list": {
-               "description": "The FDA is proposing to establish additional traceability recordkeeping requirements (beyond what is already required in existing regulations) for persons who manufacture, process, pack, or hold foods the Agency has designated for inclusion on the Food Traceability List. The Food Traceability List (FTL) identifies the foods for which the additional traceability records described in the proposed rule would be required. The term \u201cFood Traceability List\u201d (FTL) refers not only to the foods specifically listed (https://www.fda.gov/media/142303/download), but also to any foods that contain listed foods as ingredients.",
-               "type": "string"
+               "$ref": "#/$defs/FoodTraceListEnum",
+               "description": "The FDA is proposing to establish additional traceability recordkeeping requirements (beyond what is already required in existing regulations) for persons who manufacture, process, pack, or hold foods the Agency has designated for inclusion on the Food Traceability List. The Food Traceability List (FTL) identifies the foods for which the additional traceability records described in the proposed rule would be required. The term \u201cFood Traceability List\u201d (FTL) refers not only to the foods specifically listed (https://www.fda.gov/media/142303/download), but also to any foods that contain listed foods as ingredients."
             },
             "food_trav_mode": {
                "type": "string"
@@ -2449,8 +2453,8 @@
                "type": "string"
             },
             "samp_transport_cont": {
-               "description": "Conatiner in which the sample was stored during transport. Indicate the location name.",
-               "type": "string"
+               "$ref": "#/$defs/SampTransportContEnum",
+               "description": "Conatiner in which the sample was stored during transport. Indicate the location name."
             },
             "samp_transport_dur": {
                "description": "The duration of time from when the sample was collected until processed. Indicate the duration for which the sample was stored written in ISO 8601 format.",
@@ -2675,8 +2679,8 @@
                "type": "string"
             },
             "cult_result": {
-               "description": "Any result of a bacterial culture experiment reported as a binary assessment such as positive/negative, active/inactive.",
-               "type": "string"
+               "$ref": "#/$defs/CultResultEnum",
+               "description": "Any result of a bacterial culture experiment reported as a binary assessment such as positive/negative, active/inactive."
             },
             "cult_result_org": {
                "description": "Taxonomic information about the cultured organism(s).",
@@ -2725,7 +2729,7 @@
             "extr_weather_event": {
                "description": "Unusual weather events that may have affected microbial populations. Multiple terms can be separated by pipes, listed in reverse chronological order.",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/ExtrWeatherEventEnum"
                },
                "type": "array"
             },
@@ -2745,7 +2749,7 @@
             "farm_water_source": {
                "description": "Source of water used on the farm for irrigation of crops or watering of livestock.",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/FarmWaterSourceEnum"
                },
                "type": "array"
             },
@@ -2760,7 +2764,7 @@
             "food_clean_proc": {
                "description": "The process of cleaning food to separate other environmental materials from the food source. Multiple terms can be separated by pipes.",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/FoodCleanProcEnum"
                },
                "type": "array"
             },
@@ -2947,7 +2951,7 @@
             "plant_reprod_crop": {
                "description": "Plant reproductive part used in the field during planting to start the crop.",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/PlantReprodCropEnum"
                },
                "type": "array"
             },
@@ -3050,10 +3054,12 @@
             },
             "season_precpt": {
                "description": "The average of all seasonal precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps.",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "season_temp": {
                "description": "Mean seasonal temperature",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "seq_meth": {
@@ -3098,8 +3104,8 @@
                "type": "string"
             },
             "soil_texture_class": {
-               "description": "One of the 12 soil texture classes use to describe soil texture based on the relative proportion of different grain sizes  of mineral particles [sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um)] in a soil.",
-               "type": "string"
+               "$ref": "#/$defs/SoilTextureClassEnum",
+               "description": "One of the 12 soil texture classes use to describe soil texture based on the relative proportion of different grain sizes  of mineral particles [sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um)] in a soil."
             },
             "soil_texture_meth": {
                "description": "Reference or method used in determining soil texture",
@@ -3107,6 +3113,7 @@
             },
             "soil_type": {
                "description": "Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple terms can be separated by pipes.",
+               "pattern": "^\\S+.* \\[\\S+:\\S+]$",
                "type": "string"
             },
             "soil_type_meth": {
@@ -3170,7 +3177,7 @@
             "tillage": {
                "description": "Note method(s) used for tilling",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/TillageEnum"
                },
                "type": "array"
             },
@@ -3184,6 +3191,7 @@
             },
             "tot_nitro_content": {
                "description": "Total nitrogen content of the sample",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "tot_org_c_meth": {
@@ -3192,6 +3200,7 @@
             },
             "tot_org_carb": {
                "description": "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "turbidity": {
@@ -3220,7 +3229,7 @@
             "water_source_shared": {
                "description": "Other users sharing access to the same water source. Multiple terms can be separated by one or more pipes.",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/WaterSourceSharedEnum"
                },
                "type": "array"
             },
@@ -3273,8 +3282,8 @@
                "type": "string"
             },
             "cult_result": {
-               "description": "Any result of a bacterial culture experiment reported as a binary assessment such as positive/negative, active/inactive.",
-               "type": "string"
+               "$ref": "#/$defs/CultResultEnum",
+               "description": "Any result of a bacterial culture experiment reported as a binary assessment such as positive/negative, active/inactive."
             },
             "cult_result_org": {
                "description": "Taxonomic information about the cultured organism(s).",
@@ -3326,7 +3335,7 @@
             "facility_type": {
                "description": "Establishment details about the type of facility where the sample was taken. This is independent of the specific product(s) within the facility.",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/FacilityTypeEnum"
                },
                "type": "array"
             },
@@ -3445,8 +3454,8 @@
                "type": "string"
             },
             "food_trace_list": {
-               "description": "The FDA is proposing to establish additional traceability recordkeeping requirements (beyond what is already required in existing regulations) for persons who manufacture, process, pack, or hold foods the Agency has designated for inclusion on the Food Traceability List. The Food Traceability List (FTL) identifies the foods for which the additional traceability records described in the proposed rule would be required. The term \u201cFood Traceability List\u201d (FTL) refers not only to the foods specifically listed (https://www.fda.gov/media/142303/download), but also to any foods that contain listed foods as ingredients.",
-               "type": "string"
+               "$ref": "#/$defs/FoodTraceListEnum",
+               "description": "The FDA is proposing to establish additional traceability recordkeeping requirements (beyond what is already required in existing regulations) for persons who manufacture, process, pack, or hold foods the Agency has designated for inclusion on the Food Traceability List. The Food Traceability List (FTL) identifies the foods for which the additional traceability records described in the proposed rule would be required. The term \u201cFood Traceability List\u201d (FTL) refers not only to the foods specifically listed (https://www.fda.gov/media/142303/download), but also to any foods that contain listed foods as ingredients."
             },
             "food_trav_mode": {
                "type": "string"
@@ -3582,8 +3591,8 @@
                "type": "string"
             },
             "samp_loc_condition": {
-               "description": "The condition of the sample location at the time of sampling.",
-               "type": "string"
+               "$ref": "#/$defs/SampLocConditionEnum",
+               "description": "The condition of the sample location at the time of sampling."
             },
             "samp_name": {
                "description": "A local identifier or name that for the material sample used for extracting nucleic acids, and subsequent sequencing. It can refer either to the original material collected or to any derived sub-samples. It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible. INSDC requires every sample name from a single Submitter to be unique. Use of a globally unique identifier for the field source_mat_id is recommended in addition to sample_name.",
@@ -3635,13 +3644,13 @@
             "samp_surf_moisture": {
                "description": "Degree of water held on a sampled surface.  If present, user can state the degree of water held on surface (intermittent moisture, submerged). If no surface moisture is present indicate not present.",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/SampSubtypeEnum"
                },
                "type": "array"
             },
             "samp_transport_cont": {
-               "description": "Conatiner in which the sample was stored during transport. Indicate the location name.",
-               "type": "string"
+               "$ref": "#/$defs/SampTransportContEnum",
+               "description": "Conatiner in which the sample was stored during transport. Indicate the location name."
             },
             "samp_transport_dur": {
                "description": "The duration of time from when the sample was collected until processed. Indicate the duration for which the sample was stored written in ISO 8601 format.",
@@ -3763,8 +3772,8 @@
                "type": "string"
             },
             "cult_result": {
-               "description": "Any result of a bacterial culture experiment reported as a binary assessment such as positive/negative, active/inactive.",
-               "type": "string"
+               "$ref": "#/$defs/CultResultEnum",
+               "description": "Any result of a bacterial culture experiment reported as a binary assessment such as positive/negative, active/inactive."
             },
             "cult_result_org": {
                "description": "Taxonomic information about the cultured organism(s).",
@@ -3955,8 +3964,8 @@
                "type": "string"
             },
             "food_trace_list": {
-               "description": "The FDA is proposing to establish additional traceability recordkeeping requirements (beyond what is already required in existing regulations) for persons who manufacture, process, pack, or hold foods the Agency has designated for inclusion on the Food Traceability List. The Food Traceability List (FTL) identifies the foods for which the additional traceability records described in the proposed rule would be required. The term \u201cFood Traceability List\u201d (FTL) refers not only to the foods specifically listed (https://www.fda.gov/media/142303/download), but also to any foods that contain listed foods as ingredients.",
-               "type": "string"
+               "$ref": "#/$defs/FoodTraceListEnum",
+               "description": "The FDA is proposing to establish additional traceability recordkeeping requirements (beyond what is already required in existing regulations) for persons who manufacture, process, pack, or hold foods the Agency has designated for inclusion on the Food Traceability List. The Food Traceability List (FTL) identifies the foods for which the additional traceability records described in the proposed rule would be required. The term \u201cFood Traceability List\u201d (FTL) refers not only to the foods specifically listed (https://www.fda.gov/media/142303/download), but also to any foods that contain listed foods as ingredients."
             },
             "food_trav_mode": {
                "type": "string"
@@ -4136,8 +4145,8 @@
                "type": "string"
             },
             "samp_transport_cont": {
-               "description": "Conatiner in which the sample was stored during transport. Indicate the location name.",
-               "type": "string"
+               "$ref": "#/$defs/SampTransportContEnum",
+               "description": "Conatiner in which the sample was stored during transport. Indicate the location name."
             },
             "samp_transport_dur": {
                "description": "The duration of time from when the sample was collected until processed. Indicate the duration for which the sample was stored written in ISO 8601 format.",
@@ -4566,12 +4575,12 @@
                "type": "string"
             },
             "samp_capt_status": {
-               "description": "Reason for the sample",
-               "type": "string"
+               "$ref": "#/$defs/SampCaptStatusEnum",
+               "description": "Reason for the sample"
             },
             "samp_dis_stage": {
-               "description": "Stage of the disease at the time of sample collection, e.g. inoculation, penetration, infection, growth and reproduction, dissemination of pathogen.",
-               "type": "string"
+               "$ref": "#/$defs/SampDisStageEnum",
+               "description": "Stage of the disease at the time of sample collection, e.g. inoculation, penetration, infection, growth and reproduction, dissemination of pathogen."
             },
             "samp_name": {
                "description": "A local identifier or name that for the material sample used for extracting nucleic acids, and subsequent sequencing. It can refer either to the original material collected or to any derived sub-samples. It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible. INSDC requires every sample name from a single Submitter to be unique. Use of a globally unique identifier for the field source_mat_id is recommended in addition to sample_name.",
@@ -4864,8 +4873,8 @@
                "type": "boolean"
             },
             "urine_collect_meth": {
-               "description": "Specification of urine collection method",
-               "type": "string"
+               "$ref": "#/$defs/UrineCollectMethEnum",
+               "description": "Specification of urine collection method"
             },
             "urogenit_tract_disor": {
                "description": "History of urogenital tract disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, urinary system disease (https://disease-ontology.org/?id=DOID:18).",
@@ -5210,8 +5219,8 @@
                "type": "array"
             },
             "dominant_hand": {
-               "description": "Dominant hand of the subject",
-               "type": "string"
+               "$ref": "#/$defs/DominantHandEnum",
+               "description": "Dominant hand of the subject"
             },
             "ethnicity": {
                "description": "A category of people who identify with each other, usually on the basis of presumed similarities such as a common language, ancestry, history, society, culture, nation or social treatment within their residing area. https://en.wikipedia.org/wiki/List_of_contemporary_ethnic_groups",
@@ -5638,16 +5647,16 @@
                "type": "string"
             },
             "hcr": {
-               "description": "Main Hydrocarbon Resource type. The term \"Hydrocarbon Resource\" HCR defined as a natural environmental feature containing large amounts of hydrocarbons at high concentrations potentially suitable for commercial exploitation. This term should not be confused with the Hydrocarbon Occurrence term which also includes hydrocarbon-rich environments with currently limited commercial interest such as seeps, outcrops, gas hydrates etc. If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/HcrEnum",
+               "description": "Main Hydrocarbon Resource type. The term \"Hydrocarbon Resource\" HCR defined as a natural environmental feature containing large amounts of hydrocarbons at high concentrations potentially suitable for commercial exploitation. This term should not be confused with the Hydrocarbon Occurrence term which also includes hydrocarbon-rich environments with currently limited commercial interest such as seeps, outcrops, gas hydrates etc. If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "hcr_fw_salinity": {
                "description": "Original formation water salinity (prior to secondary recovery e.g. Waterflooding) expressed as TDS",
                "type": "string"
             },
             "hcr_geol_age": {
-               "description": "Geological age of hydrocarbon resource (Additional info: https://en.wikipedia.org/wiki/Period_(geology)). If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/HcrGeolAgeEnum",
+               "description": "Geological age of hydrocarbon resource (Additional info: https://en.wikipedia.org/wiki/Period_(geology)). If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "hcr_pressure": {
                "description": "Original pressure of the hydrocarbon resource",
@@ -5658,8 +5667,8 @@
                "type": "string"
             },
             "lithology": {
-               "description": "Hydrocarbon resource main lithology (Additional information: http://petrowiki.org/Lithology_and_rock_type_determination). If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/LithologyEnum",
+               "description": "Hydrocarbon resource main lithology (Additional information: http://petrowiki.org/Lithology_and_rock_type_determination). If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "magnesium": {
                "description": "Concentration of magnesium in the sample",
@@ -5748,8 +5757,8 @@
                "type": "string"
             },
             "samp_subtype": {
-               "description": "Name of sample sub-type. For example if \"sample type\" is \"Produced Water\" then subtype could be \"Oil Phase\" or \"Water Phase\". If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/SampSubtypeEnum",
+               "description": "Name of sample sub-type. For example if \"sample type\" is \"Produced Water\" then subtype could be \"Oil Phase\" or \"Water Phase\". If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "samp_transport_cond": {
                "description": "Sample transport duration (in days or hrs) and temperature the sample was exposed to (e.g. 5.5 days; 20 \u00ac\u221eC)",
@@ -5780,20 +5789,20 @@
                "type": "string"
             },
             "sr_dep_env": {
-               "description": "Source rock depositional environment (https://en.wikipedia.org/wiki/Source_rock). If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/SrDepEnvEnum",
+               "description": "Source rock depositional environment (https://en.wikipedia.org/wiki/Source_rock). If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "sr_geol_age": {
-               "description": "Geological age of source rock (Additional info: https://en.wikipedia.org/wiki/Period_(geology)). If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/SrGeolAgeEnum",
+               "description": "Geological age of source rock (Additional info: https://en.wikipedia.org/wiki/Period_(geology)). If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "sr_kerog_type": {
-               "description": "Origin of kerogen. Type I: Algal (aquatic), Type II: planktonic and soft plant material (aquatic or terrestrial), Type III: terrestrial woody/ fibrous plant material (terrestrial), Type IV: oxidized recycled woody debris (terrestrial) (additional information: https://en.wikipedia.org/wiki/Kerogen). If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/SrKerogTypeEnum",
+               "description": "Origin of kerogen. Type I: Algal (aquatic), Type II: planktonic and soft plant material (aquatic or terrestrial), Type III: terrestrial woody/ fibrous plant material (terrestrial), Type IV: oxidized recycled woody debris (terrestrial) (additional information: https://en.wikipedia.org/wiki/Kerogen). If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "sr_lithology": {
-               "description": "Lithology of source rock (https://en.wikipedia.org/wiki/Source_rock). If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/SrLithologyEnum",
+               "description": "Lithology of source rock (https://en.wikipedia.org/wiki/Source_rock). If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "sulfate": {
                "description": "Concentration of sulfate in the sample",
@@ -5984,16 +5993,16 @@
                "type": "string"
             },
             "hcr": {
-               "description": "Main Hydrocarbon Resource type. The term \"Hydrocarbon Resource\" HCR defined as a natural environmental feature containing large amounts of hydrocarbons at high concentrations potentially suitable for commercial exploitation. This term should not be confused with the Hydrocarbon Occurrence term which also includes hydrocarbon-rich environments with currently limited commercial interest such as seeps, outcrops, gas hydrates etc. If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/HcrEnum",
+               "description": "Main Hydrocarbon Resource type. The term \"Hydrocarbon Resource\" HCR defined as a natural environmental feature containing large amounts of hydrocarbons at high concentrations potentially suitable for commercial exploitation. This term should not be confused with the Hydrocarbon Occurrence term which also includes hydrocarbon-rich environments with currently limited commercial interest such as seeps, outcrops, gas hydrates etc. If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "hcr_fw_salinity": {
                "description": "Original formation water salinity (prior to secondary recovery e.g. Waterflooding) expressed as TDS",
                "type": "string"
             },
             "hcr_geol_age": {
-               "description": "Geological age of hydrocarbon resource (Additional info: https://en.wikipedia.org/wiki/Period_(geology)). If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/HcrGeolAgeEnum",
+               "description": "Geological age of hydrocarbon resource (Additional info: https://en.wikipedia.org/wiki/Period_(geology)). If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "hcr_pressure": {
                "description": "Original pressure of the hydrocarbon resource",
@@ -6012,8 +6021,8 @@
                "type": "string"
             },
             "lithology": {
-               "description": "Hydrocarbon resource main lithology (Additional information: http://petrowiki.org/Lithology_and_rock_type_determination). If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/LithologyEnum",
+               "description": "Hydrocarbon resource main lithology (Additional information: http://petrowiki.org/Lithology_and_rock_type_determination). If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "magnesium": {
                "description": "Concentration of magnesium in the sample",
@@ -6082,8 +6091,8 @@
                "type": "string"
             },
             "samp_collect_point": {
-               "description": "Sampling point on the asset were sample was collected (e.g. Wellhead, storage tank, separator, etc). If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/SampCollectPointEnum",
+               "description": "Sampling point on the asset were sample was collected (e.g. Wellhead, storage tank, separator, etc). If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "samp_loc_corr_rate": {
                "description": "Metal corrosion rate is the speed of metal deterioration due to environmental conditions. As environmental conditions change corrosion rates change accordingly. Therefore, long term corrosion rates are generally more informative than short term rates and for that reason they are preferred during reporting. In the case of suspected MIC, corrosion rate measurements at the time of sampling might provide insights into the involvement of certain microbial community members in MIC as well as potential microbial interplays",
@@ -6107,8 +6116,8 @@
                "type": "string"
             },
             "samp_subtype": {
-               "description": "Name of sample sub-type. For example if \"sample type\" is \"Produced Water\" then subtype could be \"Oil Phase\" or \"Water Phase\". If \"other\" is specified, please propose entry in \"additional info\" field",
-               "type": "string"
+               "$ref": "#/$defs/SampSubtypeEnum",
+               "description": "Name of sample sub-type. For example if \"sample type\" is \"Produced Water\" then subtype could be \"Oil Phase\" or \"Water Phase\". If \"other\" is specified, please propose entry in \"additional info\" field"
             },
             "samp_transport_cond": {
                "description": "Sample transport duration (in days or hrs) and temperature the sample was exposed to (e.g. 5.5 days; 20 \u00ac\u221eC)",
@@ -6457,10 +6466,12 @@
             },
             "org_matter": {
                "description": "Concentration of organic matter",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "org_nitro": {
                "description": "Concentration of organic nitrogen",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "organism_count": {
@@ -6560,10 +6571,12 @@
             },
             "tot_nitro_content": {
                "description": "Total nitrogen content of the sample",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "tot_org_carb": {
                "description": "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "turbidity": {
@@ -6662,8 +6675,8 @@
                "type": "string"
             },
             "lib_layout": {
-               "description": "Specify whether to expect single, paired, or other configuration of reads",
-               "type": "string"
+               "$ref": "#/$defs/LibLayoutEnum",
+               "description": "Specify whether to expect single, paired, or other configuration of reads"
             },
             "lib_reads_seqd": {
                "description": "Total number of clones sequenced from the library",
@@ -6687,8 +6700,8 @@
                "type": "string"
             },
             "neg_cont_type": {
-               "description": "The substance or equipment used as a negative control in an investigation",
-               "type": "string"
+               "$ref": "#/$defs/NegContTypeEnum",
+               "description": "The substance or equipment used as a negative control in an investigation"
             },
             "nucl_acid_amp": {
                "description": "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids",
@@ -6719,8 +6732,8 @@
                "type": "string"
             },
             "rel_to_oxygen": {
-               "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-               "type": "string"
+               "$ref": "#/$defs/RelToOxygenEnum",
+               "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
             },
             "samp_collec_device": {
                "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).",
@@ -6890,8 +6903,8 @@
                "type": "string"
             },
             "drainage_class": {
-               "description": "Drainage classification from a standard system such as the USDA system",
-               "type": "string"
+               "$ref": "#/$defs/DrainageClassEnum",
+               "description": "Drainage classification from a standard system such as the USDA system"
             },
             "elev": {
                "description": "Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit.",
@@ -6922,8 +6935,8 @@
                "type": "string"
             },
             "fao_class": {
-               "description": "Soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups",
-               "type": "string"
+               "$ref": "#/$defs/FaoClassEnum",
+               "description": "Soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups"
             },
             "feat_pred": {
                "description": "Method used to predict UViGs features such as ORFs, integration site, etc.",
@@ -6962,8 +6975,8 @@
                "type": "string"
             },
             "lib_layout": {
-               "description": "Specify whether to expect single, paired, or other configuration of reads",
-               "type": "string"
+               "$ref": "#/$defs/LibLayoutEnum",
+               "description": "Specify whether to expect single, paired, or other configuration of reads"
             },
             "lib_reads_seqd": {
                "description": "Total number of clones sequenced from the library",
@@ -7022,8 +7035,8 @@
                "type": "array"
             },
             "neg_cont_type": {
-               "description": "The substance or equipment used as a negative control in an investigation",
-               "type": "string"
+               "$ref": "#/$defs/NegContTypeEnum",
+               "description": "The substance or equipment used as a negative control in an investigation"
             },
             "nucl_acid_amp": {
                "description": "A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids",
@@ -7039,10 +7052,12 @@
             },
             "org_matter": {
                "description": "Concentration of organic matter",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "org_nitro": {
                "description": "Concentration of organic nitrogen",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "ph": {
@@ -7070,8 +7085,8 @@
                "type": "string"
             },
             "profile_position": {
-               "description": "Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas",
-               "type": "string"
+               "$ref": "#/$defs/ProfilePositionEnum",
+               "description": "Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas"
             },
             "project_name": {
                "description": "Name of the project within which the sequencing was organized",
@@ -7086,8 +7101,8 @@
                "type": "string"
             },
             "rel_to_oxygen": {
-               "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-               "type": "string"
+               "$ref": "#/$defs/RelToOxygenEnum",
+               "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
             },
             "salinity_meth": {
                "description": "Reference or method used in determining salinity",
@@ -7125,10 +7140,12 @@
             },
             "season_precpt": {
                "description": "The average of all seasonal precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps.",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "season_temp": {
                "description": "Mean seasonal temperature",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "seq_meth": {
@@ -7162,6 +7179,7 @@
             },
             "soil_text_measure": {
                "description": "The relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional.",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "soil_texture_meth": {
@@ -7170,6 +7188,7 @@
             },
             "soil_type": {
                "description": "Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple terms can be separated by pipes.",
+               "pattern": "^\\S+.* \\[\\S+:\\S+]$",
                "type": "string"
             },
             "soil_type_meth": {
@@ -7206,7 +7225,7 @@
             "tillage": {
                "description": "Note method(s) used for tilling",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/TillageEnum"
                },
                "type": "array"
             },
@@ -7216,6 +7235,7 @@
             },
             "tot_nitro_content": {
                "description": "Total nitrogen content of the sample",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "tot_org_c_meth": {
@@ -7224,6 +7244,7 @@
             },
             "tot_org_carb": {
                "description": "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "water_cont_soil_meth": {
@@ -7351,10 +7372,12 @@
             },
             "org_matter": {
                "description": "Concentration of organic matter",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "org_nitro": {
                "description": "Concentration of organic nitrogen",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "organism_count": {
@@ -7678,8 +7701,8 @@
                "type": "string"
             },
             "plant_sex": {
-               "description": "Sex of the reproductive parts on the whole plant, e.g. pistillate, staminate, monoecieous, hermaphrodite.",
-               "type": "string"
+               "$ref": "#/$defs/PlantSexEnum",
+               "description": "Sex of the reproductive parts on the whole plant, e.g. pistillate, staminate, monoecieous, hermaphrodite."
             },
             "plant_struc": {
                "description": "Name of plant structure the sample was obtained from; for Plant Ontology (PO) (v releases/2017-12-14) terms, see http://purl.bioontology.org/ontology/PO, e.g. petiole epidermis (PO_0000051). If an individual flower is sampled, the sex of it can be recorded here.",
@@ -7740,12 +7763,12 @@
                "type": "string"
             },
             "samp_capt_status": {
-               "description": "Reason for the sample",
-               "type": "string"
+               "$ref": "#/$defs/SampCaptStatusEnum",
+               "description": "Reason for the sample"
             },
             "samp_dis_stage": {
-               "description": "Stage of the disease at the time of sample collection, e.g. inoculation, penetration, infection, growth and reproduction, dissemination of pathogen.",
-               "type": "string"
+               "$ref": "#/$defs/SampDisStageEnum",
+               "description": "Stage of the disease at the time of sample collection, e.g. inoculation, penetration, infection, growth and reproduction, dissemination of pathogen."
             },
             "samp_name": {
                "description": "A local identifier or name that for the material sample used for extracting nucleic acids, and subsequent sequencing. It can refer either to the original material collected or to any derived sub-samples. It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible. INSDC requires every sample name from a single Submitter to be unique. Use of a globally unique identifier for the field source_mat_id is recommended in addition to sample_name.",
@@ -8250,10 +8273,12 @@
             },
             "org_matter": {
                "description": "Concentration of organic matter",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "org_nitro": {
                "description": "Concentration of organic nitrogen",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "organism_count": {
@@ -8338,8 +8363,8 @@
                "type": "string"
             },
             "sediment_type": {
-               "description": "Information about the sediment type based on major constituents",
-               "type": "string"
+               "$ref": "#/$defs/SedimentTypeEnum",
+               "description": "Information about the sediment type based on major constituents"
             },
             "silicate": {
                "description": "Concentration of silicate",
@@ -8363,8 +8388,8 @@
                "type": "string"
             },
             "tidal_stage": {
-               "description": "Stage of tide",
-               "type": "string"
+               "$ref": "#/$defs/TidalStageEnum",
+               "description": "Stage of tide"
             },
             "tot_carb": {
                "type": "string"
@@ -8375,10 +8400,12 @@
             },
             "tot_nitro_content": {
                "description": "Total nitrogen content of the sample",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "tot_org_carb": {
                "description": "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "turbidity": {
@@ -8522,8 +8549,8 @@
                "type": "string"
             },
             "drainage_class": {
-               "description": "Drainage classification from a standard system such as the USDA system",
-               "type": "string"
+               "$ref": "#/$defs/DrainageClassEnum",
+               "description": "Drainage classification from a standard system such as the USDA system"
             },
             "elev": {
                "description": "Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit.",
@@ -8535,8 +8562,8 @@
                "type": "string"
             },
             "fao_class": {
-               "description": "Soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups",
-               "type": "string"
+               "$ref": "#/$defs/FaoClassEnum",
+               "description": "Soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups"
             },
             "fire": {
                "description": "Historical and/or physical evidence of fire",
@@ -8598,10 +8625,12 @@
             },
             "org_matter": {
                "description": "Concentration of organic matter",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "org_nitro": {
                "description": "Concentration of organic nitrogen",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "ph": {
@@ -8625,8 +8654,8 @@
                "type": "string"
             },
             "profile_position": {
-               "description": "Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas",
-               "type": "string"
+               "$ref": "#/$defs/ProfilePositionEnum",
+               "description": "Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas"
             },
             "project_name": {
                "description": "Name of the project within which the sequencing was organized",
@@ -8647,10 +8676,12 @@
             },
             "season_precpt": {
                "description": "The average of all seasonal precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps.",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "season_temp": {
                "description": "Mean seasonal temperature",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "sieving": {
@@ -8671,6 +8702,7 @@
             },
             "soil_text_measure": {
                "description": "The relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional.",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "soil_texture_meth": {
@@ -8679,6 +8711,7 @@
             },
             "soil_type": {
                "description": "Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple terms can be separated by pipes.",
+               "pattern": "^\\S+.* \\[\\S+:\\S+]$",
                "type": "string"
             },
             "soil_type_meth": {
@@ -8697,7 +8730,7 @@
             "tillage": {
                "description": "Note method(s) used for tilling",
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/TillageEnum"
                },
                "type": "array"
             },
@@ -8707,6 +8740,7 @@
             },
             "tot_nitro_content": {
                "description": "Total nitrogen content of the sample",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "tot_org_c_meth": {
@@ -8715,6 +8749,7 @@
             },
             "tot_org_carb": {
                "description": "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "water_cont_soil_meth": {
@@ -8944,8 +8979,8 @@
                "type": "string"
             },
             "host_cellular_loc": {
-               "description": "The localization of the symbiotic host organism within the host from which it was sampled: e.g. intracellular if the symbiotic host organism is localized within the cells or extracellular if the symbiotic host organism is localized outside of cells.",
-               "type": "string"
+               "$ref": "#/$defs/HostCellularLocEnum",
+               "description": "The localization of the symbiotic host organism within the host from which it was sampled: e.g. intracellular if the symbiotic host organism is localized within the cells or extracellular if the symbiotic host organism is localized outside of cells."
             },
             "host_color": {
                "type": "string"
@@ -8954,8 +8989,8 @@
                "type": "string"
             },
             "host_dependence": {
-               "description": "Type of host dependence for the symbiotic host organism to its host.",
-               "type": "string"
+               "$ref": "#/$defs/HostDependenceEnum",
+               "description": "Type of host dependence for the symbiotic host organism to its host."
             },
             "host_dry_mass": {
                "type": "string"
@@ -9065,8 +9100,8 @@
                "type": "string"
             },
             "host_specificity": {
-               "description": "Level of specificity of symbiont-host interaction: e.g. generalist (symbiont able to establish associations with distantly related hosts) or species-specific.",
-               "type": "string"
+               "$ref": "#/$defs/HostSpecificityEnum",
+               "description": "Level of specificity of symbiont-host interaction: e.g. generalist (symbiont able to establish associations with distantly related hosts) or species-specific."
             },
             "host_subject_id": {
                "type": "string"
@@ -9096,8 +9131,8 @@
                "type": "array"
             },
             "mode_transmission": {
-               "description": "The process through which the symbiotic host organism entered the host from which it was sampled.",
-               "type": "string"
+               "$ref": "#/$defs/ModeTransmissionEnum",
+               "description": "The process through which the symbiotic host organism entered the host from which it was sampled."
             },
             "organism_count": {
                "type": "string"
@@ -9113,8 +9148,8 @@
                "type": "string"
             },
             "route_transmission": {
-               "description": "Description of path taken by the symbiotic host organism being sampled in order to establish a symbiotic relationship with the host (with which it was observed at the time of sampling) via a mode of transmission (specified in mode_transmission).",
-               "type": "string"
+               "$ref": "#/$defs/RouteTransmissionEnum",
+               "description": "Description of path taken by the symbiotic host organism being sampled in order to establish a symbiotic relationship with the host (with which it was observed at the time of sampling) via a mode of transmission (specified in mode_transmission)."
             },
             "samp_salinity": {
                "type": "string"
@@ -9148,12 +9183,12 @@
                "type": "array"
             },
             "sym_life_cycle_type": {
-               "description": "Type of life cycle of the symbiotic host species (the thing being sampled). Simple life cycles occur within a single host, complex ones within multiple different hosts over the course of their normal life cycle.",
-               "type": "string"
+               "$ref": "#/$defs/SymLifeCycleTypeEnum",
+               "description": "Type of life cycle of the symbiotic host species (the thing being sampled). Simple life cycles occur within a single host, complex ones within multiple different hosts over the course of their normal life cycle."
             },
             "symbiont_host_role": {
-               "description": "Role of the host in the life cycle of the symbiotic organism.",
-               "type": "string"
+               "$ref": "#/$defs/SymbiontHostRoleEnum",
+               "description": "Role of the host in the life cycle of the symbiotic organism."
             },
             "temp": {
                "description": "Temperature of the sample at the time of sampling.",
@@ -9161,8 +9196,8 @@
                "type": "string"
             },
             "type_of_symbiosis": {
-               "description": "Type of biological interaction established between the symbiotic host organism being sampled and its respective host",
-               "type": "string"
+               "$ref": "#/$defs/TypeOfSymbiosisEnum",
+               "description": "Type of biological interaction established between the symbiotic host organism being sampled and its respective host"
             }
          },
          "required": [],
@@ -9777,10 +9812,12 @@
             },
             "org_matter": {
                "description": "Concentration of organic matter",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "org_nitro": {
                "description": "Concentration of organic nitrogen",
+               "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                "type": "string"
             },
             "organism_count": {
@@ -9902,8 +9939,8 @@
                "type": "string"
             },
             "tidal_stage": {
-               "description": "Stage of tide",
-               "type": "string"
+               "$ref": "#/$defs/TidalStageEnum",
+               "description": "Stage of tide"
             },
             "tot_depth_water_col": {
                "description": "Measurement of total depth of water column",

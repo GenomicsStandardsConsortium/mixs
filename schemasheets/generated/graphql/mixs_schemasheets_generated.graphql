@@ -11,7 +11,7 @@ type Agriculture
     assemblyName: String
     assemblyQuality: String
     assemblySoftware: String
-    bioticRelationship: String
+    bioticRelationship: BioticRelationshipEnum
     chemAdministration: String
     chimeraCheck: String
     climateEnvironment: String
@@ -21,15 +21,15 @@ type Agriculture
     curLandUse: String
     curVegetation: String
     curVegetationMeth: String
-    drainageClass: String
+    drainageClass: DrainageClassEnum
     elev: String
     enrichmentProtocol: String
     extremeEvent: String
-    faoClass: String
+    faoClass: FaoClassEnum
     farmEquip: String
     farmEquipSan: String
     farmEquipShared: String
-    farmWaterSource: [String]
+    farmWaterSource: [FarmWaterSourceEnum]
     fertilizerAdmin: String
     fire: String
     flooding: String
@@ -62,7 +62,7 @@ type Agriculture
     hostTotMass: String
     humidity: String
     isolGrowthCondt: String
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
@@ -100,7 +100,7 @@ type Agriculture
     presAnimalInsect: String
     previousLandUse: String
     previousLandUseMeth: String
-    profilePosition: String
+    profilePosition: ProfilePositionEnum
     relLocation: String
     rootMedCarbon: String
     rootMedMacronutr: String
@@ -121,7 +121,7 @@ type Agriculture
     seasonPrecpt: String
     seasonTemp: String
     seqMeth: String
-    seqQualityCheck: String
+    seqQualityCheck: SeqQualityCheckEnum
     sequencingLocation: String
     sieving: String
     sizeFracLow: String
@@ -148,17 +148,17 @@ type Agriculture
     temp: String
     texture: String
     textureMeth: String
-    tillage: [String]
+    tillage: [TillageEnum]
     totCar: String
     totNMeth: String
     totNitro: String
     totOrgCMeth: String
     totOrgCarb: String
     totPhos: String
-    trophicLevel: String
+    trophicLevel: TrophicLevelEnum
     url: String
     waterPH: String
-    waterSourceShared: [String]
+    waterSourceShared: [WaterSourceSharedEnum]
     waterTempRegm: String
     wateringRegm: String
   }
@@ -201,109 +201,109 @@ type BuiltEnvironment
     absAirHumidity: String
     address: String
     adjRoom: String
-    aeroStruc: String
+    aeroStruc: AeroStrucEnum
     airTemp: String
     amountLight: String
-    archStruc: String
+    archStruc: ArchStrucEnum
     avgDewPoint: String
     avgOccup: Float
     avgTemp: String
     bathroomCount: Integer
     bedroomCount: Integer
-    buildDocs: String
-    buildOccupType: [String]
-    buildingSetting: String
+    buildDocs: BuildDocsEnum
+    buildOccupType: [BuildOccupTypeEnum]
+    buildingSetting: BuildingSettingEnum
     builtStrucAge: String
-    builtStrucSet: String
+    builtStrucSet: BuiltStrucSetEnum
     builtStrucType: String
     carbDioxide: String
     ceilArea: String
-    ceilCond: String
-    ceilFinishMat: String
-    ceilStruc: String
-    ceilTexture: String
+    ceilCond: CeilCondEnum
+    ceilFinishMat: CeilFinishMatEnum
+    ceilStruc: CeilStrucEnum
+    ceilTexture: CeilTextureEnum
     ceilThermalMass: String
-    ceilType: String
-    ceilWaterMold: String
+    ceilType: CeilTypeEnum
+    ceilWaterMold: CeilWaterMoldEnum
     coolSystId: Integer
     dateLastRain: String
     dewPoint: String
-    doorCompType: String
-    doorCond: String
-    doorDirect: String
-    doorLoc: String
-    doorMat: String
-    doorMove: String
+    doorCompType: DoorCompTypeEnum
+    doorCond: DoorCondEnum
+    doorDirect: DoorDirectEnum
+    doorLoc: DoorLocEnum
+    doorMat: DoorMatEnum
+    doorMove: DoorMoveEnum
     doorSize: String
-    doorType: String
-    doorTypeMetal: String
-    doorTypeWood: String
-    doorWaterMold: String
-    drawings: String
+    doorType: DoorTypeEnum
+    doorTypeMetal: DoorTypeMetalEnum
+    doorTypeWood: DoorTypeWoodEnum
+    doorWaterMold: DoorWaterMoldEnum
+    drawings: DrawingsEnum
     elevator: Integer
     escalator: Integer
     expDuct: String
     expPipe: Integer
     extDoor: Integer
-    extWallOrient: String
-    extWindowOrient: String
-    filterType: [String]
-    fireplaceType: String
+    extWallOrient: DrawingsEnum
+    extWindowOrient: ExtWindowOrientEnum
+    filterType: [FilterTypeEnum]
+    fireplaceType: FireplaceTypeEnum
     floorAge: String
     floorArea: String
-    floorCond: String
+    floorCond: FloorCondEnum
     floorCount: Integer
     floorFinishMat: String
     floorStruc: String
     floorThermalMass: String
-    floorWaterMold: String
+    floorWaterMold: FloorWaterMoldEnum
     freqClean: String
     freqCook: Integer
-    furniture: String
-    genderRestroom: String
+    furniture: FurnitureEnum
+    genderRestroom: GenderRestroomEnum
     hallCount: Integer
-    handidness: String
-    heatCoolType: [String]
+    handidness: HandidnessEnum
+    heatCoolType: [HeatCoolTypeEnum]
     heatDelivLoc: String
-    heatSysDelivMeth: String
+    heatSysDelivMeth: HeatSysDelivMethEnum
     heatSystemId: Integer
     heightCarperFiber: String
-    indoorSpace: String
+    indoorSpace: IndoorSpaceEnum
     indoorSurf: String
     insideLux: String
-    intWallCond: String
+    intWallCond: IntWallCondEnum
     lastClean: String
-    lightType: [String]
+    lightType: [LightTypeEnum]
     maxOccup: Integer
-    mechStruc: String
+    mechStruc: MechStrucEnum
     numberPets: Integer
     numberPlants: Integer
     numberResident: Integer
     occupDensitySamp: Float
-    occupDocument: String
+    occupDocument: OccupDocumentEnum
     occupSamp: Integer
     organismCount: String
     presAnimalInsect: String
     projectName: String
-    quadPos: String
+    quadPos: QuadPosEnum
     relAirHumidity: String
     relHumidityOut: String
-    relSampLoc: String
+    relSampLoc: RelSampLocEnum
     roomAirExchRate: String
     roomArchitecElem: String
-    roomCondt: String
-    roomConnected: String
+    roomCondt: RelSampLocEnum
+    roomConnected: RoomConnectedEnum
     roomCount: Integer
     roomDim: String
     roomDoorDist: String
     roomDoorShare: String
     roomHallway: String
-    roomLoc: String
+    roomLoc: RoomLocEnum
     roomMoistDamHist: Integer
     roomNetArea: String
     roomOccup: Integer
-    roomSampPos: String
-    roomType: String
+    roomSampPos: RoomSampPosEnum
+    roomType: RoomTypeEnum
     roomVol: String
     roomWallShare: String
     roomWindowCount: Integer
@@ -312,19 +312,19 @@ type BuiltEnvironment
     sampRoomId: String
     sampSortMeth: [String]
     sampTimeOut: Float
-    sampWeather: String
+    sampWeather: SampWeatherEnum
     season: String
-    seasonUse: String
-    shadDevWaterMold: String
-    shadingDeviceCond: String
-    shadingDeviceLoc: String
+    seasonUse: SeasonUseEnum
+    shadDevWaterMold: ShadDevWaterMoldEnum
+    shadingDeviceCond: ShadingDeviceCondEnum
+    shadingDeviceLoc: ShadingDeviceLocEnum
     shadingDeviceMat: String
-    shadingDeviceType: String
-    spaceTypState: String
-    specific: String
+    shadingDeviceType: ShadingDeviceTypeEnum
+    spaceTypState: SpaceTypStateEnum
+    specific: SpecificEnum
     specificHumidity: String
-    substructureType: [String]
-    surfAirCont: [String]
+    substructureType: [SubstructureTypeEnum]
+    surfAirCont: [SurfAirContEnum]
     surfHumidity: String
     surfMaterial: String
     surfMoisture: String
@@ -332,34 +332,34 @@ type BuiltEnvironment
     surfTemp: String
     tempOut: String
     trainLine: String
-    trainStatLoc: String
-    trainStopLoc: String
+    trainStatLoc: TrainStatLocEnum
+    trainStopLoc: TrainStopLocEnum
     typOccupDensity: Float
     ventilationType: String
     visMedia: String
     wallArea: String
-    wallConstType: String
-    wallFinishMat: String
+    wallConstType: WallConstTypeEnum
+    wallFinishMat: WallFinishMatEnum
     wallHeight: String
-    wallLoc: String
-    wallSurfTreatment: String
-    wallTexture: String
+    wallLoc: WallLocEnum
+    wallSurfTreatment: WallSurfTreatmentEnum
+    wallTexture: WallTextureEnum
     wallThermalMass: String
-    wallWaterMold: String
+    wallWaterMold: WallWaterMoldEnum
     waterFeatSize: String
-    waterFeatType: String
-    weekday: String
-    windowCond: String
+    waterFeatType: WaterFeatTypeEnum
+    weekday: WeekdayEnum
+    windowCond: WindowCondEnum
     windowCover: String
-    windowHorizPos: String
-    windowLoc: String
-    windowMat: String
+    windowHorizPos: WindowHorizPosEnum
+    windowLoc: WindowLocEnum
+    windowMat: WindowLocEnum
     windowOpenFreq: Integer
     windowSize: String
-    windowStatus: String
-    windowType: String
-    windowVertPos: String
-    windowWaterMold: String
+    windowStatus: WindowStatusEnum
+    windowType: WindowTypeEnum
+    windowVertPos: WindowVertPosEnum
+    windowWaterMold: WindowWaterMoldEnum
   }
 
 type ChecklistClass
@@ -398,7 +398,7 @@ type FoodAnimalAndAnimalFeed
     consPurchDate: String
     consQtyPurchased: String
     cultIsolDate: String
-    cultResult: String
+    cultResult: CultResultEnum
     cultResultOrg: [String]
     cultTarget: [String]
     enrichmentProtocol: String
@@ -426,7 +426,7 @@ type FoodAnimalAndAnimalFeed
     foodQualityDate: String
     foodSource: String
     foodSourceAge: String
-    foodTraceList: String
+    foodTraceList: FoodTraceListEnum
     foodTravMode: String
     foodTravVehic: [String]
     foodTreatProc: [String]
@@ -460,7 +460,7 @@ type FoodAnimalAndAnimalFeed
     sampStorLoc: String
     sampStorMedia: String
     sampStorTemp: String
-    sampTransportCont: String
+    sampTransportCont: SampTransportContEnum
     sampTransportDur: String
     sampTransportTemp: String
     sampVolWeDnaExt: String
@@ -504,7 +504,7 @@ type FoodFarmEnvironment
     cropRotation: String
     cropYield: String
     cultIsolDate: String
-    cultResult: String
+    cultResult: CultResultEnum
     cultResultOrg: [String]
     cultTarget: [String]
     dateExtrWeath: [String]
@@ -513,15 +513,15 @@ type FoodFarmEnvironment
     envBroadScale: String
     envLocalScale: String
     envMedium: String
-    extrWeatherEvent: [String]
+    extrWeatherEvent: [ExtrWeatherEventEnum]
     farmEquip: String
     farmEquipSan: String
     farmEquipSanFreq: String
     farmEquipShared: String
-    farmWaterSource: [String]
+    farmWaterSource: [FarmWaterSourceEnum]
     fertilizerAdmin: String
     fertilizerDate: String
-    foodCleanProc: [String]
+    foodCleanProc: [FoodCleanProcEnum]
     foodContactSurf: [String]
     foodContainWrap: String
     foodHarvestProc: String
@@ -564,7 +564,7 @@ type FoodFarmEnvironment
     phMeth: String
     plantGrowthMed: String
     plantPartMaturity: String
-    plantReprodCrop: [String]
+    plantReprodCrop: [PlantReprodCropEnum]
     plantWaterMethod: String
     previousLandUse: String
     prodLabelClaims: [String]
@@ -603,7 +603,7 @@ type FoodFarmEnvironment
     soilPH: String
     soilPorosity: String
     soilTemp: String
-    soilTextureClass: String
+    soilTextureClass: SoilTextureClassEnum
     soilTextureMeth: String
     soilType: String
     soilTypeMeth: String
@@ -616,7 +616,7 @@ type FoodFarmEnvironment
     spikeinSerovar: [String]
     spikeinStrain: [String]
     temp: String
-    tillage: [String]
+    tillage: [TillageEnum]
     timepoint: Float
     totNitroContMeth: String
     totNitroContent: String
@@ -628,7 +628,7 @@ type FoodFarmEnvironment
     waterFrequency: String
     waterPH: String
     waterSourceAdjac: [String]
-    waterSourceShared: [String]
+    waterSourceShared: [WaterSourceSharedEnum]
     windDirection: String
     windSpeed: String
   }
@@ -643,7 +643,7 @@ type FoodFoodProductionFacility
     collSiteGeoFeat: String
     collectionDate: String
     cultIsolDate: String
-    cultResult: String
+    cultResult: CultResultEnum
     cultResultOrg: [String]
     cultTarget: [String]
     dietaryClaimUse: [String]
@@ -653,7 +653,7 @@ type FoodFoodProductionFacility
     envMedium: String
     envMonitoringZone: String
     experimentalFactor: String
-    facilityType: [String]
+    facilityType: [FacilityTypeEnum]
     foodAdditive: [String]
     foodAllergenLabel: [String]
     foodContactSurf: [String]
@@ -676,7 +676,7 @@ type FoodFoodProductionFacility
     foodProductType: String
     foodQualityDate: String
     foodSource: String
-    foodTraceList: String
+    foodTraceList: FoodTraceListEnum
     foodTravMode: String
     foodTravVehic: [String]
     foodTreatProc: [String]
@@ -706,7 +706,7 @@ type FoodFoodProductionFacility
     sampCollectDevice: String
     sampCollectMethod: String
     sampFloor: String
-    sampLocCondition: String
+    sampLocCondition: SampLocConditionEnum
     sampName: String
     sampPooling: String
     sampPurpose: String
@@ -720,8 +720,8 @@ type FoodFoodProductionFacility
     sampStorLoc: String
     sampStorMedia: String
     sampStorTemp: String
-    sampSurfMoisture: [String]
-    sampTransportCont: String
+    sampSurfMoisture: [SampSubtypeEnum]
+    sampTransportCont: SampTransportContEnum
     sampTransportDur: String
     sampTransportTemp: String
     sampType: String
@@ -751,7 +751,7 @@ type FoodHumanFoods
     consPurchDate: String
     consQtyPurchased: String
     cultIsolDate: String
-    cultResult: String
+    cultResult: CultResultEnum
     cultResultOrg: [String]
     cultTarget: [String]
     dietaryClaimUse: [String]
@@ -789,7 +789,7 @@ type FoodHumanFoods
     foodProductType: String
     foodQualityDate: String
     foodSource: String
-    foodTraceList: String
+    foodTraceList: FoodTraceListEnum
     foodTravMode: String
     foodTravVehic: [String]
     foodTreatProc: [String]
@@ -831,7 +831,7 @@ type FoodHumanFoods
     sampStorLoc: String
     sampStorMedia: String
     sampStorTemp: String
-    sampTransportCont: String
+    sampTransportCont: SampTransportContEnum
     sampTransportDur: String
     sampTransportTemp: String
     sampVolWeDnaExt: String
@@ -901,8 +901,8 @@ type HostAssociated
     perturbation: String
     projectName: String
     salinity: String
-    sampCaptStatus: String
-    sampDisStage: String
+    sampCaptStatus: SampCaptStatusEnum
+    sampDisStage: SampDisStageEnum
     sampName: String
     sampStoreDur: String
     sampStoreLoc: String
@@ -963,7 +963,7 @@ type HumanAssociated
     temp: String
     travelOutSixMonth: [String]
     twinSibling: Boolean
-    urineCollectMeth: String
+    urineCollectMeth: UrineCollectMethEnum
     urogenitTractDisor: [String]
     weightLoss3Month: String
   }
@@ -1053,7 +1053,7 @@ type HumanSkin
   {
     chemAdministration: String
     dermatologyDisord: [String]
-    dominantHand: String
+    dominantHand: DominantHandEnum
     ethnicity: [String]
     hostAge: String
     hostBodyMassIndex: String
@@ -1164,12 +1164,12 @@ type HydrocarbonResourcesCores
     ethylbenzene: String
     field: String
     hcProduced: String
-    hcr: String
+    hcr: HcrEnum
     hcrFwSalinity: String
-    hcrGeolAge: String
+    hcrGeolAge: HcrGeolAgeEnum
     hcrPressure: String
     hcrTemp: String
-    lithology: String
+    lithology: LithologyEnum
     magnesium: String
     miscParam: [String]
     nitrate: String
@@ -1193,7 +1193,7 @@ type HydrocarbonResourcesCores
     sampStoreDur: String
     sampStoreLoc: String
     sampStoreTemp: String
-    sampSubtype: String
+    sampSubtype: SampSubtypeEnum
     sampTransportCond: String
     sampTvdss: String
     sampType: String
@@ -1201,10 +1201,10 @@ type HydrocarbonResourcesCores
     sampWellName: String
     saturatesPc: String
     sodium: String
-    srDepEnv: String
-    srGeolAge: String
-    srKerogType: String
-    srLithology: String
+    srDepEnv: SrDepEnvEnum
+    srGeolAge: SrGeolAgeEnum
+    srKerogType: SrKerogTypeEnum
+    srLithology: SrLithologyEnum
     sulfate: String
     sulfateFw: String
     sulfide: String
@@ -1254,14 +1254,14 @@ type HydrocarbonResourcesFluidsSwabs
     ethylbenzene: String
     field: String
     hcProduced: String
-    hcr: String
+    hcr: HcrEnum
     hcrFwSalinity: String
-    hcrGeolAge: String
+    hcrGeolAge: HcrGeolAgeEnum
     hcrPressure: String
     hcrTemp: String
     iwBtDateWell: String
     iwf: String
-    lithology: String
+    lithology: LithologyEnum
     magnesium: String
     miscParam: [String]
     nitrate: String
@@ -1279,14 +1279,14 @@ type HydrocarbonResourcesFluidsSwabs
     reservoir: String
     resinsPc: String
     salinity: String
-    sampCollectPoint: String
+    sampCollectPoint: SampCollectPointEnum
     sampLocCorrRate: String
     sampName: String
     sampPreserv: String
     sampStoreDur: String
     sampStoreLoc: String
     sampStoreTemp: String
-    sampSubtype: String
+    sampSubtype: SampSubtypeEnum
     sampTransportCond: String
     sampType: String
     sampVolWeDnaExt: String
@@ -1392,7 +1392,7 @@ interface MigsBa
     assemblyQual: String!
     assemblySoftware: String!
     associatedResource: [String]
-    bioticRelationship: String
+    bioticRelationship: BioticRelationshipEnum
     collectionDate: String!
     complScore: String
     complSoftware: String
@@ -1411,12 +1411,12 @@ interface MigsBa
     hostSpecRange: [Integer]
     isolGrowthCondt: String!
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     numReplicons: Integer!
@@ -1426,7 +1426,7 @@ interface MigsBa
     projectName: String!
     refBiomaterial: String!
     refDb: String
-    relToOxygen: String
+    relToOxygen: RelToOxygenEnum
     sampCollecDevice: String
     sampCollecMethod: String
     sampMatProcess: String
@@ -1441,9 +1441,9 @@ interface MigsBa
     specificHost: String
     subspecfGenLin: String
     taxClass: String
-    taxIdent: String
+    taxIdent: TaxIdentEnum
     temp: String
-    trophicLevel: String
+    trophicLevel: TrophicLevelEnum
   }
 
 interface MigsEu
@@ -1455,7 +1455,7 @@ interface MigsEu
     assemblyQual: String!
     assemblySoftware: String!
     associatedResource: [String]
-    bioticRelationship: String
+    bioticRelationship: BioticRelationshipEnum
     collectionDate: String!
     complScore: String
     complSoftware: String
@@ -1473,12 +1473,12 @@ interface MigsEu
     hostSpecRange: [Integer]
     isolGrowthCondt: String!
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     numReplicons: Integer
@@ -1504,9 +1504,9 @@ interface MigsEu
     specificHost: String
     subspecfGenLin: String
     taxClass: String
-    taxIdent: String
+    taxIdent: TaxIdentEnum
     temp: String
-    trophicLevel: String
+    trophicLevel: TrophicLevelEnum
   }
 
 interface MigsOrg
@@ -1533,12 +1533,12 @@ interface MigsOrg
     geoLocName: String!
     isolGrowthCondt: String!
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     numberContig: Integer
@@ -1559,7 +1559,7 @@ interface MigsOrg
     sourceMatId: [String]
     subspecfGenLin: String
     taxClass: String
-    taxIdent: String
+    taxIdent: TaxIdentEnum
     temp: String
   }
 
@@ -1588,12 +1588,12 @@ interface MigsPl
     hostSpecRange: [Integer]
     isolGrowthCondt: String!
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     numberContig: Integer
@@ -1616,7 +1616,7 @@ interface MigsPl
     specificHost: String
     subspecfGenLin: String
     taxClass: String
-    taxIdent: String
+    taxIdent: TaxIdentEnum
     temp: String
   }
 
@@ -1629,7 +1629,7 @@ interface MigsVi
     assemblyQual: String
     assemblySoftware: String!
     associatedResource: [String]
-    bioticRelationship: String
+    bioticRelationship: BioticRelationshipEnum
     collectionDate: String!
     complScore: String
     complSoftware: String
@@ -1647,12 +1647,12 @@ interface MigsVi
     hostSpecRange: [Integer]
     isolGrowthCondt: String!
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     numReplicons: Integer
@@ -1677,9 +1677,9 @@ interface MigsVi
     specificHost: String
     subspecfGenLin: String
     taxClass: String
-    taxIdent: String
+    taxIdent: TaxIdentEnum
     temp: String
-    virusEnrichAppr: String
+    virusEnrichAppr: VirusEnrichApprEnum
   }
 
 interface Mimag
@@ -1693,14 +1693,14 @@ interface Mimag
     assemblyQual: String!
     assemblySoftware: String!
     associatedResource: [String]
-    binParam: String!
+    binParam: BinParamEnum!
     binSoftware: String!
     collectionDate: String!
-    complAppr: String
+    complAppr: ComplApprEnum
     complScore: String!
     complSoftware: String!
     contamScore: String!
-    contamScreenInput: String
+    contamScreenInput: ContamScreenInputEnum
     contamScreenParam: String
     decontamSoftware: String
     depth: String
@@ -1712,14 +1712,14 @@ interface Mimag
     featPred: String
     geoLocName: String!
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
-    magCovSoftware: String
+    magCovSoftware: MagCovSoftwareEnum
     mid: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     numberContig: Integer
@@ -1728,7 +1728,7 @@ interface Mimag
     reassemblyBin: Boolean
     refBiomaterial: String
     refDb: String
-    relToOxygen: String
+    relToOxygen: RelToOxygenEnum
     sampCollecDevice: String
     sampCollecMethod: String
     sampMatProcess: String
@@ -1742,7 +1742,7 @@ interface Mimag
     sop: [String]
     sourceMatId: [String]
     taxClass: String
-    taxIdent: String!
+    taxIdent: TaxIdentEnum!
     temp: String
     trnaExtSoftware: String
     trnas: Integer
@@ -1752,7 +1752,7 @@ interface MimarksC
   {
     alt: String
     associatedResource: [String]
-    bioticRelationship: String
+    bioticRelationship: BioticRelationshipEnum
     chimeraCheck: String
     collectionDate: String!
     depth: String
@@ -1765,14 +1765,14 @@ interface MimarksC
     geoLocName: String!
     isolGrowthCondt: String!
     latLon: String!
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     pcrCond: String
     pcrPrimers: String
     posContType: String
     projectName: String!
-    relToOxygen: String
+    relToOxygen: RelToOxygenEnum
     sampCollecDevice: String
     sampCollecMethod: String
     sampMatProcess: String
@@ -1781,14 +1781,14 @@ interface MimarksC
     sampTaxonId: String!
     sampVolWeDnaExt: String
     seqMeth: String!
-    seqQualityCheck: String
+    seqQualityCheck: SeqQualityCheckEnum
     sop: [String]
     sourceMatId: [String]
     subspecfGenLin: String
     targetGene: String!
     targetSubfragment: String
     temp: String
-    trophicLevel: String
+    trophicLevel: TrophicLevelEnum
   }
 
 interface MimarksS
@@ -1807,20 +1807,20 @@ interface MimarksS
     experimentalFactor: String
     geoLocName: String!
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
     mid: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     pcrCond: String
     pcrPrimers: String
     posContType: String
     projectName: String!
-    relToOxygen: String
+    relToOxygen: RelToOxygenEnum
     sampCollecDevice: String
     sampCollecMethod: String
     sampMatProcess: String
@@ -1829,7 +1829,7 @@ interface MimarksS
     sampTaxonId: String!
     sampVolWeDnaExt: String
     seqMeth: String!
-    seqQualityCheck: String
+    seqQualityCheck: SeqQualityCheckEnum
     sizeFrac: String
     sop: [String]
     sourceMatId: [String]
@@ -1857,13 +1857,13 @@ type Mims
     featPred: String
     geoLocName: String!
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
     mid: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     numberContig: Integer
@@ -1871,7 +1871,7 @@ type Mims
     projectName: String!
     refBiomaterial: String
     refDb: String
-    relToOxygen: String
+    relToOxygen: RelToOxygenEnum
     sampCollecDevice: String
     sampCollecMethod: String
     sampMatProcess: String
@@ -1900,10 +1900,10 @@ type MimsSoil implements Mims
     curVegetation: String
     curVegetationMeth: String
     depth: String
-    drainageClass: String
+    drainageClass: DrainageClassEnum
     elev: String
     extremeEvent: String
-    faoClass: String
+    faoClass: FaoClassEnum
     fire: String
     flooding: String
     heavyMetals: [String]
@@ -1924,7 +1924,7 @@ type MimsSoil implements Mims
     poolDnaExtracts: String
     prevLandUseMeth: String
     previousLandUse: String
-    profilePosition: String
+    profilePosition: ProfilePositionEnum
     projectName: String
     salinityMeth: String
     sampName: String
@@ -1941,7 +1941,7 @@ type MimsSoil implements Mims
     soilTypeMeth: String
     storeCond: String
     temp: String
-    tillage: [String]
+    tillage: [TillageEnum]
     totNitroContMeth: String
     totNitroContent: String
     totOrgCMeth: String
@@ -1963,20 +1963,20 @@ type MimsSoil implements Mims
     featPred: String
     geoLocName: String!
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
     mid: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     numberContig: Integer
     posContType: String
     refBiomaterial: String
     refDb: String
-    relToOxygen: String
+    relToOxygen: RelToOxygenEnum
     sampCollecDevice: String
     sampCollecMethod: String
     sampMatProcess: String
@@ -2002,11 +2002,11 @@ interface Misag
     assemblySoftware: String!
     associatedResource: [String]
     collectionDate: String!
-    complAppr: String
+    complAppr: ComplApprEnum
     complScore: String!
     complSoftware: String!
     contamScore: String!
-    contamScreenInput: String
+    contamScreenInput: ContamScreenInputEnum
     contamScreenParam: String
     decontamSoftware: String
     depth: String
@@ -2018,13 +2018,13 @@ interface Misag
     featPred: String
     geoLocName: String!
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
     mid: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     numberContig: Integer
@@ -2032,7 +2032,7 @@ interface Misag
     projectName: String!
     refBiomaterial: String
     refDb: String
-    relToOxygen: String
+    relToOxygen: RelToOxygenEnum
     sampCollecDevice: String
     sampCollecMethod: String
     sampMatProcess: String
@@ -2042,18 +2042,18 @@ interface Misag
     sampVolWeDnaExt: String
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: String!
+    singleCellLysisAppr: SingleCellLysisApprEnum!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
-    sortTech: String!
+    sortTech: SortTechEnum!
     sourceMatId: [String]
     taxClass: String
-    taxIdent: String!
+    taxIdent: TaxIdentEnum!
     temp: String
     trnaExtSoftware: String
     trnas: Integer
-    wgaAmpAppr: String!
+    wgaAmpAppr: WgaAmpApprEnum!
     wgaAmpKit: String
   }
 
@@ -2116,11 +2116,11 @@ interface Miuvig
     assemblyQual: String!
     assemblySoftware: String!
     associatedResource: [String]
-    binParam: String
+    binParam: BinParamEnum
     binSoftware: String
-    bioticRelationship: String
+    bioticRelationship: BioticRelationshipEnum
     collectionDate: String!
-    complAppr: String
+    complAppr: ComplApprEnum
     complScore: String
     complSoftware: String
     depth: String
@@ -2134,18 +2134,18 @@ interface Miuvig
     featPred: String
     geoLocName: String!
     hostDiseaseStat: [String]
-    hostPredAppr: String
+    hostPredAppr: HostPredApprEnum
     hostPredEstAcc: String
     hostSpecRange: [Integer]
     latLon: String!
-    libLayout: String
+    libLayout: LibLayoutEnum
     libReadsSeqd: Integer
     libScreen: String
     libSize: Integer
     libVector: String
-    magCovSoftware: String
+    magCovSoftware: MagCovSoftwareEnum
     mid: String
-    negContType: String
+    negContType: NegContTypeEnum
     nuclAcidAmp: String
     nuclAcidExt: String
     numberContig: Integer!
@@ -2154,7 +2154,7 @@ interface Miuvig
     otuSeqCompAppr: String
     pathogenicity: String
     posContType: String
-    predGenomeStruc: String!
+    predGenomeStruc: PredGenomeStrucEnum!
     predGenomeType: String!
     projectName: String!
     reassemblyBin: Boolean
@@ -2169,22 +2169,22 @@ interface Miuvig
     sampVolWeDnaExt: String
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: String
+    singleCellLysisAppr: SingleCellLysisApprEnum
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
-    sortTech: String
+    sortTech: SortTechEnum
     sourceMatId: [String]
     sourceUvig: String!
     specificHost: String
     taxClass: String
-    taxIdent: String
+    taxIdent: TaxIdentEnum
     temp: String
     trnaExtSoftware: String
     trnas: Integer
     virIdentSoftware: String!
-    virusEnrichAppr: String!
-    wgaAmpAppr: String
+    virusEnrichAppr: VirusEnrichApprEnum!
+    wgaAmpAppr: WgaAmpApprEnum
     wgaAmpKit: String
   }
 
@@ -2237,7 +2237,7 @@ type PlantAssociated
     phRegm: String
     plantGrowthMed: String
     plantProduct: String
-    plantSex: String
+    plantSex: PlantSexEnum
     plantStruc: String
     projectName: String
     radiationRegm: [String]
@@ -2252,8 +2252,8 @@ type PlantAssociated
     rootMedSuppl: String
     salinity: String
     saltRegm: String
-    sampCaptStatus: String
-    sampDisStage: String
+    sampCaptStatus: SampCaptStatusEnum
+    sampDisStage: SampDisStageEnum
     sampName: String
     sampStoreDur: String
     sampStoreLoc: String
@@ -2326,13 +2326,13 @@ type Sediment
     sampStoreLoc: String
     sampStoreTemp: String
     sampVolWeDnaExt: String
-    sedimentType: String
+    sedimentType: SedimentTypeEnum
     silicate: String
     sodium: String
     sulfate: String
     sulfide: String
     temp: String
-    tidalStage: String
+    tidalStage: TidalStageEnum
     totCarb: String
     totDepthWaterCol: String
     totNitroContent: String
@@ -2353,10 +2353,10 @@ type Soil
     curVegetation: String
     curVegetationMeth: String
     depth: String
-    drainageClass: String
+    drainageClass: DrainageClassEnum
     elev: String
     extremeEvent: String
-    faoClass: String
+    faoClass: FaoClassEnum
     fire: String
     flooding: String
     heavyMetals: [String]
@@ -2377,7 +2377,7 @@ type Soil
     poolDnaExtracts: String
     prevLandUseMeth: String
     previousLandUse: String
-    profilePosition: String
+    profilePosition: ProfilePositionEnum
     projectName: String
     salinityMeth: String
     sampName: String
@@ -2394,7 +2394,7 @@ type Soil
     soilTypeMeth: String
     storeCond: String
     temp: String
-    tillage: [String]
+    tillage: [TillageEnum]
     totNitroContMeth: String
     totNitroContent: String
     totOrgCMeth: String
@@ -2420,10 +2420,10 @@ type SymbiontAssociated
     hostBodyHabitat: String
     hostBodyProduct: String
     hostBodySite: String
-    hostCellularLoc: String
+    hostCellularLoc: HostCellularLocEnum
     hostColor: String
     hostCommonName: String
-    hostDependence: String
+    hostDependence: HostDependenceEnum
     hostDryMass: String
     hostFamilyRelationship: String
     hostGenotype: String
@@ -2451,7 +2451,7 @@ type SymbiontAssociated
     hostPhenotype: String
     hostSex: String
     hostShape: String
-    hostSpecificity: String
+    hostSpecificity: HostSpecificityEnum
     hostSubjectId: String
     hostSubstrate: String
     hostSymbiont: String
@@ -2459,12 +2459,12 @@ type SymbiontAssociated
     hostTotMass: String
     latLon: String
     miscParam: [String]
-    modeTransmission: String
+    modeTransmission: ModeTransmissionEnum
     organismCount: String
     oxyStatSamp: String
     perturbation: String
     projectName: String
-    routeTransmission: String
+    routeTransmission: RouteTransmissionEnum
     sampSalinity: String
     sampStoreDur: String
     sampStoreLoc: String
@@ -2473,10 +2473,10 @@ type SymbiontAssociated
     sampVolWeDnaExt: String
     sampleName: String
     sourceMatId: [String]
-    symLifeCycleType: String
-    symbiontHostRole: String
+    symLifeCycleType: SymLifeCycleTypeEnum
+    symbiontHostRole: SymbiontHostRoleEnum
     temp: String
-    typeOfSymbiosis: String
+    typeOfSymbiosis: TypeOfSymbiosisEnum
   }
 
 type WastewaterSludge
@@ -2601,7 +2601,7 @@ type Water
     sulfide: String
     suspendPartMatter: String
     temp: String
-    tidalStage: String
+    tidalStage: TidalStageEnum
     totDepthWaterCol: String
     totDissNitro: String
     totInorgNitro: String

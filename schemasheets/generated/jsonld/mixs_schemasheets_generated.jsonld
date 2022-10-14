@@ -4361,7 +4361,7 @@
         "Miuvig"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "bin_param_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -4454,7 +4454,7 @@
         "Agriculture"
       ],
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "biotic_relationship_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -4601,7 +4601,7 @@
         "Miuvig"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "compl_appr_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -4782,7 +4782,7 @@
         "Misag"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "contam_screen_input_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -5626,7 +5626,7 @@
         "Miuvig"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "host_pred_appr_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -5879,7 +5879,7 @@
         "Agriculture"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -6130,7 +6130,7 @@
         "Miuvig"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "mag_cov_software_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -6222,7 +6222,7 @@
         "Mims"
       ],
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -6810,7 +6810,7 @@
         "Miuvig"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "pred_genome_struc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -7158,7 +7158,7 @@
         "Mims"
       ],
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "rel_to_oxygen_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -7680,7 +7680,7 @@
         "Agriculture"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "seq_quality_check_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -7771,7 +7771,7 @@
         "Miuvig"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "single_cell_lysis_appr_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -7954,7 +7954,7 @@
         "Miuvig"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "sort_tech_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -8335,7 +8335,7 @@
         "Miuvig"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "tax_ident_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -8543,7 +8543,7 @@
         "Agriculture"
       ],
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "trophic_level_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -8626,7 +8626,7 @@
         "Miuvig"
       ],
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "virus_enrich_appr_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -8668,7 +8668,7 @@
         "Miuvig"
       ],
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "wga_amp_appr_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -9202,7 +9202,7 @@
         "Agriculture",
         "Soil"
       ],
-      "range": "string",
+      "range": "drainage_class_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -9288,7 +9288,7 @@
         "Agriculture",
         "Soil"
       ],
-      "range": "string",
+      "range": "fao_class_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -9363,7 +9363,7 @@
         "Agriculture",
         "FoodFarmEnvironment"
       ],
-      "range": "string",
+      "range": "farm_water_source_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -10784,7 +10784,7 @@
         "Agriculture",
         "Soil"
       ],
-      "range": "string",
+      "range": "profile_position_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -11123,6 +11123,7 @@
         "Soil"
       ],
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -11164,6 +11165,7 @@
         "Soil"
       ],
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -11480,6 +11482,7 @@
         "Soil"
       ],
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -11676,7 +11679,7 @@
         "FoodFarmEnvironment",
         "Soil"
       ],
-      "range": "string",
+      "range": "tillage_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -11823,6 +11826,7 @@
         "Soil"
       ],
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -11895,7 +11899,7 @@
         "Agriculture",
         "FoodFarmEnvironment"
       ],
-      "range": "string",
+      "range": "water_source_shared_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -12459,7 +12463,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "aero_struc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -12545,7 +12549,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "arch_struc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -12760,7 +12764,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "build_docs_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -12795,7 +12799,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "build_occup_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -12829,7 +12833,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "building_setting_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -12902,7 +12906,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "built_struc_set_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13009,7 +13013,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "ceil_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13043,7 +13047,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "ceil_finish_mat_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13077,7 +13081,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "ceil_struc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13111,7 +13115,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "ceil_texture_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13184,7 +13188,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "ceil_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13218,7 +13222,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "ceil_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13359,7 +13363,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "door_comp_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13393,7 +13397,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "door_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13427,7 +13431,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "door_direct_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13461,7 +13465,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "door_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13495,7 +13499,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "door_mat_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13529,7 +13533,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "door_move_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13602,7 +13606,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "door_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13636,7 +13640,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "door_type_metal_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13670,7 +13674,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "door_type_wood_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13704,7 +13708,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "door_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13738,7 +13742,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "drawings_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13947,7 +13951,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "drawings_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -13981,7 +13985,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "ext_window_orient_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14016,7 +14020,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "filter_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14050,7 +14054,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "fireplace_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14162,7 +14166,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "floor_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14337,7 +14341,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "floor_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14418,7 +14422,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "furniture_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14452,7 +14456,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "gender_restroom_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14520,7 +14524,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "handidness_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14555,7 +14559,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "heat_cool_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14623,7 +14627,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "heat_sys_deliv_meth_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14730,7 +14734,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "indoor_space_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14816,7 +14820,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "int_wall_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14885,7 +14889,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "light_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -14953,7 +14957,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "mech_struc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -15123,7 +15127,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "occup_document_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -15191,7 +15195,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "quad_pos_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -15303,7 +15307,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "rel_samp_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -15410,7 +15414,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "rel_samp_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -15444,7 +15448,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "room_connected_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -15659,7 +15663,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "room_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -15800,7 +15804,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "room_samp_pos_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -15834,7 +15838,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "room_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16075,7 +16079,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "samp_weather_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16109,7 +16113,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "season_use_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16143,7 +16147,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "shad_dev_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16177,7 +16181,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "shading_device_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16211,7 +16215,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "shading_device_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16279,7 +16283,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "shading_device_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16313,7 +16317,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "space_typ_state_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16347,7 +16351,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "specific_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16421,7 +16425,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "substructure_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16456,7 +16460,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "surf_air_cont_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16727,7 +16731,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "train_stat_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16761,7 +16765,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "train_stop_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16902,7 +16906,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "wall_const_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -16936,7 +16940,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "wall_finish_mat_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17009,7 +17013,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "wall_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17043,7 +17047,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "wall_surf_treatment_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17077,7 +17081,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "wall_texture_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17150,7 +17154,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "wall_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17223,7 +17227,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "water_feat_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17257,7 +17261,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "weekday_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17291,7 +17295,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "window_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17359,7 +17363,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "window_horiz_pos_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17393,7 +17397,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "window_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17427,7 +17431,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "window_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17534,7 +17538,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "window_status_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17568,7 +17572,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "window_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17602,7 +17606,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "window_vert_pos_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -17636,7 +17640,7 @@
       "domain_of": [
         "BuiltEnvironment"
       ],
-      "range": "string",
+      "range": "window_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -18258,7 +18262,7 @@
         "FoodFoodProductionFacility",
         "FoodHumanFoods"
       ],
-      "range": "string",
+      "range": "cult_result_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -18910,7 +18914,7 @@
         "FoodFoodProductionFacility",
         "FoodHumanFoods"
       ],
-      "range": "string",
+      "range": "food_trace_list_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -19411,7 +19415,7 @@
         "FoodFoodProductionFacility",
         "FoodHumanFoods"
       ],
-      "range": "string",
+      "range": "samp_transport_cont_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -20246,7 +20250,7 @@
       "domain_of": [
         "FoodFarmEnvironment"
       ],
-      "range": "string",
+      "range": "extr_weather_event_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -20349,7 +20353,7 @@
       "domain_of": [
         "FoodFarmEnvironment"
       ],
-      "range": "string",
+      "range": "food_clean_proc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -20556,7 +20560,7 @@
       "domain_of": [
         "FoodFarmEnvironment"
       ],
-      "range": "string",
+      "range": "plant_reprod_crop_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -20763,7 +20767,7 @@
       "domain_of": [
         "FoodFarmEnvironment"
       ],
-      "range": "string",
+      "range": "soil_texture_class_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -20876,6 +20880,7 @@
         "Soil"
       ],
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -21143,7 +21148,7 @@
       "domain_of": [
         "FoodFoodProductionFacility"
       ],
-      "range": "string",
+      "range": "facility_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -21353,7 +21358,7 @@
       "domain_of": [
         "FoodFoodProductionFacility"
       ],
-      "range": "string",
+      "range": "samp_loc_condition_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -21388,7 +21393,7 @@
       "domain_of": [
         "FoodFoodProductionFacility"
       ],
-      "range": "string",
+      "range": "samp_subtype_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -22389,7 +22394,7 @@
         "HostAssociated",
         "PlantAssociated"
       ],
-      "range": "string",
+      "range": "samp_capt_status_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -22424,7 +22429,7 @@
         "HostAssociated",
         "PlantAssociated"
       ],
-      "range": "string",
+      "range": "samp_dis_stage_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -23227,7 +23232,7 @@
       "domain_of": [
         "HumanAssociated"
       ],
-      "range": "string",
+      "range": "urine_collect_meth_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -23509,7 +23514,7 @@
       "domain_of": [
         "HumanSkin"
       ],
-      "range": "string",
+      "range": "dominant_hand_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -24735,7 +24740,7 @@
         "HydrocarbonResourcesCores",
         "HydrocarbonResourcesFluidsSwabs"
       ],
-      "range": "string",
+      "range": "hcr_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -24810,7 +24815,7 @@
         "HydrocarbonResourcesCores",
         "HydrocarbonResourcesFluidsSwabs"
       ],
-      "range": "string",
+      "range": "hcr_geol_age_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -24925,7 +24930,7 @@
         "HydrocarbonResourcesCores",
         "HydrocarbonResourcesFluidsSwabs"
       ],
-      "range": "string",
+      "range": "lithology_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -25398,7 +25403,7 @@
         "HydrocarbonResourcesCores",
         "HydrocarbonResourcesFluidsSwabs"
       ],
-      "range": "string",
+      "range": "samp_subtype_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -25631,7 +25636,7 @@
       "domain_of": [
         "HydrocarbonResourcesCores"
       ],
-      "range": "string",
+      "range": "sr_dep_env_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -25665,7 +25670,7 @@
       "domain_of": [
         "HydrocarbonResourcesCores"
       ],
-      "range": "string",
+      "range": "sr_geol_age_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -25699,7 +25704,7 @@
       "domain_of": [
         "HydrocarbonResourcesCores"
       ],
-      "range": "string",
+      "range": "sr_kerog_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -25733,7 +25738,7 @@
       "domain_of": [
         "HydrocarbonResourcesCores"
       ],
-      "range": "string",
+      "range": "sr_lithology_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -26685,7 +26690,7 @@
       "domain_of": [
         "HydrocarbonResourcesFluidsSwabs"
       ],
-      "range": "string",
+      "range": "samp_collect_point_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -27472,6 +27477,7 @@
         "Water"
       ],
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -27515,6 +27521,7 @@
         "Water"
       ],
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -28358,7 +28365,7 @@
       "domain_of": [
         "PlantAssociated"
       ],
-      "range": "string",
+      "range": "plant_sex_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -28658,7 +28665,7 @@
       "domain_of": [
         "Sediment"
       ],
-      "range": "string",
+      "range": "sediment_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -28693,7 +28700,7 @@
         "Sediment",
         "Water"
       ],
-      "range": "string",
+      "range": "tidal_stage_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -28983,6 +28990,7 @@
         "Soil"
       ],
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -29089,7 +29097,7 @@
       "domain_of": [
         "SymbiontAssociated"
       ],
-      "range": "string",
+      "range": "host_cellular_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -29123,7 +29131,7 @@
       "domain_of": [
         "SymbiontAssociated"
       ],
-      "range": "string",
+      "range": "host_dependence_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -29750,7 +29758,7 @@
       "domain_of": [
         "SymbiontAssociated"
       ],
-      "range": "string",
+      "range": "host_specificity_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -29784,7 +29792,7 @@
       "domain_of": [
         "SymbiontAssociated"
       ],
-      "range": "string",
+      "range": "mode_transmission_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -29818,7 +29826,7 @@
       "domain_of": [
         "SymbiontAssociated"
       ],
-      "range": "string",
+      "range": "route_transmission_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -29898,7 +29906,7 @@
       "domain_of": [
         "SymbiontAssociated"
       ],
-      "range": "string",
+      "range": "sym_life_cycle_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -29932,7 +29940,7 @@
       "domain_of": [
         "SymbiontAssociated"
       ],
-      "range": "string",
+      "range": "symbiont_host_role_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -29966,7 +29974,7 @@
       "domain_of": [
         "SymbiontAssociated"
       ],
-      "range": "string",
+      "range": "type_of_symbiosis_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -31636,7 +31644,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "biotic_relationship",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "biotic_relationship_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -32456,7 +32464,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -32655,7 +32663,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -33068,7 +33076,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "rel_to_oxygen",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "rel_to_oxygen_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -33695,7 +33703,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tax_ident",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "tax_ident_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -33780,7 +33788,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "trophic_level",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "trophic_level_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -34119,7 +34127,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "biotic_relationship",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "biotic_relationship_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -34895,7 +34903,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -35094,7 +35102,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -36173,7 +36181,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tax_ident",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "tax_ident_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -36258,7 +36266,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "trophic_level",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "trophic_level_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -37248,7 +37256,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -37447,7 +37455,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -38317,7 +38325,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tax_ident",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "tax_ident_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -39392,7 +39400,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -39591,7 +39599,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -40545,7 +40553,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tax_ident",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "tax_ident_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -40926,7 +40934,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "biotic_relationship",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "biotic_relationship_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -41705,7 +41713,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -41904,7 +41912,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -42942,7 +42950,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tax_ident",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "tax_ident_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -43027,7 +43035,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "virus_enrich_appr",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "virus_enrich_appr_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -43447,7 +43455,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "bin_param",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "bin_param_enum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -43573,7 +43581,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "compl_appr",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "compl_appr_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -43741,7 +43749,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "contam_screen_input",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "contam_screen_input_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -44267,7 +44275,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -44477,7 +44485,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "mag_cov_software",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "mag_cov_software_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -44555,7 +44563,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -44923,7 +44931,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "rel_to_oxygen",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "rel_to_oxygen_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -45511,7 +45519,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tax_ident",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "tax_ident_enum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -45764,7 +45772,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "biotic_relationship",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "biotic_relationship_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -46328,7 +46336,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -46617,7 +46625,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "rel_to_oxygen",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "rel_to_oxygen_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -46993,7 +47001,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "seq_quality_check",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "seq_quality_check_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -47290,7 +47298,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "trophic_level",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "trophic_level_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -47949,7 +47957,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -48196,7 +48204,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -48485,7 +48493,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "rel_to_oxygen",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "rel_to_oxygen_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -48863,7 +48871,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "seq_quality_check",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "seq_quality_check_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -49580,7 +49588,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "compl_appr",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "compl_appr_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -49748,7 +49756,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "contam_screen_input",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "contam_screen_input_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -50274,7 +50282,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -50521,7 +50529,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -50848,7 +50856,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "rel_to_oxygen",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "rel_to_oxygen_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -51267,7 +51275,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "single_cell_lysis_appr",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "single_cell_lysis_appr_enum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -51435,7 +51443,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "sort_tech",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "sort_tech_enum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -51561,7 +51569,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tax_ident",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "tax_ident_enum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -51728,7 +51736,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "wga_amp_appr",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "wga_amp_appr_enum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -52107,7 +52115,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "bin_param",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "bin_param_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -52191,7 +52199,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "biotic_relationship",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "biotic_relationship_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -52274,7 +52282,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "compl_appr",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "compl_appr_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -52887,7 +52895,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "host_pred_appr",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "host_pred_appr_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -53056,7 +53064,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -53266,7 +53274,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "mag_cov_software",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "mag_cov_software_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -53344,7 +53352,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -53715,7 +53723,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "pred_genome_struc",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "pred_genome_struc_enum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -54345,7 +54353,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "single_cell_lysis_appr",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "single_cell_lysis_appr_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -54515,7 +54523,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "sort_tech",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "sort_tech_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -54725,7 +54733,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tax_ident",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "tax_ident_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -54933,7 +54941,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "virus_enrich_appr",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "virus_enrich_appr_enum",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -54975,7 +54983,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "wga_amp_appr",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "wga_amp_appr_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -55801,7 +55809,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -56048,7 +56056,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "neg_cont_type",
       "slot_group": "investigation",
-      "range": "string",
+      "range": "neg_cont_type_enum",
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -56376,7 +56384,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "rel_to_oxygen",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "rel_to_oxygen_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -57399,7 +57407,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "biotic_relationship",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "biotic_relationship_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -57699,7 +57707,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "drainage_class",
-      "range": "string",
+      "range": "drainage_class_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -57824,7 +57832,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "fao_class",
-      "range": "string",
+      "range": "fao_class_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -57938,7 +57946,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "farm_water_source",
-      "range": "string",
+      "range": "farm_water_source_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -58923,7 +58931,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "lib_layout",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "lib_layout_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -60113,7 +60121,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "profile_position",
-      "range": "string",
+      "range": "profile_position_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -60663,6 +60671,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "season_precpt",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -60703,6 +60712,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "season_temp",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -60774,7 +60784,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "seq_quality_check",
       "slot_group": "sequencing",
-      "range": "string",
+      "range": "seq_quality_check_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -61182,6 +61192,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "soil_type",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -61636,7 +61647,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "tillage",
-      "range": "string",
+      "range": "tillage_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -61772,6 +61783,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tot_org_carb",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -61831,7 +61843,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "trophic_level",
       "slot_group": "nucleic_acid_sequence_source",
-      "range": "string",
+      "range": "trophic_level_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -61921,7 +61933,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "water_source_shared",
-      "range": "string",
+      "range": "water_source_shared_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63050,7 +63062,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "aero_struc",
-      "range": "string",
+      "range": "aero_struc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63144,7 +63156,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "arch_struc",
-      "range": "string",
+      "range": "arch_struc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63354,7 +63366,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "build_docs",
-      "range": "string",
+      "range": "build_docs_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63390,7 +63402,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "build_occup_type",
-      "range": "string",
+      "range": "build_occup_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63425,7 +63437,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "building_setting",
-      "range": "string",
+      "range": "building_setting_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63495,7 +63507,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "built_struc_set",
-      "range": "string",
+      "range": "built_struc_set_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63629,7 +63641,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "ceil_cond",
-      "range": "string",
+      "range": "ceil_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63664,7 +63676,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "ceil_finish_mat",
-      "range": "string",
+      "range": "ceil_finish_mat_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63699,7 +63711,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "ceil_struc",
-      "range": "string",
+      "range": "ceil_struc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63734,7 +63746,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "ceil_texture",
-      "range": "string",
+      "range": "ceil_texture_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63798,7 +63810,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "ceil_type",
-      "range": "string",
+      "range": "ceil_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63833,7 +63845,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "ceil_water_mold",
-      "range": "string",
+      "range": "ceil_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -63973,7 +63985,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "door_comp_type",
-      "range": "string",
+      "range": "door_comp_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64008,7 +64020,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "door_cond",
-      "range": "string",
+      "range": "door_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64043,7 +64055,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "door_direct",
-      "range": "string",
+      "range": "door_direct_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64078,7 +64090,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "door_loc",
-      "range": "string",
+      "range": "door_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64113,7 +64125,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "door_mat",
-      "range": "string",
+      "range": "door_mat_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64148,7 +64160,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "door_move",
-      "range": "string",
+      "range": "door_move_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64218,7 +64230,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "door_type",
-      "range": "string",
+      "range": "door_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64253,7 +64265,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "door_type_metal",
-      "range": "string",
+      "range": "door_type_metal_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64288,7 +64300,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "door_type_wood",
-      "range": "string",
+      "range": "door_type_wood_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64323,7 +64335,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "door_water_mold",
-      "range": "string",
+      "range": "door_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64358,7 +64370,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "drawings",
-      "range": "string",
+      "range": "drawings_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64550,7 +64562,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "ext_wall_orient",
-      "range": "string",
+      "range": "drawings_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64585,7 +64597,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "ext_window_orient",
-      "range": "string",
+      "range": "ext_window_orient_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64621,7 +64633,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "filter_type",
-      "range": "string",
+      "range": "filter_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64656,7 +64668,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "fireplace_type",
-      "range": "string",
+      "range": "fireplace_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64749,7 +64761,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "floor_cond",
-      "range": "string",
+      "range": "floor_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -64912,7 +64924,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "floor_water_mold",
-      "range": "string",
+      "range": "floor_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65005,7 +65017,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "furniture",
-      "range": "string",
+      "range": "furniture_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65040,7 +65052,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "gender_restroom",
-      "range": "string",
+      "range": "gender_restroom_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65104,7 +65116,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "handidness",
-      "range": "string",
+      "range": "handidness_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65140,7 +65152,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "heat_cool_type",
-      "range": "string",
+      "range": "heat_cool_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65210,7 +65222,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "heat_sys_deliv_meth",
-      "range": "string",
+      "range": "heat_sys_deliv_meth_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65303,7 +65315,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "indoor_space",
-      "range": "string",
+      "range": "indoor_space_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65397,7 +65409,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "int_wall_cond",
-      "range": "string",
+      "range": "int_wall_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65468,7 +65480,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "light_type",
-      "range": "string",
+      "range": "light_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65532,7 +65544,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "mech_struc",
-      "range": "string",
+      "range": "mech_struc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65683,7 +65695,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "occup_document",
-      "range": "string",
+      "range": "occup_document_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65854,7 +65866,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "quad_pos",
-      "range": "string",
+      "range": "quad_pos_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -65959,7 +65971,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "rel_samp_loc",
-      "range": "string",
+      "range": "rel_samp_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66052,7 +66064,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "room_condt",
-      "range": "string",
+      "range": "rel_samp_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66087,7 +66099,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "room_connected",
-      "range": "string",
+      "range": "room_connected_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66267,7 +66279,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "room_loc",
-      "range": "string",
+      "range": "room_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66389,7 +66401,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "room_samp_pos",
-      "range": "string",
+      "range": "room_samp_pos_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66424,7 +66436,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "room_type",
-      "range": "string",
+      "range": "room_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66695,7 +66707,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_weather",
-      "range": "string",
+      "range": "samp_weather_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66760,7 +66772,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "season_use",
-      "range": "string",
+      "range": "season_use_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66795,7 +66807,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "shad_dev_water_mold",
-      "range": "string",
+      "range": "shad_dev_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66830,7 +66842,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "shading_device_cond",
-      "range": "string",
+      "range": "shading_device_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66865,7 +66877,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "shading_device_loc",
-      "range": "string",
+      "range": "shading_device_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66929,7 +66941,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "shading_device_type",
-      "range": "string",
+      "range": "shading_device_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66964,7 +66976,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "space_typ_state",
-      "range": "string",
+      "range": "space_typ_state_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -66999,7 +67011,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "specific",
-      "range": "string",
+      "range": "specific_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67070,7 +67082,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "substructure_type",
-      "range": "string",
+      "range": "substructure_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67106,7 +67118,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "surf_air_cont",
-      "range": "string",
+      "range": "surf_air_cont_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67381,7 +67393,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "train_stat_loc",
-      "range": "string",
+      "range": "train_stat_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67416,7 +67428,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "train_stop_loc",
-      "range": "string",
+      "range": "train_stop_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67580,7 +67592,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "wall_const_type",
-      "range": "string",
+      "range": "wall_const_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67615,7 +67627,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "wall_finish_mat",
-      "range": "string",
+      "range": "wall_finish_mat_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67679,7 +67691,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "wall_loc",
-      "range": "string",
+      "range": "wall_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67714,7 +67726,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "wall_surf_treatment",
-      "range": "string",
+      "range": "wall_surf_treatment_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67749,7 +67761,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "wall_texture",
-      "range": "string",
+      "range": "wall_texture_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67813,7 +67825,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "wall_water_mold",
-      "range": "string",
+      "range": "wall_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67877,7 +67889,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "water_feat_type",
-      "range": "string",
+      "range": "water_feat_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67912,7 +67924,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "weekday",
-      "range": "string",
+      "range": "weekday_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -67947,7 +67959,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "window_cond",
-      "range": "string",
+      "range": "window_cond_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -68017,7 +68029,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "window_horiz_pos",
-      "range": "string",
+      "range": "window_horiz_pos_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -68052,7 +68064,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "window_loc",
-      "range": "string",
+      "range": "window_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -68087,7 +68099,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "window_mat",
-      "range": "string",
+      "range": "window_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -68180,7 +68192,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "window_status",
-      "range": "string",
+      "range": "window_status_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -68215,7 +68227,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "window_type",
-      "range": "string",
+      "range": "window_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -68250,7 +68262,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "window_vert_pos",
-      "range": "string",
+      "range": "window_vert_pos_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -68285,7 +68297,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "window_water_mold",
-      "range": "string",
+      "range": "window_water_mold_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -68982,7 +68994,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "cult_result",
-      "range": "string",
+      "range": "cult_result_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -69945,7 +69957,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "food_trace_list",
-      "range": "string",
+      "range": "food_trace_list_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -71089,7 +71101,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_transport_cont",
-      "range": "string",
+      "range": "samp_transport_cont_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -72496,7 +72508,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "cult_result",
-      "range": "string",
+      "range": "cult_result_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -72818,7 +72830,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "extr_weather_event",
-      "range": "string",
+      "range": "extr_weather_event_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -72979,7 +72991,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "farm_water_source",
-      "range": "string",
+      "range": "farm_water_source_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -73089,7 +73101,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "food_clean_proc",
-      "range": "string",
+      "range": "food_clean_proc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -74515,7 +74527,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "plant_reprod_crop",
-      "range": "string",
+      "range": "plant_reprod_crop_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -75384,6 +75396,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "season_precpt",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -75419,6 +75432,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "season_temp",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -75810,7 +75824,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "soil_texture_class",
-      "range": "string",
+      "range": "soil_texture_class_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -75881,6 +75895,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "soil_type",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -76282,7 +76297,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "tillage",
-      "range": "string",
+      "range": "tillage_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -76388,6 +76403,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tot_nitro_content",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -76458,6 +76474,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tot_org_carb",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -76684,7 +76701,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "water_source_shared",
-      "range": "string",
+      "range": "water_source_shared_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -77055,7 +77072,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "cult_result",
-      "range": "string",
+      "range": "cult_result_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -77411,7 +77428,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "facility_type",
-      "range": "string",
+      "range": "facility_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -78197,7 +78214,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "food_trace_list",
-      "range": "string",
+      "range": "food_trace_list_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -79215,7 +79232,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_loc_condition",
-      "range": "string",
+      "range": "samp_loc_condition_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -79673,7 +79690,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_surf_moisture",
-      "range": "string",
+      "range": "samp_subtype_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -79708,7 +79725,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_transport_cont",
-      "range": "string",
+      "range": "samp_transport_cont_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -80629,7 +80646,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "cult_result",
-      "range": "string",
+      "range": "cult_result_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -81966,7 +81983,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "food_trace_list",
-      "range": "string",
+      "range": "food_trace_list_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -83391,7 +83408,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_transport_cont",
-      "range": "string",
+      "range": "samp_transport_cont_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -85571,7 +85588,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_capt_status",
-      "range": "string",
+      "range": "samp_capt_status_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -85606,7 +85623,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_dis_stage",
-      "range": "string",
+      "range": "samp_dis_stage_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -87450,7 +87467,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "urine_collect_meth",
-      "range": "string",
+      "range": "urine_collect_meth_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -89969,7 +89986,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "dominant_hand",
-      "range": "string",
+      "range": "dominant_hand_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -93308,7 +93325,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "hcr",
-      "range": "string",
+      "range": "hcr_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -93372,7 +93389,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "hcr_geol_age",
-      "range": "string",
+      "range": "hcr_geol_age_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -93471,7 +93488,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "lithology",
-      "range": "string",
+      "range": "lithology_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -94227,7 +94244,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_subtype",
-      "range": "string",
+      "range": "samp_subtype_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -94486,7 +94503,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sr_dep_env",
-      "range": "string",
+      "range": "sr_dep_env_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -94521,7 +94538,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sr_geol_age",
-      "range": "string",
+      "range": "sr_geol_age_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -94556,7 +94573,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sr_kerog_type",
-      "range": "string",
+      "range": "sr_kerog_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -94591,7 +94608,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sr_lithology",
-      "range": "string",
+      "range": "sr_lithology_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -96029,7 +96046,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "hcr",
-      "range": "string",
+      "range": "hcr_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -96093,7 +96110,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "hcr_geol_age",
-      "range": "string",
+      "range": "hcr_geol_age_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -96256,7 +96273,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "lithology",
-      "range": "string",
+      "range": "lithology_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -96833,7 +96850,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_collect_point",
-      "range": "string",
+      "range": "samp_collect_point_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -97052,7 +97069,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_subtype",
-      "range": "string",
+      "range": "samp_subtype_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -98998,6 +99015,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "org_matter",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -99033,6 +99051,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "org_nitro",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -99888,6 +99907,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tot_nitro_content",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -99917,6 +99937,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tot_org_carb",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -100790,6 +100811,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "org_matter",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -100825,6 +100847,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "org_nitro",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -103081,7 +103104,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "plant_sex",
-      "range": "string",
+      "range": "plant_sex_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -103589,7 +103612,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_capt_status",
-      "range": "string",
+      "range": "samp_capt_status_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -103624,7 +103647,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "samp_dis_stage",
-      "range": "string",
+      "range": "samp_dis_stage_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -105157,6 +105180,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "org_matter",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -105192,6 +105216,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "org_nitro",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -105905,7 +105930,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sediment_type",
-      "range": "string",
+      "range": "sediment_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -106117,7 +106142,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "tidal_stage",
-      "range": "string",
+      "range": "tidal_stage_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -106206,6 +106231,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tot_nitro_content",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -106235,6 +106261,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tot_org_carb",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -106651,7 +106678,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "drainage_class",
-      "range": "string",
+      "range": "drainage_class_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -106752,7 +106779,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "fao_class",
-      "range": "string",
+      "range": "fao_class_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -107179,6 +107206,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "org_matter",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -107214,6 +107242,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "org_nitro",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -107405,7 +107434,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "profile_position",
-      "range": "string",
+      "range": "profile_position_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -107573,6 +107602,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "season_precpt",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -107608,6 +107638,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "season_temp",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -107759,6 +107790,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "soil_text_measure",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -107823,6 +107855,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "soil_type",
       "range": "string",
+      "pattern": "^\\S+.* \\[\\S+:\\S+]$",
       "@type": "SlotDefinition"
     },
     {
@@ -107959,7 +107992,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "tillage",
-      "range": "string",
+      "range": "tillage_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -108018,6 +108051,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tot_nitro_content",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -108076,6 +108110,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tot_org_carb",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -108663,7 +108698,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "host_cellular_loc",
-      "range": "string",
+      "range": "host_cellular_loc_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -108757,7 +108792,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "host_dependence",
-      "range": "string",
+      "range": "host_dependence_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -109674,7 +109709,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "host_specificity",
-      "range": "string",
+      "range": "host_specificity_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -109924,7 +109959,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "mode_transmission",
-      "range": "string",
+      "range": "mode_transmission_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -110078,7 +110113,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "route_transmission",
-      "range": "string",
+      "range": "route_transmission_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -110376,7 +110411,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sym_life_cycle_type",
-      "range": "string",
+      "range": "sym_life_cycle_type_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -110416,7 +110451,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "symbiont_host_role",
-      "range": "string",
+      "range": "symbiont_host_role_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -110493,7 +110528,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "type_of_symbiosis",
-      "range": "string",
+      "range": "type_of_symbiosis_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -113223,6 +113258,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "org_matter",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -113258,6 +113294,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "org_nitro",
       "range": "string",
+      "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
       "@type": "SlotDefinition"
     },
     {
@@ -114329,7 +114366,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "tidal_stage",
-      "range": "string",
+      "range": "tidal_stage_enum",
       "@type": "SlotDefinition"
     },
     {
@@ -117937,9 +117974,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "mixs_schemasheets_generated.yaml",
-  "source_file_date": "2022-10-14T11:50:40",
-  "source_file_size": 1093372,
-  "generation_date": "2022-10-14T11:51:11",
+  "source_file_date": "2022-10-14T13:52:00",
+  "source_file_size": 1097773,
+  "generation_date": "2022-10-14T13:52:27",
   "@type": "SchemaDefinition",
   "@context": [
     "schemasheets/generated/jsonld/mixs_schemasheets_generated.context.jsonld",
