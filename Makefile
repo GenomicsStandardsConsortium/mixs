@@ -102,6 +102,7 @@ schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_classdefs.tsv
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slot_assignments.tsv \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_conflicting_defer_to_soil.tsv \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_non_conflicting_shared.tsv \
+schemasheets/tsv_in/mixs_clear_cut_enums.tsv \
 schemasheets/tsv_in/mixs_prefixes.tsv \
 schemasheets/tsv_in/mixs_schema_annotations.tsv \
 schemasheets/tsv_in/mixs_utility.tsv
@@ -228,3 +229,12 @@ schemasheets/yaml_out/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.yaml
 	$(RUN) gen-owl \
 		--format ttl \
 		--output $@ $<
+
+#enums_reality_check:
+#	$(RUN) sheets2linkml \
+#		--gsheet-id 1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ test+enums
+
+schemasheets/yaml_out/test_enums.yaml: schemasheets/tsv_in/mixs_clear_cut_enums.tsv
+	$(RUN) sheets2linkml \
+		--output $@ $<
+

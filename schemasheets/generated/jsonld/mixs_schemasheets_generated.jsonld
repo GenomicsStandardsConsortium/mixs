@@ -192,6 +192,3681 @@
       "@type": "TypeDefinition"
     }
   ],
+  "enums": [
+    {
+      "name": "bin_param_enum",
+      "definition_uri": "https://example.com/mixsBinParamEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "codon usage"
+        },
+        {
+          "text": "combination"
+        },
+        {
+          "text": "coverage"
+        },
+        {
+          "text": "homology search"
+        },
+        {
+          "text": "kmer"
+        }
+      ]
+    },
+    {
+      "name": "biotic_relationship_enum",
+      "definition_uri": "https://example.com/mixsBioticRelationshipEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "commensalism"
+        },
+        {
+          "text": "free living"
+        },
+        {
+          "text": "mutualism"
+        },
+        {
+          "text": "parasitism"
+        },
+        {
+          "text": "symbiotic"
+        }
+      ]
+    },
+    {
+      "name": "compl_appr_enum",
+      "definition_uri": "https://example.com/mixsComplApprEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "marker gene"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "reference based"
+        }
+      ]
+    },
+    {
+      "name": "contam_screen_input_enum",
+      "definition_uri": "https://example.com/mixsContamScreenInputEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "contigs"
+        },
+        {
+          "text": "reads"
+        }
+      ]
+    },
+    {
+      "name": "host_pred_appr_enum",
+      "definition_uri": "https://example.com/mixsHostPredApprEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "co-occurrence"
+        },
+        {
+          "text": "combination"
+        },
+        {
+          "text": "CRISPR spacer match"
+        },
+        {
+          "text": "host sequence similarity"
+        },
+        {
+          "text": "kmer similarity"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "provirus"
+        }
+      ]
+    },
+    {
+      "name": "lib_layout_enum",
+      "definition_uri": "https://example.com/mixsLibLayoutEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "other"
+        },
+        {
+          "text": "paired"
+        },
+        {
+          "text": "single"
+        },
+        {
+          "text": "vector"
+        }
+      ]
+    },
+    {
+      "name": "mag_cov_software_enum",
+      "definition_uri": "https://example.com/mixsMagCovSoftwareEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "bbmap"
+        },
+        {
+          "text": "bowtie"
+        },
+        {
+          "text": "bwa"
+        },
+        {
+          "text": "other"
+        }
+      ]
+    },
+    {
+      "name": "neg_cont_type_enum",
+      "definition_uri": "https://example.com/mixsNegContTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "distilled water"
+        },
+        {
+          "text": "DNA-free PCR mix"
+        },
+        {
+          "text": "empty collection device"
+        },
+        {
+          "text": "empty collection tube"
+        },
+        {
+          "text": "phosphate buffer"
+        },
+        {
+          "text": "sterile swab"
+        },
+        {
+          "text": "sterile syringe"
+        }
+      ]
+    },
+    {
+      "name": "pred_genome_struc_enum",
+      "definition_uri": "https://example.com/mixsPredGenomeStrucEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "non-segmented"
+        },
+        {
+          "text": "segmented"
+        },
+        {
+          "text": "undetermined"
+        }
+      ]
+    },
+    {
+      "name": "rel_to_oxygen_enum",
+      "definition_uri": "https://example.com/mixsRelToOxygenEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "aerobe"
+        },
+        {
+          "text": "anaerobe"
+        },
+        {
+          "text": "facultative"
+        },
+        {
+          "text": "microaerophilic"
+        },
+        {
+          "text": "microanaerobe"
+        },
+        {
+          "text": "obligate aerobe"
+        },
+        {
+          "text": "obligate anaerobe"
+        }
+      ]
+    },
+    {
+      "name": "seq_quality_check_enum",
+      "definition_uri": "https://example.com/mixsSeqQualityCheckEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "manually edited"
+        },
+        {
+          "text": "none"
+        }
+      ]
+    },
+    {
+      "name": "single_cell_lysis_appr_enum",
+      "definition_uri": "https://example.com/mixsSingleCellLysisApprEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "chemical"
+        },
+        {
+          "text": "combination"
+        },
+        {
+          "text": "enzymatic"
+        },
+        {
+          "text": "physical"
+        }
+      ]
+    },
+    {
+      "name": "sort_tech_enum",
+      "definition_uri": "https://example.com/mixsSortTechEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "flow cytometric cell sorting"
+        },
+        {
+          "text": "lazer-tweezing"
+        },
+        {
+          "text": "microfluidics"
+        },
+        {
+          "text": "micromanipulation"
+        },
+        {
+          "text": "optical manipulation"
+        },
+        {
+          "text": "other"
+        }
+      ]
+    },
+    {
+      "name": "tax_ident_enum",
+      "definition_uri": "https://example.com/mixsTaxIdentEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "16S rRNA gene"
+        },
+        {
+          "text": "multi-marker approach"
+        },
+        {
+          "text": "other"
+        }
+      ]
+    },
+    {
+      "name": "trophic_level_enum",
+      "definition_uri": "https://example.com/mixsTrophicLevelEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "autotroph"
+        },
+        {
+          "text": "carboxydotroph"
+        },
+        {
+          "text": "chemoautolithotroph"
+        },
+        {
+          "text": "chemoautotroph"
+        },
+        {
+          "text": "chemoheterotroph"
+        },
+        {
+          "text": "chemolithoautotroph"
+        },
+        {
+          "text": "chemolithotroph"
+        },
+        {
+          "text": "chemoorganoheterotroph"
+        },
+        {
+          "text": "chemoorganotroph"
+        },
+        {
+          "text": "chemosynthetic"
+        },
+        {
+          "text": "chemotroph"
+        },
+        {
+          "text": "copiotroph"
+        },
+        {
+          "text": "diazotroph"
+        },
+        {
+          "text": "facultative"
+        },
+        {
+          "text": "heterotroph"
+        },
+        {
+          "text": "lithoautotroph"
+        },
+        {
+          "text": "lithoheterotroph"
+        },
+        {
+          "text": "lithotroph"
+        },
+        {
+          "text": "methanotroph"
+        },
+        {
+          "text": "methylotroph"
+        },
+        {
+          "text": "mixotroph"
+        },
+        {
+          "text": "obligate"
+        },
+        {
+          "text": "oligotroph"
+        },
+        {
+          "text": "organoheterotroph"
+        },
+        {
+          "text": "organotroph"
+        },
+        {
+          "text": "photoautotroph"
+        },
+        {
+          "text": "photoheterotroph"
+        },
+        {
+          "text": "photolithoautotroph"
+        },
+        {
+          "text": "photolithotroph"
+        },
+        {
+          "text": "photosynthetic"
+        },
+        {
+          "text": "phototroph"
+        }
+      ]
+    },
+    {
+      "name": "virus_enrich_appr_enum",
+      "definition_uri": "https://example.com/mixsVirusEnrichApprEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "centrifugation"
+        },
+        {
+          "text": "CsCl density gradient"
+        },
+        {
+          "text": "DNAse"
+        },
+        {
+          "text": "FeCl Precipitation"
+        },
+        {
+          "text": "filtration"
+        },
+        {
+          "text": "none"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "PEG Precipitation"
+        },
+        {
+          "text": "RNAse"
+        },
+        {
+          "text": "targeted sequence capture"
+        },
+        {
+          "text": "ultracentrifugation"
+        },
+        {
+          "text": "ultrafiltration"
+        }
+      ]
+    },
+    {
+      "name": "wga_amp_appr_enum",
+      "definition_uri": "https://example.com/mixsWgaAmpApprEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "mda based"
+        },
+        {
+          "text": "pcr based"
+        }
+      ]
+    },
+    {
+      "name": "fao_class_enum",
+      "definition_uri": "https://example.com/mixsFaoClassEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Acrisols"
+        },
+        {
+          "text": "Andosols"
+        },
+        {
+          "text": "Arenosols"
+        },
+        {
+          "text": "Cambisols"
+        },
+        {
+          "text": "Chernozems"
+        },
+        {
+          "text": "Ferralsols"
+        },
+        {
+          "text": "Fluvisols"
+        },
+        {
+          "text": "Gleysols"
+        },
+        {
+          "text": "Greyzems"
+        },
+        {
+          "text": "Gypsisols"
+        },
+        {
+          "text": "Histosols"
+        },
+        {
+          "text": "Kastanozems"
+        },
+        {
+          "text": "Lithosols"
+        },
+        {
+          "text": "Luvisols"
+        },
+        {
+          "text": "Nitosols"
+        },
+        {
+          "text": "Phaeozems"
+        },
+        {
+          "text": "Planosols"
+        },
+        {
+          "text": "Podzols"
+        },
+        {
+          "text": "Podzoluvisols"
+        },
+        {
+          "text": "Rankers"
+        },
+        {
+          "text": "Regosols"
+        },
+        {
+          "text": "Rendzinas"
+        },
+        {
+          "text": "Solonchaks"
+        },
+        {
+          "text": "Solonetz"
+        },
+        {
+          "text": "Vertisols"
+        },
+        {
+          "text": "Yermosols"
+        }
+      ]
+    },
+    {
+      "name": "tillage_enum",
+      "definition_uri": "https://example.com/mixsTillageEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "chisel"
+        },
+        {
+          "text": "cutting disc"
+        },
+        {
+          "text": "disc plough"
+        },
+        {
+          "text": "drill"
+        },
+        {
+          "text": "mouldboard"
+        },
+        {
+          "text": "ridge till"
+        },
+        {
+          "text": "strip tillage"
+        },
+        {
+          "text": "tined"
+        },
+        {
+          "text": "zonal tillage"
+        }
+      ]
+    },
+    {
+      "name": "aero_struc_enum",
+      "definition_uri": "https://example.com/mixsAeroStrucEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "glider"
+        },
+        {
+          "text": "plane"
+        }
+      ]
+    },
+    {
+      "name": "animal_body_cond_enum",
+      "definition_uri": "https://example.com/mixsAnimalBodyCondEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "normal"
+        },
+        {
+          "text": "over conditioned"
+        },
+        {
+          "text": "under conditioned"
+        }
+      ]
+    },
+    {
+      "name": "animal_sex_enum",
+      "definition_uri": "https://example.com/mixsAnimalSexEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "castrated female"
+        },
+        {
+          "text": "castrated male"
+        },
+        {
+          "text": "intact female"
+        },
+        {
+          "text": "intact male"
+        }
+      ]
+    },
+    {
+      "name": "arch_struc_enum",
+      "definition_uri": "https://example.com/mixsArchStrucEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "building"
+        },
+        {
+          "text": "home"
+        },
+        {
+          "text": "shed"
+        }
+      ]
+    },
+    {
+      "name": "build_docs_enum",
+      "definition_uri": "https://example.com/mixsBuildDocsEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "building information model"
+        },
+        {
+          "text": "commissioning report"
+        },
+        {
+          "text": "complaint logs"
+        },
+        {
+          "text": "contract administration"
+        },
+        {
+          "text": "cost estimate"
+        },
+        {
+          "text": "janitorial schedules or logs"
+        },
+        {
+          "text": "maintenance plans"
+        },
+        {
+          "text": "schedule"
+        },
+        {
+          "text": "sections"
+        },
+        {
+          "text": "shop drawings"
+        },
+        {
+          "text": "submittals"
+        },
+        {
+          "text": "ventilation system"
+        },
+        {
+          "text": "windows"
+        }
+      ]
+    },
+    {
+      "name": "build_occup_type_enum",
+      "definition_uri": "https://example.com/mixsBuildOccupTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "airport"
+        },
+        {
+          "text": "commercial"
+        },
+        {
+          "text": "health care"
+        },
+        {
+          "text": "high rise"
+        },
+        {
+          "text": "low rise"
+        },
+        {
+          "text": "market"
+        },
+        {
+          "text": "office"
+        },
+        {
+          "text": "residence"
+        },
+        {
+          "text": "residential"
+        },
+        {
+          "text": "restaurant"
+        },
+        {
+          "text": "school"
+        },
+        {
+          "text": "sports complex"
+        },
+        {
+          "text": "wood framed"
+        }
+      ]
+    },
+    {
+      "name": "building_setting_enum",
+      "definition_uri": "https://example.com/mixsBuildingSettingEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "exurban"
+        },
+        {
+          "text": "rural"
+        },
+        {
+          "text": "suburban"
+        },
+        {
+          "text": "urban"
+        }
+      ]
+    },
+    {
+      "name": "built_struc_set_enum",
+      "definition_uri": "https://example.com/mixsBuiltStrucSetEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "rural"
+        },
+        {
+          "text": "urban"
+        }
+      ]
+    },
+    {
+      "name": "ceil_cond_enum",
+      "definition_uri": "https://example.com/mixsCeilCondEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "damaged"
+        },
+        {
+          "text": "needs repair"
+        },
+        {
+          "text": "new"
+        },
+        {
+          "text": "rupture"
+        },
+        {
+          "text": "visible wear"
+        }
+      ]
+    },
+    {
+      "name": "ceil_finish_mat_enum",
+      "definition_uri": "https://example.com/mixsCeilFinishMatEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "drywall"
+        },
+        {
+          "text": "fiberglass"
+        },
+        {
+          "text": "metal"
+        },
+        {
+          "text": "mineral fibre"
+        },
+        {
+          "text": "mineral wool/calcium silicate"
+        },
+        {
+          "text": "plasterboard"
+        },
+        {
+          "text": "PVC"
+        },
+        {
+          "text": "stucco"
+        },
+        {
+          "text": "tiles"
+        },
+        {
+          "text": "wood"
+        }
+      ]
+    },
+    {
+      "name": "ceil_struc_enum",
+      "definition_uri": "https://example.com/mixsCeilStrucEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "concrete"
+        },
+        {
+          "text": "wood frame"
+        }
+      ]
+    },
+    {
+      "name": "ceil_texture_enum",
+      "definition_uri": "https://example.com/mixsCeilTextureEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "crows feet"
+        },
+        {
+          "text": "crows-foot stomp"
+        },
+        {
+          "text": "double skip"
+        },
+        {
+          "text": "hawk and trowel"
+        },
+        {
+          "text": "knockdown"
+        },
+        {
+          "text": "orange peel"
+        },
+        {
+          "text": "popcorn"
+        },
+        {
+          "text": "rosebud stomp"
+        },
+        {
+          "text": "Santa-Fe texture"
+        },
+        {
+          "text": "skip trowel"
+        },
+        {
+          "text": "smooth"
+        },
+        {
+          "text": "stomp knockdown"
+        },
+        {
+          "text": "swirl"
+        }
+      ]
+    },
+    {
+      "name": "ceil_type_enum",
+      "definition_uri": "https://example.com/mixsCeilTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "barrel-shaped"
+        },
+        {
+          "text": "cathedral"
+        },
+        {
+          "text": "coffered"
+        },
+        {
+          "text": "concave"
+        },
+        {
+          "text": "cove"
+        },
+        {
+          "text": "dropped"
+        },
+        {
+          "text": "stretched"
+        }
+      ]
+    },
+    {
+      "name": "ceil_water_mold_enum",
+      "definition_uri": "https://example.com/mixsCeilWaterMoldEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "no presence of mold visible"
+        },
+        {
+          "text": "presence of mold visible"
+        }
+      ]
+    },
+    {
+      "name": "cult_result_enum",
+      "definition_uri": "https://example.com/mixsCultResultEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "absent"
+        },
+        {
+          "text": "active"
+        },
+        {
+          "text": "inactive"
+        },
+        {
+          "text": "negative"
+        },
+        {
+          "text": "no"
+        },
+        {
+          "text": "positive"
+        },
+        {
+          "text": "present"
+        },
+        {
+          "text": "yes"
+        }
+      ]
+    },
+    {
+      "name": "depos_env_enum",
+      "definition_uri": "https://example.com/mixsDeposEnvEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Continental - Aeolian"
+        },
+        {
+          "text": "Continental - Alluvial"
+        },
+        {
+          "text": "Continental - Fluvial"
+        },
+        {
+          "text": "Continental - Lacustrine"
+        },
+        {
+          "text": "Marine - Deep"
+        },
+        {
+          "text": "Marine - Reef"
+        },
+        {
+          "text": "Marine - Shallow"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "Other - Evaporite"
+        },
+        {
+          "text": "Other - Glacial"
+        },
+        {
+          "text": "Other - Volcanic"
+        },
+        {
+          "text": "Transitional - Beach"
+        },
+        {
+          "text": "Transitional - Deltaic"
+        },
+        {
+          "text": "Transitional - Lagoonal"
+        },
+        {
+          "text": "Transitional - Lake"
+        },
+        {
+          "text": "Transitional - Tidal"
+        }
+      ]
+    },
+    {
+      "name": "dominant_hand_enum",
+      "definition_uri": "https://example.com/mixsDominantHandEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "ambidextrous"
+        },
+        {
+          "text": "left"
+        },
+        {
+          "text": "right"
+        }
+      ]
+    },
+    {
+      "name": "door_comp_type_enum",
+      "definition_uri": "https://example.com/mixsDoorCompTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "metal covered"
+        },
+        {
+          "text": "revolving"
+        },
+        {
+          "text": "sliding"
+        },
+        {
+          "text": "telescopic"
+        }
+      ]
+    },
+    {
+      "name": "door_cond_enum",
+      "definition_uri": "https://example.com/mixsDoorCondEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "damaged"
+        },
+        {
+          "text": "needs repair"
+        },
+        {
+          "text": "new"
+        },
+        {
+          "text": "rupture"
+        },
+        {
+          "text": "visible wear"
+        }
+      ]
+    },
+    {
+      "name": "door_direct_enum",
+      "definition_uri": "https://example.com/mixsDoorDirectEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "inward"
+        },
+        {
+          "text": "outward"
+        },
+        {
+          "text": "sideways"
+        }
+      ]
+    },
+    {
+      "name": "door_loc_enum",
+      "definition_uri": "https://example.com/mixsDoorLocEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "east"
+        },
+        {
+          "text": "north"
+        },
+        {
+          "text": "south"
+        },
+        {
+          "text": "west"
+        }
+      ]
+    },
+    {
+      "name": "door_mat_enum",
+      "definition_uri": "https://example.com/mixsDoorMatEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "aluminum"
+        },
+        {
+          "text": "cellular PVC"
+        },
+        {
+          "text": "engineered plastic"
+        },
+        {
+          "text": "fiberboard"
+        },
+        {
+          "text": "fiberglass"
+        },
+        {
+          "text": "metal"
+        },
+        {
+          "text": "thermoplastic alloy"
+        },
+        {
+          "text": "vinyl"
+        },
+        {
+          "text": "wood"
+        },
+        {
+          "text": "wood/plastic composite"
+        }
+      ]
+    },
+    {
+      "name": "door_move_enum",
+      "definition_uri": "https://example.com/mixsDoorMoveEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "collapsible"
+        },
+        {
+          "text": "folding"
+        },
+        {
+          "text": "revolving"
+        },
+        {
+          "text": "rolling shutter"
+        },
+        {
+          "text": "sliding"
+        },
+        {
+          "text": "swinging"
+        }
+      ]
+    },
+    {
+      "name": "door_type_enum",
+      "definition_uri": "https://example.com/mixsDoorTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "composite"
+        },
+        {
+          "text": "metal"
+        },
+        {
+          "text": "wooden"
+        }
+      ]
+    },
+    {
+      "name": "door_type_metal_enum",
+      "definition_uri": "https://example.com/mixsDoorTypeMetalEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "collapsible"
+        },
+        {
+          "text": "corrugated steel"
+        },
+        {
+          "text": "hollow"
+        },
+        {
+          "text": "rolling shutters"
+        },
+        {
+          "text": "steel plate"
+        }
+      ]
+    },
+    {
+      "name": "door_type_wood_enum",
+      "definition_uri": "https://example.com/mixsDoorTypeWoodEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "battened"
+        },
+        {
+          "text": "bettened and ledged"
+        },
+        {
+          "text": "flush"
+        },
+        {
+          "text": "framed and paneled"
+        },
+        {
+          "text": "glashed or sash"
+        },
+        {
+          "text": "ledged and braced"
+        },
+        {
+          "text": "ledged and framed"
+        },
+        {
+          "text": "ledged, braced and frame"
+        },
+        {
+          "text": "louvered"
+        },
+        {
+          "text": "wire gauged"
+        }
+      ]
+    },
+    {
+      "name": "door_water_mold_enum",
+      "definition_uri": "https://example.com/mixsDoorWaterMoldEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "no presence of mold visible"
+        },
+        {
+          "text": "presence of mold visible"
+        }
+      ]
+    },
+    {
+      "name": "drainage_class_enum",
+      "definition_uri": "https://example.com/mixsDrainageClassEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "excessively drained"
+        },
+        {
+          "text": "moderately well"
+        },
+        {
+          "text": "poorly"
+        },
+        {
+          "text": "somewhat poorly"
+        },
+        {
+          "text": "very poorly"
+        },
+        {
+          "text": "well"
+        }
+      ]
+    },
+    {
+      "name": "drawings_enum",
+      "definition_uri": "https://example.com/mixsDrawingsEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "as built"
+        },
+        {
+          "text": "bid"
+        },
+        {
+          "text": "building navigation map"
+        },
+        {
+          "text": "construction"
+        },
+        {
+          "text": "design"
+        },
+        {
+          "text": "diagram"
+        },
+        {
+          "text": "operation"
+        },
+        {
+          "text": "sketch"
+        }
+      ]
+    },
+    {
+      "name": "ext_wall_orient_enum",
+      "definition_uri": "https://example.com/mixsExtWallOrientEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "east"
+        },
+        {
+          "text": "north"
+        },
+        {
+          "text": "northeast"
+        },
+        {
+          "text": "northwest"
+        },
+        {
+          "text": "south"
+        },
+        {
+          "text": "southeast"
+        },
+        {
+          "text": "southwest"
+        },
+        {
+          "text": "west"
+        }
+      ]
+    },
+    {
+      "name": "ext_window_orient_enum",
+      "definition_uri": "https://example.com/mixsExtWindowOrientEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "east"
+        },
+        {
+          "text": "north"
+        },
+        {
+          "text": "northeast"
+        },
+        {
+          "text": "northwest"
+        },
+        {
+          "text": "south"
+        },
+        {
+          "text": "southeast"
+        },
+        {
+          "text": "southwest"
+        },
+        {
+          "text": "west"
+        }
+      ]
+    },
+    {
+      "name": "extr_weather_event_enum",
+      "definition_uri": "https://example.com/mixsExtrWeatherEventEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "drought"
+        },
+        {
+          "text": "dust storm"
+        },
+        {
+          "text": "extreme cold"
+        },
+        {
+          "text": "extreme heat"
+        },
+        {
+          "text": "flood"
+        },
+        {
+          "text": "frost"
+        },
+        {
+          "text": "hail"
+        },
+        {
+          "text": "high precipitationhigh winds"
+        }
+      ]
+    },
+    {
+      "name": "facility_type_enum",
+      "definition_uri": "https://example.com/mixsFacilityTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "ambient storage"
+        },
+        {
+          "text": "caterer-catering point"
+        },
+        {
+          "text": "distribution"
+        },
+        {
+          "text": "frozen storage"
+        },
+        {
+          "text": "importer-broker"
+        },
+        {
+          "text": "interstate conveyance"
+        },
+        {
+          "text": "labeler-relabeler"
+        },
+        {
+          "text": "manufacturing-processing"
+        },
+        {
+          "text": "packaging"
+        },
+        {
+          "text": "refrigerated storage"
+        },
+        {
+          "text": "storage"
+        }
+      ]
+    },
+    {
+      "name": "farm_water_source_enum",
+      "definition_uri": "https://example.com/mixsFarmWaterSourceEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "brackish"
+        },
+        {
+          "text": "canal"
+        },
+        {
+          "text": "collected rainwater"
+        },
+        {
+          "text": "ditch"
+        },
+        {
+          "text": "estuary"
+        },
+        {
+          "text": "freshwater"
+        },
+        {
+          "text": "lake"
+        },
+        {
+          "text": "manmade"
+        },
+        {
+          "text": "melt pond"
+        },
+        {
+          "text": "municipal"
+        },
+        {
+          "text": "natural"
+        },
+        {
+          "text": "pond"
+        },
+        {
+          "text": "reservior"
+        },
+        {
+          "text": "river"
+        },
+        {
+          "text": "saline"
+        },
+        {
+          "text": "storage tank"
+        },
+        {
+          "text": "stream"
+        },
+        {
+          "text": "well"
+        }
+      ]
+    },
+    {
+      "name": "filter_type_enum",
+      "definition_uri": "https://example.com/mixsFilterTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "chemical air filter"
+        },
+        {
+          "text": "electrostatic"
+        },
+        {
+          "text": "gas-phase or ultraviolet air treatments"
+        },
+        {
+          "text": "HEPA"
+        },
+        {
+          "text": "low-MERV pleated media"
+        },
+        {
+          "text": "particulate air filter"
+        }
+      ]
+    },
+    {
+      "name": "fireplace_type_enum",
+      "definition_uri": "https://example.com/mixsFireplaceTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "gas burning"
+        },
+        {
+          "text": "wood burning"
+        }
+      ]
+    },
+    {
+      "name": "floor_cond_enum",
+      "definition_uri": "https://example.com/mixsFloorCondEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "damaged"
+        },
+        {
+          "text": "needs repair"
+        },
+        {
+          "text": "new"
+        },
+        {
+          "text": "rupture"
+        },
+        {
+          "text": "visible wear"
+        }
+      ]
+    },
+    {
+      "name": "floor_struc_enum",
+      "definition_uri": "https://example.com/mixsFloorStrucEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "balcony"
+        },
+        {
+          "text": "concrete"
+        },
+        {
+          "text": "floating floor"
+        },
+        {
+          "text": "glass floor"
+        },
+        {
+          "text": "raised floor"
+        },
+        {
+          "text": "sprung floor"
+        },
+        {
+          "text": "wood-framed"
+        }
+      ]
+    },
+    {
+      "name": "floor_water_mold_enum",
+      "definition_uri": "https://example.com/mixsFloorWaterMoldEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "bulging walls"
+        },
+        {
+          "text": "ceiling discoloration"
+        },
+        {
+          "text": "condensation"
+        },
+        {
+          "text": "floor discoloration"
+        },
+        {
+          "text": "mold odor"
+        },
+        {
+          "text": "peeling paint or wallpaper"
+        },
+        {
+          "text": "wall discoloration"
+        },
+        {
+          "text": "water stains"
+        },
+        {
+          "text": "wet floor"
+        }
+      ]
+    },
+    {
+      "name": "food_clean_proc_enum",
+      "definition_uri": "https://example.com/mixsFoodCleanProcEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "drum and drain"
+        },
+        {
+          "text": "manual spinner"
+        },
+        {
+          "text": "rinsed with sanitizer solution"
+        },
+        {
+          "text": "rinsed with water"
+        },
+        {
+          "text": "scrubbed with brush"
+        },
+        {
+          "text": "scrubbed with hand"
+        },
+        {
+          "text": "soaking"
+        }
+      ]
+    },
+    {
+      "name": "food_trace_list_enum",
+      "definition_uri": "https://example.com/mixsFoodTraceListEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "cheeses-other than hard cheeses"
+        },
+        {
+          "text": "crustaceans"
+        },
+        {
+          "text": "cucumbers"
+        },
+        {
+          "text": "finfish-including smoked finfish"
+        },
+        {
+          "text": "fruits and vegetables-fresh cut"
+        },
+        {
+          "text": "herbs-fresh"
+        },
+        {
+          "text": "leafy greens-including fresh cut leafy greens"
+        },
+        {
+          "text": "melons"
+        },
+        {
+          "text": "mollusks-bivalves"
+        },
+        {
+          "text": "nut butter"
+        },
+        {
+          "text": "peppers"
+        },
+        {
+          "text": "ready to eat deli salads"
+        },
+        {
+          "text": "shell eggs"
+        },
+        {
+          "text": "sprouts"
+        },
+        {
+          "text": "tomatoes"
+        },
+        {
+          "text": "tropical tree fruits"
+        }
+      ]
+    },
+    {
+      "name": "furniture_enum",
+      "definition_uri": "https://example.com/mixsFurnitureEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "cabinet"
+        },
+        {
+          "text": "chair"
+        },
+        {
+          "text": "desks"
+        }
+      ]
+    },
+    {
+      "name": "gender_restroom_enum",
+      "definition_uri": "https://example.com/mixsGenderRestroomEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "all gender"
+        },
+        {
+          "text": "female"
+        },
+        {
+          "text": "gender neurtral"
+        },
+        {
+          "text": "male"
+        },
+        {
+          "text": "male and female"
+        },
+        {
+          "text": "unisex"
+        }
+      ]
+    },
+    {
+      "name": "handidness_enum",
+      "definition_uri": "https://example.com/mixsHandidnessEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "ambidexterity"
+        },
+        {
+          "text": "left handedness"
+        },
+        {
+          "text": "mixed-handedness"
+        },
+        {
+          "text": "right handedness"
+        }
+      ]
+    },
+    {
+      "name": "hc_produced_enum",
+      "definition_uri": "https://example.com/mixsHcProducedEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Bitumen"
+        },
+        {
+          "text": "Coalbed Methane"
+        },
+        {
+          "text": "Gas"
+        },
+        {
+          "text": "Gas-Condensate"
+        },
+        {
+          "text": "Oil"
+        },
+        {
+          "text": "other"
+        }
+      ]
+    },
+    {
+      "name": "hcr_enum",
+      "definition_uri": "https://example.com/mixsHcrEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Coalbed"
+        },
+        {
+          "text": "Gas Reservoir"
+        },
+        {
+          "text": "Oil Reservoir"
+        },
+        {
+          "text": "Oil Sand"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "Shale"
+        },
+        {
+          "text": "Tight Gas Reservoir"
+        },
+        {
+          "text": "Tight Oil Reservoir"
+        }
+      ]
+    },
+    {
+      "name": "hcr_geol_age_enum",
+      "definition_uri": "https://example.com/mixsHcrGeolAgeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Archean"
+        },
+        {
+          "text": "Cambrian"
+        },
+        {
+          "text": "Carboniferous"
+        },
+        {
+          "text": "Cenozoic"
+        },
+        {
+          "text": "Cretaceous"
+        },
+        {
+          "text": "Devonian"
+        },
+        {
+          "text": "Jurassic"
+        },
+        {
+          "text": "Mesozoic"
+        },
+        {
+          "text": "Neogene"
+        },
+        {
+          "text": "Ordovician"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "Paleogene"
+        },
+        {
+          "text": "Paleozoic"
+        },
+        {
+          "text": "Permian"
+        },
+        {
+          "text": "Precambrian"
+        },
+        {
+          "text": "Proterozoic"
+        },
+        {
+          "text": "Silurian"
+        },
+        {
+          "text": "Triassic"
+        }
+      ]
+    },
+    {
+      "name": "heat_cool_type_enum",
+      "definition_uri": "https://example.com/mixsHeatCoolTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "forced air system"
+        },
+        {
+          "text": "heat pump"
+        },
+        {
+          "text": "radiant system"
+        },
+        {
+          "text": "steam forced heat"
+        },
+        {
+          "text": "wood stove"
+        }
+      ]
+    },
+    {
+      "name": "heat_deliv_loc_enum",
+      "definition_uri": "https://example.com/mixsHeatDelivLocEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "east"
+        },
+        {
+          "text": "north"
+        },
+        {
+          "text": "south"
+        },
+        {
+          "text": "west"
+        }
+      ]
+    },
+    {
+      "name": "heat_sys_deliv_meth_enum",
+      "definition_uri": "https://example.com/mixsHeatSysDelivMethEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "conductive"
+        },
+        {
+          "text": "radiant"
+        }
+      ]
+    },
+    {
+      "name": "host_cellular_loc_enum",
+      "definition_uri": "https://example.com/mixsHostCellularLocEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "extracellular"
+        },
+        {
+          "text": "intracellular"
+        },
+        {
+          "text": "not determined"
+        }
+      ]
+    },
+    {
+      "name": "host_dependence_enum",
+      "definition_uri": "https://example.com/mixsHostDependenceEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "facultative"
+        },
+        {
+          "text": "obligate"
+        }
+      ]
+    },
+    {
+      "name": "host_specificity_enum",
+      "definition_uri": "https://example.com/mixsHostSpecificityEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "family-specific"
+        },
+        {
+          "text": "generalist"
+        },
+        {
+          "text": "genus-specific"
+        },
+        {
+          "text": "species-specific"
+        }
+      ]
+    },
+    {
+      "name": "indoor_space_enum",
+      "definition_uri": "https://example.com/mixsIndoorSpaceEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "bathroom"
+        },
+        {
+          "text": "bedroom"
+        },
+        {
+          "text": "elevator"
+        },
+        {
+          "text": "foyer"
+        },
+        {
+          "text": "hallway"
+        },
+        {
+          "text": "kitchen"
+        },
+        {
+          "text": "locker room"
+        },
+        {
+          "text": "office"
+        }
+      ]
+    },
+    {
+      "name": "int_wall_cond_enum",
+      "definition_uri": "https://example.com/mixsIntWallCondEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "damaged"
+        },
+        {
+          "text": "needs repair"
+        },
+        {
+          "text": "new"
+        },
+        {
+          "text": "rupture"
+        },
+        {
+          "text": "visible wear"
+        }
+      ]
+    },
+    {
+      "name": "light_type_enum",
+      "definition_uri": "https://example.com/mixsLightTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "desk lamp"
+        },
+        {
+          "text": "electric light"
+        },
+        {
+          "text": "flourescent lights"
+        },
+        {
+          "text": "natural light"
+        },
+        {
+          "text": "none"
+        }
+      ]
+    },
+    {
+      "name": "lithology_enum",
+      "definition_uri": "https://example.com/mixsLithologyEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Basement"
+        },
+        {
+          "text": "Chalk"
+        },
+        {
+          "text": "Chert"
+        },
+        {
+          "text": "Coal"
+        },
+        {
+          "text": "Conglomerate"
+        },
+        {
+          "text": "Diatomite"
+        },
+        {
+          "text": "Dolomite"
+        },
+        {
+          "text": "Limestone"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "Sandstone"
+        },
+        {
+          "text": "Shale"
+        },
+        {
+          "text": "Siltstone"
+        },
+        {
+          "text": "Volcanic"
+        }
+      ]
+    },
+    {
+      "name": "mech_struc_enum",
+      "definition_uri": "https://example.com/mixsMechStrucEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "boat"
+        },
+        {
+          "text": "bus"
+        },
+        {
+          "text": "car"
+        },
+        {
+          "text": "carriage"
+        },
+        {
+          "text": "coach"
+        },
+        {
+          "text": "elevator"
+        },
+        {
+          "text": "escalator"
+        },
+        {
+          "text": "subway"
+        },
+        {
+          "text": "train"
+        }
+      ]
+    },
+    {
+      "name": "mode_transmission_enum",
+      "definition_uri": "https://example.com/mixsModeTransmissionEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "horizontal:castrator"
+        },
+        {
+          "text": "horizontal:directly transmitted"
+        },
+        {
+          "text": "horizontal:micropredator"
+        },
+        {
+          "text": "horizontal:parasitoid"
+        },
+        {
+          "text": "horizontal:trophically transmitted"
+        },
+        {
+          "text": "horizontal:vector transmitted"
+        },
+        {
+          "text": "vertical"
+        }
+      ]
+    },
+    {
+      "name": "occup_document_enum",
+      "definition_uri": "https://example.com/mixsOccupDocumentEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "automated count"
+        },
+        {
+          "text": "estimate"
+        },
+        {
+          "text": "manual count"
+        },
+        {
+          "text": "videos"
+        }
+      ]
+    },
+    {
+      "name": "plant_reprod_crop_enum",
+      "definition_uri": "https://example.com/mixsPlantReprodCropEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "plant cutting"
+        },
+        {
+          "text": "pregerminated seed"
+        },
+        {
+          "text": "ratoon"
+        },
+        {
+          "text": "seed"
+        },
+        {
+          "text": "seedling"
+        },
+        {
+          "text": "whole mature plant"
+        }
+      ]
+    },
+    {
+      "name": "plant_sex_enum",
+      "definition_uri": "https://example.com/mixsPlantSexEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Androdioecious"
+        },
+        {
+          "text": "Androecious"
+        },
+        {
+          "text": "Androgynomonoecious"
+        },
+        {
+          "text": "Androgynous"
+        },
+        {
+          "text": "Andromonoecious"
+        },
+        {
+          "text": "Bisexual"
+        },
+        {
+          "text": "Dichogamous"
+        },
+        {
+          "text": "Diclinous"
+        },
+        {
+          "text": "Dioecious"
+        },
+        {
+          "text": "Gynodioecious"
+        },
+        {
+          "text": "Gynoecious"
+        },
+        {
+          "text": "Gynomonoecious"
+        },
+        {
+          "text": "Hermaphroditic"
+        },
+        {
+          "text": "Imperfect"
+        },
+        {
+          "text": "Monoclinous"
+        },
+        {
+          "text": "Monoecious"
+        },
+        {
+          "text": "Perfect"
+        },
+        {
+          "text": "Polygamodioecious"
+        },
+        {
+          "text": "Polygamomonoecious"
+        },
+        {
+          "text": "Polygamous"
+        },
+        {
+          "text": "Protandrous"
+        },
+        {
+          "text": "Protogynous"
+        },
+        {
+          "text": "Subandroecious"
+        },
+        {
+          "text": "Subdioecious"
+        },
+        {
+          "text": "Subgynoecious"
+        },
+        {
+          "text": "Synoecious"
+        },
+        {
+          "text": "Trimonoecious"
+        },
+        {
+          "text": "Trioecious"
+        },
+        {
+          "text": "Unisexual"
+        }
+      ]
+    },
+    {
+      "name": "profile_position_enum",
+      "definition_uri": "https://example.com/mixsProfilePositionEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "backslope"
+        },
+        {
+          "text": "footslope"
+        },
+        {
+          "text": "shoulder"
+        },
+        {
+          "text": "summit"
+        },
+        {
+          "text": "toeslope"
+        }
+      ]
+    },
+    {
+      "name": "quad_pos_enum",
+      "definition_uri": "https://example.com/mixsQuadPosEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "East side"
+        },
+        {
+          "text": "North side"
+        },
+        {
+          "text": "South side"
+        },
+        {
+          "text": "West side"
+        }
+      ]
+    },
+    {
+      "name": "rel_samp_loc_enum",
+      "definition_uri": "https://example.com/mixsRelSampLocEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "center of car"
+        },
+        {
+          "text": "edge of car"
+        },
+        {
+          "text": "under a seat"
+        }
+      ]
+    },
+    {
+      "name": "room_condt_enum",
+      "definition_uri": "https://example.com/mixsRoomCondtEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "damaged"
+        },
+        {
+          "text": "needs repair"
+        },
+        {
+          "text": "new"
+        },
+        {
+          "text": "rupture"
+        },
+        {
+          "text": "visible signs of mold/mildew"
+        },
+        {
+          "text": "visible wear"
+        }
+      ]
+    },
+    {
+      "name": "room_connected_enum",
+      "definition_uri": "https://example.com/mixsRoomConnectedEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "attic"
+        },
+        {
+          "text": "bathroom"
+        },
+        {
+          "text": "closet"
+        },
+        {
+          "text": "conference room"
+        },
+        {
+          "text": "elevator"
+        },
+        {
+          "text": "examining room"
+        },
+        {
+          "text": "hallway"
+        },
+        {
+          "text": "kitchen"
+        },
+        {
+          "text": "mail room"
+        },
+        {
+          "text": "office"
+        },
+        {
+          "text": "stairwell"
+        }
+      ]
+    },
+    {
+      "name": "room_loc_enum",
+      "definition_uri": "https://example.com/mixsRoomLocEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "corner room"
+        },
+        {
+          "text": "exterior wall"
+        },
+        {
+          "text": "interior room"
+        }
+      ]
+    },
+    {
+      "name": "room_samp_pos_enum",
+      "definition_uri": "https://example.com/mixsRoomSampPosEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "center"
+        },
+        {
+          "text": "east corner"
+        },
+        {
+          "text": "north corner"
+        },
+        {
+          "text": "northeast corner"
+        },
+        {
+          "text": "northwest corner"
+        },
+        {
+          "text": "south corner"
+        },
+        {
+          "text": "southeast corner"
+        },
+        {
+          "text": "southwest corner"
+        },
+        {
+          "text": "west corner"
+        }
+      ]
+    },
+    {
+      "name": "room_type_enum",
+      "definition_uri": "https://example.com/mixsRoomTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "attic"
+        },
+        {
+          "text": "auditorium"
+        },
+        {
+          "text": "bathroom"
+        },
+        {
+          "text": "cafe"
+        },
+        {
+          "text": "closet"
+        },
+        {
+          "text": "conference room"
+        },
+        {
+          "text": "data center"
+        },
+        {
+          "text": "elevator"
+        },
+        {
+          "text": "examining room"
+        },
+        {
+          "text": "gymnasium"
+        },
+        {
+          "text": "hallway"
+        },
+        {
+          "text": "kitchen"
+        },
+        {
+          "text": "laboratory_dry"
+        },
+        {
+          "text": "laboratory_wet"
+        },
+        {
+          "text": "lobby"
+        },
+        {
+          "text": "lockers"
+        },
+        {
+          "text": "mail room"
+        },
+        {
+          "text": "mechanical or electrical room"
+        },
+        {
+          "text": "natatorium"
+        },
+        {
+          "text": "open office"
+        },
+        {
+          "text": "private office"
+        },
+        {
+          "text": "restroom",
+          "comments": [
+            "removed initial comma"
+          ]
+        },
+        {
+          "text": "stairwell"
+        },
+        {
+          "text": "vestibule"
+        },
+        {
+          "text": "warehouse"
+        }
+      ]
+    },
+    {
+      "name": "route_transmission_enum",
+      "definition_uri": "https://example.com/mixsRouteTransmissionEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "environmental:faecal-oral"
+        },
+        {
+          "text": "transplacental"
+        },
+        {
+          "text": "vector-borne:vector penetration"
+        }
+      ]
+    },
+    {
+      "name": "samp_capt_status_enum",
+      "definition_uri": "https://example.com/mixsSampCaptStatusEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "active surveillance in response to an outbreak"
+        },
+        {
+          "text": "active surveillance not initiated by an outbreak"
+        },
+        {
+          "text": "farm sample"
+        },
+        {
+          "text": "market sample"
+        },
+        {
+          "text": "other"
+        }
+      ]
+    },
+    {
+      "name": "samp_collect_point_enum",
+      "definition_uri": "https://example.com/mixsSampCollectPointEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "drilling rig"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "separator"
+        },
+        {
+          "text": "storage tank"
+        },
+        {
+          "text": "test well"
+        },
+        {
+          "text": "well"
+        },
+        {
+          "text": "wellhead"
+        }
+      ]
+    },
+    {
+      "name": "samp_dis_stage_enum",
+      "definition_uri": "https://example.com/mixsSampDisStageEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "dissemination"
+        },
+        {
+          "text": "growth and reproduction"
+        },
+        {
+          "text": "infection"
+        },
+        {
+          "text": "inoculation"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "penetration"
+        }
+      ]
+    },
+    {
+      "name": "samp_loc_condition_enum",
+      "definition_uri": "https://example.com/mixsSampLocConditionEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "damaged"
+        },
+        {
+          "text": "new"
+        },
+        {
+          "text": "rupture"
+        },
+        {
+          "text": "visible signs of mold-mildew"
+        },
+        {
+          "text": "visible weariness repair"
+        }
+      ]
+    },
+    {
+      "name": "samp_subtype_enum",
+      "definition_uri": "https://example.com/mixsSampSubtypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "biofilm"
+        },
+        {
+          "text": "not applicable"
+        },
+        {
+          "text": "oil phase"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "water phase"
+        }
+      ]
+    },
+    {
+      "name": "samp_surf_moisture_enum",
+      "definition_uri": "https://example.com/mixsSampSurfMoistureEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "intermittent moisture"
+        },
+        {
+          "text": "not present"
+        },
+        {
+          "text": "submerged"
+        }
+      ]
+    },
+    {
+      "name": "samp_transport_cont_enum",
+      "definition_uri": "https://example.com/mixsSampTransportContEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "bottle"
+        },
+        {
+          "text": "cooler"
+        },
+        {
+          "text": "glass vial"
+        },
+        {
+          "text": "plastic vial"
+        },
+        {
+          "text": "vendor supplied container"
+        }
+      ]
+    },
+    {
+      "name": "samp_weather_enum",
+      "definition_uri": "https://example.com/mixsSampWeatherEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "clear sky"
+        },
+        {
+          "text": "cloudy"
+        },
+        {
+          "text": "foggy"
+        },
+        {
+          "text": "hail"
+        },
+        {
+          "text": "rain"
+        },
+        {
+          "text": "sleet"
+        },
+        {
+          "text": "snow"
+        },
+        {
+          "text": "sunny"
+        },
+        {
+          "text": "windy"
+        }
+      ]
+    },
+    {
+      "name": "season_use_enum",
+      "definition_uri": "https://example.com/mixsSeasonUseEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Fall"
+        },
+        {
+          "text": "Spring"
+        },
+        {
+          "text": "Summer"
+        },
+        {
+          "text": "Winter"
+        }
+      ]
+    },
+    {
+      "name": "sediment_type_enum",
+      "definition_uri": "https://example.com/mixsSedimentTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "biogenous"
+        },
+        {
+          "text": "cosmogenous"
+        },
+        {
+          "text": "hydrogenous"
+        },
+        {
+          "text": "lithogenous"
+        }
+      ]
+    },
+    {
+      "name": "shad_dev_water_mold_enum",
+      "definition_uri": "https://example.com/mixsShadDevWaterMoldEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "no presence of mold visible"
+        },
+        {
+          "text": "presence of mold visible"
+        }
+      ]
+    },
+    {
+      "name": "shading_device_cond_enum",
+      "definition_uri": "https://example.com/mixsShadingDeviceCondEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "damaged"
+        },
+        {
+          "text": "needs repair"
+        },
+        {
+          "text": "new"
+        },
+        {
+          "text": "rupture"
+        },
+        {
+          "text": "visible wear"
+        }
+      ]
+    },
+    {
+      "name": "shading_device_loc_enum",
+      "definition_uri": "https://example.com/mixsShadingDeviceLocEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "exterior"
+        },
+        {
+          "text": "interior"
+        }
+      ]
+    },
+    {
+      "name": "shading_device_type_enum",
+      "definition_uri": "https://example.com/mixsShadingDeviceTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "bahama shutters"
+        },
+        {
+          "text": "exterior roll blind"
+        },
+        {
+          "text": "gambrel awning"
+        },
+        {
+          "text": "hood awning"
+        },
+        {
+          "text": "porchroller awning"
+        },
+        {
+          "text": "sarasota shutters"
+        },
+        {
+          "text": "slatted aluminum"
+        },
+        {
+          "text": "solid aluminum awning"
+        },
+        {
+          "text": "sun screen"
+        },
+        {
+          "text": "tree"
+        },
+        {
+          "text": "trellis"
+        },
+        {
+          "text": "venetian awning"
+        }
+      ]
+    },
+    {
+      "name": "soil_texture_class_enum",
+      "definition_uri": "https://example.com/mixsSoilTextureClassEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "clay"
+        },
+        {
+          "text": "clay loam"
+        },
+        {
+          "text": "loam"
+        },
+        {
+          "text": "loamy sand"
+        },
+        {
+          "text": "sand"
+        },
+        {
+          "text": "sandy clay"
+        },
+        {
+          "text": "sandy clay loam"
+        },
+        {
+          "text": "sandy loam"
+        },
+        {
+          "text": "silt"
+        },
+        {
+          "text": "silt loam"
+        },
+        {
+          "text": "silty clay"
+        },
+        {
+          "text": "silty clay loam"
+        }
+      ]
+    },
+    {
+      "name": "space_typ_state_enum",
+      "definition_uri": "https://example.com/mixsSpaceTypStateEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "typically occupied"
+        },
+        {
+          "text": "typically unoccupied"
+        }
+      ]
+    },
+    {
+      "name": "specific_enum",
+      "definition_uri": "https://example.com/mixsSpecificEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "as built"
+        },
+        {
+          "text": "bid"
+        },
+        {
+          "text": "construction"
+        },
+        {
+          "text": "design"
+        },
+        {
+          "text": "operation"
+        },
+        {
+          "text": "photos"
+        }
+      ]
+    },
+    {
+      "name": "sr_dep_env_enum",
+      "definition_uri": "https://example.com/mixsSrDepEnvEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Fluvioldeltaic"
+        },
+        {
+          "text": "Fluviomarine"
+        },
+        {
+          "text": "Lacustine"
+        },
+        {
+          "text": "Marine"
+        },
+        {
+          "text": "other"
+        }
+      ]
+    },
+    {
+      "name": "sr_geol_age_enum",
+      "definition_uri": "https://example.com/mixsSrGeolAgeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Archean"
+        },
+        {
+          "text": "Cambrian"
+        },
+        {
+          "text": "Carboniferous"
+        },
+        {
+          "text": "Cenozoic"
+        },
+        {
+          "text": "Cretaceous"
+        },
+        {
+          "text": "Devonian"
+        },
+        {
+          "text": "Jurassic"
+        },
+        {
+          "text": "Mesozoic"
+        },
+        {
+          "text": "Neogene"
+        },
+        {
+          "text": "Ordovician"
+        },
+        {
+          "text": "other"
+        },
+        {
+          "text": "Paleogene"
+        },
+        {
+          "text": "Paleozoic"
+        },
+        {
+          "text": "Permian"
+        },
+        {
+          "text": "Precambrian"
+        },
+        {
+          "text": "Proterozoic"
+        },
+        {
+          "text": "Silurian"
+        },
+        {
+          "text": "Triassic"
+        }
+      ]
+    },
+    {
+      "name": "sr_kerog_type_enum",
+      "definition_uri": "https://example.com/mixsSrKerogTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "other"
+        },
+        {
+          "text": "Type I"
+        },
+        {
+          "text": "Type II"
+        },
+        {
+          "text": "Type III"
+        },
+        {
+          "text": "Type IV"
+        }
+      ]
+    },
+    {
+      "name": "sr_lithology_enum",
+      "definition_uri": "https://example.com/mixsSrLithologyEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Biosilicieous"
+        },
+        {
+          "text": "Carbonate"
+        },
+        {
+          "text": "Clastic"
+        },
+        {
+          "text": "Coal"
+        },
+        {
+          "text": "other"
+        }
+      ]
+    },
+    {
+      "name": "substructure_type_enum",
+      "definition_uri": "https://example.com/mixsSubstructureTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "basement"
+        },
+        {
+          "text": "crawlspace"
+        },
+        {
+          "text": "slab on grade"
+        }
+      ]
+    },
+    {
+      "name": "surf_air_cont_enum",
+      "definition_uri": "https://example.com/mixsSurfAirContEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "biocides"
+        },
+        {
+          "text": "biological contaminants"
+        },
+        {
+          "text": "dust"
+        },
+        {
+          "text": "nutrients"
+        },
+        {
+          "text": "organic matter"
+        },
+        {
+          "text": "particulate matter"
+        },
+        {
+          "text": "radon"
+        },
+        {
+          "text": "volatile organic compounds"
+        }
+      ]
+    },
+    {
+      "name": "sym_life_cycle_type_enum",
+      "definition_uri": "https://example.com/mixsSymLifeCycleTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "complex life cycle"
+        },
+        {
+          "text": "simple life cycle"
+        }
+      ]
+    },
+    {
+      "name": "symbiont_host_role_enum",
+      "definition_uri": "https://example.com/mixsSymbiontHostRoleEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "accidental"
+        },
+        {
+          "text": "dead-end"
+        },
+        {
+          "text": "definitive"
+        },
+        {
+          "text": "intermediate"
+        },
+        {
+          "text": "paratenic"
+        },
+        {
+          "text": "reservoir"
+        },
+        {
+          "text": "single host"
+        }
+      ]
+    },
+    {
+      "name": "tidal_stage_enum",
+      "definition_uri": "https://example.com/mixsTidalStageEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "ebb tide"
+        },
+        {
+          "text": "flood tide"
+        },
+        {
+          "text": "high tide"
+        },
+        {
+          "text": "low tide"
+        }
+      ]
+    },
+    {
+      "name": "train_line_enum",
+      "definition_uri": "https://example.com/mixsTrainLineEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "green"
+        },
+        {
+          "text": "orange"
+        },
+        {
+          "text": "red"
+        }
+      ]
+    },
+    {
+      "name": "train_stat_loc_enum",
+      "definition_uri": "https://example.com/mixsTrainStatLocEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "forest hills"
+        },
+        {
+          "text": "riverside"
+        },
+        {
+          "text": "south station above ground"
+        },
+        {
+          "text": "south station amtrak"
+        },
+        {
+          "text": "south station underground"
+        }
+      ]
+    },
+    {
+      "name": "train_stop_loc_enum",
+      "definition_uri": "https://example.com/mixsTrainStopLocEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "downtown"
+        },
+        {
+          "text": "end"
+        },
+        {
+          "text": "mid"
+        }
+      ]
+    },
+    {
+      "name": "type_of_symbiosis_enum",
+      "definition_uri": "https://example.com/mixsTypeOfSymbiosisEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "commensalistic"
+        },
+        {
+          "text": "mutualistic"
+        },
+        {
+          "text": "parasitic"
+        }
+      ]
+    },
+    {
+      "name": "urine_collect_meth_enum",
+      "definition_uri": "https://example.com/mixsUrineCollectMethEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "catheter"
+        },
+        {
+          "text": "clean catch"
+        }
+      ]
+    },
+    {
+      "name": "wall_const_type_enum",
+      "definition_uri": "https://example.com/mixsWallConstTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "fire resistive"
+        },
+        {
+          "text": "frame construction"
+        },
+        {
+          "text": "joisted masonry"
+        },
+        {
+          "text": "light noncombustible"
+        },
+        {
+          "text": "masonry noncombustible"
+        },
+        {
+          "text": "modified fire resistive"
+        }
+      ]
+    },
+    {
+      "name": "wall_finish_mat_enum",
+      "definition_uri": "https://example.com/mixsWallFinishMatEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "acoustical treatment"
+        },
+        {
+          "text": "gypsum board"
+        },
+        {
+          "text": "gypsum plaster"
+        },
+        {
+          "text": "masonry"
+        },
+        {
+          "text": "metal"
+        },
+        {
+          "text": "plaster"
+        },
+        {
+          "text": "stone facing"
+        },
+        {
+          "text": "terrazzo"
+        },
+        {
+          "text": "tile"
+        },
+        {
+          "text": "veneer plaster"
+        },
+        {
+          "text": "wood"
+        }
+      ]
+    },
+    {
+      "name": "wall_loc_enum",
+      "definition_uri": "https://example.com/mixsWallLocEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "east"
+        },
+        {
+          "text": "north"
+        },
+        {
+          "text": "south"
+        },
+        {
+          "text": "west"
+        }
+      ]
+    },
+    {
+      "name": "wall_surf_treatment_enum",
+      "definition_uri": "https://example.com/mixsWallSurfTreatmentEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "fabric"
+        },
+        {
+          "text": "no treatment"
+        },
+        {
+          "text": "painted"
+        },
+        {
+          "text": "paneling"
+        },
+        {
+          "text": "stucco"
+        },
+        {
+          "text": "wall paper"
+        }
+      ]
+    },
+    {
+      "name": "wall_texture_enum",
+      "definition_uri": "https://example.com/mixsWallTextureEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "crows feet"
+        },
+        {
+          "text": "crows-foot stomp"
+        },
+        {
+          "text": "double skip"
+        },
+        {
+          "text": "hawk and trowel"
+        },
+        {
+          "text": "knockdown"
+        },
+        {
+          "text": "orange peel"
+        },
+        {
+          "text": "popcorn"
+        },
+        {
+          "text": "rosebud stomp"
+        },
+        {
+          "text": "Santa-Fe texture"
+        },
+        {
+          "text": "skip trowel"
+        },
+        {
+          "text": "smooth"
+        },
+        {
+          "text": "stomp knockdown"
+        },
+        {
+          "text": "swirl"
+        }
+      ]
+    },
+    {
+      "name": "wall_water_mold_enum",
+      "definition_uri": "https://example.com/mixsWallWaterMoldEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "no presence of mold visible"
+        },
+        {
+          "text": "presence of mold visible"
+        }
+      ]
+    },
+    {
+      "name": "water_feat_type_enum",
+      "definition_uri": "https://example.com/mixsWaterFeatTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "fountain"
+        },
+        {
+          "text": "pool"
+        },
+        {
+          "text": "standing feature"
+        },
+        {
+          "text": "stream"
+        },
+        {
+          "text": "waterfall"
+        }
+      ]
+    },
+    {
+      "name": "water_source_shared_enum",
+      "definition_uri": "https://example.com/mixsWaterSourceSharedEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "multiple users, agricutural"
+        },
+        {
+          "text": "multiple users, other"
+        },
+        {
+          "text": "no sharing"
+        }
+      ]
+    },
+    {
+      "name": "weekday_enum",
+      "definition_uri": "https://example.com/mixsWeekdayEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "Friday"
+        },
+        {
+          "text": "Monday"
+        },
+        {
+          "text": "Saturday"
+        },
+        {
+          "text": "Sunday"
+        },
+        {
+          "text": "Thursday"
+        },
+        {
+          "text": "Tuesday"
+        },
+        {
+          "text": "Wednesday"
+        }
+      ]
+    },
+    {
+      "name": "window_cond_enum",
+      "definition_uri": "https://example.com/mixsWindowCondEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "damaged"
+        },
+        {
+          "text": "needs repair"
+        },
+        {
+          "text": "new"
+        },
+        {
+          "text": "rupture"
+        },
+        {
+          "text": "visible wear"
+        }
+      ]
+    },
+    {
+      "name": "window_cover_enum",
+      "definition_uri": "https://example.com/mixsWindowCoverEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "blinds"
+        },
+        {
+          "text": "curtains"
+        },
+        {
+          "text": "none"
+        }
+      ]
+    },
+    {
+      "name": "window_horiz_pos_enum",
+      "definition_uri": "https://example.com/mixsWindowHorizPosEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "left"
+        },
+        {
+          "text": "middle"
+        },
+        {
+          "text": "right"
+        }
+      ]
+    },
+    {
+      "name": "window_loc_enum",
+      "definition_uri": "https://example.com/mixsWindowLocEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "east"
+        },
+        {
+          "text": "north"
+        },
+        {
+          "text": "south"
+        },
+        {
+          "text": "west"
+        }
+      ]
+    },
+    {
+      "name": "window_mat_enum",
+      "definition_uri": "https://example.com/mixsWindowMatEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "clad"
+        },
+        {
+          "text": "fiberglass"
+        },
+        {
+          "text": "metal"
+        },
+        {
+          "text": "vinyl"
+        },
+        {
+          "text": "wood"
+        }
+      ]
+    },
+    {
+      "name": "window_status_enum",
+      "definition_uri": "https://example.com/mixsWindowStatusEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "closed"
+        },
+        {
+          "text": "open"
+        }
+      ]
+    },
+    {
+      "name": "window_type_enum",
+      "definition_uri": "https://example.com/mixsWindowTypeEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "fixed window"
+        },
+        {
+          "text": "horizontal sash window"
+        },
+        {
+          "text": "single-hung sash window"
+        }
+      ]
+    },
+    {
+      "name": "window_vert_pos_enum",
+      "definition_uri": "https://example.com/mixsWindowVertPosEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "bottom"
+        },
+        {
+          "text": "high"
+        },
+        {
+          "text": "low"
+        },
+        {
+          "text": "middle"
+        },
+        {
+          "text": "top"
+        }
+      ]
+    },
+    {
+      "name": "window_water_mold_enum",
+      "definition_uri": "https://example.com/mixsWindowWaterMoldEnum",
+      "from_schema": "https://example.com/mixs",
+      "permissible_values": [
+        {
+          "text": "no presence of mold visible"
+        },
+        {
+          "text": "presence of mold visible"
+        }
+      ]
+    }
+  ],
   "slots": [
     {
       "name": "x_16s_recover",
@@ -114262,9 +117937,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "mixs_schemasheets_generated.yaml",
-  "source_file_date": "2022-10-13T12:51:14",
-  "source_file_size": 1036629,
-  "generation_date": "2022-10-13T12:51:47",
+  "source_file_date": "2022-10-14T11:50:40",
+  "source_file_size": 1093372,
+  "generation_date": "2022-10-14T11:51:11",
   "@type": "SchemaDefinition",
   "@context": [
     "schemasheets/generated/jsonld/mixs_schemasheets_generated.context.jsonld",
