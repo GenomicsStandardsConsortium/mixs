@@ -238,3 +238,11 @@ schemasheets/yaml_out/test_enums.yaml: schemasheets/tsv_in/mixs_clear_cut_enums.
 	$(RUN) sheets2linkml \
 		--output $@ $<
 
+#schemasheets/example_data/out/mims_soil_set_database.tsv: \
+#schemasheets/yaml_out/mixs_schemasheets.yaml \
+#schemasheets/example_data/in/mims_soil_set_database.yaml
+#	$(RUN) linkml-convert \
+#		--output $@ \
+#		--target-class Database \
+#		--index-slot mims_soil_set \
+#		--schema $^
