@@ -4,22 +4,21 @@
 
 URI: <a href={{ schema.id }}>{{ schema.id }}</a>
 
+## Checklists
+
+| Checklist | Description |
+{% for c in schemaview.all_classes().values() -%}
+{%- if c.mixin -%}
+| --- | --- |
+| {{ gen.link(c) }} | {{ c.description }} |
+{%- endif -%}
+{% endfor %}
 
 ## Packages
 
 | Package | Description |
 {% for c in schemaview.all_classes().values() -%}
 {%- if not c.mixin and not c.is_a -%}
-| --- | --- |
-| {{ gen.link(c) }} | {{ c.description }} |
-{%- endif -%}
-{% endfor %}
-
-## Checklists
-
-| Checklist | Description |
-{% for c in schemaview.all_classes().values() -%}
-{%- if c.mixin -%}
 | --- | --- |
 | {{ gen.link(c) }} | {{ c.description }} |
 {%- endif -%}
