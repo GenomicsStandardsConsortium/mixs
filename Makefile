@@ -87,6 +87,14 @@ schemasheets/example_data/out/mixs_database.json schemasheets/example_data/out/m
 validation_expected_pass validation_missing validation_extra bare_jsonschema_invalid \
 schemasheets/example_data/out/mims_soil_set_database.ttl
 
+# this could be a circular dependency
+# silently depends on schemasheets/yaml_out/mixs_schemasheets.yaml
+# but also prepares schemasheets/tsv_in/generated/mixs_combination_classes.tsv
+# which will be one of the inputs into generating schemasheets/yaml_out/mixs_schemasheets.yaml
+# so don't put into schemasheets_all
+schemasheets/tsv_in/generated/mixs_combination_classes.tsv:
+	$(RUN) python gsctools/gen_mixs_combination_classes.py
+
 schemasheets_clean:
 	rm -rf schemasheets/example_data/out/*
 	rm -rf schemasheets/generated/*
@@ -102,6 +110,7 @@ schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_classdefs.tsv
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slot_assignments.tsv \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_conflicting_defer_to_soil.tsv \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_non_conflicting_shared.tsv \
+schemasheets/tsv_in/generated/mixs_combination_classes.tsv \
 schemasheets/tsv_in/mixs_clear_cut_enums.tsv \
 schemasheets/tsv_in/mixs_prefixes.tsv \
 schemasheets/tsv_in/mixs_schema_annotations.tsv \
@@ -138,6 +147,8 @@ schemasheets/generated/mixs_schemasheets_generated.yaml
 #  also slow
 #  sqlschema only models mixs_database class
 #  I didn't say that it was the tree_root
+# markdown generaton slow but may reveal subtle problems
+# how to test serve?
 
 validation_expected_pass: \
 schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mixs_database.yaml

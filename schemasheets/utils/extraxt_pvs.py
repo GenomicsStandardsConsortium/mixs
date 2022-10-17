@@ -23,7 +23,7 @@ prob_chars = [
     '"',
 ]
 
-raw_enums_file = "../tsv_in/mixs_potential_enums.tsv"
+raw_enums_file = "../tsv_in/generated/mixs_potential_enums.tsv"
 
 outer_lod = []
 for sdf in slotdef_files:
