@@ -257,3 +257,8 @@ schemasheets/yaml_out/test_enums.yaml: schemasheets/tsv_in/mixs_clear_cut_enums.
 #		--target-class Database \
 #		--index-slot mims_soil_set \
 #		--schema $^
+
+schemasheets/generated/gen_docs_docs/index.md: schemasheets/yaml_out/mixs_schemasheets.yaml
+	$(RUN) gen-doc $< --directory $(dir $@) --template-directory doc_templates --use-slot-uris
+
+
