@@ -81,11 +81,14 @@ gh_docs:
 
 schemasheets_all: \
 schemasheets_clean \
+schemasheets/yaml_out/mixs_schemasheets.yaml \
 schemasheets/logs/mixs_schemasheets_linting_log.tsv \
+schemasheets/generated/mixs_schemasheets_generated.yaml \
 schemasheets/generated/mixs_schemasheets_generated.sql \
-schemasheets/example_data/out/mixs_database.json schemasheets/example_data/out/mixs_database.db \
 validation_expected_pass validation_missing validation_extra bare_jsonschema_invalid \
-schemasheets/example_data/out/mims_soil_set_database.ttl
+schemasheets/example_data/out/mixs_database.json schemasheets/example_data/out/mixs_database.db \
+schemasheets/example_data/out/mims_soil_set_database.ttl \
+schemasheets/generated/gen_docs_docs/index.md
 
 # this could be a circular dependency
 # silently depends on schemasheets/yaml_out/mixs_schemasheets.yaml
@@ -101,6 +104,7 @@ schemasheets_clean:
 	rm -rf schemasheets/logs/*
 	rm -rf schemasheets/yaml_out/*
 	rm -rf schemasheets/mkdocs_html/*
+	rm -rf schemasheets/generated/gen_docs_docs/*
 
 schemasheets/yaml_out/mixs_schemasheets.yaml: \
 schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_classdefs.tsv \
@@ -117,38 +121,49 @@ schemasheets/tsv_in/mixs_schema_annotations.tsv \
 schemasheets/tsv_in/mixs_utility.tsv
 	$(RUN) sheets2linkml --output $@ $^
 
-# schemasheets/tsv_in/enums_generated_keep.tsv \
 
 # --fix / --no-fix
 # see https://github.com/linkml/linkml/blob/main/linkml/linter/config/default.yaml
+# enum names should be upper camel case
 schemasheets/logs/mixs_schemasheets_linting_log.tsv: schemasheets/yaml_out/mixs_schemasheets.yaml
 	- $(RUN) linkml-lint \
 		--format tsv \
 		--output $@ $< \
 		--config schemasheets/configs/linter_config_default.yaml
 
-# \
 #		--ignore-warnings
 
 # todo capture log?
+#  isn't merging imports
 schemasheets/generated/mixs_schemasheets_generated.yaml: schemasheets/yaml_out/mixs_schemasheets.yaml
 	$(RUN) gen-linkml \
 		--format yaml  \
 		--no-materialize-attributes $^ > $@
 
 # todo capture log?
+# todo excel artifact has duplicate tabs (with numerical suffixes)
+#  also slow
+# markdown generaton slow but may reveal subtle problems
+# shacl slowish
 schemasheets/generated/mixs_schemasheets_generated.sql: \
 schemasheets/generated/mixs_schemasheets_generated.yaml
 	$(RUN) gen-project \
 		--exclude excel \
+		--exclude markdown \
 		--dir schemasheets/generated $<
 
-# todo excel has duplicate tabs
-#  also slow
-#  sqlschema only models mixs_database class
-#  I didn't say that it was the tree_root
-# markdown generaton slow but may reveal subtle problems
-# how to test serve?
+# this doesn't generate the left hand navigation or the index page
+schemasheets/generated/gen_docs_docs/index.md: schemasheets/yaml_out/mixs_schemasheets.yaml
+	$(RUN) gen-doc $< --directory $(dir $@) --template-directory doc_templates --use-slot-uris
+
+schemasheets/mkdocs_html/index.md: schemasheets/generated/gen_docs_docs/index.md
+	cp -R static_md/* $(dir $<)
+	mkdocs build
+	#--config-file mkdocs.yml --site-dir schemasheets/mkdocs_html
+	# then make docserve if desired
+	# publishing to GH pages will be a separate step
+	# note that schemasheets/mkdocs.yml has been edited relative to the main branch
+
 
 validation_expected_pass: \
 schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mixs_database.yaml
@@ -170,6 +185,12 @@ schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_dat
 		--target-class Database \
 		--schema $^
 
+
+bare_jsonschema_invalid: \
+schemasheets/example_data/in/mixs_database_missing.json \
+schemasheets/generated/jsonschema/mixs_schemasheets_generated.schema.json
+	! jsonschema -i $^
+
 schemasheets/example_data/out/mixs_database.json: \
 schemasheets/generated/mixs_schemasheets_generated.yaml \
 schemasheets/example_data/in/mixs_database.yaml
@@ -178,16 +199,14 @@ schemasheets/example_data/in/mixs_database.yaml
 		--target-class Database \
 		--schema $^
 
+
 schemasheets/example_data/out/mixs_database.db: \
 schemasheets/generated/mixs_schemasheets_generated.yaml \
 schemasheets/example_data/in/mixs_database.yaml
 	$(RUN) linkml-sqldb dump --db $@ --target-class Database --schema $^
 	sqlite3 $@ ".header on" "select * from Mims"
 
-bare_jsonschema_invalid: \
-schemasheets/example_data/in/mixs_database_missing.json \
-schemasheets/generated/jsonschema/mixs_schemasheets_generated.schema.json
-	! jsonschema -i $^
+
 
 #schemasheets/example_data/out/mims_soil_set_database.yaml: \
 #schemasheets/generated/mixs_schemasheets_generated.yaml \
@@ -258,7 +277,6 @@ schemasheets/yaml_out/test_enums.yaml: schemasheets/tsv_in/mixs_clear_cut_enums.
 #		--index-slot mims_soil_set \
 #		--schema $^
 
-schemasheets/generated/gen_docs_docs/index.md: schemasheets/yaml_out/mixs_schemasheets.yaml
-	$(RUN) gen-doc $< --directory $(dir $@) --template-directory doc_templates --use-slot-uris
+
 
 
