@@ -158,7 +158,7 @@ schemasheets/generated/gen_docs_docs/index.md: schemasheets/yaml_out/mixs_schema
 
 schemasheets/mkdocs_html/index.md: schemasheets/generated/gen_docs_docs/index.md
 	cp -R static_md/* $(dir $<)
-	mkdocs build
+	$(RUN) mkdocs build
 	#--config-file mkdocs.yml --site-dir schemasheets/mkdocs_html
 	# then make docserve if desired
 	# publishing to GH pages will be a separate step

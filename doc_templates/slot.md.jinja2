@@ -25,6 +25,11 @@ URI: {{ gen.uri_link(element) }}
 <!-- no inheritance hierarchy -->
 {% endif %}
 
+## Domain Classes
+{% for d in element.domain_of %}
+* {{ gen.link(d) }}
+{% endfor %}
+
 {% if schemaview.is_mixin(element.name) %}
 ## Mixin Usage
 
