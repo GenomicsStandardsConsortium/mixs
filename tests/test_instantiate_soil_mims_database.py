@@ -28,6 +28,7 @@ class Minimal(unittest.TestCase):
                 requireds.append(a_name)
         requireds.sort()
         pprint.pprint(requireds)
+        self.assertIn("project_name", requireds)
 
     # ['collection_date',
     #  'env_broad_scale',
