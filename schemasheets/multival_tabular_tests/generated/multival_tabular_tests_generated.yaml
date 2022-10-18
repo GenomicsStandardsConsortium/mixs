@@ -7,19 +7,83 @@ prefixes:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
 default_prefix: http://example.org/multival_tabular_tests/
+enums:
+  HobbyEnum:
+    name: HobbyEnum
+    permissible_values:
+      tennis:
+        text: tennis
+      cooking:
+        text: cooking
+      sewing:
+        text: sewing
+      fishing:
+        text: fishing
 slots:
+  org_set:
+    name: org_set
+    multivalued: true
+    range: Organization
+    inlined_as_list: true
+  org_name:
+    name: org_name
+    multivalued: false
+    range: string
+  pet_name:
+    name: pet_name
+    multivalued: false
+    range: string
+  species:
+    name: species
+    multivalued: false
+    range: string
+  pet_names:
+    name: pet_names
+    multivalued: true
+    range: string
+  person_set:
+    name: person_set
+    multivalued: true
+    range: Person
+    inlined_as_list: true
+  pet_set:
+    name: pet_set
+    multivalued: true
+    range: Pet
+    inlined_as_list: true
   first_name:
     name: first_name
+    range: string
   last_name:
     name: last_name
+    range: string
   hobbies:
     name: hobbies
     multivalued: true
+    range: HobbyEnum
 classes:
-  person:
-    name: person
+  Organization:
+    name: Organization
+    slots:
+    - org_name
+    - pet_names
+  Person:
+    name: Person
     slots:
     - first_name
     - last_name
     - hobbies
+    - pet_names
+  Pet:
+    name: Pet
+    slots:
+    - pet_name
+    - species
+  Database:
+    name: Database
+    slots:
+    - person_set
+    - pet_set
+    - org_set
+    tree_root: true
 source_file: multival_tabular_tests.yaml

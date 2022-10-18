@@ -184,7 +184,123 @@
       "@type": "TypeDefinition"
     }
   ],
+  "enums": [
+    {
+      "name": "HobbyEnum",
+      "definition_uri": "http://example.org/multival_tabular_tests/HobbyEnum",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "permissible_values": [
+        {
+          "text": "tennis"
+        },
+        {
+          "text": "cooking"
+        },
+        {
+          "text": "sewing"
+        },
+        {
+          "text": "fishing"
+        }
+      ]
+    }
+  ],
   "slots": [
+    {
+      "name": "org_set",
+      "definition_uri": "http://example.org/multival_tabular_tests/org_set",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "slot_uri": "http://example.org/multival_tabular_tests/org_set",
+      "multivalued": true,
+      "owner": "Database",
+      "domain_of": [
+        "Database"
+      ],
+      "range": "Organization",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "org_name",
+      "definition_uri": "http://example.org/multival_tabular_tests/org_name",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "slot_uri": "http://example.org/multival_tabular_tests/org_name",
+      "owner": "Organization",
+      "domain_of": [
+        "Organization"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pet_name",
+      "definition_uri": "http://example.org/multival_tabular_tests/pet_name",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "slot_uri": "http://example.org/multival_tabular_tests/pet_name",
+      "owner": "Pet",
+      "domain_of": [
+        "Pet"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "species",
+      "definition_uri": "http://example.org/multival_tabular_tests/species",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "slot_uri": "http://example.org/multival_tabular_tests/species",
+      "owner": "Pet",
+      "domain_of": [
+        "Pet"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pet_names",
+      "definition_uri": "http://example.org/multival_tabular_tests/pet_names",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "slot_uri": "http://example.org/multival_tabular_tests/pet_names",
+      "multivalued": true,
+      "owner": "Person",
+      "domain_of": [
+        "Organization",
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person_set",
+      "definition_uri": "http://example.org/multival_tabular_tests/person_set",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "slot_uri": "http://example.org/multival_tabular_tests/person_set",
+      "multivalued": true,
+      "owner": "Database",
+      "domain_of": [
+        "Database"
+      ],
+      "range": "Person",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pet_set",
+      "definition_uri": "http://example.org/multival_tabular_tests/pet_set",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "slot_uri": "http://example.org/multival_tabular_tests/pet_set",
+      "multivalued": true,
+      "owner": "Database",
+      "domain_of": [
+        "Database"
+      ],
+      "range": "Pet",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
     {
       "name": "first_name",
       "definition_uri": "http://example.org/multival_tabular_tests/first_name",
@@ -219,11 +335,23 @@
       "domain_of": [
         "Person"
       ],
-      "range": "string",
+      "range": "HobbyEnum",
       "@type": "SlotDefinition"
     }
   ],
   "classes": [
+    {
+      "name": "Organization",
+      "definition_uri": "http://example.org/multival_tabular_tests/Organization",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "slots": [
+        "org_name",
+        "pet_names"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://example.org/multival_tabular_tests/Organization",
+      "@type": "ClassDefinition"
+    },
     {
       "name": "Person",
       "definition_uri": "http://example.org/multival_tabular_tests/Person",
@@ -231,18 +359,45 @@
       "slots": [
         "first_name",
         "last_name",
-        "hobbies"
+        "hobbies",
+        "pet_names"
       ],
       "slot_usage": {},
       "class_uri": "http://example.org/multival_tabular_tests/Person",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Pet",
+      "definition_uri": "http://example.org/multival_tabular_tests/Pet",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "slots": [
+        "pet_name",
+        "species"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://example.org/multival_tabular_tests/Pet",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Database",
+      "definition_uri": "http://example.org/multival_tabular_tests/Database",
+      "from_schema": "http://example.org/multival_tabular_tests",
+      "slots": [
+        "person_set",
+        "pet_set",
+        "org_set"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://example.org/multival_tabular_tests/Database",
+      "tree_root": true,
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "multival_tabular_tests_generated.yaml",
-  "source_file_date": "2022-10-18T10:59:13",
-  "source_file_size": 512,
-  "generation_date": "2022-10-18T10:59:17",
+  "source_file_date": "2022-10-18T17:30:01",
+  "source_file_size": 1623,
+  "generation_date": "2022-10-18T17:30:05",
   "@type": "SchemaDefinition",
   "@context": [
     "generated/jsonld/multival_tabular_tests_generated.context.jsonld",

@@ -34,12 +34,38 @@ linkml:Objectidentifier IRI
 
 linkml:Nodeidentifier NONLITERAL
 
+<Database> CLOSED {
+    (  $<Database_tes> (  <person_set> @<Person> * ;
+          <pet_set> @<Pet> * ;
+          <org_set> @<Organization> *
+       ) ;
+       rdf:type [ <Database> ] ?
+    )
+}
+
+<Organization> CLOSED {
+    (  $<Organization_tes> (  <org_name> @linkml:String ? ;
+          <pet_names> @linkml:String *
+       ) ;
+       rdf:type [ <Organization> ] ?
+    )
+}
+
 <Person> CLOSED {
     (  $<Person_tes> (  <first_name> @linkml:String ? ;
           <last_name> @linkml:String ? ;
-          <hobbies> @linkml:String *
+          <hobbies> @<HobbyEnum> * ;
+          <pet_names> @linkml:String *
        ) ;
        rdf:type [ <Person> ] ?
+    )
+}
+
+<Pet> CLOSED {
+    (  $<Pet_tes> (  <pet_name> @linkml:String ? ;
+          <species> @linkml:String ?
+       ) ;
+       rdf:type [ <Pet> ] ?
     )
 }
 

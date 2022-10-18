@@ -1,5 +1,61 @@
 {
    "$defs": {
+      "Database": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "org_set": {
+               "items": {
+                  "$ref": "#/$defs/Organization"
+               },
+               "type": "array"
+            },
+            "person_set": {
+               "items": {
+                  "$ref": "#/$defs/Person"
+               },
+               "type": "array"
+            },
+            "pet_set": {
+               "items": {
+                  "$ref": "#/$defs/Pet"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "Database",
+         "type": "object"
+      },
+      "HobbyEnum": {
+         "description": "",
+         "enum": [
+            "tennis",
+            "cooking",
+            "sewing",
+            "fishing"
+         ],
+         "title": "HobbyEnum",
+         "type": "string"
+      },
+      "Organization": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "org_name": {
+               "type": "string"
+            },
+            "pet_names": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "Organization",
+         "type": "object"
+      },
       "Person": {
          "additionalProperties": false,
          "description": "",
@@ -9,16 +65,37 @@
             },
             "hobbies": {
                "items": {
-                  "type": "string"
+                  "$ref": "#/$defs/HobbyEnum"
                },
                "type": "array"
             },
             "last_name": {
                "type": "string"
+            },
+            "pet_names": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [],
          "title": "Person",
+         "type": "object"
+      },
+      "Pet": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "pet_name": {
+               "type": "string"
+            },
+            "species": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Pet",
          "type": "object"
       }
    },
@@ -26,7 +103,26 @@
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",
-   "properties": {},
+   "properties": {
+      "org_set": {
+         "items": {
+            "$ref": "#/$defs/Organization"
+         },
+         "type": "array"
+      },
+      "person_set": {
+         "items": {
+            "$ref": "#/$defs/Person"
+         },
+         "type": "array"
+      },
+      "pet_set": {
+         "items": {
+            "$ref": "#/$defs/Pet"
+         },
+         "type": "array"
+      }
+   },
    "required": [],
    "title": "multival_tabular_tests",
    "type": "object",

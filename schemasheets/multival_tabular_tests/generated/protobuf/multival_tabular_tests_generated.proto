@@ -1,6 +1,23 @@
+message Database
+ {
+ repeated  person personSet = 0
+ repeated  pet petSet = 0
+ repeated  organization orgSet = 0
+ }
+message Organization
+ {
+  string orgName = 0
+ repeated  string petNames = 0
+ }
 message Person
  {
   string firstName = 0
   string lastName = 0
- repeated  string hobbies = 0
+ repeated  hobbyEnum hobbies = 0
+ repeated  string petNames = 0
+ }
+message Pet
+ {
+  string petName = 0
+  string species = 0
  }

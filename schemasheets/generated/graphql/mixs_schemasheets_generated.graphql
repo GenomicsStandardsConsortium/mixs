@@ -27703,7 +27703,7 @@ interface Misag
     sampVolWeDnaExt: String
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -27914,7 +27914,7 @@ type MisagAgriculture implements Misag
     sampName: String!
     sampTaxonId: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sortTech: SortTechEnum!
@@ -28002,7 +28002,7 @@ type MisagAir implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -28228,7 +28228,7 @@ type MisagBuiltEnvironment implements Misag
     sampVolWeDnaExt: String
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -28386,7 +28386,7 @@ type MisagFoodAnimalAndAnimalFeed implements Misag
     sampMatProcess: String
     sampTaxonId: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -28583,7 +28583,7 @@ type MisagFoodFarmEnvironment implements Misag
     sampMatProcess: String
     sampTaxonId: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -28740,7 +28740,7 @@ type MisagFoodFoodProductionFacility implements Misag
     sampMatProcess: String
     sampTaxonId: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -28906,7 +28906,7 @@ type MisagFoodHumanFoods implements Misag
     sampMatProcess: String
     sampTaxonId: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -29016,7 +29016,7 @@ type MisagHostAssociated implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -29132,7 +29132,7 @@ type MisagHumanAssociated implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -29232,7 +29232,7 @@ type MisagHumanGut implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -29331,7 +29331,7 @@ type MisagHumanOral implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -29431,7 +29431,7 @@ type MisagHumanSkin implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -29539,7 +29539,7 @@ type MisagHumanVaginal implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -29683,7 +29683,7 @@ type MisagHydrocarbonResourcesCores implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -29832,7 +29832,7 @@ type MisagHydrocarbonResourcesFluidsSwabs implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -29957,7 +29957,7 @@ type MisagMicrobialMatBiofilm implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -30063,7 +30063,7 @@ type MisagMiscellaneousNaturalOrArtificialEnvironment implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -30199,7 +30199,7 @@ type MisagPlantAssociated implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -30330,7 +30330,7 @@ type MisagSediment implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -30449,7 +30449,7 @@ type MisagSoil implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -30576,7 +30576,7 @@ type MisagSymbiontAssociated implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -30677,7 +30677,7 @@ type MisagWastewaterSludge implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -30823,7 +30823,7 @@ type MisagWater implements Misag
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum!
+    singleCellLysisAppr: String!
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -30949,7 +30949,7 @@ interface Miuvig
     sampVolWeDnaExt: String
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -31170,7 +31170,7 @@ type MiuvigAgriculture implements Miuvig
     sampName: String!
     sampTaxonId: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sortTech: SortTechEnum
@@ -31271,7 +31271,7 @@ type MiuvigAir implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -31511,7 +31511,7 @@ type MiuvigBuiltEnvironment implements Miuvig
     sampVolWeDnaExt: String
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -31683,7 +31683,7 @@ type MiuvigFoodAnimalAndAnimalFeed implements Miuvig
     sampMatProcess: String
     sampTaxonId: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -31893,7 +31893,7 @@ type MiuvigFoodFarmEnvironment implements Miuvig
     sampMatProcess: String
     sampTaxonId: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -32064,7 +32064,7 @@ type MiuvigFoodFoodProductionFacility implements Miuvig
     sampMatProcess: String
     sampTaxonId: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -32244,7 +32244,7 @@ type MiuvigFoodHumanFoods implements Miuvig
     sampMatProcess: String
     sampTaxonId: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -32367,7 +32367,7 @@ type MiuvigHostAssociated implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -32496,7 +32496,7 @@ type MiuvigHumanAssociated implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -32609,7 +32609,7 @@ type MiuvigHumanGut implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -32721,7 +32721,7 @@ type MiuvigHumanOral implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -32834,7 +32834,7 @@ type MiuvigHumanSkin implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -32955,7 +32955,7 @@ type MiuvigHumanVaginal implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -33113,7 +33113,7 @@ type MiuvigHydrocarbonResourcesCores implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -33276,7 +33276,7 @@ type MiuvigHydrocarbonResourcesFluidsSwabs implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -33415,7 +33415,7 @@ type MiuvigMicrobialMatBiofilm implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -33535,7 +33535,7 @@ type MiuvigMiscellaneousNaturalOrArtificialEnvironment implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -33684,7 +33684,7 @@ type MiuvigPlantAssociated implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -33829,7 +33829,7 @@ type MiuvigSediment implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -33962,7 +33962,7 @@ type MiuvigSoil implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -34103,7 +34103,7 @@ type MiuvigSymbiontAssociated implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -34218,7 +34218,7 @@ type MiuvigWastewaterSludge implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]
@@ -34378,7 +34378,7 @@ type MiuvigWater implements Miuvig
     sampTaxonId: String!
     seqMeth: String!
     simSearchMeth: String
-    singleCellLysisAppr: SingleCellLysisApprEnum
+    singleCellLysisAppr: String
     singleCellLysisProt: String
     sizeFrac: String
     sop: [String]

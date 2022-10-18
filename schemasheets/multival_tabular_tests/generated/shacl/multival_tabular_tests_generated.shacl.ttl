@@ -2,6 +2,33 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://example.org/multival_tabular_tests/:Database> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <http://example.org/multival_tabular_tests/:Pet> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path <http://example.org/multival_tabular_tests/:pet_set> ],
+        [ sh:class <http://example.org/multival_tabular_tests/:Person> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <http://example.org/multival_tabular_tests/:person_set> ],
+        [ sh:class <http://example.org/multival_tabular_tests/:Organization> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path <http://example.org/multival_tabular_tests/:org_set> ] ;
+    sh:targetClass <http://example.org/multival_tabular_tests/:Database> .
+
+<http://example.org/multival_tabular_tests/:Organization> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:order 1 ;
+            sh:path <http://example.org/multival_tabular_tests/:pet_names> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <http://example.org/multival_tabular_tests/:org_name> ] ;
+    sh:targetClass <http://example.org/multival_tabular_tests/:Organization> .
+
 <http://example.org/multival_tabular_tests/:Person> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
@@ -11,7 +38,21 @@
         [ sh:maxCount 1 ;
             sh:order 0 ;
             sh:path <http://example.org/multival_tabular_tests/:first_name> ],
-        [ sh:order 2 ;
+        [ sh:order 3 ;
+            sh:path <http://example.org/multival_tabular_tests/:pet_names> ],
+        [ sh:in ( "tennis" "cooking" "sewing" "fishing" ) ;
+            sh:order 2 ;
             sh:path <http://example.org/multival_tabular_tests/:hobbies> ] ;
     sh:targetClass <http://example.org/multival_tabular_tests/:Person> .
+
+<http://example.org/multival_tabular_tests/:Pet> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <http://example.org/multival_tabular_tests/:pet_name> ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <http://example.org/multival_tabular_tests/:species> ] ;
+    sh:targetClass <http://example.org/multival_tabular_tests/:Pet> .
 

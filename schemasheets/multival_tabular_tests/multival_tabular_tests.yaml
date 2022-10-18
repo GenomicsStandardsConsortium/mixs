@@ -5,17 +5,62 @@ imports:
 prefixes:
   linkml: https://w3id.org/linkml/
 enums:
-  hobby:
+  HobbyEnum:
     permissible_values:
-
+      - tennis
+      - cooking
+      - sewing
+      - fishing
 classes:
-  person:
+  Organization:
+    slots:
+      - org_name
+      - pet_names
+  Person:
     slots:
       - first_name
       - last_name
       - hobbies
+      - pet_names
+  Pet:
+    slots:
+      - pet_name
+      - species
+  Database:
+    slots:
+      - person_set
+      - pet_set
+      - org_set
+    tree_root: true
 slots:
-  first_name: { }
-  last_name: { }
+  org_set:
+    range: Organization
+    multivalued: true
+    inlined_as_list: true
+  org_name:
+    range: string
+    multivalued: false
+  pet_name:
+    range: string
+    multivalued: false
+  species:
+    range: string
+    multivalued: false
+  pet_names:
+    range: string
+    multivalued: true
+  person_set:
+    range: Person
+    multivalued: true
+    inlined_as_list: true
+  pet_set:
+    range: Pet
+    multivalued: true
+    inlined_as_list: true
+  first_name:
+    range: string
+  last_name:
+    range: string
   hobbies:
+    range: HobbyEnum
     multivalued: true

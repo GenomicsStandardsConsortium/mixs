@@ -1,10 +1,10 @@
 from linkml_runtime.dumpers import yaml_dumper
 
-import mixs_schemasheets_generated
+from schemasheets.generated.mixs_schemasheets_generated import Database, MimsSoil
 
-d = mixs_schemasheets_generated.Database()
+d = Database()
 
-ms1 = mixs_schemasheets_generated.MimsSoil(
+ms1 = MimsSoil(
     collection_date="2021-01-01",
     env_broad_scale="ENVO:00000000",
     env_local_scale="ENVO:00000000",
@@ -17,7 +17,7 @@ ms1 = mixs_schemasheets_generated.MimsSoil(
 
 d.mims_soil_set.append(ms1)
 
-ms2 = mixs_schemasheets_generated.MimsSoil(
+ms2 = MimsSoil(
     collection_date="2021-01-01",
     env_broad_scale="ENVO:00000000",
     env_local_scale="ENVO:00000000",

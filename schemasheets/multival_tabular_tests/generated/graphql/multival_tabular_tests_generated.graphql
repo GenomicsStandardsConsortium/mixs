@@ -1,7 +1,27 @@
+type Database
+  {
+    personSet: [Person]
+    petSet: [Pet]
+    orgSet: [Organization]
+  }
+
+type Organization
+  {
+    orgName: String
+    petNames: [String]
+  }
+
 type Person
   {
     firstName: String
     lastName: String
-    hobbies: [String]
+    hobbies: [HobbyEnum]
+    petNames: [String]
+  }
+
+type Pet
+  {
+    petName: String
+    species: String
   }
 

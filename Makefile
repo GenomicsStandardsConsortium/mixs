@@ -88,7 +88,8 @@ schemasheets/generated/mixs_schemasheets_generated.sql \
 validation_expected_pass validation_missing validation_extra bare_jsonschema \
 schemasheets/example_data/out/mims_soil_set_database.json \
 schemasheets/example_data/out/mims_soil_set_database.ttl \
-schemasheets/mkdocs_html/index.md
+schemasheets/mkdocs_html/index.md \
+schemasheets/example_data/out/mims_soil_set_database.db
 
 # todo slow
 #   schemasheets/example_data/out/mixs_database.db \
@@ -199,11 +200,22 @@ schemasheets/generated/jsonschema/mixs_schemasheets_generated.schema.json
 
 
 # todo slow
-schemasheets/example_data/out/mixs_database.db: \
+schemasheets/example_data/out/mims_soil_set_database.db: \
 schemasheets/generated/mixs_schemasheets_generated.yaml \
 schemasheets/example_data/out/mims_soil_set_database.json
+	date
 	$(RUN) linkml-sqldb dump --db $@ --target-class Database --schema $^
-	sqlite3 $@ ".header on" "select * from Mims"
+	date
+	sqlite3 $@ ".header on" "select * from SoilMims"
+
+
+# sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: MimsSoil.project_name
+  #[SQL: INSERT INTO "MimsSoil" (adapters, alt, annot, assembly_name, assembly_qual, assembly_software, collection_date, depth, elev, env_broad_scale, env_local_scale, env_medium, experimental_factor, feat_pred, geo_loc_name, lat_lon, lib_layout, lib_reads_seqd, lib_screen, lib_size, lib_vector, mid, neg_cont_type, nucl_acid_amp, nucl_acid_ext, number_contig, pos_cont_type, project_name, ref_biomaterial, ref_db, rel_to_oxygen, samp_collec_device, samp_collec_method, samp_mat_process, samp_name, samp_size, samp_taxon_id, samp_vol_we_dna_ext, seq_meth, sim_search_meth, size_frac, tax_class, "temp", al_sat, al_sat_meth, annual_precpt, annual_temp, crop_rotation, cur_land_use, cur_vegetation, cur_vegetation_meth, drainage_class, extreme_event, fao_class, fire, flooding, heavy_metals_meth, horizon_meth, link_addit_analys, link_class_info, link_climate_info, local_class, local_class_meth, micro_biomass_meth, microbial_biomass, org_matter, org_nitro, ph, ph_meth, pool_dna_extracts, prev_land_use_meth, previous_land_use, profile_position, salinity_meth, season_precpt, season_temp, sieving, slope_aspect, slope_gradient, soil_horizon, soil_text_measure, soil_texture_meth, soil_type, soil_type_meth, store_cond, tot_nitro_cont_meth, tot_nitro_content, tot_org_c_meth, tot_org_carb, water_cont_soil_meth, water_content, "Database_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+  #[parameters: (None, None, None, None, None, None, '2018-05-11 10:00:00+01:00', None, None, 'oceanic epipelagic zone biome [ENVO:01000033]', 'litter layer [ENVO:01000338]', 'soil [ENVO:00001998]', None, None, 'USA: Maryland, Bethesda', '50.586825 6.408977', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 'minimal', None, 'Gut Metagenome [NCBI:txid749906]', None, '454 Genome Sequencer FLX [OBI:0000702]', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1)]
+  #(Background on this error at: https://sqlalche.me/e/14/gkpj)
+  #make: *** [schemasheets/example_data/out/mixs_database.db] Error 1
+
+# but then why does the validation/conversion on MimsSoils lacking project_names work?
 
 schemasheets/example_data/out/mims_soil_set_database.ttl: \
 schemasheets/generated/mixs_schemasheets_generated.yaml \

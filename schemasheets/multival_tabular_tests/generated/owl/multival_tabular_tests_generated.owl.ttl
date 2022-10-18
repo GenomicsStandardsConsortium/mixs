@@ -2,18 +2,22 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.org/multival_tabular_tests> a owl:Ontology ;
     rdfs:label "multival_tabular_tests" ;
-    IAO:0000700 <http://example.org/multival_tabular_tests/Person> ;
+    IAO:0000700 <http://example.org/multival_tabular_tests/Database>,
+        <http://example.org/multival_tabular_tests/Organization>,
+        <http://example.org/multival_tabular_tests/Person>,
+        <http://example.org/multival_tabular_tests/Pet> ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    linkml:generation_date "2022-10-18T10:59:19" ;
+    linkml:generation_date "2022-10-18T17:30:09" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "multival_tabular_tests_generated.yaml" ;
-    linkml:source_file_date "2022-10-18T10:59:13" ;
-    linkml:source_file_size 512 .
+    linkml:source_file_date "2022-10-18T17:30:01" ;
+    linkml:source_file_size 1623 .
 
 linkml:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" .
@@ -24,20 +28,18 @@ linkml:TypeDefinition a owl:Class ;
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
 
-<http://example.org/multival_tabular_tests/Person> a owl:Class,
+<http://example.org/multival_tabular_tests/Database> a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "person" ;
+    rdfs:label "Database" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <http://example.org/multival_tabular_tests/first_name> ],
+            owl:allValuesFrom <http://example.org/multival_tabular_tests/Pet> ;
+            owl:onProperty <http://example.org/multival_tabular_tests/pet_set> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <http://example.org/multival_tabular_tests/hobbies> ],
+            owl:allValuesFrom <http://example.org/multival_tabular_tests/Organization> ;
+            owl:onProperty <http://example.org/multival_tabular_tests/org_set> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <http://example.org/multival_tabular_tests/last_name> ] .
+            owl:allValuesFrom <http://example.org/multival_tabular_tests/Person> ;
+            owl:onProperty <http://example.org/multival_tabular_tests/person_set> ] .
 
 <http://example.org/multival_tabular_tests/first_name> a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -47,15 +49,116 @@ linkml:topValue a owl:DatatypeProperty ;
 <http://example.org/multival_tabular_tests/hobbies> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "hobbies" ;
-    rdfs:range linkml:String .
+    rdfs:range <http://example.org/multival_tabular_tests/HobbyEnum> .
 
 <http://example.org/multival_tabular_tests/last_name> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "last_name" ;
     rdfs:range linkml:String .
 
+<http://example.org/multival_tabular_tests/org_name> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "org_name" ;
+    rdfs:range linkml:String .
+
+<http://example.org/multival_tabular_tests/org_set> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "org_set" ;
+    rdfs:range <http://example.org/multival_tabular_tests/Organization> .
+
+<http://example.org/multival_tabular_tests/person_set> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "person_set" ;
+    rdfs:range <http://example.org/multival_tabular_tests/Person> .
+
+<http://example.org/multival_tabular_tests/pet_name> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pet_name" ;
+    rdfs:range linkml:String .
+
+<http://example.org/multival_tabular_tests/pet_set> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pet_set" ;
+    rdfs:range <http://example.org/multival_tabular_tests/Pet> .
+
+<http://example.org/multival_tabular_tests/species> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "species" ;
+    rdfs:range linkml:String .
+
+<http://example.org/multival_tabular_tests/HobbyEnum#cooking> a <http://example.org/multival_tabular_tests/HobbyEnum>,
+        owl:Class ;
+    rdfs:label "cooking" .
+
+<http://example.org/multival_tabular_tests/HobbyEnum#fishing> a <http://example.org/multival_tabular_tests/HobbyEnum>,
+        owl:Class ;
+    rdfs:label "fishing" .
+
+<http://example.org/multival_tabular_tests/HobbyEnum#sewing> a <http://example.org/multival_tabular_tests/HobbyEnum>,
+        owl:Class ;
+    rdfs:label "sewing" .
+
+<http://example.org/multival_tabular_tests/HobbyEnum#tennis> a <http://example.org/multival_tabular_tests/HobbyEnum>,
+        owl:Class ;
+    rdfs:label "tennis" .
+
+<http://example.org/multival_tabular_tests/pet_names> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pet_names" ;
+    rdfs:range linkml:String .
+
+<http://example.org/multival_tabular_tests/Organization> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Organization" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <http://example.org/multival_tabular_tests/org_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <http://example.org/multival_tabular_tests/pet_names> ] .
+
+<http://example.org/multival_tabular_tests/Person> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <http://example.org/multival_tabular_tests/first_name> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <http://example.org/multival_tabular_tests/last_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <http://example.org/multival_tabular_tests/pet_names> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://example.org/multival_tabular_tests/HobbyEnum> ;
+            owl:onProperty <http://example.org/multival_tabular_tests/hobbies> ] .
+
+<http://example.org/multival_tabular_tests/Pet> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Pet" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <http://example.org/multival_tabular_tests/species> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <http://example.org/multival_tabular_tests/pet_name> ] .
+
 linkml:ClassDefinition a owl:Class ;
     rdfs:label "class_definition" .
+
+<http://example.org/multival_tabular_tests/HobbyEnum> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "HobbyEnum" ;
+    owl:unionOf ( <http://example.org/multival_tabular_tests/HobbyEnum#tennis> <http://example.org/multival_tabular_tests/HobbyEnum#cooking> <http://example.org/multival_tabular_tests/HobbyEnum#sewing> <http://example.org/multival_tabular_tests/HobbyEnum#fishing> ) ;
+    linkml:permissible_values <http://example.org/multival_tabular_tests/HobbyEnum#cooking>,
+        <http://example.org/multival_tabular_tests/HobbyEnum#fishing>,
+        <http://example.org/multival_tabular_tests/HobbyEnum#sewing>,
+        <http://example.org/multival_tabular_tests/HobbyEnum#tennis> .
 
 linkml:SlotDefinition a owl:Class ;
     rdfs:label "slot_definition" .

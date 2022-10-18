@@ -1,5 +1,5 @@
 # Auto generated from mixs_schemasheets_generated.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-18T10:05:16
+# Generation date: 2022-10-18T17:55:28
 # Schema: MIXS
 #
 # id: http://w3id.org/mixs
@@ -2356,7 +2356,7 @@ class Misag(ChecklistClass):
     samp_name: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -2483,8 +2483,8 @@ class Misag(ChecklistClass):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -2711,7 +2711,7 @@ class Miuvig(ChecklistClass):
     samp_size: Optional[str] = None
     samp_vol_we_dna_ext: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -2957,8 +2957,8 @@ class Miuvig(ChecklistClass):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -12042,7 +12042,7 @@ class MisagAgriculture(Agriculture):
     project_name: str = None
     samp_name: str = None
     samp_taxon_id: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -12141,8 +12141,8 @@ class MisagAgriculture(Agriculture):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -12295,7 +12295,7 @@ class MiuvigAgriculture(Agriculture):
     samp_collec_device: Optional[str] = None
     samp_collec_method: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sort_tech: Optional[Union[str, "SortTechEnum"]] = None
@@ -12468,8 +12468,8 @@ class MiuvigAgriculture(Agriculture):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -14575,7 +14575,7 @@ class MisagAir(Air):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -14688,8 +14688,8 @@ class MisagAir(Air):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -14902,7 +14902,7 @@ class MiuvigAir(Air):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -15128,8 +15128,8 @@ class MiuvigAir(Air):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -17390,7 +17390,7 @@ class MisagBuiltEnvironment(BuiltEnvironment):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -17507,8 +17507,8 @@ class MisagBuiltEnvironment(BuiltEnvironment):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -17736,7 +17736,7 @@ class MiuvigBuiltEnvironment(BuiltEnvironment):
     samp_size: Optional[str] = None
     samp_vol_we_dna_ext: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -17972,8 +17972,8 @@ class MiuvigBuiltEnvironment(BuiltEnvironment):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -19672,7 +19672,7 @@ class MisagFoodAnimalAndAnimalFeed(FoodAnimalAndAnimalFeed):
     compl_software: str = None
     contam_score: str = None
     samp_taxon_id: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -19749,8 +19749,8 @@ class MisagFoodAnimalAndAnimalFeed(FoodAnimalAndAnimalFeed):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -19952,7 +19952,7 @@ class MiuvigFoodAnimalAndAnimalFeed(FoodAnimalAndAnimalFeed):
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -20140,8 +20140,8 @@ class MiuvigFoodAnimalAndAnimalFeed(FoodAnimalAndAnimalFeed):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -21822,7 +21822,7 @@ class MisagFoodFarmEnvironment(FoodFarmEnvironment):
     compl_software: str = None
     contam_score: str = None
     samp_taxon_id: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -21899,8 +21899,8 @@ class MisagFoodFarmEnvironment(FoodFarmEnvironment):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -22101,7 +22101,7 @@ class MiuvigFoodFarmEnvironment(FoodFarmEnvironment):
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -22285,8 +22285,8 @@ class MiuvigFoodFarmEnvironment(FoodFarmEnvironment):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -23994,7 +23994,7 @@ class MisagFoodFoodProductionFacility(FoodFoodProductionFacility):
     compl_software: str = None
     contam_score: str = None
     samp_taxon_id: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -24072,8 +24072,8 @@ class MisagFoodFoodProductionFacility(FoodFoodProductionFacility):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -24278,7 +24278,7 @@ class MiuvigFoodFoodProductionFacility(FoodFoodProductionFacility):
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -24467,8 +24467,8 @@ class MiuvigFoodFoodProductionFacility(FoodFoodProductionFacility):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -26167,7 +26167,7 @@ class MisagFoodHumanFoods(FoodHumanFoods):
     compl_software: str = None
     contam_score: str = None
     samp_taxon_id: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -26244,8 +26244,8 @@ class MisagFoodHumanFoods(FoodHumanFoods):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -26447,7 +26447,7 @@ class MiuvigFoodHumanFoods(FoodHumanFoods):
     samp_collec_method: Optional[str] = None
     samp_mat_process: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -26635,8 +26635,8 @@ class MiuvigFoodHumanFoods(FoodHumanFoods):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -28702,7 +28702,7 @@ class MisagHostAssociated(HostAssociated):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -28814,8 +28814,8 @@ class MisagHostAssociated(HostAssociated):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -29023,7 +29023,7 @@ class MiuvigHostAssociated(HostAssociated):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -29242,8 +29242,8 @@ class MiuvigHostAssociated(HostAssociated):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -31417,7 +31417,7 @@ class MisagHumanAssociated(HumanAssociated):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -31532,8 +31532,8 @@ class MisagHumanAssociated(HumanAssociated):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -31753,7 +31753,7 @@ class MiuvigHumanAssociated(HumanAssociated):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -31981,8 +31981,8 @@ class MiuvigHumanAssociated(HumanAssociated):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -34156,7 +34156,7 @@ class MisagHumanGut(HumanGut):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -34271,8 +34271,8 @@ class MisagHumanGut(HumanGut):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -34492,7 +34492,7 @@ class MiuvigHumanGut(HumanGut):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -34720,8 +34720,8 @@ class MiuvigHumanGut(HumanGut):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -36895,7 +36895,7 @@ class MisagHumanOral(HumanOral):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -37010,8 +37010,8 @@ class MisagHumanOral(HumanOral):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -37231,7 +37231,7 @@ class MiuvigHumanOral(HumanOral):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -37459,8 +37459,8 @@ class MiuvigHumanOral(HumanOral):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -39634,7 +39634,7 @@ class MisagHumanSkin(HumanSkin):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -39749,8 +39749,8 @@ class MisagHumanSkin(HumanSkin):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -39970,7 +39970,7 @@ class MiuvigHumanSkin(HumanSkin):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -40198,8 +40198,8 @@ class MiuvigHumanSkin(HumanSkin):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -42373,7 +42373,7 @@ class MisagHumanVaginal(HumanVaginal):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -42488,8 +42488,8 @@ class MisagHumanVaginal(HumanVaginal):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -42709,7 +42709,7 @@ class MiuvigHumanVaginal(HumanVaginal):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -42937,8 +42937,8 @@ class MiuvigHumanVaginal(HumanVaginal):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -45091,7 +45091,7 @@ class MisagHydrocarbonResourcesCores(HydrocarbonResourcesCores):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -45205,8 +45205,8 @@ class MisagHydrocarbonResourcesCores(HydrocarbonResourcesCores):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -45423,7 +45423,7 @@ class MiuvigHydrocarbonResourcesCores(HydrocarbonResourcesCores):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -45652,8 +45652,8 @@ class MiuvigHydrocarbonResourcesCores(HydrocarbonResourcesCores):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -47842,7 +47842,7 @@ class MisagHydrocarbonResourcesFluidsSwabs(HydrocarbonResourcesFluidsSwabs):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -47957,8 +47957,8 @@ class MisagHydrocarbonResourcesFluidsSwabs(HydrocarbonResourcesFluidsSwabs):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -48179,7 +48179,7 @@ class MiuvigHydrocarbonResourcesFluidsSwabs(HydrocarbonResourcesFluidsSwabs):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -48411,8 +48411,8 @@ class MiuvigHydrocarbonResourcesFluidsSwabs(HydrocarbonResourcesFluidsSwabs):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -50529,7 +50529,7 @@ class MisagMicrobialMatBiofilm(MicrobialMatBiofilm):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -50642,8 +50642,8 @@ class MisagMicrobialMatBiofilm(MicrobialMatBiofilm):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -50856,7 +50856,7 @@ class MiuvigMicrobialMatBiofilm(MicrobialMatBiofilm):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -51082,8 +51082,8 @@ class MiuvigMicrobialMatBiofilm(MicrobialMatBiofilm):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -53164,7 +53164,7 @@ class MisagMiscellaneousNaturalOrArtificialEnvironment(MiscellaneousNaturalOrArt
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -53276,8 +53276,8 @@ class MisagMiscellaneousNaturalOrArtificialEnvironment(MiscellaneousNaturalOrArt
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -53486,7 +53486,7 @@ class MiuvigMiscellaneousNaturalOrArtificialEnvironment(MiscellaneousNaturalOrAr
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -53709,8 +53709,8 @@ class MiuvigMiscellaneousNaturalOrArtificialEnvironment(MiscellaneousNaturalOrAr
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -55812,7 +55812,7 @@ class MisagPlantAssociated(PlantAssociated):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -55925,8 +55925,8 @@ class MisagPlantAssociated(PlantAssociated):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -56138,7 +56138,7 @@ class MiuvigPlantAssociated(PlantAssociated):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -56360,8 +56360,8 @@ class MiuvigPlantAssociated(PlantAssociated):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -58478,7 +58478,7 @@ class MisagSediment(Sediment):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -58591,8 +58591,8 @@ class MisagSediment(Sediment):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -58805,7 +58805,7 @@ class MiuvigSediment(Sediment):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -59031,8 +59031,8 @@ class MiuvigSediment(Sediment):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -61149,7 +61149,7 @@ class MisagSoil(Soil):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -61262,8 +61262,8 @@ class MisagSoil(Soil):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -61476,7 +61476,7 @@ class MiuvigSoil(Soil):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -61702,8 +61702,8 @@ class MiuvigSoil(Soil):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -63464,7 +63464,7 @@ class MisagSymbiontAssociated(SymbiontAssociated):
     samp_name: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -63550,8 +63550,8 @@ class MisagSymbiontAssociated(SymbiontAssociated):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -63751,7 +63751,7 @@ class MiuvigSymbiontAssociated(SymbiontAssociated):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -63948,8 +63948,8 @@ class MiuvigSymbiontAssociated(SymbiontAssociated):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -66098,7 +66098,7 @@ class MisagWastewaterSludge(WastewaterSludge):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -66212,8 +66212,8 @@ class MisagWastewaterSludge(WastewaterSludge):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -66430,7 +66430,7 @@ class MiuvigWastewaterSludge(WastewaterSludge):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -66659,8 +66659,8 @@ class MiuvigWastewaterSludge(WastewaterSludge):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -68777,7 +68777,7 @@ class MisagWater(Water):
     lat_lon: str = None
     samp_taxon_id: str = None
     seq_meth: str = None
-    single_cell_lysis_appr: Union[str, "SingleCellLysisApprEnum"] = None
+    single_cell_lysis_appr: str = None
     sort_tech: Union[str, "SortTechEnum"] = None
     tax_ident: Union[str, "TaxIdentEnum"] = None
     wga_amp_appr: Union[str, "WgaAmpApprEnum"] = None
@@ -68890,8 +68890,8 @@ class MisagWater(Water):
 
         if self._is_empty(self.single_cell_lysis_appr):
             self.MissingRequiredField("single_cell_lysis_appr")
-        if not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self._is_empty(self.sort_tech):
             self.MissingRequiredField("sort_tech")
@@ -69104,7 +69104,7 @@ class MiuvigWater(Water):
     samp_mat_process: Optional[str] = None
     samp_size: Optional[str] = None
     sim_search_meth: Optional[str] = None
-    single_cell_lysis_appr: Optional[Union[str, "SingleCellLysisApprEnum"]] = None
+    single_cell_lysis_appr: Optional[str] = None
     single_cell_lysis_prot: Optional[str] = None
     size_frac: Optional[str] = None
     sop: Optional[Union[str, List[str]]] = empty_list()
@@ -69330,8 +69330,8 @@ class MiuvigWater(Water):
         if self.sim_search_meth is not None and not isinstance(self.sim_search_meth, str):
             self.sim_search_meth = str(self.sim_search_meth)
 
-        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, SingleCellLysisApprEnum):
-            self.single_cell_lysis_appr = SingleCellLysisApprEnum(self.single_cell_lysis_appr)
+        if self.single_cell_lysis_appr is not None and not isinstance(self.single_cell_lysis_appr, str):
+            self.single_cell_lysis_appr = str(self.single_cell_lysis_appr)
 
         if self.single_cell_lysis_prot is not None and not isinstance(self.single_cell_lysis_prot, str):
             self.single_cell_lysis_prot = str(self.single_cell_lysis_prot)
@@ -71879,43 +71879,705 @@ class WindowWaterMoldEnum(EnumDefinitionImpl):
 class slots:
     pass
 
-slots.adapters = Slot(uri=MIXS['0000048'], name="adapters", curie=MIXS.curie('0000048'),
-                   model_uri=MIXS.adapters, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[ACGTacgt]+;[ACGTacgt]+$'))
+slots.host_infra_spec_name = Slot(uri=MIXS['0000253'], name="host_infra_spec_name", curie=MIXS.curie('0000253'),
+                   model_uri=MIXS.host_infra_spec_name, domain=None, range=Optional[str])
 
-slots.plant_water_method = Slot(uri=MIXS['0001111'], name="plant_water_method", curie=MIXS.curie('0001111'),
-                   model_uri=MIXS.plant_water_method, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+slots.host_infra_spec_rank = Slot(uri=MIXS['0000254'], name="host_infra_spec_rank", curie=MIXS.curie('0000254'),
+                   model_uri=MIXS.host_infra_spec_rank, domain=None, range=Optional[str])
 
-slots.fertilizer_admin = Slot(uri=MIXS['0001127'], name="fertilizer_admin", curie=MIXS.curie('0001127'),
-                   model_uri=MIXS.fertilizer_admin, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+slots.sc_lysis_approach = Slot(uri=MIXS['0000076'], name="sc_lysis_approach", curie=MIXS.curie('0000076'),
+                   model_uri=MIXS.sc_lysis_approach, domain=None, range=Optional[Union[str, "SingleCellLysisApprEnum"]])
+
+slots.sc_lysis_method = Slot(uri=MIXS['0000054'], name="sc_lysis_method", curie=MIXS.curie('0000054'),
+                   model_uri=MIXS.sc_lysis_method, domain=None, range=Optional[str])
+
+slots.x_16s_recover_software = Slot(uri=MIXS['0000066'], name="x_16s_recover_software", curie=MIXS.curie('0000066'),
+                   model_uri=MIXS.x_16s_recover_software, domain=None, range=Optional[str])
 
 slots.host_of_host_env_med = Slot(uri=MIXS['0001326'], name="host_of_host_env_med", curie=MIXS.curie('0001326'),
                    model_uri=MIXS.host_of_host_env_med, domain=None, range=Optional[str],
                    pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
-slots.reassembly_bin = Slot(uri=MIXS['0000079'], name="reassembly_bin", curie=MIXS.curie('0000079'),
-                   model_uri=MIXS.reassembly_bin, domain=None, range=Optional[Union[bool, Bool]])
+slots.ihmc_medication_code = Slot(uri=MIXS['0000884'], name="ihmc_medication_code", curie=MIXS.curie('0000884'),
+                   model_uri=MIXS.ihmc_medication_code, domain=None, range=Optional[Union[int, List[int]]])
 
-slots.x_16s_recover = Slot(uri=MIXS['0000065'], name="x_16s_recover", curie=MIXS.curie('0000065'),
-                   model_uri=MIXS.x_16s_recover, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ferm_chem_add = Slot(uri=MIXS['0001185'], name="ferm_chem_add", curie=MIXS.curie('0001185'),
-                   model_uri=MIXS.ferm_chem_add, domain=None, range=Optional[Union[str, List[str]]],
+slots.host_body_mass_index = Slot(uri=MIXS['0000317'], name="host_body_mass_index", curie=MIXS.curie('0000317'),
+                   model_uri=MIXS.host_body_mass_index, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.host_of_host_totmass = Slot(uri=MIXS['0001334'], name="host_of_host_totmass", curie=MIXS.curie('0001334'),
+                   model_uri=MIXS.host_of_host_totmass, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.host_of_host_env_loc = Slot(uri=MIXS['0001325'], name="host_of_host_env_loc", curie=MIXS.curie('0001325'),
+                   model_uri=MIXS.host_of_host_env_loc, domain=None, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.association_duration = Slot(uri=MIXS['0001299'], name="association_duration", curie=MIXS.curie('0001299'),
+                   model_uri=MIXS.association_duration, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.amniotic_fluid_color = Slot(uri=MIXS['0000276'], name="amniotic_fluid_color", curie=MIXS.curie('0000276'),
+                   model_uri=MIXS.amniotic_fluid_color, domain=None, range=Optional[str])
+
+slots.travel_out_six_month = Slot(uri=MIXS['0000268'], name="travel_out_six_month", curie=MIXS.curie('0000268'),
+                   model_uri=MIXS.travel_out_six_month, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.host_of_host_disease = Slot(uri=MIXS['0001319'], name="host_of_host_disease", curie=MIXS.curie('0001319'),
+                   model_uri=MIXS.host_of_host_disease, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.urogenit_tract_disor = Slot(uri=MIXS['0000278'], name="urogenit_tract_disor", curie=MIXS.curie('0000278'),
+                   model_uri=MIXS.urogenit_tract_disor, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.time_last_toothbrush = Slot(uri=MIXS['0000924'], name="time_last_toothbrush", curie=MIXS.curie('0000924'),
+                   model_uri=MIXS.time_last_toothbrush, domain=None, range=Optional[str])
+
+slots.time_since_last_wash = Slot(uri=MIXS['0000943'], name="time_since_last_wash", curie=MIXS.curie('0000943'),
+                   model_uri=MIXS.time_since_last_wash, domain=None, range=Optional[str])
+
+slots.adjacent_environment = Slot(uri=MIXS['0001121'], name="adjacent_environment", curie=MIXS.curie('0001121'),
+                   model_uri=MIXS.adjacent_environment, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.host_subspecf_genlin = Slot(uri=MIXS['0001318'], name="host_subspecf_genlin", curie=MIXS.curie('0001318'),
+                   model_uri=MIXS.host_subspecf_genlin, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.maternal_health_stat = Slot(uri=MIXS['0000273'], name="maternal_health_stat", curie=MIXS.curie('0000273'),
+                   model_uri=MIXS.maternal_health_stat, domain=None, range=Optional[str])
+
+slots.biocide_admin_method = Slot(uri=MIXS['0000456'], name="biocide_admin_method", curie=MIXS.curie('0000456'),
+                   model_uri=MIXS.biocide_admin_method, domain=None, range=Optional[str])
+
+slots.host_of_host_infname = Slot(uri=MIXS['0001329'], name="host_of_host_infname", curie=MIXS.curie('0001329'),
+                   model_uri=MIXS.host_of_host_infname, domain=None, range=Optional[str])
+
+slots.water_cont_soil_meth = Slot(uri=MIXS['0000323'], name="water_cont_soil_meth", curie=MIXS.curie('0000323'),
+                   model_uri=MIXS.water_cont_soil_meth, domain=None, range=Optional[str])
+
+slots.photosynt_activ_meth = Slot(uri=MIXS['0001336'], name="photosynt_activ_meth", curie=MIXS.curie('0001336'),
+                   model_uri=MIXS.photosynt_activ_meth, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.tiss_cult_growth_med = Slot(uri=MIXS['0001070'], name="tiss_cult_growth_med", curie=MIXS.curie('0001070'),
+                   model_uri=MIXS.tiss_cult_growth_med, domain=None, range=Optional[str])
+
+slots.host_of_host_infrank = Slot(uri=MIXS['0001330'], name="host_of_host_infrank", curie=MIXS.curie('0001330'),
+                   model_uri=MIXS.host_of_host_infrank, domain=None, range=Optional[str])
+
+slots.host_of_host_fam_rel = Slot(uri=MIXS['0001328'], name="host_of_host_fam_rel", curie=MIXS.curie('0001328'),
+                   model_uri=MIXS.host_of_host_fam_rel, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.shading_device_type = Slot(uri=MIXS['0000835'], name="shading_device_type", curie=MIXS.curie('0000835'),
+                   model_uri=MIXS.shading_device_type, domain=None, range=Optional[Union[str, "ShadingDeviceTypeEnum"]])
+
+slots.samp_transport_cont = Slot(uri=MIXS['0001230'], name="samp_transport_cont", curie=MIXS.curie('0001230'),
+                   model_uri=MIXS.samp_transport_cont, domain=None, range=Optional[Union[str, "SampTransportContEnum"]])
+
+slots.heat_sys_deliv_meth = Slot(uri=MIXS['0000812'], name="heat_sys_deliv_meth", curie=MIXS.curie('0000812'),
+                   model_uri=MIXS.heat_sys_deliv_meth, domain=None, range=Optional[Union[str, "HeatSysDelivMethEnum"]])
+
+slots.shading_device_cond = Slot(uri=MIXS['0000831'], name="shading_device_cond", curie=MIXS.curie('0000831'),
+                   model_uri=MIXS.shading_device_cond, domain=None, range=Optional[Union[str, "ShadingDeviceCondEnum"]])
+
+slots.biotic_relationship = Slot(uri=MIXS['0000028'], name="biotic_relationship", curie=MIXS.curie('0000028'),
+                   model_uri=MIXS.biotic_relationship, domain=None, range=Optional[Union[str, "BioticRelationshipEnum"]])
+
+slots.water_source_shared = Slot(uri=MIXS['0001176'], name="water_source_shared", curie=MIXS.curie('0001176'),
+                   model_uri=MIXS.water_source_shared, domain=None, range=Optional[Union[Union[str, "WaterSourceSharedEnum"], List[Union[str, "WaterSourceSharedEnum"]]]])
+
+slots.wall_surf_treatment = Slot(uri=MIXS['0000845'], name="wall_surf_treatment", curie=MIXS.curie('0000845'),
+                   model_uri=MIXS.wall_surf_treatment, domain=None, range=Optional[Union[str, "WallSurfTreatmentEnum"]])
+
+slots.shad_dev_water_mold = Slot(uri=MIXS['0000834'], name="shad_dev_water_mold", curie=MIXS.curie('0000834'),
+                   model_uri=MIXS.shad_dev_water_mold, domain=None, range=Optional[Union[str, "ShadDevWaterMoldEnum"]])
+
+slots.contam_screen_input = Slot(uri=MIXS['0000005'], name="contam_screen_input", curie=MIXS.curie('0000005'),
+                   model_uri=MIXS.contam_screen_input, domain=None, range=Optional[Union[str, "ContamScreenInputEnum"]])
+
+slots.env_monitoring_zone = Slot(uri=MIXS['0001254'], name="env_monitoring_zone", curie=MIXS.curie('0001254'),
+                   model_uri=MIXS.env_monitoring_zone, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.samp_vol_we_dna_ext = Slot(uri=MIXS['0000111'], name="samp_vol_we_dna_ext", curie=MIXS.curie('0000111'),
+                   model_uri=MIXS.samp_vol_we_dna_ext, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.mean_peak_frict_vel = Slot(uri=MIXS['0000502'], name="mean_peak_frict_vel", curie=MIXS.curie('0000502'),
+                   model_uri=MIXS.mean_peak_frict_vel, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.petroleum_hydrocarb = Slot(uri=MIXS['0000516'], name="petroleum_hydrocarb", curie=MIXS.curie('0000516'),
+                   model_uri=MIXS.petroleum_hydrocarb, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.soluble_react_phosp = Slot(uri=MIXS['0000738'], name="soluble_react_phosp", curie=MIXS.curie('0000738'),
+                   model_uri=MIXS.soluble_react_phosp, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.suspend_part_matter = Slot(uri=MIXS['0000741'], name="suspend_part_matter", curie=MIXS.curie('0000741'),
+                   model_uri=MIXS.suspend_part_matter, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.tot_depth_water_col = Slot(uri=MIXS['0000634'], name="tot_depth_water_col", curie=MIXS.curie('0000634'),
+                   model_uri=MIXS.tot_depth_water_col, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.extrachrom_elements = Slot(uri=MIXS['0000023'], name="extrachrom_elements", curie=MIXS.curie('0000023'),
+                   model_uri=MIXS.extrachrom_elements, domain=None, range=Optional[int])
+
+slots.sym_life_cycle_type = Slot(uri=MIXS['0001300'], name="sym_life_cycle_type", curie=MIXS.curie('0001300'),
+                   model_uri=MIXS.sym_life_cycle_type, domain=None, range=Optional[Union[str, "SymLifeCycleTypeEnum"]])
+
+slots.height_carper_fiber = Slot(uri=MIXS['0000167'], name="height_carper_fiber", curie=MIXS.curie('0000167'),
+                   model_uri=MIXS.height_carper_fiber, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.room_moist_dam_hist = Slot(uri=MIXS['0000235'], name="room_moist_dam_hist", curie=MIXS.curie('0000235'),
+                   model_uri=MIXS.room_moist_dam_hist, domain=None, range=Optional[int])
+
+slots.diet_last_six_month = Slot(uri=MIXS['0000266'], name="diet_last_six_month", curie=MIXS.curie('0000266'),
+                   model_uri=MIXS.diet_last_six_month, domain=None, range=Optional[str])
+
+slots.gastrointest_disord = Slot(uri=MIXS['0000280'], name="gastrointest_disord", curie=MIXS.curie('0000280'),
+                   model_uri=MIXS.gastrointest_disord, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.contam_screen_param = Slot(uri=MIXS['0000073'], name="contam_screen_param", curie=MIXS.curie('0000073'),
+                   model_uri=MIXS.contam_screen_param, domain=None, range=Optional[str])
+
+slots.ster_meth_samp_room = Slot(uri=MIXS['0001259'], name="ster_meth_samp_room", curie=MIXS.curie('0001259'),
+                   model_uri=MIXS.ster_meth_samp_room, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.food_allergen_label = Slot(uri=MIXS['0001201'], name="food_allergen_label", curie=MIXS.curie('0001201'),
+                   model_uri=MIXS.food_allergen_label, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.plant_part_maturity = Slot(uri=MIXS['0001120'], name="plant_part_maturity", curie=MIXS.curie('0001120'),
+                   model_uri=MIXS.plant_part_maturity, domain=None, range=Optional[str])
+
+slots.food_pack_integrity = Slot(uri=MIXS['0001209'], name="food_pack_integrity", curie=MIXS.curie('0001209'),
+                   model_uri=MIXS.food_pack_integrity, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.org_count_qpcr_info = Slot(uri=MIXS['0000099'], name="org_count_qpcr_info", curie=MIXS.curie('0000099'),
+                   model_uri=MIXS.org_count_qpcr_info, domain=None, range=Optional[str])
+
+slots.host_of_host_gravid = Slot(uri=MIXS['0001333'], name="host_of_host_gravid", curie=MIXS.curie('0001333'),
+                   model_uri=MIXS.host_of_host_gravid, domain=None, range=Optional[str])
+
+slots.growth_hormone_regm = Slot(uri=MIXS['0000560'], name="growth_hormone_regm", curie=MIXS.curie('0000560'),
+                   model_uri=MIXS.growth_hormone_regm, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.samp_transport_cond = Slot(uri=MIXS['0000410'], name="samp_transport_cond", curie=MIXS.curie('0000410'),
+                   model_uri=MIXS.samp_transport_cond, domain=None, range=Optional[str])
+
+slots.serovar_or_serotype = Slot(uri=MIXS['0001157'], name="serovar_or_serotype", curie=MIXS.curie('0001157'),
+                   model_uri=MIXS.serovar_or_serotype, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.cur_vegetation_meth = Slot(uri=MIXS['0000314'], name="cur_vegetation_meth", curie=MIXS.curie('0000314'),
+                   model_uri=MIXS.cur_vegetation_meth, domain=None, range=Optional[str])
+
+slots.tot_nitro_cont_meth = Slot(uri=MIXS['0000338'], name="tot_nitro_cont_meth", curie=MIXS.curie('0000338'),
+                   model_uri=MIXS.tot_nitro_cont_meth, domain=None, range=Optional[str])
+
+slots.secondary_treatment = Slot(uri=MIXS['0000351'], name="secondary_treatment", curie=MIXS.curie('0000351'),
+                   model_uri=MIXS.secondary_treatment, domain=None, range=Optional[str])
+
+slots.farm_equip_san_freq = Slot(uri=MIXS['0001125'], name="farm_equip_san_freq", curie=MIXS.curie('0001125'),
+                   model_uri=MIXS.farm_equip_san_freq, domain=None, range=Optional[str])
+
+slots.microb_start_source = Slot(uri=MIXS['0001221'], name="microb_start_source", curie=MIXS.curie('0001221'),
+                   model_uri=MIXS.microb_start_source, domain=None, range=Optional[str])
+
+slots.sequencing_location = Slot(uri=MIXS['0001156'], name="sequencing_location", curie=MIXS.curie('0001156'),
+                   model_uri=MIXS.sequencing_location, domain=None, range=Optional[str])
+
+slots.experimental_factor = Slot(uri=MIXS['0000008'], name="experimental_factor", curie=MIXS.curie('0000008'),
+                   model_uri=MIXS.experimental_factor, domain=None, range=Optional[str])
+
+slots.samp_transport_temp = Slot(uri=MIXS['0001232'], name="samp_transport_temp", curie=MIXS.curie('0001232'),
+                   model_uri=MIXS.samp_transport_temp, domain=None, range=Optional[str])
+
+slots.cons_food_stor_temp = Slot(uri=MIXS['0001196'], name="cons_food_stor_temp", curie=MIXS.curie('0001196'),
+                   model_uri=MIXS.cons_food_stor_temp, domain=None, range=Optional[str])
+
+slots.host_of_host_sub_id = Slot(uri=MIXS['0001327'], name="host_of_host_sub_id", curie=MIXS.curie('0001327'),
+                   model_uri=MIXS.host_of_host_sub_id, domain=None, range=Optional[str])
+
+slots.weight_loss_3_month = Slot(uri=MIXS['0000295'], name="weight_loss_3_month", curie=MIXS.curie('0000295'),
+                   model_uri=MIXS.weight_loss_3_month, domain=None, range=Optional[str])
+
+slots.associated_resource = Slot(uri=MIXS['0000091'], name="associated_resource", curie=MIXS.curie('0000091'),
+                   model_uri=MIXS.associated_resource, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.plant_water_method = Slot(uri=MIXS['0001111'], name="plant_water_method", curie=MIXS.curie('0001111'),
+                   model_uri=MIXS.plant_water_method, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.symbiont_host_role = Slot(uri=MIXS['0001303'], name="symbiont_host_role", curie=MIXS.curie('0001303'),
+                   model_uri=MIXS.symbiont_host_role, domain=None, range=Optional[Union[str, "SymbiontHostRoleEnum"]])
+
+slots.soil_texture_class = Slot(uri=MIXS['0001164'], name="soil_texture_class", curie=MIXS.curie('0001164'),
+                   model_uri=MIXS.soil_texture_class, domain=None, range=Optional[Union[str, "SoilTextureClassEnum"]])
+
+slots.urine_collect_meth = Slot(uri=MIXS['0000899'], name="urine_collect_meth", curie=MIXS.curie('0000899'),
+                   model_uri=MIXS.urine_collect_meth, domain=None, range=Optional[Union[str, "UrineCollectMethEnum"]])
+
+slots.samp_loc_condition = Slot(uri=MIXS['0001257'], name="samp_loc_condition", curie=MIXS.curie('0001257'),
+                   model_uri=MIXS.samp_loc_condition, domain=None, range=Optional[Union[str, "SampLocConditionEnum"]])
+
+slots.extr_weather_event = Slot(uri=MIXS['0001141'], name="extr_weather_event", curie=MIXS.curie('0001141'),
+                   model_uri=MIXS.extr_weather_event, domain=None, range=Optional[Union[Union[str, "ExtrWeatherEventEnum"], List[Union[str, "ExtrWeatherEventEnum"]]]])
+
+slots.route_transmission = Slot(uri=MIXS['0001316'], name="route_transmission", curie=MIXS.curie('0001316'),
+                   model_uri=MIXS.route_transmission, domain=None, range=Optional[Union[str, "RouteTransmissionEnum"]])
+
+slots.shading_device_loc = Slot(uri=MIXS['0000832'], name="shading_device_loc", curie=MIXS.curie('0000832'),
+                   model_uri=MIXS.shading_device_loc, domain=None, range=Optional[Union[str, "ShadingDeviceLocEnum"]])
+
+slots.samp_surf_moisture = Slot(uri=MIXS['0001256'], name="samp_surf_moisture", curie=MIXS.curie('0001256'),
+                   model_uri=MIXS.samp_surf_moisture, domain=None, range=Optional[Union[Union[str, "SampSubtypeEnum"], List[Union[str, "SampSubtypeEnum"]]]])
+
+slots.samp_collect_point = Slot(uri=MIXS['0001015'], name="samp_collect_point", curie=MIXS.curie('0001015'),
+                   model_uri=MIXS.samp_collect_point, domain=None, range=Optional[Union[str, "SampCollectPointEnum"]])
+
+slots.spec_intended_cons = Slot(uri=MIXS['0001234'], name="spec_intended_cons", curie=MIXS.curie('0001234'),
+                   model_uri=MIXS.spec_intended_cons, domain=None, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.occup_density_samp = Slot(uri=MIXS['0000217'], name="occup_density_samp", curie=MIXS.curie('0000217'),
+                   model_uri=MIXS.occup_density_samp, domain=None, range=Optional[float])
+
+slots.biochem_oxygen_dem = Slot(uri=MIXS['0000653'], name="biochem_oxygen_dem", curie=MIXS.curie('0000653'),
+                   model_uri=MIXS.biochem_oxygen_dem, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.efficiency_percent = Slot(uri=MIXS['0000657'], name="efficiency_percent", curie=MIXS.curie('0000657'),
+                   model_uri=MIXS.efficiency_percent, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.floor_thermal_mass = Slot(uri=MIXS['0000166'], name="floor_thermal_mass", curie=MIXS.curie('0000166'),
+                   model_uri=MIXS.floor_thermal_mass, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.indust_eff_percent = Slot(uri=MIXS['0000662'], name="indust_eff_percent", curie=MIXS.curie('0000662'),
+                   model_uri=MIXS.indust_eff_percent, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.room_air_exch_rate = Slot(uri=MIXS['0000169'], name="room_air_exch_rate", curie=MIXS.curie('0000169'),
+                   model_uri=MIXS.room_air_exch_rate, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.samp_transport_dur = Slot(uri=MIXS['0001231'], name="samp_transport_dur", curie=MIXS.curie('0001231'),
+                   model_uri=MIXS.samp_transport_dur, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.sludge_retent_time = Slot(uri=MIXS['0000669'], name="sludge_retent_time", curie=MIXS.curie('0000669'),
+                   model_uri=MIXS.sludge_retent_time, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.host_of_host_taxid = Slot(uri=MIXS['0001306'], name="host_of_host_taxid", curie=MIXS.curie('0001306'),
+                   model_uri=MIXS.host_of_host_taxid, domain=None, range=Optional[int])
+
+slots.medic_hist_perform = Slot(uri=MIXS['0000897'], name="medic_hist_perform", curie=MIXS.curie('0000897'),
+                   model_uri=MIXS.medic_hist_perform, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.samp_collec_device = Slot(uri=MIXS['0000002'], name="samp_collec_device", curie=MIXS.curie('0000002'),
+                   model_uri=MIXS.samp_collec_device, domain=None, range=Optional[str])
+
+slots.blood_blood_disord = Slot(uri=MIXS['0000271'], name="blood_blood_disord", curie=MIXS.curie('0000271'),
+                   model_uri=MIXS.blood_blood_disord, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.dermatology_disord = Slot(uri=MIXS['0000284'], name="dermatology_disord", curie=MIXS.curie('0000284'),
+                   model_uri=MIXS.dermatology_disord, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.spikein_antibiotic = Slot(uri=MIXS['0001171'], name="spikein_antibiotic", curie=MIXS.curie('0001171'),
+                   model_uri=MIXS.spikein_antibiotic, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.cons_food_stor_dur = Slot(uri=MIXS['0001195'], name="cons_food_stor_dur", curie=MIXS.curie('0001195'),
+                   model_uri=MIXS.cons_food_stor_dur, domain=None, range=Optional[str])
+
+slots.pres_animal_insect = Slot(uri=MIXS['0000819'], name="pres_animal_insect", curie=MIXS.curie('0000819'),
+                   model_uri=MIXS.pres_animal_insect, domain=None, range=Optional[str])
+
+slots.water_source_adjac = Slot(uri=MIXS['0001122'], name="water_source_adjac", curie=MIXS.curie('0001122'),
+                   model_uri=MIXS.water_source_adjac, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.coll_site_geo_feat = Slot(uri=MIXS['0001183'], name="coll_site_geo_feat", curie=MIXS.curie('0001183'),
+                   model_uri=MIXS.coll_site_geo_feat, domain=None, range=Optional[str])
+
+slots.food_prior_contact = Slot(uri=MIXS['0001210'], name="food_prior_contact", curie=MIXS.curie('0001210'),
+                   model_uri=MIXS.food_prior_contact, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.room_architec_elem = Slot(uri=MIXS['0000233'], name="room_architec_elem", curie=MIXS.curie('0000233'),
+                   model_uri=MIXS.room_architec_elem, domain=None, range=Optional[str])
+
+slots.gaseous_substances = Slot(uri=MIXS['0000661'], name="gaseous_substances", curie=MIXS.curie('0000661'),
+                   model_uri=MIXS.gaseous_substances, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.target_subfragment = Slot(uri=MIXS['0000045'], name="target_subfragment", curie=MIXS.curie('0000045'),
+                   model_uri=MIXS.target_subfragment, domain=None, range=Optional[str])
+
+slots.gynecologic_disord = Slot(uri=MIXS['0000288'], name="gynecologic_disord", curie=MIXS.curie('0000288'),
+                   model_uri=MIXS.gynecologic_disord, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.foetal_health_stat = Slot(uri=MIXS['0000275'], name="foetal_health_stat", curie=MIXS.curie('0000275'),
+                   model_uri=MIXS.foetal_health_stat, domain=None, range=Optional[str])
+
+slots.shading_device_mat = Slot(uri=MIXS['0000245'], name="shading_device_mat", curie=MIXS.curie('0000245'),
+                   model_uri=MIXS.shading_device_mat, domain=None, range=Optional[str])
+
+slots.cons_qty_purchased = Slot(uri=MIXS['0001198'], name="cons_qty_purchased", curie=MIXS.curie('0001198'),
+                   model_uri=MIXS.cons_qty_purchased, domain=None, range=Optional[str])
+
+slots.samp_loc_corr_rate = Slot(uri=MIXS['0000136'], name="samp_loc_corr_rate", curie=MIXS.curie('0000136'),
+                   model_uri=MIXS.samp_loc_corr_rate, domain=None, range=Optional[str])
+
+slots.spikein_growth_med = Slot(uri=MIXS['0001169'], name="spikein_growth_med", curie=MIXS.curie('0001169'),
+                   model_uri=MIXS.spikein_growth_med, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.microb_start_count = Slot(uri=MIXS['0001218'], name="microb_start_count", curie=MIXS.curie('0001218'),
+                   model_uri=MIXS.microb_start_count, domain=None, range=Optional[str])
+
+slots.host_of_host_pheno = Slot(uri=MIXS['0001332'], name="host_of_host_pheno", curie=MIXS.curie('0001332'),
+                   model_uri=MIXS.host_of_host_pheno, domain=None, range=Optional[str])
+
+slots.micro_biomass_meth = Slot(uri=MIXS['0000339'], name="micro_biomass_meth", curie=MIXS.curie('0000339'),
+                   model_uri=MIXS.micro_biomass_meth, domain=None, range=Optional[str])
+
+slots.prev_land_use_meth = Slot(uri=MIXS['0000316'], name="prev_land_use_meth", curie=MIXS.curie('0000316'),
+                   model_uri=MIXS.prev_land_use_meth, domain=None, range=Optional[str])
+
+slots.samp_collec_method = Slot(uri=MIXS['0001225'], name="samp_collec_method", curie=MIXS.curie('0001225'),
+                   model_uri=MIXS.samp_collec_method, domain=None, range=Optional[str])
+
+slots.vir_ident_software = Slot(uri=MIXS['0000081'], name="vir_ident_software", curie=MIXS.curie('0000081'),
+                   model_uri=MIXS.vir_ident_software, domain=None, range=Optional[str])
+
+slots.host_of_host_coinf = Slot(uri=MIXS['0001310'], name="host_of_host_coinf", curie=MIXS.curie('0001310'),
+                   model_uri=MIXS.host_of_host_coinf, domain=None, range=Optional[str])
+
+slots.tertiary_treatment = Slot(uri=MIXS['0000352'], name="tertiary_treatment", curie=MIXS.curie('0000352'),
+                   model_uri=MIXS.tertiary_treatment, domain=None, range=Optional[str])
+
+slots.ferm_chem_add_perc = Slot(uri=MIXS['0001186'], name="ferm_chem_add_perc", curie=MIXS.curie('0001186'),
+                   model_uri=MIXS.ferm_chem_add_perc, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.ferm_headspace_oxy = Slot(uri=MIXS['0001187'], name="ferm_headspace_oxy", curie=MIXS.curie('0001187'),
+                   model_uri=MIXS.ferm_headspace_oxy, domain=None, range=Optional[str])
+
+slots.microb_start_taxid = Slot(uri=MIXS['0001222'], name="microb_start_taxid", curie=MIXS.curie('0001222'),
+                   model_uri=MIXS.microb_start_taxid, domain=None, range=Optional[str])
+
+slots.type_of_symbiosis = Slot(uri=MIXS['0001307'], name="type_of_symbiosis", curie=MIXS.curie('0001307'),
+                   model_uri=MIXS.type_of_symbiosis, domain=None, range=Optional[Union[str, "TypeOfSymbiosisEnum"]])
+
+slots.substructure_type = Slot(uri=MIXS['0000767'], name="substructure_type", curie=MIXS.curie('0000767'),
+                   model_uri=MIXS.substructure_type, domain=None, range=Optional[Union[Union[str, "SubstructureTypeEnum"], List[Union[str, "SubstructureTypeEnum"]]]])
+
+slots.virus_enrich_appr = Slot(uri=MIXS['0000036'], name="virus_enrich_appr", curie=MIXS.curie('0000036'),
+                   model_uri=MIXS.virus_enrich_appr, domain=None, range=Optional[Union[str, "VirusEnrichApprEnum"]])
+
+slots.farm_water_source = Slot(uri=MIXS['0001110'], name="farm_water_source", curie=MIXS.curie('0001110'),
+                   model_uri=MIXS.farm_water_source, domain=None, range=Optional[Union[Union[str, "FarmWaterSourceEnum"], List[Union[str, "FarmWaterSourceEnum"]]]])
+
+slots.mode_transmission = Slot(uri=MIXS['0001312'], name="mode_transmission", curie=MIXS.curie('0001312'),
+                   model_uri=MIXS.mode_transmission, domain=None, range=Optional[Union[str, "ModeTransmissionEnum"]])
+
+slots.host_cellular_loc = Slot(uri=MIXS['0001313'], name="host_cellular_loc", curie=MIXS.curie('0001313'),
+                   model_uri=MIXS.host_cellular_loc, domain=None, range=Optional[Union[str, "HostCellularLocEnum"]])
+
+slots.ext_window_orient = Slot(uri=MIXS['0000818'], name="ext_window_orient", curie=MIXS.curie('0000818'),
+                   model_uri=MIXS.ext_window_orient, domain=None, range=Optional[Union[str, "ExtWindowOrientEnum"]])
+
+slots.plant_reprod_crop = Slot(uri=MIXS['0001150'], name="plant_reprod_crop", curie=MIXS.curie('0001150'),
+                   model_uri=MIXS.plant_reprod_crop, domain=None, range=Optional[Union[Union[str, "PlantReprodCropEnum"], List[Union[str, "PlantReprodCropEnum"]]]])
+
+slots.window_water_mold = Slot(uri=MIXS['0000854'], name="window_water_mold", curie=MIXS.curie('0000854'),
+                   model_uri=MIXS.window_water_mold, domain=None, range=Optional[Union[str, "WindowWaterMoldEnum"]])
+
+slots.pred_genome_struc = Slot(uri=MIXS['0000083'], name="pred_genome_struc", curie=MIXS.curie('0000083'),
+                   model_uri=MIXS.pred_genome_struc, domain=None, range=Optional[Union[str, "PredGenomeStrucEnum"]])
+
+slots.anim_water_method = Slot(uri=MIXS['0001115'], name="anim_water_method", curie=MIXS.curie('0001115'),
+                   model_uri=MIXS.anim_water_method, domain=None, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.food_product_qual = Slot(uri=MIXS['0001213'], name="food_product_qual", curie=MIXS.curie('0001213'),
+                   model_uri=MIXS.food_product_qual, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.microb_start_inoc = Slot(uri=MIXS['0001219'], name="microb_start_inoc", curie=MIXS.curie('0001219'),
+                   model_uri=MIXS.microb_start_inoc, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.typ_occup_density = Slot(uri=MIXS['0000771'], name="typ_occup_density", curie=MIXS.curie('0000771'),
+                   model_uri=MIXS.typ_occup_density, domain=None, range=Optional[float])
+
+slots.soil_text_measure = Slot(uri=MIXS['0000335'], name="soil_text_measure", curie=MIXS.curie('0000335'),
+                   model_uri=MIXS.soil_text_measure, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.tot_nitro_content = Slot(uri=MIXS['0000530'], name="tot_nitro_content", curie=MIXS.curie('0000530'),
+                   model_uri=MIXS.tot_nitro_content, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.bacterial_density = Slot(uri=MIXS['0001194'], name="bacterial_density", curie=MIXS.curie('0001194'),
+                   model_uri=MIXS.bacterial_density, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.blood_press_diast = Slot(uri=MIXS['0000258'], name="blood_press_diast", curie=MIXS.curie('0000258'),
+                   model_uri=MIXS.blood_press_diast, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.ceil_thermal_mass = Slot(uri=MIXS['0000143'], name="ceil_thermal_mass", curie=MIXS.curie('0000143'),
+                   model_uri=MIXS.ceil_thermal_mass, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.diss_carb_dioxide = Slot(uri=MIXS['0000436'], name="diss_carb_dioxide", curie=MIXS.curie('0000436'),
+                   model_uri=MIXS.diss_carb_dioxide, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.diss_oxygen_fluid = Slot(uri=MIXS['0000438'], name="diss_oxygen_fluid", curie=MIXS.curie('0000438'),
+                   model_uri=MIXS.diss_oxygen_fluid, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.ferm_rel_humidity = Slot(uri=MIXS['0001190'], name="ferm_rel_humidity", curie=MIXS.curie('0001190'),
+                   model_uri=MIXS.ferm_rel_humidity, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.microbial_biomass = Slot(uri=MIXS['0000650'], name="microbial_biomass", curie=MIXS.curie('0000650'),
+                   model_uri=MIXS.microbial_biomass, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.specific_humidity = Slot(uri=MIXS['0000214'], name="specific_humidity", curie=MIXS.curie('0000214'),
+                   model_uri=MIXS.specific_humidity, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.wall_thermal_mass = Slot(uri=MIXS['0000222'], name="wall_thermal_mass", curie=MIXS.curie('0000222'),
+                   model_uri=MIXS.wall_thermal_mass, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.seq_quality_check = Slot(uri=MIXS['0000051'], name="seq_quality_check", curie=MIXS.curie('0000051'),
+                   model_uri=MIXS.seq_quality_check, domain=None, range=Optional[Union[str, "SeqQualityCheckEnum"]])
+
+slots.animal_group_size = Slot(uri=MIXS['0001129'], name="animal_group_size", curie=MIXS.curie('0001129'),
+                   model_uri=MIXS.animal_group_size, domain=None, range=Optional[int])
+
+slots.room_window_count = Slot(uri=MIXS['0000237'], name="room_window_count", curie=MIXS.curie('0000237'),
+                   model_uri=MIXS.room_window_count, domain=None, range=Optional[int])
+
+slots.agrochem_addition = Slot(uri=MIXS['0000639'], name="agrochem_addition", curie=MIXS.curie('0000639'),
+                   model_uri=MIXS.agrochem_addition, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.host_of_host_name = Slot(uri=MIXS['0001324'], name="host_of_host_name", curie=MIXS.curie('0001324'),
+                   model_uri=MIXS.host_of_host_name, domain=None, range=Optional[str])
+
+slots.alkalinity_method = Slot(uri=MIXS['0000298'], name="alkalinity_method", curie=MIXS.curie('0000298'),
+                   model_uri=MIXS.alkalinity_method, domain=None, range=Optional[str])
+
+slots.host_disease_stat = Slot(uri=MIXS['0000031'], name="host_disease_stat", curie=MIXS.curie('0000031'),
+                   model_uri=MIXS.host_disease_stat, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.decontam_software = Slot(uri=MIXS['0000074'], name="decontam_software", curie=MIXS.curie('0000074'),
+                   model_uri=MIXS.decontam_software, domain=None, range=Optional[str])
+
+slots.food_quality_date = Slot(uri=MIXS['0001178'], name="food_quality_date", curie=MIXS.curie('0001178'),
+                   model_uri=MIXS.food_quality_date, domain=None, range=Optional[str])
+
+slots.host_pred_est_acc = Slot(uri=MIXS['0000089'], name="host_pred_est_acc", curie=MIXS.curie('0000089'),
+                   model_uri=MIXS.host_pred_est_acc, domain=None, range=Optional[str])
+
+slots.intended_consumer = Slot(uri=MIXS['0001144'], name="intended_consumer", curie=MIXS.curie('0001144'),
+                   model_uri=MIXS.intended_consumer, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.part_plant_animal = Slot(uri=MIXS['0001149'], name="part_plant_animal", curie=MIXS.curie('0001149'),
+                   model_uri=MIXS.part_plant_animal, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.food_cooking_proc = Slot(uri=MIXS['0001202'], name="food_cooking_proc", curie=MIXS.curie('0001202'),
+                   model_uri=MIXS.food_cooking_proc, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.food_preserv_proc = Slot(uri=MIXS['0001135'], name="food_preserv_proc", curie=MIXS.curie('0001135'),
+                   model_uri=MIXS.food_preserv_proc, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.food_contain_wrap = Slot(uri=MIXS['0001132'], name="food_contain_wrap", curie=MIXS.curie('0001132'),
+                   model_uri=MIXS.food_contain_wrap, domain=None, range=Optional[str])
+
+slots.food_contact_surf = Slot(uri=MIXS['0001131'], name="food_contact_surf", curie=MIXS.curie('0001131'),
+                   model_uri=MIXS.food_contact_surf, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.dietary_claim_use = Slot(uri=MIXS['0001199'], name="dietary_claim_use", curie=MIXS.curie('0001199'),
+                   model_uri=MIXS.dietary_claim_use, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.host_of_host_geno = Slot(uri=MIXS['0001331'], name="host_of_host_geno", curie=MIXS.curie('0001331'),
+                   model_uri=MIXS.host_of_host_geno, domain=None, range=Optional[str])
+
+slots.previous_land_use = Slot(uri=MIXS['0000315'], name="previous_land_use", curie=MIXS.curie('0000315'),
+                   model_uri=MIXS.previous_land_use, domain=None, range=Optional[str])
+
+slots.chem_treat_method = Slot(uri=MIXS['0000457'], name="chem_treat_method", curie=MIXS.curie('0000457'),
+                   model_uri=MIXS.chem_treat_method, domain=None, range=Optional[str])
+
+slots.mineral_nutr_regm = Slot(uri=MIXS['0000570'], name="mineral_nutr_regm", curie=MIXS.curie('0000570'),
+                   model_uri=MIXS.mineral_nutr_regm, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.assembly_software = Slot(uri=MIXS['0000058'], name="assembly_software", curie=MIXS.curie('0000058'),
+                   model_uri=MIXS.assembly_software, domain=None, range=Optional[str])
+
+slots.trna_ext_software = Slot(uri=MIXS['0000068'], name="trna_ext_software", curie=MIXS.curie('0000068'),
+                   model_uri=MIXS.trna_ext_software, domain=None, range=Optional[str])
+
+slots.isol_growth_condt = Slot(uri=MIXS['0000003'], name="isol_growth_condt", curie=MIXS.curie('0000003'),
+                   model_uri=MIXS.isol_growth_condt, domain=None, range=Optional[str])
+
+slots.link_addit_analys = Slot(uri=MIXS['0000340'], name="link_addit_analys", curie=MIXS.curie('0000340'),
+                   model_uri=MIXS.link_addit_analys, domain=None, range=Optional[str])
+
+slots.heavy_metals_meth = Slot(uri=MIXS['0000343'], name="heavy_metals_meth", curie=MIXS.curie('0000343'),
+                   model_uri=MIXS.heavy_metals_meth, domain=None, range=Optional[str])
+
+slots.link_climate_info = Slot(uri=MIXS['0000328'], name="link_climate_info", curie=MIXS.curie('0000328'),
+                   model_uri=MIXS.link_climate_info, domain=None, range=Optional[str])
+
+slots.soil_texture_meth = Slot(uri=MIXS['0000336'], name="soil_texture_meth", curie=MIXS.curie('0000336'),
+                   model_uri=MIXS.soil_texture_meth, domain=None, range=Optional[str])
+
+slots.pool_dna_extracts = Slot(uri=MIXS['0000325'], name="pool_dna_extracts", curie=MIXS.curie('0000325'),
+                   model_uri=MIXS.pool_dna_extracts, domain=None, range=Optional[str])
+
+slots.primary_treatment = Slot(uri=MIXS['0000349'], name="primary_treatment", curie=MIXS.curie('0000349'),
+                   model_uri=MIXS.primary_treatment, domain=None, range=Optional[str])
+
+slots.otu_seq_comp_appr = Slot(uri=MIXS['0000086'], name="otu_seq_comp_appr", curie=MIXS.curie('0000086'),
+                   model_uri=MIXS.otu_seq_comp_appr, domain=None, range=Optional[str])
+
+slots.soluble_inorg_mat = Slot(uri=MIXS['0000672'], name="soluble_inorg_mat", curie=MIXS.curie('0000672'),
+                   model_uri=MIXS.soluble_inorg_mat, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.food_prod_synonym = Slot(uri=MIXS['0001212'], name="food_prod_synonym", curie=MIXS.curie('0001212'),
+                   model_uri=MIXS.food_prod_synonym, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.microb_start_prep = Slot(uri=MIXS['0001220'], name="microb_start_prep", curie=MIXS.curie('0001220'),
+                   model_uri=MIXS.microb_start_prep, domain=None, range=Optional[str])
+
+slots.prod_label_claims = Slot(uri=MIXS['0001337'], name="prod_label_claims", curie=MIXS.curie('0001337'),
+                   model_uri=MIXS.prod_label_claims, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.nucl_acid_ext_kit = Slot(uri=MIXS['0001223'], name="nucl_acid_ext_kit", curie=MIXS.curie('0001223'),
+                   model_uri=MIXS.nucl_acid_ext_kit, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.volatile_org_comp = Slot(uri=MIXS['0000115'], name="volatile_org_comp", curie=MIXS.curie('0000115'),
+                   model_uri=MIXS.volatile_org_comp, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.study_complt_stat = Slot(uri=MIXS['0000898'], name="study_complt_stat", curie=MIXS.curie('0000898'),
+                   model_uri=MIXS.study_complt_stat, domain=None, range=Optional[str])
+
+slots.fertilizer_admin = Slot(uri=MIXS['0001127'], name="fertilizer_admin", curie=MIXS.curie('0001127'),
+                   model_uri=MIXS.fertilizer_admin, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.samp_capt_status = Slot(uri=MIXS['0000860'], name="samp_capt_status", curie=MIXS.curie('0000860'),
+                   model_uri=MIXS.samp_capt_status, domain=None, range=Optional[Union[str, "SampCaptStatusEnum"]])
+
+slots.mag_cov_software = Slot(uri=MIXS['0000080'], name="mag_cov_software", curie=MIXS.curie('0000080'),
+                   model_uri=MIXS.mag_cov_software, domain=None, range=Optional[Union[str, "MagCovSoftwareEnum"]])
+
+slots.host_specificity = Slot(uri=MIXS['0001308'], name="host_specificity", curie=MIXS.curie('0001308'),
+                   model_uri=MIXS.host_specificity, domain=None, range=Optional[Union[str, "HostSpecificityEnum"]])
+
+slots.window_horiz_pos = Slot(uri=MIXS['0000851'], name="window_horiz_pos", curie=MIXS.curie('0000851'),
+                   model_uri=MIXS.window_horiz_pos, domain=None, range=Optional[Union[str, "WindowHorizPosEnum"]])
+
+slots.floor_water_mold = Slot(uri=MIXS['0000805'], name="floor_water_mold", curie=MIXS.curie('0000805'),
+                   model_uri=MIXS.floor_water_mold, domain=None, range=Optional[Union[str, "FloorWaterMoldEnum"]])
+
+slots.build_occup_type = Slot(uri=MIXS['0000761'], name="build_occup_type", curie=MIXS.curie('0000761'),
+                   model_uri=MIXS.build_occup_type, domain=None, range=Optional[Union[Union[str, "BuildOccupTypeEnum"], List[Union[str, "BuildOccupTypeEnum"]]]])
+
+slots.profile_position = Slot(uri=MIXS['0001084'], name="profile_position", curie=MIXS.curie('0001084'),
+                   model_uri=MIXS.profile_position, domain=None, range=Optional[Union[str, "ProfilePositionEnum"]])
+
+slots.building_setting = Slot(uri=MIXS['0000768'], name="building_setting", curie=MIXS.curie('0000768'),
+                   model_uri=MIXS.building_setting, domain=None, range=Optional[Union[str, "BuildingSettingEnum"]])
+
+slots.food_name_status = Slot(uri=MIXS['0001206'], name="food_name_status", curie=MIXS.curie('0001206'),
+                   model_uri=MIXS.food_name_status, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.surf_moisture_ph = Slot(uri=MIXS['0000760'], name="surf_moisture_ph", curie=MIXS.curie('0000760'),
+                   model_uri=MIXS.surf_moisture_ph, domain=None, range=Optional[float])
+
+slots.abs_air_humidity = Slot(uri=MIXS['0000122'], name="abs_air_humidity", curie=MIXS.curie('0000122'),
+                   model_uri=MIXS.abs_air_humidity, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.barometric_press = Slot(uri=MIXS['0000096'], name="barometric_press", curie=MIXS.curie('0000096'),
+                   model_uri=MIXS.barometric_press, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.blood_press_syst = Slot(uri=MIXS['0000259'], name="blood_press_syst", curie=MIXS.curie('0000259'),
+                   model_uri=MIXS.blood_press_syst, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.diss_inorg_nitro = Slot(uri=MIXS['0000698'], name="diss_inorg_nitro", curie=MIXS.curie('0000698'),
+                   model_uri=MIXS.diss_inorg_nitro, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.num_samp_collect = Slot(uri=MIXS['0001224'], name="num_samp_collect", curie=MIXS.curie('0001224'),
+                   model_uri=MIXS.num_samp_collect, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.rel_air_humidity = Slot(uri=MIXS['0000121'], name="rel_air_humidity", curie=MIXS.curie('0000121'),
+                   model_uri=MIXS.rel_air_humidity, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.rel_humidity_out = Slot(uri=MIXS['0000188'], name="rel_humidity_out", curie=MIXS.curie('0000188'),
+                   model_uri=MIXS.rel_humidity_out, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.study_timecourse = Slot(uri=MIXS['0001239'], name="study_timecourse", curie=MIXS.curie('0001239'),
+                   model_uri=MIXS.study_timecourse, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.window_open_freq = Slot(uri=MIXS['0000246'], name="window_open_freq", curie=MIXS.curie('0000246'),
+                   model_uri=MIXS.window_open_freq, domain=None, range=Optional[int])
+
+slots.atmospheric_data = Slot(uri=MIXS['0001097'], name="atmospheric_data", curie=MIXS.curie('0001097'),
+                   model_uri=MIXS.atmospheric_data, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.pulmonary_disord = Slot(uri=MIXS['0000269'], name="pulmonary_disord", curie=MIXS.curie('0000269'),
+                   model_uri=MIXS.pulmonary_disord, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.pred_genome_type = Slot(uri=MIXS['0000082'], name="pred_genome_type", curie=MIXS.curie('0000082'),
+                   model_uri=MIXS.pred_genome_type, domain=None, range=Optional[str])
+
+slots.animal_body_cond = Slot(uri=MIXS['0001248'], name="animal_body_cond", curie=MIXS.curie('0001248'),
+                   model_uri=MIXS.animal_body_cond, domain=None, range=Optional[str])
+
+slots.floor_finish_mat = Slot(uri=MIXS['0000804'], name="floor_finish_mat", curie=MIXS.curie('0000804'),
+                   model_uri=MIXS.floor_finish_mat, domain=None, range=Optional[str])
+
+slots.add_recov_method = Slot(uri=MIXS['0001009'], name="add_recov_method", curie=MIXS.curie('0001009'),
+                   model_uri=MIXS.add_recov_method, domain=None, range=Optional[str])
+
+slots.food_pack_medium = Slot(uri=MIXS['0001134'], name="food_pack_medium", curie=MIXS.curie('0001134'),
+                   model_uri=MIXS.food_pack_medium, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.built_struc_type = Slot(uri=MIXS['0000721'], name="built_struc_type", curie=MIXS.curie('0000721'),
+                   model_uri=MIXS.built_struc_type, domain=None, range=Optional[str])
+
+slots.subspecf_gen_lin = Slot(uri=MIXS['0000020'], name="subspecf_gen_lin", curie=MIXS.curie('0000020'),
+                   model_uri=MIXS.subspecf_gen_lin, domain=None, range=Optional[str])
+
+slots.animal_intrusion = Slot(uri=MIXS['0001114'], name="animal_intrusion", curie=MIXS.curie('0001114'),
+                   model_uri=MIXS.animal_intrusion, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.samp_stor_device = Slot(uri=MIXS['0001228'], name="samp_stor_device", curie=MIXS.curie('0001228'),
+                   model_uri=MIXS.samp_stor_device, domain=None, range=Optional[str])
+
+slots.local_class_meth = Slot(uri=MIXS['0000331'], name="local_class_meth", curie=MIXS.curie('0000331'),
+                   model_uri=MIXS.local_class_meth, domain=None, range=Optional[str])
+
+slots.samp_mat_process = Slot(uri=MIXS['0000016'], name="samp_mat_process", curie=MIXS.curie('0000016'),
+                   model_uri=MIXS.samp_mat_process, domain=None, range=Optional[str])
 
 slots.date_extr_weath = Slot(uri=MIXS['0001142'], name="date_extr_weath", curie=MIXS.curie('0001142'),
                    model_uri=MIXS.date_extr_weath, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.extreme_event = Slot(uri=MIXS['0000320'], name="extreme_event", curie=MIXS.curie('0000320'),
-                   model_uri=MIXS.extreme_event, domain=None, range=Optional[str])
-
-slots.fire = Slot(uri=MIXS['0001086'], name="fire", curie=MIXS.curie('0001086'),
-                   model_uri=MIXS.fire, domain=None, range=Optional[str])
-
-slots.flooding = Slot(uri=MIXS['0000319'], name="flooding", curie=MIXS.curie('0000319'),
-                   model_uri=MIXS.flooding, domain=None, range=Optional[str])
 
 slots.collection_date = Slot(uri=MIXS['0000011'], name="collection_date", curie=MIXS.curie('0000011'),
                    model_uri=MIXS.collection_date, domain=None, range=Optional[str])
@@ -71926,175 +72588,17 @@ slots.cons_purch_date = Slot(uri=MIXS['0001197'], name="cons_purch_date", curie=
 slots.fertilizer_date = Slot(uri=MIXS['0001128'], name="fertilizer_date", curie=MIXS.curie('0001128'),
                    model_uri=MIXS.fertilizer_date, domain=None, range=Optional[str])
 
-slots.lat_lon = Slot(uri=MIXS['0000009'], name="lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=MIXS.lat_lon, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
-
-slots.timepoint = Slot(uri=MIXS['0001173'], name="timepoint", curie=MIXS.curie('0001173'),
-                   model_uri=MIXS.timepoint, domain=None, range=Optional[float])
-
-slots.study_inc_dur = Slot(uri=MIXS['0001237'], name="study_inc_dur", curie=MIXS.curie('0001237'),
-                   model_uri=MIXS.study_inc_dur, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.tax_ident = Slot(uri=MIXS['0000053'], name="tax_ident", curie=MIXS.curie('0000053'),
-                   model_uri=MIXS.tax_ident, domain=None, range=Optional[Union[str, "TaxIdentEnum"]])
-
-slots.cult_result = Slot(uri=MIXS['0001117'], name="cult_result", curie=MIXS.curie('0001117'),
-                   model_uri=MIXS.cult_result, domain=None, range=Optional[Union[str, "CultResultEnum"]])
-
-slots.symbiont_host_role = Slot(uri=MIXS['0001303'], name="symbiont_host_role", curie=MIXS.curie('0001303'),
-                   model_uri=MIXS.symbiont_host_role, domain=None, range=Optional[Union[str, "SymbiontHostRoleEnum"]])
-
-slots.fao_class = Slot(uri=MIXS['0001083'], name="fao_class", curie=MIXS.curie('0001083'),
-                   model_uri=MIXS.fao_class, domain=None, range=Optional[Union[str, "FaoClassEnum"]])
-
-slots.samp_capt_status = Slot(uri=MIXS['0000860'], name="samp_capt_status", curie=MIXS.curie('0000860'),
-                   model_uri=MIXS.samp_capt_status, domain=None, range=Optional[Union[str, "SampCaptStatusEnum"]])
-
-slots.rel_to_oxygen = Slot(uri=MIXS['0000015'], name="rel_to_oxygen", curie=MIXS.curie('0000015'),
-                   model_uri=MIXS.rel_to_oxygen, domain=None, range=Optional[Union[str, "RelToOxygenEnum"]])
-
 slots.gender_restroom = Slot(uri=MIXS['0000808'], name="gender_restroom", curie=MIXS.curie('0000808'),
                    model_uri=MIXS.gender_restroom, domain=None, range=Optional[Union[str, "GenderRestroomEnum"]])
-
-slots.door_mat = Slot(uri=MIXS['0000791'], name="door_mat", curie=MIXS.curie('0000791'),
-                   model_uri=MIXS.door_mat, domain=None, range=Optional[Union[str, "DoorMatEnum"]])
-
-slots.handidness = Slot(uri=MIXS['0000809'], name="handidness", curie=MIXS.curie('0000809'),
-                   model_uri=MIXS.handidness, domain=None, range=Optional[Union[str, "HandidnessEnum"]])
-
-slots.facility_type = Slot(uri=MIXS['0001252'], name="facility_type", curie=MIXS.curie('0001252'),
-                   model_uri=MIXS.facility_type, domain=None, range=Optional[Union[Union[str, "FacilityTypeEnum"], List[Union[str, "FacilityTypeEnum"]]]])
-
-slots.plant_sex = Slot(uri=MIXS['0001059'], name="plant_sex", curie=MIXS.curie('0001059'),
-                   model_uri=MIXS.plant_sex, domain=None, range=Optional[Union[str, "PlantSexEnum"]])
-
-slots.hcr_geol_age = Slot(uri=MIXS['0000993'], name="hcr_geol_age", curie=MIXS.curie('0000993'),
-                   model_uri=MIXS.hcr_geol_age, domain=None, range=Optional[Union[str, "HcrGeolAgeEnum"]])
-
-slots.sr_geol_age = Slot(uri=MIXS['0000997'], name="sr_geol_age", curie=MIXS.curie('0000997'),
-                   model_uri=MIXS.sr_geol_age, domain=None, range=Optional[Union[str, "SrGeolAgeEnum"]])
-
-slots.room_connected = Slot(uri=MIXS['0000826'], name="room_connected", curie=MIXS.curie('0000826'),
-                   model_uri=MIXS.room_connected, domain=None, range=Optional[Union[str, "RoomConnectedEnum"]])
-
-slots.room_type = Slot(uri=MIXS['0000825'], name="room_type", curie=MIXS.curie('0000825'),
-                   model_uri=MIXS.room_type, domain=None, range=Optional[Union[str, "RoomTypeEnum"]])
-
-slots.occup_document = Slot(uri=MIXS['0000816'], name="occup_document", curie=MIXS.curie('0000816'),
-                   model_uri=MIXS.occup_document, domain=None, range=Optional[Union[str, "OccupDocumentEnum"]])
-
-slots.trophic_level = Slot(uri=MIXS['0000032'], name="trophic_level", curie=MIXS.curie('0000032'),
-                   model_uri=MIXS.trophic_level, domain=None, range=Optional[Union[str, "TrophicLevelEnum"]])
-
-slots.shading_device_type = Slot(uri=MIXS['0000835'], name="shading_device_type", curie=MIXS.curie('0000835'),
-                   model_uri=MIXS.shading_device_type, domain=None, range=Optional[Union[str, "ShadingDeviceTypeEnum"]])
-
-slots.lithology = Slot(uri=MIXS['0000990'], name="lithology", curie=MIXS.curie('0000990'),
-                   model_uri=MIXS.lithology, domain=None, range=Optional[Union[str, "LithologyEnum"]])
-
-slots.indoor_space = Slot(uri=MIXS['0000763'], name="indoor_space", curie=MIXS.curie('0000763'),
-                   model_uri=MIXS.indoor_space, domain=None, range=Optional[Union[str, "IndoorSpaceEnum"]])
-
-slots.door_type_wood = Slot(uri=MIXS['0000797'], name="door_type_wood", curie=MIXS.curie('0000797'),
-                   model_uri=MIXS.door_type_wood, domain=None, range=Optional[Union[str, "DoorTypeWoodEnum"]])
-
-slots.sediment_type = Slot(uri=MIXS['0001078'], name="sediment_type", curie=MIXS.curie('0001078'),
-                   model_uri=MIXS.sediment_type, domain=None, range=Optional[Union[str, "SedimentTypeEnum"]])
-
-slots.samp_transport_cont = Slot(uri=MIXS['0001230'], name="samp_transport_cont", curie=MIXS.curie('0001230'),
-                   model_uri=MIXS.samp_transport_cont, domain=None, range=Optional[Union[str, "SampTransportContEnum"]])
 
 slots.window_vert_pos = Slot(uri=MIXS['0000857'], name="window_vert_pos", curie=MIXS.curie('0000857'),
                    model_uri=MIXS.window_vert_pos, domain=None, range=Optional[Union[str, "WindowVertPosEnum"]])
 
-slots.build_docs = Slot(uri=MIXS['0000787'], name="build_docs", curie=MIXS.curie('0000787'),
-                   model_uri=MIXS.build_docs, domain=None, range=Optional[Union[str, "BuildDocsEnum"]])
-
-slots.arch_struc = Slot(uri=MIXS['0000774'], name="arch_struc", curie=MIXS.curie('0000774'),
-                   model_uri=MIXS.arch_struc, domain=None, range=Optional[Union[str, "ArchStrucEnum"]])
-
-slots.mag_cov_software = Slot(uri=MIXS['0000080'], name="mag_cov_software", curie=MIXS.curie('0000080'),
-                   model_uri=MIXS.mag_cov_software, domain=None, range=Optional[Union[str, "MagCovSoftwareEnum"]])
-
-slots.furniture = Slot(uri=MIXS['0000807'], name="furniture", curie=MIXS.curie('0000807'),
-                   model_uri=MIXS.furniture, domain=None, range=Optional[Union[str, "FurnitureEnum"]])
-
-slots.ceil_type = Slot(uri=MIXS['0000784'], name="ceil_type", curie=MIXS.curie('0000784'),
-                   model_uri=MIXS.ceil_type, domain=None, range=Optional[Union[str, "CeilTypeEnum"]])
-
 slots.food_trace_list = Slot(uri=MIXS['0001214'], name="food_trace_list", curie=MIXS.curie('0001214'),
                    model_uri=MIXS.food_trace_list, domain=None, range=Optional[Union[str, "FoodTraceListEnum"]])
 
-slots.single_cell_lysis_appr = Slot(uri=MIXS['0000076'], name="single_cell_lysis_appr", curie=MIXS.curie('0000076'),
-                   model_uri=MIXS.single_cell_lysis_appr, domain=None, range=Optional[Union[str, "SingleCellLysisApprEnum"]])
-
-slots.window_mat = Slot(uri=MIXS['0000853'], name="window_mat", curie=MIXS.curie('0000853'),
-                   model_uri=MIXS.window_mat, domain=None, range=Optional[Union[str, "WindowLocEnum"]])
-
-slots.sr_lithology = Slot(uri=MIXS['0000995'], name="sr_lithology", curie=MIXS.curie('0000995'),
-                   model_uri=MIXS.sr_lithology, domain=None, range=Optional[Union[str, "SrLithologyEnum"]])
-
-slots.soil_texture_class = Slot(uri=MIXS['0001164'], name="soil_texture_class", curie=MIXS.curie('0001164'),
-                   model_uri=MIXS.soil_texture_class, domain=None, range=Optional[Union[str, "SoilTextureClassEnum"]])
-
-slots.urine_collect_meth = Slot(uri=MIXS['0000899'], name="urine_collect_meth", curie=MIXS.curie('0000899'),
-                   model_uri=MIXS.urine_collect_meth, domain=None, range=Optional[Union[str, "UrineCollectMethEnum"]])
-
-slots.samp_weather = Slot(uri=MIXS['0000827'], name="samp_weather", curie=MIXS.curie('0000827'),
-                   model_uri=MIXS.samp_weather, domain=None, range=Optional[Union[str, "SampWeatherEnum"]])
-
-slots.window_status = Slot(uri=MIXS['0000855'], name="window_status", curie=MIXS.curie('0000855'),
-                   model_uri=MIXS.window_status, domain=None, range=Optional[Union[str, "WindowStatusEnum"]])
-
 slots.door_type_metal = Slot(uri=MIXS['0000796'], name="door_type_metal", curie=MIXS.curie('0000796'),
                    model_uri=MIXS.door_type_metal, domain=None, range=Optional[Union[str, "DoorTypeMetalEnum"]])
-
-slots.door_move = Slot(uri=MIXS['0000792'], name="door_move", curie=MIXS.curie('0000792'),
-                   model_uri=MIXS.door_move, domain=None, range=Optional[Union[str, "DoorMoveEnum"]])
-
-slots.type_of_symbiosis = Slot(uri=MIXS['0001307'], name="type_of_symbiosis", curie=MIXS.curie('0001307'),
-                   model_uri=MIXS.type_of_symbiosis, domain=None, range=Optional[Union[str, "TypeOfSymbiosisEnum"]])
-
-slots.door_type = Slot(uri=MIXS['0000794'], name="door_type", curie=MIXS.curie('0000794'),
-                   model_uri=MIXS.door_type, domain=None, range=Optional[Union[str, "DoorTypeEnum"]])
-
-slots.heat_sys_deliv_meth = Slot(uri=MIXS['0000812'], name="heat_sys_deliv_meth", curie=MIXS.curie('0000812'),
-                   model_uri=MIXS.heat_sys_deliv_meth, domain=None, range=Optional[Union[str, "HeatSysDelivMethEnum"]])
-
-slots.room_loc = Slot(uri=MIXS['0000823'], name="room_loc", curie=MIXS.curie('0000823'),
-                   model_uri=MIXS.room_loc, domain=None, range=Optional[Union[str, "RoomLocEnum"]])
-
-slots.substructure_type = Slot(uri=MIXS['0000767'], name="substructure_type", curie=MIXS.curie('0000767'),
-                   model_uri=MIXS.substructure_type, domain=None, range=Optional[Union[Union[str, "SubstructureTypeEnum"], List[Union[str, "SubstructureTypeEnum"]]]])
-
-slots.wall_texture = Slot(uri=MIXS['0000846'], name="wall_texture", curie=MIXS.curie('0000846'),
-                   model_uri=MIXS.wall_texture, domain=None, range=Optional[Union[str, "WallTextureEnum"]])
-
-slots.ceil_texture = Slot(uri=MIXS['0000783'], name="ceil_texture", curie=MIXS.curie('0000783'),
-                   model_uri=MIXS.ceil_texture, domain=None, range=Optional[Union[str, "CeilTextureEnum"]])
-
-slots.door_cond = Slot(uri=MIXS['0000788'], name="door_cond", curie=MIXS.curie('0000788'),
-                   model_uri=MIXS.door_cond, domain=None, range=Optional[Union[str, "DoorCondEnum"]])
-
-slots.shading_device_cond = Slot(uri=MIXS['0000831'], name="shading_device_cond", curie=MIXS.curie('0000831'),
-                   model_uri=MIXS.shading_device_cond, domain=None, range=Optional[Union[str, "ShadingDeviceCondEnum"]])
-
-slots.window_cond = Slot(uri=MIXS['0000849'], name="window_cond", curie=MIXS.curie('0000849'),
-                   model_uri=MIXS.window_cond, domain=None, range=Optional[Union[str, "WindowCondEnum"]])
-
-slots.samp_loc_condition = Slot(uri=MIXS['0001257'], name="samp_loc_condition", curie=MIXS.curie('0001257'),
-                   model_uri=MIXS.samp_loc_condition, domain=None, range=Optional[Union[str, "SampLocConditionEnum"]])
-
-slots.samp_dis_stage = Slot(uri=MIXS['0000249'], name="samp_dis_stage", curie=MIXS.curie('0000249'),
-                   model_uri=MIXS.samp_dis_stage, domain=None, range=Optional[Union[str, "SampDisStageEnum"]])
-
-slots.tillage = Slot(uri=MIXS['0001081'], name="tillage", curie=MIXS.curie('0001081'),
-                   model_uri=MIXS.tillage, domain=None, range=Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]])
-
-slots.extr_weather_event = Slot(uri=MIXS['0001141'], name="extr_weather_event", curie=MIXS.curie('0001141'),
-                   model_uri=MIXS.extr_weather_event, domain=None, range=Optional[Union[Union[str, "ExtrWeatherEventEnum"], List[Union[str, "ExtrWeatherEventEnum"]]]])
 
 slots.food_clean_proc = Slot(uri=MIXS['0001182'], name="food_clean_proc", curie=MIXS.curie('0001182'),
                    model_uri=MIXS.food_clean_proc, domain=None, range=Optional[Union[Union[str, "FoodCleanProcEnum"], List[Union[str, "FoodCleanProcEnum"]]]])
@@ -72102,32 +72606,8 @@ slots.food_clean_proc = Slot(uri=MIXS['0001182'], name="food_clean_proc", curie=
 slots.ceil_finish_mat = Slot(uri=MIXS['0000780'], name="ceil_finish_mat", curie=MIXS.curie('0000780'),
                    model_uri=MIXS.ceil_finish_mat, domain=None, range=Optional[Union[str, "CeilFinishMatEnum"]])
 
-slots.surf_air_cont = Slot(uri=MIXS['0000759'], name="surf_air_cont", curie=MIXS.curie('0000759'),
-                   model_uri=MIXS.surf_air_cont, domain=None, range=Optional[Union[Union[str, "SurfAirContEnum"], List[Union[str, "SurfAirContEnum"]]]])
-
-slots.rel_samp_loc = Slot(uri=MIXS['0000821'], name="rel_samp_loc", curie=MIXS.curie('0000821'),
-                   model_uri=MIXS.rel_samp_loc, domain=None, range=Optional[Union[str, "RelSampLocEnum"]])
-
-slots.train_stop_loc = Slot(uri=MIXS['0000839'], name="train_stop_loc", curie=MIXS.curie('0000839'),
-                   model_uri=MIXS.train_stop_loc, domain=None, range=Optional[Union[str, "TrainStopLocEnum"]])
-
-slots.route_transmission = Slot(uri=MIXS['0001316'], name="route_transmission", curie=MIXS.curie('0001316'),
-                   model_uri=MIXS.route_transmission, domain=None, range=Optional[Union[str, "RouteTransmissionEnum"]])
-
-slots.shading_device_loc = Slot(uri=MIXS['0000832'], name="shading_device_loc", curie=MIXS.curie('0000832'),
-                   model_uri=MIXS.shading_device_loc, domain=None, range=Optional[Union[str, "ShadingDeviceLocEnum"]])
-
 slots.host_dependence = Slot(uri=MIXS['0001315'], name="host_dependence", curie=MIXS.curie('0001315'),
                    model_uri=MIXS.host_dependence, domain=None, range=Optional[Union[str, "HostDependenceEnum"]])
-
-slots.host_specificity = Slot(uri=MIXS['0001308'], name="host_specificity", curie=MIXS.curie('0001308'),
-                   model_uri=MIXS.host_specificity, domain=None, range=Optional[Union[str, "HostSpecificityEnum"]])
-
-slots.virus_enrich_appr = Slot(uri=MIXS['0000036'], name="virus_enrich_appr", curie=MIXS.curie('0000036'),
-                   model_uri=MIXS.virus_enrich_appr, domain=None, range=Optional[Union[str, "VirusEnrichApprEnum"]])
-
-slots.sort_tech = Slot(uri=MIXS['0000075'], name="sort_tech", curie=MIXS.curie('0000075'),
-                   model_uri=MIXS.sort_tech, domain=None, range=Optional[Union[str, "SortTechEnum"]])
 
 slots.water_feat_type = Slot(uri=MIXS['0000847'], name="water_feat_type", curie=MIXS.curie('0000847'),
                    model_uri=MIXS.water_feat_type, domain=None, range=Optional[Union[str, "WaterFeatTypeEnum"]])
@@ -72135,122 +72615,8 @@ slots.water_feat_type = Slot(uri=MIXS['0000847'], name="water_feat_type", curie=
 slots.wall_const_type = Slot(uri=MIXS['0000841'], name="wall_const_type", curie=MIXS.curie('0000841'),
                    model_uri=MIXS.wall_const_type, domain=None, range=Optional[Union[str, "WallConstTypeEnum"]])
 
-slots.biotic_relationship = Slot(uri=MIXS['0000028'], name="biotic_relationship", curie=MIXS.curie('0000028'),
-                   model_uri=MIXS.biotic_relationship, domain=None, range=Optional[Union[str, "BioticRelationshipEnum"]])
-
-slots.farm_water_source = Slot(uri=MIXS['0001110'], name="farm_water_source", curie=MIXS.curie('0001110'),
-                   model_uri=MIXS.farm_water_source, domain=None, range=Optional[Union[Union[str, "FarmWaterSourceEnum"], List[Union[str, "FarmWaterSourceEnum"]]]])
-
-slots.fireplace_type = Slot(uri=MIXS['0000802'], name="fireplace_type", curie=MIXS.curie('0000802'),
-                   model_uri=MIXS.fireplace_type, domain=None, range=Optional[Union[str, "FireplaceTypeEnum"]])
-
-slots.bin_param = Slot(uri=MIXS['0000077'], name="bin_param", curie=MIXS.curie('0000077'),
-                   model_uri=MIXS.bin_param, domain=None, range=Optional[Union[str, "BinParamEnum"]])
-
-slots.mode_transmission = Slot(uri=MIXS['0001312'], name="mode_transmission", curie=MIXS.curie('0001312'),
-                   model_uri=MIXS.mode_transmission, domain=None, range=Optional[Union[str, "ModeTransmissionEnum"]])
-
-slots.samp_surf_moisture = Slot(uri=MIXS['0001256'], name="samp_surf_moisture", curie=MIXS.curie('0001256'),
-                   model_uri=MIXS.samp_surf_moisture, domain=None, range=Optional[Union[Union[str, "SampSubtypeEnum"], List[Union[str, "SampSubtypeEnum"]]]])
-
-slots.host_cellular_loc = Slot(uri=MIXS['0001313'], name="host_cellular_loc", curie=MIXS.curie('0001313'),
-                   model_uri=MIXS.host_cellular_loc, domain=None, range=Optional[Union[str, "HostCellularLocEnum"]])
-
-slots.door_direct = Slot(uri=MIXS['0000789'], name="door_direct", curie=MIXS.curie('0000789'),
-                   model_uri=MIXS.door_direct, domain=None, range=Optional[Union[str, "DoorDirectEnum"]])
-
-slots.sr_dep_env = Slot(uri=MIXS['0000996'], name="sr_dep_env", curie=MIXS.curie('0000996'),
-                   model_uri=MIXS.sr_dep_env, domain=None, range=Optional[Union[str, "SrDepEnvEnum"]])
-
-slots.window_horiz_pos = Slot(uri=MIXS['0000851'], name="window_horiz_pos", curie=MIXS.curie('0000851'),
-                   model_uri=MIXS.window_horiz_pos, domain=None, range=Optional[Union[str, "WindowHorizPosEnum"]])
-
-slots.dominant_hand = Slot(uri=MIXS['0000944'], name="dominant_hand", curie=MIXS.curie('0000944'),
-                   model_uri=MIXS.dominant_hand, domain=None, range=Optional[Union[str, "DominantHandEnum"]])
-
-slots.tidal_stage = Slot(uri=MIXS['0000750'], name="tidal_stage", curie=MIXS.curie('0000750'),
-                   model_uri=MIXS.tidal_stage, domain=None, range=Optional[Union[str, "TidalStageEnum"]])
-
-slots.door_comp_type = Slot(uri=MIXS['0000795'], name="door_comp_type", curie=MIXS.curie('0000795'),
-                   model_uri=MIXS.door_comp_type, domain=None, range=Optional[Union[str, "DoorCompTypeEnum"]])
-
-slots.floor_water_mold = Slot(uri=MIXS['0000805'], name="floor_water_mold", curie=MIXS.curie('0000805'),
-                   model_uri=MIXS.floor_water_mold, domain=None, range=Optional[Union[str, "FloorWaterMoldEnum"]])
-
-slots.weekday = Slot(uri=MIXS['0000848'], name="weekday", curie=MIXS.curie('0000848'),
-                   model_uri=MIXS.weekday, domain=None, range=Optional[Union[str, "WeekdayEnum"]])
-
-slots.water_source_shared = Slot(uri=MIXS['0001176'], name="water_source_shared", curie=MIXS.curie('0001176'),
-                   model_uri=MIXS.water_source_shared, domain=None, range=Optional[Union[Union[str, "WaterSourceSharedEnum"], List[Union[str, "WaterSourceSharedEnum"]]]])
-
-slots.light_type = Slot(uri=MIXS['0000769'], name="light_type", curie=MIXS.curie('0000769'),
-                   model_uri=MIXS.light_type, domain=None, range=Optional[Union[Union[str, "LightTypeEnum"], List[Union[str, "LightTypeEnum"]]]])
-
-slots.ceil_cond = Slot(uri=MIXS['0000779'], name="ceil_cond", curie=MIXS.curie('0000779'),
-                   model_uri=MIXS.ceil_cond, domain=None, range=Optional[Union[str, "CeilCondEnum"]])
-
-slots.floor_cond = Slot(uri=MIXS['0000803'], name="floor_cond", curie=MIXS.curie('0000803'),
-                   model_uri=MIXS.floor_cond, domain=None, range=Optional[Union[str, "FloorCondEnum"]])
-
-slots.int_wall_cond = Slot(uri=MIXS['0000813'], name="int_wall_cond", curie=MIXS.curie('0000813'),
-                   model_uri=MIXS.int_wall_cond, domain=None, range=Optional[Union[str, "IntWallCondEnum"]])
-
-slots.room_condt = Slot(uri=MIXS['0000822'], name="room_condt", curie=MIXS.curie('0000822'),
-                   model_uri=MIXS.room_condt, domain=None, range=Optional[Union[str, "RelSampLocEnum"]])
-
-slots.room_samp_pos = Slot(uri=MIXS['0000824'], name="room_samp_pos", curie=MIXS.curie('0000824'),
-                   model_uri=MIXS.room_samp_pos, domain=None, range=Optional[Union[str, "RoomSampPosEnum"]])
-
-slots.quad_pos = Slot(uri=MIXS['0000820'], name="quad_pos", curie=MIXS.curie('0000820'),
-                   model_uri=MIXS.quad_pos, domain=None, range=Optional[Union[str, "QuadPosEnum"]])
-
-slots.door_loc = Slot(uri=MIXS['0000790'], name="door_loc", curie=MIXS.curie('0000790'),
-                   model_uri=MIXS.door_loc, domain=None, range=Optional[Union[str, "DoorLocEnum"]])
-
-slots.wall_loc = Slot(uri=MIXS['0000843'], name="wall_loc", curie=MIXS.curie('0000843'),
-                   model_uri=MIXS.wall_loc, domain=None, range=Optional[Union[str, "WallLocEnum"]])
-
-slots.window_loc = Slot(uri=MIXS['0000852'], name="window_loc", curie=MIXS.curie('0000852'),
-                   model_uri=MIXS.window_loc, domain=None, range=Optional[Union[str, "WindowLocEnum"]])
-
 slots.ext_wall_orient = Slot(uri=MIXS['0000817'], name="ext_wall_orient", curie=MIXS.curie('0000817'),
                    model_uri=MIXS.ext_wall_orient, domain=None, range=Optional[Union[str, "DrawingsEnum"]])
-
-slots.ext_window_orient = Slot(uri=MIXS['0000818'], name="ext_window_orient", curie=MIXS.curie('0000818'),
-                   model_uri=MIXS.ext_window_orient, domain=None, range=Optional[Union[str, "ExtWindowOrientEnum"]])
-
-slots.build_occup_type = Slot(uri=MIXS['0000761'], name="build_occup_type", curie=MIXS.curie('0000761'),
-                   model_uri=MIXS.build_occup_type, domain=None, range=Optional[Union[Union[str, "BuildOccupTypeEnum"], List[Union[str, "BuildOccupTypeEnum"]]]])
-
-slots.samp_subtype = Slot(uri=MIXS['0000999'], name="samp_subtype", curie=MIXS.curie('0000999'),
-                   model_uri=MIXS.samp_subtype, domain=None, range=Optional[Union[str, "SampSubtypeEnum"]])
-
-slots.hcr = Slot(uri=MIXS['0000988'], name="hcr", curie=MIXS.curie('0000988'),
-                   model_uri=MIXS.hcr, domain=None, range=Optional[Union[str, "HcrEnum"]])
-
-slots.drawings = Slot(uri=MIXS['0000798'], name="drawings", curie=MIXS.curie('0000798'),
-                   model_uri=MIXS.drawings, domain=None, range=Optional[Union[str, "DrawingsEnum"]])
-
-slots.specific = Slot(uri=MIXS['0000836'], name="specific", curie=MIXS.curie('0000836'),
-                   model_uri=MIXS.specific, domain=None, range=Optional[Union[str, "SpecificEnum"]])
-
-slots.wall_surf_treatment = Slot(uri=MIXS['0000845'], name="wall_surf_treatment", curie=MIXS.curie('0000845'),
-                   model_uri=MIXS.wall_surf_treatment, domain=None, range=Optional[Union[str, "WallSurfTreatmentEnum"]])
-
-slots.lib_layout = Slot(uri=MIXS['0000041'], name="lib_layout", curie=MIXS.curie('0000041'),
-                   model_uri=MIXS.lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
-
-slots.filter_type = Slot(uri=MIXS['0000765'], name="filter_type", curie=MIXS.curie('0000765'),
-                   model_uri=MIXS.filter_type, domain=None, range=Optional[Union[Union[str, "FilterTypeEnum"], List[Union[str, "FilterTypeEnum"]]]])
-
-slots.wga_amp_appr = Slot(uri=MIXS['0000055'], name="wga_amp_appr", curie=MIXS.curie('0000055'),
-                   model_uri=MIXS.wga_amp_appr, domain=None, range=Optional[Union[str, "WgaAmpApprEnum"]])
-
-slots.aero_struc = Slot(uri=MIXS['0000773'], name="aero_struc", curie=MIXS.curie('0000773'),
-                   model_uri=MIXS.aero_struc, domain=None, range=Optional[Union[str, "AeroStrucEnum"]])
-
-slots.plant_reprod_crop = Slot(uri=MIXS['0001150'], name="plant_reprod_crop", curie=MIXS.curie('0001150'),
-                   model_uri=MIXS.plant_reprod_crop, domain=None, range=Optional[Union[Union[str, "PlantReprodCropEnum"], List[Union[str, "PlantReprodCropEnum"]]]])
 
 slots.wall_finish_mat = Slot(uri=MIXS['0000842'], name="wall_finish_mat", curie=MIXS.curie('0000842'),
                    model_uri=MIXS.wall_finish_mat, domain=None, range=Optional[Union[str, "WallFinishMatEnum"]])
@@ -72261,44 +72627,8 @@ slots.ceil_water_mold = Slot(uri=MIXS['0000781'], name="ceil_water_mold", curie=
 slots.door_water_mold = Slot(uri=MIXS['0000793'], name="door_water_mold", curie=MIXS.curie('0000793'),
                    model_uri=MIXS.door_water_mold, domain=None, range=Optional[Union[str, "DoorWaterMoldEnum"]])
 
-slots.shad_dev_water_mold = Slot(uri=MIXS['0000834'], name="shad_dev_water_mold", curie=MIXS.curie('0000834'),
-                   model_uri=MIXS.shad_dev_water_mold, domain=None, range=Optional[Union[str, "ShadDevWaterMoldEnum"]])
-
 slots.wall_water_mold = Slot(uri=MIXS['0000844'], name="wall_water_mold", curie=MIXS.curie('0000844'),
                    model_uri=MIXS.wall_water_mold, domain=None, range=Optional[Union[str, "WallWaterMoldEnum"]])
-
-slots.window_water_mold = Slot(uri=MIXS['0000854'], name="window_water_mold", curie=MIXS.curie('0000854'),
-                   model_uri=MIXS.window_water_mold, domain=None, range=Optional[Union[str, "WindowWaterMoldEnum"]])
-
-slots.host_pred_appr = Slot(uri=MIXS['0000088'], name="host_pred_appr", curie=MIXS.curie('0000088'),
-                   model_uri=MIXS.host_pred_appr, domain=None, range=Optional[Union[str, "HostPredApprEnum"]])
-
-slots.heat_cool_type = Slot(uri=MIXS['0000766'], name="heat_cool_type", curie=MIXS.curie('0000766'),
-                   model_uri=MIXS.heat_cool_type, domain=None, range=Optional[Union[Union[str, "HeatCoolTypeEnum"], List[Union[str, "HeatCoolTypeEnum"]]]])
-
-slots.contam_screen_input = Slot(uri=MIXS['0000005'], name="contam_screen_input", curie=MIXS.curie('0000005'),
-                   model_uri=MIXS.contam_screen_input, domain=None, range=Optional[Union[str, "ContamScreenInputEnum"]])
-
-slots.pred_genome_struc = Slot(uri=MIXS['0000083'], name="pred_genome_struc", curie=MIXS.curie('0000083'),
-                   model_uri=MIXS.pred_genome_struc, domain=None, range=Optional[Union[str, "PredGenomeStrucEnum"]])
-
-slots.window_type = Slot(uri=MIXS['0000856'], name="window_type", curie=MIXS.curie('0000856'),
-                   model_uri=MIXS.window_type, domain=None, range=Optional[Union[str, "WindowTypeEnum"]])
-
-slots.train_stat_loc = Slot(uri=MIXS['0000838'], name="train_stat_loc", curie=MIXS.curie('0000838'),
-                   model_uri=MIXS.train_stat_loc, domain=None, range=Optional[Union[str, "TrainStatLocEnum"]])
-
-slots.season_use = Slot(uri=MIXS['0000830'], name="season_use", curie=MIXS.curie('0000830'),
-                   model_uri=MIXS.season_use, domain=None, range=Optional[Union[str, "SeasonUseEnum"]])
-
-slots.mech_struc = Slot(uri=MIXS['0000815'], name="mech_struc", curie=MIXS.curie('0000815'),
-                   model_uri=MIXS.mech_struc, domain=None, range=Optional[Union[str, "MechStrucEnum"]])
-
-slots.profile_position = Slot(uri=MIXS['0001084'], name="profile_position", curie=MIXS.curie('0001084'),
-                   model_uri=MIXS.profile_position, domain=None, range=Optional[Union[str, "ProfilePositionEnum"]])
-
-slots.sr_kerog_type = Slot(uri=MIXS['0000994'], name="sr_kerog_type", curie=MIXS.curie('0000994'),
-                   model_uri=MIXS.sr_kerog_type, domain=None, range=Optional[Union[str, "SrKerogTypeEnum"]])
 
 slots.space_typ_state = Slot(uri=MIXS['0000770'], name="space_typ_state", curie=MIXS.curie('0000770'),
                    model_uri=MIXS.space_typ_state, domain=None, range=Optional[Union[str, "SpaceTypStateEnum"]])
@@ -72306,196 +72636,1136 @@ slots.space_typ_state = Slot(uri=MIXS['0000770'], name="space_typ_state", curie=
 slots.built_struc_set = Slot(uri=MIXS['0000778'], name="built_struc_set", curie=MIXS.curie('0000778'),
                    model_uri=MIXS.built_struc_set, domain=None, range=Optional[Union[str, "BuiltStrucSetEnum"]])
 
-slots.building_setting = Slot(uri=MIXS['0000768'], name="building_setting", curie=MIXS.curie('0000768'),
-                   model_uri=MIXS.building_setting, domain=None, range=Optional[Union[str, "BuildingSettingEnum"]])
-
-slots.drainage_class = Slot(uri=MIXS['0001085'], name="drainage_class", curie=MIXS.curie('0001085'),
-                   model_uri=MIXS.drainage_class, domain=None, range=Optional[Union[str, "DrainageClassEnum"]])
-
-slots.samp_collect_point = Slot(uri=MIXS['0001015'], name="samp_collect_point", curie=MIXS.curie('0001015'),
-                   model_uri=MIXS.samp_collect_point, domain=None, range=Optional[Union[str, "SampCollectPointEnum"]])
-
-slots.ceil_struc = Slot(uri=MIXS['0000782'], name="ceil_struc", curie=MIXS.curie('0000782'),
-                   model_uri=MIXS.ceil_struc, domain=None, range=Optional[Union[str, "CeilStrucEnum"]])
-
-slots.neg_cont_type = Slot(uri=MIXS['0001321'], name="neg_cont_type", curie=MIXS.curie('0001321'),
-                   model_uri=MIXS.neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
-
 slots.env_local_scale = Slot(uri=MIXS['0000013'], name="env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=MIXS.env_local_scale, domain=None, range=Optional[str],
                    pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
-slots.env_monitoring_zone = Slot(uri=MIXS['0001254'], name="env_monitoring_zone", curie=MIXS.curie('0001254'),
-                   model_uri=MIXS.env_monitoring_zone, domain=None, range=Optional[str],
+slots.host_occupation = Slot(uri=MIXS['0000896'], name="host_occupation", curie=MIXS.curie('0000896'),
+                   model_uri=MIXS.host_occupation, domain=None, range=Optional[int])
+
+slots.chem_oxygen_dem = Slot(uri=MIXS['0000656'], name="chem_oxygen_dem", curie=MIXS.curie('0000656'),
+                   model_uri=MIXS.chem_oxygen_dem, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.glucosidase_act = Slot(uri=MIXS['0000137'], name="glucosidase_act", curie=MIXS.curie('0000137'),
+                   model_uri=MIXS.glucosidase_act, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.hcr_fw_salinity = Slot(uri=MIXS['0000406'], name="hcr_fw_salinity", curie=MIXS.curie('0000406'),
+                   model_uri=MIXS.hcr_fw_salinity, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.light_intensity = Slot(uri=MIXS['0000706'], name="light_intensity", curie=MIXS.curie('0000706'),
+                   model_uri=MIXS.light_intensity, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.photosynt_activ = Slot(uri=MIXS['0001296'], name="photosynt_activ", curie=MIXS.curie('0001296'),
+                   model_uri=MIXS.photosynt_activ, domain=None, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.redox_potential = Slot(uri=MIXS['0000182'], name="redox_potential", curie=MIXS.curie('0000182'),
+                   model_uri=MIXS.redox_potential, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.season_humidity = Slot(uri=MIXS['0001148'], name="season_humidity", curie=MIXS.curie('0001148'),
+                   model_uri=MIXS.season_humidity, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.tot_inorg_nitro = Slot(uri=MIXS['0000745'], name="tot_inorg_nitro", curie=MIXS.curie('0000745'),
+                   model_uri=MIXS.tot_inorg_nitro, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.water_feat_size = Slot(uri=MIXS['0000223'], name="water_feat_size", curie=MIXS.curie('0000223'),
+                   model_uri=MIXS.water_feat_size, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.water_prod_rate = Slot(uri=MIXS['0000453'], name="water_prod_rate", curie=MIXS.curie('0000453'),
+                   model_uri=MIXS.water_prod_rate, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.number_resident = Slot(uri=MIXS['0000232'], name="number_resident", curie=MIXS.curie('0000232'),
+                   model_uri=MIXS.number_resident, domain=None, range=Optional[int])
+
+slots.host_spec_range = Slot(uri=MIXS['0000030'], name="host_spec_range", curie=MIXS.curie('0000030'),
+                   model_uri=MIXS.host_spec_range, domain=None, range=Optional[Union[int, List[int]]])
+
+slots.env_broad_scale = Slot(uri=MIXS['0000012'], name="env_broad_scale", curie=MIXS.curie('0000012'),
+                   model_uri=MIXS.env_broad_scale, domain=None, range=Optional[str],
                    pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
-slots.hygienic_area = Slot(uri=MIXS['0001253'], name="hygienic_area", curie=MIXS.curie('0001253'),
-                   model_uri=MIXS.hygienic_area, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+slots.iw_bt_date_well = Slot(uri=MIXS['0001010'], name="iw_bt_date_well", curie=MIXS.curie('0001010'),
+                   model_uri=MIXS.iw_bt_date_well, domain=None, range=Optional[str])
 
-slots.soil_type = Slot(uri=MIXS['0000332'], name="soil_type", curie=MIXS.curie('0000332'),
-                   model_uri=MIXS.soil_type, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+slots.prod_start_date = Slot(uri=MIXS['0001008'], name="prod_start_date", curie=MIXS.curie('0001008'),
+                   model_uri=MIXS.prod_start_date, domain=None, range=Optional[str])
 
-slots.anim_water_method = Slot(uri=MIXS['0001115'], name="anim_water_method", curie=MIXS.curie('0001115'),
-                   model_uri=MIXS.anim_water_method, domain=None, range=Optional[Union[str, List[str]]],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+slots.built_struc_age = Slot(uri=MIXS['0000145'], name="built_struc_age", curie=MIXS.curie('0000145'),
+                   model_uri=MIXS.built_struc_age, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.food_source_age = Slot(uri=MIXS['0001251'], name="food_source_age", curie=MIXS.curie('0001251'),
+                   model_uri=MIXS.food_source_age, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.antibiotic_regm = Slot(uri=MIXS['0000553'], name="antibiotic_regm", curie=MIXS.curie('0000553'),
+                   model_uri=MIXS.antibiotic_regm, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.root_med_carbon = Slot(uri=MIXS['0000577'], name="root_med_carbon", curie=MIXS.curie('0000577'),
+                   model_uri=MIXS.root_med_carbon, domain=None, range=Optional[str])
+
+slots.urogenit_disord = Slot(uri=MIXS['0000289'], name="urogenit_disord", curie=MIXS.curie('0000289'),
+                   model_uri=MIXS.urogenit_disord, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.air_flow_impede = Slot(uri=MIXS['0001146'], name="air_flow_impede", curie=MIXS.curie('0001146'),
+                   model_uri=MIXS.air_flow_impede, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.food_trav_vehic = Slot(uri=MIXS['0001138'], name="food_trav_vehic", curie=MIXS.curie('0001138'),
+                   model_uri=MIXS.food_trav_vehic, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.fertilizer_regm = Slot(uri=MIXS['0000556'], name="fertilizer_regm", curie=MIXS.curie('0000556'),
+                   model_uri=MIXS.fertilizer_regm, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.food_ingredient = Slot(uri=MIXS['0001205'], name="food_ingredient", curie=MIXS.curie('0001205'),
+                   model_uri=MIXS.food_ingredient, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.food_treat_proc = Slot(uri=MIXS['0001140'], name="food_treat_proc", curie=MIXS.curie('0001140'),
+                   model_uri=MIXS.food_treat_proc, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.gestation_state = Slot(uri=MIXS['0000272'], name="gestation_state", curie=MIXS.curie('0000272'),
+                   model_uri=MIXS.gestation_state, domain=None, range=Optional[str])
+
+slots.inorg_particles = Slot(uri=MIXS['0000664'], name="inorg_particles", curie=MIXS.curie('0000664'),
+                   model_uri=MIXS.inorg_particles, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.repository_name = Slot(uri=MIXS['0001152'], name="repository_name", curie=MIXS.curie('0001152'),
+                   model_uri=MIXS.repository_name, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.microb_cult_med = Slot(uri=MIXS['0001216'], name="microb_cult_med", curie=MIXS.curie('0001216'),
+                   model_uri=MIXS.microb_cult_med, domain=None, range=Optional[str])
+
+slots.samp_stor_media = Slot(uri=MIXS['0001229'], name="samp_stor_media", curie=MIXS.curie('0001229'),
+                   model_uri=MIXS.samp_stor_media, domain=None, range=Optional[str])
+
+slots.sim_search_meth = Slot(uri=MIXS['0000063'], name="sim_search_meth", curie=MIXS.curie('0000063'),
+                   model_uri=MIXS.sim_search_meth, domain=None, range=Optional[str])
+
+slots.spikein_serovar = Slot(uri=MIXS['0001168'], name="spikein_serovar", curie=MIXS.curie('0001168'),
+                   model_uri=MIXS.spikein_serovar, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.cult_result_org = Slot(uri=MIXS['0001118'], name="cult_result_org", curie=MIXS.curie('0001118'),
+                   model_uri=MIXS.cult_result_org, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.ref_biomaterial = Slot(uri=MIXS['0000025'], name="ref_biomaterial", curie=MIXS.curie('0000025'),
+                   model_uri=MIXS.ref_biomaterial, domain=None, range=Optional[str])
+
+slots.link_class_info = Slot(uri=MIXS['0000329'], name="link_class_info", curie=MIXS.curie('0000329'),
+                   model_uri=MIXS.link_class_info, domain=None, range=Optional[str])
+
+slots.pet_farm_animal = Slot(uri=MIXS['0000267'], name="pet_farm_animal", curie=MIXS.curie('0000267'),
+                   model_uri=MIXS.pet_farm_animal, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.water_frequency = Slot(uri=MIXS['0001174'], name="water_frequency", curie=MIXS.curie('0001174'),
+                   model_uri=MIXS.water_frequency, domain=None, range=Optional[str])
+
+slots.room_door_share = Slot(uri=MIXS['0000242'], name="room_door_share", curie=MIXS.curie('0000242'),
+                   model_uri=MIXS.room_door_share, domain=None, range=Optional[str])
+
+slots.room_wall_share = Slot(uri=MIXS['0000243'], name="room_wall_share", curie=MIXS.curie('0000243'),
+                   model_uri=MIXS.room_wall_share, domain=None, range=Optional[str])
+
+slots.soluble_org_mat = Slot(uri=MIXS['0000673'], name="soluble_org_mat", curie=MIXS.curie('0000673'),
+                   model_uri=MIXS.soluble_org_mat, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.additional_info = Slot(uri=MIXS['0000300'], name="additional_info", curie=MIXS.curie('0000300'),
+                   model_uri=MIXS.additional_info, domain=None, range=Optional[str])
+
+slots.animal_am_route = Slot(uri=MIXS['0001246'], name="animal_am_route", curie=MIXS.curie('0001246'),
+                   model_uri=MIXS.animal_am_route, domain=None, range=Optional[str])
+
+slots.wastewater_type = Slot(uri=MIXS['0000353'], name="wastewater_type", curie=MIXS.curie('0000353'),
+                   model_uri=MIXS.wastewater_type, domain=None, range=Optional[str])
+
+slots.reassembly_bin = Slot(uri=MIXS['0000079'], name="reassembly_bin", curie=MIXS.curie('0000079'),
+                   model_uri=MIXS.reassembly_bin, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.room_connected = Slot(uri=MIXS['0000826'], name="room_connected", curie=MIXS.curie('0000826'),
+                   model_uri=MIXS.room_connected, domain=None, range=Optional[Union[str, "RoomConnectedEnum"]])
+
+slots.occup_document = Slot(uri=MIXS['0000816'], name="occup_document", curie=MIXS.curie('0000816'),
+                   model_uri=MIXS.occup_document, domain=None, range=Optional[Union[str, "OccupDocumentEnum"]])
+
+slots.door_type_wood = Slot(uri=MIXS['0000797'], name="door_type_wood", curie=MIXS.curie('0000797'),
+                   model_uri=MIXS.door_type_wood, domain=None, range=Optional[Union[str, "DoorTypeWoodEnum"]])
+
+slots.samp_dis_stage = Slot(uri=MIXS['0000249'], name="samp_dis_stage", curie=MIXS.curie('0000249'),
+                   model_uri=MIXS.samp_dis_stage, domain=None, range=Optional[Union[str, "SampDisStageEnum"]])
+
+slots.train_stop_loc = Slot(uri=MIXS['0000839'], name="train_stop_loc", curie=MIXS.curie('0000839'),
+                   model_uri=MIXS.train_stop_loc, domain=None, range=Optional[Union[str, "TrainStopLocEnum"]])
+
+slots.fireplace_type = Slot(uri=MIXS['0000802'], name="fireplace_type", curie=MIXS.curie('0000802'),
+                   model_uri=MIXS.fireplace_type, domain=None, range=Optional[Union[str, "FireplaceTypeEnum"]])
+
+slots.door_comp_type = Slot(uri=MIXS['0000795'], name="door_comp_type", curie=MIXS.curie('0000795'),
+                   model_uri=MIXS.door_comp_type, domain=None, range=Optional[Union[str, "DoorCompTypeEnum"]])
+
+slots.host_pred_appr = Slot(uri=MIXS['0000088'], name="host_pred_appr", curie=MIXS.curie('0000088'),
+                   model_uri=MIXS.host_pred_appr, domain=None, range=Optional[Union[str, "HostPredApprEnum"]])
+
+slots.heat_cool_type = Slot(uri=MIXS['0000766'], name="heat_cool_type", curie=MIXS.curie('0000766'),
+                   model_uri=MIXS.heat_cool_type, domain=None, range=Optional[Union[Union[str, "HeatCoolTypeEnum"], List[Union[str, "HeatCoolTypeEnum"]]]])
+
+slots.train_stat_loc = Slot(uri=MIXS['0000838'], name="train_stat_loc", curie=MIXS.curie('0000838'),
+                   model_uri=MIXS.train_stat_loc, domain=None, range=Optional[Union[str, "TrainStatLocEnum"]])
+
+slots.drainage_class = Slot(uri=MIXS['0001085'], name="drainage_class", curie=MIXS.curie('0001085'),
+                   model_uri=MIXS.drainage_class, domain=None, range=Optional[Union[str, "DrainageClassEnum"]])
 
 slots.animal_housing = Slot(uri=MIXS['0001180'], name="animal_housing", curie=MIXS.curie('0001180'),
                    model_uri=MIXS.animal_housing, domain=None, range=Optional[Union[str, List[str]]],
                    pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
-slots.size_frac = Slot(uri=MIXS['0000017'], name="size_frac", curie=MIXS.curie('0000017'),
-                   model_uri=MIXS.size_frac, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[0-9]*\.?[0-9]+-[0-9]*\.?[0-9]+ +\S.*$'))
+slots.bishomohopanol = Slot(uri=MIXS['0000175'], name="bishomohopanol", curie=MIXS.curie('0000175'),
+                   model_uri=MIXS.bishomohopanol, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.food_product_qual = Slot(uri=MIXS['0001213'], name="food_product_qual", curie=MIXS.curie('0001213'),
-                   model_uri=MIXS.food_product_qual, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+slots.host_body_temp = Slot(uri=MIXS['0000274'], name="host_body_temp", curie=MIXS.curie('0000274'),
+                   model_uri=MIXS.host_body_temp, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.spec_intended_cons = Slot(uri=MIXS['0001234'], name="spec_intended_cons", curie=MIXS.curie('0001234'),
-                   model_uri=MIXS.spec_intended_cons, domain=None, range=Optional[Union[str, List[str]]],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+slots.mean_frict_vel = Slot(uri=MIXS['0000498'], name="mean_frict_vel", curie=MIXS.curie('0000498'),
+                   model_uri=MIXS.mean_frict_vel, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.food_name_status = Slot(uri=MIXS['0001206'], name="food_name_status", curie=MIXS.curie('0001206'),
-                   model_uri=MIXS.food_name_status, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+slots.part_org_nitro = Slot(uri=MIXS['0000719'], name="part_org_nitro", curie=MIXS.curie('0000719'),
+                   model_uri=MIXS.part_org_nitro, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.haccp_term = Slot(uri=MIXS['0001215'], name="haccp_term", curie=MIXS.curie('0001215'),
-                   model_uri=MIXS.haccp_term, domain=None, range=Optional[Union[str, List[str]]],
+slots.slope_gradient = Slot(uri=MIXS['0000646'], name="slope_gradient", curie=MIXS.curie('0000646'),
+                   model_uri=MIXS.slope_gradient, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.study_inc_temp = Slot(uri=MIXS['0001238'], name="study_inc_temp", curie=MIXS.curie('0001238'),
+                   model_uri=MIXS.study_inc_temp, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.tot_diss_nitro = Slot(uri=MIXS['0000744'], name="tot_diss_nitro", curie=MIXS.curie('0000744'),
+                   model_uri=MIXS.tot_diss_nitro, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.estimated_size = Slot(uri=MIXS['0000024'], name="estimated_size", curie=MIXS.curie('0000024'),
+                   model_uri=MIXS.estimated_size, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[0-9]+ +bp$'))
+
+slots.lib_reads_seqd = Slot(uri=MIXS['0000040'], name="lib_reads_seqd", curie=MIXS.curie('0000040'),
+                   model_uri=MIXS.lib_reads_seqd, domain=None, range=Optional[int])
+
+slots.date_last_rain = Slot(uri=MIXS['0000786'], name="date_last_rain", curie=MIXS.curie('0000786'),
+                   model_uri=MIXS.date_last_rain, domain=None, range=Optional[str])
+
+slots.heat_system_id = Slot(uri=MIXS['0000833'], name="heat_system_id", curie=MIXS.curie('0000833'),
+                   model_uri=MIXS.heat_system_id, domain=None, range=Optional[int])
+
+slots.animal_am_freq = Slot(uri=MIXS['0001245'], name="animal_am_freq", curie=MIXS.curie('0001245'),
+                   model_uri=MIXS.animal_am_freq, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.bathroom_count = Slot(uri=MIXS['0000776'], name="bathroom_count", curie=MIXS.curie('0000776'),
+                   model_uri=MIXS.bathroom_count, domain=None, range=Optional[int])
+
+slots.cur_vegetation = Slot(uri=MIXS['0000312'], name="cur_vegetation", curie=MIXS.curie('0000312'),
+                   model_uri=MIXS.cur_vegetation, domain=None, range=Optional[str])
+
+slots.otu_class_appr = Slot(uri=MIXS['0000085'], name="otu_class_appr", curie=MIXS.curie('0000085'),
+                   model_uri=MIXS.otu_class_appr, domain=None, range=Optional[str])
+
+slots.samp_sort_meth = Slot(uri=MIXS['0000216'], name="samp_sort_meth", curie=MIXS.curie('0000216'),
+                   model_uri=MIXS.samp_sort_meth, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.diether_lipids = Slot(uri=MIXS['0000178'], name="diether_lipids", curie=MIXS.curie('0000178'),
+                   model_uri=MIXS.diether_lipids, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.heat_deliv_loc = Slot(uri=MIXS['0000810'], name="heat_deliv_loc", curie=MIXS.curie('0000810'),
+                   model_uri=MIXS.heat_deliv_loc, domain=None, range=Optional[str])
+
+slots.encoded_traits = Slot(uri=MIXS['0000034'], name="encoded_traits", curie=MIXS.curie('0000034'),
+                   model_uri=MIXS.encoded_traits, domain=None, range=Optional[str])
+
+slots.room_door_dist = Slot(uri=MIXS['0000193'], name="room_door_dist", curie=MIXS.curie('0000193'),
+                   model_uri=MIXS.room_door_dist, domain=None, range=Optional[str])
+
+slots.area_samp_size = Slot(uri=MIXS['0001255'], name="area_samp_size", curie=MIXS.curie('0001255'),
+                   model_uri=MIXS.area_samp_size, domain=None, range=Optional[str])
+
+slots.root_med_solid = Slot(uri=MIXS['0001063'], name="root_med_solid", curie=MIXS.curie('0001063'),
+                   model_uri=MIXS.root_med_solid, domain=None, range=Optional[str])
+
+slots.samp_well_name = Slot(uri=MIXS['0000296'], name="samp_well_name", curie=MIXS.curie('0000296'),
+                   model_uri=MIXS.samp_well_name, domain=None, range=Optional[str])
+
+slots.sequencing_kit = Slot(uri=MIXS['0001155'], name="sequencing_kit", curie=MIXS.curie('0001155'),
+                   model_uri=MIXS.sequencing_kit, domain=None, range=Optional[str])
+
+slots.asphaltenes_pc = Slot(uri=MIXS['0000135'], name="asphaltenes_pc", curie=MIXS.curie('0000135'),
+                   model_uri=MIXS.asphaltenes_pc, domain=None, range=Optional[str])
+
+slots.chem_treatment = Slot(uri=MIXS['0001012'], name="chem_treatment", curie=MIXS.curie('0001012'),
+                   model_uri=MIXS.chem_treatment, domain=None, range=Optional[str])
+
+slots.compl_software = Slot(uri=MIXS['0000070'], name="compl_software", curie=MIXS.curie('0000070'),
+                   model_uri=MIXS.compl_software, domain=None, range=Optional[str])
+
+slots.spikein_strain = Slot(uri=MIXS['0001170'], name="spikein_strain", curie=MIXS.curie('0001170'),
+                   model_uri=MIXS.spikein_strain, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.particle_class = Slot(uri=MIXS['0000206'], name="particle_class", curie=MIXS.curie('0000206'),
+                   model_uri=MIXS.particle_class, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.soil_type_meth = Slot(uri=MIXS['0000334'], name="soil_type_meth", curie=MIXS.curie('0000334'),
+                   model_uri=MIXS.soil_type_meth, domain=None, range=Optional[str])
+
+slots.tot_org_c_meth = Slot(uri=MIXS['0000337'], name="tot_org_c_meth", curie=MIXS.curie('0000337'),
+                   model_uri=MIXS.tot_org_c_meth, domain=None, range=Optional[str])
+
+slots.radiation_regm = Slot(uri=MIXS['0000575'], name="radiation_regm", curie=MIXS.curie('0000575'),
+                   model_uri=MIXS.radiation_regm, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.samp_store_sol = Slot(uri=MIXS['0001317'], name="samp_store_sol", curie=MIXS.curie('0001317'),
+                   model_uri=MIXS.samp_store_sol, domain=None, range=Optional[str])
+
+slots.root_med_suppl = Slot(uri=MIXS['0000580'], name="root_med_suppl", curie=MIXS.curie('0000580'),
+                   model_uri=MIXS.root_med_suppl, domain=None, range=Optional[str])
+
+slots.suspend_solids = Slot(uri=MIXS['0000150'], name="suspend_solids", curie=MIXS.curie('0000150'),
+                   model_uri=MIXS.suspend_solids, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.food_prod_char = Slot(uri=MIXS['0001136'], name="food_prod_char", curie=MIXS.curie('0001136'),
+                   model_uri=MIXS.food_prod_char, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.ferm_chem_add = Slot(uri=MIXS['0001185'], name="ferm_chem_add", curie=MIXS.curie('0001185'),
+                   model_uri=MIXS.ferm_chem_add, domain=None, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.extreme_event = Slot(uri=MIXS['0000320'], name="extreme_event", curie=MIXS.curie('0000320'),
+                   model_uri=MIXS.extreme_event, domain=None, range=Optional[str])
+
+slots.study_inc_dur = Slot(uri=MIXS['0001237'], name="study_inc_dur", curie=MIXS.curie('0001237'),
+                   model_uri=MIXS.study_inc_dur, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.rel_to_oxygen = Slot(uri=MIXS['0000015'], name="rel_to_oxygen", curie=MIXS.curie('0000015'),
+                   model_uri=MIXS.rel_to_oxygen, domain=None, range=Optional[Union[str, "RelToOxygenEnum"]])
+
+slots.facility_type = Slot(uri=MIXS['0001252'], name="facility_type", curie=MIXS.curie('0001252'),
+                   model_uri=MIXS.facility_type, domain=None, range=Optional[Union[Union[str, "FacilityTypeEnum"], List[Union[str, "FacilityTypeEnum"]]]])
+
+slots.trophic_level = Slot(uri=MIXS['0000032'], name="trophic_level", curie=MIXS.curie('0000032'),
+                   model_uri=MIXS.trophic_level, domain=None, range=Optional[Union[str, "TrophicLevelEnum"]])
+
+slots.sediment_type = Slot(uri=MIXS['0001078'], name="sediment_type", curie=MIXS.curie('0001078'),
+                   model_uri=MIXS.sediment_type, domain=None, range=Optional[Union[str, "SedimentTypeEnum"]])
+
+slots.window_status = Slot(uri=MIXS['0000855'], name="window_status", curie=MIXS.curie('0000855'),
+                   model_uri=MIXS.window_status, domain=None, range=Optional[Union[str, "WindowStatusEnum"]])
+
+slots.surf_air_cont = Slot(uri=MIXS['0000759'], name="surf_air_cont", curie=MIXS.curie('0000759'),
+                   model_uri=MIXS.surf_air_cont, domain=None, range=Optional[Union[Union[str, "SurfAirContEnum"], List[Union[str, "SurfAirContEnum"]]]])
+
+slots.dominant_hand = Slot(uri=MIXS['0000944'], name="dominant_hand", curie=MIXS.curie('0000944'),
+                   model_uri=MIXS.dominant_hand, domain=None, range=Optional[Union[str, "DominantHandEnum"]])
+
+slots.int_wall_cond = Slot(uri=MIXS['0000813'], name="int_wall_cond", curie=MIXS.curie('0000813'),
+                   model_uri=MIXS.int_wall_cond, domain=None, range=Optional[Union[str, "IntWallCondEnum"]])
+
+slots.room_samp_pos = Slot(uri=MIXS['0000824'], name="room_samp_pos", curie=MIXS.curie('0000824'),
+                   model_uri=MIXS.room_samp_pos, domain=None, range=Optional[Union[str, "RoomSampPosEnum"]])
+
+slots.sr_kerog_type = Slot(uri=MIXS['0000994'], name="sr_kerog_type", curie=MIXS.curie('0000994'),
+                   model_uri=MIXS.sr_kerog_type, domain=None, range=Optional[Union[str, "SrKerogTypeEnum"]])
+
+slots.neg_cont_type = Slot(uri=MIXS['0001321'], name="neg_cont_type", curie=MIXS.curie('0001321'),
+                   model_uri=MIXS.neg_cont_type, domain=None, range=Optional[Union[str, "NegContTypeEnum"]])
+
+slots.hygienic_area = Slot(uri=MIXS['0001253'], name="hygienic_area", curie=MIXS.curie('0001253'),
+                   model_uri=MIXS.hygienic_area, domain=None, range=Optional[str],
                    pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
 slots.num_replicons = Slot(uri=MIXS['0000022'], name="num_replicons", curie=MIXS.curie('0000022'),
                    model_uri=MIXS.num_replicons, domain=None, range=Optional[int])
 
-slots.pcr_primers = Slot(uri=MIXS['0000046'], name="pcr_primers", curie=MIXS.curie('0000046'),
-                   model_uri=MIXS.pcr_primers, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^FWD:[ACGTacgt]+;REV:[ACGTacgt]$'))
-
-slots.hysterectomy = Slot(uri=MIXS['0000287'], name="hysterectomy", curie=MIXS.curie('0000287'),
-                   model_uri=MIXS.hysterectomy, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.host_occupation = Slot(uri=MIXS['0000896'], name="host_occupation", curie=MIXS.curie('0000896'),
-                   model_uri=MIXS.host_occupation, domain=None, range=Optional[int])
-
-slots.ihmc_medication_code = Slot(uri=MIXS['0000884'], name="ihmc_medication_code", curie=MIXS.curie('0000884'),
-                   model_uri=MIXS.ihmc_medication_code, domain=None, range=Optional[Union[int, List[int]]])
-
-slots.microb_start_inoc = Slot(uri=MIXS['0001219'], name="microb_start_inoc", curie=MIXS.curie('0001219'),
-                   model_uri=MIXS.microb_start_inoc, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.ferm_ph = Slot(uri=MIXS['0001189'], name="ferm_ph", curie=MIXS.curie('0001189'),
-                   model_uri=MIXS.ferm_ph, domain=None, range=Optional[float])
-
-slots.occup_density_samp = Slot(uri=MIXS['0000217'], name="occup_density_samp", curie=MIXS.curie('0000217'),
-                   model_uri=MIXS.occup_density_samp, domain=None, range=Optional[float])
-
-slots.root_med_ph = Slot(uri=MIXS['0001062'], name="root_med_ph", curie=MIXS.curie('0001062'),
-                   model_uri=MIXS.root_med_ph, domain=None, range=Optional[float])
-
-slots.surf_moisture_ph = Slot(uri=MIXS['0000760'], name="surf_moisture_ph", curie=MIXS.curie('0000760'),
-                   model_uri=MIXS.surf_moisture_ph, domain=None, range=Optional[float])
-
-slots.typ_occup_density = Slot(uri=MIXS['0000771'], name="typ_occup_density", curie=MIXS.curie('0000771'),
-                   model_uri=MIXS.typ_occup_density, domain=None, range=Optional[float])
-
-slots.ph = Slot(uri=MIXS['0001001'], name="ph", curie=MIXS.curie('0001001'),
-                   model_uri=MIXS.ph, domain=None, range=Optional[float])
-
 slots.water_content = Slot(uri=MIXS['0000185'], name="water_content", curie=MIXS.curie('0000185'),
                    model_uri=MIXS.water_content, domain=None, range=Optional[float])
 
-slots.depth = Slot(uri=MIXS['0000018'], name="depth", curie=MIXS.curie('0000018'),
-                   model_uri=MIXS.depth, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.alt = Slot(uri=MIXS['0000094'], name="alt", curie=MIXS.curie('0000094'),
-                   model_uri=MIXS.alt, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.elev = Slot(uri=MIXS['0000093'], name="elev", curie=MIXS.curie('0000093'),
-                   model_uri=MIXS.elev, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.samp_vol_we_dna_ext = Slot(uri=MIXS['0000111'], name="samp_vol_we_dna_ext", curie=MIXS.curie('0000111'),
-                   model_uri=MIXS.samp_vol_we_dna_ext, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.temp = Slot(uri=MIXS['0000113'], name="temp", curie=MIXS.curie('0000113'),
-                   model_uri=MIXS.temp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.samp_size = Slot(uri=MIXS['0000001'], name="samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=MIXS.samp_size, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.org_matter = Slot(uri=MIXS['0000204'], name="org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=MIXS.org_matter, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.org_nitro = Slot(uri=MIXS['0000205'], name="org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=MIXS.org_nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
 slots.season_precpt = Slot(uri=MIXS['0000645'], name="season_precpt", curie=MIXS.curie('0000645'),
                    model_uri=MIXS.season_precpt, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.season_temp = Slot(uri=MIXS['0000643'], name="season_temp", curie=MIXS.curie('0000643'),
-                   model_uri=MIXS.season_temp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.soil_text_measure = Slot(uri=MIXS['0000335'], name="soil_text_measure", curie=MIXS.curie('0000335'),
-                   model_uri=MIXS.soil_text_measure, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.tot_nitro_content = Slot(uri=MIXS['0000530'], name="tot_nitro_content", curie=MIXS.curie('0000530'),
-                   model_uri=MIXS.tot_nitro_content, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.tot_org_carb = Slot(uri=MIXS['0000533'], name="tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=MIXS.tot_org_carb, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.abs_air_humidity = Slot(uri=MIXS['0000122'], name="abs_air_humidity", curie=MIXS.curie('0000122'),
-                   model_uri=MIXS.abs_air_humidity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.al_sat = Slot(uri=MIXS['0000607'], name="al_sat", curie=MIXS.curie('0000607'),
-                   model_uri=MIXS.al_sat, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.alkalinity = Slot(uri=MIXS['0000421'], name="alkalinity", curie=MIXS.curie('0000421'),
-                   model_uri=MIXS.alkalinity, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.aminopept_act = Slot(uri=MIXS['0000172'], name="aminopept_act", curie=MIXS.curie('0000172'),
                    model_uri=MIXS.aminopept_act, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.ammonium = Slot(uri=MIXS['0000427'], name="ammonium", curie=MIXS.curie('0000427'),
-                   model_uri=MIXS.ammonium, domain=None, range=Optional[str],
+slots.annual_precpt = Slot(uri=MIXS['0000644'], name="annual_precpt", curie=MIXS.curie('0000644'),
+                   model_uri=MIXS.annual_precpt, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.avg_dew_point = Slot(uri=MIXS['0000141'], name="avg_dew_point", curie=MIXS.curie('0000141'),
+                   model_uri=MIXS.avg_dew_point, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.carb_monoxide = Slot(uri=MIXS['0000098'], name="carb_monoxide", curie=MIXS.curie('0000098'),
+                   model_uri=MIXS.carb_monoxide, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.diss_hydrogen = Slot(uri=MIXS['0000179'], name="diss_hydrogen", curie=MIXS.curie('0000179'),
+                   model_uri=MIXS.diss_hydrogen, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.diss_org_carb = Slot(uri=MIXS['0000433'], name="diss_org_carb", curie=MIXS.curie('0000433'),
+                   model_uri=MIXS.diss_org_carb, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.host_wet_mass = Slot(uri=MIXS['0000567'], name="host_wet_mass", curie=MIXS.curie('0000567'),
+                   model_uri=MIXS.host_wet_mass, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.samp_rep_biol = Slot(uri=MIXS['0001226'], name="samp_rep_biol", curie=MIXS.curie('0001226'),
+                   model_uri=MIXS.samp_rep_biol, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.samp_rep_tech = Slot(uri=MIXS['0001227'], name="samp_rep_tech", curie=MIXS.curie('0001227'),
+                   model_uri=MIXS.samp_rep_tech, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.surf_humidity = Slot(uri=MIXS['0000123'], name="surf_humidity", curie=MIXS.curie('0000123'),
+                   model_uri=MIXS.surf_humidity, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.surf_moisture = Slot(uri=MIXS['0000128'], name="surf_moisture", curie=MIXS.curie('0000128'),
+                   model_uri=MIXS.surf_moisture, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.tot_part_carb = Slot(uri=MIXS['0000747'], name="tot_part_carb", curie=MIXS.curie('0000747'),
+                   model_uri=MIXS.tot_part_carb, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.water_current = Slot(uri=MIXS['0000203'], name="water_current", curie=MIXS.curie('0000203'),
+                   model_uri=MIXS.water_current, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.number_plants = Slot(uri=MIXS['0000230'], name="number_plants", curie=MIXS.curie('0000230'),
+                   model_uri=MIXS.number_plants, domain=None, range=Optional[int])
+
+slots.samp_time_out = Slot(uri=MIXS['0000196'], name="samp_time_out", curie=MIXS.curie('0000196'),
+                   model_uri=MIXS.samp_time_out, domain=None, range=Optional[float])
+
+slots.number_contig = Slot(uri=MIXS['0000060'], name="number_contig", curie=MIXS.curie('0000060'),
+                   model_uri=MIXS.number_contig, domain=None, range=Optional[int])
+
+slots.bedroom_count = Slot(uri=MIXS['0000777'], name="bedroom_count", curie=MIXS.curie('0000777'),
+                   model_uri=MIXS.bedroom_count, domain=None, range=Optional[int])
+
+slots.crop_rotation = Slot(uri=MIXS['0000318'], name="crop_rotation", curie=MIXS.curie('0000318'),
+                   model_uri=MIXS.crop_rotation, domain=None, range=Optional[str])
+
+slots.kidney_disord = Slot(uri=MIXS['0000277'], name="kidney_disord", curie=MIXS.curie('0000277'),
+                   model_uri=MIXS.kidney_disord, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.assembly_qual = Slot(uri=MIXS['0000056'], name="assembly_qual", curie=MIXS.curie('0000056'),
+                   model_uri=MIXS.assembly_qual, domain=None, range=Optional[str])
+
+slots.food_additive = Slot(uri=MIXS['0001200'], name="food_additive", curie=MIXS.curie('0001200'),
+                   model_uri=MIXS.food_additive, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.source_mat_id = Slot(uri=MIXS['0000026'], name="source_mat_id", curie=MIXS.curie('0000026'),
+                   model_uri=MIXS.source_mat_id, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.spikein_metal = Slot(uri=MIXS['0001172'], name="spikein_metal", curie=MIXS.curie('0001172'),
+                   model_uri=MIXS.spikein_metal, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.host_hiv_stat = Slot(uri=MIXS['0000265'], name="host_hiv_stat", curie=MIXS.curie('0000265'),
+                   model_uri=MIXS.host_hiv_stat, domain=None, range=Optional[str])
+
+slots.specific_host = Slot(uri=MIXS['0000029'], name="specific_host", curie=MIXS.curie('0000029'),
+                   model_uri=MIXS.specific_host, domain=None, range=Optional[str])
+
+slots.humidity_regm = Slot(uri=MIXS['0000568'], name="humidity_regm", curie=MIXS.curie('0000568'),
+                   model_uri=MIXS.humidity_regm, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.room_net_area = Slot(uri=MIXS['0000194'], name="room_net_area", curie=MIXS.curie('0000194'),
+                   model_uri=MIXS.room_net_area, domain=None, range=Optional[str])
+
+slots.rainfall_regm = Slot(uri=MIXS['0000576'], name="rainfall_regm", curie=MIXS.curie('0000576'),
+                   model_uri=MIXS.rainfall_regm, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.birth_control = Slot(uri=MIXS['0000286'], name="birth_control", curie=MIXS.curie('0000286'),
+                   model_uri=MIXS.birth_control, domain=None, range=Optional[str])
+
+slots.assembly_name = Slot(uri=MIXS['0000057'], name="assembly_name", curie=MIXS.curie('0000057'),
+                   model_uri=MIXS.assembly_name, domain=None, range=Optional[str])
+
+slots.chimera_check = Slot(uri=MIXS['0000052'], name="chimera_check", curie=MIXS.curie('0000052'),
+                   model_uri=MIXS.chimera_check, domain=None, range=Optional[str])
+
+slots.cult_root_med = Slot(uri=MIXS['0001041'], name="cult_root_med", curie=MIXS.curie('0001041'),
+                   model_uri=MIXS.cult_root_med, domain=None, range=Optional[str])
+
+slots.pathogenicity = Slot(uri=MIXS['0000027'], name="pathogenicity", curie=MIXS.curie('0000027'),
+                   model_uri=MIXS.pathogenicity, domain=None, range=Optional[str])
+
+slots.spikein_count = Slot(uri=MIXS['0001335'], name="spikein_count", curie=MIXS.curie('0001335'),
+                   model_uri=MIXS.spikein_count, domain=None, range=Optional[str])
+
+slots.org_particles = Slot(uri=MIXS['0000665'], name="org_particles", curie=MIXS.curie('0000665'),
+                   model_uri=MIXS.org_particles, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.soil_porosity = Slot(uri=MIXS['0001162'], name="soil_porosity", curie=MIXS.curie('0001162'),
+                   model_uri=MIXS.soil_porosity, domain=None, range=Optional[str])
+
+slots.phaeopigments = Slot(uri=MIXS['0000180'], name="phaeopigments", curie=MIXS.curie('0000180'),
+                   model_uri=MIXS.phaeopigments, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.nucl_acid_ext = Slot(uri=MIXS['0000037'], name="nucl_acid_ext", curie=MIXS.curie('0000037'),
+                   model_uri=MIXS.nucl_acid_ext, domain=None, range=Optional[str])
+
+slots.nucl_acid_amp = Slot(uri=MIXS['0000038'], name="nucl_acid_amp", curie=MIXS.curie('0000038'),
+                   model_uri=MIXS.nucl_acid_amp, domain=None, range=Optional[str])
+
+slots.salinity_meth = Slot(uri=MIXS['0000341'], name="salinity_meth", curie=MIXS.curie('0000341'),
+                   model_uri=MIXS.salinity_meth, domain=None, range=Optional[str])
+
+slots.pre_treatment = Slot(uri=MIXS['0000348'], name="pre_treatment", curie=MIXS.curie('0000348'),
+                   model_uri=MIXS.pre_treatment, domain=None, range=Optional[str])
+
+slots.plant_product = Slot(uri=MIXS['0001058'], name="plant_product", curie=MIXS.curie('0001058'),
+                   model_uri=MIXS.plant_product, domain=None, range=Optional[str])
+
+slots.root_med_regl = Slot(uri=MIXS['0000581'], name="root_med_regl", curie=MIXS.curie('0000581'),
+                   model_uri=MIXS.root_med_regl, domain=None, range=Optional[str])
+
+slots.samp_taxon_id = Slot(uri=MIXS['0001320'], name="samp_taxon_id", curie=MIXS.curie('0001320'),
+                   model_uri=MIXS.samp_taxon_id, domain=None, range=Optional[str])
+
+slots.air_temp_regm = Slot(uri=MIXS['0000551'], name="air_temp_regm", curie=MIXS.curie('0000551'),
+                   model_uri=MIXS.air_temp_regm, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.animal_am_use = Slot(uri=MIXS['0001247'], name="animal_am_use", curie=MIXS.curie('0001247'),
+                   model_uri=MIXS.animal_am_use, domain=None, range=Optional[str])
+
+slots.growth_medium = Slot(uri=MIXS['0001108'], name="growth_medium", curie=MIXS.curie('0001108'),
+                   model_uri=MIXS.growth_medium, domain=None, range=Optional[str])
+
+slots.animal_am_dur = Slot(uri=MIXS['0001244'], name="animal_am_dur", curie=MIXS.curie('0001244'),
+                   model_uri=MIXS.animal_am_dur, domain=None, range=Optional[str])
+
+slots.pos_cont_type = Slot(uri=MIXS['0001322'], name="pos_cont_type", curie=MIXS.curie('0001322'),
+                   model_uri=MIXS.pos_cont_type, domain=None, range=Optional[str])
+
+slots.x_16s_recover = Slot(uri=MIXS['0000065'], name="x_16s_recover", curie=MIXS.curie('0000065'),
+                   model_uri=MIXS.x_16s_recover, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.hcr_geol_age = Slot(uri=MIXS['0000993'], name="hcr_geol_age", curie=MIXS.curie('0000993'),
+                   model_uri=MIXS.hcr_geol_age, domain=None, range=Optional[Union[str, "HcrGeolAgeEnum"]])
+
+slots.indoor_space = Slot(uri=MIXS['0000763'], name="indoor_space", curie=MIXS.curie('0000763'),
+                   model_uri=MIXS.indoor_space, domain=None, range=Optional[Union[str, "IndoorSpaceEnum"]])
+
+slots.sr_lithology = Slot(uri=MIXS['0000995'], name="sr_lithology", curie=MIXS.curie('0000995'),
+                   model_uri=MIXS.sr_lithology, domain=None, range=Optional[Union[str, "SrLithologyEnum"]])
+
+slots.samp_weather = Slot(uri=MIXS['0000827'], name="samp_weather", curie=MIXS.curie('0000827'),
+                   model_uri=MIXS.samp_weather, domain=None, range=Optional[Union[str, "SampWeatherEnum"]])
+
+slots.wall_texture = Slot(uri=MIXS['0000846'], name="wall_texture", curie=MIXS.curie('0000846'),
+                   model_uri=MIXS.wall_texture, domain=None, range=Optional[Union[str, "WallTextureEnum"]])
+
+slots.ceil_texture = Slot(uri=MIXS['0000783'], name="ceil_texture", curie=MIXS.curie('0000783'),
+                   model_uri=MIXS.ceil_texture, domain=None, range=Optional[Union[str, "CeilTextureEnum"]])
+
+slots.rel_samp_loc = Slot(uri=MIXS['0000821'], name="rel_samp_loc", curie=MIXS.curie('0000821'),
+                   model_uri=MIXS.rel_samp_loc, domain=None, range=Optional[Union[str, "RelSampLocEnum"]])
+
+slots.samp_subtype = Slot(uri=MIXS['0000999'], name="samp_subtype", curie=MIXS.curie('0000999'),
+                   model_uri=MIXS.samp_subtype, domain=None, range=Optional[Union[str, "SampSubtypeEnum"]])
+
+slots.wga_amp_appr = Slot(uri=MIXS['0000055'], name="wga_amp_appr", curie=MIXS.curie('0000055'),
+                   model_uri=MIXS.wga_amp_appr, domain=None, range=Optional[Union[str, "WgaAmpApprEnum"]])
+
+slots.hysterectomy = Slot(uri=MIXS['0000287'], name="hysterectomy", curie=MIXS.curie('0000287'),
+                   model_uri=MIXS.hysterectomy, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.tot_org_carb = Slot(uri=MIXS['0000533'], name="tot_org_carb", curie=MIXS.curie('0000533'),
+                   model_uri=MIXS.tot_org_carb, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.amount_light = Slot(uri=MIXS['0000140'], name="amount_light", curie=MIXS.curie('0000140'),
                    model_uri=MIXS.amount_light, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.annual_precpt = Slot(uri=MIXS['0000644'], name="annual_precpt", curie=MIXS.curie('0000644'),
-                   model_uri=MIXS.annual_precpt, domain=None, range=Optional[str],
+slots.carb_dioxide = Slot(uri=MIXS['0000097'], name="carb_dioxide", curie=MIXS.curie('0000097'),
+                   model_uri=MIXS.carb_dioxide, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.ethylbenzene = Slot(uri=MIXS['0000155'], name="ethylbenzene", curie=MIXS.curie('0000155'),
+                   model_uri=MIXS.ethylbenzene, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.primary_prod = Slot(uri=MIXS['0000728'], name="primary_prod", curie=MIXS.curie('0000728'),
+                   model_uri=MIXS.primary_prod, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.slope_aspect = Slot(uri=MIXS['0000647'], name="slope_aspect", curie=MIXS.curie('0000647'),
+                   model_uri=MIXS.slope_aspect, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.twin_sibling = Slot(uri=MIXS['0000326'], name="twin_sibling", curie=MIXS.curie('0000326'),
+                   model_uri=MIXS.twin_sibling, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.cool_syst_id = Slot(uri=MIXS['0000785'], name="cool_syst_id", curie=MIXS.curie('0000785'),
+                   model_uri=MIXS.cool_syst_id, domain=None, range=Optional[int])
+
+slots.contam_score = Slot(uri=MIXS['0000072'], name="contam_score", curie=MIXS.curie('0000072'),
+                   model_uri=MIXS.contam_score, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ %$'))
+
+slots.biocide_used = Slot(uri=MIXS['0001258'], name="biocide_used", curie=MIXS.curie('0001258'),
+                   model_uri=MIXS.biocide_used, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.geo_loc_name = Slot(uri=MIXS['0000010'], name="geo_loc_name", curie=MIXS.curie('0000010'),
+                   model_uri=MIXS.geo_loc_name, domain=None, range=Optional[str])
+
+slots.liver_disord = Slot(uri=MIXS['0000282'], name="liver_disord", curie=MIXS.curie('0000282'),
+                   model_uri=MIXS.liver_disord, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.window_cover = Slot(uri=MIXS['0000850'], name="window_cover", curie=MIXS.curie('0000850'),
+                   model_uri=MIXS.window_cover, domain=None, range=Optional[str])
+
+slots.cur_land_use = Slot(uri=MIXS['0001080'], name="cur_land_use", curie=MIXS.curie('0001080'),
+                   model_uri=MIXS.cur_land_use, domain=None, range=Optional[str])
+
+slots.special_diet = Slot(uri=MIXS['0000905'], name="special_diet", curie=MIXS.curie('0000905'),
+                   model_uri=MIXS.special_diet, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.soil_horizon = Slot(uri=MIXS['0001291'], name="soil_horizon", curie=MIXS.curie('0001291'),
+                   model_uri=MIXS.soil_horizon, domain=None, range=Optional[str])
+
+slots.samp_purpose = Slot(uri=MIXS['0001151'], name="samp_purpose", curie=MIXS.curie('0001151'),
+                   model_uri=MIXS.samp_purpose, domain=None, range=Optional[str])
+
+slots.microb_start = Slot(uri=MIXS['0001217'], name="microb_start", curie=MIXS.curie('0001217'),
+                   model_uri=MIXS.microb_start, domain=None, range=Optional[str])
+
+slots.growth_facil = Slot(uri=MIXS['0001043'], name="growth_facil", curie=MIXS.curie('0001043'),
+                   model_uri=MIXS.growth_facil, domain=None, range=Optional[str])
+
+slots.heavy_metals = Slot(uri=MIXS['0000652'], name="heavy_metals", curie=MIXS.curie('0000652'),
+                   model_uri=MIXS.heavy_metals, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.hcr_pressure = Slot(uri=MIXS['0000395'], name="hcr_pressure", curie=MIXS.curie('0000395'),
+                   model_uri=MIXS.hcr_pressure, domain=None, range=Optional[str])
+
+slots.permeability = Slot(uri=MIXS['0000404'], name="permeability", curie=MIXS.curie('0000404'),
+                   model_uri=MIXS.permeability, domain=None, range=Optional[str])
+
+slots.chem_mutagen = Slot(uri=MIXS['0000555'], name="chem_mutagen", curie=MIXS.curie('0000555'),
+                   model_uri=MIXS.chem_mutagen, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.aromatics_pc = Slot(uri=MIXS['0000133'], name="aromatics_pc", curie=MIXS.curie('0000133'),
+                   model_uri=MIXS.aromatics_pc, domain=None, range=Optional[str])
+
+slots.samp_preserv = Slot(uri=MIXS['0000463'], name="samp_preserv", curie=MIXS.curie('0000463'),
+                   model_uri=MIXS.samp_preserv, domain=None, range=Optional[str])
+
+slots.saturates_pc = Slot(uri=MIXS['0000131'], name="saturates_pc", curie=MIXS.curie('0000131'),
+                   model_uri=MIXS.saturates_pc, domain=None, range=Optional[str])
+
+slots.bin_software = Slot(uri=MIXS['0000078'], name="bin_software", curie=MIXS.curie('0000078'),
+                   model_uri=MIXS.bin_software, domain=None, range=Optional[str])
+
+slots.study_design = Slot(uri=MIXS['0001236'], name="study_design", curie=MIXS.curie('0001236'),
+                   model_uri=MIXS.study_design, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.horizon_meth = Slot(uri=MIXS['0000321'], name="horizon_meth", curie=MIXS.curie('0000321'),
+                   model_uri=MIXS.horizon_meth, domain=None, range=Optional[str])
+
+slots.reactor_type = Slot(uri=MIXS['0000350'], name="reactor_type", curie=MIXS.curie('0000350'),
+                   model_uri=MIXS.reactor_type, domain=None, range=Optional[str])
+
+slots.room_hallway = Slot(uri=MIXS['0000238'], name="room_hallway", curie=MIXS.curie('0000238'),
+                   model_uri=MIXS.room_hallway, domain=None, range=Optional[str])
+
+slots.project_name = Slot(uri=MIXS['0000092'], name="project_name", curie=MIXS.curie('0000092'),
+                   model_uri=MIXS.project_name, domain=None, range=Optional[str])
+
+slots.cult_result = Slot(uri=MIXS['0001117'], name="cult_result", curie=MIXS.curie('0001117'),
+                   model_uri=MIXS.cult_result, domain=None, range=Optional[Union[str, "CultResultEnum"]])
+
+slots.sr_geol_age = Slot(uri=MIXS['0000997'], name="sr_geol_age", curie=MIXS.curie('0000997'),
+                   model_uri=MIXS.sr_geol_age, domain=None, range=Optional[Union[str, "SrGeolAgeEnum"]])
+
+slots.window_cond = Slot(uri=MIXS['0000849'], name="window_cond", curie=MIXS.curie('0000849'),
+                   model_uri=MIXS.window_cond, domain=None, range=Optional[Union[str, "WindowCondEnum"]])
+
+slots.door_direct = Slot(uri=MIXS['0000789'], name="door_direct", curie=MIXS.curie('0000789'),
+                   model_uri=MIXS.door_direct, domain=None, range=Optional[Union[str, "DoorDirectEnum"]])
+
+slots.tidal_stage = Slot(uri=MIXS['0000750'], name="tidal_stage", curie=MIXS.curie('0000750'),
+                   model_uri=MIXS.tidal_stage, domain=None, range=Optional[Union[str, "TidalStageEnum"]])
+
+slots.filter_type = Slot(uri=MIXS['0000765'], name="filter_type", curie=MIXS.curie('0000765'),
+                   model_uri=MIXS.filter_type, domain=None, range=Optional[Union[Union[str, "FilterTypeEnum"], List[Union[str, "FilterTypeEnum"]]]])
+
+slots.window_type = Slot(uri=MIXS['0000856'], name="window_type", curie=MIXS.curie('0000856'),
+                   model_uri=MIXS.window_type, domain=None, range=Optional[Union[str, "WindowTypeEnum"]])
+
+slots.pcr_primers = Slot(uri=MIXS['0000046'], name="pcr_primers", curie=MIXS.curie('0000046'),
+                   model_uri=MIXS.pcr_primers, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^FWD:[ACGTacgt]+;REV:[ACGTacgt]$'))
+
+slots.root_med_ph = Slot(uri=MIXS['0001062'], name="root_med_ph", curie=MIXS.curie('0001062'),
+                   model_uri=MIXS.root_med_ph, domain=None, range=Optional[float])
+
+slots.season_temp = Slot(uri=MIXS['0000643'], name="season_temp", curie=MIXS.curie('0000643'),
+                   model_uri=MIXS.season_temp, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.annual_temp = Slot(uri=MIXS['0000642'], name="annual_temp", curie=MIXS.curie('0000642'),
                    model_uri=MIXS.annual_temp, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.api = Slot(uri=MIXS['0000157'], name="api", curie=MIXS.curie('0000157'),
-                   model_uri=MIXS.api, domain=None, range=Optional[str],
+slots.chlorophyll = Slot(uri=MIXS['0000177'], name="chlorophyll", curie=MIXS.curie('0000177'),
+                   model_uri=MIXS.chlorophyll, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.avg_dew_point = Slot(uri=MIXS['0000141'], name="avg_dew_point", curie=MIXS.curie('0000141'),
-                   model_uri=MIXS.avg_dew_point, domain=None, range=Optional[str],
+slots.diss_oxygen = Slot(uri=MIXS['0000119'], name="diss_oxygen", curie=MIXS.curie('0000119'),
+                   model_uri=MIXS.diss_oxygen, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.photon_flux = Slot(uri=MIXS['0000725'], name="photon_flux", curie=MIXS.curie('0000725'),
+                   model_uri=MIXS.photon_flux, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.number_pets = Slot(uri=MIXS['0000231'], name="number_pets", curie=MIXS.curie('0000231'),
+                   model_uri=MIXS.number_pets, domain=None, range=Optional[int])
+
+slots.plant_struc = Slot(uri=MIXS['0001060'], name="plant_struc", curie=MIXS.curie('0001060'),
+                   model_uri=MIXS.plant_struc, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.wall_height = Slot(uri=MIXS['0000221'], name="wall_height", curie=MIXS.curie('0000221'),
+                   model_uri=MIXS.wall_height, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.floor_count = Slot(uri=MIXS['0000225'], name="floor_count", curie=MIXS.curie('0000225'),
+                   model_uri=MIXS.floor_count, domain=None, range=Optional[int])
+
+slots.host_number = Slot(uri=MIXS['0001305'], name="host_number", curie=MIXS.curie('0001305'),
+                   model_uri=MIXS.host_number, domain=None, range=Optional[str])
+
+slots.floor_struc = Slot(uri=MIXS['0000806'], name="floor_struc", curie=MIXS.curie('0000806'),
+                   model_uri=MIXS.floor_struc, domain=None, range=Optional[str])
+
+slots.source_uvig = Slot(uri=MIXS['0000035'], name="source_uvig", curie=MIXS.curie('0000035'),
+                   model_uri=MIXS.source_uvig, domain=None, range=Optional[str])
+
+slots.hc_produced = Slot(uri=MIXS['0000989'], name="hc_produced", curie=MIXS.curie('0000989'),
+                   model_uri=MIXS.hc_produced, domain=None, range=Optional[str])
+
+slots.propagation = Slot(uri=MIXS['0000033'], name="propagation", curie=MIXS.curie('0000033'),
+                   model_uri=MIXS.propagation, domain=None, range=Optional[str])
+
+slots.target_gene = Slot(uri=MIXS['0000044'], name="target_gene", curie=MIXS.curie('0000044'),
+                   model_uri=MIXS.target_gene, domain=None, range=Optional[str])
+
+slots.ferm_medium = Slot(uri=MIXS['0001188'], name="ferm_medium", curie=MIXS.curie('0001188'),
+                   model_uri=MIXS.ferm_medium, domain=None, range=Optional[str])
+
+slots.wga_amp_kit = Slot(uri=MIXS['0000006'], name="wga_amp_kit", curie=MIXS.curie('0000006'),
+                   model_uri=MIXS.wga_amp_kit, domain=None, range=Optional[str])
+
+slots.local_class = Slot(uri=MIXS['0000330'], name="local_class", curie=MIXS.curie('0000330'),
+                   model_uri=MIXS.local_class, domain=None, range=Optional[str])
+
+slots.window_size = Slot(uri=MIXS['0000224'], name="window_size", curie=MIXS.curie('0000224'),
+                   model_uri=MIXS.window_size, domain=None, range=Optional[str])
+
+slots.spikein_amr = Slot(uri=MIXS['0001235'], name="spikein_amr", curie=MIXS.curie('0001235'),
+                   model_uri=MIXS.spikein_amr, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.spikein_org = Slot(uri=MIXS['0001167'], name="spikein_org", curie=MIXS.curie('0001167'),
+                   model_uri=MIXS.spikein_org, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.cult_target = Slot(uri=MIXS['0001119'], name="cult_target", curie=MIXS.curie('0001119'),
+                   model_uri=MIXS.cult_target, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.al_sat_meth = Slot(uri=MIXS['0000324'], name="al_sat_meth", curie=MIXS.curie('0000324'),
+                   model_uri=MIXS.al_sat_meth, domain=None, range=Optional[str])
+
+slots.compl_score = Slot(uri=MIXS['0000069'], name="compl_score", curie=MIXS.curie('0000069'),
+                   model_uri=MIXS.compl_score, domain=None, range=Optional[str])
+
+slots.sewage_type = Slot(uri=MIXS['0000215'], name="sewage_type", curie=MIXS.curie('0000215'),
+                   model_uri=MIXS.sewage_type, domain=None, range=Optional[str])
+
+slots.ferm_vessel = Slot(uri=MIXS['0001193'], name="ferm_vessel", curie=MIXS.curie('0001193'),
+                   model_uri=MIXS.ferm_vessel, domain=None, range=Optional[str])
+
+slots.animal_diet = Slot(uri=MIXS['0001130'], name="animal_diet", curie=MIXS.curie('0001130'),
+                   model_uri=MIXS.animal_diet, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.handidness = Slot(uri=MIXS['0000809'], name="handidness", curie=MIXS.curie('0000809'),
+                   model_uri=MIXS.handidness, domain=None, range=Optional[Union[str, "HandidnessEnum"]])
+
+slots.build_docs = Slot(uri=MIXS['0000787'], name="build_docs", curie=MIXS.curie('0000787'),
+                   model_uri=MIXS.build_docs, domain=None, range=Optional[Union[str, "BuildDocsEnum"]])
+
+slots.arch_struc = Slot(uri=MIXS['0000774'], name="arch_struc", curie=MIXS.curie('0000774'),
+                   model_uri=MIXS.arch_struc, domain=None, range=Optional[Union[str, "ArchStrucEnum"]])
+
+slots.window_mat = Slot(uri=MIXS['0000853'], name="window_mat", curie=MIXS.curie('0000853'),
+                   model_uri=MIXS.window_mat, domain=None, range=Optional[Union[str, "WindowLocEnum"]])
+
+slots.sr_dep_env = Slot(uri=MIXS['0000996'], name="sr_dep_env", curie=MIXS.curie('0000996'),
+                   model_uri=MIXS.sr_dep_env, domain=None, range=Optional[Union[str, "SrDepEnvEnum"]])
+
+slots.light_type = Slot(uri=MIXS['0000769'], name="light_type", curie=MIXS.curie('0000769'),
+                   model_uri=MIXS.light_type, domain=None, range=Optional[Union[Union[str, "LightTypeEnum"], List[Union[str, "LightTypeEnum"]]]])
+
+slots.floor_cond = Slot(uri=MIXS['0000803'], name="floor_cond", curie=MIXS.curie('0000803'),
+                   model_uri=MIXS.floor_cond, domain=None, range=Optional[Union[str, "FloorCondEnum"]])
+
+slots.room_condt = Slot(uri=MIXS['0000822'], name="room_condt", curie=MIXS.curie('0000822'),
+                   model_uri=MIXS.room_condt, domain=None, range=Optional[Union[str, "RelSampLocEnum"]])
+
+slots.window_loc = Slot(uri=MIXS['0000852'], name="window_loc", curie=MIXS.curie('0000852'),
+                   model_uri=MIXS.window_loc, domain=None, range=Optional[Union[str, "WindowLocEnum"]])
+
+slots.lib_layout = Slot(uri=MIXS['0000041'], name="lib_layout", curie=MIXS.curie('0000041'),
+                   model_uri=MIXS.lib_layout, domain=None, range=Optional[Union[str, "LibLayoutEnum"]])
+
+slots.aero_struc = Slot(uri=MIXS['0000773'], name="aero_struc", curie=MIXS.curie('0000773'),
+                   model_uri=MIXS.aero_struc, domain=None, range=Optional[Union[str, "AeroStrucEnum"]])
+
+slots.season_use = Slot(uri=MIXS['0000830'], name="season_use", curie=MIXS.curie('0000830'),
+                   model_uri=MIXS.season_use, domain=None, range=Optional[Union[str, "SeasonUseEnum"]])
+
+slots.mech_struc = Slot(uri=MIXS['0000815'], name="mech_struc", curie=MIXS.curie('0000815'),
+                   model_uri=MIXS.mech_struc, domain=None, range=Optional[Union[str, "MechStrucEnum"]])
+
+slots.ceil_struc = Slot(uri=MIXS['0000782'], name="ceil_struc", curie=MIXS.curie('0000782'),
+                   model_uri=MIXS.ceil_struc, domain=None, range=Optional[Union[str, "CeilStrucEnum"]])
+
+slots.haccp_term = Slot(uri=MIXS['0001215'], name="haccp_term", curie=MIXS.curie('0001215'),
+                   model_uri=MIXS.haccp_term, domain=None, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.org_matter = Slot(uri=MIXS['0000204'], name="org_matter", curie=MIXS.curie('0000204'),
+                   model_uri=MIXS.org_matter, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.alkalinity = Slot(uri=MIXS['0000421'], name="alkalinity", curie=MIXS.curie('0000421'),
+                   model_uri=MIXS.alkalinity, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.floor_area = Slot(uri=MIXS['0000165'], name="floor_area", curie=MIXS.curie('0000165'),
+                   model_uri=MIXS.floor_area, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.host_pulse = Slot(uri=MIXS['0000333'], name="host_pulse", curie=MIXS.curie('0000333'),
+                   model_uri=MIXS.host_pulse, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.inside_lux = Slot(uri=MIXS['0000168'], name="inside_lux", curie=MIXS.curie('0000168'),
+                   model_uri=MIXS.inside_lux, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.pour_point = Slot(uri=MIXS['0000127'], name="pour_point", curie=MIXS.curie('0000127'),
+                   model_uri=MIXS.pour_point, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.sulfate_fw = Slot(uri=MIXS['0000407'], name="sulfate_fw", curie=MIXS.curie('0000407'),
+                   model_uri=MIXS.sulfate_fw, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.tot_sulfur = Slot(uri=MIXS['0000419'], name="tot_sulfur", curie=MIXS.curie('0000419'),
+                   model_uri=MIXS.tot_sulfur, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.occup_samp = Slot(uri=MIXS['0000772'], name="occup_samp", curie=MIXS.curie('0000772'),
+                   model_uri=MIXS.occup_samp, domain=None, range=Optional[int])
+
+slots.room_occup = Slot(uri=MIXS['0000236'], name="room_occup", curie=MIXS.curie('0000236'),
+                   model_uri=MIXS.room_occup, domain=None, range=Optional[int])
+
+slots.compl_appr = Slot(uri=MIXS['0000071'], name="compl_appr", curie=MIXS.curie('0000071'),
+                   model_uri=MIXS.compl_appr, domain=None, range=Optional[Union[str, "ComplApprEnum"]])
+
+slots.env_medium = Slot(uri=MIXS['0000014'], name="env_medium", curie=MIXS.curie('0000014'),
+                   model_uri=MIXS.env_medium, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.last_clean = Slot(uri=MIXS['0000814'], name="last_clean", curie=MIXS.curie('0000814'),
+                   model_uri=MIXS.last_clean, domain=None, range=Optional[str])
+
+slots.hall_count = Slot(uri=MIXS['0000228'], name="hall_count", curie=MIXS.curie('0000228'),
+                   model_uri=MIXS.hall_count, domain=None, range=Optional[int])
+
+slots.room_count = Slot(uri=MIXS['0000234'], name="room_count", curie=MIXS.curie('0000234'),
+                   model_uri=MIXS.room_count, domain=None, range=Optional[int])
+
+slots.drug_usage = Slot(uri=MIXS['0000894'], name="drug_usage", curie=MIXS.curie('0000894'),
+                   model_uri=MIXS.drug_usage, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.animal_sex = Slot(uri=MIXS['0001249'], name="animal_sex", curie=MIXS.curie('0001249'),
+                   model_uri=MIXS.animal_sex, domain=None, range=Optional[str])
+
+slots.detec_type = Slot(uri=MIXS['0000084'], name="detec_type", curie=MIXS.curie('0000084'),
+                   model_uri=MIXS.detec_type, domain=None, range=Optional[str])
+
+slots.train_line = Slot(uri=MIXS['0000837'], name="train_line", curie=MIXS.curie('0000837'),
+                   model_uri=MIXS.train_line, domain=None, range=Optional[str])
+
+slots.light_regm = Slot(uri=MIXS['0000569'], name="light_regm", curie=MIXS.curie('0000569'),
+                   model_uri=MIXS.light_regm, domain=None, range=Optional[str])
+
+slots.study_tmnt = Slot(uri=MIXS['0001240'], name="study_tmnt", curie=MIXS.curie('0001240'),
+                   model_uri=MIXS.study_tmnt, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.crop_yield = Slot(uri=MIXS['0001116'], name="crop_yield", curie=MIXS.curie('0001116'),
+                   model_uri=MIXS.crop_yield, domain=None, range=Optional[str])
+
+slots.samp_tvdss = Slot(uri=MIXS['0000409'], name="samp_tvdss", curie=MIXS.curie('0000409'),
+                   model_uri=MIXS.samp_tvdss, domain=None, range=Optional[str])
+
+slots.misc_param = Slot(uri=MIXS['0000752'], name="misc_param", curie=MIXS.curie('0000752'),
+                   model_uri=MIXS.misc_param, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.sexual_act = Slot(uri=MIXS['0000285'], name="sexual_act", curie=MIXS.curie('0000285'),
+                   model_uri=MIXS.sexual_act, domain=None, range=Optional[str])
+
+slots.pollutants = Slot(uri=MIXS['0000107'], name="pollutants", curie=MIXS.curie('0000107'),
+                   model_uri=MIXS.pollutants, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.lib_screen = Slot(uri=MIXS['0000043'], name="lib_screen", curie=MIXS.curie('0000043'),
+                   model_uri=MIXS.lib_screen, domain=None, range=Optional[str])
+
+slots.store_cond = Slot(uri=MIXS['0000327'], name="store_cond", curie=MIXS.curie('0000327'),
+                   model_uri=MIXS.store_cond, domain=None, range=Optional[str])
+
+slots.lib_vector = Slot(uri=MIXS['0000042'], name="lib_vector", curie=MIXS.curie('0000042'),
+                   model_uri=MIXS.lib_vector, domain=None, range=Optional[str])
+
+slots.timepoint = Slot(uri=MIXS['0001173'], name="timepoint", curie=MIXS.curie('0001173'),
+                   model_uri=MIXS.timepoint, domain=None, range=Optional[float])
+
+slots.tax_ident = Slot(uri=MIXS['0000053'], name="tax_ident", curie=MIXS.curie('0000053'),
+                   model_uri=MIXS.tax_ident, domain=None, range=Optional[Union[str, "TaxIdentEnum"]])
+
+slots.fao_class = Slot(uri=MIXS['0001083'], name="fao_class", curie=MIXS.curie('0001083'),
+                   model_uri=MIXS.fao_class, domain=None, range=Optional[Union[str, "FaoClassEnum"]])
+
+slots.plant_sex = Slot(uri=MIXS['0001059'], name="plant_sex", curie=MIXS.curie('0001059'),
+                   model_uri=MIXS.plant_sex, domain=None, range=Optional[Union[str, "PlantSexEnum"]])
+
+slots.room_type = Slot(uri=MIXS['0000825'], name="room_type", curie=MIXS.curie('0000825'),
+                   model_uri=MIXS.room_type, domain=None, range=Optional[Union[str, "RoomTypeEnum"]])
+
+slots.lithology = Slot(uri=MIXS['0000990'], name="lithology", curie=MIXS.curie('0000990'),
+                   model_uri=MIXS.lithology, domain=None, range=Optional[Union[str, "LithologyEnum"]])
+
+slots.furniture = Slot(uri=MIXS['0000807'], name="furniture", curie=MIXS.curie('0000807'),
+                   model_uri=MIXS.furniture, domain=None, range=Optional[Union[str, "FurnitureEnum"]])
+
+slots.ceil_type = Slot(uri=MIXS['0000784'], name="ceil_type", curie=MIXS.curie('0000784'),
+                   model_uri=MIXS.ceil_type, domain=None, range=Optional[Union[str, "CeilTypeEnum"]])
+
+slots.door_move = Slot(uri=MIXS['0000792'], name="door_move", curie=MIXS.curie('0000792'),
+                   model_uri=MIXS.door_move, domain=None, range=Optional[Union[str, "DoorMoveEnum"]])
+
+slots.door_type = Slot(uri=MIXS['0000794'], name="door_type", curie=MIXS.curie('0000794'),
+                   model_uri=MIXS.door_type, domain=None, range=Optional[Union[str, "DoorTypeEnum"]])
+
+slots.door_cond = Slot(uri=MIXS['0000788'], name="door_cond", curie=MIXS.curie('0000788'),
+                   model_uri=MIXS.door_cond, domain=None, range=Optional[Union[str, "DoorCondEnum"]])
+
+slots.sort_tech = Slot(uri=MIXS['0000075'], name="sort_tech", curie=MIXS.curie('0000075'),
+                   model_uri=MIXS.sort_tech, domain=None, range=Optional[Union[str, "SortTechEnum"]])
+
+slots.bin_param = Slot(uri=MIXS['0000077'], name="bin_param", curie=MIXS.curie('0000077'),
+                   model_uri=MIXS.bin_param, domain=None, range=Optional[Union[str, "BinParamEnum"]])
+
+slots.ceil_cond = Slot(uri=MIXS['0000779'], name="ceil_cond", curie=MIXS.curie('0000779'),
+                   model_uri=MIXS.ceil_cond, domain=None, range=Optional[Union[str, "CeilCondEnum"]])
+
+slots.soil_type = Slot(uri=MIXS['0000332'], name="soil_type", curie=MIXS.curie('0000332'),
+                   model_uri=MIXS.soil_type, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
+
+slots.size_frac = Slot(uri=MIXS['0000017'], name="size_frac", curie=MIXS.curie('0000017'),
+                   model_uri=MIXS.size_frac, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[0-9]*\.?[0-9]+-[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.samp_size = Slot(uri=MIXS['0000001'], name="samp_size", curie=MIXS.curie('0000001'),
+                   model_uri=MIXS.samp_size, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.org_nitro = Slot(uri=MIXS['0000205'], name="org_nitro", curie=MIXS.curie('0000205'),
+                   model_uri=MIXS.org_nitro, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.ceil_area = Slot(uri=MIXS['0000148'], name="ceil_area", curie=MIXS.curie('0000148'),
+                   model_uri=MIXS.ceil_area, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.dew_point = Slot(uri=MIXS['0000129'], name="dew_point", curie=MIXS.curie('0000129'),
+                   model_uri=MIXS.dew_point, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.diss_iron = Slot(uri=MIXS['0000139'], name="diss_iron", curie=MIXS.curie('0000139'),
+                   model_uri=MIXS.diss_iron, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.door_size = Slot(uri=MIXS['0000158'], name="door_size", curie=MIXS.curie('0000158'),
+                   model_uri=MIXS.door_size, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.ferm_temp = Slot(uri=MIXS['0001191'], name="ferm_temp", curie=MIXS.curie('0001191'),
+                   model_uri=MIXS.ferm_temp, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.magnesium = Slot(uri=MIXS['0000431'], name="magnesium", curie=MIXS.curie('0000431'),
+                   model_uri=MIXS.magnesium, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.owc_tvdss = Slot(uri=MIXS['0000405'], name="owc_tvdss", curie=MIXS.curie('0000405'),
+                   model_uri=MIXS.owc_tvdss, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.phosphate = Slot(uri=MIXS['0000505'], name="phosphate", curie=MIXS.curie('0000505'),
+                   model_uri=MIXS.phosphate, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.potassium = Slot(uri=MIXS['0000430'], name="potassium", curie=MIXS.curie('0000430'),
+                   model_uri=MIXS.potassium, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.prod_rate = Slot(uri=MIXS['0000452'], name="prod_rate", curie=MIXS.curie('0000452'),
+                   model_uri=MIXS.prod_rate, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.surf_temp = Slot(uri=MIXS['0000125'], name="surf_temp", curie=MIXS.curie('0000125'),
+                   model_uri=MIXS.surf_temp, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.tot_nitro = Slot(uri=MIXS['0000102'], name="tot_nitro", curie=MIXS.curie('0000102'),
+                   model_uri=MIXS.tot_nitro, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.tot_phosp = Slot(uri=MIXS['0000117'], name="tot_phosp", curie=MIXS.curie('0000117'),
+                   model_uri=MIXS.tot_phosp, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.wall_area = Slot(uri=MIXS['0000198'], name="wall_area", curie=MIXS.curie('0000198'),
+                   model_uri=MIXS.wall_area, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.water_cut = Slot(uri=MIXS['0000454'], name="water_cut", curie=MIXS.curie('0000454'),
+                   model_uri=MIXS.water_cut, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.freq_cook = Slot(uri=MIXS['0000227'], name="freq_cook", curie=MIXS.curie('0000227'),
+                   model_uri=MIXS.freq_cook, domain=None, range=Optional[int])
+
+slots.max_occup = Slot(uri=MIXS['0000229'], name="max_occup", curie=MIXS.curie('0000229'),
+                   model_uri=MIXS.max_occup, domain=None, range=Optional[int])
+
+slots.menopause = Slot(uri=MIXS['0000968'], name="menopause", curie=MIXS.curie('0000968'),
+                   model_uri=MIXS.menopause, domain=None, range=Optional[str])
+
+slots.pregnancy = Slot(uri=MIXS['0000966'], name="pregnancy", curie=MIXS.curie('0000966'),
+                   model_uri=MIXS.pregnancy, domain=None, range=Optional[str])
+
+slots.avg_occup = Slot(uri=MIXS['0000775'], name="avg_occup", curie=MIXS.curie('0000775'),
+                   model_uri=MIXS.avg_occup, domain=None, range=Optional[float])
+
+slots.floor_age = Slot(uri=MIXS['0000164'], name="floor_age", curie=MIXS.curie('0000164'),
+                   model_uri=MIXS.floor_age, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.escalator = Slot(uri=MIXS['0000800'], name="escalator", curie=MIXS.curie('0000800'),
+                   model_uri=MIXS.escalator, domain=None, range=Optional[int])
+
+slots.tax_class = Slot(uri=MIXS['0000064'], name="tax_class", curie=MIXS.curie('0000064'),
+                   model_uri=MIXS.tax_class, domain=None, range=Optional[str])
+
+slots.host_diet = Slot(uri=MIXS['0000869'], name="host_diet", curie=MIXS.curie('0000869'),
+                   model_uri=MIXS.host_diet, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.ferm_time = Slot(uri=MIXS['0001192'], name="ferm_time", curie=MIXS.curie('0001192'),
+                   model_uri=MIXS.ferm_time, domain=None, range=Optional[str])
+
+slots.emulsions = Slot(uri=MIXS['0000660'], name="emulsions", curie=MIXS.curie('0000660'),
+                   model_uri=MIXS.emulsions, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.depos_env = Slot(uri=MIXS['0000992'], name="depos_env", curie=MIXS.curie('0000992'),
+                   model_uri=MIXS.depos_env, domain=None, range=Optional[str])
+
+slots.vis_media = Slot(uri=MIXS['0000840'], name="vis_media", curie=MIXS.curie('0000840'),
+                   model_uri=MIXS.vis_media, domain=None, range=Optional[str])
+
+slots.viscosity = Slot(uri=MIXS['0000126'], name="viscosity", curie=MIXS.curie('0000126'),
+                   model_uri=MIXS.viscosity, domain=None, range=Optional[str])
+
+slots.reservoir = Slot(uri=MIXS['0000303'], name="reservoir", curie=MIXS.curie('0000303'),
+                   model_uri=MIXS.reservoir, domain=None, range=Optional[str])
+
+slots.resins_pc = Slot(uri=MIXS['0000134'], name="resins_pc", curie=MIXS.curie('0000134'),
+                   model_uri=MIXS.resins_pc, domain=None, range=Optional[str])
+
+slots.feat_pred = Slot(uri=MIXS['0000061'], name="feat_pred", curie=MIXS.curie('0000061'),
+                   model_uri=MIXS.feat_pred, domain=None, range=Optional[str])
+
+slots.root_cond = Slot(uri=MIXS['0001061'], name="root_cond", curie=MIXS.curie('0001061'),
+                   model_uri=MIXS.root_cond, domain=None, range=Optional[str])
+
+slots.samp_name = Slot(uri=MIXS['0001107'], name="samp_name", curie=MIXS.curie('0001107'),
+                   model_uri=MIXS.samp_name, domain=None, range=Optional[str])
+
+slots.animal_am = Slot(uri=MIXS['0001243'], name="animal_am", curie=MIXS.curie('0001243'),
+                   model_uri=MIXS.animal_am, domain=None, range=Optional[str])
+
+slots.ethnicity = Slot(uri=MIXS['0000895'], name="ethnicity", curie=MIXS.curie('0000895'),
+                   model_uri=MIXS.ethnicity, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.adapters = Slot(uri=MIXS['0000048'], name="adapters", curie=MIXS.curie('0000048'),
+                   model_uri=MIXS.adapters, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[ACGTacgt]+;[ACGTacgt]+$'))
+
+slots.flooding = Slot(uri=MIXS['0000319'], name="flooding", curie=MIXS.curie('0000319'),
+                   model_uri=MIXS.flooding, domain=None, range=Optional[str])
+
+slots.door_mat = Slot(uri=MIXS['0000791'], name="door_mat", curie=MIXS.curie('0000791'),
+                   model_uri=MIXS.door_mat, domain=None, range=Optional[Union[str, "DoorMatEnum"]])
+
+slots.room_loc = Slot(uri=MIXS['0000823'], name="room_loc", curie=MIXS.curie('0000823'),
+                   model_uri=MIXS.room_loc, domain=None, range=Optional[Union[str, "RoomLocEnum"]])
+
+slots.quad_pos = Slot(uri=MIXS['0000820'], name="quad_pos", curie=MIXS.curie('0000820'),
+                   model_uri=MIXS.quad_pos, domain=None, range=Optional[Union[str, "QuadPosEnum"]])
+
+slots.door_loc = Slot(uri=MIXS['0000790'], name="door_loc", curie=MIXS.curie('0000790'),
+                   model_uri=MIXS.door_loc, domain=None, range=Optional[Union[str, "DoorLocEnum"]])
+
+slots.wall_loc = Slot(uri=MIXS['0000843'], name="wall_loc", curie=MIXS.curie('0000843'),
+                   model_uri=MIXS.wall_loc, domain=None, range=Optional[Union[str, "WallLocEnum"]])
+
+slots.drawings = Slot(uri=MIXS['0000798'], name="drawings", curie=MIXS.curie('0000798'),
+                   model_uri=MIXS.drawings, domain=None, range=Optional[Union[str, "DrawingsEnum"]])
+
+slots.specific = Slot(uri=MIXS['0000836'], name="specific", curie=MIXS.curie('0000836'),
+                   model_uri=MIXS.specific, domain=None, range=Optional[Union[str, "SpecificEnum"]])
+
+slots.ammonium = Slot(uri=MIXS['0000427'], name="ammonium", curie=MIXS.curie('0000427'),
+                   model_uri=MIXS.ammonium, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.avg_temp = Slot(uri=MIXS['0000142'], name="avg_temp", curie=MIXS.curie('0000142'),
@@ -72510,32 +73780,82 @@ slots.bac_resp = Slot(uri=MIXS['0000684'], name="bac_resp", curie=MIXS.curie('00
                    model_uri=MIXS.bac_resp, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.bacterial_density = Slot(uri=MIXS['0001194'], name="bacterial_density", curie=MIXS.curie('0001194'),
-                   model_uri=MIXS.bacterial_density, domain=None, range=Optional[str],
+slots.chloride = Slot(uri=MIXS['0000429'], name="chloride", curie=MIXS.curie('0000429'),
+                   model_uri=MIXS.chloride, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.barometric_press = Slot(uri=MIXS['0000096'], name="barometric_press", curie=MIXS.curie('0000096'),
-                   model_uri=MIXS.barometric_press, domain=None, range=Optional[str],
+slots.down_par = Slot(uri=MIXS['0000703'], name="down_par", curie=MIXS.curie('0000703'),
+                   model_uri=MIXS.down_par, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.exp_duct = Slot(uri=MIXS['0000144'], name="exp_duct", curie=MIXS.curie('0000144'),
+                   model_uri=MIXS.exp_duct, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.pressure = Slot(uri=MIXS['0000412'], name="pressure", curie=MIXS.curie('0000412'),
+                   model_uri=MIXS.pressure, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.silicate = Slot(uri=MIXS['0000184'], name="silicate", curie=MIXS.curie('0000184'),
+                   model_uri=MIXS.silicate, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.temp_out = Slot(uri=MIXS['0000197'], name="temp_out", curie=MIXS.curie('0000197'),
+                   model_uri=MIXS.temp_out, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.tot_iron = Slot(uri=MIXS['0000105'], name="tot_iron", curie=MIXS.curie('0000105'),
+                   model_uri=MIXS.tot_iron, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.exp_pipe = Slot(uri=MIXS['0000220'], name="exp_pipe", curie=MIXS.curie('0000220'),
+                   model_uri=MIXS.exp_pipe, domain=None, range=Optional[int])
+
+slots.lib_size = Slot(uri=MIXS['0000039'], name="lib_size", curie=MIXS.curie('0000039'),
+                   model_uri=MIXS.lib_size, domain=None, range=Optional[int])
+
+slots.menarche = Slot(uri=MIXS['0000965'], name="menarche", curie=MIXS.curie('0000965'),
+                   model_uri=MIXS.menarche, domain=None, range=Optional[str])
+
+slots.elevator = Slot(uri=MIXS['0000799'], name="elevator", curie=MIXS.curie('0000799'),
+                   model_uri=MIXS.elevator, domain=None, range=Optional[int])
+
+slots.ext_door = Slot(uri=MIXS['0000170'], name="ext_door", curie=MIXS.curie('0000170'),
+                   model_uri=MIXS.ext_door, domain=None, range=Optional[int])
+
+slots.pcr_cond = Slot(uri=MIXS['0000049'], name="pcr_cond", curie=MIXS.curie('0000049'),
+                   model_uri=MIXS.pcr_cond, domain=None, range=Optional[str])
+
+slots.room_vol = Slot(uri=MIXS['0000195'], name="room_vol", curie=MIXS.curie('0000195'),
+                   model_uri=MIXS.room_vol, domain=None, range=Optional[str])
+
+slots.room_dim = Slot(uri=MIXS['0000192'], name="room_dim", curie=MIXS.curie('0000192'),
+                   model_uri=MIXS.room_dim, domain=None, range=Optional[str])
+
+slots.hcr_temp = Slot(uri=MIXS['0000393'], name="hcr_temp", curie=MIXS.curie('0000393'),
+                   model_uri=MIXS.hcr_temp, domain=None, range=Optional[str])
+
+slots.adj_room = Slot(uri=MIXS['0000219'], name="adj_room", curie=MIXS.curie('0000219'),
+                   model_uri=MIXS.adj_room, domain=None, range=Optional[str])
+
+slots.seq_meth = Slot(uri=MIXS['0000050'], name="seq_meth", curie=MIXS.curie('0000050'),
+                   model_uri=MIXS.seq_meth, domain=None, range=Optional[str])
+
+slots.lat_lon = Slot(uri=MIXS['0000009'], name="lat_lon", curie=MIXS.curie('0000009'),
+                   model_uri=MIXS.lat_lon, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +[-+]?[0-9]*\.?[0-9]+$'))
+
+slots.tillage = Slot(uri=MIXS['0001081'], name="tillage", curie=MIXS.curie('0001081'),
+                   model_uri=MIXS.tillage, domain=None, range=Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]])
+
+slots.weekday = Slot(uri=MIXS['0000848'], name="weekday", curie=MIXS.curie('0000848'),
+                   model_uri=MIXS.weekday, domain=None, range=Optional[Union[str, "WeekdayEnum"]])
+
+slots.ferm_ph = Slot(uri=MIXS['0001189'], name="ferm_ph", curie=MIXS.curie('0001189'),
+                   model_uri=MIXS.ferm_ph, domain=None, range=Optional[float])
 
 slots.benzene = Slot(uri=MIXS['0000153'], name="benzene", curie=MIXS.curie('0000153'),
                    model_uri=MIXS.benzene, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.biochem_oxygen_dem = Slot(uri=MIXS['0000653'], name="biochem_oxygen_dem", curie=MIXS.curie('0000653'),
-                   model_uri=MIXS.biochem_oxygen_dem, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.bishomohopanol = Slot(uri=MIXS['0000175'], name="bishomohopanol", curie=MIXS.curie('0000175'),
-                   model_uri=MIXS.bishomohopanol, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.blood_press_diast = Slot(uri=MIXS['0000258'], name="blood_press_diast", curie=MIXS.curie('0000258'),
-                   model_uri=MIXS.blood_press_diast, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.blood_press_syst = Slot(uri=MIXS['0000259'], name="blood_press_syst", curie=MIXS.curie('0000259'),
-                   model_uri=MIXS.blood_press_syst, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.bromide = Slot(uri=MIXS['0000176'], name="bromide", curie=MIXS.curie('0000176'),
@@ -72546,1046 +73866,93 @@ slots.calcium = Slot(uri=MIXS['0000432'], name="calcium", curie=MIXS.curie('0000
                    model_uri=MIXS.calcium, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.carb_dioxide = Slot(uri=MIXS['0000097'], name="carb_dioxide", curie=MIXS.curie('0000097'),
-                   model_uri=MIXS.carb_dioxide, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.carb_monoxide = Slot(uri=MIXS['0000098'], name="carb_monoxide", curie=MIXS.curie('0000098'),
-                   model_uri=MIXS.carb_monoxide, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.ceil_area = Slot(uri=MIXS['0000148'], name="ceil_area", curie=MIXS.curie('0000148'),
-                   model_uri=MIXS.ceil_area, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.ceil_thermal_mass = Slot(uri=MIXS['0000143'], name="ceil_thermal_mass", curie=MIXS.curie('0000143'),
-                   model_uri=MIXS.ceil_thermal_mass, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.chem_oxygen_dem = Slot(uri=MIXS['0000656'], name="chem_oxygen_dem", curie=MIXS.curie('0000656'),
-                   model_uri=MIXS.chem_oxygen_dem, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.chloride = Slot(uri=MIXS['0000429'], name="chloride", curie=MIXS.curie('0000429'),
-                   model_uri=MIXS.chloride, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.chlorophyll = Slot(uri=MIXS['0000177'], name="chlorophyll", curie=MIXS.curie('0000177'),
-                   model_uri=MIXS.chlorophyll, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.dew_point = Slot(uri=MIXS['0000129'], name="dew_point", curie=MIXS.curie('0000129'),
-                   model_uri=MIXS.dew_point, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.diss_carb_dioxide = Slot(uri=MIXS['0000436'], name="diss_carb_dioxide", curie=MIXS.curie('0000436'),
-                   model_uri=MIXS.diss_carb_dioxide, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.diss_hydrogen = Slot(uri=MIXS['0000179'], name="diss_hydrogen", curie=MIXS.curie('0000179'),
-                   model_uri=MIXS.diss_hydrogen, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.diss_inorg_nitro = Slot(uri=MIXS['0000698'], name="diss_inorg_nitro", curie=MIXS.curie('0000698'),
-                   model_uri=MIXS.diss_inorg_nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.diss_iron = Slot(uri=MIXS['0000139'], name="diss_iron", curie=MIXS.curie('0000139'),
-                   model_uri=MIXS.diss_iron, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.diss_org_carb = Slot(uri=MIXS['0000433'], name="diss_org_carb", curie=MIXS.curie('0000433'),
-                   model_uri=MIXS.diss_org_carb, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.diss_oxygen = Slot(uri=MIXS['0000119'], name="diss_oxygen", curie=MIXS.curie('0000119'),
-                   model_uri=MIXS.diss_oxygen, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.diss_oxygen_fluid = Slot(uri=MIXS['0000438'], name="diss_oxygen_fluid", curie=MIXS.curie('0000438'),
-                   model_uri=MIXS.diss_oxygen_fluid, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.door_size = Slot(uri=MIXS['0000158'], name="door_size", curie=MIXS.curie('0000158'),
-                   model_uri=MIXS.door_size, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.down_par = Slot(uri=MIXS['0000703'], name="down_par", curie=MIXS.curie('0000703'),
-                   model_uri=MIXS.down_par, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.efficiency_percent = Slot(uri=MIXS['0000657'], name="efficiency_percent", curie=MIXS.curie('0000657'),
-                   model_uri=MIXS.efficiency_percent, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.ethylbenzene = Slot(uri=MIXS['0000155'], name="ethylbenzene", curie=MIXS.curie('0000155'),
-                   model_uri=MIXS.ethylbenzene, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.exp_duct = Slot(uri=MIXS['0000144'], name="exp_duct", curie=MIXS.curie('0000144'),
-                   model_uri=MIXS.exp_duct, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.ferm_rel_humidity = Slot(uri=MIXS['0001190'], name="ferm_rel_humidity", curie=MIXS.curie('0001190'),
-                   model_uri=MIXS.ferm_rel_humidity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.ferm_temp = Slot(uri=MIXS['0001191'], name="ferm_temp", curie=MIXS.curie('0001191'),
-                   model_uri=MIXS.ferm_temp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.floor_area = Slot(uri=MIXS['0000165'], name="floor_area", curie=MIXS.curie('0000165'),
-                   model_uri=MIXS.floor_area, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.floor_thermal_mass = Slot(uri=MIXS['0000166'], name="floor_thermal_mass", curie=MIXS.curie('0000166'),
-                   model_uri=MIXS.floor_thermal_mass, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.fluor = Slot(uri=MIXS['0000704'], name="fluor", curie=MIXS.curie('0000704'),
-                   model_uri=MIXS.fluor, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.glucosidase_act = Slot(uri=MIXS['0000137'], name="glucosidase_act", curie=MIXS.curie('0000137'),
-                   model_uri=MIXS.glucosidase_act, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.hcr_fw_salinity = Slot(uri=MIXS['0000406'], name="hcr_fw_salinity", curie=MIXS.curie('0000406'),
-                   model_uri=MIXS.hcr_fw_salinity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.host_body_mass_index = Slot(uri=MIXS['0000317'], name="host_body_mass_index", curie=MIXS.curie('0000317'),
-                   model_uri=MIXS.host_body_mass_index, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.host_body_temp = Slot(uri=MIXS['0000274'], name="host_body_temp", curie=MIXS.curie('0000274'),
-                   model_uri=MIXS.host_body_temp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.host_of_host_totmass = Slot(uri=MIXS['0001334'], name="host_of_host_totmass", curie=MIXS.curie('0001334'),
-                   model_uri=MIXS.host_of_host_totmass, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.host_pulse = Slot(uri=MIXS['0000333'], name="host_pulse", curie=MIXS.curie('0000333'),
-                   model_uri=MIXS.host_pulse, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.host_wet_mass = Slot(uri=MIXS['0000567'], name="host_wet_mass", curie=MIXS.curie('0000567'),
-                   model_uri=MIXS.host_wet_mass, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.indust_eff_percent = Slot(uri=MIXS['0000662'], name="indust_eff_percent", curie=MIXS.curie('0000662'),
-                   model_uri=MIXS.indust_eff_percent, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.inside_lux = Slot(uri=MIXS['0000168'], name="inside_lux", curie=MIXS.curie('0000168'),
-                   model_uri=MIXS.inside_lux, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.iwf = Slot(uri=MIXS['0000455'], name="iwf", curie=MIXS.curie('0000455'),
-                   model_uri=MIXS.iwf, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.light_intensity = Slot(uri=MIXS['0000706'], name="light_intensity", curie=MIXS.curie('0000706'),
-                   model_uri=MIXS.light_intensity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.magnesium = Slot(uri=MIXS['0000431'], name="magnesium", curie=MIXS.curie('0000431'),
-                   model_uri=MIXS.magnesium, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.mean_frict_vel = Slot(uri=MIXS['0000498'], name="mean_frict_vel", curie=MIXS.curie('0000498'),
-                   model_uri=MIXS.mean_frict_vel, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.mean_peak_frict_vel = Slot(uri=MIXS['0000502'], name="mean_peak_frict_vel", curie=MIXS.curie('0000502'),
-                   model_uri=MIXS.mean_peak_frict_vel, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
 slots.methane = Slot(uri=MIXS['0000101'], name="methane", curie=MIXS.curie('0000101'),
                    model_uri=MIXS.methane, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.microbial_biomass = Slot(uri=MIXS['0000650'], name="microbial_biomass", curie=MIXS.curie('0000650'),
-                   model_uri=MIXS.microbial_biomass, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.nitro = Slot(uri=MIXS['0000504'], name="nitro", curie=MIXS.curie('0000504'),
-                   model_uri=MIXS.nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.num_samp_collect = Slot(uri=MIXS['0001224'], name="num_samp_collect", curie=MIXS.curie('0001224'),
-                   model_uri=MIXS.num_samp_collect, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.owc_tvdss = Slot(uri=MIXS['0000405'], name="owc_tvdss", curie=MIXS.curie('0000405'),
-                   model_uri=MIXS.owc_tvdss, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.oxygen = Slot(uri=MIXS['0000104'], name="oxygen", curie=MIXS.curie('0000104'),
-                   model_uri=MIXS.oxygen, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.part_org_nitro = Slot(uri=MIXS['0000719'], name="part_org_nitro", curie=MIXS.curie('0000719'),
-                   model_uri=MIXS.part_org_nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.petroleum_hydrocarb = Slot(uri=MIXS['0000516'], name="petroleum_hydrocarb", curie=MIXS.curie('0000516'),
-                   model_uri=MIXS.petroleum_hydrocarb, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.phosphate = Slot(uri=MIXS['0000505'], name="phosphate", curie=MIXS.curie('0000505'),
-                   model_uri=MIXS.phosphate, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.photon_flux = Slot(uri=MIXS['0000725'], name="photon_flux", curie=MIXS.curie('0000725'),
-                   model_uri=MIXS.photon_flux, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.photosynt_activ = Slot(uri=MIXS['0001296'], name="photosynt_activ", curie=MIXS.curie('0001296'),
-                   model_uri=MIXS.photosynt_activ, domain=None, range=Optional[Union[str, List[str]]],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.potassium = Slot(uri=MIXS['0000430'], name="potassium", curie=MIXS.curie('0000430'),
-                   model_uri=MIXS.potassium, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.pour_point = Slot(uri=MIXS['0000127'], name="pour_point", curie=MIXS.curie('0000127'),
-                   model_uri=MIXS.pour_point, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.pressure = Slot(uri=MIXS['0000412'], name="pressure", curie=MIXS.curie('0000412'),
-                   model_uri=MIXS.pressure, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.primary_prod = Slot(uri=MIXS['0000728'], name="primary_prod", curie=MIXS.curie('0000728'),
-                   model_uri=MIXS.primary_prod, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.prod_rate = Slot(uri=MIXS['0000452'], name="prod_rate", curie=MIXS.curie('0000452'),
-                   model_uri=MIXS.prod_rate, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.redox_potential = Slot(uri=MIXS['0000182'], name="redox_potential", curie=MIXS.curie('0000182'),
-                   model_uri=MIXS.redox_potential, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.rel_air_humidity = Slot(uri=MIXS['0000121'], name="rel_air_humidity", curie=MIXS.curie('0000121'),
-                   model_uri=MIXS.rel_air_humidity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.rel_humidity_out = Slot(uri=MIXS['0000188'], name="rel_humidity_out", curie=MIXS.curie('0000188'),
-                   model_uri=MIXS.rel_humidity_out, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.room_air_exch_rate = Slot(uri=MIXS['0000169'], name="room_air_exch_rate", curie=MIXS.curie('0000169'),
-                   model_uri=MIXS.room_air_exch_rate, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.samp_rep_biol = Slot(uri=MIXS['0001226'], name="samp_rep_biol", curie=MIXS.curie('0001226'),
-                   model_uri=MIXS.samp_rep_biol, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.samp_rep_tech = Slot(uri=MIXS['0001227'], name="samp_rep_tech", curie=MIXS.curie('0001227'),
-                   model_uri=MIXS.samp_rep_tech, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.samp_transport_dur = Slot(uri=MIXS['0001231'], name="samp_transport_dur", curie=MIXS.curie('0001231'),
-                   model_uri=MIXS.samp_transport_dur, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.season_humidity = Slot(uri=MIXS['0001148'], name="season_humidity", curie=MIXS.curie('0001148'),
-                   model_uri=MIXS.season_humidity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.silicate = Slot(uri=MIXS['0000184'], name="silicate", curie=MIXS.curie('0000184'),
-                   model_uri=MIXS.silicate, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.slope_aspect = Slot(uri=MIXS['0000647'], name="slope_aspect", curie=MIXS.curie('0000647'),
-                   model_uri=MIXS.slope_aspect, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.slope_gradient = Slot(uri=MIXS['0000646'], name="slope_gradient", curie=MIXS.curie('0000646'),
-                   model_uri=MIXS.slope_gradient, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.sludge_retent_time = Slot(uri=MIXS['0000669'], name="sludge_retent_time", curie=MIXS.curie('0000669'),
-                   model_uri=MIXS.sludge_retent_time, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.sodium = Slot(uri=MIXS['0000428'], name="sodium", curie=MIXS.curie('0000428'),
-                   model_uri=MIXS.sodium, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.soluble_react_phosp = Slot(uri=MIXS['0000738'], name="soluble_react_phosp", curie=MIXS.curie('0000738'),
-                   model_uri=MIXS.soluble_react_phosp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.specific_humidity = Slot(uri=MIXS['0000214'], name="specific_humidity", curie=MIXS.curie('0000214'),
-                   model_uri=MIXS.specific_humidity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.study_inc_temp = Slot(uri=MIXS['0001238'], name="study_inc_temp", curie=MIXS.curie('0001238'),
-                   model_uri=MIXS.study_inc_temp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.study_timecourse = Slot(uri=MIXS['0001239'], name="study_timecourse", curie=MIXS.curie('0001239'),
-                   model_uri=MIXS.study_timecourse, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.sulfate = Slot(uri=MIXS['0000423'], name="sulfate", curie=MIXS.curie('0000423'),
                    model_uri=MIXS.sulfate, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.sulfate_fw = Slot(uri=MIXS['0000407'], name="sulfate_fw", curie=MIXS.curie('0000407'),
-                   model_uri=MIXS.sulfate_fw, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
 slots.sulfide = Slot(uri=MIXS['0000424'], name="sulfide", curie=MIXS.curie('0000424'),
                    model_uri=MIXS.sulfide, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.surf_humidity = Slot(uri=MIXS['0000123'], name="surf_humidity", curie=MIXS.curie('0000123'),
-                   model_uri=MIXS.surf_humidity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.surf_moisture = Slot(uri=MIXS['0000128'], name="surf_moisture", curie=MIXS.curie('0000128'),
-                   model_uri=MIXS.surf_moisture, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.surf_temp = Slot(uri=MIXS['0000125'], name="surf_temp", curie=MIXS.curie('0000125'),
-                   model_uri=MIXS.surf_temp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.suspend_part_matter = Slot(uri=MIXS['0000741'], name="suspend_part_matter", curie=MIXS.curie('0000741'),
-                   model_uri=MIXS.suspend_part_matter, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.tan = Slot(uri=MIXS['0000120'], name="tan", curie=MIXS.curie('0000120'),
-                   model_uri=MIXS.tan, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.temp_out = Slot(uri=MIXS['0000197'], name="temp_out", curie=MIXS.curie('0000197'),
-                   model_uri=MIXS.temp_out, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.toluene = Slot(uri=MIXS['0000154'], name="toluene", curie=MIXS.curie('0000154'),
                    model_uri=MIXS.toluene, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.tot_depth_water_col = Slot(uri=MIXS['0000634'], name="tot_depth_water_col", curie=MIXS.curie('0000634'),
-                   model_uri=MIXS.tot_depth_water_col, domain=None, range=Optional[str],
+slots.biomass = Slot(uri=MIXS['0000174'], name="biomass", curie=MIXS.curie('0000174'),
+                   model_uri=MIXS.biomass, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.sieving = Slot(uri=MIXS['0000322'], name="sieving", curie=MIXS.curie('0000322'),
+                   model_uri=MIXS.sieving, domain=None, range=Optional[str])
+
+slots.gravity = Slot(uri=MIXS['0000559'], name="gravity", curie=MIXS.curie('0000559'),
+                   model_uri=MIXS.gravity, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.samp_md = Slot(uri=MIXS['0000413'], name="samp_md", curie=MIXS.curie('0000413'),
+                   model_uri=MIXS.samp_md, domain=None, range=Optional[str])
+
+slots.biocide = Slot(uri=MIXS['0001011'], name="biocide", curie=MIXS.curie('0001011'),
+                   model_uri=MIXS.biocide, domain=None, range=Optional[str])
+
+slots.ph_meth = Slot(uri=MIXS['0001106'], name="ph_meth", curie=MIXS.curie('0001106'),
+                   model_uri=MIXS.ph_meth, domain=None, range=Optional[str])
+
+slots.address = Slot(uri=MIXS['0000218'], name="address", curie=MIXS.curie('0000218'),
+                   model_uri=MIXS.address, domain=None, range=Optional[str])
+
+slots.al_sat = Slot(uri=MIXS['0000607'], name="al_sat", curie=MIXS.curie('0000607'),
+                   model_uri=MIXS.al_sat, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.tot_diss_nitro = Slot(uri=MIXS['0000744'], name="tot_diss_nitro", curie=MIXS.curie('0000744'),
-                   model_uri=MIXS.tot_diss_nitro, domain=None, range=Optional[str],
+slots.oxygen = Slot(uri=MIXS['0000104'], name="oxygen", curie=MIXS.curie('0000104'),
+                   model_uri=MIXS.oxygen, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.tot_inorg_nitro = Slot(uri=MIXS['0000745'], name="tot_inorg_nitro", curie=MIXS.curie('0000745'),
-                   model_uri=MIXS.tot_inorg_nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.tot_iron = Slot(uri=MIXS['0000105'], name="tot_iron", curie=MIXS.curie('0000105'),
-                   model_uri=MIXS.tot_iron, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.tot_nitro = Slot(uri=MIXS['0000102'], name="tot_nitro", curie=MIXS.curie('0000102'),
-                   model_uri=MIXS.tot_nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.tot_part_carb = Slot(uri=MIXS['0000747'], name="tot_part_carb", curie=MIXS.curie('0000747'),
-                   model_uri=MIXS.tot_part_carb, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.tot_phosp = Slot(uri=MIXS['0000117'], name="tot_phosp", curie=MIXS.curie('0000117'),
-                   model_uri=MIXS.tot_phosp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.tot_sulfur = Slot(uri=MIXS['0000419'], name="tot_sulfur", curie=MIXS.curie('0000419'),
-                   model_uri=MIXS.tot_sulfur, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.vfa = Slot(uri=MIXS['0000152'], name="vfa", curie=MIXS.curie('0000152'),
-                   model_uri=MIXS.vfa, domain=None, range=Optional[str],
+slots.sodium = Slot(uri=MIXS['0000428'], name="sodium", curie=MIXS.curie('0000428'),
+                   model_uri=MIXS.sodium, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.vfa_fw = Slot(uri=MIXS['0000408'], name="vfa_fw", curie=MIXS.curie('0000408'),
                    model_uri=MIXS.vfa_fw, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.wall_area = Slot(uri=MIXS['0000198'], name="wall_area", curie=MIXS.curie('0000198'),
-                   model_uri=MIXS.wall_area, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.wall_thermal_mass = Slot(uri=MIXS['0000222'], name="wall_thermal_mass", curie=MIXS.curie('0000222'),
-                   model_uri=MIXS.wall_thermal_mass, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.water_current = Slot(uri=MIXS['0000203'], name="water_current", curie=MIXS.curie('0000203'),
-                   model_uri=MIXS.water_current, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.water_cut = Slot(uri=MIXS['0000454'], name="water_cut", curie=MIXS.curie('0000454'),
-                   model_uri=MIXS.water_cut, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.water_feat_size = Slot(uri=MIXS['0000223'], name="water_feat_size", curie=MIXS.curie('0000223'),
-                   model_uri=MIXS.water_feat_size, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.water_prod_rate = Slot(uri=MIXS['0000453'], name="water_prod_rate", curie=MIXS.curie('0000453'),
-                   model_uri=MIXS.water_prod_rate, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
 slots.xylene = Slot(uri=MIXS['0000156'], name="xylene", curie=MIXS.curie('0000156'),
                    model_uri=MIXS.xylene, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.exp_pipe = Slot(uri=MIXS['0000220'], name="exp_pipe", curie=MIXS.curie('0000220'),
-                   model_uri=MIXS.exp_pipe, domain=None, range=Optional[int])
-
-slots.freq_cook = Slot(uri=MIXS['0000227'], name="freq_cook", curie=MIXS.curie('0000227'),
-                   model_uri=MIXS.freq_cook, domain=None, range=Optional[int])
-
-slots.max_occup = Slot(uri=MIXS['0000229'], name="max_occup", curie=MIXS.curie('0000229'),
-                   model_uri=MIXS.max_occup, domain=None, range=Optional[int])
-
-slots.number_pets = Slot(uri=MIXS['0000231'], name="number_pets", curie=MIXS.curie('0000231'),
-                   model_uri=MIXS.number_pets, domain=None, range=Optional[int])
-
-slots.number_plants = Slot(uri=MIXS['0000230'], name="number_plants", curie=MIXS.curie('0000230'),
-                   model_uri=MIXS.number_plants, domain=None, range=Optional[int])
-
-slots.number_resident = Slot(uri=MIXS['0000232'], name="number_resident", curie=MIXS.curie('0000232'),
-                   model_uri=MIXS.number_resident, domain=None, range=Optional[int])
-
-slots.occup_samp = Slot(uri=MIXS['0000772'], name="occup_samp", curie=MIXS.curie('0000772'),
-                   model_uri=MIXS.occup_samp, domain=None, range=Optional[int])
-
-slots.room_occup = Slot(uri=MIXS['0000236'], name="room_occup", curie=MIXS.curie('0000236'),
-                   model_uri=MIXS.room_occup, domain=None, range=Optional[int])
-
-slots.mid = Slot(uri=MIXS['0000047'], name="mid", curie=MIXS.curie('0000047'),
-                   model_uri=MIXS.mid, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[ACGTacgt]+$'))
-
-slots.host_spec_range = Slot(uri=MIXS['0000030'], name="host_spec_range", curie=MIXS.curie('0000030'),
-                   model_uri=MIXS.host_spec_range, domain=None, range=Optional[Union[int, List[int]]])
-
-slots.host_of_host_taxid = Slot(uri=MIXS['0001306'], name="host_of_host_taxid", curie=MIXS.curie('0001306'),
-                   model_uri=MIXS.host_of_host_taxid, domain=None, range=Optional[int])
-
-slots.seq_quality_check = Slot(uri=MIXS['0000051'], name="seq_quality_check", curie=MIXS.curie('0000051'),
-                   model_uri=MIXS.seq_quality_check, domain=None, range=Optional[Union[str, "SeqQualityCheckEnum"]])
-
-slots.estimated_size = Slot(uri=MIXS['0000024'], name="estimated_size", curie=MIXS.curie('0000024'),
-                   model_uri=MIXS.estimated_size, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[0-9]+ +bp$'))
-
-slots.lib_size = Slot(uri=MIXS['0000039'], name="lib_size", curie=MIXS.curie('0000039'),
-                   model_uri=MIXS.lib_size, domain=None, range=Optional[int])
-
-slots.extrachrom_elements = Slot(uri=MIXS['0000023'], name="extrachrom_elements", curie=MIXS.curie('0000023'),
-                   model_uri=MIXS.extrachrom_elements, domain=None, range=Optional[int])
-
-slots.lib_reads_seqd = Slot(uri=MIXS['0000040'], name="lib_reads_seqd", curie=MIXS.curie('0000040'),
-                   model_uri=MIXS.lib_reads_seqd, domain=None, range=Optional[int])
 
 slots.ploidy = Slot(uri=MIXS['0000021'], name="ploidy", curie=MIXS.curie('0000021'),
                    model_uri=MIXS.ploidy, domain=None, range=Optional[str],
                    pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
 
-slots.plant_struc = Slot(uri=MIXS['0001060'], name="plant_struc", curie=MIXS.curie('0001060'),
-                   model_uri=MIXS.plant_struc, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
-
-slots.twin_sibling = Slot(uri=MIXS['0000326'], name="twin_sibling", curie=MIXS.curie('0000326'),
-                   model_uri=MIXS.twin_sibling, domain=None, range=Optional[Union[bool, Bool]])
-
 slots.smoker = Slot(uri=MIXS['0000262'], name="smoker", curie=MIXS.curie('0000262'),
                    model_uri=MIXS.smoker, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.compl_appr = Slot(uri=MIXS['0000071'], name="compl_appr", curie=MIXS.curie('0000071'),
-                   model_uri=MIXS.compl_appr, domain=None, range=Optional[Union[str, "ComplApprEnum"]])
-
-slots.env_broad_scale = Slot(uri=MIXS['0000012'], name="env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=MIXS.env_broad_scale, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
-
-slots.env_medium = Slot(uri=MIXS['0000014'], name="env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=MIXS.env_medium, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
-
-slots.samp_time_out = Slot(uri=MIXS['0000196'], name="samp_time_out", curie=MIXS.curie('0000196'),
-                   model_uri=MIXS.samp_time_out, domain=None, range=Optional[float])
-
-slots.date_last_rain = Slot(uri=MIXS['0000786'], name="date_last_rain", curie=MIXS.curie('0000786'),
-                   model_uri=MIXS.date_last_rain, domain=None, range=Optional[str])
 
 slots.douche = Slot(uri=MIXS['0000967'], name="douche", curie=MIXS.curie('0000967'),
                    model_uri=MIXS.douche, domain=None, range=Optional[str])
 
-slots.hrt = Slot(uri=MIXS['0000969'], name="hrt", curie=MIXS.curie('0000969'),
-                   model_uri=MIXS.hrt, domain=None, range=Optional[str])
-
-slots.iw_bt_date_well = Slot(uri=MIXS['0001010'], name="iw_bt_date_well", curie=MIXS.curie('0001010'),
-                   model_uri=MIXS.iw_bt_date_well, domain=None, range=Optional[str])
-
-slots.last_clean = Slot(uri=MIXS['0000814'], name="last_clean", curie=MIXS.curie('0000814'),
-                   model_uri=MIXS.last_clean, domain=None, range=Optional[str])
-
-slots.menarche = Slot(uri=MIXS['0000965'], name="menarche", curie=MIXS.curie('0000965'),
-                   model_uri=MIXS.menarche, domain=None, range=Optional[str])
-
-slots.menopause = Slot(uri=MIXS['0000968'], name="menopause", curie=MIXS.curie('0000968'),
-                   model_uri=MIXS.menopause, domain=None, range=Optional[str])
-
-slots.pregnancy = Slot(uri=MIXS['0000966'], name="pregnancy", curie=MIXS.curie('0000966'),
-                   model_uri=MIXS.pregnancy, domain=None, range=Optional[str])
-
-slots.prod_start_date = Slot(uri=MIXS['0001008'], name="prod_start_date", curie=MIXS.curie('0001008'),
-                   model_uri=MIXS.prod_start_date, domain=None, range=Optional[str])
-
-slots.medic_hist_perform = Slot(uri=MIXS['0000897'], name="medic_hist_perform", curie=MIXS.curie('0000897'),
-                   model_uri=MIXS.medic_hist_perform, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.sym_life_cycle_type = Slot(uri=MIXS['0001300'], name="sym_life_cycle_type", curie=MIXS.curie('0001300'),
-                   model_uri=MIXS.sym_life_cycle_type, domain=None, range=Optional[Union[str, "SymLifeCycleTypeEnum"]])
-
-slots.host_of_host_env_loc = Slot(uri=MIXS['0001325'], name="host_of_host_env_loc", curie=MIXS.curie('0001325'),
-                   model_uri=MIXS.host_of_host_env_loc, domain=None, range=Optional[Union[str, List[str]]],
-                   pattern=re.compile(r'^\S+.* \[\S+:\S+]$'))
-
-slots.cool_syst_id = Slot(uri=MIXS['0000785'], name="cool_syst_id", curie=MIXS.curie('0000785'),
-                   model_uri=MIXS.cool_syst_id, domain=None, range=Optional[int])
-
-slots.heat_system_id = Slot(uri=MIXS['0000833'], name="heat_system_id", curie=MIXS.curie('0000833'),
-                   model_uri=MIXS.heat_system_id, domain=None, range=Optional[int])
-
-slots.avg_occup = Slot(uri=MIXS['0000775'], name="avg_occup", curie=MIXS.curie('0000775'),
-                   model_uri=MIXS.avg_occup, domain=None, range=Optional[float])
-
-slots.animal_am_freq = Slot(uri=MIXS['0001245'], name="animal_am_freq", curie=MIXS.curie('0001245'),
-                   model_uri=MIXS.animal_am_freq, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.association_duration = Slot(uri=MIXS['0001299'], name="association_duration", curie=MIXS.curie('0001299'),
-                   model_uri=MIXS.association_duration, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.built_struc_age = Slot(uri=MIXS['0000145'], name="built_struc_age", curie=MIXS.curie('0000145'),
-                   model_uri=MIXS.built_struc_age, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.floor_age = Slot(uri=MIXS['0000164'], name="floor_age", curie=MIXS.curie('0000164'),
-                   model_uri=MIXS.floor_age, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.food_source_age = Slot(uri=MIXS['0001251'], name="food_source_age", curie=MIXS.curie('0001251'),
-                   model_uri=MIXS.food_source_age, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.height_carper_fiber = Slot(uri=MIXS['0000167'], name="height_carper_fiber", curie=MIXS.curie('0000167'),
-                   model_uri=MIXS.height_carper_fiber, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.wall_height = Slot(uri=MIXS['0000221'], name="wall_height", curie=MIXS.curie('0000221'),
-                   model_uri=MIXS.wall_height, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
-
-slots.contam_score = Slot(uri=MIXS['0000072'], name="contam_score", curie=MIXS.curie('0000072'),
-                   model_uri=MIXS.contam_score, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ %$'))
-
-slots.number_contig = Slot(uri=MIXS['0000060'], name="number_contig", curie=MIXS.curie('0000060'),
-                   model_uri=MIXS.number_contig, domain=None, range=Optional[int])
-
-slots.animal_group_size = Slot(uri=MIXS['0001129'], name="animal_group_size", curie=MIXS.curie('0001129'),
-                   model_uri=MIXS.animal_group_size, domain=None, range=Optional[int])
-
-slots.bathroom_count = Slot(uri=MIXS['0000776'], name="bathroom_count", curie=MIXS.curie('0000776'),
-                   model_uri=MIXS.bathroom_count, domain=None, range=Optional[int])
-
-slots.bedroom_count = Slot(uri=MIXS['0000777'], name="bedroom_count", curie=MIXS.curie('0000777'),
-                   model_uri=MIXS.bedroom_count, domain=None, range=Optional[int])
-
-slots.elevator = Slot(uri=MIXS['0000799'], name="elevator", curie=MIXS.curie('0000799'),
-                   model_uri=MIXS.elevator, domain=None, range=Optional[int])
-
-slots.escalator = Slot(uri=MIXS['0000800'], name="escalator", curie=MIXS.curie('0000800'),
-                   model_uri=MIXS.escalator, domain=None, range=Optional[int])
-
-slots.ext_door = Slot(uri=MIXS['0000170'], name="ext_door", curie=MIXS.curie('0000170'),
-                   model_uri=MIXS.ext_door, domain=None, range=Optional[int])
-
-slots.floor_count = Slot(uri=MIXS['0000225'], name="floor_count", curie=MIXS.curie('0000225'),
-                   model_uri=MIXS.floor_count, domain=None, range=Optional[int])
-
-slots.hall_count = Slot(uri=MIXS['0000228'], name="hall_count", curie=MIXS.curie('0000228'),
-                   model_uri=MIXS.hall_count, domain=None, range=Optional[int])
-
-slots.room_count = Slot(uri=MIXS['0000234'], name="room_count", curie=MIXS.curie('0000234'),
-                   model_uri=MIXS.room_count, domain=None, range=Optional[int])
-
-slots.room_moist_dam_hist = Slot(uri=MIXS['0000235'], name="room_moist_dam_hist", curie=MIXS.curie('0000235'),
-                   model_uri=MIXS.room_moist_dam_hist, domain=None, range=Optional[int])
-
-slots.room_window_count = Slot(uri=MIXS['0000237'], name="room_window_count", curie=MIXS.curie('0000237'),
-                   model_uri=MIXS.room_window_count, domain=None, range=Optional[int])
-
-slots.window_open_freq = Slot(uri=MIXS['0000246'], name="window_open_freq", curie=MIXS.curie('0000246'),
-                   model_uri=MIXS.window_open_freq, domain=None, range=Optional[int])
-
-slots.trnas = Slot(uri=MIXS['0000067'], name="trnas", curie=MIXS.curie('0000067'),
-                   model_uri=MIXS.trnas, domain=None, range=Optional[int])
-
-slots.agrochem_addition = Slot(uri=MIXS['0000639'], name="agrochem_addition", curie=MIXS.curie('0000639'),
-                   model_uri=MIXS.agrochem_addition, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.antibiotic_regm = Slot(uri=MIXS['0000553'], name="antibiotic_regm", curie=MIXS.curie('0000553'),
-                   model_uri=MIXS.antibiotic_regm, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.atmospheric_data = Slot(uri=MIXS['0001097'], name="atmospheric_data", curie=MIXS.curie('0001097'),
-                   model_uri=MIXS.atmospheric_data, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.biomass = Slot(uri=MIXS['0000174'], name="biomass", curie=MIXS.curie('0000174'),
-                   model_uri=MIXS.biomass, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.root_med_carbon = Slot(uri=MIXS['0000577'], name="root_med_carbon", curie=MIXS.curie('0000577'),
-                   model_uri=MIXS.root_med_carbon, domain=None, range=Optional[str])
-
-slots.tax_class = Slot(uri=MIXS['0000064'], name="tax_class", curie=MIXS.curie('0000064'),
-                   model_uri=MIXS.tax_class, domain=None, range=Optional[str])
-
-slots.amniotic_fluid_color = Slot(uri=MIXS['0000276'], name="amniotic_fluid_color", curie=MIXS.curie('0000276'),
-                   model_uri=MIXS.amniotic_fluid_color, domain=None, range=Optional[str])
-
-slots.biocide_used = Slot(uri=MIXS['0001258'], name="biocide_used", curie=MIXS.curie('0001258'),
-                   model_uri=MIXS.biocide_used, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.host_of_host_name = Slot(uri=MIXS['0001324'], name="host_of_host_name", curie=MIXS.curie('0001324'),
-                   model_uri=MIXS.host_of_host_name, domain=None, range=Optional[str])
-
-slots.host_number = Slot(uri=MIXS['0001305'], name="host_number", curie=MIXS.curie('0001305'),
-                   model_uri=MIXS.host_number, domain=None, range=Optional[str])
-
-slots.travel_out_six_month = Slot(uri=MIXS['0000268'], name="travel_out_six_month", curie=MIXS.curie('0000268'),
-                   model_uri=MIXS.travel_out_six_month, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.geo_loc_name = Slot(uri=MIXS['0000010'], name="geo_loc_name", curie=MIXS.curie('0000010'),
-                   model_uri=MIXS.geo_loc_name, domain=None, range=Optional[str])
-
-slots.crop_rotation = Slot(uri=MIXS['0000318'], name="crop_rotation", curie=MIXS.curie('0000318'),
-                   model_uri=MIXS.crop_rotation, domain=None, range=Optional[str])
-
-slots.cur_vegetation = Slot(uri=MIXS['0000312'], name="cur_vegetation", curie=MIXS.curie('0000312'),
-                   model_uri=MIXS.cur_vegetation, domain=None, range=Optional[str])
-
-slots.otu_class_appr = Slot(uri=MIXS['0000085'], name="otu_class_appr", curie=MIXS.curie('0000085'),
-                   model_uri=MIXS.otu_class_appr, domain=None, range=Optional[str])
-
 slots.otu_db = Slot(uri=MIXS['0000087'], name="otu_db", curie=MIXS.curie('0000087'),
                    model_uri=MIXS.otu_db, domain=None, range=Optional[str])
 
-slots.alkalinity_method = Slot(uri=MIXS['0000298'], name="alkalinity_method", curie=MIXS.curie('0000298'),
-                   model_uri=MIXS.alkalinity_method, domain=None, range=Optional[str])
-
-slots.samp_sort_meth = Slot(uri=MIXS['0000216'], name="samp_sort_meth", curie=MIXS.curie('0000216'),
-                   model_uri=MIXS.samp_sort_meth, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.sieving = Slot(uri=MIXS['0000322'], name="sieving", curie=MIXS.curie('0000322'),
-                   model_uri=MIXS.sieving, domain=None, range=Optional[str])
-
-slots.samp_collec_device = Slot(uri=MIXS['0000002'], name="samp_collec_device", curie=MIXS.curie('0000002'),
-                   model_uri=MIXS.samp_collec_device, domain=None, range=Optional[str])
-
-slots.diet_last_six_month = Slot(uri=MIXS['0000266'], name="diet_last_six_month", curie=MIXS.curie('0000266'),
-                   model_uri=MIXS.diet_last_six_month, domain=None, range=Optional[str])
-
-slots.host_diet = Slot(uri=MIXS['0000869'], name="host_diet", curie=MIXS.curie('0000869'),
-                   model_uri=MIXS.host_diet, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.diether_lipids = Slot(uri=MIXS['0000178'], name="diether_lipids", curie=MIXS.curie('0000178'),
-                   model_uri=MIXS.diether_lipids, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.host_disease_stat = Slot(uri=MIXS['0000031'], name="host_disease_stat", curie=MIXS.curie('0000031'),
-                   model_uri=MIXS.host_disease_stat, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.host_of_host_disease = Slot(uri=MIXS['0001319'], name="host_of_host_disease", curie=MIXS.curie('0001319'),
-                   model_uri=MIXS.host_of_host_disease, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.blood_blood_disord = Slot(uri=MIXS['0000271'], name="blood_blood_disord", curie=MIXS.curie('0000271'),
-                   model_uri=MIXS.blood_blood_disord, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.dermatology_disord = Slot(uri=MIXS['0000284'], name="dermatology_disord", curie=MIXS.curie('0000284'),
-                   model_uri=MIXS.dermatology_disord, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.gastrointest_disord = Slot(uri=MIXS['0000280'], name="gastrointest_disord", curie=MIXS.curie('0000280'),
-                   model_uri=MIXS.gastrointest_disord, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.kidney_disord = Slot(uri=MIXS['0000277'], name="kidney_disord", curie=MIXS.curie('0000277'),
-                   model_uri=MIXS.kidney_disord, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.liver_disord = Slot(uri=MIXS['0000282'], name="liver_disord", curie=MIXS.curie('0000282'),
-                   model_uri=MIXS.liver_disord, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.pulmonary_disord = Slot(uri=MIXS['0000269'], name="pulmonary_disord", curie=MIXS.curie('0000269'),
-                   model_uri=MIXS.pulmonary_disord, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.urogenit_disord = Slot(uri=MIXS['0000289'], name="urogenit_disord", curie=MIXS.curie('0000289'),
-                   model_uri=MIXS.urogenit_disord, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.urogenit_tract_disor = Slot(uri=MIXS['0000278'], name="urogenit_tract_disor", curie=MIXS.curie('0000278'),
-                   model_uri=MIXS.urogenit_tract_disor, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.spikein_antibiotic = Slot(uri=MIXS['0001171'], name="spikein_antibiotic", curie=MIXS.curie('0001171'),
-                   model_uri=MIXS.spikein_antibiotic, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.drug_usage = Slot(uri=MIXS['0000894'], name="drug_usage", curie=MIXS.curie('0000894'),
-                   model_uri=MIXS.drug_usage, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.cons_food_stor_dur = Slot(uri=MIXS['0001195'], name="cons_food_stor_dur", curie=MIXS.curie('0001195'),
-                   model_uri=MIXS.cons_food_stor_dur, domain=None, range=Optional[str])
-
-slots.ferm_time = Slot(uri=MIXS['0001192'], name="ferm_time", curie=MIXS.curie('0001192'),
-                   model_uri=MIXS.ferm_time, domain=None, range=Optional[str])
-
-slots.time_last_toothbrush = Slot(uri=MIXS['0000924'], name="time_last_toothbrush", curie=MIXS.curie('0000924'),
-                   model_uri=MIXS.time_last_toothbrush, domain=None, range=Optional[str])
-
-slots.time_since_last_wash = Slot(uri=MIXS['0000943'], name="time_since_last_wash", curie=MIXS.curie('0000943'),
-                   model_uri=MIXS.time_since_last_wash, domain=None, range=Optional[str])
-
-slots.emulsions = Slot(uri=MIXS['0000660'], name="emulsions", curie=MIXS.curie('0000660'),
-                   model_uri=MIXS.emulsions, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.floor_struc = Slot(uri=MIXS['0000806'], name="floor_struc", curie=MIXS.curie('0000806'),
-                   model_uri=MIXS.floor_struc, domain=None, range=Optional[str])
-
-slots.window_cover = Slot(uri=MIXS['0000850'], name="window_cover", curie=MIXS.curie('0000850'),
-                   model_uri=MIXS.window_cover, domain=None, range=Optional[str])
-
-slots.animal_sex = Slot(uri=MIXS['0001249'], name="animal_sex", curie=MIXS.curie('0001249'),
-                   model_uri=MIXS.animal_sex, domain=None, range=Optional[str])
-
-slots.decontam_software = Slot(uri=MIXS['0000074'], name="decontam_software", curie=MIXS.curie('0000074'),
-                   model_uri=MIXS.decontam_software, domain=None, range=Optional[str])
-
-slots.cur_land_use = Slot(uri=MIXS['0001080'], name="cur_land_use", curie=MIXS.curie('0001080'),
-                   model_uri=MIXS.cur_land_use, domain=None, range=Optional[str])
-
-slots.depos_env = Slot(uri=MIXS['0000992'], name="depos_env", curie=MIXS.curie('0000992'),
-                   model_uri=MIXS.depos_env, domain=None, range=Optional[str])
-
-slots.pred_genome_type = Slot(uri=MIXS['0000082'], name="pred_genome_type", curie=MIXS.curie('0000082'),
-                   model_uri=MIXS.pred_genome_type, domain=None, range=Optional[str])
-
-slots.assembly_qual = Slot(uri=MIXS['0000056'], name="assembly_qual", curie=MIXS.curie('0000056'),
-                   model_uri=MIXS.assembly_qual, domain=None, range=Optional[str])
-
-slots.detec_type = Slot(uri=MIXS['0000084'], name="detec_type", curie=MIXS.curie('0000084'),
-                   model_uri=MIXS.detec_type, domain=None, range=Optional[str])
-
-slots.special_diet = Slot(uri=MIXS['0000905'], name="special_diet", curie=MIXS.curie('0000905'),
-                   model_uri=MIXS.special_diet, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.source_uvig = Slot(uri=MIXS['0000035'], name="source_uvig", curie=MIXS.curie('0000035'),
-                   model_uri=MIXS.source_uvig, domain=None, range=Optional[str])
-
-slots.animal_body_cond = Slot(uri=MIXS['0001248'], name="animal_body_cond", curie=MIXS.curie('0001248'),
-                   model_uri=MIXS.animal_body_cond, domain=None, range=Optional[str])
-
-slots.heat_deliv_loc = Slot(uri=MIXS['0000810'], name="heat_deliv_loc", curie=MIXS.curie('0000810'),
-                   model_uri=MIXS.heat_deliv_loc, domain=None, range=Optional[str])
-
-slots.hc_produced = Slot(uri=MIXS['0000989'], name="hc_produced", curie=MIXS.curie('0000989'),
-                   model_uri=MIXS.hc_produced, domain=None, range=Optional[str])
-
-slots.vis_media = Slot(uri=MIXS['0000840'], name="vis_media", curie=MIXS.curie('0000840'),
-                   model_uri=MIXS.vis_media, domain=None, range=Optional[str])
-
-slots.train_line = Slot(uri=MIXS['0000837'], name="train_line", curie=MIXS.curie('0000837'),
-                   model_uri=MIXS.train_line, domain=None, range=Optional[str])
-
-slots.floor_finish_mat = Slot(uri=MIXS['0000804'], name="floor_finish_mat", curie=MIXS.curie('0000804'),
-                   model_uri=MIXS.floor_finish_mat, domain=None, range=Optional[str])
-
-slots.soil_horizon = Slot(uri=MIXS['0001291'], name="soil_horizon", curie=MIXS.curie('0001291'),
-                   model_uri=MIXS.soil_horizon, domain=None, range=Optional[str])
-
-slots.samp_purpose = Slot(uri=MIXS['0001151'], name="samp_purpose", curie=MIXS.curie('0001151'),
-                   model_uri=MIXS.samp_purpose, domain=None, range=Optional[str])
-
-slots.food_quality_date = Slot(uri=MIXS['0001178'], name="food_quality_date", curie=MIXS.curie('0001178'),
-                   model_uri=MIXS.food_quality_date, domain=None, range=Optional[str])
-
-slots.pres_animal_insect = Slot(uri=MIXS['0000819'], name="pres_animal_insect", curie=MIXS.curie('0000819'),
-                   model_uri=MIXS.pres_animal_insect, domain=None, range=Optional[str])
-
-slots.air_flow_impede = Slot(uri=MIXS['0001146'], name="air_flow_impede", curie=MIXS.curie('0001146'),
-                   model_uri=MIXS.air_flow_impede, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.add_recov_method = Slot(uri=MIXS['0001009'], name="add_recov_method", curie=MIXS.curie('0001009'),
-                   model_uri=MIXS.add_recov_method, domain=None, range=Optional[str])
-
-slots.contam_screen_param = Slot(uri=MIXS['0000073'], name="contam_screen_param", curie=MIXS.curie('0000073'),
-                   model_uri=MIXS.contam_screen_param, domain=None, range=Optional[str])
-
-slots.adjacent_environment = Slot(uri=MIXS['0001121'], name="adjacent_environment", curie=MIXS.curie('0001121'),
-                   model_uri=MIXS.adjacent_environment, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.water_source_adjac = Slot(uri=MIXS['0001122'], name="water_source_adjac", curie=MIXS.curie('0001122'),
-                   model_uri=MIXS.water_source_adjac, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.coll_site_geo_feat = Slot(uri=MIXS['0001183'], name="coll_site_geo_feat", curie=MIXS.curie('0001183'),
-                   model_uri=MIXS.coll_site_geo_feat, domain=None, range=Optional[str])
-
-slots.food_trav_vehic = Slot(uri=MIXS['0001138'], name="food_trav_vehic", curie=MIXS.curie('0001138'),
-                   model_uri=MIXS.food_trav_vehic, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.ster_meth_samp_room = Slot(uri=MIXS['0001259'], name="ster_meth_samp_room", curie=MIXS.curie('0001259'),
-                   model_uri=MIXS.ster_meth_samp_room, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.light_regm = Slot(uri=MIXS['0000569'], name="light_regm", curie=MIXS.curie('0000569'),
-                   model_uri=MIXS.light_regm, domain=None, range=Optional[str])
-
-slots.host_pred_est_acc = Slot(uri=MIXS['0000089'], name="host_pred_est_acc", curie=MIXS.curie('0000089'),
-                   model_uri=MIXS.host_pred_est_acc, domain=None, range=Optional[str])
-
-slots.fertilizer_regm = Slot(uri=MIXS['0000556'], name="fertilizer_regm", curie=MIXS.curie('0000556'),
-                   model_uri=MIXS.fertilizer_regm, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.food_ingredient = Slot(uri=MIXS['0001205'], name="food_ingredient", curie=MIXS.curie('0001205'),
-                   model_uri=MIXS.food_ingredient, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.intended_consumer = Slot(uri=MIXS['0001144'], name="intended_consumer", curie=MIXS.curie('0001144'),
-                   model_uri=MIXS.intended_consumer, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.food_additive = Slot(uri=MIXS['0001200'], name="food_additive", curie=MIXS.curie('0001200'),
-                   model_uri=MIXS.food_additive, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.part_plant_animal = Slot(uri=MIXS['0001149'], name="part_plant_animal", curie=MIXS.curie('0001149'),
-                   model_uri=MIXS.part_plant_animal, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.food_cooking_proc = Slot(uri=MIXS['0001202'], name="food_cooking_proc", curie=MIXS.curie('0001202'),
-                   model_uri=MIXS.food_cooking_proc, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.food_treat_proc = Slot(uri=MIXS['0001140'], name="food_treat_proc", curie=MIXS.curie('0001140'),
-                   model_uri=MIXS.food_treat_proc, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.food_preserv_proc = Slot(uri=MIXS['0001135'], name="food_preserv_proc", curie=MIXS.curie('0001135'),
-                   model_uri=MIXS.food_preserv_proc, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.food_pack_medium = Slot(uri=MIXS['0001134'], name="food_pack_medium", curie=MIXS.curie('0001134'),
-                   model_uri=MIXS.food_pack_medium, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.food_contain_wrap = Slot(uri=MIXS['0001132'], name="food_contain_wrap", curie=MIXS.curie('0001132'),
-                   model_uri=MIXS.food_contain_wrap, domain=None, range=Optional[str])
-
-slots.food_contact_surf = Slot(uri=MIXS['0001131'], name="food_contact_surf", curie=MIXS.curie('0001131'),
-                   model_uri=MIXS.food_contact_surf, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.dietary_claim_use = Slot(uri=MIXS['0001199'], name="dietary_claim_use", curie=MIXS.curie('0001199'),
-                   model_uri=MIXS.dietary_claim_use, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.food_allergen_label = Slot(uri=MIXS['0001201'], name="food_allergen_label", curie=MIXS.curie('0001201'),
-                   model_uri=MIXS.food_allergen_label, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.plant_part_maturity = Slot(uri=MIXS['0001120'], name="plant_part_maturity", curie=MIXS.curie('0001120'),
-                   model_uri=MIXS.plant_part_maturity, domain=None, range=Optional[str])
-
-slots.food_prior_contact = Slot(uri=MIXS['0001210'], name="food_prior_contact", curie=MIXS.curie('0001210'),
-                   model_uri=MIXS.food_prior_contact, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.food_pack_integrity = Slot(uri=MIXS['0001209'], name="food_pack_integrity", curie=MIXS.curie('0001209'),
-                   model_uri=MIXS.food_pack_integrity, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.microb_start = Slot(uri=MIXS['0001217'], name="microb_start", curie=MIXS.curie('0001217'),
-                   model_uri=MIXS.microb_start, domain=None, range=Optional[str])
-
-slots.source_mat_id = Slot(uri=MIXS['0000026'], name="source_mat_id", curie=MIXS.curie('0000026'),
-                   model_uri=MIXS.source_mat_id, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.encoded_traits = Slot(uri=MIXS['0000034'], name="encoded_traits", curie=MIXS.curie('0000034'),
-                   model_uri=MIXS.encoded_traits, domain=None, range=Optional[str])
-
-slots.propagation = Slot(uri=MIXS['0000033'], name="propagation", curie=MIXS.curie('0000033'),
-                   model_uri=MIXS.propagation, domain=None, range=Optional[str])
-
-slots.built_struc_type = Slot(uri=MIXS['0000721'], name="built_struc_type", curie=MIXS.curie('0000721'),
-                   model_uri=MIXS.built_struc_type, domain=None, range=Optional[str])
-
-slots.room_architec_elem = Slot(uri=MIXS['0000233'], name="room_architec_elem", curie=MIXS.curie('0000233'),
-                   model_uri=MIXS.room_architec_elem, domain=None, range=Optional[str])
-
-slots.growth_facil = Slot(uri=MIXS['0001043'], name="growth_facil", curie=MIXS.curie('0001043'),
-                   model_uri=MIXS.growth_facil, domain=None, range=Optional[str])
-
-slots.gaseous_substances = Slot(uri=MIXS['0000661'], name="gaseous_substances", curie=MIXS.curie('0000661'),
-                   model_uri=MIXS.gaseous_substances, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.target_subfragment = Slot(uri=MIXS['0000045'], name="target_subfragment", curie=MIXS.curie('0000045'),
-                   model_uri=MIXS.target_subfragment, domain=None, range=Optional[str])
-
-slots.target_gene = Slot(uri=MIXS['0000044'], name="target_gene", curie=MIXS.curie('0000044'),
-                   model_uri=MIXS.target_gene, domain=None, range=Optional[str])
-
-slots.org_count_qpcr_info = Slot(uri=MIXS['0000099'], name="org_count_qpcr_info", curie=MIXS.curie('0000099'),
-                   model_uri=MIXS.org_count_qpcr_info, domain=None, range=Optional[str])
-
-slots.subspecf_gen_lin = Slot(uri=MIXS['0000020'], name="subspecf_gen_lin", curie=MIXS.curie('0000020'),
-                   model_uri=MIXS.subspecf_gen_lin, domain=None, range=Optional[str])
-
-slots.host_subspecf_genlin = Slot(uri=MIXS['0001318'], name="host_subspecf_genlin", curie=MIXS.curie('0001318'),
-                   model_uri=MIXS.host_subspecf_genlin, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.host_of_host_geno = Slot(uri=MIXS['0001331'], name="host_of_host_geno", curie=MIXS.curie('0001331'),
-                   model_uri=MIXS.host_of_host_geno, domain=None, range=Optional[str])
-
-slots.gestation_state = Slot(uri=MIXS['0000272'], name="gestation_state", curie=MIXS.curie('0000272'),
-                   model_uri=MIXS.gestation_state, domain=None, range=Optional[str])
-
-slots.host_of_host_gravid = Slot(uri=MIXS['0001333'], name="host_of_host_gravid", curie=MIXS.curie('0001333'),
-                   model_uri=MIXS.host_of_host_gravid, domain=None, range=Optional[str])
-
-slots.gravity = Slot(uri=MIXS['0000559'], name="gravity", curie=MIXS.curie('0000559'),
-                   model_uri=MIXS.gravity, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.growth_hormone_regm = Slot(uri=MIXS['0000560'], name="growth_hormone_regm", curie=MIXS.curie('0000560'),
-                   model_uri=MIXS.growth_hormone_regm, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.ferm_medium = Slot(uri=MIXS['0001188'], name="ferm_medium", curie=MIXS.curie('0001188'),
-                   model_uri=MIXS.ferm_medium, domain=None, range=Optional[str])
-
-slots.gynecologic_disord = Slot(uri=MIXS['0000288'], name="gynecologic_disord", curie=MIXS.curie('0000288'),
-                   model_uri=MIXS.gynecologic_disord, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.foetal_health_stat = Slot(uri=MIXS['0000275'], name="foetal_health_stat", curie=MIXS.curie('0000275'),
-                   model_uri=MIXS.foetal_health_stat, domain=None, range=Optional[str])
-
-slots.maternal_health_stat = Slot(uri=MIXS['0000273'], name="maternal_health_stat", curie=MIXS.curie('0000273'),
-                   model_uri=MIXS.maternal_health_stat, domain=None, range=Optional[str])
-
-slots.spikein_metal = Slot(uri=MIXS['0001172'], name="spikein_metal", curie=MIXS.curie('0001172'),
-                   model_uri=MIXS.spikein_metal, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.heavy_metals = Slot(uri=MIXS['0000652'], name="heavy_metals", curie=MIXS.curie('0000652'),
-                   model_uri=MIXS.heavy_metals, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.host_hiv_stat = Slot(uri=MIXS['0000265'], name="host_hiv_stat", curie=MIXS.curie('0000265'),
-                   model_uri=MIXS.host_hiv_stat, domain=None, range=Optional[str])
-
-slots.specific_host = Slot(uri=MIXS['0000029'], name="specific_host", curie=MIXS.curie('0000029'),
-                   model_uri=MIXS.specific_host, domain=None, range=Optional[str])
-
-slots.humidity_regm = Slot(uri=MIXS['0000568'], name="humidity_regm", curie=MIXS.curie('0000568'),
-                   model_uri=MIXS.humidity_regm, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.pcr_cond = Slot(uri=MIXS['0000049'], name="pcr_cond", curie=MIXS.curie('0000049'),
-                   model_uri=MIXS.pcr_cond, domain=None, range=Optional[str])
-
-slots.inorg_particles = Slot(uri=MIXS['0000664'], name="inorg_particles", curie=MIXS.curie('0000664'),
-                   model_uri=MIXS.inorg_particles, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.repository_name = Slot(uri=MIXS['0001152'], name="repository_name", curie=MIXS.curie('0001152'),
-                   model_uri=MIXS.repository_name, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.wga_amp_kit = Slot(uri=MIXS['0000006'], name="wga_amp_kit", curie=MIXS.curie('0000006'),
-                   model_uri=MIXS.wga_amp_kit, domain=None, range=Optional[str])
-
-slots.single_cell_lysis_prot = Slot(uri=MIXS['0000054'], name="single_cell_lysis_prot", curie=MIXS.curie('0000054'),
-                   model_uri=MIXS.single_cell_lysis_prot, domain=None, range=Optional[str])
-
-slots.previous_land_use = Slot(uri=MIXS['0000315'], name="previous_land_use", curie=MIXS.curie('0000315'),
-                   model_uri=MIXS.previous_land_use, domain=None, range=Optional[str])
-
-slots.local_class = Slot(uri=MIXS['0000330'], name="local_class", curie=MIXS.curie('0000330'),
-                   model_uri=MIXS.local_class, domain=None, range=Optional[str])
-
-slots.shading_device_mat = Slot(uri=MIXS['0000245'], name="shading_device_mat", curie=MIXS.curie('0000245'),
-                   model_uri=MIXS.shading_device_mat, domain=None, range=Optional[str])
-
-slots.study_tmnt = Slot(uri=MIXS['0001240'], name="study_tmnt", curie=MIXS.curie('0001240'),
-                   model_uri=MIXS.study_tmnt, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.window_size = Slot(uri=MIXS['0000224'], name="window_size", curie=MIXS.curie('0000224'),
-                   model_uri=MIXS.window_size, domain=None, range=Optional[str])
-
-slots.crop_yield = Slot(uri=MIXS['0001116'], name="crop_yield", curie=MIXS.curie('0001116'),
-                   model_uri=MIXS.crop_yield, domain=None, range=Optional[str])
-
-slots.cons_qty_purchased = Slot(uri=MIXS['0001198'], name="cons_qty_purchased", curie=MIXS.curie('0001198'),
-                   model_uri=MIXS.cons_qty_purchased, domain=None, range=Optional[str])
-
-slots.room_door_dist = Slot(uri=MIXS['0000193'], name="room_door_dist", curie=MIXS.curie('0000193'),
-                   model_uri=MIXS.room_door_dist, domain=None, range=Optional[str])
-
-slots.room_net_area = Slot(uri=MIXS['0000194'], name="room_net_area", curie=MIXS.curie('0000194'),
-                   model_uri=MIXS.room_net_area, domain=None, range=Optional[str])
-
-slots.room_vol = Slot(uri=MIXS['0000195'], name="room_vol", curie=MIXS.curie('0000195'),
-                   model_uri=MIXS.room_vol, domain=None, range=Optional[str])
-
-slots.area_samp_size = Slot(uri=MIXS['0001255'], name="area_samp_size", curie=MIXS.curie('0001255'),
-                   model_uri=MIXS.area_samp_size, domain=None, range=Optional[str])
-
-slots.room_dim = Slot(uri=MIXS['0000192'], name="room_dim", curie=MIXS.curie('0000192'),
-                   model_uri=MIXS.room_dim, domain=None, range=Optional[str])
-
-slots.spikein_amr = Slot(uri=MIXS['0001235'], name="spikein_amr", curie=MIXS.curie('0001235'),
-                   model_uri=MIXS.spikein_amr, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.samp_tvdss = Slot(uri=MIXS['0000409'], name="samp_tvdss", curie=MIXS.curie('0000409'),
-                   model_uri=MIXS.samp_tvdss, domain=None, range=Optional[str])
-
-slots.hcr_pressure = Slot(uri=MIXS['0000395'], name="hcr_pressure", curie=MIXS.curie('0000395'),
-                   model_uri=MIXS.hcr_pressure, domain=None, range=Optional[str])
-
-slots.hcr_temp = Slot(uri=MIXS['0000393'], name="hcr_temp", curie=MIXS.curie('0000393'),
-                   model_uri=MIXS.hcr_temp, domain=None, range=Optional[str])
-
-slots.samp_loc_corr_rate = Slot(uri=MIXS['0000136'], name="samp_loc_corr_rate", curie=MIXS.curie('0000136'),
-                   model_uri=MIXS.samp_loc_corr_rate, domain=None, range=Optional[str])
-
-slots.permeability = Slot(uri=MIXS['0000404'], name="permeability", curie=MIXS.curie('0000404'),
-                   model_uri=MIXS.permeability, domain=None, range=Optional[str])
-
-slots.samp_md = Slot(uri=MIXS['0000413'], name="samp_md", curie=MIXS.curie('0000413'),
-                   model_uri=MIXS.samp_md, domain=None, range=Optional[str])
-
-slots.biocide_admin_method = Slot(uri=MIXS['0000456'], name="biocide_admin_method", curie=MIXS.curie('0000456'),
-                   model_uri=MIXS.biocide_admin_method, domain=None, range=Optional[str])
-
-slots.chem_treat_method = Slot(uri=MIXS['0000457'], name="chem_treat_method", curie=MIXS.curie('0000457'),
-                   model_uri=MIXS.chem_treat_method, domain=None, range=Optional[str])
-
-slots.samp_transport_cond = Slot(uri=MIXS['0000410'], name="samp_transport_cond", curie=MIXS.curie('0000410'),
-                   model_uri=MIXS.samp_transport_cond, domain=None, range=Optional[str])
-
-slots.viscosity = Slot(uri=MIXS['0000126'], name="viscosity", curie=MIXS.curie('0000126'),
-                   model_uri=MIXS.viscosity, domain=None, range=Optional[str])
-
-slots.rainfall_regm = Slot(uri=MIXS['0000576'], name="rainfall_regm", curie=MIXS.curie('0000576'),
-                   model_uri=MIXS.rainfall_regm, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.birth_control = Slot(uri=MIXS['0000286'], name="birth_control", curie=MIXS.curie('0000286'),
-                   model_uri=MIXS.birth_control, domain=None, range=Optional[str])
-
-slots.microb_cult_med = Slot(uri=MIXS['0001216'], name="microb_cult_med", curie=MIXS.curie('0001216'),
-                   model_uri=MIXS.microb_cult_med, domain=None, range=Optional[str])
-
-slots.samp_stor_media = Slot(uri=MIXS['0001229'], name="samp_stor_media", curie=MIXS.curie('0001229'),
-                   model_uri=MIXS.samp_stor_media, domain=None, range=Optional[str])
-
-slots.spikein_growth_med = Slot(uri=MIXS['0001169'], name="spikein_growth_med", curie=MIXS.curie('0001169'),
-                   model_uri=MIXS.spikein_growth_med, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.mineral_nutr_regm = Slot(uri=MIXS['0000570'], name="mineral_nutr_regm", curie=MIXS.curie('0000570'),
-                   model_uri=MIXS.mineral_nutr_regm, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.chem_mutagen = Slot(uri=MIXS['0000555'], name="chem_mutagen", curie=MIXS.curie('0000555'),
-                   model_uri=MIXS.chem_mutagen, domain=None, range=Optional[Union[str, List[str]]])
+slots.ref_db = Slot(uri=MIXS['0000062'], name="ref_db", curie=MIXS.curie('0000062'),
+                   model_uri=MIXS.ref_db, domain=None, range=Optional[str])
+
+slots.depth = Slot(uri=MIXS['0000018'], name="depth", curie=MIXS.curie('0000018'),
+                   model_uri=MIXS.depth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.fluor = Slot(uri=MIXS['0000704'], name="fluor", curie=MIXS.curie('0000704'),
+                   model_uri=MIXS.fluor, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.nitro = Slot(uri=MIXS['0000504'], name="nitro", curie=MIXS.curie('0000504'),
+                   model_uri=MIXS.nitro, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+
+slots.trnas = Slot(uri=MIXS['0000067'], name="trnas", curie=MIXS.curie('0000067'),
+                   model_uri=MIXS.trnas, domain=None, range=Optional[int])
 
 slots.basin = Slot(uri=MIXS['0000290'], name="basin", curie=MIXS.curie('0000290'),
                    model_uri=MIXS.basin, domain=None, range=Optional[str])
@@ -73593,425 +73960,64 @@ slots.basin = Slot(uri=MIXS['0000290'], name="basin", curie=MIXS.curie('0000290'
 slots.field = Slot(uri=MIXS['0000291'], name="field", curie=MIXS.curie('0000291'),
                    model_uri=MIXS.field, domain=None, range=Optional[str])
 
-slots.host_of_host_infname = Slot(uri=MIXS['0001329'], name="host_of_host_infname", curie=MIXS.curie('0001329'),
-                   model_uri=MIXS.host_of_host_infname, domain=None, range=Optional[str])
-
-slots.reservoir = Slot(uri=MIXS['0000303'], name="reservoir", curie=MIXS.curie('0000303'),
-                   model_uri=MIXS.reservoir, domain=None, range=Optional[str])
-
-slots.root_med_solid = Slot(uri=MIXS['0001063'], name="root_med_solid", curie=MIXS.curie('0001063'),
-                   model_uri=MIXS.root_med_solid, domain=None, range=Optional[str])
-
-slots.samp_well_name = Slot(uri=MIXS['0000296'], name="samp_well_name", curie=MIXS.curie('0000296'),
-                   model_uri=MIXS.samp_well_name, domain=None, range=Optional[str])
-
-slots.assembly_name = Slot(uri=MIXS['0000057'], name="assembly_name", curie=MIXS.curie('0000057'),
-                   model_uri=MIXS.assembly_name, domain=None, range=Optional[str])
-
-slots.assembly_software = Slot(uri=MIXS['0000058'], name="assembly_software", curie=MIXS.curie('0000058'),
-                   model_uri=MIXS.assembly_software, domain=None, range=Optional[str])
-
-slots.chimera_check = Slot(uri=MIXS['0000052'], name="chimera_check", curie=MIXS.curie('0000052'),
-                   model_uri=MIXS.chimera_check, domain=None, range=Optional[str])
-
-slots.sequencing_kit = Slot(uri=MIXS['0001155'], name="sequencing_kit", curie=MIXS.curie('0001155'),
-                   model_uri=MIXS.sequencing_kit, domain=None, range=Optional[str])
-
-slots.host_infra_specific_name = Slot(uri=MIXS['0000253'], name="host_infra_specific_name", curie=MIXS.curie('0000253'),
-                   model_uri=MIXS.host_infra_specific_name, domain=None, range=Optional[str])
-
 slots.annot = Slot(uri=MIXS['0000059'], name="annot", curie=MIXS.curie('0000059'),
                    model_uri=MIXS.annot, domain=None, range=Optional[str])
 
-slots.cult_root_med = Slot(uri=MIXS['0001041'], name="cult_root_med", curie=MIXS.curie('0001041'),
-                   model_uri=MIXS.cult_root_med, domain=None, range=Optional[str])
+slots.fire = Slot(uri=MIXS['0001086'], name="fire", curie=MIXS.curie('0001086'),
+                   model_uri=MIXS.fire, domain=None, range=Optional[str])
 
-slots.aromatics_pc = Slot(uri=MIXS['0000133'], name="aromatics_pc", curie=MIXS.curie('0000133'),
-                   model_uri=MIXS.aromatics_pc, domain=None, range=Optional[str])
+slots.elev = Slot(uri=MIXS['0000093'], name="elev", curie=MIXS.curie('0000093'),
+                   model_uri=MIXS.elev, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.asphaltenes_pc = Slot(uri=MIXS['0000135'], name="asphaltenes_pc", curie=MIXS.curie('0000135'),
-                   model_uri=MIXS.asphaltenes_pc, domain=None, range=Optional[str])
+slots.temp = Slot(uri=MIXS['0000113'], name="temp", curie=MIXS.curie('0000113'),
+                   model_uri=MIXS.temp, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.resins_pc = Slot(uri=MIXS['0000134'], name="resins_pc", curie=MIXS.curie('0000134'),
-                   model_uri=MIXS.resins_pc, domain=None, range=Optional[str])
+slots.hcr = Slot(uri=MIXS['0000988'], name="hcr", curie=MIXS.curie('0000988'),
+                   model_uri=MIXS.hcr, domain=None, range=Optional[Union[str, "HcrEnum"]])
 
-slots.samp_preserv = Slot(uri=MIXS['0000463'], name="samp_preserv", curie=MIXS.curie('0000463'),
-                   model_uri=MIXS.samp_preserv, domain=None, range=Optional[str])
+slots.alt = Slot(uri=MIXS['0000094'], name="alt", curie=MIXS.curie('0000094'),
+                   model_uri=MIXS.alt, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.saturates_pc = Slot(uri=MIXS['0000131'], name="saturates_pc", curie=MIXS.curie('0000131'),
-                   model_uri=MIXS.saturates_pc, domain=None, range=Optional[str])
+slots.api = Slot(uri=MIXS['0000157'], name="api", curie=MIXS.curie('0000157'),
+                   model_uri=MIXS.api, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.biocide = Slot(uri=MIXS['0001011'], name="biocide", curie=MIXS.curie('0001011'),
-                   model_uri=MIXS.biocide, domain=None, range=Optional[str])
+slots.iwf = Slot(uri=MIXS['0000455'], name="iwf", curie=MIXS.curie('0000455'),
+                   model_uri=MIXS.iwf, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.chem_treatment = Slot(uri=MIXS['0001012'], name="chem_treatment", curie=MIXS.curie('0001012'),
-                   model_uri=MIXS.chem_treatment, domain=None, range=Optional[str])
+slots.tan = Slot(uri=MIXS['0000120'], name="tan", curie=MIXS.curie('0000120'),
+                   model_uri=MIXS.tan, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.compl_software = Slot(uri=MIXS['0000070'], name="compl_software", curie=MIXS.curie('0000070'),
-                   model_uri=MIXS.compl_software, domain=None, range=Optional[str])
+slots.vfa = Slot(uri=MIXS['0000152'], name="vfa", curie=MIXS.curie('0000152'),
+                   model_uri=MIXS.vfa, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.bin_software = Slot(uri=MIXS['0000078'], name="bin_software", curie=MIXS.curie('0000078'),
-                   model_uri=MIXS.bin_software, domain=None, range=Optional[str])
+slots.mid = Slot(uri=MIXS['0000047'], name="mid", curie=MIXS.curie('0000047'),
+                   model_uri=MIXS.mid, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[ACGTacgt]+$'))
 
-slots.sim_search_meth = Slot(uri=MIXS['0000063'], name="sim_search_meth", curie=MIXS.curie('0000063'),
-                   model_uri=MIXS.sim_search_meth, domain=None, range=Optional[str])
-
-slots.trna_ext_software = Slot(uri=MIXS['0000068'], name="trna_ext_software", curie=MIXS.curie('0000068'),
-                   model_uri=MIXS.trna_ext_software, domain=None, range=Optional[str])
-
-slots.feat_pred = Slot(uri=MIXS['0000061'], name="feat_pred", curie=MIXS.curie('0000061'),
-                   model_uri=MIXS.feat_pred, domain=None, range=Optional[str])
-
-slots.x_16s_recover_software = Slot(uri=MIXS['0000066'], name="x_16s_recover_software", curie=MIXS.curie('0000066'),
-                   model_uri=MIXS.x_16s_recover_software, domain=None, range=Optional[str])
-
-slots.pathogenicity = Slot(uri=MIXS['0000027'], name="pathogenicity", curie=MIXS.curie('0000027'),
-                   model_uri=MIXS.pathogenicity, domain=None, range=Optional[str])
-
-slots.ref_db = Slot(uri=MIXS['0000062'], name="ref_db", curie=MIXS.curie('0000062'),
-                   model_uri=MIXS.ref_db, domain=None, range=Optional[str])
-
-slots.spikein_serovar = Slot(uri=MIXS['0001168'], name="spikein_serovar", curie=MIXS.curie('0001168'),
-                   model_uri=MIXS.spikein_serovar, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.animal_intrusion = Slot(uri=MIXS['0001114'], name="animal_intrusion", curie=MIXS.curie('0001114'),
-                   model_uri=MIXS.animal_intrusion, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.cult_result_org = Slot(uri=MIXS['0001118'], name="cult_result_org", curie=MIXS.curie('0001118'),
-                   model_uri=MIXS.cult_result_org, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.microb_start_tax_id = Slot(uri=MIXS['0001222'], name="microb_start_tax_id", curie=MIXS.curie('0001222'),
-                   model_uri=MIXS.microb_start_tax_id, domain=None, range=Optional[str])
-
-slots.serovar_or_serotype = Slot(uri=MIXS['0001157'], name="serovar_or_serotype", curie=MIXS.curie('0001157'),
-                   model_uri=MIXS.serovar_or_serotype, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.spikein_org = Slot(uri=MIXS['0001167'], name="spikein_org", curie=MIXS.curie('0001167'),
-                   model_uri=MIXS.spikein_org, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.cult_target = Slot(uri=MIXS['0001119'], name="cult_target", curie=MIXS.curie('0001119'),
-                   model_uri=MIXS.cult_target, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.spikein_strain = Slot(uri=MIXS['0001170'], name="spikein_strain", curie=MIXS.curie('0001170'),
-                   model_uri=MIXS.spikein_strain, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.samp_stor_device = Slot(uri=MIXS['0001228'], name="samp_stor_device", curie=MIXS.curie('0001228'),
-                   model_uri=MIXS.samp_stor_device, domain=None, range=Optional[str])
-
-slots.study_design = Slot(uri=MIXS['0001236'], name="study_design", curie=MIXS.curie('0001236'),
-                   model_uri=MIXS.study_design, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.microb_start_count = Slot(uri=MIXS['0001218'], name="microb_start_count", curie=MIXS.curie('0001218'),
-                   model_uri=MIXS.microb_start_count, domain=None, range=Optional[str])
-
-slots.spikein_count = Slot(uri=MIXS['0001335'], name="spikein_count", curie=MIXS.curie('0001335'),
-                   model_uri=MIXS.spikein_count, domain=None, range=Optional[str])
-
-slots.misc_param = Slot(uri=MIXS['0000752'], name="misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=MIXS.misc_param, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.org_particles = Slot(uri=MIXS['0000665'], name="org_particles", curie=MIXS.curie('0000665'),
-                   model_uri=MIXS.org_particles, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.particle_class = Slot(uri=MIXS['0000206'], name="particle_class", curie=MIXS.curie('0000206'),
-                   model_uri=MIXS.particle_class, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.sexual_act = Slot(uri=MIXS['0000285'], name="sexual_act", curie=MIXS.curie('0000285'),
-                   model_uri=MIXS.sexual_act, domain=None, range=Optional[str])
-
-slots.soil_porosity = Slot(uri=MIXS['0001162'], name="soil_porosity", curie=MIXS.curie('0001162'),
-                   model_uri=MIXS.soil_porosity, domain=None, range=Optional[str])
-
-slots.phaeopigments = Slot(uri=MIXS['0000180'], name="phaeopigments", curie=MIXS.curie('0000180'),
-                   model_uri=MIXS.phaeopigments, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.host_of_host_pheno = Slot(uri=MIXS['0001332'], name="host_of_host_pheno", curie=MIXS.curie('0001332'),
-                   model_uri=MIXS.host_of_host_pheno, domain=None, range=Optional[str])
-
-slots.ref_biomaterial = Slot(uri=MIXS['0000025'], name="ref_biomaterial", curie=MIXS.curie('0000025'),
-                   model_uri=MIXS.ref_biomaterial, domain=None, range=Optional[str])
-
-slots.nucl_acid_ext = Slot(uri=MIXS['0000037'], name="nucl_acid_ext", curie=MIXS.curie('0000037'),
-                   model_uri=MIXS.nucl_acid_ext, domain=None, range=Optional[str])
-
-slots.nucl_acid_amp = Slot(uri=MIXS['0000038'], name="nucl_acid_amp", curie=MIXS.curie('0000038'),
-                   model_uri=MIXS.nucl_acid_amp, domain=None, range=Optional[str])
-
-slots.isol_growth_condt = Slot(uri=MIXS['0000003'], name="isol_growth_condt", curie=MIXS.curie('0000003'),
-                   model_uri=MIXS.isol_growth_condt, domain=None, range=Optional[str])
-
-slots.al_sat_meth = Slot(uri=MIXS['0000324'], name="al_sat_meth", curie=MIXS.curie('0000324'),
-                   model_uri=MIXS.al_sat_meth, domain=None, range=Optional[str])
-
-slots.link_addit_analys = Slot(uri=MIXS['0000340'], name="link_addit_analys", curie=MIXS.curie('0000340'),
-                   model_uri=MIXS.link_addit_analys, domain=None, range=Optional[str])
-
-slots.water_cont_soil_meth = Slot(uri=MIXS['0000323'], name="water_cont_soil_meth", curie=MIXS.curie('0000323'),
-                   model_uri=MIXS.water_cont_soil_meth, domain=None, range=Optional[str])
-
-slots.cur_vegetation_meth = Slot(uri=MIXS['0000314'], name="cur_vegetation_meth", curie=MIXS.curie('0000314'),
-                   model_uri=MIXS.cur_vegetation_meth, domain=None, range=Optional[str])
-
-slots.heavy_metals_meth = Slot(uri=MIXS['0000343'], name="heavy_metals_meth", curie=MIXS.curie('0000343'),
-                   model_uri=MIXS.heavy_metals_meth, domain=None, range=Optional[str])
-
-slots.horizon_meth = Slot(uri=MIXS['0000321'], name="horizon_meth", curie=MIXS.curie('0000321'),
-                   model_uri=MIXS.horizon_meth, domain=None, range=Optional[str])
-
-slots.link_class_info = Slot(uri=MIXS['0000329'], name="link_class_info", curie=MIXS.curie('0000329'),
-                   model_uri=MIXS.link_class_info, domain=None, range=Optional[str])
-
-slots.link_climate_info = Slot(uri=MIXS['0000328'], name="link_climate_info", curie=MIXS.curie('0000328'),
-                   model_uri=MIXS.link_climate_info, domain=None, range=Optional[str])
-
-slots.local_class_meth = Slot(uri=MIXS['0000331'], name="local_class_meth", curie=MIXS.curie('0000331'),
-                   model_uri=MIXS.local_class_meth, domain=None, range=Optional[str])
-
-slots.micro_biomass_meth = Slot(uri=MIXS['0000339'], name="micro_biomass_meth", curie=MIXS.curie('0000339'),
-                   model_uri=MIXS.micro_biomass_meth, domain=None, range=Optional[str])
-
-slots.ph_meth = Slot(uri=MIXS['0001106'], name="ph_meth", curie=MIXS.curie('0001106'),
-                   model_uri=MIXS.ph_meth, domain=None, range=Optional[str])
-
-slots.prev_land_use_meth = Slot(uri=MIXS['0000316'], name="prev_land_use_meth", curie=MIXS.curie('0000316'),
-                   model_uri=MIXS.prev_land_use_meth, domain=None, range=Optional[str])
-
-slots.salinity_meth = Slot(uri=MIXS['0000341'], name="salinity_meth", curie=MIXS.curie('0000341'),
-                   model_uri=MIXS.salinity_meth, domain=None, range=Optional[str])
-
-slots.soil_texture_meth = Slot(uri=MIXS['0000336'], name="soil_texture_meth", curie=MIXS.curie('0000336'),
-                   model_uri=MIXS.soil_texture_meth, domain=None, range=Optional[str])
-
-slots.soil_type_meth = Slot(uri=MIXS['0000334'], name="soil_type_meth", curie=MIXS.curie('0000334'),
-                   model_uri=MIXS.soil_type_meth, domain=None, range=Optional[str])
-
-slots.tot_nitro_cont_meth = Slot(uri=MIXS['0000338'], name="tot_nitro_cont_meth", curie=MIXS.curie('0000338'),
-                   model_uri=MIXS.tot_nitro_cont_meth, domain=None, range=Optional[str])
-
-slots.tot_org_c_meth = Slot(uri=MIXS['0000337'], name="tot_org_c_meth", curie=MIXS.curie('0000337'),
-                   model_uri=MIXS.tot_org_c_meth, domain=None, range=Optional[str])
-
-slots.samp_collec_method = Slot(uri=MIXS['0001225'], name="samp_collec_method", curie=MIXS.curie('0001225'),
-                   model_uri=MIXS.samp_collec_method, domain=None, range=Optional[str])
-
-slots.photosynt_activ_meth = Slot(uri=MIXS['0001336'], name="photosynt_activ_meth", curie=MIXS.curie('0001336'),
-                   model_uri=MIXS.photosynt_activ_meth, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.root_cond = Slot(uri=MIXS['0001061'], name="root_cond", curie=MIXS.curie('0001061'),
-                   model_uri=MIXS.root_cond, domain=None, range=Optional[str])
-
-slots.tiss_cult_growth_med = Slot(uri=MIXS['0001070'], name="tiss_cult_growth_med", curie=MIXS.curie('0001070'),
-                   model_uri=MIXS.tiss_cult_growth_med, domain=None, range=Optional[str])
-
-slots.pollutants = Slot(uri=MIXS['0000107'], name="pollutants", curie=MIXS.curie('0000107'),
-                   model_uri=MIXS.pollutants, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.pool_dna_extracts = Slot(uri=MIXS['0000325'], name="pool_dna_extracts", curie=MIXS.curie('0000325'),
-                   model_uri=MIXS.pool_dna_extracts, domain=None, range=Optional[str])
-
-slots.pre_treatment = Slot(uri=MIXS['0000348'], name="pre_treatment", curie=MIXS.curie('0000348'),
-                   model_uri=MIXS.pre_treatment, domain=None, range=Optional[str])
-
-slots.pet_farm_animal = Slot(uri=MIXS['0000267'], name="pet_farm_animal", curie=MIXS.curie('0000267'),
-                   model_uri=MIXS.pet_farm_animal, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.primary_treatment = Slot(uri=MIXS['0000349'], name="primary_treatment", curie=MIXS.curie('0000349'),
-                   model_uri=MIXS.primary_treatment, domain=None, range=Optional[str])
-
-slots.plant_product = Slot(uri=MIXS['0001058'], name="plant_product", curie=MIXS.curie('0001058'),
-                   model_uri=MIXS.plant_product, domain=None, range=Optional[str])
-
-slots.compl_score = Slot(uri=MIXS['0000069'], name="compl_score", curie=MIXS.curie('0000069'),
-                   model_uri=MIXS.compl_score, domain=None, range=Optional[str])
-
-slots.radiation_regm = Slot(uri=MIXS['0000575'], name="radiation_regm", curie=MIXS.curie('0000575'),
-                   model_uri=MIXS.radiation_regm, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.host_of_host_infrank = Slot(uri=MIXS['0001330'], name="host_of_host_infrank", curie=MIXS.curie('0001330'),
-                   model_uri=MIXS.host_of_host_infrank, domain=None, range=Optional[str])
-
-slots.host_infra_specific_rank = Slot(uri=MIXS['0000254'], name="host_infra_specific_rank", curie=MIXS.curie('0000254'),
-                   model_uri=MIXS.host_infra_specific_rank, domain=None, range=Optional[str])
-
-slots.water_frequency = Slot(uri=MIXS['0001174'], name="water_frequency", curie=MIXS.curie('0001174'),
-                   model_uri=MIXS.water_frequency, domain=None, range=Optional[str])
-
-slots.reactor_type = Slot(uri=MIXS['0000350'], name="reactor_type", curie=MIXS.curie('0000350'),
-                   model_uri=MIXS.reactor_type, domain=None, range=Optional[str])
-
-slots.associated_resource = Slot(uri=MIXS['0000091'], name="associated_resource", curie=MIXS.curie('0000091'),
-                   model_uri=MIXS.associated_resource, domain=None, range=Optional[Union[str, List[str]]])
+slots.hrt = Slot(uri=MIXS['0000969'], name="hrt", curie=MIXS.curie('0000969'),
+                   model_uri=MIXS.hrt, domain=None, range=Optional[str])
 
 slots.sop = Slot(uri=MIXS['0000090'], name="sop", curie=MIXS.curie('0000090'),
                    model_uri=MIXS.sop, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.root_med_regl = Slot(uri=MIXS['0000581'], name="root_med_regl", curie=MIXS.curie('0000581'),
-                   model_uri=MIXS.root_med_regl, domain=None, range=Optional[str])
-
-slots.host_of_host_fam_rel = Slot(uri=MIXS['0001328'], name="host_of_host_fam_rel", curie=MIXS.curie('0001328'),
-                   model_uri=MIXS.host_of_host_fam_rel, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.adj_room = Slot(uri=MIXS['0000219'], name="adj_room", curie=MIXS.curie('0000219'),
-                   model_uri=MIXS.adj_room, domain=None, range=Optional[str])
-
-slots.room_door_share = Slot(uri=MIXS['0000242'], name="room_door_share", curie=MIXS.curie('0000242'),
-                   model_uri=MIXS.room_door_share, domain=None, range=Optional[str])
-
-slots.room_hallway = Slot(uri=MIXS['0000238'], name="room_hallway", curie=MIXS.curie('0000238'),
-                   model_uri=MIXS.room_hallway, domain=None, range=Optional[str])
-
-slots.room_wall_share = Slot(uri=MIXS['0000243'], name="room_wall_share", curie=MIXS.curie('0000243'),
-                   model_uri=MIXS.room_wall_share, domain=None, range=Optional[str])
-
-slots.lib_screen = Slot(uri=MIXS['0000043'], name="lib_screen", curie=MIXS.curie('0000043'),
-                   model_uri=MIXS.lib_screen, domain=None, range=Optional[str])
-
-slots.secondary_treatment = Slot(uri=MIXS['0000351'], name="secondary_treatment", curie=MIXS.curie('0000351'),
-                   model_uri=MIXS.secondary_treatment, domain=None, range=Optional[str])
-
-slots.sewage_type = Slot(uri=MIXS['0000215'], name="sewage_type", curie=MIXS.curie('0000215'),
-                   model_uri=MIXS.sewage_type, domain=None, range=Optional[str])
-
-slots.otu_seq_comp_appr = Slot(uri=MIXS['0000086'], name="otu_seq_comp_appr", curie=MIXS.curie('0000086'),
-                   model_uri=MIXS.otu_seq_comp_appr, domain=None, range=Optional[str])
-
-slots.vir_ident_software = Slot(uri=MIXS['0000081'], name="vir_ident_software", curie=MIXS.curie('0000081'),
-                   model_uri=MIXS.vir_ident_software, domain=None, range=Optional[str])
-
-slots.soluble_inorg_mat = Slot(uri=MIXS['0000672'], name="soluble_inorg_mat", curie=MIXS.curie('0000672'),
-                   model_uri=MIXS.soluble_inorg_mat, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.soluble_org_mat = Slot(uri=MIXS['0000673'], name="soluble_org_mat", curie=MIXS.curie('0000673'),
-                   model_uri=MIXS.soluble_org_mat, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.samp_store_sol = Slot(uri=MIXS['0001317'], name="samp_store_sol", curie=MIXS.curie('0001317'),
-                   model_uri=MIXS.samp_store_sol, domain=None, range=Optional[str])
-
-slots.host_of_host_coinf = Slot(uri=MIXS['0001310'], name="host_of_host_coinf", curie=MIXS.curie('0001310'),
-                   model_uri=MIXS.host_of_host_coinf, domain=None, range=Optional[str])
-
-slots.store_cond = Slot(uri=MIXS['0000327'], name="store_cond", curie=MIXS.curie('0000327'),
-                   model_uri=MIXS.store_cond, domain=None, range=Optional[str])
-
-slots.root_med_suppl = Slot(uri=MIXS['0000580'], name="root_med_suppl", curie=MIXS.curie('0000580'),
-                   model_uri=MIXS.root_med_suppl, domain=None, range=Optional[str])
-
-slots.suspend_solids = Slot(uri=MIXS['0000150'], name="suspend_solids", curie=MIXS.curie('0000150'),
-                   model_uri=MIXS.suspend_solids, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.samp_taxon_id = Slot(uri=MIXS['0001320'], name="samp_taxon_id", curie=MIXS.curie('0001320'),
-                   model_uri=MIXS.samp_taxon_id, domain=None, range=Optional[str])
-
-slots.air_temp_regm = Slot(uri=MIXS['0000551'], name="air_temp_regm", curie=MIXS.curie('0000551'),
-                   model_uri=MIXS.air_temp_regm, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.tertiary_treatment = Slot(uri=MIXS['0000352'], name="tertiary_treatment", curie=MIXS.curie('0000352'),
-                   model_uri=MIXS.tertiary_treatment, domain=None, range=Optional[str])
-
-slots.samp_mat_process = Slot(uri=MIXS['0000016'], name="samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=MIXS.samp_mat_process, domain=None, range=Optional[str])
-
-slots.samp_name = Slot(uri=MIXS['0001107'], name="samp_name", curie=MIXS.curie('0001107'),
-                   model_uri=MIXS.samp_name, domain=None, range=Optional[str])
-
-slots.additional_info = Slot(uri=MIXS['0000300'], name="additional_info", curie=MIXS.curie('0000300'),
-                   model_uri=MIXS.additional_info, domain=None, range=Optional[str])
-
-slots.animal_am = Slot(uri=MIXS['0001243'], name="animal_am", curie=MIXS.curie('0001243'),
-                   model_uri=MIXS.animal_am, domain=None, range=Optional[str])
-
-slots.animal_am_route = Slot(uri=MIXS['0001246'], name="animal_am_route", curie=MIXS.curie('0001246'),
-                   model_uri=MIXS.animal_am_route, domain=None, range=Optional[str])
-
-slots.animal_am_use = Slot(uri=MIXS['0001247'], name="animal_am_use", curie=MIXS.curie('0001247'),
-                   model_uri=MIXS.animal_am_use, domain=None, range=Optional[str])
-
-slots.farm_equip_san_freq = Slot(uri=MIXS['0001125'], name="farm_equip_san_freq", curie=MIXS.curie('0001125'),
-                   model_uri=MIXS.farm_equip_san_freq, domain=None, range=Optional[str])
-
-slots.ferm_vessel = Slot(uri=MIXS['0001193'], name="ferm_vessel", curie=MIXS.curie('0001193'),
-                   model_uri=MIXS.ferm_vessel, domain=None, range=Optional[str])
-
-slots.food_prod_char = Slot(uri=MIXS['0001136'], name="food_prod_char", curie=MIXS.curie('0001136'),
-                   model_uri=MIXS.food_prod_char, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.food_prod_synonym = Slot(uri=MIXS['0001212'], name="food_prod_synonym", curie=MIXS.curie('0001212'),
-                   model_uri=MIXS.food_prod_synonym, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.growth_medium = Slot(uri=MIXS['0001108'], name="growth_medium", curie=MIXS.curie('0001108'),
-                   model_uri=MIXS.growth_medium, domain=None, range=Optional[str])
-
-slots.microb_start_prep = Slot(uri=MIXS['0001220'], name="microb_start_prep", curie=MIXS.curie('0001220'),
-                   model_uri=MIXS.microb_start_prep, domain=None, range=Optional[str])
-
-slots.microb_start_source = Slot(uri=MIXS['0001221'], name="microb_start_source", curie=MIXS.curie('0001221'),
-                   model_uri=MIXS.microb_start_source, domain=None, range=Optional[str])
-
-slots.prod_label_claims = Slot(uri=MIXS['0001337'], name="prod_label_claims", curie=MIXS.curie('0001337'),
-                   model_uri=MIXS.prod_label_claims, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.sequencing_location = Slot(uri=MIXS['0001156'], name="sequencing_location", curie=MIXS.curie('0001156'),
-                   model_uri=MIXS.sequencing_location, domain=None, range=Optional[str])
-
 slots.win = Slot(uri=MIXS['0000297'], name="win", curie=MIXS.curie('0000297'),
                    model_uri=MIXS.win, domain=None, range=Optional[str])
 
-slots.experimental_factor = Slot(uri=MIXS['0000008'], name="experimental_factor", curie=MIXS.curie('0000008'),
-                   model_uri=MIXS.experimental_factor, domain=None, range=Optional[str])
+slots.ph = Slot(uri=MIXS['0001001'], name="ph", curie=MIXS.curie('0001001'),
+                   model_uri=MIXS.ph, domain=None, range=Optional[float])
 
-slots.animal_diet = Slot(uri=MIXS['0001130'], name="animal_diet", curie=MIXS.curie('0001130'),
-                   model_uri=MIXS.animal_diet, domain=None, range=Optional[Union[str, List[str]]])
+slots.single_cell_lysis_appr = Slot(uri=MIXS.single_cell_lysis_appr, name="single_cell_lysis_appr", curie=MIXS.curie('single_cell_lysis_appr'),
+                   model_uri=MIXS.single_cell_lysis_appr, domain=None, range=Optional[str])
 
-slots.samp_transport_temp = Slot(uri=MIXS['0001232'], name="samp_transport_temp", curie=MIXS.curie('0001232'),
-                   model_uri=MIXS.samp_transport_temp, domain=None, range=Optional[str])
-
-slots.cons_food_stor_temp = Slot(uri=MIXS['0001196'], name="cons_food_stor_temp", curie=MIXS.curie('0001196'),
-                   model_uri=MIXS.cons_food_stor_temp, domain=None, range=Optional[str])
-
-slots.seq_meth = Slot(uri=MIXS['0000050'], name="seq_meth", curie=MIXS.curie('0000050'),
-                   model_uri=MIXS.seq_meth, domain=None, range=Optional[str])
-
-slots.ethnicity = Slot(uri=MIXS['0000895'], name="ethnicity", curie=MIXS.curie('0000895'),
-                   model_uri=MIXS.ethnicity, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.nucl_acid_ext_kit = Slot(uri=MIXS['0001223'], name="nucl_acid_ext_kit", curie=MIXS.curie('0001223'),
-                   model_uri=MIXS.nucl_acid_ext_kit, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.host_of_host_sub_id = Slot(uri=MIXS['0001327'], name="host_of_host_sub_id", curie=MIXS.curie('0001327'),
-                   model_uri=MIXS.host_of_host_sub_id, domain=None, range=Optional[str])
-
-slots.animal_am_dur = Slot(uri=MIXS['0001244'], name="animal_am_dur", curie=MIXS.curie('0001244'),
-                   model_uri=MIXS.animal_am_dur, domain=None, range=Optional[str])
-
-slots.ferm_chem_add_perc = Slot(uri=MIXS['0001186'], name="ferm_chem_add_perc", curie=MIXS.curie('0001186'),
-                   model_uri=MIXS.ferm_chem_add_perc, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.ferm_headspace_oxy = Slot(uri=MIXS['0001187'], name="ferm_headspace_oxy", curie=MIXS.curie('0001187'),
-                   model_uri=MIXS.ferm_headspace_oxy, domain=None, range=Optional[str])
-
-slots.address = Slot(uri=MIXS['0000218'], name="address", curie=MIXS.curie('0000218'),
-                   model_uri=MIXS.address, domain=None, range=Optional[str])
-
-slots.lib_vector = Slot(uri=MIXS['0000042'], name="lib_vector", curie=MIXS.curie('0000042'),
-                   model_uri=MIXS.lib_vector, domain=None, range=Optional[str])
-
-slots.volatile_org_comp = Slot(uri=MIXS['0000115'], name="volatile_org_comp", curie=MIXS.curie('0000115'),
-                   model_uri=MIXS.volatile_org_comp, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.wastewater_type = Slot(uri=MIXS['0000353'], name="wastewater_type", curie=MIXS.curie('0000353'),
-                   model_uri=MIXS.wastewater_type, domain=None, range=Optional[str])
-
-slots.weight_loss_3_month = Slot(uri=MIXS['0000295'], name="weight_loss_3_month", curie=MIXS.curie('0000295'),
-                   model_uri=MIXS.weight_loss_3_month, domain=None, range=Optional[str])
-
-slots.study_complt_stat = Slot(uri=MIXS['0000898'], name="study_complt_stat", curie=MIXS.curie('0000898'),
-                   model_uri=MIXS.study_complt_stat, domain=None, range=Optional[str])
-
-slots.pos_cont_type = Slot(uri=MIXS['0001322'], name="pos_cont_type", curie=MIXS.curie('0001322'),
-                   model_uri=MIXS.pos_cont_type, domain=None, range=Optional[str])
-
-slots.project_name = Slot(uri=MIXS['0000092'], name="project_name", curie=MIXS.curie('0000092'),
-                   model_uri=MIXS.project_name, domain=None, range=Optional[str])
+slots.single_cell_lysis_prot = Slot(uri=MIXS.single_cell_lysis_prot, name="single_cell_lysis_prot", curie=MIXS.curie('single_cell_lysis_prot'),
+                   model_uri=MIXS.single_cell_lysis_prot, domain=None, range=Optional[str])
 
 slots.ances_data = Slot(uri=MIXS.ances_data, name="ances_data", curie=MIXS.curie('ances_data'),
                    model_uri=MIXS.ances_data, domain=None, range=Optional[str])
@@ -74319,6 +74325,9 @@ slots.samp_type = Slot(uri=MIXS.samp_type, name="samp_type", curie=MIXS.curie('s
 slots.turbidity = Slot(uri=MIXS.turbidity, name="turbidity", curie=MIXS.curie('turbidity'),
                    model_uri=MIXS.turbidity, domain=None, range=Optional[str])
 
+slots.microb_start_tax_id = Slot(uri=MIXS.microb_start_tax_id, name="microb_start_tax_id", curie=MIXS.curie('microb_start_tax_id'),
+                   model_uri=MIXS.microb_start_tax_id, domain=None, range=Optional[str])
+
 slots.sample_collec_method = Slot(uri=MIXS.sample_collec_method, name="sample_collec_method", curie=MIXS.curie('sample_collec_method'),
                    model_uri=MIXS.sample_collec_method, domain=None, range=Optional[str])
 
@@ -74420,6 +74429,12 @@ slots.non_min_nutr_regm = Slot(uri=MIXS.non_min_nutr_regm, name="non_min_nutr_re
 
 slots.host_family_relationship = Slot(uri=MIXS.host_family_relationship, name="host_family_relationship", curie=MIXS.curie('host_family_relationship'),
                    model_uri=MIXS.host_family_relationship, domain=None, range=Optional[str])
+
+slots.host_infra_specific_name = Slot(uri=MIXS.host_infra_specific_name, name="host_infra_specific_name", curie=MIXS.curie('host_infra_specific_name'),
+                   model_uri=MIXS.host_infra_specific_name, domain=None, range=Optional[str])
+
+slots.host_infra_specific_rank = Slot(uri=MIXS.host_infra_specific_rank, name="host_infra_specific_rank", curie=MIXS.curie('host_infra_specific_rank'),
+                   model_uri=MIXS.host_infra_specific_rank, domain=None, range=Optional[str])
 
 slots.sample_name = Slot(uri=MIXS.sample_name, name="sample_name", curie=MIXS.curie('sample_name'),
                    model_uri=MIXS.sample_name, domain=None, range=Optional[str])
@@ -76112,10 +76127,10 @@ slots.Misag_seq_meth = Slot(uri=MIXS['0000050'], name="Misag_seq_meth", curie=MI
 slots.Misag_sim_search_meth = Slot(uri=MIXS['0000063'], name="Misag_sim_search_meth", curie=MIXS.curie('0000063'),
                    model_uri=MIXS.Misag_sim_search_meth, domain=None, range=Optional[str])
 
-slots.Misag_single_cell_lysis_appr = Slot(uri=MIXS['0000076'], name="Misag_single_cell_lysis_appr", curie=MIXS.curie('0000076'),
-                   model_uri=MIXS.Misag_single_cell_lysis_appr, domain=None, range=Union[str, "SingleCellLysisApprEnum"])
+slots.Misag_single_cell_lysis_appr = Slot(uri=MIXS.single_cell_lysis_appr, name="Misag_single_cell_lysis_appr", curie=MIXS.curie('single_cell_lysis_appr'),
+                   model_uri=MIXS.Misag_single_cell_lysis_appr, domain=None, range=str)
 
-slots.Misag_single_cell_lysis_prot = Slot(uri=MIXS['0000054'], name="Misag_single_cell_lysis_prot", curie=MIXS.curie('0000054'),
+slots.Misag_single_cell_lysis_prot = Slot(uri=MIXS.single_cell_lysis_prot, name="Misag_single_cell_lysis_prot", curie=MIXS.curie('single_cell_lysis_prot'),
                    model_uri=MIXS.Misag_single_cell_lysis_prot, domain=None, range=Optional[str])
 
 slots.Misag_size_frac = Slot(uri=MIXS['0000017'], name="Misag_size_frac", curie=MIXS.curie('0000017'),
@@ -76345,10 +76360,10 @@ slots.Miuvig_seq_meth = Slot(uri=MIXS['0000050'], name="Miuvig_seq_meth", curie=
 slots.Miuvig_sim_search_meth = Slot(uri=MIXS['0000063'], name="Miuvig_sim_search_meth", curie=MIXS.curie('0000063'),
                    model_uri=MIXS.Miuvig_sim_search_meth, domain=None, range=Optional[str])
 
-slots.Miuvig_single_cell_lysis_appr = Slot(uri=MIXS['0000076'], name="Miuvig_single_cell_lysis_appr", curie=MIXS.curie('0000076'),
-                   model_uri=MIXS.Miuvig_single_cell_lysis_appr, domain=None, range=Optional[Union[str, "SingleCellLysisApprEnum"]])
+slots.Miuvig_single_cell_lysis_appr = Slot(uri=MIXS.single_cell_lysis_appr, name="Miuvig_single_cell_lysis_appr", curie=MIXS.curie('single_cell_lysis_appr'),
+                   model_uri=MIXS.Miuvig_single_cell_lysis_appr, domain=None, range=Optional[str])
 
-slots.Miuvig_single_cell_lysis_prot = Slot(uri=MIXS['0000054'], name="Miuvig_single_cell_lysis_prot", curie=MIXS.curie('0000054'),
+slots.Miuvig_single_cell_lysis_prot = Slot(uri=MIXS.single_cell_lysis_prot, name="Miuvig_single_cell_lysis_prot", curie=MIXS.curie('single_cell_lysis_prot'),
                    model_uri=MIXS.Miuvig_single_cell_lysis_prot, domain=None, range=Optional[str])
 
 slots.Miuvig_size_frac = Slot(uri=MIXS['0000017'], name="Miuvig_size_frac", curie=MIXS.curie('0000017'),
@@ -78831,7 +78846,7 @@ slots.FoodHumanFoods_microb_start_prep = Slot(uri=MIXS['0001220'], name="FoodHum
 slots.FoodHumanFoods_microb_start_source = Slot(uri=MIXS['0001221'], name="FoodHumanFoods_microb_start_source", curie=MIXS.curie('0001221'),
                    model_uri=MIXS.FoodHumanFoods_microb_start_source, domain=FoodHumanFoods, range=Optional[str])
 
-slots.FoodHumanFoods_microb_start_tax_id = Slot(uri=MIXS['0001222'], name="FoodHumanFoods_microb_start_tax_id", curie=MIXS.curie('0001222'),
+slots.FoodHumanFoods_microb_start_tax_id = Slot(uri=MIXS.microb_start_tax_id, name="FoodHumanFoods_microb_start_tax_id", curie=MIXS.curie('microb_start_tax_id'),
                    model_uri=MIXS.FoodHumanFoods_microb_start_tax_id, domain=FoodHumanFoods, range=Optional[str])
 
 slots.FoodHumanFoods_misc_param = Slot(uri=MIXS['0000752'], name="FoodHumanFoods_misc_param", curie=MIXS.curie('0000752'),
@@ -81502,10 +81517,10 @@ slots.SymbiontAssociated_host_growth_cond = Slot(uri=MIXS.host_growth_cond, name
 slots.SymbiontAssociated_host_height = Slot(uri=MIXS.host_height, name="SymbiontAssociated_host_height", curie=MIXS.curie('host_height'),
                    model_uri=MIXS.SymbiontAssociated_host_height, domain=SymbiontAssociated, range=Optional[str])
 
-slots.SymbiontAssociated_host_infra_specific_name = Slot(uri=MIXS['0000253'], name="SymbiontAssociated_host_infra_specific_name", curie=MIXS.curie('0000253'),
+slots.SymbiontAssociated_host_infra_specific_name = Slot(uri=MIXS.host_infra_specific_name, name="SymbiontAssociated_host_infra_specific_name", curie=MIXS.curie('host_infra_specific_name'),
                    model_uri=MIXS.SymbiontAssociated_host_infra_specific_name, domain=SymbiontAssociated, range=Optional[str])
 
-slots.SymbiontAssociated_host_infra_specific_rank = Slot(uri=MIXS['0000254'], name="SymbiontAssociated_host_infra_specific_rank", curie=MIXS.curie('0000254'),
+slots.SymbiontAssociated_host_infra_specific_rank = Slot(uri=MIXS.host_infra_specific_rank, name="SymbiontAssociated_host_infra_specific_rank", curie=MIXS.curie('host_infra_specific_rank'),
                    model_uri=MIXS.SymbiontAssociated_host_infra_specific_rank, domain=SymbiontAssociated, range=Optional[str])
 
 slots.SymbiontAssociated_host_length = Slot(uri=MIXS.host_length, name="SymbiontAssociated_host_length", curie=MIXS.curie('host_length'),
