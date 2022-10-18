@@ -1,0 +1,34 @@
+{
+   "$defs": {
+      "Person": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "first_name": {
+               "type": "string"
+            },
+            "hobbies": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "last_name": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Person",
+         "type": "object"
+      }
+   },
+   "$id": "http://example.org/multival_tabular_tests",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {},
+   "required": [],
+   "title": "multival_tabular_tests",
+   "type": "object",
+   "version": null
+}

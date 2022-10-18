@@ -1,0 +1,21 @@
+name: multival_tabular_tests
+id: http://example.org/multival_tabular_tests
+imports:
+  - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+enums:
+  hobby:
+    permissible_values:
+
+classes:
+  person:
+    slots:
+      - first_name
+      - last_name
+      - hobbies
+slots:
+  first_name: { }
+  last_name: { }
+  hobbies:
+    multivalued: true

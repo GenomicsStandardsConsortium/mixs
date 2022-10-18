@@ -1,3 +1,4 @@
-schema	id	default_range	default_prefix
-> schema	id	default_range	default_prefix
-MIXS	https://example.com/mixs	string	MIXS
+schema	id	default_range	default_prefix	comments
+> schema	id	default_range	default_prefix	comments
+>	""	""	""	"internal_separator: ""|"""
+MIXS	http://w3id.org/mixs	string	MIXS	structured comment names must be 20 characters of less

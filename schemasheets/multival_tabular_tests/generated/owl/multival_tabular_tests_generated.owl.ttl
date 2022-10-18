@@ -1,0 +1,63 @@
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/multival_tabular_tests> a owl:Ontology ;
+    rdfs:label "multival_tabular_tests" ;
+    IAO:0000700 <http://example.org/multival_tabular_tests/Person> ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    linkml:generation_date "2022-10-18T10:59:19" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "multival_tabular_tests_generated.yaml" ;
+    linkml:source_file_date "2022-10-18T10:59:13" ;
+    linkml:source_file_size 512 .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+<http://example.org/multival_tabular_tests/Person> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <http://example.org/multival_tabular_tests/first_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <http://example.org/multival_tabular_tests/hobbies> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <http://example.org/multival_tabular_tests/last_name> ] .
+
+<http://example.org/multival_tabular_tests/first_name> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "first_name" ;
+    rdfs:range linkml:String .
+
+<http://example.org/multival_tabular_tests/hobbies> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hobbies" ;
+    rdfs:range linkml:String .
+
+<http://example.org/multival_tabular_tests/last_name> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "last_name" ;
+    rdfs:range linkml:String .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
+
+

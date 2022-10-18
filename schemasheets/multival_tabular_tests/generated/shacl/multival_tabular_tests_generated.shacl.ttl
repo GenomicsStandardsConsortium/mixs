@@ -1,0 +1,17 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/multival_tabular_tests/:Person> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <http://example.org/multival_tabular_tests/:last_name> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <http://example.org/multival_tabular_tests/:first_name> ],
+        [ sh:order 2 ;
+            sh:path <http://example.org/multival_tabular_tests/:hobbies> ] ;
+    sh:targetClass <http://example.org/multival_tabular_tests/:Person> .
+

@@ -1,0 +1,25 @@
+name: multival_tabular_tests
+id: http://example.org/multival_tabular_tests
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+default_prefix: http://example.org/multival_tabular_tests/
+slots:
+  first_name:
+    name: first_name
+  last_name:
+    name: last_name
+  hobbies:
+    name: hobbies
+    multivalued: true
+classes:
+  person:
+    name: person
+    slots:
+    - first_name
+    - last_name
+    - hobbies
+source_file: multival_tabular_tests.yaml

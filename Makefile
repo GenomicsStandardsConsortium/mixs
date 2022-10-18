@@ -2,82 +2,82 @@
 
 RUN=poetry run
 
-.PHONY: all clean gh_docs docserve
-
-# html_docs
-all: clean generated/mixs.py mkdocs_html/index.html
-
-# ---------------------------------------
-# TSVs from google drive
-# ---------------------------------------
-# for seeding
-
-clean:
-	#rm -rf downloads/*tsv
-	rm -rf generated/*
-	rm -rf logs/*
-	rm -rf mkdocs_html/
-	#rm -rf model/schema/*yaml
-
-#model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
-#	$(RUN) python -m gsctools.mixs_converter  2>&1 | tee -a logs/sheet2linkml.log
+#.PHONY: all clean gh_docs docserve
 #
-#downloads/mixs6.tsv:
-#	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
-#downloads/mixs6_core.tsv:
-#	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
-
-# todo add owl back in and make it awesome
-# todo derive output path from target file name
-# 		--exclude owl \
-
-generated/mixs.py: model/schema/mixs.yaml
-	$(RUN) gen-project \
-		--exclude java \
-		--exclude markdown \
-		--dir $(dir $@) $< 2>&1 | tee -a logs/linkml_artifact_generation.log
-
-# 		--exclude excel \
-
-#	mkdir generated/excel
-#	$(RUN) gen-excel --output generated/excel/mixs.xlsx $<
-#	# skipping jinja --template_file
-#	mkdir generated/java
-#	$(RUN) gen-java --package mixs --output_directory generated/java $<
-
+## html_docs
+#all: clean generated/mixs.py mkdocs_html/index.html
+#
 ## ---------------------------------------
-## MARKDOWN DOCS
-##      Generate documentation ready for mkdocs
+## TSVs from google drive
 ## ---------------------------------------
-## For help with mkdocs see https://www.mkdocs.org/.
-
-generated/docs/index.md: model/schema/mixs.yaml generated/mixs.py
-	$(RUN) gen-doc $< --directory $(dir $@) --template-directory doc_templates --use-slot-uris
-
-generated/docs/introduction/%.md: generated/docs/index.md
-	cp -R static_md/* $(dir $@)
-
-# add more logging?
-# some docs pages not being created
-# usage of mkdocs.yml attributes like analytics?
-
-mkdocs_html/index.html: generated/docs/index.md
-	poetry run mkdocs build
-
-# test docs locally.
-# repeats build
-docserve:
-	$(RUN) mkdocs serve
-
-# repeats build
-# pushes to gh-pages branch
-# exposes at https://GenomicsStandardsConsortium.github.io/mixs/
-gh_docs:
-	poetry run mkdocs gh-deploy
+## for seeding
+#
+#clean:
+#	#rm -rf downloads/*tsv
+#	rm -rf generated/*
+#	rm -rf logs/*
+#	rm -rf mkdocs_html/
+#	#rm -rf model/schema/*yaml
+#
+##model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
+##	$(RUN) python -m gsctools.mixs_converter  2>&1 | tee -a logs/sheet2linkml.log
+##
+##downloads/mixs6.tsv:
+##	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=750683809' > $@
+##downloads/mixs6_core.tsv:
+##	curl -L -s 'https://docs.google.com/spreadsheets/d/1QDeeUcDqXes69Y2RjU2aWgOpCVWo5OVsBX9MKmMqi_o/export?format=tsv&gid=178015749' > $@
+#
+## todo add owl back in and make it awesome
+## todo derive output path from target file name
+## 		--exclude owl \
+#
+#generated/mixs.py: model/schema/mixs.yaml
+#	$(RUN) gen-project \
+#		--exclude java \
+#		--exclude markdown \
+#		--dir $(dir $@) $< 2>&1 | tee -a logs/linkml_artifact_generation.log
+#
+## 		--exclude excel \
+#
+##	mkdir generated/excel
+##	$(RUN) gen-excel --output generated/excel/mixs.xlsx $<
+##	# skipping jinja --template_file
+##	mkdir generated/java
+##	$(RUN) gen-java --package mixs --output_directory generated/java $<
+#
+### ---------------------------------------
+### MARKDOWN DOCS
+###      Generate documentation ready for mkdocs
+### ---------------------------------------
+### For help with mkdocs see https://www.mkdocs.org/.
+#
+#generated/docs/index.md: model/schema/mixs.yaml generated/mixs.py
+#	$(RUN) gen-doc $< --directory $(dir $@) --template-directory doc_templates --use-slot-uris
+#
+#generated/docs/introduction/%.md: generated/docs/index.md
+#	cp -R static_md/* $(dir $@)
+#
+## add more logging?
+## some docs pages not being created
+## usage of schemasheets_mkdocs.yml attributes like analytics?
+#
+#mkdocs_html/index.html: generated/docs/index.md
+#	poetry run mkdocs build
+#
+## test docs locally.
+## repeats build
+#docserve:
+#	$(RUN) mkdocs serve
+#
+## repeats build
+## pushes to gh-pages branch
+## exposes at https://GenomicsStandardsConsortium.github.io/mixs/
+#gh_docs:
+#	poetry run mkdocs gh-deploy
 
 # ---------------------------------------
 
-.PHONY: schemasheets_clean schemasheets_all validation_expected_pass validation_missing validation_extra bare_jsonschema_invalid
+.PHONY: schemasheets_clean schemasheets_all validation_expected_pass validation_missing validation_extra bare_jsonschema
 
 schemasheets_all: \
 schemasheets_clean \
@@ -85,10 +85,13 @@ schemasheets/yaml_out/mixs_schemasheets.yaml \
 schemasheets/logs/mixs_schemasheets_linting_log.tsv \
 schemasheets/generated/mixs_schemasheets_generated.yaml \
 schemasheets/generated/mixs_schemasheets_generated.sql \
-validation_expected_pass validation_missing validation_extra bare_jsonschema_invalid \
-schemasheets/example_data/out/mixs_database.json schemasheets/example_data/out/mixs_database.db \
+validation_expected_pass validation_missing validation_extra bare_jsonschema \
+schemasheets/example_data/out/mims_soil_set_database.json \
 schemasheets/example_data/out/mims_soil_set_database.ttl \
-schemasheets/generated/gen_docs_docs/index.md
+schemasheets/mkdocs_html/index.md
+
+# todo slow
+#   schemasheets/example_data/out/mixs_database.db \
 
 # this could be a circular dependency
 # silently depends on schemasheets/yaml_out/mixs_schemasheets.yaml
@@ -107,17 +110,14 @@ schemasheets_clean:
 	rm -rf schemasheets/generated/gen_docs_docs/*
 
 schemasheets/yaml_out/mixs_schemasheets.yaml: \
-schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_classdefs.tsv \
-schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_slot_assignments.tsv \
-schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_slotdefs.tsv \
-schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_classdefs.tsv \
-schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slot_assignments.tsv \
-schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_conflicting_defer_to_soil.tsv \
-schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_packages-Final_clean_slotdefs_non_conflicting_shared.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_classdefs.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_partial_slotdefs_more_constraints.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_slot_assignments.tsv \
 schemasheets/tsv_in/generated/mixs_combination_classes.tsv \
 schemasheets/tsv_in/mixs_clear_cut_enums.tsv \
 schemasheets/tsv_in/mixs_prefixes.tsv \
 schemasheets/tsv_in/mixs_schema_annotations.tsv \
+schemasheets/tsv_in/mixs_subsets.tsv \
 schemasheets/tsv_in/mixs_utility.tsv
 	$(RUN) sheets2linkml --output $@ $^
 
@@ -142,10 +142,11 @@ schemasheets/generated/mixs_schemasheets_generated.yaml: schemasheets/yaml_out/m
 
 # todo capture log?
 # todo excel artifact has duplicate tabs (with numerical suffixes)
+#  but explore whether this would be a useful data collection tool
 #  also slow
-# markdown generaton slow but may reveal subtle problems
+# markdown generation slow but may reveal subtle problems
 # shacl slowish
-schemasheets/generated/mixs_schemasheets_generated.sql: \
+schemasheets/generated/%: \
 schemasheets/generated/mixs_schemasheets_generated.yaml
 	$(RUN) gen-project \
 		--exclude excel \
@@ -158,64 +159,51 @@ schemasheets/generated/gen_docs_docs/index.md: schemasheets/yaml_out/mixs_schema
 
 schemasheets/mkdocs_html/index.md: schemasheets/generated/gen_docs_docs/index.md
 	cp -R static_md/* $(dir $<)
-	$(RUN) mkdocs build
-	#--config-file mkdocs.yml --site-dir schemasheets/mkdocs_html
-	# then make docserve if desired
-	# publishing to GH pages will be a separate step
-	# note that schemasheets/mkdocs.yml has been edited relative to the main branch
+	$(RUN) mkdocs build --config-file schemasheets_mkdocs.yml
+	# then `make schemasheets_docserve` and or `make schemasheets_gh_docs` if desired
+
+schemasheets_docserve:
+	$(RUN) mkdocs serve --config-file schemasheets_mkdocs.yml
 
 
 validation_expected_pass: \
-schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mixs_database.yaml
+schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mims_soil_set_database.yaml
 	$(RUN) linkml-validate \
 		--target-class Database \
 		--schema $^
 
-
 validation_missing: \
-schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mixs_database_missing.yaml
+schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mims_soil_set_database_missing.yaml
 	! $(RUN) linkml-validate \
 		--target-class Database \
 		--schema $^
-
 
 validation_extra: \
-schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mixs_database_extra.yaml
+schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_data/in/mims_soil_set_database_extra.yaml
 	! $(RUN) linkml-validate \
 		--target-class Database \
 		--schema $^
 
-
-bare_jsonschema_invalid: \
-schemasheets/example_data/in/mixs_database_missing.json \
-schemasheets/generated/jsonschema/mixs_schemasheets_generated.schema.json
-	! jsonschema -i $^
-
-schemasheets/example_data/out/mixs_database.json: \
+schemasheets/example_data/out/mims_soil_set_database.json: \
 schemasheets/generated/mixs_schemasheets_generated.yaml \
-schemasheets/example_data/in/mixs_database.yaml
+schemasheets/example_data/in/mims_soil_set_database.yaml
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class Database \
 		--schema $^
 
+bare_jsonschema: \
+schemasheets/example_data/out/mims_soil_set_database.json \
+schemasheets/generated/jsonschema/mixs_schemasheets_generated.schema.json
+	$(RUN) jsonschema -i $^
 
+
+# todo slow
 schemasheets/example_data/out/mixs_database.db: \
 schemasheets/generated/mixs_schemasheets_generated.yaml \
-schemasheets/example_data/in/mixs_database.yaml
+schemasheets/example_data/out/mims_soil_set_database.json
 	$(RUN) linkml-sqldb dump --db $@ --target-class Database --schema $^
 	sqlite3 $@ ".header on" "select * from Mims"
-
-
-
-#schemasheets/example_data/out/mims_soil_set_database.yaml: \
-#schemasheets/generated/mixs_schemasheets_generated.yaml \
-#schemasheets/example_data/in/MimsSoil_data.tsv.minimal
-#	$(RUN) linkml-convert \
-#		--output $@ \
-#		--target-class Database \
-#		--index-slot mims_soil_set \
-#		--schema $^
 
 schemasheets/example_data/out/mims_soil_set_database.ttl: \
 schemasheets/generated/mixs_schemasheets_generated.yaml \
@@ -226,12 +214,14 @@ schemasheets/example_data/in/mims_soil_set_database.yaml
 		--index-slot mims_soil_set \
 		--schema $^
 
+# CONVERSION TARGETS
 #csv/tsv
 #json
 #json-ld
 #rdf/ttl
 #yml/yaml
 
+# GENERAL NOTES
 # added xsd prefix for converting non-string values to rdf/ttl
 # datetime ranges incompatible with sqlite dump
 # may not be possible to convert to or from csv or tsv due to multivalued slots (even is they're not populated?!)
@@ -243,40 +233,3 @@ schemasheets/example_data/in/mims_soil_set_database.yaml
 # what patterns in the schema or data break which tools?
 # no good regex for lat_lon?
 # multivalued slots with scalar values might be repaired in some situations but don't count on it
-
-all_owl_enums: clean_owl_enums schemasheets/generated/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.owl.ttl
-
-clean_owl_enums:
-	rm -f schemasheets/yaml_out/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.yaml
-	rm -f schemasheets/generated/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.owl.ttl
-
-schemasheets/yaml_out/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.yaml: \
-schemasheets/tsv_in/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.tsv
-	$(RUN) sheets2linkml $< > $@
-
-schemasheets/generated/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.owl.ttl: \
-schemasheets/yaml_out/MIxS_6_term_updates_MIxS6_Core-Final_clean_enums.yaml
-	$(RUN) gen-owl \
-		--format ttl \
-		--output $@ $<
-
-#enums_reality_check:
-#	$(RUN) sheets2linkml \
-#		--gsheet-id 1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ test+enums
-
-schemasheets/yaml_out/test_enums.yaml: schemasheets/tsv_in/mixs_clear_cut_enums.tsv
-	$(RUN) sheets2linkml \
-		--output $@ $<
-
-#schemasheets/example_data/out/mims_soil_set_database.tsv: \
-#schemasheets/yaml_out/mixs_schemasheets.yaml \
-#schemasheets/example_data/in/mims_soil_set_database.yaml
-#	$(RUN) linkml-convert \
-#		--output $@ \
-#		--target-class Database \
-#		--index-slot mims_soil_set \
-#		--schema $^
-
-
-
-

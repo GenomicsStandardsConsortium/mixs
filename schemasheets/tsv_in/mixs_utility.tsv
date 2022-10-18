@@ -1,8 +1,4 @@
-class	slot	required	multivalued	inlined_as_list	range	tree_root	is_a	mixins	Requirement	Cardinality	cardinality	recommended
-> class	slot	required	multivalued	inlined_as_list	range	tree_root	is_a	mixins	annotations	annotations	cardinality	recommended
->								"internal_separator: ""|"""				
->									inner_key: mixs_requirement_code	inner_key: cardinality_code		
-Database						TRUE						
-Database	mims_set		TRUE	TRUE	Mims							
-Database	soil_set		TRUE	TRUE	Soil							
-Database	mims_soil_set		TRUE	TRUE	MimsSoil
+class	slot	multivalued	inlined_as_list	range	tree_root
+> class	slot	multivalued	inlined_as_list	range	tree_root
+Database					TRUE
+Database	mims_soil_set	TRUE	TRUE	MimsSoil	
