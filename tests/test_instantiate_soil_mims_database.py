@@ -12,12 +12,12 @@ class Minimal(unittest.TestCase):
         d = mixs.Database()
         self.assertTrue(type(d) == mixs.Database)
 
-    def test_mims_soil_name(self):
+    def test_get_schema_name(self):
         mixs_source = "../schemasheets/yaml_out/mixs_schemasheets.yaml"
         mixs_view = SchemaView(mixs_source)
         assert mixs_view.schema.name == "MIXS"
 
-    def test_mims_soil_name(self):
+    def test_report_requireds(self):
         mixs_source = "../schemasheets/yaml_out/mixs_schemasheets.yaml"
         mixs_view = SchemaView(mixs_source)
         ic = mixs_view.induced_class("MimsSoil")
