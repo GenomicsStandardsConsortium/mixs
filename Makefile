@@ -87,7 +87,9 @@ schemasheets/generated/mixs_schemasheets_generated.yaml \
 schemasheets/generated/mixs_schemasheets_generated.sql \
 validation_expected_pass validation_missing validation_extra bare_jsonschema \
 schemasheets/example_data/out/mims_soil_set_database.json \
+schemasheets/example_data/out/mims_soil_set_database.tsv \
 schemasheets/example_data/out/mims_soil_set_database.ttl \
+schemasheets/example_data/out/mims_soil_set_database.yaml \
 schemasheets/mkdocs_html/index.md \
 schemasheets/example_data/out/mims_soil_set_database.db
 
@@ -226,8 +228,29 @@ schemasheets/example_data/in/mims_soil_set_database.yaml
 		--index-slot mims_soil_set \
 		--schema $^
 
+# schemasheets/yaml_out/mixs_schemasheets.yaml
+# schemasheets/generated/mixs_schemasheets_generated.yaml
+# WARNING:root:Index slot range not to class: None
+schemasheets/example_data/out/mims_soil_set_database.tsv: \
+schemasheets/yaml_out/mixs_schemasheets.yaml \
+schemasheets/example_data/in/mims_soil_set_database.yaml
+	$(RUN) linkml-convert \
+		--output $@ \
+		--target-class Database \
+		--index-slot mims_soil_set \
+		--schema $^
+
+schemasheets/example_data/out/mims_soil_set_database.yaml: \
+schemasheets/yaml_out/mixs_schemasheets.yaml \
+schemasheets/example_data/out/mims_soil_set_database.tsv
+	$(RUN) linkml-convert \
+		--output $@ \
+		--target-class Database \
+		--index-slot mims_soil_set \
+		--schema $^
+
 # CONVERSION TARGETS
-#csv/tsv
+#csv/tsv (writes TSV no matter what)
 #json
 #json-ld
 #rdf/ttl
