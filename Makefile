@@ -107,10 +107,11 @@ schemasheets/tsv_in/generated/mixs_combination_classes.tsv:
 schemasheets_clean:
 	rm -rf schemasheets/example_data/out/*
 	rm -rf schemasheets/generated/*
-	rm -rf schemasheets/logs/*
-	rm -rf schemasheets/yaml_out/*
-	rm -rf schemasheets/mkdocs_html/*
 	rm -rf schemasheets/generated/gen_docs_docs/*
+	rm -rf schemasheets/logs/*
+	rm -rf schemasheets/mkdocs_html/*
+	rm -rf schemasheets/yaml_out/*
+	mkdir -p schemasheets/example_data/out
 
 schemasheets/yaml_out/mixs_schemasheets.yaml: \
 schemasheets/tsv_in/MIxS_6_term_updates_classdefs.tsv \
@@ -141,7 +142,8 @@ schemasheets/logs/mixs_schemasheets_linting_log.tsv: schemasheets/yaml_out/mixs_
 schemasheets/generated/mixs_schemasheets_generated.yaml: schemasheets/yaml_out/mixs_schemasheets.yaml
 	$(RUN) gen-linkml \
 		--format yaml  \
-		--no-materialize-attributes $^ > $@
+		--no-materialize-attributes \
+		--output $@ $<
 
 # todo capture log?
 # todo excel artifact has duplicate tabs (with numerical suffixes)
@@ -187,6 +189,13 @@ schemasheets/generated/mixs_schemasheets_generated.yaml schemasheets/example_dat
 		--target-class Database \
 		--schema $^
 
+# CONVERSION TARGETS
+#csv/tsv (writes TSV no matter what)
+#json
+#json-ld
+#rdf/ttl
+#yml/yaml
+
 schemasheets/example_data/out/mims_soil_set_database.json: \
 schemasheets/generated/mixs_schemasheets_generated.yaml \
 schemasheets/example_data/in/mims_soil_set_database.yaml
@@ -199,7 +208,6 @@ bare_jsonschema: \
 schemasheets/example_data/out/mims_soil_set_database.json \
 schemasheets/generated/jsonschema/mixs_schemasheets_generated.schema.json
 	$(RUN) jsonschema -i $^
-
 
 # todo slow
 schemasheets/example_data/out/mims_soil_set_database.db: \
@@ -228,8 +236,6 @@ schemasheets/example_data/in/mims_soil_set_database.yaml
 		--index-slot mims_soil_set \
 		--schema $^
 
-# schemasheets/yaml_out/mixs_schemasheets.yaml
-# schemasheets/generated/mixs_schemasheets_generated.yaml
 # WARNING:root:Index slot range not to class: None
 schemasheets/example_data/out/mims_soil_set_database.tsv: \
 schemasheets/yaml_out/mixs_schemasheets.yaml \
@@ -249,22 +255,16 @@ schemasheets/example_data/out/mims_soil_set_database.tsv
 		--index-slot mims_soil_set \
 		--schema $^
 
-# CONVERSION TARGETS
-#csv/tsv (writes TSV no matter what)
-#json
-#json-ld
-#rdf/ttl
-#yml/yaml
-
 # GENERAL NOTES
 # added xsd prefix for converting non-string values to rdf/ttl
+# date_or_datetime not implemented yet, and might have some disadvantageous
 # datetime ranges incompatible with sqlite dump
-# may not be possible to convert to or from csv or tsv due to multivalued slots (even is they're not populated?!)
-# schemasheets will compile slots starting with digits and generators don't complain either
-#   but the jsonschema utility won't validate against the generated jsonschema
 # expected problems with enum/pv names/texts
 # gen-linkml not merging (for example the "free" linkml:types
-# date_or_datetime not implemented yet, and might have some disadvantageous
-# what patterns in the schema or data break which tools?
-# no good regex for lat_lon?
+# may not be possible to convert to or from csv or tsv due to multivalued slots (even if they're not populated?!)
 # multivalued slots with scalar values might be repaired in some situations but don't count on it
+# no good regex for lat_lon?
+# what patterns in the schema or data break which tools?
+# schemasheets will compile sheets containing slots whose names start with digits
+#   generators don't complain either
+#   but the jsonschema utility won't validate against the generated jsonschema

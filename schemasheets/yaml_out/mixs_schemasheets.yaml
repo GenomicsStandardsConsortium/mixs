@@ -18752,6 +18752,9 @@ slots:
   mims_soil_set:
     name: mims_soil_set
     from_schema: http://w3id.org/mixs
+  migs_set:
+    name: migs_set
+    from_schema: http://w3id.org/mixs
 classes:
   MigsBa:
     name: MigsBa
@@ -48023,10 +48026,16 @@ classes:
     from_schema: http://w3id.org/mixs
     slots:
     - mims_soil_set
+    - migs_set
     slot_usage:
       mims_soil_set:
         name: mims_soil_set
         multivalued: true
         range: MimsSoil
+        inlined_as_list: true
+      migs_set:
+        name: migs_set
+        multivalued: true
+        range: MigsEu
         inlined_as_list: true
     tree_root: true
