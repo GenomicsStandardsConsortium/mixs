@@ -28,12 +28,28 @@ URI: {{ gen.uri_link(element) }}
 
 ## Slots
 
-| MIxS ID | Name | Cardinality and Range | Description |
+| Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-{% for s in schemaview.class_induced_slots(element.name) -%}
-| {{ gen.link(s) }} | {{ s.name }} | {{ gen.cardinality(s) }} <br/> {{ gen.link(s.range) }} | {{ s.description|enshorten }} |
-{% endfor %}
+{% if gen.get_direct_slots(element)|length > 0 %}
+{%- for d_slot in gen.get_direct_slots(element) -%}
+| {{ gen.link(schemaview.get_slot(d_slot)) }} | {{ gen.cardinality(schemaview.get_slot(d_slot)) }} <br/> {{ gen.link(schemaview.get_slot(d_slot).range) }} | {{ schemaview.get_slot(d_slot).description|enshorten }} | direct |
+{% endfor -%}
+{% endif -%}
+{% if gen.get_indirect_slots(element)|length > 0 %}
+{%- for i_slot in gen.get_indirect_slots(element) -%}
+| {{ gen.link(schemaview.get_slot(i_slot)) }} | {{ gen.cardinality(schemaview.get_slot(i_slot)) }} <br/> {{ gen.link(schemaview.get_slot(i_slot).range) }} | {{ schemaview.get_slot(i_slot).description|enshorten }} | {{ gen.links(gen.get_slot_inherited_from(element.name, i_slot))|join(', ') }} |
+{% endfor -%}
+{% endif %}
 
+{% if schemaview.is_mixin(element.name) %}
+## Mixin Usage
+
+| mixed into | description |
+| --- | --- |
+{% for c in schemaview.class_children(element.name, is_a=False) -%}
+| {{ gen.link(c) }} | {{ schemaview.get_class(c).description|enshorten }} |
+{% endfor %}
+{% endif %}
 
 {% if schemaview.usage_index().get(element.name) %}
 ## Usages
@@ -46,13 +62,6 @@ URI: {{ gen.uri_link(element) }}
 {% endif %}
 
 {% include "common_metadata.md.jinja2" %}
-
-
-{% if element.rules or element.classification_rules %}
-
-## Rules
-
-{% endif %}
 
 {% if schemaview.get_mappings(element.name).items() -%}
 ## Mappings

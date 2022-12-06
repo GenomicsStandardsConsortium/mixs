@@ -42,21 +42,18 @@ URI: {{ gen.uri_link(element) }}
 
 ## Properties
 
-* Range: {{gen.link(element.range)}}
-* Multivalued: {{ element.multivalued }}
-{% if element.aliases %}
-* Aliases:
-{% for alias in element.aliases %}
-    * {{ alias }}
-{% endfor %}
-{% endif %}
+## Properties
 
-{% if element.required %}
+* Range: {{gen.link(element.range)}}
+{%- if element.multivalued %}
+* Multivalued: {{ element.multivalued }}
+{% endif %}
+{%- if element.required %}
 * Required: {{ element.required }}
 {% elif element.recommended %}
 * Recommended: {{ element.recommended }}
 {% endif %}
-{% if schemaview.is_mixin(element.name) %}
+{%- if schemaview.is_mixin(element.name) %}
 * Mixin: {{ element.mixin }}
 {% endif %}
 
