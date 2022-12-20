@@ -62,7 +62,7 @@ RUN=poetry run
 ## usage of schemasheets_mkdocs.yml attributes like analytics?
 #
 #mkdocs_html/index.html: generated/docs/index.md
-#	poetry run mkdocs build
+#	$(RUN) mkdocs build
 #
 ## test docs locally.
 ## repeats build
@@ -73,7 +73,7 @@ RUN=poetry run
 ## pushes to gh-pages branch
 ## exposes at https://GenomicsStandardsConsortium.github.io/mixs/
 #gh_docs:
-#	poetry run mkdocs gh-deploy
+#	$(RUN) mkdocs gh-deploy
 
 # ---------------------------------------
 
