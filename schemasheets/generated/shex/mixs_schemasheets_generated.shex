@@ -431,7 +431,9 @@ linkml:Nodeidentifier NONLITERAL
 )
 
 <Database> CLOSED {
-    (  $<Database_tes> <mims_soil_set> @<MimsSoil> * ;
+    (  $<Database_tes> (  <mims_soil_set> @<MimsSoil> * ;
+          <migs_set> @<MigsEu> *
+       ) ;
        rdf:type [ <Database> ] ?
     )
 }

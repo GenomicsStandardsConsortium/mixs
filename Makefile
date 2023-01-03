@@ -62,7 +62,7 @@ RUN=poetry run
 ## usage of schemasheets_mkdocs.yml attributes like analytics?
 #
 #mkdocs_html/index.html: generated/docs/index.md
-#	poetry run mkdocs build
+#	$(RUN) mkdocs build
 #
 ## test docs locally.
 ## repeats build
@@ -73,7 +73,7 @@ RUN=poetry run
 ## pushes to gh-pages branch
 ## exposes at https://GenomicsStandardsConsortium.github.io/mixs/
 #gh_docs:
-#	poetry run mkdocs gh-deploy
+#	$(RUN) mkdocs gh-deploy
 
 # ---------------------------------------
 
@@ -218,6 +218,8 @@ schemasheets/example_data/out/mims_soil_set_database.json
 	date
 	sqlite3 $@ ".header on" "select * from SoilMims"
 
+# Error: in prepare, no such table: SoilMims (1)
+
 
 # sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: MimsSoil.project_name
   #[SQL: INSERT INTO "MimsSoil" (adapters, alt, annot, assembly_name, assembly_qual, assembly_software, collection_date, depth, elev, env_broad_scale, env_local_scale, env_medium, experimental_factor, feat_pred, geo_loc_name, lat_lon, lib_layout, lib_reads_seqd, lib_screen, lib_size, lib_vector, mid, neg_cont_type, nucl_acid_amp, nucl_acid_ext, number_contig, pos_cont_type, project_name, ref_biomaterial, ref_db, rel_to_oxygen, samp_collec_device, samp_collec_method, samp_mat_process, samp_name, samp_size, samp_taxon_id, samp_vol_we_dna_ext, seq_meth, sim_search_meth, size_frac, tax_class, "temp", al_sat, al_sat_meth, annual_precpt, annual_temp, crop_rotation, cur_land_use, cur_vegetation, cur_vegetation_meth, drainage_class, extreme_event, fao_class, fire, flooding, heavy_metals_meth, horizon_meth, link_addit_analys, link_class_info, link_climate_info, local_class, local_class_meth, micro_biomass_meth, microbial_biomass, org_matter, org_nitro, ph, ph_meth, pool_dna_extracts, prev_land_use_meth, previous_land_use, profile_position, salinity_meth, season_precpt, season_temp, sieving, slope_aspect, slope_gradient, soil_horizon, soil_text_measure, soil_texture_meth, soil_type, soil_type_meth, store_cond, tot_nitro_cont_meth, tot_nitro_content, tot_org_c_meth, tot_org_carb, water_cont_soil_meth, water_content, "Database_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
@@ -268,6 +270,7 @@ schemasheets/example_data/out/mims_soil_set_database.tsv
 # schemasheets will compile sheets containing slots whose names start with digits
 #   generators don't complain either
 #   but the jsonschema utility won't validate against the generated jsonschema
+
 
 schemasheets/mixs_schemasheets.ddl.sql: schemasheets/yaml_out/mixs_schemasheets.yaml
 	$(RUN) gen-sqlddl $< > $@

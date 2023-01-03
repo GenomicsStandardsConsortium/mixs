@@ -366,7 +366,8 @@ CREATE TABLE "BuiltEnvironment" (
 
 CREATE TABLE "Database" (
 	mims_soil_set TEXT, 
-	PRIMARY KEY (mims_soil_set)
+	migs_set TEXT, 
+	PRIMARY KEY (mims_soil_set, migs_set)
 );
 
 CREATE TABLE "FoodAnimalAndAnimalFeed" (
