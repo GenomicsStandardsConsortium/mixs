@@ -1,39 +1,39 @@
-SAFE checklist	checklist	MIXS ID	aliases	from_schema	is_a	mixin	see_also	title	in_subset	description
-> class	annotations	class_uri	aliases	ignore	is_a	mixin	see_also	title	in_subset	description
->	inner_key: legacy_checklist_name									
-MigsBa	migs_ba	MIXS:0010003			ChecklistClass	TRUE		migs_ba	core_tab	
-MigsEu	migs_eu	MIXS:0010002			ChecklistClass	TRUE		migs_eu	core_tab	
-MigsOrg	migs_org	MIXS:0010006			ChecklistClass	TRUE		migs_org	core_tab	
-MigsPl	migs_pl	MIXS:0010004			ChecklistClass	TRUE		migs_pl	core_tab	
-MigsVi	migs_vi	MIXS:0010005			ChecklistClass	TRUE		migs_vi	core_tab	
-Mimag	mimag	MIXS:0010011			ChecklistClass	TRUE		mimag	core_tab	
-MimarksC	mimarks_c	MIXS:0010009			ChecklistClass	TRUE		mimarks_c	core_tab	
-MimarksS	mimarks_s	MIXS:0010008			ChecklistClass	TRUE		mimarks_s	core_tab	
-Mims	mims	MIXS:0010007			ChecklistClass			mims	core_tab	
-Misag	misag	MIXS:0010010			ChecklistClass	TRUE		misag	core_tab	
-Miuvig	miuvig	MIXS:0010012			ChecklistClass	TRUE		miuvig	core_tab	
-Agriculture	agriculture	MIXS:0016018			EnvPackageClass			agriculture	packages_tab	
-Air	air	MIXS:0016000			EnvPackageClass			air	packages_tab	
-BuiltEnvironment	built environment	MIXS:0016001			EnvPackageClass			built environment	packages_tab	
-FoodAnimalAndAnimalFeed	food-animal and animal feed	MIXS:0016019			EnvPackageClass			food-animal and animal feed	packages_tab	
-FoodFarmEnvironment	food-farm environment	MIXS:0016020			EnvPackageClass			food-farm environment	packages_tab	
-FoodFoodProductionFacility	food-food production facility	MIXS:0016021			EnvPackageClass			food-food production facility	packages_tab	
-FoodHumanFoods	food-human foods	MIXS:0016022			EnvPackageClass			food-human foods	packages_tab	
-HostAssociated	host-associated	MIXS:0016002			EnvPackageClass			host-associated	packages_tab	
-HumanAssociated	human-associated	MIXS:0016003			EnvPackageClass			human-associated	packages_tab	
-HumanGut	human-gut	MIXS:0016004			EnvPackageClass			human-gut	packages_tab	
-HumanOral	human-oral	MIXS:0016005			EnvPackageClass			human-oral	packages_tab	
-HumanSkin	human-skin	MIXS:0016006			EnvPackageClass			human-skin	packages_tab	
-HumanVaginal	human-vaginal	MIXS:0016007			EnvPackageClass			human-vaginal	packages_tab	
-HydrocarbonResourcesCores	hydrocarbon resources-cores	MIXS:0016015			EnvPackageClass			hydrocarbon resources-cores	packages_tab	
-HydrocarbonResourcesFluidsSwabs	hydrocarbon resources-fluids/swabs	MIXS:0016016			EnvPackageClass			hydrocarbon resources-fluids/swabs	packages_tab	
-MicrobialMatBiofilm	microbial mat/biofilm	MIXS:0016008			EnvPackageClass			microbial mat/biofilm	packages_tab	
-MiscellaneousNaturalOrArtificialEnvironment	miscellaneous natural or artificial environment	MIXS:0016009			EnvPackageClass			miscellaneous natural or artificial environment	packages_tab	
-PlantAssociated	plant-associated	MIXS:0016010			EnvPackageClass			plant-associated	packages_tab	
-Sediment	sediment	MIXS:0016011			EnvPackageClass			sediment	packages_tab	
-Soil	soil	MIXS:0016012			EnvPackageClass			soil	packages_tab	
-SymbiontAssociated	symbiont-associated	MIXS:0016023			EnvPackageClass			symbiont-associated	packages_tab	
-WastewaterSludge	wastewater/sludge	MIXS:0016013			EnvPackageClass			wastewater/sludge	packages_tab	
-Water	water	MIXS:0016014			EnvPackageClass			water	packages_tab	
-ChecklistClass								MIxS Checklist		"A class with slots assigned for the required, recommended, and optional metadata fields for a specific type sequence, such as genomes, metagenomes, or marker genes. The migs class, which models genomic sequences, is subdivided into checklists for specific taxa: eukaryotes, bacteria, viruses, and plants."
-EnvPackageClass								Environmental Package		"A supplement to MIxS Checklists, in the sense of  providing additional terms to describe the specific environement from which a sample was collected."
+SAFE checklist	checklist	MIXS ID	aliases	from_schema	is_a	mixin	see_also	title	in_subset	description	github ticket
+> class	annotations	class_uri	aliases	ignore	is_a	mixin	see_also	title	in_subset	description	annotations
+>	inner_key: legacy_checklist_name	NULL									inner_key: github_ticket
+MigsBa	migs_ba	MIXS:0010003			ChecklistClass	TRUE		migs_ba	core_tab	NULL	
+MigsEu	migs_eu	MIXS:0010002			ChecklistClass	TRUE		migs_eu	core_tab	NULL	
+MigsOrg	migs_org	MIXS:0010006			ChecklistClass	TRUE		migs_org	core_tab	NULL	
+MigsPl	migs_pl	MIXS:0010004			ChecklistClass	TRUE		migs_pl	core_tab	NULL	
+MigsVi	migs_vi	MIXS:0010005			ChecklistClass	TRUE		migs_vi	core_tab	NULL	
+Mimag	mimag	MIXS:0010011			ChecklistClass	TRUE		mimag	core_tab	NULL	
+MimarksC	mimarks_c	MIXS:0010009			ChecklistClass	TRUE		mimarks_c	core_tab	NULL	
+MimarksS	mimarks_s	MIXS:0010008			ChecklistClass	TRUE		mimarks_s	core_tab	NULL	
+Mims	mims	MIXS:0010007			ChecklistClass			mims	core_tab	NULL	
+Misag	misag	MIXS:0010010			ChecklistClass	TRUE		misag	core_tab	NULL	
+Miuvig	miuvig	MIXS:0010012			ChecklistClass	TRUE		miuvig	core_tab	NULL	
+Agriculture	agriculture	MIXS:0016018			EnvPackageClass			agriculture	packages_tab	NULL	
+Air	air	MIXS:0016000			EnvPackageClass			air	packages_tab	NULL	
+BuiltEnvironment	built environment	MIXS:0016001			EnvPackageClass			built environment	packages_tab	NULL	
+FoodAnimalAndAnimalFeed	food-animal and animal feed	MIXS:0016019			EnvPackageClass			food-animal and animal feed	packages_tab	NULL	
+FoodFarmEnvironment	food-farm environment	MIXS:0016020			EnvPackageClass			food-farm environment	packages_tab	NULL	
+FoodFoodProductionFacility	food-food production facility	MIXS:0016021			EnvPackageClass			food-food production facility	packages_tab	NULL	
+FoodHumanFoods	food-human foods	MIXS:0016022			EnvPackageClass			food-human foods	packages_tab	NULL	
+HostAssociated	host-associated	MIXS:0016002			EnvPackageClass			host-associated	packages_tab	NULL	
+HumanAssociated	human-associated	MIXS:0016003			EnvPackageClass			human-associated	packages_tab	NULL	
+HumanGut	human-gut	MIXS:0016004			EnvPackageClass			human-gut	packages_tab	NULL	
+HumanOral	human-oral	MIXS:0016005			EnvPackageClass			human-oral	packages_tab	NULL	
+HumanSkin	human-skin	MIXS:0016006			EnvPackageClass			human-skin	packages_tab	NULL	
+HumanVaginal	human-vaginal	MIXS:0016007			EnvPackageClass			human-vaginal	packages_tab	NULL	
+HydrocarbonResourcesCores	hydrocarbon resources-cores	MIXS:0016015			EnvPackageClass			hydrocarbon resources-cores	packages_tab	NULL	
+HydrocarbonResourcesFluidsSwabs	hydrocarbon resources-fluids/swabs	MIXS:0016016			EnvPackageClass			hydrocarbon resources-fluids/swabs	packages_tab	NULL	
+MicrobialMatBiofilm	microbial mat/biofilm	MIXS:0016008			EnvPackageClass			microbial mat/biofilm	packages_tab	NULL	
+MiscellaneousNaturalOrArtificialEnvironment	miscellaneous natural or artificial environment	MIXS:0016009			EnvPackageClass			miscellaneous natural or artificial environment	packages_tab	NULL	
+PlantAssociated	plant-associated	MIXS:0016010			EnvPackageClass			plant-associated	packages_tab	NULL	
+Sediment	sediment	MIXS:0016011			EnvPackageClass			sediment	packages_tab	NULL	
+Soil	soil	MIXS:0016012			EnvPackageClass			soil	packages_tab	NULL	
+SymbiontAssociated	symbiont-associated	MIXS:0016023			EnvPackageClass			symbiont-associated	packages_tab	NULL	
+WastewaterSludge	wastewater/sludge	MIXS:0016013			EnvPackageClass			wastewater/sludge	packages_tab	NULL	
+Water	water	MIXS:0016014			EnvPackageClass			water	packages_tab	NULL	
+ChecklistClass								MIxS Checklist		"A class with slots assigned for the required, recommended, and optional metadata fields for a specific type sequence, such as genomes, metagenomes, or marker genes. The migs class, which models genomic sequences, is subdivided into checklists for specific taxa: eukaryotes, bacteria, viruses, and plants."	
+EnvPackageClass								Environmental Package		"A supplement to MIxS Checklists, in the sense of  providing additional terms to describe the specific environement from which a sample was collected."	

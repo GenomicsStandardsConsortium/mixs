@@ -115,8 +115,8 @@ schemasheets_clean:
 
 schemasheets/yaml_out/mixs_schemasheets.yaml: \
 schemasheets/tsv_in/MIxS_6_term_updates_classdefs.tsv \
-schemasheets/tsv_in/MIxS_6_term_updates_partial_slotdefs_more_constraints.tsv \
-schemasheets/tsv_in/MIxS_6_term_updates_slot_assignments.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_global_partial_slotdefs.tsv \
+schemasheets/tsv_in/MIxS_6_term_updates_slot_assignments_and_usages.tsv \
 schemasheets/tsv_in/generated/mixs_combination_classes.tsv \
 schemasheets/tsv_in/mixs_clear_cut_enums.tsv \
 schemasheets/tsv_in/mixs_prefixes.tsv \
@@ -268,3 +268,9 @@ schemasheets/example_data/out/mims_soil_set_database.tsv
 # schemasheets will compile sheets containing slots whose names start with digits
 #   generators don't complain either
 #   but the jsonschema utility won't validate against the generated jsonschema
+
+schemasheets/mixs_schemasheets.ddl.sql: schemasheets/yaml_out/mixs_schemasheets.yaml
+	$(RUN) gen-sqlddl $< > $@
+
+schemasheets/mixs_schemasheets.db: schemasheets/mixs_schemasheets.ddl.sql
+	sqlite3 $@ < $<
