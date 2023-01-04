@@ -26,12 +26,15 @@ def slot_usage_defs(path_to_slot_usage_defs):
         slot_usage_defs_df[slot_usage_defs_df["class"] == ">"].index[0] + 1 :
     ]
     slot_usage_defs_df = slot_usage_defs_df[["class", "Structured comment name"]]
-    temp = (
+    slot_usage_defs_dict = (
         slot_usage_defs_df.groupby(["class"])
         .apply(lambda x: x["Structured comment name"].tolist())
         .to_dict()
     )
-    return [temp.keys(), list(set(list(itertools.chain.from_iterable(temp.values()))))]
+    return [
+        slot_usage_defs_dict.keys(),
+        list(set(list(itertools.chain.from_iterable(slot_usage_defs_dict.values())))),
+    ]
 
 
 if __name__ == "__main__":
@@ -39,10 +42,10 @@ if __name__ == "__main__":
         "/Users/sujaypatil/Desktop/mixs/schemasheets/tsv_in/MIxS_6_term_updates_classdefs.tsv"
     )
     slot_names = slot_defs(
-        "/Users/sujaypatil/Desktop/mixs/schemasheets/tsv_in/MIxS_6_term_updates_partial_slotdefs.tsv"
+        "/Users/sujaypatil/Desktop/mixs/schemasheets/tsv_in/MIxS_6_term_updates_global_partial_slotdefs.tsv"
     )
     class_slot_assignments = slot_usage_defs(
-        "/Users/sujaypatil/Desktop/mixs/schemasheets/tsv_in/MIxS_6_term_updates_slot_assignments.tsv"
+        "/Users/sujaypatil/Desktop/mixs/schemasheets/tsv_in/MIxS_6_term_updates_slot_assignments_and_usages.tsv"
     )
 
     list1 = class_names
@@ -50,26 +53,21 @@ if __name__ == "__main__":
     list3 = list(class_slot_assignments[0])
     list4 = class_slot_assignments[1]
 
-    print(
-        "Difference between MIxS_6_term_updates_classdefs.tsv and MIxS_6_term_updates_slot_assignments.tsv"
-    )
+    print("Classes in definitions file, but no slot assignments:")
     list1_list3_diff = [x for x in list1 if x not in list3]
     print(list1_list3_diff)
+    print("\n")
 
-    print(
-        "Difference between MIxS_6_term_updates_slot_assignments.tsv and MIxS_6_term_updates_classdefs.tsv"
-    )
+    print("Classes with slot assignments, but not present in definitions file:")
     list3_list1_diff = [x for x in list3 if x not in list1]
     print(list3_list1_diff)
+    print("\n")
 
-    print(
-        "Difference between MIxS_6_term_updates_partial_slotdefs.tsv and MIxS_6_term_updates_slot_assignments.tsv"
-    )
+    print("Slots in definitions file, but not assigned to any classes:")
     list2_list4_diff = [x for x in list2 if x not in list4]
     print(list2_list4_diff)
+    print("\n")
 
-    print(
-        "Difference between MIxS_6_term_updates_partial_slotdefs.tsv and MIxS_6_term_updates_slot_assignments.tsv"
-    )
+    print("Classes with slot assignments not present in definitions file:")
     list4_list2_diff = [x for x in list4 if x not in list2]
     print(list4_list2_diff)
