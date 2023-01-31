@@ -12,9 +12,6 @@ _{{ element.description }}_
 {% if element.abstract %}
 * __NOTE__: this is an abstract class and should not be instantiated directly
 {% endif %}
-{% if element.mixin %}
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-{% endif %}
 
 URI: {{ gen.uri_link(element) }}
 
@@ -31,13 +28,13 @@ URI: {{ gen.uri_link(element) }}
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 {% if gen.get_direct_slots(element)|length > 0 %}
-{%- for d_slot in gen.get_direct_slots(element) -%}
-| {{ gen.link(schemaview.get_slot(d_slot)) }} | {{ gen.cardinality(schemaview.get_slot(d_slot)) }} <br/> {{ gen.link(schemaview.get_slot(d_slot).range) }} | {{ schemaview.get_slot(d_slot).description|enshorten }} | direct |
+{%- for slot in gen.get_direct_slots(element) -%}
+| {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ slot.description|enshorten }} | direct |
 {% endfor -%}
 {% endif -%}
 {% if gen.get_indirect_slots(element)|length > 0 %}
-{%- for i_slot in gen.get_indirect_slots(element) -%}
-| {{ gen.link(schemaview.get_slot(i_slot)) }} | {{ gen.cardinality(schemaview.get_slot(i_slot)) }} <br/> {{ gen.link(schemaview.get_slot(i_slot).range) }} | {{ schemaview.get_slot(i_slot).description|enshorten }} | {{ gen.links(gen.get_slot_inherited_from(element.name, i_slot))|join(', ') }} |
+{%- for slot in gen.get_indirect_slots(element) -%}
+| {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ slot.description|enshorten }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} |
 {% endfor -%}
 {% endif %}
 
@@ -57,7 +54,7 @@ URI: {{ gen.uri_link(element) }}
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 {% for usage in schemaview.usage_index().get(element.name) -%}
-| {{ gen.link(usage.used_by) }} | {{ gen.link(usage.slot) }} | {{ usage.metaslot }} | {{ usage.used }} |
+| {{gen.link(usage.used_by)}} | {{gen.link(usage.slot)}} | {{usage.metaslot}} | {{ gen.link(usage.used) }} |
 {% endfor %}
 {% endif %}
 
@@ -70,14 +67,25 @@ URI: {{ gen.uri_link(element) }}
 | ---  | ---  |
 {% for m, mt in schemaview.get_mappings(element.name).items() -%}
 {% if mt|length > 0 -%}
-| {{ m }} | {{ mt }}|join(', ') |
+| {{ m }} | {{ mt|join(', ') }} |
 {% endif -%}
 {% endfor %}
 
 {% endif -%}
 
+{% if gen.example_object_blobs(element.name) -%}
+## Examples
+{% for name, blob in gen.example_object_blobs(element.name) -%}
+### Example: {{name}}
 
-## LinkML Specification
+```yaml
+{{ blob }}
+```
+{% endfor %}
+{% endif %}
+
+
+## LinkML Source
 
 ### Direct
 
