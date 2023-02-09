@@ -54,7 +54,7 @@ generated/docs/index.md: model/schema/mixs.yaml
 
 generated/docs/introduction/%.md: generated/docs/index.md
 	cp -R static_md/* $(dir $@)
-	cp citation.ris $(dir $@)/..
+	cp citation.ris $(dir $@)
 
 # add more logging?
 # some docs pages not being created
