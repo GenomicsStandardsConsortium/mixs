@@ -5,7 +5,7 @@ RUN=poetry run
 .PHONY: all clean gh_docs docserve
 
 # html_docs
-all: clean generated/mixs.py mkdocs_html/index.html
+all: clean generated/mixs.py make
 
 # ---------------------------------------
 # TSVs from google drive
@@ -54,6 +54,7 @@ generated/docs/index.md: model/schema/mixs.yaml
 
 generated/docs/introduction/%.md: generated/docs/index.md
 	cp -R static_md/* $(dir $@)
+	cp citation.ris $(dir $@)/..
 
 # add more logging?
 # some docs pages not being created
