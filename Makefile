@@ -5,7 +5,7 @@ RUN=poetry run
 .PHONY: all clean gh_docs docserve
 
 # html_docs
-all: clean generated/mixs.py mkdocs_html/index.html
+all: clean generated/mixs.py make
 
 # ---------------------------------------
 # TSVs from google drive
