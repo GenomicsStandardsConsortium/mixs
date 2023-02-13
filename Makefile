@@ -5,7 +5,7 @@ RUN=poetry run
 .PHONY: all clean gh_docs docserve
 
 # html_docs
-all: clean generated/mixs.py make
+all: clean generated/mixs.py mkdocs_html/index.html
 
 # ---------------------------------------
 # TSVs from google drive
@@ -16,7 +16,7 @@ clean:
 	#rm -rf downloads/*tsv
 	rm -rf generated/*
 	rm -rf logs/*
-	rm -rf mkdocs_html/
+	rm -rf mkdocs_html/*
 	#rm -rf model/schema/*yaml
 
 #model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
@@ -60,16 +60,16 @@ generated/docs/introduction/%.md: generated/docs/index.md
 # some docs pages not being created
 # usage of mkdocs.yml attributes like analytics?
 
-mkdocs_html/index.html: generated/docs/index.md
+mkdocs_html/index.html: generated/docs/introduction/background.md
 	poetry run mkdocs build
 
 # test docs locally.
 # repeats build
-docserve:
+docserve: generated/docs/introduction/background.md
 	$(RUN) mkdocs serve
 
 # repeats build
 # pushes to gh-pages branch
 # exposes at https://GenomicsStandardsConsortium.github.io/mixs/
-gh_docs:
+gh_docs: generated/docs/introduction/background.md
 	poetry run mkdocs gh-deploy

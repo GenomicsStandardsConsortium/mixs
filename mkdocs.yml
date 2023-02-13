@@ -7,7 +7,7 @@ theme:
 #plugins:
 #  - search
 
-plugins: []
+plugins: [ ]
 
 docs_dir: generated/docs
 site_dir: mkdocs_html
@@ -15,9 +15,9 @@ site_dir: mkdocs_html
 nav:
   - Reference: index.md
   - Introduction:
-    - Background: introduction/background.md
-    - Cite: introduction/citation.md
-    - Contents: introduction/contents.md
+      - Background: introduction/background.md
+      - Cite: introduction/citation.md
+      - Contents: introduction/contents.md
 
 site_url: https://genomicsstandardsconsortium.github.io/mixs/
 repo_url: https://github.com/GenomicsStandardsConsortium/mixs/
