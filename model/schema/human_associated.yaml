@@ -2,11 +2,11 @@ id: http://w3id.org/mixs/human_associated
 name: human_associated
 imports:
 - linkml:types
-- terms
+- MIXS_yaml:terms
 prefixes:
   linkml: https://w3id.org/linkml/
   MIXS: https://w3id.org/mixs/
-default_prefix: MIXS
+  MIXS_yaml: https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/
 slots: {}
 classes:
   human-associated:
