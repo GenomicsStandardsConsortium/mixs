@@ -16,7 +16,7 @@ clean:
 	#rm -rf downloads/*tsv
 	rm -rf generated/*
 	rm -rf logs/*
-	rm -rf mkdocs_html/
+	rm -rf mkdocs_html/*
 	#rm -rf model/schema/*yaml
 
 #model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
@@ -49,26 +49,27 @@ generated/mixs.py: model/schema/mixs.yaml
 ## ---------------------------------------
 ## For help with mkdocs see https://www.mkdocs.org/.
 
-generated/docs/index.md: model/schema/mixs.yaml generated/mixs.py
+generated/docs/index.md: model/schema/mixs.yaml
 	$(RUN) gen-doc $< --directory $(dir $@) --template-directory doc_templates --use-slot-uris
 
 generated/docs/introduction/%.md: generated/docs/index.md
 	cp -R static_md/* $(dir $@)
+	cp citation.ris $(dir $@)/..
 
 # add more logging?
 # some docs pages not being created
 # usage of mkdocs.yml attributes like analytics?
 
-mkdocs_html/index.html: generated/docs/index.md
+mkdocs_html/index.html: generated/docs/introduction/background.md
 	poetry run mkdocs build
 
 # test docs locally.
 # repeats build
-docserve:
+docserve: generated/docs/introduction/background.md
 	$(RUN) mkdocs serve
 
 # repeats build
 # pushes to gh-pages branch
 # exposes at https://GenomicsStandardsConsortium.github.io/mixs/
-gh_docs:
+gh_docs: generated/docs/introduction/background.md
 	poetry run mkdocs gh-deploy
