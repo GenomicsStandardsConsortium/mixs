@@ -2,10 +2,11 @@ id: http://w3id.org/mixs/human_gut
 name: human_gut
 imports:
 - linkml:types
-- terms
+- MIXS_yaml:terms
 prefixes:
   linkml: https://w3id.org/linkml/
   MIXS: https://w3id.org/mixs/
+  MIXS_yaml: https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/
 default_prefix: MIXS
 slots: {}
 classes:
