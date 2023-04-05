@@ -18,6 +18,8 @@ clean:
 	rm -rf logs/*
 	rm -rf mkdocs_html/*
 	#rm -rf model/schema/*yaml
+	mkdir -p logs
+	touch logs/.gitkeep
 
 #model/schema/mixs.yaml: downloads/mixs6.tsv downloads/mixs6_core.tsv
 #	$(RUN) python -m gsctools.mixs_converter  2>&1 | tee -a logs/sheet2linkml.log
@@ -30,11 +32,11 @@ clean:
 # todo add owl back in and make it awesome
 # todo derive output path from target file name
 # 		--exclude owl \
+#		--exclude excel \
 
 # excel completes now but takes ~ 1.5 hours!
 generated/mixs.py: model/schema/mixs.yaml
 	$(RUN) gen-project \
-		--exclude excel \
 		--exclude java \
 		--exclude markdown \
 		--dir $(dir $@) $< 2>&1 | tee -a logs/linkml_artifact_generation.log
