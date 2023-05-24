@@ -1,0 +1,75 @@
+name: New Term Request
+description: For us to assess a new term request we require the following details:
+title: "New term proposal: "
+labels: [NewTerm]
+body:
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      description: >
+        Please make sure you check all these items before submitting your feature request.
+      options:
+        - label: I have reviewed the existing MIxS checklists and extensions that the term does not exist.
+          required: true
+  - type: input
+    attributes:
+      label: Term Name
+      description: >
+        The name of the term
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Structured comment name
+      description: >
+        A version of the name with less than 20 characters and no spaces
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Definition
+      description: >
+        a clear and concise description of the term
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Expected value
+      description: >
+        The expected type of information the term will hold
+      placeholder: >
+        "e.g., text or EFO and/or OBI etc...".
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Value syntax
+      description: >
+        The pattern of the value that the term will be checked against
+      placeholder: >
+        "e.g. {float} {unit}|{termLabel} {[termID]}|{text}|{timestamp} etc...".
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Example
+      description: >
+        An example value for the term
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Preferred unit
+      description: >
+        The preferred unit if appropriate
+      placeholder: >
+        "e.g, millliter, gram, milligram, liter".
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Extensions(s)
+      description: >
+        List any extensions that should include the new term
+    validations:
+      required: false
