@@ -19,6 +19,7 @@ Value syntax -
 Example -
 Preferred unit - 
 Package(s) - 
+Relationship to other MIXS terms [if applicable] -
 ```
 
 **Suggested update(s)**
@@ -32,6 +33,7 @@ Value syntax -
 Example -
 Preferred unit - 
 Package(s) - 
+Relationship to other MIXS terms [if applicable] -
 ```
 
 **Additional context**
