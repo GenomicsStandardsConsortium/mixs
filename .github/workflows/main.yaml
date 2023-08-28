@@ -1,0 +1,52 @@
+# Built from:
+# https://docs.github.com/en/actions/guides/building-and-testing-python
+# https://github.com/snok/install-poetry#workflows-and-tips
+
+name: Build and test mixs_6_2_rc
+
+on: [pull_request]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10"]
+
+    steps:
+
+      #----------------------------------------------
+      #       check-out repo and set-up python
+      #----------------------------------------------
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      #----------------------------------------------
+      #          install & configure poetry
+      #----------------------------------------------
+      - name: Install Poetry
+        uses: snok/install-poetry@v1.3
+
+      #----------------------------------------------
+      # install dependencies if cache does not exist 
+      #----------------------------------------------
+      - name: Install dependencies
+        run: poetry install --no-interaction --no-root
+
+      #----------------------------------------------
+      #    install your root project, if required 
+      #----------------------------------------------      
+      - name: Install library
+        run: poetry install --no-interaction
+
+      #----------------------------------------------
+      #              make all, which includes tests of the linkml components and data
+      #----------------------------------------------
+      - name: Run tests
+        run: make all

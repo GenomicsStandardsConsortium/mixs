@@ -1,0 +1,257 @@
+name: linkml_stage_mixs_modifications
+id: http://example.com/linkml_stage_mixs_modifications
+imports:
+  - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  AGRO: http://purl.obolibrary.org/obo/AGRO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+slots:
+  #  farm_equip:
+  #    range: FARM_EQUIP_ENUM
+  #  farm_equip_shared:
+  #    range: FARM_EQUIP_ENUM
+  #  fertilizer_admin:
+  #    range: FERTILIZER_ADMIN_ENUM
+  #  plant_water_method:
+  #    range: PLANT_WATER_METHOD_ENUM
+  animal_am_freq:
+    range: float
+  carb_nitro_ratio:
+    range: float
+  ferm_rel_humidity:
+    comments:
+      - percent or float?
+    pattern: "[0-9]*\\.?[0-9]+ ?%"
+  food_source_age:
+    comments:
+      - ISO 8601 period or measurement value?
+  host_occupation:
+    comments:
+      - "Couldn't convert host_occupation with value veterinary to integer"
+      - almost all host_occupation values in the NCBI biosample_set are strings, not integers
+    range: string
+  iwf:
+    comments:
+      - pattern was "[0-9]*\\.?[0-9]+ ?%"
+      - percent or float?
+    range: float
+  micro_biomass_meth:
+    comments:
+      - slot name/scn was microbial_biomass_meth
+  occup_samp:
+    range: float
+  photosynt_activ:
+    examples:
+      - value: 0.1 mol CO2 m-2 s-1
+        description: added a magnitude to the example from the XLSX file, " mol CO2 m-2 s-1"
+  rel_air_humidity:
+    comments:
+      - percent or float?
+    range: float
+  season:
+    comments:
+      - autumn [NCIT:C94733] does not match ^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$
+      - would require ^\\S+.*\\S+ \\[[a-zA-Z]{2,}:[a-zA-Z0-9]\\]$
+    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:[a-zA-Z0-9]+\]$
+  season_humidity:
+    comments:
+      - percent or float?
+    range: float
+  surf_humidity:
+    comments:
+      - percent or float?
+    range: float
+  time_last_toothbrush:
+    comments:
+      - P2H45M does not match ^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d+[HMS])(\\d+H)?(\\d+M)?(\\d+S)?)?$
+      - problematic ISO 8601 period validation
+  water_cut:
+    comments:
+      - percent or float?
+    pattern: "[0-9]*\\.?[0-9]+ ?%"
+  bin_param:
+    examples:
+      - value: coverage
+        description: was 'coverage and kmer'
+      - value: kmer
+        description: 'was coverage and kmer'
+  compl_appr:
+    examples:
+      - value: other
+        description: was other <colon> UViG length compared to the average length of reference genomes from the P22virus genus (NCBI RefSeq v83)
+  farm_water_source:
+    examples:
+      - value: well
+        description: was water well (ENVO:01000002)
+  food_clean_proc:
+    examples:
+      - value: rinsed with water
+        description: was rinsed with water|scrubbed with brush
+      - value: scrubbed with brush
+        description: was rinsed with water|scrubbed with brush
+  host_sex:
+    comments: example of non-binary from Excel sheets does not match any of the enumerated values
+  shading_device_type:
+    examples:
+      - value: slatted aluminum
+        description: was slatted aluminum awning
+  tax_ident:
+    examples:
+      - value: other
+        description: was other <colon> rpoB gene
+  virus_enrich_appr:
+    examples:
+      - value: filtration
+        description: was filtration + FeCl Precipitation + ultracentrifugation + DNAse
+      - value: FeCl Precipitation
+        description: was filtration + FeCl Precipitation + ultracentrifugation + DNAse
+      - value: ultracentrifugation
+        description: was filtration + FeCl Precipitation + ultracentrifugation + DNAse
+      - value: DNAse
+        description: was filtration + FeCl Precipitation + ultracentrifugation + DNAse
+  num_replicons:
+    range: integer
+  experimental_factor:
+    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    multivalued: true
+  soil_pH:
+    range: float
+#  geo_loc_name:
+#    structured_pattern:
+#      syntax: "^{text}: {text}, {text}$"
+#      interpolated: true
+#      partial_match: true
+  lat_lon:
+    structured_pattern:
+      syntax: "^{lat} {lon}$"
+      interpolated: true
+      partial_match: true
+#  samp_name:
+#    identifier: true
+
+classes:
+#  Soil:
+#    slot_usage:
+#      heavy_metals_meth:
+#        annotations:
+#          usage_title: "extreme_unusual_properties/heavy metals method"
+#      horizon_meth:
+#        annotations:
+#          usage_title: "soil horizon method"
+#      sieving:
+#        annotations:
+#          usage_title: "composite design/sieving"
+#  Agriculture:
+#    slot_usage:
+#      heavy_metals_meth:
+#        annotations:
+#          usage_title: "extreme_unusual_conditions"
+#      sieving:
+#        annotations:
+#          usage_title: "composite design/sieving (if any)"
+#      soil_texture_meth:
+#        annotations:
+#          usage_title: "texture method"
+#      solar_irradiance:
+#        annotations:
+#          usage_title: "mean seasonal solar irradiance"
+#      store_cond:
+#        annotations:
+#          usage_title: "storage conditions (fresh/frozen/other)"
+#      tot_nitro_cont_meth:
+#        annotations:
+#          usage_title: "total nitrogen method"
+#  HumanAssociated:
+#    slot_usage:
+#      nose_throat_disord:
+#        annotations:
+#          usage_title: "lung/nose-throat disorder"
+#  HumanOral:
+#    slot_usage:
+#      nose_throat_disord:
+#        annotations:
+#          usage_title: "nose/mouth/teeth/throat disorder"
+#  FoodFarmEnvironment:
+#    slot_usage:
+#      samp_type:
+#        annotations:
+#          usage_title: "sample type (host or environmental context)"
+#      season_temp:
+#        annotations:
+#          usage_title: "mean seasonal air temperature"
+#      solar_irradiance:
+#        annotations:
+#          usage_title: "mean seasonal solar irradiance"
+
+settings:
+  country: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  name: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  parameters: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  region: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  room_name: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  software: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  specific_location: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  storage_condition_type: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  termLabel: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  text: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  unit: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+  version: "([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)"
+
+
+  # URL pattern from https://uibakery.io/regex-library/url
+  DOI: "^doi:10.\\d{2,9}/.*$"
+  NCBItaxon_id: "NCBITaxon:\\d+"
+  PMID: "^PMID:\\d+$"
+  URL: "^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$"
+  adapter: "[ACGTRKSYMWBHDVN]+"
+  ambiguous_nucleotides: "[ACGTRKSYMWBHDVN]+"
+  duration: "P(?:(?:\\d+D|\\d+M(?:\\d+D)?|\\d+Y(?:\\d+M(?:\\d+D)?)?)(?:T(?:\\d+H(?:\\d+M(?:\\d+S)?)?|\\d+M(?:\\d+S)?|\\d+S))?|T(?:\\d+H(?:\\d+M(?:\\d+S)?)?|\\d+M(?:\\d+S)?|\\d+S)|\\d+W)"
+  float: "[-+]?[0-9]*\\.?[0-9]+"
+  integer: "[1-9][0-9]*"
+  lat: "(-?((?:[0-8]?[0-9](?:\\.\\d{0,8})?)|90))"
+  lon: "-?[0-9]+(?:\\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})"
+  room_number: "[1-9][0-9]*"
+  scientific_float: "[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?"
+  termID: "[a-zA-Z]{2,}:[a-zA-Z0-9]\\d+"
+
+
+
+#  {crop_rotation_status};{schedule}: {boolean};{Rn/start_time/end_time/duration}
+
+# fractional durations
+# /P(?:(?:(?:\\d+D|\\d+\\.\\d+D$)|(?:\\d+M|\\d+\\.\\d+M$)(?:\\d+D|\\d+\\.\\d+D$)?|(?:\\d+Y|\\d+\\.\\d+Y$)(:?(?:\\d+M|\\d+\\.\\d+M$)(?:\\d+D|\\d+\\.\\d+D$)?)?)(:?T(?:(?:\\d+H|\\d+\\.\\d+H$)(?:(?:\\d+M|\\d+\\.\\d+M$)(?:\\d+S|\\d+\\.\\d+S$)?)?|(?:\\d+M|\\d+\\.\\d+M$)(?:\\d+S|\\d+\\.\\d+S$)?|(?:\\d+S|\\d+\\.\\d+S$)))?|T(?:(?:\\d+H|\\d+\\.\\d+H$)(?:(?:\\d+M|\\d+\\.\\d+M$)(?:\\d+S|\\d+\\.\\d+S$)?)?|(?:\\d+M|\\d+\\.\\d+M$)(?:\\d+S|\\d+\\.\\d+S$)?|(?:\\d+S|\\d+\\.\\d+S$))|(?:\\d+W|\\d+\\.\\d+W$))/gm
+
+enums:
+#  FARM_EQUIP_ENUM:
+#    reachable_from:
+#      source_ontology: obo:agro
+#      source_nodes:
+#        - AGRO:00000416
+#      relationship_types:
+#        - rdfs:subClassOf
+#      is_direct: False
+#      include_self: False
+#      traverse_up: False
+#  PLANT_WATER_METHOD_ENUM:
+#    reachable_from:
+#      source_ontology: obo:agro
+#      source_nodes:
+#        - AGRO:00000006
+#      relationship_types:
+#        - rdfs:subClassOf
+#      is_direct: False
+#      include_self: False
+#      traverse_up: False
+#  FERTILIZER_ADMIN_ENUM:
+#    reachable_from:
+#      source_ontology: obo:agro
+#      source_nodes:
+#        - AGRO:00002062
+#      relationship_types:
+#        - rdfs:subClassOf
+#      is_direct: False
+#      include_self: False
+#      traverse_up: False
+

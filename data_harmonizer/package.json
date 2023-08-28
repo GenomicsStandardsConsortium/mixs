@@ -1,0 +1,22 @@
+{
+  "name": "dh-testing-web",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "update-schema": "gen-linkml --format json --output schemas/mixs_6_2_rc.json ../generated-schema/mixs_6_2_rc.yaml"
+  },
+  "private": true,
+  "devDependencies": {
+    "linkml-runtime": "0.2.0",
+    "vite": "3.0.4"
+  },
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "data-harmonizer": "1.4.7",
+    "jquery": "3.5.1",
+    "popper.js": "1.16.1"
+  }
+}
