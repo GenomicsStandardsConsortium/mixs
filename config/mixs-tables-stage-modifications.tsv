@@ -1,0 +1,521 @@
+apply	delete	key	key_val	target	target_val	notes	eponymous
+TRUE	TRUE	MIXS ID	MIXS:0001291				
+TRUE		MIXS ID	MIXS:0000018	Expected value	measurement value		
+TRUE		MIXS ID	MIXS:0000018	Item	depth		
+TRUE		MIXS ID	MIXS:0000018	Occurrence	1		
+TRUE		MIXS ID	MIXS:0000018	Structured comment name	depth		
+TRUE		MIXS ID	MIXS:0000056	Item	assembly quality		
+TRUE		MIXS ID	MIXS:0000056	Occurrence	1		
+TRUE		MIXS ID	MIXS:0000056	Structured comment name	assembly_qual		FALSE
+TRUE		MIXS ID	MIXS:0000058	Item	assembly software		
+TRUE		MIXS ID	MIXS:0000058	Occurrence	1		
+TRUE		MIXS ID	MIXS:0000058	Section	sequencing		
+TRUE		MIXS ID	MIXS:0000058	Structured comment name	assembly_software		FALSE
+TRUE		MIXS ID	MIXS:0000065	Structured comment name	x16s_recover		FALSE
+TRUE		MIXS ID	MIXS:0000066	Structured comment name	x16s_recover_software		FALSE
+TRUE		MIXS ID	MIXS:0000091	Structured comment name	associated_resource		FALSE
+TRUE		MIXS ID	MIXS:0000110	Structured comment name	samp_store_temp		FALSE
+TRUE		MIXS ID	MIXS:0000116	Structured comment name	samp_store_dur		FALSE
+TRUE		MIXS ID	MIXS:0000270	Structured comment name	nose_throat_disord		
+TRUE		MIXS ID	MIXS:0000283	Structured comment name	nose_mouth_teeth_throat_disord		
+TRUE		MIXS ID	MIXS:0000335	Structured comment name	soil_texture		
+TRUE		MIXS ID	MIXS:0000335	Item	soil texture		
+TRUE		MIXS ID	MIXS:0000336	Definition	Reference or method used in determining soil texture.		
+TRUE		MIXS ID	MIXS:0000336	Item	soil texture method		
+TRUE		MIXS ID	MIXS:0000336	Structured comment name	soil_texture_meth		FALSE
+TRUE		MIXS ID	MIXS:0000338	Definition	Reference or method used in determining the total nitrogen.		
+TRUE		MIXS ID	MIXS:0000338	Example	https://currentprotocols.onlinelibrary.wiley.com/doi/abs/10.1002/0471142913.fab0102s00		
+TRUE		MIXS ID	MIXS:0000338	Item	total nitrogen content method		
+TRUE		MIXS ID	MIXS:0000338	Occurrence	1		
+TRUE		MIXS ID	MIXS:0000338	Structured comment name	tot_nitro_cont_meth		
+TRUE		MIXS ID	MIXS:0000338	Value syntax	{PMID}|{DOI}|{URL}		
+TRUE		MIXS ID	MIXS:0000525	Structured comment name	tot_carb		FALSE
+TRUE		MIXS ID	MIXS:0000530	Structured comment name	tot_nitro_content		FALSE
+TRUE		MIXS ID	MIXS:0000689	Item	total phosphate		
+TRUE		MIXS ID	MIXS:0000689	Structured comment name	tot_phosphate		
+TRUE		MIXS ID	MIXS:0000755	Structured comment name	samp_store_loc		FALSE
+TRUE		MIXS ID	MIXS:0000862	Structured comment name	urobiom_sex		FALSE
+TRUE		MIXS ID	MIXS:0001082	Definition	Specific layer in the land area which measures parallel to the soil surface and possesses physical characteristics which differ from the layers above and beneath		
+TRUE		MIXS ID	MIXS:0001082	Example	A horizon		
+TRUE		MIXS ID	MIXS:0001082	Item	soil horizon		
+TRUE		MIXS ID	MIXS:0001082	Structured comment name	soil_horizon		
+TRUE		MIXS ID	MIXS:0001082	Value syntax	[O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost]		
+TRUE		MIXS ID	MIXS:0001107	Definition	A local identifier or name that for the material sample used for extracting nucleic acids, and subsequent sequencing. It can refer either to the original material collected or to any derived sub-samples. It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible. INSDC requires every sample name from a single Submitter to be unique. Use of a globally unique identifier for the field source_mat_id is recommended in addition to sample_name.		
+TRUE		MIXS ID	MIXS:0001107	Structured comment name	samp_name		
+TRUE		MIXS ID	MIXS:0001139	Structured comment name	food_source		FALSE
+TRUE		MIXS ID	MIXS:0001184	Structured comment name	food_product_type		FALSE
+TRUE		MIXS ID	MIXS:0001225	Structured comment name	samp_collect_method		FALSE
+TRUE		MIXS ID	MIXS:0001309	Occurrence	1		FALSE
+TRUE		Structured comment name	adapters	Example	AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT		FALSE
+TRUE		Structured comment name	adapters	Section	sequencing		FALSE
+TRUE		Structured comment name	adapters	Value syntax	{dna};{dna}		FALSE
+TRUE		Structured comment name	agrochem_addition	Example	roundup;5 milligram per liter;2018-06-21		FALSE
+TRUE		Structured comment name	air_temp	Definition	Temperature of the air at the time of sampling.		FALSE
+TRUE		Structured comment name	alt	Definition	Heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air		FALSE
+TRUE		Structured comment name	alt	Preferred unit	meter		FALSE
+TRUE		Structured comment name	alt	Section	environment		FALSE
+TRUE		Structured comment name	ances_data	Definition	Information about either pedigree or other ancestral information description (e.g. parental variety in case of mutant or selection), e.g. A/3*B (meaning [(A x B) x B] x B)		FALSE
+TRUE		Structured comment name	ances_data	Expected value	text		FALSE
+TRUE		Structured comment name	animal_am_freq	Example	1.5	completely made up	FALSE
+TRUE		Structured comment name	animal_diet	Example	Hay [FOODON:03301763]		FALSE
+TRUE		Structured comment name	animal_feed_equip	Definition	Description of the feeding equipment used for livestock. This field accepts terms listed under feed delivery (http://opendata.inra.fr/EOL/EOL_0001757). Multiple terms can be separated by pipes.		
+TRUE		Structured comment name	animal_feed_equip	Expected value	EOL:0001757		FALSE
+TRUE		Structured comment name	animal_feed_equip	Value syntax	{termLabel} [{termID}]		FALSE
+TRUE		Structured comment name	annot	Example	prokka		FALSE
+TRUE		Structured comment name	annot	Expected value	name of tool or pipeline used, or annotation source description		FALSE
+TRUE		Structured comment name	annot	Section	sequencing		FALSE
+TRUE		Structured comment name	api	Example	31.1 API	from description of slot	FALSE
+TRUE		Structured comment name	assembly_name	Expected value	name and version of assembly		FALSE
+TRUE		Structured comment name	assembly_name	Section	sequencing		FALSE
+TRUE		Structured comment name	assembly_qual	Item	assembly quality		FALSE
+TRUE		Structured comment name	assembly_qual	Occurrence	1		FALSE
+TRUE		Structured comment name	assembly_qual	Section	sequencing		FALSE
+TRUE		Structured comment name	assembly_qual	Structured comment name	assembly_qual		TRUE
+TRUE		Structured comment name	assembly_software	Item	assembly software		FALSE
+TRUE		Structured comment name	assembly_software	Occurrence	1		FALSE
+TRUE		Structured comment name	assembly_software	Section	sequencing		FALSE
+TRUE		Structured comment name	assembly_software	Structured comment name	assembly_software		TRUE
+TRUE		Structured comment name	associated_resource	Definition	A related resource that is referenced, cited, or otherwise associated to the sequence. 		FALSE
+TRUE		Structured comment name	associated_resource	Example	http://www.earthmicrobiome.org/		FALSE
+TRUE		Structured comment name	associated_resource	Expected value	reference to resource		FALSE
+TRUE		Structured comment name	associated_resource	Section	sequencing		FALSE
+TRUE		Structured comment name	associated_resource	Structured comment name	associated_resource	only agriculture uses url	TRUE
+TRUE		Structured comment name	associated_resource	Value syntax	{PMID}|{DOI}|{URL}		FALSE
+TRUE		Structured comment name	basin	Example	Campos	from description of slot	FALSE
+TRUE		Structured comment name	bin_param	Example		dropping example, to be reasserted in config/linkml-stage-mixs-modifications.yaml	FALSE
+TRUE		Structured comment name	biol_stat	Definition	The level of genome modification.		FALSE
+TRUE		Structured comment name	biotic_relationship	Example	free living		FALSE
+TRUE		Structured comment name	biotic_relationship	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	biotic_relationship	Value syntax	[free living|parasitism|commensalism|symbiotic|mutualism]	only agriculture says [free living|parasite|commensal|symbiont]	FALSE
+TRUE		Structured comment name	built_struc_age	Example	15 years	completely made up	FALSE
+TRUE		Structured comment name	carb_nitro_ratio	Value syntax	{float}:{float}		
+TRUE		Structured comment name	chem_administration	Definition	List of chemical compounds administered to the host or site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include multiple compounds. For chemical entities of biological interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi		FALSE
+TRUE		Structured comment name	chem_administration	Example	agar [CHEBI:2509];2018-05-11T20:00Z		FALSE
+TRUE		Structured comment name	chimera_check	Example	uchime;v4.1;default parameters		FALSE
+TRUE		Structured comment name	chimera_check	Expected value	name and version of software, parameters used		FALSE
+TRUE		Structured comment name	chimera_check	Item	chimera check software		FALSE
+TRUE		Structured comment name	chimera_check	Section	sequencing		FALSE
+TRUE		Structured comment name	chimera_check	Value syntax	{software};{version};{parameters}		FALSE
+TRUE		Structured comment name	climate_environment	Example	tropical climate;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	coll_site_geo_feat	Example	farm [ENVO:00000078]	present in NCBI biosample_set	FALSE
+TRUE		Structured comment name	collection_date	Definition	The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant		FALSE
+TRUE		Structured comment name	collection_date	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	collection_date	Section	environment		FALSE
+TRUE		Structured comment name	compl_appr	Example		dropping example, to be reasserted in config/linkml-stage-mixs-modifications.yaml	FALSE
+TRUE		Structured comment name	conduc	Definition	Electrical conductivity of water.		FALSE
+TRUE		Structured comment name	cons_purch_date	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	crop_rotation	Definition	Whether or not crop is rotated, and if yes, rotation schedule.		FALSE
+TRUE		Structured comment name	crop_rotation	Example	yes;R2/2017-01-01/2018-12-31/P6M		FALSE
+TRUE		Structured comment name	cult_isol_date	Definition	The datetime marking the end of a process in which a sample yields a positive result for the target microbial analyte(s) in the form of an isolated colony or colonies.	Removed X is a X pattern.	FALSE
+TRUE		Structured comment name	cult_isol_date	Example	2018-05-11T10:00:00+01:00		FALSE
+TRUE		Structured comment name	cult_isol_date	Expected value	date and time		FALSE
+TRUE		Structured comment name	cult_isol_date	Occurrence	1		FALSE
+TRUE		Structured comment name	cult_isol_date	Value syntax	{timestamp}		FALSE
+TRUE		Structured comment name	cult_result_org	Value syntax	{termLabel} [{termID}]|{integer}		FALSE
+TRUE		Structured comment name	cult_target	Value syntax	{termLabel} [{termID}]|{integer}		FALSE
+TRUE		Structured comment name	cur_land_use	Example	conifers		FALSE
+TRUE		Structured comment name	cur_vegetation_meth	Value syntax	{PMID}|{DOI}|{URL}		
+TRUE		Structured comment name	date_extr_weath	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	date_last_rain	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	density	Preferred unit	gram per cubic meter, gram per cubic centimeter		FALSE
+TRUE		Structured comment name	depth	Definition	The vertical distance below local surface. For sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.	variability in case and punctuation	FALSE
+TRUE		Structured comment name	depth	Occurrence	1		FALSE
+TRUE		Structured comment name	depth	Preferred unit	meter		FALSE
+TRUE		Structured comment name	depth	Section	environment		FALSE
+TRUE		Structured comment name	depth	Structured comment name	depth		TRUE
+TRUE		Structured comment name	diss_inorg_carb	Preferred unit	microgram per liter, milligram per liter, parts per million		FALSE
+TRUE		Structured comment name	douche	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	drainage_class	Example	well		FALSE
+TRUE		Structured comment name	elev	Definition	Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit.		FALSE
+TRUE		Structured comment name	elev	Occurrence	1		FALSE
+TRUE		Structured comment name	elev	Preferred unit	meter		FALSE
+TRUE		Structured comment name	elev	Section	environment		FALSE
+TRUE		Structured comment name	enrichment_protocol	Definition	The microbiological workflow or protocol followed to test for the presence or enumeration of the target microbial analyte(s). Please provide a PubMed or DOI reference for published protocols.		FALSE
+TRUE		Structured comment name	env_broad_scale	Example	rangeland biome [ENVO:01000247]	arbitrarily selected EnvO biome term	FALSE
+TRUE		Structured comment name	env_broad_scale	Occurrence	1	may be controversial. Check for appearances of multi-valued entries in bio-sample SQL database or other community suggestions	FALSE
+TRUE		Structured comment name	env_local_scale	Example	hillside [ENVO:01000333]	arbitrarily selected EnvO term	FALSE
+TRUE		Structured comment name	env_local_scale	Occurrence	1	may be controversial. Check for appearances of multi-valued entries in bio-sample SQL database or other community suggestions	FALSE
+TRUE		Structured comment name	env_medium	Example	bluegrass field soil [ENVO:00005789]	arbitrarily selected EnvO environmental material term	FALSE
+TRUE		Structured comment name	env_medium	Occurrence	1	may be controversial. Check for appearances of multi-valued entries in bio-sample SQL database or other community suggestions	FALSE
+TRUE		Structured comment name	env_monitoring_zone	Value syntax	{text}		FALSE
+TRUE		Structured comment name	experimental_factor	Definition	Variable aspects of an experiment design that can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI).		FALSE
+TRUE		Structured comment name	experimental_factor	Example	time series design [EFO:0001779]		FALSE
+TRUE		Structured comment name	experimental_factor	Occurrence	m		FALSE
+TRUE		Structured comment name	experimental_factor	Section	investigation		FALSE
+TRUE		Structured comment name	fao_class	Example	Luvisols		FALSE
+TRUE		Structured comment name	fao_class	Value syntax	[Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]		FALSE
+TRUE		Structured comment name	farm_equip	Definition	List of equipment used for planting, fertilization, harvesting, irrigation, land levelling, residue management, weeding or transplanting during the growing season.  This field accepts terms listed under agricultural implement (http://purl.obolibrary.org/obo/AGRO_00000416). Multiple terms can be separated by pipes.		
+TRUE		Structured comment name	farm_equip	Occurrence	m		FALSE
+TRUE		Structured comment name	farm_equip_san	Definition	Method used to sanitize growing and harvesting equipment. This can including type and concentration of sanitizing solution.  Multiple terms can be separated by one or more pipes.		
+TRUE		Structured comment name	farm_equip_san	Example	hot water pressure wash, hypochlorite solution, 50 parts per million		FALSE
+TRUE		Structured comment name	farm_equip_san	Expected value	text or commercial name of sanitizer or class of sanitizer or active ingredient in sanitizer		FALSE
+TRUE		Structured comment name	farm_equip_san	Occurrence	m		FALSE
+TRUE		Structured comment name	farm_equip_san	Preferred unit	parts per million		FALSE
+TRUE		Structured comment name	farm_equip_san	Value syntax	{text} {float} {unit}		FALSE
+TRUE		Structured comment name	farm_equip_shared	Definition	List of planting, growing or harvesting equipment shared with other farms. This field accepts terms listed under agricultural implement (http://purl.obolibrary.org/obo/AGRO_00000416). Multiple terms can be separated by pipes.		
+TRUE		Structured comment name	farm_equip_shared	Example	combine harvester [AGRO:00000473]		FALSE
+TRUE		Structured comment name	farm_equip_shared	Expected value	AGRO:00000416		FALSE
+TRUE		Structured comment name	farm_equip_shared	Occurrence	m		FALSE
+TRUE		Structured comment name	farm_equip_shared	Value syntax	{termLabel} [{termID}]		FALSE
+TRUE		Structured comment name	farm_water_source	Example		dropping example, to be reasserted in config/linkml-stage-mixs-modifications.yaml	FALSE
+TRUE		Structured comment name	ferm_rel_humidity	Example	95%	removed ' RH' suffix from XLSX example	FALSE
+TRUE		Structured comment name	food_additive	Example	xanthan gum [FOODON:03413321]		FALSE
+TRUE		Structured comment name	food_clean_proc	Example		dropping example, to be reasserted in config/linkml-stage-mixs-modifications.yaml	FALSE
+TRUE		Structured comment name	food_dis_point	Definition	A reference to a place on the Earth, by its name or by its geographical location that refers to a distribution point along the food chain. This field accepts terms listed under geographic location (http://purl.obolibrary.org/obo/GAZ_00000448). Reference: Adam Diamond, James Barham. Moving Food Along the Value Chain: Innovations in Regional Food Distribution. U.S. Dept. of Agriculture, Agricultural Marketing Service. Washington, DC. March 2012. http://dx.doi.org/10.9752/MS045.03-2012.		FALSE
+TRUE		Structured comment name	food_dis_point	Example	USA: Delmarva, Peninsula		FALSE
+TRUE		Structured comment name	food_dis_point	Expected value	country: region, specific location		FALSE
+TRUE		Structured comment name	food_dis_point_city	Occurrence	m		FALSE
+TRUE		Structured comment name	food_harvest_proc	Example	hand-picked		FALSE
+TRUE		Structured comment name	food_harvest_proc	Expected value	text		FALSE
+TRUE		Structured comment name	food_harvest_proc	Occurrence	m		FALSE
+TRUE		Structured comment name	food_harvest_proc	Value syntax	{text}		FALSE
+TRUE		Structured comment name	food_origin	Example	USA: Delmarva, Peninsula		FALSE
+TRUE		Structured comment name	food_origin	Value syntax	{term}: {term}, {text}		FALSE
+TRUE		Structured comment name	food_pack_capacity	Definition	The maximum number of product units within a package.		FALSE
+TRUE		Structured comment name	food_prod	Definition	Descriptors of the food production system or of the agricultural environment and growing conditions related to the farm production system, such as wild caught, organic, free-range, industrial, dairy, beef,  domestic or cultivated food production. This field accepts terms listed under food production (http://purl.obolibrary.org/obo/FOODON_03530206). Multiple terms may apply and can be separated by pipes.		FALSE
+TRUE		Structured comment name	food_product_type	Definition	A food product type is a class of food products that is differentiated by its food composition (e.g., single- or multi-ingredient), processing and/or consumption characteristics. This does not include brand name products but it may include generic food dish categories. This field accepts terms under food product type (http://purl.obolibrary.org/obo/FOODON:03400361). For terms related to food product for an animal, consult food product for animal (http://purl.obolibrary.org/obo/FOODON_03309997). If the proper descriptor is not listed please use text to describe the food type. Multiple terms can be separated by one or more pipes.		FALSE
+TRUE		Structured comment name	food_product_type	Expected value	FOODON:00001002 or FOODON:03309997		FALSE
+TRUE		Structured comment name	food_product_type	Item	food product type		FALSE
+TRUE		Structured comment name	food_product_type	Occurrence	1		FALSE
+TRUE		Structured comment name	food_product_type	Structured comment name	food_product_type		TRUE
+TRUE		Structured comment name	food_product_type	Value syntax	{text}|{termLabel} [{termID}]		FALSE
+TRUE		Structured comment name	food_source	Item	food source		FALSE
+TRUE		Structured comment name	food_source	Occurrence	1		FALSE
+TRUE		Structured comment name	food_source	Structured comment name	food_source		TRUE
+TRUE		Structured comment name	food_source	Value syntax	{termLabel} [{termID}]		FALSE
+TRUE		Structured comment name	food_source_age	Example	6 months	converted ISO 8601 period in slot to a measurement value string	FALSE
+TRUE		Structured comment name	food_trav_mode	Definition	A descriptor for the method of movement of food commodity along the food distribution system.  This field accepts terms listed under travel mode (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descrptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes.		FALSE
+TRUE		Structured comment name	food_trav_vehic	Item	food shipping transportation vehicle		FALSE
+TRUE		Structured comment name	freq_clean	Example	Daily		FALSE
+TRUE		Structured comment name	fungicide_regm	Example	bifonazole;1 mole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	gaseous_environment	Example	nitric oxide;0.5 micromole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	genetic_mod	Definition	Genetic modifications of the genome of an organism, which may occur naturally by spontaneous mutation, or be introduced by some experimental means, e.g. specification of a transgene or the gene knocked-out or details of transient transfection.		FALSE
+TRUE		Structured comment name	genetic_mod	Expected value	PMID, DOI, URL or text		FALSE
+TRUE		Structured comment name	genetic_mod	Occurrence	1	majority rule	FALSE
+TRUE		Structured comment name	genetic_mod	Value syntax	{PMID}|{DOI}|{URL}|{text}		
+TRUE		Structured comment name	genetic_mod	Value syntax	{PMID}|{DOI}|{URL}		
+TRUE		Structured comment name	geo_loc_name	Definition	The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)		FALSE
+TRUE		Structured comment name	geo_loc_name	Section	environment		FALSE
+TRUE		Structured comment name	gravidity	Definition	Whether or not subject is gravid, and if yes date due or date post-conception, specifying which is used.		
+TRUE		Structured comment name	gravidity	Example	yes;due date:2018-05-11		FALSE
+TRUE		Structured comment name	growth_habit	Definition	Characteristic shape, appearance or growth form of a plant species.		
+TRUE		Structured comment name	heavy_metals_meth	Item	extreme_unusual_properties/heavy metals method		
+TRUE		Structured comment name	herbicide_regm	Example	atrazine;10 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	horizon	Item	horizon		FALSE
+TRUE		Structured comment name	horizon	Structured comment name	horizon		TRUE
+TRUE		Structured comment name	horizon_meth	Item	horizon method		FALSE
+TRUE		Structured comment name	horizon_meth	Value syntax	{PMID}|{DOI}|{URL}		
+TRUE		Structured comment name	host_age	Definition	Age of host at the time of sampling; relevant scale depends on species and study, e.g. Could be seconds for amoebae or centuries for trees		FALSE
+TRUE		Structured comment name	host_age	Expected value	measurement value		FALSE
+TRUE		Structured comment name	host_body_habitat	Definition	Original body habitat where the sample was obtained from.		FALSE
+TRUE		Structured comment name	host_body_product	Definition	Substance produced by the body, e.g. Stool, mucus, where the sample was obtained from. Use terms from the foundational model of anatomy ontology (fma) or Uber-anatomy ontology (UBERON)		FALSE
+TRUE		Structured comment name	host_body_product	Definition	Substance produced by the body, e.g. Stool, mucus, where the sample was obtained from. Use terms from the foundational model of anatomy ontology (fma) or Uber-anatomy ontology (UBERON)		FALSE
+TRUE		Structured comment name	host_body_product	Example	mucus [FMA:66938]	reformatted the example from the XLSX file, 'Portion of mucus [fma66938]'	FALSE
+TRUE		Structured comment name	host_body_product	Expected value	FMA or UBERON		FALSE
+TRUE		Structured comment name	host_body_product	MIXS ID	MIXS:0000888		FALSE
+TRUE		Structured comment name	host_body_site	Definition	Name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...). Use terms from the foundational model of anatomy ontology (fma) or the Uber-anatomy ontology (UBERON)		FALSE
+TRUE		Structured comment name	host_body_site	Expected value	FMA or UBERON		FALSE
+TRUE		Structured comment name	host_color	Definition	The color of host.		FALSE
+TRUE		Structured comment name	host_common_name	Expected value	common name		FALSE
+TRUE		Structured comment name	host_disease_stat	Definition	List of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org, non-human host diseases are free text		FALSE
+TRUE		Structured comment name	host_disease_stat	Expected value	disease name or Disease Ontology term		FALSE
+TRUE		Structured comment name	host_disease_stat	Occurrence	1	majority rule	FALSE
+TRUE		Structured comment name	host_disease_stat	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	host_disease_stat	Value syntax	{termLabel} [{termID}]|{text}		
+TRUE		Structured comment name	host_dry_mass	Definition	Measurement of dry mass.		FALSE
+TRUE		Structured comment name	host_dry_mass	Example	500 gram		FALSE
+TRUE		Structured comment name	host_dry_mass	Expected value	measurement value		FALSE
+TRUE		Structured comment name	host_fam_rel	Definition	Relationships to other hosts in the same study; can include multiple relationships		FALSE
+TRUE		Structured comment name	host_fam_rel	Expected value	relationship type;arbitrary identifier		FALSE
+TRUE		Structured comment name	host_fam_rel	Occurrence	m	majority rule	FALSE
+TRUE		Structured comment name	host_genotype	Definition	Observed genotype.		FALSE
+TRUE		Structured comment name	host_genotype	Expected value	genotype		FALSE
+TRUE		Structured comment name	host_genotype	Occurrence	1		FALSE
+TRUE		Structured comment name	host_growth_cond	Definition	Literature reference giving growth conditions of the host.		FALSE
+TRUE		Structured comment name	host_growth_cond	Example	https://academic.oup.com/icesjms/article/68/2/349/617247		FALSE
+TRUE		Structured comment name	host_height	Definition	The height of subject.		FALSE
+TRUE		Structured comment name	host_height	Expected value	measurement value		FALSE
+TRUE		Structured comment name	host_height	Preferred unit	centimeter, millimeter, meter		FALSE
+TRUE		Structured comment name	host_last_meal	Expected value	content;duration		FALSE
+TRUE		Structured comment name	host_length	Definition	The length of subject.		FALSE
+TRUE		Structured comment name	host_length	Example	1 meter		FALSE
+TRUE		Structured comment name	host_length	Expected value	measurement value		FALSE
+TRUE		Structured comment name	host_length	Preferred unit	centimeter, millimeter, meter		FALSE
+TRUE		Structured comment name	host_life_stage	Definition	Description of life stage of host.		FALSE
+TRUE		Structured comment name	host_life_stage	Expected value	stage		FALSE
+TRUE		Structured comment name	host_of_host_env_loc	Value syntax	small intestine [UBERON:0002108]		FALSE
+TRUE		Structured comment name	host_phenotype	Definition	Phenotype of human or other host. Use terms from the phenotypic quality ontology (pato) or the Human Phenotype Ontology (HP)		FALSE
+TRUE		Structured comment name	host_phenotype	Expected value	PATO or HP		FALSE
+TRUE		Structured comment name	host_phenotype	Occurrence	1		FALSE
+TRUE		Structured comment name	host_phenotype	Value syntax	{termLabel} [{termID}]		
+TRUE		Structured comment name	host_sex	Example		dropping example, to be reasserted in config/linkml-stage-mixs-modifications.yaml	FALSE
+TRUE		Structured comment name	host_sex	MIXS ID	MIXS:0000811		FALSE
+TRUE		Structured comment name	host_shape	Definition	Morphological shape of host.		FALSE
+TRUE		Structured comment name	host_shape	Example	round		FALSE
+TRUE		Structured comment name	host_spec_range	Example	9606		FALSE
+TRUE		Structured comment name	host_spec_range	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	host_subject_id	Definition	A unique identifier by which each subject can be referred to, de-identified. 		FALSE
+TRUE		Structured comment name	host_subject_id	Expected value	unique identifier		FALSE
+TRUE		Structured comment name	host_substrate	Example	rock		FALSE
+TRUE		Structured comment name	host_symbiont	Definition	The taxonomic name of the organism(s) found living in mutualistic, commensalistic, or parasitic symbiosis with the specific host. The sampled symbiont can have its own symbionts. For example, parasites may have hyperparasites (=parasites of the parasite).		FALSE
+TRUE		Structured comment name	host_symbiont	Expected value	species name or common name		FALSE
+TRUE		Structured comment name	host_symbiont	MIXS ID	MIXS:0001298		FALSE
+TRUE		Structured comment name	host_symbiont	Occurrence	m		FALSE
+TRUE		Structured comment name	host_taxid	Definition	NCBI taxon id of the host, e.g. 9606		FALSE
+TRUE		Structured comment name	host_taxid	Expected value	NCBI taxon identifier		FALSE
+TRUE		Structured comment name	host_tot_mass	Definition	Total mass of the host at collection, the unit depends on host.		FALSE
+TRUE		Structured comment name	host_tot_mass	Expected value	measurement value		FALSE
+TRUE		Structured comment name	host_tot_mass	Preferred unit	kilogram, gram		FALSE
+TRUE		Structured comment name	hrt	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	humidity	Definition	Amount of water vapour in the air, at the time of sampling.		FALSE
+TRUE		Structured comment name	hygienic_area	Expected value	Expected value		FALSE
+TRUE		Structured comment name	hygienic_area	Value syntax	{text}		FALSE
+TRUE		Structured comment name	IFSAC_category	Definition	The IFSAC food categorization scheme has five distinct levels to which foods can be assigned, depending upon the type of food. First, foods are assigned to one of four food groups (aquatic animals, land animals, plants, and other). Food groups include increasingly specific food categories; dairy, eggs, meat and poultry, and game are in the land animal food group, and the category meat and poultry is further subdivided into more specific categories of meat (beef, pork, other meat) and poultry (chicken, turkey, other poultry). Finally, foods are differentiated by differences in food processing (such as pasteurized fluid dairy products, unpasteurized fluid dairy products, pasteurized solid and semi-solid dairy products, and unpasteurized solid and semi-solid dairy products. An IFSAC food category chart is available from https://www.cdc.gov/foodsafety/ifsac/projects/food-categorization-scheme.html PMID: 28926300.		FALSE
+TRUE		Structured comment name	indoor_surf	Definition	Type of indoor surface.		FALSE
+TRUE		Structured comment name	isol_growth_condt	Example	doi:10.1016/j.syapm.2018.01.009	no space between prefix and local portion	FALSE
+TRUE		Structured comment name	isol_growth_condt	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	isol_growth_condt	Value syntax	{PMID}|{DOI}|{URL}		FALSE
+TRUE		Structured comment name	iw_bt_date_well	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	iwf	Example	0.79	casual Google search	FALSE
+TRUE		Structured comment name	last_clean	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	lat_lon	Definition	The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system		FALSE
+TRUE		Structured comment name	lat_lon	Expected value	decimal degrees,  limit to 8 decimal points		FALSE
+TRUE		Structured comment name	lat_lon	Section	environment		FALSE
+TRUE		Structured comment name	lib_layout	Section	sequencing		FALSE
+TRUE		Structured comment name	lib_reads_seqd	Example	20		FALSE
+TRUE		Structured comment name	lib_reads_seqd	Section	sequencing		FALSE
+TRUE		Structured comment name	lib_screen	Section	sequencing		FALSE
+TRUE		Structured comment name	lib_size	Example	50		FALSE
+TRUE		Structured comment name	lib_size	Section	sequencing		FALSE
+TRUE		Structured comment name	lib_vector	Example	Bacteriophage P1		FALSE
+TRUE		Structured comment name	lib_vector	Section	sequencing		FALSE
+TRUE		Structured comment name	library_prep_kit	Definition	Packaged kits (containing adapters, indexes, enzymes, buffers etc.), tailored for specific sequencing workflows, which allow the simplified preparation of sequencing-ready libraries for small genomes, amplicons, and plasmids.		FALSE
+TRUE		Structured comment name	library_prep_kit	Expected value	name of library preparation kit		FALSE
+TRUE		Structured comment name	link_class_info	Value syntax	{termLabel} [{termID}]		
+TRUE		Structured comment name	link_climate_info	Value syntax	{PMID}|{DOI}|{URL}		
+TRUE		Structured comment name	local_class_meth	Value syntax	{PMID}|{DOI}|{URL}		
+TRUE		Structured comment name	lot_number	Definition	A distinctive alpha-numeric identification code assigned by the manufacturer or distributor to a specific quantity of manufactured material or product within a batch. Synonym: Batch Number.  The submitter should provide lot number of the item followed by the item name for which the lot number was provided.		FALSE
+TRUE		Structured comment name	lot_number	Item	lot number		FALSE
+TRUE		Structured comment name	lot_number	Occurrence	m		FALSE
+TRUE		Structured comment name	mechanical_damage	Definition	Information about any mechanical damage exerted on the plant; can include multiple damages and sites.		
+TRUE		Structured comment name	menarche	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	menopause	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	micro_biomass_meth	Example	http://dx.doi.org/10.1016/j.soilbio.2005.01.021	present in NCBI biosample_set	FALSE
+TRUE		Structured comment name	micro_biomass_meth	Value syntax	{PMID}|{DOI}|{URL}		
+TRUE		Structured comment name	mid	Example	GTGAATAT		FALSE
+TRUE		Structured comment name	mid	Section	sequencing		FALSE
+TRUE		Structured comment name	misc_param	Definition	Any other measurement performed or parameter collected, that is not listed here		FALSE
+TRUE		Structured comment name	misc_param	Example	Bicarbonate ion concentration;2075 micromole per kilogram		FALSE
+TRUE		Structured comment name	misc_param	Expected value	parameter name;measurement value		FALSE
+TRUE		Structured comment name	nitrate	Preferred unit	micromole per liter, milligram per liter, parts per million		FALSE
+TRUE		Structured comment name	nitrite	Preferred unit	micromole per liter, milligram per liter, parts per million		FALSE
+TRUE		Structured comment name	non_min_nutr_regm	Example	https://phylogenomics.me/protocols/16s-pcr-protocol/		FALSE
+TRUE		Structured comment name	nose_throat_disord	Item	nose throat disorder		FALSE
+TRUE		Structured comment name	nucl_acid_amp	Example	https://phylogenomics.me/protocols/16s-pcr-protocol/		FALSE
+TRUE		Structured comment name	nucl_acid_amp	Expected value	PMID, DOI or URL		FALSE
+TRUE		Structured comment name	nucl_acid_amp	Section	sequencing		FALSE
+TRUE		Structured comment name	nucl_acid_amp	Value syntax	{PMID}|{DOI}|{URL}		FALSE
+TRUE		Structured comment name	nucl_acid_ext	Definition	A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the material separation to recover the nucleic acid fraction from a sample		FALSE
+TRUE		Structured comment name	nucl_acid_ext	Example	https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf		FALSE
+TRUE		Structured comment name	nucl_acid_ext	Section	sequencing		FALSE
+TRUE		Structured comment name	nucl_acid_ext	Value syntax	{PMID}|{DOI}|{URL}		FALSE
+TRUE		Structured comment name	occup_density_samp	Example	0.1	casual Google search for legislation about occupants per square foot	FALSE
+TRUE		Structured comment name	org_matter	Preferred unit	microgram per liter		FALSE
+TRUE		Structured comment name	organism_count	Definition	Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)		FALSE
+TRUE		Structured comment name	organism_count	Expected value	organism name;measurement value;enumeration		FALSE
+TRUE		Structured comment name	organism_count	Occurrence	m	majority rule. There are lots of other variations in this slot.	FALSE
+TRUE		Structured comment name	organism_count	Value syntax	{text};{float} {unit};[ATP|MPN|qPCR|other]		FALSE
+TRUE		Structured comment name	oxy_stat_samp	Definition	Oxygenation status of sample.		FALSE
+TRUE		Structured comment name	oxy_stat_samp	Example	aerobic		FALSE
+TRUE		Structured comment name	oxy_stat_samp	Value syntax	[aerobic|anaerobic|other]	only symbiont-associated and agriculture say [aerobic|anaerobic]	FALSE
+TRUE		Structured comment name	pathogenicity	Expected value	names of organisms that the entity is pathogenic to		FALSE
+TRUE		Structured comment name	pathogenicity	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	pathogenicity	Value syntax	{text}		FALSE
+TRUE		Structured comment name	pcr_cond	Example	initial denaturation:94_3;annealing:50_1;elongation:72_1.5;final elongation:72_10;35		FALSE
+TRUE		Structured comment name	pcr_cond	Expected value	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles		FALSE
+TRUE		Structured comment name	pcr_cond	Section	sequencing		FALSE
+TRUE		Structured comment name	pcr_cond	Value syntax	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles		FALSE
+TRUE		Structured comment name	pcr_primers	Example	FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT		FALSE
+TRUE		Structured comment name	pcr_primers	Expected value	FWD: forward primer sequence;REV:reverse primer sequence		FALSE
+TRUE		Structured comment name	pcr_primers	Occurrence	1		FALSE
+TRUE		Structured comment name	pcr_primers	Section	sequencing		FALSE
+TRUE		Structured comment name	pcr_primers	Value syntax	FWD:{dna};REV:{dna}		FALSE
+TRUE		Structured comment name	perturbation	Definition	Type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with perturbation regimen including how many times the perturbation was repeated, how long each perturbation lasted, and the start and end time of the entire perturbation period; can include multiple perturbation types		FALSE
+TRUE		Structured comment name	perturbation	Example	antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M		FALSE
+TRUE		Structured comment name	perturbation	Expected value	perturbation type name;perturbation interval and duration		FALSE
+TRUE		Structured comment name	perturbation	Value syntax	{text};{Rn/start_time/end_time/duration}		FALSE
+TRUE		Structured comment name	pesticide_regm	Example	pyrethrum;0.6 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	ph	Definition	Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid		FALSE
+TRUE		Structured comment name	ph_meth	Definition	Reference or method used in determining pH.		FALSE
+TRUE		Structured comment name	ph_meth	Example	https://www.epa.gov/sites/production/files/2015-12/documents/9040c.pdf		FALSE
+TRUE		Structured comment name	ph_meth	Value syntax	{PMID}|{DOI}|{URL}		FALSE
+TRUE		Structured comment name	ph_regm	Example	7.6;R2/2018-05-11:T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	photosynt_activ	Example	0.1 mol CO2 m-2 s-1	added a magnitude to the example from the XLSX file, ' mol CO2 m-2 s-1' BUT THIS SHEET CAN'T HANDLE MULTI-VALUED EXAMPLES?	FALSE
+TRUE		Structured comment name	physical_sex	Item	physical sex		FALSE
+TRUE		Structured comment name	physical_sex	Structured comment name	physical_sex		TRUE
+TRUE		Structured comment name	plant_product	Example	xylem sap [PO:0025539]		FALSE
+TRUE		Structured comment name	pool_dna_extracts	Definition	Indicate whether multiple DNA extractions were mixed. If the answer yes, the number of extracts that were pooled should be given.		
+TRUE		Structured comment name	pool_dna_extracts	Example	yes, 5		FALSE
+TRUE		Structured comment name	pool_dna_extracts	Expected value	pooling status;number of pooled extracts		FALSE
+TRUE		Structured comment name	pool_dna_extracts	Preferred unit	gram, milliliter, microliter		FALSE
+TRUE		Structured comment name	porosity	Definition	Porosity of deposited sediment is volume of voids divided by the total volume of sample		FALSE
+TRUE		Structured comment name	pregnancy	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	prev_land_use_meth	Value syntax	{PMID}|{DOI}|{URL}		
+TRUE		Structured comment name	previous_land_use	Definition	Previous land use and dates.		FALSE
+TRUE		Structured comment name	previous_land_use	Example	fallow; 2018-05-11:T14:30Z		FALSE
+TRUE		Structured comment name	prod_label_claims	MIXS ID	MIXS:prod_label_claims		
+TRUE		Structured comment name	prod_start_date	Example	2013-03-25T12:42:31+01:00	arbitrarily selected ISO 8601 date	FALSE
+TRUE		Structured comment name	profile_position	Example	summit		FALSE
+TRUE		Structured comment name	project_name	Definition	Name of the project within which the sequencing was organized.		FALSE
+TRUE		Structured comment name	project_name	Expected value	text		FALSE
+TRUE		Structured comment name	project_name	Section	investigation		FALSE
+TRUE		Structured comment name	rel_location	Definition	Location of sampled soil to other parts of the farm e.g. under crop plant, near irrigation ditch, from the dirt road.		
+TRUE		Structured comment name	rel_location	Occurrence	1		FALSE
+TRUE		Structured comment name	rel_location	Value syntax	{text}		FALSE
+TRUE		Structured comment name	repository_name	Expected value	Institution		FALSE
+TRUE		Structured comment name	room_dim	Example	4 meter x 4 meter x 4 meter		FALSE
+TRUE		Structured comment name	root_med_macronutr	Definition	Measurement of the culture rooting medium macronutrients (N,P, K, Ca, Mg, S); e.g. KH2PO4 (170 mg/L).		FALSE
+TRUE		Structured comment name	root_med_micronutr	Definition	Measurement of the culture rooting medium micronutrients (Fe, Mn, Zn, B, Cu, Mo); e.g. H3BO3 (6.2 mg/L).		
+TRUE		Structured comment name	salinity	Occurrence	1	majority rule	FALSE
+TRUE		Structured comment name	salt_regm	Example	NaCl;5 gram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	samp_collect_device	Definition	The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).		FALSE
+TRUE		Structured comment name	samp_collect_device	Expected value	device name	some type name	FALSE
+TRUE		Structured comment name	samp_collect_device	Item	sample collection device		FALSE
+TRUE		Structured comment name	samp_collect_device	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	samp_collect_device	Value syntax	{termLabel} [{termID}]|{text}	some {text}	FALSE
+TRUE		Structured comment name	samp_collect_method	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	samp_collect_method	Structured comment name	samp_collect_method		TRUE
+TRUE		Structured comment name	samp_floor	Definition	The floor of the building, where the sampling room is located.		FALSE
+TRUE		Structured comment name	samp_mat_process	Expected value	text		FALSE
+TRUE		Structured comment name	samp_mat_process	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	samp_mat_process	Value syntax	{text}		FALSE
+TRUE		Structured comment name	samp_name	Definition	A local identifier or name that for the material sample used for extracting nucleic acids, and subsequent sequencing. It can refer either to the original material collected or to any derived sub-samples. It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible. INSDC requires every sample name from a single Submitter to be unique. Use of a globally unique identifier for the field source_mat_id is recommended in addition to sample_name.		FALSE
+TRUE		Structured comment name	samp_name	Item	sample name	some have trailing whitespace	FALSE
+TRUE		Structured comment name	samp_name	Section	investigation		FALSE
+TRUE		Structured comment name	samp_name	Structured comment name	samp_name	samp_name & (sample_name declared by NCBI, but only symbiont-associated uses that)	TRUE
+TRUE		Structured comment name	samp_pooling	Example	5uL of extracted genomic DNA from 5 leaves were pooled		FALSE
+TRUE		Structured comment name	samp_pooling	Expected value	text		FALSE
+TRUE		Structured comment name	samp_pooling	Occurrence	m		FALSE
+TRUE		Structured comment name	samp_pooling	Value syntax	{text}		FALSE
+TRUE		Structured comment name	samp_room_id	Definition	Sampling room number. This ID should be consistent with the designations on the building floor plans.		
+TRUE		Structured comment name	samp_size	Example	5 liter		FALSE
+TRUE		Structured comment name	samp_size	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	samp_source_mat_cat	Definition	This is the scientific role or category that the subject organism or material has with respect to an investigation.  This field accepts terms listed under specimen source material category (http://purl.obolibrary.org/obo/GENEPIO_0001237 or http://purl.obolibrary.org/obo/OBI_0100051).		FALSE
+TRUE		Structured comment name	samp_source_mat_cat	Example	environmental (swab or sampling) [GENEPIO:0001732]		FALSE
+TRUE		Structured comment name	samp_source_mat_cat	Expected value	GENEPIO:0001237		FALSE
+TRUE		Structured comment name	samp_store_dur	Definition	Duration for which the sample was stored. Indicate the duration for which the sample was stored written in ISO 8601 format.		FALSE
+TRUE		Structured comment name	samp_store_dur	Example	P1Y6M		FALSE
+TRUE		Structured comment name	samp_store_dur	Expected value	duration		FALSE
+TRUE		Structured comment name	samp_store_dur	Structured comment name	samp_store_dur		TRUE
+TRUE		Structured comment name	samp_store_dur	Value syntax	{duration}		FALSE
+TRUE		Structured comment name	samp_store_loc	Definition	Location at which sample was stored, usually name of a specific freezer/room		FALSE
+TRUE		Structured comment name	samp_store_loc	Example	Freezer no:5		FALSE
+TRUE		Structured comment name	samp_store_loc	Expected value	location name		FALSE
+TRUE		Structured comment name	samp_store_loc	Structured comment name	samp_store_loc		TRUE
+TRUE		Structured comment name	samp_store_temp	Definition	Temperature at which sample was stored, e.g. -80 degree Celsius		FALSE
+TRUE		Structured comment name	samp_store_temp	Example	-80 degree Celsius		FALSE
+TRUE		Structured comment name	samp_store_temp	Structured comment name	samp_store_temp		TRUE
+TRUE		Structured comment name	samp_type	Item	sample type		FALSE
+TRUE		Structured comment name	samp_vol_we_dna_ext	Definition	Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term Sample Size (MIXS:0000001).		FALSE
+TRUE		Structured comment name	samp_vol_we_dna_ext	Example	1500 milliliter		FALSE
+TRUE		Structured comment name	samp_vol_we_dna_ext	Preferred unit	milliliter, gram, milligram, square centimeter		FALSE
+TRUE		Structured comment name	samp_vol_we_dna_ext	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	season	Expected value	autumn [NCIT:C94733], spring [NCIT:C94731], summer [NCIT:C94732], winter [NCIT:C94730]		FALSE
+TRUE		Structured comment name	season_environment	Example	rainy;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	season_precpt	Example	75 millimeters		FALSE
+TRUE		Structured comment name	season_temp	Definition	Mean seasonal temperature		FALSE
+TRUE		Structured comment name	season_temp	Item	mean seasonal temperature		FALSE
+TRUE		Structured comment name	seq_meth	Occurrence	1		FALSE
+TRUE		Structured comment name	seq_meth	Section	sequencing		FALSE
+TRUE		Structured comment name	seq_quality_check	Example	none		FALSE
+TRUE		Structured comment name	seq_quality_check	Section	sequencing		FALSE
+TRUE		Structured comment name	shading_device_type	Example		dropping example, to be reasserted in config/linkml-stage-mixs-modifications.yaml	FALSE
+TRUE		Structured comment name	sieving	Item	sieving		FALSE
+TRUE		Structured comment name	size_frac_low	Definition	List of chemical compounds administered to the host or site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include multiple compounds. Use terms from the chemical entities of biological interest ontology ontology (chebi)		FALSE
+TRUE		Structured comment name	size_frac_low	Definition	Refers to the mesh/pore size used to pre-filter/pre-sort the sample. Materials larger than the size threshold are excluded from the sample		FALSE
+TRUE		Structured comment name	size_frac_up	Definition	Mesh or pore size of the device used to retain the sample. Materials smaller than the size threshold are excluded from the sample		FALSE
+TRUE		Structured comment name	soil_conductivity	Example	10 milliSiemens per centimeter		FALSE
+TRUE		Structured comment name	soil_conductivity	Occurrence	1		FALSE
+TRUE		Structured comment name	soil_conductivity	Preferred unit	milliSiemens per centimeter		FALSE
+TRUE		Structured comment name	soil_conductivity	Value syntax	{float} {unit}		FALSE
+TRUE		Structured comment name	soil_cover	Occurrence	1		FALSE
+TRUE		Structured comment name	soil_cover	Value syntax	bare soil [ENVO:01001616]		FALSE
+TRUE		Structured comment name	soil_horizon	Example	A horizon		FALSE
+TRUE		Structured comment name	soil_horizon	Item	soil horizon		FALSE
+TRUE		Structured comment name	soil_horizon	Structured comment name	soil_horizon		TRUE
+TRUE		Structured comment name	soil_pH	Example	7.2		FALSE
+TRUE		Structured comment name	soil_pH	Occurrence	1		FALSE
+TRUE		Structured comment name	soil_pH	Value syntax	{float}		FALSE
+TRUE		Structured comment name	soil_texture_meth	Example	https://uwlab.soils.wisc.edu/wp-content/uploads/sites/17/2015/09/particle_size.pdf	no parenthetical notes allowed	FALSE
+TRUE		Structured comment name	soil_texture_meth	Item	soil texture method		FALSE
+TRUE		Structured comment name	soil_type	Definition	Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple terms can be separated by pipes.		
+TRUE		Structured comment name	soil_type	Example	plinthosol [ENVO:00002250]		FALSE
+TRUE		Structured comment name	soil_type	Expected value	ENVO:00001998		FALSE
+TRUE		Structured comment name	soil_type_meth	Definition	Reference or method used in determining soil series name or other lower-level classification.		
+TRUE		Structured comment name	soil_type_meth	Example	https://www.lrh.usace.army.mil/Portals/38/docs/PR/BluestoneSFEIS/Appendix%20K-Soil%20Descriptions.pdf	a list of textual labels is not a PMID, a DOI or a URL	FALSE
+TRUE		Structured comment name	soil_type_meth	Value syntax	{PMID}|{DOI}|{URL}		
+TRUE		Structured comment name	solar_irradiance	Definition	The amount of solar energy that arrives at a specific area of a surface during a specific time interval		FALSE
+TRUE		Structured comment name	solar_irradiance	Item	solar irradiance		FALSE
+TRUE		Structured comment name	solar_irradiance	Occurrence	m		FALSE
+TRUE		Structured comment name	sop	Example	http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/		FALSE
+TRUE		Structured comment name	sop	Section	sequencing		FALSE
+TRUE		Structured comment name	sop	Value syntax	{PMID}|{DOI}|{URL}		FALSE
+TRUE		Structured comment name	source_mat_id	Example	MPI012345		FALSE
+TRUE		Structured comment name	source_mat_id	Occurrence	m		FALSE
+TRUE		Structured comment name	source_mat_id	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	specific_host	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	spikein_count	Definition	Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) should also be provided (example: total prokaryotes; 3.5e7 cells per ml; qPCR).		FALSE
+TRUE		Structured comment name	standing_water_regm	Example	standing water;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	store_cond	Example	-20 degree Celsius freezer;P2Y10D		FALSE
+TRUE		Structured comment name	store_cond	Item	storage conditions		FALSE
+TRUE		Structured comment name	store_cond	Value syntax	{text};{period}		FALSE
+TRUE		Structured comment name	study_inc_dur	Example	PT24H	provided example of P24H may not satisfy strict ISO 8601 period validation	FALSE
+TRUE		Structured comment name	subspecf_gen_lin	Expected value	Genetic lineage below lowest rank of NCBI taxonomy, which is subspecies, e.g. serovar, biotype, ecotype, variety, cultivar.		FALSE
+TRUE		Structured comment name	subspecf_gen_lin	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	surf_material	Definition	Surface materials at the point of sampling.		FALSE
+TRUE		Structured comment name	target_gene	Section	sequencing		FALSE
+TRUE		Structured comment name	target_subfragment	Section	sequencing		FALSE
+TRUE		Structured comment name	tax_ident	Example		dropping example, to be reasserted in config/linkml-stage-mixs-modifications.yaml	FALSE
+TRUE		Structured comment name	temp	Definition	Temperature of the sample at the time of sampling.		FALSE
+TRUE		Structured comment name	temp	Example	25 degree Celsius		FALSE
+TRUE		Structured comment name	temp	Section	environment		FALSE
+TRUE		Structured comment name	tillage	Example	chisel		FALSE
+TRUE		Structured comment name	time_last_toothbrush	Example	PT2H45M	added T separator to value of P2H45M in slots description	FALSE
+TRUE		Structured comment name	timepoint	Example	PT24H	provided example of P24H may not satisfy strict ISO 8601 period validation	FALSE
+TRUE		Structured comment name	tot_carb	Structured comment name	tot_carb		TRUE
+TRUE		Structured comment name	tot_nitro	Item	total nitrogen concentration		FALSE
+TRUE		Structured comment name	tot_nitro_cont_meth	Example	https://currentprotocols.onlinelibrary.wiley.com/doi/abs/10.1002/0471142913.fab0102s00		FALSE
+TRUE		Structured comment name	tot_nitro_cont_meth	Item	total nitrogen content method		FALSE
+TRUE		Structured comment name	tot_nitro_cont_meth	Occurrence	1		FALSE
+TRUE		Structured comment name	tot_nitro_cont_meth	Structured comment name	tot_nitro_cont_meth		TRUE
+TRUE		Structured comment name	tot_nitro_content	Definition	Total nitrogen content of the sample.		FALSE
+TRUE		Structured comment name	tot_nitro_content	Example	35 milligrams Nitrogen per kilogram of soil		FALSE
+TRUE		Structured comment name	tot_nitro_content	Item	total nitrogen content		FALSE
+TRUE		Structured comment name	tot_nitro_content	Occurrence	1	majority rule	FALSE
+TRUE		Structured comment name	tot_nitro_content	Structured comment name	tot_nitro_content		TRUE
+TRUE		Structured comment name	tot_org_c_meth	Definition	Reference or method used in determining total organic carbon.		FALSE
+TRUE		Structured comment name	tot_org_c_meth	Example	https://www.epa.gov/sites/production/files/2015-12/documents/9060a.pdf		FALSE
+TRUE		Structured comment name	tot_org_c_meth	Value syntax	{PMID}|{DOI}|{URL}		
+TRUE		Structured comment name	tot_org_carb	Definition	Total organic carbon content		FALSE
+TRUE		Structured comment name	tot_org_carb	Example	0.02		FALSE
+TRUE		Structured comment name	tot_org_carb	Expected value	measurement value		FALSE
+TRUE		Structured comment name	tot_org_carb	Value syntax	{float} {unit}		FALSE
+TRUE		Structured comment name	tot_phosp	Example	0.03 milligram per liter		FALSE
+TRUE		Structured comment name	tot_phosp	Item	total phosphorus	x from agriculture is misspelled	FALSE
+TRUE		Structured comment name	trophic_level	Example	heterotroph		FALSE
+TRUE		Structured comment name	trophic_level	Section	nucleic acid sequence source		FALSE
+TRUE		Structured comment name	trophic_level	Value syntax	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]		FALSE
+TRUE		Structured comment name	turbidity	Definition	Measure of the amount of cloudiness or haziness in water caused by individual particles		FALSE
+TRUE		Structured comment name	tvdss_of_hcr_press	Definition	True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original pressure was measured (e.g. 1578 m).		
+TRUE		Structured comment name	tvdss_of_hcr_temp	Definition	True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original temperature was measured (e.g. 1345 m).		
+TRUE		Structured comment name	ventilation_rate	Definition	Ventilation rate of the system in the sampled premises.		FALSE
+TRUE		Structured comment name	ventilation_type	Definition	Ventilation system used in the sampled premises.		FALSE
+TRUE		Structured comment name	virus_enrich_appr	Example		dropping example, to be reasserted in config/linkml-stage-mixs-modifications.yaml	FALSE
+TRUE		Structured comment name	water_cut	Example	45%	casual Google search	FALSE
+TRUE		Structured comment name	water_pH	Occurrence	1		FALSE
+TRUE		Structured comment name	water_temp_regm	Example	15 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	watering_regm	Example	1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M		FALSE
+TRUE		Structured comment name	wind_direction	Definition	Wind direction is the direction from which a wind originates.		FALSE
+TRUE		Structured comment name	wind_direction	Preferred unit	degrees or cardinal direction		FALSE
+TRUE		Structured comment name	wind_speed	Definition	speed of wind measured at the time of sampling.		FALSE
+TRUE		Structured comment name	samp_taxon_id	Example	Gut Metagenome [NCBITaxon:749906]		FALSE

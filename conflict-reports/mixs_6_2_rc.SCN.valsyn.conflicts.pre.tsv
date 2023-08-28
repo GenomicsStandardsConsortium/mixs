@@ -1,0 +1,420 @@
+class	Structured comment name	Value syntax	Frequency
+agriculture	adapters	{dna},{dna}	0.08333333333333333
+migs_ba	adapters	{dna};{dna}	0.9166666666666666
+migs_eu	adapters	{dna};{dna}	0.9166666666666666
+migs_org	adapters	{dna};{dna}	0.9166666666666666
+migs_pl	adapters	{dna};{dna}	0.9166666666666666
+migs_vi	adapters	{dna};{dna}	0.9166666666666666
+mimag	adapters	{dna};{dna}	0.9166666666666666
+mimarks_c	adapters	{dna};{dna}	0.9166666666666666
+mimarks_s	adapters	{dna};{dna}	0.9166666666666666
+mims	adapters	{dna};{dna}	0.9166666666666666
+misag	adapters	{dna};{dna}	0.9166666666666666
+miuvig	adapters	{dna};{dna}	0.9166666666666666
+food-animal and animal feed	animal_feed_equip	{termLabel} [{termID}]	0.5
+food-farm environment	animal_feed_equip	{termLabel}{[termID]}	0.5
+agriculture	assembly_software	[Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality draft genome|Genome fragment(s)]	0.08333333333333333
+migs_ba	assembly_software	{software};{version};{parameters}	0.9166666666666666
+migs_eu	assembly_software	{software};{version};{parameters}	0.9166666666666666
+migs_org	assembly_software	{software};{version};{parameters}	0.9166666666666666
+migs_pl	assembly_software	{software};{version};{parameters}	0.9166666666666666
+migs_vi	assembly_software	{software};{version};{parameters}	0.9166666666666666
+mimag	assembly_software	{software};{version};{parameters}	0.9166666666666666
+mimarks_c	assembly_software	{software};{version};{parameters}	0.9166666666666666
+mimarks_s	assembly_software	{software};{version};{parameters}	0.9166666666666666
+mims	assembly_software	{software};{version};{parameters}	0.9166666666666666
+misag	assembly_software	{software};{version};{parameters}	0.9166666666666666
+miuvig	assembly_software	{software};{version};{parameters}	0.9166666666666666
+agriculture	biotic_relationship	[free living|parasite|commensal|symbiont]	0.08333333333333333
+migs_ba	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+migs_eu	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+migs_org	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+migs_pl	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+migs_vi	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+mimag	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+mimarks_c	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+mimarks_s	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+mims	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+misag	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+miuvig	biotic_relationship	[free living|parasitism|commensalism|symbiotic|mutualism]	0.9166666666666666
+microbial mat/biofilm	carb_nitro_ratio	{float} {unit}	0.6666666666666666
+sediment	carb_nitro_ratio	{float} {unit}	0.6666666666666666
+water	carb_nitro_ratio	{float}:{float}	0.3333333333333333
+migs_ba	chimera_check	{software};{version};{parameters}	0.9166666666666666
+migs_eu	chimera_check	{software};{version};{parameters}	0.9166666666666666
+migs_org	chimera_check	{software};{version};{parameters}	0.9166666666666666
+migs_pl	chimera_check	{software};{version};{parameters}	0.9166666666666666
+migs_vi	chimera_check	{software};{version};{parameters}	0.9166666666666666
+mimag	chimera_check	{software};{version};{parameters}	0.9166666666666666
+mimarks_c	chimera_check	{software};{version};{parameters}	0.9166666666666666
+mimarks_s	chimera_check	{software};{version};{parameters}	0.9166666666666666
+mims	chimera_check	{software};{version};{parameters}	0.9166666666666666
+misag	chimera_check	{software};{version};{parameters}	0.9166666666666666
+miuvig	chimera_check	{software};{version};{parameters}	0.9166666666666666
+agriculture	chimera_check	{text} {text}	0.08333333333333333
+plant-associated	climate_environment	{text};{Rn/start_time/end_time/duration}	0.5
+agriculture	climate_environment	{text};{period};{interval};{period}	0.5
+agriculture	crop_rotation	{boolean};Rn/{timestamp}/{period}	0.3333333333333333
+food-farm environment	crop_rotation	{boolean};{Rn/start_time/end_time/duration}	0.6666666666666666
+soil	crop_rotation	{boolean};{Rn/start_time/end_time/duration}	0.6666666666666666
+agriculture	cult_isol_date	YYYY-MM-DD	0.2
+food-animal and animal feed	cult_isol_date	{timestamp}	0.8
+food-farm environment	cult_isol_date	{timestamp}	0.8
+food-food production facility	cult_isol_date	{timestamp}	0.8
+food-human foods	cult_isol_date	{timestamp}	0.8
+food-farm environment	cult_result_org	{TermLabel} [{termID}]|{integer}	0.25
+food-animal and animal feed	cult_result_org	{termLabel} [{termID}]|{integer}	0.75
+food-food production facility	cult_result_org	{termLabel} [{termID}]|{integer}	0.75
+food-human foods	cult_result_org	{termLabel} [{termID}]|{integer}	0.75
+food-farm environment	cult_target	{TermLabel} [{termID}]|{integer}	0.25
+food-animal and animal feed	cult_target	{termLabel} [{termID}]|{integer}	0.75
+food-food production facility	cult_target	{termLabel} [{termID}]|{integer}	0.75
+food-human foods	cult_target	{termLabel} [{termID}]|{integer}	0.75
+agriculture	cur_vegetation_meth	{PMID|DOI|URL}	0.5
+soil	cur_vegetation_meth	{PMID}|{DOI}|{URL}	0.5
+soil	fao_class	[Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]	0.5
+agriculture	fao_class	{term}	0.5
+food-farm environment	farm_equip_san	{text} {float} {unit}	0.5
+agriculture	farm_equip_san		0.5
+food-farm environment	farm_equip_shared	{termLabel} [{termID}]	0.5
+agriculture	farm_equip_shared		0.5
+food-farm environment	food_harvest_proc	{text}	0.5
+agriculture	food_harvest_proc		0.5
+food-food production facility	food_origin	{term}: {term}, {text}	0.6666666666666666
+food-human foods	food_origin	{term}: {term}, {text}	0.6666666666666666
+food-animal and animal feed	food_origin	{term}:{term}, {text}	0.3333333333333333
+built environment	freq_clean	[ Daily| Weekly| Monthly| Quarterly | Annually| other]	0.5
+food-food production facility	freq_clean	{text}	0.5
+plant-associated	fungicide_regm	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	fungicide_regm	{text};{float} {unit};{period};{interval};{period}	0.5
+plant-associated	gaseous_environment	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	gaseous_environment	{text};{float} {unit};{period};{interval};{period}	0.5
+food-farm environment	genetic_mod	{PMID}|{DOI}|{URL}	0.5
+food-food production facility	genetic_mod	{PMID}|{DOI}|{URL}	0.5
+food-human foods	genetic_mod	{PMID}|{DOI}|{URL}	0.5
+agriculture	genetic_mod	{PMID}|{DOI}|{URL}|{text}	0.5
+host-associated	genetic_mod	{PMID}|{DOI}|{URL}|{text}	0.5
+plant-associated	genetic_mod	{PMID}|{DOI}|{URL}|{text}	0.5
+agriculture	heavy_metals_meth	{PMID|DOI|URL}	0.5
+soil	heavy_metals_meth	{PMID}|{DOI}|{URL}	0.5
+plant-associated	herbicide_regm	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	herbicide_regm	{text};{float} {unit};{period};{interval};{period}	0.5
+agriculture	horizon_meth	{PMID|DOI|URL}	0.5
+soil	horizon_meth	{PMID}|{DOI}|{URL}	0.5
+human-associated	host_disease_stat	{termLabel} [{termID}]	0.25
+human-gut	host_disease_stat	{termLabel} [{termID}]	0.25
+human-oral	host_disease_stat	{termLabel} [{termID}]	0.25
+human-skin	host_disease_stat	{termLabel} [{termID}]	0.25
+human-vaginal	host_disease_stat	{termLabel} [{termID}]	0.25
+host-associated	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+migs_ba	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+migs_eu	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+migs_org	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+migs_pl	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+migs_vi	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+mimag	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+mimarks_c	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+mimarks_s	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+mims	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+misag	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+miuvig	host_disease_stat	{termLabel} [{termID}]|{text}	0.6
+agriculture	host_disease_stat	{text}|{termLabel} [{termID}]	0.15
+food-farm environment	host_disease_stat	{text}|{termLabel} [{termID}]	0.15
+plant-associated	host_disease_stat	{text}|{termLabel} [{termID}]	0.15
+host-associated	host_phenotype	{termLabel} [{termID}]	0.6
+human-associated	host_phenotype	{termLabel} [{termID}]	0.6
+human-gut	host_phenotype	{termLabel} [{termID}]	0.6
+human-oral	host_phenotype	{termLabel} [{termID}]	0.6
+human-skin	host_phenotype	{termLabel} [{termID}]	0.6
+human-vaginal	host_phenotype	{termLabel} [{termID}]	0.6
+agriculture	host_phenotype	{term}	0.2
+symbiont-associated	host_phenotype	{term}	0.2
+food-farm environment	host_phenotype	{text};{termLabel} [{termID}]	0.2
+plant-associated	host_phenotype	{text};{termLabel} [{termID}]	0.2
+symbiont-associated	host_sex	[female|hermaphrodite|male|neuter]	0.14285714285714285
+host-associated	host_sex	"[female|hermaphrodite|non-binary|male|transgender|transgender (female to male)|transgender (male to female)
+|undeclared]"	0.8571428571428571
+human-associated	host_sex	"[female|hermaphrodite|non-binary|male|transgender|transgender (female to male)|transgender (male to female)
+|undeclared]"	0.8571428571428571
+human-gut	host_sex	"[female|hermaphrodite|non-binary|male|transgender|transgender (female to male)|transgender (male to female)
+|undeclared]"	0.8571428571428571
+human-oral	host_sex	"[female|hermaphrodite|non-binary|male|transgender|transgender (female to male)|transgender (male to female)
+|undeclared]"	0.8571428571428571
+human-skin	host_sex	"[female|hermaphrodite|non-binary|male|transgender|transgender (female to male)|transgender (male to female)
+|undeclared]"	0.8571428571428571
+human-vaginal	host_sex	"[female|hermaphrodite|non-binary|male|transgender|transgender (female to male)|transgender (male to female)
+|undeclared]"	0.8571428571428571
+food-farm environment	host_taxid	{NCBI taxid}	0.6
+host-associated	host_taxid	{NCBI taxid}	0.6
+plant-associated	host_taxid	{NCBI taxid}	0.6
+agriculture	host_taxid	{integer}	0.4
+symbiont-associated	host_taxid	{integer}	0.4
+agriculture	isol_growth_condt	{PMID|DOI|URL}	0.08333333333333333
+migs_ba	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_eu	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_org	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_pl	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_vi	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+mimag	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+mimarks_c	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+mimarks_s	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+mims	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+misag	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+miuvig	isol_growth_condt	{PMID}|{DOI}|{URL}	0.9166666666666666
+agriculture	link_class_info	{PMID|DOI|URL}	0.5
+soil	link_class_info	{PMID}|{DOI}|{URL}	0.5
+agriculture	link_climate_info	{PMID|DOI|URL}	0.5
+soil	link_climate_info	{PMID}|{DOI}|{URL}	0.5
+agriculture	local_class_meth	{PMID|DOI|URL}	0.5
+soil	local_class_meth	{PMID}|{DOI}|{URL}	0.5
+agriculture	micro_biomass_meth	{PMID|DOI|URL}	0.5
+soil	micro_biomass_meth	{PMID}|{DOI}|{URL}	0.5
+plant-associated	non_min_nutr_regm	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	non_min_nutr_regm	{text};{float} {unit};{period};{interval};{period}	0.5
+agriculture	nucl_acid_amp	{PMID|DOI|URL}	0.08333333333333333
+migs_ba	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_eu	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_org	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_pl	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_vi	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+mimag	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+mimarks_c	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+mimarks_s	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+mims	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+misag	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+miuvig	nucl_acid_amp	{PMID}|{DOI}|{URL}	0.9166666666666666
+agriculture	nucl_acid_ext	{PMID|DOI|URL}	0.0625
+food-animal and animal feed	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+food-farm environment	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+food-food production facility	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+food-human foods	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+migs_ba	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+migs_eu	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+migs_org	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+migs_pl	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+migs_vi	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+mimag	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+mimarks_c	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+mimarks_s	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+mims	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+misag	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+miuvig	nucl_acid_ext	{PMID}|{DOI}|{URL}	0.9375
+symbiont-associated	organism_count	{text};{float} {unit}	0.045454545454545456
+food-animal and animal feed	organism_count	{text};{float} {unit};[ATP|MPN|qPCR|other]	0.18181818181818182
+food-farm environment	organism_count	{text};{float} {unit};[ATP|MPN|qPCR|other]	0.18181818181818182
+food-food production facility	organism_count	{text};{float} {unit};[ATP|MPN|qPCR|other]	0.18181818181818182
+food-human foods	organism_count	{text};{float} {unit};[ATP|MPN|qPCR|other]	0.18181818181818182
+agriculture	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+air	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+built environment	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+host-associated	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+human-associated	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+human-gut	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+human-oral	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+human-skin	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+human-vaginal	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+hydrocarbon resources-cores	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+hydrocarbon resources-fluids/swabs	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+microbial mat/biofilm	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+miscellaneous natural or artificial environment	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+plant-associated	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+sediment	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+wastewater/sludge	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+water	organism_count	{text};{float} {unit};[qPCR|ATP|MPN|other]	0.7727272727272727
+agriculture	oxy_stat_samp	[aerobic|anaerobic]	0.11764705882352941
+symbiont-associated	oxy_stat_samp	[aerobic|anaerobic]	0.11764705882352941
+air	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+host-associated	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+human-associated	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+human-gut	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+human-oral	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+human-skin	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+human-vaginal	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+hydrocarbon resources-cores	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+hydrocarbon resources-fluids/swabs	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+microbial mat/biofilm	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+miscellaneous natural or artificial environment	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+plant-associated	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+sediment	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+wastewater/sludge	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+water	oxy_stat_samp	[aerobic|anaerobic|other]	0.8823529411764706
+agriculture	pathogenicity	{term}	0.08333333333333333
+migs_ba	pathogenicity	{text}	0.9166666666666666
+migs_eu	pathogenicity	{text}	0.9166666666666666
+migs_org	pathogenicity	{text}	0.9166666666666666
+migs_pl	pathogenicity	{text}	0.9166666666666666
+migs_vi	pathogenicity	{text}	0.9166666666666666
+mimag	pathogenicity	{text}	0.9166666666666666
+mimarks_c	pathogenicity	{text}	0.9166666666666666
+mimarks_s	pathogenicity	{text}	0.9166666666666666
+mims	pathogenicity	{text}	0.9166666666666666
+misag	pathogenicity	{text}	0.9166666666666666
+miuvig	pathogenicity	{text}	0.9166666666666666
+agriculture	pcr_cond	initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes; total cycles	0.08333333333333333
+migs_ba	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+migs_eu	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+migs_org	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+migs_pl	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+migs_vi	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+mimag	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+mimarks_c	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+mimarks_s	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+mims	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+misag	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+miuvig	pcr_cond	initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles	0.9166666666666666
+migs_ba	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+migs_eu	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+migs_org	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+migs_pl	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+migs_vi	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+mimag	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+mimarks_c	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+mimarks_s	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+mims	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+misag	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+miuvig	pcr_primers	FWD:{dna};REV:{dna}	0.9166666666666666
+agriculture	pcr_primers		0.08333333333333333
+air	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+food-animal and animal feed	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+food-farm environment	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+food-human foods	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+host-associated	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+human-associated	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+human-gut	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+human-oral	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+human-skin	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+human-vaginal	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+microbial mat/biofilm	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+miscellaneous natural or artificial environment	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+plant-associated	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+sediment	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+symbiont-associated	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+wastewater/sludge	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+water	perturbation	{text};{Rn/start_time/end_time/duration}	0.9444444444444444
+agriculture	perturbation	{text};{interval}	0.05555555555555555
+plant-associated	pesticide_regm	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	pesticide_regm	{text};{float} {unit};{period};{interval};{period}	0.5
+agriculture	ph_meth	{PMID|DOI|URL}	0.3333333333333333
+food-farm environment	ph_meth	{PMID}|{DOI}|{URL}	0.6666666666666666
+soil	ph_meth	{PMID}|{DOI}|{URL}	0.6666666666666666
+plant-associated	ph_regm	{float};{Rn/start_time/end_time/duration}	0.5
+agriculture	ph_regm	{float};{period};{interval};{period}	0.5
+food-animal and animal feed	pool_dna_extracts	{boolean},{integer}	0.6
+food-food production facility	pool_dna_extracts	{boolean},{integer}	0.6
+food-human foods	pool_dna_extracts	{boolean},{integer}	0.6
+agriculture	pool_dna_extracts	{boolean};{float} {unit}	0.2
+soil	pool_dna_extracts	{boolean};{integer}	0.2
+agriculture	prev_land_use_meth	{PMID|DOI|URL}	0.5
+soil	prev_land_use_meth	{PMID}|{DOI}|{URL}	0.5
+food-farm environment	rel_location	{text}	0.5
+agriculture	rel_location		0.5
+plant-associated	salt_regm	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	salt_regm	{text};{float} {unit};{period};{interval};{period}	0.5
+food-animal and animal feed	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+food-farm environment	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+food-human foods	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+migs_ba	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+migs_eu	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+migs_org	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+migs_pl	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+migs_vi	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+mimag	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+mimarks_c	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+mimarks_s	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+mims	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+misag	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+miuvig	samp_collect_device	{termLabel} [{termID}]|{text}	0.875
+agriculture	samp_collect_device	{text}	0.125
+food-food production facility	samp_collect_device	{text}	0.125
+agriculture	samp_mat_process	{text|term}	0.08333333333333333
+migs_ba	samp_mat_process	{text}	0.9166666666666666
+migs_eu	samp_mat_process	{text}	0.9166666666666666
+migs_org	samp_mat_process	{text}	0.9166666666666666
+migs_pl	samp_mat_process	{text}	0.9166666666666666
+migs_vi	samp_mat_process	{text}	0.9166666666666666
+mimag	samp_mat_process	{text}	0.9166666666666666
+mimarks_c	samp_mat_process	{text}	0.9166666666666666
+mimarks_s	samp_mat_process	{text}	0.9166666666666666
+mims	samp_mat_process	{text}	0.9166666666666666
+misag	samp_mat_process	{text}	0.9166666666666666
+miuvig	samp_mat_process	{text}	0.9166666666666666
+food-animal and animal feed	samp_pooling	{text}	0.8
+food-farm environment	samp_pooling	{text}	0.8
+food-food production facility	samp_pooling	{text}	0.8
+food-human foods	samp_pooling	{text}	0.8
+agriculture	samp_pooling		0.2
+air	samp_store_dur	{duration}	0.9411764705882353
+host-associated	samp_store_dur	{duration}	0.9411764705882353
+human-associated	samp_store_dur	{duration}	0.9411764705882353
+human-gut	samp_store_dur	{duration}	0.9411764705882353
+human-oral	samp_store_dur	{duration}	0.9411764705882353
+human-skin	samp_store_dur	{duration}	0.9411764705882353
+human-vaginal	samp_store_dur	{duration}	0.9411764705882353
+hydrocarbon resources-cores	samp_store_dur	{duration}	0.9411764705882353
+hydrocarbon resources-fluids/swabs	samp_store_dur	{duration}	0.9411764705882353
+microbial mat/biofilm	samp_store_dur	{duration}	0.9411764705882353
+miscellaneous natural or artificial environment	samp_store_dur	{duration}	0.9411764705882353
+plant-associated	samp_store_dur	{duration}	0.9411764705882353
+sediment	samp_store_dur	{duration}	0.9411764705882353
+symbiont-associated	samp_store_dur	{duration}	0.9411764705882353
+wastewater/sludge	samp_store_dur	{duration}	0.9411764705882353
+water	samp_store_dur	{duration}	0.9411764705882353
+agriculture	samp_store_dur	{interval}	0.058823529411764705
+plant-associated	season_environment	{text};{Rn/start_time/end_time/duration}	0.5
+agriculture	season_environment	{text};{period};{interval};{period}	0.5
+food-farm environment	soil_conductivity	{float} {unit}	0.5
+agriculture	soil_conductivity		0.5
+soil	soil_horizon	[O horizon|A horizon|E horizon|B horizon|C horizon|R layer|Permafrost]	0.5
+agriculture	soil_horizon	enumeration	0.5
+food-farm environment	soil_pH	{float}	0.5
+agriculture	soil_pH		0.5
+food-farm environment	soil_type	{termLabel} [{termID}]	0.3333333333333333
+soil	soil_type	"{termLabel} [{termID}]
+"	0.3333333333333333
+agriculture	soil_type	{text}	0.3333333333333333
+agriculture	soil_type_meth	{PMID|DOI|URL}	0.3333333333333333
+food-farm environment	soil_type_meth	{PMID}|{DOI}|{URL}	0.6666666666666666
+soil	soil_type_meth	{PMID}|{DOI}|{URL}	0.6666666666666666
+agriculture	sop	{PMID|DOI|URL}	0.08333333333333333
+migs_ba	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_eu	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_org	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_pl	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+migs_vi	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+mimag	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+mimarks_c	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+mimarks_s	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+mims	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+misag	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+miuvig	sop	{PMID}|{DOI}|{URL}	0.9166666666666666
+plant-associated	standing_water_regm	{text};{Rn/start_time/end_time/duration}	0.5
+agriculture	standing_water_regm	{text};{period};{interval};{period}	0.5
+soil	store_cond	{text};{duration}	0.5
+agriculture	store_cond	{text};{period}	0.5
+agriculture	tot_org_c_meth	{PMID|DOI|URL}	0.3333333333333333
+food-farm environment	tot_org_c_meth	{PMID}|{DOI}|{URL}	0.6666666666666666
+soil	tot_org_c_meth	{PMID}|{DOI}|{URL}	0.6666666666666666
+agriculture	tot_org_carb	{float} {unit}	0.8
+microbial mat/biofilm	tot_org_carb	{float} {unit}	0.8
+sediment	tot_org_carb	{float} {unit}	0.8
+soil	tot_org_carb	{float} {unit}	0.8
+food-farm environment	tot_org_carb	{percentage}	0.2
+agriculture	trophic_level	[autotroph| carboxydotroph| chemoautotroph| chemoheterotroph| chemolithoautotroph| chemolithotroph| chemoorganoheterotroph| chemoorganotroph| chemosynthetic| chemotroph| copiotroph| diazotroph| facultative| autotroph| heterotroph| lithoautotroph| lithoheterotroph| lithotroph| methanotroph| methylotroph| mixotroph| obligate| chemoautolithotroph| oligotroph| organoheterotroph| organotroph| photoautotroph| photoheterotroph| photolithoautotroph| photolithotroph| photosynthetic| phototroph]	0.08333333333333333
+migs_ba	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+migs_eu	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+migs_org	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+migs_pl	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+migs_vi	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+mimag	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+mimarks_c	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+mimarks_s	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+mims	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+misag	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+miuvig	trophic_level	[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]	0.9166666666666666
+soil	water_content	{float}	0.3333333333333333
+microbial mat/biofilm	water_content	{float} {unit}	0.6666666666666666
+sediment	water_content	{float} {unit}	0.6666666666666666
+plant-associated	water_temp_regm	{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	water_temp_regm	{float} {unit};{period};{interval};{period}	0.5
+plant-associated	watering_regm	{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	watering_regm	{float} {unit};{period};{interval};{period}	0.5

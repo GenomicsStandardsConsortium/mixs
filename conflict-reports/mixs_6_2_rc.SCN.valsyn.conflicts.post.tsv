@@ -1,0 +1,49 @@
+class	Structured comment name	Value syntax	Frequency
+plant-associated	climate_environment	{text};{Rn/start_time/end_time/duration}	0.5
+agriculture	climate_environment	{text};{period};{interval};{period}	0.5
+agriculture	crop_rotation	{boolean};Rn/{timestamp}/{period}	0.3333333333333333
+food-farm environment	crop_rotation	{boolean};{Rn/start_time/end_time/duration}	0.6666666666666666
+soil	crop_rotation	{boolean};{Rn/start_time/end_time/duration}	0.6666666666666666
+built environment	freq_clean	[ Daily| Weekly| Monthly| Quarterly | Annually| other]	0.5
+food-food production facility	freq_clean	{text}	0.5
+plant-associated	fungicide_regm	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	fungicide_regm	{text};{float} {unit};{period};{interval};{period}	0.5
+plant-associated	gaseous_environment	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	gaseous_environment	{text};{float} {unit};{period};{interval};{period}	0.5
+agriculture	heavy_metals_meth	{PMID|DOI|URL}	0.5
+soil	heavy_metals_meth	{PMID}|{DOI}|{URL}	0.5
+plant-associated	herbicide_regm	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	herbicide_regm	{text};{float} {unit};{period};{interval};{period}	0.5
+food-farm environment	host_taxid	{NCBI taxid}	0.6
+host-associated	host_taxid	{NCBI taxid}	0.6
+plant-associated	host_taxid	{NCBI taxid}	0.6
+agriculture	host_taxid	{integer}	0.4
+symbiont-associated	host_taxid	{integer}	0.4
+plant-associated	non_min_nutr_regm	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	non_min_nutr_regm	{text};{float} {unit};{period};{interval};{period}	0.5
+plant-associated	pesticide_regm	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	pesticide_regm	{text};{float} {unit};{period};{interval};{period}	0.5
+plant-associated	ph_regm	{float};{Rn/start_time/end_time/duration}	0.5
+agriculture	ph_regm	{float};{period};{interval};{period}	0.5
+food-animal and animal feed	pool_dna_extracts	{boolean},{integer}	0.6
+food-food production facility	pool_dna_extracts	{boolean},{integer}	0.6
+food-human foods	pool_dna_extracts	{boolean},{integer}	0.6
+agriculture	pool_dna_extracts	{boolean};{float} {unit}	0.2
+soil	pool_dna_extracts	{boolean};{integer}	0.2
+plant-associated	salt_regm	{text};{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	salt_regm	{text};{float} {unit};{period};{interval};{period}	0.5
+plant-associated	season_environment	{text};{Rn/start_time/end_time/duration}	0.5
+agriculture	season_environment	{text};{period};{interval};{period}	0.5
+food-farm environment	soil_type	{termLabel} [{termID}]	0.3333333333333333
+soil	soil_type	"{termLabel} [{termID}]
+"	0.3333333333333333
+agriculture	soil_type	{text}	0.3333333333333333
+plant-associated	standing_water_regm	{text};{Rn/start_time/end_time/duration}	0.5
+agriculture	standing_water_regm	{text};{period};{interval};{period}	0.5
+soil	water_content	{float}	0.3333333333333333
+microbial mat/biofilm	water_content	{float} {unit}	0.6666666666666666
+sediment	water_content	{float} {unit}	0.6666666666666666
+plant-associated	water_temp_regm	{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	water_temp_regm	{float} {unit};{period};{interval};{period}	0.5
+plant-associated	watering_regm	{float} {unit};{Rn/start_time/end_time/duration}	0.5
+agriculture	watering_regm	{float} {unit};{period};{interval};{period}	0.5

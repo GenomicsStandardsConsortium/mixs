@@ -1,0 +1,102 @@
+Value_syntax	Expected_value	range	pattern	structured_pattern	notes	min_val	max_val	root_ontology	root_term
+{boolean}	boolean	boolean							
+{boolean}	hysterectomy status	boolean							
+{boolean}	presence status	boolean							
+{boolean}	smoking status	boolean							
+{boolean}	true or false	boolean							
+{dna}	multiplex identifier sequence	string		^{ambiguous_nucleotides}$
+{dna},{dna}		string		^{ambiguous_nucleotides},{ambiguous_nucleotides}$
+{dna};{dna}		string		^{ambiguous_nucleotides};{ambiguous_nucleotides}$
+{duration}	duration	string		^{duration}$
+{duration}		string		^{duration}$
+{float}	measurement value	float							
+{float}	value	float							
+{float} - {float} {unit}	measurement value range	string		^{float} *- *{float} {unit}$
+{float} {unit}	measurement value	string		^{scientific_float}( *- *{scientific_float})? *{text}$
+{float} {unit}		string		^{scientific_float}( *- *{scientific_float})? *{text}$
+{float}{unit}	measurement value	string		^{scientific_float}( *- *{scientific_float})? *{text}$
+{integer}	IHMC code	integer							
+{integer}	measurement value	string		^{integer} {text}$
+{integer}	number of clones	integer							
+{integer}	number of extrachromosmal elements	integer							
+{integer}	number of reads sequenced	integer							
+{integer}	unique identifier	integer							
+{integer}	value	integer							
+{integer} {unit}	measurement value	string		^{integer} {text}$
+{PMID} | {DOI} | {URL}	reference to resource	string		^{PMID}|{DOI}|{URL}$
+{PMID}|{DOI}|{URL}	PMID, DOI or URL	string		^{PMID}|{DOI}|{URL}$
+{PMID}|{DOI}|{URL}	PMID,DOI or URL	string		^{PMID}|{DOI}|{URL}$
+{PMID}|{DOI}|{URL}	PMID,DOI or url	string		^{PMID}|{DOI}|{URL}$
+{PMID}|{DOI}|{URL}|{text}	PMID,DOI,url , or text	string		^{PMID}|{DOI}|{URL}|{text}$
+{PMID}|{DOI}|{URL}|{text}	PMID,DOI,url or free text	string		^{PMID}|{DOI}|{URL}|{text}$
+{PMID}|{DOI}|{URL}|{text}		string		^{PMID}|{DOI}|{URL}|{text}$
+{PMID|DOI|URL}	PMID,DOI or url	string		^{PMID}|{DOI}|{URL}$
+{termLabel} [{termID}]	AGRO_00000006	string		^{termLabel} \[{termID}\]$					AGRO:00000006
+{termLabel} [{termID}]	AGRO_00002062	string		^{termLabel} \[{termID}\]$					AGRO:00002062
+{termLabel} [{termID}]	AGRO:00000416	string		^{termLabel} \[{termID}\]$					AGRO:00000416
+{termLabel} [{termID}]	ENVO	string		^{termLabel} \[{termID}\]$				ENVO
+{termLabel} [{termID}]	EOL_0001653	string		^{termLabel} \[{termID}\]$					EOL:0001653
+{termLabel} [{termID}]	EOL:0001605	string		^{termLabel} \[{termID}\]$					EOL:0001605
+{termLabel} [{termID}]	FOODON:00002454	string		^{termLabel} \[{termID}\]$					FOODON:00002454
+{termLabel} [{termID}]	FOODON:03510136	string		^{termLabel} \[{termID}\]$					FOODON:03510136
+{termLabel} [{termID}]	FOODON:03530087	string		^{termLabel} \[{termID}\]$					FOODON:03530087
+{termLabel} [{termID}]	FOODON:03530206	string		^{termLabel} \[{termID}\]$					FOODON:03530206
+{termLabel} [{termID}]	FOODON:03530221	string		^{termLabel} \[{termID}\]$					FOODON:03530221
+{termLabel} [{termID}]	GENEPIO:0001064	string		^{termLabel} \[{termID}\]$					GENEPIO:0001064
+{termLabel} [{termID}]	GENEPIO:0001246	string		^{termLabel} \[{termID}\]$					GENEPIO:0001246
+{termLabel} [{termID}]	PATO	string		^{termLabel} \[{termID}\]$				PATO
+{termLabel} [{termID}]	PO	string		^{termLabel} \[{termID}\]$				PO
+{termLabel} [{termID}]	subclass of 'environmental material', http://purl.obolibrary.org/obo/ENVO_00010483	string		^{termLabel} \[{termID}\]$					ENVO:00010483
+{termLabel} [{termID}]	The major environment type(s) where the sample was collected. Recommend subclasses of biome [ENVO:00000428]. Multiple terms can be separated by one or more pipes	string		^{termLabel} \[{termID}\]$					ENVO:00000428
+{termLabel} [{termID}]	The material displaced by the entity at time of sampling. Recommend subclasses of environmental material [ENVO:00010483]	string		^{termLabel} \[{termID}\]$					ENVO:00010483
+{termLabel} [{termID}]	UBERON term(s), multiple values can be separated by pipes	string		^{termLabel} \[{termID}\]$				UBERON
+{termLabel} [{termID}]		string		^{termLabel} \[{termID}\]$
+{termLabel} {[termID]}		string		^{termLabel} \[{termID}\]$
+{text}	classification method, database name, and other parameters	string							
+{text}	color	string							
+{text}	common name	string							
+{text}	description of method	string							
+{text}	diet type	string							
+{text}	disorder name	string							
+{text}	false discovery rate	string							
+{text}	free text	string							
+{text}	gene fragment name	string							
+{text}	gene name	string							
+{text}	genotype	string							
+{text}	gestation state	string							
+{text}	growth medium	string							
+{text}	gynecological disorder	string							
+{text}	health status	string							
+{text}	name	string							
+{text}	name of the symbiotic organism (host of the samples)	string							
+{text}	rank	string							
+{text}	rank of the symbiotic organism (host of the samples)	string							
+{text}	text	string							
+{text}	unique identifier	string							
+{text}		string							
+{text} {text}		string		^{text} {text}$
+{text};{float} {unit}	name;measurement value	string		^{name};{float} {unit}$
+{text};{integer}	room name;room number	string		^{room_name};{room_number}$
+{timestamp}	date	datetime							
+{timestamp}	date and time	datetime							
+{timestamp}	timestamp	datetime							
+{URL}	URL	uriorcurie							
+	adapter A and B sequence	string		^{adapter};{adapter}$
+	country: region, specific location	string		^{country}: {region}, {specific_location}$
+	free text	string
+	measurement value	string		^{scientific_float}( *- *{scientific_float})? *{text}$
+	PMID, DOI or URL	string		^{PMID}|{DOI}|{URL}$
+	PMID,DOI or url	string		^{PMID}|{DOI}|{URL}$
+	PMID,DOI or URL	string		^{PMID}|{DOI}|{URL}$
+	storage condition type;duration	string		^{storage_condition_type};{duration}$
+	text	string							
+{termLabel} [{termID}]|{integer}	NCIT:C14250 or NCBI taxid	string		^({termLabel} \[{termID}\])|{integer}$
+{software};{version};{parameters}	names and versions of software(s), parameters used	string		^{software};{version};{parameters}$
+{float} percentage	value	float
+{text}|{termLabel} [{termID}]	MICRO:0000067	string		^{text}|({termLabel} \[{termID}\])$
+{software};{version};{parameters}	name and version of software, parameters used	string		^{software};{version};{parameters}$
+	text	string
+{termLabel} [{termID}]|{text}	Text or OBI	string		^{text}|({termLabel} \[{termID}\])$
+{text} [NCBI:txid]	Taxonomy ID	string		^{text} \[{NCBItaxon_id}\]$	https://github.com/microbiomedata/mixs-6-2-release-candidate/issues/184
+{term}: {term}, {text}	country or sea name (INSDC or GAZ): region(GAZ), specific location name	string		^{text}: {text}, {text}$
+{term}: {term}, {text}	country: region, specific location	string		^{text}: {text}, {text}$

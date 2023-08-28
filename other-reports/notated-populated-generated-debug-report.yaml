@@ -1,0 +1,28 @@
+blacklist:
+- attributes
+- instantiates
+- name
+- slot_usage
+- slots
+blacklist_skipped:
+- slots
+- slot_usage
+- attributes
+untemplateable_skipped: []
+untemplateables:
+  all_members: anonymous_slot_expression
+  all_of: anonymous_class_expression
+  alt_descriptions: alt_description
+  any_of: anonymous_class_expression
+  classification_rules: anonymous_class_expression
+  enum_range: enum_expression
+  exactly_one_of: anonymous_class_expression
+  extensions: extension
+  has_member: anonymous_slot_expression
+  local_names: local_name
+  none_of: anonymous_class_expression
+  path_rule: path_expression
+  range_expression: anonymous_class_expression
+  rules: class_rule
+  structured_aliases: structured_alias
+  unique_keys: unique_key

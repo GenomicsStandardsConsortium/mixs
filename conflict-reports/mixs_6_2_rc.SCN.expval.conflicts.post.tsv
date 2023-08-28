@@ -1,0 +1,41 @@
+class	Structured comment name	Expected value	Frequency
+agriculture	climate_environment	climate name;treatment duration;interval;experimental duration	0.5
+plant-associated	climate_environment	climate name;treatment interval and duration	0.5
+built environment	freq_clean	enumeration or {text}	0.5
+food-food production facility	freq_clean	text	0.5
+agriculture	fungicide_regm	fungicide name;fungicide amount;treatment duration;interval;experimental duration	0.5
+plant-associated	fungicide_regm	fungicide name;fungicide amount;treatment interval and duration	0.5
+agriculture	gaseous_environment	gaseous compound name;gaseous compound amount;treatment duration;interval;experimental duration	0.5
+plant-associated	gaseous_environment	gaseous compound name;gaseous compound amount;treatment interval and duration	0.5
+symbiont-associated	gravidity	gravidity status of the symbiotic organism (host of the samples);timestamp	0.5
+host-associated	gravidity	gravidity status;timestamp	0.5
+agriculture	herbicide_regm	herbicide name;herbicide amount;treatment duration;interval;experimental duration	0.5
+plant-associated	herbicide_regm	herbicide name;herbicide amount;treatment interval and duration	0.5
+host-associated	host_body_habitat	free text	0.5
+symbiont-associated	host_body_habitat	original symbiotic organism (host of the samples) body habitat where the sample was obtained from; free text	0.5
+host-associated	host_color	color	0.5
+symbiont-associated	host_color	color of the symbiotic organism (host of the samples)	0.5
+symbiont-associated	host_growth_cond	Literature reference giving growth conditions of the symbiotic organism (host of the samples); PMID,DOI,url or free text	0.5
+host-associated	host_growth_cond	PMID,DOI,url or free text	0.5
+host-associated	host_shape	shape	0.5
+symbiont-associated	host_shape	shape of the symbiotic organism (host of the samples)	0.5
+host-associated	host_substrate	substrate name	0.5
+symbiont-associated	host_substrate	substrate name of the symbiotic organism (host of the samples)	0.5
+agriculture	non_min_nutr_regm	non-mineral nutrient name;non-mineral nutrient amount;treatment duration;interval;experimental duration	0.5
+plant-associated	non_min_nutr_regm	non-mineral nutrient name;non-mineral nutrient amount;treatment interval and duration	0.5
+agriculture	pesticide_regm	pesticide name;pesticide amount;treatment duration;interval;experimental duration	0.5
+plant-associated	pesticide_regm	pesticide name;pesticide amount;treatment interval and duration	0.5
+agriculture	ph_regm	measurement value;treatment duration;interval;experimental duration	0.5
+plant-associated	ph_regm	measurement value;treatment interval and duration	0.5
+agriculture	salt_regm	salt name;salt amount;treatment duration;interval;experimental duration	0.5
+plant-associated	salt_regm	salt name;salt amount;treatment interval and duration	0.5
+agriculture	season_environment	seasonal environment name;treatment duration;interval;experimental duration	0.5
+plant-associated	season_environment	seasonal environment name;treatment interval and duration	0.5
+agriculture	standing_water_regm	standing water type;treatment duration;interval;experimental duration	0.5
+plant-associated	standing_water_regm	standing water type;treatment interval and duration	0.5
+agriculture	water_temp_regm	measurement value;treatment duration;interval;experimental duration	0.5
+plant-associated	water_temp_regm	measurement value;treatment interval and duration	0.5
+agriculture	watering_regm	measurement value;treatment duration;interval;experimental duration	0.5
+plant-associated	watering_regm	measurement value;treatment interval and duration	0.5
+food-farm environment	wind_direction	cardinal wind direction or azimuth degrees	0.5
+air	wind_direction	wind direction name	0.5
