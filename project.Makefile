@@ -1,7 +1,7 @@
 
-##only if running the postgres queries
-include local/.env # for PGPASSWORD, BIOSAMPLE_DB_USER etc
-export $(shell sed 's/=.*//'  local/.env)
+###only if running the postgres queries
+#include local/.env # for PGPASSWORD, BIOSAMPLE_DB_USER etc
+#export $(shell sed 's/=.*//'  local/.env)
 
 .PHONY: all clean squeaky-clean conflicts-cleanup conflicts-all-reports linkml-validate-build-test-only linkml-validate-extracted
 
