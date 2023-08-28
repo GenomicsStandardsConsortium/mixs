@@ -61,7 +61,7 @@ mims_soil_data:
   lat_lon: 45.1 45.9
   project_name: absolutely any text
   samp_name: msd1
-  samp_taxon_id: absolutely any text
+  samp_taxon_id: organism [NCBITaxon:123]
   seq_meth: absolutely any text
 
 ```
