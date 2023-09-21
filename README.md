@@ -14,13 +14,13 @@ The current standards can be browsed at https://genomicsstandardsconsortium.gith
 
 To support existing implementers who have been using previous Excel-based versions of MIxS, we have provided a manually created [Excel workbook](mixs/excel) with the same format as MIxS 5. However, we highly recommend using one of the machine-readable artifacts available in the [mixs](mixs) folder.
 
-MIxS is divided into checklists and packages.
+MIxS is divided into checklists and extensions (previously known as environmental packages).
 
 **[Checklists](https://genomicsstandardsconsortium.github.io/mixs/#checklists)** include the required, recommended, and optional metadata fields for a specific type of sequence: genome, metagenome, marker gene, or xxx. For genomic sequences (MIGS), there are specific checklists for different taxa groups (Eukaryotes, Bacteria, Viruses, and Plants as hosts).
 
-**[Packages](https://genomicsstandardsconsortium.github.io/mixs/#packages)** supplement checklists by providing additional terms to describe specific environments from which a sample was collected. For example, the Agriculture package has a number of terms to record attributes specific to agricultural environments. 
+**[Extensions](https://genomicsstandardsconsortium.github.io/mixs/#packages)** supplement checklists by providing additional terms to describe specific environments from which a sample was collected. For example, the Agriculture extension has a number of terms to record attributes specific to agricultural environments. 
 
-Packages can be used in conjunction with any checklist, so, for example, if you generate metagenomic sequences from an agricultural environment, you would use MIMS + the Agriculture package. All possible [combinations](https://genomicsstandardsconsortium.github.io/mixs/#combinations) of checklists and packages are available on the web browser.
+Extensions can be used in conjunction with any checklist, so, for example, if you generate metagenomic sequences from an agricultural environment, you would use MIMS + the Agriculture extension. All possible [combinations](https://genomicsstandardsconsortium.github.io/mixs/#combinations) of checklists with extensions are available on the web browser.
 
 
 **To request changes to the MIxS standards, please use the [issue tracker](https://github.com/GenomicsStandardsConsortium/mixs/issues) in this repo.**
