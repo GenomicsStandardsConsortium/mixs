@@ -54,6 +54,8 @@ a [spreadsheet version of the MIxS standard](https://github.com/GenomicsStandard
 
 This work is provided for consideration as MIxS 6.2 and will be presented at the [23rd Genomic Standards Consortium Meeting](https://genomicsstandardsconsortium.github.io/GSC23-Bangkok/) in August 2023 in Bangkok, Thailand.
 
+See also [Social and Technical Aspects of Implementing MIxS in LinkML](https://docs.google.com/presentation/d/13m2nGnhFYzrgn96Q9fU2UQXcqaKvOZU9D1pcTtdyV1o/edit#slide=id.g238169b1045_0_208)
+
 <!-- 
 <h2>And future site of MIxS/EnvO Structured Knowledge Extraction</h2>
 
