@@ -17,7 +17,7 @@ def get_all_keys(yaml_file):
 
 
 if __name__ == "__main__":
-    yaml_file = "../generated-schema/mixs_6_2_rc.yaml"
+    yaml_file = "generated-schema/mixs_6_2_rc.yaml"
     keys = get_all_keys(yaml_file)
 
     print("Keys:")
