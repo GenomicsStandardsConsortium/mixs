@@ -838,13 +838,13 @@ referencing = ">=0.28.0"
 
 [[package]]
 name = "linkml"
-version = "1.5.7"
+version = "1.5.8"
 description = "Linked Open Data Modeling Language"
 optional = false
 python-versions = ">=3.7.6,<4.0.0"
 files = [
-    {file = "linkml-1.5.7-py3-none-any.whl", hash = "sha256:677f4c5809dc51b151b86accc69e77482ad86b9c1326a212cef9b4a2a9a96c10"},
-    {file = "linkml-1.5.7.tar.gz", hash = "sha256:bca3dd56837ced79749656843e1e20b8d1db1a89287e7b29d1ee145e4a75ad4d"},
+    {file = "linkml-1.5.8-py3-none-any.whl", hash = "sha256:35a997716a1ad740bc369c7d19eb8d9e7326e8f3518b5405c65730a81e3ae0d3"},
+    {file = "linkml-1.5.8.tar.gz", hash = "sha256:bbef21c06df584298afdeee17533d8384222b6c1cb763ea0dba0934902448034"},
 ]
 
 [package.dependencies]
@@ -857,7 +857,7 @@ jinja2 = ">=3.1.0"
 jsonasobj2 = ">=1.0.3,<2.0.0"
 jsonschema = {version = ">=4.0.0", extras = ["format"]}
 linkml-dataops = "*"
-linkml-runtime = ">=1.5.4"
+linkml-runtime = ">=1.5.7,<2.0.0"
 openpyxl = "*"
 parse = "*"
 prefixcommons = ">=0.1.7"
@@ -893,13 +893,13 @@ linkml-runtime = ">=1.1.6"
 
 [[package]]
 name = "linkml-runtime"
-version = "1.5.5"
+version = "1.5.7"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 optional = false
 python-versions = ">=3.7.6,<4.0.0"
 files = [
-    {file = "linkml_runtime-1.5.5-py3-none-any.whl", hash = "sha256:92b0148a107f980a75b5608ece692f7d33f77328c6f61640a4d2e51488be4a3c"},
-    {file = "linkml_runtime-1.5.5.tar.gz", hash = "sha256:f0275823c659924c032e88d4084e6fdb9699c0a62c6c62d45cb62e27101cbbff"},
+    {file = "linkml_runtime-1.5.7-py3-none-any.whl", hash = "sha256:8ea32b5f0de3637c2339edfbb88008bb08a9e2ff36d1aada20e002058263418f"},
+    {file = "linkml_runtime-1.5.7.tar.gz", hash = "sha256:c202799f01571b0c202bb521957f281b1052fabad106419c8e1368802088d6a4"},
 ]
 
 [package.dependencies]
@@ -912,7 +912,7 @@ jsonasobj2 = ">=1.0.4,<2.dev0"
 jsonschema = ">=3.2.0"
 prefixcommons = ">=0.1.12"
 prefixmaps = ">=0.1.4"
-pydantic = ">=1.10.2,<2.0.0"
+pydantic = ">=1.10.2,<3.0.0"
 pyyaml = "*"
 rdflib = ">=6.0.0"
 requests = "*"
@@ -2420,4 +2420,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "097721c8608b78a1f4f731e51614b0036972e895778c9889683cd9eb79e0550d"
+content-hash = "3ff592522b9001e5bf9847e2e93c7d8ae29fc25f2349f320ee744ebde138f7a3"
