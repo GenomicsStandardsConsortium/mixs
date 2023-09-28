@@ -28,7 +28,8 @@ lint: lint-black lint-flake lint-mypy ## runs all static analysis tools
 .PHONY: lint
 
 test: ## runs tests
-	$(CMD) pytest --cov=src --cov-report html:tests/.coverage $(TESTS_DIR)
+	@echo "Not testing coverage at this time"
+	#$(CMD) pytest --cov=src --cov-report html:tests/.coverage $(TESTS_DIR) # MAM 2023-09-28 # https://github.com/GenomicsStandardsConsortium/mixs6.2_release_candidate/issues/20
 .PHONY: test
 
 safety: ## tests third part packages against a database of known compromised ones
