@@ -406,11 +406,12 @@ ncbi-biosample-sql/results/ncbi-biosample-harmonized-attribute-usage.csv
 		--ncbi-harmonized-names-file $(word 2,$^) \
 		--output-file $@
 
+# gen-owl isn't honoring --output any more?
 schema-derivatives/$(RC_PREFIX).owl.ttl: $(SOURCE_SCHEMA_PATH)
 	$(RUN) gen-owl \
 		--output $@ \
 		--format ttl \
-		--metadata-profile rdfs $<
+		--metadata-profile rdfs $< > $@
 
 schema-derivatives/$(RC_PREFIX).schema.json: $(SOURCE_SCHEMA_PATH)
 	$(RUN) gen-json-schema --closed $< > $@
