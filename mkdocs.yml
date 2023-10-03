@@ -10,9 +10,14 @@ nav:
   - "- MIxS v6.2.rc Documentation Home": index.md
   - "- Ephemeral, un-submitted validation": __data_harmonizer/
   - "- Back to GitHub repository": https://github.com/microbiomedata/mixs-6-2-release-candidate
+  - "- Full term table": term_list.md
+markdown_extensions:
+  - tables
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
 
-
-site_url: https://microbiomedata.github.io/mixs-6-2-release-candidate/
+site_url: https://microbiomedata.github.io/mixs-6-2-release-candidate
 repo_url: https://github.com/microbiomedata/mixs-6-2-release-candidate
 
 docs_dir: mixs-docs-md
