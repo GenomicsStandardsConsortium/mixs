@@ -967,10 +967,10 @@ def create_schema(
     gsc_excel_file_name = url_path_components[-1]
     gsc_excel_output_path = os.path.join(gsc_excel_output_dir, gsc_excel_file_name)
 
-    default_prefix_base = "https://w3id.org/mixs-6-2-rc/"
+    default_prefix_base = "https://w3id.org/mixs-6-2-rc"
     global_target_schema = SchemaDefinition(
         default_range="string",
-        id=f"{default_prefix_base}{schema_name}",
+        id=f"{default_prefix_base}",
         name=schema_name,
         source=gsc_excel_input,
     )
