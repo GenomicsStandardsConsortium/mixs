@@ -13,31 +13,31 @@ MimarksS	mimarks_s|MIMARKS-SP|MIMARKS-survey	for marker gene sequences obtained 
 Mims	mims			Metagenome or Environmental	Checklist	true		MIXS:0010007	MIMS	
 Misag	misag			Minimum Information About a Single Amplified Genome	Checklist	true		MIXS:0010010	Minimum Information About a Single Amplified Genome	
 Miuvig	miuvig			Minimum Information About an Uncultivated Virus Genome	Checklist	true		MIXS:0010012	Minimum Information About an Uncultivated Virus Genome	
-Agriculture				agriculture package	EnvironmentalPackage			MIXS:0016018	agriculture	
-Air				air package	EnvironmentalPackage			MIXS:0016000	air	
-BuiltEnvironment				built environment package	EnvironmentalPackage			MIXS:0016001	built environment	
-FoodAnimalAndAnimalFeed				food-animal and animal feed package	EnvironmentalPackage			MIXS:0016019	food-animal and animal feed	
-FoodFarmEnvironment				food-farm environment package	EnvironmentalPackage			MIXS:0016020	food-farm environment	
-FoodFoodProductionFacility				food-food production facility package	EnvironmentalPackage			MIXS:0016021	food-food production facility	
-FoodHumanFoods				food-human foods package	EnvironmentalPackage			MIXS:0016022	food-human foods	
-HostAssociated				host-associated package	EnvironmentalPackage			MIXS:0016002	host-associated	
-HumanAssociated				human-associated package	EnvironmentalPackage			MIXS:0016003	human-associated	
-HumanGut				human-gut package	EnvironmentalPackage			MIXS:0016004	human-gut	
-HumanOral				human-oral package	EnvironmentalPackage			MIXS:0016005	human-oral	
-HumanSkin				human-skin package	EnvironmentalPackage			MIXS:0016006	human-skin	
-HumanVaginal				human-vaginal package	EnvironmentalPackage			MIXS:0016007	human-vaginal	
-HydrocarbonResourcesCores				hydrocarbon resources-cores package	EnvironmentalPackage			MIXS:0016015	hydrocarbon resources-cores	
-HydrocarbonResourcesFluidsSwabs				hydrocarbon resources-fluids/swabs package	EnvironmentalPackage			MIXS:0016016	hydrocarbon resources-fluids/swabs	
-MicrobialMatBiofilm				microbial mat/biofilm package	EnvironmentalPackage			MIXS:0016008	microbial mat/biofilm	
-MiscellaneousNaturalOrArtificialEnvironment				miscellaneous natural or artificial environment package	EnvironmentalPackage			MIXS:0016009	miscellaneous natural or artificial environment	
-PlantAssociated				plant-associated package	EnvironmentalPackage			MIXS:0016010	plant-associated	
-Sediment				sediment package	EnvironmentalPackage			MIXS:0016011	sediment	
-Soil				soil package	EnvironmentalPackage			MIXS:0016012	soil	
-SymbiontAssociated				symbiont-associated package	EnvironmentalPackage			MIXS:0016023	symbiont-associated	
-WastewaterSludge				wastewater/sludge package	EnvironmentalPackage			MIXS:0016013	wastewater/sludge	
-Water				water package	EnvironmentalPackage			MIXS:0016014	water	
-Checklist				A class with slots assigned for the required, recommended, and optional metadata fields for a specific type sequence, such as genomes, metagenomes, or marker genes. The migs class, which models genomic sequences, is subdivided into checklists for specific taxa: bacteria, eukaryotes, organelles, plasmids and viruses.						
-EnvironmentalPackage				A supplement to MIxS Checklists, in the sense of providing additional terms to describe the specific environment from which a sample was collected.						
+Agriculture				agriculture extension	Extension			MIXS:0016018	agriculture
+Air				air extension	Extension			MIXS:0016000	air
+BuiltEnvironment				built environment extension	Extension			MIXS:0016001	built environment
+FoodAnimalAndAnimalFeed				food-animal and animal feed extension	Extension			MIXS:0016019	food-animal and animal feed
+FoodFarmEnvironment				food-farm environment extension	Extension			MIXS:0016020	food-farm environment
+FoodFoodProductionFacility				food-food production facility extension	Extension			MIXS:0016021	food-food production facility
+FoodHumanFoods				food-human foods extension	Extension			MIXS:0016022	food-human foods
+HostAssociated				host-associated extension	Extension			MIXS:0016002	host-associated
+HumanAssociated				human-associated extension	Extension			MIXS:0016003	human-associated
+HumanGut				human-gut extension	Extension			MIXS:0016004	human-gut
+HumanOral				human-oral extension	Extension			MIXS:0016005	human-oral
+HumanSkin				human-skin extension	Extension			MIXS:0016006	human-skin
+HumanVaginal				human-vaginal extension	Extension			MIXS:0016007	human-vaginal
+HydrocarbonResourcesCores				hydrocarbon resources-cores extension	Extension			MIXS:0016015	hydrocarbon resources-cores
+HydrocarbonResourcesFluidsSwabs				hydrocarbon resources-fluids/swabs extension	Extension			MIXS:0016016	hydrocarbon resources-fluids/swabs
+MicrobialMatBiofilm				microbial mat/biofilm extension	Extension			MIXS:0016008	microbial mat/biofilm
+MiscellaneousNaturalOrArtificialEnvironment				miscellaneous natural or artificial environment extension	Extension			MIXS:0016009	miscellaneous natural or artificial environment
+PlantAssociated				plant-associated extension	Extension			MIXS:0016010	plant-associated
+Sediment				sediment extension	Extension			MIXS:0016011	sediment
+Soil				soil extension	Extension			MIXS:0016012	soil
+SymbiontAssociated				symbiont-associated extension	Extension			MIXS:0016023	symbiont-associated
+WastewaterSludge				wastewater/sludge extension	Extension			MIXS:0016013	wastewater/sludge
+Water				water extension	Extension			MIXS:0016014	water
+Checklist				A collection of metadata terms (slots) to minimally describe the sampling and sequencing method of a specimen used to generate a nucleotide sequence.						
+Extension	EnvironmentalPackage			A collection of recommended metadata terms (slots) developed by community experts, describing the specific context under which a sample was collected.
 AllSlotsTestClass			for build-time testing of all slots							
 AllSlotsTestClassCollection			for build-time testing of all slots							
-MixsCompliantData				A collection of data that complies with some combination of a MIxS checklist and environmental package					MIxS compliant data	true
+MixsCompliantData				A collection of data that complies with some combination of a MIxS checklist and environmental extension					MIxS compliant data	true

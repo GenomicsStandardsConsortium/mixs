@@ -81,7 +81,7 @@ def instantiate_combos(global_target_schema, root_class_name, combo_checklists,
     for class_name, class_value in global_target_schema.classes.items():
         if class_value.is_a == "Checklist":
             bootstrapped_checklists.append(class_name)
-        elif class_value.is_a == "EnvironmentalPackage":
+        elif class_value.is_a == "Extension":
             bootstrapped_envs.append(class_name)
 
     bootstrapped_checklists.sort()
@@ -119,7 +119,7 @@ def instantiate_combos(global_target_schema, root_class_name, combo_checklists,
 
             if uncombined_ep_collection_slot_name not in list(global_target_schema.slots.keys()):
                 new_slot = SlotDefinition(
-                    description=f"Data that complies with environmental package {ep}",
+                    description=f"Data that complies with Extension {ep}",
                     domain=root_class_name,
                     inlined=True,
                     inlined_as_list=True,
@@ -150,7 +150,7 @@ def instantiate_combos(global_target_schema, root_class_name, combo_checklists,
                 name=combo_name,
                 title=combo_title,
                 description=
-                f"MIxS data that complies with the {checklist} checklist and the {ep} environmental package",
+                f"MIxS data that complies with the {checklist} checklist and the {ep} Extension",
                 in_subset="combination_classes"
             )
             global_target_schema.classes[combo_name] = new_class
@@ -569,7 +569,7 @@ def requirement_followup(sheet: pd.DataFrame, global_target_schema, debug_mode, 
         elif requirement == "E":
             is_a_parent = global_target_schema.classes[tidied_class].is_a
 
-            if is_a_parent == "EnvironmentalPackage":
+            if is_a_parent == "Extension":
                 if tidied_scn in global_target_schema.classes[tidied_class].slot_usage:
                     global_target_schema.classes[tidied_class].slot_usage[tidied_scn].required = True
                     if "Requirement" in global_target_schema.classes[tidied_class].slot_usage[tidied_scn].annotations:
@@ -1005,7 +1005,7 @@ def create_schema(
             root_class_name = class_name
         if class_def.is_a == "Checklist":
             checklists_from_schemasheet.append(class_name)
-        elif class_def.is_a == "EnvironmentalPackage":
+        elif class_def.is_a == "Extension":
             envs_from_schemasheet.append(class_name)
 
     global_target_schema.prefixes[schema_name] = Prefix(schema_name, default_prefix_base)
