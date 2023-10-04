@@ -4,7 +4,7 @@ import glob
 import unittest
 
 from linkml_runtime.loaders import yaml_loader
-from mixs_6_2_for_merge.datamodel.mixs_6_2_for_merge import Checklist
+from mixs_6_2_for_merge.datamodel.mixs_6_2_for_merge import MixsCompliantData
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, "src", "data", "examples")
@@ -18,5 +18,5 @@ class TestData(unittest.TestCase):
     def test_data(self):
         """Date test."""
         for path in EXAMPLE_FILES:
-            obj = yaml_loader.load(path, target_class=Checklist)
+            obj = yaml_loader.load(path, target_class=MixsCompliantData)
             assert obj
