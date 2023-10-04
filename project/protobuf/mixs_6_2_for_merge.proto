@@ -1,0 +1,23 @@
+// Represents a Checklist
+message Checklist
+ {
+  uriorcurie id = 0
+  string name = 0
+  string description = 0
+  string primaryEmail = 0
+  date birthDate = 0
+  integer ageInYears = 0
+  personStatus vitalStatus = 0
+ }
+// A holder for Checklist objects
+message ChecklistCollection
+ {
+ repeated  checklist entries = 0
+ }
+// A generic grouping for any identifiable entity
+message NamedThing
+ {
+  uriorcurie id = 0
+  string name = 0
+  string description = 0
+ }
