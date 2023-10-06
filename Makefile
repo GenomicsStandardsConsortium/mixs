@@ -21,10 +21,11 @@ SHEET_ID = $(shell ${SHELL} ./utils/get-value.sh google_sheet_id)
 SHEET_TABS = $(shell ${SHELL} ./utils/get-value.sh google_sheet_tabs)
 SHEET_MODULE_PATH = $(SOURCE_SCHEMA_DIR)/$(SHEET_MODULE).yaml
 
-# environment variables
-include config.env
+## environment variables
+#include config.env
 
-GEN_PARGS =
+# MAM 2023-10-06 hard-coding exclude statements
+GEN_PARGS = --exclude excel --exclude graphql --exclude prefixmap --exclude protobuf --exclude shacl --exclude shex --exclude markdown
 ifdef LINKML_GENERATORS_PROJECT_ARGS
 GEN_PARGS = ${LINKML_GENERATORS_PROJECT_ARGS}
 endif
