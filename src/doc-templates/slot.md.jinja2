@@ -1,4 +1,4 @@
-# Slot: {{ gen.name(element) }}
+# Term: {{ gen.name(element) }}
 
 {%- if header -%}
 {{header}}
@@ -23,17 +23,6 @@ URI: {{ gen.uri_link(element) }}
 <!-- no inheritance hierarchy -->
 {% endif %}
 
-
-{% if schemaview.is_mixin(element.name) %}
-## Mixin Usage
-
-| mixed into | description | range | domain |
-| --- | --- | --- | --- |
-{% for s in schemaview.slot_children(element.name, is_a=False) -%}
-| {{ gen.link(s) }} | {{ schemaview.get_slot(s).description|enshorten }} | {{ schemaview.get_slot(s).range }} | {{ schemaview.get_classes_by_slot(schemaview.get_slot(s))|join(', ') }} |
-{% endfor %}
-{% endif %}
-
 ## Properties
 
 * Range: {{gen.link(element.range)}}
@@ -51,11 +40,11 @@ URI: {{ gen.uri_link(element) }}
 {% if element.maximum_value is not none %}
 * Maximum Value: {{ element.maximum_value|int }}
 {% endif -%}
+{% if element.structured_pattern.syntax %}
+* Structured pattern: {{ '`' }}{{  element.structured_pattern.syntax }}{{ '`' }}
+{% endif -%}
 {% if element.pattern %}
 * Regex pattern: {{ '`' }}{{  element.pattern }}{{ '`' }}
-{% endif -%}
-{% if schemaview.is_mixin(element.name) %}
-* Mixin: {{ element.mixin }}
 {% endif -%}
 
 
