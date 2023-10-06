@@ -161,6 +161,8 @@ gendoc: $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	$(RUN) gen-doc ${GEN_DARGS} -d $(DOCDIR) $(SOURCE_SCHEMA_PATH) --template-directory $(TEMPLATEDIR)
 	$(RUN) python $(SRC)/scripts/term_list_generator.py $(TERM_LIST_FILE)
+	mkdir -p $(DOCDIR)/javascripts
+	$(RUN) cp $(SRC)/scripts/javascripts/* $(DOCDIR)/javascripts/
 
 testdoc: gendoc serve
 
