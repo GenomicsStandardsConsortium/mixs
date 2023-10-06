@@ -10,12 +10,19 @@ theme:
 plugins:
   - search
   - mermaid2
+markdown_extensions:
+  - tables
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
 nav:
   # - Home: home.md
   - Index: index.md
-  - About: about.md
+  - Full term table: term_list.md
 site_url: https://GenomicsStandardsConsortium.github.io/mixs-6-2-for-merge
 repo_url: https://github.com/GenomicsStandardsConsortium/mixs-6-2-for-merge
+
+docs_dir: docs
 
 # Uncomment this block to enable use of Google Analytics.
 # Replace the property value with your own ID.

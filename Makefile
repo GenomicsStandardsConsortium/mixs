@@ -15,6 +15,8 @@ SRC = src
 DEST = project
 PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel
 DOCDIR = docs
+TEMPLATEDIR = $(SRC)/doc-templates
+TERM_LIST_FILE = $(DOCDIR)/term_list.md
 EXAMPLEDIR = examples
 SHEET_MODULE = personinfo_enums
 SHEET_ID = $(shell ${SHELL} ./utils/get-value.sh google_sheet_id)
@@ -157,7 +159,10 @@ $(DOCDIR):
 
 gendoc: $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
-	$(RUN) gen-doc ${GEN_DARGS} -d $(DOCDIR) $(SOURCE_SCHEMA_PATH)
+	$(RUN) gen-doc ${GEN_DARGS} -d $(DOCDIR) $(SOURCE_SCHEMA_PATH) --template-directory $(TEMPLATEDIR)
+	$(RUN) python $(SRC)/scripts/term_list_generator.py $(TERM_LIST_FILE)
+	mkdir -p $(DOCDIR)/javascripts
+	$(RUN) cp $(SRC)/scripts/javascripts/* $(DOCDIR)/javascripts/
 
 testdoc: gendoc serve
 
