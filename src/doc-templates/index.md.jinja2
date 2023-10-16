@@ -24,16 +24,6 @@ URI: <a href={{ schema.id }}>{{ schema.id }}</a>
 {%- endif -%}
 {% endfor %}
 
-## Combinations
-
-| Combination | Description |
-{% for c in schemaview.all_classes().values() -%}
-{% if c.mixins and c.is_a -%}
-| --- | --- |
-| {{ gen.link(c) }} | {{ c.description }} |
-{%- endif -%}
-{% endfor %}
-
 ## Subsets
 
 | Subset | Description |
