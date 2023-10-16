@@ -1,4 +1,12 @@
-# Class: {{ gen.name(element) }}
+{% if element.is_a == "Checklist" -%}
+    # Checklist: {{ gen.name(element) }}
+{% elif element.is_a == "Extension" -%}
+    # Extension: {{ gen.name(element) }}
+{% elif element.mixins and element.is_a -%}
+    # Combination: {{ gen.name(element) }}
+{% else -%}
+    # Class: {{ gen.name(element) }}
+{% endif %}
 
 {%- if header -%}
 {{header}}
