@@ -12,7 +12,7 @@ like `description`, `range`, `pattern` and `in_subset`.
 We have [some known issues](https://github.com/GenomicsStandardsConsortium/mixs/issues?q=is%3Aissue+is%3Aopen+label%3A6.1.1-%3E6.2.0), and you may find others. [Please report them](https://github.com/GenomicsStandardsConsortium/mixs/issues) including text snippets and or screen shots!
 
 **Until this message is removed:**
--  You can continue to use any MIxS 6.0 to 6.1.1 artifacts you ahve previously downloaded.
+-  You can continue to use any MIxS 6.0 to 6.1.1 artifacts you have previously downloaded.
  - Or start some new downloads by browsing https://github.com/GenomicsStandardsConsortium/mixs/tree/mixs6.1.1/mixs.
 
 If you have questions or concerns in the interim, please contact gensc-twg@groups.google.com
