@@ -28,7 +28,7 @@ SHEET_MODULE_PATH = $(SOURCE_SCHEMA_DIR)/$(SHEET_MODULE).yaml
 #include config.env
 
 # MAM 2023-10-06 hard-coding exclude statements
-GEN_PARGS = --exclude excel --exclude graphql --exclude prefixmap --exclude protobuf --exclude shacl --exclude shex --exclude markdown
+GEN_PARGS = --exclude excel --exclude graphql --exclude markdown --exclude prefixmap  --exclude protobuf  --exclude shacl  --exclude shex
 ifdef LINKML_GENERATORS_PROJECT_ARGS
 GEN_PARGS = ${LINKML_GENERATORS_PROJECT_ARGS}
 endif
@@ -137,7 +137,7 @@ examples/%.ttl: src/data/examples/%.yaml
 
 test-examples: examples/output
 
-examples/output: src/mixs
+examples/output: src/mixs/schema/mixs.yaml
 	mkdir -p $@
 	$(RUN) linkml-run-examples \
 		--output-formats json \
