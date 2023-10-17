@@ -1,8 +1,9 @@
-name: mixs_6_2_rc
+name: mixs
 comments:
 - 'slot titles that are associated with more than one slot name/SCN: host sex'
 source: https://github.com/GenomicsStandardsConsortium/mixs/raw/issue-610-temp-mixs-xlsx-home/mixs/excel/mixs_v6.xlsx
-id: https://w3id.org/mixs-6-2-rc
+id: https://w3id.org/mixs
+version: v6.2.0 # GH uses same version string # pyproject.toml says "6.2.0"
 prefixes:
   linkml:
     prefix_prefix: linkml
@@ -16,9 +17,6 @@ prefixes:
   ENVO:
     prefix_prefix: ENVO
     prefix_reference: http://purl.obolibrary.org/obo/ENVO_
-  mixs_6_2_rc:
-    prefix_prefix: mixs_6_2_rc
-    prefix_reference: https://w3id.org/mixs-6-2-rc
   MIXS:
     prefix_prefix: MIXS
     prefix_reference: https://w3id.org/mixs/
@@ -31,7 +29,7 @@ prefixes:
   schema:
     prefix_prefix: schema
     prefix_reference: http://schema.org/
-default_prefix: mixs_6_2_rc
+default_prefix: mixs
 default_range: string
 subsets:
   combination_classes:

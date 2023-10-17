@@ -1,20 +1,20 @@
-# mixs-6-2-for-merge
+# mixs
 
 MIxS: the Minimum Information about any (X) Sequence standard
 
 ## Website
 
-[https://GenomicsStandardsConsortium.github.io/mixs-6-2-for-merge](https://GenomicsStandardsConsortium.github.io/mixs-6-2-for-merge)
+[https://GenomicsStandardsConsortium.github.io/mixs](https://GenomicsStandardsConsortium.github.io/mixs)
 
 ## Repository Structure
 
 * [examples/](examples/) - example data
 * [project/](project/) - project files (do not edit these)
 * [src/](src/) - source files (edit these)
-  * [mixs_6_2_for_merge](src/mixs_6_2_for_merge)
-    * [schema](src/mixs_6_2_for_merge/schema) -- LinkML schema
+  * [mixs](src/mixs)
+    * [schema](src/mixs/schema) -- LinkML schema
       (edit this)
-    * [datamodel](src/mixs_6_2_for_merge/datamodel) -- generated
+    * [datamodel](src/mixs/datamodel) -- generated
       Python datamodel
 * [tests/](tests/) - Python tests
 
