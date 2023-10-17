@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     output_file = sys.argv[1]
 
-    docgen = DocGenerator("src/mixs_6_2_for_merge/schema/mixs_6_2_for_merge.yaml", directory="docs")
+    docgen = DocGenerator("src/mixs/schema/mixs.yaml", directory="docs")
     classes = list(docgen.all_class_objects())
 
     try:

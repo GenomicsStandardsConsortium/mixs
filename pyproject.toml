@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "mixs_6_2_for_merge"
-version = "0.1.0"
+name = "mixs"
+version = "6.2.0"
 description = "MIxS: the Minimum Information about any (X) Sequence standard"
-authors = ["Mark Andrew Miller <MAM@lbl.gov>"]
-license = "MIT"
+authors = ["Mark Andrew Miller <MAM@lbl.gov>"] # needs updating
+license = "CC0-1.0 license"
 readme = "README.md"
-include = ["README.md", "src/mixs_6_2_for_merge/schema", "project"]
+include = ["README.md", "src/mixs/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -13,10 +13,10 @@ linkml-runtime = "^1.6.0"
 rdflib = "^6.2.0" # some LinkML components are not compatible with rdflib 7+ yet
 pydantic = "^1.10.13"
 
-[tool.poetry-dynamic-versioning]
-enable = true
-vcs = "git"
-style = "pep440"
+#[tool.poetry-dynamic-versioning]
+#enable = true
+#vcs = "git"
+#style = "pep440"
 
 [tool.poetry.dev-dependencies]
 linkml = "^1.6.0"
