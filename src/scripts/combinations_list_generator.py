@@ -1,6 +1,6 @@
 import sys
 import logging
-from linkml_runtime.utils.schemaview import SchemaView
+from linkml.generators.docgen import DocGenerator
 
 logging.basicConfig(
     level=logging.INFO,
@@ -18,7 +18,8 @@ if __name__ == "__main__":
 
     output_file = sys.argv[1]
 
-    sv = SchemaView("src/mixs_6_2_for_merge/schema/mixs_6_2_for_merge.yaml")
+    docgen = DocGenerator("src/mixs_6_2_for_merge/schema/mixs_6_2_for_merge.yaml", directory="docs")
+    classes = list(docgen.all_class_objects())
 
     try:
         with open(output_file, "w") as md_file:
@@ -27,11 +28,10 @@ if __name__ == "__main__":
             md_file.write("| Name | Description |\n")
             md_file.write("| --- | --- |\n")
 
-            for c in sv.all_classes().values():
+            for c in classes:
                 if c.mixins and c.is_a:
-                    name = c.name
                     description = c.description
-                    link = f"[{name}]({c.from_schema}/{name})"
+                    link = docgen.link(c.name)
                     md_file.write(f"| {link} | {description} |\n")
 
         logger.info(f"Combinations page has been written to '{output_file}'.")

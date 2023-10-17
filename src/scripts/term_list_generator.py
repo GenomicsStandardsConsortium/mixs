@@ -1,27 +1,12 @@
 import sys
 import logging
-from typing import Iterator
-from linkml_runtime.utils.schemaview import SchemaView
-from linkml_runtime.linkml_model.meta import SlotDefinition
+from linkml.generators.docgen import DocGenerator
 
 logging.basicConfig(
-    filename="term_list_generator.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 logger = logging.getLogger(__name__)
-
-
-def all_slot_objects(sv: SchemaView) -> Iterator[SlotDefinition]:
-    """
-    all slot objects in schema
-
-    Ensures rank is non-null
-    :return: iterator
-    """
-    elts = sv.all_slots().values()
-    for e in elts:
-        yield e
 
 
 if __name__ == "__main__":
@@ -33,8 +18,8 @@ if __name__ == "__main__":
 
     output_file = sys.argv[1]
 
-    sv = SchemaView("src/mixs_6_2_for_merge/schema/mixs_6_2_for_merge.yaml")
-    terms = list(all_slot_objects(sv))
+    docgen = DocGenerator("src/mixs_6_2_for_merge/schema/mixs_6_2_for_merge.yaml", directory="docs")
+    terms = list(docgen.all_slot_objects())
 
     try:
         with open(output_file, "w") as md_file:
@@ -44,9 +29,8 @@ if __name__ == "__main__":
             md_file.write("| --- | --- |\n")
 
             for t in terms:
-                name = t.name
                 description = t.description
-                link = f"[{name}]({t.from_schema}/{t.slot_uri.split(':')[-1]})"
+                link = docgen.link(t.name)
                 md_file.write(f"| {link} | {description} |\n")
 
         logger.info(f"Term list table has been written to '{output_file}'.")
