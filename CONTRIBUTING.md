@@ -17,6 +17,7 @@ in a pull request.
 * [Best Practices](#best-practices)
   * [How to write a great issue](#great-issues)
   * [How to create a great pull/merge request](#great-pulls)
+* [Guidelines for GSC developers](#gsc-devs)
 
 <a id="code-of-conduct"></a>
 
@@ -71,3 +72,20 @@ and make your changes on a [new branch][about-branches].
 [about-pulls]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
 [issues]: https://github.com/GenomicsStandardsConsortium/mixs-6-2-for-merge/issues/
 [pulls]: https://github.com/GenomicsStandardsConsortium/mixs-6-2-for-merge/pulls/
+
+<a id="gsc-devs"></a>
+
+## Guidelines for GSC developers
+
+If you're a GSC developer with editing rights, the advice and guidelines above still hold. You should always create an issue for each proposed change (keeping them atomic: one issue per logical change), create a branch from that issue, and - once you've made your changes on the branch - create a pull request for review and validation. 
+
+However, here are some guidelines on where and what to edit for a few routine tasks.
+
+### Editing the MIxS specification 
+
+The YAML file that drives the creation of the MIxS specification in its various serialisations is located in:
+`/src/mixs/schema/`
+
+Once you've created an issue, branch, and done some editing on that branch, create a PR to have your proposed changes reviewed by the Technical WG. 
+Minor edits (e.g. fixing typos, clarifying edits of descriptions, etc) can be included in a patch, while any new terms or consequential edits to terms or their properties should be coordinated with minor / major release processes.
+
