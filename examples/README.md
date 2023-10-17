@@ -1,5 +1,5 @@
-# Examples of use of mixs_6_2_for_merge
+# Examples of use of mixs
 
-This folder contains example data conforming to mixs_6_2_for_merge
+This folder contains example data conforming to mixs
 
 The source for these is in [src/data](../src/data/examples)

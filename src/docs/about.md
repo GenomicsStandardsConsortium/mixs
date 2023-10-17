@@ -1,3 +1,3 @@
-# mixs-6-2-for-merge
+# mixs
 
 MIxS: the Minimum Information about any (X) Sequence standard
