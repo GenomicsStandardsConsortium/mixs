@@ -83,7 +83,8 @@ However, here are some guidelines on where and what to edit for a few routine ta
 
 ### Editing the MIxS specification 
 
-The YAML file that drives the creation of the MIxS specification in its various serialisations is located in:
+To edit the MIxS terms, you'll need to edit the YAML file that drives the creation of the MIxS specification in its various serialisations.
+This file is located in:
 `/src/mixs/schema/`
 
 Once you've created an issue, branch, and done some editing on that branch, create a PR to have your proposed changes reviewed by the Technical WG. 
