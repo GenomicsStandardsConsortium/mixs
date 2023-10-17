@@ -1,17 +1,27 @@
-# mixs-6-2-for-merge
+# MIxS: Minimum Information about any (X) Sequence
 
-MIxS: the Minimum Information about any (X) Sequence standard
+⚠️ ⚠️ ⚠️ 
 
-# Important Notice
-The 6.2 release of the MIxS repository is in transition and still has a few bugs. 
+The GSC is preparing for the MIxS 6.2.0 release. Thanks to everyone who has contributed in any way!
 
-**Until we remove this message from this readme file, if you are already implementing MIxS using the 6.0 to 6.1.1 release, please continue to do so. If you are looking to download the latest usable version of MIxS, please download the artifact you need from https://github.com/GenomicsStandardsConsortium/mixs/tree/mixs6.1.1/mixs.**
+The new release primarily consists of converting a spreadsheet expressing MIxS 6.1 into a [LinkML artifact, which now serves as the source of truth](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml). 
+We have also started to follow the [LinkML cookiecutter layout](https://github.com/linkml/linkml-project-cookiecutter).
+MIxS users should see very few changes in the content, although legacy term attributes like "Definition", "Expected value", "Value syntax" and "Section" have been broken down into their LinkML equivalents, 
+like `description`, `range`, `pattern` and `in_subset`.
 
-If you have questions or concerns in the interm, please contact gensc-twg@groups.google.com or create an issue in this repository
+We have [some known issues](https://github.com/GenomicsStandardsConsortium/mixs/issues?q=is%3Aissue+is%3Aopen+label%3A6.1.1-%3E6.2.0), and you may find others. [Please report them](https://github.com/GenomicsStandardsConsortium/mixs/issues) including text snippets and or screen shots!
 
-## Website
+**Until this message is removed:**
+-  You can continue to use any MIxS 6.0 to 6.1.1 artifacts you ahve previously downloaded.
+ - Or start some new downloads by browsing https://github.com/GenomicsStandardsConsortium/mixs/tree/mixs6.1.1/mixs.
 
-[https://GenomicsStandardsConsortium.github.io/mixs-6-2-for-merge](https://GenomicsStandardsConsortium.github.io/mixs-6-2-for-merge)
+If you have questions or concerns in the interim, please contact gensc-twg@groups.google.com
+
+⚠️ ⚠️ ⚠️ 
+
+## Documentation Website
+
+[https://w3id.org/mixs](https://w3id.org/mixs)
 
 ## Repository Structure
 
