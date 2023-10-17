@@ -1,49 +1,32 @@
 [tool.poetry]
-name = "mixs-linkml"
-version = "0.1.3"
-description = "A LinkML model for the MIxS standard"
-authors = ["GSC"]
-license = "CC0"
-
+name = "mixs_6_2_for_merge"
+version = "0.1.0"
+description = "MIxS: the Minimum Information about any (X) Sequence standard"
+authors = ["Mark Andrew Miller <MAM@lbl.gov>"]
+license = "MIT"
 readme = "README.md"
-
-homepage = "https://gensc.org/mixs/"
-repository = "https://github.com/GenomicsStandardsConsortium/mixs"
-documentation = "https://genomicsstandardsconsortium.github.io/mixs/"
-
-keywords = ["MIxS", "linkml", "schema", "data model"]
-
-classifiers = [
-    "Development Status :: 4 - Beta",
-    "Programming Language :: Python :: 3 :: Only",
-    "Intended Audience :: Developers",
-    "Intended Audience :: Science/Research",
-    "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
-]
-
-packages = [
-    { include = "mixs" }
-]
+include = ["README.md", "src/mixs_6_2_for_merge/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml = "^1.5.2"
-pandas = "*"
+linkml-runtime = "^1.6.0"
+rdflib = "^6.2.0" # some LinkML components are not compatible with rdflib 7+ yet
+pydantic = "^1.10.13"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "pep440"
 
 [tool.poetry.dev-dependencies]
-pipenv-to-requirements = "*"
-tox = "*"
-tox-pipenv = "*"
-unittest2 = "*"
-nbconvert = "*"
-nbformat = "*"
-ipykernel = "*"
-mkdocs = "*"
-mkdocs-material = "^8.3.5"
+linkml = "^1.6.0"
+mkdocs-material = "^9.0.12"
+mkdocs-mermaid2-plugin = "^0.6.0"
+schemasheets = "^0.1.18"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
 
 [tool.poetry.extras]
 docs = ["linkml", "mkdocs-material"]

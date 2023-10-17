@@ -1,0 +1,23 @@
+type Checklist
+  {
+    id: Uriorcurie!
+    name: String
+    description: String
+    primaryEmail: String
+    birthDate: Date
+    ageInYears: Integer
+    vitalStatus: PersonStatus
+  }
+
+type ChecklistCollection
+  {
+    entries: [Checklist]
+  }
+
+type NamedThing
+  {
+    id: Uriorcurie!
+    name: String
+    description: String
+  }
+
