@@ -5,30 +5,20 @@ source: https://github.com/GenomicsStandardsConsortium/mixs/raw/issue-610-temp-m
 id: https://w3id.org/mixs
 version: v6.2.0 # GH uses same version string # pyproject.toml says "6.2.0"
 prefixes:
-  linkml:
-    prefix_prefix: linkml
-    prefix_reference: https://w3id.org/linkml/
-  AGRO:
-    prefix_prefix: AGRO
-    prefix_reference: http://purl.obolibrary.org/obo/AGRO_
-  CHEBI:
-    prefix_prefix: CHEBI
-    prefix_reference: http://purl.obolibrary.org/obo/CHEBI_
-  ENVO:
-    prefix_prefix: ENVO
-    prefix_reference: http://purl.obolibrary.org/obo/ENVO_
-  MIXS:
-    prefix_prefix: MIXS
-    prefix_reference: https://w3id.org/mixs/
-  xsd:
-    prefix_prefix: xsd
-    prefix_reference: http://www.w3.org/2001/XMLSchema#
-  shex:
-    prefix_prefix: shex
-    prefix_reference: http://www.w3.org/ns/shex#
-  schema:
-    prefix_prefix: schema
-    prefix_reference: http://schema.org/
+  linkml: https://w3id.org/linkml/
+  #  AGRO:
+  #    prefix_prefix: AGRO
+  #    prefix_reference: http://purl.obolibrary.org/obo/AGRO_
+  #  CHEBI:
+  #    prefix_prefix: CHEBI
+  #    prefix_reference: http://purl.obolibrary.org/obo/CHEBI_
+  #  ENVO:
+  #    prefix_prefix: ENVO
+  #    prefix_reference: http://purl.obolibrary.org/obo/ENVO_
+  MIXS: https://w3id.org/mixs/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  shex: http://www.w3.org/ns/shex#
+  schema: http://schema.org/
 default_prefix: MIXS
 default_range: string
 subsets:
