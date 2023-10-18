@@ -1,12 +1,21 @@
-{% if element.is_a == "Checklist" -%}
-    # Checklist: {{ gen.name(element) }}
-{% elif element.is_a == "Extension" -%}
-    # Extension: {{ gen.name(element) }}
-{% elif element.mixins and element.is_a -%}
-    # Combination: {{ gen.name(element) }}
-{% else -%}
-    # Class: {{ gen.name(element) }}
-{% endif %}
+{%- if element.is_a == "Checklist" -%}
+    {%- set type = "Checklist" -%}
+{%- elif element.is_a == "Extension" -%}
+    {%- set type = "Extension" -%}
+{%- elif element.mixins and element.is_a -%}
+    {%- set type = "Combination" -%}
+{%- else -%}
+    {%- set type = "Class" -%}
+{%- endif -%}
+
+{%- if element.title -%}
+    {%- set title = element.title ~ ' (' ~ gen.name(element) ~ ')' -%}
+{%- else -%}
+    {%- set title = gen.name(element) -%}
+{%- endif -%}
+
+# {{ type }}: {{ title }}
+
 
 {%- if header -%}
 {{header}}
@@ -24,26 +33,23 @@ _{{ element_description_line }}_
 * __NOTE__: this is an abstract class and should not be instantiated directly
 {% endif %}
 
-{% if schemaview.class_parents(element.name) or schemaview.class_children(element.name, mixins=False) %}
-
-## Inheritance
-{{ gen.inheritance_tree(element, mixins=True) }}
-{% else %}
-<!-- no inheritance hierarchy -->
+{% if element.mixins and element.is_a -%}
+## Composition
+{{ gen.link(element.is_a) }} [Checklist] + {{ gen.link(element.mixins[0]) }} [Extension]
 {% endif %}
 
 ## Terms
 
-| Name | Cardinality and Range | Description | Inheritance |
+| MIXS ID | Name | Cardinality and Range | Description |
 | ---  | --- | --- | --- |
 {% if gen.get_direct_slots(element)|length > 0 %}
 {%- for slot in gen.get_direct_slots(element) -%}
-| {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ slot.description|enshorten }} | direct |
+| {{ gen.uri_link(slot) }} | {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ slot.description|enshorten }} |
 {% endfor -%}
 {% endif -%}
 {% if gen.get_indirect_slots(element)|length > 0 %}
 {%- for slot in gen.get_indirect_slots(element) -%}
-| {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ slot.description|enshorten }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} |
+| {{ gen.uri_link(slot) }} | {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ slot.description|enshorten }} |
 {% endfor -%}
 {% endif %}
 
