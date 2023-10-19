@@ -35,7 +35,7 @@ _{{ element_description_line }}_
 
 {% if element.mixins and element.is_a -%}
 ## Composition
-{{ gen.link(element.is_a) }} [Checklist] + {{ gen.link(element.mixins[0]) }} [Extension]
+{{ gen.link(element.mixins[0]) }} [Checklist] + {{ gen.link(element.is_a) }} [Extension]
 {% endif %}
 
 ## Terms
