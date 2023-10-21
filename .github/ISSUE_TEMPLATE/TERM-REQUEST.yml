@@ -13,39 +13,39 @@ body:
           required: true
   - type: input
     attributes:
-      label: Term Name
+      label: Title
       description: >
-        The name of the term
+        The name of the term. Previously known as 'Term name'
     validations:
       required: true
   - type: input
     attributes:
-      label: Structured comment name
+      label: Title
       description: >
-        A version of the name with less than 20 characters and no spaces
+        A version of the name with less than 20 characters and no spaces. Previously known as 'Structured comment name'.
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Definition
+      label: Description
       description: >
-        a clear and concise description of the term
+        A clear and concise description of the term. Previously known as 'Definition'.
     validations:
       required: true
   - type: input
     attributes:
-      label: Expected value
+      label: Short description of pattern or range.
       description: >
-        The expected type of information the term will hold
+        The expected type of information the term will hold. Previously known as 'Expected value'.
       placeholder: >
         "e.g., text or EFO and/or OBI etc...".
     validations:
       required: true
   - type: input
     attributes:
-      label: Value syntax
+      label: Pattern or range syntax
       description: >
-        The pattern of the value that the term will be checked against
+        The pattern of the value that the term will be checked against. Previously known as 'Value syntax'.
       placeholder: >
         "e.g. {float} {unit}|{termLabel} {[termID]}|{text}|{timestamp} etc...".
     validations:
@@ -54,18 +54,31 @@ body:
     attributes:
       label: Example
       description: >
-        An example value for the term
+        An example value for the term/slot
     validations:
       required: true
   - type: input
     attributes:
-      label: Preferred unit
+      label: Unit
       description: >
-        The preferred unit if appropriate
+        The preferred unit if appropriate. Previously known as 'Preferred unit'.
       placeholder: >
         "e.g, millliter, gram, milligram, liter".
     validations:
       required: false
+  - type: input
+    attributes:
+      label: Requirement
+      description: >
+        Should the term/slot be considered 'Required' or 'Recommended', and if so, for which checklist/package.
+  - type: dropdown
+      attributes:
+        label: Multivalued
+        description: >
+          Could the term be used multiple times in a checklist/package to provide additional meta information.
+        options:
+          - Yes
+          - No
   - type: input
     attributes:
       label: Extensions(s)
