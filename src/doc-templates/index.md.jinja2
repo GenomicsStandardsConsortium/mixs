@@ -32,12 +32,3 @@ URI: <a href={{ schema.id }}>{{ schema.id }}</a>
 | {{gen.link(ss)}} | {{ss.description|enshorten}} |
 {% endfor %}
 
-## Enumerations
-
-| Enumeration | Description |
-| --- | --- |
-{% for e in gen.all_enum_objects()|sort(attribute=sort_by) -%}
-| {{gen.link(e)}} | {{e.description|enshorten}} |
-{% endfor %}
-
-
