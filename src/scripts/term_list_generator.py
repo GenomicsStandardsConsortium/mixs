@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     try:
         with open(output_file, "w") as md_file:
-            md_file.write("# List of all terms in MIXS schema\n\n")
+            md_file.write("# All terms in MIxS schema\n\n")
 
             md_file.write("| Name | Description |\n")
             md_file.write("| --- | --- |\n")
