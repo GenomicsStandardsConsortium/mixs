@@ -18,6 +18,7 @@ DOCDIR = docs
 TEMPLATEDIR = $(SRC)/doc-templates
 TERM_LIST_FILE = $(DOCDIR)/term_list.md
 COMBINATIONS_FILE = $(DOCDIR)/combinations.md
+ENUMERATIONS_FILE = $(DOCDIR)/enumerations.md
 EXAMPLEDIR = examples
 SHEET_MODULE = personinfo_enums
 SHEET_ID = $(shell ${SHELL} ./utils/get-value.sh google_sheet_id)
@@ -163,6 +164,7 @@ gendoc: $(DOCDIR)
 	$(RUN) gen-doc ${GEN_DARGS} -d $(DOCDIR) $(SOURCE_SCHEMA_PATH) --template-directory $(TEMPLATEDIR) --use-slot-uris
 	$(RUN) python $(SRC)/scripts/term_list_generator.py $(TERM_LIST_FILE)
 	$(RUN) python $(SRC)/scripts/combinations_list_generator.py $(COMBINATIONS_FILE)
+	$(RUN) python $(SRC)/scripts/enumerations_list_generator.py $(ENUMERATIONS_FILE)
 	mkdir -p $(DOCDIR)/javascripts
 	$(RUN) cp $(SRC)/scripts/javascripts/* $(DOCDIR)/javascripts/
 
