@@ -29,6 +29,9 @@ if __name__ == "__main__":
             md_file.write("| --- | --- |\n")
 
             for t in terms:
+                if t.domain == "MixsCompliantData":
+                    continue
+
                 description = t.description
                 link = docgen.link(t.name)
                 md_file.write(f"| {link} | {description} |\n")
