@@ -18,17 +18,20 @@ if __name__ == "__main__":
 
     output_file = sys.argv[1]
 
-    docgen = DocGenerator("src/mixs_6_2_for_merge/schema/mixs_6_2_for_merge.yaml", directory="docs")
+    docgen = DocGenerator("src/mixs/schema/mixs.yaml", template_directory="src/doc-templates", directory="docs", use_slot_uris=True)
     terms = list(docgen.all_slot_objects())
 
     try:
         with open(output_file, "w") as md_file:
-            md_file.write("# List of all terms in MIXS schema\n\n")
+            md_file.write("# All terms in MIxS schema\n\n")
 
             md_file.write("| Name | Description |\n")
             md_file.write("| --- | --- |\n")
 
             for t in terms:
+                if t.domain == "MixsCompliantData":
+                    continue
+
                 description = t.description
                 link = docgen.link(t.name)
                 md_file.write(f"| {link} | {description} |\n")

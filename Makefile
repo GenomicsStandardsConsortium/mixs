@@ -18,6 +18,7 @@ DOCDIR = docs
 TEMPLATEDIR = $(SRC)/doc-templates
 TERM_LIST_FILE = $(DOCDIR)/term_list.md
 COMBINATIONS_FILE = $(DOCDIR)/combinations.md
+ENUMERATIONS_FILE = $(DOCDIR)/enumerations.md
 EXAMPLEDIR = examples
 SHEET_MODULE = personinfo_enums
 SHEET_ID = $(shell ${SHELL} ./utils/get-value.sh google_sheet_id)
@@ -28,7 +29,7 @@ SHEET_MODULE_PATH = $(SOURCE_SCHEMA_DIR)/$(SHEET_MODULE).yaml
 #include config.env
 
 # MAM 2023-10-06 hard-coding exclude statements
-GEN_PARGS = --exclude excel --exclude graphql --exclude prefixmap --exclude protobuf --exclude shacl --exclude shex --exclude markdown
+GEN_PARGS = --exclude excel --exclude graphql --exclude markdown --exclude prefixmap  --exclude protobuf  --exclude shacl  --exclude shex
 ifdef LINKML_GENERATORS_PROJECT_ARGS
 GEN_PARGS = ${LINKML_GENERATORS_PROJECT_ARGS}
 endif
@@ -137,7 +138,7 @@ examples/%.ttl: src/data/examples/%.yaml
 
 test-examples: examples/output
 
-examples/output: src/mixs_6_2_for_merge/schema/mixs_6_2_for_merge.yaml
+examples/output: src/mixs/schema/mixs.yaml
 	mkdir -p $@
 	$(RUN) linkml-run-examples \
 		--output-formats json \
@@ -160,9 +161,10 @@ $(DOCDIR):
 
 gendoc: $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
-	$(RUN) gen-doc ${GEN_DARGS} -d $(DOCDIR) $(SOURCE_SCHEMA_PATH) --template-directory $(TEMPLATEDIR)
+	$(RUN) gen-doc ${GEN_DARGS} -d $(DOCDIR) $(SOURCE_SCHEMA_PATH) --template-directory $(TEMPLATEDIR) --use-slot-uris
 	$(RUN) python $(SRC)/scripts/term_list_generator.py $(TERM_LIST_FILE)
 	$(RUN) python $(SRC)/scripts/combinations_list_generator.py $(COMBINATIONS_FILE)
+	$(RUN) python $(SRC)/scripts/enumerations_list_generator.py $(ENUMERATIONS_FILE)
 	mkdir -p $(DOCDIR)/javascripts
 	$(RUN) cp $(SRC)/scripts/javascripts/* $(DOCDIR)/javascripts/
 
@@ -177,7 +179,7 @@ git-init-add: git-init git-add git-commit git-status
 git-init:
 	git init
 git-add: .cruft.json
-	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml poetry.lock project.Makefile pyproject.toml src/mixs_6_2_for_merge/schema/*yaml src/*/datamodel/*py src/data src/docs tests src/*/_version.py
+	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml poetry.lock project.Makefile pyproject.toml src/mixs/schema/*yaml src/*/datamodel/*py src/data src/docs tests src/*/_version.py
 	git add $(patsubst %, project/%, $(PROJECT_FOLDERS))
 git-commit:
 	git commit -m 'chore: initial commit' -a

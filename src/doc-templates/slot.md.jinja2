@@ -1,4 +1,10 @@
-# Term: {{ gen.name(element) }}
+{%- if element.title %}
+    {%- set title = element.title ~ ' (' ~ element.name ~ ')' -%}
+{%- else %}
+    {%- set title = gen.name(element) -%}
+{%- endif -%}
+
+# Term: {{ title }}
 
 {%- if header -%}
 {{header}}
@@ -26,14 +32,7 @@ URI: {{ gen.uri_link(element) }}
 ## Properties
 
 * Range: {{gen.link(element.range)}}
-{% if element.multivalued %}
-* Multivalued: {{ element.multivalued }}
-{% endif -%}
-{% if element.required %}
-* Required: {{ element.required }}
-{% elif element.recommended %}
-* Recommended: {{ element.recommended }}
-{% endif -%}
+* Cardinality: {{ gen.cardinality(element) }}
 {% if element.minimum_value is not none %}
 * Minimum Value: {{ element.minimum_value|int }}
 {% endif -%}
