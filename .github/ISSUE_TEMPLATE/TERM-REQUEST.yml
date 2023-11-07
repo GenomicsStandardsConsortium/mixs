@@ -72,10 +72,13 @@ body:
       description: >
         Should the term/slot be considered 'Required' or 'Recommended', and if so, for which checklist/extension.
   - type: dropdown
-      attributes:
-        label: Multivalued
-        description: >
-          Could the term be used multiple times in a checklist/package to provide additional meta information.
+    attributes:
+      label: Multivalued
+      description: >
+        Could the term be used multiple times in a checklist/package to provide additional meta information.
+      options:
+        - Yes
+        - No
   - type: input
     attributes:
       label: Extensions(s)
