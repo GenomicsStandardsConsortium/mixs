@@ -10,6 +10,7 @@ theme:
 plugins:
   - search:
       separator: '[\s\-\:\(\)]+'
+      prebuild_index: true
   - mermaid2
 markdown_extensions:
   - tables

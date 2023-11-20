@@ -24,6 +24,15 @@ jobs:
       - name: Install dependencies.
         run: poetry install -E docs
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # Choose the desired Node.js version
+
+      - name: Add Node.js to the system path
+        run: |
+          echo 'export PATH=$HOME/.npm-global/bin:$PATH' >> $GITHUB_ENV
+
       - name: Build documentation.
         run: |
           mkdir -p docs
@@ -31,5 +40,3 @@ jobs:
           make gendoc
           ([ ! -f docs/about.md ] && cp src/docs/about.md docs/) || true
           make mkd-gh-deploy
-
-...
