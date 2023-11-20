@@ -39,4 +39,5 @@ jobs:
           touch docs/.nojekyll
           make gendoc
           ([ ! -f docs/about.md ] && cp src/docs/about.md docs/) || true
+          mkdocs build --clean
           make mkd-gh-deploy
