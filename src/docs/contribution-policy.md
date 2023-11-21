@@ -1,6 +1,6 @@
 # Introduction
 
-The MIxS standard maintained by the Genomic Standards Consortium (GSC) is community built and developed to improve FAIR data and data sharing. Below you'll find documentation on how to contribute to or make suggested changes to the GSC's MIxS standard. Additionally, you'll find policy around workflow and requirements for contributions.
+The MIxS standard, maintained by the Genomic Standards Consortium (GSC), is community built and developed to improve FAIR data and data sharing. Below you'll find documentation on how to contribute to or make suggested changes to the GSC's MIxS standard. Additionally, you'll find policy around workflow and requirements for contributions.
 
 The GSC's static documentation will live under src/docs as markdown files. Anywhere applicable, these will be used to create GSC websites.
 
