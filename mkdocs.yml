@@ -8,7 +8,8 @@ theme:
   features:
     - content.tabs.link
 plugins:
-  - search
+  - search:
+      separator: '[\s\-\:\(\)]+'
   - mermaid2
 markdown_extensions:
   - tables
