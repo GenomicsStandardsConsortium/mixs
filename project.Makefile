@@ -13,3 +13,8 @@ assets/mixs_derived_class_term_schemasheet.tsv: src/mixs/schema/mixs.yaml
 		--debug-report-path assets/mixs_derived_class_term_schemasheet_debug.txt \
 		--log-file assets/mixs_derived_class_term_schemasheet_log.txt \
 		--report-style concise
+
+assets/required_and_recommended_slot_usages.tsv: src/mixs/schema/mixs.yaml
+	$(RUN) python src/scripts/required_supersedes_recommended.py \
+		--input-schema $< \
+		--output $@
