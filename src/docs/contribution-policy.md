@@ -1,16 +1,16 @@
 # Introduction
 
-The MIxS standard, maintained by the Genomic Standards Consortium (GSC), is community built and developed to improve FAIR data and data sharing. Below you'll find documentation on how to contribute to or make suggested changes to the GSC's MIxS standard. Additionally, you'll find policy around workflow and requirements for contributions.
+This documentation is intended to guide MIxS editors, including TWG editors who can commit to this repository, external working groups who would like to contribute a new checklist or package, and external individuals or groups who want to request a new term or term update. This documentaiton is not meant for external users, such as repositories or researchers, who want to know [how to use MIxS](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml). 
 
-The GSC's static documentation will live under src/docs as markdown files. Anywhere applicable, these will be used to create GSC websites.
+The MIxS standard, maintained by the Genomic Standards Consortium (GSC), is community built and developed to improve FAIR data and data sharing. Below you'll find documentation on how to contribute to or make suggested changes to the GSC's MIxS standard. Additionally, you'll find policy around workflows and requirements for contributions.
 
-_add more_
+MIxS static documentation lives in this repo under src/docs as markdown files. Where applicable, static documents will be used to create GSC website pages.
 
-## GSC transition to LinkML Details
+## MIxS transition to LinkML Details
 
-_links to LinkML documentation about classes_
+With the release of MIxS 6.0, management of MIxS switched to fulling using GitHub for edits and releases and to using [Linkml](https://linkml.io/). The release of MIxS 6.2.0 made the switch to using "out of the box" LinkML code rather than customizations. The biggest changes was to remove any dependencies on an external spreadsheet for generating the LinkML YAML file. The source of truth (SOT) for editing MIxS is now [the YAML file](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml). However, since this was a minor release, most repositories implementing MIxS will continue to use the generated artifacts from MIxS 6.1 until MIxS 7 is released.
 
-- This should maybe go somewhere else?
+NOTE: Update this section after the release of MIxS 7.
 
 ## GitHub Policy
 
