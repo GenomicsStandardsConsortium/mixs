@@ -26,9 +26,9 @@ NOTE: Update or delete this section after the release of MIxS 7.
 
 # Guidelines for Contributions and Requests
 
-For guidance on how to request a new checklist or package, request a new term or update to an existing term, or report an issue with the MIxS code, please see [the workflows document](worklows.md).
+For guidance on how to request a new checklist or package, request a new term or update to an existing term, or report an issue with the MIxS code, please see [the workflows document](worklow.md).
 
-For MIxS editing policies please see the [editing policies document](policies.md).
+For MIxS editing policies please see the [editing policies document](policy.md).
 
 To guidance on how to use LinkML or contribute to the core LinkML code, please see [the LinkML documentation](https://linkml.io/linkml/).
 
