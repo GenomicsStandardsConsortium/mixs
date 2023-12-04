@@ -1,10 +1,8 @@
 # Introduction
 
-This documentation is intended to guide MIxS editors, including TWG editors who can commit to this repository, external working groups who would like to contribute a new checklist or package, and external individuals or groups who want to request a new term or term update. This documentaiton is not meant for external users, such as repositories or researchers, who want to know [how to use MIxS](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml). 
+This document records policies about editing and contributing to MIxS. It is considered authoritative.
 
-The MIxS standard, maintained by the Genomic Standards Consortium (GSC), is community built and developed to improve FAIR data and data sharing. Below you'll find documentation on how to contribute to or make suggested changes to the GSC's MIxS standard. Additionally, you'll find policy around workflows and requirements for contributions.
-
-MIxS static documentation lives in this repo under src/docs as markdown files. Where applicable, static documents will be used to create GSC website pages.
+All new editing and contribution policies must be approved by the Technical Working Group (TWG) and Compliance and Interoperability Group (CIG).
 
 ## MIxS transition to LinkML Details
 
@@ -63,6 +61,8 @@ The GSC leverages GitHub tools to manage its extensions, checklists, and release
 ### Requesting a term deprecation 
 
 ### Requesting a new Checklist or Extension
+
+Most new Checklists or Extensions are contributed to MIxS by external research communities. Often, the community has spent considerable time defining their contribution before approaching MIxS. 
 
 - Add require a description to the suggested new thing to the requirements
 - New extensions or checklists should be tracked using GitHub Projects
