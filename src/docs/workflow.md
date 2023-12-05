@@ -2,13 +2,29 @@
 
 Please try to follow this document. First read the [policies](policies) document.
 
-## Suggesting a new term
+# Terms
 
-## Requesting a term update
+## Requesting and creating a new term
 
-## Requesting a term deprecation 
+## Requesting and implementing a term update
 
-## Requesting a new Checklist or Extension
+
+## Requesting and implementing a term deprecation 
+
+# Checklists, extensions, and combinations
+
+Define what they are
+
+## Requesting and creating a new checklist or extension
+
+## Updating an existing checklist or extension
+
+# Releases
+
+# LinkML Updates
+
+------------------
+Content copied over:
 
 - All change requests to the GSC should be captured in an issue.
    - Issues should be descriptive and provide clear requests and changes. Issue templates are available and should be used when possible.
