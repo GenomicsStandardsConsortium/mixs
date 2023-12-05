@@ -1,3 +1,5 @@
+TODO: Get rid of this and edit CONTRIBUTING.md in root directory
+
 # Contributing to MIxS
 
 :+1: First of all: Thank you for taking the time to contribute!
