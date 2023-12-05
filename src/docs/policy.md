@@ -23,7 +23,7 @@ The GSC leverages GitHub tools to manage MIxS terms, checklists, extensions, and
 * All pull requests (PRs) must be reviewed by at least one other person besides the requester who is a member of the TWG. Additional reviewers are encouraged.
   * If the issue author does not make the PR, they should be included as a pull request reviewer.
 
-**TODO:** Add policy about who can commit directly to mixs repo and merge pull requests.
+**TODO:** Add policy about who can commit directly to mixs repo and merge pull requests. CREATE AN ISSUE FOR THIS!!!
 * should anyone be allowed to commit directly to main (PRs are merged, not committed)
 * rules  allow us to control this
 * Who has permission to create branches is controlled by roles
@@ -35,7 +35,8 @@ The GSC (through the CIG and with support from the TWG) creates major releases f
 * Before a major release, the CIG and TWG must generate a release candidate.
 * Major releases contain new checklists, extensions, and terms.
 * Major releases may also include the types of changes allowed in minor or patch releases.
-* Major releases must be reviewed by the CIG, TWG, GSC board, and INSDC (_Do we want to include any other repos in the must category?_). The general public is invited to review major releases.
+* Major releases must be reviewed by the CIG, TWG, GSC board, and the list of repositories using MIxS.
+  * TODO: Create a list in this repo of who are external reviews. Assign a responsible person to maintain that list and to maintain the emails in a separate private document.
 * The CIG manages the distribution of and feedback from major releases and provides outreach about new releases.
 * At least x months must be provided for feedback on major releases before they are published.
 * Repositories that are MIxS compliant must adopt major releases within X months of their release.
