@@ -1,8 +1,6 @@
 # Introduction
 
-This document records policies about editing and contributing to MIxS. It is considered authoritative.
-
-All new editing and contribution policies must be approved by the Technical Working Group (TWG) and Compliance and Interoperability Group (CIG).
+This document records policies about editing and contributing to MIxS which are enacted via [editing workflows](workflow.md). Documentation in this repository is considered authoritative and supercedes any previous documentation in Google Drive or the gensc.org website, although content from this repository may be duplicated in those or other locations. All new editing and contributing policies must be approved by the Technical Working Group (TWG) and Compliance and Interoperability Group (CIG).
 
 ## MIxS transition to LinkML Details
 
@@ -10,59 +8,68 @@ With the release of MIxS 6.0, management of MIxS switched to fulling using GitHu
 
 NOTE: Update this section after the release of MIxS 7.
 
-## GitHub Policy
+# GitHub Editin Policies
 
-The GSC leverages GitHub tools to manage its extensions, checklists, and releases. GSC meeting notes are NOT authoritative. GitHub issues, pull requests, and releases will contain the source of truth. Documentation will be generated from GitHub. Below are guidance and policies on how to contribute to the GSC and appropriately use the available tools.
+The GSC leverages GitHub tools to manage MIxS terms, checklists, extensions, and releases. GSC meeting notes, including CIG, TWG, and Board meetings, are NOT authoritative but exist to support development in this repository. GitHub issues, pull requests, and releases will contain the source of truth. Documentation will be generated from GitHub. Below are guidance and policies on how to contribute to MIxS. Specific details on how to use GitHub for contributions are available in the [editing workflows](workflow.md) document.
 
-- All change requests to the GSC should be captured in an issue.
-   - Issues should be descriptive and provide clear requests and changes. Issue templates are available and should be used when possible.
-   - One change should be proposed per issue. If multiple issues are related, you can leverage a GitHub super issue to connect related items.
+### Editing policies
+* All change requests to the GSC should be captured in an issue.
+  * Issues should be descriptive and provide clear requests and changes. Issue templates are available and should be used when possible.
+  *  One change should be proposed per issue. If multiple issues are related, you can leverage a GitHub super issue to connect related items.
+* All branches should be tied to issues and the branch name should relate to the issue it's tied to.
+  * More details on how to easily accomplish this using the GitHub "create a branch" tool are provided in the editing workflows.
+* All pushes, pull requests, and changes should be related to a single issue, and issues should be a single change per issue.
+  * Issues and their associated pull requests should be small and targeted. One change per issue and pull request.
+* All pull requests (PRs) must be reviewed by at least one other person besides the requester who is a member of the TWG. Additional reviewers are encouraged.
+  * If the issue author does not make the PR, they should be included as a pull request reviewer.
 
-- All branches should be tied to issues and the branch name should relate to the issue it's tied to.
-  - This can be accomplished easily using the GitHub "create a branch" tool when viewing the issue on the webpage.
+**TODO:** Add policy about who can commit directly to mixs repo and merge pull requests.
 
-- All pushes, pull requests, and changes should be related to a single issue, and issues should be a single change per issue.
-  - Issues and their associated pull requests should be small and targeted. One change per issue and pull request.
+# Release Policies
+The GSC (through the CIG and with support from the TWG) creates major releases for MIxS approximately one time per year. MIxS uses semantic versioning for releases: 3 digits (major, minor, patch).
 
-- All branches and pull requests should be tied to an issue.
+## Major Releases
+* Before a major release, the CIG and TWG must generate a release candidate.
+* Major releases contain new checklists, extensions, and terms.
+* Major releases may also include the types of changes allowed in minor or patch releases.
+* Major releases must be reviewed by the CIG, TWG, GSC board, and INSDC (_Do we want to include any other repos in the must category?_). The general public is invited to review major releases.
+* The CIG manages the distribution of and feedback from major releases and provides outreach about new releases.
+* At least x months must be provided for feedback on major releases before they are published.
+* Repositories that are MIxS compliant must adopt major releases within X months of their release.
 
-- When making a pull request, contributions can continue to be made and built, but within scope of the related issue.
-  - Making a draft pull request can be done to confirm changes are being done correctly
+## Minor Releases
+* Before a minor release, the CIG and TWG must generate a release candidate.
+* Minor releases CANNOT contain new checklists or extensions.
+* Minor releases can include updates to existing terms.
+* Minor releases may include new terms, but those terms are not consider "official" until the next major release. **TODO:**  Discuss this policy
+* Minor releases must be reviewed by the CIG and TWG. Other interested parties may review minor releases using GitHub.
+* Depending on whether the minor release is more technical or content focused, either the TWG or CIG manages the distribution of and feedback and provides outreach about new minor releases.
+* At least x weeks must be provided for feedback on major releases before they are published.
+* Repositories that are MIxS compliant are not required to adopt minor releases.
 
-- Provide a reviewer for pull requests. 
-  - Pull requests must be reviewed by a member of the GSC Technical Working Group
-  - A Pull request requires someone other than the person that created the pull request
-  - Include issue author as a pull request reviewer
+## Patch Releases
+* Patch releases are used to correct errors in elements (checklists, extensions, or terms) that do no substantively change the content of the element.
+* Patch releases may be used to update documentation.
 
-- Once a pull request is started, all further discussion, review, and changes, happen in the pull request (rather than the issue). 
-  - ?? Using conversations within PRs (TODO: add links to GH documentation)
+# Policies for Community Contributions to MIxS
 
-- When a pull request is merged, the associated branch should be deleted and issue closed.
+This section provides policies about contributing to MIxS. See the [editing workflows](workflow.md) document for how to request, update, or deprecate a checklist, extension, or term.
 
-- The GSC will create releases (ADD Details, # of PRs? on a schedule?)
-  - The GSC will use semantic versioning for releases: 3 digits (major, minor, patch)
-  - Create a project for the release or other large change set
-  - A change log for a release will be generated from all the pull requests that are part of the repository since the last release.
+It is the responsibility of the CIG to work with contributors to ensure that their proposal meets MIxS and GSC requirements for content. It is the responsibility of the TWG to work with the CIG and external contributors to ensure that proposed changes meet MIxS technical requirments. 
 
-- All issues that pertain to a release should be part of a project for that release.
+## Checklists and Extension
 
-- Contributions should NOT be made in a fork. 
-  - If external parties make a fork, it should be tied to an issue. Forks will only be merged back in following the above criteria for branches and small changes.
-  - It is expected that external parties will discuss with the Technical Working Group before making changes on a scale that require a fork (e.g. a new checklist or extension).
-  - The preference is to avoid forks and will be reviewed on a case by case basis.
-  - Whenever a fork is created, a Technical Working Group member will reach out to the creator
+Most new checklists, extensions, and combinations are contributed to MIxS by external research communities. If an indivudual or single organization wants a new checklist or extension, we strongly recommend that they first enlist broad participation from the relevant community to ensure that the request is supported by community consensus. Often, the community has spent considerable time defining their contribution before approaching MIxS, but we encourage communities to engage with the GSC as early as possible. 
 
-## Community Contributions to GSC
+See the MIxS documentation for a definitions of checklist, extension, and combination. **TODO:** Add link when it is ready.
 
-### Suggesting a new term
+## Terms
 
-### Requesting a term update
+Changes to terms (addtion, deletion/deprecation, modification) are made by individuals, organizations (e.g., repositories working with MIxS), or communities. They may stand along or part of a new checklist or extension.
 
-### Requesting a term deprecation 
+Procedures for changing terms are described in the [editing workflows](workflow.md) document. All terms related requests must come through an issue in this GitHub repository. 
 
-### Requesting a new Checklist or Extension
+# What it means to be MIxS Compliant
+As a standards organization, GSC has expections of what it means to be compliant with their standards. For MIxS, this  means...
 
-Most new Checklists or Extensions are contributed to MIxS by external research communities. Often, the community has spent considerable time defining their contribution before approaching MIxS. 
-
-- Add require a description to the suggested new thing to the requirements
-- New extensions or checklists should be tracked using GitHub Projects
+**TODO:** Decide on and document what MIxS Compliant means and if/how to enforce it.
