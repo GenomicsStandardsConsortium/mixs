@@ -24,6 +24,9 @@ The GSC leverages GitHub tools to manage MIxS terms, checklists, extensions, and
   * If the issue author does not make the PR, they should be included as a pull request reviewer.
 
 **TODO:** Add policy about who can commit directly to mixs repo and merge pull requests.
+* should anyone be allowed to commit directly to main (PRs are merged, not committed)
+* rules  allow us to control this
+* Who has permission to create branches is controlled by roles
 
 # Release Policies
 The GSC (through the CIG and with support from the TWG) creates major releases for MIxS approximately one time per year. MIxS uses semantic versioning for releases: 3 digits (major, minor, patch).
