@@ -250,31 +250,35 @@ enums:
   FaoClassEnum:
     permissible_values:
       Acrisols:
+      Alisols:
       Andosols:
+      Anthrosols:
       Arenosols:
+      Calcisols:
       Cambisols:
       Chernozems:
+      Cryosols:
+      Durisols:
       Ferralsols:
       Fluvisols:
       Gleysols:
-      Greyzems:
       Gypsisols:
       Histosols:
       Kastanozems:
-      Lithosols:
+      Leptosols:
+      Lixisols:
       Luvisols:
       Nitosols:
       Phaeozems:
       Planosols:
+      Plinthosols:
       Podzols:
-      Podzoluvisols:
-      Rankers:
-      Regosols:
-      Rendzinas:
       Solonchaks:
       Solonetz:
+      Stagnosols:
+      Technosols:
+      Umbrisols:
       Vertisols:
-      Yermosols:
   FarmWaterSourceEnum:
     permissible_values:
       brackish:
@@ -6734,8 +6738,7 @@ slots:
     multivalued: true
     range: FacilityTypeEnum
   fao_class:
-    description: Soil classification from the FAO World Reference Database for Soil
-      Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups
+    description: Soil classification from the FAO World soil distribution from International Soil Reference and Information Centre (ISRIC). The list of available soil classifications can be found at https://www.isric.org/explore/world-soil-distribution
     title: soil_taxonomic/FAO classification
     examples:
       - value: Luvisols
