@@ -18,7 +18,13 @@ if __name__ == "__main__":
 
     output_file = sys.argv[1]
 
-    docgen = DocGenerator("src/mixs/schema/mixs.yaml", template_directory="src/doc-templates", directory="docs", use_slot_uris=True)
+    docgen = DocGenerator(
+        "src/mixs/schema/mixs.yaml",
+        template_directory="src/doc-templates",
+        directory="docs",
+        use_slot_uris=True,
+        use_class_uris=True,
+    )
     terms = list(docgen.all_slot_objects())
 
     try:
