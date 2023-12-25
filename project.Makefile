@@ -6,6 +6,17 @@
 
 RUN=poetry run
 
+gen-excel: $(SOURCE_SCHEMA_PATH)
+	$(RUN) gen-excel $< \
+		--include-mixins \
+		--split-workbook-by-class \
+		--output $(DEST)/excel
+	mkdir -p $(EXCEL_TEMPLATES_DIR)
+	$(RUN) python src/scripts/organize_excel_files.py \
+		--mixs-schema-file $< \
+		--source-directory $(DEST)/excel \
+		--base-destination-folder $(EXCEL_TEMPLATES_DIR)
+
 assets/mixs_derived_class_term_schemasheet.tsv: src/mixs/schema/mixs.yaml
 	$(RUN) linkml2schemasheets-template \
 		--source-path $< \
