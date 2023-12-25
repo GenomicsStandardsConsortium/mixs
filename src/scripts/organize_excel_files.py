@@ -39,7 +39,7 @@ class MIxSExcelFileOrganizer:
                     result_dict[x].append(cls_name)
 
         result_list = [
-            {"x": x, "cls_names": cls_names} for x, cls_names in result_dict.items()
+            {"x": x, "cls_names": [x] + cls_names} for x, cls_names in result_dict.items()
         ]
 
         # Create a folder for extensions
