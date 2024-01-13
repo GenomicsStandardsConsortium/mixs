@@ -14360,29 +14360,6 @@ slots:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
       interpolated: true
       partial_match: true
-  tot_nitro:
-    annotations:
-      Preferred_unit:
-        tag: Preferred_unit
-        value: microgram per liter, micromole per liter, milligram per liter
-    description: 'Total nitrogen concentration of water samples, calculated by: total
-      nitrogen = total dissolved nitrogen + particulate nitrogen. Can also be measured
-      without filtering, reported as nitrogen'
-    title: total nitrogen concentration
-    examples:
-      - value: 50 micromole per liter
-    keywords:
-      - concentration
-      - nitrogen
-      - total
-    slot_uri: MIXS:0000102
-    range: string
-    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
-      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
-    structured_pattern:
-      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
-      interpolated: true
-      partial_match: true
   tot_nitro_cont_meth:
     description: Reference or method used in determining the total nitrogen
     title: total nitrogen content method
