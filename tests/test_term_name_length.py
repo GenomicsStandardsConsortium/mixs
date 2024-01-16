@@ -1,6 +1,8 @@
 import unittest
 import os
 
+import src.mixs.datamodel.mixs as mixs
+
 from linkml_runtime import SchemaView
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
