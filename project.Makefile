@@ -29,3 +29,10 @@ extensions-dendrogram.pdf:
 	$(RUN) extension-distances \
 		--schema src/mixs/schema/mixs.yaml \
 		--output $@
+
+
+soil-vs-water-slot-usage.yaml: src/mixs/schema/mixs.yaml
+	$(RUN) extension-differences \
+		--schema $< \
+		--ext1 Soil \
+		--ext2 Water > $@

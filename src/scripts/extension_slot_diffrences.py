@@ -4,6 +4,8 @@ import click
 
 from linkml_runtime import SchemaView
 
+import yaml
+
 
 def compare_slots_by_extension(ext_slot_pairings, ext1, ext2):
     """
@@ -56,14 +58,18 @@ def set_arithmatic(schema, ext1, ext2):
         extension_slots = list(extension_obj.attributes.keys())
         for current_slot in extension_slots:
             temp_dict = {
-                "extension": current_extension,
-                "slot": current_slot
+                "extension": str(current_extension),
+                "slot": str(current_slot)
             }
             lod.append(temp_dict)
 
     result = compare_slots_by_extension(lod, ext1, ext2)
 
-    pprint.pprint(result)
+    # pprint.pprint(result)
+
+    # create a yaml representation of the result
+    yaml_string = yaml.dump(result)
+    print(yaml_string)
 
 
 if __name__ == '__main__':
