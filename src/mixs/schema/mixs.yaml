@@ -15945,7 +15945,11 @@ classes:
         recommended: true
     class_uri: MIXS:0010012
   Agriculture:
-    description: agriculture extension
+    description: >
+      A collection of terms appropriate when sequencing samples obtained in an agricultural environment. 
+      Suitable to capture metadata appropriate to enhance crop productivity and agroecosystem health 
+      with the aim to facilitate research of agricultural microbiomes and their relationships to plant productivity 
+      and sustainable crop production from diverse crop management contexts.
     title: agriculture
     is_a: Extension
     slots:
@@ -16354,8 +16358,13 @@ classes:
         string_serialization: '{float} {unit};{period};{interval};{period}'
         recommended: true
     class_uri: MIXS:0016018
+    aliases:
+      - MIxS-Ag (agriculture)
+    annotations:
+      use_cases: Agricultural Microbiomes Research Coordination Network, model cropping and plant systems focused on agricultural plant and soil microbe; microbiome studies in agricultural sites; long-term ecological research in croplands; eDNA in manure samples; describing agricultural microbiome studies
   Air:
-    description: air extension
+    description: >
+      A collection of terms appropriate when collecting and sequencing obtained from a gaseous environment.
     title: air
     is_a: Extension
     slots:
@@ -16409,8 +16418,15 @@ classes:
         examples:
         - value: 21 kilometer per hour
     class_uri: MIXS:0016000
+    aliases:
+      - MIxS-air
+    annotations:
+      use_cases: bioaerosol samples, pathogen load in urban air, aerosols
   BuiltEnvironment:
-    description: built environment extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples obtained in the 
+      built-up environment, which includes terms for surface material, humidity, temperature, moisture and 
+      occupancy type along with specific metadata terms describing the indoor air, building and sample properties.
     title: built environment
     is_a: Extension
     slots:
@@ -16601,8 +16617,18 @@ classes:
       ventilation_type:
         required: true
     class_uri: MIXS:0016001
+    aliases:
+      - MIxS-BE (built environment)
+    annotations:
+      use_cases: microbiology studies of the built environment, NASA space station sampling, MetaSUB transit system sampling, home, hospitals, office buildings
   FoodAnimalAndAnimalFeed:
-    description: food-animal and animal feed extension
+    description: >
+      A collection of terms appropriate when collecting samples and performing sequencing of samples 
+      obtained from farm animals and their feed.
+    comments:
+      - This extension is intended to work alongside the other food extensions 
+        (farm environment, food production facility, and human foods) for capturing contextual data 
+        across the food supply-chain environment.
     title: food-animal and animal feed
     is_a: Extension
     slots:
@@ -16741,8 +16767,18 @@ classes:
       samp_purpose:
         required: true
     class_uri: MIXS:0016019
+    aliases:
+      - MIxS-Food (animal and animal feed)
+    annotations:
+      use_cases: Microbiome of farm animals, their feed, and pet food.
   FoodFarmEnvironment:
-    description: food-farm environment extension
+    description: >
+      A collection of terms appropriate when collecting samples and performing sequencing of samples 
+      obtained from the farm environment, including soil, manure, and food harvesting equipment.
+    comments:
+      - This extension is intended to work alongside the other food extensions 
+        (animals and animal feed, food production facility, and human foods) 
+        for capturing contextual data across the food supply-chain environment.
     title: food-farm environment
     is_a: Extension
     slots:
@@ -16961,8 +16997,18 @@ classes:
         examples:
         - value: 1.6 kilometers per hour
     class_uri: MIXS:0016020
+    aliases:
+      - MIxS-Food (farm environment)
+    annotations:
+      use_cases: Microbiome of farm and field crops as well as environmental samples including irrigation, soil amendments, and farm equipment.
   FoodFoodProductionFacility:
-    description: food-food production facility extension
+    description: >
+      A collection of terms appropriate when collecting samples and performing sequencing of samples 
+      obtained from food production facilities.
+    comments:
+      - This extension is intended to work alongside the other food extensions 
+        (animals and animal feed, farm environment, and human foods) 
+        for capturing contextual data across the food supply-chain environment.
     title: food-food production facility
     is_a: Extension
     slots:
@@ -17111,8 +17157,18 @@ classes:
       samp_stor_media:
         required: true
     class_uri: MIXS:0016021
+    aliases:
+      - MIxS-Food(food production facility)
+    annotations:
+      use_cases: Microbiome of food production facilities/factories
   FoodHumanFoods:
-    description: food-human foods extension
+    description: >
+      A collection of terms appropriate when collecting samples and performing sequencing of samples 
+      obtained from human food products.
+    comments:
+      - This extension is intended to work alongside the other food extensions 
+        (animals and animal feed, farm environment, and food production facilities) 
+        for capturing contextual data across the food supply-chain environment.
     title: food-human foods
     is_a: Extension
     slots:
@@ -17251,8 +17307,23 @@ classes:
         examples:
         - value: environmental swab sampling
     class_uri: MIXS:0016022
+    aliases:
+      - MIxS-Food (human foods)
+    annotations:
+      use_cases: Microbiome of foods intended for human consumption.
   HostAssociated:
-    description: host-associated extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from a non-human host, to examine the host-associated microbiome or genome.
+    comments:
+      - This is a very broad package, intended to capture many kinds of sequences derived 
+        from the bodies of or derived from an organism. Where possible, please use a more specific package. 
+        For example, consider using food-animal and animal feed extension for sampling of farm animals reared for consumption.
+        For human stool microbiomes, consider MIxS-human-gut. 
+        Incidental associations of environmental material with an organism may also be better served by other packages. 
+        For example, nucleic acids derived from soil that was sampled from the hoof of a cow may be better described 
+        by terms from the soil extension; 
+        however, soil embedded in a wound on a cow’s leg would be best described by terms in this extension
     title: host-associated
     is_a: Extension
     slots:
@@ -17371,8 +17442,17 @@ classes:
         examples:
         - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     class_uri: MIXS:0016002
+    aliases:
+      - MIxS-host-associated
+    annotations:
+      use_cases: elephant fecal matter or cat oral cavity
   HumanAssociated:
-    description: human-associated extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from a person to examine their human-associated microbiome or genome, 
+      that does not have a specific extension (e.g., skin, gut, vaginal).
+    comments:
+      - For stool samples use MIxS-human-gut extension.
     title: human-associated
     is_a: Extension
     slots:
@@ -17473,8 +17553,14 @@ classes:
         examples:
         - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     class_uri: MIXS:0016003
+    aliases:
+      - MIxS-human-associated
+    annotations:
+      use_cases: blood samples or biopsy samples.
   HumanGut:
-    description: human-gut extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from a person to examine their oral-associated microbiome.
     title: human-gut
     is_a: Extension
     slots:
@@ -17559,8 +17645,14 @@ classes:
         examples:
         - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     class_uri: MIXS:0016004
+    aliases:
+      - MIxS-human-gut
+    annotations:
+      use_cases: human stool or fecal samples, or samples collected directly from the gut.
   HumanOral:
-    description: human-oral extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from a person to examine their oral-associated microbiome.
     title: human-oral
     is_a: Extension
     slots:
@@ -17644,8 +17736,15 @@ classes:
         examples:
         - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     class_uri: MIXS:0016005
+    aliases:
+      - MIxS-human-oral
+
+    annotations:
+      use_cases: mouth swab sampling, dental microbiome samples, microbiome of oral swabs, nasal, mouth, throat, teeth, tongue microbiome studies
   HumanSkin:
-    description: human-skin extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from a person to examine their skin-associated microbiome.
     title: human-skin
     is_a: Extension
     slots:
@@ -17730,8 +17829,14 @@ classes:
         examples:
         - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     class_uri: MIXS:0016006
+    aliases:
+      - MIxS-human-skin
+    annotations:
+      use_cases: swab samples taken on a person’s skin surface.
   HumanVaginal:
-    description: human-vaginal extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from a person to examine their vaginal-associated microbiome.
     title: human-vaginal
     is_a: Extension
     slots:
@@ -17823,8 +17928,14 @@ classes:
         examples:
         - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     class_uri: MIXS:0016007
+    aliases:
+      - MIxS-human-vaginal
+    annotations:
+      use_cases: vaginal swabbing
   HydrocarbonResourcesCores:
-    description: hydrocarbon resources-cores extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from environments pertaining to hydrocarbon resources, specifically core samples.
     title: hydrocarbon resources-cores
     is_a: Extension
     slots:
@@ -17943,8 +18054,14 @@ classes:
       vfa_fw:
         required: true
     class_uri: MIXS:0016015
+    aliases:
+      - MIxS-HCR (hydrocarbon resources-cores)
+    annotations:
+      use_cases: The microbial characterization of hydrocarbon occurrences, defined as the natural and artificial environmental features that are rich in hydrocarbons, from hydrocarbon rich formations, such as reservoir cores.
   HydrocarbonResourcesFluidsSwabs:
-    description: hydrocarbon resources-fluids/swabs extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from environments pertaining to hydrocarbon resources, specifically run-off liquids samples and swabs.
     title: hydrocarbon resources-fluids/swabs
     is_a: Extension
     slots:
@@ -18067,8 +18184,14 @@ classes:
       vfa_fw:
         recommended: true
     class_uri: MIXS:0016016
+    aliases:
+      - MIxS-HCR (hydrocarbon resources-fluids/swabs)
+    annotations:
+      use_cases: The microbial characterization of hydrocarbon occurrences,  defined as the natural and artificial environmental features that are rich in hydrocarbons, from hydrocarbon resource fluids.
   MicrobialMatBiofilm:
-    description: microbial mat/biofilm extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from biofilm environments including microbial mats.
     title: microbial mat/biofilm
     is_a: Extension
     slots:
@@ -18152,8 +18275,14 @@ classes:
       water_content:
         string_serialization: '{float} {unit}'
     class_uri: MIXS:0016008
+    aliases:
+      - MIxS-microbial mat/biofilm
+    annotations:
+      use_cases: samples from microbial mats at cold seeps
   MiscellaneousNaturalOrArtificialEnvironment:
-    description: miscellaneous natural or artificial environment extension
+    description: >
+      A collection of generic terms appropriate when collecting and sequencing samples 
+      obtained from environments, where there is no specific extension already available.
     title: miscellaneous natural or artificial environment
     is_a: Extension
     slots:
@@ -18216,8 +18345,12 @@ classes:
         examples:
         - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     class_uri: MIXS:0016009
+    aliases:
+      - MIxS-miscellaneous natural or artificial environment
   PlantAssociated:
-    description: plant-associated extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from a plant to examine it’s plant-associated microbiome.
     title: plant-associated
     is_a: Extension
     slots:
@@ -18365,8 +18498,16 @@ classes:
       watering_regm:
         string_serialization: '{float} {unit};{Rn/start_time/end_time/duration}'
     class_uri: MIXS:0016010
+    aliases:
+      - MIxS-plant-associated
+    annotations:
+      use_cases: plant surface swabs, root soil or rhizosphere, cultivated plants, plant phenotyping
   Sediment:
-    description: sediment extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from the sedimentary area of aquatic environments.
+    comments:
+      - Sedimentary layers in terrestrial environments will probably be better served by the soil extension.
     title: sediment
     is_a: Extension
     slots:
@@ -18456,8 +18597,16 @@ classes:
       water_content:
         string_serialization: '{float} {unit}'
     class_uri: MIXS:0016011
+    aliases:
+      - MIxS-sediment
+    annotations:
+      use_cases: river bed or sea floor.
   Soil:
-    description: soil extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from the uppermost layer of Earth's crust, contributed by the Terragenome Consortium.
+    see_also:
+      - https://www.fao.org/agriculture/crops/thematic-sitemap/theme/spi/soil-biodiversity/research-into-soil-biodiversity/the-terragenome-project/en/
     title: soil
     is_a: Extension
     slots:
@@ -18532,14 +18681,18 @@ classes:
       pool_dna_extracts:
         string_serialization: '{boolean};{integer}'
       soil_type:
-        string_serialization: '{termLabel} [{termID}]
-
-          '
+        string_serialization: '{termLabel} [{termID}]'
       water_content:
         string_serialization: '{float}'
     class_uri: MIXS:0016012
+    aliases:
+      - MIxS-soil
+    annotations:
+      use_cases: soil collection, island microbiome sampling, farm land or forest floor.
   SymbiontAssociated:
-    description: symbiont-associated extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from an organism that lives in close association with any other organism(s).
     title: symbiont-associated
     is_a: Extension
     slots:
@@ -18654,8 +18807,14 @@ classes:
         examples:
         - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     class_uri: MIXS:0016023
+    aliases:
+      - MIxS-SA (symbiont-associated)
+    annotations:
+      use_cases: the microbiome sequence of a flea sampled from a farm animal
   WastewaterSludge:
-    description: wastewater/sludge extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from any solid, semisolid or liquid waste.
     title: wastewater/sludge
     is_a: Extension
     slots:
@@ -18708,8 +18867,14 @@ classes:
         examples:
         - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     class_uri: MIXS:0016013
+    aliases:
+      - MIxS-wastewater/sludge
+    annotations:
+      use_cases: sewerage or industrial wastewater
   Water:
-    description: water extension
+    description: >
+      A collection of terms appropriate when collecting samples and sequencing water samples 
+      obtained from any aquatic environment.
     title: water
     is_a: Extension
     slots:
@@ -18809,6 +18974,12 @@ classes:
         examples:
         - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     class_uri: MIXS:0016014
+    aliases:
+      - MIxS-water
+    annotations:
+      use_cases: sea or river water, global ocean sampling day
+    see_also:
+      - https://www.vliz.be/projects/assembleplus/research/ocean-sampling-day-2018.html
   Checklist:
     description: A collection of metadata terms (slots) to minimally describe the
       sampling and sequencing method of a specimen used to generate a nucleotide sequence.
