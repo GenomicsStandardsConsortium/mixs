@@ -29,6 +29,21 @@ URI: {{ gen.uri_link(element) }}
 <!-- no inheritance hierarchy -->
 {% endif %}
 
+{% set classes_by_slot = schemaview.get_classes_by_slot(element) %}
+{% if classes_by_slot %}
+
+## Applicable Checklists and Extensions
+
+<b>NOTE:</b> does not include Combinations that use <i>{{ element.name }}</i>.
+
+| Name | Description | Checklist/Extension |
+| --- | --- | --- |
+{% for c in classes_by_slot -%}
+| {{ gen.link(c) }} | {{ schemaview.get_class(c).description|enshorten }} | {% if schemaview.get_class(c).is_a == "Checklist" %}Checklist{% elif schemaview.get_class(c).is_a == "Extension" %}Extension{% else %}-{% endif %} |
+{% endfor %}
+
+{% endif %}
+
 ## Properties
 
 * Range: {{gen.link(element.range)}}
