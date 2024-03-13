@@ -43,7 +43,7 @@ class MIxSExcelFileOrganizer:
         ]
 
         # Create a folder for extensions
-        extensions_folder = os.path.join(self.base_destination_folder, "extensions")
+        extensions_folder = os.path.join(self.base_destination_folder, "extensions_only")
         os.makedirs(extensions_folder, exist_ok=True)
 
         # Copy files with names in 'extensions' to the 'extensions' folder
@@ -62,11 +62,11 @@ class MIxSExcelFileOrganizer:
         for item in result_list:
             x_value = item["x"]
             folder_path = os.path.join(self.base_destination_folder, x_value)
-            os.makedirs(folder_path, exist_ok=True)
+            os.makedirs(f"{folder_path}_plus_combinations", exist_ok=True)
 
             for cls_name in item["cls_names"]:
                 source_file = os.path.join(self.source_directory, f"{cls_name}.xlsx")
-                destination_file = os.path.join(folder_path, f"{cls_name}.xlsx")
+                destination_file = os.path.join(f"{folder_path}_plus_combinations", f"{cls_name}.xlsx")
 
                 if os.path.isfile(source_file):
                     shutil.copy(source_file, destination_file)

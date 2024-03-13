@@ -31,8 +31,8 @@ if __name__ == "__main__":
         with open(output_file, "w") as md_file:
             md_file.write("# All terms in MIxS schema\n\n")
 
-            md_file.write("| Name | Description |\n")
-            md_file.write("| --- | --- |\n")
+            md_file.write("| Name | Title | Description |\n")
+            md_file.write("| --- | --- | --- |\n")
 
             for t in terms:
                 if t.domain == "MixsCompliantData":
@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
                 description = t.description
                 link = docgen.link(t.name)
-                md_file.write(f"| {link} | {description} |\n")
+                md_file.write(f"| {link} | {t.title} | {description} |\n")
 
         logger.info(f"Term list table has been written to '{output_file}'.")
     except Exception as e:
