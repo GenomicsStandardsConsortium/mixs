@@ -1,47 +1,60 @@
-import sys
-import logging
-from linkml.generators.docgen import DocGenerator
+import click
+import pandas as pd
+from scipy.spatial.distance import pdist, squareform
+from scipy.cluster import hierarchy
+import matplotlib.pyplot as plt
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-)
-logger = logging.getLogger(__name__)
+from linkml_runtime import SchemaView
 
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        logger.error(
-            "Usage: `poetry run python src/scripts/term_list_generator.py <output-file.md>`"
-        )
-        sys.exit(1)
+@click.command()
+@click.option('--schema', '-s',
+              default='src/mixs/schema/mixs.yaml',
+              required=True,
+              help='Path to the schema file')
+@click.option('--output', '-o', default='dendrogram.pdf',
+              help='Output file name for the dendrogram plot (default: dendrogram.pdf)')
+def generate_dendrogram(schema, output):
+    schema_view = SchemaView(schema)
 
-    output_file = sys.argv[1]
+    extension_class_names = schema_view.class_descendants('Extension')
+    checklist_class_names = schema_view.class_descendants('Checklist')
 
-    docgen = DocGenerator(
-        "src/mixs/schema/mixs.yaml",
-        template_directory="src/doc-templates",
-        directory="docs",
-        use_slot_uris=True,
-        use_class_uris=True,
-    )
-    terms = list(docgen.all_slot_objects())
+    lod = []
 
-    try:
-        with open(output_file, "w") as md_file:
-            md_file.write("# All terms in MIxS schema\n\n")
+    for current_extension in extension_class_names:
+        if current_extension in checklist_class_names:
+            continue
+        extension_obj = schema_view.induced_class(current_extension)
 
-            md_file.write("| Name | Description |\n")
-            md_file.write("| --- | --- |\n")
+        extension_slots = list(extension_obj.attributes.keys())
+        for current_slot in extension_slots:
+            temp_dict = {
+                "extension": current_extension,
+                "slot": current_slot
+            }
+            lod.append(temp_dict)
 
-            for t in terms:
-                if t.domain == "MixsCompliantData":
-                    continue
+    df = pd.DataFrame(lod)
 
-                description = t.description
-                link = docgen.link(t.name)
-                md_file.write(f"| {link} | {description} |\n")
+    pivot_df = df.pivot(index='extension', columns='slot', values='slot').notna()
 
-        logger.info(f"Term list table has been written to '{output_file}'.")
-    except Exception as e:
-        logger.error(f"Error writing to '{output_file}': {str(e)}")
+    dist_matrix = pdist(pivot_df.values, metric='euclidean')
+    dist_matrix_square = squareform(dist_matrix)
+
+    linkage_matrix = hierarchy.linkage(dist_matrix, method='complete')
+
+    plt.figure(figsize=(14, 8))
+    dendrogram = hierarchy.dendrogram(linkage_matrix, labels=pivot_df.index.values, orientation='top')
+    plt.title('Similarity of MIxS Extensions by Term Usage')
+    plt.ylabel('Distance')
+    plt.xlabel('Extensions')
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+
+    plt.savefig(output, format='pdf')
+    plt.show()
+
+
+if __name__ == '__main__':
+    generate_dendrogram()
