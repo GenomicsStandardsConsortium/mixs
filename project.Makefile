@@ -49,3 +49,7 @@ assets/mixs-schemasheets-concise.tsv: src/mixs/schema/mixs.yaml
 		--debug-report-path assets/mixs-schemasheets-concise-report.txt \
 		--log-file assets/mixs-schemasheets-concise-log.txt \
 		--report-style concise
+
+assets/mixs-patterns-materialized.yaml: src/mixs/schema/mixs.yaml
+	$(RUN) gen-linkml \
+		--format yaml $< > $@
