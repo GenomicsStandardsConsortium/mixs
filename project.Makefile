@@ -55,3 +55,8 @@ assets/mixs-patterns-materialized.yaml: src/mixs/schema/mixs.yaml
 		--format yaml \
 		--materialize-patterns \
 		--no-materialize-attributes $< > $@
+
+assets/mixs-schemasheets-concise-global-slots.tsv: assets/mixs-schemasheets-concise.tsv
+	$(RUN) python src/scripts/isolate_slots.py \
+		--input $< \
+		--output $@
