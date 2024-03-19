@@ -24,3 +24,15 @@ assets/mixs_derived_class_term_schemasheet.tsv: src/mixs/schema/mixs.yaml
 		--debug-report-path assets/mixs_derived_class_term_schemasheet_debug.txt \
 		--log-file assets/mixs_derived_class_term_schemasheet_log.txt \
 		--report-style concise
+
+extensions-dendrogram.pdf:
+	$(RUN) extension-distances \
+		--schema src/mixs/schema/mixs.yaml \
+		--output $@
+
+
+soil-vs-water-slot-usage.yaml: src/mixs/schema/mixs.yaml
+	$(RUN) extension-differences \
+		--schema $< \
+		--ext1 Soil \
+		--ext2 Water > $@
