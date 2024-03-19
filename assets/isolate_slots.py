@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 engine = create_engine(
-    'postgresql://postgres:wildcard-purebred-recognize-thumb-quilt@localhost:15432/ncbi_biosamples_feb26')
+    'postgresql://postgres:<PASSWORD>:15432/ncbi_biosamples_feb26')
 destination_table_name = 'mixs_global_slots'
 
 df = pd.read_csv('mixs-schemasheets-concise.tsv', sep='\t')
