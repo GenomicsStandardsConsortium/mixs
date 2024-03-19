@@ -41,3 +41,11 @@ assets/class_summary_results.tsv: src/mixs/schema/mixs.yaml assets/class_summary
 	$(RUN) linkml2sheets \
 		--schema $(word 1,$^) \
 		 --output $@ $(word 2,$^)
+
+assets/mixs-schemasheets-concise.tsv: src/mixs/schema/mixs.yaml
+	$(RUN) linkml2schemasheets-template \
+		--source-path $< \
+		--output-path $@ \
+		--debug-report-path assets/mixs-schemasheets-concise-report.txt \
+		--log-file assets/mixs-schemasheets-concise-log.txt \
+		--report-style concise
