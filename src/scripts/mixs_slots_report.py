@@ -1,7 +1,3 @@
-# oops, I don't have a claude API yet event hough I do have a paid account. I just applied for a research account.
-
-# would get key from local/.env
-
 # start by extracting something that will fit in Clause's 200k token context window
 #  or smaller for other LLMSs!
 
@@ -13,9 +9,9 @@ from collections import defaultdict
 import yaml
 
 schema_file = '../mixs/schema/mixs.yaml'
-slots_output_yaml = 'mixs_slots.yaml'
+slots_output_yaml = '../../assets/mixs_slots_report.yaml'
 # claude wants csv?
-slots_output_csv = 'cleaned.csv'
+slots_output_csv = '../../assets/mixs_slots_report.csv'
 
 
 def load_yaml_file(filepath):
@@ -80,7 +76,11 @@ for d in slots_dict.values():
         for key in d["annotations"]:
             anno_counts[key] += 1
 
+print("Annotation counts:")
 print(dict(anno_counts))
+
+
+# {'Expected_value': 227, 'Preferred_unit': 238}
 
 
 def flatten(v):
@@ -98,9 +98,6 @@ for slot_id, slots in slots_dict.items():
     if "domain" in slots and slots["domain"] == "MixsCompliantData":
         continue
 
-    # if "domain" in slots:
-    #     print(f"Domain for {slot_id}: {slots['domain']}")
-
     cleaned_dict = {'name': slot_id}
 
     if "annotations" in slots and "Expected_value" in slots["annotations"]:
@@ -112,16 +109,12 @@ for slot_id, slots in slots_dict.items():
 
     cleaned.append(cleaned_dict)
 
-# pprint.pprint(cleaned)
-
 with open(slots_output_csv, 'w') as f:
     # , delimiter='\t'
     writer = csv.DictWriter(f, fieldnames=['name', 'description', 'title', 'expected_value'])
     writer.writeheader()
     for d in cleaned:
         writer.writerow(d)
-
-# {'Expected_value': 227, 'Preferred_unit': 238}
 
 with open(slots_output_yaml, 'w') as file:
     yaml.dump(slots_dict, file, sort_keys=False)
