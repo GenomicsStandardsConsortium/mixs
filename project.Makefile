@@ -36,3 +36,25 @@ soil-vs-water-slot-usage.yaml: src/mixs/schema/mixs.yaml
 		--schema $< \
 		--ext1 Soil \
 		--ext2 Water > $@
+
+assets/class_summary_results.tsv: src/mixs/schema/mixs.yaml assets/class_summary_template.tsv
+	$(RUN) linkml2sheets \
+		--schema $(word 1,$^) \
+		 --output $@ $(word 2,$^)
+
+assets/mixs-schemasheets-concise.tsv: src/mixs/schema/mixs.yaml
+	$(RUN) linkml2schemasheets-template \
+		--source-path $< \
+		--output-path $@ \
+		--debug-report-path assets/mixs-schemasheets-concise-report.txt \
+		--log-file assets/mixs-schemasheets-concise-log.txt \
+		--report-style concise
+
+assets/mixs-patterns-materialized.yaml: src/mixs/schema/mixs.yaml
+	$(RUN) gen-linkml \
+		--format yaml \
+		--materialize-patterns \
+		--no-materialize-attributes $< > $@
+
+assets/mixs-schemasheets-concise-global-slots.tsv: assets/mixs-schemasheets-concise.tsv
+	$(RUN) python src/scripts/isolate_slots.py
