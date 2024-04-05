@@ -20,13 +20,17 @@ pydantic = "^1.10.13"
 #enable = true
 #vcs = "git"
 #style = "pep440"
+pandas = "^2.2.0"
+scipy = "^1.12.0"
+matplotlib = "^3.8.2"
+pyarrow = "^15.0.0"
 
 [tool.poetry.group.dev.dependencies]
 linkml = "^1.6.0"
 mkdocs-material = "^9.0.12"
 mkdocs-mermaid2-plugin = "^0.6.0"
 schemasheets = "^0.1.18"
-black = "^23.11.0"
+black = "^24.3.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
@@ -34,3 +38,7 @@ build-backend = "poetry_dynamic_versioning.backend"
 
 [tool.poetry.extras]
 docs = ["linkml", "mkdocs-material"]
+
+[tool.poetry.scripts]
+extension-distances = 'scripts.extension_distances:generate_dendrogram'
+extension-differences = 'scripts.extension_slot_diffrences:set_arithmatic'

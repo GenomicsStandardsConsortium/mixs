@@ -1,0 +1,773 @@
+name,description,title,expected_value
+HACCP_term,Hazard Analysis Critical Control Points (HACCP) food safety terms; This field accepts terms listed under HACCP guide food safety term (http://purl.obolibrary.org/obo/FOODON_03530221),Hazard Analysis Critical Control Points (HACCP) guide food safety term,
+IFSAC_category,"The IFSAC food categorization scheme has five distinct levels to which foods can be assigned, depending upon the type of food. First, foods are assigned to one of four food groups (aquatic animals, land animals, plants, and other). Food groups include increasingly specific food categories; dairy, eggs, meat and poultry, and game are in the land animal food group, and the category meat and poultry is further subdivided into more specific categories of meat (beef, pork, other meat) and poultry (chicken, turkey, other poultry). Finally, foods are differentiated by differences in food processing (such as pasteurized fluid dairy products, unpasteurized fluid dairy products, pasteurized solid and semi-solid dairy products, and unpasteurized solid and semi-solid dairy products. An IFSAC food category chart is available from https://www.cdc.gov/foodsafety/ifsac/projects/food-categorization-scheme.html PMID: 28926300",Interagency Food Safety Analytics Collaboration (IFSAC) category,IFSAC term
+abs_air_humidity,Actual mass of water vapor - mh20 - present in the air water vapor mixture,absolute air humidity,
+adapters,Adapters provide priming sequences for both amplification and sequencing of the sample-library fragments. Both adapters should be reported; in uppercase letters,adapters,adapter A and B sequence
+add_recov_method,"Additional (i.e. Secondary, tertiary, etc.) recovery methods deployed for increase of hydrocarbon recovery from resource and start date for each one of them. If ""other"" is specified, please propose entry in ""additional info"" field",secondary and tertiary recovery methods and start date,enumeration;timestamp
+additional_info,Information that doesn't fit anywhere else. Can also be used to propose new entries for fields with controlled vocabulary,additional info,
+address,The street name and building number where the sampling occurred,address,value
+adj_room,"List of rooms (room number, room name) immediately adjacent to the sampling room",adjacent rooms,
+adjacent_environment,Description of the environmental system or features that are adjacent to the sampling site. This field accepts terms under ecosystem (http://purl.obolibrary.org/obo/ENVO_01001110) and human construction (http://purl.obolibrary.org/obo/ENVO_00000070). Multiple terms can be separated by pipes,environment adjacent to site,ENVO_01001110 or ENVO_00000070
+aero_struc,"Aerospace structures typically consist of thin plates with stiffeners for the external surfaces, bulkheads and frames to support the shape and fasteners such as welds, rivets, screws and bolts to hold the components together",aerospace structure,
+agrochem_addition,"Addition of fertilizers, pesticides, etc. - amount and time of applications",history/agrochemical additions,agrochemical name;agrochemical amount;timestamp
+air_PM_concen,"Concentration of substances that remain suspended in the air, and comprise mixtures of organic and inorganic substances (PM10 and PM2.5); can report multiple PM's by entering numeric values preceded by name of PM",air particulate matter concentration,particulate matter name;measurement value
+air_flow_impede,Presence of objects in the area that would influence or impede air flow through the air filter,local air flow impediments,enumeration;obstruction type; distance from sampling device
+air_temp,Temperature of the air at the time of sampling,air temperature,
+air_temp_regm,"Information about treatment involving an exposure to varying temperatures; should include the temperature, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include different temperature regimens",air temperature regimen,temperature value;treatment interval and duration
+al_sat,Aluminum saturation (esp. For tropical soils),extreme_unusual_properties/Al saturation,
+al_sat_meth,Reference or method used in determining Al saturation,extreme_unusual_properties/Al saturation method,
+alkalinity,"Alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",alkalinity,
+alkalinity_method,Method used for alkalinity measurement,alkalinity method,
+alkyl_diethers,Concentration of alkyl diethers,alkyl diethers,
+alt,"Heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air",altitude,
+aminopept_act,Measurement of aminopeptidase activity,aminopeptidase activity,
+ammonium,Concentration of ammonium in the sample,ammonium,
+amniotic_fluid_color,Specification of the color of the amniotic fluid sample,amniotic fluid/color,
+amount_light,"The unit of illuminance and luminous emittance, measuring luminous flux per unit area",amount of light,
+ances_data,"Information about either pedigree or other ancestral information description (e.g. parental variety in case of mutant or selection), e.g. A/3*B (meaning [(A x B) x B] x B)",ancestral data,
+anim_water_method,Description of the equipment or method used to distribute water to livestock. This field accepts termed listed under water delivery equipment (http://opendata.inra.fr/EOL/EOL_0001653). Multiple terms can be separated by pipes,animal water delivery method,
+animal_am,The name(s) (generic or brand) of the antimicrobial(s) given to the food animal within the last 30 days,food animal antimicrobial,
+animal_am_dur,The duration of time (days) that the antimicrobial was administered to the food animal,food animal antimicrobial duration,value
+animal_am_freq,The frequency per day that the antimicrobial was adminstered to the food animal,food animal antimicrobial frequency,
+animal_am_route,The route by which the antimicrobial is adminstered into the body of the food animal,food animal antimicrobial route of administration,
+animal_am_use,The prescribed intended use of or the condition treated by the antimicrobial given to the food animal by any route of administration,food animal antimicrobial intended use,
+animal_body_cond,"Body condition scoring is a production management tool used to evaluate overall health and nutritional needs of a food animal. Because there are different scoring systems, this field is restricted to three categories",food animal body condition,
+animal_diet,"If the isolate is from a food animal, the type of diet eaten by the food animal.  Please list the main food staple and the setting, if appropriate.  For a list of acceptable animal feed terms or categories, please see http://www.feedipedia.org.  Multiple terms may apply and can be separated by pipes |Food product for animal covers foods intended for consumption by domesticated animals. Consult http://purl.obolibrary.org/obo/FOODON_03309997. If the proper descriptor is not listed please use text to describe the food type. Multiple terms can be separated by one or more pipes. If the proper descriptor is not listed please use text to describe the food product type",food animal source diet,text or FOODON_03309997
+animal_feed_equip,Description of the feeding equipment used for livestock. This field accepts terms listed under feed delivery (http://opendata.inra.fr/EOL/EOL_0001757). Multiple terms can be separated by pipes,animal feeding equipment,EOL:0001757
+animal_group_size,"The number of food animals of the same species that are maintained together as a unit, i.e. a herd or flock",food animal group size,
+animal_housing,Description of the housing system of the livestock. This field accepts terms listed under terrestrial management housing system (http://opendata.inra.fr/EOL/EOL_0001605),animal housing system,
+animal_intrusion,Identification of animals intruding on the sample or sample site including invertebrates (such as pests or pollinators) and vertebrates (such as wildlife or domesticated animals). This field accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250). This field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy. Multiple terms can be separated by pipes,animal intrusion near sample source,
+animal_sex,The sex and reproductive status of the food animal,food animal source sex category,
+annot,"Tool used for annotation, or for cases where annotation was provided by a community jamboree or model organism database rather than by a specific submitter",annotation,"name of tool or pipeline used, or annotation source description"
+annual_precpt,"The average of all annual precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps",mean annual precipitation,
+annual_temp,Mean annual temperature,mean annual temperature,
+antibiotic_regm,"Information about treatment involving antibiotic administration; should include the name of antibiotic, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple antibiotic regimens",antibiotic regimen,antibiotic name;antibiotic amount;treatment interval and duration
+api,API gravity is a measure of how heavy or light a petroleum liquid is compared to water (source: https://en.wikipedia.org/wiki/API_gravity) (e.g. 31.1   API),API gravity,
+arch_struc,"An architectural structure is a human-made, free-standing, immobile outdoor construction",architectural structure,
+area_samp_size,"The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected",area sampled size,measurement value
+aromatics_pc,"Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",aromatics wt%,
+asphaltenes_pc,"Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",asphaltenes wt%,
+assembly_name,Name/version of the assembly provided by the submitter that is used in the genome browsers and in the community,assembly name,name and version of assembly
+assembly_qual,"The assembly quality category is based on sets of criteria outlined for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities with a consensus error rate equivalent to Q50 or better. High Quality Draft:Multiple fragments where gaps span repetitive regions. Presence of the 23S, 16S and 5S rRNA genes and at least 18 tRNAs. Medium Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Low Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Assembly statistics include, but are not limited to total assembly size, number of contigs, contig N50/L50, and maximum contig length. For MIUVIG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities, with extensive manual review and editing to annotate putative gene functions and transcriptional units. High-quality draft genome: One or multiple fragments, totaling   90% of the expected genome or replicon sequence or predicted complete. Genome fragment(s): One or multiple fragments, totalling < 90% of the expected genome or replicon sequence, or for which no genome size could be estimated",assembly quality,enumeration
+assembly_software,"Tool(s) used for assembly, including version number and parameters",assembly software,
+associated_resource,"A related resource that is referenced, cited, or otherwise associated to the sequence",relevant electronic resources,reference to resource
+association_duration,Time spent in host of the symbiotic organism at the time of sampling; relevant scale depends on symbiotic organism and study,duration of association with the host,
+atmospheric_data,Measurement of atmospheric data; can include multiple data,atmospheric data,atmospheric data name;measurement value
+avg_dew_point,The average of dew point measures taken at the beginning of every hour over a 24 hour period on the sampling day,average dew point,
+avg_occup,Daily average occupancy of room. Indicate the number of person(s) daily occupying the sampling room,average daily occupancy,
+avg_temp,The average of temperatures taken at the beginning of every hour over a 24 hour period on the sampling day,average temperature,
+bac_prod,Bacterial production in the water column measured by isotope uptake,bacterial production,
+bac_resp,Measurement of bacterial respiration in the water column,bacterial respiration,
+bacteria_carb_prod,Measurement of bacterial carbon production,bacterial carbon production,
+bacterial_density,"Number of bacteria in sample, as defined by bacteria density (http://purl.obolibrary.org/obo/GENEPIO_0000043)",bacteria density,
+barometric_press,Force per unit area exerted against a surface by the weight of air above that surface,barometric pressure,
+basin,Name of the basin (e.g. Campos),basin name,
+bathroom_count,The number of bathrooms in the building,bathroom count,
+bedroom_count,The number of bedrooms in the building,bedroom count,
+benzene,Concentration of benzene in the sample,benzene,
+bin_param,The parameters that have been applied during the extraction of genomes from metagenomic datasets,binning parameters,
+bin_software,"Tool(s) used for the extraction of genomes from metagenomic datasets, where possible include a product ID (PID) of the tool(s) used",binning software,names and versions of software(s) used
+biochem_oxygen_dem,Amount of dissolved oxygen needed by aerobic biological organisms in a body of water to break down organic material present in a given water sample at certain temperature over a specific time period,biochemical oxygen demand,
+biocide,List of biocides (commercial name of product and supplier) and date of administration,biocide administration,name;name;timestamp
+biocide_admin_method,"Method of biocide administration (dose, frequency, duration, time elapsed between last biociding and sampling) (e.g. 150 mg/l; weekly; 4 hr; 3 days)",biocide administration method,measurement value;frequency;duration;duration
+biocide_used,"Substance intended for preventing, neutralizing, destroying, repelling, or mitigating the effects of any pest or microorganism; that inhibits the growth, reproduction, and activity of organisms, including fungal cells; decreases the number of fungi or pests present; deters microbial growth and degradation of other ingredients in the formulation. Indicate the biocide used on the location where the sample was taken. Multiple terms can be separated by pipes",biocide,"commercial name of biocide, active ingredient in biocide or class of biocide"
+biol_stat,The level of genome modification,biological status,enumeration
+biomass,"Amount of biomass; should include the name for the part of biomass measured, e.g. Microbial, total. Can include multiple measurements",biomass,biomass type;measurement value
+biotic_regm,"Information about treatment(s) involving use of biotic factors, such as bacteria, viruses or fungi",biotic regimen,
+biotic_relationship,"Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object",observed biotic relationship,
+birth_control,Specification of birth control medication used,birth control,medication name
+bishomohopanol,Concentration of bishomohopanol,bishomohopanol,
+blood_blood_disord,"History of blood disorders; can include multiple disorders.  The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, hematopoietic system disease (https://disease-ontology.org/?id=DOID:74)",blood/blood disorder,
+blood_press_diast,"Resting diastolic blood pressure, measured as mm mercury",host blood pressure diastolic,
+blood_press_syst,"Resting systolic blood pressure, measured as mm mercury",host blood pressure systolic,
+bromide,Concentration of bromide,bromide,
+build_docs,"The building design, construction and operation documents","design, construction, and operation documents",
+build_occup_type,The primary function for which a building or discrete part of a building is intended to be used,building occupancy type,
+building_setting,A location (geography) where a building is set,building setting,
+built_struc_age,The age of the built structure since construction,built structure age,
+built_struc_set,The characterization of the location of the built structure as high or low human density,built structure setting,
+built_struc_type,A physical structure that is a body or assemblage of bodies in space to form a system capable of supporting loads,built structure type,
+calcium,Concentration of calcium in the sample,calcium,
+carb_dioxide,Carbon dioxide (gas) amount or concentration at the time of sampling,carbon dioxide,
+carb_monoxide,Carbon monoxide (gas) amount or concentration at the time of sampling,carbon monoxide,
+carb_nitro_ratio,Ratio of amount or concentrations of carbon to nitrogen,carbon/nitrogen ratio,measurement value
+ceil_area,The area of the ceiling space within the room,ceiling area,
+ceil_cond,The physical condition of the ceiling at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas,ceiling condition,
+ceil_finish_mat,The type of material used to finish a ceiling,ceiling finish material,
+ceil_struc,The construction format of the ceiling,ceiling structure,
+ceil_texture,"The feel, appearance, or consistency of a ceiling surface",ceiling texture,
+ceil_thermal_mass,The ability of the ceiling to provide inertia against temperature fluctuations. Generally this means concrete that is exposed. A metal deck that supports a concrete slab will act thermally as long as it is exposed to room air flow,ceiling thermal mass,
+ceil_type,The type of ceiling according to the ceiling's appearance or construction,ceiling type,
+ceil_water_mold,Signs of the presence of mold or mildew on the ceiling,ceiling signs of water/mold,
+chem_administration,"List of chemical compounds administered to the host or site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include multiple compounds. For chemical entities of biological interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi",chemical administration,CHEBI;timestamp
+chem_mutagen,"Treatment involving use of mutagens; should include the name of mutagen, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple mutagen regimens",chemical mutagen,mutagen name;mutagen amount;treatment interval and duration
+chem_oxygen_dem,A measure of the capacity of water to consume oxygen during the decomposition of organic matter and the oxidation of inorganic chemicals such as ammonia and nitrite,chemical oxygen demand,
+chem_treat_method,"Method of chemical administration(dose, frequency, duration, time elapsed between administration and sampling) (e.g. 50 mg/l; twice a week; 1 hr; 0 days)",chemical treatment method,measurement value;frequency;duration;duration
+chem_treatment,"List of chemical compounds administered upstream the sampling location where sampling occurred (e.g. Glycols, H2S scavenger, corrosion and scale inhibitors, demulsifiers, and other production chemicals etc.). The commercial name of the product and name of the supplier should be provided. The date of administration should also be included",chemical treatment,name;name;timestamp
+chimera_check,"Tool(s) used for chimera checking, including version number and parameters, to discover and remove chimeric sequences. A chimeric sequence is comprised of two or more phylogenetically distinct parent sequences",chimera check software,
+chloride,Concentration of chloride in the sample,chloride,
+chlorophyll,Concentration of chlorophyll,chlorophyll,
+climate_environment,"Treatment involving an exposure to a particular climate; treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple climates",climate environment,
+coll_site_geo_feat,"Text or terms that describe the geographic feature where the food sample was obtained by the researcher. This field accepts selected terms listed under the following ontologies: anthropogenic geographic feature (http://purl.obolibrary.org/obo/ENVO_00000002), for example agricultural fairground [ENVO:01000986]; garden [ENVO:00000011} or any of its subclasses; market [ENVO:01000987]; water well [ENVO:01000002]; or human construction (http://purl.obolibrary.org/obo/ENVO_00000070)",collection site geographic feature,ENVO:00000002 or ENVO:00000070
+collection_date,"The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant",collection date,
+compl_appr,"The approach used to determine the completeness of a given genomic assembly, which would typically make use of a set of conserved marker genes or a closely related reference genome. For UViG completeness, include reference genome or group used, and contig feature suggesting a complete genome",completeness approach,text
+compl_score,"Completeness score is typically based on either the fraction of markers found as compared to a database or the percent of a genome found as compared to a closely related reference genome. High Quality Draft: >90%, Medium Quality Draft: >50%, and Low Quality Draft: < 50% should have the indicated completeness scores",completeness score,quality;percent completeness
+compl_software,"Tools used for completion estimate, i.e. checkm, anvi'o, busco",completeness software,names and versions of software(s) used
+conduc,Electrical conductivity of water,conductivity,
+cons_food_stor_dur,"The storage duration of the food commodity by the consumer, prior to onset of illness or sample collection.  Indicate the timepoint written in ISO 8601 format",food stored by consumer (storage duration),
+cons_food_stor_temp,"Temperature at which food commodity was stored by the consumer, prior to onset of illness or sample collection",food stored by consumer (storage temperature),text or measurement value
+cons_purch_date,The date a food product was purchased by consumer,purchase date,
+cons_qty_purchased,The quantity of food purchased by consumer,quantity purchased,
+contam_score,"The contamination score is based on the fraction of single-copy genes that are observed more than once in a query genome. The following scores are acceptable for; High Quality Draft: < 5%, Medium Quality Draft: < 10%, Low Quality Draft: < 10%. Contamination must be below 5% for a SAG or MAG to be deposited into any of the public databases",contamination score,
+contam_screen_input,The type of sequence data used as input,contamination screening input,
+contam_screen_param,"Specific parameters used in the decontamination sofware, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer",contamination screening parameters,enumeration;value or name
+cool_syst_id,The cooling system identifier,cooling system identifier,
+crop_rotation,"Whether or not crop is rotated, and if yes, rotation schedule",history/crop rotation,crop rotation status;schedule
+crop_yield,Amount of crop produced per unit or area of land,crop yield,
+cult_isol_date,The datetime marking the end of a process in which a sample yields a positive result for the target microbial analyte(s) in the form of an isolated colony or colonies,culture isolation date,
+cult_result,"Any result of a bacterial culture experiment reported as a binary assessment such as positive/negative, active/inactive",culture result,
+cult_result_org,Taxonomic information about the cultured organism(s),culture result organism,
+cult_root_med,"Name or reference for the hydroponic or in vitro culture rooting medium; can be the name of a commonly used medium or reference to a specific medium, e.g. Murashige and Skoog medium. If the medium has not been formally published, use the rooting medium descriptors",culture rooting medium,"name, PMID,DOI or url"
+cult_target,The target microbial analyte in terms of investigation scope. This field accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250). This field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy,culture target microbial analyte,NCIT:C14250 or NCBI taxid or culture independent
+cur_land_use,Present state of sample site,current land use,enumeration
+cur_vegetation,"Vegetation classification from one or more standard classification systems, or agricultural crop",current vegetation,current vegetation type
+cur_vegetation_meth,Reference or method used in vegetation classification,current vegetation method,
+date_extr_weath,"Date of unusual weather events that may have affected microbial populations. Multiple terms can be separated by pipes, listed in reverse chronological order",extreme weather date,
+date_last_rain,The date of the last time it rained,date last rain,
+decontam_software,Tool(s) used in contamination screening,decontamination software,enumeration
+density,"Density of the sample, which is its mass per unit volume (aka volumetric mass density)",density,
+depos_env,"Main depositional environment (https://en.wikipedia.org/wiki/Depositional_environment). If ""other"" is specified, please propose entry in ""additional info"" field",depositional environment,
+depth,"The vertical distance below local surface. For sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples",depth,
+dermatology_disord,"History of dermatology disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, skin disease (https://disease-ontology.org/?id=DOID:37)",dermatology disorder,
+detec_type,Type of UViG detection,detection type,enumeration
+dew_point,"The temperature to which a given parcel of humid air must be cooled, at constant barometric pressure, for water vapor to condense into water",dew point,
+diet_last_six_month,"Specification of major diet changes in the last six months, if yes the change should be specified",major diet change in last six months,diet change;current diet
+dietary_claim_use,"These descriptors are used either for foods intended for special dietary use as defined in 21 CFR 105 or for foods that have special characteristics indicated in the name or labeling. This field accepts terms listed under dietary claim or use (http://purl.obolibrary.org/obo/FOODON_03510023). Multiple terms can be separated by one or more pipes, but please consider limiting this list to the most prominent dietary claim or use",dietary claim or use,FOODON:03510023
+diether_lipids,Concentration of diether lipids; can include multiple types of diether lipids,diether lipids,diether lipid name;measurement value
+diss_carb_dioxide,Concentration of dissolved carbon dioxide in the sample or liquid portion of the sample,dissolved carbon dioxide,
+diss_hydrogen,Concentration of dissolved hydrogen,dissolved hydrogen,
+diss_inorg_carb,"Dissolved inorganic carbon concentration in the sample, typically measured after filtering the sample using a 0.45 micrometer filter",dissolved inorganic carbon,
+diss_inorg_nitro,Concentration of dissolved inorganic nitrogen,dissolved inorganic nitrogen,
+diss_inorg_phosp,Concentration of dissolved inorganic phosphorus in the sample,dissolved inorganic phosphorus,
+diss_iron,Concentration of dissolved iron in the sample,dissolved iron,
+diss_org_carb,"Concentration of dissolved organic carbon in the sample, liquid portion of the sample, or aqueous phase of the fluid",dissolved organic carbon,
+diss_org_nitro,Dissolved organic nitrogen concentration measured as; total dissolved nitrogen - NH4 - NO3 - NO2,dissolved organic nitrogen,
+diss_oxygen,Concentration of dissolved oxygen,dissolved oxygen,
+diss_oxygen_fluid,Concentration of dissolved oxygen in the oil field produced fluids as it contributes to oxgen-corrosion and microbial activity (e.g. Mic),dissolved oxygen in fluids,
+dominant_hand,Dominant hand of the subject,dominant hand,
+door_comp_type,The composite type of the door,"door type, composite",
+door_cond,The phsical condition of the door,door condition,
+door_direct,The direction the door opens,door direction of opening,
+door_loc,The relative location of the door in the room,door location,
+door_mat,The material the door is composed of,door material,
+door_move,The type of movement of the door,door movement,
+door_size,The size of the door,door area or size,
+door_type,The type of door material,door type,
+door_type_metal,The type of metal door,"door type, metal",
+door_type_wood,The type of wood door,"door type, wood",enumeration
+door_water_mold,Signs of the presence of mold or mildew on a door,door signs of water/mold,
+douche,Date of most recent douche,douche,
+down_par,Visible waveband radiance and irradiance measurements in the water column,downward PAR,
+drainage_class,Drainage classification from a standard system such as the USDA system,drainage classification,
+drawings,"The buildings architectural drawings; if design is chosen, indicate phase-conceptual, schematic, design development, and construction documents",drawings,
+drug_usage,Any drug used by subject and the frequency of usage; can include multiple drugs used,drug usage,drug name;frequency
+efficiency_percent,Percentage of volatile solids removed from the anaerobic digestor,efficiency percent,
+elev,"Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit",elevation,
+elevator,The number of elevators within the built structure,elevator count,
+emulsions,"Amount or concentration of substances such as paints, adhesives, mayonnaise, hair colorants, emulsified oils, etc.; can include multiple emulsion types",emulsions,emulsion name;measurement value
+encoded_traits,"Should include key traits like antibiotic resistance or xenobiotic degradation phenotypes for plasmids, converting genes for phage",encoded traits,for plasmid: antibiotic resistance; for phage: converting genes
+enrichment_protocol,The microbiological workflow or protocol followed to test for the presence or enumeration of the target microbial analyte(s). Please provide a PubMed or DOI reference for published protocols,enrichment protocol,
+env_broad_scale,"Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS",broad-scale environmental context,
+env_local_scale,"Report the entity or entities which are in the sample or specimen s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS",local environmental context,Environmental entities having causal influences upon the entity at time of sampling
+env_medium,"Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top)",environmental medium,
+env_monitoring_zone,"An environmental monitoring zone is a formal designation as part of an environmental monitoring program, in which areas of a food production facility are categorized, commonly as zones 1-4, based on likelihood or risk of foodborne pathogen contamination. This field accepts terms listed under food production environmental monitoring zone (http://purl.obolibrary.org/obo/ENVO). Please add a term to indicate the environmental monitoring zone the sample was taken from",food production environmental monitoring zone,ENVO
+escalator,The number of escalators within the built structure,escalator count,
+estimated_size,The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period,estimated size,number of base pairs
+ethnicity,"A category of people who identify with each other, usually on the basis of presumed similarities such as a common language, ancestry, history, society, culture, nation or social treatment within their residing area. https://en.wikipedia.org/wiki/List_of_contemporary_ethnic_groups",ethnicity,text recommend from Wikipedia list
+ethylbenzene,Concentration of ethylbenzene in the sample,ethylbenzene,
+exp_duct,The amount of exposed ductwork in the room,exposed ductwork,
+exp_pipe,The number of exposed pipes in the room,exposed pipes,
+experimental_factor,"Variable aspects of an experiment design that can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI)",experimental factor,text or EFO and/or OBI
+ext_door,The number of exterior doors in the built structure,exterior door count,
+ext_wall_orient,The orientation of the exterior wall,orientations of exterior wall,
+ext_window_orient,The compass direction the exterior window of the room is facing,orientations of exterior window,
+extr_weather_event,"Unusual weather events that may have affected microbial populations. Multiple terms can be separated by pipes, listed in reverse chronological order",extreme weather event,
+extrachrom_elements,Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids),extrachromosomal elements,
+extreme_event,Unusual physical events that may have affected microbial populations,history/extreme events,
+facility_type,Establishment details about the type of facility where the sample was taken. This is independent of the specific product(s) within the facility,facility type,
+fao_class,Soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups,soil_taxonomic/FAO classification,
+farm_equip,"List of equipment used for planting, fertilization, harvesting, irrigation, land levelling, residue management, weeding or transplanting during the growing season.  This field accepts terms listed under agricultural implement (http://purl.obolibrary.org/obo/AGRO_00000416). Multiple terms can be separated by pipes",farm equipment used,
+farm_equip_san,Method used to sanitize growing and harvesting equipment. This can including type and concentration of sanitizing solution.  Multiple terms can be separated by one or more pipes,farm equipment sanitization,text or commercial name of sanitizer or class of sanitizer or active ingredient in sanitizer
+farm_equip_san_freq,"The number of times farm equipment is cleaned. Frequency of cleaning might be on a Daily basis, Weekly, Monthly, Quarterly or Annually",farm equipment sanitization frequency,
+farm_equip_shared,"List of planting, growing or harvesting equipment shared with other farms. This field accepts terms listed under agricultural implement (http://purl.obolibrary.org/obo/AGRO_00000416). Multiple terms can be separated by pipes",equipment shared with other farms,
+farm_water_source,Source of water used on the farm for irrigation of crops or watering of livestock,farm watering water source,
+feat_pred,"Method used to predict UViGs features such as ORFs, integration site, etc",feature prediction,
+ferm_chem_add,Any chemicals that are added to the fermentation process to achieve the desired final product,fermentation chemical additives,chemical ingredient
+ferm_chem_add_perc,The amount of chemical added to the fermentation process,fermentation chemical additives percentage,
+ferm_headspace_oxy,The amount of headspace oxygen in a fermentation vessel,fermentation headspace oxygen,
+ferm_medium,"The growth medium used for the fermented food fermentation process, which supplies the required nutrients.  Usually this includes a carbon and nitrogen source, water, micronutrients and chemical additives",fermentation medium,
+ferm_pH,The pH of the fermented food fermentation process,fermentation pH,
+ferm_rel_humidity,The relative humidity of the fermented food fermentation process,fermentation relative humidity,
+ferm_temp,The temperature of the fermented food fermentation process,fermentation temperature,
+ferm_time,The time duration of the fermented food fermentation process,fermentation time,
+ferm_vessel,The type of vessel used for containment of the fermentation,fermentation vessel,
+fertilizer_admin,"Type of fertilizer or amendment added to the soil or water for the purpose of improving substrate health and quality for plant growth. This field accepts terms listed under agronomic fertilizer (http://purl.obolibrary.org/obo/AGRO_00002062). Multiple terms may apply and can be separated by pipes, listing in reverse chronological order",fertilizer administration,
+fertilizer_date,"Date of administration of soil amendment or fertilizer. Multiple terms may apply and can be separated by pipes, listing in reverse chronological order",fertilizer administration date,
+fertilizer_regm,"Information about treatment involving the use of fertilizers; should include the name of fertilizer, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple fertilizer regimens",fertilizer regimen,fertilizer name;fertilizer amount;treatment interval and duration
+field,Name of the hydrocarbon field (e.g. Albacora),field name,
+filter_type,A device which removes solid particulates or airborne molecular contaminants,filter type,
+fire,Historical and/or physical evidence of fire,history/fire,
+fireplace_type,A firebox with chimney,fireplace type,
+flooding,Historical and/or physical evidence of flooding,history/flooding,
+floor_age,The time period since installment of the carpet or flooring,floor age,
+floor_area,The area of the floor space within the room,floor area,
+floor_cond,The physical condition of the floor at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas,floor condition,
+floor_count,"The number of floors in the building, including basements and mechanical penthouse",floor count,
+floor_finish_mat,The floor covering type; the finished surface that is walked on,floor finish material,enumeration
+floor_struc,Refers to the structural elements and subfloor upon which the finish flooring is installed,floor structure,
+floor_thermal_mass,The ability of the floor to provide inertia against temperature fluctuations,floor thermal mass,
+floor_water_mold,Signs of the presence of mold or mildew in a room,floor signs of water/mold,
+fluor,Raw or converted fluorescence of water,fluorescence,
+foetal_health_stat,"Specification of foetal health status, should also include abortion",amniotic fluid/foetal health status,
+food_additive,"A substance or substances added to food to maintain or improve safety and freshness, to improve or maintain nutritional value, or improve taste, texture and appearance.  This field accepts terms listed under food additive (http://purl.obolibrary.org/obo/FOODON_03412972). Multiple terms can be separated by one or more pipes, but please consider limiting this list to the top 5 ingredients listed in order as on the food label.  See also, https://www.fda.gov/food/food-ingredients-packaging/overview-food-ingredients-additives-colors",food additive,FOODON:03412972
+food_allergen_label,A label indication that the product contains a recognized allergen. This field accepts terms listed under dietary claim or use (http://purl.obolibrary.org/obo/FOODON_03510213),food allergen labeling,FOODON:03510213
+food_clean_proc,The process of cleaning food to separate other environmental materials from the food source. Multiple terms can be separated by pipes,food cleaning process,
+food_contact_surf,The specific container or coating materials in direct contact with the food. Multiple values can be assigned.  This field accepts terms listed under food contact surface (http://purl.obolibrary.org/obo/FOODON_03500010),food contact surface,FOODON:03500010
+food_contain_wrap,"Type of container or wrapping defined by the main container material, the container form, and the material of the liner lids or ends. Also type of container or wrapping by form; prefer description by material first, then by form. This field accepts terms listed under food container or wrapping (http://purl.obolibrary.org/obo/FOODON_03490100)",food container or wrapping,FOODON:03490100
+food_cooking_proc,The transformation of raw food by the application of heat. This field accepts terms listed under food cooking (http://purl.obolibrary.org/obo/FOODON_03450002),food cooking process,FOODON:03450002
+food_dis_point,"A reference to a place on the Earth, by its name or by its geographical location that refers to a distribution point along the food chain. This field accepts terms listed under geographic location (http://purl.obolibrary.org/obo/GAZ_00000448). Reference: Adam Diamond, James Barham. Moving Food Along the Value Chain: Innovations in Regional Food Distribution. U.S. Dept. of Agriculture, Agricultural Marketing Service. Washington, DC. March 2012. http://dx.doi.org/10.9752/MS045.03-2012",food distribution point geographic location,
+food_dis_point_city,"A reference to a place on the Earth, by its name or by its geographical location that refers to a distribution point along the food chain. This field accepts terms listed under geographic location (http://purl.obolibrary.org/obo/GAZ_00000448). Reference: Adam Diamond, James Barham. Moving Food Along the Value Chain: Innovations in Regional Food Distribution. U.S. Dept. of Agriculture, Agricultural Marketing Service. Washington, DC. March 2012. http://dx.doi.org/10.9752/MS045.03-2012",food distribution point geographic location (city),GAZ:00000448
+food_harvest_proc,"A harvesting process is a process which takes in some food material from an individual or community of plant or animal organisms in a given context and time, and outputs a precursor or consumable food product. This may include a part of an organism or the whole, and may involve killing the organism",Food harvesting process,
+food_ingredient,"In this field, please list individual ingredients for multi-component food [FOODON:00002501] and simple foods that is not captured in food_type.  Please use terms that are present in FoodOn.  Multiple terms can be separated by one or more pipes |, but please consider limiting this list to the top 5 ingredients listed in order as on the food label.  See also, https://www.fda.gov/food/food-ingredients-packaging/overview-food-ingredients-additives-colors",food ingredient,FOODON
+food_name_status,A datum indicating that use of a food product name is regulated in some legal jurisdiction. This field accepts terms listed under food product name legal status (http://purl.obolibrary.org/obo/FOODON_03530087),food product name legal status,
+food_origin,"A reference to a place on the Earth, by its name or by its geographical location that describes the origin of the food commodity, either in terms of its cultivation or production. This field accepts terms listed under geographic location (http://purl.obolibrary.org/obo/GAZ_00000448)",food product origin geographic location,
+food_pack_capacity,The maximum number of product units within a package,food package capacity,
+food_pack_integrity,A term label and term id to describe the state of the packing material and text to explain the exact condition.  This field accepts terms listed under food packing medium integrity (http://purl.obolibrary.org/obo/FOODON_03530218),food packing medium integrity,FOODON:03530218
+food_pack_medium,"The medium in which the food is packed for preservation and handling or the medium surrounding homemade foods, e.g., peaches cooked in sugar syrup. The packing medium may provide a controlled environment for the food. It may also serve to improve palatability and consumer appeal.  This includes edible packing media (e.g. fruit juice), gas other than air (e.g. carbon dioxide), vacuum packed, or packed with aerosol propellant. This field accepts terms under food packing medium (http://purl.obolibrary.org/obo/FOODON_03480020). Multiple terms may apply and can be separated by pipes",food packing medium,FOODON:03480020
+food_preserv_proc,"The methods contributing to the prevention or retardation of microbial, enzymatic or oxidative spoilage and thus to the extension of shelf life. This field accepts terms listed under food preservation process (http://purl.obolibrary.org/obo/FOODON_03470107)",food preservation process,FOODON:03470107
+food_prior_contact,"The material the food contacted (e.g., was processed in) prior to packaging. This field accepts terms listed under material of contact prior to food packaging (http://purl.obolibrary.org/obo/FOODON_03530077). If the proper descriptor is not listed please use text to describe the material of contact prior to food packaging",material of contact prior to food packaging,FOODON:03530077
+food_prod,"Descriptors of the food production system or of the agricultural environment and growing conditions related to the farm production system, such as wild caught, organic, free-range, industrial, dairy, beef,  domestic or cultivated food production. This field accepts terms listed under food production (http://purl.obolibrary.org/obo/FOODON_03530206). Multiple terms may apply and can be separated by pipes",food production system characteristics,
+food_prod_char,"Descriptors of the food production system such as wild caught, free-range, organic, free-range, industrial, dairy, beef",food production characteristics,
+food_prod_synonym,"Other names by which the food product is known by (e.g., regional or non-English names)",food product synonym,
+food_product_qual,"Descriptors for describing food visually or via other senses, which is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like ""food (frozen)"" are both a quality descriptor and the output of a process. This field accepts terms listed under food product by quality (http://purl.obolibrary.org/obo/FOODON_00002454)",food product by quality,
+food_product_type,"A food product type is a class of food products that is differentiated by its food composition (e.g., single- or multi-ingredient), processing and/or consumption characteristics. This does not include brand name products but it may include generic food dish categories. This field accepts terms under food product type (http://purl.obolibrary.org/obo/FOODON:03400361). For terms related to food product for an animal, consult food product for animal (http://purl.obolibrary.org/obo/FOODON_03309997). If the proper descriptor is not listed please use text to describe the food type. Multiple terms can be separated by one or more pipes",food product type,FOODON:00001002 or FOODON:03309997
+food_quality_date,"The date recommended for the use of the product while at peak quality, this date is not a reflection of safety unless used on infant formula this date is not a reflection of safety and is typically labeled on a food product as ""best if used by,"" best by,"" ""use by,"" or ""freeze by.""",food quality date,"enumeration, date"
+food_source,Type of plant or animal from which the food product or its major ingredient is derived or a chemical food source [FDA CFSAN 1995],food source,FOODON term
+food_source_age,"The age of the food source host organim. Depending on the type of host organism, age may be more appropriate to report in days, weeks, or years",food source age,
+food_trace_list,"The FDA is proposing to establish additional traceability recordkeeping requirements (beyond what is already required in existing regulations) for persons who manufacture, process, pack, or hold foods the Agency has designated for inclusion on the Food Traceability List. The Food Traceability List (FTL) identifies the foods for which the additional traceability records described in the proposed rule would be required. The term  Food Traceability List  (FTL) refers not only to the foods specifically listed (https://www.fda.gov/media/142303/download), but also to any foods that contain listed foods as ingredients",food traceability list category,
+food_trav_mode,A descriptor for the method of movement of food commodity along the food distribution system.  This field accepts terms listed under travel mode (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descrptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes,food shipping transportation method,
+food_trav_vehic,A descriptor for the mobile machine which is used to transport food commodities along the food distribution system.  This field accepts terms listed under vehicle (http://purl.obolibrary.org/obo/ENVO_01000604). If the proper descrptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes,food shipping transportation vehicle,ENVO:01000604
+food_treat_proc,"Used to specifically characterize a food product based on the treatment or processes applied to the product or any indexed ingredient. The processes include adding, substituting or removing components or modifying the food or component, e.g., through fermentation. Multiple values can be assigned. This fields accepts terms listed under food treatment process (http://purl.obolibrary.org/obo/FOODON_03460111)",food treatment process,FOODON:03460111
+freq_clean,"The number of times the sample location is cleaned. Frequency of cleaning might be on a Daily basis, Weekly, Monthly, Quarterly or Annually",frequency of cleaning,
+freq_cook,The number of times a meal is cooked per week,frequency of cooking,
+fungicide_regm,"Information about treatment involving use of fungicides; should include the name of fungicide, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple fungicide regimens",fungicide regimen,
+furniture,The types of furniture present in the sampled room,furniture,
+gaseous_environment,"Use of conditions with differing gaseous environments; should include the name of gaseous compound, amount administered, treatment duration, interval and total experimental duration; can include multiple gaseous environment regimens",gaseous environment,
+gaseous_substances,"Amount or concentration of substances such as hydrogen sulfide, carbon dioxide, methane, etc.; can include multiple substances",gaseous substances,gaseous substance name;measurement value
+gastrointest_disord,"History of gastrointestinal tract disorders; can include multiple disorders. History of blood disorders; can include multiple disorders.  The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, gastrointestinal system disease (https://disease-ontology.org/?id=DOID:77)",gastrointestinal tract disorder,
+gender_restroom,The gender type of the restroom,gender of restroom,
+genetic_mod,"Genetic modifications of the genome of an organism, which may occur naturally by spontaneous mutation, or be introduced by some experimental means, e.g. specification of a transgene or the gene knocked-out or details of transient transfection",genetic modification,"PMID, DOI, URL or text"
+geo_loc_name,"The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)","geographic location (country and/or sea,region)",
+gestation_state,Specification of the gestation state,amniotic fluid/gestation state,
+glucosidase_act,Measurement of glucosidase activity,glucosidase activity,
+gravidity,"Whether or not subject is gravid, and if yes date due or date post-conception, specifying which is used",gravidity,
+gravity,"Information about treatment involving use of gravity factor to study various types of responses in presence, absence or modified levels of gravity; treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple treatments",gravity,gravity factor value;treatment interval and duration
+growth_facil,"Type of facility where the sampled plant was grown; controlled vocabulary: growth chamber, open top chamber, glasshouse, experimental garden, field. Alternatively use Crop Ontology (CO) terms, see http://www.cropontology.org/ontology/CO_715/Crop%20Research",growth facility,free text or CO
+growth_habit,"Characteristic shape, appearance or growth form of a plant species",growth habit,
+growth_hormone_regm,"Information about treatment involving use of growth hormones; should include the name of growth hormone, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple growth hormone regimens",growth hormone regimen,growth hormone name;growth hormone amount;treatment interval and duration
+growth_medium,"A liquid or gel containing nutrients, salts, and other factors formulated to support the growth of microorganisms, cells, or plants (National Cancer Institute Thesaurus).  The name of the medium used to grow the microorganism",growth medium,
+gynecologic_disord,"History of gynecological disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, female reproductive system disease (https://disease-ontology.org/?id=DOID:229)",gynecological disorder,
+hall_count,The total count of hallways and cooridors in the built structure,hallway/corridor count,
+handidness,The handidness of the individual sampled,handidness,
+hc_produced,"Main hydrocarbon type produced from resource (i.e. Oil, gas, condensate, etc). If ""other"" is specified, please propose entry in ""additional info"" field",hydrocarbon type produced,
+hcr,"Main Hydrocarbon Resource type. The term ""Hydrocarbon Resource"" HCR defined as a natural environmental feature containing large amounts of hydrocarbons at high concentrations potentially suitable for commercial exploitation. This term should not be confused with the Hydrocarbon Occurrence term which also includes hydrocarbon-rich environments with currently limited commercial interest such as seeps, outcrops, gas hydrates etc. If ""other"" is specified, please propose entry in ""additional info"" field",hydrocarbon resource type,
+hcr_fw_salinity,Original formation water salinity (prior to secondary recovery e.g. Waterflooding) expressed as TDS,formation water salinity,
+hcr_geol_age,"Geological age of hydrocarbon resource (Additional info: https://en.wikipedia.org/wiki/Period_(geology)). If ""other"" is specified, please propose entry in ""additional info"" field",hydrocarbon resource geological age,
+hcr_pressure,Original pressure of the hydrocarbon resource,hydrocarbon resource original pressure,
+hcr_temp,Original temperature of the hydrocarbon resource,hydrocarbon resource original temperature,
+heat_cool_type,Methods of conditioning or heating a room or building,heating and cooling system type,
+heat_deliv_loc,The location of heat delivery within the room,heating delivery locations,
+heat_sys_deliv_meth,The method by which the heat is delivered through the system,heating system delivery method,
+heat_system_id,The heating system identifier,heating system identifier,
+heavy_metals,"Heavy metals present in the sequenced sample and their concentrations. For multiple heavy metals and concentrations, add multiple copies of this field",extreme_unusual_properties/heavy metals,heavy metal name;measurement value unit
+heavy_metals_meth,Reference or method used in determining heavy metals,extreme_unusual_properties/heavy metals method,
+height_carper_fiber,The average carpet fiber height in the indoor environment,height carpet fiber mat,
+herbicide_regm,"Information about treatment involving use of herbicides; information about treatment involving use of growth hormones; should include the name of herbicide, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",herbicide regimen,
+horizon_meth,Reference or method used in determining the horizon,horizon method,
+host_age,"Age of host at the time of sampling; relevant scale depends on species and study, e.g. Could be seconds for amoebae or centuries for trees",host age,
+host_body_habitat,Original body habitat where the sample was obtained from,host body habitat,
+host_body_mass_index,"Body mass index, calculated as weight/(height)squared",host body-mass index,
+host_body_product,"Substance produced by the body, e.g. Stool, mucus, where the sample was obtained from. Use terms from the foundational model of anatomy ontology (fma) or Uber-anatomy ontology (UBERON)",host body product,FMA or UBERON
+host_body_site,"Name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...). Use terms from the foundational model of anatomy ontology (fma) or the Uber-anatomy ontology (UBERON)",host body site,FMA or UBERON
+host_body_temp,Core body temperature of the host when sample was collected,host body temperature,
+host_cellular_loc,The localization of the symbiotic host organism within the host from which it was sampled: e.g. intracellular if the symbiotic host organism is localized within the cells or extracellular if the symbiotic host organism is localized outside of cells,host cellular location,
+host_color,The color of host,host color,
+host_common_name,Common name of the host,host common name,
+host_dependence,Type of host dependence for the symbiotic host organism to its host,host dependence,
+host_diet,"Type of diet depending on the host, for animals omnivore, herbivore etc., for humans high-fat, meditteranean etc.; can include multiple diet types",host diet,
+host_disease_stat,"List of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org, non-human host diseases are free text",host disease status,disease name or Disease Ontology term
+host_dry_mass,Measurement of dry mass,host dry mass,
+host_fam_rel,Relationships to other hosts in the same study; can include multiple relationships,host family relationship,relationship type;arbitrary identifier
+host_genotype,Observed genotype,host genotype,
+host_growth_cond,Literature reference giving growth conditions of the host,host growth conditions,
+host_height,The height of subject,host height,
+host_hiv_stat,"HIV status of subject, if yes HAART initiation status should also be indicated as [YES or NO]",host HIV status,HIV status;HAART initiation status
+host_infra_spec_name,Taxonomic information about the host below subspecies level,host infra-specific name,
+host_infra_spec_rank,"Taxonomic rank information about the host below subspecies level, such as variety, form, rank etc",host infra-specific rank,
+host_last_meal,Content of last meal and time since feeding; can include multiple values,host last meal,content;duration
+host_length,The length of subject,host length,
+host_life_stage,Description of life stage of host,host life stage,stage
+host_number,Number of symbiotic host individuals pooled at the time of collection,host number individual,count
+host_occupation,Most frequent job performed by subject,host occupation,
+host_of_host_coinf,"The taxonomic name of any coinfecting organism observed in a symbiotic relationship with the host of the sampled host organism. e.g. where a sample collected from a host trematode species (A) which was collected from a host_of_host fish (B) that was also infected with a nematode (C), the value here would be (C) the nematode {species name} or {common name}. Multiple co-infecting species may be added in a comma-separated list. For listing symbiotic organisms associated with the host (A) use the term Observed host symbiont",observed coinfecting organisms in host of host,species name of coinfecting organism(s)
+host_of_host_disease,"List of diseases with which the host of the symbiotic host organism has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org, non-human host diseases are free text",host of the symbiotic host disease status,disease name or Disease Ontology term
+host_of_host_env_loc,"For a symbiotic host organism the local anatomical environment within its host may have causal influences. Report the anatomical entity(s) which are in the direct environment of the symbiotic host organism being sampled and which you believe have significant causal influences on your sample or specimen. For example, if the symbiotic host organism being sampled is an intestinal worm, its local environmental context will be the term for intestine from UBERON (http://uberon.github.io/)",host of the symbiotic host local environmental context,"UBERON term(s), multiple values can be separated by pipes"
+host_of_host_env_med,"Report the environmental material(s) immediately surrounding the symbiotic host organism at the time of sampling. This usually will be a tissue or substance type from the host, but may be another material if the symbiont is external to the host. We recommend using classes from the UBERON ontology, but subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483) may also be used. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. intestines, heart).MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. intestines, heart)",host of the symbiotic host environemental medium,An ontology term for a material such as a tissue type or excreted substance
+host_of_host_fam_rel,Familial relationship of the host of the symbiotic host organisms to other hosts of symbiotic host organism in the same study; can include multiple relationships,host of the symbiotic host family relationship,relationship type;arbitrary identifier
+host_of_host_geno,Observed genotype of the host of the symbiotic host organism,host of the symbiotic host genotype,
+host_of_host_gravid,"Whether or not the host of the symbiotic host organism is gravid, and if yes date due or date post-conception, specifying which is used",host of the symbiotic host gravidity,gravidity status;timestamp
+host_of_host_infname,Taxonomic name information of the host of the symbiotic host organism below subspecies level,host of the symbiotic host infra-specific name,
+host_of_host_infrank,"Taxonomic rank information about the host of the symbiotic host organism below subspecies level, such as variety, form, rank etc",host of the symbiotic host infra-specific rank,
+host_of_host_name,Common name of the host of the symbiotic host organism,host of the symbiotic host common name,
+host_of_host_pheno,"Phenotype of the host of the symbiotic host organism. For phenotypic quality ontology (PATO) terms, see http://purl.bioontology.org/ontology/pato",host of the symbiotic host phenotype,phenotype of the host of the symbiotic organism; PATO
+host_of_host_sub_id,"A unique identifier by which each host of the symbiotic host organism subject can be referred to, de-identified, e.g. #H14",host of the symbiotic host subject id,
+host_of_host_taxid,NCBI taxon id of the host of the symbiotic host organism,host of the symbiotic host taxon id,NCBI taxon identifier of the host of the symbiotic taxon organism
+host_of_host_totmass,"Total mass of the host of the symbiotic host organism at collection, the unit depends on the host",host of the symbiotic host total mass,
+host_phenotype,Phenotype of human or other host. Use terms from the phenotypic quality ontology (pato) or the Human Phenotype Ontology (HP),host phenotype,PATO or HP
+host_pred_appr,Tool or approach used for host prediction,host prediction approach,
+host_pred_est_acc,"For each tool or approach used for host prediction, estimated false discovery rates should be included, either computed de novo or from the literature",host prediction estimated accuracy,
+host_pulse,"Resting pulse, measured as beats per minute",host pulse,
+host_sex,Gender or physical sex of the host,host sex,enumeration
+host_shape,Morphological shape of host,host shape,
+host_spec_range,"The range and diversity of host species that an organism is capable of infecting, defined by NCBI taxonomy identifier",host specificity or range,NCBI taxid
+host_specificity,Level of specificity of symbiont-host interaction: e.g. generalist (symbiont able to establish associations with distantly related hosts) or species-specific,host specificity,
+host_subject_id,"A unique identifier by which each subject can be referred to, de-identified",host subject id,
+host_subspecf_genlin,"Information about the genetic distinctness of the host organism below the subspecies level e.g., serovar, serotype, biotype, ecotype, variety, cultivar, or any relevant genetic typing schemes like Group I plasmid. Subspecies should not be recorded in this term, but in the NCBI taxonomy. Supply both the lineage name and the lineage rank separated by a colon, e.g., biovar:abc123",host subspecific genetic lineage,"Genetic lineage below lowest rank of NCBI taxonomy, which is subspecies, e.g. serovar, biotype, ecotype, variety, cultivar"
+host_substrate,The growth substrate of the host,host substrate,
+host_symbiont,"The taxonomic name of the organism(s) found living in mutualistic, commensalistic, or parasitic symbiosis with the specific host. The sampled symbiont can have its own symbionts. For example, parasites may have hyperparasites (=parasites of the parasite)",observed host symbionts,species name or common name
+host_taxid,"NCBI taxon id of the host, e.g. 9606",host taxid,NCBI taxon identifier
+host_tot_mass,"Total mass of the host at collection, the unit depends on host",host total mass,
+host_wet_mass,Measurement of wet mass,host wet mass,
+hrt,"Whether subject had hormone replacement theraphy, and if yes start date",HRT,
+humidity,"Amount of water vapour in the air, at the time of sampling",humidity,
+humidity_regm,"Information about treatment involving an exposure to varying degree of humidity; information about treatment involving use of growth hormones; should include amount of humidity administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",humidity regimen,humidity value;treatment interval and duration
+hygienic_area,The subdivision of areas within a food production facility according to hygienic requirements. This field accepts terms listed under hygienic food production area (http://purl.obolibrary.org/obo/ENVO). Please add a term that most accurately indicates the hygienic area your sample was taken from according to the definitions provided,hygienic food production area,Expected value
+hysterectomy,Specification of whether hysterectomy was performed,hysterectomy,
+ihmc_medication_code,Can include multiple medication codes,IHMC medication code,
+indoor_space,"A distinguishable space within a structure, the purpose for which discrete areas of a building is used",indoor space,
+indoor_surf,Type of indoor surface,indoor surface,
+indust_eff_percent,Percentage of industrial effluents received by wastewater treatment plant,industrial effluent percent,
+inorg_particles,"Concentration of particles such as sand, grit, metal particles, ceramics, etc.; can include multiple particles",inorganic particles,inorganic particle name;measurement value
+inside_lux,The recorded value at sampling time (power density),inside lux light,
+int_wall_cond,The physical condition of the wall at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas,interior wall condition,
+intended_consumer,"Food consumer type, human or animal, for which the food product is produced and marketed. This field accepts terms listed under food consumer group (http://purl.obolibrary.org/obo/FOODON_03510136) or NCBI taxid",intended consumer,FOODON_03510136 or NCBI taxid
+isol_growth_condt,"Publication reference in the form of pubmed ID (pmid), digital object identifier (doi) or url for isolation and growth condition specifications of the organism/material",isolation and growth condition,
+iw_bt_date_well,Injection water breakthrough date per well following a secondary and/or tertiary recovery,injection water breakthrough date of specific well,
+iwf,Proportion of the produced fluids derived from injected water at the time of sampling. (e.g. 87%),injection water fraction,
+kidney_disord,"History of kidney disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, kidney disease (https://disease-ontology.org/?id=DOID:557)",urine/kidney disorder,
+last_clean,"The last time the floor was cleaned (swept, mopped, vacuumed)",last time swept/mopped/vacuumed,
+lat_lon,The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system,geographic location (latitude and longitude),"decimal degrees,  limit to 8 decimal points"
+lib_layout,"Specify whether to expect single, paired, or other configuration of reads",library layout,
+lib_reads_seqd,Total number of clones sequenced from the library,library reads sequenced,
+lib_screen,Specific enrichment or screening methods applied before and/or after creating libraries,library screening strategy,screening strategy name
+lib_size,Total number of clones in the library prepared for the project,library size,
+lib_vector,Cloning vector type(s) used in construction of libraries,library vector,vector
+library_prep_kit,"Packaged kits (containing adapters, indexes, enzymes, buffers etc.), tailored for specific sequencing workflows, which allow the simplified preparation of sequencing-ready libraries for small genomes, amplicons, and plasmids",library preparation kit,name of library preparation kit
+light_intensity,Measurement of light intensity,light intensity,
+light_regm,"Information about treatment(s) involving exposure to light, including both light intensity and quality",light regimen,exposure type;light intensity;light quality
+light_type,"Application of light to achieve some practical or aesthetic effect. Lighting includes the use of both artificial light sources such as lamps and light fixtures, as well as natural illumination by capturing daylight. Can also include absence of light",light type,
+link_addit_analys,Link to additional analysis results performed on the sample,links to additional analysis,
+link_class_info,Link to digitized soil maps or other soil classification information,link to classification information,"PMID,DOI or url"
+link_climate_info,Link to climate resource,link to climate information,
+lithology,"Hydrocarbon resource main lithology (Additional information: http://petrowiki.org/Lithology_and_rock_type_determination). If ""other"" is specified, please propose entry in ""additional info"" field",lithology,
+liver_disord,"History of liver disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, liver disease (https://disease-ontology.org/?id=DOID:409)",liver disorder,
+local_class,Soil classification based on local soil classification system,soil_taxonomic/local classification,local classification name
+local_class_meth,Reference or method used in determining the local soil classification,soil_taxonomic/local classification method,
+lot_number,A distinctive alpha-numeric identification code assigned by the manufacturer or distributor to a specific quantity of manufactured material or product within a batch. Synonym: Batch Number.  The submitter should provide lot number of the item followed by the item name for which the lot number was provided,lot number,"lot number, item"
+mag_cov_software,Tool(s) used to determine the genome coverage if coverage is used as a binning parameter in the extraction of genomes from metagenomic datasets,MAG coverage software,
+magnesium,Concentration of magnesium in the sample,magnesium,
+maternal_health_stat,Specification of the maternal health status,amniotic fluid/maternal health status,
+max_occup,The maximum amount of people allowed in the indoor environment,maximum occupancy,
+mean_frict_vel,Measurement of mean friction velocity,mean friction velocity,
+mean_peak_frict_vel,Measurement of mean peak friction velocity,mean peak friction velocity,
+mech_struc,mechanical structure: a moving structure,mechanical structure,
+mechanical_damage,Information about any mechanical damage exerted on the plant; can include multiple damages and sites,mechanical damage,damage type;body site
+medic_hist_perform,Whether full medical history was collected,medical history performed,
+menarche,Date of most recent menstruation,menarche,
+menopause,Date of onset of menopause,menopause,
+methane,Methane (gas) amount or concentration at the time of sampling,methane,
+micro_biomass_meth,Reference or method used in determining microbial biomass,microbial biomass method,
+microb_cult_med,"A culture medium used to select for, grow, and maintain prokaryotic microorganisms. Can be in either liquid (broth) or solidified (e.g. with agar) forms. This field accepts terms listed under microbiological culture medium (http://purl.obolibrary.org/obo/MICRO_0000067). If the proper descriptor is not listed please use text to describe the culture medium",microbiological culture medium,
+microb_start,Any type of microorganisms used in food production.  This field accepts terms listed under live organisms for food production (http://purl.obolibrary.org/obo/FOODON_0344453),microbial starter,FOODON:03544453
+microb_start_count,"Total cell count of starter culture per gram, volume or area of sample and the method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) should also be provided. (example : total prokaryotes; 3.5e7 cells per ml; qPCR)",microbial starter organism count,organism name; measurement value; enumeration
+microb_start_inoc,The amount of starter culture used to inoculate a new batch,microbial starter inoculation,
+microb_start_prep,Information about the protocol or method used to prepare the starter inoculum,microbial starter preparation,
+microb_start_source,"The source from which the microbial starter culture was sourced.  If commercially supplied, list supplier",microbial starter source,
+microb_start_taxID,"Please include Genus species and strain ID, if known of microorganisms used in food production. For complex communities, pipes can be used to separate two or more microbes",microbial starter NCBI taxonomy ID,
+microbial_biomass,"The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units",microbial biomass,
+mid,"Molecular barcodes, called Multiplex Identifiers (MIDs), that are used to specifically tag unique samples in a sequencing run. Sequence should be reported in uppercase letters",multiplex identifiers,
+mineral_nutr_regm,"Information about treatment involving the use of mineral supplements; should include the name of mineral nutrient, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple mineral nutrient regimens",mineral nutrient regimen,mineral nutrient name;mineral nutrient amount;treatment interval and duration
+misc_param,"Any other measurement performed or parameter collected, that is not listed here",miscellaneous parameter,parameter name;measurement value
+mode_transmission,The process through which the symbiotic host organism entered the host from which it was sampled,mode of transmission,
+n_alkanes,Concentration of n-alkanes; can include multiple n-alkanes,n-alkanes,n-alkane name;measurement value
+neg_cont_type,The substance or equipment used as a negative control in an investigation,negative control type,enumeration or text
+nitrate,Concentration of nitrate in the sample,nitrate,
+nitrite,Concentration of nitrite in the sample,nitrite,
+nitro,Concentration of nitrogen (total),nitrogen,
+non_min_nutr_regm,"Information about treatment involving the exposure of plant to non-mineral nutrient such as oxygen, hydrogen or carbon; should include the name of non-mineral nutrient, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple non-mineral nutrient regimens",non-mineral nutrient regimen,
+nose_mouth_teeth_throat_disord,"History of nose/mouth/teeth/throat disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, nose disease (https://disease-ontology.org/?id=DOID:2825), mouth disease (https://disease-ontology.org/?id=DOID:403), tooth disease (https://disease-ontology.org/?id=DOID:1091), or upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)",nose/mouth/teeth/throat disorder,
+nose_throat_disord,"History of nose-throat disorders; can include multiple disorders,  The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850), upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)",nose throat disorder,
+nucl_acid_amp,"A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids",nucleic acid amplification,
+nucl_acid_ext,"A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the material separation to recover the nucleic acid fraction from a sample",nucleic acid extraction,
+nucl_acid_ext_kit,The name of the extraction kit used to recover the nucleic acid fraction of an input material is performed,nucleic acid extraction kit,The name of an extraction kit
+num_replicons,"Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote",number of replicons,for eukaryotes and bacteria: chromosomes (haploid count); for viruses: segments
+num_samp_collect,The number of samples collected during the current sampling event,number of samples collected,
+number_contig,"Total number of contigs in the cleaned/submitted assembly that makes up a given genome, SAG, MAG, or UViG",number of contigs,
+number_pets,The number of pets residing in the sampled space,number of pets,
+number_plants,The number of plant(s) in the sampling space,number of houseplants,
+number_resident,The number of individuals currently occupying in the sampling location,number of residents,
+occup_density_samp,Average number of occupants at time of sampling per square footage,occupant density at sampling,
+occup_document,The type of documentation of occupancy,occupancy documentation,
+occup_samp,Number of occupants present at time of sample within the given space,occupancy at sampling,
+org_carb,Concentration of organic carbon,organic carbon,
+org_count_qpcr_info,"If qpcr was used for the cell count, the target gene name, the primer sequence and the cycling conditions should also be provided. (Example: 16S rrna; FWD:ACGTAGCTATGACGT REV:GTGCTAGTCGAGTAC; initial denaturation:90C_5min; denaturation:90C_2min; annealing:52C_30 sec; elongation:72C_30 sec; 90 C for 1 min; final elongation:72C_5min; 30 cycles)",organism count qPCR information,gene name;FWD:forward primer sequence;REV:reverse primer sequence;initial denaturation:degrees_minutes;denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes; total cycles
+org_matter,Concentration of organic matter,organic matter,
+org_nitro,Concentration of organic nitrogen,organic nitrogen,
+org_particles,"Concentration of particles such as faeces, hairs, food, vomit, paper fibers, plant material, humus, etc",organic particles,particle name;measurement value
+organism_count,"Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",organism count,organism name;measurement value;enumeration
+otu_class_appr,"Cutoffs and approach used when clustering  species-level  OTUs. Note that results from standard 95% ANI / 85% AF clustering should be provided alongside OTUS defined from another set of thresholds, even if the latter are the ones primarily used during the analysis",OTU classification approach,cutoffs and method used
+otu_db,"Reference database (i.e. sequences not generated as part of the current study) used to cluster new genomes in ""species-level"" OTUs, if any",OTU database,database and version
+otu_seq_comp_appr,"Tool and thresholds used to compare sequences when computing ""species-level"" OTUs",OTU sequence comparison approach,"software name, version and relevant parameters"
+owc_tvdss,Depth of the original oil water contact (OWC) zone (average) (m TVDSS),oil water contact depth,
+oxy_stat_samp,Oxygenation status of sample,oxygenation status of sample,
+oxygen,Oxygen (gas) amount or concentration at the time of sampling,oxygen,
+part_org_carb,Concentration of particulate organic carbon,particulate organic carbon,
+part_org_nitro,Concentration of particulate organic nitrogen,particulate organic nitrogen,
+part_plant_animal,"The anatomical part of the organism being involved in food production or consumption; e.g., a carrot is the root of the plant (root vegetable). This field accepts terms listed under part of plant or animal (http://purl.obolibrary.org/obo/FOODON_03420116)",part of plant or animal,FOODON:03420116
+particle_class,"Particles are classified, based on their size, into six general categories:clay, silt, sand, gravel, cobbles, and boulders; should include amount of particle preceded by the name of the particle type; can include multiple values",particle classification,particle name;measurement value
+pathogenicity,To what is the entity pathogenic,known pathogenicity,names of organisms that the entity is pathogenic to
+pcr_cond,Description of reaction conditions and components of PCR in the form of 'initial denaturation:94degC_1.5min; annealing=...',pcr conditions,initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total cycles
+pcr_primers,"PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single PCR reaction. The primer sequence should be reported in uppercase letters",pcr primers,FWD: forward primer sequence;REV:reverse primer sequence
+permeability,Measure of the ability of a hydrocarbon resource to allow fluids to pass through it. (Additional information: https://en.wikipedia.org/wiki/Permeability_(earth_sciences)),permeability,measurement value range
+perturbation,"Type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with perturbation regimen including how many times the perturbation was repeated, how long each perturbation lasted, and the start and end time of the entire perturbation period; can include multiple perturbation types",perturbation,perturbation type name;perturbation interval and duration
+pesticide_regm,"Information about treatment involving use of insecticides; should include the name of pesticide, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple pesticide regimens",pesticide regimen,
+pet_farm_animal,"Specification of presence of pets or farm animals in the environment of subject, if yes the animals should be specified; can include multiple animals present",presence of pets or farm animals,presence status;type of animal or pet
+petroleum_hydrocarb,Concentration of petroleum hydrocarbon,petroleum hydrocarbon,
+ph,"Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid",pH,
+ph_meth,Reference or method used in determining pH,pH method,
+ph_regm,"Information about treatment involving exposure of plants to varying levels of ph of the growth media, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimen",pH regimen,
+phaeopigments,Concentration of phaeopigments; can include multiple phaeopigments,phaeopigments,phaeopigment name;measurement value
+phosphate,Concentration of phosphate,phosphate,
+phosplipid_fatt_acid,Concentration of phospholipid fatty acids; can include multiple values,phospholipid fatty acid,phospholipid fatty acid name;measurement value
+photon_flux,Measurement of photon flux,photon flux,
+photosynt_activ,Measurement of photosythetic activity (i.e. leaf gas exchange / chlorophyll fluorescence emissions / reflectance / transpiration) Please also include the term method term detailing the method of activity measurement,photosynthetic activity,
+photosynt_activ_meth,Reference or method used in measurement of photosythetic activity,photosynthetic activity method,
+plant_growth_med,"Specification of the media for growing the plants or tissue cultured samples, e.g. soil, aeroponic, hydroponic, in vitro solid culture medium, in vitro liquid culture medium. Recommended value is a specific value from EO:plant growth medium (follow this link for terms http://purl.obolibrary.org/obo/EO_0007147) or other controlled vocabulary",plant growth medium,EO or enumeration
+plant_part_maturity,A description of the stage of development of a plant or plant part based on maturity or ripeness. This field accepts terms listed under degree of plant maturity (http://purl.obolibrary.org/obo/FOODON_03530050),degree of plant part maturity,FOODON:03530050
+plant_product,"Substance produced by the plant, where the sample was obtained from",plant product,product name
+plant_reprod_crop,Plant reproductive part used in the field during planting to start the crop,plant reproductive part,
+plant_sex,"Sex of the reproductive parts on the whole plant, e.g. pistillate, staminate, monoecieous, hermaphrodite",plant sex,
+plant_struc,"Name of plant structure the sample was obtained from; for Plant Ontology (PO) (v releases/2017-12-14) terms, see http://purl.bioontology.org/ontology/PO, e.g. petiole epidermis (PO_0000051). If an individual flower is sampled, the sex of it can be recorded here",plant structure,
+plant_water_method,Description of the equipment or method used to distribute water to crops. This field accepts termed listed under irrigation process (http://purl.obolibrary.org/obo/AGRO_00000006). Multiple terms can be separated by pipes,plant water delivery method,
+ploidy,"The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO",ploidy,
+pollutants,"Pollutant types and, amount or concentrations measured at the time of sampling; can report multiple pollutants by entering numeric values preceded by name of pollutant",pollutants,pollutant name;measurement value
+pool_dna_extracts,"Indicate whether multiple DNA extractions were mixed. If the answer yes, the number of extracts that were pooled should be given",pooling of DNA extracts (if done),pooling status;number of pooled extracts
+porosity,Porosity of deposited sediment is volume of voids divided by the total volume of sample,porosity,measurement value or range
+pos_cont_type,"The substance, mixture, product, or apparatus used to verify that a process which is part of an investigation delivers a true positive",positive control type,
+potassium,Concentration of potassium in the sample,potassium,
+pour_point,"Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high  pour point  is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)",pour point,
+pre_treatment,The process of pre-treatment removes materials that can be easily collected from the raw wastewater,pre-treatment,pre-treatment type
+pred_genome_struc,Expected structure of the viral genome,predicted genome structure,
+pred_genome_type,Type of genome predicted for the UViG,predicted genome type,enumeration
+pregnancy,Date due of pregnancy,pregnancy,
+pres_animal_insect,The type and number of animals or insects present in the sampling space,"presence of pets, animals, or insects",enumeration;count
+pressure,"Pressure to which the sample is subject to, in atmospheres",pressure,
+prev_land_use_meth,Reference or method used in determining previous land use and dates,history/previous land use method,
+previous_land_use,Previous land use and dates,history/previous land use,land use name;date
+primary_prod,"Measurement of primary production, generally measured as isotope uptake",primary production,
+primary_treatment,The process to produce both a generally homogeneous liquid capable of being treated biologically and a sludge that can be separately treated or processed,primary treatment,primary treatment type
+prod_label_claims,"Labeling claims containing descriptors such as wild caught, free-range, organic, free-range, industrial, hormone-free, antibiotic free, cage free. Can include more than one term, separated by "";""",production labeling claims,
+prod_rate,Oil and/or gas production rates per well (e.g. 524 m3 / day),production rate,
+prod_start_date,Date of field's first production,production start date,
+profile_position,Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas,profile position,
+project_name,Name of the project within which the sequencing was organized,project name,
+propagation,The type of reproduction from the parent stock. Values for this field is specific to different taxa. For phage or virus: lytic/lysogenic/temperate/obligately lytic. For plasmids: incompatibility group. For eukaryotes: sexual/asexual,propagation,"for virus: lytic, lysogenic, temperate, obligately lytic; for plasmid: incompatibility group; for eukaryote: asexual, sexual; other more specific values (e.g., incompatibility group) are allowed"
+pulmonary_disord,"History of pulmonary disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850)",lung/pulmonary disorder,
+quad_pos,The quadrant position of the sampling room within the building,quadrant position,
+radiation_regm,"Information about treatment involving exposure of plant or a plant part to a particular radiation regimen; should include the radiation type, amount or intensity administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple radiation regimens",radiation regimen,radiation type name;radiation amount;treatment interval and duration
+rainfall_regm,"Information about treatment involving an exposure to a given amount of rainfall, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",rainfall regimen,measurement value;treatment interval and duration
+reactor_type,"Anaerobic digesters can be designed and engineered to operate using a number of different process configurations, as batch or continuous, mesophilic, high solid or low solid, and single stage or multistage",reactor type,reactor type name
+reassembly_bin,Has an assembly been performed on a genome bin extracted from a metagenomic assembly?,reassembly post binning,
+redox_potential,"Redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential",redox potential,
+ref_biomaterial,"Primary publication if isolated before genome publication; otherwise, primary genome report",reference for biomaterial,
+ref_db,"List of database(s) used for ORF annotation, along with version number and reference to website or publication",reference database(s),"names, versions, and references of databases"
+rel_air_humidity,"Partial vapor and air pressure, density of the vapor and air, or by the actual mass of the vapor and air",relative air humidity,
+rel_humidity_out,The recorded outside relative humidity value at the time of sampling,outside relative humidity,
+rel_location,"Location of sampled soil to other parts of the farm e.g. under crop plant, near irrigation ditch, from the dirt road",relative location of sample,
+rel_samp_loc,The sampling location within the train car,relative sampling location,
+rel_to_oxygen,"Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",relationship to oxygen,
+repository_name,"The name of the institution where the sample or DNA extract is held or ""sample not available"" if the sample was used in its entirety for analysis or otherwise not retained",repository name,Institution
+reservoir,Name of the reservoir (e.g. Carapebus),reservoir name,
+resins_pc,"Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",resins wt%,
+room_air_exch_rate,The rate at which outside air replaces indoor air in a given space,room air exchange rate,
+room_architec_elem,"The unique details and component parts that, together, form the architecture of a distinguisahable space within a built structure",room architectural elements,
+room_condt,The condition of the room at the time of sampling,room condition,
+room_connected,List of rooms connected to the sampling room by a doorway,rooms connected by a doorway,
+room_count,The total count of rooms in the built structure including all room types,room count,
+room_dim,"The length, width and height of sampling room",room dimensions,measurement value
+room_door_dist,Distance between doors (meters) in the hallway between the sampling room and adjacent rooms,room door distance,
+room_door_share,"List of room(s) (room number, room name) sharing a door with the sampling room",rooms that share a door with sampling room,
+room_hallway,"List of room(s) (room number, room name) located in the same hallway as sampling room",rooms that are on the same hallway,
+room_loc,The position of the room within the building,room location in building,
+room_moist_dam_hist,The history of moisture damage or mold in the past 12 months. Number of events of moisture damage or mold observed,room moisture damage or mold history,
+room_net_area,The net floor area of sampling room. Net area excludes wall thicknesses,room net area,
+room_occup,Count of room occupancy at time of sampling,room occupancy,
+room_samp_pos,The horizontal sampling position in the room relative to architectural elements,room sampling position,
+room_type,The main purpose or activity of the sampling room. A room is any distinguishable space within a structure,room type,enumeration
+room_vol,Volume of sampling room,room volume,
+room_wall_share,"List of room(s) (room number, room name) sharing a wall with the sampling room",rooms that share a wall with sampling room,
+room_window_count,Number of windows in the room,room window count,
+root_cond,"Relevant rooting conditions such as field plot size, sowing density, container dimensions, number of plants per container",rooting conditions,
+root_med_carbon,Source of organic carbon in the culture rooting medium; e.g. sucrose,rooting medium carbon,carbon source name;measurement value
+root_med_macronutr,"Measurement of the culture rooting medium macronutrients (N,P, K, Ca, Mg, S); e.g. KH2PO4 (170 mg/L)",rooting medium macronutrients,macronutrient name;measurement value
+root_med_micronutr,"Measurement of the culture rooting medium micronutrients (Fe, Mn, Zn, B, Cu, Mo); e.g. H3BO3 (6.2 mg/L)",rooting medium micronutrients,micronutrient name;measurement value
+root_med_ph,pH measurement of the culture rooting medium; e.g. 5.5,rooting medium pH,
+root_med_regl,"Growth regulators in the culture rooting medium such as cytokinins, auxins, gybberellins, abscisic acid; e.g. 0.5  mg/L NAA",rooting medium regulators,regulator name;measurement value
+root_med_solid,Specification of the solidifying agent in the culture rooting medium; e.g. agar,rooting medium solidifier,
+root_med_suppl,"Organic supplements of the culture rooting medium, such as vitamins, amino acids, organic acids, antibiotics activated charcoal; e.g. nicotinic acid (0.5  mg/L)",rooting medium organic supplements,supplement name;measurement value
+route_transmission,Description of path taken by the symbiotic host organism being sampled in order to establish a symbiotic relationship with the host (with which it was observed at the time of sampling) via a mode of transmission (specified in mode_transmission),route of transmission,
+salinity,"The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater",salinity,
+salt_regm,"Information about treatment involving use of salts as supplement to liquid and soil growth media; should include the name of salt, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple salt regimens",salt regimen,
+samp_capt_status,Reason for the sample,sample capture status,
+samp_collect_device,The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094),sample collection device,device name
+samp_collect_method,The method employed for collecting the sample,sample collection method,
+samp_collect_point,"Sampling point on the asset were sample was collected (e.g. Wellhead, storage tank, separator, etc). If ""other"" is specified, please propose entry in ""additional info"" field",sample collection point,
+samp_dis_stage,"Stage of the disease at the time of sample collection, e.g. inoculation, penetration, infection, growth and reproduction, dissemination of pathogen",sample disease stage,
+samp_floor,"The floor of the building, where the sampling room is located",sampling floor,enumeration
+samp_loc_condition,The condition of the sample location at the time of sampling,sample location condition,
+samp_loc_corr_rate,"Metal corrosion rate is the speed of metal deterioration due to environmental conditions. As environmental conditions change corrosion rates change accordingly. Therefore, long term corrosion rates are generally more informative than short term rates and for that reason they are preferred during reporting. In the case of suspected MIC, corrosion rate measurements at the time of sampling might provide insights into the involvement of certain microbial community members in MIC as well as potential microbial interplays",corrosion rate at sample location,
+samp_mat_process,"A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed",sample material processing,
+samp_md,"In non deviated well, measured depth is equal to the true vertical depth, TVD (TVD=TVDSS plus the reference or datum it refers to). In deviated wells, the MD is the length of trajectory of the borehole measured from the same reference or datum. Common datums used are ground level (GL), drilling rig floor (DF), rotary table (RT), kelly bushing (KB) and mean sea level (MSL). If ""other"" is specified, please propose entry in ""additional info"" field",sample measured depth,measurement value;enumeration
+samp_name,"A local identifier or name that for the material sample used for extracting nucleic acids, and subsequent sequencing. It can refer either to the original material collected or to any derived sub-samples. It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible. INSDC requires every sample name from a single Submitter to be unique. Use of a globally unique identifier for the field source_mat_id is recommended in addition to sample_name",sample name,
+samp_pooling,"Physical combination of several instances of like material, e.g. RNA extracted from samples or dishes of cell cultures into one big aliquot of cells. Please provide a short description of the samples that were pooled",sample pooling,
+samp_preserv,"Preservative added to the sample (e.g. Rnalater, alcohol, formaldehyde, etc.). Where appropriate include volume added (e.g. Rnalater; 2 ml)",preservative added to sample,
+samp_purpose,The reason that the sample was collected,purpose of sampling,enumeration or {text}
+samp_rep_biol,Measurements of biologically distinct samples that show biological variation,biological sample replicate,
+samp_rep_tech,Repeated measurements of the same sample that show independent measures of the noise associated with the equipment and the protocols,technical sample replicate,
+samp_room_id,Sampling room number. This ID should be consistent with the designations on the building floor plans,sampling room ID or name,
+samp_size,"The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected",amount or size of sample collected,
+samp_sort_meth,"Method by which samples are sorted; open face filter collecting total suspended particles, prefilter to remove particles larger than X micrometers in diameter, where common values of X would be 10 and 2.5 full size sorting in a cascade impactor",sample size sorting method,
+samp_source_mat_cat,This is the scientific role or category that the subject organism or material has with respect to an investigation.  This field accepts terms listed under specimen source material category (http://purl.obolibrary.org/obo/GENEPIO_0001237 or http://purl.obolibrary.org/obo/OBI_0100051),sample source material category,GENEPIO:0001237
+samp_stor_device,The container used to store the  sample. This field accepts terms listed under container (http://purl.obolibrary.org/obo/NCIT_C43186). If the proper descriptor is not listed please use text to describe the storage device,sample storage device,NCIT:C4318
+samp_stor_media,"The liquid that is added to the sample collection device prior to sampling. If the sample is pre-hydrated, indicate the liquid media the sample is pre-hydrated with for storage purposes. This field accepts terms listed under microbiological culture medium (http://purl.obolibrary.org/obo/MICRO_0000067). If the proper descriptor is not listed please use text to describe the sample storage media",sample storage media,
+samp_store_dur,Duration for which the sample was stored. Indicate the duration for which the sample was stored written in ISO 8601 format,sample storage duration,
+samp_store_loc,"Location at which sample was stored, usually name of a specific freezer/room",sample storage location,location name
+samp_store_sol,"Solution within which sample was stored, if any",sample storage solution,solution name
+samp_store_temp,"Temperature at which sample was stored, e.g. -80 degree Celsius",sample storage temperature,
+samp_subtype,"Name of sample sub-type. For example if ""sample type"" is ""Produced Water"" then subtype could be ""Oil Phase"" or ""Water Phase"". If ""other"" is specified, please propose entry in ""additional info"" field",sample subtype,
+samp_surf_moisture,"Degree of water held on a sampled surface.  If present, user can state the degree of water held on surface (intermittent moisture, submerged). If no surface moisture is present indicate not present",sample surface moisture,
+samp_taxon_id,"NCBI taxon id of the sample.  Maybe be a single taxon or mixed taxa sample. Use 'synthetic metagenome  for mock community/positive controls, or 'blank sample' for negative controls",taxonomy ID of DNA sample,
+samp_time_out,The recent and long term history of outside sampling,sampling time outside,time
+samp_transport_cond,Sample transport duration (in days or hrs) and temperature the sample was exposed to (e.g. 5.5 days; 20   C),sample transport conditions,measurement value;measurement value
+samp_transport_cont,Conatiner in which the sample was stored during transport. Indicate the location name,sample transport  container,
+samp_transport_dur,The duration of time from when the sample was collected until processed. Indicate the duration for which the sample was stored written in ISO 8601 format,sample transport duration,
+samp_transport_temp,"Temperature at which sample was transported, e.g. -20 or 4 degree Celsius",sample transport temperature,text or measurement value
+samp_tvdss,Depth of the sample i.e. The vertical distance between the sea level and the sampled position in the subsurface. Depth can be reported as an interval for subsurface samples e.g. 1325.75-1362.25 m,sample true vertical depth subsea,measurement value or measurement value range
+samp_type,"The type of material from which the sample was obtained. For the Hydrocarbon package, samples include types like core, rock trimmings, drill cuttings, piping section, coupon, pigging debris, solid deposit, produced fluid, produced water, injected water, swabs, etc. For the Food Package, samples are usually categorized as food, body products or tissues, or environmental material. This field accepts terms listed under environmental specimen (http://purl.obolibrary.org/obo/GENEPIO_0001246)",sample type,
+samp_vol_we_dna_ext,Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term Sample Size (MIXS:0000001),sample volume or weight for DNA extraction,
+samp_weather,The weather on the sampling day,sampling day weather,
+samp_well_name,Name of the well (e.g. BXA1123) where sample was taken,sample well name,
+saturates_pc,"Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",saturates wt%,
+sc_lysis_approach,Method used to free DNA from interior of the cell(s) or particle(s),single cell or viral particle lysis approach,
+sc_lysis_method,Name of the kit or standard protocol used for cell(s) or particle(s) lysis,single cell or viral particle lysis kit protocol,"kit, protocol name"
+season,The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices. This field accepts terms listed under season (http://purl.obolibrary.org/obo/NCIT_C94729),season,"autumn [NCIT:C94733], spring [NCIT:C94731], summer [NCIT:C94732], winter [NCIT:C94730]"
+season_environment,"Treatment involving an exposure to a particular season (e.g. Winter, summer, rabi, rainy etc.), treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment",seasonal environment,
+season_humidity,Average humidity of the region throughout the growing season,mean seasonal humidity,
+season_precpt,"The average of all seasonal precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps",mean seasonal precipitation,
+season_temp,Mean seasonal temperature,mean seasonal temperature,
+season_use,The seasons the space is occupied,seasonal use,
+secondary_treatment,The process for substantially degrading the biological content of the sewage,secondary treatment,secondary treatment type
+sediment_type,Information about the sediment type based on major constituents,sediment type,
+seq_meth,Sequencing machine used. Where possible the term should be taken from the OBI list of DNA sequencers (http://purl.obolibrary.org/obo/OBI_0400103),sequencing method,
+seq_quality_check,"Indicate if the sequence has been called by automatic systems (none) or undergone a manual editing procedure (e.g. by inspecting the raw data or chromatograms). Applied only for sequences that are not submitted to SRA,ENA or DRA",sequence quality check,none or manually edited
+sequencing_kit,"Pre-filled, ready-to-use reagent cartridges. Used to produce improved chemistry, cluster density and read length as well as improve quality (Q) scores. Reagent components are encoded to interact with the sequencing system to validate compatibility with user-defined applications. Indicate name of the sequencing kit",sequencing kit,name of sequencing kit used
+sequencing_location,The location the sequencing run was performed. Indicate the name of the lab or core facility where samples were sequenced,sequencing location,
+serovar_or_serotype,A characterization of a cell or microorganism based on the antigenic properties of the molecules on its surface. Indicate the name of a serovar or serotype of interest. This field accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250). This field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy,serovar or serotype,
+sewage_type,Type of wastewater treatment plant as municipial or industrial,sewage type,sewage type name
+sexual_act,Current sexual partner and frequency of sex,sexual activity,partner sex;frequency
+shad_dev_water_mold,Signs of the presence of mold or mildew on the shading device,shading device signs of water/mold,
+shading_device_cond,The physical condition of the shading device at the time of sampling,shading device condition,
+shading_device_loc,The location of the shading device in relation to the built structure,shading device location,
+shading_device_mat,The material the shading device is composed of,shading device material,material name
+shading_device_type,The type of shading device,shading device type,
+sieving,Collection design of pooled samples and/or sieve size and amount of sample sieved,sieving,design name and/or size;amount
+silicate,Concentration of silicate,silicate,
+sim_search_meth,"Tool used to compare ORFs with database, along with version and cutoffs used",similarity search method,
+size_frac,Filtering pore size used in sample preparation,size fraction selected,filter size value range
+size_frac_low,Refers to the mesh/pore size used to pre-filter/pre-sort the sample. Materials larger than the size threshold are excluded from the sample,size-fraction lower threshold,
+size_frac_up,Mesh or pore size of the device used to retain the sample. Materials smaller than the size threshold are excluded from the sample,size-fraction upper threshold,
+slope_aspect,"The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees); e.g., nw or 315 degrees. This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration",slope aspect,
+slope_gradient,Commonly called 'slope'. The angle between ground surface and a horizontal line (in percent). This is the direction that overland water would flow. This measure is usually taken with a hand level meter or clinometer,slope gradient,
+sludge_retent_time,The time activated sludge remains in reactor,sludge retention time,
+smoker,Specification of smoking status,smoker,
+sodium,Sodium concentration in the sample,sodium,
+soil_conductivity,,soil conductivity,
+soil_cover,"Material covering the sampled soil. This field accepts terms under ENVO:00010483, environmental material",soil cover,"subclass of 'environmental material', http://purl.obolibrary.org/obo/ENVO_00010483"
+soil_horizon,Specific layer in the land area which measures parallel to the soil surface and possesses physical characteristics which differ from the layers above and beneath,soil horizon,
+soil_pH,,soil pH,
+soil_porosity,Porosity of soil or deposited sediment is volume of voids divided by the total volume of sample,soil sediment porosity,percent porosity
+soil_temp,Temperature of soil at the time of sampling,soil temperature,
+soil_texture,"The relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional",soil texture,
+soil_texture_class,"One of the 12 soil texture classes use to describe soil texture based on the relative proportion of different grain sizes  of mineral particles [sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um)] in a soil",soil texture classification,
+soil_texture_meth,Reference or method used in determining soil texture,soil texture method,
+soil_type,Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple terms can be separated by pipes,soil type,ENVO:00001998
+soil_type_meth,Reference or method used in determining soil series name or other lower-level classification,soil type method,
+solar_irradiance,The amount of solar energy that arrives at a specific area of a surface during a specific time interval,solar irradiance,
+soluble_inorg_mat,"Concentration of substances such as ammonia, road-salt, sea-salt, cyanide, hydrogen sulfide, thiocyanates, thiosulfates, etc",soluble inorganic material,soluble inorganic material name;measurement value
+soluble_org_mat,"Concentration of substances such as urea, fruit sugars, soluble proteins, drugs, pharmaceuticals, etc",soluble organic material,soluble organic material name;measurement value
+soluble_react_phosp,Concentration of soluble reactive phosphorus,soluble reactive phosphorus,
+sop,"Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences",relevant standard operating procedures,reference to SOP
+sort_tech,Method used to sort/isolate cells or particles of interest,sorting technology,
+source_mat_id,"A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain 'UAM:Herps:14' , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2)",source material identifiers,for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer
+source_uvig,Type of dataset from which the UViG was obtained,source of UViGs,enumeration
+space_typ_state,Customary or normal state of the space,space typical state,
+spec_intended_cons,"Food consumer type, human or animal, for which the food product is produced and marketed. This field accepts terms listed under food consumer group (http://purl.obolibrary.org/obo/FOODON_03510136)",specific intended consumer,
+special_diet,Specification of special diet; can include multiple special diets,special diet,enumeration
+specific,"The building specifications. If design is chosen, indicate phase: conceptual, schematic, design development, construction documents",specifications,
+specific_host,Report the host's taxonomic name and/or NCBI taxonomy ID,host scientific name,"host scientific name, taxonomy ID"
+specific_humidity,"The mass of water vapour in a unit mass of moist air, usually expressed as grams of vapour per kilogram of air, or, in air conditioning, as grains per pound",specific humidity,
+spikein_AMR,"Qualitative description of a microbial response to antimicrobial agents. Bacteria may be susceptible or resistant to a broad range of antibiotic drugs or drug classes, with several intermediate states or phases. This field accepts terms under antimicrobial phenotype (http://purl.obolibrary.org/obo/ARO_3004299)",antimicrobial phenotype of spike-in bacteria,measurement value ARO:3004299
+spikein_antibiotic,"Antimicrobials used in research study to assess effects of exposure on microbiome of a specific site.  Please list antimicrobial, common name and/or class and concentration used for spike-in",spike-in with antibiotics,drug name; concentration
+spikein_count,"Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) should also be provided (example: total prokaryotes; 3.5e7 cells per ml; qPCR)",spike-in organism count,organism name;measurement value;enumeration
+spikein_growth_med,"A liquid or gel containing nutrients, salts, and other factors formulated to support the growth of microorganisms, cells, or plants (National Cancer Institute Thesaurus).  A growth medium is a culture medium which has the disposition to encourage growth of particular bacteria to the exclusion of others in the same growth environment.  In this case, list the culture medium used to propagate the spike-in bacteria during preparation of spike-in inoculum. This field accepts terms listed under microbiological culture medium (http://purl.obolibrary.org/obo/MICRO_0000067). If the proper descriptor is not listed please use text to describe the spike in growth media",spike-in growth medium,
+spikein_metal,Heavy metals used in research study to assess effects of exposure on microbiome of a specific site.  Please list heavy metals and concentration used for spike-in,spike-in with heavy metals,heavy metal name or chemical symbol; concentration
+spikein_org,Taxonomic information about the spike-in organism(s). This field accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250). This field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy. Multiple terms can be separated by pipes,spike in organism,
+spikein_serovar,Taxonomic information about the spike-in organism(s) at the serovar or serotype level. This field accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250). This field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy. Multiple terms can be separated by pipes,spike-in bacterial serovar or serotype,NCIT:C14250 or antigenic formula or serovar name
+spikein_strain,Taxonomic information about the spike-in organism(s) at the strain level. This field accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250). This field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy. Multiple terms can be separated by pipes,spike-in microbial strain,NCIT:C14250 or NCBI taxid or text
+sr_dep_env,"Source rock depositional environment (https://en.wikipedia.org/wiki/Source_rock). If ""other"" is specified, please propose entry in ""additional info"" field",source rock depositional environment,
+sr_geol_age,"Geological age of source rock (Additional info: https://en.wikipedia.org/wiki/Period_(geology)). If ""other"" is specified, please propose entry in ""additional info"" field",source rock geological age,
+sr_kerog_type,"Origin of kerogen. Type I: Algal (aquatic), Type II: planktonic and soft plant material (aquatic or terrestrial), Type III: terrestrial woody/ fibrous plant material (terrestrial), Type IV: oxidized recycled woody debris (terrestrial) (additional information: https://en.wikipedia.org/wiki/Kerogen). If ""other"" is specified, please propose entry in ""additional info"" field",source rock kerogen type,
+sr_lithology,"Lithology of source rock (https://en.wikipedia.org/wiki/Source_rock). If ""other"" is specified, please propose entry in ""additional info"" field",source rock lithology,
+standing_water_regm,"Treatment involving an exposure to standing water during a plant's life span, types can be flood water or standing water, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",standing water regimen,
+ster_meth_samp_room,"The method used to sterilize the sampling room. This field accepts terms listed under electromagnetic radiation (http://purl.obolibrary.org/obo/ENVO_01001026). If the proper descriptor is not listed, please use text to describe the sampling room sterilization method. Multiple terms can be separated by pipes",sampling room sterilization method,ENVO:01001026
+store_cond,Explain how and for how long the soil sample was stored before DNA extraction (fresh/frozen/other),storage conditions,storage condition type;duration
+study_complt_stat,"Specification of study completion status, if no the reason should be specified",study completion status,YES or NO due to (1)adverse event (2) non-compliance (3) lost to follow up (4)other-specify
+study_design,A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of an investigation and is realized during a study design execution. This field accepts terms under study design (http://purl.obolibrary.org/obo/OBI_0500000). If the proper descriptor is not listed please use text to describe the study design. Multiple terms can be separated by pipes,study design,OBI:0500000
+study_inc_dur,Sample incubation duration if unpublished or unvalidated method is used. Indicate the timepoint written in ISO 8601 format,study incubation duration,
+study_inc_temp,Sample incubation temperature if unpublished or unvalidated method is used,study incubation temperature,
+study_timecourse,"For time-course research studies involving samples of the food commodity, indicate the total duration of the time-course study",time-course duration,
+study_tmnt,"A process in which the act is intended to modify or alter some other material entity.  From the study design, each treatment is comprised of one level of one or multiple factors. This field accepts terms listed under treatment (http://purl.obolibrary.org/obo/MCO_0000866). If the proper descriptor is not listed please use text to describe the study treatment. Multiple terms can be separated by one or more pipes",study treatment,MCO:0000866
+subspecf_gen_lin,"Information about the genetic distinctness of the sequenced organism below the subspecies level, e.g., serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group I plasmid. Subspecies should not be recorded in this term, but in the NCBI taxonomy. Supply both the lineage name and the lineage rank separated by a colon, e.g., biovar:abc123",subspecific genetic lineage,"Genetic lineage below lowest rank of NCBI taxonomy, which is subspecies, e.g. serovar, biotype, ecotype, variety, cultivar"
+substructure_type,The substructure or under building is that largely hidden section of the building which is built off the foundations to the ground floor level,substructure type,
+sulfate,Concentration of sulfate in the sample,sulfate,
+sulfate_fw,Original sulfate concentration in the hydrocarbon resource,sulfate in formation water,
+sulfide,Concentration of sulfide in the sample,sulfide,
+surf_air_cont,Contaminant identified on surface,surface-air contaminant,
+surf_humidity,Surfaces: water activity as a function of air and material moisture,surface humidity,
+surf_material,Surface materials at the point of sampling,surface material,
+surf_moisture,Water held on a surface,surface moisture,
+surf_moisture_ph,ph measurement of surface,surface moisture pH,
+surf_temp,Temperature of the surface at the time of sampling,surface temperature,
+suspend_part_matter,Concentration of suspended particulate matter,suspended particulate matter,
+suspend_solids,"Concentration of substances including a wide variety of material, such as silt, decaying plant and animal matter; can include multiple substances",suspended solids,suspended solid name;measurement value
+sym_life_cycle_type,"Type of life cycle of the symbiotic host species (the thing being sampled). Simple life cycles occur within a single host, complex ones within multiple different hosts over the course of their normal life cycle",symbiotic host organism life cycle type,type of life cycle of the symbiotic organism (host of the samples)
+symbiont_host_role,Role of the host in the life cycle of the symbiotic organism,host of the symbiont role,
+tan,Total Acid Number  (TAN) is a measurement of acidity that is determined by the amount of  potassium hydroxide  in milligrams that is needed to neutralize the acids in one gram of oil.  It is an important quality measurement of  crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number),total acid number,
+target_gene,Targeted gene or locus name for marker gene studies,target gene,
+target_subfragment,Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on 16S rRNA,target subfragment,
+tax_class,"Method used for taxonomic classification, along with reference database used, classification rank, and thresholds used to classify new genomes",taxonomic classification,
+tax_ident,The phylogenetic marker(s) used to assign an organism name to the SAG or MAG,taxonomic identity marker,
+temp,Temperature of the sample at the time of sampling,temperature,
+temp_out,The recorded temperature value at sampling time outside,temperature outside house,
+tertiary_treatment,The process providing a final treatment stage to raise the effluent quality before it is discharged to the receiving environment,tertiary treatment,tertiary treatment type
+tidal_stage,Stage of tide,tidal stage,
+tillage,Note method(s) used for tilling,history/tillage,
+time_last_toothbrush,Specification of the time since last toothbrushing,time since last toothbrushing,
+time_since_last_wash,Specification of the time since last wash,time since last wash,
+timepoint,Time point at which a sample or observation is made or taken from a biomaterial as measured from some reference point. Indicate the timepoint written in ISO 8601 format,timepoint,
+tiss_cult_growth_med,Description of plant tissue culture growth media used,tissue culture growth media,
+toluene,Concentration of toluene in the sample,toluene,
+tot_carb,Total carbon content,total carbon,
+tot_depth_water_col,Measurement of total depth of water column,total depth of water column,
+tot_diss_nitro,"Total dissolved nitrogen concentration, reported as nitrogen, measured by: total dissolved nitrogen = NH4 + NO3NO2 + dissolved organic nitrogen",total dissolved nitrogen,
+tot_inorg_nitro,Total inorganic nitrogen content,total inorganic nitrogen,
+tot_iron,Concentration of total iron in the sample,total iron,
+tot_nitro,"Total nitrogen concentration of water samples, calculated by: total nitrogen = total dissolved nitrogen + particulate nitrogen. Can also be measured without filtering, reported as nitrogen",total nitrogen concentration,
+tot_nitro_cont_meth,Reference or method used in determining the total nitrogen,total nitrogen content method,
+tot_nitro_content,Total nitrogen content of the sample,total nitrogen content,
+tot_org_c_meth,Reference or method used in determining total organic carbon,total organic carbon method,
+tot_org_carb,Total organic carbon content,total organic carbon,
+tot_part_carb,Total particulate carbon content,total particulate carbon,
+tot_phosp,"Total phosphorus concentration in the sample, calculated by: total phosphorus = total dissolved phosphorus + particulate phosphorus",total phosphorus,
+tot_phosphate,Total amount or concentration of phosphate,total phosphate,
+tot_sulfur,Concentration of total sulfur in the sample,total sulfur,
+train_line,The subway line name,train line,
+train_stat_loc,The train station collection location,train station collection location,
+train_stop_loc,The train stop collection location,train stop collection location,
+travel_out_six_month,Specification of the countries travelled in the last six months; can include multiple travels,travel outside the country in last six months,country name
+trna_ext_software,Tools used for tRNA identification,tRNA extraction software,
+trnas,The total number of tRNAs identified from the SAG or MAG,number of standard tRNAs extracted,value from 0-21
+trophic_level,Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph),trophic level,
+turbidity,Measure of the amount of cloudiness or haziness in water caused by individual particles,turbidity,
+tvdss_of_hcr_press,True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original pressure was measured (e.g. 1578 m),depth (TVDSS) of hydrocarbon resource pressure,
+tvdss_of_hcr_temp,True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original temperature was measured (e.g. 1345 m),depth (TVDSS) of hydrocarbon resource temperature,
+twin_sibling,Specification of twin sibling presence,twin sibling presence,
+typ_occup_density,Customary or normal density of occupants,typical occupant density,
+type_of_symbiosis,Type of biological interaction established between the symbiotic host organism being sampled and its respective host,type of symbiosis,
+urine_collect_meth,Specification of urine collection method,urine/collection method,
+urobiom_sex,Physical sex of the host,host sex,sex of the symbiotic organism (host of the samples); enumeration
+urogenit_disord,"History of urogenital disorders, can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, reproductive system disease (https://disease-ontology.org/?id=DOID:15) or urinary system disease (https://disease-ontology.org/?id=DOID:18)",urogenital disorder,
+urogenit_tract_disor,"History of urogenital tract disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, urinary system disease (https://disease-ontology.org/?id=DOID:18)",urine/urogenital tract disorder,
+ventilation_rate,Ventilation rate of the system in the sampled premises,ventilation rate,
+ventilation_type,Ventilation system used in the sampled premises,ventilation type,ventilation type name
+vfa,Concentration of Volatile Fatty Acids in the sample,volatile fatty acids,
+vfa_fw,Original volatile fatty acid concentration in the hydrocarbon resource,vfa in formation water,
+vir_ident_software,"Tool(s) used for the identification of UViG as a viral genome, software or protocol name including version number, parameters, and cutoffs used",viral identification software,"software name, version and relevant parameters"
+virus_enrich_appr,"List of approaches used to enrich the sample for viruses, if any",virus enrichment approach,
+vis_media,The building visual media,visual media,enumeration
+viscosity,A measure of oil's resistance  to gradual deformation by  shear stress  or  tensile stress (e.g. 3.5 cp; 100   C),viscosity,measurement value;measurement value
+volatile_org_comp,Concentration of carbon-based chemicals that easily evaporate at room temperature; can report multiple volatile organic compounds by entering numeric values preceded by name of compound,volatile organic compounds,volatile organic compound name;measurement value
+wall_area,The total area of the sampled room's walls,wall area,
+wall_const_type,The building class of the wall defined by the composition of the building elements and fire-resistance rating,wall construction type,
+wall_finish_mat,The material utilized to finish the outer most layer of the wall,wall finish material,
+wall_height,The average height of the walls in the sampled room,wall height,
+wall_loc,The relative location of the wall within the room,wall location,
+wall_surf_treatment,The surface treatment of interior wall,wall surface treatment,
+wall_texture,"The feel, appearance, or consistency of a wall surface",wall texture,
+wall_thermal_mass,The ability of the wall to provide inertia against temperature fluctuations. Generally this means concrete or concrete block that is either exposed or covered only with paint,wall thermal mass,
+wall_water_mold,Signs of the presence of mold or mildew on a wall,wall signs of water/mold,
+wastewater_type,"The origin of wastewater such as human waste, rainfall, storm drains, etc",wastewater type,wastewater type name
+water_cont_soil_meth,Reference or method used in determining the water content of soil,water content method,
+water_content,Water content measurement,water content,
+water_current,Measurement of magnitude and direction of flow within a fluid,water current,
+water_cut,Current amount of water (%) in a produced fluid stream; or the average of the combined streams,water cut,
+water_feat_size,The size of the water feature,water feature size,
+water_feat_type,The type of water feature present within the building being sampled,water feature type,
+water_frequency,Number of water delivery events within a given period of time,water delivery frequency,rate
+water_pH,,water pH,
+water_prod_rate,Water production rates per well (e.g. 987 m3 / day),water production rate,
+water_source_adjac,Description of the environmental features that are adjacent to the farm water source. This field accepts terms under ecosystem (http://purl.obolibrary.org/obo/ENVO_01001110) and human construction (http://purl.obolibrary.org/obo/ENVO_00000070). Multiple terms can be separated by pipes,environmental feature adjacent water source,ENVO_01001110 or ENVO_00000070
+water_source_shared,Other users sharing access to the same water source. Multiple terms can be separated by one or more pipes,water source shared,enumeration
+water_temp_regm,"Information about treatment involving an exposure to water with varying degree of temperature, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",water temperature regimen,
+watering_regm,"Information about treatment involving an exposure to watering frequencies, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",watering regimen,
+weekday,The day of the week when sampling occurred,weekday,
+weight_loss_3_month,"Specification of weight loss in the last three months, if yes should be further specified to include amount of weight loss",weight loss in last three months,weight loss specification;measurement value
+wga_amp_appr,Method used to amplify genomic DNA in preparation for sequencing,WGA amplification approach,
+wga_amp_kit,Kit used to amplify genomic DNA in preparation for sequencing,WGA amplification kit,kit name
+win,A unique identifier of a well or wellbore. This is part of the Global Framework for Well Identification initiative which is compiled by the Professional Petroleum Data Management Association (PPDM) in an effort to improve well identification systems. (Supporting information: https://ppdm.org/ and http://dl.ppdm.org/dl/690),well identification number,
+wind_direction,Wind direction is the direction from which a wind originates,wind direction,
+wind_speed,speed of wind measured at the time of sampling,wind speed,
+window_cond,The physical condition of the window at the time of sampling,window condition,
+window_cover,The type of window covering,window covering,
+window_horiz_pos,The horizontal position of the window on the wall,window horizontal position,
+window_loc,The relative location of the window within the room,window location,
+window_mat,The type of material used to finish a window,window material,
+window_open_freq,The number of times windows are opened per week,window open frequency,
+window_size,The window's length and width,window area/size,measurement value
+window_status,Defines whether the windows were open or closed during environmental testing,window status,
+window_type,The type of windows,window type,
+window_vert_pos,The vertical position of the window on the wall,window vertical position,
+window_water_mold,Signs of the presence of mold or mildew on the window,window signs of water/mold,
+x16s_recover,Can a 16S gene be recovered from the submitted SAG or MAG?,16S recovered,
+x16s_recover_software,Tools used for 16S rRNA gene extraction,16S recovery software,
+xylene,Concentration of xylene in the sample,xylene,
