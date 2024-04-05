@@ -8,7 +8,7 @@ With the release of MIxS 6.0, management of MIxS switched to fulling using GitHu
 
 NOTE: Update this section after the release of MIxS 7.
 
-# GitHub Editin Policies
+# GitHub Editing Policies
 
 The GSC leverages GitHub tools to manage MIxS terms, checklists, extensions, and releases. GSC meeting notes, including CIG, TWG, and Board meetings, are NOT authoritative but exist to support development in this repository. GitHub issues, pull requests, and releases will contain the source of truth. Documentation will be generated from GitHub. Below are guidance and policies on how to contribute to MIxS. Specific details on how to use GitHub for contributions are available in the [editing workflows](workflow.md) document.
 
