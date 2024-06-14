@@ -3703,13 +3703,14 @@ slots:
     title: Hazard Analysis Critical Control Points (HACCP) guide food safety term
     examples:
     - value: tetrodotoxic poisoning [FOODON:03530249]
+    - value: tetrodotoxic poisoning[FOODON:03530249]; neurotoxic shellfish poisoning[FOODON:03530246]
     keywords:
     - food
     - term
     slot_uri: MIXS:0001215
     multivalued: true
     range: string
-    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+    pattern: ^.+\s*\[FOODON:\d+\](;\s*\[FOODON:\d+\])*$
     structured_pattern:
       syntax: ^{termLabel} \[{termID}\]$
       interpolated: true
