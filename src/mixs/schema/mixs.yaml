@@ -10001,11 +10001,11 @@ slots:
     annotations:
       Expected_value: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
           elongation:degrees_minutes;total cycles
-    description: Description of reaction conditions and components of PCR in the form
-      of 'initial denaturation:94degC_1.5min; annealing=...'
+    description: Description of reaction conditions and components of polymerase chain reaction performed during library preparation.
     title: pcr conditions
     examples:
     - value: initial denaturation:94_3;annealing:50_1;elongation:72_1.5;final elongation:72_10;35
+    - value: initial denaturation:94degC_1.5min
     in_subset:
     - sequencing
     keywords:
