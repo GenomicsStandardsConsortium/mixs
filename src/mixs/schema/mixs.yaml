@@ -3793,8 +3793,7 @@ slots:
     slot_uri: MIXS:0001009
     required: true
   additional_info:
-    description: Information that doesn't fit anywhere else. Can also be used to propose
-      new entries for fields with controlled vocabulary
+    description: Information that doesn't fit anywhere else. Can also be used to propose new entries for fields with controlled vocabulary
     title: additional info
     keywords:
     - information
@@ -3808,8 +3807,7 @@ slots:
     string_serialization: '{integer}{text}'
     slot_uri: MIXS:0000218
   adj_room:
-    description: List of rooms (room number, room name) immediately adjacent to the
-      sampling room
+    description: List of rooms (room number, room name) immediately adjacent to the sampling room
     title: adjacent rooms
     keywords:
     - adjacent
@@ -3824,10 +3822,7 @@ slots:
   adjacent_environment:
     annotations:
       Expected_value: ENVO_01001110 or ENVO_00000070
-    description: Description of the environmental system or features that are adjacent
-      to the sampling site. This field accepts terms under ecosystem (http://purl.obolibrary.org/obo/ENVO_01001110)
-      and human construction (http://purl.obolibrary.org/obo/ENVO_00000070). Multiple
-      terms can be separated by pipes
+    description: Description of the environmental system or features that are adjacent to the sampling site. This field accepts terms under ecosystem (http://purl.obolibrary.org/obo/ENVO_01001110) and human construction (http://purl.obolibrary.org/obo/ENVO_00000070). Multiple terms can be separated by pipes
     title: environment adjacent to site
     examples:
     - value: estuarine biome [ENVO:01000020]
