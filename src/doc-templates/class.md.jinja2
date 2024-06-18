@@ -8,10 +8,14 @@
     {%- set type = "Class" -%}
 {%- endif -%}
 
-{%- if element.title -%}
-    {%- set title = element.title ~ ' (' ~ gen.name(element) ~ ')' -%}
-{%- else -%}
-    {%- set title = gen.name(element) -%}
+{%- if element.title %}
+    {%- set title = element.title ~ ' (' ~ element.name ~ ')' -%}
+{%- else %}
+    {%- if gen.use_class_uris -%}
+        {%- set title = element.name -%}
+    {%- else -%}
+        {%- set title = gen.name(element) -%}
+    {%- endif -%}
 {%- endif -%}
 
 # {{ type }}: {{ title }}

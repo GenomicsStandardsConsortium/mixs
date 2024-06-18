@@ -1,0 +1,316 @@
+class	title	aliases	description	is_a	comments	use_cases
+>class 	title	aliases	description	is_a	comments	annotations
+>		"internal_separator: ""|"""			"internal_separator: ""|"""	inner_key: use_cases
+MigsBa	MIGS bacteria	migs_ba	Minimal Information about a Genome Sequence: cultured bacteria/archaea	Checklist		
+MigsEu	MIGS eukaryote	migs_eu	Minimal Information about a Genome Sequence: eukaryote	Checklist		
+MigsOrg	MIGS org	migs_org	Minimal Information about a Genome Sequence: organelle	Checklist		
+MigsPl	MIGS pl	migs_pl	Minimal Information about a Genome Sequence: plasmid	Checklist		
+MigsVi	MIGS virus	migs_vi	Minimal Information about a Genome Sequence: virus	Checklist		
+Mimag	MIMAG	mimag	Minimum Information About a Metagenome-Assembled Genome	Checklist		
+MimarksC	MIMARKS specimen	mimarks_c|MIMARKS-SU|MIMARKS-specimen	Minimal Information about a Marker Specimen: specimen	Checklist	for marker gene sequences from cultured or voucher-identifiable specimens	
+MimarksS	MIMARKS survey	mimarks_s|MIMARKS-SP|MIMARKS-survey	Minimal Information about a Marker Specimen: survey	Checklist	for marker gene sequences obtained directly from the environment	
+Mims	MIMS	mims	Metagenome or Environmental	Checklist		
+Misag	Minimum Information About a Single Amplified Genome	misag	Minimum Information About a Single Amplified Genome	Checklist		
+Miuvig	Minimum Information About an Uncultivated Virus Genome	miuvig	Minimum Information About an Uncultivated Virus Genome	Checklist		
+Agriculture	agriculture	MIxS-Ag (agriculture)	"A collection of terms appropriate when sequencing samples obtained in an agricultural environment.  Suitable to capture metadata appropriate to enhance crop productivity and agroecosystem health  with the aim to facilitate research of agricultural microbiomes and their relationships to plant productivity  and sustainable crop production from diverse crop management contexts.
+"	Extension		Agricultural Microbiomes Research Coordination Network, model cropping and plant systems focused on agricultural plant and soil microbe; microbiome studies in agricultural sites; long-term ecological research in croplands; eDNA in manure samples; describing agricultural microbiome studies
+Air	air	MIxS-air	"A collection of terms appropriate when collecting and sequencing samples obtained from a gaseous environment.
+"	Extension		bioaerosol samples, pathogen load in urban air, aerosols
+BuiltEnvironment	built environment	MIxS-BE (built environment)	"A collection of terms appropriate when collecting samples and sequencing samples obtained in the  built-up environment, which includes terms for surface material, humidity, temperature, moisture and  occupancy type along with specific metadata terms describing the indoor air, building and sample properties.
+"	Extension		microbiology studies of the built environment, NASA space station sampling, MetaSUB transit system sampling, home, hospitals, office buildings
+FoodAnimalAndAnimalFeed	food-animal and animal feed	MIxS-Food (animal and animal feed)	"A collection of terms appropriate when collecting samples and performing sequencing of samples  obtained from farm animals and their feed.
+"	Extension	This extension is intended to work alongside the other food extensions (farm environment, food production facility, and human foods) for capturing contextual data across the food supply-chain environment.	Microbiome of farm animals, their feed, and pet food.
+FoodFarmEnvironment	food-farm environment	MIxS-Food (farm environment)	"A collection of terms appropriate when collecting samples and performing sequencing of samples  obtained from the farm environment, including soil, manure, and food harvesting equipment.
+"	Extension	This extension is intended to work alongside the other food extensions (animals and animal feed, food production facility, and human foods) for capturing contextual data across the food supply-chain environment.	Microbiome of farm and field crops as well as environmental samples including irrigation, soil amendments, and farm equipment.
+FoodFoodProductionFacility	food-food production facility	MIxS-Food(food production facility)	"A collection of terms appropriate when collecting samples and performing sequencing of samples  obtained from food production facilities.
+"	Extension	This extension is intended to work alongside the other food extensions (animals and animal feed, farm environment, and human foods) for capturing contextual data across the food supply-chain environment.	Microbiome of food production facilities/factories
+FoodHumanFoods	food-human foods	MIxS-Food (human foods)	"A collection of terms appropriate when collecting samples and performing sequencing of samples  obtained from human food products.
+"	Extension	This extension is intended to work alongside the other food extensions (animals and animal feed, farm environment, and food production facilities) for capturing contextual data across the food supply-chain environment.	Microbiome of foods intended for human consumption.
+HostAssociated	host-associated	MIxS-host-associated	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from a non-human host, to examine the host-associated microbiome or genome.
+"	Extension	This is a very broad package, intended to capture many kinds of sequences derived from the bodies of or derived from an organism. Where possible, please use a more specific package. For example, consider using food-animal and animal feed extension for sampling of farm animals reared for consumption. For human stool microbiomes, consider MIxS-human-gut. Incidental associations of environmental material with an organism may also be better served by other packages. For example, nucleic acids derived from soil that was sampled from the hoof of a cow may be better described by terms from the soil extension; however, soil embedded in a wound on a cow’s leg would be best described by terms in this extension	elephant fecal matter or cat oral cavity
+HumanAssociated	human-associated	MIxS-human-associated	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from a person to examine their human-associated microbiome or genome,  that does not have a specific extension (e.g., skin, gut, vaginal).
+"	Extension	For stool samples use MIxS-human-gut extension.	blood samples or biopsy samples.
+HumanGut	human-gut	MIxS-human-gut	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from a person to examine their gut-associated microbiome.
+"	Extension		human stool or fecal samples, or samples collected directly from the gut.
+HumanOral	human-oral	MIxS-human-oral	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from a person to examine their oral-associated microbiome.
+"	Extension		mouth swab sampling, dental microbiome samples, microbiome of oral swabs, nasal, mouth, throat, teeth, tongue microbiome studies
+HumanSkin	human-skin	MIxS-human-skin	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from a person to examine their skin-associated microbiome.
+"	Extension		swab samples taken on a person’s skin surface.
+HumanVaginal	human-vaginal	MIxS-human-vaginal	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from a person to examine their vaginal-associated microbiome.
+"	Extension		vaginal swabbing
+HydrocarbonResourcesCores	hydrocarbon resources-cores	MIxS-HCR (hydrocarbon resources-cores)	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from environments pertaining to hydrocarbon resources, specifically core samples.
+"	Extension		The microbial characterization of hydrocarbon occurrences, defined as the natural and artificial environmental features that are rich in hydrocarbons, from hydrocarbon rich formations, such as reservoir cores.
+HydrocarbonResourcesFluidsSwabs	hydrocarbon resources-fluids/swabs	MIxS-HCR (hydrocarbon resources-fluids/swabs)	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from environments pertaining to hydrocarbon resources, specifically run-off liquids samples and swabs.
+"	Extension		The microbial characterization of hydrocarbon occurrences,  defined as the natural and artificial environmental features that are rich in hydrocarbons, from hydrocarbon resource fluids.
+MicrobialMatBiofilm	microbial mat/biofilm	MIxS-microbial mat/biofilm	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from biofilm environments including microbial mats.
+"	Extension		samples from microbial mats at cold seeps
+MiscellaneousNaturalOrArtificialEnvironment	miscellaneous natural or artificial environment	MIxS-miscellaneous natural or artificial environment	"A collection of generic terms appropriate when collecting and sequencing samples  obtained from environments, where there is no specific extension already available.
+"	Extension		
+PlantAssociated	plant-associated	MIxS-plant-associated	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from a plant to examine it’s plant-associated microbiome.
+"	Extension		plant surface swabs, root soil or rhizosphere, cultivated plants, plant phenotyping
+Sediment	sediment	MIxS-sediment	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from the sedimentary area of aquatic environments.
+"	Extension	Sedimentary layers in terrestrial environments will probably be better served by the soil extension.	river bed or sea floor.
+Soil	soil	MIxS-soil	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from the uppermost layer of Earth's crust, contributed by the Terragenome Consortium.
+"	Extension		soil collection, island microbiome sampling, farm land or forest floor.
+SymbiontAssociated	symbiont-associated	MIxS-SA (symbiont-associated)	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from an organism that lives in close association with any other organism(s).
+"	Extension		the microbiome sequence of a flea sampled from a farm animal
+WastewaterSludge	wastewater/sludge	MIxS-wastewater/sludge	"A collection of terms appropriate when collecting samples and sequencing samples  obtained from any solid, semisolid or liquid waste.
+"	Extension		sewerage or industrial wastewater
+Water	water	MIxS-water	"A collection of terms appropriate when collecting samples and sequencing water samples  obtained from any aquatic environment.
+"	Extension		sea or river water, global ocean sampling day
+Checklist			A collection of metadata terms (slots) to minimally describe the sampling and sequencing method of a specimen used to generate a nucleotide sequence.			
+Extension		EnvironmentalPackage	A collection of recommended metadata terms (slots) developed by community experts, describing the specific context under which a sample was collected.			
+MixsCompliantData	MIxS compliant data		A collection of Data that comply with some combination of a MIxS checklist and environmental extension			
+MigsBaAgriculture	MigsBa combined with Agriculture		MIxS Data that comply with the MigsBa checklist and the Agriculture Extension	Agriculture		
+MigsBaAir	MigsBa combined with Air		MIxS Data that comply with the MigsBa checklist and the Air Extension	Air		
+MigsBaBuiltEnvironment	MigsBa combined with BuiltEnvironment		MIxS Data that comply with the MigsBa checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MigsBaFoodAnimalAndAnimalFeed	MigsBa combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the MigsBa checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MigsBaFoodFarmEnvironment	MigsBa combined with FoodFarmEnvironment		MIxS Data that comply with the MigsBa checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MigsBaFoodFoodProductionFacility	MigsBa combined with FoodFoodProductionFacility		MIxS Data that comply with the MigsBa checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MigsBaFoodHumanFoods	MigsBa combined with FoodHumanFoods		MIxS Data that comply with the MigsBa checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MigsBaHostAssociated	MigsBa combined with HostAssociated		MIxS Data that comply with the MigsBa checklist and the HostAssociated Extension	HostAssociated		
+MigsBaHumanAssociated	MigsBa combined with HumanAssociated		MIxS Data that comply with the MigsBa checklist and the HumanAssociated Extension	HumanAssociated		
+MigsBaHumanGut	MigsBa combined with HumanGut		MIxS Data that comply with the MigsBa checklist and the HumanGut Extension	HumanGut		
+MigsBaHumanOral	MigsBa combined with HumanOral		MIxS Data that comply with the MigsBa checklist and the HumanOral Extension	HumanOral		
+MigsBaHumanSkin	MigsBa combined with HumanSkin		MIxS Data that comply with the MigsBa checklist and the HumanSkin Extension	HumanSkin		
+MigsBaHumanVaginal	MigsBa combined with HumanVaginal		MIxS Data that comply with the MigsBa checklist and the HumanVaginal Extension	HumanVaginal		
+MigsBaHydrocarbonResourcesCores	MigsBa combined with HydrocarbonResourcesCores		MIxS Data that comply with the MigsBa checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MigsBaHydrocarbonResourcesFluidsSwabs	MigsBa combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the MigsBa checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MigsBaMicrobialMatBiofilm	MigsBa combined with MicrobialMatBiofilm		MIxS Data that comply with the MigsBa checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MigsBaMiscellaneousNaturalOrArtificialEnvironment	MigsBa combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the MigsBa checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MigsBaPlantAssociated	MigsBa combined with PlantAssociated		MIxS Data that comply with the MigsBa checklist and the PlantAssociated Extension	PlantAssociated		
+MigsBaSediment	MigsBa combined with Sediment		MIxS Data that comply with the MigsBa checklist and the Sediment Extension	Sediment		
+MigsBaSoil	MigsBa combined with Soil		MIxS Data that comply with the MigsBa checklist and the Soil Extension	Soil		
+MigsBaSymbiontAssociated	MigsBa combined with SymbiontAssociated		MIxS Data that comply with the MigsBa checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MigsBaWastewaterSludge	MigsBa combined with WastewaterSludge		MIxS Data that comply with the MigsBa checklist and the WastewaterSludge Extension	WastewaterSludge		
+MigsBaWater	MigsBa combined with Water		MIxS Data that comply with the MigsBa checklist and the Water Extension	Water		
+MigsEuAgriculture	MigsEu combined with Agriculture		MIxS Data that comply with the MigsEu checklist and the Agriculture Extension	Agriculture		
+MigsEuAir	MigsEu combined with Air		MIxS Data that comply with the MigsEu checklist and the Air Extension	Air		
+MigsEuBuiltEnvironment	MigsEu combined with BuiltEnvironment		MIxS Data that comply with the MigsEu checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MigsEuFoodAnimalAndAnimalFeed	MigsEu combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the MigsEu checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MigsEuFoodFarmEnvironment	MigsEu combined with FoodFarmEnvironment		MIxS Data that comply with the MigsEu checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MigsEuFoodFoodProductionFacility	MigsEu combined with FoodFoodProductionFacility		MIxS Data that comply with the MigsEu checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MigsEuFoodHumanFoods	MigsEu combined with FoodHumanFoods		MIxS Data that comply with the MigsEu checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MigsEuHostAssociated	MigsEu combined with HostAssociated		MIxS Data that comply with the MigsEu checklist and the HostAssociated Extension	HostAssociated		
+MigsEuHumanAssociated	MigsEu combined with HumanAssociated		MIxS Data that comply with the MigsEu checklist and the HumanAssociated Extension	HumanAssociated		
+MigsEuHumanGut	MigsEu combined with HumanGut		MIxS Data that comply with the MigsEu checklist and the HumanGut Extension	HumanGut		
+MigsEuHumanOral	MigsEu combined with HumanOral		MIxS Data that comply with the MigsEu checklist and the HumanOral Extension	HumanOral		
+MigsEuHumanSkin	MigsEu combined with HumanSkin		MIxS Data that comply with the MigsEu checklist and the HumanSkin Extension	HumanSkin		
+MigsEuHumanVaginal	MigsEu combined with HumanVaginal		MIxS Data that comply with the MigsEu checklist and the HumanVaginal Extension	HumanVaginal		
+MigsEuHydrocarbonResourcesCores	MigsEu combined with HydrocarbonResourcesCores		MIxS Data that comply with the MigsEu checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MigsEuHydrocarbonResourcesFluidsSwabs	MigsEu combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the MigsEu checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MigsEuMicrobialMatBiofilm	MigsEu combined with MicrobialMatBiofilm		MIxS Data that comply with the MigsEu checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MigsEuMiscellaneousNaturalOrArtificialEnvironment	MigsEu combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the MigsEu checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MigsEuPlantAssociated	MigsEu combined with PlantAssociated		MIxS Data that comply with the MigsEu checklist and the PlantAssociated Extension	PlantAssociated		
+MigsEuSediment	MigsEu combined with Sediment		MIxS Data that comply with the MigsEu checklist and the Sediment Extension	Sediment		
+MigsEuSoil	MigsEu combined with Soil		MIxS Data that comply with the MigsEu checklist and the Soil Extension	Soil		
+MigsEuSymbiontAssociated	MigsEu combined with SymbiontAssociated		MIxS Data that comply with the MigsEu checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MigsEuWastewaterSludge	MigsEu combined with WastewaterSludge		MIxS Data that comply with the MigsEu checklist and the WastewaterSludge Extension	WastewaterSludge		
+MigsEuWater	MigsEu combined with Water		MIxS Data that comply with the MigsEu checklist and the Water Extension	Water		
+MigsOrgAgriculture	MigsOrg combined with Agriculture		MIxS Data that comply with the MigsOrg checklist and the Agriculture Extension	Agriculture		
+MigsOrgAir	MigsOrg combined with Air		MIxS Data that comply with the MigsOrg checklist and the Air Extension	Air		
+MigsOrgBuiltEnvironment	MigsOrg combined with BuiltEnvironment		MIxS Data that comply with the MigsOrg checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MigsOrgFoodAnimalAndAnimalFeed	MigsOrg combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the MigsOrg checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MigsOrgFoodFarmEnvironment	MigsOrg combined with FoodFarmEnvironment		MIxS Data that comply with the MigsOrg checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MigsOrgFoodFoodProductionFacility	MigsOrg combined with FoodFoodProductionFacility		MIxS Data that comply with the MigsOrg checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MigsOrgFoodHumanFoods	MigsOrg combined with FoodHumanFoods		MIxS Data that comply with the MigsOrg checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MigsOrgHostAssociated	MigsOrg combined with HostAssociated		MIxS Data that comply with the MigsOrg checklist and the HostAssociated Extension	HostAssociated		
+MigsOrgHumanAssociated	MigsOrg combined with HumanAssociated		MIxS Data that comply with the MigsOrg checklist and the HumanAssociated Extension	HumanAssociated		
+MigsOrgHumanGut	MigsOrg combined with HumanGut		MIxS Data that comply with the MigsOrg checklist and the HumanGut Extension	HumanGut		
+MigsOrgHumanOral	MigsOrg combined with HumanOral		MIxS Data that comply with the MigsOrg checklist and the HumanOral Extension	HumanOral		
+MigsOrgHumanSkin	MigsOrg combined with HumanSkin		MIxS Data that comply with the MigsOrg checklist and the HumanSkin Extension	HumanSkin		
+MigsOrgHumanVaginal	MigsOrg combined with HumanVaginal		MIxS Data that comply with the MigsOrg checklist and the HumanVaginal Extension	HumanVaginal		
+MigsOrgHydrocarbonResourcesCores	MigsOrg combined with HydrocarbonResourcesCores		MIxS Data that comply with the MigsOrg checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MigsOrgHydrocarbonResourcesFluidsSwabs	MigsOrg combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the MigsOrg checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MigsOrgMicrobialMatBiofilm	MigsOrg combined with MicrobialMatBiofilm		MIxS Data that comply with the MigsOrg checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MigsOrgMiscellaneousNaturalOrArtificialEnvironment	MigsOrg combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the MigsOrg checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MigsOrgPlantAssociated	MigsOrg combined with PlantAssociated		MIxS Data that comply with the MigsOrg checklist and the PlantAssociated Extension	PlantAssociated		
+MigsOrgSediment	MigsOrg combined with Sediment		MIxS Data that comply with the MigsOrg checklist and the Sediment Extension	Sediment		
+MigsOrgSoil	MigsOrg combined with Soil		MIxS Data that comply with the MigsOrg checklist and the Soil Extension	Soil		
+MigsOrgSymbiontAssociated	MigsOrg combined with SymbiontAssociated		MIxS Data that comply with the MigsOrg checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MigsOrgWastewaterSludge	MigsOrg combined with WastewaterSludge		MIxS Data that comply with the MigsOrg checklist and the WastewaterSludge Extension	WastewaterSludge		
+MigsOrgWater	MigsOrg combined with Water		MIxS Data that comply with the MigsOrg checklist and the Water Extension	Water		
+MigsPlAgriculture	MigsPl combined with Agriculture		MIxS Data that comply with the MigsPl checklist and the Agriculture Extension	Agriculture		
+MigsPlAir	MigsPl combined with Air		MIxS Data that comply with the MigsPl checklist and the Air Extension	Air		
+MigsPlBuiltEnvironment	MigsPl combined with BuiltEnvironment		MIxS Data that comply with the MigsPl checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MigsPlFoodAnimalAndAnimalFeed	MigsPl combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the MigsPl checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MigsPlFoodFarmEnvironment	MigsPl combined with FoodFarmEnvironment		MIxS Data that comply with the MigsPl checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MigsPlFoodFoodProductionFacility	MigsPl combined with FoodFoodProductionFacility		MIxS Data that comply with the MigsPl checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MigsPlFoodHumanFoods	MigsPl combined with FoodHumanFoods		MIxS Data that comply with the MigsPl checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MigsPlHostAssociated	MigsPl combined with HostAssociated		MIxS Data that comply with the MigsPl checklist and the HostAssociated Extension	HostAssociated		
+MigsPlHumanAssociated	MigsPl combined with HumanAssociated		MIxS Data that comply with the MigsPl checklist and the HumanAssociated Extension	HumanAssociated		
+MigsPlHumanGut	MigsPl combined with HumanGut		MIxS Data that comply with the MigsPl checklist and the HumanGut Extension	HumanGut		
+MigsPlHumanOral	MigsPl combined with HumanOral		MIxS Data that comply with the MigsPl checklist and the HumanOral Extension	HumanOral		
+MigsPlHumanSkin	MigsPl combined with HumanSkin		MIxS Data that comply with the MigsPl checklist and the HumanSkin Extension	HumanSkin		
+MigsPlHumanVaginal	MigsPl combined with HumanVaginal		MIxS Data that comply with the MigsPl checklist and the HumanVaginal Extension	HumanVaginal		
+MigsPlHydrocarbonResourcesCores	MigsPl combined with HydrocarbonResourcesCores		MIxS Data that comply with the MigsPl checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MigsPlHydrocarbonResourcesFluidsSwabs	MigsPl combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the MigsPl checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MigsPlMicrobialMatBiofilm	MigsPl combined with MicrobialMatBiofilm		MIxS Data that comply with the MigsPl checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MigsPlMiscellaneousNaturalOrArtificialEnvironment	MigsPl combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the MigsPl checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MigsPlPlantAssociated	MigsPl combined with PlantAssociated		MIxS Data that comply with the MigsPl checklist and the PlantAssociated Extension	PlantAssociated		
+MigsPlSediment	MigsPl combined with Sediment		MIxS Data that comply with the MigsPl checklist and the Sediment Extension	Sediment		
+MigsPlSoil	MigsPl combined with Soil		MIxS Data that comply with the MigsPl checklist and the Soil Extension	Soil		
+MigsPlSymbiontAssociated	MigsPl combined with SymbiontAssociated		MIxS Data that comply with the MigsPl checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MigsPlWastewaterSludge	MigsPl combined with WastewaterSludge		MIxS Data that comply with the MigsPl checklist and the WastewaterSludge Extension	WastewaterSludge		
+MigsPlWater	MigsPl combined with Water		MIxS Data that comply with the MigsPl checklist and the Water Extension	Water		
+MigsViAgriculture	MigsVi combined with Agriculture		MIxS Data that comply with the MigsVi checklist and the Agriculture Extension	Agriculture		
+MigsViAir	MigsVi combined with Air		MIxS Data that comply with the MigsVi checklist and the Air Extension	Air		
+MigsViBuiltEnvironment	MigsVi combined with BuiltEnvironment		MIxS Data that comply with the MigsVi checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MigsViFoodAnimalAndAnimalFeed	MigsVi combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the MigsVi checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MigsViFoodFarmEnvironment	MigsVi combined with FoodFarmEnvironment		MIxS Data that comply with the MigsVi checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MigsViFoodFoodProductionFacility	MigsVi combined with FoodFoodProductionFacility		MIxS Data that comply with the MigsVi checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MigsViFoodHumanFoods	MigsVi combined with FoodHumanFoods		MIxS Data that comply with the MigsVi checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MigsViHostAssociated	MigsVi combined with HostAssociated		MIxS Data that comply with the MigsVi checklist and the HostAssociated Extension	HostAssociated		
+MigsViHumanAssociated	MigsVi combined with HumanAssociated		MIxS Data that comply with the MigsVi checklist and the HumanAssociated Extension	HumanAssociated		
+MigsViHumanGut	MigsVi combined with HumanGut		MIxS Data that comply with the MigsVi checklist and the HumanGut Extension	HumanGut		
+MigsViHumanOral	MigsVi combined with HumanOral		MIxS Data that comply with the MigsVi checklist and the HumanOral Extension	HumanOral		
+MigsViHumanSkin	MigsVi combined with HumanSkin		MIxS Data that comply with the MigsVi checklist and the HumanSkin Extension	HumanSkin		
+MigsViHumanVaginal	MigsVi combined with HumanVaginal		MIxS Data that comply with the MigsVi checklist and the HumanVaginal Extension	HumanVaginal		
+MigsViHydrocarbonResourcesCores	MigsVi combined with HydrocarbonResourcesCores		MIxS Data that comply with the MigsVi checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MigsViHydrocarbonResourcesFluidsSwabs	MigsVi combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the MigsVi checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MigsViMicrobialMatBiofilm	MigsVi combined with MicrobialMatBiofilm		MIxS Data that comply with the MigsVi checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MigsViMiscellaneousNaturalOrArtificialEnvironment	MigsVi combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the MigsVi checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MigsViPlantAssociated	MigsVi combined with PlantAssociated		MIxS Data that comply with the MigsVi checklist and the PlantAssociated Extension	PlantAssociated		
+MigsViSediment	MigsVi combined with Sediment		MIxS Data that comply with the MigsVi checklist and the Sediment Extension	Sediment		
+MigsViSoil	MigsVi combined with Soil		MIxS Data that comply with the MigsVi checklist and the Soil Extension	Soil		
+MigsViSymbiontAssociated	MigsVi combined with SymbiontAssociated		MIxS Data that comply with the MigsVi checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MigsViWastewaterSludge	MigsVi combined with WastewaterSludge		MIxS Data that comply with the MigsVi checklist and the WastewaterSludge Extension	WastewaterSludge		
+MigsViWater	MigsVi combined with Water		MIxS Data that comply with the MigsVi checklist and the Water Extension	Water		
+MimagAgriculture	Mimag combined with Agriculture		MIxS Data that comply with the Mimag checklist and the Agriculture Extension	Agriculture		
+MimagAir	Mimag combined with Air		MIxS Data that comply with the Mimag checklist and the Air Extension	Air		
+MimagBuiltEnvironment	Mimag combined with BuiltEnvironment		MIxS Data that comply with the Mimag checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MimagFoodAnimalAndAnimalFeed	Mimag combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the Mimag checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MimagFoodFarmEnvironment	Mimag combined with FoodFarmEnvironment		MIxS Data that comply with the Mimag checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MimagFoodFoodProductionFacility	Mimag combined with FoodFoodProductionFacility		MIxS Data that comply with the Mimag checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MimagFoodHumanFoods	Mimag combined with FoodHumanFoods		MIxS Data that comply with the Mimag checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MimagHostAssociated	Mimag combined with HostAssociated		MIxS Data that comply with the Mimag checklist and the HostAssociated Extension	HostAssociated		
+MimagHumanAssociated	Mimag combined with HumanAssociated		MIxS Data that comply with the Mimag checklist and the HumanAssociated Extension	HumanAssociated		
+MimagHumanGut	Mimag combined with HumanGut		MIxS Data that comply with the Mimag checklist and the HumanGut Extension	HumanGut		
+MimagHumanOral	Mimag combined with HumanOral		MIxS Data that comply with the Mimag checklist and the HumanOral Extension	HumanOral		
+MimagHumanSkin	Mimag combined with HumanSkin		MIxS Data that comply with the Mimag checklist and the HumanSkin Extension	HumanSkin		
+MimagHumanVaginal	Mimag combined with HumanVaginal		MIxS Data that comply with the Mimag checklist and the HumanVaginal Extension	HumanVaginal		
+MimagHydrocarbonResourcesCores	Mimag combined with HydrocarbonResourcesCores		MIxS Data that comply with the Mimag checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MimagHydrocarbonResourcesFluidsSwabs	Mimag combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the Mimag checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MimagMicrobialMatBiofilm	Mimag combined with MicrobialMatBiofilm		MIxS Data that comply with the Mimag checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MimagMiscellaneousNaturalOrArtificialEnvironment	Mimag combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the Mimag checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MimagPlantAssociated	Mimag combined with PlantAssociated		MIxS Data that comply with the Mimag checklist and the PlantAssociated Extension	PlantAssociated		
+MimagSediment	Mimag combined with Sediment		MIxS Data that comply with the Mimag checklist and the Sediment Extension	Sediment		
+MimagSoil	Mimag combined with Soil		MIxS Data that comply with the Mimag checklist and the Soil Extension	Soil		
+MimagSymbiontAssociated	Mimag combined with SymbiontAssociated		MIxS Data that comply with the Mimag checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MimagWastewaterSludge	Mimag combined with WastewaterSludge		MIxS Data that comply with the Mimag checklist and the WastewaterSludge Extension	WastewaterSludge		
+MimagWater	Mimag combined with Water		MIxS Data that comply with the Mimag checklist and the Water Extension	Water		
+MimarksCAgriculture	MimarksC combined with Agriculture		MIxS Data that comply with the MimarksC checklist and the Agriculture Extension	Agriculture		
+MimarksCAir	MimarksC combined with Air		MIxS Data that comply with the MimarksC checklist and the Air Extension	Air		
+MimarksCBuiltEnvironment	MimarksC combined with BuiltEnvironment		MIxS Data that comply with the MimarksC checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MimarksCFoodAnimalAndAnimalFeed	MimarksC combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the MimarksC checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MimarksCFoodFarmEnvironment	MimarksC combined with FoodFarmEnvironment		MIxS Data that comply with the MimarksC checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MimarksCFoodFoodProductionFacility	MimarksC combined with FoodFoodProductionFacility		MIxS Data that comply with the MimarksC checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MimarksCFoodHumanFoods	MimarksC combined with FoodHumanFoods		MIxS Data that comply with the MimarksC checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MimarksCHostAssociated	MimarksC combined with HostAssociated		MIxS Data that comply with the MimarksC checklist and the HostAssociated Extension	HostAssociated		
+MimarksCHumanAssociated	MimarksC combined with HumanAssociated		MIxS Data that comply with the MimarksC checklist and the HumanAssociated Extension	HumanAssociated		
+MimarksCHumanGut	MimarksC combined with HumanGut		MIxS Data that comply with the MimarksC checklist and the HumanGut Extension	HumanGut		
+MimarksCHumanOral	MimarksC combined with HumanOral		MIxS Data that comply with the MimarksC checklist and the HumanOral Extension	HumanOral		
+MimarksCHumanSkin	MimarksC combined with HumanSkin		MIxS Data that comply with the MimarksC checklist and the HumanSkin Extension	HumanSkin		
+MimarksCHumanVaginal	MimarksC combined with HumanVaginal		MIxS Data that comply with the MimarksC checklist and the HumanVaginal Extension	HumanVaginal		
+MimarksCHydrocarbonResourcesCores	MimarksC combined with HydrocarbonResourcesCores		MIxS Data that comply with the MimarksC checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MimarksCHydrocarbonResourcesFluidsSwabs	MimarksC combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the MimarksC checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MimarksCMicrobialMatBiofilm	MimarksC combined with MicrobialMatBiofilm		MIxS Data that comply with the MimarksC checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MimarksCMiscellaneousNaturalOrArtificialEnvironment	MimarksC combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the MimarksC checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MimarksCPlantAssociated	MimarksC combined with PlantAssociated		MIxS Data that comply with the MimarksC checklist and the PlantAssociated Extension	PlantAssociated		
+MimarksCSediment	MimarksC combined with Sediment		MIxS Data that comply with the MimarksC checklist and the Sediment Extension	Sediment		
+MimarksCSoil	MimarksC combined with Soil		MIxS Data that comply with the MimarksC checklist and the Soil Extension	Soil		
+MimarksCSymbiontAssociated	MimarksC combined with SymbiontAssociated		MIxS Data that comply with the MimarksC checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MimarksCWastewaterSludge	MimarksC combined with WastewaterSludge		MIxS Data that comply with the MimarksC checklist and the WastewaterSludge Extension	WastewaterSludge		
+MimarksCWater	MimarksC combined with Water		MIxS Data that comply with the MimarksC checklist and the Water Extension	Water		
+MimarksSAgriculture	MimarksS combined with Agriculture		MIxS Data that comply with the MimarksS checklist and the Agriculture Extension	Agriculture		
+MimarksSAir	MimarksS combined with Air		MIxS Data that comply with the MimarksS checklist and the Air Extension	Air		
+MimarksSBuiltEnvironment	MimarksS combined with BuiltEnvironment		MIxS Data that comply with the MimarksS checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MimarksSFoodAnimalAndAnimalFeed	MimarksS combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the MimarksS checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MimarksSFoodFarmEnvironment	MimarksS combined with FoodFarmEnvironment		MIxS Data that comply with the MimarksS checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MimarksSFoodFoodProductionFacility	MimarksS combined with FoodFoodProductionFacility		MIxS Data that comply with the MimarksS checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MimarksSFoodHumanFoods	MimarksS combined with FoodHumanFoods		MIxS Data that comply with the MimarksS checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MimarksSHostAssociated	MimarksS combined with HostAssociated		MIxS Data that comply with the MimarksS checklist and the HostAssociated Extension	HostAssociated		
+MimarksSHumanAssociated	MimarksS combined with HumanAssociated		MIxS Data that comply with the MimarksS checklist and the HumanAssociated Extension	HumanAssociated		
+MimarksSHumanGut	MimarksS combined with HumanGut		MIxS Data that comply with the MimarksS checklist and the HumanGut Extension	HumanGut		
+MimarksSHumanOral	MimarksS combined with HumanOral		MIxS Data that comply with the MimarksS checklist and the HumanOral Extension	HumanOral		
+MimarksSHumanSkin	MimarksS combined with HumanSkin		MIxS Data that comply with the MimarksS checklist and the HumanSkin Extension	HumanSkin		
+MimarksSHumanVaginal	MimarksS combined with HumanVaginal		MIxS Data that comply with the MimarksS checklist and the HumanVaginal Extension	HumanVaginal		
+MimarksSHydrocarbonResourcesCores	MimarksS combined with HydrocarbonResourcesCores		MIxS Data that comply with the MimarksS checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MimarksSHydrocarbonResourcesFluidsSwabs	MimarksS combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the MimarksS checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MimarksSMicrobialMatBiofilm	MimarksS combined with MicrobialMatBiofilm		MIxS Data that comply with the MimarksS checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MimarksSMiscellaneousNaturalOrArtificialEnvironment	MimarksS combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the MimarksS checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MimarksSPlantAssociated	MimarksS combined with PlantAssociated		MIxS Data that comply with the MimarksS checklist and the PlantAssociated Extension	PlantAssociated		
+MimarksSSediment	MimarksS combined with Sediment		MIxS Data that comply with the MimarksS checklist and the Sediment Extension	Sediment		
+MimarksSSoil	MimarksS combined with Soil		MIxS Data that comply with the MimarksS checklist and the Soil Extension	Soil		
+MimarksSSymbiontAssociated	MimarksS combined with SymbiontAssociated		MIxS Data that comply with the MimarksS checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MimarksSWastewaterSludge	MimarksS combined with WastewaterSludge		MIxS Data that comply with the MimarksS checklist and the WastewaterSludge Extension	WastewaterSludge		
+MimarksSWater	MimarksS combined with Water		MIxS Data that comply with the MimarksS checklist and the Water Extension	Water		
+MimsAgriculture	Mims combined with Agriculture		MIxS Data that comply with the Mims checklist and the Agriculture Extension	Agriculture		
+MimsAir	Mims combined with Air		MIxS Data that comply with the Mims checklist and the Air Extension	Air		
+MimsBuiltEnvironment	Mims combined with BuiltEnvironment		MIxS Data that comply with the Mims checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MimsFoodAnimalAndAnimalFeed	Mims combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the Mims checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MimsFoodFarmEnvironment	Mims combined with FoodFarmEnvironment		MIxS Data that comply with the Mims checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MimsFoodFoodProductionFacility	Mims combined with FoodFoodProductionFacility		MIxS Data that comply with the Mims checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MimsFoodHumanFoods	Mims combined with FoodHumanFoods		MIxS Data that comply with the Mims checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MimsHostAssociated	Mims combined with HostAssociated		MIxS Data that comply with the Mims checklist and the HostAssociated Extension	HostAssociated		
+MimsHumanAssociated	Mims combined with HumanAssociated		MIxS Data that comply with the Mims checklist and the HumanAssociated Extension	HumanAssociated		
+MimsHumanGut	Mims combined with HumanGut		MIxS Data that comply with the Mims checklist and the HumanGut Extension	HumanGut		
+MimsHumanOral	Mims combined with HumanOral		MIxS Data that comply with the Mims checklist and the HumanOral Extension	HumanOral		
+MimsHumanSkin	Mims combined with HumanSkin		MIxS Data that comply with the Mims checklist and the HumanSkin Extension	HumanSkin		
+MimsHumanVaginal	Mims combined with HumanVaginal		MIxS Data that comply with the Mims checklist and the HumanVaginal Extension	HumanVaginal		
+MimsHydrocarbonResourcesCores	Mims combined with HydrocarbonResourcesCores		MIxS Data that comply with the Mims checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MimsHydrocarbonResourcesFluidsSwabs	Mims combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the Mims checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MimsMicrobialMatBiofilm	Mims combined with MicrobialMatBiofilm		MIxS Data that comply with the Mims checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MimsMiscellaneousNaturalOrArtificialEnvironment	Mims combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the Mims checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MimsPlantAssociated	Mims combined with PlantAssociated		MIxS Data that comply with the Mims checklist and the PlantAssociated Extension	PlantAssociated		
+MimsSediment	Mims combined with Sediment		MIxS Data that comply with the Mims checklist and the Sediment Extension	Sediment		
+MimsSoil	Mims combined with Soil		MIxS Data that comply with the Mims checklist and the Soil Extension	Soil		
+MimsSymbiontAssociated	Mims combined with SymbiontAssociated		MIxS Data that comply with the Mims checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MimsWastewaterSludge	Mims combined with WastewaterSludge		MIxS Data that comply with the Mims checklist and the WastewaterSludge Extension	WastewaterSludge		
+MimsWater	Mims combined with Water		MIxS Data that comply with the Mims checklist and the Water Extension	Water		
+MisagAgriculture	Misag combined with Agriculture		MIxS Data that comply with the Misag checklist and the Agriculture Extension	Agriculture		
+MisagAir	Misag combined with Air		MIxS Data that comply with the Misag checklist and the Air Extension	Air		
+MisagBuiltEnvironment	Misag combined with BuiltEnvironment		MIxS Data that comply with the Misag checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MisagFoodAnimalAndAnimalFeed	Misag combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the Misag checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MisagFoodFarmEnvironment	Misag combined with FoodFarmEnvironment		MIxS Data that comply with the Misag checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MisagFoodFoodProductionFacility	Misag combined with FoodFoodProductionFacility		MIxS Data that comply with the Misag checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MisagFoodHumanFoods	Misag combined with FoodHumanFoods		MIxS Data that comply with the Misag checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MisagHostAssociated	Misag combined with HostAssociated		MIxS Data that comply with the Misag checklist and the HostAssociated Extension	HostAssociated		
+MisagHumanAssociated	Misag combined with HumanAssociated		MIxS Data that comply with the Misag checklist and the HumanAssociated Extension	HumanAssociated		
+MisagHumanGut	Misag combined with HumanGut		MIxS Data that comply with the Misag checklist and the HumanGut Extension	HumanGut		
+MisagHumanOral	Misag combined with HumanOral		MIxS Data that comply with the Misag checklist and the HumanOral Extension	HumanOral		
+MisagHumanSkin	Misag combined with HumanSkin		MIxS Data that comply with the Misag checklist and the HumanSkin Extension	HumanSkin		
+MisagHumanVaginal	Misag combined with HumanVaginal		MIxS Data that comply with the Misag checklist and the HumanVaginal Extension	HumanVaginal		
+MisagHydrocarbonResourcesCores	Misag combined with HydrocarbonResourcesCores		MIxS Data that comply with the Misag checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MisagHydrocarbonResourcesFluidsSwabs	Misag combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the Misag checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MisagMicrobialMatBiofilm	Misag combined with MicrobialMatBiofilm		MIxS Data that comply with the Misag checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MisagMiscellaneousNaturalOrArtificialEnvironment	Misag combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the Misag checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MisagPlantAssociated	Misag combined with PlantAssociated		MIxS Data that comply with the Misag checklist and the PlantAssociated Extension	PlantAssociated		
+MisagSediment	Misag combined with Sediment		MIxS Data that comply with the Misag checklist and the Sediment Extension	Sediment		
+MisagSoil	Misag combined with Soil		MIxS Data that comply with the Misag checklist and the Soil Extension	Soil		
+MisagSymbiontAssociated	Misag combined with SymbiontAssociated		MIxS Data that comply with the Misag checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MisagWastewaterSludge	Misag combined with WastewaterSludge		MIxS Data that comply with the Misag checklist and the WastewaterSludge Extension	WastewaterSludge		
+MisagWater	Misag combined with Water		MIxS Data that comply with the Misag checklist and the Water Extension	Water		
+MiuvigAgriculture	Miuvig combined with Agriculture		MIxS Data that comply with the Miuvig checklist and the Agriculture Extension	Agriculture		
+MiuvigAir	Miuvig combined with Air		MIxS Data that comply with the Miuvig checklist and the Air Extension	Air		
+MiuvigBuiltEnvironment	Miuvig combined with BuiltEnvironment		MIxS Data that comply with the Miuvig checklist and the BuiltEnvironment Extension	BuiltEnvironment		
+MiuvigFoodAnimalAndAnimalFeed	Miuvig combined with FoodAnimalAndAnimalFeed		MIxS Data that comply with the Miuvig checklist and the FoodAnimalAndAnimalFeed Extension	FoodAnimalAndAnimalFeed		
+MiuvigFoodFarmEnvironment	Miuvig combined with FoodFarmEnvironment		MIxS Data that comply with the Miuvig checklist and the FoodFarmEnvironment Extension	FoodFarmEnvironment		
+MiuvigFoodFoodProductionFacility	Miuvig combined with FoodFoodProductionFacility		MIxS Data that comply with the Miuvig checklist and the FoodFoodProductionFacility Extension	FoodFoodProductionFacility		
+MiuvigFoodHumanFoods	Miuvig combined with FoodHumanFoods		MIxS Data that comply with the Miuvig checklist and the FoodHumanFoods Extension	FoodHumanFoods		
+MiuvigHostAssociated	Miuvig combined with HostAssociated		MIxS Data that comply with the Miuvig checklist and the HostAssociated Extension	HostAssociated		
+MiuvigHumanAssociated	Miuvig combined with HumanAssociated		MIxS Data that comply with the Miuvig checklist and the HumanAssociated Extension	HumanAssociated		
+MiuvigHumanGut	Miuvig combined with HumanGut		MIxS Data that comply with the Miuvig checklist and the HumanGut Extension	HumanGut		
+MiuvigHumanOral	Miuvig combined with HumanOral		MIxS Data that comply with the Miuvig checklist and the HumanOral Extension	HumanOral		
+MiuvigHumanSkin	Miuvig combined with HumanSkin		MIxS Data that comply with the Miuvig checklist and the HumanSkin Extension	HumanSkin		
+MiuvigHumanVaginal	Miuvig combined with HumanVaginal		MIxS Data that comply with the Miuvig checklist and the HumanVaginal Extension	HumanVaginal		
+MiuvigHydrocarbonResourcesCores	Miuvig combined with HydrocarbonResourcesCores		MIxS Data that comply with the Miuvig checklist and the HydrocarbonResourcesCores Extension	HydrocarbonResourcesCores		
+MiuvigHydrocarbonResourcesFluidsSwabs	Miuvig combined with HydrocarbonResourcesFluidsSwabs		MIxS Data that comply with the Miuvig checklist and the HydrocarbonResourcesFluidsSwabs Extension	HydrocarbonResourcesFluidsSwabs		
+MiuvigMicrobialMatBiofilm	Miuvig combined with MicrobialMatBiofilm		MIxS Data that comply with the Miuvig checklist and the MicrobialMatBiofilm Extension	MicrobialMatBiofilm		
+MiuvigMiscellaneousNaturalOrArtificialEnvironment	Miuvig combined with MiscellaneousNaturalOrArtificialEnvironment		MIxS Data that comply with the Miuvig checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension	MiscellaneousNaturalOrArtificialEnvironment		
+MiuvigPlantAssociated	Miuvig combined with PlantAssociated		MIxS Data that comply with the Miuvig checklist and the PlantAssociated Extension	PlantAssociated		
+MiuvigSediment	Miuvig combined with Sediment		MIxS Data that comply with the Miuvig checklist and the Sediment Extension	Sediment		
+MiuvigSoil	Miuvig combined with Soil		MIxS Data that comply with the Miuvig checklist and the Soil Extension	Soil		
+MiuvigSymbiontAssociated	Miuvig combined with SymbiontAssociated		MIxS Data that comply with the Miuvig checklist and the SymbiontAssociated Extension	SymbiontAssociated		
+MiuvigWastewaterSludge	Miuvig combined with WastewaterSludge		MIxS Data that comply with the Miuvig checklist and the WastewaterSludge Extension	WastewaterSludge		
+MiuvigWater	Miuvig combined with Water		MIxS Data that comply with the Miuvig checklist and the Water Extension	Water		
