@@ -29,5 +29,3 @@ main schema file nor participate in the validation of data.
 
 \*\* note: For a deprecated class, references could be in the `is_a` or `mixin` elements of another class, 
 or in the `domain` or `range` elements of an existing slot. For deprecated slots, check all classes that reference that slot, etc.  
-
-#### TODO - section on updating the portal schema in the context of deprecation
