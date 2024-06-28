@@ -1,8 +1,8 @@
-# Deprecating NMDC schema elements
+# Deprecating GSC MIxS schema elements
 
-By deprecating, rather than deleting, schema elements in the NMDC model, we ensure backward compatibility, extend user 
+By deprecating, rather than deleting, schema elements in the GSC MIxS model, we ensure backward compatibility, extend user 
 trust, and provide a valuable historical record, aiding in the understanding of the model's evolution. Therefore, 
-'deleting' a schema element in NMDC is instead, a two-step (and two-release) deprecation process.
+'deleting' a schema element in GSC MIxS is instead, a two-step (and two-release) deprecation process.
 
 ## First release cycle:
 
