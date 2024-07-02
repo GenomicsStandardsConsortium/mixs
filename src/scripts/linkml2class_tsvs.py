@@ -1,8 +1,33 @@
+import csv
+import importlib.resources as pkg_resources
+import os
+import pprint
+from importlib.resources import files
+from typing import List, Set, Dict, Union
+
 import click
 from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
-from yaml import load, FullLoader
-from typing import List, Set, Dict, Any, Union
+from linkml_runtime.linkml_model import SlotDefinition
+
+from collections import OrderedDict
+
+
+def get_metaview():
+    # Try to access the resource using a known part of the package structure
+    package_name = 'linkml_runtime.linkml_model.model.schema'
+    try:
+        # Dynamically obtain a reference to the package containing the resource
+        resource_package = files(package_name)
+
+        # Use this reference to open 'meta.yaml'
+        with pkg_resources.as_file(resource_package.joinpath('meta.yaml')) as file_path:
+            with open(file_path, 'r') as file:
+                meta_yaml_content = file.read()
+                return SchemaView(meta_yaml_content)
+    except Exception as e:
+        print(f"Error accessing the meta.yaml file: {e}")
+        exit()
 
 
 def collect_paths(data: Union[Dict, List], current_path: List[str], paths: Set[str]):
@@ -34,80 +59,165 @@ def collect_paths(data: Union[Dict, List], current_path: List[str], paths: Set[s
               help='Eligible parent classes to include in the output.')
 @click.option('--delete-attributes', multiple=True, default=['domain_of', 'alias', 'from_schema', 'owner'],
               help='Attributes of the classes to delete before printing.')
+@click.option('--metaslots', multiple=True,
+              default=[
+                  'name',
+                  'title',
+                  'slot_uri',
+                  'comments',
+                  'description',
+                  'in_subset',
+                  'keywords',
+                  'multivalued',
+                  'pattern',
+                  'range',
+                  'recommended',
+                  'required',
+                  'string_serialization',
+              ],
+              help='Metaslot names to include in the TSV output.')
 def process_schema_classes(schema_file: str, include_parent_classes: bool, eligible_parent_classes: List[str],
-                           delete_attributes: List[str]):
+                           delete_attributes: List[str], metaslots: List[str]):
     """
     Processes eligible classes from a given schema, filtering based on specified parent classes,
-    and modifies attributes of these classes based on specified operations.
+    and generates a directory of TSV files representing the attributes of these classes.
     """
     schema_view = SchemaView(schema_file)
-    all_paths: Set[str] = set()
+
+    metaview = get_metaview()
+
+    metaslots_helper = {}
+    for metaslot in metaslots:
+        metaslot_obj = metaview.get_slot(metaslot)
+        fallback_range = metaslot_obj.range if metaslot_obj.range else metaview.schema.default_range
+        range_element = metaview.get_element(fallback_range)
+
+        range_element_ccc = range_element.class_class_curie
+        if fallback_range == "boolean":
+            fallback = False
+        else:
+            fallback = None
+
+        metaslots_helper[metaslot] = {
+            "fallback": fallback,
+            "metatype": range_element_ccc,
+            "multivalued": metaslot_obj.multivalued if metaslot_obj.multivalued is not None else False,
+            "range": fallback_range,
+        }
+
+    pprint.pprint(metaslots_helper)
 
     eligible_leaves: Set[str] = set()
     for parent_class in eligible_parent_classes:
         current_eligible_leaves = schema_view.class_descendants(parent_class, reflexive=include_parent_classes)
         eligible_leaves.update(current_eligible_leaves)
 
-    eligible_leaves = sorted(eligible_leaves)
-    for class_name in eligible_leaves:
-        print(class_name)
+    sorted_eligible_leaves = sorted(eligible_leaves)
+    output_dir = "output_tsvs"  # todo parameterize
+    os.makedirs(output_dir, exist_ok=True)
+
+    for class_name in sorted_eligible_leaves:
         induced_class = schema_view.induced_class(class_name)
         induced_attributes = induced_class.attributes
-        for attribute_name, attribute_value in induced_attributes.items():
-            for attribute in delete_attributes:
-                if hasattr(attribute_value, attribute):
-                    delattr(attribute_value, attribute)
-    #         yaml_output = yaml_dumper.dumps(attribute_value)
-    #         attribute_data = load(yaml_output,
-    #                               Loader=FullLoader)  # parse the YAML back to a Python object # todo inefficient
-    #         collect_paths(attribute_data, [], all_paths)  # collect paths
-    #
-    # print("Collected Paths:")
-    # for path in sorted(all_paths):
-    #     print(path)
 
-    # Collected Paths:
-    # annotations
-    # annotations/Expected_value
-    # annotations/Expected_value/tag
-    # annotations/Expected_value/value
-    # annotations/Preferred_unit
-    # annotations/Preferred_unit/tag
-    # annotations/Preferred_unit/value
-    # comments
-    # comments/0
-    # comments/1
-    # description
-    # examples
-    # examples/0
-    # examples/0/description
-    # examples/0/value
-    # examples/1
-    # examples/1/description
-    # examples/1/value
-    # in_subset
-    # in_subset/0
-    # keywords
-    # keywords/0
-    # keywords/1
-    # keywords/2
-    # keywords/3
-    # keywords/4
-    # keywords/5
-    # multivalued
-    # name
-    # pattern
-    # range
-    # recommended
-    # required
-    # slot_uri
-    # string_serialization
-    # structured_pattern
-    # structured_pattern/interpolated
-    # structured_pattern/partial_match
-    # structured_pattern/syntax
-    # title
+        # Sorting the keys based on the 'name' field in each object
+        sorted_keys = sorted(induced_attributes, key=lambda x: induced_attributes[x]['name'])
 
+        # Creating a new OrderedDict that preserves the new order
+        sorted_induced_attributes = OrderedDict((k, induced_attributes[k]) for k in sorted_keys)
+
+        with open(f"{output_dir}/{class_name}.tsv", 'w', newline='') as tsvfile:
+            writer = csv.DictWriter(tsvfile, fieldnames=metaslots, delimiter='\t')
+            writer.writeheader()
+
+            rows = []
+
+            for iak, iav in sorted_induced_attributes.items():
+                temp_dict = {}
+                for mhk, mhv in metaslots_helper.items():
+                    # Attempt to fetch the value for the current metaslot from the induced attribute
+                    iav_mhk_val = getattr(iav, mhk, metaslots_helper[mhk]["fallback"])
+
+                    # Check conditions for metatype and whether it is multivalued
+                    if not mhv["multivalued"] and mhv["metatype"] in ["linkml:TypeDefinition",
+                                                                      "linkml:ClassDefinition"]:
+                        # For non-multivalued metatypes that are TypeDefinition or ClassDefinition
+                        temp_dict[mhk] = iav_mhk_val
+                    elif mhv["multivalued"] and mhv["metatype"] in ["linkml:TypeDefinition", "linkml:ClassDefinition"]:
+                        # For multivalued metatypes that are TypeDefinition or ClassDefinition
+                        # Ensure it's a list, join it into a string, and assign
+                        if isinstance(iav_mhk_val, list):
+                            iav_mhk_val = '|'.join(iav_mhk_val)
+                        temp_dict[mhk] = iav_mhk_val
+                    else:
+                        # Handle other cases or unknowns
+                        print(f"Unhandled case for {class_name}, {iak}, {mhk} with type {mhv['metatype']}")
+                        temp_dict[mhk] = None
+
+                rows.append(temp_dict)
+                writer.writerow(temp_dict)
+
+        # for attribute_name, attribute_value in induced_attributes.items():
+        #     for attribute in delete_attributes:
+        #         if hasattr(attribute_value, attribute):
+        #             # useful for yaml dumping
+        #             # but not necessary for TSV dumping if we require the user to provide a list of metaslots
+        #             delattr(attribute_value, attribute)
+        #         # print(yaml_dumper.dumps(attribute_value))
+
+
+#                 # row_data = {meta: getattr(attribute_value, meta, None) for meta in metaslots}
+#                 # writer.writerow(row_data)
+#
+#
+# if __name__ == "__main__":
+#     process_schema_classes()
+#
+#     #         yaml_output = yaml_dumper.dumps(attribute_value)
+#     #         attribute_data = load(yaml_output,
+#     #                               Loader=FullLoader)  # parse the YAML back to a Python object # todo inefficient
+#     #         collect_paths(attribute_data, [], all_paths)  # collect paths
+#     #
+#     # print("Collected Paths:")
+#     # for path in sorted(all_paths):
+#     #     print(path)
+#
+#     # Collected Paths:
+#     # annotations
+#     # annotations/Expected_value
+#     # annotations/Expected_value/tag
+#     # annotations/Expected_value/value
+#     # annotations/Preferred_unit
+#     # annotations/Preferred_unit/tag
+#     # annotations/Preferred_unit/value
+
+#     # examples
+#     # examples/0
+#     # examples/0/description
+#     # examples/0/value
+#     # examples/1
+#     # examples/1/description
+#     # examples/1/value
+
+#     # structured_pattern
+#     # structured_pattern/interpolated
+#     # structured_pattern/partial_match
+#     # structured_pattern/syntax
+
+
+# 'name',
+# 'title',
+# 'slot_uri',
+# 'comments',
+# 'description',
+# 'in_subset',
+# 'keywords',
+# 'multivalued',
+# 'pattern',
+# 'range',
+# 'recommended',
+# 'required',
+# 'string_serialization',
 
 if __name__ == "__main__":
     process_schema_classes()
