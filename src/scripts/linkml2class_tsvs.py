@@ -76,8 +76,14 @@ def collect_paths(data: Union[Dict, List], current_path: List[str], paths: Set[s
                   'string_serialization',
               ],
               help='Metaslot names to include in the TSV output.')
+@click.option('--annotations', multiple=True,
+              default=[
+                  'Expected_value',
+                  'Preferred_unit',
+              ],
+              help='Metaslot names to include in the TSV output.')
 def process_schema_classes(schema_file: str, include_parent_classes: bool, eligible_parent_classes: List[str],
-                           delete_attributes: List[str], metaslots: List[str]):
+                           delete_attributes: List[str], metaslots: List[str], annotations: List[str]):
     """
     Processes eligible classes from a given schema, filtering based on specified parent classes,
     and generates a directory of TSV files representing the attributes of these classes.
@@ -127,7 +133,7 @@ def process_schema_classes(schema_file: str, include_parent_classes: bool, eligi
         sorted_induced_attributes = OrderedDict((k, induced_attributes[k]) for k in sorted_keys)
 
         with open(f"{output_dir}/{class_name}.tsv", 'w', newline='') as tsvfile:
-            writer = csv.DictWriter(tsvfile, fieldnames=metaslots, delimiter='\t')
+            writer = csv.DictWriter(tsvfile, fieldnames=(metaslots + annotations), delimiter='\t')
             writer.writeheader()
 
             rows = []
@@ -153,6 +159,12 @@ def process_schema_classes(schema_file: str, include_parent_classes: bool, eligi
                         # Handle other cases or unknowns
                         print(f"Unhandled case for {class_name}, {iak}, {mhk} with type {mhv['metatype']}")
                         temp_dict[mhk] = None
+                for annotation_name in annotations:
+                    if annotation_name in iav.annotations:
+                        # print(class_name, annotation_name, iav.annotations[annotation_name].value)
+                        temp_dict[annotation_name] = iav.annotations[annotation_name].value
+                    else:
+                        print(f"didn't see {annotation_name} annotation in {class_name}'s {iak}")
 
                 rows.append(temp_dict)
                 writer.writerow(temp_dict)
