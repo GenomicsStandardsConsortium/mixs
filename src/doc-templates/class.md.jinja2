@@ -42,7 +42,7 @@ _{{ element_description_line }}_
 {{ gen.link(element.mixins[0]) }} [Checklist] + {{ gen.link(element.is_a) }} [Extension]
 {% endif %}
 
-## Terms
+## Terms {{ title }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong> {% endif %}
 
 | MIXS ID | Name | Cardinality and Range | Description |
 | ---  | --- | --- | --- |
