@@ -66,6 +66,7 @@ def collect_paths(data: Union[Dict, List], current_path: List[str], paths: Set[s
                   'slot_uri',
                   'comments',
                   'description',
+                  'examples',
                   'in_subset',
                   'keywords',
                   'multivalued',
@@ -74,6 +75,7 @@ def collect_paths(data: Union[Dict, List], current_path: List[str], paths: Set[s
                   'recommended',
                   'required',
                   'string_serialization',
+                  'structured_pattern',
               ],
               help='Metaslot names to include in the TSV output.')
 @click.option('--annotations', multiple=True,
@@ -144,9 +146,30 @@ def process_schema_classes(schema_file: str, include_parent_classes: bool, eligi
                     # Attempt to fetch the value for the current metaslot from the induced attribute
                     iav_mhk_val = getattr(iav, mhk, metaslots_helper[mhk]["fallback"])
 
+                    if mhk == "examples":
+                        if iav_mhk_val:
+                            example_reprs = []
+                            for current_example in iav_mhk_val:
+                                examples_dict = {
+                                    "value": current_example.value,
+                                }
+                                if current_example.description:
+                                    examples_dict["description"] = current_example.description
+                                example_reprs.append(temp_dict)
+                            temp_dict[mhk] = examples_dict.__repr__()
+
+                    elif mhk == "structured_pattern":
+                        if iav_mhk_val:
+                            structured_pattern_dict = {
+                                "syntax": iav_mhk_val.syntax,
+                                "interpolated": iav_mhk_val.interpolated if iav_mhk_val.interpolated is not None else False,
+                                "partial_match": iav_mhk_val.partial_match if iav_mhk_val.partial_match is not None else False,
+                            }
+                            temp_dict[mhk] = structured_pattern_dict.__repr__()
+
                     # Check conditions for metatype and whether it is multivalued
-                    if not mhv["multivalued"] and mhv["metatype"] in ["linkml:TypeDefinition",
-                                                                      "linkml:ClassDefinition"]:
+                    elif not mhv["multivalued"] and mhv["metatype"] in ["linkml:TypeDefinition",
+                                                                        "linkml:ClassDefinition"]:
                         # For non-multivalued metatypes that are TypeDefinition or ClassDefinition
                         temp_dict[mhk] = iav_mhk_val
                     elif mhv["multivalued"] and mhv["metatype"] in ["linkml:TypeDefinition", "linkml:ClassDefinition"]:
@@ -164,7 +187,8 @@ def process_schema_classes(schema_file: str, include_parent_classes: bool, eligi
                         # print(class_name, annotation_name, iav.annotations[annotation_name].value)
                         temp_dict[annotation_name] = iav.annotations[annotation_name].value
                     else:
-                        print(f"didn't see {annotation_name} annotation in {class_name}'s {iak}")
+                        # print(f"didn't see {annotation_name} annotation in {class_name}'s {iak}")
+                        pass
 
                 rows.append(temp_dict)
                 writer.writerow(temp_dict)
@@ -193,15 +217,6 @@ def process_schema_classes(schema_file: str, include_parent_classes: bool, eligi
 #     # print("Collected Paths:")
 #     # for path in sorted(all_paths):
 #     #     print(path)
-#
-#     # Collected Paths:
-#     # annotations
-#     # annotations/Expected_value
-#     # annotations/Expected_value/tag
-#     # annotations/Expected_value/value
-#     # annotations/Preferred_unit
-#     # annotations/Preferred_unit/tag
-#     # annotations/Preferred_unit/value
 
 #     # examples
 #     # examples/0
@@ -230,6 +245,8 @@ def process_schema_classes(schema_file: str, include_parent_classes: bool, eligi
 # 'recommended',
 # 'required',
 # 'string_serialization',
+
+# annotations[].value
 
 if __name__ == "__main__":
     process_schema_classes()
