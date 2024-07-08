@@ -54,7 +54,9 @@ def collect_paths(data: Union[Dict, List], current_path: List[str], paths: Set[s
 @click.command()
 @click.option('--schema-file', default='src/mixs/schema/mixs.yaml', type=click.Path(exists=True, dir_okay=False),
               help='Path to the schema YAML file.')
-@click.option('--include-parent-classes', is_flag=True, help='Include parent classes in the output.')
+@click.option('--output-dir', default='project/class-model-tsvs', type=click.Path(dir_okay=True, file_okay=False),
+              help='Directory for saving teh TSV representations of MIxS classes.')
+@click.option('--include-parent-classes', is_flag=True, default=False, help='Include parent classes in the output.')
 @click.option('--eligible-parent-classes', multiple=True, default=['Checklist', 'Extension'],
               help='Eligible parent classes to include in the output.')
 @click.option('--delete-attributes', multiple=True, default=['domain_of', 'alias', 'from_schema', 'owner'],
@@ -85,7 +87,8 @@ def collect_paths(data: Union[Dict, List], current_path: List[str], paths: Set[s
               ],
               help='Metaslot names to include in the TSV output.')
 def process_schema_classes(schema_file: str, include_parent_classes: bool, eligible_parent_classes: List[str],
-                           delete_attributes: List[str], metaslots: List[str], annotations: List[str]):
+                           delete_attributes: List[str], metaslots: List[str], annotations: List[str],
+                           output_dir: str):
     """
     Processes eligible classes from a given schema, filtering based on specified parent classes,
     and generates a directory of TSV files representing the attributes of these classes.
@@ -113,7 +116,7 @@ def process_schema_classes(schema_file: str, include_parent_classes: bool, eligi
             "range": fallback_range,
         }
 
-    pprint.pprint(metaslots_helper)
+    # pprint.pprint(metaslots_helper)
 
     eligible_leaves: Set[str] = set()
     for parent_class in eligible_parent_classes:
@@ -121,7 +124,6 @@ def process_schema_classes(schema_file: str, include_parent_classes: bool, eligi
         eligible_leaves.update(current_eligible_leaves)
 
     sorted_eligible_leaves = sorted(eligible_leaves)
-    output_dir = "output_tsvs"  # todo parameterize
     os.makedirs(output_dir, exist_ok=True)
 
     for class_name in sorted_eligible_leaves:
@@ -193,60 +195,6 @@ def process_schema_classes(schema_file: str, include_parent_classes: bool, eligi
                 rows.append(temp_dict)
                 writer.writerow(temp_dict)
 
-        # for attribute_name, attribute_value in induced_attributes.items():
-        #     for attribute in delete_attributes:
-        #         if hasattr(attribute_value, attribute):
-        #             # useful for yaml dumping
-        #             # but not necessary for TSV dumping if we require the user to provide a list of metaslots
-        #             delattr(attribute_value, attribute)
-        #         # print(yaml_dumper.dumps(attribute_value))
-
-
-#                 # row_data = {meta: getattr(attribute_value, meta, None) for meta in metaslots}
-#                 # writer.writerow(row_data)
-#
-#
-# if __name__ == "__main__":
-#     process_schema_classes()
-#
-#     #         yaml_output = yaml_dumper.dumps(attribute_value)
-#     #         attribute_data = load(yaml_output,
-#     #                               Loader=FullLoader)  # parse the YAML back to a Python object # todo inefficient
-#     #         collect_paths(attribute_data, [], all_paths)  # collect paths
-#     #
-#     # print("Collected Paths:")
-#     # for path in sorted(all_paths):
-#     #     print(path)
-
-#     # examples
-#     # examples/0
-#     # examples/0/description
-#     # examples/0/value
-#     # examples/1
-#     # examples/1/description
-#     # examples/1/value
-
-#     # structured_pattern
-#     # structured_pattern/interpolated
-#     # structured_pattern/partial_match
-#     # structured_pattern/syntax
-
-
-# 'name',
-# 'title',
-# 'slot_uri',
-# 'comments',
-# 'description',
-# 'in_subset',
-# 'keywords',
-# 'multivalued',
-# 'pattern',
-# 'range',
-# 'recommended',
-# 'required',
-# 'string_serialization',
-
-# annotations[].value
 
 if __name__ == "__main__":
     process_schema_classes()

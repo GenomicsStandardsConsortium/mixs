@@ -58,3 +58,10 @@ assets/mixs-patterns-materialized.yaml: src/mixs/schema/mixs.yaml
 
 assets/mixs-schemasheets-concise-global-slots.tsv: assets/mixs-schemasheets-concise.tsv
 	$(RUN) python src/scripts/isolate_slots.py
+
+project/class-model-tsvs:
+	$(RUN) linkml2class-tsvs \
+		--eligible-parent-classes Checklist \
+		--eligible-parent-classes Extension \
+		--output-dir project/class-model-tsvs \
+		--schema-file src/mixs/schema/mixs.yaml
