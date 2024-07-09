@@ -4,7 +4,7 @@
     {%- set title = gen.name(element) -%}
 {%- endif -%}
 
-# Term: {{ title }}
+# Term: {{ title }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong> {% endif %}
 
 {%- if header -%}
 {{header}}
