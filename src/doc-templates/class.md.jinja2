@@ -18,7 +18,7 @@
     {%- endif -%}
 {%- endif -%}
 
-# {{ type }}: {{ title }}
+# {{ type }}: {{ title }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong> {% endif %}
 
 
 {%- if header -%}
@@ -42,7 +42,7 @@ _{{ element_description_line }}_
 {{ gen.link(element.mixins[0]) }} [Checklist] + {{ gen.link(element.is_a) }} [Extension]
 {% endif %}
 
-## Terms {{ title }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong> {% endif %}
+## Terms 
 
 | MIXS ID | Name | Cardinality and Range | Description |
 | ---  | --- | --- | --- |
