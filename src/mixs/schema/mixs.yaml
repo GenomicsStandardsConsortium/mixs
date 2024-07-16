@@ -3704,13 +3704,14 @@ slots:
     title: Hazard Analysis Critical Control Points (HACCP) guide food safety term
     examples:
     - value: tetrodotoxic poisoning [FOODON:03530249]
+    - value: tetrodotoxic poisoning[FOODON:03530249]; neurotoxic shellfish poisoning[FOODON:03530246]
     keywords:
     - food
     - term
     slot_uri: MIXS:0001215
     multivalued: true
     range: string
-    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+    pattern: ^.+\s*\[FOODON:\d+\](;\s*\[FOODON:\d+\])*$
     structured_pattern:
       syntax: ^{termLabel} \[{termID}\]$
       interpolated: true
@@ -3742,8 +3743,7 @@ slots:
   abs_air_humidity:
     annotations:
       Preferred_unit: gram per gram, kilogram per kilogram, kilogram, pound
-    description: Actual mass of water vapor - mh20 - present in the air water vapor
-      mixture
+    description: Actual mass of water vapor - mh20 - present in the air water vapor mixture
     title: absolute air humidity
     examples:
     - value: 9 gram per gram
@@ -3794,8 +3794,7 @@ slots:
     slot_uri: MIXS:0001009
     required: true
   additional_info:
-    description: Information that doesn't fit anywhere else. Can also be used to propose
-      new entries for fields with controlled vocabulary
+    description: Information that doesn't fit anywhere else. Can also be used to propose new entries for fields with controlled vocabulary
     title: additional info
     keywords:
     - information
@@ -3809,8 +3808,7 @@ slots:
     string_serialization: '{integer}{text}'
     slot_uri: MIXS:0000218
   adj_room:
-    description: List of rooms (room number, room name) immediately adjacent to the
-      sampling room
+    description: List of rooms (room number, room name) immediately adjacent to the sampling room
     title: adjacent rooms
     keywords:
     - adjacent
@@ -3825,10 +3823,7 @@ slots:
   adjacent_environment:
     annotations:
       Expected_value: ENVO_01001110 or ENVO_00000070
-    description: Description of the environmental system or features that are adjacent
-      to the sampling site. This field accepts terms under ecosystem (http://purl.obolibrary.org/obo/ENVO_01001110)
-      and human construction (http://purl.obolibrary.org/obo/ENVO_00000070). Multiple
-      terms can be separated by pipes
+    description: Description of the environmental system or features that are adjacent to the sampling site. This field accepts terms under ecosystem (http://purl.obolibrary.org/obo/ENVO_01001110) and human construction (http://purl.obolibrary.org/obo/ENVO_00000070). Multiple terms can be separated by pipes
     title: environment adjacent to site
     examples:
     - value: estuarine biome [ENVO:01000020]
