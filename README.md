@@ -1,8 +1,11 @@
 # MIxS: Minimum Information about any (X) Sequence
 
-MIxS is a specification for the Minimum Information about any (X) Sequence standard.
+MIxS, or the Minimum Information about any (X) Sequence is a specification for describing the provenance of a neucleotide sequence. The standard/data model has Terms that help attribute a sequence with certain characteristics that help answer questions like -
+* What do we know about the sample that the sequence came from?
+* In what kind of an environment was the sample found?
+* In what ways were the nucleic acids extracted, amplified, etc. from the sample?
 
-Starting from v6 the MIxS standard is represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas and data models. You can refer to the [user-facing](#repository-structure)/[developer-focused](#developer-documentation) sections describing the repository structure to understand where to find these YAML files that are describing the MIxS standard.
+Starting from v6 the MIxS standard is represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas and data models. You can refer to the [user-focused](#repository-structure)/[developer-focused](#developer-documentation) sections describing the repository structure to understand where to find these YAML files that are describing the MIxS standard.
 
 The public-facing web documentation site can be browsed at: https://genomicsstandardsconsortium.github.io/mixs/
 
