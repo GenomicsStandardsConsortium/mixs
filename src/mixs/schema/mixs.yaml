@@ -253,31 +253,49 @@ enums:
   FaoClassEnum:
     permissible_values:
       Acrisols:
+      Alisols:
       Andosols:
+      Anthrosols:
       Arenosols:
+      Calcisols:
       Cambisols:
       Chernozems:
+      Cryosols:
+      Durisols:
       Ferralsols:
       Fluvisols:
       Gleysols:
       Greyzems:
+        deprecated: true, value no longer recognized by FAO, https://github.com/GenomicsStandardsConsortium/mixs/issues/696
       Gypsisols:
       Histosols:
       Kastanozems:
       Lithosols:
+        deprecated: true, value no longer recognized by FAO, https://github.com/GenomicsStandardsConsortium/mixs/issues/696
+      Leptosols:
+      Lixisols:
       Luvisols:
       Nitosols:
       Phaeozems:
       Planosols:
+      Plinthosols:
       Podzols:
       Podzoluvisols:
+        deprecated: true, value no longer recognized by FAO, https://github.com/GenomicsStandardsConsortium/mixs/issues/696
       Rankers:
+        deprecated: true, value no longer recognized by FAO, https://github.com/GenomicsStandardsConsortium/mixs/issues/696
       Regosols:
+        deprecated: true, value no longer recognized by FAO, https://github.com/GenomicsStandardsConsortium/mixs/issues/696
       Rendzinas:
+        deprecated: true, value no longer recognized by FAO, https://github.com/GenomicsStandardsConsortium/mixs/issues/696
       Solonchaks:
       Solonetz:
+      Stagnosols:
+      Technosols:
+      Umbrisols:
       Vertisols:
       Yermosols:
+        deprecated: true, value no longer recognized by FAO, https://github.com/GenomicsStandardsConsortium/mixs/issues/696
   FarmWaterSourceEnum:
     permissible_values:
       brackish:
@@ -6495,8 +6513,7 @@ slots:
     multivalued: true
     range: FacilityTypeEnum
   fao_class:
-    description: Soil classification from the FAO World Reference Database for Soil
-      Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups
+    description: Soil classification from the FAO World soil distribution from International Soil Reference and Information Centre (ISRIC). The list of available soil classifications can be found at https://www.isric.org/explore/world-soil-distribution
     title: soil_taxonomic/FAO classification
     examples:
     - value: Luvisols
