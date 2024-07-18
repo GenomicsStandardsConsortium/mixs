@@ -8,7 +8,7 @@ from collections import defaultdict
 
 import yaml
 
-schema_file = '../mixs/schema/mixs.yaml'
+schema_file = '../../mixs/schema/mixs.yaml'
 slots_output_yaml = '../../assets/mixs_slots_report.yaml'
 # claude wants csv?
 slots_output_csv = '../../assets/mixs_slots_report.csv'

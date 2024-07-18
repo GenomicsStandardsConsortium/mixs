@@ -5,7 +5,7 @@ from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
 from linkml_runtime.utils.formatutils import camelcase
 
-schema_file = "../mixs/schema/mixs.yaml"
+schema_file = "../../mixs/schema/mixs.yaml"
 
 schema_view = SchemaView(schema_file)
 
@@ -64,4 +64,4 @@ print(yaml_dumper.dumps(schema_view.schema.enums))
 
 yaml_dumper.dump(schema_view.schema, "camel_case_enums.yaml")
 
-x = SchemaFixer()
+# x = SchemaFixer()
