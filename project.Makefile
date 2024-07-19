@@ -52,6 +52,7 @@ assets/mixs-schemasheets-concise.tsv: src/mixs/schema/mixs.yaml
 
 assets/mixs-patterns-materialized.yaml: src/mixs/schema/mixs.yaml
 	$(RUN) gen-linkml \
+	$(RUN) gen-linkml \
 		--format yaml \
 		--materialize-patterns \
 		--no-materialize-attributes $< > $@
