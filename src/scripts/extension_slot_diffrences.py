@@ -32,6 +32,7 @@ def compare_slots_by_extension(ext_slot_pairings, ext1, ext2):
     return {
         f"{ext1}_only": sorted(list(ext1_slots - ext2_slots)),
         f"{ext2}_only": sorted(list(ext2_slots - ext1_slots)),
+        f"intersection": sorted(ext1_slots.intersection(ext2_slots)),
     }
 
 
