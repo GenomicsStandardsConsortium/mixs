@@ -3,14 +3,14 @@ import shutil
 from collections import defaultdict
 from linkml_runtime.utils.schemaview import SchemaView
 import logging
-import argparse
+import click
 
-
-class MIxSExcelFileOrganizer:
-    def __init__(self, mixs_schema_file, source_directory, base_destination_folder):
+class MIxSFileOrganizer:
+    def __init__(self, mixs_schema_file, source_directory, base_destination_folder, extensions):
         self.mixs_schema_file = mixs_schema_file
         self.source_directory = source_directory
         self.base_destination_folder = base_destination_folder
+        self.extensions = extensions
         self.logger = self.setup_logger()
 
     def setup_logger(self):
@@ -47,16 +47,7 @@ class MIxSExcelFileOrganizer:
         os.makedirs(extensions_folder, exist_ok=True)
 
         # Copy files with names in 'extensions' to the 'extensions' folder
-        for extension_file in extensions:
-            source_file = os.path.join(self.source_directory, f"{extension_file}.xlsx")
-            destination_file = os.path.join(extensions_folder, f"{extension_file}.xlsx")
-
-            if os.path.isfile(source_file):
-                shutil.copy(source_file, destination_file)
-            else:
-                self.logger.warning(
-                    f"File {extension_file}.xlsx not found in the source directory."
-                )
+        self.copy_files(extensions, extensions_folder)
 
         # Copy files based on 'result_list'
         for item in result_list:
@@ -64,41 +55,53 @@ class MIxSExcelFileOrganizer:
             folder_path = os.path.join(self.base_destination_folder, x_value)
             os.makedirs(f"{folder_path}_plus_combinations", exist_ok=True)
 
-            for cls_name in item["cls_names"]:
-                source_file = os.path.join(self.source_directory, f"{cls_name}.xlsx")
-                destination_file = os.path.join(f"{folder_path}_plus_combinations", f"{cls_name}.xlsx")
+            self.copy_files(item["cls_names"], f"{folder_path}_plus_combinations")
+
+    def copy_files(self, file_names, destination_folder):
+        for file_name in file_names:
+            for extension in self.extensions:
+                source_file = os.path.join(self.source_directory, f"{file_name}.{extension}")
+                destination_file = os.path.join(destination_folder, f"{file_name}.{extension}")
 
                 if os.path.isfile(source_file):
                     shutil.copy(source_file, destination_file)
                 else:
                     self.logger.warning(
-                        f"File {cls_name}.xlsx not found in the source directory."
+                        f"File {file_name}.{extension} not found in the source directory."
                     )
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="MIxS Excel File Organizer")
-    parser.add_argument(
-        "--mixs-schema-file",
-        default="src/mixs/schema/mixs.yaml",
-        help="Path to MIxS schema file",
-    )
-    parser.add_argument(
-        "--source-directory",
-        required=True,
-        help="Path to the source directory containing XLSX files",
-    )
-    parser.add_argument(
-        "--base-destination-folder",
-        required=True,
-        help="Path to the base destination folder",
-    )
-
-    args = parser.parse_args()
-
-    mixs_organizer = MIxSExcelFileOrganizer(
-        mixs_schema_file=args.mixs_schema_file,
-        source_directory=args.source_directory,
-        base_destination_folder=args.base_destination_folder,
+@click.command()
+@click.option(
+    '--mixs-schema-file',
+    default='src/mixs/schema/mixs.yaml',
+    help='Path to MIxS schema file',
+)
+@click.option(
+    '--source-directory',
+    required=True,
+    help='Path to the source directory containing files',
+)
+@click.option(
+    '--base-destination-folder',
+    required=True,
+    help='Path to the base destination folder',
+)
+@click.option(
+    '--extensions',
+    required=True,
+    multiple=True,
+    help='File extensions to be organized (e.g., --extensions xlsx --extensions tsv)',
+)
+def main(mixs_schema_file, source_directory, base_destination_folder, extensions):
+    mixs_organizer = MIxSFileOrganizer(
+        mixs_schema_file=mixs_schema_file,
+        source_directory=source_directory,
+        base_destination_folder=base_destination_folder,
+        extensions=extensions,
     )
     mixs_organizer.organize_files()
+
+
+if __name__ == "__main__":
+    main()

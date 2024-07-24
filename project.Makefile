@@ -12,10 +12,11 @@ gen-excel: $(SOURCE_SCHEMA_PATH)
 		--split-workbook-by-class \
 		--output $(DEST)/excel
 	mkdir -p $(EXCEL_TEMPLATES_DIR)
-	$(RUN) python src/scripts/organize_excel_files.py \
+	$(RUN) python src/scripts/organize_files.py \
 		--mixs-schema-file $< \
 		--source-directory $(DEST)/excel \
 		--base-destination-folder $(EXCEL_TEMPLATES_DIR)
+		--extensions xlsx
 
 assets/mixs_derived_class_term_schemasheet.tsv: src/mixs/schema/mixs.yaml
 	$(RUN) linkml2schemasheets-template \
@@ -59,9 +60,15 @@ assets/mixs-patterns-materialized.yaml: src/mixs/schema/mixs.yaml
 assets/mixs-schemasheets-concise-global-slots.tsv: assets/mixs-schemasheets-concise.tsv
 	$(RUN) python src/scripts/isolate_slots.py
 
-project/class-model-tsvs:
+project/class-model-tsvs-organized:
 	$(RUN) linkml2class-tsvs \
 		--eligible-parent-classes Checklist \
 		--eligible-parent-classes Extension \
 		--output-dir project/class-model-tsvs \
 		--schema-file src/mixs/schema/mixs.yaml
+	mkdir -p project/class-model-tsvs-organized
+	$(RUN) python src/scripts/organize_files.py \
+		--mixs-schema-file $< \
+		--source-directory project/class-model-tsvs \
+		--base-destination-folder project/class-model-tsvs-organized
+		--extensions tsv
