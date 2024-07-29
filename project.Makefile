@@ -58,3 +58,6 @@ assets/mixs-patterns-materialized.yaml: src/mixs/schema/mixs.yaml
 
 assets/mixs-schemasheets-concise-global-slots.tsv: assets/mixs-schemasheets-concise.tsv
 	$(RUN) python src/scripts/isolate_slots.py
+
+compare_release_excel.txt:
+	$(RUN) python src/scripts/compare_release_excel.py > $@
