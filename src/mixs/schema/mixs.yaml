@@ -4246,7 +4246,10 @@ slots:
     keywords:
       - animal
       - equipment
-    string_serialization: '{termLabel} [{termID}]'
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
     slot_uri: MIXS:0001113
     multivalued: true
   animal_group_size:
@@ -6298,7 +6301,10 @@ slots:
     keywords:
       - context
       - environmental
-    string_serialization: '{termLabel} [{termID}]'
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
     slot_uri: MIXS:0000013
     required: true
   env_medium:
