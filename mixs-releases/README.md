@@ -72,7 +72,7 @@ MIxS has transitioned from using spreadsheets as the source of truth to using a 
 
 Note: Visual comparison of spreadsheets, while sometimes used, is not a reliable method for comprehensive change detection. See Versioning and Tracking Changes section above.
 
-### [Contributing to MIxS]{#contributing-to-mixs}
+### [Contributing to MIxS](#contributing-to-mixs)
 
 1. Raise an issue in the MIxS issue tracker. Please use the newest MIxS language found in this document, like Extension (not Environment or Package)  
 2. Make a branch of [MIxS repository](https://github.com/GenomicsStandardsConsortium/mixs)  
