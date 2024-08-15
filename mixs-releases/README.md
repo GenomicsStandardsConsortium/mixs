@@ -29,7 +29,7 @@ Since there wasn’t any LinkML YAML file before version mixs6.0.0, a community-
 
 ### Versioning and Tracking Changes
 
-Anyone interested in contributing to or expanding their knowledge of MIxS is encouraged to engage with the [MIxS community](\#contributing-to-mixs). Changes to MIxS over time can be found by:
+Anyone interested in contributing to or expanding their knowledge of MIxS is encouraged to engage with the [MIxS community](#contributing-to-mixs). Changes to MIxS over time can be found by:
 
 1. Referencing [GitHub releases and release notes](https://github.com/GenomicsStandardsConsortium/mixs/releases) for high-level summaries of changes.  
 2. Use GitHub's diff tools to compare specific files between versions, being aware of their limitations for complex changes.  
@@ -72,7 +72,7 @@ MIxS has transitioned from using spreadsheets as the source of truth to using a 
 
 Note: Visual comparison of spreadsheets, while sometimes used, is not a reliable method for comprehensive change detection. See Versioning and Tracking Changes section above.
 
-### Contributing to MIxS {#contributing-to-mixs}
+### [Contributing to MIxS]{#contributing-to-mixs}
 
 1. Raise an issue in the MIxS issue tracker. Please use the newest MIxS language found in this document, like Extension (not Environment or Package)  
 2. Make a branch of [MIxS repository](https://github.com/GenomicsStandardsConsortium/mixs)  
