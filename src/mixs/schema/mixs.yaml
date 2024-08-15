@@ -437,6 +437,16 @@ enums:
       kmer similarity:
       other:
       provirus:
+  HostSexEnum:
+    permissible_values:
+      female:
+      hermaphrodite:
+      non-binary:
+      male:
+      transgender:
+      transgender (female to male):
+      transgender (male to female):
+      undeclared:
   HostSpecificityEnum:
     permissible_values:
       family-specific:
@@ -8494,15 +8504,12 @@ slots:
     description: Gender or physical sex of the host
     title: host sex
     comments:
-    - example of non-binary from Excel sheets does not match any of the enumerated
-      values
+      - example of non-binary from Excel sheets does not match any of the enumerated
+        values
     keywords:
-    - host
-    - host.
-    string_serialization: '[female|hermaphrodite|non-binary|male|transgender|transgender
-      (female to male)|transgender (male to female)
-
-      |undeclared]'
+      - host
+      - host.
+    range: HostSexEnum
     slot_uri: MIXS:0000811
   host_shape:
     description: Morphological shape of host
