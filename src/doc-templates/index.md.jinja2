@@ -1,0 +1,34 @@
+#  {{ schema.name }}
+
+{{ schema.description }}
+
+URI: <a href={{ schema.id }}>{{ schema.id }}</a>
+
+## Checklists
+
+| Checklist | Description |
+{% for c in schemaview.all_classes().values() -%}
+{%- if c.is_a == "Checklist" -%}
+| --- | --- |
+| {{ gen.link(c) }} | {{ c.description }} |
+{%- endif -%}
+{% endfor %}
+
+## Extensions
+
+| Extension | Description |
+{% for c in schemaview.all_classes().values() -%}
+{%- if c.is_a == "Extension" -%}
+| --- | --- |
+| {{ gen.link(c) }} | {{ c.description }} |
+{%- endif -%}
+{% endfor %}
+
+## Subsets
+
+| Subset | Description |
+| --- | --- |
+{% for ss in schemaview.all_subsets().values()|sort(attribute='name') -%}
+| {{gen.link(ss)}} | {{ss.description|enshorten}} |
+{% endfor %}
+

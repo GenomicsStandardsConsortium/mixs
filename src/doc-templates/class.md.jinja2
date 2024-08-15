@@ -1,0 +1,85 @@
+{%- if element.is_a == "Checklist" -%}
+    {%- set type = "Checklist" -%}
+{%- elif element.is_a == "Extension" -%}
+    {%- set type = "Extension" -%}
+{%- elif element.mixins and element.is_a -%}
+    {%- set type = "Combination" -%}
+{%- else -%}
+    {%- set type = "Class" -%}
+{%- endif -%}
+
+{%- if element.title %}
+    {%- set title = element.title ~ ' (' ~ element.name ~ ')' -%}
+{%- else %}
+    {%- if gen.use_class_uris -%}
+        {%- set title = element.name -%}
+    {%- else -%}
+        {%- set title = gen.name(element) -%}
+    {%- endif -%}
+{%- endif -%}
+
+# {{ type }}: {{ title }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong> {% endif %}
+
+
+{%- if header -%}
+{{header}}
+{%- endif -%}
+
+
+{% if element.description %}
+{% set element_description_lines = element.description.split('\n') %}
+{% for element_description_line in element_description_lines %}
+_{{ element_description_line }}_
+{% endfor %}
+{% endif %}
+
+{% if element.abstract %}
+* __NOTE__: this is an abstract class and should not be instantiated directly
+{% endif %}
+
+{% if element.mixins and element.is_a -%}
+## Composition
+{{ gen.link(element.mixins[0]) }} [Checklist] + {{ gen.link(element.is_a) }} [Extension]
+{% endif %}
+
+## Terms 
+
+| MIXS ID | Name | Cardinality and Range | Description |
+| ---  | --- | --- | --- |
+{% if gen.get_direct_slots(element)|length > 0 %}
+{%- for slot in gen.get_direct_slots(element) -%}
+| {{ gen.uri_link(slot) }} | {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ slot.description|enshorten }} |
+{% endfor -%}
+{% endif -%}
+{% if gen.get_indirect_slots(element)|length > 0 %}
+{%- for slot in gen.get_indirect_slots(element) -%}
+| {{ gen.uri_link(slot) }} | {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ gen.link(slot.range) }} | {{ slot.description|enshorten }} |
+{% endfor -%}
+{% endif %}
+
+{% include "common_metadata.md.jinja2" %}
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+{{gen.yaml(element)}}
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+{{gen.yaml(element, inferred=True)}}
+```
+</details>
+
+{%- if footer -%}
+{{footer}}
+{%- endif -%}

@@ -17,7 +17,8 @@ Expected value - [e.g. text or EFO and/or OBI etc...]
 Value syntax - [e.g. {float} {unit}|{termLabel} {[termID]}|{text}|{timestamp} etc...]
 Example - [provide and example value]
 Preferred unit - [if appropriate]
-Package(s) - [list any packages that should include the new term]
+Extension(s) - [list any extensions that should include the new term]
+Relationship to other MIXS terms - [list any terms that are dependant on this term or vice-versa, e.g. "pH method" is required when "pH" is given]
 ```
 
 **Additional context**

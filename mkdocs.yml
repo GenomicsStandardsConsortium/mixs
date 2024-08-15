@@ -1,23 +1,38 @@
-site_name: "MIxS"
-
+---
+site_name: "mixs"
 theme:
   name: material
-  nav_style: dark
-
-#plugins:
-#  - search
-
-plugins: [ ]
-
-docs_dir: generated/docs
-site_dir: mkdocs_html
-
+  # palette:
+  #  scheme: slate
+  #  primary: cyan
+  features:
+    - content.tabs.link
+    - search.suggest
+plugins:
+  - search:
+      separator: '[\s\-\:\(\)]+'
+      prebuild_index: true
+  - mermaid2
+markdown_extensions:
+  - tables
+  - pymdownx.magiclink
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
 nav:
-  - Reference: index.md
-  - Introduction:
-      - Background: introduction/background.md
-      - Cite: introduction/citation.md
-      - Contents: introduction/contents.md
+  # - Home: home.md
+  - Index: index.md
+  - Full term table: term_list.md
+  - Combinations: combinations.md
+  - Enumerations: enumerations.md
+site_url: https://GenomicsStandardsConsortium.github.io/mixs
+repo_url: https://github.com/GenomicsStandardsConsortium/mixs
 
-site_url: https://genomicsstandardsconsortium.github.io/mixs/
-repo_url: https://github.com/GenomicsStandardsConsortium/mixs/
+docs_dir: docs
+
+# Uncomment this block to enable use of Google Analytics.
+# Replace the property value with your own ID.
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXXXXXXXXX

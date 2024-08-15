@@ -1,0 +1,42 @@
+{% if element.aliases %}
+## Aliases
+
+{% for alias in element.aliases %}
+* {{ alias }}
+{%- endfor %}
+{% endif %}
+
+
+{% if element.examples %}
+## Examples
+
+| Value |
+| --- |
+{% for x in element.examples -%}
+| {{ x.value }} |
+{% endfor %}
+{% endif -%}
+
+{% if element.see_also -%}
+## See Also
+
+{% for x in element.see_also -%}
+* {{ gen.uri_link(x) }}
+{% endfor %}
+{% endif -%}
+
+
+{% set annotations_data = [] %}
+
+{% for a in element.annotations -%}
+    {%- if a|string|first != '_' and element.annotations[a].value is not none and element.annotations[a].value != '' -%}
+        {%- set _ = annotations_data.append({'a': a, 'value': element.annotations[a].value}) -%}
+    {%- endif -%}
+{% endfor -%}
+
+{% if annotations_data %}
+### Annotations
+{% for item in annotations_data -%}
+* {{ item['a'] }}: {{ item['value'] }}
+{% endfor %}
+{% endif %}
