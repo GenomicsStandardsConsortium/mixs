@@ -25,7 +25,7 @@ What’s included in a release?
 
 Since there wasn’t any LinkML YAML file before version mixs6.0.0, a community-reviewed, **all-encompassing XLSX spreadsheet was designated as the “release file”** in those historical versions, and was shared with external stakeholders. The v6 release file was lost with the release of 6.1 and have been re-added to the GitHub directory (PATH). MIxS will continue to include tabular summaries in future releases. Since the content of these spreadsheets is just a small subset of the current MIxS schemas, calling them “release files” is now misleading.
 
-## [Versioning and Tracking Changes](#versioning-and-tracking-changes)
+### [Versioning and Tracking Changes](#versioning-and-tracking-changes)
 
 Anyone interested in contributing to or expanding their knowledge of MIxS is encouraged to engage with the [MIxS community](#contributing-to-mixs). Changes to MIxS over time can be found by:
 
@@ -50,7 +50,7 @@ MIxS has transitioned from using spreadsheets as the source of truth to using a 
 - Implementation of LinkML  
 - Comprehensive linting of YAML schema files
 
-## [Evolution of MIxS Representation](#evolution-of-mixs-representation)
+### [Evolution of MIxS Representation](#evolution-of-mixs-representation)
 
 - Pre-v6: Spreadsheets were both the source of truth and shareable format.  
 - v6.0.0 to v6.1.1: LinkML YAML files became the source of truth, with spreadsheets as shareable formats.  
