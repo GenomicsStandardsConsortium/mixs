@@ -2,6 +2,13 @@
 
 Welcome to the Minimum Information about any (x) Sequence (MIxS) standard, maintained by the Genomic Standards Consortium (GSC). MIxS provides a framework for describing sequences and samples across different environments.
 
+## [Accessing MIxS Versions](#accessing-mixs-versions)
+
+- Current version: [MIxS v6.2.0](https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.0)  
+- Last major release: [mixs6.0.0](https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.0.0)  
+- [View all releases on GitHub](https://github.com/GenomicsStandardsConsortium/mixs/releases)  
+- [Report issues or contribute](https://github.com/GenomicsStandardsConsortium/mixs/issues)
+
 ## [Official Releases and Versioning](#offical-releases-and-versioning)
 
 The Genomic Standards Consortium (GSC) is the provider of official MIxS releases. MIxS uses a versioning system loosely based on [semver](https://semver.org/), with major, minor and patch releases.
@@ -17,13 +24,6 @@ What’s included in a release?
 **From a GitHub perspective**, the entire `GenomicsStandardsConsortium/mixs` GitHub repository is frozen at some point in time as a release, and associated with a version tag. That includes the `mixs/schema/mixs.yaml` LinkML file, which serves as the source of truth for MIxS. It also includes numerous configuration files, representations of MIxS in formats other than YAML (like JSON schema and OWL), and code used to maintain the repository.
 
 Since there wasn’t any LinkML YAML file before version mixs6.0.0, a community-reviewed, **all-encompassing XLSX spreadsheet was designated as the “release file”** in those historical versions, and was shared with external stakeholders. The v6 release file was lost with the release of 6.1 and have been re-added to the GitHub directory (PATH). MIxS will continue to include tabular summaries in future releases. Since the content of these spreadsheets is just a small subset of the current MIxS schemas, calling them “release files” is now misleading.
-
-## [Accessing MIxS Versions](#accessing-mixs-versions)
-
-- Current version: [MIxS v6.2.0](https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.0)  
-- Last major release: [mixs6.0.0](https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.0.0)  
-- [View all releases on GitHub](https://github.com/GenomicsStandardsConsortium/mixs/releases)  
-- [Report issues or contribute](https://github.com/GenomicsStandardsConsortium/mixs/issues)
 
 ## [Versioning and Tracking Changes](#versioning-and-tracking-changes)
 
