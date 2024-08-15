@@ -2,7 +2,7 @@
 
 Welcome to the Minimum Information about any (x) Sequence (MIxS) standard, maintained by the Genomic Standards Consortium (GSC). MIxS provides a framework for describing sequences and samples across different environments.
 
-## Official Releases and Versioning(#offical-releases-and-versioning)
+## [Official Releases and Versioning](#offical-releases-and-versioning)
 
 The Genomic Standards Consortium (GSC) is the provider of official MIxS releases. MIxS uses a versioning system loosely based on [semver](https://semver.org/), with major, minor and patch releases.
 
@@ -18,14 +18,14 @@ What’s included in a release?
 
 Since there wasn’t any LinkML YAML file before version mixs6.0.0, a community-reviewed, **all-encompassing XLSX spreadsheet was designated as the “release file”** in those historical versions, and was shared with external stakeholders. The v6 release file was lost with the release of 6.1 and have been re-added to the GitHub directory (PATH). MIxS will continue to include tabular summaries in future releases. Since the content of these spreadsheets is just a small subset of the current MIxS schemas, calling them “release files” is now misleading.
 
-## Accessing MIxS Versions(#accessing-mixs-versions)
+## [Accessing MIxS Versions](#accessing-mixs-versions)
 
 - Current version: [MIxS v6.2.0](https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.0)  
 - Last major release: [mixs6.0.0](https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.0.0)  
 - [View all releases on GitHub](https://github.com/GenomicsStandardsConsortium/mixs/releases)  
 - [Report issues or contribute](https://github.com/GenomicsStandardsConsortium/mixs/issues)
 
-## Versioning and Tracking Changes(#versioning-and-tracking-changes)
+## [Versioning and Tracking Changes](#versioning-and-tracking-changes)
 
 Anyone interested in contributing to or expanding their knowledge of MIxS is encouraged to engage with the [MIxS community](#contributing-to-mixs). Changes to MIxS over time can be found by:
 
@@ -37,7 +37,7 @@ Anyone interested in contributing to or expanding their knowledge of MIxS is enc
 
 In addition to the multiple releases of MIxS provided by GSC, there are various implementations of MIxS within partner systems, like the ENA and NCBI Biosample databases that participate in the International Sequence Database Collection. The INSDC databases generally update their implantation after each **major** MIxS release by GSC, and changes from **minor** releases may not be reflected. As such, when using the MIxS standard, users are responsible to understand the version they’re accessing and how it may differ from the most recent GSC release. GSC’s Technical Working Group is working to develop more robust methods to detect differences between MIxS releases.
 
-## Key Changes(#key-changes)
+## [Key Changes](#key-changes)
 
 MIxS has transitioned from using spreadsheets as the source of truth to using a [LinkML schema](#explanation), improving computability and interoperability. The authoritative representation is now a LinkML YAML file, with efforts ongoing to provide accessible, shareable formats alongside it. Some of the following changes can be seen in the mixs.yaml source file while others can be found in the Makefile.
 
@@ -50,20 +50,20 @@ MIxS has transitioned from using spreadsheets as the source of truth to using a 
 - Implementation of LinkML  
 - Comprehensive linting of YAML schema files
 
-## Evolution of MIxS Representation(#evolution-of-mixs-representation)
+## [Evolution of MIxS Representation](#evolution-of-mixs-representation)
 
 - Pre-v6: Spreadsheets were both the source of truth and shareable format.  
 - v6.0.0 to v6.1.1: LinkML YAML files became the source of truth, with spreadsheets as shareable formats.  
 - v6.2.0 and later: A single LinkML YAML file (src/mixs/schema/mixs.yaml) is the authoritative source of truth. XLSX summaries are provided as a supplement for those that don’t need to see the full expressiveness of the MIxS schema.
 
-## How to Use MIxS(#how-to-use-mixs)
+## [How to Use MIxS](#how-to-use-mixs)
 
-### Current Structure (v6.2.0 and later)(#current-structure)
+### [Current Structure (v6.2.0 and later)](#current-structure)
 
 - Source of Truth: src/mixs/schema/mixs.yaml  
 - Shareable Formats: Under development to complement the LinkML schema
 
-### Finding the Current MIxS Version(#finding-the-current-mixs-version)
+### [Finding the Current MIxS Version](#finding-the-current-mixs-version)
 
 1. Visit the [MIxS GitHub repository](https://github.com/GenomicsStandardsConsortium/mixs)  
 2. Check the latest release in the Releases section
@@ -83,14 +83,14 @@ Consider attending one of these meetings
 * [GSC Technical Working Group (2024 Meeting Notes)](https://docs.google.com/document/d/1MG9JBj9m8Lnev7UBnPGpbQO9ReovswASGNouidjmfx4/edit\#heading=h.2989lvv9mqv5)  
 * [Compliance and Interoperability Group (CIG) Agenda and Actions](https://docs.google.com/document/d/19CWWf1oqMlyH7prteVC5k4eYF\_JzJbNqNcvGUyX\_U50/edit\#heading=h.mget0ilzdhks)
 
-## Understanding MIxS Structure(#understanding-mixs-structure)
+## [Understanding MIxS Structure](#understanding-mixs-structure)
 
 The MIxS terms are assigned to Checklist and Extension classes:
 
 1. Checklists: e.g., MIGS (Microbial Genome Sequence)  
 2. Extensions: e.g., Soil, Water, Host-associated
 
-### Key Terminology(#key-terminology)
+### [Key Terminology](#key-terminology)
 
 - Checklist: A core set of terms applicable across environments  
 - Extension: Environment-specific terms that complement checklists  
@@ -100,14 +100,14 @@ The MIxS terms are assigned to Checklist and Extension classes:
 - Range: The type of data expected for a term (formerly "Expected value")  
 - Pattern: Regular expression defining valid values (formerly "Value syntax")
 
-### LinkML Schema Structure(#linkml-schema-structure)
+### [LinkML Schema Structure](#linkml-schema-structure)
 
 - `mixs.yaml`: Main schema file  
 - Classes: Represent extensions and checklists  
 - Slots: Represent individual terms  
 - LinkML attributes: Properties of classes and slots (e.g., `required`, `range`, `pattern`)
 
-### Terminology Evolution and Current Status(#terminology-evolution-and-current-status)
+### [Terminology Evolution and Current Status](#terminology-evolution-and-current-status)
 
 1. Environmental Packages are now Environmental Extensions. Speaking strictly in terms of the MIxS v6.2.0+ LinkML model, “Combinations” refer to an Extension plus a Checklist. Partnering institutions may refer to any of these things as Packages, Models, etc.  
      
@@ -127,9 +127,9 @@ The MIxS terms are assigned to Checklist and Extension classes:
      
 9. Section values have preliminarily been expressed as LinkML `subsets`, but this approach is still under discussion in  [GitHub issue \#772](https://github.com/GenomicsStandardsConsortium/mixs/issues/772).
 
-## Explanation(#explanation)
+## [Explanation](#explanation)
 
-### Why LinkML?(#why-linkml)
+### [Why LinkML?](#why-linkml)
 
 The transition to LinkML offers several advantages:
 
@@ -138,7 +138,7 @@ The transition to LinkML offers several advantages:
 3. Better support for semantic web technologies  
 4. Easier integration with modern data management tools
 
-### Balancing Tradition and Innovation(#balancing-tradition-and-innovation)
+### [Balancing Tradition and Innovation](#balancing-tradition-and-innovation)
 
 While we've adopted LinkML as the authoritative representation, we recognize the familiarity and utility of spreadsheet formats for many users. Our ongoing efforts include:
 
@@ -146,7 +146,7 @@ While we've adopted LinkML as the authoritative representation, we recognize the
 2. Providing comprehensive documentation to support users in transitioning to and understanding the LinkML-based standard  
 3. Maintaining a balance between technical advancement and user accessibility
 
-## Future Directions(#future-directions)
+## [Future Directions](#future-directions)
 
 We are actively working on:
 
