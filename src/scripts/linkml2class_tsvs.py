@@ -1,37 +1,14 @@
 import csv
-import importlib.resources as pkg_resources
 import os
-import pprint
 from importlib import resources
-from importlib.resources import files
 from typing import List, Set, Dict, Union
 
 import click
 from linkml_runtime import SchemaView
-from linkml_runtime.dumpers import yaml_dumper
-from linkml_runtime.linkml_model import SlotDefinition
+from linkml_runtime.utils.introspection import package_schemaview
 
 from collections import OrderedDict
-import requests
 
-import yaml
-
-
-# def get_metaview():
-#     # Try to access the resource using a known part of the package structure
-#     package_name = 'linkml_runtime.linkml_model.model.schema'
-#     try:
-#         # Dynamically obtain a reference to the package containing the resource
-#         resource_package = files(package_name)
-#     #
-#     #     # Use this reference to open 'meta.yaml'
-#     #     with pkg_resources.as_file(resource_package.joinpath('meta.yaml')) as file_path:
-#     #         with open(file_path, 'r') as file:
-#     #             meta_yaml_content = file.read()
-#     #             return SchemaView(meta_yaml_content)
-#     except Exception as e:
-#         print(f"Error accessing the meta.yaml file: {e}")
-#         exit()
 
 def list_package_contents(package_name):
     try:
@@ -41,30 +18,6 @@ def list_package_contents(package_name):
     except Exception as e:
         print(f"Error accessing package contents: {e}")
         return []
-
-
-def get_metaview():
-    file_path = '/Users/MAM/Documents/gitrepos/mixs/.venv/lib/python3.9/site-packages/linkml_runtime/linkml_model/model/schema/meta.yaml'
-    package_name = 'linkml_runtime.linkml_model.model.schema'
-    resource_name = 'meta.yaml'
-    url = 'https://w3id.org/linkml/meta.yaml'
-    try:
-        # Make a GET request to fetch the content of the meta.yaml file
-        response = requests.get(url)
-        response.raise_for_status()  # Raises an HTTPError for bad responses
-        meta_yaml_content = response.text
-        return SchemaView(meta_yaml_content)
-    except requests.exceptions.HTTPError as errh:
-        print(f"HTTP Error: {errh}")
-    except requests.exceptions.ConnectionError as errc:
-        print(f"Error Connecting: {errc}")
-    except requests.exceptions.Timeout as errt:
-        print(f"Timeout Error: {errt}")
-    except requests.exceptions.RequestException as err:
-        print(f"Error: {err}")
-    except Exception as e:
-        print(f"An error occurred: {e}")
-    return None
 
 
 def collect_paths(data: Union[Dict, List], current_path: List[str], paths: Set[str]):
@@ -132,7 +85,7 @@ def process_schema_classes(schema_file: str, include_parent_classes: bool, eligi
     """
     schema_view = SchemaView(schema_file)
 
-    metaview = get_metaview()
+    metaview = package_schemaview('linkml_runtime.linkml_model.meta')
 
     metaslots_helper = {}
     for metaslot in metaslots:
