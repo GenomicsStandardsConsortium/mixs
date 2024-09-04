@@ -16,6 +16,7 @@ The Genomic Standards Consortium (GSC) is the provider of official MIxS releases
 - Conceptual major versions (e.g., "v6") represent significant milestones in MIxS development but do not directly correspond to specific release tags.  
 - Actual releases are tagged with more specific version numbers (e.g., mixs6.0.0, mixs6.1.0, v6.2.0).  
 - The last release that could be considered a "major" release in terms of significant changes is [mixs6.0.0](https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.0.0).  
+    - [release/excel/soil_mixs6.xlsx](release/excel/soil_mixs6.xlsx) is an XLSX-formatted release file, with the terms assigned to each Checklist and Extension
 - Subsequent releases (e.g., mixs6.1.0, v6.2.0) have introduced significant changes to technical implementation, but generally only minor changes to existing terms.
 
 When referring to MIxS versions, it's best to use the specific release tags (e.g., mixs6.0.0, v6.2.0) rather than general concepts like "v6".
