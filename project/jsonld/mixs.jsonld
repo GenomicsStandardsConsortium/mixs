@@ -10790,7 +10790,7 @@
     {
       "name": "animal_am_freq",
       "definition_uri": "https://w3id.org/mixs/animal_am_freq",
-      "description": "The frequency per day that the antimicrobial was adminstered to the food animal",
+      "description": "The frequency per day that the antimicrobial was administered to the food animal",
       "title": "food animal antimicrobial frequency",
       "examples": [
         {
@@ -10826,7 +10826,7 @@
     {
       "name": "animal_am_route",
       "definition_uri": "https://w3id.org/mixs/animal_am_route",
-      "description": "The route by which the antimicrobial is adminstered into the body of the food animal",
+      "description": "The route by which the antimicrobial is administered into the body of the food animal",
       "title": "food animal antimicrobial route of administration",
       "examples": [
         {
@@ -14009,7 +14009,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Specific parameters used in the decontamination sofware, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer",
+      "description": "Specific parameters used in the decontamination software, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer",
       "title": "contamination screening parameters",
       "examples": [
         {
@@ -15299,7 +15299,7 @@
     {
       "name": "door_cond",
       "definition_uri": "https://w3id.org/mixs/door_cond",
-      "description": "The phsical condition of the door",
+      "description": "The physical condition of the door",
       "title": "door condition",
       "examples": [
         {
@@ -18533,7 +18533,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "The age of the food source host organim. Depending on the type of host organism, age may be more appropriate to report in days, weeks, or years",
+      "description": "The age of the food source host organism. Depending on the type of host organism, age may be more appropriate to report in days, weeks, or years",
       "title": "food source age",
       "comments": [
         "ISO 8601 period or measurement value?"
@@ -18599,7 +18599,7 @@
     {
       "name": "food_trav_mode",
       "definition_uri": "https://w3id.org/mixs/food_trav_mode",
-      "description": "A descriptor for the method of movement of food commodity along the food distribution system.  This field accepts terms listed under travel mode (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descrptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes",
+      "description": "A descriptor for the method of movement of food commodity along the food distribution system.  This field accepts terms listed under travel mode (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descriptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes",
       "title": "food shipping transportation method",
       "examples": [
         {
@@ -18646,7 +18646,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A descriptor for the mobile machine which is used to transport food commodities along the food distribution system.  This field accepts terms listed under vehicle (http://purl.obolibrary.org/obo/ENVO_01000604). If the proper descrptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes",
+      "description": "A descriptor for the mobile machine which is used to transport food commodities along the food distribution system.  This field accepts terms listed under vehicle (http://purl.obolibrary.org/obo/ENVO_01000604). If the proper descriptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes",
       "title": "food shipping transportation vehicle",
       "examples": [
         {
@@ -20827,7 +20827,7 @@
         }
       ],
       "description": "Report the environmental material(s) immediately surrounding the symbiotic host organism at the time of sampling. This usually will be a tissue or substance type from the host, but may be another material if the symbiont is external to the host. We recommend using classes from the UBERON ontology, but subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483) may also be used. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. intestines, heart).MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. intestines, heart)",
-      "title": "host of the symbiotic host environemental medium",
+      "title": "host of the symbiotic host environmental medium",
       "examples": [
         {
           "value": "feces[uberon:0001988]",
@@ -22873,7 +22873,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A distinctive alpha-numeric identification code assigned by the manufacturer or distributor to a specific quantity of manufactured material or product within a batch. Synonym: Batch Number.  The submitter should provide lot number of the item followed by the item name for which the lot number was provided",
+      "description": "A distinctive alphanumeric identification code assigned by the manufacturer or distributor to a specific quantity of manufactured material or product within a batch. Synonym: Batch Number.  The submitter should provide lot number of the item followed by the item name for which the lot number was provided",
       "title": "lot number",
       "examples": [
         {
@@ -26433,7 +26433,7 @@
       "title": "history/previous land use",
       "examples": [
         {
-          "value": "fallow; 2018-05-11:T14:30Z",
+          "value": "follow; 2018-05-11:T14:30Z",
           "@type": "Example"
         }
       ],
@@ -29433,7 +29433,7 @@
     {
       "name": "samp_transport_cont",
       "definition_uri": "https://w3id.org/mixs/samp_transport_cont",
-      "description": "Conatiner in which the sample was stored during transport. Indicate the location name",
+      "description": "Container in which the sample was stored during transport. Indicate the location name",
       "title": "sample transport  container",
       "examples": [
         {
@@ -31532,7 +31532,7 @@
       "annotations": [
         {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "@type": "Annotation"
         }
       ],
@@ -38063,7 +38063,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -39980,7 +39980,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -41605,7 +41605,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -43247,7 +43247,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -45102,7 +45102,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -45951,7 +45951,7 @@
           "annotations": {}
         }
       },
-      "description": "Specific parameters used in the decontamination sofware, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer",
+      "description": "Specific parameters used in the decontamination software, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer",
       "title": "contamination screening parameters",
       "examples": [
         {
@@ -47103,7 +47103,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -48287,7 +48287,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -49642,7 +49642,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -51069,7 +51069,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -51655,7 +51655,7 @@
           "annotations": {}
         }
       },
-      "description": "Specific parameters used in the decontamination sofware, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer",
+      "description": "Specific parameters used in the decontamination software, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer",
       "title": "contamination screening parameters",
       "examples": [
         {
@@ -52853,7 +52853,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -55426,7 +55426,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -57387,7 +57387,7 @@
       "title": "observed host symbionts",
       "examples": [
         {
-          "value": "Paragordius varius",
+          "value": "Paragordius various",
           "@type": "Example"
         }
       ],
@@ -58726,7 +58726,7 @@
       "title": "history/previous land use",
       "examples": [
         {
-          "value": "fallow; 2018-05-11:T14:30Z",
+          "value": "follow; 2018-05-11:T14:30Z",
           "@type": "Example"
         }
       ],
@@ -59769,7 +59769,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }
@@ -63802,7 +63802,7 @@
       "title": "history/previous land use",
       "examples": [
         {
-          "value": "fallow; 2018-05-11:T14:30Z",
+          "value": "follow; 2018-05-11:T14:30Z",
           "@type": "Example"
         }
       ],
@@ -80384,7 +80384,7 @@
       "title": "history/previous land use",
       "examples": [
         {
-          "value": "fallow; 2018-05-11:T14:30Z",
+          "value": "follow; 2018-05-11:T14:30Z",
           "@type": "Example"
         }
       ],
@@ -81895,7 +81895,7 @@
       "title": "observed host symbionts",
       "examples": [
         {
-          "value": "Paragordius varius",
+          "value": "Paragordius various",
           "@type": "Example"
         }
       ],
@@ -82266,7 +82266,7 @@
       "annotations": {
         "Expected_value": {
           "tag": "Expected_value",
-          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer",
+          "value": "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier",
           "extensions": {},
           "annotations": {}
         }

@@ -305,7 +305,7 @@ MIXS:animal_am_freq a owl:ObjectProperty,
             owl:intersectionOf ( MIXS:float [ a rdfs:Datatype ;
                         owl:onDatatype xsd:string ;
                         owl:withRestrictions ( [ xsd:pattern "^[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)$" ] ) ] ) ] ;
-    skos:definition "The frequency per day that the antimicrobial was adminstered to the food animal" ;
+    skos:definition "The frequency per day that the antimicrobial was administered to the food animal" ;
     skos:inScheme <https://w3id.org/mixs> .
 
 MIXS:animal_am_route a owl:ObjectProperty,
@@ -318,7 +318,7 @@ MIXS:animal_am_route a owl:ObjectProperty,
         "food",
         "route" ;
     rdfs:range MIXS:string ;
-    skos:definition "The route by which the antimicrobial is adminstered into the body of the food animal" ;
+    skos:definition "The route by which the antimicrobial is administered into the body of the food animal" ;
     skos:inScheme <https://w3id.org/mixs> .
 
 MIXS:animal_am_use a owl:ObjectProperty,
@@ -1431,7 +1431,7 @@ MIXS:door_cond a owl:ObjectProperty,
     schema1:keywords "condition",
         "door" ;
     rdfs:range MIXS:SHAREDENUM2 ;
-    skos:definition "The phsical condition of the door" ;
+    skos:definition "The physical condition of the door" ;
     skos:inScheme <https://w3id.org/mixs> .
 
 MIXS:door_direct a owl:ObjectProperty,
@@ -2309,7 +2309,7 @@ MIXS:food_source_age a owl:ObjectProperty,
             owl:intersectionOf ( MIXS:string [ a rdfs:Datatype ;
                         owl:onDatatype xsd:string ;
                         owl:withRestrictions ( [ xsd:pattern "^[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)$" ] ) ] ) ] ;
-    skos:definition "The age of the food source host organim. Depending on the type of host organism, age may be more appropriate to report in days, weeks, or years" ;
+    skos:definition "The age of the food source host organism. Depending on the type of host organism, age may be more appropriate to report in days, weeks, or years" ;
     skos:inScheme <https://w3id.org/mixs> ;
     skos:note "ISO 8601 period or measurement value?" ;
     MIXS:Preferred_unit "days" .
@@ -2334,7 +2334,7 @@ MIXS:food_trav_mode a owl:ObjectProperty,
             owl:intersectionOf ( MIXS:string [ a rdfs:Datatype ;
                         owl:onDatatype xsd:string ;
                         owl:withRestrictions ( [ xsd:pattern "^([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+) \\[[a-zA-Z]{2,}:[a-zA-Z0-9]\\d+\\]$" ] ) ] ) ] ;
-    skos:definition "A descriptor for the method of movement of food commodity along the food distribution system.  This field accepts terms listed under travel mode (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descrptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes" ;
+    skos:definition "A descriptor for the method of movement of food commodity along the food distribution system.  This field accepts terms listed under travel mode (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descriptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes" ;
     skos:inScheme <https://w3id.org/mixs> .
 
 MIXS:food_trav_vehic a owl:ObjectProperty,
@@ -2343,7 +2343,7 @@ MIXS:food_trav_vehic a owl:ObjectProperty,
     dcterms:title "food shipping transportation vehicle" ;
     schema1:keywords "food",
         "transport" ;
-    skos:definition "A descriptor for the mobile machine which is used to transport food commodities along the food distribution system.  This field accepts terms listed under vehicle (http://purl.obolibrary.org/obo/ENVO_01000604). If the proper descrptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes" ;
+    skos:definition "A descriptor for the mobile machine which is used to transport food commodities along the food distribution system.  This field accepts terms listed under vehicle (http://purl.obolibrary.org/obo/ENVO_01000604). If the proper descriptor is not listed please use text to describe the mode of travel. Multiple terms can be separated by one or more pipes" ;
     skos:inScheme <https://w3id.org/mixs> ;
     MIXS:Expected_value "ENVO:01000604" .
 
@@ -2814,7 +2814,7 @@ MIXS:host_of_host_env_loc a owl:ObjectProperty,
 MIXS:host_of_host_env_med a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "host_of_host_env_med" ;
-    dcterms:title "host of the symbiotic host environemental medium" ;
+    dcterms:title "host of the symbiotic host environmental medium" ;
     schema1:keywords "environmental",
         "host",
         "host.",
@@ -3325,7 +3325,7 @@ MIXS:lot_number a owl:ObjectProperty,
     rdfs:label "lot_number" ;
     dcterms:title "lot number" ;
     schema1:keywords "number" ;
-    skos:definition "A distinctive alpha-numeric identification code assigned by the manufacturer or distributor to a specific quantity of manufactured material or product within a batch. Synonym: Batch Number.  The submitter should provide lot number of the item followed by the item name for which the lot number was provided" ;
+    skos:definition "A distinctive alphanumeric identification code assigned by the manufacturer or distributor to a specific quantity of manufactured material or product within a batch. Synonym: Batch Number.  The submitter should provide lot number of the item followed by the item name for which the lot number was provided" ;
     skos:inScheme <https://w3id.org/mixs> ;
     MIXS:Expected_value "lot number, item" .
 
@@ -7137,7 +7137,7 @@ MIXS:samp_transport_cont a owl:ObjectProperty,
     schema1:keywords "sample",
         "transport" ;
     rdfs:range MIXS:SAMPTRANSPORTCONTENUM ;
-    skos:definition "Conatiner in which the sample was stored during transport. Indicate the location name" ;
+    skos:definition "Container in which the sample was stored during transport. Indicate the location name" ;
     skos:inScheme <https://w3id.org/mixs> .
 
 MIXS:samp_transport_dur a owl:ObjectProperty,
@@ -15563,7 +15563,7 @@ MIXS:contam_screen_param a owl:ObjectProperty,
     rdfs:label "contam_screen_param" ;
     dcterms:title "contamination screening parameters" ;
     schema1:keywords "parameter" ;
-    skos:definition "Specific parameters used in the decontamination sofware, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer" ;
+    skos:definition "Specific parameters used in the decontamination software, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer" ;
     skos:inScheme <https://w3id.org/mixs> ;
     MIXS:Expected_value "enumeration;value or name" .
 
@@ -27969,7 +27969,7 @@ MIXS:source_mat_id a owl:ObjectProperty,
         "source" ;
     skos:definition "A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain 'UAM:Herps:14' , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2)" ;
     skos:inScheme <https://w3id.org/mixs> ;
-    MIXS:Expected_value "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifer" .
+    MIXS:Expected_value "for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary identifier" .
 
 MIXS:FAOCLASSENUM a owl:Class,
         linkml:EnumDefinition ;

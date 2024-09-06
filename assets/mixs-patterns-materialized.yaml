@@ -6131,7 +6131,7 @@ slots:
     slot_uri: MIXS:0001244
   animal_am_freq:
     name: animal_am_freq
-    description: The frequency per day that the antimicrobial was adminstered to the
+    description: The frequency per day that the antimicrobial was administered to the
       food animal
     title: food animal antimicrobial frequency
     examples:
@@ -6152,7 +6152,7 @@ slots:
       partial_match: true
   animal_am_route:
     name: animal_am_route
-    description: The route by which the antimicrobial is adminstered into the body
+    description: The route by which the antimicrobial is administered into the body
       of the food animal
     title: food animal antimicrobial route of administration
     examples:
@@ -7769,7 +7769,7 @@ slots:
       Expected_value:
         tag: Expected_value
         value: enumeration;value or name
-    description: Specific parameters used in the decontamination sofware, such as
+    description: Specific parameters used in the decontamination software, such as
       reference database, coverage, and kmers. Combinations of these parameters may
       also be used, i.e. kmer and coverage, or reference database and kmer
     title: contamination screening parameters
@@ -8414,7 +8414,7 @@ slots:
     range: DoorCompTypeEnum
   door_cond:
     name: door_cond
-    description: The phsical condition of the door
+    description: The physical condition of the door
     title: door condition
     examples:
     - value: new
@@ -10053,7 +10053,7 @@ slots:
       Preferred_unit:
         tag: Preferred_unit
         value: days
-    description: The age of the food source host organim. Depending on the type of
+    description: The age of the food source host organism. Depending on the type of
       host organism, age may be more appropriate to report in days, weeks, or years
     title: food source age
     comments:
@@ -10095,7 +10095,7 @@ slots:
     name: food_trav_mode
     description: A descriptor for the method of movement of food commodity along the
       food distribution system.  This field accepts terms listed under travel mode
-      (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descrptor is
+      (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descriptor is
       not listed please use text to describe the mode of travel. Multiple terms can
       be separated by one or more pipes
     title: food shipping transportation method
@@ -10123,7 +10123,7 @@ slots:
     description: A descriptor for the mobile machine which is used to transport food
       commodities along the food distribution system.  This field accepts terms listed
       under vehicle (http://purl.obolibrary.org/obo/ENVO_01000604). If the proper
-      descrptor is not listed please use text to describe the mode of travel. Multiple
+      descriptor is not listed please use text to describe the mode of travel. Multiple
       terms can be separated by one or more pipes
     title: food shipping transportation vehicle
     examples:
@@ -11225,7 +11225,7 @@ slots:
       (e.g. intestines, heart).MIxS . Terms from other OBO ontologies are permissible
       as long as they reference mass/volume nouns (e.g. air, water, blood) and not
       discrete, countable entities (e.g. intestines, heart)'
-    title: host of the symbiotic host environemental medium
+    title: host of the symbiotic host environmental medium
     examples:
     - value: feces[uberon:0001988]
     from_schema: https://w3id.org/mixs
@@ -12225,7 +12225,7 @@ slots:
       Expected_value:
         tag: Expected_value
         value: lot number, item
-    description: 'A distinctive alpha-numeric identification code assigned by the
+    description: 'A distinctive alphanumeric identification code assigned by the
       manufacturer or distributor to a specific quantity of manufactured material
       or product within a batch. Synonym: Batch Number.  The submitter should provide
       lot number of the item followed by the item name for which the lot number was
@@ -13970,7 +13970,7 @@ slots:
     description: Previous land use and dates
     title: history/previous land use
     examples:
-    - value: fallow; 2018-05-11:T14:30Z
+    - value: follow; 2018-05-11:T14:30Z
     from_schema: https://w3id.org/mixs
     keywords:
     - history
@@ -15419,7 +15419,7 @@ slots:
     slot_uri: MIXS:0000410
   samp_transport_cont:
     name: samp_transport_cont
-    description: Conatiner in which the sample was stored during transport. Indicate
+    description: Container in which the sample was stored during transport. Indicate
       the location name
     title: sample transport  container
     examples:
@@ -20941,7 +20941,7 @@ classes:
       host_symbiont:
         name: host_symbiont
         examples:
-        - value: Paragordius varius
+        - value: Paragordius various
       host_taxid:
         name: host_taxid
         examples:
@@ -23983,7 +23983,7 @@ classes:
       host_symbiont:
         name: host_symbiont
         examples:
-        - value: Paragordius varius
+        - value: Paragordius various
       host_taxid:
         name: host_taxid
         examples:
