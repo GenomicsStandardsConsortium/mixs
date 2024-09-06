@@ -43,3 +43,9 @@ docs = ["linkml", "mkdocs-material"]
 [tool.poetry.scripts]
 extension-distances = 'scripts.extension_distances:generate_dendrogram'
 extension-differences = 'scripts.extension_slot_diffrences:set_arithmatic'
+[tool.codespell]
+# Ref: https://github.com/codespell-project/codespell#using-a-config-file
+skip = '.git*,*.pdf,*.lock'
+check-hidden = true
+# ignore-regex = ''
+# ignore-words-list = ''
