@@ -6357,7 +6357,7 @@ MIXS:pour_point a owl:ObjectProperty,
             owl:intersectionOf ( MIXS:string [ a rdfs:Datatype ;
                         owl:onDatatype xsd:string ;
                         owl:withRestrictions ( [ xsd:pattern "^[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)$" ] ) ] ) ] ;
-    skos:definition "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high  pour point  is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)" ;
+    skos:definition "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high  pour point  is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (source: https://en.wikipedia.org/wiki/pour_point)" ;
     skos:inScheme <https://w3id.org/mixs> ;
     MIXS:Preferred_unit "degree Celsius" .
 
@@ -12789,9 +12789,9 @@ MIXS:uriorcurie a owl:Class,
         MIXS:LIGHTTYPEENUM ;
     rdfs:label "electric light" .
 
-<https://w3id.org/mixs/LIGHTTYPEENUM#flourescent+lights> a owl:Class,
+<https://w3id.org/mixs/LIGHTTYPEENUM#fluorescent+lights> a owl:Class,
         MIXS:LIGHTTYPEENUM ;
-    rdfs:label "flourescent lights" .
+    rdfs:label "fluorescent lights" .
 
 <https://w3id.org/mixs/LIGHTTYPEENUM#natural+light> a owl:Class,
         MIXS:LIGHTTYPEENUM ;
@@ -15372,10 +15372,10 @@ MIXS:HEATCOOLTYPEENUM a owl:Class,
 
 MIXS:LIGHTTYPEENUM a owl:Class,
         linkml:EnumDefinition ;
-    owl:unionOf ( <https://w3id.org/mixs/LIGHTTYPEENUM#desk+lamp> <https://w3id.org/mixs/LIGHTTYPEENUM#electric+light> <https://w3id.org/mixs/LIGHTTYPEENUM#flourescent+lights> <https://w3id.org/mixs/LIGHTTYPEENUM#natural+light> <https://w3id.org/mixs/LIGHTTYPEENUM#none> ) ;
+    owl:unionOf ( <https://w3id.org/mixs/LIGHTTYPEENUM#desk+lamp> <https://w3id.org/mixs/LIGHTTYPEENUM#electric+light> <https://w3id.org/mixs/LIGHTTYPEENUM#fluorescent+lights> <https://w3id.org/mixs/LIGHTTYPEENUM#natural+light> <https://w3id.org/mixs/LIGHTTYPEENUM#none> ) ;
     linkml:permissible_values <https://w3id.org/mixs/LIGHTTYPEENUM#desk+lamp>,
         <https://w3id.org/mixs/LIGHTTYPEENUM#electric+light>,
-        <https://w3id.org/mixs/LIGHTTYPEENUM#flourescent+lights>,
+        <https://w3id.org/mixs/LIGHTTYPEENUM#fluorescent+lights>,
         <https://w3id.org/mixs/LIGHTTYPEENUM#natural+light>,
         <https://w3id.org/mixs/LIGHTTYPEENUM#none> .
 
