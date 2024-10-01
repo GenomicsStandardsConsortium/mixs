@@ -1731,10 +1731,6 @@ attributes:
       partial_match: true
   add_recov_method:
     name: add_recov_method
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: enumeration;timestamp
     description: Additional (i.e. Secondary, tertiary, etc.) recovery methods deployed
       for increase of hydrocarbon recovery from resource and start date for each one
       of them. If &quot;other&quot; is specified, please propose entry in &quot;additional info&quot;
@@ -1749,8 +1745,6 @@ attributes:
     - recover
     - secondary
     - start
-    string_serialization: '[Water Injection|Dump Flood|Gas Injection|Wag Immiscible
-      Injection|Polymer Addition|Surfactant Addition|Not Applicable|other];{timestamp}'
     slot_uri: MIXS:0001009
     alias: add_recov_method
     owner: HydrocarbonResourcesFluidsSwabs
@@ -1758,6 +1752,10 @@ attributes:
     - HydrocarbonResourcesFluidsSwabs
     range: string
     required: true
+    structured_pattern:
+      syntax: ^({add_recov_methods});{date_time_stamp}$
+      interpolated: true
+      partial_match: true
   iw_bt_date_well:
     name: iw_bt_date_well
     description: Injection water breakthrough date per well following a secondary
@@ -2280,7 +2278,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: HydrocarbonResourcesFluidsSwabs

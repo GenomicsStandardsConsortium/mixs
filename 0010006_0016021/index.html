@@ -521,7 +521,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000056">MIXS:0000056</a></td>
 <td><a href="../0000056/">assembly_qual</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../AssemblyQualEnum/">AssemblyQualEnum</a></td>
 <td>The assembly quality category is based on sets of criteria outlined for each ...</td>
 </tr>
 <tr>
@@ -1340,7 +1340,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - library
-    string_serialization: '{text}'
     slot_uri: MIXS:0000043
     alias: lib_screen
     owner: MigsOrgFoodFoodProductionFacility
@@ -1758,7 +1757,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: MigsOrgFoodFoodProductionFacility
@@ -2016,10 +2014,6 @@ attributes:
     range: LibLayoutEnum
   assembly_qual:
     name: assembly_qual
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: enumeration
     description: 'The assembly quality category is based on sets of criteria outlined
       for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated,
       contiguous sequence per replicon without gaps or ambiguities with a consensus
@@ -2046,8 +2040,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - quality
-    string_serialization: '[Finished genome|High-quality draft genome|Medium-quality
-      draft genome|Low-quality draft genome|Genome fragment(s)]'
     slot_uri: MIXS:0000056
     alias: assembly_qual
     owner: MigsOrgFoodFoodProductionFacility
@@ -2062,7 +2054,7 @@ attributes:
     - Misag
     - Miuvig
     - Agriculture
-    range: string
+    range: AssemblyQualEnum
   ref_biomaterial:
     name: ref_biomaterial
     description: Primary publication if isolated before genome publication; otherwise,
@@ -2157,7 +2149,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - library
-    string_serialization: '{text}'
     slot_uri: MIXS:0000042
     alias: lib_vector
     owner: MigsOrgFoodFoodProductionFacility
@@ -2176,10 +2167,6 @@ attributes:
     range: string
   adapters:
     name: adapters
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: adapter A and B sequence
     description: Adapters provide priming sequences for both amplification and sequencing
       of the sample-library fragments. Both adapters should be reported; in uppercase
       letters
@@ -2189,7 +2176,6 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    string_serialization: '{dna};{dna}'
     slot_uri: MIXS:0000048
     alias: adapters
     owner: MigsOrgFoodFoodProductionFacility
@@ -2207,6 +2193,10 @@ attributes:
     - Agriculture
     range: string
     recommended: true
+    structured_pattern:
+      syntax: ^{adapter_A_DNA_sequence};{adapter_B_DNA_sequence}$
+      interpolated: true
+      partial_match: true
   neg_cont_type:
     name: neg_cont_type
     annotations:
@@ -2314,7 +2304,6 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0000059
     alias: annot
     owner: MigsOrgFoodFoodProductionFacility
@@ -2448,7 +2437,6 @@ attributes:
     keywords:
     - context
     - environmental
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000013
     alias: env_local_scale
     owner: MigsOrgFoodFoodProductionFacility
@@ -2466,6 +2454,10 @@ attributes:
     - Miuvig
     range: string
     required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   compl_software:
     name: compl_software
     annotations:
@@ -2842,12 +2834,9 @@ attributes:
       partial_match: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -2857,7 +2846,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: MigsOrgFoodFoodProductionFacility
@@ -3315,7 +3303,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - frequency
-    string_serialization: '{text}'
     slot_uri: MIXS:0000226
     alias: freq_clean
     owner: MigsOrgFoodFoodProductionFacility
@@ -3383,7 +3370,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: MigsOrgFoodFoodProductionFacility
@@ -3710,7 +3696,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - food
-    string_serialization: '{text}'
     slot_uri: MIXS:0001179
     alias: IFSAC_category
     owner: MigsOrgFoodFoodProductionFacility
@@ -3987,7 +3972,6 @@ attributes:
     - area
     - food
     - production
-    string_serialization: '{text}'
     slot_uri: MIXS:0001253
     alias: hygienic_area
     owner: MigsOrgFoodFoodProductionFacility
@@ -4015,7 +3999,6 @@ attributes:
     - environmental
     - food
     - production
-    string_serialization: '{text}'
     slot_uri: MIXS:0001254
     alias: env_monitoring_zone
     owner: MigsOrgFoodFoodProductionFacility
@@ -4102,7 +4085,6 @@ attributes:
     examples:
     - value: Quaternary ammonium compound|SterBac
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0001258
     alias: biocide_used
     owner: MigsOrgFoodFoodProductionFacility
@@ -4498,7 +4480,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - kit
-    string_serialization: '{text}'
     slot_uri: MIXS:0001223
     alias: nucl_acid_ext_kit
     owner: MigsOrgFoodFoodProductionFacility
@@ -4524,7 +4505,6 @@ attributes:
     - kit
     - library
     - preparation
-    string_serialization: '{text}'
     slot_uri: MIXS:0001145
     alias: library_prep_kit
     owner: MigsOrgFoodFoodProductionFacility
@@ -4552,7 +4532,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - kit
-    string_serialization: '{text}'
     slot_uri: MIXS:0001155
     alias: sequencing_kit
     owner: MigsOrgFoodFoodProductionFacility
@@ -5366,7 +5345,6 @@ attributes:
     examples:
     - value: FDA CFSAN Microbiology Laboratories
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0001152
     alias: repository_name
     owner: MigsOrgFoodFoodProductionFacility

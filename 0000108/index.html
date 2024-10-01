@@ -339,21 +339,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -414,7 +399,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: *</li>
+<li>
+<p>Cardinality: *</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{particulate_matter_name};{float} {unit}$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -429,18 +419,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: particulate matter name;measurement value</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: air_PM_concen
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: particulate matter name;measurement value
 description: Concentration of substances that remain suspended in the air, and comprise
   mixtures of organic and inorganic substances (PM10 and PM2.5); can report multiple
   PM's by entering numeric values preceded by name of PM
@@ -453,7 +435,6 @@ keywords:
 - concentration
 - particle
 - particulate
-string_serialization: '{text};{float} {unit}'
 slot_uri: MIXS:0000108
 alias: air_PM_concen
 domain_of:
@@ -461,6 +442,10 @@ domain_of:
 - FoodFarmEnvironment
 range: string
 multivalued: true
+structured_pattern:
+  syntax: ^{particulate_matter_name};{float} {unit}$
+  interpolated: true
+  partial_match: true
 
 </code></pre>
 

@@ -1296,7 +1296,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: MimarksCWastewaterSludge
@@ -1734,7 +1733,6 @@ attributes:
     keywords:
     - context
     - environmental
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000013
     alias: env_local_scale
     owner: MimarksCWastewaterSludge
@@ -1752,6 +1750,10 @@ attributes:
     - Miuvig
     range: string
     required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   samp_mat_process:
     name: samp_mat_process
     description: A brief description of any processing applied to the sample during
@@ -2069,12 +2071,9 @@ attributes:
       partial_match: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -2084,7 +2083,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: MimarksCWastewaterSludge
@@ -2851,7 +2849,6 @@ attributes:
       collected from the raw wastewater
     title: pre-treatment
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0000348
     alias: pre_treatment
     owner: MimarksCWastewaterSludge
@@ -2872,7 +2869,6 @@ attributes:
     keywords:
     - primary
     - treatment
-    string_serialization: '{text}'
     slot_uri: MIXS:0000349
     alias: primary_treatment
     owner: MimarksCWastewaterSludge
@@ -2892,7 +2888,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - type
-    string_serialization: '{text}'
     slot_uri: MIXS:0000350
     alias: reactor_type
     owner: MimarksCWastewaterSludge
@@ -3004,7 +2999,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: MimarksCWastewaterSludge
@@ -3090,7 +3084,6 @@ attributes:
     keywords:
     - secondary
     - treatment
-    string_serialization: '{text}'
     slot_uri: MIXS:0000351
     alias: secondary_treatment
     owner: MimarksCWastewaterSludge
@@ -3108,7 +3101,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - type
-    string_serialization: '{text}'
     slot_uri: MIXS:0000215
     alias: sewage_type
     owner: MimarksCWastewaterSludge
@@ -3256,7 +3248,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - treatment
-    string_serialization: '{text}'
     slot_uri: MIXS:0000352
     alias: tertiary_treatment
     owner: MimarksCWastewaterSludge
@@ -3332,7 +3323,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - type
-    string_serialization: '{text}'
     slot_uri: MIXS:0000353
     alias: wastewater_type
     owner: MimarksCWastewaterSludge

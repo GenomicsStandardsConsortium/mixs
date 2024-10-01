@@ -641,7 +641,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000858">MIXS:0000858</a></td>
 <td><a href="../0000858/">biol_stat</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../BiolStatEnum/">BiolStatEnum</a></td>
 <td>The level of genome modification</td>
 </tr>
 <tr>
@@ -1344,7 +1344,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: MimarksCHostAssociated
@@ -1782,7 +1781,6 @@ attributes:
     keywords:
     - context
     - environmental
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000013
     alias: env_local_scale
     owner: MimarksCHostAssociated
@@ -1800,6 +1798,10 @@ attributes:
     - Miuvig
     range: string
     required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   samp_mat_process:
     name: samp_mat_process
     description: A brief description of any processing applied to the sample during
@@ -2117,12 +2119,9 @@ attributes:
       partial_match: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -2132,7 +2131,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: MimarksCHostAssociated
@@ -2403,10 +2401,6 @@ attributes:
     range: string
   biol_stat:
     name: biol_stat
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: enumeration
     description: The level of genome modification
     title: biological status
     examples:
@@ -2414,15 +2408,13 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - status
-    string_serialization: '[wild|natural|semi-natural|inbred line|breeder''s line|hybrid|clonal
-      selection|mutant]'
     slot_uri: MIXS:0000858
     alias: biol_stat
     owner: MimarksCHostAssociated
     domain_of:
     - HostAssociated
     - PlantAssociated
-    range: string
+    range: BiolStatEnum
   genetic_mod:
     name: genetic_mod
     annotations:
@@ -2608,7 +2600,6 @@ attributes:
     - host
     - host.
     - life
-    string_serialization: '{text}'
     slot_uri: MIXS:0000251
     alias: host_life_stage
     owner: MimarksCHostAssociated
@@ -3557,7 +3548,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: MimarksCHostAssociated
@@ -3602,7 +3592,6 @@ attributes:
     - host.
     - observed
     - symbiosis
-    string_serialization: '{text}'
     slot_uri: MIXS:0001298
     alias: host_symbiont
     owner: MimarksCHostAssociated

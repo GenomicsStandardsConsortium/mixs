@@ -1764,12 +1764,9 @@ attributes:
     required: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -1779,7 +1776,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: FoodFarmEnvironment
@@ -3130,7 +3126,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - type
-    string_serialization: '{text}'
     slot_uri: MIXS:0000756
     alias: ventilation_type
     owner: FoodFarmEnvironment
@@ -3729,10 +3724,6 @@ attributes:
       partial_match: true
   air_PM_concen:
     name: air_PM_concen
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: particulate matter name;measurement value
     description: Concentration of substances that remain suspended in the air, and
       comprise mixtures of organic and inorganic substances (PM10 and PM2.5); can
       report multiple PM's by entering numeric values preceded by name of PM
@@ -3745,7 +3736,6 @@ attributes:
     - concentration
     - particle
     - particulate
-    string_serialization: '{text};{float} {unit}'
     slot_uri: MIXS:0000108
     alias: air_PM_concen
     owner: FoodFarmEnvironment
@@ -3754,6 +3744,10 @@ attributes:
     - FoodFarmEnvironment
     range: string
     multivalued: true
+    structured_pattern:
+      syntax: ^{particulate_matter_name};{float} {unit}$
+      interpolated: true
+      partial_match: true
   animal_feed_equip:
     name: animal_feed_equip
     annotations:
@@ -3770,7 +3764,6 @@ attributes:
     keywords:
     - animal
     - equipment
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0001113
     alias: animal_feed_equip
     owner: FoodFarmEnvironment
@@ -3779,6 +3772,10 @@ attributes:
     - FoodFarmEnvironment
     range: string
     multivalued: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   animal_intrusion:
     name: animal_intrusion
     description: Identification of animals intruding on the sample or sample site
@@ -4002,7 +3999,6 @@ attributes:
     - feature
     - source
     - water
-    string_serialization: '{text}'
     slot_uri: MIXS:0001122
     alias: water_source_adjac
     owner: FoodFarmEnvironment
@@ -4194,7 +4190,6 @@ attributes:
     - diet
     - food
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0001130
     alias: animal_diet
     owner: FoodFarmEnvironment
@@ -4602,7 +4597,6 @@ attributes:
     - kit
     - library
     - preparation
-    string_serialization: '{text}'
     slot_uri: MIXS:0001145
     alias: library_prep_kit
     owner: FoodFarmEnvironment
@@ -4802,7 +4796,6 @@ attributes:
     examples:
     - value: FDA CFSAN Microbiology Laboratories
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0001152
     alias: repository_name
     owner: FoodFarmEnvironment
@@ -4881,7 +4874,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - kit
-    string_serialization: '{text}'
     slot_uri: MIXS:0001155
     alias: sequencing_kit
     owner: FoodFarmEnvironment
@@ -5479,7 +5471,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - food
-    string_serialization: '{text}'
     slot_uri: MIXS:0001179
     alias: IFSAC_category
     owner: FoodFarmEnvironment

@@ -339,21 +339,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -400,8 +385,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0010004/">MigsPl</a></td>
-<td>Minimal Information about a Genome Sequence: plasmid</td>
+<td><a href="../0010012/">Miuvig</a></td>
+<td>Minimum Information About an Uncultivated Virus Genome</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0010007/">Mims</a></td>
+<td>Metagenome or Environmental</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -410,23 +400,23 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010011/">Mimag</a></td>
-<td>Minimum Information About a Metagenome-Assembled Genome</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010012/">Miuvig</a></td>
-<td>Minimum Information About an Uncultivated Virus Genome</td>
-<td>Checklist</td>
-</tr>
-<tr>
 <td><a href="../0010002/">MigsEu</a></td>
 <td>Minimal Information about a Genome Sequence: eukaryote</td>
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010007/">Mims</a></td>
-<td>Metagenome or Environmental</td>
+<td><a href="../0010011/">Mimag</a></td>
+<td>Minimum Information About a Metagenome-Assembled Genome</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0016018/">Agriculture</a></td>
+<td>A collection of terms appropriate when sequencing samples obtained in an agri...</td>
+<td>Extension</td>
+</tr>
+<tr>
+<td><a href="../0010006/">MigsOrg</a></td>
+<td>Minimal Information about a Genome Sequence: organelle</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -440,20 +430,15 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0016018/">Agriculture</a></td>
-<td>A collection of terms appropriate when sequencing samples obtained in an agri...</td>
-<td>Extension</td>
-</tr>
-<tr>
-<td><a href="../0010006/">MigsOrg</a></td>
-<td>Minimal Information about a Genome Sequence: organelle</td>
+<td><a href="../0010004/">MigsPl</a></td>
+<td>Minimal Information about a Genome Sequence: plasmid</td>
 <td>Checklist</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../AssemblyQualEnum/">AssemblyQualEnum</a></li>
 <li>Cardinality: 0..1</li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -469,18 +454,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: enumeration</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: assembly_qual
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: enumeration
 description: 'The assembly quality category is based on sets of criteria outlined
   for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated,
   contiguous sequence per replicon without gaps or ambiguities with a consensus error
@@ -506,8 +483,6 @@ in_subset:
 from_schema: https://w3id.org/mixs
 keywords:
 - quality
-string_serialization: '[Finished genome|High-quality draft genome|Medium-quality draft
-  genome|Low-quality draft genome|Genome fragment(s)]'
 slot_uri: MIXS:0000056
 alias: assembly_qual
 domain_of:
@@ -521,7 +496,7 @@ domain_of:
 - Misag
 - Miuvig
 - Agriculture
-range: string
+range: AssemblyQualEnum
 
 </code></pre>
 

@@ -1260,10 +1260,6 @@ attributes:
     multivalued: true
   air_PM_concen:
     name: air_PM_concen
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: particulate matter name;measurement value
     description: Concentration of substances that remain suspended in the air, and
       comprise mixtures of organic and inorganic substances (PM10 and PM2.5); can
       report multiple PM's by entering numeric values preceded by name of PM
@@ -1276,7 +1272,6 @@ attributes:
     - concentration
     - particle
     - particulate
-    string_serialization: '{text};{float} {unit}'
     slot_uri: MIXS:0000108
     alias: air_PM_concen
     owner: Air
@@ -1285,6 +1280,10 @@ attributes:
     - FoodFarmEnvironment
     range: string
     multivalued: true
+    structured_pattern:
+      syntax: ^{particulate_matter_name};{float} {unit}$
+      interpolated: true
+      partial_match: true
   salinity:
     name: salinity
     annotations:
@@ -1390,7 +1389,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: Air
@@ -1652,7 +1650,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - type
-    string_serialization: '{text}'
     slot_uri: MIXS:0000756
     alias: ventilation_type
     owner: Air

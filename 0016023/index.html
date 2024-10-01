@@ -1167,12 +1167,9 @@ attributes:
     required: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -1182,7 +1179,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: SymbiontAssociated
@@ -1536,7 +1532,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: SymbiontAssociated
@@ -1633,7 +1628,6 @@ attributes:
     - host
     - host.
     - life
-    string_serialization: '{text}'
     slot_uri: MIXS:0000251
     alias: host_life_stage
     owner: SymbiontAssociated
@@ -2185,7 +2179,6 @@ attributes:
     - host.
     - observed
     - symbiosis
-    string_serialization: '{text}'
     slot_uri: MIXS:0001298
     alias: host_symbiont
     owner: SymbiontAssociated
@@ -2307,7 +2300,6 @@ attributes:
     - host.
     - observed
     - organism
-    string_serialization: '{text}'
     slot_uri: MIXS:0001310
     alias: host_of_host_coinf
     owner: SymbiontAssociated
@@ -3037,7 +3029,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: SymbiontAssociated
@@ -3077,7 +3068,6 @@ attributes:
     keywords:
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0001317
     alias: samp_store_sol
     owner: SymbiontAssociated

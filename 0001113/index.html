@@ -414,7 +414,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: *</li>
+<li>
+<p>Cardinality: *</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{termLabel} \[{termID}\]$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -451,7 +456,6 @@ from_schema: https://w3id.org/mixs
 keywords:
 - animal
 - equipment
-string_serialization: '{termLabel} [{termID}]'
 slot_uri: MIXS:0001113
 alias: animal_feed_equip
 domain_of:
@@ -459,6 +463,10 @@ domain_of:
 - FoodFarmEnvironment
 range: string
 multivalued: true
+structured_pattern:
+  syntax: ^{termLabel} \[{termID}\]$
+  interpolated: true
+  partial_match: true
 
 </code></pre>
 

@@ -744,7 +744,7 @@
 <td><a href="https://w3id.org/mixs/0001245">MIXS:0001245</a></td>
 <td><a href="../0001245/">animal_am_freq</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
-<td>The frequency per day that the antimicrobial was adminstered to the food anim...</td>
+<td>The frequency per day that the antimicrobial was administered to the food ani...</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/0001246">MIXS:0001246</a></td>
@@ -1614,7 +1614,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: MimarksCFoodAnimalAndAnimalFeed
@@ -2052,7 +2051,6 @@ attributes:
     keywords:
     - context
     - environmental
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000013
     alias: env_local_scale
     owner: MimarksCFoodAnimalAndAnimalFeed
@@ -2070,6 +2068,10 @@ attributes:
     - Miuvig
     range: string
     required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   samp_mat_process:
     name: samp_mat_process
     description: A brief description of any processing applied to the sample during
@@ -2387,12 +2389,9 @@ attributes:
       partial_match: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -2402,7 +2401,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: MimarksCFoodAnimalAndAnimalFeed
@@ -2865,7 +2863,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: MimarksCFoodAnimalAndAnimalFeed
@@ -3124,7 +3121,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - food
-    string_serialization: '{text}'
     slot_uri: MIXS:0001179
     alias: IFSAC_category
     owner: MimarksCFoodAnimalAndAnimalFeed
@@ -3211,10 +3207,6 @@ attributes:
     range: string
   animal_am_dur:
     name: animal_am_dur
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: value
     description: The duration of time (days) that the antimicrobial was administered
       to the food animal
     title: food animal antimicrobial duration
@@ -3227,17 +3219,20 @@ attributes:
     - duration
     - food
     - period
-    string_serialization: '{float} {day}'
     slot_uri: MIXS:0001244
     alias: animal_am_dur
     owner: MimarksCFoodAnimalAndAnimalFeed
     domain_of:
     - FoodAnimalAndAnimalFeed
     range: string
+    structured_pattern:
+      syntax: ^{float} days$
+      interpolated: true
+      partial_match: true
   animal_am_freq:
     name: animal_am_freq
-    description: The frequency per day that the antimicrobial was adminstered to the
-      food animal
+    description: The frequency per day that the antimicrobial was administered to
+      the food animal
     title: food animal antimicrobial frequency
     examples:
     - value: '1.5'
@@ -3341,7 +3336,6 @@ attributes:
     - diet
     - food
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0001130
     alias: animal_diet
     owner: MimarksCFoodAnimalAndAnimalFeed
@@ -3366,7 +3360,6 @@ attributes:
     keywords:
     - animal
     - equipment
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0001113
     alias: animal_feed_equip
     owner: MimarksCFoodAnimalAndAnimalFeed
@@ -3375,6 +3368,10 @@ attributes:
     - FoodFarmEnvironment
     range: string
     multivalued: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   animal_group_size:
     name: animal_group_size
     description: The number of food animals of the same species that are maintained
@@ -4275,7 +4272,6 @@ attributes:
     - kit
     - library
     - preparation
-    string_serialization: '{text}'
     slot_uri: MIXS:0001145
     alias: library_prep_kit
     owner: MimarksCFoodAnimalAndAnimalFeed
@@ -4382,7 +4378,6 @@ attributes:
     examples:
     - value: FDA CFSAN Microbiology Laboratories
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0001152
     alias: repository_name
     owner: MimarksCFoodAnimalAndAnimalFeed
@@ -4621,7 +4616,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - kit
-    string_serialization: '{text}'
     slot_uri: MIXS:0001155
     alias: sequencing_kit
     owner: MimarksCFoodAnimalAndAnimalFeed

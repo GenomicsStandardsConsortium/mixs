@@ -414,7 +414,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: *</li>
+<li>
+<p>Cardinality: *</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{agrochemical_name};{amount} {unit};{date_time_stamp}$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -431,7 +436,6 @@
 </table>
 <h3 id="annotations">Annotations</h3>
 <ul>
-<li>Expected_value: agrochemical name;agrochemical amount;timestamp</li>
 <li>Preferred_unit: gram, mole per liter, milligram per liter</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -439,9 +443,6 @@
 
 <pre><code class="language-yaml">name: agrochem_addition
 annotations:
-  Expected_value:
-    tag: Expected_value
-    value: agrochemical name;agrochemical amount;timestamp
   Preferred_unit:
     tag: Preferred_unit
     value: gram, mole per liter, milligram per liter
@@ -452,7 +453,6 @@ examples:
 from_schema: https://w3id.org/mixs
 keywords:
 - history
-string_serialization: '{text};{float} {unit};{timestamp}'
 slot_uri: MIXS:0000639
 alias: agrochem_addition
 domain_of:
@@ -460,6 +460,10 @@ domain_of:
 - Soil
 range: string
 multivalued: true
+structured_pattern:
+  syntax: ^{agrochemical_name};{amount} {unit};{date_time_stamp}$
+  interpolated: true
+  partial_match: true
 
 </code></pre>
 

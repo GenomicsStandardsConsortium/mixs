@@ -1059,7 +1059,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - library
-    string_serialization: '{text}'
     slot_uri: MIXS:0000043
     alias: lib_screen
     owner: MimarksSMiscellaneousNaturalOrArtificialEnvironment
@@ -1402,7 +1401,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: MimarksSMiscellaneousNaturalOrArtificialEnvironment
@@ -1739,7 +1737,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - library
-    string_serialization: '{text}'
     slot_uri: MIXS:0000042
     alias: lib_vector
     owner: MimarksSMiscellaneousNaturalOrArtificialEnvironment
@@ -1759,10 +1756,6 @@ attributes:
     recommended: true
   adapters:
     name: adapters
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: adapter A and B sequence
     description: Adapters provide priming sequences for both amplification and sequencing
       of the sample-library fragments. Both adapters should be reported; in uppercase
       letters
@@ -1772,7 +1765,6 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    string_serialization: '{dna};{dna}'
     slot_uri: MIXS:0000048
     alias: adapters
     owner: MimarksSMiscellaneousNaturalOrArtificialEnvironment
@@ -1790,6 +1782,10 @@ attributes:
     - Agriculture
     range: string
     recommended: true
+    structured_pattern:
+      syntax: ^{adapter_A_DNA_sequence};{adapter_B_DNA_sequence}$
+      interpolated: true
+      partial_match: true
   neg_cont_type:
     name: neg_cont_type
     annotations:
@@ -1931,7 +1927,6 @@ attributes:
     keywords:
     - context
     - environmental
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000013
     alias: env_local_scale
     owner: MimarksSMiscellaneousNaturalOrArtificialEnvironment
@@ -1949,6 +1944,10 @@ attributes:
     - Miuvig
     range: string
     required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   samp_mat_process:
     name: samp_mat_process
     description: A brief description of any processing applied to the sample during
@@ -2267,12 +2266,9 @@ attributes:
       partial_match: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -2282,7 +2278,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: MimarksSMiscellaneousNaturalOrArtificialEnvironment
@@ -3536,7 +3531,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: MimarksSMiscellaneousNaturalOrArtificialEnvironment

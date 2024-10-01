@@ -2081,7 +2081,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - type
-    string_serialization: '{text}'
     slot_uri: MIXS:0000756
     alias: ventilation_type
     owner: BuiltEnvironment
@@ -2348,20 +2347,19 @@ attributes:
     required: true
   address:
     name: address
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: value
     description: The street name and building number where the sampling occurred
     title: address
     from_schema: https://w3id.org/mixs
-    string_serialization: '{integer}{text}'
     slot_uri: MIXS:0000218
     alias: address
     owner: BuiltEnvironment
     domain_of:
     - BuiltEnvironment
     range: string
+    structured_pattern:
+      syntax: ^{integer} {text}}$
+      interpolated: true
+      partial_match: true
   adj_room:
     name: adj_room
     description: List of rooms (room number, room name) immediately adjacent to the
@@ -4183,7 +4181,6 @@ attributes:
     keywords:
     - device
     - material
-    string_serialization: '{text}'
     slot_uri: MIXS:0000245
     alias: shading_device_mat
     owner: BuiltEnvironment

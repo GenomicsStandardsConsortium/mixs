@@ -330,21 +330,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -400,29 +385,29 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: 0..1</li>
-</ul>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: value</li>
+<li>
+<p>Cardinality: 0..1</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{integer} {text}}$</code></p>
+</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: address
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: value
 description: The street name and building number where the sampling occurred
 title: address
 from_schema: https://w3id.org/mixs
-string_serialization: '{integer}{text}'
 slot_uri: MIXS:0000218
 alias: address
 domain_of:
 - BuiltEnvironment
 range: string
+structured_pattern:
+  syntax: ^{integer} {text}}$
+  interpolated: true
+  partial_match: true
 
 </code></pre>
 

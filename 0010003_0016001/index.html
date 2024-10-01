@@ -551,7 +551,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000056">MIXS:0000056</a></td>
 <td><a href="../0000056/">assembly_qual</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../AssemblyQualEnum/">AssemblyQualEnum</a></td>
 <td>The assembly quality category is based on sets of criteria outlined for each ...</td>
 </tr>
 <tr>
@@ -1826,7 +1826,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - library
-    string_serialization: '{text}'
     slot_uri: MIXS:0000043
     alias: lib_screen
     owner: MigsBaBuiltEnvironment
@@ -2244,7 +2243,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: MigsBaBuiltEnvironment
@@ -2392,7 +2390,6 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0000027
     alias: pathogenicity
     owner: MigsBaBuiltEnvironment
@@ -2470,7 +2467,6 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0000034
     alias: encoded_traits
     owner: MigsBaBuiltEnvironment
@@ -2631,10 +2627,6 @@ attributes:
     range: LibLayoutEnum
   assembly_qual:
     name: assembly_qual
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: enumeration
     description: 'The assembly quality category is based on sets of criteria outlined
       for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated,
       contiguous sequence per replicon without gaps or ambiguities with a consensus
@@ -2661,8 +2653,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - quality
-    string_serialization: '[Finished genome|High-quality draft genome|Medium-quality
-      draft genome|Low-quality draft genome|Genome fragment(s)]'
     slot_uri: MIXS:0000056
     alias: assembly_qual
     owner: MigsBaBuiltEnvironment
@@ -2677,7 +2667,7 @@ attributes:
     - Misag
     - Miuvig
     - Agriculture
-    range: string
+    range: AssemblyQualEnum
     required: true
   ref_biomaterial:
     name: ref_biomaterial
@@ -2774,7 +2764,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - library
-    string_serialization: '{text}'
     slot_uri: MIXS:0000042
     alias: lib_vector
     owner: MigsBaBuiltEnvironment
@@ -2854,10 +2843,6 @@ attributes:
     recommended: true
   adapters:
     name: adapters
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: adapter A and B sequence
     description: Adapters provide priming sequences for both amplification and sequencing
       of the sample-library fragments. Both adapters should be reported; in uppercase
       letters
@@ -2867,7 +2852,6 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    string_serialization: '{dna};{dna}'
     slot_uri: MIXS:0000048
     alias: adapters
     owner: MigsBaBuiltEnvironment
@@ -2885,6 +2869,10 @@ attributes:
     - Agriculture
     range: string
     recommended: true
+    structured_pattern:
+      syntax: ^{adapter_A_DNA_sequence};{adapter_B_DNA_sequence}$
+      interpolated: true
+      partial_match: true
   assembly_software:
     name: assembly_software
     description: Tool(s) used for assembly, including version number and parameters
@@ -2962,7 +2950,6 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0000059
     alias: annot
     owner: MigsBaBuiltEnvironment
@@ -3118,7 +3105,6 @@ attributes:
     keywords:
     - context
     - environmental
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000013
     alias: env_local_scale
     owner: MigsBaBuiltEnvironment
@@ -3136,6 +3122,10 @@ attributes:
     - Miuvig
     range: string
     required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   compl_software:
     name: compl_software
     annotations:
@@ -3582,12 +3572,9 @@ attributes:
       partial_match: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -3597,7 +3584,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: MigsBaBuiltEnvironment
@@ -4161,7 +4147,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - type
-    string_serialization: '{text}'
     slot_uri: MIXS:0000756
     alias: ventilation_type
     owner: MigsBaBuiltEnvironment
@@ -4428,20 +4413,19 @@ attributes:
     required: true
   address:
     name: address
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: value
     description: The street name and building number where the sampling occurred
     title: address
     from_schema: https://w3id.org/mixs
-    string_serialization: '{integer}{text}'
     slot_uri: MIXS:0000218
     alias: address
     owner: MigsBaBuiltEnvironment
     domain_of:
     - BuiltEnvironment
     range: string
+    structured_pattern:
+      syntax: ^{integer} {text}}$
+      interpolated: true
+      partial_match: true
   adj_room:
     name: adj_room
     description: List of rooms (room number, room name) immediately adjacent to the
@@ -6263,7 +6247,6 @@ attributes:
     keywords:
     - device
     - material
-    string_serialization: '{text}'
     slot_uri: MIXS:0000245
     alias: shading_device_mat
     owner: MigsBaBuiltEnvironment

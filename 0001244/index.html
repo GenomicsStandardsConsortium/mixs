@@ -339,21 +339,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -409,7 +394,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: 0..1</li>
+<li>
+<p>Cardinality: 0..1</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{float} days$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -424,18 +414,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: value</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: animal_am_dur
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: value
 description: The duration of time (days) that the antimicrobial was administered to
   the food animal
 title: food animal antimicrobial duration
@@ -448,12 +430,15 @@ keywords:
 - duration
 - food
 - period
-string_serialization: '{float} {day}'
 slot_uri: MIXS:0001244
 alias: animal_am_dur
 domain_of:
 - FoodAnimalAndAnimalFeed
 range: string
+structured_pattern:
+  syntax: ^{float} days$
+  interpolated: true
+  partial_match: true
 
 </code></pre>
 

@@ -1662,7 +1662,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: MimarksCFoodHumanFoods
@@ -2100,7 +2099,6 @@ attributes:
     keywords:
     - context
     - environmental
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000013
     alias: env_local_scale
     owner: MimarksCFoodHumanFoods
@@ -2118,6 +2116,10 @@ attributes:
     - Miuvig
     range: string
     required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   samp_mat_process:
     name: samp_mat_process
     description: A brief description of any processing applied to the sample during
@@ -2435,12 +2437,9 @@ attributes:
       partial_match: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -2450,7 +2449,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: MimarksCFoodHumanFoods
@@ -2913,7 +2911,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: MimarksCFoodHumanFoods
@@ -3094,7 +3091,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - food
-    string_serialization: '{text}'
     slot_uri: MIXS:0001179
     alias: IFSAC_category
     owner: MimarksCFoodHumanFoods
@@ -4273,7 +4269,6 @@ attributes:
     - kit
     - library
     - preparation
-    string_serialization: '{text}'
     slot_uri: MIXS:0001145
     alias: library_prep_kit
     owner: MimarksCFoodHumanFoods
@@ -4488,7 +4483,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - kit
-    string_serialization: '{text}'
     slot_uri: MIXS:0001223
     alias: nucl_acid_ext_kit
     owner: MimarksCFoodHumanFoods
@@ -4560,7 +4554,6 @@ attributes:
     examples:
     - value: FDA CFSAN Microbiology Laboratories
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0001152
     alias: repository_name
     owner: MimarksCFoodHumanFoods
@@ -4845,7 +4838,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - kit
-    string_serialization: '{text}'
     slot_uri: MIXS:0001155
     alias: sequencing_kit
     owner: MimarksCFoodHumanFoods

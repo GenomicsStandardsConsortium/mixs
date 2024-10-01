@@ -1179,9 +1179,6 @@ slot_usage:
     name: food_source
     examples:
     - value: giant tiger prawn [FOODON:03412612]
-  freq_clean:
-    name: freq_clean
-    string_serialization: '{text}'
   library_prep_kit:
     name: library_prep_kit
     examples:
@@ -1263,9 +1260,6 @@ slot_usage:
     name: food_source
     examples:
     - value: giant tiger prawn [FOODON:03412612]
-  freq_clean:
-    name: freq_clean
-    string_serialization: '{text}'
   library_prep_kit:
     name: library_prep_kit
     examples:
@@ -1407,12 +1401,9 @@ attributes:
     required: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -1422,7 +1413,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: FoodFoodProductionFacility
@@ -1924,7 +1914,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - frequency
-    string_serialization: '{text}'
     slot_uri: MIXS:0000226
     alias: freq_clean
     owner: FoodFoodProductionFacility
@@ -2056,7 +2045,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: FoodFoodProductionFacility
@@ -2383,7 +2371,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - food
-    string_serialization: '{text}'
     slot_uri: MIXS:0001179
     alias: IFSAC_category
     owner: FoodFoodProductionFacility
@@ -2697,7 +2684,6 @@ attributes:
     - area
     - food
     - production
-    string_serialization: '{text}'
     slot_uri: MIXS:0001253
     alias: hygienic_area
     owner: FoodFoodProductionFacility
@@ -2725,7 +2711,6 @@ attributes:
     - environmental
     - food
     - production
-    string_serialization: '{text}'
     slot_uri: MIXS:0001254
     alias: env_monitoring_zone
     owner: FoodFoodProductionFacility
@@ -2812,7 +2797,6 @@ attributes:
     examples:
     - value: Quaternary ammonium compound|SterBac
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0001258
     alias: biocide_used
     owner: FoodFoodProductionFacility
@@ -3241,7 +3225,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - kit
-    string_serialization: '{text}'
     slot_uri: MIXS:0001223
     alias: nucl_acid_ext_kit
     owner: FoodFoodProductionFacility
@@ -3267,7 +3250,6 @@ attributes:
     - kit
     - library
     - preparation
-    string_serialization: '{text}'
     slot_uri: MIXS:0001145
     alias: library_prep_kit
     owner: FoodFoodProductionFacility
@@ -3295,7 +3277,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - kit
-    string_serialization: '{text}'
     slot_uri: MIXS:0001155
     alias: sequencing_kit
     owner: FoodFoodProductionFacility
@@ -4109,7 +4090,6 @@ attributes:
     examples:
     - value: FDA CFSAN Microbiology Laboratories
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0001152
     alias: repository_name
     owner: FoodFoodProductionFacility

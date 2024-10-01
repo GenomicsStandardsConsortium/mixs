@@ -339,21 +339,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -400,12 +385,12 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0016002/">HostAssociated</a></td>
+<td><a href="../0016010/">PlantAssociated</a></td>
 <td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0016010/">PlantAssociated</a></td>
+<td><a href="../0016002/">HostAssociated</a></td>
 <td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
 <td>Extension</td>
 </tr>
@@ -413,7 +398,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../BiolStatEnum/">BiolStatEnum</a></li>
 <li>Cardinality: 0..1</li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -429,18 +414,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: enumeration</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: biol_stat
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: enumeration
 description: The level of genome modification
 title: biological status
 examples:
@@ -448,14 +425,12 @@ examples:
 from_schema: https://w3id.org/mixs
 keywords:
 - status
-string_serialization: '[wild|natural|semi-natural|inbred line|breeder''s line|hybrid|clonal
-  selection|mutant]'
 slot_uri: MIXS:0000858
 alias: biol_stat
 domain_of:
 - HostAssociated
 - PlantAssociated
-range: string
+range: BiolStatEnum
 
 </code></pre>
 

@@ -1390,7 +1390,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: MimarksCSoil
@@ -1828,7 +1827,6 @@ attributes:
     keywords:
     - context
     - environmental
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000013
     alias: env_local_scale
     owner: MimarksCSoil
@@ -1846,6 +1844,10 @@ attributes:
     - Miuvig
     range: string
     required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   samp_mat_process:
     name: samp_mat_process
     description: A brief description of any processing applied to the sample during
@@ -2164,12 +2166,9 @@ attributes:
       partial_match: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -2179,7 +2178,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: MimarksCSoil
@@ -2477,7 +2475,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - vegetation
-    string_serialization: '{text}'
     slot_uri: MIXS:0000312
     alias: cur_vegetation
     owner: MimarksCSoil
@@ -2576,9 +2573,6 @@ attributes:
   agrochem_addition:
     name: agrochem_addition
     annotations:
-      Expected_value:
-        tag: Expected_value
-        value: agrochemical name;agrochemical amount;timestamp
       Preferred_unit:
         tag: Preferred_unit
         value: gram, mole per liter, milligram per liter
@@ -2589,7 +2583,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - history
-    string_serialization: '{text};{float} {unit};{timestamp}'
     slot_uri: MIXS:0000639
     alias: agrochem_addition
     owner: MimarksCSoil
@@ -2598,6 +2591,10 @@ attributes:
     - Soil
     range: string
     multivalued: true
+    structured_pattern:
+      syntax: ^{agrochemical_name};{amount} {unit};{date_time_stamp}$
+      interpolated: true
+      partial_match: true
   tillage:
     name: tillage
     description: Note method(s) used for tilling
@@ -2995,7 +2992,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - classification
-    string_serialization: '{text}'
     slot_uri: MIXS:0000330
     alias: local_class
     owner: MimarksCSoil

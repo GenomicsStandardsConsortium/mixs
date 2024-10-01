@@ -400,18 +400,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0010004/">MigsPl</a></td>
-<td>Minimal Information about a Genome Sequence: plasmid</td>
+<td><a href="../0010012/">Miuvig</a></td>
+<td>Minimum Information About an Uncultivated Virus Genome</td>
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010010/">Misag</a></td>
-<td>Minimum Information About a Single Amplified Genome</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010011/">Mimag</a></td>
-<td>Minimum Information About a Metagenome-Assembled Genome</td>
+<td><a href="../0010007/">Mims</a></td>
+<td>Metagenome or Environmental</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -420,8 +415,8 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010012/">Miuvig</a></td>
-<td>Minimum Information About an Uncultivated Virus Genome</td>
+<td><a href="../0010010/">Misag</a></td>
+<td>Minimum Information About a Single Amplified Genome</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -430,8 +425,18 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010007/">Mims</a></td>
-<td>Metagenome or Environmental</td>
+<td><a href="../0010011/">Mimag</a></td>
+<td>Minimum Information About a Metagenome-Assembled Genome</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0010009/">MimarksC</a></td>
+<td>Minimal Information about a Marker Sequence: specimen</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0010006/">MigsOrg</a></td>
+<td>Minimal Information about a Genome Sequence: organelle</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -445,13 +450,8 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010009/">MimarksC</a></td>
-<td>Minimal Information about a Marker Sequence: specimen</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010006/">MigsOrg</a></td>
-<td>Minimal Information about a Genome Sequence: organelle</td>
+<td><a href="../0010004/">MigsPl</a></td>
+<td>Minimal Information about a Genome Sequence: plasmid</td>
 <td>Checklist</td>
 </tr>
 </tbody>
@@ -459,7 +459,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: 1</li>
+<li>
+<p>Cardinality: 1</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{termLabel} \[{termID}\]$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -502,7 +507,6 @@ from_schema: https://w3id.org/mixs
 keywords:
 - context
 - environmental
-string_serialization: '{termLabel} [{termID}]'
 slot_uri: MIXS:0000013
 alias: env_local_scale
 domain_of:
@@ -519,6 +523,10 @@ domain_of:
 - Miuvig
 range: string
 required: true
+structured_pattern:
+  syntax: ^{termLabel} \[{termID}\]$
+  interpolated: true
+  partial_match: true
 
 </code></pre>
 

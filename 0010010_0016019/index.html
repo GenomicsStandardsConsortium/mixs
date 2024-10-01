@@ -563,7 +563,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000056">MIXS:0000056</a></td>
 <td><a href="../0000056/">assembly_qual</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../AssemblyQualEnum/">AssemblyQualEnum</a></td>
 <td>The assembly quality category is based on sets of criteria outlined for each ...</td>
 </tr>
 <tr>
@@ -888,7 +888,7 @@
 <td><a href="https://w3id.org/mixs/0001245">MIXS:0001245</a></td>
 <td><a href="../0001245/">animal_am_freq</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
-<td>The frequency per day that the antimicrobial was adminstered to the food anim...</td>
+<td>The frequency per day that the antimicrobial was administered to the food ani...</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/0001246">MIXS:0001246</a></td>
@@ -1445,7 +1445,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - library
-    string_serialization: '{text}'
     slot_uri: MIXS:0000043
     alias: lib_screen
     owner: MisagFoodAnimalAndAnimalFeed
@@ -1904,7 +1903,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: MisagFoodAnimalAndAnimalFeed
@@ -2056,7 +2054,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - kit
-    string_serialization: '{text}'
     slot_uri: MIXS:0000006
     alias: wga_amp_kit
     owner: MisagFoodAnimalAndAnimalFeed
@@ -2197,7 +2194,6 @@ attributes:
     - particle
     - protocol
     - single
-    string_serialization: '{text}'
     slot_uri: MIXS:0000054
     alias: sc_lysis_method
     owner: MisagFoodAnimalAndAnimalFeed
@@ -2261,10 +2257,6 @@ attributes:
     range: string
   assembly_qual:
     name: assembly_qual
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: enumeration
     description: 'The assembly quality category is based on sets of criteria outlined
       for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated,
       contiguous sequence per replicon without gaps or ambiguities with a consensus
@@ -2291,8 +2283,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - quality
-    string_serialization: '[Finished genome|High-quality draft genome|Medium-quality
-      draft genome|Low-quality draft genome|Genome fragment(s)]'
     slot_uri: MIXS:0000056
     alias: assembly_qual
     owner: MisagFoodAnimalAndAnimalFeed
@@ -2307,7 +2297,7 @@ attributes:
     - Misag
     - Miuvig
     - Agriculture
-    range: string
+    range: AssemblyQualEnum
     required: true
   ref_biomaterial:
     name: ref_biomaterial
@@ -2403,7 +2393,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - library
-    string_serialization: '{text}'
     slot_uri: MIXS:0000042
     alias: lib_vector
     owner: MisagFoodAnimalAndAnimalFeed
@@ -2423,10 +2412,6 @@ attributes:
     recommended: true
   adapters:
     name: adapters
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: adapter A and B sequence
     description: Adapters provide priming sequences for both amplification and sequencing
       of the sample-library fragments. Both adapters should be reported; in uppercase
       letters
@@ -2436,7 +2421,6 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    string_serialization: '{dna};{dna}'
     slot_uri: MIXS:0000048
     alias: adapters
     owner: MisagFoodAnimalAndAnimalFeed
@@ -2454,6 +2438,10 @@ attributes:
     - Agriculture
     range: string
     recommended: true
+    structured_pattern:
+      syntax: ^{adapter_A_DNA_sequence};{adapter_B_DNA_sequence}$
+      interpolated: true
+      partial_match: true
   neg_cont_type:
     name: neg_cont_type
     annotations:
@@ -2584,7 +2572,6 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0000059
     alias: annot
     owner: MisagFoodAnimalAndAnimalFeed
@@ -2755,7 +2742,6 @@ attributes:
     keywords:
     - context
     - environmental
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000013
     alias: env_local_scale
     owner: MisagFoodAnimalAndAnimalFeed
@@ -2773,6 +2759,10 @@ attributes:
     - Miuvig
     range: string
     required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   sort_tech:
     name: sort_tech
     description: Method used to sort/isolate cells or particles of interest
@@ -3202,12 +3192,9 @@ attributes:
       partial_match: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -3217,7 +3204,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: MisagFoodAnimalAndAnimalFeed
@@ -3689,7 +3675,6 @@ attributes:
     - location
     - sample
     - storage
-    string_serialization: '{text}'
     slot_uri: MIXS:0000755
     alias: samp_store_loc
     owner: MisagFoodAnimalAndAnimalFeed
@@ -3948,7 +3933,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - food
-    string_serialization: '{text}'
     slot_uri: MIXS:0001179
     alias: IFSAC_category
     owner: MisagFoodAnimalAndAnimalFeed
@@ -4035,10 +4019,6 @@ attributes:
     range: string
   animal_am_dur:
     name: animal_am_dur
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: value
     description: The duration of time (days) that the antimicrobial was administered
       to the food animal
     title: food animal antimicrobial duration
@@ -4051,17 +4031,20 @@ attributes:
     - duration
     - food
     - period
-    string_serialization: '{float} {day}'
     slot_uri: MIXS:0001244
     alias: animal_am_dur
     owner: MisagFoodAnimalAndAnimalFeed
     domain_of:
     - FoodAnimalAndAnimalFeed
     range: string
+    structured_pattern:
+      syntax: ^{float} days$
+      interpolated: true
+      partial_match: true
   animal_am_freq:
     name: animal_am_freq
-    description: The frequency per day that the antimicrobial was adminstered to the
-      food animal
+    description: The frequency per day that the antimicrobial was administered to
+      the food animal
     title: food animal antimicrobial frequency
     examples:
     - value: '1.5'
@@ -4165,7 +4148,6 @@ attributes:
     - diet
     - food
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0001130
     alias: animal_diet
     owner: MisagFoodAnimalAndAnimalFeed
@@ -4190,7 +4172,6 @@ attributes:
     keywords:
     - animal
     - equipment
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0001113
     alias: animal_feed_equip
     owner: MisagFoodAnimalAndAnimalFeed
@@ -4199,6 +4180,10 @@ attributes:
     - FoodFarmEnvironment
     range: string
     multivalued: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   animal_group_size:
     name: animal_group_size
     description: The number of food animals of the same species that are maintained
@@ -5099,7 +5084,6 @@ attributes:
     - kit
     - library
     - preparation
-    string_serialization: '{text}'
     slot_uri: MIXS:0001145
     alias: library_prep_kit
     owner: MisagFoodAnimalAndAnimalFeed
@@ -5206,7 +5190,6 @@ attributes:
     examples:
     - value: FDA CFSAN Microbiology Laboratories
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0001152
     alias: repository_name
     owner: MisagFoodAnimalAndAnimalFeed
@@ -5445,7 +5428,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - kit
-    string_serialization: '{text}'
     slot_uri: MIXS:0001155
     alias: sequencing_kit
     owner: MisagFoodAnimalAndAnimalFeed

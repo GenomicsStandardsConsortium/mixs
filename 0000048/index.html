@@ -339,21 +339,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -400,18 +385,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0010004/">MigsPl</a></td>
-<td>Minimal Information about a Genome Sequence: plasmid</td>
+<td><a href="../0010012/">Miuvig</a></td>
+<td>Minimum Information About an Uncultivated Virus Genome</td>
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010010/">Misag</a></td>
-<td>Minimum Information About a Single Amplified Genome</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010011/">Mimag</a></td>
-<td>Minimum Information About a Metagenome-Assembled Genome</td>
+<td><a href="../0010007/">Mims</a></td>
+<td>Metagenome or Environmental</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -420,8 +400,8 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010012/">Miuvig</a></td>
-<td>Minimum Information About an Uncultivated Virus Genome</td>
+<td><a href="../0010010/">Misag</a></td>
+<td>Minimum Information About a Single Amplified Genome</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -430,8 +410,18 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010007/">Mims</a></td>
-<td>Metagenome or Environmental</td>
+<td><a href="../0010011/">Mimag</a></td>
+<td>Minimum Information About a Metagenome-Assembled Genome</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0016018/">Agriculture</a></td>
+<td>A collection of terms appropriate when sequencing samples obtained in an agri...</td>
+<td>Extension</td>
+</tr>
+<tr>
+<td><a href="../0010006/">MigsOrg</a></td>
+<td>Minimal Information about a Genome Sequence: organelle</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -445,13 +435,8 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0016018/">Agriculture</a></td>
-<td>A collection of terms appropriate when sequencing samples obtained in an agri...</td>
-<td>Extension</td>
-</tr>
-<tr>
-<td><a href="../0010006/">MigsOrg</a></td>
-<td>Minimal Information about a Genome Sequence: organelle</td>
+<td><a href="../0010004/">MigsPl</a></td>
+<td>Minimal Information about a Genome Sequence: plasmid</td>
 <td>Checklist</td>
 </tr>
 </tbody>
@@ -459,7 +444,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: 0..1</li>
+<li>
+<p>Cardinality: 0..1</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{adapter_A_DNA_sequence};{adapter_B_DNA_sequence}$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -474,18 +464,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: adapter A and B sequence</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: adapters
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: adapter A and B sequence
 description: Adapters provide priming sequences for both amplification and sequencing
   of the sample-library fragments. Both adapters should be reported; in uppercase
   letters
@@ -495,7 +477,6 @@ examples:
 in_subset:
 - sequencing
 from_schema: https://w3id.org/mixs
-string_serialization: '{dna};{dna}'
 slot_uri: MIXS:0000048
 alias: adapters
 domain_of:
@@ -511,6 +492,10 @@ domain_of:
 - Miuvig
 - Agriculture
 range: string
+structured_pattern:
+  syntax: ^{adapter_A_DNA_sequence};{adapter_B_DNA_sequence}$
+  interpolated: true
+  partial_match: true
 
 </code></pre>
 

@@ -575,7 +575,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000056">MIXS:0000056</a></td>
 <td><a href="../0000056/">assembly_qual</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../AssemblyQualEnum/">AssemblyQualEnum</a></td>
 <td>The assembly quality category is based on sets of criteria outlined for each ...</td>
 </tr>
 <tr>
@@ -1215,7 +1215,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - library
-    string_serialization: '{text}'
     slot_uri: MIXS:0000043
     alias: lib_screen
     owner: MimagSoil
@@ -1741,7 +1740,6 @@ attributes:
     - identifier
     - material
     - source
-    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: MimagSoil
@@ -2067,10 +2065,6 @@ attributes:
     range: string
   assembly_qual:
     name: assembly_qual
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: enumeration
     description: 'The assembly quality category is based on sets of criteria outlined
       for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated,
       contiguous sequence per replicon without gaps or ambiguities with a consensus
@@ -2097,8 +2091,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - quality
-    string_serialization: '[Finished genome|High-quality draft genome|Medium-quality
-      draft genome|Low-quality draft genome|Genome fragment(s)]'
     slot_uri: MIXS:0000056
     alias: assembly_qual
     owner: MimagSoil
@@ -2113,7 +2105,7 @@ attributes:
     - Misag
     - Miuvig
     - Agriculture
-    range: string
+    range: AssemblyQualEnum
     required: true
   ref_biomaterial:
     name: ref_biomaterial
@@ -2209,7 +2201,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - library
-    string_serialization: '{text}'
     slot_uri: MIXS:0000042
     alias: lib_vector
     owner: MimagSoil
@@ -2229,10 +2220,6 @@ attributes:
     recommended: true
   adapters:
     name: adapters
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: adapter A and B sequence
     description: Adapters provide priming sequences for both amplification and sequencing
       of the sample-library fragments. Both adapters should be reported; in uppercase
       letters
@@ -2242,7 +2229,6 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    string_serialization: '{dna};{dna}'
     slot_uri: MIXS:0000048
     alias: adapters
     owner: MimagSoil
@@ -2260,6 +2246,10 @@ attributes:
     - Agriculture
     range: string
     recommended: true
+    structured_pattern:
+      syntax: ^{adapter_A_DNA_sequence};{adapter_B_DNA_sequence}$
+      interpolated: true
+      partial_match: true
   neg_cont_type:
     name: neg_cont_type
     annotations:
@@ -2390,7 +2380,6 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    string_serialization: '{text}'
     slot_uri: MIXS:0000059
     alias: annot
     owner: MimagSoil
@@ -2561,7 +2550,6 @@ attributes:
     keywords:
     - context
     - environmental
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000013
     alias: env_local_scale
     owner: MimagSoil
@@ -2579,6 +2567,10 @@ attributes:
     - Miuvig
     range: string
     required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
   samp_mat_process:
     name: samp_mat_process
     description: A brief description of any processing applied to the sample during
@@ -2955,12 +2947,9 @@ attributes:
       partial_match: true
   lat_lon:
     name: lat_lon
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: decimal degrees,  limit to 8 decimal points
     description: The geographical origin of the sample as defined by latitude and
-      longitude. The values should be reported in decimal degrees and in WGS84 system
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
     title: geographic location (latitude and longitude)
     examples:
     - value: 50.586825 6.408977
@@ -2970,7 +2959,6 @@ attributes:
     keywords:
     - geographic
     - location
-    string_serialization: '{float} {float}'
     slot_uri: MIXS:0000009
     alias: lat_lon
     owner: MimagSoil
@@ -3277,7 +3265,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - vegetation
-    string_serialization: '{text}'
     slot_uri: MIXS:0000312
     alias: cur_vegetation
     owner: MimagSoil
@@ -3376,9 +3363,6 @@ attributes:
   agrochem_addition:
     name: agrochem_addition
     annotations:
-      Expected_value:
-        tag: Expected_value
-        value: agrochemical name;agrochemical amount;timestamp
       Preferred_unit:
         tag: Preferred_unit
         value: gram, mole per liter, milligram per liter
@@ -3389,7 +3373,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - history
-    string_serialization: '{text};{float} {unit};{timestamp}'
     slot_uri: MIXS:0000639
     alias: agrochem_addition
     owner: MimagSoil
@@ -3398,6 +3381,10 @@ attributes:
     - Soil
     range: string
     multivalued: true
+    structured_pattern:
+      syntax: ^{agrochemical_name};{amount} {unit};{date_time_stamp}$
+      interpolated: true
+      partial_match: true
   tillage:
     name: tillage
     description: Note method(s) used for tilling
@@ -3795,7 +3782,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - classification
-    string_serialization: '{text}'
     slot_uri: MIXS:0000330
     alias: local_class
     owner: MimagSoil
