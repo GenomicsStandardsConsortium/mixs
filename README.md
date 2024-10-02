@@ -1,25 +1,25 @@
-# MIxS: Minimum Information about any (X) Sequence
+# MIxS: Minimum Information about any (x) Sequence
 
-MIxS, or the Minimum Information about any (X) Sequence is a specification for describing the provenance of a neucleotide sequence. The standard/data model has Terms that help attribute a sequence with certain characteristics that help answer questions like -
+MIxS, or the Minimum Information about any (x) Sequence is a standard for describing the provenance of a neucleotide sequence. The standard has *Terms* that can attribute characteristics to a sample that can help answer questions like -
 * What do we know about the sample that the sequence came from?
-* In what kind of an environment was the sample found?
+* In what kind of environment was the sample found?
 * In what ways were the nucleic acids extracted, amplified, etc. from the sample?
 
-Starting from v6 the MIxS standard is represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas and data models. You can refer to the [user-focused](#repository-structure)/[developer-focused](#developer-documentation) sections describing the repository structure to understand where to find these YAML files that are describing the MIxS standard.
+Starting from v6, the MIxS standard is represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas. You can refer to the [user-focused](#repository-structure)/[developer-focused](#developer-documentation) sections of the repository structure to understand where to find these YAML files defining the standard.
 
-The public-facing web documentation site can be browsed at: https://genomicsstandardsconsortium.github.io/mixs/
+Here is thee link to the public-facing website: https://genomicsstandardsconsortium.github.io/mixs/
 
-MIxS is divided into Checklists and Extensions (previously called Packages).
+Consumers of the standard might primarily be interested in *Terms* that are described by the standard, a table of which can be found [here](https://genomicsstandardsconsortium.github.io/mixs/term_list/). These *Terms* are attributes/properties that can typically be used to describe samples and their sequences. Broadly, they are grouped under *Checklists*, *Extensions*, and *Combinations* (of *Checklists* and *Extensions*). What this means is that if we decide to use a *Combination* (say) to fill out metadata about our samples and sequences, then we would need to look at the *Terms* grouped under that *Combination* to decide what and how these attributes/properties need to be filled out.
 
 [Checklists](https://genomicsstandardsconsortium.github.io/mixs/#checklists) include the required, recommended and optional metadata fields for a specific type of sequence (genome, metagenome, marker gene, etc.). For example, for genomic sequences (MIGS), there are checklists for specific taxa (Eukaryotes, Bacteria, Viruses, and Plants as hosts).
 
 [Extensions](https://genomicsstandardsconsortium.github.io/mixs/#extensions) supplement Checklists by providing additional terms to describe specific environments from which a sample was collected. For example, the Agriculture Extension has a number of terms to describe agricultural environments.
 
-Extensions can be used in conjunction with any Checklist. We call them [Combinations](https://genomicsstandardsconsortium.github.io/mixs/combinations/). For example, if you have sequenced a metagenome sample retrieved from an agricultural environment, then you would be able to use a Combination of the [Mims](https://genomicsstandardsconsortium.github.io/mixs/0010007/) Checklist and [Agriculture](https://genomicsstandardsconsortium.github.io/mixs/0016018/) Extension, called [MimsAgriculture](https://genomicsstandardsconsortium.github.io/mixs/0010003_0016018/).
+*Extensions* can be used in conjunction with any *Checklist*. We call them [Combinations](https://genomicsstandardsconsortium.github.io/mixs/combinations/). For example, if you have sequenced a metagenome sample retrieved from an agricultural environment, then you would be able to use a Combination of the [Mims](https://genomicsstandardsconsortium.github.io/mixs/0010007/) *Checklist* and [Agriculture](https://genomicsstandardsconsortium.github.io/mixs/0016018/) *Extension*, called [MimsAgriculture](https://genomicsstandardsconsortium.github.io/mixs/0010003_0016018/).
 
 ## Repository Structure
 
-Below is documentation about the contents of the various user-facing folders/directories in this repository.
+Below are descriptions for the various user-facing folders/directories in this repository.
 
 * [examples/](examples/) - examples of different kinds of data files in different data formats in different (JSON, YAML) containing data conformant with MIxS standard
 * [mixs-templates/](mixs-templates/) -  MIxS schema (meta)data collection templates in the Excel spreadsheet (.xlsx) format
