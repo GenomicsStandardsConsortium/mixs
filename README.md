@@ -12,7 +12,7 @@ Following the release of MIxS v6.0, subsequent releases (e.g. MIxS 6.1) are repr
 The MIxS standards are found at: https://genomicsstandardsconsortium.github.io/mixs/
 
 *Terms* 
-The individual metadata termsare provided in the table: [here](https://genomicsstandardsconsortium.github.io/mixs/term_list/). These *Terms* are attributes or properties that describe samples and their sequence-associated metadata. Broadly, MIxS metadata *Terms* are represented in genomic *Checklists*, environmental *Extensions*, and *Combinations* (of *Checklists* and *Extensions*). 
+The individual metadata terms are provided in the table: [here](https://genomicsstandardsconsortium.github.io/mixs/term_list/). These *Terms* are attributes or properties that describe samples and their sequence-associated metadata. Broadly, MIxS metadata *Terms* are represented in genomic *Checklists*, environmental *Extensions*, and *Combinations* (of *Checklists* and *Extensions*). 
 
 *Checklists*
 [Checklists](https://genomicsstandardsconsortium.github.io/mixs/#checklists) include the required, recommended and optional metadata fields (*Terms*) for a specific type of genomic sequence (e.g. genome, metagenome, microbiome, marker gene, MAG or single cell genome). The MIGS genomic sequences checklist, for example, supports taxa or subcellular structure specific checklists (Eukaryotes, Bacteria, Viruses, Organelle, Plants).
