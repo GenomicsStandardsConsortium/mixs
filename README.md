@@ -5,7 +5,7 @@ MIxS, or the Minimum Information about any (X) Sequence is a standard for descri
 * In what kind of environment was the sample collected?
 * What methods were utilized to process the sample?
 
-Follwoign the release of MIxS v6.0, subsequent minor releases (e.g. MIxS 6.1) are represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas. The [user-focused](#repository-structure)/[developer-focused](#developer-documentation) sections of the repository structure provide details on where to find these YAML files that are defining the standard.
+Following the release of MIxS v6.0, subsequent minor releases (e.g. MIxS 6.1) are represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas. The [user-focused](#repository-structure)/[developer-focused](#developer-documentation) sections of the repository structure provide details on where to find these YAML files that are defining the standard.
 
 The MIxS standards are found at: https://genomicsstandardsconsortium.github.io/mixs/
 
