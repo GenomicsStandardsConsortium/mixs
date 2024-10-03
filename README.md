@@ -46,5 +46,5 @@ Use the `make` command to generate project artefacts:
 
 ## Credits
 
-This project was made with
+The MIxS utilizes LinkML, see: 
 [linkml-project-cookiecutter](https://github.com/linkml/linkml-project-cookiecutter).
