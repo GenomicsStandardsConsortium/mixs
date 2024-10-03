@@ -1,5 +1,7 @@
 # MIxS: Minimum Information about any (X) Sequence
 
+This repository contains the source material for the [Genomic Standards Consortium](https://www.gensc.org/) (GSC) [Minimum Information about any (X) Sequence (MIxS) standard](https://www.gensc.org/pages/standards-intro.html).
+
 MIxS, or the Minimum Information about any (X) Sequence is a standard for describing the contextual information about the sampling and sequencing of any genomic sequence. The standard has *Terms* that describe characteristics of a sample that addresses: 
 * What is the source of the sequence?
 * In what kind of environment was the sample collected?
