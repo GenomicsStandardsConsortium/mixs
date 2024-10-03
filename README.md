@@ -1,28 +1,32 @@
-# MIxS: Minimum Information about any (x) Sequence
+# MIxS: Minimum Information about any (X) Sequence
 
-MIxS, or the Minimum Information about any (x) Sequence is a standard for describing the provenance of a neucleotide sequence. The standard has *Terms* that can attribute characteristics to a sample that can help answer questions like -
-* What do we know about the sample that the sequence came from?
-* In what kind of environment was the sample found?
-* In what ways were the nucleic acids extracted, amplified, etc. from the sample?
+MIxS, or the Minimum Information about any (X) Sequence is a standard for describing the contextual information about the sampling and sequencing of any genomic sequence. The standard has *Terms* that describe characteristics of a sample that addresses: 
+* What is the source of the sequence?
+* In what kind of environment was the sample collected?
+* What methods were utilized to process the sample?
 
-Starting from v6, the MIxS standard is represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas. You can refer to the [user-focused](#repository-structure)/[developer-focused](#developer-documentation) sections of the repository structure to understand where to find these YAML files defining the standard.
+Follwoign the release of MIxS v6.0, subsequent minor releases (e.g. MIxS 6.1) are represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas. The [user-focused](#repository-structure)/[developer-focused](#developer-documentation) sections of the repository structure provide details on where to find these YAML files that are defining the standard.
 
-Here is thee link to the public-facing website: https://genomicsstandardsconsortium.github.io/mixs/
+The MIxS standards are found at: https://genomicsstandardsconsortium.github.io/mixs/
 
-Consumers of the standard might primarily be interested in *Terms* that are described by the standard, a table of which can be found [here](https://genomicsstandardsconsortium.github.io/mixs/term_list/). These *Terms* are attributes/properties that can typically be used to describe samples and their sequences. Broadly, they are grouped under *Checklists*, *Extensions*, and *Combinations* (of *Checklists* and *Extensions*). What this means is that if we decide to use a *Combination* (say) to fill out metadata about our samples and sequences, then we would need to look at the *Terms* grouped under that *Combination* to decide what and how these attributes/properties need to be filled out.
+*Terms* 
+The individual metadata termsare provided in the table: [here](https://genomicsstandardsconsortium.github.io/mixs/term_list/). These *Terms* are attributes or properties that describe samples and their sequence-associated metadata. Broadly, MIxS metadata *Terms* are represented in genomic *Checklists*, environmental *Extensions*, and *Combinations* (of *Checklists* and *Extensions*). 
 
-[Checklists](https://genomicsstandardsconsortium.github.io/mixs/#checklists) include the required, recommended and optional metadata fields for a specific type of sequence (genome, metagenome, marker gene, etc.). For example, for genomic sequences (MIGS), there are checklists for specific taxa (Eukaryotes, Bacteria, Viruses, and Plants as hosts).
+*Checklists*
+[Checklists](https://genomicsstandardsconsortium.github.io/mixs/#checklists) include the required, recommended and optional metadata fields (*Terms*) for a specific type of genomic sequence (e.g. genome, metagenome, microbiome, marker gene, MAG or single cell genome). The MIGS genomic sequences checklist, for example, supports taxa or subcellular structure specific checklists (Eukaryotes, Bacteria, Viruses, Organelle, Plants).
 
-[Extensions](https://genomicsstandardsconsortium.github.io/mixs/#extensions) supplement Checklists by providing additional terms to describe specific environments from which a sample was collected. For example, the Agriculture Extension has a number of terms to describe agricultural environments.
+*Extensions*
+[Extensions](https://genomicsstandardsconsortium.github.io/mixs/#extensions) include *Terms* that describe specific environments from which a sample was collected. For example, the Agriculture Extension (MIxS-Ag) includes terms to describe agricultural environments.
 
-*Extensions* can be used in conjunction with any *Checklist*. We call them [Combinations](https://genomicsstandardsconsortium.github.io/mixs/combinations/). For example, if you have sequenced a metagenome sample retrieved from an agricultural environment, then you would be able to use a Combination of the [Mims](https://genomicsstandardsconsortium.github.io/mixs/0010007/) *Checklist* and [Agriculture](https://genomicsstandardsconsortium.github.io/mixs/0016018/) *Extension*, called [MimsAgriculture](https://genomicsstandardsconsortium.github.io/mixs/0010003_0016018/).
+*Combinations*
+MIxS Checklists and Extensions are designed to be modular, supporting mix and match combinations of any genomic checklist with terms from any environmental extension, to create MIxS [Combinations](https://genomicsstandardsconsortium.github.io/mixs/combinations/). For example, a Combination of the [MIMS](https://genomicsstandardsconsortium.github.io/mixs/0010007/) *Checklist* and [Agriculture](https://genomicsstandardsconsortium.github.io/mixs/0016018/) *Extension*, called [MIMSAgriculture](https://genomicsstandardsconsortium.github.io/mixs/0010003_0016018/).
 
 ## Repository Structure
 
-Below are descriptions for the various user-facing folders/directories in this repository.
+Below are descriptions for the various user-facing directories in this repository.
 
 * [examples/](examples/) - examples of different kinds of data files in different data formats in different (JSON, YAML) containing data conformant with MIxS standard
-* [mixs-templates/](mixs-templates/) -  MIxS schema (meta)data collection templates in the Excel spreadsheet (.xlsx) format
+* [mixs-templates/](mixs-templates/) -  MIxS schema metadata collection templates in the Excel spreadsheet (.xlsx) format. These templates can be utilized for organizing a project's metadata in prepartion for submission to a sequence data archive.
 * [project/](project/) - artifacts autogenerated by the suite of generators in the [linkml](https://github.com/linkml/linkml) library. Artifacts include JSON-LD, OWL, JSON Schema, spreadsheet, etc. representations of the schema
 * [src/](src/)
   * [src/data/examples/](src/data/examples/) - valid and invalid data examples 
@@ -33,7 +37,7 @@ Below are descriptions for the various user-facing folders/directories in this r
   * [src/docs](src/docs) - markdown files that can be converted to HTML and included in the web documentation pages
 
 ## Developer Documentation
-
+Note: Developer documention is specifically included here for the use of members of the GSC's CIG and TWG committees.
 <details>
 Use the `make` command to generate project artefacts:
 
