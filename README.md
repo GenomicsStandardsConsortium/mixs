@@ -64,5 +64,5 @@ Documentation about the contents of the developer-focussed folders/directories i
 
 ## LinkML:
 
-This project is supported by:
+The MIxS utilizes LinkML, see:
 [linkml-project-cookiecutter](https://github.com/linkml/linkml-project-cookiecutter).
