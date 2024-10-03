@@ -7,7 +7,7 @@ MIxS, or the Minimum Information about any (X) Sequence is a standard for descri
 * In what kind of environment was the sample collected?
 * What methods were utilized to process the sample?
 
-Following the release of MIxS v6.0, subsequent minor releases (e.g. MIxS 6.1) are represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas. The [user-focused](#repository-structure)/[developer-focused](#developer-documentation) sections of the repository structure provide details on where to find these YAML files that are defining the standard.
+Following the release of MIxS v6.0, subsequent releases (e.g. MIxS 6.1) are represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas. The [user-focused](#repository-structure)/[developer-focused](#developer-documentation) sections of the repository structure provide details on where to find these YAML files that are defining the standard.
 
 The MIxS standards are found at: https://genomicsstandardsconsortium.github.io/mixs/
 
@@ -62,7 +62,7 @@ Documentation about the contents of the developer-focussed folders/directories i
 * [Makefile](Makefile) - Makefile containing pre-defined linkml-project-cookiecutter targets/rules
 * [project.Makefile](project.Makefile) - file that can be modified to extend pre-defined rules in [Makefile](Makefile)
 
-## Credits
+## LinkML:
 
-This project was made with
+This project is supported by:
 [linkml-project-cookiecutter](https://github.com/linkml/linkml-project-cookiecutter).
