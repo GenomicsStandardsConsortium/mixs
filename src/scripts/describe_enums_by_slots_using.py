@@ -4,8 +4,8 @@ from linkml_runtime.dumpers import yaml_dumper
 
 
 @click.command()
-@click.option('--schema_file', type=str, default="../mixs/schema/mixs.yaml", help="Path to the input schema file.")
-@click.option('--output_file', type=str, default='../../mixs_with_enum_descriptions.yaml', show_default=True,
+@click.option('--schema-file', type=str, default="../mixs/schema/mixs.yaml", help="Path to the input schema file.")
+@click.option('--output-file', type=str, default='../../mixs_with_enum_descriptions.yaml', show_default=True,
               help="Path to the output schema file with updated enum descriptions.")
 def update_enum_descriptions(schema_file: str, output_file: str) -> None:
     """
