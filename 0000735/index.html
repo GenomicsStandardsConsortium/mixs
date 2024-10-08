@@ -384,7 +384,7 @@
 
 
 <h1 id="term-size-fraction-lower-threshold-size_frac_low">Term: size-fraction lower threshold (size_frac_low)</h1>
-<p><em>Refers to the mesh/pore size used to pre-filter/pre-sort the sample. Materials larger than the size threshold are excluded from the sample</em></p>
+<p><em>Refers to the mesh/pore size used to pre-filter/pre-sort the sample. Materials smaller than the size threshold are excluded from the sample</em></p>
 <p>URI: <a href="https://w3id.org/mixs/0000735">MIXS:0000735</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -400,11 +400,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0016018/">Agriculture</a></td>
-<td>A collection of terms appropriate when sequencing samples obtained in an agri...</td>
-<td>Extension</td>
-</tr>
-<tr>
 <td><a href="../0016020/">FoodFarmEnvironment</a></td>
 <td>A collection of terms appropriate when collecting samples and performing sequ...</td>
 <td>Extension</td>
@@ -412,6 +407,11 @@
 <tr>
 <td><a href="../0016014/">Water</a></td>
 <td>A collection of terms appropriate when collecting samples and sequencing wate...</td>
+<td>Extension</td>
+</tr>
+<tr>
+<td><a href="../0016018/">Agriculture</a></td>
+<td>A collection of terms appropriate when sequencing samples obtained in an agri...</td>
 <td>Extension</td>
 </tr>
 </tbody>
@@ -455,7 +455,7 @@ annotations:
     tag: Preferred_unit
     value: micrometer
 description: Refers to the mesh/pore size used to pre-filter/pre-sort the sample.
-  Materials larger than the size threshold are excluded from the sample
+  Materials smaller than the size threshold are excluded from the sample
 title: size-fraction lower threshold
 examples:
 - value: 0.2 micrometer
