@@ -4,7 +4,7 @@ In this folder, the GSC provides Microsoft Excel (.xlsx) spreadsheets that can b
 
 The GSC appreciates that spreadsheets like these can be very useful for use in the field and lab, as well as for preparing data to be submitted to an INSDC database. However, users should be aware of the limitations of these spreadsheets, listed below.
 
-Each of the files in this folder and its subfolders are blank template spreadsheets, with only the header row populated with the names of terms associated with a particular [Checklist](https://sujaypatil96.github.io/mixs/#Checklists), [Extension](https://sujaypatil96.github.io/mixs/#Extensions), or [Combination](https://sujaypatil96.github.io/mixs/combinations/) (of one Checklist plus one Extension). 
+Each of the files in this folder and its subfolders are blank template spreadsheets, with only the header row populated with the names of terms associated with a particular [Checklist](https://genomicsstandardsconsortium.github.io/mixs/#Checklists), [Extension](https://genomicsstandardsconsortium.github.io/mixs/#Extensions), or [Combination](https://genomicsstandardsconsortium.github.io/mixs/combinations/) (of one Checklist plus one Extension). 
 
 * There is one template for each *Checklist*, *Extension* and *Combination* in the [schema](src/mixs/schema/mixs.yaml).
 
