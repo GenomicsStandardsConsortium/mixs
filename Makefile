@@ -149,6 +149,29 @@ examples/output: src/mixs/schema/mixs.yaml
 		--output-directory $@ \
 		--schema $< > $@/README.md
 
+.PHONY: standardize-schema
+
+standardize-schema:
+	$(RUN) gen-linkml \
+		--format yaml \
+		--no-mergeimports \
+		--no-materialize-attributes \
+		--materialize-patterns src/mixs/schema/mixs.yaml |\
+	yq eval '(.. | select(has("from_schema")) | .from_schema) style="" | del(.. | select(has("from_schema")).from_schema)' |\
+	yq eval '.prefixes |= map_values(.prefix_reference)' |\
+	yq eval '.settings |= map_values(.setting_value)'  |\
+	yq eval 'del(.classes.[].name)' |\
+	yq eval 'del(.classes.[].slot_usage.[].name)'  |\
+	yq eval 'del(.enums.[].name)'  |\
+	yq eval 'del(.enums.[].permissible_values.[].text)' |\
+	yq eval 'del(.slots.[].domain)'  |\
+	yq eval 'del(.slots.[].name)' |\
+	yq eval 'del(.source_file)'  |\
+	yq eval 'del(.subsets.[].name)' |\
+	yamlfmt -in -conf .yamlfmt > src/mixs/schema/mixs_standardized.yaml
+	mv src/mixs/schema/mixs_standardized.yaml src/mixs/schema/mixs.yaml
+	rm -rf src/mixs/schema/mixs_standardized.yaml
+
 # Test documentation locally
 serve: mkd-serve
 
