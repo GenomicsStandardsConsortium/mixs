@@ -18,11 +18,13 @@ DOCDIR = docs
 TEMPLATEDIR = $(SRC)/doc-templates
 TERM_LIST_FILE = $(DOCDIR)/term_list.md
 COMBINATIONS_FILE = $(DOCDIR)/combinations.md
+ENUMERATIONS_FILE = $(DOCDIR)/enumerations.md
 EXAMPLEDIR = examples
 SHEET_MODULE = personinfo_enums
 SHEET_ID = $(shell ${SHELL} ./utils/get-value.sh google_sheet_id)
 SHEET_TABS = $(shell ${SHELL} ./utils/get-value.sh google_sheet_tabs)
 SHEET_MODULE_PATH = $(SOURCE_SCHEMA_DIR)/$(SHEET_MODULE).yaml
+EXCEL_TEMPLATES_DIR = mixs-templates
 
 ## environment variables
 #include config.env
@@ -160,9 +162,10 @@ $(DOCDIR):
 
 gendoc: $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
-	$(RUN) gen-doc ${GEN_DARGS} -d $(DOCDIR) $(SOURCE_SCHEMA_PATH) --template-directory $(TEMPLATEDIR) --use-slot-uris
+	$(RUN) gen-doc ${GEN_DARGS} $(SOURCE_SCHEMA_PATH) -d $(DOCDIR) --template-directory $(TEMPLATEDIR) --use-slot-uris --use-class-uris --include src/mixs/schema/deprecated.yaml
 	$(RUN) python $(SRC)/scripts/term_list_generator.py $(TERM_LIST_FILE)
 	$(RUN) python $(SRC)/scripts/combinations_list_generator.py $(COMBINATIONS_FILE)
+	$(RUN) python $(SRC)/scripts/enumerations_list_generator.py $(ENUMERATIONS_FILE)
 	mkdir -p $(DOCDIR)/javascripts
 	$(RUN) cp $(SRC)/scripts/javascripts/* $(DOCDIR)/javascripts/
 

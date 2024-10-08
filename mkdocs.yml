@@ -7,11 +7,15 @@ theme:
   #  primary: cyan
   features:
     - content.tabs.link
+    - search.suggest
 plugins:
-  - search
+  - search:
+      separator: '[\s\-\:\(\)]+'
+      prebuild_index: true
   - mermaid2
 markdown_extensions:
   - tables
+  - pymdownx.magiclink
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/tablesort.js
@@ -20,6 +24,7 @@ nav:
   - Index: index.md
   - Full term table: term_list.md
   - Combinations: combinations.md
+  - Enumerations: enumerations.md
 site_url: https://GenomicsStandardsConsortium.github.io/mixs
 repo_url: https://github.com/GenomicsStandardsConsortium/mixs
 

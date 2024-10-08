@@ -1,3 +1,5 @@
+# Enum: {{ gen.name(element) }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong> {% endif %}
+
 # Enum: {{ gen.name(element) }}
 
 {% if element.description %}
@@ -7,7 +9,7 @@ _{{ element_description_line }}_
 {% endfor %}
 {% endif %}
 
-URI: {{ gen.uri_link(element) }}
+URI: {{ gen.link(element) }}
 
 {% if element.permissible_values -%}
 ## Permissible Values

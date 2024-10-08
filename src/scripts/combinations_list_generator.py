@@ -18,12 +18,18 @@ if __name__ == "__main__":
 
     output_file = sys.argv[1]
 
-    docgen = DocGenerator("src/mixs/schema/mixs.yaml", directory="docs")
+    docgen = DocGenerator(
+        "src/mixs/schema/mixs.yaml",
+        template_directory="src/doc-templates",
+        directory="docs",
+        use_slot_uris=True,
+        use_class_uris=True,
+    )
     classes = list(docgen.all_class_objects())
 
     try:
         with open(output_file, "w") as md_file:
-            md_file.write("# Combinations\n\n")
+            md_file.write("# All combinations in MIxS schema\n\n")
 
             md_file.write("| Name | Description |\n")
             md_file.write("| --- | --- |\n")
