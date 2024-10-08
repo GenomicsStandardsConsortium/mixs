@@ -12808,7 +12808,7 @@ slots:
         tag: Preferred_unit
         value: micrometer
     description: Refers to the mesh/pore size used to pre-filter/pre-sort the sample.
-      Materials larger than the size threshold are excluded from the sample
+      Materials smaller than the size threshold are excluded from the sample
     title: size-fraction lower threshold
     examples:
       - value: 0.2 micrometer
@@ -12828,7 +12828,7 @@ slots:
         tag: Preferred_unit
         value: micrometer
     description: Mesh or pore size of the device used to retain the sample. Materials
-      smaller than the size threshold are excluded from the sample
+      larger than the size threshold are excluded from the sample.
     title: size-fraction upper threshold
     examples:
       - value: 20 micrometer
