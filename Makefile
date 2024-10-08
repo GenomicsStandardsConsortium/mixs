@@ -152,11 +152,14 @@ examples/output: src/mixs/schema/mixs.yaml
 .PHONY: standardize-schema
 
 standardize-schema:
+	$(RUN) python src/scripts/describe_enums_by_slots_using.py \
+    --schema_file src/mixs/schema/mixs.yaml \
+    --output_file src/mixs/schema/mixs_with_enum_descriptions.yaml
 	$(RUN) gen-linkml \
 		--format yaml \
 		--no-mergeimports \
 		--no-materialize-attributes \
-		--materialize-patterns src/mixs/schema/mixs.yaml |\
+		--materialize-patterns src/mixs/schema/mixs_with_enum_descriptions.yaml |\
 	yq eval '(.. | select(has("from_schema")) | .from_schema) style="" | del(.. | select(has("from_schema")).from_schema)' |\
 	yq eval '.prefixes |= map_values(.prefix_reference)' |\
 	yq eval '.settings |= map_values(.setting_value)'  |\
@@ -170,7 +173,7 @@ standardize-schema:
 	yq eval 'del(.subsets.[].name)' |\
 	yamlfmt -in -conf .yamlfmt > src/mixs/schema/mixs_standardized.yaml
 	mv src/mixs/schema/mixs_standardized.yaml src/mixs/schema/mixs.yaml
-	rm -rf src/mixs/schema/mixs_standardized.yaml
+	rm -rf src/mixs/schema/mixs_standardized.yaml src/mixs/schema/mixs_with_enum_descriptions.yaml
 
 # Test documentation locally
 serve: mkd-serve

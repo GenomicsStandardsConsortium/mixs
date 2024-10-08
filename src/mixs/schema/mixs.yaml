@@ -29,6 +29,7 @@ subsets:
   investigation: {}
 enums:
   BiolStatEnum:
+    description: Permissible values, used by term biol_stat
     permissible_values:
       breeder's line: {}
       clonal selection: {}
@@ -39,6 +40,7 @@ enums:
       semi-natural: {}
       wild: {}
   AssemblyQualEnum:
+    description: Permissible values, used by term assembly_qual
     permissible_values:
       Finished genome: {}
       High-quality draft genome: {}
@@ -46,26 +48,31 @@ enums:
       Low-quality draft genome: {}
       Genome fragment(s): {}
   AeroStrucEnum:
+    description: Permissible values, used by term aero_struc
     permissible_values:
       glider: {}
       plane: {}
   AnimalBodyCondEnum:
+    description: Permissible values, used by term animal_body_cond
     permissible_values:
       normal: {}
       over conditioned: {}
       under conditioned: {}
   AnimalSexEnum:
+    description: Permissible values, used by term animal_sex
     permissible_values:
       castrated female: {}
       castrated male: {}
       intact female: {}
       intact male: {}
   ArchStrucEnum:
+    description: Permissible values, used by term arch_struc
     permissible_values:
       building: {}
       home: {}
       shed: {}
   BinParamEnum:
+    description: Permissible values, used by term bin_param
     permissible_values:
       codon usage: {}
       combination: {}
@@ -73,6 +80,7 @@ enums:
       homology search: {}
       kmer: {}
   BioticRelationshipEnum:
+    description: Permissible values, used by term biotic_relationship
     permissible_values:
       commensalism: {}
       free living: {}
@@ -80,12 +88,14 @@ enums:
       parasitism: {}
       symbiotic: {}
   BuildingSettingEnum:
+    description: Permissible values, used by term building_setting
     permissible_values:
       exurban: {}
       rural: {}
       suburban: {}
       urban: {}
   BuildDocsEnum:
+    description: Permissible values, used by term build_docs
     permissible_values:
       building information model: {}
       commissioning report: {}
@@ -101,6 +111,7 @@ enums:
       ventilation system: {}
       windows: {}
   BuildOccupTypeEnum:
+    description: Permissible values, used by term build_occup_type
     permissible_values:
       airport: {}
       commercial: {}
@@ -116,10 +127,12 @@ enums:
       sports complex: {}
       wood framed: {}
   BuiltStrucSetEnum:
+    description: Permissible values, used by term built_struc_set
     permissible_values:
       rural: {}
       urban: {}
   CeilFinishMatEnum:
+    description: Permissible values, used by term ceil_finish_mat
     permissible_values:
       PVC: {}
       drywall: {}
@@ -132,10 +145,12 @@ enums:
       tiles: {}
       wood: {}
   CeilStrucEnum:
+    description: Permissible values, used by term ceil_struc
     permissible_values:
       concrete: {}
       wood frame: {}
   CeilTypeEnum:
+    description: Permissible values, used by term ceil_type
     permissible_values:
       barrel-shaped: {}
       cathedral: {}
@@ -145,15 +160,18 @@ enums:
       dropped: {}
       stretched: {}
   ComplApprEnum:
+    description: Permissible values, used by term compl_appr
     permissible_values:
       marker gene: {}
       other: {}
       reference based: {}
   ContamScreenInputEnum:
+    description: Permissible values, used by term contam_screen_input
     permissible_values:
       contigs: {}
       reads: {}
   CultResultEnum:
+    description: Permissible values, used by term cult_result
     permissible_values:
       absent: {}
       active: {}
@@ -164,6 +182,7 @@ enums:
       present: {}
       'yes': {}
   DeposEnvEnum:
+    description: Permissible values, used by term depos_env
     permissible_values:
       Continental - Aeolian: {}
       Continental - Alluvial: {}
@@ -182,22 +201,26 @@ enums:
       Transitional - Tidal: {}
       other: {}
   DominantHandEnum:
+    description: Permissible values, used by term dominant_hand
     permissible_values:
       ambidextrous: {}
       left: {}
       right: {}
   DoorCompTypeEnum:
+    description: Permissible values, used by term door_comp_type
     permissible_values:
       metal covered: {}
       revolving: {}
       sliding: {}
       telescopic: {}
   DoorDirectEnum:
+    description: Permissible values, used by term door_direct
     permissible_values:
       inward: {}
       outward: {}
       sideways: {}
   DoorMatEnum:
+    description: Permissible values, used by term door_mat
     permissible_values:
       aluminum: {}
       cellular PVC: {}
@@ -210,6 +233,7 @@ enums:
       wood: {}
       wood/plastic composite: {}
   DoorMoveEnum:
+    description: Permissible values, used by term door_move
     permissible_values:
       collapsible: {}
       folding: {}
@@ -218,11 +242,13 @@ enums:
       sliding: {}
       swinging: {}
   DoorTypeEnum:
+    description: Permissible values, used by term door_type
     permissible_values:
       composite: {}
       metal: {}
       wooden: {}
   DoorTypeMetalEnum:
+    description: Permissible values, used by term door_type_metal
     permissible_values:
       collapsible: {}
       corrugated steel: {}
@@ -230,6 +256,7 @@ enums:
       rolling shutters: {}
       steel plate: {}
   DrainageClassEnum:
+    description: Permissible values, used by term drainage_class
     permissible_values:
       excessively drained: {}
       moderately well: {}
@@ -238,6 +265,7 @@ enums:
       very poorly: {}
       well: {}
   DrawingsEnum:
+    description: Permissible values, used by term drawings
     permissible_values:
       as built: {}
       bid: {}
@@ -248,6 +276,7 @@ enums:
       operation: {}
       sketch: {}
   ExtrWeatherEventEnum:
+    description: Permissible values, used by term extr_weather_event
     permissible_values:
       drought: {}
       dust storm: {}
@@ -259,6 +288,7 @@ enums:
       high precipitation: {}
       high winds: {}
   FacilityTypeEnum:
+    description: Permissible values, used by term facility_type
     permissible_values:
       ambient storage: {}
       caterer-catering point: {}
@@ -272,6 +302,7 @@ enums:
       refrigerated storage: {}
       storage: {}
   FaoClassEnum:
+    description: Permissible values, used by term fao_class
     permissible_values:
       Acrisols: {}
       Alisols: {}
@@ -318,6 +349,7 @@ enums:
       Yermosols:
         deprecated: true, value no longer recognized by FAO, https://github.com/GenomicsStandardsConsortium/mixs/issues/696
   FarmWaterSourceEnum:
+    description: Permissible values, used by term farm_water_source
     permissible_values:
       brackish: {}
       canal: {}
@@ -338,6 +370,7 @@ enums:
       stream: {}
       well: {}
   FilterTypeEnum:
+    description: Permissible values, used by term filter_type
     permissible_values:
       HEPA: {}
       chemical air filter: {}
@@ -346,10 +379,12 @@ enums:
       low-MERV pleated media: {}
       particulate air filter: {}
   FireplaceTypeEnum:
+    description: Permissible values, used by term fireplace_type
     permissible_values:
       gas burning: {}
       wood burning: {}
   FloorStrucEnum:
+    description: Permissible values, used by term floor_struc
     permissible_values:
       balcony: {}
       concrete: {}
@@ -359,6 +394,7 @@ enums:
       sprung floor: {}
       wood-framed: {}
   FloorWaterMoldEnum:
+    description: Permissible values, used by term floor_water_mold
     permissible_values:
       bulging walls: {}
       ceiling discoloration: {}
@@ -370,6 +406,7 @@ enums:
       water stains: {}
       wet floor: {}
   FoodCleanProcEnum:
+    description: Permissible values, used by term food_clean_proc
     permissible_values:
       drum and drain: {}
       manual spinner: {}
@@ -379,6 +416,7 @@ enums:
       scrubbed with hand: {}
       soaking: {}
   FoodTraceListEnum:
+    description: Permissible values, used by term food_trace_list
     permissible_values:
       cheeses-other than hard cheeses: {}
       crustaceans: {}
@@ -397,6 +435,7 @@ enums:
       tomatoes: {}
       tropical tree fruits: {}
   FreqCleanEnum:
+    description: Permissible values, used by term freq_clean
     permissible_values:
       Annually: {}
       Daily: {}
@@ -405,11 +444,13 @@ enums:
       Weekly: {}
       other: {}
   FurnitureEnum:
+    description: Permissible values, used by term furniture
     permissible_values:
       cabinet: {}
       chair: {}
       desks: {}
   GenderRestroomEnum:
+    description: Permissible values, used by term gender_restroom
     permissible_values:
       all gender: {}
       female: {}
@@ -418,18 +459,21 @@ enums:
       male and female: {}
       unisex: {}
   GrowthHabitEnum:
+    description: Permissible values, used by term growth_habit
     permissible_values:
       erect: {}
       prostrate: {}
       semi-erect: {}
       spreading: {}
   HandidnessEnum:
+    description: Permissible values, used by term handidness
     permissible_values:
       ambidexterity: {}
       left handedness: {}
       mixed-handedness: {}
       right handedness: {}
   HcrEnum:
+    description: Permissible values, used by term hcr
     permissible_values:
       Coalbed: {}
       Gas Reservoir: {}
@@ -440,6 +484,7 @@ enums:
       Tight Oil Reservoir: {}
       other: {}
   HcProducedEnum:
+    description: Permissible values, used by term hc_produced
     permissible_values:
       Bitumen: {}
       Coalbed Methane: {}
@@ -448,6 +493,7 @@ enums:
       Oil: {}
       other: {}
   HeatCoolTypeEnum:
+    description: Permissible values, used by term heat_cool_type
     permissible_values:
       forced air system: {}
       heat pump: {}
@@ -455,19 +501,23 @@ enums:
       steam forced heat: {}
       wood stove: {}
   HeatSysDelivMethEnum:
+    description: Permissible values, used by term heat_sys_deliv_meth
     permissible_values:
       conductive: {}
       radiant: {}
   HostCellularLocEnum:
+    description: Permissible values, used by term host_cellular_loc
     permissible_values:
       extracellular: {}
       intracellular: {}
       not determined: {}
   HostDependenceEnum:
+    description: Permissible values, used by term host_dependence
     permissible_values:
       facultative: {}
       obligate: {}
   HostPredApprEnum:
+    description: Permissible values, used by term host_pred_appr
     permissible_values:
       CRISPR spacer match: {}
       co-occurrence: {}
@@ -477,12 +527,14 @@ enums:
       other: {}
       provirus: {}
   HostSpecificityEnum:
+    description: Permissible values, used by term host_specificity
     permissible_values:
       family-specific: {}
       generalist: {}
       genus-specific: {}
       species-specific: {}
   IndoorSpaceEnum:
+    description: Permissible values, used by term indoor_space
     permissible_values:
       bathroom: {}
       bedroom: {}
@@ -493,6 +545,7 @@ enums:
       locker room: {}
       office: {}
   IndoorSurfEnum:
+    description: Permissible values, used by term indoor_surf
     permissible_values:
       cabinet: {}
       ceiling: {}
@@ -503,12 +556,14 @@ enums:
       wall: {}
       window: {}
   LibLayoutEnum:
+    description: Permissible values, used by term lib_layout
     permissible_values:
       other: {}
       paired: {}
       single: {}
       vector: {}
   LightTypeEnum:
+    description: Permissible values, used by term light_type
     permissible_values:
       desk lamp: {}
       electric light: {}
@@ -516,6 +571,7 @@ enums:
       natural light: {}
       none: {}
   LithologyEnum:
+    description: Permissible values, used by term lithology
     permissible_values:
       Basement: {}
       Chalk: {}
@@ -531,12 +587,14 @@ enums:
       Volcanic: {}
       other: {}
   MagCovSoftwareEnum:
+    description: Permissible values, used by term mag_cov_software
     permissible_values:
       bbmap: {}
       bowtie: {}
       bwa: {}
       other: {}
   MechStrucEnum:
+    description: Permissible values, used by term mech_struc
     permissible_values:
       boat: {}
       bus: {}
@@ -548,6 +606,7 @@ enums:
       subway: {}
       train: {}
   ModeTransmissionEnum:
+    description: Permissible values, used by term mode_transmission
     permissible_values:
       horizontal:castrator: {}
       horizontal:directly transmitted: {}
@@ -557,6 +616,7 @@ enums:
       horizontal:vector transmitted: {}
       vertical: {}
   NegContTypeEnum:
+    description: Permissible values, used by term neg_cont_type
     permissible_values:
       DNA-free PCR mix: {}
       distilled water: {}
@@ -566,17 +626,20 @@ enums:
       sterile swab: {}
       sterile syringe: {}
   OccupDocumentEnum:
+    description: Permissible values, used by term occup_document
     permissible_values:
       automated count: {}
       estimate: {}
       manual count: {}
       videos: {}
   OxyStatSampEnum:
+    description: Permissible values, used by term oxy_stat_samp
     permissible_values:
       aerobic: {}
       anaerobic: {}
       other: {}
   PlantReprodCropEnum:
+    description: Permissible values, used by term plant_reprod_crop
     permissible_values:
       plant cutting: {}
       pregerminated seed: {}
@@ -585,6 +648,7 @@ enums:
       seedling: {}
       whole mature plant: {}
   PlantSexEnum:
+    description: Permissible values, used by term plant_sex
     permissible_values:
       Androdioecious: {}
       Androecious: {}
@@ -616,11 +680,13 @@ enums:
       Trioecious: {}
       Unisexual: {}
   PredGenomeStrucEnum:
+    description: Permissible values, used by term pred_genome_struc
     permissible_values:
       non-segmented: {}
       segmented: {}
       undetermined: {}
   ProfilePositionEnum:
+    description: Permissible values, used by term profile_position
     permissible_values:
       backslope: {}
       footslope: {}
@@ -628,17 +694,20 @@ enums:
       summit: {}
       toeslope: {}
   QuadPosEnum:
+    description: Permissible values, used by term quad_pos
     permissible_values:
       East side: {}
       North side: {}
       South side: {}
       West side: {}
   RelSampLocEnum:
+    description: Permissible values, used by term rel_samp_loc
     permissible_values:
       center of car: {}
       edge of car: {}
       under a seat: {}
   RelToOxygenEnum:
+    description: Permissible values, used by term rel_to_oxygen
     permissible_values:
       aerobe: {}
       anaerobe: {}
@@ -648,6 +717,7 @@ enums:
       obligate aerobe: {}
       obligate anaerobe: {}
   RoomCondtEnum:
+    description: Permissible values, used by term room_condt
     permissible_values:
       damaged: {}
       needs repair: {}
@@ -656,6 +726,7 @@ enums:
       visible signs of mold/mildew: {}
       visible wear: {}
   RoomConnectedEnum:
+    description: Permissible values, used by term room_connected
     permissible_values:
       attic: {}
       bathroom: {}
@@ -669,11 +740,13 @@ enums:
       office: {}
       stairwell: {}
   RoomLocEnum:
+    description: Permissible values, used by term room_loc
     permissible_values:
       corner room: {}
       exterior wall: {}
       interior room: {}
   RoomSampPosEnum:
+    description: Permissible values, used by term room_samp_pos
     permissible_values:
       center: {}
       east corner: {}
@@ -685,11 +758,13 @@ enums:
       southwest corner: {}
       west corner: {}
   RouteTransmissionEnum:
+    description: Permissible values, used by term route_transmission
     permissible_values:
       environmental:faecal-oral: {}
       transplacental: {}
       vector-borne:vector penetration: {}
   SampCaptStatusEnum:
+    description: Permissible values, used by term samp_capt_status
     permissible_values:
       active surveillance in response to an outbreak: {}
       active surveillance not initiated by an outbreak: {}
@@ -697,6 +772,7 @@ enums:
       market sample: {}
       other: {}
   SampCollectPointEnum:
+    description: Permissible values, used by term samp_collect_point
     permissible_values:
       drilling rig: {}
       other: {}
@@ -706,6 +782,7 @@ enums:
       well: {}
       wellhead: {}
   SampDisStageEnum:
+    description: Permissible values, used by term samp_dis_stage
     permissible_values:
       dissemination: {}
       growth and reproduction: {}
@@ -714,6 +791,7 @@ enums:
       other: {}
       penetration: {}
   SampLocConditionEnum:
+    description: Permissible values, used by term samp_loc_condition
     permissible_values:
       damaged: {}
       new: {}
@@ -721,6 +799,7 @@ enums:
       visible signs of mold-mildew: {}
       visible weariness repair: {}
   SampSubtypeEnum:
+    description: Permissible values, used by term samp_subtype
     permissible_values:
       biofilm: {}
       not applicable: {}
@@ -728,11 +807,13 @@ enums:
       other: {}
       water phase: {}
   SampSurfMoistureEnum:
+    description: Permissible values, used by term samp_surf_moisture
     permissible_values:
       intermittent moisture: {}
       not present: {}
       submerged: {}
   SampTransportContEnum:
+    description: Permissible values, used by term samp_transport_cont
     permissible_values:
       bottle: {}
       cooler: {}
@@ -740,6 +821,7 @@ enums:
       plastic vial: {}
       vendor supplied container: {}
   SampWeatherEnum:
+    description: Permissible values, used by term samp_weather
     permissible_values:
       clear sky: {}
       cloudy: {}
@@ -751,32 +833,38 @@ enums:
       sunny: {}
       windy: {}
   ScLysisApproachEnum:
+    description: Permissible values, used by term sc_lysis_approach
     permissible_values:
       chemical: {}
       combination: {}
       enzymatic: {}
       physical: {}
   SeasonUseEnum:
+    description: Permissible values, used by term season_use
     permissible_values:
       Fall: {}
       Spring: {}
       Summer: {}
       Winter: {}
   SedimentTypeEnum:
+    description: Permissible values, used by term sediment_type
     permissible_values:
       biogenous: {}
       cosmogenous: {}
       hydrogenous: {}
       lithogenous: {}
   SeqQualityCheckEnum:
+    description: Permissible values, used by term seq_quality_check
     permissible_values:
       manually edited: {}
       none: {}
   ShadingDeviceLocEnum:
+    description: Permissible values, used by term shading_device_loc
     permissible_values:
       exterior: {}
       interior: {}
   ShadingDeviceTypeEnum:
+    description: Permissible values, used by term shading_device_type
     permissible_values:
       bahama shutters: {}
       exterior roll blind: {}
@@ -791,6 +879,8 @@ enums:
       trellis: {}
       venetian awning: {}
   CompassDirections8Enum:
+    description: 'Permissible values, used by 6 terms: door_loc, ext_wall_orient,
+      ext_window_orient, heat_deliv_loc, wall_loc, window_loc'
     permissible_values:
       east: {}
       north: {}
@@ -801,10 +891,14 @@ enums:
       southwest: {}
       west: {}
   MoldVisibilityEnum:
+    description: 'Permissible values, used by 5 terms: ceil_water_mold, door_water_mold,
+      shad_dev_water_mold, wall_water_mold, window_water_mold'
     permissible_values:
       no presence of mold visible: {}
       presence of mold visible: {}
   DamagedRupturedEnum:
+    description: 'Permissible values, used by 3 terms: door_cond, shading_device_cond,
+      window_cond'
     permissible_values:
       damaged: {}
       needs repair: {}
@@ -812,6 +906,7 @@ enums:
       rupture: {}
       visible wear: {}
   DamagedEnum:
+    description: 'Permissible values, used by 3 terms: ceil_cond, floor_cond, int_wall_cond'
     permissible_values:
       damaged: {}
       needs repair: {}
@@ -819,6 +914,7 @@ enums:
       rupture: {}
       visible wear: {}
   CeilingWallTextureEnum:
+    description: 'Permissible values, used by 2 terms: ceil_texture, wall_texture'
     permissible_values:
       Santa-Fe texture: {}
       crows feet: {}
@@ -834,6 +930,7 @@ enums:
       stomp knockdown: {}
       swirl: {}
   GeolAgeEnum:
+    description: 'Permissible values, used by 2 terms: hcr_geol_age, sr_geol_age'
     permissible_values:
       Archean: {}
       Cambrian: {}
@@ -854,6 +951,7 @@ enums:
       Triassic: {}
       other: {}
   SoilHorizonEnum:
+    description: Permissible values, used by term soil_horizon
     permissible_values:
       A horizon: {}
       B horizon: {}
@@ -863,6 +961,7 @@ enums:
       Permafrost: {}
       R layer: {}
   SoilTextureClassEnum:
+    description: Permissible values, used by term soil_texture_class
     permissible_values:
       clay: {}
       clay loam: {}
@@ -877,6 +976,7 @@ enums:
       silty clay: {}
       silty clay loam: {}
   SortTechEnum:
+    description: Permissible values, used by term sort_tech
     permissible_values:
       flow cytometric cell sorting: {}
       lazer-tweezing: {}
@@ -885,10 +985,12 @@ enums:
       optical manipulation: {}
       other: {}
   SpaceTypStateEnum:
+    description: Permissible values, used by term space_typ_state
     permissible_values:
       typically occupied: {}
       typically unoccupied: {}
   SpecificEnum:
+    description: Permissible values, used by term specific
     permissible_values:
       as built: {}
       bid: {}
@@ -897,6 +999,7 @@ enums:
       operation: {}
       photos: {}
   SrDepEnvEnum:
+    description: Permissible values, used by term sr_dep_env
     permissible_values:
       Fluvioldeltaic: {}
       Fluviomarine: {}
@@ -904,6 +1007,7 @@ enums:
       Marine: {}
       other: {}
   SrKerogTypeEnum:
+    description: Permissible values, used by term sr_kerog_type
     permissible_values:
       Type I: {}
       Type II: {}
@@ -911,6 +1015,7 @@ enums:
       Type IV: {}
       other: {}
   SrLithologyEnum:
+    description: Permissible values, used by term sr_lithology
     permissible_values:
       Biosilicieous: {}
       Carbonate: {}
@@ -918,11 +1023,13 @@ enums:
       Coal: {}
       other: {}
   SubstructureTypeEnum:
+    description: Permissible values, used by term substructure_type
     permissible_values:
       basement: {}
       crawlspace: {}
       slab on grade: {}
   SurfAirContEnum:
+    description: Permissible values, used by term surf_air_cont
     permissible_values:
       biocides: {}
       biological contaminants: {}
@@ -933,6 +1040,7 @@ enums:
       radon: {}
       volatile organic compounds: {}
   SurfMaterialEnum:
+    description: Permissible values, used by term surf_material
     permissible_values:
       adobe: {}
       carpet: {}
@@ -950,6 +1058,7 @@ enums:
       vinyl: {}
       wood: {}
   SymbiontHostRoleEnum:
+    description: Permissible values, used by term symbiont_host_role
     permissible_values:
       accidental: {}
       dead-end: {}
@@ -959,21 +1068,25 @@ enums:
       reservoir: {}
       single host: {}
   SymLifeCycleTypeEnum:
+    description: Permissible values, used by term sym_life_cycle_type
     permissible_values:
       complex life cycle: {}
       simple life cycle: {}
   TaxIdentEnum:
+    description: Permissible values, used by term tax_ident
     permissible_values:
       16S rRNA gene: {}
       multi-marker approach: {}
       other: {}
   TidalStageEnum:
+    description: Permissible values, used by term tidal_stage
     permissible_values:
       ebb tide: {}
       flood tide: {}
       high tide: {}
       low tide: {}
   TillageEnum:
+    description: Permissible values, used by term tillage
     permissible_values:
       chisel: {}
       cutting disc: {}
@@ -985,11 +1098,13 @@ enums:
       tined: {}
       zonal tillage: {}
   TrainLineEnum:
+    description: Permissible values, used by term train_line
     permissible_values:
       green: {}
       orange: {}
       red: {}
   TrainStatLocEnum:
+    description: Permissible values, used by term train_stat_loc
     permissible_values:
       forest hills: {}
       riverside: {}
@@ -997,11 +1112,13 @@ enums:
       south station amtrak: {}
       south station underground: {}
   TrainStopLocEnum:
+    description: Permissible values, used by term train_stop_loc
     permissible_values:
       downtown: {}
       end: {}
       mid: {}
   TrophicLevelEnum:
+    description: Permissible values, used by term trophic_level
     permissible_values:
       autotroph: {}
       carboxydotroph: {}
@@ -1035,21 +1152,25 @@ enums:
       photosynthetic: {}
       phototroph: {}
   TypeOfSymbiosisEnum:
+    description: Permissible values, used by term type_of_symbiosis
     permissible_values:
       commensalistic: {}
       mutualistic: {}
       parasitic: {}
   UrineCollectMethEnum:
+    description: Permissible values, used by term urine_collect_meth
     permissible_values:
       catheter: {}
       clean catch: {}
   UrobiomSexEnum:
+    description: Permissible values, used by term urobiom_sex
     permissible_values:
       female: {}
       hermaphrodite: {}
       male: {}
       neuter: {}
   VirusEnrichApprEnum:
+    description: Permissible values, used by term virus_enrich_appr
     permissible_values:
       CsCl density gradient: {}
       DNAse: {}
@@ -1064,6 +1185,7 @@ enums:
       ultracentrifugation: {}
       ultrafiltration: {}
   WallConstTypeEnum:
+    description: Permissible values, used by term wall_const_type
     permissible_values:
       fire resistive: {}
       frame construction: {}
@@ -1072,6 +1194,7 @@ enums:
       masonry noncombustible: {}
       modified fire resistive: {}
   WallFinishMatEnum:
+    description: Permissible values, used by term wall_finish_mat
     permissible_values:
       acoustical treatment: {}
       gypsum board: {}
@@ -1085,6 +1208,7 @@ enums:
       veneer plaster: {}
       wood: {}
   WallSurfTreatmentEnum:
+    description: Permissible values, used by term wall_surf_treatment
     permissible_values:
       fabric: {}
       no treatment: {}
@@ -1093,6 +1217,7 @@ enums:
       stucco: {}
       wall paper: {}
   WaterFeatTypeEnum:
+    description: Permissible values, used by term water_feat_type
     permissible_values:
       fountain: {}
       pool: {}
@@ -1100,6 +1225,7 @@ enums:
       stream: {}
       waterfall: {}
   WeekdayEnum:
+    description: Permissible values, used by term weekday
     permissible_values:
       Friday: {}
       Monday: {}
@@ -1109,20 +1235,24 @@ enums:
       Tuesday: {}
       Wednesday: {}
   WgaAmpApprEnum:
+    description: Permissible values, used by term wga_amp_appr
     permissible_values:
       mda based: {}
       pcr based: {}
   WindowCoverEnum:
+    description: Permissible values, used by term window_cover
     permissible_values:
       blinds: {}
       curtains: {}
       none: {}
   WindowHorizPosEnum:
+    description: Permissible values, used by term window_horiz_pos
     permissible_values:
       left: {}
       middle: {}
       right: {}
   WindowMatEnum:
+    description: Permissible values, used by term window_mat
     permissible_values:
       clad: {}
       fiberglass: {}
@@ -1130,15 +1260,18 @@ enums:
       vinyl: {}
       wood: {}
   WindowStatusEnum:
+    description: Permissible values, used by term window_status
     permissible_values:
       closed: {}
       open: {}
   WindowTypeEnum:
+    description: Permissible values, used by term window_type
     permissible_values:
       fixed window: {}
       horizontal sash window: {}
       single-hung sash window: {}
   WindowVertPosEnum:
+    description: Permissible values, used by term window_vert_pos
     permissible_values:
       bottom: {}
       high: {}
