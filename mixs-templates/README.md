@@ -1,6 +1,8 @@
 ## MIxS (meta)data collection spreadsheet templates
 
-In this folder, the GSC provides Microsoft Excel (.xlsx) spreadsheets that can be used as templates for collecting metadata according to the MIxS standard. The GSC appreciates that spreadsheets like these can be very useful for preparing data to be submitted to an INSDC database. Users should be aware of the limitations of these spreadsheets, listed below.
+In this folder, the GSC provides Microsoft Excel (.xlsx) spreadsheets that can be used as templates for collecting metadata according to the MIxS standard. 
+
+The GSC appreciates that spreadsheets like these can be very useful for use in the field and lab, as well as for preparing data to be submitted to an INSDC database. However, users should be aware of the limitations of these spreadsheets, listed below.
 
 Each of the files in this folder and its subfolders are blank template spreadsheets, with only the header row populated with the names of terms associated with a particular [Checklist](https://sujaypatil96.github.io/mixs/#Checklists), [Extension](https://sujaypatil96.github.io/mixs/#Extensions), or [Combination](https://sujaypatil96.github.io/mixs/combinations/) (of one Checklist plus one Extension). 
 
