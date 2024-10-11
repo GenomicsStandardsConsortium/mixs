@@ -151,6 +151,16 @@ examples/output: src/mixs/schema/mixs.yaml
 
 .PHONY: standardize-schema
 
+#   IFSAC_category:
+#      name: IFSAC_category
+#      annotations:
+#        Expected_value:
+#          tag: Expected_value
+#          value: IFSAC term
+
+  # 	yq eval '.slots.annotations |= map_values(.value)' |\
+  # 	yq eval '.slots.[].annotations |= map_values(.value))' |\
+
 standardize-schema:
 	$(RUN) python src/scripts/describe_enums_by_slots_using.py \
     --schema_file src/mixs/schema/mixs.yaml \
@@ -161,8 +171,10 @@ standardize-schema:
 		--no-materialize-attributes \
 		--materialize-patterns src/mixs/schema/mixs_with_enum_descriptions.yaml |\
 	yq eval '(.. | select(has("from_schema")) | .from_schema) style="" | del(.. | select(has("from_schema")).from_schema)' |\
+	yq eval '.classes[] |= select(has("annotations")).annotations |= map_values(.value)' |\
 	yq eval '.prefixes |= map_values(.prefix_reference)' |\
 	yq eval '.settings |= map_values(.setting_value)'  |\
+	yq eval '.slots[] |= select(has("annotations")).annotations |= map_values(.value)' |\
 	yq eval 'del(.classes.[].name)' |\
 	yq eval 'del(.classes.[].slot_usage.[].name)'  |\
 	yq eval 'del(.enums.[].name)'  |\
