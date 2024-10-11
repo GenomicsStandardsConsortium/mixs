@@ -151,16 +151,6 @@ examples/output: src/mixs/schema/mixs.yaml
 
 .PHONY: standardize-schema
 
-#   IFSAC_category:
-#      name: IFSAC_category
-#      annotations:
-#        Expected_value:
-#          tag: Expected_value
-#          value: IFSAC term
-
-  # 	yq eval '.slots.annotations |= map_values(.value)' |\
-  # 	yq eval '.slots.[].annotations |= map_values(.value))' |\
-
 standardize-schema:
 	$(RUN) python src/scripts/describe_enums_by_slots_using.py \
     --schema_file src/mixs/schema/mixs.yaml \
