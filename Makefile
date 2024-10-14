@@ -151,6 +151,9 @@ examples/output: src/mixs/schema/mixs.yaml
 
 .PHONY: standardize-schema
 
+#  |\
+  #	yamlfmt -in -conf .yamlfmt >
+
 standardize-schema:
 	$(RUN) python src/scripts/describe_enums_by_slots_using.py \
     --schema_file src/mixs/schema/mixs.yaml \
@@ -172,10 +175,13 @@ standardize-schema:
 	yq eval 'del(.slots.[].domain)'  |\
 	yq eval 'del(.slots.[].name)' |\
 	yq eval 'del(.source_file)'  |\
-	yq eval 'del(.subsets.[].name)' |\
-	yamlfmt -in -conf .yamlfmt > src/mixs/schema/mixs_standardized.yaml
+	yq eval 'del(.subsets.[].name)' | cat > src/mixs/schema/mixs_standardized.yaml
 	mv src/mixs/schema/mixs_standardized.yaml src/mixs/schema/mixs.yaml
 	rm -rf src/mixs/schema/mixs_standardized.yaml src/mixs/schema/mixs_with_enum_descriptions.yaml
+
+test1:
+	echo $$PATH
+	yamlfmt  -conf .yamlfmt src/mixs/schema/mixs.yaml >  src/mixs/schema/mixs_standardized.yam
 
 # Test documentation locally
 serve: mkd-serve

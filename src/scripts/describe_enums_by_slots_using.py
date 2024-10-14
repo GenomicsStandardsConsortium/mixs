@@ -15,6 +15,8 @@ def update_enum_descriptions(schema_file: str, output_file: str) -> None:
     by other terms (slots). The descriptions will indicate whether an enum is used by any term, and if so,
     by how many terms and which ones.
 
+    Does not overwrite existing descriptions
+
     :param schema_file: Path to the input schema file.
     :param output_file: Path to the output schema file where the updated schema will be saved.
     """
@@ -26,12 +28,19 @@ def update_enum_descriptions(schema_file: str, output_file: str) -> None:
         user_names = [u.name for u in users]
         user_names.sort()
 
-        if len(user_names) == 0:
-            ev.description = "Permissible values, not used by any term"
-        elif len(user_names) == 1:
-            ev.description = f"Permissible values, used by term {user_names[0]}"
-        else:  # len(user_names) > 1
-            ev.description = f"Permissible values, used by {len(user_names)} terms: {', '.join(user_names)}"
+        new_desc = ""
+
+        if ev.description is None or ev.description != "":
+            if len(user_names) == 0:
+                new_desc = "Permissible values, not used by any term"
+            elif len(user_names) == 1:
+                new_desc = f"Permissible values, used by term {user_names[0]}"
+            else:  # len(user_names) > 1
+                new_desc = f"Permissible values, used by {len(user_names)} terms: {', '.join(user_names)}"
+            ev.description = new_desc
+        else:
+            click.echo(
+                f"Permissible value {ek} already has description '{ev.description}'. Refusing to overwrite with {new_desc}.")
 
     yaml_dumper.dump(schema_view.schema, output_file)
     click.echo(f"Enum descriptions updated and saved to {output_file}")
