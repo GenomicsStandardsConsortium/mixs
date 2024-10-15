@@ -4,9 +4,19 @@ from linkml_runtime.dumpers import yaml_dumper
 
 
 @click.command()
-@click.option('--schema_file', type=str, default="../mixs/schema/mixs.yaml", help="Path to the input schema file.")
-@click.option('--output_file', type=str, default='../../mixs_with_enum_descriptions.yaml', show_default=True,
-              help="Path to the output schema file with updated enum descriptions.")
+@click.option(
+    "--schema_file",
+    type=str,
+    default="../mixs/schema/mixs.yaml",
+    help="Path to the input schema file.",
+)
+@click.option(
+    "--output_file",
+    type=str,
+    default="../../mixs_with_enum_descriptions.yaml",
+    show_default=True,
+    help="Path to the output schema file with updated enum descriptions.",
+)
 def update_enum_descriptions(schema_file: str, output_file: str) -> None:
     """
     Update enum descriptions in the given schema file.
@@ -15,7 +25,7 @@ def update_enum_descriptions(schema_file: str, output_file: str) -> None:
     by other terms (slots). The descriptions will indicate whether an enum is used by any term, and if so,
     by how many terms and which ones.
 
-    Does not overwrite existing descriptions
+    Note: Does not overwrite existing descriptions
 
     :param schema_file: Path to the input schema file.
     :param output_file: Path to the output schema file where the updated schema will be saved.
@@ -30,7 +40,7 @@ def update_enum_descriptions(schema_file: str, output_file: str) -> None:
 
         new_desc = ""
 
-        if ev.description is None or ev.description != "":
+        if ev.description is None or ev.description == "":
             if len(user_names) == 0:
                 new_desc = "Permissible values, not used by any term"
             elif len(user_names) == 1:
@@ -40,11 +50,12 @@ def update_enum_descriptions(schema_file: str, output_file: str) -> None:
             ev.description = new_desc
         else:
             click.echo(
-                f"Permissible value {ek} already has description '{ev.description}'. Refusing to overwrite with {new_desc}.")
+                f"Enum {ek} already has description '{ev.description}'. Do not overwrite with new description."
+            )
 
     yaml_dumper.dump(schema_view.schema, output_file)
     click.echo(f"Enum descriptions updated and saved to {output_file}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     update_enum_descriptions()
