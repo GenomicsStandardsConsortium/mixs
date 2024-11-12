@@ -188,7 +188,7 @@ The MIxS terms are assigned to Checklist and Extension classes:
 ## [Explanation](#explanation)
 
 ### [Why LinkML?](#why-linkml)
-
+[Practical Approach to Using the Genomic Standards Consortium MIxS Reporting Standard for Comparative Genomics and Metagenomics](https://link.springer.com/protocol/10.1007/978-1-0716-3838-5_20)
 The transition to LinkML offers several advantages:
 
 1. Improved interoperability with other data standards
