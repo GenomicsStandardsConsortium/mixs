@@ -14600,6 +14600,13 @@ slots:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
       interpolated: true
       partial_match: true
+  nucleobase_atom_frac:
+    annotations:
+      Preferred_unit: percent
+    description: Atom % enrichment of the nucleobases in this fraction
+    title: atom percent enrichment of nucleobases
+    slot_uri:
+    range: string
 classes:
   MigsBa:
     description: 'Minimal Information about a Genome Sequence: cultured bacteria/archaea'
@@ -15985,6 +15992,18 @@ classes:
       wga_amp_kit:
         recommended: true
     class_uri: MIXS:0010012
+  MISIP:
+    description: 'Minimal Information about Stable Isotope Probing'
+    title: MISIP
+    aliases:
+      - misip
+    is_a: Checklist
+    mixin: true
+    slots:
+      - nucleobase_atom_frac
+    slot_usage:
+      nucleobase_atom_frac:
+        required: true
   Agriculture:
     description: >-
       A collection of terms appropriate when sequencing samples obtained in an agricultural environment. 
