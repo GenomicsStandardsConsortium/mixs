@@ -4,7 +4,10 @@ on:
   - pull_request
 jobs:
   linkml:
-    permissions: write-all
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
     name: LinkML Linting
     runs-on: ubuntu-latest
     steps:
