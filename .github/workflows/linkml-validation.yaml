@@ -25,11 +25,10 @@ jobs:
           ## Results file header and basic formatting
           printf '# LinkML Linting Results \n' > linting-results.md
           printf "$(linkml --version) linting found the following issues: \n\n" >> linting-results.md
-          printf "> [!WARNING]\n" >> linting-results.md
 
           ## Lint the schema, and further format
-          linkml lint  src/mixs/schema/mixs.yaml >> linting-results.md
-          sed -i 's/^  warning/> - warning    /' linting-results.md
+          linkml lint -f markdown src/mixs/schema/mixs.yaml >> linting-results.md
+          sed -i 's/#### Warnings/> [!WARNING]/; s/^*/> */' linting-results.md
       # If the above check failed, post a comment on the PR explaining the failure
       - name: Post PR comment
         if: failure()
