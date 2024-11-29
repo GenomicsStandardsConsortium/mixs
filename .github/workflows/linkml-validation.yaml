@@ -19,4 +19,14 @@ jobs:
           pip install linkml
       - name: Run LinkML Linting
         run: |
-          linkml lint  src/mixs/schema/mixs.yaml
+          echo '# LinkML Linting Results' > linting-results.md
+          echo "$(linkml --version) linting found the following issues:" >> linting-results.md
+          linkml lint  src/mixs/schema/mixs.yaml >> linting-results.md
+      # If the above check failed, post a comment on the PR explaining the failure
+      - name: Post PR comment
+        if: failure()
+        uses: mshick/add-pr-comment@b8f338c590a895d50bcbfa6c5859251edc8952fc # v2
+        with:
+          message-path: linting-results.md
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: true
