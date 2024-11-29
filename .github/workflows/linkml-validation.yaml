@@ -28,7 +28,7 @@ jobs:
 
           ## Lint the schema, and further format
           linkml lint -f markdown src/mixs/schema/mixs.yaml >> linting-results.md
-          sed -i 's/#### Warnings/> [!WARNING]/; s/^*/> */' linting-results.md
+          sed -i -e 's/#### Warnings/> [!WARNING]/; s/^*/> */' -e '/###.*yaml/ s/$/\n/' -e '/###.*yaml/ s/^###/*File*:/' linting-results.md
       # If the above check failed, post a comment on the PR explaining the failure
       - name: Post PR comment
         if: failure()
