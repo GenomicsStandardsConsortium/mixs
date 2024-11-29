@@ -1,7 +1,9 @@
 ---
 name: LinkML Linting GitHub Action
 on:
-  - pull_request
+  push:
+    paths:
+      - "src/mixs/schema/mixs.yaml"
 jobs:
   linkml:
     permissions:
@@ -27,8 +29,11 @@ jobs:
           printf "$(linkml --version) linting found the following issues: \n\n" >> linting-results.md
 
           ## Lint the schema, and further format
+          echo "Run linting"
           linkml lint -f markdown src/mixs/schema/mixs.yaml >> linting-results.md
+          echo "Run formatting"
           sed -i -e 's/#### Warnings/> [!WARNING]/; s/^*/> */' -e '/###.*yaml/ s/$/\n/' -e '/###.*yaml/ s/^###/*File*:/' linting-results.md
+          echo "Completed: move onto comment posting"
       # If the above check failed, post a comment on the PR explaining the failure
       - name: Post PR comment
         if: failure()
