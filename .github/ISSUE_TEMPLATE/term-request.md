@@ -54,7 +54,7 @@ body:
     attributes:
       label: Example
       description: >
-        An example value for the term/slot
+        An example value for the term/slot. The example value must follow the pattern/syntax described above.
     validations:
       required: true
   - type: input
