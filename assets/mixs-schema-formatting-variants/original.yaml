@@ -472,16 +472,6 @@ enums:
       kmer similarity:
       other:
       provirus:
-  HostSexEnum:
-    permissible_values:
-      female:
-      hermaphrodite:
-      non-binary:
-      male:
-      transgender:
-      transgender (female to male):
-      transgender (male to female):
-      undeclared:
   HostSpecificityEnum:
     permissible_values:
       family-specific:
@@ -8549,7 +8539,10 @@ slots:
     keywords:
       - host
       - host.
-    range: HostSexEnum
+    string_serialization: '[female|hermaphrodite|non-binary|male|transgender|transgender
+      (female to male)|transgender (male to female)
+
+      |undeclared]'
     slot_uri: MIXS:0000811
   host_shape:
     description: Morphological shape of host
@@ -12226,7 +12219,8 @@ slots:
   size_frac_low:
     annotations:
       Preferred_unit: micrometer
-    description: Refers to the mesh/pore size used to pre-filter/pre-sort the sample. Materials smaller than the size threshold are excluded from the sample
+    description: Refers to the mesh/pore size used to pre-filter/pre-sort the sample.
+      Materials larger than the size threshold are excluded from the sample
     title: size-fraction lower threshold
     examples:
       - value: 0.2 micrometer
@@ -12243,7 +12237,8 @@ slots:
   size_frac_up:
     annotations:
       Preferred_unit: micrometer
-    description: Mesh or pore size of the device used to retain the sample. Materials larger than the size threshold are excluded from the sample.
+    description: Mesh or pore size of the device used to retain the sample. Materials
+      smaller than the size threshold are excluded from the sample
     title: size-fraction upper threshold
     examples:
       - value: 20 micrometer

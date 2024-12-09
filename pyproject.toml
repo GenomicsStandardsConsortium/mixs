@@ -14,7 +14,7 @@ include = ["README.md", "src/mixs/schema", "project"]
 python = "^3.9"
 linkml-runtime = "^1.6.0"
 rdflib = "^6.2.0" # some LinkML components are not compatible with rdflib 7+ yet
-pydantic = "^1.10.13"
+#pydantic = "^1.10.13"
 
 #[tool.poetry-dynamic-versioning]
 #enable = true
@@ -27,6 +27,7 @@ pyarrow = "^15.0.0"
 
 [tool.poetry.group.dev.dependencies]
 linkml = "^1.6.0"
+
 mkdocs-material = "^9.0.12"
 mkdocs-mermaid2-plugin = "^0.6.0"
 schemasheets = "^0.1.18"
@@ -43,3 +44,4 @@ docs = ["linkml", "mkdocs-material"]
 [tool.poetry.scripts]
 extension-distances = 'scripts.extension_distances:generate_dendrogram'
 extension-differences = 'scripts.extension_slot_diffrences:set_arithmatic'
+linkml2class-tsvs = 'scripts.linkml2class_tsvs:process_schema_classes'
