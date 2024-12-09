@@ -25,13 +25,13 @@ jobs:
 
       - name: Install dependencies
         run: poetry install --no-interaction --no-root
-          
+
       - name: Run LinkML Linting
         run: |
           ## Results file header and basic formatting
-          printf '# LinkML Linting Results \n' > linting-results.md
-          printf "$(linkml --version) linting found the following issues: \n\n" >> linting-results.md
-
+          printf '# LinkML Linting Results \n\n' > linting-results.md
+          printf "$(linkml --version) linting found the following issues. \n\n" >> linting-results.md
+          printf "_For more information about the linting rule categories, see the [LinkML linter documentation](https://linkml.io/linkml/schemas/linter.html#rules)._\n" >> linting-results.md
           ## Lint the schema, and further format
           linkml lint --ignore-warnings -f markdown src/mixs/schema/mixs.yaml >> linting-results.md
       - name: Reformat log
