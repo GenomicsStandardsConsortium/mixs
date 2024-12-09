@@ -35,7 +35,7 @@ jobs:
           linkml lint --config linkml-lint-config.yml --ignore-warnings -f markdown src/mixs/schema/mixs.yaml >> linting-results.md
       - name: Reformat log
         run: |
-          sed -z -i -e 's/#### Errors/> [!CAUTION]/' -e 's/#### Warnings/> [!WARNING]/' -e 's/^*/> */' -e '/###.*yaml/ s/$/\n/' -e '/###.*yaml/ s/^###/**File**:/' linting-results.md
+          sed -i -e 's/#### Errors/> [!CAUTION]/' -e 's/#### Warnings/> [!WARNING]/' -e 's/^*/> */' -e '/###.*yaml/ s/$/\n/' -e '/###.*yaml/ s/^###/**File**:/' linting-results.md
       - name: Post PR comment
         uses: mshick/add-pr-comment@b8f338c590a895d50bcbfa6c5859251edc8952fc # v2
         with:
