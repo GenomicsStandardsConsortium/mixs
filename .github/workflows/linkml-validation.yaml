@@ -12,16 +12,20 @@ jobs:
     name: LinkML Linting
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check out repository
         uses: actions/checkout@v4
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1.3
+
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install linkml
+        run: poetry install --no-interaction --no-root
+          
       - name: Run LinkML Linting
         run: |
           ## Results file header and basic formatting
