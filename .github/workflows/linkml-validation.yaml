@@ -24,7 +24,7 @@ jobs:
         uses: snok/install-poetry@v1.3
 
       - name: Install dependencies
-        run: poetry install --no-interaction --no-root
+        run: poetry install
 
       - name: Run LinkML Linting
         run: |
@@ -33,7 +33,7 @@ jobs:
           printf "$(linkml --version) linting found the following issues. \n\n" >> linting-results.md
           printf "_For more information about the linting rule categories, see the [LinkML linter documentation](https://linkml.io/linkml/schemas/linter.html#rules)._\n" >> linting-results.md
           ## Lint the schema, and further format
-          linkml lint --ignore-warnings -f markdown src/mixs/schema/mixs.yaml >> linting-results.md
+          linkml lint --config linkml-lint-config.yml --ignore-warnings -f markdown src/mixs/schema/mixs.yaml >> linting-results.md
       - name: Reformat log
         run: |
           sed -z -i -e 's/#### Errors/> [!CAUTION]/' -e 's/#### Warnings/<details>> [!WARNING]/' -e 's/^*/> */' -e '/###.*yaml/ s/$/\n/' -e '/###.*yaml/ s/^###/**File**:/' -e '$a</details>' linting-results.md
