@@ -20,10 +20,11 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Install Poetry
+        uses: snok/install-poetry@v1.3
+
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install linkml
+        run: poetry install --no-interaction --no-root
 
       - name: Run LinkML Linting
         run: |
@@ -32,7 +33,7 @@ jobs:
           printf "$(linkml --version) linting found the following issues. \n\n" >> linting-results.md
           printf "_For more information about the linting rule categories, see the [LinkML linter documentation](https://linkml.io/linkml/schemas/linter.html#rules)._\n" >> linting-results.md
           ## Lint the schema, and further format
-          linkml lint --config linkml-lint-config.yml --ignore-warnings -f markdown src/mixs/schema/mixs.yaml >> linting-results.md
+          poetry run linkml lint --config linkml-lint-config.yml --ignore-warnings -f markdown src/mixs/schema/mixs.yaml >> linting-results.md
       - name: Reformat log
         run: |
           sed -i -e 's/#### Errors/> [!CAUTION]/' -e 's/#### Warnings/> [!WARNING]/' -e 's/^*/> */' -e '/###.*yaml/ s/$/\n/' -e '/###.*yaml/ s/^###/**File**:/' linting-results.md
