@@ -7462,9 +7462,8 @@ slots:
       interpolated: true
       partial_match: true
   climate_environment:
-    name: climate_environment
-    description:
-      Treatment involving an exposure to a particular climate; treatment
+    deprecated: true, slot is inconsistently used and provides redundant information to other slots, https://github.com/GenomicsStandardsConsortium/mixs/issues/591 and https://github.com/microbiomedata/nmdc-schema/issues/586 
+    description: Treatment involving an exposure to a particular climate; treatment
       regimen including how many times the treatment was repeated, how long each treatment
       lasted, and the start and end time of the entire treatment; can include multiple
       climates
@@ -16486,7 +16485,8 @@ slots:
       interpolated: true
       partial_match: true
   soil_conductivity:
-    name: soil_conductivity
+    description: Conductivity of some soil.
+    comments: Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
     annotations:
       Preferred_unit:
         tag: Preferred_unit
@@ -21568,6 +21568,7 @@ classes:
       soil_conductivity:
         name: soil_conductivity
         description: Conductivity of some soil.
+        comments: Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
       soil_cover:
         name: soil_cover
         recommended: true
@@ -22335,6 +22336,7 @@ classes:
       soil_conductivity:
         name: soil_conductivity
         description: Conductivity of soil at time of sampling.
+        comments: Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
       soil_pH:
         name: soil_pH
         description: The pH of soil at time of sampling.
