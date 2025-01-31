@@ -1,4 +1,4 @@
-# LinkML Schema Quickstart
+# MIxS LinkML Schema Quickstart
 
 This page aims to help to quickly orient newcomers (or refamiliarise returners) to the MIxS LinkML schema file, without needing to do a deep dive into the official [LinkmL documentation](https://linkml.io/linkml/).
 The descriptions here are written in a way to be practical and specific to the MIxS schema, and may not fully represent how LinkML theoretically should work.
