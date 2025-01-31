@@ -16,23 +16,25 @@ The schema is currently (as of Jan 2025) a very large file of more than 20,000 l
 
 The following table provides a description of each top-level element of the `.yaml` file:
 
-| Element | Description |
-|---------|--------------|
-| `name:` | name of the overall schema itself |
-| `description:` | short description of what the schema is for |
-| `comments:` | additional general information about the schema (e.g. like code comments) |
-| `source:` | original source of the information encoded in schema (e.g. URL) |
-| `id:` | A w3id linked-data URL |
-| `version:` | version of the schema |
-| `imports:` | specifications of internal linkml packages/modules used |
-| `prefixes:` | additional URL prefixes for call out different things within the schema where prefix + object makes a full URL |
-| `default_prefix`: | default prefix to append to each 'slot' (term) ID |
-| `default_range`: | default slot (term) object type (e.g., integer, string)  |
-| `subsets`: | section or term group category definitions |
-| `enums`: | definitions of drop down menu/fixed lists used by metadata term slots  |
-| `slots`: | definition of each MIxS metadata term; basic summary information of each MIxS checklist and extension |
-| `classes`: | definition of the contents of each checklists, extensions, combinations (e.g., which metadata term slot is included)  |
-| `settings`: | definitions of regex patterns etc. (a bit like variables) that are then be used inside `string_serialisation:` attribute of a slot |
+| Element | Description | Can you modify\* |
+|---------|--------------|-------------------|
+| `name:` | name of the overall schema itself | No |
+| `description:` | short description of what the schema is for | No |
+| `comments:` | additional general information about the schema (e.g. like code comments) | No |
+| `source:` | original source of the information encoded in schema (e.g. URL) | No |
+| `id:` | A w3id linked-data URL | No |
+| `version:` | version of the schema | No |
+| `imports:` | specifications of internal linkml packages/modules used | No |
+| `prefixes:` | additional URL prefixes for call out different things within the schema where prefix + object makes a full URL | No |
+| `default_prefix`: | default prefix to append to each 'slot' (term) ID | No |
+| `default_range`: | default slot (term) object type (e.g., integer, string)  | No |
+| `subsets`: | section or term group category definitions | No |
+| `enums`: | definitions of drop down menu/fixed lists used by metadata term slots  | Yes |
+| `slots`: | definition of each MIxS metadata term; basic summary information of each MIxS checklist and extension | Yes |
+| `classes`: | definition of the contents of each checklists, extensions, combinations (e.g., which metadata term slot is included)  | Yes |
+| `settings`: | definitions of regex patterns etc. (a bit like variables) that are then be used inside `string_serialisation:` attribute of a slot | No |
+
+\* where 'you' refers to someone contributing to a occasional contributor of metadata terms, rather than a schema developer.
 
 ### Gold MIxS Standard Metadata Slot
 
