@@ -413,6 +413,26 @@ enums:
       male:
       male and female:
       unisex:
+  ViralGenomeTypeEnum:
+    description: Types of viral genomes based on Baltimore classification
+    permissible_values:
+      DNA:
+        meaning: http://purl.obolibrary.org/obo/SO_0000352    # 'DNA'
+      dsDNA:
+        meaning: http://purl.obolibrary.org/obo/SO_0001198    # 'ds_DNA_viral_sequence'
+      ssDNA:
+      RNA:
+        meaning: http://purl.obolibrary.org/obo/SO_0000356    # 'RNA'
+      dsRNA:
+        meaning: http://purl.obolibrary.org/obo/SO_0001169    # 'ds_RNA_viral_sequence'
+      ssRNA:
+        meaning: http://purl.obolibrary.org/obo/SO_0001199    # 'ss_RNA_viral_sequence'
+      "ssRNA (+)":
+        meaning: http://purl.obolibrary.org/obo/SO_0001201    # 'positive_sense_ssRNA_viral_sequence'
+      "ssRNA (-)":
+        meaning: http://purl.obolibrary.org/obo/SO_0001200    # 'negative_sense_ssRNA_viral_sequence'
+      mixed:
+      uncharacterized:
   GrowthHabitEnum:
     permissible_values:
       erect:
@@ -9870,7 +9890,7 @@ slots:
   otu_class_appr:
     annotations:
       Expected_value: cutoffs and method used
-    description: Cutoffs and approach used when clustering  species-level  OTUs. Note
+    description: Cutoffs and approach used when clustering species-level OTUs. Note
       that results from standard 95% ANI / 85% AF clustering should be provided alongside
       OTUS defined from another set of thresholds, even if the latter are the ones
       primarily used during the analysis
@@ -10067,7 +10087,9 @@ slots:
       - sequencing
     keywords:
       - pcr
-    string_serialization: FWD:{dna};REV:{dna}
+    structured_pattern:
+      syntax: FWD:{dna};REV:{dna}
+      interpolated: true
     slot_uri: MIXS:0000046
   permeability:
     annotations:
@@ -10497,7 +10519,7 @@ slots:
     keywords:
       - predict
       - type
-    string_serialization: '[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]'
+    range: ViralGenomeTypeEnum
     slot_uri: MIXS:0000082
   pregnancy:
     description: Date due of pregnancy
@@ -12931,8 +12953,9 @@ slots:
       - value: no;non-compliance
     keywords:
       - status
-    string_serialization: '{boolean};[adverse event|non-compliance|lost to follow
-      up|other-specify]'
+    structured_pattern:
+      syntax: ^{boolean};(?:adverse event|non-compliance|lost to followup|other-specify)$
+      interpolated: true
     slot_uri: MIXS:0000898
   study_design:
     annotations:
@@ -21824,8 +21847,10 @@ settings:
   adapter_A_DNA_sequence: '[ACGTRKSYMWBHDVN]+'
   adapter_B_DNA_sequence: '[ACGTRKSYMWBHDVN]+'
   ambiguous_nucleotides: '[ACGTRKSYMWBHDVN]+'
+  boolean: '(?:yes|no)' # a non-capturing group matching either 'yes' or 'no'
   country: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?$'
+  dna: '^[ACGT]+$'
   duration: P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)
   float: '[-+]?[0-9]*\.?[0-9]+'
   integer: '[1-9][0-9]*'
