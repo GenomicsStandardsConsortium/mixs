@@ -4559,7 +4559,10 @@ slots:
       - sequencing
     keywords:
       - resource
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
+      partial_match: true
     slot_uri: MIXS:0000091
     multivalued: true
     recommended: true
@@ -5607,8 +5610,6 @@ slots:
       interpolated: true
       partial_match: true
   cult_root_med:
-    annotations:
-      Expected_value: name, PMID,DOI or url
     description: Name or reference for the hydroponic or in vitro culture rooting
       medium; can be the name of a commonly used medium or reference to a specific
       medium, e.g. Murashige and Skoog medium. If the medium has not been formally
@@ -5618,7 +5619,10 @@ slots:
       - value: http://himedialabs.com/TD/PT158.pdf
     keywords:
       - culture
-    string_serialization: '{text}|{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: ^{text}|{PMID}|{DOI}|{URL}$
+      interpolated: true
+      partial_match: true
     slot_uri: MIXS:0001041
   cult_target:
     annotations:
@@ -7577,8 +7581,6 @@ slots:
     slot_uri: MIXS:0000808
     range: GenderRestroomEnum
   genetic_mod:
-    annotations:
-      Expected_value: PMID, DOI, URL or text
     description: Genetic modifications of the genome of an organism, which may occur
       naturally by spontaneous mutation, or be introduced by some experimental means,
       e.g. specification of a transgene or the gene knocked-out or details of transient
@@ -7586,7 +7588,10 @@ slots:
     title: genetic modification
     examples:
       - value: aox1A transgenic
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
+      partial_match: true
     slot_uri: MIXS:0000859
   geo_loc_name:
     description: The geographical origin of the sample as defined by the country or
@@ -9892,7 +9897,7 @@ slots:
       Expected_value: cutoffs and method used
     description: Cutoffs and approach used when clustering species-level OTUs. Note
       that results from standard 95% ANI / 85% AF clustering should be provided alongside
-      OTUS defined from another set of thresholds, even if the latter are the ones
+      OTUs defined from another set of thresholds, even if the latter are the ones
       primarily used during the analysis
     title: OTU classification approach
     examples:
@@ -9902,7 +9907,7 @@ slots:
     keywords:
       - classification
       - otu
-    string_serialization: '{ANI cutoff};{AF cutoff};{clustering method}'
+    structured_pattern: ^{integer}%\s*ANI;\s*{integer}%\s*AF;\s*{text}$ # constrain based on Leiden algorithm
     slot_uri: MIXS:0000085
   otu_db:
     annotations:
@@ -10074,8 +10079,6 @@ slots:
       elongation:degrees_minutes;total cycles
     slot_uri: MIXS:0000049
   pcr_primers:
-    annotations:
-      Expected_value: 'FWD: forward primer sequence;REV:reverse primer sequence'
     description: PCR primers that were used to amplify the sequence of the targeted
       gene, locus or subfragment. This field should contain all the primers used for
       a single PCR reaction if multiple forward or reverse primers are present in
@@ -11361,7 +11364,12 @@ slots:
       - value: 4th floor
     keywords:
       - floor
-    string_serialization: '[1st floor|2nd floor|{integer} floor|basement|lobby]'
+    # \d*1[1-3]th –> 11th, 12th, 13th, 111th, etc.
+    # \d*1st –> 1st, 21st, 31st, 101st, etc.
+    # \d*2nd –> 2nd, 22nd, 32nd, 102nd, etc.
+    # \d*3rd –> 3rd, 23rd, 33rd, 103rd, etc.
+    # \d*[04-9]th –> 4th, 5th, 6th, 10th, 11th, 14th, 20th, etc.
+    pattern: ^(?:(?:\d*1[1-3]th|\d*1st|\d*2nd|\d*3rd|\d*[04-9]th) floor|basement|lobby)$
     slot_uri: MIXS:0000828
   samp_loc_condition:
     description: The condition of the sample location at the time of sampling
@@ -12580,7 +12588,10 @@ slots:
       - sequencing
     keywords:
       - procedures
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
+      partial_match: true
     slot_uri: MIXS:0000090
     multivalued: true
   sort_tech:
@@ -18742,7 +18753,10 @@ classes:
       elev:
         required: true
       heavy_metals_meth:
-        string_serialization: '{PMID}|{DOI}|{URL}'
+        structured_pattern:
+          syntax: ^{PMID}|{DOI}|{URL}$
+          interpolated: true
+          partial_match: true
       pool_dna_extracts:
         string_serialization: '{boolean};{integer}'
       soil_type:
