@@ -4562,7 +4562,6 @@ slots:
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
       interpolated: true
-      partial_match: true
     slot_uri: MIXS:0000091
     multivalued: true
     recommended: true
@@ -5622,7 +5621,6 @@ slots:
     structured_pattern:
       syntax: ^{text}|{PMID}|{DOI}|{URL}$
       interpolated: true
-      partial_match: true
     slot_uri: MIXS:0001041
   cult_target:
     annotations:
@@ -7591,8 +7589,7 @@ slots:
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
       interpolated: true
-      partial_match: true
-    slot_uri: MIXS:0000859
+      slot_uri: MIXS:0000859
   geo_loc_name:
     description: The geographical origin of the sample as defined by the country or
       sea name followed by specific region name. Country or sea names should be chosen
@@ -12593,7 +12590,6 @@ slots:
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
       interpolated: true
-      partial_match: true
     slot_uri: MIXS:0000090
     multivalued: true
   sort_tech:
@@ -18758,7 +18754,6 @@ classes:
         structured_pattern:
           syntax: ^{PMID}|{DOI}|{URL}$
           interpolated: true
-          partial_match: true
       pool_dna_extracts:
         string_serialization: '{boolean};{integer}'
       soil_type:
