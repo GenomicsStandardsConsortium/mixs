@@ -15,6 +15,7 @@ prefixes:
   xsd: http://www.w3.org/2001/XMLSchema#
   shex: http://www.w3.org/ns/shex#
   schema: http://schema.org/
+  SO: http://purl.obolibrary.org/obo/SO_  # Sequence Ontology
 default_prefix: MIXS
 default_range: string
 subsets:
@@ -417,20 +418,20 @@ enums:
     description: Types of viral genomes based on Baltimore classification
     permissible_values:
       DNA:
-        meaning: http://purl.obolibrary.org/obo/SO_0000352    # 'DNA'
+        meaning: SO:0000352    # 'DNA'
       dsDNA:
-        meaning: http://purl.obolibrary.org/obo/SO_0001198    # 'ds_DNA_viral_sequence'
+        meaning: SO:0001198    # 'ds_DNA_viral_sequence'
       ssDNA:
       RNA:
-        meaning: http://purl.obolibrary.org/obo/SO_0000356    # 'RNA'
+        meaning: SO:0000356    # 'RNA'
       dsRNA:
-        meaning: http://purl.obolibrary.org/obo/SO_0001169    # 'ds_RNA_viral_sequence'
+        meaning: SO:0001169    # 'ds_RNA_viral_sequence'
       ssRNA:
-        meaning: http://purl.obolibrary.org/obo/SO_0001199    # 'ss_RNA_viral_sequence'
+        meaning: SO:0001199    # 'ss_RNA_viral_sequence'
       "ssRNA (+)":
-        meaning: http://purl.obolibrary.org/obo/SO_0001201    # 'positive_sense_ssRNA_viral_sequence'
+        meaning: SO:0001201    # 'positive_sense_ssRNA_viral_sequence'
       "ssRNA (-)":
-        meaning: http://purl.obolibrary.org/obo/SO_0001200    # 'negative_sense_ssRNA_viral_sequence'
+        meaning: SO:0001200    # 'negative_sense_ssRNA_viral_sequence'
       mixed:
       uncharacterized:
   GrowthHabitEnum:
@@ -7585,7 +7586,7 @@ slots:
       transfection
     title: genetic modification
     examples:
-      - value: aox1A transgenic
+      - value: PMID:19497774  # PMID for review of infection in sickle cell disease
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
       interpolated: true
