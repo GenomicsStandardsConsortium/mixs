@@ -3437,7 +3437,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - resource
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000091
     alias: associated_resource
     owner: MigsPlAgriculture
@@ -3457,6 +3456,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   sop:
     name: sop
     annotations:
@@ -3473,7 +3475,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - procedures
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000090
     alias: sop
     owner: MigsPlAgriculture
@@ -3493,6 +3494,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   plant_growth_med:
     name: plant_growth_med
     annotations:
@@ -4619,19 +4623,14 @@ attributes:
     range: string
   genetic_mod:
     name: genetic_mod
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: PMID, DOI, URL or text
     description: Genetic modifications of the genome of an organism, which may occur
       naturally by spontaneous mutation, or be introduced by some experimental means,
       e.g. specification of a transgene or the gene knocked-out or details of transient
       transfection
     title: genetic modification
     examples:
-    - value: aox1A transgenic
+    - value: PMID:19497774
     from_schema: https://w3id.org/mixs
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000859
     alias: genetic_mod
     owner: MigsPlAgriculture
@@ -4643,6 +4642,9 @@ attributes:
     - HostAssociated
     - PlantAssociated
     range: string
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   food_product_type:
     name: food_product_type
     annotations:
@@ -5815,10 +5817,6 @@ attributes:
     recommended: true
   pcr_primers:
     name: pcr_primers
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: 'FWD: forward primer sequence;REV:reverse primer sequence'
     description: PCR primers that were used to amplify the sequence of the targeted
       gene, locus or subfragment. This field should contain all the primers used for
       a single PCR reaction if multiple forward or reverse primers are present in
@@ -5831,7 +5829,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - pcr
-    string_serialization: FWD:{dna};REV:{dna}
     slot_uri: MIXS:0000046
     alias: pcr_primers
     owner: MigsPlAgriculture
@@ -5841,6 +5838,9 @@ attributes:
     - Agriculture
     range: string
     required: true
+    structured_pattern:
+      syntax: FWD:{ambiguous_nucleotides};REV:{ambiguous_nucleotides}
+      interpolated: true
   target_gene:
     name: target_gene
     description: Targeted gene or locus name for marker gene studies

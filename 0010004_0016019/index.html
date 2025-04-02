@@ -3154,7 +3154,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - resource
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000091
     alias: associated_resource
     owner: MigsPlFoodAnimalAndAnimalFeed
@@ -3174,6 +3173,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   sop:
     name: sop
     annotations:
@@ -3190,7 +3192,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - procedures
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000090
     alias: sop
     owner: MigsPlFoodAnimalAndAnimalFeed
@@ -3210,6 +3211,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   organism_count:
     name: organism_count
     annotations:

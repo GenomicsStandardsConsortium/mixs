@@ -2639,7 +2639,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - resource
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000091
     alias: associated_resource
     owner: MimsHostAssociated
@@ -2659,6 +2658,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   sop:
     name: sop
     annotations:
@@ -2675,7 +2677,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - procedures
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000090
     alias: sop
     owner: MimsHostAssociated
@@ -2695,6 +2696,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   ances_data:
     name: ances_data
     description: Information about either pedigree or other ancestral information
@@ -2731,19 +2735,14 @@ attributes:
     range: BiolStatEnum
   genetic_mod:
     name: genetic_mod
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: PMID, DOI, URL or text
     description: Genetic modifications of the genome of an organism, which may occur
       naturally by spontaneous mutation, or be introduced by some experimental means,
       e.g. specification of a transgene or the gene knocked-out or details of transient
       transfection
     title: genetic modification
     examples:
-    - value: aox1A transgenic
+    - value: PMID:19497774
     from_schema: https://w3id.org/mixs
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000859
     alias: genetic_mod
     owner: MimsHostAssociated
@@ -2755,6 +2754,9 @@ attributes:
     - HostAssociated
     - PlantAssociated
     range: string
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   host_common_name:
     name: host_common_name
     annotations:

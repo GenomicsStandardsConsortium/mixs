@@ -409,7 +409,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: 0..1</li>
+<li>
+<p>Cardinality: 0..1</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{boolean};(?:adverse event|non-compliance|lost to follow up|other)$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -445,12 +450,14 @@ examples:
 from_schema: https://w3id.org/mixs
 keywords:
 - status
-string_serialization: '{boolean};[adverse event|non-compliance|lost to follow up|other-specify]'
 slot_uri: MIXS:0000898
 alias: study_complt_stat
 domain_of:
 - HumanAssociated
 range: string
+structured_pattern:
+  syntax: ^{boolean};(?:adverse event|non-compliance|lost to follow up|other)$
+  interpolated: true
 
 </code></pre>
 

@@ -2795,7 +2795,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - resource
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000091
     alias: associated_resource
     owner: MimsPlantAssociated
@@ -2815,6 +2814,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   sop:
     name: sop
     annotations:
@@ -2831,7 +2833,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - procedures
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000090
     alias: sop
     owner: MimsPlantAssociated
@@ -2851,6 +2852,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   air_temp_regm:
     name: air_temp_regm
     annotations:
@@ -3050,10 +3054,6 @@ attributes:
     multivalued: true
   cult_root_med:
     name: cult_root_med
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: name, PMID,DOI or url
     description: Name or reference for the hydroponic or in vitro culture rooting
       medium; can be the name of a commonly used medium or reference to a specific
       medium, e.g. Murashige and Skoog medium. If the medium has not been formally
@@ -3064,13 +3064,15 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - culture
-    string_serialization: '{text}|{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0001041
     alias: cult_root_med
     owner: MimsPlantAssociated
     domain_of:
     - PlantAssociated
     range: string
+    structured_pattern:
+      syntax: ^{text}|{PMID}|{DOI}|{URL}$
+      interpolated: true
   fertilizer_regm:
     name: fertilizer_regm
     annotations:
@@ -3150,19 +3152,14 @@ attributes:
     multivalued: true
   genetic_mod:
     name: genetic_mod
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: PMID, DOI, URL or text
     description: Genetic modifications of the genome of an organism, which may occur
       naturally by spontaneous mutation, or be introduced by some experimental means,
       e.g. specification of a transgene or the gene knocked-out or details of transient
       transfection
     title: genetic modification
     examples:
-    - value: aox1A transgenic
+    - value: PMID:19497774
     from_schema: https://w3id.org/mixs
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000859
     alias: genetic_mod
     owner: MimsPlantAssociated
@@ -3174,6 +3171,9 @@ attributes:
     - HostAssociated
     - PlantAssociated
     range: string
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   gravity:
     name: gravity
     annotations:

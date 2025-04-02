@@ -803,7 +803,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000082">MIXS:0000082</a></td>
 <td><a href="../0000082/">pred_genome_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../ViralGenomeTypeEnum/">ViralGenomeTypeEnum</a></td>
 <td>Type of genome predicted for the UViG</td>
 </tr>
 <tr>
@@ -822,7 +822,7 @@
 <td><a href="https://w3id.org/mixs/0000085">MIXS:0000085</a></td>
 <td><a href="../0000085/">otu_class_appr</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
-<td>Cutoffs and approach used when clustering  species-level  OTUs</td>
+<td>Cutoffs and approach used when clustering species-level OTUs</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/0000086">MIXS:0000086</a></td>
@@ -3394,13 +3394,12 @@ attributes:
     keywords:
     - predict
     - type
-    string_serialization: '[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]'
     slot_uri: MIXS:0000082
     alias: pred_genome_type
     owner: MiuvigHumanVaginal
     domain_of:
     - Miuvig
-    range: string
+    range: ViralGenomeTypeEnum
     required: true
   pred_genome_struc:
     name: pred_genome_struc
@@ -3449,9 +3448,9 @@ attributes:
       Expected_value:
         tag: Expected_value
         value: cutoffs and method used
-    description: Cutoffs and approach used when clustering  species-level  OTUs. Note
+    description: Cutoffs and approach used when clustering species-level OTUs. Note
       that results from standard 95% ANI / 85% AF clustering should be provided alongside
-      OTUS defined from another set of thresholds, even if the latter are the ones
+      OTUs defined from another set of thresholds, even if the latter are the ones
       primarily used during the analysis
     title: OTU classification approach
     examples:
@@ -3462,7 +3461,6 @@ attributes:
     keywords:
     - classification
     - otu
-    string_serialization: '{ANI cutoff};{AF cutoff};{clustering method}'
     slot_uri: MIXS:0000085
     alias: otu_class_appr
     owner: MiuvigHumanVaginal
@@ -3470,6 +3468,9 @@ attributes:
     - Miuvig
     range: string
     recommended: true
+    structured_pattern:
+      syntax: ^{integer}%\s*ANI;\s*{integer}%\s*AF;\s*{text}$
+      interpolated: true
   otu_seq_comp_appr:
     name: otu_seq_comp_appr
     annotations:
@@ -3577,7 +3578,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - resource
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000091
     alias: associated_resource
     owner: MiuvigHumanVaginal
@@ -3597,6 +3597,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   sop:
     name: sop
     annotations:
@@ -3613,7 +3616,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - procedures
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000090
     alias: sop
     owner: MiuvigHumanVaginal
@@ -3633,6 +3635,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   menarche:
     name: menarche
     description: Date of most recent menstruation

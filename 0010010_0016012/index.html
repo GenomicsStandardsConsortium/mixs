@@ -3185,7 +3185,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - resource
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000091
     alias: associated_resource
     owner: MisagSoil
@@ -3205,6 +3204,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   sop:
     name: sop
     annotations:
@@ -3221,7 +3223,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - procedures
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000090
     alias: sop
     owner: MisagSoil
@@ -3241,6 +3242,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   cur_land_use:
     name: cur_land_use
     annotations:
@@ -4330,7 +4334,6 @@ attributes:
     - method
     - properties
     - unusual
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000343
     alias: heavy_metals_meth
     owner: MisagSoil
@@ -4342,7 +4345,6 @@ attributes:
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
       interpolated: true
-      partial_match: true
   al_sat:
     name: al_sat
     annotations:

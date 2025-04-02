@@ -339,21 +339,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -419,7 +404,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: 0..1</li>
+<li>
+<p>Cardinality: 0..1</p>
+</li>
+<li>
+<p>Structured pattern: <code>FWD:{ambiguous_nucleotides};REV:{ambiguous_nucleotides}</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -434,18 +424,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: FWD: forward primer sequence;REV:reverse primer sequence</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: pcr_primers
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: 'FWD: forward primer sequence;REV:reverse primer sequence'
 description: PCR primers that were used to amplify the sequence of the targeted gene,
   locus or subfragment. This field should contain all the primers used for a single
   PCR reaction if multiple forward or reverse primers are present in a single PCR
@@ -458,7 +440,6 @@ in_subset:
 from_schema: https://w3id.org/mixs
 keywords:
 - pcr
-string_serialization: FWD:{dna};REV:{dna}
 slot_uri: MIXS:0000046
 alias: pcr_primers
 domain_of:
@@ -466,6 +447,9 @@ domain_of:
 - MimarksS
 - Agriculture
 range: string
+structured_pattern:
+  syntax: FWD:{ambiguous_nucleotides};REV:{ambiguous_nucleotides}
+  interpolated: true
 
 </code></pre>
 

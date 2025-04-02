@@ -3114,7 +3114,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - resource
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000091
     alias: associated_resource
     owner: MigsBaHumanAssociated
@@ -3134,6 +3133,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   sop:
     name: sop
     annotations:
@@ -3150,7 +3152,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - procedures
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000090
     alias: sop
     owner: MigsBaHumanAssociated
@@ -3170,6 +3171,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   host_subject_id:
     name: host_subject_id
     description: A unique identifier by which each subject can be referred to, de-identified
@@ -3902,14 +3906,15 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - status
-    string_serialization: '{boolean};[adverse event|non-compliance|lost to follow
-      up|other-specify]'
     slot_uri: MIXS:0000898
     alias: study_complt_stat
     owner: MigsBaHumanAssociated
     domain_of:
     - HumanAssociated
     range: string
+    structured_pattern:
+      syntax: ^{boolean};(?:adverse event|non-compliance|lost to follow up|other)$
+      interpolated: true
   pulmonary_disord:
     name: pulmonary_disord
     description: History of pulmonary disorders; can include multiple disorders. The

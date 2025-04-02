@@ -1835,14 +1835,15 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - status
-    string_serialization: '{boolean};[adverse event|non-compliance|lost to follow
-      up|other-specify]'
     slot_uri: MIXS:0000898
     alias: study_complt_stat
     owner: HumanAssociated
     domain_of:
     - HumanAssociated
     range: string
+    structured_pattern:
+      syntax: ^{boolean};(?:adverse event|non-compliance|lost to follow up|other)$
+      interpolated: true
   pulmonary_disord:
     name: pulmonary_disord
     description: History of pulmonary disorders; can include multiple disorders. The

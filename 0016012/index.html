@@ -869,7 +869,9 @@ slot_usage:
     required: true
   heavy_metals_meth:
     name: heavy_metals_meth
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   pool_dna_extracts:
     name: pool_dna_extracts
     string_serialization: '{boolean};{integer}'
@@ -917,7 +919,9 @@ slot_usage:
     required: true
   heavy_metals_meth:
     name: heavy_metals_meth
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   pool_dna_extracts:
     name: pool_dna_extracts
     string_serialization: '{boolean};{integer}'
@@ -2352,7 +2356,6 @@ attributes:
     - method
     - properties
     - unusual
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000343
     alias: heavy_metals_meth
     owner: Soil
@@ -2364,7 +2367,6 @@ attributes:
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
       interpolated: true
-      partial_match: true
   al_sat:
     name: al_sat
     annotations:

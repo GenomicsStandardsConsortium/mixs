@@ -339,21 +339,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -405,7 +390,7 @@
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0016002/">HostAssociated</a></td>
+<td><a href="../0016010/">PlantAssociated</a></td>
 <td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
 <td>Extension</td>
 </tr>
@@ -415,8 +400,8 @@
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0016021/">FoodFoodProductionFacility</a></td>
-<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
+<td><a href="../0016002/">HostAssociated</a></td>
+<td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
 <td>Extension</td>
 </tr>
 <tr>
@@ -425,8 +410,8 @@
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0016010/">PlantAssociated</a></td>
-<td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
+<td><a href="../0016021/">FoodFoodProductionFacility</a></td>
+<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
 <td>Extension</td>
 </tr>
 </tbody>
@@ -434,7 +419,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: 0..1</li>
+<li>
+<p>Cardinality: 0..1</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{PMID}|{DOI}|{URL}$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -445,30 +435,21 @@
 </thead>
 <tbody>
 <tr>
-<td>aox1A transgenic</td>
+<td>PMID:19497774</td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: PMID, DOI, URL or text</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: genetic_mod
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: PMID, DOI, URL or text
 description: Genetic modifications of the genome of an organism, which may occur naturally
   by spontaneous mutation, or be introduced by some experimental means, e.g. specification
   of a transgene or the gene knocked-out or details of transient transfection
 title: genetic modification
 examples:
-- value: aox1A transgenic
+- value: PMID:19497774
 from_schema: https://w3id.org/mixs
-string_serialization: '{PMID}|{DOI}|{URL}'
 slot_uri: MIXS:0000859
 alias: genetic_mod
 domain_of:
@@ -479,6 +460,9 @@ domain_of:
 - HostAssociated
 - PlantAssociated
 range: string
+structured_pattern:
+  syntax: ^{PMID}|{DOI}|{URL}$
+  interpolated: true
 
 </code></pre>
 

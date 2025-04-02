@@ -803,7 +803,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000082">MIXS:0000082</a></td>
 <td><a href="../0000082/">pred_genome_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../ViralGenomeTypeEnum/">ViralGenomeTypeEnum</a></td>
 <td>Type of genome predicted for the UViG</td>
 </tr>
 <tr>
@@ -822,7 +822,7 @@
 <td><a href="https://w3id.org/mixs/0000085">MIXS:0000085</a></td>
 <td><a href="../0000085/">otu_class_appr</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
-<td>Cutoffs and approach used when clustering  species-level  OTUs</td>
+<td>Cutoffs and approach used when clustering species-level OTUs</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/0000086">MIXS:0000086</a></td>
@@ -3956,13 +3956,12 @@ attributes:
     keywords:
     - predict
     - type
-    string_serialization: '[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]'
     slot_uri: MIXS:0000082
     alias: pred_genome_type
     owner: MiuvigAgriculture
     domain_of:
     - Miuvig
-    range: string
+    range: ViralGenomeTypeEnum
     required: true
   pred_genome_struc:
     name: pred_genome_struc
@@ -4011,9 +4010,9 @@ attributes:
       Expected_value:
         tag: Expected_value
         value: cutoffs and method used
-    description: Cutoffs and approach used when clustering  species-level  OTUs. Note
+    description: Cutoffs and approach used when clustering species-level OTUs. Note
       that results from standard 95% ANI / 85% AF clustering should be provided alongside
-      OTUS defined from another set of thresholds, even if the latter are the ones
+      OTUs defined from another set of thresholds, even if the latter are the ones
       primarily used during the analysis
     title: OTU classification approach
     examples:
@@ -4024,7 +4023,6 @@ attributes:
     keywords:
     - classification
     - otu
-    string_serialization: '{ANI cutoff};{AF cutoff};{clustering method}'
     slot_uri: MIXS:0000085
     alias: otu_class_appr
     owner: MiuvigAgriculture
@@ -4032,6 +4030,9 @@ attributes:
     - Miuvig
     range: string
     recommended: true
+    structured_pattern:
+      syntax: ^{integer}%\s*ANI;\s*{integer}%\s*AF;\s*{text}$
+      interpolated: true
   otu_seq_comp_appr:
     name: otu_seq_comp_appr
     annotations:
@@ -4139,7 +4140,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - resource
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000091
     alias: associated_resource
     owner: MiuvigAgriculture
@@ -4159,6 +4159,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   sop:
     name: sop
     annotations:
@@ -4175,7 +4178,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - procedures
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000090
     alias: sop
     owner: MiuvigAgriculture
@@ -4195,6 +4197,9 @@ attributes:
     range: string
     recommended: true
     multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   plant_growth_med:
     name: plant_growth_med
     annotations:
@@ -5280,19 +5285,14 @@ attributes:
     range: string
   genetic_mod:
     name: genetic_mod
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: PMID, DOI, URL or text
     description: Genetic modifications of the genome of an organism, which may occur
       naturally by spontaneous mutation, or be introduced by some experimental means,
       e.g. specification of a transgene or the gene knocked-out or details of transient
       transfection
     title: genetic modification
     examples:
-    - value: aox1A transgenic
+    - value: PMID:19497774
     from_schema: https://w3id.org/mixs
-    string_serialization: '{PMID}|{DOI}|{URL}'
     slot_uri: MIXS:0000859
     alias: genetic_mod
     owner: MiuvigAgriculture
@@ -5304,6 +5304,9 @@ attributes:
     - HostAssociated
     - PlantAssociated
     range: string
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
   food_product_type:
     name: food_product_type
     annotations:
@@ -6457,10 +6460,6 @@ attributes:
     recommended: true
   pcr_primers:
     name: pcr_primers
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: 'FWD: forward primer sequence;REV:reverse primer sequence'
     description: PCR primers that were used to amplify the sequence of the targeted
       gene, locus or subfragment. This field should contain all the primers used for
       a single PCR reaction if multiple forward or reverse primers are present in
@@ -6473,7 +6472,6 @@ attributes:
     from_schema: https://w3id.org/mixs
     keywords:
     - pcr
-    string_serialization: FWD:{dna};REV:{dna}
     slot_uri: MIXS:0000046
     alias: pcr_primers
     owner: MiuvigAgriculture
@@ -6483,6 +6481,9 @@ attributes:
     - Agriculture
     range: string
     required: true
+    structured_pattern:
+      syntax: FWD:{ambiguous_nucleotides};REV:{ambiguous_nucleotides}
+      interpolated: true
   target_gene:
     name: target_gene
     description: Targeted gene or locus name for marker gene studies

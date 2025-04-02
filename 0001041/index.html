@@ -339,21 +339,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -409,7 +394,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: 0..1</li>
+<li>
+<p>Cardinality: 0..1</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{text}|{PMID}|{DOI}|{URL}$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -424,18 +414,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: name, PMID,DOI or url</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: cult_root_med
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: name, PMID,DOI or url
 description: Name or reference for the hydroponic or in vitro culture rooting medium;
   can be the name of a commonly used medium or reference to a specific medium, e.g.
   Murashige and Skoog medium. If the medium has not been formally published, use the
@@ -446,12 +428,14 @@ examples:
 from_schema: https://w3id.org/mixs
 keywords:
 - culture
-string_serialization: '{text}|{PMID}|{DOI}|{URL}'
 slot_uri: MIXS:0001041
 alias: cult_root_med
 domain_of:
 - PlantAssociated
 range: string
+structured_pattern:
+  syntax: ^{text}|{PMID}|{DOI}|{URL}$
+  interpolated: true
 
 </code></pre>
 

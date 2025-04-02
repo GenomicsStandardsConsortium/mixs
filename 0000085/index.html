@@ -384,7 +384,7 @@
 
 
 <h1 id="term-otu-classification-approach-otu_class_appr">Term: OTU classification approach (otu_class_appr)</h1>
-<p><em>Cutoffs and approach used when clustering  species-level  OTUs. Note that results from standard 95% ANI / 85% AF clustering should be provided alongside OTUS defined from another set of thresholds, even if the latter are the ones primarily used during the analysis</em></p>
+<p><em>Cutoffs and approach used when clustering species-level OTUs. Note that results from standard 95% ANI / 85% AF clustering should be provided alongside OTUs defined from another set of thresholds, even if the latter are the ones primarily used during the analysis</em></p>
 <p>URI: <a href="https://w3id.org/mixs/0000085">MIXS:0000085</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -409,7 +409,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: 0..1</li>
+<li>
+<p>Cardinality: 0..1</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{integer}%\s*ANI;\s*{integer}%\s*AF;\s*{text}$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -436,9 +441,9 @@ annotations:
   Expected_value:
     tag: Expected_value
     value: cutoffs and method used
-description: Cutoffs and approach used when clustering  species-level  OTUs. Note
-  that results from standard 95% ANI / 85% AF clustering should be provided alongside
-  OTUS defined from another set of thresholds, even if the latter are the ones primarily
+description: Cutoffs and approach used when clustering species-level OTUs. Note that
+  results from standard 95% ANI / 85% AF clustering should be provided alongside OTUs
+  defined from another set of thresholds, even if the latter are the ones primarily
   used during the analysis
 title: OTU classification approach
 examples:
@@ -449,12 +454,14 @@ from_schema: https://w3id.org/mixs
 keywords:
 - classification
 - otu
-string_serialization: '{ANI cutoff};{AF cutoff};{clustering method}'
 slot_uri: MIXS:0000085
 alias: otu_class_appr
 domain_of:
 - Miuvig
 range: string
+structured_pattern:
+  syntax: ^{integer}%\s*ANI;\s*{integer}%\s*AF;\s*{text}$
+  interpolated: true
 
 </code></pre>
 

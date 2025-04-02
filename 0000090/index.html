@@ -400,8 +400,18 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0010009/">MimarksC</a></td>
-<td>Minimal Information about a Marker Sequence: specimen</td>
+<td><a href="../0010003/">MigsBa</a></td>
+<td>Minimal Information about a Genome Sequence: cultured bacteria/archaea</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0010010/">Misag</a></td>
+<td>Minimum Information About a Single Amplified Genome</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0010005/">MigsVi</a></td>
+<td>Minimal Information about a Genome Sequence: virus</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -410,8 +420,8 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010010/">Misag</a></td>
-<td>Minimum Information About a Single Amplified Genome</td>
+<td><a href="../0010008/">MimarksS</a></td>
+<td>Minimal Information about a Marker Sequence: survey</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -425,8 +435,13 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010003/">MigsBa</a></td>
-<td>Minimal Information about a Genome Sequence: cultured bacteria/archaea</td>
+<td><a href="../0010007/">Mims</a></td>
+<td>Metagenome or Environmental</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0010009/">MimarksC</a></td>
+<td>Minimal Information about a Marker Sequence: specimen</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -440,23 +455,8 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010007/">Mims</a></td>
-<td>Metagenome or Environmental</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010005/">MigsVi</a></td>
-<td>Minimal Information about a Genome Sequence: virus</td>
-<td>Checklist</td>
-</tr>
-<tr>
 <td><a href="../0010004/">MigsPl</a></td>
 <td>Minimal Information about a Genome Sequence: plasmid</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010008/">MimarksS</a></td>
-<td>Minimal Information about a Marker Sequence: survey</td>
 <td>Checklist</td>
 </tr>
 </tbody>
@@ -464,7 +464,12 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: *</li>
+<li>
+<p>Cardinality: *</p>
+</li>
+<li>
+<p>Structured pattern: <code>^{PMID}|{DOI}|{URL}$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -501,7 +506,6 @@ in_subset:
 from_schema: https://w3id.org/mixs
 keywords:
 - procedures
-string_serialization: '{PMID}|{DOI}|{URL}'
 slot_uri: MIXS:0000090
 alias: sop
 domain_of:
@@ -519,6 +523,9 @@ domain_of:
 - Agriculture
 range: string
 multivalued: true
+structured_pattern:
+  syntax: ^{PMID}|{DOI}|{URL}$
+  interpolated: true
 
 </code></pre>
 
