@@ -26,7 +26,7 @@ Please carefully read our [Code of Conduct](../../CODE_OF_CONDUCT.md) before mak
 Please review GitHub's overview article,
 ["Tracking Your Work with Issues"][about-issues].
 
-**Labeling issues:** Issue labeld were updated 2023/12. Please do not create new labels on your own. Instead, create an issue to request a new label, which will be reviewed by the TWG or CIG. See the [labels page](https://github.com/GenomicsStandardsConsortium/mixs/labels) for descriptions of existing issues.
+**Labeling issues:** Issue labeled were updated 2023/12. Please do not create new labels on your own. Instead, create an issue to request a new label, which will be reviewed by the TWG or CIG. See the [labels page](https://github.com/GenomicsStandardsConsortium/mixs/labels) for descriptions of existing labels.
 
 ### How to create a great pull/merge request
 
