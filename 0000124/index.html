@@ -330,7 +330,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Properties">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -415,6 +424,19 @@
 <p>Regex pattern: <code>^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$</code></p>
 </li>
 </ul>
+<h2 id="examples">Examples</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25 degree Celsius</td>
+</tr>
+</tbody>
+</table>
 <h3 id="annotations">Annotations</h3>
 <ul>
 <li>Preferred_unit: degree Celsius</li>
@@ -429,6 +451,8 @@ annotations:
     value: degree Celsius
 description: Temperature of the air at the time of sampling
 title: air temperature
+examples:
+- value: 25 degree Celsius
 from_schema: https://w3id.org/mixs
 keywords:
 - air
