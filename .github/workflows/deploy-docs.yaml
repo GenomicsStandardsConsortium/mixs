@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0  # otherwise, you will failed to push refs to dest repo
 
@@ -24,12 +24,20 @@ jobs:
       - name: Install dependencies.
         run: poetry install -E docs
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # Choose the desired Node.js version
+
+      - name: Add Node.js to the system path
+        run: |
+          echo 'export PATH=$HOME/.npm-global/bin:$PATH' >> $GITHUB_ENV
+
       - name: Build documentation.
         run: |
           mkdir -p docs
           touch docs/.nojekyll
           make gendoc
           ([ ! -f docs/about.md ] && cp src/docs/about.md docs/) || true
+          poetry run mkdocs build --clean
           make mkd-gh-deploy
-
-...

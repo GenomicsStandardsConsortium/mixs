@@ -18,14 +18,20 @@ if __name__ == "__main__":
 
     output_file = sys.argv[1]
 
-    docgen = DocGenerator("src/mixs/schema/mixs.yaml", template_directory="src/doc-templates", directory="docs", use_slot_uris=True)
+    docgen = DocGenerator(
+        "src/mixs/schema/mixs.yaml",
+        template_directory="src/doc-templates",
+        directory="docs",
+        use_slot_uris=True,
+        use_class_uris=True,
+    )
     terms = list(docgen.all_slot_objects())
 
     try:
         with open(output_file, "w") as md_file:
             md_file.write("# All terms in MIxS schema\n\n")
 
-            md_file.write("| Name | Description |\n")
+            md_file.write("| Title (Name) | Description |\n")
             md_file.write("| --- | --- |\n")
 
             for t in terms:
@@ -34,7 +40,7 @@ if __name__ == "__main__":
 
                 description = t.description
                 link = docgen.link(t.name)
-                md_file.write(f"| {link} | {description} |\n")
+                md_file.write(f"| {t.title} ({link}) | {description} |\n")
 
         logger.info(f"Term list table has been written to '{output_file}'.")
     except Exception as e:

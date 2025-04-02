@@ -1,42 +1,45 @@
 # MIxS: Minimum Information about any (X) Sequence
 
-⚠️ ⚠️ ⚠️ 
+This repository contains the source material for the [Genomic Standards Consortium](https://www.gensc.org/) (GSC) [Minimum Information about any (X) Sequence (MIxS) standard](https://www.gensc.org/pages/standards-intro.html).
 
-The GSC is preparing for the MIxS 6.2.0 release. Thanks to everyone who has contributed in any way!
+MIxS, or the Minimum Information about any (X) Sequence is a standard for describing the contextual information about the sampling and sequencing of any genomic sequence. The standard has *Terms* that describe characteristics of a sample that addresses: 
+* What is the source of the sequence?
+* In what kind of environment was the sample collected?
+* What methods were utilized to process the sample?
 
-The new release primarily consists of converting a spreadsheet expressing MIxS 6.1 into a [LinkML artifact, which now serves as the source of truth](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml). 
-We have also started to follow the [LinkML cookiecutter layout](https://github.com/linkml/linkml-project-cookiecutter).
-MIxS users should see very few changes in the content, although legacy term attributes like "Definition", "Expected value", "Value syntax" and "Section" have been broken down into their LinkML equivalents, 
-like `description`, `range`, `pattern` and `in_subset`.
+Following the release of MIxS v6.0, subsequent releases (e.g. MIxS 6.1) are represented in and maintained using the [LinkML](https://linkml.io/linkml/) framework. LinkML uses YAML to define schemas. The [user-focused](#repository-structure)/[developer-focused](#developer-documentation) sections of the repository structure provide details on where to find these YAML files that are defining the standard.
 
-We have [some known issues](https://github.com/GenomicsStandardsConsortium/mixs/issues?q=is%3Aissue+is%3Aopen+label%3A6.1.1-%3E6.2.0), and you may find others. [Please report them](https://github.com/GenomicsStandardsConsortium/mixs/issues) including text snippets and or screen shots!
+The MIxS standards are found at: https://genomicsstandardsconsortium.github.io/mixs/
 
-**Until this message is removed:**
--  You can continue to use any MIxS 6.0 to 6.1.1 artifacts you have previously downloaded.
- - Or start some new downloads by browsing https://github.com/GenomicsStandardsConsortium/mixs/tree/mixs6.1.1/mixs.
+*Terms* 
+The individual metadata terms are provided in the table: [here](https://genomicsstandardsconsortium.github.io/mixs/term_list/). These *Terms* are attributes or properties that describe samples and their sequence-associated metadata. Broadly, MIxS metadata *Terms* are represented in genomic *Checklists*, environmental *Extensions*, and *Combinations* (of *Checklists* and *Extensions*). 
 
-If you have questions or concerns in the interim, please contact gensc-twg@groups.google.com
+*Checklists*
+[Checklists](https://genomicsstandardsconsortium.github.io/mixs/#checklists) include the required, recommended and optional metadata fields (*Terms*) for a specific type of genomic sequence (e.g. genome, metagenome, microbiome, marker gene, MAG or single cell genome). The MIGS genomic sequences checklist, for example, supports taxa or subcellular structure specific checklists (Eukaryotes, Bacteria, Viruses, Organelle, Plants).
 
-⚠️ ⚠️ ⚠️ 
+*Extensions*
+[Extensions](https://genomicsstandardsconsortium.github.io/mixs/#extensions) include *Terms* that describe specific environments from which a sample was collected. For example, the Agriculture Extension (MIxS-Ag) includes terms to describe agricultural environments.
 
-## Documentation Website
-
-[https://w3id.org/mixs](https://w3id.org/mixs)
+*Combinations*
+MIxS Checklists and Extensions are designed to be modular, supporting mix and match combinations of any genomic checklist with terms from any environmental extension, to create MIxS [Combinations](https://genomicsstandardsconsortium.github.io/mixs/combinations/). For example, a Combination of the [MIMS](https://genomicsstandardsconsortium.github.io/mixs/0010007/) *Checklist* and [Agriculture](https://genomicsstandardsconsortium.github.io/mixs/0016018/) *Extension*, called [MIMSAgriculture](https://genomicsstandardsconsortium.github.io/mixs/0010003_0016018/).
 
 ## Repository Structure
 
-* [examples/](examples/) - example data
-* [project/](project/) - project files (do not edit these)
-* [src/](src/) - source files (edit these)
-  * [mixs](src/mixs)
-    * [schema](src/mixs/schema) -- LinkML schema
-      (edit this)
-    * [datamodel](src/mixs/datamodel) -- generated
-      Python datamodel
-* [tests/](tests/) - Python tests
+Below are descriptions for the various user-facing directories in this repository.
+
+* [examples/](examples/) - examples of different kinds of data files in different data formats in different (JSON, YAML) containing data conformant with MIxS standard
+* [mixs-templates/](mixs-templates/) -  MIxS schema metadata collection templates in the Excel spreadsheet (.xlsx) format. These templates can be utilized for organizing a project's metadata in prepartion for submission to a sequence data archive.
+* [project/](project/) - artifacts autogenerated by the suite of generators in the [linkml](https://github.com/linkml/linkml) library. Artifacts include JSON-LD, OWL, JSON Schema, spreadsheet, etc. representations of the schema
+* [src/](src/)
+  * [src/data/examples/](src/data/examples/) - valid and invalid data examples 
+  * The folder structure (*valid* and *invalid* folders), and the corresponding YAML data examples in this directory need to follow guidelines in accordance with the `linkml-run-examples` *testing framework*
+  * [src/mixs/](src/mixs/)
+    * [src/mixs/schema/](src/mixs/schema/)
+      * [src/mixs/schema/mixs.yaml](src/mixs/schema/mixs.yaml) - LinkML YAML schema representing the MIxS standard
+  * [src/docs](src/docs) - markdown files that can be converted to HTML and included in the web documentation pages
 
 ## Developer Documentation
-
+Note: Developer documention is specifically included here for the use of members of the GSC's CIG and TWG committees.
 <details>
 Use the `make` command to generate project artefacts:
 
@@ -44,7 +47,22 @@ Use the `make` command to generate project artefacts:
 * `make deploy`: deploys site
 </details>
 
-## Credits
+Documentation about the contents of the developer-focussed folders/directories in this repository.
 
-This project was made with
+* [assets/](assets/) - files consumed by, or generated by maintenance scripts in [src/scripts](src/scripts/)
+* [src/](src/)
+  * [src/mixs/](src/mixs/)
+    * [src/mixs/datamodel/](src/mixs/datamodel/) - Python dataclasses artifact generated by running the LinkML Python generator on MIxS schema file
+    * [src/mixs/schema/](src/mixs/schema/)
+      * [src/mixs/schema/mixs.yaml](src/mixs/schema/mixs.yaml) - LinkML YAML schema representing the MIxS standard
+  * [src/doc-templates/](src/doc-templates/) - jinja2 files that are responsible for the customization of layout and content of web documentation pages
+  * [src/scripts](src/scripts) - Python scripts for specific discovery/exploration/inference based on the MIxS YAML schema
+* [tests/](tests/) - test data files
+* [config.yaml](config.yaml) - config file to custom specify arguments for the LinkML project generator
+* [Makefile](Makefile) - Makefile containing pre-defined linkml-project-cookiecutter targets/rules
+* [project.Makefile](project.Makefile) - file that can be modified to extend pre-defined rules in [Makefile](Makefile)
+
+## LinkML:
+
+The MIxS utilizes LinkML, see:
 [linkml-project-cookiecutter](https://github.com/linkml/linkml-project-cookiecutter).

@@ -1,4 +1,3 @@
-
 import copy
 
 from linkml.utils.schema_fixer import SchemaFixer
@@ -6,7 +5,7 @@ from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
 from linkml_runtime.utils.formatutils import camelcase
 
-schema_file = "../mixs/schema/mixs.yaml"
+schema_file = "../../mixs/schema/mixs.yaml"
 
 schema_view = SchemaView(schema_file)
 
@@ -24,7 +23,9 @@ for current_class in class_names:
     slot_usage = schema_classes[current_class].slot_usage
     if slot_usage:
         if "range" in slot_usage and slot_usage["range"]:
-            print(f"{current_class} asserts a range of {slot_usage['range']} in it's slot_usage")
+            print(
+                f"{current_class} asserts a range of {slot_usage['range']} in it's slot_usage"
+            )
             range_modifying_slot_usages.append((current_class, slot_usage["range"]))
         else:
             pass
@@ -63,4 +64,4 @@ print(yaml_dumper.dumps(schema_view.schema.enums))
 
 yaml_dumper.dump(schema_view.schema, "camel_case_enums.yaml")
 
-x = SchemaFixer()
+# x = SchemaFixer()

@@ -1,0 +1,23 @@
+# yamllint configuration file for mixs repo
+# it extends the default conf by adjusting some options
+extends: default
+
+rules:
+  line-length:
+    # this rule can be used to set a limit to lines length.
+    # we set it to 518 to match the max length of the lines in
+    # src/mixs/schema/mixs.yaml
+    # default is 80
+    max: 518
+
+  indentation:
+    # this rule can be used to control the indentation level
+    # 'whatever' means either indenting or not indenting 
+    # individual block sequences is OK.
+    # ideally, we want this to be set to 'true'/'consistent'
+    indent-sequences: whatever
+
+  # this rule can be used to allow/forbid trailing spaces 
+  # at the end of lines.
+  # ideally, we want this to be set to be enabled
+  trailing-spaces: disable

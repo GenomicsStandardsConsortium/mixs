@@ -8,13 +8,17 @@
     {%- set type = "Class" -%}
 {%- endif -%}
 
-{%- if element.title -%}
-    {%- set title = element.title ~ ' (' ~ gen.name(element) ~ ')' -%}
-{%- else -%}
-    {%- set title = gen.name(element) -%}
+{%- if element.title %}
+    {%- set title = element.title ~ ' (' ~ element.name ~ ')' -%}
+{%- else %}
+    {%- if gen.use_class_uris -%}
+        {%- set title = element.name -%}
+    {%- else -%}
+        {%- set title = gen.name(element) -%}
+    {%- endif -%}
 {%- endif -%}
 
-# {{ type }}: {{ title }}
+# {{ type }}: {{ title }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong> {% endif %}
 
 
 {%- if header -%}
@@ -38,7 +42,7 @@ _{{ element_description_line }}_
 {{ gen.link(element.mixins[0]) }} [Checklist] + {{ gen.link(element.is_a) }} [Extension]
 {% endif %}
 
-## Terms
+## Terms 
 
 | MIXS ID | Name | Cardinality and Range | Description |
 | ---  | --- | --- | --- |

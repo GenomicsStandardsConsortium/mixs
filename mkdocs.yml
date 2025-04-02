@@ -7,9 +7,11 @@ theme:
   #  primary: cyan
   features:
     - content.tabs.link
+    - search.suggest
 plugins:
   - search:
       separator: '[\s\-\:\(\)]+'
+      prebuild_index: true
   - mermaid2
 markdown_extensions:
   - tables

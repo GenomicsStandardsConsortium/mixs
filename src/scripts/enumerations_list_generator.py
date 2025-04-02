@@ -18,7 +18,13 @@ if __name__ == "__main__":
 
     output_file = sys.argv[1]
 
-    docgen = DocGenerator("src/mixs/schema/mixs.yaml", template_directory="src/doc-templates", directory="docs", use_slot_uris=True)
+    docgen = DocGenerator(
+        "src/mixs/schema/mixs.yaml",
+        template_directory="src/doc-templates",
+        directory="docs",
+        use_slot_uris=True,
+        use_class_uris=True,
+    )
     enums = list(docgen.all_enum_objects())
 
     try:
@@ -31,7 +37,7 @@ if __name__ == "__main__":
                 md_file.write("| --- |\n")
                 for pv_name, _ in e.permissible_values.items():
                     md_file.write(f"| {pv_name} |\n")
-                
+
                 md_file.write("\n")
 
         logger.info(f"Term list table has been written to '{output_file}'.")
