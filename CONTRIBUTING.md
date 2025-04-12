@@ -70,8 +70,8 @@ and make your changes on a [new branch][about-branches].
 [about-branches]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches
 [about-issues]: https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues
 [about-pulls]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
-[issues]: https://github.com/GenomicsStandardsConsortium/mixs-6-2-for-merge/issues/
-[pulls]: https://github.com/GenomicsStandardsConsortium/mixs-6-2-for-merge/pulls/
+[issues]: https://github.com/GenomicsStandardsConsortium/mixs/issues/
+[pulls]: https://github.com/GenomicsStandardsConsortium/mixs/pulls/
 
 <a id="gsc-devs"></a>
 
