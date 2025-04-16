@@ -9628,15 +9628,15 @@ slots:
     slot_uri: MIXS:0000283
     multivalued: true
     range: string
+    deprecated: true, replace with MIXS:0000270 https://github.com/GenomicsStandardsConsortium/mixs/issues/743 
   nose_throat_disord:
-    description: History of nose-throat disorders; can include multiple disorders,  The
-      terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
-      lung disease (https://disease-ontology.org/?id=DOID:850), upper respiratory
-      tract disease (https://disease-ontology.org/?id=DOID:974)
+    description: Report any history of nose, mouth, teeth and/or throat disorders in the subject. May include multiple disorders.
     title: nose throat disorder
     keywords:
       - disorder
     slot_uri: MIXS:0000270
+    alias: nose_mouth_teeth_throat_disord
+    comment:  The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850), upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)
     multivalued: true
     range: string
   nucl_acid_amp:
