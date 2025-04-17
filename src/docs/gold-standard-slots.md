@@ -11,8 +11,9 @@ There are examples of slots that cover a range of common types of data, includin
 - [String](#string) (free text)
 - [Fixed list](#fixed-list) (enumeration)
 - [Boolean](#boolean)
-- [Structured text](#structured-text-numeric-with-units) (numeric with units)
-- [Structured text](#structured-text-text-only) (text only)
+- [Structured text (text only)](#structured-text-text-only) (text only)
+- [Structured text (with unit)](#structured-text-numeric-with-units) (numeric with units)
+- [Structured text (ontology term)](#structured-text-ontology-term)
 - [URL](#url) (or other link utilising a URL like structure)
 - [Mixed type](#mixed-type) (either free text, or from an ontology)
 
@@ -45,12 +46,11 @@ And for some slots, the following attributes are also recommended:
 
 - If a string or mix-`range`-based term has a particular format it should follow:
 
-  - [structured_pattern](https://linkml.io/linkml/schemas/constraints.html#structured-patterns): a particular pattern that has pre-defined components that describe how each component should be formatted
+  - [structured_pattern](https://linkml.io/linkml/schemas/constraints.html#structured-patterns): a particular regex-like pattern that includes pre-defined components that describe how each component should be formatted
     - In the MIxS LinkML schema, these preset formats can be seen under the [`settings`](https://github.com/GenomicsStandardsConsortium/mixs/blob/609b0f567486f64cb7061246588d8006f87fa138/src/mixs/schema/mixs.yaml#L21852-L21887) section of the schema
-  - [pattern](https://linkml.io/linkml/schemas/constraints.html#patterns): a regex pattern that the string should match
-    - This is a more generalised version of `string_serialization`, and can be used for any string-based slot
+  - [pattern](https://linkml.io/linkml/schemas/constraints.html#patterns): a regex pattern that the string will be compared against for validation
+    - This is a more generalised version of `structured_pattern`, and can be used for any string-based slot
     - It is typically used for 'one-off' formats that would not be reused in other metadata schemas
-  - [string_serialization](https://linkml.io/linkml/schemas/constraints.html#string-serialization)
 
 ## Examples
 
@@ -114,16 +114,30 @@ JFY comment: I don't like this so much as:
 
 ### String
 
-An example of a close-to gold standard _XXXX_ slot is [`XXXX`](https://genomicsstandardsconsortium.github.io/mixs/XXXXXXXX/):
+An example of a close-to gold standard _string (freetext)_ slot is [`wga_amp_kit`](https://genomicsstandardsconsortium.github.io/mixs/0000006/):
 
 ```yaml
-
+wga_amp_kit:
+  annotations:
+    Expected_value: kit name
+  description: Kit used to amplify genomic DNA in preparation for sequencing
+  title: WGA amplification kit
+  examples:
+    - value: qiagen repli-g
+  in_subset:
+    - sequencing
+  keywords:
+    - kit
+  range: string
+  slot_uri: MIXS:0000006
 ```
 
 <!--
 JFY comment: I don't like this so much as:
 
 - single example
+- missing subset
+- single keyword
 -->
 
 ### Fixed list
@@ -193,32 +207,98 @@ JFY comment: I don't like this so much as:
 - no recommended or required
 -->
 
-### Structured text (numeric with units)
-
-An example of a close-to gold standard _XXXX_ slot is [`XXXX`](https://genomicsstandardsconsortium.github.io/mixs/XXXXXXXX/):
-
-```yaml
-
-```
-
-<!--
-JFY comment: I don't like this so much as:
-
-- single example
--->
-
 ### Structured text (text only)
 
-An example of a close-to gold standard _XXXX_ slot is [`XXXX`](https://genomicsstandardsconsortium.github.io/mixs/XXXXXXXX/):
+An example of a close-to gold standard _Structured text (text only)_ slot is [`adapters`](https://genomicsstandardsconsortium.github.io/mixs/0000048/):
 
 ```yaml
-
+adapters:
+  description:
+    Adapters provide priming sequences for both amplification and sequencing
+    of the sample-library fragments. Both adapters should be reported; in uppercase
+    letters
+  title: adapters
+  examples:
+    - value: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+  in_subset:
+    - sequencing
+  structured_pattern:
+    syntax: ^{adapter_A_DNA_sequence};{adapter_B_DNA_sequence}$
+    interpolated: true
+    partial_match: true
+  slot_uri: MIXS:0000048
 ```
 
 <!--
 JFY comment: I don't like this so much as:
 
 - single example
+- no keywords
+-->
+
+### Structured text (numeric with units)
+
+An example of a close-to gold standard _Structured text (numeric with units)_ slot is [`size_frac`](https://genomicsstandardsconsortium.github.io/mixs/0000017/):
+
+```yaml
+size_frac:
+  annotations:
+    Expected_value: filter size value range
+  description: Filtering pore size used in sample preparation
+  title: size fraction selected
+  examples:
+    - value: 0-0.22 micrometer
+  in_subset:
+    - nucleic acid sequence source
+  keywords:
+    - fraction
+    - size
+  string_serialization: "{float}-{float} {unit}"
+  slot_uri: MIXS:0000017
+```
+
+<!--
+JFY comment: I don't like this so much as:
+
+- single example
+- is a value range not a single value
+- missing range? (but possibly assumed default)
+-->
+
+### Structured text (ontology term)
+
+An example of a close-to gold standard _Structured text (ontology term)_ slot is [`env_medium`](https://genomicsstandardsconsortium.github.io/mixs/0000014/)
+
+```yaml
+env_medium:
+  description: "Report the environmental material(s) immediately surrounding the
+    sample or specimen at the time of sampling. We recommend using subclasses of
+    'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO
+    documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+    . Terms from other OBO ontologies are permissible as long as they reference
+    mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+    (e.g. a tree, a leaf, a table top)"
+  title: environmental medium
+  examples:
+    - value: bluegrass field soil [ENVO:00005789]
+  in_subset:
+    - environment
+  keywords:
+    - environmental
+  slot_uri: MIXS:0000014
+  range: string
+  required: true
+  pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+  structured_pattern:
+    syntax: ^{termLabel} \[{termID}\]$
+    interpolated: true
+    partial_match: true
+```
+
+<!--
+JFY comment: I don't like this so much as:
+
+- Why pattern AND structured_pattern?
 -->
 
 ### URL
