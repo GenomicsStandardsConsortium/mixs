@@ -9916,7 +9916,7 @@ slots:
       - classification
       - otu
     structured_pattern:
-      syntax: ^{integer}%\s*ANI;\s*{integer}%\s*AF;\s*{text}$ # constrain based on Leiden algorithm
+      syntax: ^{integer}%\s*ANI;\s*{integer}%\s*AF;\s*{text}$  # constrain based on Leiden algorithm
       interpolated: true
     slot_uri: MIXS:0000085
   otu_db:
