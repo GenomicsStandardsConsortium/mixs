@@ -6,6 +6,8 @@
 
 RUN=poetry run
 
+.PHONY: gen-excel
+
 gen-excel: $(SOURCE_SCHEMA_PATH)
 	$(RUN) gen-excel $< \
 		--include-mixins \
