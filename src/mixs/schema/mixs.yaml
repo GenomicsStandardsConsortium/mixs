@@ -9617,10 +9617,12 @@ slots:
     multivalued: true
     range: string
   nose_mouth_teeth_throat_disord:
-    description: History of nose/mouth/teeth/throat disorders; can include multiple
+    description: >
+      History of nose/mouth/teeth/throat disorders; can include multiple
       disorders. The terms should be chosen from the DO (Human Disease Ontology) at
       http://www.disease-ontology.org, nose disease (https://disease-ontology.org/?id=DOID:2825),
-      mouth disease (https://disease-ontology.org/?id=DOID:403), tooth disease (https://disease-ontology.org/?id=DOID:1091),
+      mouth disease (https://disease-ontology.org/?id=DOID:403), 
+      tooth disease (https://disease-ontology.org/?id=DOID:1091),
       or upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)
     title: nose/mouth/teeth/throat disorder
     keywords:
@@ -9628,15 +9630,21 @@ slots:
     slot_uri: MIXS:0000283
     multivalued: true
     range: string
+    deprecated: true, replace with MIXS:0000270 https://github.com/GenomicsStandardsConsortium/mixs/issues/743 
   nose_throat_disord:
-    description: History of nose-throat disorders; can include multiple disorders,  The
-      terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
-      lung disease (https://disease-ontology.org/?id=DOID:850), upper respiratory
-      tract disease (https://disease-ontology.org/?id=DOID:974)
+    description: >
+      Report any history of nose, mouth, teeth and/or throat disorders in the subject. 
+      May include multiple disorders.
     title: nose throat disorder
     keywords:
       - disorder
     slot_uri: MIXS:0000270
+    aliases: nose_mouth_teeth_throat_disord
+    comments:
+      - >
+        The terms should be chosen from the DO (Human Disease Ontology) 
+        at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850), 
+        upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)
     multivalued: true
     range: string
   nucl_acid_amp:
@@ -9908,7 +9916,7 @@ slots:
       - classification
       - otu
     structured_pattern:
-      syntax: ^{integer}%\s*ANI;\s*{integer}%\s*AF;\s*{text}$ # constrain based on Leiden algorithm
+      syntax: ^{integer}%\s*ANI;\s*{integer}%\s*AF;\s*{text}$  # constrain based on Leiden algorithm
       interpolated: true
     slot_uri: MIXS:0000085
   otu_db:
