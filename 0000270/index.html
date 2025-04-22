@@ -333,6 +333,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       LinkML Source
@@ -360,7 +369,8 @@
 
 
 <h1 id="term-nose-throat-disorder-nose_throat_disord">Term: nose throat disorder (nose_throat_disord)</h1>
-<p><em>History of nose-throat disorders; can include multiple disorders,  The terms should be chosen from the DO (Human Disease Ontology) at <a href="http://www.disease-ontology.org">http://www.disease-ontology.org</a>, lung disease (<a href="https://disease-ontology.org/?id=DOID:850">https://disease-ontology.org/?id=DOID:850</a>), upper respiratory tract disease (<a href="https://disease-ontology.org/?id=DOID:974">https://disease-ontology.org/?id=DOID:974</a>)</em></p>
+<p><em>Report any history of nose, mouth, teeth and/or throat disorders in the subject.  May include multiple disorders.</em></p>
+<p>__</p>
 <p>URI: <a href="https://w3id.org/mixs/0000270">MIXS:0000270</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -387,16 +397,28 @@
 <li>Range: <a href="../String/">String</a></li>
 <li>Cardinality: *</li>
 </ul>
+<h2 id="aliases">Aliases</h2>
+<ul>
+<li>nose_mouth_teeth_throat_disord</li>
+</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: nose_throat_disord
-description: History of nose-throat disorders; can include multiple disorders,  The
-  terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
-  lung disease (https://disease-ontology.org/?id=DOID:850), upper respiratory tract
-  disease (https://disease-ontology.org/?id=DOID:974)
+description: 'Report any history of nose, mouth, teeth and/or throat disorders in
+  the subject.  May include multiple disorders.
+
+  '
 title: nose throat disorder
+comments:
+- 'The terms should be chosen from the DO (Human Disease Ontology)  at http://www.disease-ontology.org,
+  lung disease (https://disease-ontology.org/?id=DOID:850),  upper respiratory tract
+  disease (https://disease-ontology.org/?id=DOID:974)
+
+  '
 from_schema: https://w3id.org/mixs
+aliases:
+- nose_mouth_teeth_throat_disord
 keywords:
 - disorder
 slot_uri: MIXS:0000270
