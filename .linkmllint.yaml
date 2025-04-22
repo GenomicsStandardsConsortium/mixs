@@ -1,0 +1,10 @@
+extends: recommended
+rules:
+  recommended:
+    level: error
+    exclude_type:
+      - enum_definition
+  standard_naming:
+    level: error
+    exclude_type:
+      - permissible_value
