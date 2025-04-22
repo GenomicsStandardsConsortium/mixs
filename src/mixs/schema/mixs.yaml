@@ -15,6 +15,7 @@ prefixes:
   xsd: http://www.w3.org/2001/XMLSchema#
   shex: http://www.w3.org/ns/shex#
   schema: http://schema.org/
+  SO: http://purl.obolibrary.org/obo/SO_  # Sequence Ontology
 default_prefix: MIXS
 default_range: string
 subsets:
@@ -413,6 +414,26 @@ enums:
       male:
       male and female:
       unisex:
+  ViralGenomeTypeEnum:
+    description: Types of viral genomes based on Baltimore classification
+    permissible_values:
+      DNA:
+        meaning: SO:0000352    # 'DNA'
+      dsDNA:
+        meaning: SO:0001198    # 'ds_DNA_viral_sequence'
+      ssDNA:
+      RNA:
+        meaning: SO:0000356    # 'RNA'
+      dsRNA:
+        meaning: SO:0001169    # 'ds_RNA_viral_sequence'
+      ssRNA:
+        meaning: SO:0001199    # 'ss_RNA_viral_sequence'
+      "ssRNA (+)":
+        meaning: SO:0001201    # 'positive_sense_ssRNA_viral_sequence'
+      "ssRNA (-)":
+        meaning: SO:0001200    # 'negative_sense_ssRNA_viral_sequence'
+      mixed:
+      uncharacterized:
   GrowthHabitEnum:
     permissible_values:
       erect:
@@ -3936,6 +3957,8 @@ slots:
       Preferred_unit: degree Celsius
     description: Temperature of the air at the time of sampling
     title: air temperature
+    examples:
+      - value: 25 degree Celsius
     keywords:
       - air
       - temperature
@@ -4539,7 +4562,9 @@ slots:
       - sequencing
     keywords:
       - resource
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
     slot_uri: MIXS:0000091
     multivalued: true
     recommended: true
@@ -5304,6 +5329,7 @@ slots:
       interpolated: true
       partial_match: true
   climate_environment:
+    deprecated: true, slot is inconsistently used and provides redundant information to other slots, https://github.com/GenomicsStandardsConsortium/mixs/issues/591 and https://github.com/microbiomedata/nmdc-schema/issues/586 
     description: Treatment involving an exposure to a particular climate; treatment
       regimen including how many times the treatment was repeated, how long each treatment
       lasted, and the start and end time of the entire treatment; can include multiple
@@ -5586,8 +5612,6 @@ slots:
       interpolated: true
       partial_match: true
   cult_root_med:
-    annotations:
-      Expected_value: name, PMID,DOI or url
     description: Name or reference for the hydroponic or in vitro culture rooting
       medium; can be the name of a commonly used medium or reference to a specific
       medium, e.g. Murashige and Skoog medium. If the medium has not been formally
@@ -5597,7 +5621,9 @@ slots:
       - value: http://himedialabs.com/TD/PT158.pdf
     keywords:
       - culture
-    string_serialization: '{text}|{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: ^{text}|{PMID}|{DOI}|{URL}$
+      interpolated: true
     slot_uri: MIXS:0001041
   cult_target:
     annotations:
@@ -7556,16 +7582,16 @@ slots:
     slot_uri: MIXS:0000808
     range: GenderRestroomEnum
   genetic_mod:
-    annotations:
-      Expected_value: PMID, DOI, URL or text
     description: Genetic modifications of the genome of an organism, which may occur
       naturally by spontaneous mutation, or be introduced by some experimental means,
       e.g. specification of a transgene or the gene knocked-out or details of transient
       transfection
     title: genetic modification
     examples:
-      - value: aox1A transgenic
-    string_serialization: '{PMID}|{DOI}|{URL}'
+      - value: PMID:19497774  # PMID for review of infection in sickle cell disease
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
     slot_uri: MIXS:0000859
   geo_loc_name:
     description: The geographical origin of the sample as defined by the country or
@@ -8500,8 +8526,7 @@ slots:
       discovery rates should be included, either computed de novo or from the literature
     title: host prediction estimated accuracy
     examples:
-      - value: 'CRISPR spacer match: 0 or 1 mismatches, estimated 8% FDR at the host
-        genus rank (Edwards et al. 2016 doi:10.1093/femsre/fuv048)'
+      - value: 'CRISPR spacer match: 0 or 1 mismatches, estimated 8% FDR at the host genus rank (Edwards et al. 2016 doi:10.1093/femsre/fuv048)'
     in_subset:
       - sequencing
     keywords:
@@ -9870,9 +9895,9 @@ slots:
   otu_class_appr:
     annotations:
       Expected_value: cutoffs and method used
-    description: Cutoffs and approach used when clustering  species-level  OTUs. Note
+    description: Cutoffs and approach used when clustering species-level OTUs. Note
       that results from standard 95% ANI / 85% AF clustering should be provided alongside
-      OTUS defined from another set of thresholds, even if the latter are the ones
+      OTUs defined from another set of thresholds, even if the latter are the ones
       primarily used during the analysis
     title: OTU classification approach
     examples:
@@ -9882,7 +9907,9 @@ slots:
     keywords:
       - classification
       - otu
-    string_serialization: '{ANI cutoff};{AF cutoff};{clustering method}'
+    structured_pattern:
+      syntax: ^{integer}%\s*ANI;\s*{integer}%\s*AF;\s*{text}$ # constrain based on Leiden algorithm
+      interpolated: true
     slot_uri: MIXS:0000085
   otu_db:
     annotations:
@@ -10054,8 +10081,6 @@ slots:
       elongation:degrees_minutes;total cycles
     slot_uri: MIXS:0000049
   pcr_primers:
-    annotations:
-      Expected_value: 'FWD: forward primer sequence;REV:reverse primer sequence'
     description: PCR primers that were used to amplify the sequence of the targeted
       gene, locus or subfragment. This field should contain all the primers used for
       a single PCR reaction if multiple forward or reverse primers are present in
@@ -10067,7 +10092,9 @@ slots:
       - sequencing
     keywords:
       - pcr
-    string_serialization: FWD:{dna};REV:{dna}
+    structured_pattern:
+      syntax: FWD:{ambiguous_nucleotides};REV:{ambiguous_nucleotides}
+      interpolated: true
     slot_uri: MIXS:0000046
   permeability:
     annotations:
@@ -10497,7 +10524,7 @@ slots:
     keywords:
       - predict
       - type
-    string_serialization: '[DNA|dsDNA|ssDNA|RNA|dsRNA|ssRNA|ssRNA (+)|ssRNA (-)|mixed|uncharacterized]'
+    range: ViralGenomeTypeEnum
     slot_uri: MIXS:0000082
   pregnancy:
     description: Date due of pregnancy
@@ -11339,7 +11366,12 @@ slots:
       - value: 4th floor
     keywords:
       - floor
-    string_serialization: '[1st floor|2nd floor|{integer} floor|basement|lobby]'
+    # \d*1[1-3]th –> 11th, 12th, 13th, 111th, etc.
+    # \d*1st –> 1st, 21st, 31st, 101st, etc.
+    # \d*2nd –> 2nd, 22nd, 32nd, 102nd, etc.
+    # \d*3rd –> 3rd, 23rd, 33rd, 103rd, etc.
+    # \d*[04-9]th –> 4th, 5th, 6th, 10th, 11th, 14th, 20th, etc.
+    pattern: ^(?:(?:\d*1[1-3]th|\d*1st|\d*2nd|\d*3rd|\d*[04-9]th) floor|basement|lobby)$
     slot_uri: MIXS:0000828
   samp_loc_condition:
     description: The condition of the sample location at the time of sampling
@@ -12323,6 +12355,8 @@ slots:
       interpolated: true
       partial_match: true
   soil_conductivity:
+    description: Conductivity of some soil.
+    comments: Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
     annotations:
       Preferred_unit: milliSiemens per centimeter
     title: soil conductivity
@@ -12556,7 +12590,9 @@ slots:
       - sequencing
     keywords:
       - procedures
-    string_serialization: '{PMID}|{DOI}|{URL}'
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
     slot_uri: MIXS:0000090
     multivalued: true
   sort_tech:
@@ -12929,8 +12965,9 @@ slots:
       - value: no;non-compliance
     keywords:
       - status
-    string_serialization: '{boolean};[adverse event|non-compliance|lost to follow
-      up|other-specify]'
+    structured_pattern:
+      syntax: ^{boolean};(?:adverse event|non-compliance|lost to follow up|other)$
+      interpolated: true
     slot_uri: MIXS:0000898
   study_design:
     annotations:
@@ -16349,6 +16386,7 @@ classes:
         recommended: true
       soil_conductivity:
         description: Conductivity of some soil.
+        comments: Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
       soil_cover:
         recommended: true
       soil_horizon:
@@ -17023,6 +17061,7 @@ classes:
           - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
       soil_conductivity:
         description: Conductivity of soil at time of sampling.
+        comments: Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
       soil_pH:
         description: The pH of soil at time of sampling.
       soil_type:
@@ -18715,7 +18754,9 @@ classes:
       elev:
         required: true
       heavy_metals_meth:
-        string_serialization: '{PMID}|{DOI}|{URL}'
+        structured_pattern:
+          syntax: ^{PMID}|{DOI}|{URL}$
+          interpolated: true
       pool_dna_extracts:
         string_serialization: '{boolean};{integer}'
       soil_type:
@@ -21820,8 +21861,10 @@ settings:
   adapter_A_DNA_sequence: '[ACGTRKSYMWBHDVN]+'
   adapter_B_DNA_sequence: '[ACGTRKSYMWBHDVN]+'
   ambiguous_nucleotides: '[ACGTRKSYMWBHDVN]+'
+  boolean: '(?:yes|no)' # a non-capturing group matching either 'yes' or 'no'
   country: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?$'
+  dna: '^[ACGT]+$'
   duration: P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)
   float: '[-+]?[0-9]*\.?[0-9]+'
   integer: '[1-9][0-9]*'
