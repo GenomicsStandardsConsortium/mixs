@@ -32,12 +32,12 @@ EXCEL_TEMPLATES_DIR = mixs-templates
 # MAM 2023-10-06 hard-coding exclude statements
 GEN_PARGS = --exclude excel --exclude graphql --exclude markdown --exclude prefixmap  --exclude protobuf  --exclude shacl  --exclude shex
 ifdef LINKML_GENERATORS_PROJECT_ARGS
-GEN_PARGS = ${LINKML_GENERATORS_PROJECT_ARGS}
+	GEN_PARGS = ${LINKML_GENERATORS_PROJECT_ARGS}
 endif
 
 GEN_DARGS =
 ifdef LINKML_GENERATORS_MARKDOWN_ARGS
-GEN_DARGS = ${LINKML_GENERATORS_MARKDOWN_ARGS}
+	GEN_DARGS = ${LINKML_GENERATORS_MARKDOWN_ARGS}
 endif
 
 
@@ -110,13 +110,12 @@ gen-examples:
 # generates all project files
 
 gen-project: $(PYMODEL)
-	$(RUN) gen-project ${GEN_PARGS} -d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
-
+	$(RUN) linkml generate project --log_level INFO --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
 test: test-schema test-python test-examples
 
 test-schema:
-	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
+	$(RUN) linkml generate project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
 
 test-python:
 	$(RUN) python -m unittest discover
