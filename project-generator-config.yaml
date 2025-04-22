@@ -41,11 +41,11 @@ generator_args:
     default_permissible_value_type: "owl:Class"  # Or "owl:NamedIndividual"
     enum_iri_separator: "#"  # Separator used in enum IRIs
     format: ttl  # Options: owl, ttl
-    metaclasses: false  # Include LinkML metamodel as metaclasses
+    metaclasses: false  # Include LinkML metamodel as metaclasses # config.yaml says true
     metadata_profile: linkml  # Options: linkml, rdfs, ols
     metadata_profiles: [ ]  # List of profiles
     ontology_uri_suffix: ".owl.ttl"  # Suffix for ontology URI
-    type_objects: false  # Model types as objects instead of literals
+    type_objects: false  # Model types as objects instead of literals # config.yaml says true
     use_native_uris: true  # Use definition_uris instead of class_uris
     # custom
     add_root_classes: true  # Add LinkML metamodel classes as superclasses
