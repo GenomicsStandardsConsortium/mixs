@@ -1,0 +1,53 @@
+directory: project
+includes:
+  - graphql # warnings about re-encoding
+  - jsonld
+  - jsonldcontext
+  - jsonschema
+  - owl
+  - prefixmap
+  - proto
+  - python
+  - shacl
+  - shex
+  - sqltable # slow
+excludes:
+  - csv # no default output? # not widely used # largely supplanted by schemasheets
+  - doc # handled separately
+  - erdiagram # would need customization
+  - excel # handled separately
+  - golang # no default output?
+  - golr-views # no default output?
+  - graphviz # would need customization
+  - java # no default output?
+  - markdown # redundant with docs
+  - namespaces # no default output?
+  - plantuml # would need customization
+  - pydantic # no default output?
+  - rdf # no default output?
+  - sparql # no default output?
+  - sqla # no default output?
+  - sssom # no default output?
+  - summary # no default output?
+  - terminusdb # no default output?
+  - typescript # no default output?
+  - yaml # would be useful for structured pattern materialization once the materializations are removed from src/mixs/schema/mixs.yaml
+  - yuml # would need customization
+generator_args:
+  owl:
+    # defaults
+    add_ols_annotations: true  # Include OLS-specific annotations
+    assert_equivalent_classes: false  # Use owl:equivalentClass vs skos:exactMatch
+    default_permissible_value_type: "owl:Class"  # Or "owl:NamedIndividual"
+    enum_iri_separator: "#"  # Separator used in enum IRIs
+    format: ttl  # Options: owl, ttl
+    metaclasses: false  # Include LinkML metamodel as metaclasses # config.yaml says true
+    metadata_profile: linkml  # Options: linkml, rdfs, ols
+    metadata_profiles: [ ]  # List of profiles
+    ontology_uri_suffix: ".owl.ttl"  # Suffix for ontology URI
+    type_objects: false  # Model types as objects instead of literals # config.yaml says true
+    use_native_uris: true  # Use definition_uris instead of class_uris
+    # custom
+    add_root_classes: true  # Add LinkML metamodel classes as superclasses
+    mixins_as_expressions: true  # Use OWL existential restrictions for mixins
+
