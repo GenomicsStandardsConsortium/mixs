@@ -85,10 +85,6 @@ JFY comment: I don't like this so much as:
 - no recommended or required
 -->
 
-<!--
-TODO: for all examples, explain why it's good/the particularities
--->
-
 ### Float
 
 An example of a close-to gold standard _float_ slot is [`ph`](https://genomicsstandardsconsortium.github.io/mixs/0001001/):
