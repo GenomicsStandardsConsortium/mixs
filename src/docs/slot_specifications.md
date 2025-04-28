@@ -8,6 +8,21 @@ The key words “MUST”, “MUST NOT”, “SHOULD”, etc. are to be interpret
 
 A MIxS LinkML slot MUST at a minimum include following attributes:
 
+- [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions)
+- [`title`](https://linkml.io/linkml-model/latest/docs/title/)
+- [`examples`](https://linkml.io/linkml-model/latest/docs/examples/)
+- [`in_subset`](https://linkml.io/linkml-model/latest/docs/in_subset/)
+- [`keywords`](https://linkml.io/linkml-model/latest/docs/keywords/)
+- [`slot_uri`](https://linkml.io/linkml-model/latest/docs/slot_uri/)
+- [`range`](https://linkml.io/linkml/schemas/slots.html#ranges)
+
+### 1.2. Recommended slot attributes
+
+A MIxS LinkML slot SHOULD at a ideally include the following attributes:
+
+- [`recommended`](https://linkml.io/linkml/schemas/slots.html#recommended)
+- [`required`](https://linkml.io/linkml/schemas/slots.html#required)
+
 ## 2. Naming
 
 A MIxS LinkML slot MUST be named according to the following rules:
@@ -23,7 +38,19 @@ A MIxS LinkML slot MUST be named according to the following rules:
 
 ### 3.1 Range types
 
-The slot MUST have a range type from the following options.
+The slot MUST have a range type from the following options:
+
+- `string`
+- `integer`
+- `float`
+- `boolean`
+- A MIxS defined enumeration
+
+### 3.2 Structured string slots
+
+A slot that requires a structured string SHOULD use the `structured_pattern` attribute, where the pattern components are predefined in the `settings:` section of the schema.
+
+A slot MAY use `pattern:` attribute when XYZ <!-- TODO -->.
 
 ## 4. Slot URI
 
