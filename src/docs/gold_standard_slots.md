@@ -6,16 +6,18 @@ This page lists a range of 'gold standard' examples of slots that are used in th
 
 There are examples of slots that cover a range of common types of data, including:
 
-- [Integer](#integer) (numeric)
-- [Float](#float) (numeric)
-- [String](#string) (free text)
-- [Fixed list](#fixed-list) (enumeration)
-- [Boolean](#boolean)
-- [Structured text (text only)](#structured-text-text-only) (text only)
-- [Structured text (with unit)](#structured-text-numeric-with-units) (numeric with units)
-- [Structured text (ontology term)](#structured-text-ontology-term)
-- [URL](#url) (or other link utilising a URL like structure)
-- [Mixed type](#mixed-type) (either free text, or from an ontology)
+- Basic slots (i.e., match exactly to a LinkML `range` type):
+  - [Integer](#integer) (numeric)
+  - [Float](#float) (numeric)
+  - [String](#string) (free text)
+  - [Fixed list](#fixed-list) (enumeration)
+  - [Boolean](#boolean)
+- Complex (i.e., common more complex `range` types that are more specific to MIxS):
+  - [Structured text (text only)](#structured-text-text-only) (text only)
+  - [Structured text (with unit, measurement)](#structured-text-numeric-with-unit-measurement) (numeric with units)
+  - [Structured text (ontology term)](#structured-text-ontology-term)
+  - [URL](#url) (or other link utilising a URL like structure)
+  - [Mixed type (free text or ontology)](#mixed-type) (either free text, or from an ontology)
 
 You can use these as templates on how to construct your own new slot to the highest quality level expected.
 
@@ -27,7 +29,7 @@ Every MIxS LinkML slot should have at a minimum the following attributes:
 - [`title`](https://linkml.io/linkml-model/latest/docs/title/): a short human readable 'title' for the slot
 - [`examples`](https://linkml.io/linkml-model/latest/docs/examples/): examples values demonstrating how the slot should be used
 - [`in_subset`](https://linkml.io/linkml-model/latest/docs/in_subset/): the section of the schema that the slot belongs based on a [fix list of MIxS categories](https://github.com/GenomicsStandardsConsortium/mixs/blob/609b0f567486f64cb7061246588d8006f87fa138/src/mixs/schema/mixs.yaml#L21-L26)
-  - Note: this may be replaced in the near future!
+  - Note: this system may be replaced in the near future!
 - [`keywords`](https://linkml.io/linkml-model/latest/docs/keywords/): useful keywords to allow grouping of related slots together
 - [`slot_uri`](https://linkml.io/linkml-model/latest/docs/slot_uri/): a unique ID assigned by MIxS
   - This likely only gets assigned upon acceptance and merging by the core GSC MIxS team
@@ -72,6 +74,8 @@ lib_reads_seqd:
   range: integer
 ```
 
+This example slot allows a single bit of information in the form of a singular integer value.
+
 <!--
 JFY comment: I don't like this so much as:
 
@@ -82,12 +86,12 @@ JFY comment: I don't like this so much as:
 -->
 
 <!--
-TODO: for all examples, explain why it's good/the particularties
+TODO: for all examples, explain why it's good/the particularities
 -->
 
 ### Float
 
-An example of a close-to gold standard _float_ slot is [`-s`](https://genomicsstandardsconsortium.github.io/mixs/0001001/):
+An example of a close-to gold standard _float_ slot is [`ph`](https://genomicsstandardsconsortium.github.io/mixs/0001001/):
 
 ```yaml
 ph:
@@ -102,6 +106,8 @@ ph:
   slot_uri: MIXS:0001001
   range: float
 ```
+
+This example slot allows a single bit of information in the form of a float value, i .e. allows decimal numbers.
 
 <!--
 JFY comment: I don't like this so much as:
@@ -131,6 +137,11 @@ wga_amp_kit:
   range: string
   slot_uri: MIXS:0000006
 ```
+
+This example slot allows a character string of any length, and is not limited to a particular format.
+You can consider this to be 'free text' in that the user can add any bit of information, phrased or formatted in whatever way they prefer, and in as much or little detail.
+
+As a rule this range type is generally preferred to be avoided in metadata slots, as it does not allow standardisation or consistency of the information stored within it.
 
 <!--
 JFY comment: I don't like this so much as:
@@ -177,6 +188,11 @@ assembly_qual:
   slot_uri: MIXS:0000056
 ```
 
+This example slot allows a fixed set of options that a user can select from, and is not free text.
+The `range:` attribute refers to a pre-defined [LinkML `enum`eration](https://linkml.io/linkml-model/latest/docs/enumerations/) that is described at the root level `enums:` section of the schema.
+The contents of the range can be of any type (e.g., string, integer, float), but the values are fixed and cannot be changed without adding the value to the list.
+In most implementations, this will be rendered as a drop-down menu of options to select from.
+
 <!--
 JFY comment: I don't like this so much as:
 
@@ -201,10 +217,13 @@ x16s_recover:
   range: boolean
 ```
 
+This example slot allows a binary choice of true or false, yes or no.
+
 <!--
 JFY comment: I don't like this so much as:
 
 - no recommended or required
+- Not clear to me if a `boolean` is represented as true/false, yes/no.
 -->
 
 ### Structured text (text only)
@@ -229,14 +248,55 @@ adapters:
   slot_uri: MIXS:0000048
 ```
 
+This example slot allows a character string but with a pre-defined structure that it must follow.
+The use of the `structured_pattern:` is preferred when a specifically formatted string is required.
+Therefore while it is not as restrictive as a fixed list (it does allow some flexibility for the user), it does enforce a certain level of consistency in the terms to ensure that the information in the term is recorded in a way that is familiar across all entries of the same term, and more easily machine-readable.
+Implementations of the schema will use this `structured_pattern:` to validate the contents of the slot is in the correct format.
+
+Critically, this slot example uses a _structured_ pattern, whereby the pattern syntax is 'simplified' in the slot definition itself; instead referring to pre-defined regex patterns that are defined in the `settings:` section of the schema.
+It is recommended to re-use existing patterns as much as possible, however new patterns should be added to the pre-defined `settings:` section of the schema.
+
+Another option is to use a `pattern:` attribute, which is a more generalised regex pattern that the string will be compared against for validation.
+This is less encouraged as it is less readable, however is essentially the same as the `structured_pattern:` attribute but where you explicitly define all parts of the pattern (rather than referring to pre-defined sub-patterns using variables).
+It should only be used as a last resort for very complex and unique patterns where components would not be reused in other contexts.
+
+An example of a `pattern:` (only) _Structured text (text only)_ slot is [`experimental_factor`](https://genomicsstandardsconsortium.github.io/mixs/0000008/):
+
+```yaml
+experimental_factor:
+  annotations:
+    Expected_value: text or EFO and/or OBI
+  description:
+    Variable aspects of an experiment design that can be used to describe
+    an experiment, or set of experiments, in an increasingly detailed manner. This
+    field accepts ontology terms from Experimental Factor Ontology (EFO) and/or
+    Ontology for Biomedical Investigations (OBI)
+  title: experimental factor
+  examples:
+    - value: time series design [EFO:0001779]
+  in_subset:
+    - investigation
+  keywords:
+    - experimental
+    - factor
+  string_serialization: "{termLabel} [{termID}]|{text}"
+  slot_uri: MIXS:0000008
+  multivalued: true
+  range: string
+  pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+```
+
+> [!WARNING]
+> This slot example includes a `string_serialization:` attribute, which is discouraged as standard practice for a basic `pattern:` slot!
+
 <!--
 JFY comment: I don't like this so much as:
 
 - single example
-- no keywords
+- Using a string_serialisation...
 -->
 
-### Structured text (numeric with units)
+### Structured text (numeric with unit, measurement)
 
 An example of a close-to gold standard _Structured text (numeric with units)_ slot is [`size_frac`](https://genomicsstandardsconsortium.github.io/mixs/0000017/):
 
@@ -256,6 +316,15 @@ size_frac:
   string_serialization: "{float}-{float} {unit}"
   slot_uri: MIXS:0000017
 ```
+
+This example shows a slot that records a numeric measurement value with a specific unit of measurement.
+The value is a float, however the particular unit can be defined by the user (or interpreted by the implementation of the schema) as a pre-defined string format, as defined in the `settings:` section of the schema (like with the `structured_pattern:` attribute).
+In this example the measurement is made as a range of values, however the value itself could also be a single value such as `{float} {unit}`.
+In this particular case, the `string_serialization:` attribute is used to define the format of the string in a different way to the `structured_pattern:` attribute.
+
+<!--
+JFY comment: someone else will need to explain why the string_serialization is used here rather than a structured_pattern
+-->
 
 <!--
 JFY comment: I don't like this so much as:
@@ -295,6 +364,10 @@ env_medium:
     partial_match: true
 ```
 
+This example shows a specific type of structured text slot that is commonly used across in MIxS, where the value refers to a specific ontology term.
+This particular pattern has the pattern of an ontology term label (a string) plus a unique identifier (a string) in square brackets.
+Implementers of the schema will often use such slots to perform API lookups to the ontology term against the ontology database, thus the pattern structure is critical when defining an ontology term-based metadata slot
+
 <!--
 JFY comment: I don't like this so much as:
 
@@ -329,6 +402,9 @@ isol_growth_condt:
     partial_match: true
 ```
 
+This example shows another common type of structured pattern for terms that refer to a URL-like or web address.
+The pattern in the example, allow a PubMed ID (`PMID:`), a digital object identifier (`doi:`), or a URL (uniform resource locator, `https:`), each with a specific prefix indicating the type of link address.
+
 <!--
 JFY comment: I don't like this so much as:
 
@@ -361,6 +437,9 @@ microb_cult_med:
     interpolated: true
     partial_match: true
 ```
+
+This is an example of a slot that can accept _either_ a free text value or a particular structured text pattern.
+While these types of slots are discouraged, they are sometimes necessary to allow flexibility in the data entry such as when a particular metadata term may describe a very diverse or complex set of information that cannot be easily captured within ontology terms.
 
 <!--
 JFY comment: I don't like this so much as:
