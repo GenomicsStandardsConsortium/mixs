@@ -4,6 +4,8 @@ The key words “MUST”, “MUST NOT”, “SHOULD”, etc. are to be interpret
 
 ## 1. Slot attributes
 
+<!-- TODO: Add point about slot must be written in LinkML etc.  -->
+
 ### 1.1. Minimal required slot attributes
 
 A MIxS LinkML slot MUST at a minimum include following attributes:
