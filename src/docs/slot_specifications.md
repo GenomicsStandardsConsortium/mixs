@@ -16,6 +16,10 @@ A MIxS slot MUST be written in and compatible with the [LinkML](https://linkml.i
 
 It MUST conform to any MIxS specific LinkML linting requirements as defined within the [MIxS GitHub repository](https://github.com/GenomicsStandardsConsortium/mixs).
 
+### 1.2 Slot definition
+
+A MIxS slot is a LinkML slot object that is used to describe a MIxS metadata term - i.e. information that is used to describe a particular aspect of a sample, nucleic acid,, or sequence data.
+
 ### 1.2 Language
 
 All MIxS LinkML slots attributes MUST be written in English.
