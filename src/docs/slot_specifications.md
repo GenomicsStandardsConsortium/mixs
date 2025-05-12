@@ -148,6 +148,10 @@ In addition to the minimum number of examples, the examples SHOULD cover the ful
 For example if a slot accepts either an ontology term _or_ a free text string, there should be at least one example for each type.
 If a slot accepts different unit types, there should be at least two examples of different units to demonstrate multiple units are accepted.
 
+### 6.3 Examples for multivalued slots
+
+If a slot is multivalued, the examples MUST include at least two examples to show how to fill the slot with multiple values.
+
 ## 7. Slot in_subset attribute
 
 > [!WARNING]
