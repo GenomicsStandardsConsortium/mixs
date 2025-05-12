@@ -150,7 +150,7 @@ If a slot accepts different unit types, there should be at least two examples of
 
 ### 6.3 Examples for multivalued slots
 
-If a slot is multivalued, the examples MUST include at least two examples to show how to fill the slot with multiple values.
+If a slot is multivalued, the examples MUST include at a minimum two examples, one to show inputting a single value, and another to show how to fill the slot with multiple values.
 
 ## 7. Slot in_subset attribute
 
