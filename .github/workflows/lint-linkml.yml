@@ -52,16 +52,6 @@ jobs:
           echo "=== Linting Results ==="
           cat linting-results.md
 
-#      # Upload the linting results as an artifact
-#      - name: Upload linting report
-#        uses: actions/upload-artifact@v4  # Updated to v4
-#        with:
-#          name: linkml-linting-results-${{ github.sha }}  # Include commit SHA for uniqueness
-#          path: linting-results.md
-#          # Optional: Set retention period (default is 90 days)
-#      #          retention-days: 30
-
-      # Optional: Add a step to comment on PR with results (if running on PR)
       - name: Comment linting results on PR
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
