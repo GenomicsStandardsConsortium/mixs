@@ -1,0 +1,43 @@
+name: Preview documentation build
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Poetry
+        run: pipx install poetry
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Generate web-based documentation
+        run: |
+          mkdir -p docs
+          touch docs/.nojekyll
+          make gendoc
+          poetry run mkdocs build -d site
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: site/
+          preview-branch: gh-pages

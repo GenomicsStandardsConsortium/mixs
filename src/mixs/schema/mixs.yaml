@@ -873,12 +873,28 @@ enums:
   SoilHorizonEnum:
     permissible_values:
       A horizon:
+        description: The surface horizon, also called topsoil. It has a defined soil structure, and is mostly made up of humus (decayed organic matter).
       B horizon:
+        description: Also known as the subsoil. It is greatly composed of material illuviated (washed in from) layers above it. It is typically denser than the A horizon and has a clayey texture.
       C horizon:
+        description: Also known as the substratum is unconsolidated material deepest in the pit and closest to the bedrock.
       E horizon:
+        description: Used to refer to subsurface horizons that have undergone a significant loss of minerals, also known as Eluviation (or leaching).
       O horizon:
+        description: The organic horizon. Typically at the top of the soil structure and is made up of mostly organic matter.
+        meaning: http://purl.obolibrary.org/obo/ENVO_03600018  # ENVO:03600018
       Permafrost:
+        description: Soil that continuously remains below 0 °C (32 °F) for two years or more.
       R layer:
+        description: Hard bedrock, which is usually the lowest layer. It is characterized by tightly bound and unbreakable materials.
+        aliases:
+          - R horizon
+    see_also:
+      - https://www.nrcs.usda.gov/resources/education-and-teaching-materials/a-soil-profile
+      - https://www.ffa.org/ag-101/ag-101-soil-horizons/
+      - https://soil.evs.buffalo.edu/index.php/Soil_Horizons
+      - https://en.wikipedia.org/wiki/Soil_horizon
+      - https://en.wikipedia.org/wiki/Permafrost
   SoilTextureClassEnum:
     permissible_values:
       clay:
