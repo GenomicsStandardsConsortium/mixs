@@ -1,0 +1,4341 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/0016019/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Extension: food-animal and animal feed (FoodAnimalAndAnimalFeed) - mixs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#extension-food-animal-and-animal-feed-foodanimalandanimalfeed" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="mixs" class="md-header__button md-logo" aria-label="mixs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mixs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Extension: food-animal and animal feed (FoodAnimalAndAnimalFeed)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GenomicsStandardsConsortium/mixs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="mixs" class="md-nav__button md-logo" aria-label="mixs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    mixs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GenomicsStandardsConsortium/mixs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../term_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Full term table
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combinations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Combinations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enumerations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enumerations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aliases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LinkML Source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#induced" class="md-nav__link">
+    <span class="md-ellipsis">
+      Induced
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="extension-food-animal-and-animal-feed-foodanimalandanimalfeed">Extension: food-animal and animal feed (FoodAnimalAndAnimalFeed)</h1>
+<p><em>A collection of terms appropriate when collecting samples and performing sequencing of samples  obtained from farm animals and their feed.</em></p>
+<h2 id="terms">Terms</h2>
+<table>
+<thead>
+<tr>
+<th>MIXS ID</th>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://w3id.org/mixs/0001107">MIXS:0001107</a></td>
+<td><a href="../0001107/">samp_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>A local identifier or name that for the material sample used for extracting n...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000092">MIXS:0000092</a></td>
+<td><a href="../0000092/">project_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Name of the project within which the sequencing was organized</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000009">MIXS:0000009</a></td>
+<td><a href="../0000009/">lat_lon</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The geographical origin of the sample as defined by latitude and longitude</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000010">MIXS:0000010</a></td>
+<td><a href="../0000010/">geo_loc_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The geographical origin of the sample as defined by the country or sea name f...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000011">MIXS:0000011</a></td>
+<td><a href="../0000011/">collection_date</a></td>
+<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>The time of sampling, either as an instance (single point in time) or interva...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000050">MIXS:0000050</a></td>
+<td><a href="../0000050/">seq_meth</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Sequencing machine used</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000001">MIXS:0000001</a></td>
+<td><a href="../0000001/">samp_size</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The total amount or size (volume (ml), mass (g) or area (m2) ) of sample coll...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000002">MIXS:0000002</a></td>
+<td><a href="../0000002/">samp_collect_device</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The device used to collect an environmental sample</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000008">MIXS:0000008</a></td>
+<td><a href="../0000008/">experimental_factor</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Variable aspects of an experiment design that can be used to describe an expe...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000037">MIXS:0000037</a></td>
+<td><a href="../0000037/">nucl_acid_ext</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A link to a literature reference, electronic resource or a standard operating...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000103">MIXS:0000103</a></td>
+<td><a href="../0000103/">organism_count</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Total cell count of any organism (or group of organisms) per gram, volume or ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001335">MIXS:0001335</a></td>
+<td><a href="../0001335/">spikein_count</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Total cell count of any organism (or group of organisms) per gram, volume or ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000110">MIXS:0000110</a></td>
+<td><a href="../0000110/">samp_store_temp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Temperature at which sample was stored, e</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000116">MIXS:0000116</a></td>
+<td><a href="../0000116/">samp_store_dur</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Duration for which the sample was stored</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000111">MIXS:0000111</a></td>
+<td><a href="../0000111/">samp_vol_we_dna_ext</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Volume (ml) or mass (g) of total collected sample processed for DNA extractio...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000325">MIXS:0000325</a></td>
+<td><a href="../0000325/">pool_dna_extracts</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Indicate whether multiple DNA extractions were mixed</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000113">MIXS:0000113</a></td>
+<td><a href="../0000113/">temp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Temperature of the sample at the time of sampling</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000755">MIXS:0000755</a></td>
+<td><a href="../0000755/">samp_store_loc</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Location at which sample was stored, usually name of a specific freezer/room</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001230">MIXS:0001230</a></td>
+<td><a href="../0001230/">samp_transport_cont</a></td>
+<td>0..1 <br/> <a href="../SampTransportContEnum/">SampTransportContEnum</a></td>
+<td>Conatiner in which the sample was stored during transport</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000754">MIXS:0000754</a></td>
+<td><a href="../0000754/">perturbation</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Type of perturbation, e</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001183">MIXS:0001183</a></td>
+<td><a href="../0001183/">coll_site_geo_feat</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Text or terms that describe the geographic feature where the food sample was ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001207">MIXS:0001207</a></td>
+<td><a href="../0001207/">food_origin</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>A reference to a place on the Earth, by its name or by its geographical locat...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001211">MIXS:0001211</a></td>
+<td><a href="../0001211/">food_prod</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>Descriptors of the food production system or of the agricultural environment ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001184">MIXS:0001184</a></td>
+<td><a href="../0001184/">food_product_type</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>A food product type is a class of food products that is differentiated by its...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001139">MIXS:0001139</a></td>
+<td><a href="../0001139/">food_source</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Type of plant or animal from which the food product or its major ingredient i...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001179">MIXS:0001179</a></td>
+<td><a href="../0001179/">IFSAC_category</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>The IFSAC food categorization scheme has five distinct levels to which foods ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001144">MIXS:0001144</a></td>
+<td><a href="../0001144/">intended_consumer</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>Food consumer type, human or animal, for which the food product is produced a...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001151">MIXS:0001151</a></td>
+<td><a href="../0001151/">samp_purpose</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The reason that the sample was collected</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001243">MIXS:0001243</a></td>
+<td><a href="../0001243/">animal_am</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The name(s) (generic or brand) of the antimicrobial(s) given to the food anim...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001244">MIXS:0001244</a></td>
+<td><a href="../0001244/">animal_am_dur</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The duration of time (days) that the antimicrobial was administered to the fo...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001245">MIXS:0001245</a></td>
+<td><a href="../0001245/">animal_am_freq</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>The frequency per day that the antimicrobial was administered to the food ani...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001246">MIXS:0001246</a></td>
+<td><a href="../0001246/">animal_am_route</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The route by which the antimicrobial is adminstered into the body of the food...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001247">MIXS:0001247</a></td>
+<td><a href="../0001247/">animal_am_use</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The prescribed intended use of or the condition treated by the antimicrobial ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001248">MIXS:0001248</a></td>
+<td><a href="../0001248/">animal_body_cond</a></td>
+<td>0..1 <br/> <a href="../AnimalBodyCondEnum/">AnimalBodyCondEnum</a></td>
+<td>Body condition scoring is a production management tool used to evaluate overa...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001130">MIXS:0001130</a></td>
+<td><a href="../0001130/">animal_diet</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>If the isolate is from a food animal, the type of diet eaten by the food anim...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001113">MIXS:0001113</a></td>
+<td><a href="../0001113/">animal_feed_equip</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Description of the feeding equipment used for livestock</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001129">MIXS:0001129</a></td>
+<td><a href="../0001129/">animal_group_size</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>The number of food animals of the same species that are maintained together a...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001180">MIXS:0001180</a></td>
+<td><a href="../0001180/">animal_housing</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Description of the housing system of the livestock</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001249">MIXS:0001249</a></td>
+<td><a href="../0001249/">animal_sex</a></td>
+<td>0..1 <br/> <a href="../AnimalSexEnum/">AnimalSexEnum</a></td>
+<td>The sex and reproductive status of the food animal</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001194">MIXS:0001194</a></td>
+<td><a href="../0001194/">bacterial_density</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Number of bacteria in sample, as defined by bacteria density (<a href="http://purl">http://purl</a></td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001195">MIXS:0001195</a></td>
+<td><a href="../0001195/">cons_food_stor_dur</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The storage duration of the food commodity by the consumer, prior to onset of...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001196">MIXS:0001196</a></td>
+<td><a href="../0001196/">cons_food_stor_temp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Temperature at which food commodity was stored by the consumer, prior to onse...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001197">MIXS:0001197</a></td>
+<td><a href="../0001197/">cons_purch_date</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>The date a food product was purchased by consumer</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001198">MIXS:0001198</a></td>
+<td><a href="../0001198/">cons_qty_purchased</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The quantity of food purchased by consumer</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001181">MIXS:0001181</a></td>
+<td><a href="../0001181/">cult_isol_date</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>The datetime marking the end of a process in which a sample yields a positive...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001117">MIXS:0001117</a></td>
+<td><a href="../0001117/">cult_result</a></td>
+<td>0..1 <br/> <a href="../CultResultEnum/">CultResultEnum</a></td>
+<td>Any result of a bacterial culture experiment reported as a binary assessment ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001118">MIXS:0001118</a></td>
+<td><a href="../0001118/">cult_result_org</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Taxonomic information about the cultured organism(s)</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001119">MIXS:0001119</a></td>
+<td><a href="../0001119/">cult_target</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>The target microbial analyte in terms of investigation scope</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001177">MIXS:0001177</a></td>
+<td><a href="../0001177/">enrichment_protocol</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The microbiological workflow or protocol followed to test for the presence or...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001200">MIXS:0001200</a></td>
+<td><a href="../0001200/">food_additive</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A substance or substances added to food to maintain or improve safety and fre...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001131">MIXS:0001131</a></td>
+<td><a href="../0001131/">food_contact_surf</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>The specific container or coating materials in direct contact with the food</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001132">MIXS:0001132</a></td>
+<td><a href="../0001132/">food_contain_wrap</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Type of container or wrapping defined by the main container material, the con...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001202">MIXS:0001202</a></td>
+<td><a href="../0001202/">food_cooking_proc</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>The transformation of raw food by the application of heat</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001203">MIXS:0001203</a></td>
+<td><a href="../0001203/">food_dis_point</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A reference to a place on the Earth, by its name or by its geographical locat...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001204">MIXS:0001204</a></td>
+<td><a href="../0001204/">food_dis_point_city</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A reference to a place on the Earth, by its name or by its geographical locat...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001205">MIXS:0001205</a></td>
+<td><a href="../0001205/">food_ingredient</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>In this field, please list individual ingredients for multi-component food [F...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001208">MIXS:0001208</a></td>
+<td><a href="../0001208/">food_pack_capacity</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The maximum number of product units within a package</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001209">MIXS:0001209</a></td>
+<td><a href="../0001209/">food_pack_integrity</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A term label and term id to describe the state of the packing material and te...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001134">MIXS:0001134</a></td>
+<td><a href="../0001134/">food_pack_medium</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>The medium in which the food is packed for preservation and handling or the m...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001135">MIXS:0001135</a></td>
+<td><a href="../0001135/">food_preserv_proc</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>The methods contributing to the prevention or retardation of microbial, enzym...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001210">MIXS:0001210</a></td>
+<td><a href="../0001210/">food_prior_contact</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>The material the food contacted (e</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001212">MIXS:0001212</a></td>
+<td><a href="../0001212/">food_prod_synonym</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Other names by which the food product is known by (e</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001213">MIXS:0001213</a></td>
+<td><a href="../0001213/">food_product_qual</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Descriptors for describing food visually or via other senses, which is useful...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001178">MIXS:0001178</a></td>
+<td><a href="../0001178/">food_quality_date</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The date recommended for the use of the product while at peak quality, this d...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001251">MIXS:0001251</a></td>
+<td><a href="../0001251/">food_source_age</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The age of the food source host organim</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001214">MIXS:0001214</a></td>
+<td><a href="../0001214/">food_trace_list</a></td>
+<td>0..1 <br/> <a href="../FoodTraceListEnum/">FoodTraceListEnum</a></td>
+<td>The FDA is proposing to establish additional traceability recordkeeping requi...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001137">MIXS:0001137</a></td>
+<td><a href="../0001137/">food_trav_mode</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A descriptor for the method of movement of food commodity along the food dist...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001138">MIXS:0001138</a></td>
+<td><a href="../0001138/">food_trav_vehic</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A descriptor for the mobile machine which is used to transport food commoditi...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001140">MIXS:0001140</a></td>
+<td><a href="../0001140/">food_treat_proc</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Used to specifically characterize a food product based on the treatment or pr...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001215">MIXS:0001215</a></td>
+<td><a href="../0001215/">HACCP_term</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Hazard Analysis Critical Control Points (HACCP) food safety terms; This field...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001145">MIXS:0001145</a></td>
+<td><a href="../0001145/">library_prep_kit</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Packaged kits (containing adapters, indexes, enzymes, buffers etc</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001147">MIXS:0001147</a></td>
+<td><a href="../0001147/">lot_number</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A distinctive alpha-numeric identification code assigned by the manufacturer ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001216">MIXS:0001216</a></td>
+<td><a href="../0001216/">microb_cult_med</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A culture medium used to select for, grow, and maintain prokaryotic microorga...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001149">MIXS:0001149</a></td>
+<td><a href="../0001149/">part_plant_animal</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>The anatomical part of the organism being involved in food production or cons...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001152">MIXS:0001152</a></td>
+<td><a href="../0001152/">repository_name</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>The name of the institution where the sample or DNA extract is held or "sampl...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001225">MIXS:0001225</a></td>
+<td><a href="../0001225/">samp_collect_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The method employed for collecting the sample</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001153">MIXS:0001153</a></td>
+<td><a href="../0001153/">samp_pooling</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Physical combination of several instances of like material, e</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001226">MIXS:0001226</a></td>
+<td><a href="../0001226/">samp_rep_biol</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Measurements of biologically distinct samples that show biological variation</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001227">MIXS:0001227</a></td>
+<td><a href="../0001227/">samp_rep_tech</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Repeated measurements of the same sample that show independent measures of th...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001154">MIXS:0001154</a></td>
+<td><a href="../0001154/">samp_source_mat_cat</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>This is the scientific role or category that the subject organism or material...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001228">MIXS:0001228</a></td>
+<td><a href="../0001228/">samp_stor_device</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The container used to store the  sample</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001229">MIXS:0001229</a></td>
+<td><a href="../0001229/">samp_stor_media</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The liquid that is added to the sample collection device prior to sampling</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001231">MIXS:0001231</a></td>
+<td><a href="../0001231/">samp_transport_dur</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The duration of time from when the sample was collected until processed</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001232">MIXS:0001232</a></td>
+<td><a href="../0001232/">samp_transport_temp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Temperature at which sample was transported, e</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001155">MIXS:0001155</a></td>
+<td><a href="../0001155/">sequencing_kit</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Pre-filled, ready-to-use reagent cartridges</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001156">MIXS:0001156</a></td>
+<td><a href="../0001156/">sequencing_location</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The location the sequencing run was performed</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001157">MIXS:0001157</a></td>
+<td><a href="../0001157/">serovar_or_serotype</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A characterization of a cell or microorganism based on the antigenic properti...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001235">MIXS:0001235</a></td>
+<td><a href="../0001235/">spikein_AMR</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Qualitative description of a microbial response to antimicrobial agents</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001171">MIXS:0001171</a></td>
+<td><a href="../0001171/">spikein_antibiotic</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Antimicrobials used in research study to assess effects of exposure on microb...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001169">MIXS:0001169</a></td>
+<td><a href="../0001169/">spikein_growth_med</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A liquid or gel containing nutrients, salts, and other factors formulated to ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001172">MIXS:0001172</a></td>
+<td><a href="../0001172/">spikein_metal</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Heavy metals used in research study to assess effects of exposure on microbio...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001167">MIXS:0001167</a></td>
+<td><a href="../0001167/">spikein_org</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Taxonomic information about the spike-in organism(s)</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001168">MIXS:0001168</a></td>
+<td><a href="../0001168/">spikein_serovar</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Taxonomic information about the spike-in organism(s) at the serovar or seroty...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001170">MIXS:0001170</a></td>
+<td><a href="../0001170/">spikein_strain</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Taxonomic information about the spike-in organism(s) at the strain level</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001236">MIXS:0001236</a></td>
+<td><a href="../0001236/">study_design</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A plan specification comprised of protocols (which may specify how and what k...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001237">MIXS:0001237</a></td>
+<td><a href="../0001237/">study_inc_dur</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Sample incubation duration if unpublished or unvalidated method is used</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001238">MIXS:0001238</a></td>
+<td><a href="../0001238/">study_inc_temp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Sample incubation temperature if unpublished or unvalidated method is used</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001239">MIXS:0001239</a></td>
+<td><a href="../0001239/">study_timecourse</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>For time-course research studies involving samples of the food commodity, ind...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001240">MIXS:0001240</a></td>
+<td><a href="../0001240/">study_tmnt</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A process in which the act is intended to modify or alter some other material...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001173">MIXS:0001173</a></td>
+<td><a href="../0001173/">timepoint</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Time point at which a sample or observation is made or taken from a biomateri...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000752">MIXS:0000752</a></td>
+<td><a href="../0000752/">misc_param</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Any other measurement performed or parameter collected, that is not listed he...</td>
+</tr>
+</tbody>
+</table>
+<h2 id="aliases">Aliases</h2>
+<ul>
+<li>MIxS-Food (animal and animal feed)</li>
+</ul>
+<h3 id="annotations">Annotations</h3>
+<ul>
+<li>use_cases: Microbiome of farm animals, their feed, and pet food.</li>
+</ul>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+<h3 id="direct">Direct</h3>
+<details>
+
+<pre><code class="language-yaml">name: FoodAnimalAndAnimalFeed
+annotations:
+  use_cases:
+    tag: use_cases
+    value: Microbiome of farm animals, their feed, and pet food.
+description: A collection of terms appropriate when collecting samples and performing
+  sequencing of samples  obtained from farm animals and their feed.
+title: food-animal and animal feed
+comments:
+- This extension is intended to work alongside the other food extensions (farm environment,
+  food production facility, and human foods) for capturing contextual data across
+  the food supply-chain environment.
+from_schema: https://w3id.org/mixs
+aliases:
+- MIxS-Food (animal and animal feed)
+is_a: Extension
+slots:
+- samp_name
+- project_name
+- lat_lon
+- geo_loc_name
+- collection_date
+- seq_meth
+- samp_size
+- samp_collect_device
+- experimental_factor
+- nucl_acid_ext
+- organism_count
+- spikein_count
+- samp_store_temp
+- samp_store_dur
+- samp_vol_we_dna_ext
+- pool_dna_extracts
+- temp
+- samp_store_loc
+- samp_transport_cont
+- perturbation
+- coll_site_geo_feat
+- food_origin
+- food_prod
+- food_product_type
+- food_source
+- IFSAC_category
+- intended_consumer
+- samp_purpose
+- animal_am
+- animal_am_dur
+- animal_am_freq
+- animal_am_route
+- animal_am_use
+- animal_body_cond
+- animal_diet
+- animal_feed_equip
+- animal_group_size
+- animal_housing
+- animal_sex
+- bacterial_density
+- cons_food_stor_dur
+- cons_food_stor_temp
+- cons_purch_date
+- cons_qty_purchased
+- cult_isol_date
+- cult_result
+- cult_result_org
+- cult_target
+- enrichment_protocol
+- food_additive
+- food_contact_surf
+- food_contain_wrap
+- food_cooking_proc
+- food_dis_point
+- food_dis_point_city
+- food_ingredient
+- food_pack_capacity
+- food_pack_integrity
+- food_pack_medium
+- food_preserv_proc
+- food_prior_contact
+- food_prod_synonym
+- food_product_qual
+- food_quality_date
+- food_source_age
+- food_trace_list
+- food_trav_mode
+- food_trav_vehic
+- food_treat_proc
+- HACCP_term
+- library_prep_kit
+- lot_number
+- microb_cult_med
+- part_plant_animal
+- repository_name
+- samp_collect_method
+- samp_pooling
+- samp_rep_biol
+- samp_rep_tech
+- samp_source_mat_cat
+- samp_stor_device
+- samp_stor_media
+- samp_transport_dur
+- samp_transport_temp
+- sequencing_kit
+- sequencing_location
+- serovar_or_serotype
+- spikein_AMR
+- spikein_antibiotic
+- spikein_growth_med
+- spikein_metal
+- spikein_org
+- spikein_serovar
+- spikein_strain
+- study_design
+- study_inc_dur
+- study_inc_temp
+- study_timecourse
+- study_tmnt
+- timepoint
+- misc_param
+slot_usage:
+  food_origin:
+    name: food_origin
+    required: true
+  food_pack_medium:
+    name: food_pack_medium
+    examples:
+    - value: packed in fruit juice [FOODON:03480039]
+  food_prod:
+    name: food_prod
+    required: true
+  food_product_type:
+    name: food_product_type
+    examples:
+    - value: shrimp (peeled, deep-frozen) [FOODON:03317171]
+    required: true
+  food_source:
+    name: food_source
+    examples:
+    - value: giant tiger prawn [FOODON:03412612]
+  intended_consumer:
+    name: intended_consumer
+    required: true
+  library_prep_kit:
+    name: library_prep_kit
+    examples:
+    - value: Illumina DNA Prep
+  organism_count:
+    name: organism_count
+    examples:
+    - value: total prokaryotes;3.5e7 colony forming units per milliliter;qPCR
+  pool_dna_extracts:
+    name: pool_dna_extracts
+    string_serialization: '{boolean},{integer}'
+  samp_collect_device:
+    name: samp_collect_device
+    examples:
+    - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
+  samp_collect_method:
+    name: samp_collect_method
+    examples:
+    - value: environmental swab sampling
+  samp_purpose:
+    name: samp_purpose
+    required: true
+class_uri: MIXS:0016019
+
+</code></pre>
+
+</details>
+
+<h3 id="induced">Induced</h3>
+<details>
+
+<pre><code class="language-yaml">name: FoodAnimalAndAnimalFeed
+annotations:
+  use_cases:
+    tag: use_cases
+    value: Microbiome of farm animals, their feed, and pet food.
+description: A collection of terms appropriate when collecting samples and performing
+  sequencing of samples  obtained from farm animals and their feed.
+title: food-animal and animal feed
+comments:
+- This extension is intended to work alongside the other food extensions (farm environment,
+  food production facility, and human foods) for capturing contextual data across
+  the food supply-chain environment.
+from_schema: https://w3id.org/mixs
+aliases:
+- MIxS-Food (animal and animal feed)
+is_a: Extension
+slot_usage:
+  food_origin:
+    name: food_origin
+    required: true
+  food_pack_medium:
+    name: food_pack_medium
+    examples:
+    - value: packed in fruit juice [FOODON:03480039]
+  food_prod:
+    name: food_prod
+    required: true
+  food_product_type:
+    name: food_product_type
+    examples:
+    - value: shrimp (peeled, deep-frozen) [FOODON:03317171]
+    required: true
+  food_source:
+    name: food_source
+    examples:
+    - value: giant tiger prawn [FOODON:03412612]
+  intended_consumer:
+    name: intended_consumer
+    required: true
+  library_prep_kit:
+    name: library_prep_kit
+    examples:
+    - value: Illumina DNA Prep
+  organism_count:
+    name: organism_count
+    examples:
+    - value: total prokaryotes;3.5e7 colony forming units per milliliter;qPCR
+  pool_dna_extracts:
+    name: pool_dna_extracts
+    string_serialization: '{boolean},{integer}'
+  samp_collect_device:
+    name: samp_collect_device
+    examples:
+    - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
+  samp_collect_method:
+    name: samp_collect_method
+    examples:
+    - value: environmental swab sampling
+  samp_purpose:
+    name: samp_purpose
+    required: true
+attributes:
+  samp_name:
+    name: samp_name
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: ''
+    description: A local identifier or name that for the material sample used for
+      extracting nucleic acids, and subsequent sequencing. It can refer either to
+      the original material collected or to any derived sub-samples. It can have any
+      format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name
+    title: sample name
+    examples:
+    - value: ISDsoil1
+    in_subset:
+    - investigation
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    slot_uri: MIXS:0001107
+    alias: samp_name
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Air
+    - BuiltEnvironment
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    required: true
+  project_name:
+    name: project_name
+    description: Name of the project within which the sequencing was organized
+    title: project name
+    examples:
+    - value: Forest soil metagenome
+    in_subset:
+    - investigation
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - project
+    slot_uri: MIXS:0000092
+    alias: project_name
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Air
+    - BuiltEnvironment
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    required: true
+  lat_lon:
+    name: lat_lon
+    description: The geographical origin of the sample as defined by latitude and
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
+    title: geographic location (latitude and longitude)
+    examples:
+    - value: 50.586825 6.408977
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - geographic
+    - location
+    slot_uri: MIXS:0000009
+    alias: lat_lon
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - SymbiontAssociated
+    range: string
+    required: true
+    pattern: ^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$
+    structured_pattern:
+      syntax: ^{lat} {lon}$
+      interpolated: true
+      partial_match: true
+  geo_loc_name:
+    name: geo_loc_name
+    description: The geographical origin of the sample as defined by the country or
+      sea name followed by specific region name. Country or sea names should be chosen
+      from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology
+      (http://purl.bioontology.org/ontology/GAZ)
+    title: geographic location (country and/or sea,region)
+    examples:
+    - value: 'USA: Maryland, Bethesda'
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - geographic
+    - location
+    slot_uri: MIXS:0000010
+    alias: geo_loc_name
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - SymbiontAssociated
+    range: string
+    required: true
+    pattern: '^([^\s-]{1,2}|[^\s-]+.+[^\s-]+): ([^\s-]{1,2}|[^\s-]+.+[^\s-]+), ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'
+    structured_pattern:
+      syntax: '^{text}: {text}, {text}$'
+      interpolated: true
+      partial_match: true
+  collection_date:
+    name: collection_date
+    description: 'The time of sampling, either as an instance (single point in time)
+      or interval. In case no exact time is available, the date/time can be right
+      truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10;
+      2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant'
+    title: collection date
+    examples:
+    - value: '2013-03-25T12:42:31+01:00'
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - date
+    slot_uri: MIXS:0000011
+    alias: collection_date
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - SymbiontAssociated
+    range: datetime
+    required: true
+  seq_meth:
+    name: seq_meth
+    description: Sequencing machine used. Where possible the term should be taken
+      from the OBI list of DNA sequencers (http://purl.obolibrary.org/obo/OBI_0400103)
+    title: sequencing method
+    examples:
+    - value: 454 Genome Sequencer FLX [OBI:0000702]
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - method
+    slot_uri: MIXS:0000050
+    alias: seq_meth
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    required: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+)|(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])$
+    structured_pattern:
+      syntax: ^{text}|({termLabel} \[{termID}\])$
+      interpolated: true
+      partial_match: true
+  samp_size:
+    name: samp_size
+    description: The total amount or size (volume (ml), mass (g) or area (m2) ) of
+      sample collected
+    title: amount or size of sample collected
+    examples:
+    - value: 5 liter
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    - size
+    slot_uri: MIXS:0000001
+    alias: samp_size
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  samp_collect_device:
+    name: samp_collect_device
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: device name
+    description: The device used to collect an environmental sample. This field accepts
+      terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
+      This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)
+    title: sample collection device
+    examples:
+    - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - device
+    - sample
+    string_serialization: '{termLabel} [{termID}]|{text}'
+    slot_uri: MIXS:0000002
+    alias: samp_collect_device
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  experimental_factor:
+    name: experimental_factor
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: text or EFO and/or OBI
+    description: Variable aspects of an experiment design that can be used to describe
+      an experiment, or set of experiments, in an increasingly detailed manner. This
+      field accepts ontology terms from Experimental Factor Ontology (EFO) and/or
+      Ontology for Biomedical Investigations (OBI)
+    title: experimental factor
+    examples:
+    - value: time series design [EFO:0001779]
+    in_subset:
+    - investigation
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - experimental
+    - factor
+    string_serialization: '{termLabel} [{termID}]|{text}'
+    slot_uri: MIXS:0000008
+    alias: experimental_factor
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+  nucl_acid_ext:
+    name: nucl_acid_ext
+    description: A link to a literature reference, electronic resource or a standard
+      operating procedure (SOP), that describes the material separation to recover
+      the nucleic acid fraction from a sample
+    title: nucleic acid extraction
+    examples:
+    - value: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    slot_uri: MIXS:0000037
+    alias: nucl_acid_ext
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$$
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
+      partial_match: true
+  organism_count:
+    name: organism_count
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: organism name;measurement value;enumeration
+    description: 'Total cell count of any organism (or group of organisms) per gram,
+      volume or area of sample, should include name of organism followed by count.
+      The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should
+      also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    title: organism count
+    examples:
+    - value: total prokaryotes;3.5e7 colony forming units per milliliter;qPCR
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - count
+    - organism
+    string_serialization: '{text};{float} {unit};[ATP|MPN|qPCR|other]'
+    slot_uri: MIXS:0000103
+    alias: organism_count
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - Air
+    - BuiltEnvironment
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    multivalued: true
+  spikein_count:
+    name: spikein_count
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: organism name;measurement value;enumeration
+      Preferred_unit:
+        tag: Preferred_unit
+        value: colony forming units per milliliter; colony forming units per gram
+          of dry weight
+    description: 'Total cell count of any organism (or group of organisms) per gram,
+      volume or area of sample, should include name of organism followed by count.
+      The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) should
+      also be provided (example: total prokaryotes; 3.5e7 cells per ml; qPCR)'
+    title: spike-in organism count
+    examples:
+    - value: total prokaryotes;3.5e7 colony forming units per milliliter;qPCR
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - count
+    - organism
+    - spike
+    string_serialization: '{text};{float} {unit};[ATP|MPN|qPCR|other]'
+    slot_uri: MIXS:0001335
+    alias: spikein_count
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    range: string
+  samp_store_temp:
+    name: samp_store_temp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+    description: Temperature at which sample was stored, e.g. -80 degree Celsius
+    title: sample storage temperature
+    examples:
+    - value: -80 degree Celsius
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    - storage
+    - temperature
+    slot_uri: MIXS:0000110
+    alias: samp_store_temp
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  samp_store_dur:
+    name: samp_store_dur
+    description: Duration for which the sample was stored. Indicate the duration for
+      which the sample was stored written in ISO 8601 format
+    title: sample storage duration
+    examples:
+    - value: P1Y6M
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - duration
+    - period
+    - sample
+    - storage
+    slot_uri: MIXS:0000116
+    alias: samp_store_dur
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    pattern: ^P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)$
+    structured_pattern:
+      syntax: ^{duration}$
+      interpolated: true
+      partial_match: true
+  samp_vol_we_dna_ext:
+    name: samp_vol_we_dna_ext
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: milliliter, gram, milligram, square centimeter
+    description: 'Volume (ml) or mass (g) of total collected sample processed for
+      DNA extraction. Note: total sample collected should be entered under the term
+      Sample Size (MIXS:0000001)'
+    title: sample volume or weight for DNA extraction
+    examples:
+    - value: 1500 milliliter
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - dna
+    - sample
+    - volume
+    - weight
+    slot_uri: MIXS:0000111
+    alias: samp_vol_we_dna_ext
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  pool_dna_extracts:
+    name: pool_dna_extracts
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: pooling status;number of pooled extracts
+      Preferred_unit:
+        tag: Preferred_unit
+        value: gram, milliliter, microliter
+    description: Indicate whether multiple DNA extractions were mixed. If the answer
+      yes, the number of extracts that were pooled should be given
+    title: pooling of DNA extracts (if done)
+    examples:
+    - value: yes, 5
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - dna
+    - pooling
+    string_serialization: '{boolean},{integer}'
+    slot_uri: MIXS:0000325
+    alias: pool_dna_extracts
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - Soil
+    range: string
+  temp:
+    name: temp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+    description: Temperature of the sample at the time of sampling
+    title: temperature
+    examples:
+    - value: 25 degree Celsius
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - temperature
+    slot_uri: MIXS:0000113
+    alias: temp
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  samp_store_loc:
+    name: samp_store_loc
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: location name
+    description: Location at which sample was stored, usually name of a specific freezer/room
+    title: sample storage location
+    examples:
+    - value: Freezer no:5
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - location
+    - sample
+    - storage
+    slot_uri: MIXS:0000755
+    alias: samp_store_loc
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+  samp_transport_cont:
+    name: samp_transport_cont
+    description: Conatiner in which the sample was stored during transport. Indicate
+      the location name
+    title: sample transport  container
+    examples:
+    - value: cooler
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    - transport
+    slot_uri: MIXS:0001230
+    alias: samp_transport_cont
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: SampTransportContEnum
+  perturbation:
+    name: perturbation
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: perturbation type name;perturbation interval and duration
+    description: Type of perturbation, e.g. chemical administration, physical disturbance,
+      etc., coupled with perturbation regimen including how many times the perturbation
+      was repeated, how long each perturbation lasted, and the start and end time
+      of the entire perturbation period; can include multiple perturbation types
+    title: perturbation
+    examples:
+    - value: antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - perturbation
+    string_serialization: '{text};{Rn/start_time/end_time/duration}'
+    slot_uri: MIXS:0000754
+    alias: perturbation
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    multivalued: true
+  coll_site_geo_feat:
+    name: coll_site_geo_feat
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: ENVO:00000002 or ENVO:00000070
+    description: 'Text or terms that describe the geographic feature where the food
+      sample was obtained by the researcher. This field accepts selected terms listed
+      under the following ontologies: anthropogenic geographic feature (http://purl.obolibrary.org/obo/ENVO_00000002),
+      for example agricultural fairground [ENVO:01000986]; garden [ENVO:00000011}
+      or any of its subclasses; market [ENVO:01000987]; water well [ENVO:01000002];
+      or human construction (http://purl.obolibrary.org/obo/ENVO_00000070)'
+    title: collection site geographic feature
+    examples:
+    - value: farm [ENVO:00000078]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - feature
+    - geographic
+    - site
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001183
+    alias: coll_site_geo_feat
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    required: true
+  food_origin:
+    name: food_origin
+    description: A reference to a place on the Earth, by its name or by its geographical
+      location that describes the origin of the food commodity, either in terms of
+      its cultivation or production. This field accepts terms listed under geographic
+      location (http://purl.obolibrary.org/obo/GAZ_00000448)
+    title: food product origin geographic location
+    examples:
+    - value: 'USA: Delmarva, Peninsula'
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - geographic
+    - location
+    - product
+    slot_uri: MIXS:0001207
+    alias: food_origin
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    required: true
+    pattern: '^([^\s-]{1,2}|[^\s-]+.+[^\s-]+): ([^\s-]{1,2}|[^\s-]+.+[^\s-]+), ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'
+    structured_pattern:
+      syntax: '^{text}: {text}, {text}$'
+      interpolated: true
+      partial_match: true
+  food_prod:
+    name: food_prod
+    description: Descriptors of the food production system or of the agricultural
+      environment and growing conditions related to the farm production system, such
+      as wild caught, organic, free-range, industrial, dairy, beef,  domestic or cultivated
+      food production. This field accepts terms listed under food production (http://purl.obolibrary.org/obo/FOODON_03530206).
+      Multiple terms may apply and can be separated by pipes
+    title: food production system characteristics
+    examples:
+    - value: organic plant cultivation [FOODON:03530253]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - production
+    slot_uri: MIXS:0001211
+    alias: food_prod
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    required: true
+    multivalued: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
+  food_product_type:
+    name: food_product_type
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:00001002 or FOODON:03309997
+    description: A food product type is a class of food products that is differentiated
+      by its food composition (e.g., single- or multi-ingredient), processing and/or
+      consumption characteristics. This does not include brand name products but it
+      may include generic food dish categories. This field accepts terms under food
+      product type (http://purl.obolibrary.org/obo/FOODON:03400361). For terms related
+      to food product for an animal, consult food product for animal (http://purl.obolibrary.org/obo/FOODON_03309997).
+      If the proper descriptor is not listed please use text to describe the food
+      type. Multiple terms can be separated by one or more pipes
+    title: food product type
+    examples:
+    - value: shrimp (peeled, deep-frozen) [FOODON:03317171]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - product
+    - type
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001184
+    alias: food_product_type
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    required: true
+  food_source:
+    name: food_source
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON term
+    description: Type of plant or animal from which the food product or its major
+      ingredient is derived or a chemical food source [FDA CFSAN 1995]
+    title: food source
+    examples:
+    - value: giant tiger prawn [FOODON:03412612]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - source
+    string_serialization: '{termLabel} [{termID}]'
+    slot_uri: MIXS:0001139
+    alias: food_source
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  IFSAC_category:
+    name: IFSAC_category
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: IFSAC term
+    description: 'The IFSAC food categorization scheme has five distinct levels to
+      which foods can be assigned, depending upon the type of food. First, foods are
+      assigned to one of four food groups (aquatic animals, land animals, plants,
+      and other). Food groups include increasingly specific food categories; dairy,
+      eggs, meat and poultry, and game are in the land animal food group, and the
+      category meat and poultry is further subdivided into more specific categories
+      of meat (beef, pork, other meat) and poultry (chicken, turkey, other poultry).
+      Finally, foods are differentiated by differences in food processing (such as
+      pasteurized fluid dairy products, unpasteurized fluid dairy products, pasteurized
+      solid and semi-solid dairy products, and unpasteurized solid and semi-solid
+      dairy products. An IFSAC food category chart is available from https://www.cdc.gov/foodsafety/ifsac/projects/food-categorization-scheme.html
+      PMID: 28926300'
+    title: Interagency Food Safety Analytics Collaboration (IFSAC) category
+    examples:
+    - value: Plants:Produce:Vegetables:Herbs:Dried Herbs
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    slot_uri: MIXS:0001179
+    alias: IFSAC_category
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    required: true
+    multivalued: true
+  intended_consumer:
+    name: intended_consumer
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON_03510136 or NCBI taxid
+    description: Food consumer type, human or animal, for which the food product is
+      produced and marketed. This field accepts terms listed under food consumer group
+      (http://purl.obolibrary.org/obo/FOODON_03510136) or NCBI taxid
+    title: intended consumer
+    examples:
+    - value: 9606 o rsenior as food consumer [FOODON:03510254]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - consumer
+    string_serialization: '{integer}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001144
+    alias: intended_consumer
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    required: true
+    multivalued: true
+  samp_purpose:
+    name: samp_purpose
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: enumeration or {text}
+    description: The reason that the sample was collected
+    title: purpose of sampling
+    examples:
+    - value: field trial
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - purpose
+    string_serialization: '[active surveillance in response to an outbreak|active
+      surveillance not initiated by an outbreak|clinical trial|cluster investigation|environmental
+      assessment|farm sample|field trial|for cause|industry internal investigation|market
+      sample|passive surveillance|population based studies|research|research and development]
+      or {text}'
+    slot_uri: MIXS:0001151
+    alias: samp_purpose
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    required: true
+  animal_am:
+    name: animal_am
+    description: The name(s) (generic or brand) of the antimicrobial(s) given to the
+      food animal within the last 30 days
+    title: food animal antimicrobial
+    examples:
+    - value: tetracycline
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    - antimicrobial
+    - food
+    slot_uri: MIXS:0001243
+    alias: animal_am
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    range: string
+  animal_am_dur:
+    name: animal_am_dur
+    description: The duration of time (days) that the antimicrobial was administered
+      to the food animal
+    title: food animal antimicrobial duration
+    examples:
+    - value: 3 days
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    - antimicrobial
+    - duration
+    - food
+    - period
+    slot_uri: MIXS:0001244
+    alias: animal_am_dur
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    range: string
+    structured_pattern:
+      syntax: ^{float} days$
+      interpolated: true
+      partial_match: true
+  animal_am_freq:
+    name: animal_am_freq
+    description: The frequency per day that the antimicrobial was administered to
+      the food animal
+    title: food animal antimicrobial frequency
+    examples:
+    - value: '1.5'
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    - antimicrobial
+    - food
+    - frequency
+    slot_uri: MIXS:0001245
+    alias: animal_am_freq
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  animal_am_route:
+    name: animal_am_route
+    description: The route by which the antimicrobial is adminstered into the body
+      of the food animal
+    title: food animal antimicrobial route of administration
+    examples:
+    - value: oral-feed
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - administration
+    - animal
+    - antimicrobial
+    - food
+    - route
+    slot_uri: MIXS:0001246
+    alias: animal_am_route
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    range: string
+  animal_am_use:
+    name: animal_am_use
+    description: The prescribed intended use of or the condition treated by the antimicrobial
+      given to the food animal by any route of administration
+    title: food animal antimicrobial intended use
+    examples:
+    - value: shipping fever
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    - antimicrobial
+    - food
+    - use
+    slot_uri: MIXS:0001247
+    alias: animal_am_use
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    range: string
+  animal_body_cond:
+    name: animal_body_cond
+    description: Body condition scoring is a production management tool used to evaluate
+      overall health and nutritional needs of a food animal. Because there are different
+      scoring systems, this field is restricted to three categories
+    title: food animal body condition
+    examples:
+    - value: under conditioned
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    - body
+    - condition
+    - food
+    slot_uri: MIXS:0001248
+    alias: animal_body_cond
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    range: AnimalBodyCondEnum
+  animal_diet:
+    name: animal_diet
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: text or FOODON_03309997
+    description: If the isolate is from a food animal, the type of diet eaten by the
+      food animal.  Please list the main food staple and the setting, if appropriate.  For
+      a list of acceptable animal feed terms or categories, please see http://www.feedipedia.org.  Multiple
+      terms may apply and can be separated by pipes |Food product for animal covers
+      foods intended for consumption by domesticated animals. Consult http://purl.obolibrary.org/obo/FOODON_03309997.
+      If the proper descriptor is not listed please use text to describe the food
+      type. Multiple terms can be separated by one or more pipes. If the proper descriptor
+      is not listed please use text to describe the food product type
+    title: food animal source diet
+    examples:
+    - value: Hay [FOODON:03301763]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    - diet
+    - food
+    - source
+    slot_uri: MIXS:0001130
+    alias: animal_diet
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    range: string
+    multivalued: true
+  animal_feed_equip:
+    name: animal_feed_equip
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: EOL:0001757
+    description: Description of the feeding equipment used for livestock. This field
+      accepts terms listed under feed delivery (http://opendata.inra.fr/EOL/EOL_0001757).
+      Multiple terms can be separated by pipes
+    title: animal feeding equipment
+    examples:
+    - value: self feeding [EOL:0001645]| straight feed trough [EOL:0001661]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    - equipment
+    slot_uri: MIXS:0001113
+    alias: animal_feed_equip
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    range: string
+    multivalued: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
+  animal_group_size:
+    name: animal_group_size
+    description: The number of food animals of the same species that are maintained
+      together as a unit, i.e. a herd or flock
+    title: food animal group size
+    examples:
+    - value: '80'
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    - food
+    - size
+    slot_uri: MIXS:0001129
+    alias: animal_group_size
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    range: integer
+  animal_housing:
+    name: animal_housing
+    description: Description of the housing system of the livestock. This field accepts
+      terms listed under terrestrial management housing system (http://opendata.inra.fr/EOL/EOL_0001605)
+    title: animal housing system
+    examples:
+    - value: pen rearing system [EOL:0001636]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    slot_uri: MIXS:0001180
+    alias: animal_housing
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    range: string
+    multivalued: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
+  animal_sex:
+    name: animal_sex
+    description: The sex and reproductive status of the food animal
+    title: food animal source sex category
+    examples:
+    - value: castrated male
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    - food
+    - source
+    slot_uri: MIXS:0001249
+    alias: animal_sex
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    range: AnimalSexEnum
+  bacterial_density:
+    name: bacterial_density
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: colony forming units per milliliter; colony forming units per gram
+          of dry weight
+    description: Number of bacteria in sample, as defined by bacteria density (http://purl.obolibrary.org/obo/GENEPIO_0000043)
+    title: bacteria density
+    examples:
+    - value: 10 colony forming units per gram dry weight
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - density
+    slot_uri: MIXS:0001194
+    alias: bacterial_density
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  cons_food_stor_dur:
+    name: cons_food_stor_dur
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: hours or days
+    description: The storage duration of the food commodity by the consumer, prior
+      to onset of illness or sample collection.  Indicate the timepoint written in
+      ISO 8601 format
+    title: food stored by consumer (storage duration)
+    examples:
+    - value: P5D
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - consumer
+    - duration)
+    - food
+    - storage
+    slot_uri: MIXS:0001195
+    alias: cons_food_stor_dur
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodHumanFoods
+    range: string
+    pattern: ^P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)$
+    structured_pattern:
+      syntax: ^{duration}$
+      interpolated: true
+      partial_match: true
+  cons_food_stor_temp:
+    name: cons_food_stor_temp
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: text or measurement value
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+    description: Temperature at which food commodity was stored by the consumer, prior
+      to onset of illness or sample collection
+    title: food stored by consumer (storage temperature)
+    examples:
+    - value: 4 degree Celsius
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - consumer
+    - food
+    - storage
+    - temperature
+    string_serialization: '{float} {unit}|{text}'
+    slot_uri: MIXS:0001196
+    alias: cons_food_stor_temp
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodHumanFoods
+    range: string
+  cons_purch_date:
+    name: cons_purch_date
+    description: The date a food product was purchased by consumer
+    title: purchase date
+    examples:
+    - value: '2013-03-25T12:42:31+01:00'
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - date
+    slot_uri: MIXS:0001197
+    alias: cons_purch_date
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodHumanFoods
+    range: datetime
+  cons_qty_purchased:
+    name: cons_qty_purchased
+    description: The quantity of food purchased by consumer
+    title: quantity purchased
+    examples:
+    - value: 5 cans
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - quantity
+    slot_uri: MIXS:0001198
+    alias: cons_qty_purchased
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodHumanFoods
+    range: string
+    pattern: ^[1-9][0-9]* ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{integer} {text}$
+      interpolated: true
+      partial_match: true
+  cult_isol_date:
+    name: cult_isol_date
+    description: The datetime marking the end of a process in which a sample yields
+      a positive result for the target microbial analyte(s) in the form of an isolated
+      colony or colonies
+    title: culture isolation date
+    examples:
+    - value: '2018-05-11T10:00:00+01:00'
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - culture
+    - date
+    - isolation
+    slot_uri: MIXS:0001181
+    alias: cult_isol_date
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: datetime
+  cult_result:
+    name: cult_result
+    description: Any result of a bacterial culture experiment reported as a binary
+      assessment such as positive/negative, active/inactive
+    title: culture result
+    examples:
+    - value: positive
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - culture
+    slot_uri: MIXS:0001117
+    alias: cult_result
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: CultResultEnum
+  cult_result_org:
+    name: cult_result_org
+    description: Taxonomic information about the cultured organism(s)
+    title: culture result organism
+    examples:
+    - value: Listeria monocytogenes [NCIT:C86502]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - culture
+    - organism
+    slot_uri: MIXS:0001118
+    alias: cult_result_org
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+    pattern: ^(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])|[1-9][0-9]*$
+    structured_pattern:
+      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      interpolated: true
+      partial_match: true
+  cult_target:
+    name: cult_target
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: NCIT:C14250 or NCBI taxid or culture independent
+    description: The target microbial analyte in terms of investigation scope. This
+      field accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250).
+      This field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy
+    title: culture target microbial analyte
+    examples:
+    - value: Listeria monocytogenes [NCIT:C86502]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - culture
+    - microbial
+    - target
+    string_serialization: '{termLabel} [{termID}]|{integer}'
+    slot_uri: MIXS:0001119
+    alias: cult_target
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  enrichment_protocol:
+    name: enrichment_protocol
+    description: The microbiological workflow or protocol followed to test for the
+      presence or enumeration of the target microbial analyte(s). Please provide a
+      PubMed or DOI reference for published protocols
+    title: enrichment protocol
+    examples:
+    - value: 'BAM Chapter 4: Enumeration of Escherichia coli and the Coliform Bacteria'
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - enrichment
+    - protocol
+    slot_uri: MIXS:0001177
+    alias: enrichment_protocol
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$|([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      interpolated: true
+      partial_match: true
+  food_additive:
+    name: food_additive
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:03412972
+    description: A substance or substances added to food to maintain or improve safety
+      and freshness, to improve or maintain nutritional value, or improve taste, texture
+      and appearance.  This field accepts terms listed under food additive (http://purl.obolibrary.org/obo/FOODON_03412972).
+      Multiple terms can be separated by one or more pipes, but please consider limiting
+      this list to the top 5 ingredients listed in order as on the food label.  See
+      also, https://www.fda.gov/food/food-ingredients-packaging/overview-food-ingredients-additives-colors
+    title: food additive
+    examples:
+    - value: xanthan gum [FOODON:03413321]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001200
+    alias: food_additive
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  food_contact_surf:
+    name: food_contact_surf
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:03500010
+    description: The specific container or coating materials in direct contact with
+      the food. Multiple values can be assigned.  This field accepts terms listed
+      under food contact surface (http://purl.obolibrary.org/obo/FOODON_03500010)
+    title: food contact surface
+    examples:
+    - value: cellulose acetate [FOODON:03500034]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - surface
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001131
+    alias: food_contact_surf
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  food_contain_wrap:
+    name: food_contain_wrap
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:03490100
+    description: Type of container or wrapping defined by the main container material,
+      the container form, and the material of the liner lids or ends. Also type of
+      container or wrapping by form; prefer description by material first, then by
+      form. This field accepts terms listed under food container or wrapping (http://purl.obolibrary.org/obo/FOODON_03490100)
+    title: food container or wrapping
+    examples:
+    - value: Plastic shrink-pack [FOODON:03490137]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001132
+    alias: food_contain_wrap
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  food_cooking_proc:
+    name: food_cooking_proc
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:03450002
+    description: The transformation of raw food by the application of heat. This field
+      accepts terms listed under food cooking (http://purl.obolibrary.org/obo/FOODON_03450002)
+    title: food cooking process
+    examples:
+    - value: food blanching [FOODON:03470175]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - process
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001202
+    alias: food_cooking_proc
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  food_dis_point:
+    name: food_dis_point
+    description: 'A reference to a place on the Earth, by its name or by its geographical
+      location that refers to a distribution point along the food chain. This field
+      accepts terms listed under geographic location (http://purl.obolibrary.org/obo/GAZ_00000448).
+      Reference: Adam Diamond, James Barham. Moving Food Along the Value Chain: Innovations
+      in Regional Food Distribution. U.S. Dept. of Agriculture, Agricultural Marketing
+      Service. Washington, DC. March 2012. http://dx.doi.org/10.9752/MS045.03-2012'
+    title: food distribution point geographic location
+    examples:
+    - value: 'USA: Delmarva, Peninsula'
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - geographic
+    - location
+    slot_uri: MIXS:0001203
+    alias: food_dis_point
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+    pattern: '^([^\s-]{1,2}|[^\s-]+.+[^\s-]+): ([^\s-]{1,2}|[^\s-]+.+[^\s-]+), ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'
+    structured_pattern:
+      syntax: '^{text}: {text}, {text}$'
+      interpolated: true
+      partial_match: true
+  food_dis_point_city:
+    name: food_dis_point_city
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: GAZ:00000448
+    description: 'A reference to a place on the Earth, by its name or by its geographical
+      location that refers to a distribution point along the food chain. This field
+      accepts terms listed under geographic location (http://purl.obolibrary.org/obo/GAZ_00000448).
+      Reference: Adam Diamond, James Barham. Moving Food Along the Value Chain: Innovations
+      in Regional Food Distribution. U.S. Dept. of Agriculture, Agricultural Marketing
+      Service. Washington, DC. March 2012. http://dx.doi.org/10.9752/MS045.03-2012'
+    title: food distribution point geographic location (city)
+    examples:
+    - value: Atlanta[GAZ:00004445]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - geographic
+    - location
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001204
+    alias: food_dis_point_city
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    range: string
+    multivalued: true
+  food_ingredient:
+    name: food_ingredient
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON
+    description: In this field, please list individual ingredients for multi-component
+      food [FOODON:00002501] and simple foods that is not captured in food_type.  Please
+      use terms that are present in FoodOn.  Multiple terms can be separated by one
+      or more pipes |, but please consider limiting this list to the top 5 ingredients
+      listed in order as on the food label.  See also, https://www.fda.gov/food/food-ingredients-packaging/overview-food-ingredients-additives-colors
+    title: food ingredient
+    examples:
+    - value: bean (whole) [FOODON:00002753]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - ingredient
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001205
+    alias: food_ingredient
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  food_pack_capacity:
+    name: food_pack_capacity
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: grams
+    description: The maximum number of product units within a package
+    title: food package capacity
+    examples:
+    - value: 454 grams
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - package
+    slot_uri: MIXS:0001208
+    alias: food_pack_capacity
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  food_pack_integrity:
+    name: food_pack_integrity
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:03530218
+    description: A term label and term id to describe the state of the packing material
+      and text to explain the exact condition.  This field accepts terms listed under
+      food packing medium integrity (http://purl.obolibrary.org/obo/FOODON_03530218)
+    title: food packing medium integrity
+    examples:
+    - value: food packing medium compromised [FOODON:00002517]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001209
+    alias: food_pack_integrity
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  food_pack_medium:
+    name: food_pack_medium
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:03480020
+    description: The medium in which the food is packed for preservation and handling
+      or the medium surrounding homemade foods, e.g., peaches cooked in sugar syrup.
+      The packing medium may provide a controlled environment for the food. It may
+      also serve to improve palatability and consumer appeal.  This includes edible
+      packing media (e.g. fruit juice), gas other than air (e.g. carbon dioxide),
+      vacuum packed, or packed with aerosol propellant. This field accepts terms under
+      food packing medium (http://purl.obolibrary.org/obo/FOODON_03480020). Multiple
+      terms may apply and can be separated by pipes
+    title: food packing medium
+    examples:
+    - value: packed in fruit juice [FOODON:03480039]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001134
+    alias: food_pack_medium
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  food_preserv_proc:
+    name: food_preserv_proc
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:03470107
+    description: The methods contributing to the prevention or retardation of microbial,
+      enzymatic or oxidative spoilage and thus to the extension of shelf life. This
+      field accepts terms listed under food preservation process (http://purl.obolibrary.org/obo/FOODON_03470107)
+    title: food preservation process
+    examples:
+    - value: food slow freezing [FOODON:03470128]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - process
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001135
+    alias: food_preserv_proc
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  food_prior_contact:
+    name: food_prior_contact
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:03530077
+    description: The material the food contacted (e.g., was processed in) prior to
+      packaging. This field accepts terms listed under material of contact prior to
+      food packaging (http://purl.obolibrary.org/obo/FOODON_03530077). If the proper
+      descriptor is not listed please use text to describe the material of contact
+      prior to food packaging
+    title: material of contact prior to food packaging
+    examples:
+    - value: processed in stainless steel container [FOODON:03530081]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - material
+    - prior
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001210
+    alias: food_prior_contact
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  food_prod_synonym:
+    name: food_prod_synonym
+    description: Other names by which the food product is known by (e.g., regional
+      or non-English names)
+    title: food product synonym
+    examples:
+    - value: pinot gris
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - product
+    slot_uri: MIXS:0001212
+    alias: food_prod_synonym
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  food_product_qual:
+    name: food_product_qual
+    description: Descriptors for describing food visually or via other senses, which
+      is useful for tasks like food inspection where little prior knowledge of how
+      the food came to be is available. Some terms like &quot;food (frozen)&quot; are both a
+      quality descriptor and the output of a process. This field accepts terms listed
+      under food product by quality (http://purl.obolibrary.org/obo/FOODON_00002454)
+    title: food product by quality
+    examples:
+    - value: raw [FOODON:03311126]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - product
+    - quality
+    slot_uri: MIXS:0001213
+    alias: food_product_qual
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
+  food_quality_date:
+    name: food_quality_date
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: enumeration, date
+    description: The date recommended for the use of the product while at peak quality,
+      this date is not a reflection of safety unless used on infant formula this date
+      is not a reflection of safety and is typically labeled on a food product as
+      &quot;best if used by,&quot; best by,&quot; &quot;use by,&quot; or &quot;freeze by.&quot;
+    title: food quality date
+    examples:
+    - value: best by 2020-05-24
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - date
+    - food
+    - quality
+    string_serialization: '[best by|best if used by|freeze by|use by]; date'
+    slot_uri: MIXS:0001178
+    alias: food_quality_date
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  food_source_age:
+    name: food_source_age
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: days
+    description: The age of the food source host organim. Depending on the type of
+      host organism, age may be more appropriate to report in days, weeks, or years
+    title: food source age
+    comments:
+    - ISO 8601 period or measurement value?
+    examples:
+    - value: 6 months
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - age
+    - food
+    - source
+    slot_uri: MIXS:0001251
+    alias: food_source_age
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  food_trace_list:
+    name: food_trace_list
+    description: The FDA is proposing to establish additional traceability recordkeeping
+      requirements (beyond what is already required in existing regulations) for persons
+      who manufacture, process, pack, or hold foods the Agency has designated for
+      inclusion on the Food Traceability List. The Food Traceability List (FTL) identifies
+      the foods for which the additional traceability records described in the proposed
+      rule would be required. The term  Food Traceability List  (FTL) refers not only
+      to the foods specifically listed (https://www.fda.gov/media/142303/download),
+      but also to any foods that contain listed foods as ingredients
+    title: food traceability list category
+    examples:
+    - value: tropical tree fruits
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    slot_uri: MIXS:0001214
+    alias: food_trace_list
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: FoodTraceListEnum
+  food_trav_mode:
+    name: food_trav_mode
+    description: A descriptor for the method of movement of food commodity along the
+      food distribution system.  This field accepts terms listed under travel mode
+      (http://purl.obolibrary.org/obo/GENEPIO_0001064). If the proper descrptor is
+      not listed please use text to describe the mode of travel. Multiple terms can
+      be separated by one or more pipes
+    title: food shipping transportation method
+    examples:
+    - value: train travel [GENEPIO:0001060]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - method
+    - transport
+    slot_uri: MIXS:0001137
+    alias: food_trav_mode
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
+  food_trav_vehic:
+    name: food_trav_vehic
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: ENVO:01000604
+    description: A descriptor for the mobile machine which is used to transport food
+      commodities along the food distribution system.  This field accepts terms listed
+      under vehicle (http://purl.obolibrary.org/obo/ENVO_01000604). If the proper
+      descrptor is not listed please use text to describe the mode of travel. Multiple
+      terms can be separated by one or more pipes
+    title: food shipping transportation vehicle
+    examples:
+    - value: aircraft [ENVO:01001488]|car [ENVO:01000605]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - transport
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001138
+    alias: food_trav_vehic
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  food_treat_proc:
+    name: food_treat_proc
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:03460111
+    description: Used to specifically characterize a food product based on the treatment
+      or processes applied to the product or any indexed ingredient. The processes
+      include adding, substituting or removing components or modifying the food or
+      component, e.g., through fermentation. Multiple values can be assigned. This
+      fields accepts terms listed under food treatment process (http://purl.obolibrary.org/obo/FOODON_03460111)
+    title: food treatment process
+    examples:
+    - value: gluten removal process [FOODON:03460750]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - process
+    - treatment
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001140
+    alias: food_treat_proc
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  HACCP_term:
+    name: HACCP_term
+    description: Hazard Analysis Critical Control Points (HACCP) food safety terms;
+      This field accepts terms listed under HACCP guide food safety term (http://purl.obolibrary.org/obo/FOODON_03530221)
+    title: Hazard Analysis Critical Control Points (HACCP) guide food safety term
+    examples:
+    - value: tetrodotoxic poisoning [FOODON:03530249]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - food
+    - term
+    slot_uri: MIXS:0001215
+    alias: HACCP_term
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
+  library_prep_kit:
+    name: library_prep_kit
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: name of library preparation kit
+    description: Packaged kits (containing adapters, indexes, enzymes, buffers etc.),
+      tailored for specific sequencing workflows, which allow the simplified preparation
+      of sequencing-ready libraries for small genomes, amplicons, and plasmids
+    title: library preparation kit
+    examples:
+    - value: Illumina DNA Prep
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - kit
+    - library
+    - preparation
+    slot_uri: MIXS:0001145
+    alias: library_prep_kit
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  lot_number:
+    name: lot_number
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: lot number, item
+    description: 'A distinctive alpha-numeric identification code assigned by the
+      manufacturer or distributor to a specific quantity of manufactured material
+      or product within a batch. Synonym: Batch Number.  The submitter should provide
+      lot number of the item followed by the item name for which the lot number was
+      provided'
+    title: lot number
+    examples:
+    - value: 1239ABC01A, split Cornish hens
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - number
+    string_serialization: '{integer}, {text}'
+    slot_uri: MIXS:0001147
+    alias: lot_number
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  microb_cult_med:
+    name: microb_cult_med
+    description: A culture medium used to select for, grow, and maintain prokaryotic
+      microorganisms. Can be in either liquid (broth) or solidified (e.g. with agar)
+      forms. This field accepts terms listed under microbiological culture medium
+      (http://purl.obolibrary.org/obo/MICRO_0000067). If the proper descriptor is
+      not listed please use text to describe the culture medium
+    title: microbiological culture medium
+    examples:
+    - value: brain heart infusion agar [MICRO:0000566]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - culture
+    - microbiological
+    slot_uri: MIXS:0001216
+    alias: microb_cult_med
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+)|(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])$
+    structured_pattern:
+      syntax: ^{text}|({termLabel} \[{termID}\])$
+      interpolated: true
+      partial_match: true
+  part_plant_animal:
+    name: part_plant_animal
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FOODON:03420116
+    description: The anatomical part of the organism being involved in food production
+      or consumption; e.g., a carrot is the root of the plant (root vegetable). This
+      field accepts terms listed under part of plant or animal (http://purl.obolibrary.org/obo/FOODON_03420116)
+    title: part of plant or animal
+    examples:
+    - value: chuck [FOODON:03530021]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - animal
+    - plant
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001149
+    alias: part_plant_animal
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  repository_name:
+    name: repository_name
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: Institution
+    description: The name of the institution where the sample or DNA extract is held
+      or &quot;sample not available&quot; if the sample was used in its entirety for analysis
+      or otherwise not retained
+    title: repository name
+    examples:
+    - value: FDA CFSAN Microbiology Laboratories
+    from_schema: https://w3id.org/mixs
+    slot_uri: MIXS:0001152
+    alias: repository_name
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  samp_collect_method:
+    name: samp_collect_method
+    description: The method employed for collecting the sample
+    title: sample collection method
+    examples:
+    - value: environmental swab sampling
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - method
+    - sample
+    slot_uri: MIXS:0001225
+    alias: samp_collect_method
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$|([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      interpolated: true
+      partial_match: true
+  samp_pooling:
+    name: samp_pooling
+    description: Physical combination of several instances of like material, e.g.
+      RNA extracted from samples or dishes of cell cultures into one big aliquot of
+      cells. Please provide a short description of the samples that were pooled
+    title: sample pooling
+    examples:
+    - value: 5uL of extracted genomic DNA from 5 leaves were pooled
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - pooling
+    - sample
+    slot_uri: MIXS:0001153
+    alias: samp_pooling
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  samp_rep_biol:
+    name: samp_rep_biol
+    description: Measurements of biologically distinct samples that show biological
+      variation
+    title: biological sample replicate
+    examples:
+    - value: 6 replicates
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    slot_uri: MIXS:0001226
+    alias: samp_rep_biol
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  samp_rep_tech:
+    name: samp_rep_tech
+    description: Repeated measurements of the same sample that show independent measures
+      of the noise associated with the equipment and the protocols
+    title: technical sample replicate
+    examples:
+    - value: 10 replicates
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    slot_uri: MIXS:0001227
+    alias: samp_rep_tech
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  samp_source_mat_cat:
+    name: samp_source_mat_cat
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: GENEPIO:0001237
+    description: This is the scientific role or category that the subject organism
+      or material has with respect to an investigation.  This field accepts terms
+      listed under specimen source material category (http://purl.obolibrary.org/obo/GENEPIO_0001237
+      or http://purl.obolibrary.org/obo/OBI_0100051)
+    title: sample source material category
+    examples:
+    - value: environmental (swab or sampling) [GENEPIO:0001732]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - material
+    - sample
+    - source
+    string_serialization: '{termLabel} [{termID}]'
+    slot_uri: MIXS:0001154
+    alias: samp_source_mat_cat
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  samp_stor_device:
+    name: samp_stor_device
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: NCIT:C4318
+    description: The container used to store the  sample. This field accepts terms
+      listed under container (http://purl.obolibrary.org/obo/NCIT_C43186). If the
+      proper descriptor is not listed please use text to describe the storage device
+    title: sample storage device
+    examples:
+    - value: Whirl Pak sampling bag [GENEPIO:0002122]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - device
+    - sample
+    - storage
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001228
+    alias: samp_stor_device
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  samp_stor_media:
+    name: samp_stor_media
+    description: The liquid that is added to the sample collection device prior to
+      sampling. If the sample is pre-hydrated, indicate the liquid media the sample
+      is pre-hydrated with for storage purposes. This field accepts terms listed under
+      microbiological culture medium (http://purl.obolibrary.org/obo/MICRO_0000067).
+      If the proper descriptor is not listed please use text to describe the sample
+      storage media
+    title: sample storage media
+    examples:
+    - value: peptone water medium [MICRO:0000548]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    - storage
+    slot_uri: MIXS:0001229
+    alias: samp_stor_media
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+)|(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])$
+    structured_pattern:
+      syntax: ^{text}|({termLabel} \[{termID}\])$
+      interpolated: true
+      partial_match: true
+  samp_transport_dur:
+    name: samp_transport_dur
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: days
+    description: The duration of time from when the sample was collected until processed.
+      Indicate the duration for which the sample was stored written in ISO 8601 format
+    title: sample transport duration
+    examples:
+    - value: P10D
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - duration
+    - period
+    - sample
+    - transport
+    slot_uri: MIXS:0001231
+    alias: samp_transport_dur
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)$
+    structured_pattern:
+      syntax: ^{duration}$
+      interpolated: true
+      partial_match: true
+  samp_transport_temp:
+    name: samp_transport_temp
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: text or measurement value
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+    description: Temperature at which sample was transported, e.g. -20 or 4 degree
+      Celsius
+    title: sample transport temperature
+    examples:
+    - value: 4 degree Celsius
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    - temperature
+    - transport
+    string_serialization: '{float} {unit} {text}'
+    slot_uri: MIXS:0001232
+    alias: samp_transport_temp
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  sequencing_kit:
+    name: sequencing_kit
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: name of sequencing kit used
+    description: Pre-filled, ready-to-use reagent cartridges. Used to produce improved
+      chemistry, cluster density and read length as well as improve quality (Q) scores.
+      Reagent components are encoded to interact with the sequencing system to validate
+      compatibility with user-defined applications. Indicate name of the sequencing
+      kit
+    title: sequencing kit
+    examples:
+    - value: NextSeq 500/550 High Output Kit v2.5 (75 Cycles)
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - kit
+    slot_uri: MIXS:0001155
+    alias: sequencing_kit
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  sequencing_location:
+    name: sequencing_location
+    description: The location the sequencing run was performed. Indicate the name
+      of the lab or core facility where samples were sequenced
+    title: sequencing location
+    examples:
+    - value: University of Maryland Genomics Resource Center
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - location
+    slot_uri: MIXS:0001156
+    alias: sequencing_location
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  serovar_or_serotype:
+    name: serovar_or_serotype
+    description: A characterization of a cell or microorganism based on the antigenic
+      properties of the molecules on its surface. Indicate the name of a serovar or
+      serotype of interest. This field accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250).
+      This field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy
+    title: serovar or serotype
+    examples:
+    - value: Escherichia coli strain O157:H7 [NCIT:C86883]
+    from_schema: https://w3id.org/mixs
+    slot_uri: MIXS:0001157
+    alias: serovar_or_serotype
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+    pattern: ^(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])|[1-9][0-9]*$
+    structured_pattern:
+      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      interpolated: true
+      partial_match: true
+  spikein_AMR:
+    name: spikein_AMR
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: measurement value ARO:3004299
+    description: Qualitative description of a microbial response to antimicrobial
+      agents. Bacteria may be susceptible or resistant to a broad range of antibiotic
+      drugs or drug classes, with several intermediate states or phases. This field
+      accepts terms under antimicrobial phenotype (http://purl.obolibrary.org/obo/ARO_3004299)
+    title: antimicrobial phenotype of spike-in bacteria
+    examples:
+    - value: wild type [ARO:3004432]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - antimicrobial
+    - spike
+    string_serialization: '{float} {unit};{termLabel} [{termID}]'
+    slot_uri: MIXS:0001235
+    alias: spikein_AMR
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  spikein_antibiotic:
+    name: spikein_antibiotic
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: drug name; concentration
+    description: Antimicrobials used in research study to assess effects of exposure
+      on microbiome of a specific site.  Please list antimicrobial, common name and/or
+      class and concentration used for spike-in
+    title: spike-in with antibiotics
+    examples:
+    - value: Tetracycline at 5 mg/ml
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - spike
+    string_serialization: '{text} {integer}'
+    slot_uri: MIXS:0001171
+    alias: spikein_antibiotic
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  spikein_growth_med:
+    name: spikein_growth_med
+    description: A liquid or gel containing nutrients, salts, and other factors formulated
+      to support the growth of microorganisms, cells, or plants (National Cancer Institute
+      Thesaurus).  A growth medium is a culture medium which has the disposition to
+      encourage growth of particular bacteria to the exclusion of others in the same
+      growth environment.  In this case, list the culture medium used to propagate
+      the spike-in bacteria during preparation of spike-in inoculum. This field accepts
+      terms listed under microbiological culture medium (http://purl.obolibrary.org/obo/MICRO_0000067).
+      If the proper descriptor is not listed please use text to describe the spike
+      in growth media
+    title: spike-in growth medium
+    examples:
+    - value: LB broth [MCO:0000036]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - growth
+    - spike
+    slot_uri: MIXS:0001169
+    alias: spikein_growth_med
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+)|(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])$
+    structured_pattern:
+      syntax: ^{text}|({termLabel} \[{termID}\])$
+      interpolated: true
+      partial_match: true
+  spikein_metal:
+    name: spikein_metal
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: heavy metal name or chemical symbol; concentration
+    description: Heavy metals used in research study to assess effects of exposure
+      on microbiome of a specific site.  Please list heavy metals and concentration
+      used for spike-in
+    title: spike-in with heavy metals
+    examples:
+    - value: Cd at 20 ppm
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - heavy
+    - spike
+    string_serialization: '{text} {integer}'
+    slot_uri: MIXS:0001172
+    alias: spikein_metal
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  spikein_org:
+    name: spikein_org
+    description: Taxonomic information about the spike-in organism(s). This field
+      accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250). This
+      field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy.
+      Multiple terms can be separated by pipes
+    title: spike in organism
+    examples:
+    - value: Listeria monocytogenes [NCIT:C86502]|28901
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - organism
+    - spike
+    slot_uri: MIXS:0001167
+    alias: spikein_org
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+    pattern: ^(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])|[1-9][0-9]*$
+    structured_pattern:
+      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      interpolated: true
+      partial_match: true
+  spikein_serovar:
+    name: spikein_serovar
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: NCIT:C14250 or antigenic formula or serovar name
+    description: Taxonomic information about the spike-in organism(s) at the serovar
+      or serotype level. This field accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250).
+      This field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy.
+      Multiple terms can be separated by pipes
+    title: spike-in bacterial serovar or serotype
+    examples:
+    - value: Escherichia coli strain O157:H7 [NCIT:C86883]|83334
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - spike
+    string_serialization: '{termLabel} [{termID}]|{integer}'
+    slot_uri: MIXS:0001168
+    alias: spikein_serovar
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  spikein_strain:
+    name: spikein_strain
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: NCIT:C14250 or NCBI taxid or text
+    description: Taxonomic information about the spike-in organism(s) at the strain
+      level. This field accepts terms under organism (http://purl.obolibrary.org/obo/NCIT_C14250).
+      This field also accepts identification numbers from NCBI under https://www.ncbi.nlm.nih.gov/taxonomy.
+      Multiple terms can be separated by pipes
+    title: spike-in microbial strain
+    examples:
+    - value: '169963'
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - microbial
+    - spike
+    string_serialization: '{termLabel} [{termID}]|{integer}'
+    slot_uri: MIXS:0001170
+    alias: spikein_strain
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  study_design:
+    name: study_design
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: OBI:0500000
+    description: A plan specification comprised of protocols (which may specify how
+      and what kinds of data will be gathered) that are executed as part of an investigation
+      and is realized during a study design execution. This field accepts terms under
+      study design (http://purl.obolibrary.org/obo/OBI_0500000). If the proper descriptor
+      is not listed please use text to describe the study design. Multiple terms can
+      be separated by pipes
+    title: study design
+    examples:
+    - value: in vitro design [OBI:0001285]
+    from_schema: https://w3id.org/mixs
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001236
+    alias: study_design
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  study_inc_dur:
+    name: study_inc_dur
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: hours or days
+    description: Sample incubation duration if unpublished or unvalidated method is
+      used. Indicate the timepoint written in ISO 8601 format
+    title: study incubation duration
+    examples:
+    - value: PT24H
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - duration
+    - incubation
+    - period
+    slot_uri: MIXS:0001237
+    alias: study_inc_dur
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)$
+    structured_pattern:
+      syntax: ^{duration}$
+      interpolated: true
+      partial_match: true
+  study_inc_temp:
+    name: study_inc_temp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+    description: Sample incubation temperature if unpublished or unvalidated method
+      is used
+    title: study incubation temperature
+    examples:
+    - value: 37 degree Celsius
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - incubation
+    - temperature
+    slot_uri: MIXS:0001238
+    alias: study_inc_temp
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  study_timecourse:
+    name: study_timecourse
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: dpi
+    description: For time-course research studies involving samples of the food commodity,
+      indicate the total duration of the time-course study
+    title: time-course duration
+    examples:
+    - value: 2 days post inoculation
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - duration
+    - period
+    - time
+    slot_uri: MIXS:0001239
+    alias: study_timecourse
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  study_tmnt:
+    name: study_tmnt
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: MCO:0000866
+    description: A process in which the act is intended to modify or alter some other
+      material entity.  From the study design, each treatment is comprised of one
+      level of one or multiple factors. This field accepts terms listed under treatment
+      (http://purl.obolibrary.org/obo/MCO_0000866). If the proper descriptor is not
+      listed please use text to describe the study treatment. Multiple terms can be
+      separated by one or more pipes
+    title: study treatment
+    examples:
+    - value: Factor A|spike-in|levels high, medium, low
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - treatment
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001240
+    alias: study_tmnt
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+  timepoint:
+    name: timepoint
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: hours or days
+    description: Time point at which a sample or observation is made or taken from
+      a biomaterial as measured from some reference point. Indicate the timepoint
+      written in ISO 8601 format
+    title: timepoint
+    examples:
+    - value: PT24H
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - time
+    slot_uri: MIXS:0001173
+    alias: timepoint
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)$
+    structured_pattern:
+      syntax: ^{duration}$
+      interpolated: true
+      partial_match: true
+  misc_param:
+    name: misc_param
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: parameter name;measurement value
+    description: Any other measurement performed or parameter collected, that is not
+      listed here
+    title: miscellaneous parameter
+    examples:
+    - value: Bicarbonate ion concentration;2075 micromole per kilogram
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - parameter
+    string_serialization: '{text};{float} {unit}'
+    slot_uri: MIXS:0000752
+    alias: misc_param
+    owner: FoodAnimalAndAnimalFeed
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    multivalued: true
+class_uri: MIXS:0016019
+
+</code></pre>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "search.suggest"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
