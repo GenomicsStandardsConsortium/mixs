@@ -25,6 +25,80 @@ subsets:
   nucleic acid sequence source:
   investigation:
 enums:
+  InsdcMissingValueEnum:
+    description: Permissible values recommended by INSDC for reporting missing metadata values.
+    comments:
+      - The International Nucleotide Database Collaboration (INSDC) have a standardised missing/null
+        value reporting language to be used where a value of an expected format for sample metadata reporting can not be provided.
+      - The controlled vocabulary takes into account different type of constraints.
+        Submitters are strongly encouraged to always provide true values.
+        However, if missing/null value reporting is required, submitters are asked
+        to use a term with the finest granularity for their situation.
+        See the table below for accepted missing value reporting terms.
+      - Please use the above standardised missing value vocabulary only if a true value of an expected format
+        for a mandatory field is missing.
+        If a true value is missing for a recommended or an optional field,
+        then these fields should not be used for reporting at all.
+        When reporting a missing mandatory field, the eight granular 'reporting level' terms
+        need to be preceded with the term "missing:" to declare both the absence of a true value as well as the reason.
+    see_also:
+      - https://www.insdc.org/technical-specifications/missing-value-reporting/
+    examples:
+      - value: "geographic location (country and/or sea): missing: data agreement-established pre-2023"
+      - value: "collection date: missing: control sample"
+      - value: "geographic location (country and/or sea): missing: human-identifiable"
+    permissible_values:
+      not applicable:
+        description: >
+          Information is inappropriate to report, 
+          can indicate that the standard itself fails to model or represent the information appropriately
+        aliases:
+          - n/a
+          - na
+      missing:
+        aliases:
+          - no data
+          - not available
+          - unavailable
+          - unknown
+          - unspecified
+      not collected:
+        description: Information of an expected format was not given because it has not been collected
+        aliases:
+          - not determined
+          - not recorded
+      not provided:
+        description: Information of an expected format was not given, a value may be given at the later stage
+        aliases:
+          - not reported
+      restricted access:
+        description: Information exists but can not be released openly because of privacy concerns
+        aliases:
+          - restricted
+      "missing: control sample":
+        description: Information is not applicable as the sample represents a negative control sample collected in a lab.
+      "missing: sample group":
+        description: >
+          Information is not applicable as the sample represents a group of samples that do not have a single origin. 
+          E.g. for co-assembly or transcriptome assembly.
+      "missing: synthetic construct":
+        description: Information does not exist as the sample represents an ab-initio synthetic construct.
+      "missing: lab stock":
+        description: >
+          Information was not collected as the sample represents a cultured cell line or model organism 
+          under long-term lab control.
+      "missing: third party data":
+        description: >
+          Information does not exist as the metadata was not collected or reported in records predating the 2023 agreement. 
+          For use in Third PArty data submissions.
+      "missing: data agreement established pre-2023":
+        description: >
+          Data agreements were established before the 2023 INSDC standard and metadata can not be provided. 
+          A value may be given at a later stage.
+      "missing: endangered species":
+        description: Information can not be reported as the target organism is endangered e.g. on the IUCN red-list.
+      "missing: human-identifiable":
+        description: Information can not be reported as the metadata would make the sample human-identifiable.
   BiolStatEnum:
     permissible_values:
       breeder's line:
