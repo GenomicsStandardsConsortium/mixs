@@ -10179,8 +10179,7 @@ slots:
       interpolated: true
       partial_match: true
   ph:
-    description: Ph measurement of the sample, or liquid portion of sample, or aqueous
-      phase of the fluid
+    description: pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid
     title: pH
     examples:
       - value: '7.2'
@@ -12406,6 +12405,7 @@ slots:
     range: SoilHorizonEnum
   soil_pH:
     title: soil pH
+    description: pH measurement of some soil at the time of sampling
     examples:
       - value: '7.2'
     keywords:
@@ -14328,6 +14328,7 @@ slots:
     slot_uri: MIXS:0001174
   water_pH:
     title: water pH
+    description: pH measurement of some water at the time of sampling
     examples:
       - value: '7.2'
     keywords:
@@ -16399,8 +16400,6 @@ classes:
         recommended: true
       soil_horizon:
         recommended: true
-      soil_pH:
-        description: pH of some soil.
       soil_type:
         required: true
       soil_type_meth:
@@ -16434,9 +16433,6 @@ classes:
         recommended: true
       trophic_level:
         recommended: true
-      water_pH:
-        description: The pH measurement of the sample, or liquid portion of sample,
-          or aqueous phase of the fluid.
       water_temp_regm:
         string_serialization: '{float} {unit};{period};{interval};{period}'
         recommended: true
@@ -17070,13 +17066,8 @@ classes:
       soil_conductivity:
         description: Conductivity of soil at time of sampling.
         comments: Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
-      soil_pH:
-        description: The pH of soil at time of sampling.
       soil_type:
         string_serialization: '{termLabel} [{termID}]'
-      water_pH:
-        description: pH measurement of the sample, or liquid portion of sample, or
-          aqueous phase of the fluid.
       wind_direction:
         examples:
           - value: 0 degrees; Northwest
