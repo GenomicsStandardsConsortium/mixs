@@ -48,7 +48,7 @@ jobs:
           echo "" >> linting-results.md
           
           # Run the linter and capture output (continue even if linter finds issues)
-          poetry run linkml lint --ignore-warnings -f markdown src/mixs/schema/mixs.yaml >> linting-results.md || true
+          poetry run linkml lint --ignore-warnings -f markdown src/mixs/schema/mixs.yaml > linting-results.md 
           
           # Show results in the action log for immediate visibility
           echo "=== Linting Results ==="
@@ -61,7 +61,7 @@ jobs:
           name: linkml-linting-results-${{ github.sha }}  # Include commit SHA for uniqueness
           path: linting-results.md
           # Optional: Set retention period (default is 90 days)
-          retention-days: 30
+#          retention-days: 30
 
 #      # Optional: Add a step to comment on PR with results (if running on PR)
 #      - name: Comment linting results on PR
