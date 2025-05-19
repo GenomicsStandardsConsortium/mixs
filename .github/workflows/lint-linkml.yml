@@ -1,9 +1,9 @@
 ---
 name: LinkML Linting GitHub Action
 on:
-  push:
-    paths:
-      - "src/mixs/schema/mixs.yaml"
+#  push:
+#    paths:
+#      - "src/mixs/schema/mixs.yaml"
   pull_request:
     paths:
       - "src/mixs/schema/mixs.yaml"
@@ -14,6 +14,7 @@ jobs:
     # Simplified permissions - we only need to upload artifacts
     permissions:
       contents: read
+      pull-requests: write  # This is the missing piece!
     name: LinkML Linting
     runs-on: ubuntu-latest
     steps:
