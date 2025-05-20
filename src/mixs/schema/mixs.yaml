@@ -25,6 +25,12 @@ subsets:
   nucleic acid sequence source:
   investigation:
 enums:
+  SeasonEnum:
+    permissible_values:
+      - autumn [NCIT:C94733]
+      - spring [NCIT:C94731]
+      - summer [NCIT:C94732]
+      - winter [NCIT:C94730]
   BiolStatEnum:
     permissible_values:
       breeder's line:
@@ -11957,24 +11963,15 @@ slots:
     range: string
     slot_uri: MIXS:0000054
   season:
-    annotations:
-      Expected_value: autumn [NCIT:C94733], spring [NCIT:C94731], summer [NCIT:C94732], winter
-        [NCIT:C94730]
     description: The season when sampling occurred. Any of the four periods into which
-      the year is divided by the equinoxes and solstices. This field accepts terms
-      listed under season (http://purl.obolibrary.org/obo/NCIT_C94729)
+      the year is divided by the equinoxes and solstices.
     title: season
-    comments:
-      - autumn [NCIT:C94733] does not match ^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$
-      - would require ^\\S+.*\\S+ \\[[a-zA-Z]{2,}:[a-zA-Z0-9]\\]$
     examples:
       - value: autumn [NCIT:C94733]
     keywords:
       - season
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000829
-    range: string
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:[a-zA-Z0-9]+\]$
+    range: SeasonEnum
   season_environment:
     description: Treatment involving an exposure to a particular season (e.g. Winter,
       summer, rabi, rainy etc.), treatment regimen including how many times the treatment
@@ -12030,6 +12027,8 @@ slots:
   season_temp:
     annotations:
       Preferred_unit: degree Celsius
+    comments:
+      - this slot should not be populated unless season is also populated
     description: Mean seasonal temperature
     title: mean seasonal temperature
     examples:
@@ -18768,6 +18767,7 @@ classes:
       - al_sat
       - al_sat_meth
       - misc_param
+      - season
     slot_usage:
       crop_rotation:
         string_serialization: '{boolean};{Rn/start_time/end_time/duration}'
