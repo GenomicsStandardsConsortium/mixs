@@ -25,6 +25,99 @@ subsets:
   nucleic acid sequence source:
   investigation:
 enums:
+  CurLandUseEnum:
+    permissible_values:
+      badlands:
+      cities:
+      conifers:
+        examples:
+          - value: cypress
+          - value: fir
+          - value: pine
+          - value: spruce
+      crop trees:
+        examples:
+          - value: christmas trees
+          - value: fruit
+          - value: nursery trees
+          - value: nuts
+      farmstead:
+      gravel:
+      hardwoods:
+        examples:
+          - value: aspen
+          - value: elm
+          - value: hickory
+          - value: oak
+      hayland:
+      horticultural plants:
+        examples:
+          - value: tulips
+      industrial areas:
+      intermixed hardwood and conifers:
+      marshlands:
+        examples:
+          - value: grass
+          - value: rushes
+          - value: sedges
+      meadows:
+        examples:
+          - value: alfalfa
+          - value: bromegrass
+          - value: fescue
+          - value: grasses
+          - value: timothy
+      mines-quarries:
+      mudflats:
+      oil waste areas:
+      pastureland:
+        description: grasslands used for livestock grazing
+      permanent snow or ice:
+      rainforest:
+        description: evergreen forest receiving greater than 406 cm annual rainfall
+      rangeland:
+      roads-railroads:
+      rock:
+      row crops:
+      saline seeps:
+      salt flats:
+      sand:
+      shrub crops:
+        examples:
+          - value: blueberries
+          - value: filberts
+          - value: nursery ornamentals
+      shrub land:
+        examples:
+          - value: creosote bush
+          - value: eucalyptus
+          - value: mesquite
+          - value: sage-brush
+          - value: shrub oak
+      small grains:
+      successional shrub land:
+        examples:
+          - value: blackberries
+          - value: chokecherry
+          - value: hazels
+          - value: shrub dogwoods
+          - value: sumacs
+          - value: tree saplings
+      swamp:
+        description: permanent or semi-permanent water body dominated by woody plants
+      tropical:
+        examples:
+          - value: mangrove
+          - value: palms
+      tundra:
+        examples:
+          - value: lichens
+          - value: mosses
+      vegetable crops:
+      vine crops:
+        examples:
+          - value: grapes
+
   BiolStatEnum:
     permissible_values:
       breeder's line:
@@ -5658,8 +5751,6 @@ slots:
     slot_uri: MIXS:0001119
     multivalued: true
   cur_land_use:
-    annotations:
-      Expected_value: enumeration
     description: Present state of sample site
     title: current land use
     examples:
@@ -5667,19 +5758,7 @@ slots:
     keywords:
       - land
       - use
-    string_serialization: '[cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|salt
-      flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas|small
-      grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands
-      (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands
-      used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub
-      land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)|successional
-      shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub
-      crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers
-      (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed
-      hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest
-      receiving >406 cm annual rainfall)|swamp (permanent or semi-permanent water
-      body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery
-      trees)]'
+    range: CurLandUseEnum
     slot_uri: MIXS:0001080
   cur_vegetation:
     annotations:
