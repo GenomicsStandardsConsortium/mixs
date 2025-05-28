@@ -1282,6 +1282,49 @@ enums:
       single:
       multiple:
 slots:
+  marker_gene_recov:
+    description: Recovery status of taxonomic marker genes from the assembled genome
+    title: taxonomic marker gene recovered
+    examples:
+      - value: 'yes'
+    in_subset:
+      - sequencing
+    keywords:
+      - recover
+      - marker gene
+      - taxonomy
+    slot_uri: MIXS:0001337
+    range: boolean
+    aliases:
+      - x16s_recover
+    see_also:
+      - MIXS:0000065
+
+  marker_gene_recov_sw:
+    description: Tools used for taxonomic marker gene extraction from assembled genomes
+    title: taxonomic marker gene recovery software
+    examples:
+      - value: rambl;v2;default parameters
+      - value: barrnap;0.9;--kingdom bac
+      - value: metaxa2;2.2;-t bacteria
+    in_subset:
+      - sequencing
+    keywords:
+      - recover
+      - software
+      - marker gene
+      - taxonomy
+    slot_uri: MIXS:0001338
+    range: string
+    structured_pattern:
+      syntax: ^{software};{version};{parameters}$
+      interpolated: true
+      partial_match: true
+    aliases:
+      - x16s_recover_software
+    see_also:
+      - MIXS:0000066
+
   migs_ba_data:
     description: Data that comply with checklist MigsBa
     title: MigsBa data
@@ -15472,6 +15515,8 @@ classes:
       - annot
       - x16s_recover_software
       - x16s_recover
+      - marker_gene_recov
+      - marker_gene_recov_sw
       - pos_cont_type
       - feat_pred
       - compl_software
@@ -15936,6 +15981,8 @@ classes:
       - annot
       - x16s_recover_software
       - x16s_recover
+      - marker_gene_recov
+      - marker_gene_recov_sw
       - pos_cont_type
       - feat_pred
       - compl_software
