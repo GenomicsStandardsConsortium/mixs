@@ -30,43 +30,58 @@ enums:
       badlands:
       cities:
       conifers:
-        examples:
-          - value: cypress
-          - value: fir
-          - value: pine
-          - value: spruce
+      fir:
+        is_a: conifers
+      pine:
+        is_a: conifers
+      spruce:
+        is_a: conifers
+      cypress:
+        is_a: conifers
       crop trees:
-        examples:
-          - value: christmas trees
-          - value: fruit
-          - value: nursery trees
-          - value: nuts
+      christmas trees:
+        is_a: crop trees
+      fruit:
+        is_a: crop trees
+      nursery trees:
+        is_a: crop trees
+      nuts:
+        is_a: crop trees
       farmstead:
       gravel:
       hardwoods:
-        examples:
-          - value: aspen
-          - value: elm
-          - value: hickory
-          - value: oak
+      aspen:
+        is_a: hardwoods
+      elm:
+        is_a: hardwoods
+      hickory:
+        is_a: hardwoods
+      oak:
+        is_a: hardwoods
       hayland:
       horticultural plants:
-        examples:
-          - value: tulips
+      tulips:
+        is_a: horticultural plants
       industrial areas:
       intermixed hardwood and conifers:
       marshlands:
-        examples:
-          - value: grass
-          - value: rushes
-          - value: sedges
+      grass:
+        is_a: marshlands
+      rushes:
+        is_a: marshlands
+      sedges:
+        is_a: marshlands
       meadows:
-        examples:
-          - value: alfalfa
-          - value: bromegrass
-          - value: fescue
-          - value: grasses
-          - value: timothy
+      alfalfa:
+        is_a: meadows
+      bromegrass:
+        is_a: meadows
+      fescue:
+        is_a: meadows
+      grasses:
+        is_a: meadows
+      timothy:
+        is_a: meadows
       mines-quarries:
       mudflats:
       oil waste areas:
@@ -83,40 +98,54 @@ enums:
       salt flats:
       sand:
       shrub crops:
-        examples:
-          - value: blueberries
-          - value: filberts
-          - value: nursery ornamentals
+      blueberries:
+        is_a: shrub crops
+      filberts:
+        is_a: shrub crops
+      nursery ornamentals:
+        is_a: shrub crops
       shrub land:
-        examples:
-          - value: creosote bush
-          - value: eucalyptus
-          - value: mesquite
-          - value: sage-brush
-          - value: shrub oak
+      creosote bush:
+        is_a: shrub land
+      eucalyptus:
+        is_a: shrub land
+      mesquite:
+        is_a: shrub land
+      sage-brush:
+        is_a: shrub land
+      shrub oak:
+        is_a: shrub land
       small grains:
       successional shrub land:
-        examples:
-          - value: blackberries
-          - value: chokecherry
-          - value: hazels
-          - value: shrub dogwoods
-          - value: sumacs
-          - value: tree saplings
+      blackberries:
+        is_a: successional shrub land
+      chokecherry:
+        is_a: successional shrub land
+      hazels:
+        is_a: successional shrub land
+      shrub dogwoods:
+        is_a: successional shrub land
+      sumacs:
+        is_a: successional shrub land
+      tree saplings:
+        is_a: successional shrub land
       swamp:
         description: permanent or semi-permanent water body dominated by woody plants
       tropical:
-        examples:
-          - value: mangrove
-          - value: palms
+      mangrove:
+        is_a: tropical
+      palms:
+        is_a: tropical
       tundra:
-        examples:
-          - value: lichens
-          - value: mosses
+      lichens:
+        is_a: tundra
+      mosses:
+        is_a: tundra
       vegetable crops:
       vine crops:
-        examples:
-          - value: grapes
+      grapes:
+        is_a: vine crops
+
 
   BiolStatEnum:
     permissible_values:
@@ -5438,7 +5467,7 @@ slots:
       interpolated: true
       partial_match: true
   climate_environment:
-    deprecated: true, slot is inconsistently used and provides redundant information to other slots, https://github.com/GenomicsStandardsConsortium/mixs/issues/591 and https://github.com/microbiomedata/nmdc-schema/issues/586 
+    deprecated: true, slot is inconsistently used and provides redundant information to other slots, https://github.com/GenomicsStandardsConsortium/mixs/issues/591 and https://github.com/microbiomedata/nmdc-schema/issues/586
     description: Treatment involving an exposure to a particular climate; treatment
       regimen including how many times the treatment was repeated, how long each treatment
       lasted, and the start and end time of the entire treatment; can include multiple
@@ -9725,7 +9754,7 @@ slots:
     slot_uri: MIXS:0000283
     multivalued: true
     range: string
-    deprecated: true, replace with MIXS:0000270 https://github.com/GenomicsStandardsConsortium/mixs/issues/743 
+    deprecated: true, replace with MIXS:0000270 https://github.com/GenomicsStandardsConsortium/mixs/issues/743
   nose_throat_disord:
     description: >
       Report any history of nose, mouth, teeth and/or throat disorders in the subject. 
