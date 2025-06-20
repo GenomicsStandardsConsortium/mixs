@@ -18,7 +18,7 @@ It MUST conform to any MIxS specific LinkML linting requirements as defined with
 
 ### 1.2 Slot definition
 
-A MIxS slot is a LinkML slot object that is used to describe a MIxS metadata term - i.e. information that is used to describe a particular aspect of a sample, nucleic acid,, or sequence data.
+A LinkML slot is the object that is used to describe a MIxS metadata term - i.e. information that is used to describe a particular aspect of a sample, nucleic acid,, or sequence data.
 
 ### 1.2 Language
 
@@ -165,7 +165,7 @@ If a slot is multivalued, the examples MUST include at a minimum two examples, o
 
 ## 7.1 All core slots must be assigned a subset
 
-All core checklist MIxS term slots MUST be assigned to a subset.
+All core checklist MIxS term LinkML slots MUST be assigned to a subset.
 
 ## 7.2 All extension slots must not be assigned a subset
 
@@ -183,7 +183,7 @@ Re-using existing keywords SHOULD be preferred, but new keywords MAY be created 
 
 ### 8.2 Keyword types
 
-Keywords SHOULD be descriptive of the data the slot is intended to hold in a way it can be grouped with like term slots.
+Keywords SHOULD be descriptive of the data the slot is intended to hold in a way it can be grouped with like MIxS term LinkML slots.
 
 This can correspond to stage of project, domain of research, or the sample type (or extension) the slot is intended to be used with.
 
