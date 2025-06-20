@@ -1,6 +1,6 @@
 # (Unoffical) MIxS LinkML Slot Specifications
 
-The key words “MUST”, “MUST NOT”, “SHOULD”, etc. are to be interpreted as described in RFC 2119.
+The key words “MUST”, “MUST NOT”, “SHOULD”, etc. are to be interpreted as described in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 
 | Metadata     | Value                         |
 | ------------ | ----------------------------- |
@@ -22,7 +22,7 @@ A MIxS slot is a LinkML slot object that is used to describe a MIxS metadata ter
 
 ### 1.2 Language
 
-All MIxS LinkML slots attributes MUST be written in English.
+All MIxS term LinkML slot attributes MUST be written in English.
 
 <!-- JFY comment: may be being a bit strict here, I guess you could have 'translated name' column or something like that, should rephrase to allow those exceptions -->
 
@@ -30,21 +30,27 @@ All MIxS LinkML slots attributes MUST be written in English.
 
 ### 2.1 Slot name format
 
-The slot name MUST be in snake_case.
+The slot name MUST be in [snake_case](https://en.wikipedia.org/wiki/Snake_case).
 
-### 2.2 Slot name uniqueness
+All words must be lower case and underscores (`_`) MUST be used to separate words in the slot name.
+
+### 2.1 Slot name length
+
+The slot name must be a maximum of 20 characters in length.
+
+### 2.4 Slot name uniqueness
 
 The slot name MUST be unique within the MIxS LinkML model.
 
-### 2.3 Slot name descriptiveness
+### 2.5 Slot name descriptiveness
 
 The slot name MUST be descriptive of the data it is intended to hold.
 
-### 2.5 Slot name common prefix
+### 2.6 Slot name common prefix
 
 When related to existing terms, the slot name SHOULD use a common prefix that allow grouping of related terms.
 
-### 2.6 Slot name abbreviation
+### 2.7 Slot name abbreviation
 
 The slot name SHOULD be a abbreviated form of the title attribute.
 
@@ -66,7 +72,7 @@ Refer to LinkML documentation for more information on [range types](https://link
 
 ### 3.1. Minimal required slot attributes
 
-A MIxS LinkML slot MUST at a minimum include following attributes:
+A MIxS term LinkML slot MUST at a minimum include following attributes:
 
 - [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions).
 - [`title`](https://linkml.io/linkml-model/latest/docs/title/).
