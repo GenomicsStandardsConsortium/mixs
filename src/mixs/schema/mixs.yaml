@@ -1262,6 +1262,10 @@ enums:
         description: Hydrogen with 2H isotope
       18O:
         description: Oxygen with 18O isotope
+  IsotopologLabelEnum:
+    permissible_values:
+      isotopically labeled:
+      natural abundance:
 slots:
   migs_ba_data:
     description: Data that comply with checklist MigsBa
@@ -14755,7 +14759,26 @@ slots:
     examples:
       - value: 13C
       - value: 13C; 15N
-  
+  isotopolog: 
+    title: isotopolog
+    description: Isotopologue (isotope source/substrate/molecule) added to the biological sample. 
+    comments: List the PubChem Compound Identification (CID) number. If it's an undefined mixture, enter 0. If more than one isotopologue was used in this sample, use a ; to delimit each isotopolog.
+    structured_pattern:
+      syntax: ^{termLabel} {[termID]}
+    range: text
+    examples:
+      - value: toluene [pubchem.compound:1140]
+      - value: toluene [pubchem.compound:1140]; water [pubchem.compound:962]
+      - value: "0"
+  isotopolog_label:
+    title: isotopolog label status
+    description: List whether the isotopologue added to this biological sample was heavy-labelled or natural abundance
+    range: IsotopologLabelEnum
+    examples:
+      - value: natural abundance
+      - value: isotopically labeled
+    
+
 
 classes:
   MigsBa:
