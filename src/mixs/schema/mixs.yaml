@@ -1266,6 +1266,10 @@ enums:
     permissible_values:
       isotopically labeled:
       natural abundance:
+  IsotopologApproachEnum:
+    permissible_values:
+      single:
+      multiple:
 slots:
   migs_ba_data:
     description: Data that comply with checklist MigsBa
@@ -14777,7 +14781,23 @@ slots:
     examples:
       - value: natural abundance
       - value: isotopically labeled
-    
+  isotopolog_approach:
+    title: Labeling approach (number of labeled isotopologs supplied)	
+    description: The labelling approach of this SIP experiment. Details if multiple isotopically labelled isotopologues were added to samples ("multiple"), or was only one isotopologue added to each sample ("single").
+    range: IsotopologApproachEnum
+    examples:
+      - value: single
+      - value: multiple
+  gradient_position:
+    title: gradient position
+    description: A number designating the gradient position from heaviest (=1) to lightest. Unfractionated samples, from which fractionated samples were derived, should be denoted with –1.
+    range: integer
+    examples:
+      - value: 1
+      - value: -1
+      
+
+
 
 
 classes:
