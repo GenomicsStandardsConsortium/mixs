@@ -14795,10 +14795,16 @@ slots:
     examples:
       - value: 1
       - value: -1
-
-
-
-
+  gradient_pos_density:
+    title: density of gradient position
+    description: Buoyant density of this fraction
+    structured_pattern:
+      syntax: ^{float}-{float} {unit} | {float} {unit}
+    annotations:
+      Preferred_unit: g/mL
+    examples:
+      - value: 1.725 g/mL
+      - value: 1.725 - 1.735 g/mL
 
 classes:
   MigsBa:
