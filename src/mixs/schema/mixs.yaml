@@ -14769,7 +14769,7 @@ slots:
     comments: List the PubChem Compound Identification (CID) number. If it's an undefined mixture, enter 0. If more than one isotopologue was used in this sample, use a ; to delimit each isotopolog.
     structured_pattern:
       syntax: ^{termLabel} {[termID]}
-    range: text
+    range: string
     examples:
       - value: toluene [pubchem.compound:1140]
       - value: toluene [pubchem.compound:1140]; water [pubchem.compound:962]
@@ -14795,7 +14795,7 @@ slots:
     examples:
       - value: 1
       - value: -1
-      
+
 
 
 
