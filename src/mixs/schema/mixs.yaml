@@ -1252,6 +1252,16 @@ enums:
       low:
       middle:
       top:
+  IsotopeEnum:
+    permissible_values:
+      13C:
+        description: Carbon with 13C isotope
+      15N:
+        description: Nitrogen with 15N isotope
+      2H:
+        description: Hydrogen with 2H isotope
+      18O:
+        description: Oxygen with 18O isotope
 slots:
   migs_ba_data:
     description: Data that comply with checklist MigsBa
@@ -14737,6 +14747,16 @@ slots:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
       interpolated: true
       partial_match: true
+  isotope:
+    title: isotope
+    description: The target isotope for measurement in the experimental sample. List both the element and the atomic mass.
+    range: IsotopeEnum
+    multivalued: true
+    examples:
+      - value: 13C
+      - value: 13C; 15N
+  
+
 classes:
   MigsBa:
     description: 'Minimal Information about a Genome Sequence: cultured bacteria/archaea'
