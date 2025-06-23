@@ -445,7 +445,7 @@
 <td><a href="https://w3id.org/mixs/0000122">MIXS:0000122</a></td>
 <td><a href="../0000122/">abs_air_humidity</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td>Actual mass of water vapor - mh20 - present in the air water vapor mixture</td>
+<td>Actual mass of water vapor present in the air water vapor mixture</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/0000123">MIXS:0000123</a></td>
@@ -1846,12 +1846,15 @@ attributes:
     annotations:
       Preferred_unit:
         tag: Preferred_unit
-        value: gram per gram, kilogram per kilogram, kilogram, pound
-    description: Actual mass of water vapor - mh20 - present in the air water vapor
-      mixture
+        value: gram per gram, kilogram per kilogram, kilogram, pound, gram per cubic
+          meter, kilogram per cubic meter, percent
+    description: Actual mass of water vapor present in the air water vapor mixture.
     title: absolute air humidity
+    comments:
+    - Can be calculated via mass of water vapor divided by the volume of the air and
+      water vapor mixture.
     examples:
-    - value: 9 gram per gram
+    - value: 7 gram per cubic meter
     from_schema: https://w3id.org/mixs
     keywords:
     - absolute
