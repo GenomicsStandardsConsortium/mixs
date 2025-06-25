@@ -25,6 +25,126 @@ subsets:
   nucleic acid sequence source:
   investigation:
 enums:
+  CurLandUseEnum:
+    permissible_values:
+      badlands:
+      cities:
+      conifers:
+      fir:
+        is_a: conifers
+      pine:
+        is_a: conifers
+      spruce:
+        is_a: conifers
+      cypress:
+        is_a: conifers
+      crop trees:
+      christmas trees:
+        is_a: crop trees
+      fruit:
+        is_a: crop trees
+      nursery trees:
+        is_a: crop trees
+      nuts:
+        is_a: crop trees
+      farmstead:
+      gravel:
+      hardwoods:
+      aspen:
+        is_a: hardwoods
+      elm:
+        is_a: hardwoods
+      hickory:
+        is_a: hardwoods
+      oak:
+        is_a: hardwoods
+      hayland:
+      horticultural plants:
+      tulips:
+        is_a: horticultural plants
+      industrial areas:
+      intermixed hardwood and conifers:
+      marshlands:
+      grass:
+        is_a: marshlands
+      rushes:
+        is_a: marshlands
+      sedges:
+        is_a: marshlands
+      meadows:
+      alfalfa:
+        is_a: meadows
+      bromegrass:
+        is_a: meadows
+      fescue:
+        is_a: meadows
+      grasses:
+        is_a: meadows
+      timothy:
+        is_a: meadows
+      mines-quarries:
+      mudflats:
+      oil waste areas:
+      pastureland:
+        description: grasslands used for livestock grazing
+      permanent snow or ice:
+      rainforest:
+        description: evergreen forest receiving greater than 406 cm annual rainfall
+      rangeland:
+      roads-railroads:
+      rock:
+      row crops:
+      saline seeps:
+      salt flats:
+      sand:
+      shrub crops:
+      blueberries:
+        is_a: shrub crops
+      filberts:
+        is_a: shrub crops
+      nursery ornamentals:
+        is_a: shrub crops
+      shrub land:
+      creosote bush:
+        is_a: shrub land
+      eucalyptus:
+        is_a: shrub land
+      mesquite:
+        is_a: shrub land
+      sage-brush:
+        is_a: shrub land
+      shrub oak:
+        is_a: shrub land
+      small grains:
+      successional shrub land:
+      blackberries:
+        is_a: successional shrub land
+      chokecherry:
+        is_a: successional shrub land
+      hazels:
+        is_a: successional shrub land
+      shrub dogwoods:
+        is_a: successional shrub land
+      sumacs:
+        is_a: successional shrub land
+      tree saplings:
+        is_a: successional shrub land
+      swamp:
+        description: permanent or semi-permanent water body dominated by woody plants
+      tropical:
+      mangrove:
+        is_a: tropical
+      palms:
+        is_a: tropical
+      tundra:
+      lichens:
+        is_a: tundra
+      mosses:
+        is_a: tundra
+      vegetable crops:
+      vine crops:
+      grapes:
+        is_a: vine crops
   InsdcMissingValueEnum:
     description: Permissible values recommended by INSDC for reporting missing metadata values.
     comments:
@@ -5420,7 +5540,7 @@ slots:
       interpolated: true
       partial_match: true
   climate_environment:
-    deprecated: true, slot is inconsistently used and provides redundant information to other slots, https://github.com/GenomicsStandardsConsortium/mixs/issues/591 and https://github.com/microbiomedata/nmdc-schema/issues/586 
+    deprecated: true, slot is inconsistently used and provides redundant information to other slots, https://github.com/GenomicsStandardsConsortium/mixs/issues/591 and https://github.com/microbiomedata/nmdc-schema/issues/586
     description: Treatment involving an exposure to a particular climate; treatment
       regimen including how many times the treatment was repeated, how long each treatment
       lasted, and the start and end time of the entire treatment; can include multiple
@@ -5733,8 +5853,6 @@ slots:
     slot_uri: MIXS:0001119
     multivalued: true
   cur_land_use:
-    annotations:
-      Expected_value: enumeration
     description: Present state of sample site
     title: current land use
     examples:
@@ -5742,19 +5860,7 @@ slots:
     keywords:
       - land
       - use
-    string_serialization: '[cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|salt
-      flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas|small
-      grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands
-      (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands
-      used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub
-      land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)|successional
-      shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub
-      crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers
-      (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed
-      hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest
-      receiving >406 cm annual rainfall)|swamp (permanent or semi-permanent water
-      body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery
-      trees)]'
+    range: CurLandUseEnum
     slot_uri: MIXS:0001080
   cur_vegetation:
     annotations:
@@ -9721,7 +9827,7 @@ slots:
     slot_uri: MIXS:0000283
     multivalued: true
     range: string
-    deprecated: true, replace with MIXS:0000270 https://github.com/GenomicsStandardsConsortium/mixs/issues/743 
+    deprecated: true, replace with MIXS:0000270 https://github.com/GenomicsStandardsConsortium/mixs/issues/743
   nose_throat_disord:
     description: >
       Report any history of nose, mouth, teeth and/or throat disorders in the subject. 
