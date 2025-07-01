@@ -14782,7 +14782,7 @@ slots:
       - value: natural abundance
       - value: isotopically labeled
   isotopolog_approach:
-    title: Labeling approach (number of labeled isotopologs supplied)	
+    title: Labeling approach (number of labeled isotopologs supplied)
     description: The labelling approach of this SIP experiment. Details if multiple isotopically labelled isotopologues were added to samples ("multiple"), or was only one isotopologue added to each sample ("single").
     range: IsotopologApproachEnum
     examples:
@@ -22020,7 +22020,7 @@ settings:
   adapter_A_DNA_sequence: '[ACGTRKSYMWBHDVN]+'
   adapter_B_DNA_sequence: '[ACGTRKSYMWBHDVN]+'
   ambiguous_nucleotides: '[ACGTRKSYMWBHDVN]+'
-  boolean: '(?:yes|no)' # a non-capturing group matching either 'yes' or 'no'
+  boolean: '(?:yes|no)'  # a non-capturing group matching either 'yes' or 'no'
   country: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?$'
   dna: '^[ACGT]+$'
