@@ -97,7 +97,7 @@ Refer to LinkML documentation for more information on [range types](https://link
 
 ### 3.1. Minimal required LinkML slot attributes
 
-A LinkML slot of a MIxS term MUST at a minimum include following attributes:
+A term (slot) MUST at a minimum include following attributes:
 
 - [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions).
 - [`title`](https://linkml.io/linkml-model/latest/docs/title/).
@@ -109,7 +109,7 @@ A LinkML slot of a MIxS term MUST at a minimum include following attributes:
 
 ### 3.2. Recommended LinkML slot attributes
 
-A LinkML slot of a MIxS term SHOULD at a ideally include the following attributes:
+A term (slot) that has some level of 'requirement' (mandatory, conditional mandatory, optional) SHOULD include the following LinkML attributes:
 
 - [`recommended`](https://linkml.io/linkml/schemas/slots.html#recommended)
 - [`required`](https://linkml.io/linkml/schemas/slots.html#required)
@@ -118,25 +118,25 @@ A LinkML slot of a MIxS term SHOULD at a ideally include the following attribute
 
 ### 4.1 Description contents
 
-The description SHOULD aim to be precise enough for a user to understand the data the term is intended to hold, how it should be filled, and used.
+The definition (description) SHOULD aim to be precise enough for a user to understand the data the term (slot) is intended to hold, how it should be filled, and used.
 
-Links to external resources (e.g. ontologies, databases, or other documentation) SHOULD be included in the description when relevant.
+Links to external resources (e.g. ontologies, databases, or other documentation) SHOULD be included in the definition (description) when relevant.
 
 ### 4.2 Description length
 
-The description MUST be at a minimum 1 sentence long that is longer than the term title.
+The definition (description) MUST be at a minimum 1 sentence long that is longer than the term (slot) title.
 
-The description MAY be multiple sentences long, but should be as concise as possible to ensure readability.
+The definition (description) MAY be multiple sentences long, but should be as concise as possible to ensure readability.
 
 ### 4.3 Description examples
 
-The description SHOULD NOT include basic examples of the data the term is intended to hold (this is covered by the `examples` attribute).
+The definition (description) SHOULD NOT include basic examples of the data the term (slot) is intended to hold (this is covered by the `examples` attribute).
 
-The description MAY include examples when the information for the term requires different formatting depending on certain conditions. The description MAY also include examples when it requires additional understanding that cannot be inferred by looking purely at the `examples` section.
+The definition (description) MAY include examples when the information for the term (slot) requires different formatting depending on certain conditions. The definition (description) MAY also include examples when it requires additional understanding that cannot be inferred by looking purely at the `examples` section.
 
 ### 4.4 Description external resources
 
-Links or URLs used in the description to point a reader to an external resource MUST be valid and generally accessible via the public world wide web.
+Links or URLs used in the definition (description) to point a reader to an external resource MUST be valid and generally accessible via the public world wide web.
 
 External resources SHOULD only be referred to when from a stable and established resource (i.e., not a personal or website, or a resource that is not widely used).
 
@@ -179,22 +179,22 @@ In addition to the minimum number of examples, the examples SHOULD cover the ful
 For example if a term (slot) accepts either an ontology term _or_ a free text string, there should be at least one example for each type.
 If a term (slot) accepts different unit types, there should be at least two examples of different units to demonstrate multiple units are accepted.
 
-### 6.3 Examples for multivalued term
+### 6.3 Examples for terms that allow more than one entry
 
-If a term (slot) is 'multivalued', the examples MUST include at a minimum two examples, one to show inputting a single value, and another to show how to fill the term with multiple values.
+If a term (slot) allows multiple occurrences ('multivalued'), the examples MUST include at a minimum two examples, one to show inputting a single value, and another to show how to fill the term with multiple values.
 
 ## 7. Slot in_subset attribute
 
 > [!WARNING]
-> The guidance in this section may be replaced with the use of `slot-group` in the future.
+> The guidance in this section regarding `subset`s may be replaced with the use of `slot-group` in the future.
 
 ## 7.1 All core slots must be assigned a subset
 
-All core checklist LinkML slots (terms) MUST be assigned to a subset.
+All core checklist LinkML slots (terms) MUST be assigned to a section (subset).
 
 ## 7.2 All extension terms must not be assigned a subset
 
-A slot (term) assigned to just an extension MUST NOT be assigned to a subset.
+A slot (term) assigned to just an extension MUST NOT be assigned to a section (subset).
 
 ## 8. Term keywords attribute
 
@@ -232,6 +232,6 @@ See section [4](#4-data-types).
 
 ### 10.2 Structured or formatted text should use a structured pattern
 
-A term that requires a structured string layout SHOULD use the `structured_pattern` slot attribute, where the pattern components are predefined in the `settings:` section of the schema.
+A term that requires a specific value syntax or a structured string layout SHOULD use the `structured_pattern` slot attribute, where the pattern components are predefined in the `settings:` section of the schema.
 
 A slot MAY use `pattern:` attribute when XYZ <!-- TODO -->.
