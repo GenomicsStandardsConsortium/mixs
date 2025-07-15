@@ -339,21 +339,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -400,13 +385,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0016020/">FoodFarmEnvironment</a></td>
-<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
+<td><a href="../0016001/">BuiltEnvironment</a></td>
+<td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0016001/">BuiltEnvironment</a></td>
-<td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
+<td><a href="../0016020/">FoodFarmEnvironment</a></td>
+<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
 <td>Extension</td>
 </tr>
 <tr>
@@ -418,13 +403,8 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
-<li>
-<p>Cardinality: 0..1</p>
-</li>
-<li>
-<p>Regex pattern: <code>^\S+.*\S+ \[[a-zA-Z]{2,}:[a-zA-Z0-9]+\]$</code></p>
-</li>
+<li>Range: <a href="../SeasonEnum/">SeasonEnum</a></li>
+<li>Cardinality: 0..1</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -439,40 +419,26 @@
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: autumn [NCIT:C94733], spring [NCIT:C94731], summer [NCIT:C94732], winter [NCIT:C94730]</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: season
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: autumn [NCIT:C94733], spring [NCIT:C94731], summer [NCIT:C94732], winter
-      [NCIT:C94730]
 description: The season when sampling occurred. Any of the four periods into which
   the year is divided by the equinoxes and solstices. This field accepts terms listed
   under season (http://purl.obolibrary.org/obo/NCIT_C94729)
 title: season
-comments:
-- autumn [NCIT:C94733] does not match ^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$
-- would require ^\\S+.*\\S+ \\[[a-zA-Z]{2,}:[a-zA-Z0-9]\\]$
 examples:
 - value: autumn [NCIT:C94733]
 from_schema: https://w3id.org/mixs
 keywords:
 - season
-string_serialization: '{termLabel} [{termID}]'
 slot_uri: MIXS:0000829
 alias: season
 domain_of:
 - Agriculture
 - BuiltEnvironment
 - FoodFarmEnvironment
-range: string
-pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:[a-zA-Z0-9]+\]$
+range: SeasonEnum
 
 </code></pre>
 

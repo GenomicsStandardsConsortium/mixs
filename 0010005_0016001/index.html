@@ -1487,7 +1487,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000829">MIXS:0000829</a></td>
 <td><a href="../0000829/">season</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../SeasonEnum/">SeasonEnum</a></td>
 <td>The season when sampling occurred</td>
 </tr>
 <tr>
@@ -6143,24 +6143,15 @@ attributes:
     range: string
   season:
     name: season
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: autumn [NCIT:C94733], spring [NCIT:C94731], summer [NCIT:C94732], winter
-          [NCIT:C94730]
     description: The season when sampling occurred. Any of the four periods into which
       the year is divided by the equinoxes and solstices. This field accepts terms
       listed under season (http://purl.obolibrary.org/obo/NCIT_C94729)
     title: season
-    comments:
-    - autumn [NCIT:C94733] does not match ^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$
-    - would require ^\\S+.*\\S+ \\[[a-zA-Z]{2,}:[a-zA-Z0-9]\\]$
     examples:
     - value: autumn [NCIT:C94733]
     from_schema: https://w3id.org/mixs
     keywords:
     - season
-    string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000829
     alias: season
     owner: MigsViBuiltEnvironment
@@ -6168,8 +6159,7 @@ attributes:
     - Agriculture
     - BuiltEnvironment
     - FoodFarmEnvironment
-    range: string
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:[a-zA-Z0-9]+\]$
+    range: SeasonEnum
   season_use:
     name: season_use
     description: The seasons the space is occupied
