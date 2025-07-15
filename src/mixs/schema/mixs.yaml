@@ -1264,6 +1264,24 @@ enums:
       low:
       middle:
       top:
+  IsotopeEnum:
+    permissible_values:
+      13C:
+        description: Carbon with 13C isotope
+      15N:
+        description: Nitrogen with 15N isotope
+      2H:
+        description: Hydrogen with 2H isotope
+      18O:
+        description: Oxygen with 18O isotope
+  IsotopologLabelEnum:
+    permissible_values:
+      isotopically labeled:
+      natural abundance:
+  IsotopologApproachEnum:
+    permissible_values:
+      single:
+      multiple:
 slots:
   migs_ba_data:
     description: Data that comply with checklist MigsBa
@@ -14742,6 +14760,57 @@ slots:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
       interpolated: true
       partial_match: true
+  isotope:
+    title: isotope
+    description: The target isotope for measurement in the experimental sample. List both the element and the atomic mass.
+    range: IsotopeEnum
+    multivalued: true
+    examples:
+      - value: 13C
+      - value: 13C; 15N
+  isotopolog: 
+    title: isotopolog
+    description: Isotopologue (isotope source/substrate/molecule) added to the biological sample. 
+    comments: List the PubChem Compound Identification (CID) number. If it's an undefined mixture, enter 0. If more than one isotopologue was used in this sample, use a ; to delimit each isotopolog.
+    structured_pattern:
+      syntax: ^{termLabel} {[termID]}
+    range: string
+    examples:
+      - value: toluene [pubchem.compound:1140]
+      - value: toluene [pubchem.compound:1140]; water [pubchem.compound:962]
+      - value: "0"
+  isotopolog_label:
+    title: isotopolog label status
+    description: List whether the isotopologue added to this biological sample was heavy-labelled or natural abundance
+    range: IsotopologLabelEnum
+    examples:
+      - value: natural abundance
+      - value: isotopically labeled
+  isotopolog_approach:
+    title: Labeling approach (number of labeled isotopologs supplied)
+    description: The labelling approach of this SIP experiment. Details if multiple isotopically labelled isotopologues were added to samples ("multiple"), or was only one isotopologue added to each sample ("single").
+    range: IsotopologApproachEnum
+    examples:
+      - value: single
+      - value: multiple
+  gradient_position:
+    title: gradient position
+    description: A number designating the gradient position from heaviest (=1) to lightest. Unfractionated samples, from which fractionated samples were derived, should be denoted with –1.
+    range: integer
+    examples:
+      - value: 1
+      - value: -1
+  gradient_pos_density:
+    title: density of gradient position
+    description: Buoyant density of this fraction
+    structured_pattern:
+      syntax: ^{float}-{float} {unit} | {float} {unit}
+    annotations:
+      Preferred_unit: g/mL
+    examples:
+      - value: 1.725 g/mL
+      - value: 1.725 - 1.735 g/mL
+
 classes:
   MigsBa:
     description: 'Minimal Information about a Genome Sequence: cultured bacteria/archaea'
@@ -21956,7 +22025,7 @@ settings:
   adapter_A_DNA_sequence: '[ACGTRKSYMWBHDVN]+'
   adapter_B_DNA_sequence: '[ACGTRKSYMWBHDVN]+'
   ambiguous_nucleotides: '[ACGTRKSYMWBHDVN]+'
-  boolean: '(?:yes|no)' # a non-capturing group matching either 'yes' or 'no'
+  boolean: '(?:yes|no)'  # a non-capturing group matching either 'yes' or 'no'
   country: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?$'
   dna: '^[ACGT]+$'
