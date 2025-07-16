@@ -22,11 +22,33 @@ from dotenv import load_dotenv
 import yaml
 from linkml_runtime.utils.schemaview import SchemaView
 from typing import List, Tuple, Dict, Optional, Any
+import re
 
 
 APPROVED_DIRS = ['src', 'model']
-DEFAULT_OLD_COMMIT = '74744ee'  # mixs6.0.0
-DEFAULT_NEW_COMMIT = '994c745'  # main
+DEFAULT_OLD_COMMIT = '74744ee'  # mixs6.0.0 - comparing from this version
+DEFAULT_NEW_COMMIT = '994c745'  # main branch as of 2025-07-14 - comparing to this version
+
+
+def validate_github_token(token: str) -> bool:
+    """Validate GitHub token format.
+    
+    Args:
+        token: GitHub token to validate.
+        
+    Returns:
+        True if token format is valid, False otherwise.
+    """
+    # GitHub personal access tokens patterns
+    patterns = [
+        r'^ghp_[a-zA-Z0-9]{36}$',  # Personal access token
+        r'^gho_[a-zA-Z0-9]{36}$',  # OAuth token
+        r'^ghu_[a-zA-Z0-9]{36}$',  # User token
+        r'^ghs_[a-zA-Z0-9]{36}$',  # Server token
+        r'^github_pat_[a-zA-Z0-9_]{82}$',  # Fine-grained personal access token
+    ]
+    
+    return any(re.match(pattern, token) for pattern in patterns)
 
 
 def get_github_headers() -> Dict[str, str]:
@@ -41,8 +63,12 @@ def get_github_headers() -> Dict[str, str]:
     
     headers = {}
     if token := os.getenv('GITHUB_TOKEN'):
-        headers['Authorization'] = f'token {token}'
-        print("Using authenticated GitHub API")
+        if validate_github_token(token):
+            headers['Authorization'] = f'token {token}'
+            print("Using authenticated GitHub API")
+        else:
+            print("WARNING: Invalid GitHub token format detected, using unauthenticated API")
+            print("Using unauthenticated GitHub API (rate limited)")
     else:
         print("Using unauthenticated GitHub API (rate limited)")
     return headers
@@ -59,7 +85,7 @@ def fetch_tree(commit_sha: str) -> List[str]:
     """
     headers = get_github_headers()
     url = f"https://api.github.com/repos/GenomicsStandardsConsortium/mixs/git/trees/{commit_sha}?recursive=1"
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, timeout=10)
     response.raise_for_status()
     tree = response.json()
     
@@ -98,7 +124,7 @@ def get_releases() -> List[Tuple[str, datetime]]:
     """
     headers = get_github_headers()
     url = "https://api.github.com/repos/GenomicsStandardsConsortium/mixs/releases"
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, timeout=10)
     response.raise_for_status()
     releases = response.json()
     
@@ -124,7 +150,7 @@ def get_yaml_files_from_release(tag: str) -> Tuple[List[str], str]:
     headers = get_github_headers()
     # Get commit SHA for the tag
     url = f"https://api.github.com/repos/GenomicsStandardsConsortium/mixs/git/refs/tags/{tag}"
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, timeout=10)
     response.raise_for_status()
     commit_sha = response.json()['object']['sha']
     
@@ -143,7 +169,7 @@ def get_main_branch_info() -> Tuple[List[str], str, datetime]:
     headers = get_github_headers()
     # Get main branch commit
     url = "https://api.github.com/repos/GenomicsStandardsConsortium/mixs/branches/main"
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, timeout=10)
     response.raise_for_status()
     branch_info = response.json()
     
@@ -249,14 +275,19 @@ def print_releases() -> None:
         print(f"{tag}: {date.strftime('%Y-%m-%d')}")
 
 
-if __name__ == "__main__":
+def build_release_info_dict() -> Dict[str, Dict[str, Any]]:
+    """Build release info dictionary with all releases and main branch info.
+    
+    Returns:
+        Dict mapping short commit hashes to release metadata.
+    """
     releases = get_releases()
     release_info = {}
     
+    # Build release info for all releases
     for tag, date in releases:
         yaml_files, commit_sha = get_yaml_files_from_release(tag)
         short_hash = commit_sha[:7]
-        
         mixs_yaml_path = find_mixs_yaml_path(yaml_files)
         
         release_info[short_hash] = {
@@ -272,7 +303,6 @@ if __name__ == "__main__":
     # Add main branch info
     yaml_files, commit_sha, commit_date = get_main_branch_info()
     short_hash = commit_sha[:7]
-    
     mixs_yaml_path = find_mixs_yaml_path(yaml_files)
     
     release_info[short_hash] = {
@@ -284,6 +314,13 @@ if __name__ == "__main__":
     print(f"\nmain: {commit_date.strftime('%Y-%m-%d')} ({short_hash})")
     for yaml_file in yaml_files:
         print(f"  {yaml_file}")
+    
+    return release_info
+
+
+if __name__ == "__main__":
+    # Build and display release info
+    release_info = build_release_info_dict()
     
     # Print the dictionary
     separator = "=" * 50
@@ -303,7 +340,7 @@ if __name__ == "__main__":
     print("Loading schemas for comparison...")
     print("="*50)
     
-    old_schema, new_schema, old_info, new_info = load_schema_views('e7ffaea', '994c745')
+    old_schema, new_schema, old_info, new_info = load_schema_views(DEFAULT_OLD_COMMIT, DEFAULT_NEW_COMMIT)
     
     print("\nOld schema info:")
     pprint.pprint(old_info)
