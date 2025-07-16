@@ -310,3 +310,39 @@ if __name__ == "__main__":
     
     print("\nNew schema info:")
     pprint.pprint(new_info)
+    
+    # Identify populated keys in each schema
+    print("\n" + "="*50)
+    print("Schema Key Analysis")
+    print("="*50)
+    
+    old_schema_keys = set(key for key, value in old_schema.schema.__dict__.items() if value is not None)
+    new_schema_keys = set(key for key, value in new_schema.schema.__dict__.items() if value is not None)
+    
+    print(f"\nOld schema ({old_info['tag']}) populated keys ({len(old_schema_keys)}):")
+    for key in sorted(old_schema_keys):
+        print(f"  {key}")
+    
+    print(f"\nNew schema ({new_info['tag']}) populated keys ({len(new_schema_keys)}):")
+    for key in sorted(new_schema_keys):
+        print(f"  {key}")
+    
+    # Compare keys
+    keys_only_in_old = old_schema_keys - new_schema_keys
+    keys_only_in_new = new_schema_keys - old_schema_keys
+    common_keys = old_schema_keys & new_schema_keys
+    
+    print(f"\nKey comparison:")
+    print(f"  Keys only in old schema: {len(keys_only_in_old)}")
+    if keys_only_in_old:
+        for key in sorted(keys_only_in_old):
+            print(f"    {key}")
+    
+    print(f"  Keys only in new schema: {len(keys_only_in_new)}")
+    if keys_only_in_new:
+        for key in sorted(keys_only_in_new):
+            print(f"    {key}")
+    
+    print(f"  Common keys: {len(common_keys)}")
+    for key in sorted(common_keys):
+        print(f"    {key}")
