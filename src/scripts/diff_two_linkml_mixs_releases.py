@@ -391,13 +391,37 @@ if __name__ == "__main__":
     print("\nNew schema info:")
     pprint.pprint(new_info)
     
-    # Identify populated keys in each schema
+    # Identify populated keys in merged schemas
     print("\n" + "="*50)
-    print("Schema Key Analysis")
+    print("Schema Key Analysis (Merged)")
     print("="*50)
     
-    old_schema_keys = set(key for key, value in old_schema.schema.__dict__.items() if is_populated(value))
-    new_schema_keys = set(key for key, value in new_schema.schema.__dict__.items() if is_populated(value))
+    def get_merged_schema_keys(schema_view):
+        """Get all populated keys from merged schema by discovering all available data."""
+        merged_keys = set()
+        
+        # Get all methods that start with 'all_' (these return resolved collections)
+        for method_name in dir(schema_view):
+            if method_name.startswith('all_') and callable(getattr(schema_view, method_name)):
+                try:
+                    result = getattr(schema_view, method_name)()
+                    if is_populated(result):
+                        # Remove 'all_' prefix to get the key name
+                        key_name = method_name[4:]  # Remove 'all_'
+                        merged_keys.add(key_name)
+                except:
+                    # Skip methods that fail to call
+                    pass
+        
+        # Add populated attributes from raw schema
+        for attr_name, attr_value in schema_view.schema.__dict__.items():
+            if is_populated(attr_value):
+                merged_keys.add(attr_name)
+        
+        return merged_keys
+    
+    old_schema_keys = get_merged_schema_keys(old_schema)
+    new_schema_keys = get_merged_schema_keys(new_schema)
     
     print(f"\nOld schema ({old_info['tag']}) populated keys ({len(old_schema_keys)}):")
     for key in sorted(old_schema_keys):
@@ -426,16 +450,3 @@ if __name__ == "__main__":
     print(f"  Common keys: {len(common_keys)}")
     for key in sorted(common_keys):
         print(f"    {key}")
-    
-    # Test keywords specifically as requested
-    print(f"\nKeywords test case:")
-    old_keywords = getattr(old_schema.schema, 'keywords', None)
-    new_keywords = getattr(new_schema.schema, 'keywords', None)
-    print(f"  Old schema keywords: {old_keywords} (populated: {is_populated(old_keywords)})")
-    print(f"  New schema keywords: {new_keywords} (populated: {is_populated(new_keywords)})")
-    
-    # Show type information for better understanding
-    if old_keywords is not None:
-        print(f"  Old keywords type: {type(old_keywords)}")
-    if new_keywords is not None:
-        print(f"  New keywords type: {type(new_keywords)}")
