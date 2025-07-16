@@ -90,7 +90,7 @@ def fetch_tree(commit_sha: str) -> List[str]:
     tree = response.json()
     
     yaml_files = [item['path'] for item in tree['tree'] 
-                  if item['path'].endswith('.yaml')]
+                  if item['path'].endswith(('.yaml', '.yml'))]
     return yaml_files
 
 
