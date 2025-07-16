@@ -30,6 +30,39 @@ DEFAULT_OLD_COMMIT = '74744ee'  # mixs6.0.0 - comparing from this version
 DEFAULT_NEW_COMMIT = '994c745'  # main branch as of 2025-07-14 - comparing to this version
 
 
+def is_populated(value: Any) -> bool:
+    """Check if a value is truly populated (not None, not empty).
+    
+    Args:
+        value: Value to check for population.
+        
+    Returns:
+        True if value is populated, False if it's None, empty, or effectively empty.
+    """
+    # Handle None
+    if value is None:
+        return False
+    
+    # Handle empty strings
+    if isinstance(value, str) and not value.strip():
+        return False
+    
+    # Handle empty collections
+    if isinstance(value, (list, dict, set, tuple)) and len(value) == 0:
+        return False
+    
+    # Handle LinkML class instances - check if they have any populated attributes
+    if hasattr(value, '__dict__'):
+        # For LinkML objects, check if any of their attributes are populated
+        for attr_name, attr_value in value.__dict__.items():
+            if not attr_name.startswith('_') and is_populated(attr_value):
+                return True
+        return False
+    
+    # If we get here, it's likely a populated primitive value
+    return True
+
+
 def validate_github_token(token: str) -> bool:
     """Validate GitHub token format.
     
@@ -117,22 +150,33 @@ def find_mixs_yaml_path(yaml_files: List[str], approved_dirs: Optional[List[str]
 
 
 def get_releases() -> List[Tuple[str, datetime]]:
-    """Get releases from GitHub API and return list of (tag, date) tuples.
+    """Get releases from GitHub API with pagination support.
     
     Returns:
         List of tuples containing (tag_name, published_date) for each release.
     """
     headers = get_github_headers()
     url = "https://api.github.com/repos/GenomicsStandardsConsortium/mixs/releases"
-    response = requests.get(url, headers=headers, timeout=10)
-    response.raise_for_status()
-    releases = response.json()
     
     release_info = []
-    for release in releases:
-        tag = release['tag_name']
-        date = datetime.fromisoformat(release['published_at'].replace('Z', '+00:00'))
-        release_info.append((tag, date))
+    page = 1
+    
+    while True:
+        paginated_url = f"{url}?page={page}&per_page=100"
+        response = requests.get(paginated_url, headers=headers, timeout=10)
+        response.raise_for_status()
+        releases = response.json()
+        
+        # If no releases returned, we've reached the end
+        if not releases:
+            break
+        
+        for release in releases:
+            tag = release['tag_name']
+            date = datetime.fromisoformat(release['published_at'].replace('Z', '+00:00'))
+            release_info.append((tag, date))
+        
+        page += 1
     
     return release_info
 
@@ -195,21 +239,11 @@ def get_raw_schema_url(commit_hash: str, mixs_yaml_path: Optional[str]) -> Optio
     return f"https://raw.githubusercontent.com/GenomicsStandardsConsortium/mixs/{commit_hash}/{mixs_yaml_path}"
 
 
-def load_schema_views(old_commit: str = DEFAULT_OLD_COMMIT, 
-                     new_commit: str = DEFAULT_NEW_COMMIT) -> Tuple[SchemaView, SchemaView, Dict[str, Any], Dict[str, Any]]:
-    """Load SchemaView objects for old and new commits.
+def build_full_release_info() -> Dict[str, Dict[str, Any]]:
+    """Build comprehensive release info dictionary for all releases and main branch.
     
-    Args:
-        old_commit: Short commit hash for the old schema version.
-        new_commit: Short commit hash for the new schema version.
-        
     Returns:
-        Tuple of (old_schema, new_schema, old_info, new_info) where:
-        - old_schema, new_schema: SchemaView objects for the schemas
-        - old_info, new_info: Dict with release metadata (tag, date, etc.)
-        
-    Raises:
-        ValueError: If specified commits are not found or have no mixs.yaml file.
+        Dict mapping short commit hashes to release metadata with commit_sha included.
     """
     releases = get_releases()
     release_info = {}
@@ -238,6 +272,27 @@ def load_schema_views(old_commit: str = DEFAULT_OLD_COMMIT,
         'mixs_yaml_path': mixs_yaml_path,
         'commit_sha': commit_sha
     }
+    
+    return release_info
+
+
+def load_schema_views(old_commit: str = DEFAULT_OLD_COMMIT, 
+                     new_commit: str = DEFAULT_NEW_COMMIT) -> Tuple[SchemaView, SchemaView, Dict[str, Any], Dict[str, Any]]:
+    """Load SchemaView objects for old and new commits.
+    
+    Args:
+        old_commit: Short commit hash for the old schema version.
+        new_commit: Short commit hash for the new schema version.
+        
+    Returns:
+        Tuple of (old_schema, new_schema, old_info, new_info) where:
+        - old_schema, new_schema: SchemaView objects for the schemas
+        - old_info, new_info: Dict with release metadata (tag, date, etc.)
+        
+    Raises:
+        ValueError: If specified commits are not found or have no mixs.yaml file.
+    """
+    release_info = build_full_release_info()
     
     # Get schema info for specified commits
     old_info = release_info.get(old_commit)
@@ -276,46 +331,34 @@ def print_releases() -> None:
 
 
 def build_release_info_dict() -> Dict[str, Dict[str, Any]]:
-    """Build release info dictionary with all releases and main branch info.
+    """Build release info dictionary with all releases and main branch info (with display output).
     
     Returns:
         Dict mapping short commit hashes to release metadata.
     """
-    releases = get_releases()
-    release_info = {}
+    release_info = build_full_release_info()
     
-    # Build release info for all releases
+    # Print output for each release (excluding main for now)
+    releases = get_releases()
     for tag, date in releases:
         yaml_files, commit_sha = get_yaml_files_from_release(tag)
         short_hash = commit_sha[:7]
-        mixs_yaml_path = find_mixs_yaml_path(yaml_files)
-        
-        release_info[short_hash] = {
-            'tag': tag,
-            'date': date.strftime('%Y-%m-%d'),
-            'mixs_yaml_path': mixs_yaml_path
-        }
         
         print(f"\n{tag}: {date.strftime('%Y-%m-%d')} ({short_hash})")
         for yaml_file in yaml_files:
             print(f"  {yaml_file}")
     
-    # Add main branch info
+    # Add main branch info display
     yaml_files, commit_sha, commit_date = get_main_branch_info()
     short_hash = commit_sha[:7]
-    mixs_yaml_path = find_mixs_yaml_path(yaml_files)
-    
-    release_info[short_hash] = {
-        'tag': 'main',
-        'date': commit_date.strftime('%Y-%m-%d'),
-        'mixs_yaml_path': mixs_yaml_path
-    }
     
     print(f"\nmain: {commit_date.strftime('%Y-%m-%d')} ({short_hash})")
     for yaml_file in yaml_files:
         print(f"  {yaml_file}")
     
-    return release_info
+    # Return the simplified dict (without commit_sha for backward compatibility)
+    return {k: {key: val for key, val in v.items() if key != 'commit_sha'} 
+            for k, v in release_info.items()}
 
 
 if __name__ == "__main__":
@@ -353,8 +396,8 @@ if __name__ == "__main__":
     print("Schema Key Analysis")
     print("="*50)
     
-    old_schema_keys = set(key for key, value in old_schema.schema.__dict__.items() if value is not None)
-    new_schema_keys = set(key for key, value in new_schema.schema.__dict__.items() if value is not None)
+    old_schema_keys = set(key for key, value in old_schema.schema.__dict__.items() if is_populated(value))
+    new_schema_keys = set(key for key, value in new_schema.schema.__dict__.items() if is_populated(value))
     
     print(f"\nOld schema ({old_info['tag']}) populated keys ({len(old_schema_keys)}):")
     for key in sorted(old_schema_keys):
@@ -383,3 +426,16 @@ if __name__ == "__main__":
     print(f"  Common keys: {len(common_keys)}")
     for key in sorted(common_keys):
         print(f"    {key}")
+    
+    # Test keywords specifically as requested
+    print(f"\nKeywords test case:")
+    old_keywords = getattr(old_schema.schema, 'keywords', None)
+    new_keywords = getattr(new_schema.schema, 'keywords', None)
+    print(f"  Old schema keywords: {old_keywords} (populated: {is_populated(old_keywords)})")
+    print(f"  New schema keywords: {new_keywords} (populated: {is_populated(new_keywords)})")
+    
+    # Show type information for better understanding
+    if old_keywords is not None:
+        print(f"  Old keywords type: {type(old_keywords)}")
+    if new_keywords is not None:
+        print(f"  New keywords type: {type(new_keywords)}")
