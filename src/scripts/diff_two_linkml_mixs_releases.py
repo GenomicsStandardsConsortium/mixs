@@ -1,0 +1,452 @@
+"""
+Script to compare MIxS schema releases using GitHub API.
+
+Fetches release information from GitHub, identifies mixs.yaml files across releases,
+and saves structured data for analysis. Supports GitHub API authentication via
+local/.env file for higher rate limits.
+
+Usage:
+    python diff_two_linkml_mixs_releases.py
+
+Output:
+    - Console output showing releases and YAML files
+    - local/mixs_releases.yaml with structured release data
+"""
+
+import requests
+from datetime import datetime
+import pprint
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+import yaml
+from linkml_runtime.utils.schemaview import SchemaView
+from typing import List, Tuple, Dict, Optional, Any
+import re
+
+
+APPROVED_DIRS = ['src', 'model']
+DEFAULT_OLD_COMMIT = '74744ee'  # mixs6.0.0 - comparing from this version
+DEFAULT_NEW_COMMIT = '994c745'  # main branch as of 2025-07-14 - comparing to this version
+
+
+def is_populated(value: Any) -> bool:
+    """Check if a value is truly populated (not None, not empty).
+    
+    Args:
+        value: Value to check for population.
+        
+    Returns:
+        True if value is populated, False if it's None, empty, or effectively empty.
+    """
+    # Handle None
+    if value is None:
+        return False
+    
+    # Handle empty strings
+    if isinstance(value, str) and not value.strip():
+        return False
+    
+    # Handle empty collections
+    if isinstance(value, (list, dict, set, tuple)) and len(value) == 0:
+        return False
+    
+    # Handle LinkML class instances - check if they have any populated attributes
+    if hasattr(value, '__dict__'):
+        # For LinkML objects, check if any of their attributes are populated
+        for attr_name, attr_value in value.__dict__.items():
+            if not attr_name.startswith('_') and is_populated(attr_value):
+                return True
+        return False
+    
+    # If we get here, it's likely a populated primitive value
+    return True
+
+
+def validate_github_token(token: str) -> bool:
+    """Validate GitHub token format.
+    
+    Args:
+        token: GitHub token to validate.
+        
+    Returns:
+        True if token format is valid, False otherwise.
+    """
+    # GitHub personal access tokens patterns
+    patterns = [
+        r'^ghp_[a-zA-Z0-9]{36}$',  # Personal access token
+        r'^gho_[a-zA-Z0-9]{36}$',  # OAuth token
+        r'^ghu_[a-zA-Z0-9]{36}$',  # User token
+        r'^ghs_[a-zA-Z0-9]{36}$',  # Server token
+        r'^github_pat_[a-zA-Z0-9_]{82}$',  # Fine-grained personal access token
+    ]
+    
+    return any(re.match(pattern, token) for pattern in patterns)
+
+
+def get_github_headers() -> Dict[str, str]:
+    """Get GitHub API headers with authentication if available.
+    
+    Returns:
+        Dict containing Authorization header if token is available, empty dict otherwise.
+    """
+    env_file = Path(__file__).parent.parent.parent / 'local' / '.env'
+    if env_file.exists():
+        load_dotenv(env_file)
+    
+    headers = {}
+    if token := os.getenv('GITHUB_TOKEN'):
+        if validate_github_token(token):
+            headers['Authorization'] = f'token {token}'
+            print("Using authenticated GitHub API")
+        else:
+            print("WARNING: Invalid GitHub token format detected, using unauthenticated API")
+            print("Using unauthenticated GitHub API (rate limited)")
+    else:
+        print("Using unauthenticated GitHub API (rate limited)")
+    return headers
+
+
+def fetch_tree(commit_sha: str) -> List[str]:
+    """Fetch recursive tree from GitHub API and return YAML files.
+    
+    Args:
+        commit_sha: Git commit SHA to fetch tree for.
+        
+    Returns:
+        List of paths to YAML files in the repository at the given commit.
+    """
+    headers = get_github_headers()
+    url = f"https://api.github.com/repos/GenomicsStandardsConsortium/mixs/git/trees/{commit_sha}?recursive=1"
+    response = requests.get(url, headers=headers, timeout=10)
+    response.raise_for_status()
+    tree = response.json()
+    
+    yaml_files = [item['path'] for item in tree['tree'] 
+                  if item['path'].endswith(('.yaml', '.yml'))]
+    return yaml_files
+
+
+def find_mixs_yaml_path(yaml_files: List[str], approved_dirs: Optional[List[str]] = None) -> Optional[str]:
+    """Find mixs.yaml file in approved directories.
+    
+    Args:
+        yaml_files: List of YAML file paths to search through.
+        approved_dirs: List of approved directory names to search in. 
+                      Defaults to APPROVED_DIRS constant.
+                      
+    Returns:
+        Path to mixs.yaml file if found in approved directories, None otherwise.
+    """
+    if approved_dirs is None:
+        approved_dirs = APPROVED_DIRS
+    
+    for yaml_file in yaml_files:
+        if yaml_file.endswith('mixs.yaml'):
+            for approved_dir in approved_dirs:
+                if yaml_file.startswith(f'{approved_dir}/'):
+                    return yaml_file
+    return None
+
+
+def get_releases() -> List[Tuple[str, datetime]]:
+    """Get releases from GitHub API with pagination support.
+    
+    Returns:
+        List of tuples containing (tag_name, published_date) for each release.
+    """
+    headers = get_github_headers()
+    url = "https://api.github.com/repos/GenomicsStandardsConsortium/mixs/releases"
+    
+    release_info = []
+    page = 1
+    
+    while True:
+        paginated_url = f"{url}?page={page}&per_page=100"
+        response = requests.get(paginated_url, headers=headers, timeout=10)
+        response.raise_for_status()
+        releases = response.json()
+        
+        # If no releases returned, we've reached the end
+        if not releases:
+            break
+        
+        for release in releases:
+            tag = release['tag_name']
+            date = datetime.fromisoformat(release['published_at'].replace('Z', '+00:00'))
+            release_info.append((tag, date))
+        
+        page += 1
+    
+    return release_info
+
+
+def get_yaml_files_from_release(tag: str) -> Tuple[List[str], str]:
+    """Get list of YAML files and commit SHA from a specific release tag.
+    
+    Args:
+        tag: Release tag name to fetch files for.
+        
+    Returns:
+        Tuple of (yaml_files, commit_sha) where yaml_files is a list of YAML file paths
+        and commit_sha is the full commit hash for the tag.
+    """
+    headers = get_github_headers()
+    # Get commit SHA for the tag
+    url = f"https://api.github.com/repos/GenomicsStandardsConsortium/mixs/git/refs/tags/{tag}"
+    response = requests.get(url, headers=headers, timeout=10)
+    response.raise_for_status()
+    commit_sha = response.json()['object']['sha']
+    
+    yaml_files = fetch_tree(commit_sha)
+    return yaml_files, commit_sha
+
+
+def get_main_branch_info() -> Tuple[List[str], str, datetime]:
+    """Get YAML files and commit info from main branch.
+    
+    Returns:
+        Tuple of (yaml_files, commit_sha, commit_date) where yaml_files is a list
+        of YAML file paths, commit_sha is the full commit hash, and commit_date
+        is the datetime of the commit.
+    """
+    headers = get_github_headers()
+    # Get main branch commit
+    url = "https://api.github.com/repos/GenomicsStandardsConsortium/mixs/branches/main"
+    response = requests.get(url, headers=headers, timeout=10)
+    response.raise_for_status()
+    branch_info = response.json()
+    
+    commit_sha = branch_info['commit']['sha']
+    commit_date = datetime.fromisoformat(branch_info['commit']['commit']['author']['date'].replace('Z', '+00:00'))
+    
+    yaml_files = fetch_tree(commit_sha)
+    return yaml_files, commit_sha, commit_date
+
+
+def get_raw_schema_url(commit_hash: str, mixs_yaml_path: Optional[str]) -> Optional[str]:
+    """Get raw GitHub URL for a mixs.yaml file at a specific commit.
+    
+    Args:
+        commit_hash: Git commit hash.
+        mixs_yaml_path: Path to mixs.yaml file within the repository.
+        
+    Returns:
+        Raw GitHub URL to the schema file, or None if no path provided.
+    """
+    if not mixs_yaml_path:
+        return None
+    return f"https://raw.githubusercontent.com/GenomicsStandardsConsortium/mixs/{commit_hash}/{mixs_yaml_path}"
+
+
+def build_full_release_info() -> Dict[str, Dict[str, Any]]:
+    """Build comprehensive release info dictionary for all releases and main branch.
+    
+    Returns:
+        Dict mapping short commit hashes to release metadata with commit_sha included.
+    """
+    releases = get_releases()
+    release_info = {}
+    
+    # Build release info dict
+    for tag, date in releases:
+        yaml_files, commit_sha = get_yaml_files_from_release(tag)
+        short_hash = commit_sha[:7]
+        mixs_yaml_path = find_mixs_yaml_path(yaml_files)
+        
+        release_info[short_hash] = {
+            'tag': tag,
+            'date': date.strftime('%Y-%m-%d'),
+            'mixs_yaml_path': mixs_yaml_path,
+            'commit_sha': commit_sha
+        }
+    
+    # Add main branch info
+    yaml_files, commit_sha, commit_date = get_main_branch_info()
+    short_hash = commit_sha[:7]
+    mixs_yaml_path = find_mixs_yaml_path(yaml_files)
+    
+    release_info[short_hash] = {
+        'tag': 'main',
+        'date': commit_date.strftime('%Y-%m-%d'),
+        'mixs_yaml_path': mixs_yaml_path,
+        'commit_sha': commit_sha
+    }
+    
+    return release_info
+
+
+def load_schema_views(old_commit: str = DEFAULT_OLD_COMMIT, 
+                     new_commit: str = DEFAULT_NEW_COMMIT) -> Tuple[SchemaView, SchemaView, Dict[str, Any], Dict[str, Any]]:
+    """Load SchemaView objects for old and new commits.
+    
+    Args:
+        old_commit: Short commit hash for the old schema version.
+        new_commit: Short commit hash for the new schema version.
+        
+    Returns:
+        Tuple of (old_schema, new_schema, old_info, new_info) where:
+        - old_schema, new_schema: SchemaView objects for the schemas
+        - old_info, new_info: Dict with release metadata (tag, date, etc.)
+        
+    Raises:
+        ValueError: If specified commits are not found or have no mixs.yaml file.
+    """
+    release_info = build_full_release_info()
+    
+    # Get schema info for specified commits
+    old_info = release_info.get(old_commit)
+    new_info = release_info.get(new_commit)
+    
+    if not old_info:
+        raise ValueError(f"Old commit {old_commit} not found in releases")
+    if not new_info:
+        raise ValueError(f"New commit {new_commit} not found in releases")
+    
+    # Get raw URLs
+    old_url = get_raw_schema_url(old_info['commit_sha'], old_info['mixs_yaml_path'])
+    new_url = get_raw_schema_url(new_info['commit_sha'], new_info['mixs_yaml_path'])
+    
+    if not old_url:
+        raise ValueError(f"No mixs.yaml found for old commit {old_commit} ({old_info['tag']})")
+    if not new_url:
+        raise ValueError(f"No mixs.yaml found for new commit {new_commit} ({new_info['tag']})")
+    
+    print(f"Loading old schema: {old_info['tag']} ({old_commit})")
+    print(f"  URL: {old_url}")
+    old_schema = SchemaView(old_url)
+    
+    print(f"Loading new schema: {new_info['tag']} ({new_commit})")
+    print(f"  URL: {new_url}")
+    new_schema = SchemaView(new_url)
+    
+    return old_schema, new_schema, old_info, new_info
+
+
+def print_releases() -> None:
+    """Print all releases with tag and date."""
+    releases = get_releases()
+    for tag, date in releases:
+        print(f"{tag}: {date.strftime('%Y-%m-%d')}")
+
+
+def build_release_info_dict() -> Dict[str, Dict[str, Any]]:
+    """Build release info dictionary with all releases and main branch info (with display output).
+    
+    Returns:
+        Dict mapping short commit hashes to release metadata.
+    """
+    release_info = build_full_release_info()
+    
+    # Print output for each release (excluding main for now)
+    releases = get_releases()
+    for tag, date in releases:
+        yaml_files, commit_sha = get_yaml_files_from_release(tag)
+        short_hash = commit_sha[:7]
+        
+        print(f"\n{tag}: {date.strftime('%Y-%m-%d')} ({short_hash})")
+        for yaml_file in yaml_files:
+            print(f"  {yaml_file}")
+    
+    # Add main branch info display
+    yaml_files, commit_sha, commit_date = get_main_branch_info()
+    short_hash = commit_sha[:7]
+    
+    print(f"\nmain: {commit_date.strftime('%Y-%m-%d')} ({short_hash})")
+    for yaml_file in yaml_files:
+        print(f"  {yaml_file}")
+    
+    # Return the simplified dict (without commit_sha for backward compatibility)
+    return {k: {key: val for key, val in v.items() if key != 'commit_sha'} 
+            for k, v in release_info.items()}
+
+
+if __name__ == "__main__":
+    # Build and display release info
+    release_info = build_release_info_dict()
+    
+    # Print the dictionary
+    separator = "=" * 50
+    print(f"\n{separator}")
+    print("Release Info Dictionary:")
+    print(separator)
+    pprint.pprint(release_info)
+    
+    # Save as YAML file
+    output_file = Path(__file__).parent.parent.parent / "local" / "mixs_releases.yaml"
+    with open(output_file, 'w') as f:
+        yaml.dump(release_info, f, default_flow_style=False, sort_keys=False)
+    print(f"\nSaved release info to: {output_file}")
+    
+    # Load and compare schemas
+    print("\n" + "="*50)
+    print("Loading schemas for comparison...")
+    print("="*50)
+    
+    old_schema, new_schema, old_info, new_info = load_schema_views(DEFAULT_OLD_COMMIT, DEFAULT_NEW_COMMIT)
+    
+    print("\nOld schema info:")
+    pprint.pprint(old_info)
+    
+    print("\nNew schema info:")
+    pprint.pprint(new_info)
+    
+    # Identify populated keys in merged schemas
+    print("\n" + "="*50)
+    print("Schema Key Analysis (Merged)")
+    print("="*50)
+    
+    def get_merged_schema_keys(schema_view):
+        """Get all populated keys from merged schema by discovering all available data."""
+        merged_keys = set()
+        
+        # Get all methods that start with 'all_' (these return resolved collections)
+        for method_name in dir(schema_view):
+            if method_name.startswith('all_') and callable(getattr(schema_view, method_name)):
+                try:
+                    result = getattr(schema_view, method_name)()
+                    if is_populated(result):
+                        # Remove 'all_' prefix to get the key name
+                        key_name = method_name[4:]  # Remove 'all_'
+                        merged_keys.add(key_name)
+                except:
+                    # Skip methods that fail to call
+                    pass
+        
+        # Add populated attributes from raw schema
+        for attr_name, attr_value in schema_view.schema.__dict__.items():
+            if is_populated(attr_value):
+                merged_keys.add(attr_name)
+        
+        return merged_keys
+    
+    old_schema_keys = get_merged_schema_keys(old_schema)
+    new_schema_keys = get_merged_schema_keys(new_schema)
+    
+    print(f"\nOld schema ({old_info['tag']}) populated keys ({len(old_schema_keys)}):")
+    for key in sorted(old_schema_keys):
+        print(f"  {key}")
+    
+    print(f"\nNew schema ({new_info['tag']}) populated keys ({len(new_schema_keys)}):")
+    for key in sorted(new_schema_keys):
+        print(f"  {key}")
+    
+    # Compare keys
+    keys_only_in_old = old_schema_keys - new_schema_keys
+    keys_only_in_new = new_schema_keys - old_schema_keys
+    common_keys = old_schema_keys & new_schema_keys
+    
+    print(f"\nKey comparison:")
+    print(f"  Keys only in old schema: {len(keys_only_in_old)}")
+    if keys_only_in_old:
+        for key in sorted(keys_only_in_old):
+            print(f"    {key}")
+    
+    print(f"  Keys only in new schema: {len(keys_only_in_new)}")
+    if keys_only_in_new:
+        for key in sorted(keys_only_in_new):
+            print(f"    {key}")
+    
+    print(f"  Common keys: {len(common_keys)}")
+    for key in sorted(common_keys):
+        print(f"    {key}")
