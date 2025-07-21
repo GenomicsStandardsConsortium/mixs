@@ -121,7 +121,7 @@ standardize-schema:
 
 yamlfmt-beta:
 	echo $$PATH
-	yamlfmt  -conf .yamlfmt src/mixs/schema/mixs.yaml >  src/mixs/schema/mixs_standardized.yam
+	yamlfmt  -conf .yamlfmt src/mixs/schema/mixs.yaml >  src/mixs/schema/mixs_standardized.yaml
 
 # Test documentation locally
 serve: mkd-serve
