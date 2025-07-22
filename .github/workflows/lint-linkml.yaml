@@ -15,19 +15,16 @@ jobs:
     name: LinkML Linting
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # Fixed: Specify exact Python version instead of using undefined matrix variable
-      - name: Set up Python 3.11
+      - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          # Removed cache here since Poetry isn't installed yet
 
-      # Install Poetry first before trying to use it
       - name: Install Poetry
-        run: pipx install poetry
+        uses: snok/install-poetry@v1
 
       # Now we can configure Poetry cache
       - name: Configure Poetry cache

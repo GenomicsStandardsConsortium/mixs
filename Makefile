@@ -78,7 +78,7 @@ test-python:
 	$(RUN) python -m unittest discover
 
 linkml-lint: # was previously just "lint"
-	-$(RUN) linkml-lint $(SOURCE_SCHEMA_PATH)
+	-$(RUN) linkml lint $(SOURCE_SCHEMA_PATH)
 
 yaml-lint: # Run yamllint on schema files
 	@echo "Running yamllint on src/mixs/schema..."
