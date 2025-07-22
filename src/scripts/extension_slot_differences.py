@@ -43,7 +43,7 @@ def compare_slots_by_extension(ext_slot_pairings, ext1, ext2):
               help='Path to the schema file')
 @click.option('--ext1', default="Soil", type=str, help='Enter the first extension name:')
 @click.option('--ext2', default="Water", type=str, help='Enter the second extension name:')
-def set_arithmatic(schema, ext1, ext2):
+def set_arithmetic(schema, ext1, ext2):
     schema_view = SchemaView(schema)
 
     extension_class_names = schema_view.class_descendants('Extension')
@@ -74,4 +74,4 @@ def set_arithmatic(schema, ext1, ext2):
 
 
 if __name__ == '__main__':
-    set_arithmatic()
+    set_arithmetic()
