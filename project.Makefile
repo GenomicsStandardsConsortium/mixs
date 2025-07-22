@@ -9,6 +9,7 @@ RUN=poetry run
 .PHONY: gen-excel
 
 gen-excel: $(SOURCE_SCHEMA_PATH)
+	mkdir -p $(DEST)/excel
 	$(RUN) gen-excel $< \
 		--include-mixins \
 		--split-workbook-by-class \
@@ -21,6 +22,7 @@ gen-excel: $(SOURCE_SCHEMA_PATH)
 		--extensions xlsx
 
 assets/mixs_derived_class_term_schemasheet.tsv: src/mixs/schema/mixs.yaml
+	mkdir -p assets
 	$(RUN) linkml2schemasheets-template \
 		--source-path $< \
 		--output-path $@ \
@@ -29,28 +31,33 @@ assets/mixs_derived_class_term_schemasheet.tsv: src/mixs/schema/mixs.yaml
 		--report-style concise
 
 assets/required_and_recommended_slot_usages.tsv: src/mixs/schema/mixs.yaml
+	mkdir -p assets
 	$(RUN) python src/scripts/required_supersedes_recommended.py \
 		--input-schema $< \
 		--output $@
 
 assets/extensions-dendrogram.pdf:
+	mkdir -p assets
 	$(RUN) extension-distances \
 		--schema src/mixs/schema/mixs.yaml \
 		--output $@
 
 
 assets/soil-vs-water-slot-usage.yaml: src/mixs/schema/mixs.yaml
+	mkdir -p assets
 	$(RUN) extension-differences \
 		--schema $< \
 		--ext1 Soil \
 		--ext2 Water > $@
 
 assets/class_summary_results.tsv: src/mixs/schema/mixs.yaml assets/class_summary_template.tsv
+	mkdir -p assets
 	$(RUN) linkml2sheets \
 		--schema $(word 1,$^) \
 		 --output $@ $(word 2,$^)
 
 assets/mixs-schemasheets-concise.tsv: src/mixs/schema/mixs.yaml
+	mkdir -p assets
 	$(RUN) linkml2schemasheets-template \
 		--source-path $< \
 		--output-path $@ \
@@ -59,6 +66,7 @@ assets/mixs-schemasheets-concise.tsv: src/mixs/schema/mixs.yaml
 		--report-style concise
 
 assets/mixs-patterns-materialized.yaml: src/mixs/schema/mixs.yaml
+	mkdir -p assets
 	$(RUN) gen-linkml \
 		--format yaml \
 		--materialize-patterns \

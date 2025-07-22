@@ -44,7 +44,17 @@ help: status
 	@echo "make testdoc -- builds docs and runs local test server"
 	@echo ""
 
-.PHONY: all all-assets clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples
+.PHONY: all all-assets clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs
+
+ensure-dirs:
+	mkdir -p assets
+	mkdir -p $(DEST)
+	mkdir -p $(DOCDIR)
+	mkdir -p $(PYMODEL)
+	mkdir -p examples/output
+	mkdir -p $(EXCEL_TEMPLATES_DIR)
+	mkdir -p project/class-model-tsvs-organized
+	mkdir -p $(DOCDIR)/javascripts
 
 status:
 	@echo "Project: $(SCHEMA_NAME)"
@@ -58,15 +68,15 @@ install:
 create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
-all: site linkml-lint yaml-lint qc gen-excel project/class-model-tsvs-organized
+all: ensure-dirs site linkml-lint yaml-lint qc gen-excel project/class-model-tsvs-organized
 
-all-assets: assets/mixs-pattern-materialized-normalized-minimized.yaml assets/mixs_derived_class_term_schemasheet.tsv assets/required_and_recommended_slot_usages.tsv assets/extensions-dendrogram.pdf assets/soil-vs-water-slot-usage.yaml assets/class_summary_results.tsv assets/mixs-schemasheets-concise.tsv assets/mixs-schemasheets-concise-global-slots.tsv assets/mixs-patterns-materialized.yaml
+all-assets: ensure-dirs assets/mixs-pattern-materialized-normalized-minimized.yaml assets/mixs_derived_class_term_schemasheet.tsv assets/required_and_recommended_slot_usages.tsv assets/extensions-dendrogram.pdf assets/soil-vs-water-slot-usage.yaml assets/class_summary_results.tsv assets/mixs-schemasheets-concise.tsv assets/mixs-schemasheets-concise-global-slots.tsv assets/mixs-patterns-materialized.yaml
 
 site: gen-project gendoc
 %.yaml: gen-project
 
 # generates all project files
-gen-project: $(PYMODEL)
+gen-project: ensure-dirs $(PYMODEL)
 	$(RUN) linkml generate project --log_level INFO --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
 test: linkml-lint yaml-lint qc test-schema test-python test-examples
@@ -101,6 +111,7 @@ examples/output: src/mixs/schema/mixs.yaml
   #	yamlfmt -in -conf .yamlfmt >
 
 assets/mixs-pattern-materialized-normalized-minimized.yaml: src/mixs/schema/mixs.yaml
+	mkdir -p assets
 	$(RUN) gen-linkml \
 		--format yaml \
 		--no-mergeimports \
@@ -134,7 +145,7 @@ $(PYMODEL):
 $(DOCDIR):
 	mkdir -p $@
 
-gendoc: $(DOCDIR)
+gendoc: ensure-dirs $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	$(RUN) gen-doc ${GEN_DARGS} $(SOURCE_SCHEMA_PATH) -d $(DOCDIR) --template-directory $(TEMPLATEDIR) --use-slot-uris --use-class-uris --include src/mixs/schema/deprecated.yaml
 	$(RUN) python $(SRC)/scripts/term_list_generator.py $(TERM_LIST_FILE)
