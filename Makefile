@@ -1,3 +1,5 @@
+# RELEASE SOP: make install clean all all-assets test
+
 MAKEFLAGS += --warn-undefined-variables
 SHELL := bash
 .SHELLFLAGS := -eu -o pipefail -c
@@ -42,7 +44,7 @@ help: status
 	@echo "make testdoc -- builds docs and runs local test server"
 	@echo ""
 
-.PHONY: all clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples
+.PHONY: all all-assets clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples
 
 status:
 	@echo "Project: $(SCHEMA_NAME)"
@@ -56,7 +58,10 @@ install:
 create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
-all: site
+all: site linkml-lint yaml-lint qc gen-excel project/class-model-tsvs-organized
+
+all-assets: assets/mixs-pattern-materialized-normalized-minimized.yaml assets/mixs_derived_class_term_schemasheet.tsv assets/required_and_recommended_slot_usages.tsv assets/extensions-dendrogram.pdf assets/soil-vs-water-slot-usage.yaml assets/class_summary_results.tsv assets/mixs-schemasheets-concise.tsv assets/mixs-schemasheets-concise-global-slots.tsv assets/mixs-patterns-materialized.yaml
+
 site: gen-project gendoc
 %.yaml: gen-project
 
@@ -64,7 +69,7 @@ site: gen-project gendoc
 gen-project: $(PYMODEL)
 	$(RUN) linkml generate project --log_level INFO --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-test: test-schema test-python test-examples
+test: linkml-lint yaml-lint qc test-schema test-python test-examples
 
 test-schema:
 	$(RUN) linkml generate project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
@@ -146,7 +151,7 @@ mkd-%:
 
 PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld graphql excel
 
-clean:
+clean: clean-assets
 	rm -rf $(DEST)
 	rm -rf tmp
 	rm -fr docs/*
