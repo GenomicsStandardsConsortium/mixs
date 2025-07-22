@@ -85,20 +85,16 @@ examples/output: src/mixs/schema/mixs.yaml
 		--output-directory $@ \
 		--schema $< > $@/README.md
 
-.PHONY: standardize-schema
 
 #  |\
   #	yamlfmt -in -conf .yamlfmt >
 
-standardize-schema:
-	$(RUN) python src/scripts/describe_enums_by_slots_using.py \
-    --schema_file src/mixs/schema/mixs.yaml \
-    --output_file src/mixs/schema/mixs_with_enum_descriptions.yaml
+assets/mixs-pattern-materialized-normalized-minimized.yaml: src/mixs/schema/mixs.yaml
 	$(RUN) gen-linkml \
 		--format yaml \
 		--no-mergeimports \
 		--no-materialize-attributes \
-		--materialize-patterns src/mixs/schema/mixs_with_enum_descriptions.yaml |\
+		--materialize-patterns $< |\
 	yq eval '(.. | select(has("from_schema")) | .from_schema) style="" | del(.. | select(has("from_schema")).from_schema)' |\
 	yq eval '.classes[] |= select(has("annotations")).annotations |= map_values(.value)' |\
 	yq eval '.prefixes |= map_values(.prefix_reference)' |\
@@ -108,12 +104,10 @@ standardize-schema:
 	yq eval 'del(.classes.[].slot_usage.[].name)'  |\
 	yq eval 'del(.enums.[].name)'  |\
 	yq eval 'del(.enums.[].permissible_values.[].text)' |\
-	yq eval 'del(.slots.[].domain)'  |\
+	yq eval 'del(.slots[] | select(.domain != "MixsCompliantData") | .domain)'  |\
 	yq eval 'del(.slots.[].name)' |\
 	yq eval 'del(.source_file)'  |\
-	yq eval 'del(.subsets.[].name)' | cat > src/mixs/schema/mixs_standardized.yaml
-	mv src/mixs/schema/mixs_standardized.yaml src/mixs/schema/mixs.yaml
-	rm -rf src/mixs/schema/mixs_standardized.yaml src/mixs/schema/mixs_with_enum_descriptions.yaml
+	yq eval 'del(.subsets.[].name)' > $@
 
 test1:
 	echo $$PATH
