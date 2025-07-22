@@ -52,7 +52,7 @@ status:
 
 # install any dependencies required for building
 install:
-	poetry install
+	poetry install --all-extras
 
 # EXPERIMENTAL
 create-data-harmonizer:
