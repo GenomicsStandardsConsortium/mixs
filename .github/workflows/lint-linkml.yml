@@ -33,9 +33,9 @@ jobs:
       - name: Configure Poetry cache
         run: poetry config cache-dir ~/.cache/poetry
 
-      # Install dependencies with Poetry
+      # Install dependencies using Makefile
       - name: Install dependencies
-        run: poetry install --no-interaction --no-root
+        run: make install
 
       # Run the LinkML linting command
       - name: Run LinkML Linting
