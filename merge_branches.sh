@@ -5,7 +5,7 @@ echo "Starting cumulative merge of all feature branches..."
 echo "Current branch: $(git branch --show-current)"
 echo ""
 
-for branch in $(git branch -r | grep -v HEAD | grep -v main | grep -v 23-make-a-cumulative-branch | sed 's/origin\///'); do
+for branch in $(git branch -r | grep -v HEAD | grep -v main | grep -v 23-make-a-cumulative-branch | grep -v gh-pages | sed 's/origin\///'); do
   echo "Attempting to merge $branch..."
   if ! git merge --no-edit origin/$branch; then
     echo ""
