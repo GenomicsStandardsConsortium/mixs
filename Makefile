@@ -152,4 +152,8 @@ clean:
 	rm -fr docs/*
 	rm -fr $(PYMODEL)/*
 
+.PHONY: qc
+qc:
+	poetry run deptry . --ignore DEP004
+
 include project.Makefile
