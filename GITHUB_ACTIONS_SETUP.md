@@ -32,7 +32,7 @@ This configuration enables:
 | Workflow | Permissions | Purpose |
 |----------|-------------|---------|
 | `deploy-docs.yaml` | `contents: read`<br>`pages: write`<br>`id-token: write` | Deploy documentation to GitHub Pages using `mkdocs gh-deploy` |
-| `test_pages_build.yaml` | `contents: write` | Deploy PR previews using `rossjrw/pr-preview-action` |
+| `test_pages_build.yaml` | `contents: write`<br>`pull-requests: write` | Deploy PR previews using `rossjrw/pr-preview-action` and post preview links |
 | `lint-linkml.yml` | `contents: read`<br>`pull-requests: write` | Read schema files and post linting results as PR comments |
 | `main.yaml` | Default (no explicit permissions) | Run tests and builds |
 | `lint-yaml.yaml` | Default (no explicit permissions) | YAML linting |
