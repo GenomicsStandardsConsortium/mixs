@@ -75,7 +75,7 @@ test-python:
 linkml-lint: # was previously just "lint"
 	$(RUN) linkml-lint $(SOURCE_SCHEMA_PATH)
 
-yaml-lint: ## Run yamllint on schema files
+yaml-lint: # Run yamllint on schema files
 	@echo "Running yamllint on src/mixs/schema..."
 	$(RUN) yamllint -c .yamllint src/mixs/schema
 
