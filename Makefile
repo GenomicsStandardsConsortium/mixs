@@ -152,8 +152,17 @@ clean:
 	rm -fr docs/*
 	rm -fr $(PYMODEL)/*
 
-.PHONY: qc
+.PHONY: qc clean-assets
+
 qc:
 	poetry run deptry . --ignore DEP004
+
+clean-assets:
+	rm -rf assets/class_summary_results.* \
+	       assets/mixs_derived_class_term_schemasheet.* \
+	       assets/mixs-patterns-materialized.yaml \
+	       assets/mixs-schemasheets-concise* \
+	       assets/required_and_recommended_slot_usages.tsv \
+	       assets/mixs_derived_class_term_schemasheet_*
 
 include project.Makefile
