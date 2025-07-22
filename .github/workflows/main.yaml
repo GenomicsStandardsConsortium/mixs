@@ -27,8 +27,5 @@ jobs:
       - name: Install Poetry
         uses: snok/install-poetry@v1
 
-      - name: Install dependencies
-        run: make install
-
-      - name: Run test suite
-        run: make test
+      - name: Run release SOP
+        run: make install clean all all-assets test
