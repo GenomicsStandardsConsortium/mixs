@@ -163,6 +163,8 @@ clean-assets:
 	       assets/mixs-patterns-materialized.yaml \
 	       assets/mixs-schemasheets-concise* \
 	       assets/required_and_recommended_slot_usages.tsv \
-	       assets/mixs_derived_class_term_schemasheet_*
+	       assets/mixs_derived_class_term_schemasheet_* \
+	       assets/extensions-dendrogram.pdf \
+	       assets/soil-vs-water-slot-usage.yaml
 
 include project.Makefile

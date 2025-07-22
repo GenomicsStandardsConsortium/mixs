@@ -82,7 +82,3 @@ project/class-model-tsvs-organized: src/mixs/schema/mixs.yaml
 	rm -rf project/class-model-tsvs
 	mv project/class-model-tsvs-organized project/class-model-tsvs
 
-.PHONY: clean-assets
-clean-assets:
-	rm -f assets/extensions-dendrogram.pdf
-	rm -f assets/soil-vs-water-slot-usage.yaml
