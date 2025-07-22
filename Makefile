@@ -34,13 +34,15 @@ help: status
 	@echo ""
 	@echo "make help -- show this help"
 	@echo "make install -- install dependencies"
-	@echo "make lint -- perform linting"
+	@echo "make linkml-lint -- perform linkml linting"
+	@echo "make yaml-lint -- perform yaml linting"
+	@echo "make yamlfmt-beta -- experimental yaml formatting"
 	@echo "make site -- makes site locally"
 	@echo "make test -- runs tests"
 	@echo "make testdoc -- builds docs and runs local test server"
 	@echo ""
 
-.PHONY: all clean install help status lint test testdoc serve gen-project gendoc test-schema test-python test-examples
+.PHONY: all clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples
 
 status:
 	@echo "Project: $(SCHEMA_NAME)"
@@ -70,8 +72,12 @@ test-schema:
 test-python:
 	$(RUN) python -m unittest discover
 
-lint:
+linkml-lint: # was previously just "lint"
 	$(RUN) linkml-lint $(SOURCE_SCHEMA_PATH)
+
+yaml-lint: ## Run yamllint on schema files
+	@echo "Running yamllint on src/mixs/schema..."
+	$(RUN) yamllint -c .yamllint src/mixs/schema
 
 test-examples: examples/output
 
@@ -115,9 +121,9 @@ standardize-schema:
 	mv src/mixs/schema/mixs_standardized.yaml src/mixs/schema/mixs.yaml
 	rm -rf src/mixs/schema/mixs_standardized.yaml src/mixs/schema/mixs_with_enum_descriptions.yaml
 
-test1:
+yamlfmt-beta: # was test1
 	echo $$PATH
-	yamlfmt  -conf .yamlfmt src/mixs/schema/mixs.yaml >  src/mixs/schema/mixs_standardized.yam
+	yamlfmt -conf .yamlfmt src/mixs/schema/mixs.yaml > src/mixs/schema/mixs_standardized.yaml
 
 # Test documentation locally
 serve: mkd-serve
