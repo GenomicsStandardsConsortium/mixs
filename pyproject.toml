@@ -8,7 +8,7 @@ authors = [
 ]
 license = "CC0-1.0 license"
 readme = "README.md"
-include = ["README.md", "src/scripts/mixs/schema", "project"]
+include = ["README.md", "src/scripts/mixs/schema", "src/mixs/schema", "project"]
 
 #[tool.poetry-dynamic-versioning]
 #enable = true
@@ -17,9 +17,9 @@ include = ["README.md", "src/scripts/mixs/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-linkml-runtime = "^1.9.1"
+linkml-runtime = "^1.9"
 jsonasobj2 = "^1.0" # used transitively in src/scripts/mixs/datamodel/mixs.py
-rdflib = "^6.2.0" # used transitively in src/scripts/mixs/datamodel/mixs.py # OK to upgrade to v7 now
+rdflib = "^7.1" # updated from ^6.2.0
 
 
 [tool.poetry.group.dev.dependencies]
