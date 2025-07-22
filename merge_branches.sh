@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 echo "Starting cumulative merge of all feature branches..."
 echo "Current branch: $(git branch --show-current)"

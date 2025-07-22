@@ -44,7 +44,7 @@ build-backend = "poetry_dynamic_versioning.backend"
 docs = ["linkml", "mkdocs-material"]
 
 [tool.poetry.scripts]
-extension-distances = 'src.scripts.extension_distances:generate_dendrogram'
-extension-differences = 'src.scripts.extension_slot_diffrences:set_arithmatic'
-linkml2class-tsvs = 'src.scripts.linkml2class_tsvs:process_schema_classes'
+extension-distances = 'scripts.extension_distances:generate_dendrogram'
+extension-differences = 'scripts.extension_slot_diffrences:set_arithmatic'
+linkml2class-tsvs = 'scripts.linkml2class_tsvs:process_schema_classes'
 
