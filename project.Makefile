@@ -33,13 +33,13 @@ assets/required_and_recommended_slot_usages.tsv: src/mixs/schema/mixs.yaml
 		--input-schema $< \
 		--output $@
 
-extensions-dendrogram.pdf:
+assets/extensions-dendrogram.pdf:
 	$(RUN) extension-distances \
 		--schema src/mixs/schema/mixs.yaml \
 		--output $@
 
 
-soil-vs-water-slot-usage.yaml: src/mixs/schema/mixs.yaml
+assets/soil-vs-water-slot-usage.yaml: src/mixs/schema/mixs.yaml
 	$(RUN) extension-differences \
 		--schema $< \
 		--ext1 Soil \
@@ -81,3 +81,8 @@ project/class-model-tsvs-organized: src/mixs/schema/mixs.yaml
 		--extensions tsv
 	rm -rf project/class-model-tsvs
 	mv project/class-model-tsvs-organized project/class-model-tsvs
+
+.PHONY: clean-assets
+clean-assets:
+	rm -f assets/extensions-dendrogram.pdf
+	rm -f assets/soil-vs-water-slot-usage.yaml
