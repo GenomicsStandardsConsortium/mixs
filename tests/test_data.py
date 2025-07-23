@@ -7,7 +7,7 @@ from linkml_runtime.loaders import yaml_loader
 from mixs.datamodel.mixs import MixsCompliantData
 
 # this is somewhat redundant with the examples/output Makefile target,
-# but it illustrates the use of the MIxS python datamodel
+# but it illustrates the use of the MixS python datamodel
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, "src", "data", "examples", "valid")
