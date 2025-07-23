@@ -77,7 +77,7 @@ site: gen-project gendoc
 
 # generates all project files
 gen-project: ensure-dirs $(PYMODEL)
-	$(RUN) linkml generate project --log_level INFO --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
+	$(RUN) linkml generate project --log_level WARNING --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
 test: linkml-lint yaml-lint qc test-schema test-python test-examples
 
