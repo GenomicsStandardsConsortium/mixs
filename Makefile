@@ -88,7 +88,7 @@ test-examples: examples/output
 
 examples/output: src/mixs/schema/mixs.yaml
 	mkdir -p $@
-	$(RUN) linkml-run-examples \
+	$(RUN) linkml examples \
 		--output-formats json \
 		--output-formats yaml \
 		--counter-example-input-directory src/data/examples/invalid \
@@ -101,8 +101,7 @@ examples/output: src/mixs/schema/mixs.yaml
   #	yamlfmt -in -conf .yamlfmt >
 
 assets/mixs-pattern-materialized-normalized-minimized.yaml: src/mixs/schema/mixs.yaml
-	$(RUN) gen-linkml \
-		--format yaml \
+	$(RUN) linkml generate yaml \
 		--no-mergeimports \
 		--no-materialize-attributes \
 		--materialize-patterns $< |\
@@ -136,7 +135,7 @@ $(DOCDIR):
 
 gendoc: $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
-	$(RUN) gen-doc ${GEN_DARGS} $(SOURCE_SCHEMA_PATH) -d $(DOCDIR) --template-directory $(TEMPLATEDIR) --use-slot-uris --use-class-uris --include src/mixs/schema/deprecated.yaml
+	$(RUN) linkml generate doc ${GEN_DARGS} $(SOURCE_SCHEMA_PATH) -d $(DOCDIR) --template-directory $(TEMPLATEDIR) --use-slot-uris --use-class-uris --include src/mixs/schema/deprecated.yaml
 	$(RUN) python $(SRC)/scripts/term_list_generator.py $(TERM_LIST_FILE)
 	$(RUN) python $(SRC)/scripts/combinations_list_generator.py $(COMBINATIONS_FILE)
 	$(RUN) python $(SRC)/scripts/enumerations_list_generator.py $(ENUMERATIONS_FILE)
