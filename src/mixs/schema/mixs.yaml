@@ -3929,7 +3929,7 @@ slots:
     in_subset:
       - sequencing
     structured_pattern:
-      syntax: ^{adapter_A_DNA_sequence};{adapter_B_DNA_sequence}$
+      syntax: ^{dna};{dna}$
       interpolated: true
       partial_match: true
     slot_uri: MIXS:0000048
@@ -7714,7 +7714,7 @@ slots:
     required: true
     pattern: '^([^\s-]{1,2}|[^\s-]+.+[^\s-]+): ([^\s-]{1,2}|[^\s-]+.+[^\s-]+), ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'
     structured_pattern:
-      syntax: '^{text}: {text}, {text}$'
+      syntax: '^{country}: {region}, {specific_location}$'
       interpolated: true
       partial_match: true
   gestation_state:
@@ -9581,9 +9581,8 @@ slots:
       - identifier
     slot_uri: MIXS:0000047
     range: string
-    pattern: ^[ACGTRKSYMWBHDVN]+$
     structured_pattern:
-      syntax: ^{ambiguous_nucleotides}$
+      syntax: ^{dna}$
       interpolated: true
       partial_match: true
   mineral_nutr_regm:
@@ -10204,7 +10203,7 @@ slots:
     keywords:
       - pcr
     structured_pattern:
-      syntax: FWD:{ambiguous_nucleotides};REV:{ambiguous_nucleotides}
+      syntax: FWD:{dna};REV:{dna}
       interpolated: true
     slot_uri: MIXS:0000046
   permeability:
@@ -13046,8 +13045,6 @@ slots:
     slot_uri: MIXS:0001259
     multivalued: true
   store_cond:
-    annotations:
-      Expected_value: storage condition type;duration
     description: Explain how and for how long the soil sample was stored before DNA
       extraction (fresh/frozen/other)
     title: storage conditions
@@ -13056,6 +13053,8 @@ slots:
     keywords:
       - condition
       - storage
+    structured_pattern:
+      syntax: ^{storage_condition_type};{duration}$
     string_serialization: '{text};{period}'
     slot_uri: MIXS:0000327
   study_complt_stat:
@@ -21945,21 +21944,17 @@ classes:
       - Miuvig
     class_uri: MIXS:0010012_0016014
 settings:
-  agrochemical_name: ".*"
-  amount: '[-+]?[0-9]*\.?[0-9]+'
-  add_recov_methods: 'Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other'
   DOI: '^doi:10.\d{2,9}/.*$'
   NCBItaxon_id: NCBITaxon:\d+
   PMID: ^PMID:\d+$
   URL: ^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$
-  adapter: '[ACGTRKSYMWBHDVN]+'
-  adapter_A_DNA_sequence: '[ACGTRKSYMWBHDVN]+'
-  adapter_B_DNA_sequence: '[ACGTRKSYMWBHDVN]+'
-  ambiguous_nucleotides: '[ACGTRKSYMWBHDVN]+'
+  add_recov_methods: 'Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other'
+  agrochemical_name: ".*"
+  amount: '[-+]?[0-9]*\.?[0-9]+'
   boolean: '(?:yes|no)' # a non-capturing group matching either 'yes' or 'no'
   country: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?$'
-  dna: '^[ACGT]+$'
+  dna: '[ACGTRKSYMWBHDVN]+'
   duration: P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)
   float: '[-+]?[0-9]*\.?[0-9]+'
   integer: '[1-9][0-9]*'
