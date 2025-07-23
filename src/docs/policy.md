@@ -1,6 +1,6 @@
 # Introduction
 
-This document records policies about editing and contributing to MIxS which are enacted via [editing workflows](workflow.md). Documentation in this repository is considered authoritative and supercedes any previous documentation in Google Drive or the gensc.org website, although content from this repository may be duplicated in those or other locations. All new editing and contributing policies must be approved by the Technical Working Group (TWG) and Compliance and Interoperability Group (CIG).
+This document records policies about editing and contributing to MIxS which are enacted via [editing workflows](edit_workflow.md). Documentation in this repository is considered authoritative and supercedes any previous documentation in Google Drive or the gensc.org website, although content from this repository may be duplicated in those or other locations. All new editing and contributing policies must be approved by the Technical Working Group (TWG) and Compliance and Interoperability Group (CIG).
 
 ## MIxS transition to LinkML Details
 
@@ -10,7 +10,7 @@ NOTE: Update this section after the release of MIxS 7.
 
 # GitHub Editing Policies
 
-The GSC leverages GitHub tools to manage MIxS terms, checklists, extensions, and releases. GSC meeting notes, including CIG, TWG, and Board meetings, are NOT authoritative but exist to support development in this repository. GitHub issues, pull requests, and releases will contain the source of truth. Documentation will be generated from GitHub. Below are guidance and policies on how to contribute to MIxS. Specific details on how to use GitHub for contributions are available in the [editing workflows](workflow.md) document.
+The GSC leverages GitHub tools to manage MIxS terms, checklists, extensions, and releases. GSC meeting notes, including CIG, TWG, and Board meetings, are NOT authoritative but exist to support development in this repository. GitHub issues, pull requests, and releases will contain the source of truth. Documentation will be generated from GitHub. Below are guidance and policies on how to contribute to MIxS. Specific details on how to use GitHub for contributions are available in the [editing workflows](edit_workflow.md) document.
 
 ### Editing policies
 * All change requests to the GSC should be captured in an issue.
@@ -57,7 +57,7 @@ The GSC (through the CIG and with support from the TWG) creates major releases f
 
 # Policies for Community Contributions to MIxS
 
-This section provides policies about contributing to MIxS. See the [editing workflows](workflow.md) document for how to request, update, or deprecate a checklist, extension, or term.
+This section provides policies about contributing to MIxS. See the [editing workflows](edit_workflow.md) document for how to request, update, or deprecate a checklist, extension, or term.
 
 It is the responsibility of the CIG to work with contributors to ensure that their proposal meets MIxS and GSC requirements for content. It is the responsibility of the TWG to work with the CIG and external contributors to ensure that proposed changes meet MIxS technical requirments. 
 
@@ -71,7 +71,7 @@ See the MIxS documentation for a definitions of checklist, extension, and combin
 
 Changes to terms (addtion, deletion/deprecation, modification) are made by individuals, organizations (e.g., repositories working with MIxS), or communities. They may stand along or part of a new checklist or extension.
 
-Procedures for changing terms are described in the [editing workflows](workflow.md) document. All terms related requests must come through an issue in this GitHub repository. 
+Procedures for changing terms are described in the [editing workflows](edit_workflow.md) document. All terms related requests must come through an issue in this GitHub repository. 
 
 # What it means to be MIxS Compliant
 As a standards organization, GSC has expections of what it means to be compliant with their standards. For MIxS, this  means...

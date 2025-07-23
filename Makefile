@@ -197,6 +197,7 @@ $(DOCDIR):
 
 gendoc: ensure-dirs $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
+	rm -f $(DOCDIR)/README.md ; \
 	$(RUN) linkml generate doc ${GEN_DARGS} $(SOURCE_SCHEMA_PATH) -d $(DOCDIR) --template-directory $(TEMPLATEDIR) --use-slot-uris --use-class-uris --include src/mixs/schema/deprecated.yaml
 	$(RUN) python $(SRC)/scripts/term_list_generator.py $(TERM_LIST_FILE)
 	$(RUN) python $(SRC)/scripts/combinations_list_generator.py $(COMBINATIONS_FILE)
