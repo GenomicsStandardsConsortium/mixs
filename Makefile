@@ -82,7 +82,7 @@ gen-project: ensure-dirs $(PYMODEL)
 test: linkml-lint yaml-lint qc test-schema test-python test-examples
 
 test-schema:
-	@echo "Schema generation eliminated due to runtime concerns - validation handled by gen-project"
+	@echo "Schema re-generation in test phase eliminated due to long run time"
 
 test-python:
 	$(RUN) python -m unittest discover
