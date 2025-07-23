@@ -65,12 +65,25 @@ assets/mixs-schemasheets-concise.tsv: src/mixs/schema/mixs.yaml
 		--log-file assets/mixs-schemasheets-concise-log.txt \
 		--report-style concise
 
-assets/mixs-patterns-materialized.yaml: src/mixs/schema/mixs.yaml
+assets/mixs-patterns-materialized.yaml: assets/mixs-normalized-minimized.yaml
 	mkdir -p assets
 	$(RUN) gen-linkml \
 		--format yaml \
 		--materialize-patterns \
-		--no-materialize-attributes $< > $@
+		--no-materialize-attributes $< |\
+	yq eval '(.. | select(has("from_schema")) | .from_schema) style="" | del(.. | select(has("from_schema")).from_schema)' |\
+	yq eval '.classes[] |= select(has("annotations")).annotations |= map_values(.value)' |\
+	yq eval '.prefixes |= map_values(.prefix_reference)' |\
+	yq eval '.settings |= map_values(.setting_value)'  |\
+	yq eval '.slots[] |= select(has("annotations")).annotations |= map_values(.value)' |\
+	yq eval 'del(.classes.[].name)' |\
+	yq eval 'del(.classes.[].slot_usage.[].name)'  |\
+	yq eval 'del(.enums.[].name)'  |\
+	yq eval 'del(.enums.[].permissible_values.[].text)' |\
+	yq eval 'del(.slots[] | select(.domain != "MixsCompliantData") | .domain)'  |\
+	yq eval 'del(.slots.[].name)' |\
+	yq eval 'del(.source_file)'  |\
+	yq eval 'del(.subsets.[].name)' > $@
 
 assets/mixs-schemasheets-concise-global-slots.tsv: assets/mixs-schemasheets-concise.tsv
 	$(RUN) python src/scripts/isolate_slots.py
