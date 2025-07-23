@@ -50,7 +50,7 @@ assets/soil-vs-water-slot-usage.yaml: src/mixs/schema/mixs.yaml
 		--ext1 Soil \
 		--ext2 Water > $@
 
-assets/class_summary_results.tsv: src/mixs/schema/mixs.yaml assets/class_summary_template.tsv
+assets/class_summary_results.tsv: src/mixs/schema/mixs.yaml assets/templates/class_summary_template.tsv
 	mkdir -p assets
 	$(RUN) linkml2sheets \
 		--schema $(word 1,$^) \
