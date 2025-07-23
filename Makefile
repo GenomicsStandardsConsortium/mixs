@@ -112,7 +112,8 @@ examples/output: src/mixs/schema/mixs.yaml
 
 assets/mixs-pattern-materialized-normalized-minimized.yaml: src/mixs/schema/mixs.yaml
 	mkdir -p assets
-	$(RUN) linkml generate yaml \
+	$(RUN) linkml generate linkml \
+		--format yaml \
 		--no-mergeimports \
 		--no-materialize-attributes \
 		--materialize-patterns $< |\
