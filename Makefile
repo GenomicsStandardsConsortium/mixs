@@ -168,6 +168,7 @@ clean: clean-assets
 	rm -fr docs/*
 	rm -fr $(PYMODEL)/*
 	rm -rf $(EXCEL_TEMPLATES_DIR)
+	rm -rf examples/output
 
 .PHONY: qc clean-assets
 
