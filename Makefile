@@ -106,10 +106,6 @@ examples/output: src/mixs/schema/mixs.yaml
 		--output-directory $@ \
 		--schema $< > $@/README.md
 
-
-#  |\
-  #	yamlfmt -in -conf .yamlfmt >
-
 assets/mixs_structured_patterns_preferred.yaml: src/mixs/schema/mixs.yaml
 	mkdir -p assets
 	yq '(.slots[] | select(has("structured_pattern") and has("pattern"))) |= del(.pattern)' $< > $@
@@ -134,6 +130,56 @@ assets/mixs-normalized-minimized.yaml: assets/mixs_structured_patterns_preferred
 	yq eval 'del(.slots.[].name)' |\
 	yq eval 'del(.source_file)'  |\
 	yq eval 'del(.subsets.[].name)' > $@
+
+assets/mixs-patterns-materialized.yaml: assets/mixs-normalized-minimized.yaml
+	mkdir -p assets
+	$(RUN) gen-linkml \
+		--format yaml \
+		--materialize-patterns \
+		--no-materialize-attributes $< |\
+	yq eval '(.. | select(has("from_schema")) | .from_schema) style="" | del(.. | select(has("from_schema")).from_schema)' |\
+	yq eval '.classes[] |= select(has("annotations")).annotations |= map_values(.value)' |\
+	yq eval '.prefixes |= map_values(.prefix_reference)' |\
+	yq eval '.settings |= map_values(.setting_value)'  |\
+	yq eval '.slots[] |= select(has("annotations")).annotations |= map_values(.value)' |\
+	yq eval 'del(.classes.[].name)' |\
+	yq eval 'del(.classes.[].slot_usage.[].name)'  |\
+	yq eval 'del(.enums.[].name)'  |\
+	yq eval 'del(.enums.[].permissible_values.[].text)' |\
+	yq eval 'del(.slots[] | select(.domain != "MixsCompliantData") | .domain)'  |\
+	yq eval 'del(.slots.[].name)' |\
+	yq eval 'del(.source_file)'  |\
+	yq eval 'del(.subsets.[].name)' > $@
+
+.PHONY: gen-excel
+
+gen-excel: $(SOURCE_SCHEMA_PATH)
+	mkdir -p $(DEST)/excel
+	$(RUN) gen-excel $< \
+		--include-mixins \
+		--split-workbook-by-class \
+		--output $(DEST)/excel
+	mkdir -p $(EXCEL_TEMPLATES_DIR)
+	$(RUN) python src/scripts/organize_files.py \
+		--mixs-schema-file $< \
+		--source-directory $(DEST)/excel \
+		--base-destination-folder $(EXCEL_TEMPLATES_DIR) \
+		--extensions xlsx
+
+project/class-model-tsvs-organized: src/mixs/schema/mixs.yaml
+	$(RUN) linkml2class-tsvs \
+		--eligible-parent-classes Checklist \
+		--eligible-parent-classes Extension \
+		--output-dir project/class-model-tsvs \
+		--schema-file src/mixs/schema/mixs.yaml
+	mkdir -p project/class-model-tsvs-organized
+	$(RUN) python src/scripts/organize_files.py \
+		--mixs-schema-file $< \
+		--source-directory project/class-model-tsvs \
+		--base-destination-folder project/class-model-tsvs-organized \
+		--extensions tsv
+	rm -rf project/class-model-tsvs
+	mv project/class-model-tsvs-organized project/class-model-tsvs
 
 yamlfmt-beta: # was test1
 	echo $$PATH
