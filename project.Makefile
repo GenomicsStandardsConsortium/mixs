@@ -65,7 +65,7 @@ assets/mixs-schemasheets-concise.tsv: src/mixs/schema/mixs.yaml
 		--log-file assets/mixs-schemasheets-concise-log.txt \
 		--report-style concise
 
-assets/mixs-patterns-materialized.yaml: src/mixs/schema/mixs.yaml
+assets/mixs-patterns-materialized.yaml: assets/mixs-pattern-materialized-normalized-minimized.yaml
 	mkdir -p assets
 	$(RUN) gen-linkml \
 		--format yaml \

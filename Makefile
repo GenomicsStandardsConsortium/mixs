@@ -70,7 +70,7 @@ create-data-harmonizer:
 
 all: ensure-dirs site linkml-lint yaml-lint qc gen-excel project/class-model-tsvs-organized
 
-all-assets: ensure-dirs assets/mixs-pattern-materialized-normalized-minimized.yaml assets/mixs_derived_class_term_schemasheet.tsv assets/required_and_recommended_slot_usages.tsv assets/extensions-dendrogram.pdf assets/soil-vs-water-slot-usage.yaml assets/class_summary_results.tsv assets/mixs-schemasheets-concise.tsv assets/mixs-schemasheets-concise-global-slots.tsv assets/mixs-patterns-materialized.yaml
+all-assets: ensure-dirs assets/mixs_structured_patterns_preferred.yaml assets/mixs-pattern-materialized-normalized-minimized.yaml assets/mixs_derived_class_term_schemasheet.tsv assets/required_and_recommended_slot_usages.tsv assets/extensions-dendrogram.pdf assets/soil-vs-water-slot-usage.yaml assets/class_summary_results.tsv assets/mixs-schemasheets-concise.tsv assets/mixs-schemasheets-concise-global-slots.tsv assets/mixs-patterns-materialized.yaml
 
 site: gen-project gendoc
 %.yaml: gen-project
@@ -110,7 +110,11 @@ examples/output: src/mixs/schema/mixs.yaml
 #  |\
   #	yamlfmt -in -conf .yamlfmt >
 
-assets/mixs-pattern-materialized-normalized-minimized.yaml: src/mixs/schema/mixs.yaml
+assets/mixs_structured_patterns_preferred.yaml: src/mixs/schema/mixs.yaml
+	mkdir -p assets
+	yq '(.slots[] | select(has("structured_pattern") and has("pattern"))) |= del(.pattern)' $< > $@
+
+assets/mixs-pattern-materialized-normalized-minimized.yaml: assets/mixs_structured_patterns_preferred.yaml
 	mkdir -p assets
 	$(RUN) linkml generate linkml \
 		--format yaml \
@@ -179,6 +183,7 @@ clean-assets:
 	rm -rf assets/class_summary_results.* \
 	       assets/mixs_derived_class_term_schemasheet.* \
 	       assets/mixs-patterns-materialized.yaml \
+	       assets/mixs_structured_patterns_preferred.yaml \
 	       assets/mixs-pattern-materialized-normalized-minimized.yaml \
 	       assets/mixs-schemasheets-concise* \
 	       assets/required_and_recommended_slot_usages.tsv \
