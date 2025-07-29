@@ -384,7 +384,7 @@
 
 
 <h1 id="term-dose-of-isotopolog-isotopolog_dose">Term: dose of isotopolog (isotopolog_dose)</h1>
-<p><em>Total dose of isotopolog added to the system in grams</em></p>
+<p><em>Total dose of isotopolog added to the system in grams. Multiple values allowed, separated by a ; and should be orded the same as the isotopolog.</em></p>
 <p>URI: <a href="https://w3id.org/mixs/isotopolog_dose">MIXS:isotopolog_dose</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -400,7 +400,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../MisipMims/">MisipMims</a></td>
+<td><a href="../MimsMisip/">MimsMisip</a></td>
 <td>Metagenome or Environmental with SIP</td>
 <td>Checklist</td>
 </tr>
@@ -441,14 +441,15 @@ annotations:
   Preferred_unit:
     tag: Preferred_unit
     value: ppm
-description: Total dose of isotopolog added to the system in grams
+description: Total dose of isotopolog added to the system in grams. Multiple values
+  allowed, separated by a ; and should be orded the same as the isotopolog.
 title: dose of isotopolog
 examples:
 - value: 10 ppm
 from_schema: https://w3id.org/mixs
 alias: isotopolog_dose
 domain_of:
-- MisipMims
+- MimsMisip
 range: string
 recommended: true
 structured_pattern:
