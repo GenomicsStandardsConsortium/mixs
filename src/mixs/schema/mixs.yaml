@@ -14763,6 +14763,7 @@ slots:
     examples:
       - value: 13C
       - value: 13C; 15N
+    required: true
   isotopolog: 
     title: isotopolog
     description: Isotopologue (isotope source/substrate/molecule) added to the biological sample. 
@@ -14774,6 +14775,7 @@ slots:
       - value: toluene [pubchem.compound:1140]
       - value: toluene [pubchem.compound:1140]; water [pubchem.compound:962]
       - value: "0"
+    required: true
   isotopolog_label:
     title: isotopolog label status
     description: List whether the isotopologue added to this biological sample was heavy-labelled or natural abundance
@@ -14781,6 +14783,7 @@ slots:
     examples:
       - value: natural abundance
       - value: isotopically labeled
+    required: true
   isotopolog_approach:
     title: Labeling approach (number of labeled isotopologs supplied)
     description: The labelling approach of this SIP experiment. Details if multiple isotopically labelled isotopologues were added to samples ("multiple"), or was only one isotopologue added to each sample ("single").
@@ -14788,6 +14791,7 @@ slots:
     examples:
       - value: single
       - value: multiple
+    required: true
   gradient_position:
     title: gradient position
     description: A number designating the gradient position from heaviest (=1) to lightest. Unfractionated samples, from which fractionated samples were derived, should be denoted with –1.
@@ -14795,6 +14799,7 @@ slots:
     examples:
       - value: 1
       - value: -1
+    required: true
   gradient_pos_density:
     title: density of gradient position
     description: Buoyant density of this fraction
@@ -14805,6 +14810,7 @@ slots:
     examples:
       - value: 1.725 g/mL
       - value: 1.725 - 1.735 g/mL
+    recommended: true
   gradient_pos_rel_am:
     title: relative amount of nucleic acids in the gradient position
     description: Percent of total nucleic acids loaded onto the column in this fraction. If uploading 16S rRNA gene (or other amplicon) sequencing data, this value should be calculated from qPCR data. If uploading untargetted sequencing data, this value should be calculated from total DNA concentration.
@@ -14815,6 +14821,7 @@ slots:
     examples:
       - value: 10%
     range: string
+    recommended: true
   sip_method:
     title: method for SIP fractionating
     description: Method used to fractionate nucleic acids.
@@ -14823,6 +14830,7 @@ slots:
       - value: https://doi.org/10.1038/s41396-018-0279-6
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
+    recommended: true
   isotopolog_atom_frac:
     title: atom fraction of isotopolog
     description: The fraction of heavy-labelled atoms out of all atoms of a given element in the isotopolog. Multiple values allowed, separated by a ; and should be orded the same as the isotopolog.
@@ -14832,6 +14840,7 @@ slots:
       - value: 0.95
     structured_pattern:
       syntax: ^{float}|{float}-{float}$
+    recommended: true
   isotopolog_atom_pos:
     title: set of labeled atoms in isotopologue
     description: InChI label designating set of all isotopically enriched atoms in isotopologue. Multiple values allowed, separated by a ; and should be orded the same as the isotopolog.
@@ -14841,6 +14850,7 @@ slots:
       - value: undefined
     structured_pattern:
       syntax: ^{termLabel} {[termID]}|{text}$
+    recommended: true
   isotopolog_dose:
     title: dose of isotopolog
     description: Total dose of isotopolog added to the system in grams
@@ -14851,6 +14861,7 @@ slots:
       - value: 10 ppm
     structured_pattern:
       syntax: ^{float} {unit}$
+    recommended: true
   nucleobase_atom_frac:
     title: nucleobase excess atom fraction
     description: Excess atom fraction of the nucleobases in this fraction
@@ -14859,6 +14870,7 @@ slots:
       - value: 25%
     structured_pattern:
       syntax: ^{float}{unit}$
+    recommended: true
   isotopolog_incu_time:
     title: isotopolog incubation time
     description: Total time of incubation after isotopologue addition in hours
@@ -14869,6 +14881,7 @@ slots:
       - value: 12 hour
     structured_pattern:
       syntax: ^{float} {unit}$
+    recommended: true
   internal_standard:
     title: internal standard method
     description: Method used for internal standard for SIP fractionation, if an internal standard was used (i.e., spiking in a heavy-labelled DNA sequence).
@@ -14877,6 +14890,7 @@ slots:
       - value: https://doi.org/10.1101/2022.12.20.521340
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
+    recommended: true
 
 classes:
   MisipMims:
@@ -15004,34 +15018,6 @@ classes:
       source_mat_id:
         recommended: true
       temp:
-        recommended: true
-      isotope:
-        required: true
-      isotopolog:
-        required: true
-      isotopolog_label:
-        required: true
-      isotopolog_approach:
-        required: true
-      gradient_position:
-        required: true
-      gradient_pos_density:
-        recommended: true
-      gradient_pos_rel_am:
-        recommended: true
-      sip_method:
-        recommended: true
-      isotopolog_atom_frac:
-        recommended: true
-      isotopolog_atom_pos:
-        recommended: true
-      isotopolog_dose:
-        recommended: true
-      nucleobase_atom_frac:
-        recommended: true
-      isotopolog_incu_time:
-        recommended: true
-      internal_standard:
         recommended: true
     # class_uri: 
 
