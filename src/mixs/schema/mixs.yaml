@@ -14847,13 +14847,14 @@ slots:
     range: string
     examples:
       - value: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1
+      - value: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1; 1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h1,3-6,8-12H,2H2/t3-,4+,5+,6+/m0/s1
       - value: undefined
     structured_pattern:
       syntax: ^{termLabel} {[termID]}|{text}$
     recommended: true
   isotopolog_dose:
     title: dose of isotopolog
-    description: Total dose of isotopolog added to the system in grams
+    description: Total dose of isotopolog added to the system in grams. Multiple values allowed, separated by a ; and should be orded the same as the isotopolog.
     annotations:
       Preferred_unit: ppm
     range: string
