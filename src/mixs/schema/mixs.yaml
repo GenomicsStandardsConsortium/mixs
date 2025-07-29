@@ -14805,8 +14805,238 @@ slots:
     examples:
       - value: 1.725 g/mL
       - value: 1.725 - 1.735 g/mL
+  gradient_pos_rel_am:
+    title: relative amount of nucleic acids in the gradient position
+    description: Percent of total nucleic acids loaded onto the column in this fraction. If uploading 16S rRNA gene (or other amplicon) sequencing data, this value should be calculated from qPCR data. If uploading untargetted sequencing data, this value should be calculated from total DNA concentration.
+    structured_pattern:
+      syntax: ^{float} {unit}$
+    annotations:
+      Preferred_unit: percent
+    examples:
+      - value: 10%
+    range: string
+  sip_method:
+    title: method for SIP fractionating
+    description: Method used to fractionate nucleic acids.
+    range: string
+    examples:
+      - value: https://doi.org/10.1038/s41396-018-0279-6
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+  isotopolog_atom_frac:
+    title: atom fraction of isotopolog
+    description: The fraction of heavy-labelled atoms out of all atoms of a given element in the isotopolog. Multiple values allowed, separated by a ; and should be orded the same as the isotopolog.
+    range: string
+    examples:
+      - value: 0.99 or 0.99
+      - value: 0.95
+    structured_pattern:
+      syntax: ^{float}|{float}-{float}$
+  isotopolog_atom_pos:
+    title: set of labeled atoms in isotopologue
+    description: InChI label designating set of all isotopically enriched atoms in isotopologue. Multiple values allowed, separated by a ; and should be orded the same as the isotopolog.
+    range: string
+    examples:
+      - value: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1
+      - value: undefined
+    structured_pattern:
+      syntax: ^{termLabel} {[termID]}|{text}$
+  isotopolog_dose:
+    title: dose of isotopolog
+    description: Total dose of isotopolog added to the system in grams
+    annotations:
+      Preferred_unit: ppm
+    range: string
+    examples:
+      - value: 10 ppm
+    structured_pattern:
+      syntax: ^{float} {unit}$
+  nucleobase_atom_frac:
+    title: nucleobase excess atom fraction
+    description: Excess atom fraction of the nucleobases in this fraction
+    range: string
+    examples:
+      - value: 25%
+    structured_pattern:
+      syntax: ^{float}{unit}$
+  isotopolog_incu_time:
+    title: isotopolog incubation time
+    description: Total time of incubation after isotopologue addition in hours
+    annotations:
+      Preferred_unit: hours
+    range: string
+    examples:
+      - value: 12 hour
+    structured_pattern:
+      syntax: ^{float} {unit}$
+  internal_standard:
+    title: internal standard method
+    description: Method used for internal standard for SIP fractionation, if an internal standard was used (i.e., spiking in a heavy-labelled DNA sequence).
+    range: string
+    examples:
+      - value: https://doi.org/10.1101/2022.12.20.521340
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
 
 classes:
+  MimsMisip:
+    description: Metagenome or Environmental with SIP
+    title: MISIP-MIMS
+    aliases:
+      - misip
+      - mims
+    is_a: Checklist
+    mixin: true
+    slots:
+      - samp_name
+      - size_frac
+      - lib_screen
+      - ref_db
+      - nucl_acid_amp
+      - lib_size
+      - mid
+      - assembly_name
+      - temp
+      - nucl_acid_ext
+      - samp_size
+      - alt
+      - source_mat_id
+      - samp_vol_we_dna_ext
+      - lib_reads_seqd
+      - rel_to_oxygen
+      - samp_collect_device
+      - number_contig
+      - lib_layout
+      - assembly_qual
+      - ref_biomaterial
+      - project_name
+      - lib_vector
+      - adapters
+      - neg_cont_type
+      - assembly_software
+      - annot
+      - pos_cont_type
+      - feat_pred
+      - env_local_scale
+      - samp_mat_process
+      - sim_search_meth
+      - depth
+      - samp_collect_method
+      - env_medium
+      - samp_taxon_id
+      - geo_loc_name
+      - collection_date
+      - seq_meth
+      - lat_lon
+      - elev
+      - env_broad_scale
+      - tax_class
+      - experimental_factor
+      - associated_resource
+      - sop
+      - isotope
+      - isotopolog
+      - isotopolog_label
+      - isotopolog_approach
+      - gradient_position
+      - gradient_pos_density
+      - gradient_pos_rel_am
+      - sip_method
+      - isotopolog_atom_frac
+      - isotopolog_atom_pos
+      - isotopolog_dose
+      - nucleobase_atom_frac
+      - isotopolog_incu_time
+      - internal_standard
+    slot_usage:
+      adapters:
+        recommended: true
+      alt:
+        recommended: true
+      annot:
+        recommended: true
+      assembly_name:
+        recommended: true
+      assembly_qual:
+        recommended: true
+      assembly_software:
+        recommended: true
+      depth:
+        examples:
+          - value: 10 meter
+        recommended: true
+      elev:
+        recommended: true
+      experimental_factor:
+        recommended: true
+      lib_layout:
+        recommended: true
+      lib_reads_seqd:
+        recommended: true
+      lib_screen:
+        recommended: true
+      lib_size:
+        recommended: true
+      lib_vector:
+        recommended: true
+      mid:
+        recommended: true
+      nucl_acid_amp:
+        recommended: true
+      nucl_acid_ext:
+        recommended: true
+      number_contig:
+        recommended: true
+      samp_collect_device:
+        examples:
+          - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
+        recommended: true
+      samp_collect_method:
+        examples:
+          - value: swabbing
+        recommended: true
+      samp_mat_process:
+        recommended: true
+      samp_size:
+        recommended: true
+      sop:
+        recommended: true
+      source_mat_id:
+        recommended: true
+      temp:
+        recommended: true
+      isotope:
+        required: true
+      isotopolog:
+        required: true
+      isotopolog_label:
+        required: true
+      isotopolog_approach:
+        required: true
+      gradient_position:
+        required: true
+      gradient_pos_density:
+        recommended: true
+      gradient_pos_rel_am:
+        recommended: true
+      sip_method:
+        recommended: true
+      isotopolog_atom_frac:
+        recommended: true
+      isotopolog_atom_pos:
+        recommended: true
+      isotopolog_dose:
+        recommended: true
+      nucleobase_atom_frac:
+        recommended: true
+      isotopolog_incu_time:
+        recommended: true
+      internal_standard:
+        recommended: true
+    #class_uri: 
+
+
+
   MigsBa:
     description: 'Minimal Information about a Genome Sequence: cultured bacteria/archaea'
     title: MIGS bacteria
