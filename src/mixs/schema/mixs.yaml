@@ -14896,6 +14896,9 @@ slots:
 classes:
   MimsMisip:
     description: Metagenome or Environmental with SIP
+    comments: Any changes made to MIMS should be reflected here, in MIMS-MISIP. This checklist includes all MIMS terms and additional MISIP terms. 
+    todos:
+      - Add a validation or test to check the MIMS slots and MIMS-MISIP slots don't diverge
     title: MIMS-MISIP
     aliases:
       - misip
@@ -21770,6 +21773,229 @@ classes:
     mixins:
       - Mims
     class_uri: MIXS:0010007_0016014
+  MimsMisipAgriculture:
+    description: MIxS Data that comply with the MimsMisip checklist and the Agriculture
+      Extension
+    title: MimsMisip combined with Agriculture
+    in_subset:
+      - combination_classes
+    is_a: Agriculture
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipAir:
+    description: MIxS Data that comply with the MimsMisip checklist and the Air Extension
+    title: MimsMisip combined with Air
+    in_subset:
+      - combination_classes
+    is_a: Air
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipBuiltEnvironment:
+    description: MIxS Data that comply with the MimsMisip checklist and the BuiltEnvironment
+      Extension
+    title: MimsMisip combined with BuiltEnvironment
+    in_subset:
+      - combination_classes
+    is_a: BuiltEnvironment
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipFoodAnimalAndAnimalFeed:
+    description: MIxS Data that comply with the MimsMisip checklist and the FoodAnimalAndAnimalFeed
+      Extension
+    title: MimsMisip combined with FoodAnimalAndAnimalFeed
+    in_subset:
+      - combination_classes
+    is_a: FoodAnimalAndAnimalFeed
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipFoodFarmEnvironment:
+    description: MIxS Data that comply with the MimsMisip checklist and the FoodFarmEnvironment
+      Extension
+    title: MimsMisip combined with FoodFarmEnvironment
+    in_subset:
+      - combination_classes
+    is_a: FoodFarmEnvironment
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipFoodFoodProductionFacility:
+    description: MIxS Data that comply with the MimsMisip checklist and the FoodFoodProductionFacility
+      Extension
+    title: MimsMisip combined with FoodFoodProductionFacility
+    in_subset:
+      - combination_classes
+    is_a: FoodFoodProductionFacility
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipFoodHumanFoods:
+    description: MIxS Data that comply with the MimsMisip checklist and the FoodHumanFoods
+      Extension
+    title: MimsMisip combined with FoodHumanFoods
+    in_subset:
+      - combination_classes
+    is_a: FoodHumanFoods
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipHostAssociated:
+    description: MIxS Data that comply with the MimsMisip checklist and the HostAssociated
+      Extension
+    title: MimsMisip combined with HostAssociated
+    in_subset:
+      - combination_classes
+    is_a: HostAssociated
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipHumanAssociated:
+    description: MIxS Data that comply with the MimsMisip checklist and the HumanAssociated
+      Extension
+    title: MimsMisip combined with HumanAssociated
+    in_subset:
+      - combination_classes
+    is_a: HumanAssociated
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipHumanGut:
+    description: MIxS Data that comply with the MimsMisip checklist and the HumanGut Extension
+    title: MimsMisip combined with HumanGut
+    in_subset:
+      - combination_classes
+    is_a: HumanGut
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipHumanOral:
+    description: MIxS Data that comply with the MimsMisip checklist and the HumanOral Extension
+    title: MimsMisip combined with HumanOral
+    in_subset:
+      - combination_classes
+    is_a: HumanOral
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipHumanSkin:
+    description: MIxS Data that comply with the MimsMisip checklist and the HumanSkin Extension
+    title: MimsMisip combined with HumanSkin
+    in_subset:
+      - combination_classes
+    is_a: HumanSkin
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipHumanVaginal:
+    description: MIxS Data that comply with the MimsMisip checklist and the HumanVaginal
+      Extension
+    title: MimsMisip combined with HumanVaginal
+    in_subset:
+      - combination_classes
+    is_a: HumanVaginal
+    mixins:
+      - MimsMisip
+    #class_uri:
+  MimsMisipHydrocarbonResourcesCores:
+    description: MIxS Data that comply with the MimsMisip checklist and the HydrocarbonResourcesCores
+      Extension
+    title: MimsMisip combined with HydrocarbonResourcesCores
+    in_subset:
+      - combination_classes
+    is_a: HydrocarbonResourcesCores
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipHydrocarbonResourcesFluidsSwabs:
+    description: MIxS Data that comply with the MimsMisip checklist and the HydrocarbonResourcesFluidsSwabs
+      Extension
+    title: MimsMisip combined with HydrocarbonResourcesFluidsSwabs
+    in_subset:
+      - combination_classes
+    is_a: HydrocarbonResourcesFluidsSwabs
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipMicrobialMatBiofilm:
+    description: MIxS Data that comply with the MimsMisip checklist and the MicrobialMatBiofilm
+      Extension
+    title: MimsMisip combined with MicrobialMatBiofilm
+    in_subset:
+      - combination_classes
+    is_a: MicrobialMatBiofilm
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipMiscellaneousNaturalOrArtificialEnvironment:
+    description: MIxS Data that comply with the MimsMisip checklist and the MiscellaneousNaturalOrArtificialEnvironment
+      Extension
+    title: MimsMisip combined with MiscellaneousNaturalOrArtificialEnvironment
+    in_subset:
+      - combination_classes
+    is_a: MiscellaneousNaturalOrArtificialEnvironment
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipPlantAssociated:
+    description: MIxS Data that comply with the MimsMisip checklist and the PlantAssociated
+      Extension
+    title: MimsMisip combined with PlantAssociated
+    in_subset:
+      - combination_classes
+    is_a: PlantAssociated
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipSediment:
+    description: MIxS Data that comply with the MimsMisip checklist and the Sediment Extension
+    title: MimsMisip combined with Sediment
+    in_subset:
+      - combination_classes
+    is_a: Sediment
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipSoil:
+    description: MIxS Data that comply with the MimsMisip checklist and the Soil Extension
+    title: MimsMisip combined with Soil
+    in_subset:
+      - combination_classes
+    is_a: Soil
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipSymbiontAssociated:
+    description: MIxS Data that comply with the MimsMisip checklist and the SymbiontAssociated
+      Extension
+    title: MimsMisip combined with SymbiontAssociated
+    in_subset:
+      - combination_classes
+    is_a: SymbiontAssociated
+    mixins:
+      - MimsMisip
+    #lass_uri: 
+  MimsMisipWastewaterSludge:
+    description: MIxS Data that comply with the MimsMisip checklist and the WastewaterSludge
+      Extension
+    title: MimsMisip combined with WastewaterSludge
+    in_subset:
+      - combination_classes
+    is_a: WastewaterSludge
+    mixins:
+      - MimsMisip
+    #class_uri: 
+  MimsMisipWater:
+    description: MIxS Data that comply with the MimsMisip checklist and the Water Extension
+    title: MimsMisip combined with Water
+    in_subset:
+      - combination_classes
+    is_a: Water
+    mixins:
+      - MimsMisip
+    #class_uri: 
   MisagAgriculture:
     description: MIxS Data that comply with the Misag checklist and the Agriculture
       Extension
