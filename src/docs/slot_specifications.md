@@ -17,20 +17,20 @@ The key words “MUST”, “MUST NOT”, “SHOULD”, etc. are to be interpret
 This specification documentation refers to both MIxS and LinkML terminology.
 The following table can guide readers to how the terminology can be linked.
 
-| MIxS                    | LinkML               | Description                                                                                                                                            |
-| ----------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Term                    | `slot`               | A single field of information (metadata) that has various attributes on how this information should be represented and formatted                       |
-| Structured comment name | `name`               | A short computer compatible key or ID for a given metadata field that is used to refer to the particular term (typically) within the schema internally |
-| Item                    | `title`              | A short human readable name for the metadata term/slot                                                                                                 |
-| MIxS ID                 | `slot_uri`           |                                                                                                                                                        |
-| Definition              | `description`        | A detailed human-readable explanation of what information the metadata field should be holding                                                         |
-| Expected value          | `range`              | The category of metadata the metadata field will hold (text, numbers, etc.)                                                                            |
-| Value syntax            | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                 |
-| Section                 | `slot_group`         | A way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression               |
-| Section                 | `subset`             | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression         |
-| Requirement             | `recommended`        | Specifying the whether a metadata field is optional but should be to be filled in for a sample                                                         |
-| Requirement             | `required`           | Specifying the whether a metadata field is mandatory to be filled in for a sample                                                                      |
-| Occurrence              | `multivalued`        | The number of times a particular metadata field can be used for a specific sample                                                                      |
+| MIxS                    | LinkML               | Description                                                                                                                                                    |
+| ----------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Term                    | `slot`               | A single field of information (metadata) that has various attributes on how this information should be represented and formatted                               |
+| Structured comment name | `name`               | A short computer compatible key or ID for a given metadata field that is used to refer to the particular term (typically) within the schema internally         |
+| Item                    | `title`              | A short human readable name for the metadata term/slot                                                                                                         |
+| MIxS ID                 | `slot_uri`           | The resolvable globally unique persistent identifier associated with a MIxS metadata field with the prefix 'MIXS' that expands to https://w3id.org/gensc/mixs/ |
+| Definition              | `description`        | A detailed human-readable explanation of what information the metadata field should be holding                                                                 |
+| Expected value          | `range`              | The category of metadata the metadata field will hold (text, numbers, etc.)                                                                                    |
+| Value syntax            | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                         |
+| Section                 | `slot_group`         | A way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                       |
+| Section                 | `subset`             | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                 |
+| Requirement             | `recommended`        | Specifying the whether a metadata field is optional but should be to be filled in for a sample                                                                 |
+| Requirement             | `required`           | Specifying the whether a metadata field is mandatory to be filled in for a sample                                                                              |
+| Occurrence              | `multivalued`        | The number of times a particular metadata field can be used for a specific sample                                                                              |
 
 This document will generally use MIxS terminology, but where helpful more relevant use the LinkML equivalent, with the other form in parentheses afterwards.
 
