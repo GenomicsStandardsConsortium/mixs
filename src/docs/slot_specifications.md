@@ -4,7 +4,7 @@
 | ------------ | ----------------------------- |
 | Version      | 0.0.1                         |
 | Last updated | 2025-05-05                    |
-| Authors      | James Fellows Yates (@jfy133) |
+| Document Authors      | James Fellows Yates (@jfy133), Mark Miller (@turbomam), Chris Hunter (@only1chunts) |
 
 ## Preamble
 
