@@ -1,10 +1,10 @@
 # MIxS term specifications in the LinkML framework
 
-| Metadata     | Value                         |
-| ------------ | ----------------------------- |
-| Version      | 0.0.1                         |
-| Last updated | 2025-05-05                    |
-| Document Authors      | James Fellows Yates (@jfy133), Mark Miller (@turbomam), Chris Hunter (@only1chunts) |
+| Metadata         | Value                                                                               |
+| ---------------- | ----------------------------------------------------------------------------------- |
+| Version          | 0.0.1                                                                               |
+| Last updated     | 2025-05-05                                                                          |
+| Document Authors | James Fellows Yates (@jfy133), Mark Miller (@turbomam), Chris Hunter (@only1chunts) |
 
 ## Preamble
 
