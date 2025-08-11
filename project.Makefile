@@ -28,6 +28,11 @@ assets/mixs_derived_class_term_schemasheet.tsv: src/mixs/schema/mixs.yaml
 		--log-file assets/mixs_derived_class_term_schemasheet_log.txt \
 		--report-style concise
 
+assets/required_and_recommended_slot_usages.tsv: src/mixs/schema/mixs.yaml
+	$(RUN) python src/scripts/required_supersedes_recommended.py \
+		--input-schema $< \
+		--output $@
+
 extensions-dendrogram.pdf:
 	$(RUN) extension-distances \
 		--schema src/mixs/schema/mixs.yaml \
@@ -76,4 +81,3 @@ project/class-model-tsvs-organized: src/mixs/schema/mixs.yaml
 		--extensions tsv
 	rm -rf project/class-model-tsvs
 	mv project/class-model-tsvs-organized project/class-model-tsvs
-

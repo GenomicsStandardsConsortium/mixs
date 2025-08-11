@@ -46,7 +46,7 @@ generator_args:
     metadata_profiles: [ ]  # List of profiles
     ontology_uri_suffix: ".owl.ttl"  # Suffix for ontology URI
     type_objects: false  # Model types as objects instead of literals # config.yaml says true
-    use_native_uris: true  # Use definition_uris instead of class_uris
+    use_native_uris: false  # true -> MIXS:filter_type ; false -> MIXS:0000765
     # custom
     add_root_classes: true  # Add LinkML metamodel classes as superclasses
     mixins_as_expressions: true  # Use OWL existential restrictions for mixins
