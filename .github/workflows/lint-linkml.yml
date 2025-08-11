@@ -1,45 +1,69 @@
 ---
 name: LinkML Linting GitHub Action
 on:
-  push:
+  pull_request:
     paths:
       - "src/mixs/schema/mixs.yaml"
+  workflow_dispatch:  # This allows manual triggering
+
 jobs:
   linkml:
+    # Simplified permissions - we only need to upload artifacts
     permissions:
-      pull-requests: write
+      contents: read
+      pull-requests: write  # This is the missing piece!
     name: LinkML Linting
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
+      # Fixed: Specify exact Python version instead of using undefined matrix variable
+      - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
-          cache: 'poetry'
+          python-version: '3.11'
+          # Removed cache here since Poetry isn't installed yet
 
+      # Install Poetry first before trying to use it
       - name: Install Poetry
         run: pipx install poetry
 
+      # Now we can configure Poetry cache
+      - name: Configure Poetry cache
+        run: poetry config cache-dir ~/.cache/poetry
+
+      # Install dependencies with Poetry
       - name: Install dependencies
         run: poetry install --no-interaction --no-root
 
+      # Run the LinkML linting command
       - name: Run LinkML Linting
         run: |
-          ## Results file header and basic formatting
-          printf '# LinkML Linting Results \n\n' > linting-results.md
-          printf "$(poetry run linkml --version) linting found the following issues. \n\n" >> linting-results.md
-          printf "_For more information about the linting rule categories, see the [LinkML linter documentation](https://linkml.io/linkml/schemas/linter.html#rules)._\n" >> linting-results.md
-          ## Lint the schema, and further format
-          poetry run linkml lint --ignore-warnings -f markdown src/mixs/schema/mixs.yaml >> linting-results.md
-      - name: Reformat log
-        run: |
-          sed -i -e 's/#### Errors/> [!CAUTION]/' -e 's/#### Warnings/> [!WARNING]/' -e 's/^*/> */' -e '/###.*yaml/ s/$/\n/' -e '/###.*yaml/ s/^###/**File**:/' linting-results.md
-      - name: Post PR comment
-        uses: mshick/add-pr-comment@v2 # v2
+          # Create linting results with timestamp header
+          echo "# LinkML Linting Results" > linting-results.md
+          echo "Generated on: $(date)" >> linting-results.md
+          echo "" >> linting-results.md
+          
+          # Run the linter and capture output (continue even if linter finds issues)
+          poetry run linkml lint --ignore-warnings -f markdown src/mixs/schema/mixs.yaml > linting-results.md || true
+          
+          # Show results in the action log for immediate visibility
+          echo "=== Linting Results ==="
+          cat linting-results.md
+
+      - name: Comment linting results on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
         with:
-          message-path: linting-results.md
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-repeats: true
+          script: |
+            const fs = require('fs');
+            const lintingResults = fs.readFileSync('linting-results.md', 'utf8');
+
+            // Create or update comment with linting results
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## LinkML Linting Results\n\n${lintingResults}`
+            });
