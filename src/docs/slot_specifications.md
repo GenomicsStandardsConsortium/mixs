@@ -26,6 +26,7 @@ The following table can guide readers to how the terminology can be linked.
 | Definition              | `description`        | A detailed human-readable explanation of what information the metadata field should be holding                                                                 |
 | Expected value          | `range`              | The category of metadata the metadata field will hold (text, numbers, etc.)                                                                                    |
 | Value syntax            | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                         |
+| Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field should be filled in                                                                |
 | Section                 | `slot_group`         | A way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                       |
 | Section                 | `subset`             | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                 |
 | Requirement             | `recommended`        | Specifying the whether a metadata field is optional but should be to be filled in for a sample                                                                 |
