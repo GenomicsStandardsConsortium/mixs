@@ -54,27 +54,27 @@ All MIxS terms attributes MUST be written in English.
 
 ## 2. Term structured naming
 
-### 2.1 Term name format
+### 2.1 (Structured comment) name format
 
-The term (slot) name MUST be in [snake_case](https://en.wikipedia.org/wiki/Snake_case).
+The term (slot) structured comment name (`name`) MUST be in [snake_case](https://en.wikipedia.org/wiki/Snake_case).
 
 All words must be lower case and underscores (`_`) MUST be used to separate words in the slot name.
 
-### 2.1 Term name length
+### 2.1 (Structured comment) name length
 
-The term (slot) name must be a maximum of 20 characters in length as per INSDC guidelines ([https://www.insdc.org/submitting-standards/feature-table/#3.1](https://www.insdc.org/submitting-standards/feature-table/#3.1)).
+The term (slot) structured comment name (`name`) must be a maximum of 20 characters in length as per INSDC guidelines ([https://www.insdc.org/submitting-standards/feature-table/#3.1](https://www.insdc.org/submitting-standards/feature-table/#3.1)).
 
-### 2.4 Term name uniqueness
+### 2.4 (Structured comment) name uniqueness
 
-The term (slot) name MUST be unique within the MIxS LinkML model.
+The term (slot) structured comment name (`name`) MUST be unique within the MIxS LinkML model.
 
-### 2.5 Term name descriptiveness
+### 2.5 (Structured comment) name descriptiveness
 
-The term (slot) name MUST be descriptive of the data it is intended to hold.
+The term (slot) structured comment name (`name`) MUST be descriptive of the data it is intended to hold.
 
-### 2.6 Term name abbreviation
+### 2.6 (Structured comment) name abbreviation
 
-The term (slot) name SHOULD be a abbreviated form of the item (title) attribute.
+The term (slot) structured comment name (`name`) SHOULD be a abbreviated form of the item (title) attribute.
 
 Examples:
 
@@ -86,9 +86,9 @@ Examples:
 | sample volume or weight for DNA extraction      | `samp_vol_we_dna_ext`            |
 | collection site geographic feature              | `coll_site_geo_feat`             |
 
-### 2.7 Term name common prefix
+### 2.7 (Structured comment) name common prefix
 
-When related to existing terms, the term (slot) name SHOULD use a common prefix that allow grouping of related terms.
+When related to existing terms, the term (slot) structured comment name (`name`) SHOULD use a common prefix that allow grouping of related terms.
 
 Examples:
 
@@ -108,11 +108,11 @@ Examples:
   | assembly software            | `assembly_software`              |
   | assembly quality             | `assembly_qual`                  |
 
-## 4. Term data types
+## 4. Term expected value types
 
-### 4.1 Term data types must be valid LinkML types
+### 4.1 Term expected value must be valid LinkML range types
 
-The data or information a term (slot) encodes MUST be in the form of a valid LinkML `range:` type:
+The type of data specified in the expected value (`range`) of a slot (term) MUST be in the form of a valid LinkML `range` type:
 
 - `string`
 - `integer`
@@ -143,33 +143,33 @@ A term (slot) that has some level of 'requirement' (mandatory, conditional manda
 - [`recommended`](https://linkml.io/linkml/schemas/slots.html#recommended)
 - [`required`](https://linkml.io/linkml/schemas/slots.html#required)
 
-## 4. Term description
+## 4. Term definition
 
-### 4.1 Description contents
+### 4.1 Definition contents
 
 The definition (description) SHOULD aim to be precise enough for a user to understand the data the term (slot) is intended to hold, how it should be filled, and used.
 
 Links to external resources (e.g. ontologies, databases, or other documentation) SHOULD be included in the definition (description) when relevant.
 
-### 4.2 Description length
+### 4.2 Definition length
 
 The definition (description) MUST be at a minimum 1 sentence long that is longer than the term (slot) title.
 
 The definition (description) MAY be multiple sentences long, but should be as concise as possible to ensure readability.
 
-### 4.3 Description examples
+### 4.3 Definition examples
 
 The definition (description) SHOULD NOT include basic examples of the data the term (slot) is intended to hold (this is covered by the `examples` attribute).
 
 The definition (description) MAY include examples when the information for the term (slot) requires different formatting depending on certain conditions. The definition (description) MAY also include examples when it requires additional understanding that cannot be inferred by looking purely at the `examples` section.
 
-### 4.4 Description external resources
+### 4.4 Definition external resources
 
 Links or URLs used in the definition (description) to point a reader to an external resource MUST be valid and generally accessible via the public world wide web.
 
 External resources SHOULD only be referred to when from a stable and established resource (i.e., not a personal or website, or a resource that is not widely used).
 
-URLs in external resources specified within descriptions SHOULD also be defined within a LinkML `see_also` slot attribute.
+URLs in external resources specified within descriptions SHOULD also be defined within a LinkML [`see_also` slot attribute](https://linkml.io/linkml-model/latest/docs/see_also/).
 
 ## 5. Term item title attribute
 
@@ -201,11 +201,12 @@ Capitalisation MAY be used when it is an acronym or abbreviation that typically 
 
 ### 6.1 Minimum number of examples
 
-There MUST have minimum of 3 examples for a term (slot).
+There MUST have minimum of 1 examples for a term (slot).
+Ideally, there SHOULD be a minimum of 3 examples for a term (slot).
 
 ### 6.2 Scope of examples
 
-In addition to the minimum number of examples, the examples SHOULD cover the full range of possible values, string formats, or any other way that information can be given to the term (slot).
+Examples SHOULD cover the full range of possible values, string formats, or any other way that information can be given to the term (slot).
 
 For example if a term (slot) accepts either an ontology term _or_ a free text string, there should be at least one example for each type.
 If a term (slot) accepts different unit types, there should be at least two examples of different units to demonstrate multiple units are accepted.
@@ -257,6 +258,9 @@ The MIxS ID (slot_uri) must begin with the string `MIXS`, a colon, and followed 
 
 Example: `MIXS:0000010`.
 
+> [!NOTE]
+> MIxS IDs are only able to be assigned by the GSC's Compliance and Integration Working Group (CIG).
+
 ## 10. Slot range attribute
 
 ### 10.1 Range options should be valid LinkML types
@@ -269,13 +273,19 @@ A term that requires a specific value syntax or a structured string layout SHOUL
 
 A slot MAY use `pattern:` attribute when XYZ <!-- TODO -->.
 
-### 10.2 Specifying units
+### 10.3 Strucutred or formatted text components should be reused
+
+A structured pattern SHOULD re-use existing pattern components when as far as possible.
+
+Additional pattern components MAY be created when needed after consultation with the GSC's Compliance and Integration Working Group (CIG).
+
+### 10.4 Specifying units
 
 Terms (slots) that require the use of a measurement unit SHOULD specify the types of units through a dedicated structured string pattern component.
 
 ## 11. Multiple occurrence
 
-A term (slot) that allows multiple values for a single sample SHOULD be be specified by setting the LinkML `multivalued` boolean to `true`.
+A term (slot) that allows multiple values for a single sample SHOULD be specified by setting the LinkML `multivalued` boolean to `true`.
 
 ## 12. Level of requirement
 
