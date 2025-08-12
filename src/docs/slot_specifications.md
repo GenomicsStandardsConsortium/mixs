@@ -282,7 +282,7 @@ Additional pattern components MAY be created when needed after consultation with
 
 ### 11.4 Specifying units
 
-Terms (slots) SHOULD specify the preferred unit of measurement for the term (slot) within a LinkmL `annotation` slot sub-attribute called `Preferred_unit:`.
+Terms (slots) that record a measurement SHOULD specify the preferred unit of measurement for the term (slot) within a LinkmL `annotation` slot sub-attribute called `Preferred_unit:`.
 
 Example:
 
