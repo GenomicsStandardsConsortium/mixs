@@ -46,7 +46,7 @@ It MUST conform to any MIxS specific LinkML linting requirements as defined with
 
 A LinkML slot is the object that is used to describe a MIxS term - i.e. information that is used to describe a particular aspect of a sample, nucleic acid,, or sequence data.
 
-### 1.2 Language
+### 1.3 Language
 
 All MIxS terms attributes MUST be written in English.
 
