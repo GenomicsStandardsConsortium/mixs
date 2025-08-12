@@ -221,13 +221,13 @@ If a term (slot) allows multiple occurrences ('multivalued'), the examples MUST 
 > [!WARNING]
 > The guidance in this section regarding `subset`s may be replaced with the use of `slot-group` in the future.
 
-### 8.1 All core slots must be assigned a subset
+### 8.1 All core terms must be assigned a subset
 
-All core checklist LinkML slots (terms) MUST be assigned to a section (subset).
+All core checklist terms (slot) MUST be assigned to a section (subset).
 
-### 8.2 All extension terms must not be assigned a subset
+### 8.2 All extension terms must be assigned the environment subset
 
-A slot (term) assigned to just an extension MUST NOT be assigned to a section (subset).
+A term (slot) defined in an extension (rather than a core checklist term) MUST be assigned to the 'Environment' section (subset).
 
 ## 9. Term keywords attribute
 
