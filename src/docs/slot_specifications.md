@@ -282,7 +282,14 @@ Additional pattern components MAY be created when needed after consultation with
 
 ### 11.4 Specifying units
 
-Terms (slots) that require the use of a measurement unit SHOULD specify the types of units through a dedicated structured string pattern component.
+Terms (slots) SHOULD specify the preferred unit of measurement for the term (slot) within a LinkmL `annotation` slot sub-attribute called `Preferred_unit:`.
+
+Example:
+
+```yaml
+annotations:
+  Preferred_unit: degree Celsius
+```
 
 ## 12. Multiple occurrence
 
