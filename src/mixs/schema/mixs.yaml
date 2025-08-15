@@ -50,7 +50,7 @@ enums:
     permissible_values:
       not applicable:
         description: >
-          Information is inappropriate to report, 
+          Information is inappropriate to report,
           can indicate that the standard itself fails to model or represent the information appropriately
         aliases:
           - n/a
@@ -79,21 +79,21 @@ enums:
         description: Information is not applicable as the sample represents a negative control sample collected in a lab.
       "missing: sample group":
         description: >
-          Information is not applicable as the sample represents a group of samples that do not have a single origin. 
+          Information is not applicable as the sample represents a group of samples that do not have a single origin.
           E.g. for co-assembly or transcriptome assembly.
       "missing: synthetic construct":
         description: Information does not exist as the sample represents an ab-initio synthetic construct.
       "missing: lab stock":
         description: >
-          Information was not collected as the sample represents a cultured cell line or model organism 
+          Information was not collected as the sample represents a cultured cell line or model organism
           under long-term lab control.
       "missing: third party data":
         description: >
-          Information does not exist as the metadata was not collected or reported in records predating the 2023 agreement. 
+          Information does not exist as the metadata was not collected or reported in records predating the 2023 agreement.
           For use in Third PArty data submissions.
       "missing: data agreement established pre-2023":
         description: >
-          Data agreements were established before the 2023 INSDC standard and metadata can not be provided. 
+          Data agreements were established before the 2023 INSDC standard and metadata can not be provided.
           A value may be given at a later stage.
       "missing: endangered species":
         description: Information can not be reported as the target organism is endangered e.g. on the IUCN red-list.
@@ -3906,7 +3906,7 @@ slots:
   abs_air_humidity:
     annotations:
       Preferred_unit: gram per gram, kilogram per kilogram, kilogram, pound, gram per cubic meter, kilogram per cubic meter, percent
-    description: Actual mass of water vapor present in the air water vapor mixture. 
+    description: Actual mass of water vapor present in the air water vapor mixture.
     comments:
       - Can be calculated via mass of water vapor divided by the volume of the air and water vapor mixture.
     title: absolute air humidity
@@ -5438,7 +5438,7 @@ slots:
       interpolated: true
       partial_match: true
   climate_environment:
-    deprecated: true, slot is inconsistently used and provides redundant information to other slots, https://github.com/GenomicsStandardsConsortium/mixs/issues/591 and https://github.com/microbiomedata/nmdc-schema/issues/586 
+    deprecated: true, slot is inconsistently used and provides redundant information to other slots, https://github.com/GenomicsStandardsConsortium/mixs/issues/591 and https://github.com/microbiomedata/nmdc-schema/issues/586
     description: Treatment involving an exposure to a particular climate; treatment
       regimen including how many times the treatment was repeated, how long each treatment
       lasted, and the start and end time of the entire treatment; can include multiple
@@ -9730,7 +9730,7 @@ slots:
       History of nose/mouth/teeth/throat disorders; can include multiple
       disorders. The terms should be chosen from the DO (Human Disease Ontology) at
       http://www.disease-ontology.org, nose disease (https://disease-ontology.org/?id=DOID:2825),
-      mouth disease (https://disease-ontology.org/?id=DOID:403), 
+      mouth disease (https://disease-ontology.org/?id=DOID:403),
       tooth disease (https://disease-ontology.org/?id=DOID:1091),
       or upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)
     title: nose/mouth/teeth/throat disorder
@@ -9739,10 +9739,10 @@ slots:
     slot_uri: MIXS:0000283
     multivalued: true
     range: string
-    deprecated: true, replace with MIXS:0000270 https://github.com/GenomicsStandardsConsortium/mixs/issues/743 
+    deprecated: true, replace with MIXS:0000270 https://github.com/GenomicsStandardsConsortium/mixs/issues/743
   nose_throat_disord:
     description: >
-      Report any history of nose, mouth, teeth and/or throat disorders in the subject. 
+      Report any history of nose, mouth, teeth and/or throat disorders in the subject.
       May include multiple disorders.
     title: nose throat disorder
     keywords:
@@ -9751,8 +9751,8 @@ slots:
     aliases: nose_mouth_teeth_throat_disord
     comments:
       - >
-        The terms should be chosen from the DO (Human Disease Ontology) 
-        at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850), 
+        The terms should be chosen from the DO (Human Disease Ontology)
+        at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850),
         upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)
     multivalued: true
     range: string
@@ -14764,9 +14764,9 @@ slots:
       - value: 13C
       - value: 13C; 15N
     required: true
-  isotopolog: 
+  isotopolog:
     title: isotopolog
-    description: Isotopologue (isotope source/substrate/molecule) added to the biological sample. 
+    description: Isotopologue (isotope source/substrate/molecule) added to the biological sample.
     comments: List the PubChem Compound Identification (CID) number. If it's an undefined mixture, enter 0. If more than one isotopologue was used in this sample, use a ; to delimit each isotopolog.
     structured_pattern:
       syntax: ^{termLabel} {[termID]}
@@ -14896,7 +14896,7 @@ slots:
 classes:
   MimsMisip:
     description: Metagenome or Environmental with SIP
-    comments: Any changes made to MIMS should be reflected here, in MIMS-MISIP. This checklist includes all MIMS terms and additional MISIP terms. 
+    comments: Any changes made to MIMS should be reflected here, in MIMS-MISIP. This checklist includes all MIMS terms and additional MISIP terms.
     todos:
       - Add a validation or test to check the MIMS slots and MIMS-MISIP slots don't diverge
     title: MIMS-MISIP
@@ -15022,7 +15022,7 @@ classes:
         recommended: true
       temp:
         recommended: true
-    # class_uri: 
+        # class_uri:
 
   MigsBa:
     description: 'Minimal Information about a Genome Sequence: cultured bacteria/archaea'
@@ -16410,9 +16410,9 @@ classes:
     class_uri: MIXS:0010012
   Agriculture:
     description: >-
-      A collection of terms appropriate when sequencing samples obtained in an agricultural environment. 
-      Suitable to capture metadata appropriate to enhance crop productivity and agroecosystem health 
-      with the aim to facilitate research of agricultural microbiomes and their relationships to plant productivity 
+      A collection of terms appropriate when sequencing samples obtained in an agricultural environment.
+      Suitable to capture metadata appropriate to enhance crop productivity and agroecosystem health
+      with the aim to facilitate research of agricultural microbiomes and their relationships to plant productivity
       and sustainable crop production from diverse crop management contexts.
     title: agriculture
     is_a: Extension
@@ -16883,8 +16883,8 @@ classes:
       use_cases: bioaerosol samples, pathogen load in urban air, aerosols
   BuiltEnvironment:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples obtained in the 
-      built-up environment, which includes terms for surface material, humidity, temperature, moisture and 
+      A collection of terms appropriate when collecting samples and sequencing samples obtained in the
+      built-up environment, which includes terms for surface material, humidity, temperature, moisture and
       occupancy type along with specific metadata terms describing the indoor air, building and sample properties.
     title: built environment
     is_a: Extension
@@ -17082,7 +17082,7 @@ classes:
       use_cases: microbiology studies of the built environment, NASA space station sampling, MetaSUB transit system sampling, home, hospitals, office buildings
   FoodAnimalAndAnimalFeed:
     description: >-
-      A collection of terms appropriate when collecting samples and performing sequencing of samples 
+      A collection of terms appropriate when collecting samples and performing sequencing of samples
       obtained from farm animals and their feed.
     comments:
       - This extension is intended to work alongside the other food extensions
@@ -17232,7 +17232,7 @@ classes:
       use_cases: Microbiome of farm animals, their feed, and pet food.
   FoodFarmEnvironment:
     description: >-
-      A collection of terms appropriate when collecting samples and performing sequencing of samples 
+      A collection of terms appropriate when collecting samples and performing sequencing of samples
       obtained from the farm environment, including soil, manure, and food harvesting equipment.
     comments:
       - This extension is intended to work alongside the other food extensions
@@ -17458,7 +17458,7 @@ classes:
       use_cases: Microbiome of farm and field crops as well as environmental samples including irrigation, soil amendments, and farm equipment.
   FoodFoodProductionFacility:
     description: >-
-      A collection of terms appropriate when collecting samples and performing sequencing of samples 
+      A collection of terms appropriate when collecting samples and performing sequencing of samples
       obtained from food production facilities.
     comments:
       - This extension is intended to work alongside the other food extensions
@@ -17616,7 +17616,7 @@ classes:
       use_cases: Microbiome of food production facilities/factories
   FoodHumanFoods:
     description: >-
-      A collection of terms appropriate when collecting samples and performing sequencing of samples 
+      A collection of terms appropriate when collecting samples and performing sequencing of samples
       obtained from human food products.
     comments:
       - This extension is intended to work alongside the other food extensions
@@ -17766,7 +17766,7 @@ classes:
       use_cases: Microbiome of foods intended for human consumption.
   HostAssociated:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from a non-human host, to examine the host-associated microbiome or genome.
     comments:
       - This is a very broad package, intended to capture many kinds of sequences derived
@@ -17901,8 +17901,8 @@ classes:
       use_cases: elephant fecal matter or cat oral cavity
   HumanAssociated:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
-      obtained from a person to examine their human-associated microbiome or genome, 
+      A collection of terms appropriate when collecting samples and sequencing samples
+      obtained from a person to examine their human-associated microbiome or genome,
       that does not have a specific extension (e.g., skin, gut, vaginal).
     comments:
       - For stool samples use MIxS-human-gut extension.
@@ -18012,7 +18012,7 @@ classes:
       use_cases: blood samples or biopsy samples.
   HumanGut:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from a person to examine their gut-associated microbiome.
     title: human-gut
     is_a: Extension
@@ -18104,7 +18104,7 @@ classes:
       use_cases: human stool or fecal samples, or samples collected directly from the gut.
   HumanOral:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from a person to examine their oral-associated microbiome.
     title: human-oral
     is_a: Extension
@@ -18196,7 +18196,7 @@ classes:
       use_cases: mouth swab sampling, dental microbiome samples, microbiome of oral swabs, nasal, mouth, throat, teeth, tongue microbiome studies
   HumanSkin:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from a person to examine their skin-associated microbiome.
     title: human-skin
     is_a: Extension
@@ -18288,7 +18288,7 @@ classes:
       use_cases: swab samples taken on a person’s skin surface.
   HumanVaginal:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from a person to examine their vaginal-associated microbiome.
     title: human-vaginal
     is_a: Extension
@@ -18387,7 +18387,7 @@ classes:
       use_cases: vaginal swabbing
   HydrocarbonResourcesCores:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from environments pertaining to hydrocarbon resources, specifically core samples.
     title: hydrocarbon resources-cores
     is_a: Extension
@@ -18513,7 +18513,7 @@ classes:
       use_cases: The microbial characterization of hydrocarbon occurrences, defined as the natural and artificial environmental features that are rich in hydrocarbons, from hydrocarbon rich formations, such as reservoir cores.
   HydrocarbonResourcesFluidsSwabs:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from environments pertaining to hydrocarbon resources, specifically run-off liquids samples and swabs.
     title: hydrocarbon resources-fluids/swabs
     is_a: Extension
@@ -18643,7 +18643,7 @@ classes:
       use_cases: The microbial characterization of hydrocarbon occurrences,  defined as the natural and artificial environmental features that are rich in hydrocarbons, from hydrocarbon resource fluids.
   MicrobialMatBiofilm:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from biofilm environments including microbial mats.
     title: microbial mat/biofilm
     is_a: Extension
@@ -18734,7 +18734,7 @@ classes:
       use_cases: samples from microbial mats at cold seeps
   MiscellaneousNaturalOrArtificialEnvironment:
     description: >-
-      A collection of generic terms appropriate when collecting and sequencing samples 
+      A collection of generic terms appropriate when collecting and sequencing samples
       obtained from environments, where there is no specific extension already available.
     title: miscellaneous natural or artificial environment
     is_a: Extension
@@ -18802,7 +18802,7 @@ classes:
       - MIxS-miscellaneous natural or artificial environment
   PlantAssociated:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from a plant to examine it’s plant-associated microbiome.
     title: plant-associated
     is_a: Extension
@@ -18957,7 +18957,7 @@ classes:
       use_cases: plant surface swabs, root soil or rhizosphere, cultivated plants, plant phenotyping
   Sediment:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from the sedimentary area of aquatic environments.
     comments:
       - Sedimentary layers in terrestrial environments will probably be better served by the soil extension.
@@ -19056,7 +19056,7 @@ classes:
       use_cases: river bed or sea floor.
   Soil:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from the uppermost layer of Earth's crust, contributed by the Terragenome Consortium.
     see_also:
       - https://www.fao.org/agriculture/crops/thematic-sitemap/theme/spi/soil-biodiversity/research-into-soil-biodiversity/the-terragenome-project/en/
@@ -19146,7 +19146,7 @@ classes:
       use_cases: soil collection, island microbiome sampling, farm land or forest floor.
   SymbiontAssociated:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from an organism that lives in close association with any other organism(s).
     title: symbiont-associated
     is_a: Extension
@@ -19268,7 +19268,7 @@ classes:
       use_cases: the microbiome sequence of a flea sampled from a farm animal
   WastewaterSludge:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples 
+      A collection of terms appropriate when collecting samples and sequencing samples
       obtained from any solid, semisolid or liquid waste.
     title: wastewater/sludge
     is_a: Extension
@@ -19328,7 +19328,7 @@ classes:
       use_cases: sewerage or industrial wastewater
   Water:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing water samples 
+      A collection of terms appropriate when collecting samples and sequencing water samples
       obtained from any aquatic environment.
     title: water
     is_a: Extension
@@ -21782,7 +21782,7 @@ classes:
     is_a: Agriculture
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipAir:
     description: MIxS Data that comply with the MimsMisip checklist and the Air Extension
     title: MimsMisip combined with Air
@@ -21791,7 +21791,7 @@ classes:
     is_a: Air
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipBuiltEnvironment:
     description: MIxS Data that comply with the MimsMisip checklist and the BuiltEnvironment
       Extension
@@ -21801,7 +21801,7 @@ classes:
     is_a: BuiltEnvironment
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipFoodAnimalAndAnimalFeed:
     description: MIxS Data that comply with the MimsMisip checklist and the FoodAnimalAndAnimalFeed
       Extension
@@ -21811,7 +21811,7 @@ classes:
     is_a: FoodAnimalAndAnimalFeed
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipFoodFarmEnvironment:
     description: MIxS Data that comply with the MimsMisip checklist and the FoodFarmEnvironment
       Extension
@@ -21821,7 +21821,7 @@ classes:
     is_a: FoodFarmEnvironment
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipFoodFoodProductionFacility:
     description: MIxS Data that comply with the MimsMisip checklist and the FoodFoodProductionFacility
       Extension
@@ -21831,7 +21831,7 @@ classes:
     is_a: FoodFoodProductionFacility
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipFoodHumanFoods:
     description: MIxS Data that comply with the MimsMisip checklist and the FoodHumanFoods
       Extension
@@ -21841,7 +21841,7 @@ classes:
     is_a: FoodHumanFoods
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipHostAssociated:
     description: MIxS Data that comply with the MimsMisip checklist and the HostAssociated
       Extension
@@ -21851,7 +21851,7 @@ classes:
     is_a: HostAssociated
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipHumanAssociated:
     description: MIxS Data that comply with the MimsMisip checklist and the HumanAssociated
       Extension
@@ -21861,7 +21861,7 @@ classes:
     is_a: HumanAssociated
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipHumanGut:
     description: MIxS Data that comply with the MimsMisip checklist and the HumanGut Extension
     title: MimsMisip combined with HumanGut
@@ -21870,7 +21870,7 @@ classes:
     is_a: HumanGut
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipHumanOral:
     description: MIxS Data that comply with the MimsMisip checklist and the HumanOral Extension
     title: MimsMisip combined with HumanOral
@@ -21879,7 +21879,7 @@ classes:
     is_a: HumanOral
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipHumanSkin:
     description: MIxS Data that comply with the MimsMisip checklist and the HumanSkin Extension
     title: MimsMisip combined with HumanSkin
@@ -21888,7 +21888,7 @@ classes:
     is_a: HumanSkin
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipHumanVaginal:
     description: MIxS Data that comply with the MimsMisip checklist and the HumanVaginal
       Extension
@@ -21898,7 +21898,7 @@ classes:
     is_a: HumanVaginal
     mixins:
       - MimsMisip
-    # class_uri:
+      # class_uri:
   MimsMisipHydrocarbonResourcesCores:
     description: MIxS Data that comply with the MimsMisip checklist and the HydrocarbonResourcesCores
       Extension
@@ -21908,7 +21908,7 @@ classes:
     is_a: HydrocarbonResourcesCores
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipHydrocarbonResourcesFluidsSwabs:
     description: MIxS Data that comply with the MimsMisip checklist and the HydrocarbonResourcesFluidsSwabs
       Extension
@@ -21918,7 +21918,7 @@ classes:
     is_a: HydrocarbonResourcesFluidsSwabs
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipMicrobialMatBiofilm:
     description: MIxS Data that comply with the MimsMisip checklist and the MicrobialMatBiofilm
       Extension
@@ -21928,7 +21928,7 @@ classes:
     is_a: MicrobialMatBiofilm
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipMiscellaneousNaturalOrArtificialEnvironment:
     description: MIxS Data that comply with the MimsMisip checklist and the MiscellaneousNaturalOrArtificialEnvironment
       Extension
@@ -21938,7 +21938,7 @@ classes:
     is_a: MiscellaneousNaturalOrArtificialEnvironment
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipPlantAssociated:
     description: MIxS Data that comply with the MimsMisip checklist and the PlantAssociated
       Extension
@@ -21948,7 +21948,7 @@ classes:
     is_a: PlantAssociated
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipSediment:
     description: MIxS Data that comply with the MimsMisip checklist and the Sediment Extension
     title: MimsMisip combined with Sediment
@@ -21957,7 +21957,7 @@ classes:
     is_a: Sediment
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipSoil:
     description: MIxS Data that comply with the MimsMisip checklist and the Soil Extension
     title: MimsMisip combined with Soil
@@ -21966,7 +21966,7 @@ classes:
     is_a: Soil
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipSymbiontAssociated:
     description: MIxS Data that comply with the MimsMisip checklist and the SymbiontAssociated
       Extension
@@ -21976,7 +21976,7 @@ classes:
     is_a: SymbiontAssociated
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipWastewaterSludge:
     description: MIxS Data that comply with the MimsMisip checklist and the WastewaterSludge
       Extension
@@ -21986,7 +21986,7 @@ classes:
     is_a: WastewaterSludge
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MimsMisipWater:
     description: MIxS Data that comply with the MimsMisip checklist and the Water Extension
     title: MimsMisip combined with Water
@@ -21995,7 +21995,7 @@ classes:
     is_a: Water
     mixins:
       - MimsMisip
-    # class_uri: 
+      # class_uri:
   MisagAgriculture:
     description: MIxS Data that comply with the Misag checklist and the Agriculture
       Extension
