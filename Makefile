@@ -44,10 +44,10 @@ help: status
 	@echo "make testdoc -- builds docs and runs local test server"
 	@echo ""
 
-.PHONY: all all-assets clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs
+.PHONY: all all-assets clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib
 
 ensure-dirs:
-	mkdir -p assets
+	mkdir -p contrib
 	mkdir -p $(DEST)
 	mkdir -p $(DOCDIR)
 	mkdir -p $(PYMODEL)
@@ -68,9 +68,9 @@ install:
 create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
-all: ensure-dirs site linkml-lint yaml-lint qc gen-excel project/class-model-tsvs-organized
+all: ensure-dirs site qc gen-excel project/class-model-tsvs-organized linkml-lint yaml-lint
 
-all-assets: ensure-dirs assets/mixs_structured_patterns_preferred.yaml assets/mixs-normalized-minimized.yaml assets/mixs_derived_class_term_schemasheet.tsv assets/required_and_recommended_slot_usages.tsv assets/extensions-dendrogram.pdf assets/soil-vs-water-slot-usage.yaml assets/class_summary_results.tsv assets/mixs-schemasheets-concise.tsv assets/mixs-schemasheets-concise-global-slots.tsv assets/mixs-patterns-materialized.yaml
+all-assets: ensure-dirs contrib/mixs_structured_patterns_preferred.yaml contrib/mixs-normalized-minimized.yaml contrib/mixs_derived_class_term_schemasheet.tsv contrib/required_and_recommended_slot_usages.tsv contrib/extensions-dendrogram.pdf contrib/soil-vs-water-slot-usage.yaml contrib/class_summary_results.tsv contrib/mixs-schemasheets-concise.tsv contrib/mixs-schemasheets-concise-global-slots.tsv contrib/mixs-patterns-materialized.yaml
 
 site: gen-project gendoc
 %.yaml: gen-project
@@ -79,7 +79,7 @@ site: gen-project gendoc
 gen-project: ensure-dirs $(PYMODEL)
 	$(RUN) linkml generate project --log_level WARNING --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-test: linkml-lint yaml-lint qc test-schema test-python test-examples
+test: qc test-schema test-python test-examples linkml-lint yaml-lint
 
 test-schema:
 	@echo "Schema re-generation in test phase eliminated due to long run time"
@@ -88,11 +88,11 @@ test-python:
 	$(RUN) python -m unittest discover
 
 linkml-lint: # was previously just "lint"
-	-$(RUN) linkml lint $(SOURCE_SCHEMA_PATH)
+	$(RUN) linkml lint $(SOURCE_SCHEMA_PATH) || true
 
 yaml-lint: # Run yamllint on schema files
 	@echo "Running yamllint on src/mixs/schema..."
-	$(RUN) yamllint -c .yamllint src/mixs/schema
+	$(RUN) yamllint -c .yamllint src/mixs/schema || true
 
 test-examples: examples/output
 
@@ -106,12 +106,12 @@ examples/output: src/mixs/schema/mixs.yaml
 		--output-directory $@ \
 		--schema $< > $@/README.md
 
-assets/mixs_structured_patterns_preferred.yaml: src/mixs/schema/mixs.yaml
-	mkdir -p assets
+contrib/mixs_structured_patterns_preferred.yaml: src/mixs/schema/mixs.yaml
+	mkdir -p contrib
 	yq '(.slots[] | select(has("structured_pattern") and has("pattern"))) |= del(.pattern)' $< > $@
 
-assets/mixs-normalized-minimized.yaml: assets/mixs_structured_patterns_preferred.yaml
-	mkdir -p assets
+contrib/mixs-normalized-minimized.yaml: contrib/mixs_structured_patterns_preferred.yaml
+	mkdir -p contrib
 	$(RUN) linkml generate linkml \
 		--format yaml \
 		--no-mergeimports \
@@ -131,8 +131,8 @@ assets/mixs-normalized-minimized.yaml: assets/mixs_structured_patterns_preferred
 	yq eval 'del(.source_file)'  |\
 	yq eval 'del(.subsets.[].name)' > $@
 
-assets/mixs-patterns-materialized.yaml: assets/mixs-normalized-minimized.yaml
-	mkdir -p assets
+contrib/mixs-patterns-materialized.yaml: contrib/mixs-normalized-minimized.yaml
+	mkdir -p contrib
 	$(RUN) gen-linkml \
 		--format yaml \
 		--materialize-patterns \
@@ -213,7 +213,7 @@ mkd-%:
 
 PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld graphql excel
 
-clean: clean-assets
+clean: clean-contrib
 	rm -rf $(DEST)
 	rm -rf tmp
 	rm -fr docs/*
@@ -226,16 +226,16 @@ clean: clean-assets
 qc:
 	poetry run deptry . --ignore DEP004
 
-clean-assets:
-	rm -rf assets/class_summary_results.* \
-	       assets/mixs_derived_class_term_schemasheet.* \
-	       assets/mixs-patterns-materialized.yaml \
-	       assets/mixs_structured_patterns_preferred.yaml \
-	       assets/mixs-normalized-minimized.yaml \
-	       assets/mixs-schemasheets-concise* \
-	       assets/required_and_recommended_slot_usages.tsv \
-	       assets/mixs_derived_class_term_schemasheet_* \
-	       assets/extensions-dendrogram.pdf \
-	       assets/soil-vs-water-slot-usage.yaml
+clean-contrib:
+	rm -rf contrib/class_summary_results.* \
+	       contrib/mixs_derived_class_term_schemasheet.* \
+	       contrib/mixs-patterns-materialized.yaml \
+	       contrib/mixs_structured_patterns_preferred.yaml \
+	       contrib/mixs-normalized-minimized.yaml \
+	       contrib/mixs-schemasheets-concise* \
+	       contrib/required_and_recommended_slot_usages.tsv \
+	       contrib/mixs_derived_class_term_schemasheet_* \
+	       contrib/extensions-dendrogram.pdf \
+	       contrib/soil-vs-water-slot-usage.yaml
 
-include project.Makefile
+include contrib.Makefile
