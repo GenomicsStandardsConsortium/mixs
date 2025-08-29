@@ -34,26 +34,56 @@ GEN_DARGS =
 # when the user types "make" they should get help info
 help: status
 	@echo ""
-	@echo "make help -- show this help"
-	@echo "make install -- install dependencies"
-	@echo "make linkml-lint -- perform linkml linting"
-	@echo "make yaml-lint -- perform yaml linting"
-	@echo "make yamlfmt-beta -- experimental yaml formatting"
-	@echo "make site -- makes site locally"
-	@echo "make test -- runs tests"
-	@echo "make testdoc -- builds docs and runs local test server"
+	@echo "Core workflow: make install clean all test"
+	@echo ""
+	@echo "Main targets:"
+	@echo "  install       -- install Python dependencies (used by all GH Actions)"
+	@echo "  clean         -- remove all generated files (calls clean-contrib; used by main & docs GH Actions)"
+	@echo "  all           -- complete build (calls site, qc, gen-excel, project/class-model-tsvs-organized, all-contrib, linkml-lint, yaml-lint; used by main GH Action)"
+	@echo "  test          -- validation & tests (calls qc, test-schema, test-python, test-examples, linkml-lint, yaml-lint; used by main GH Action)"
+	@echo ""
+	@echo "Output to directories:"
+	@echo "  site          -- build website (called by all; calls gen-project, gendoc)"
+	@echo "  gen-project   -- generate project/ artifacts (called by all via site)"
+	@echo "  gendoc        -- generate docs/ website files (called by all via site, testdoc; used by docs GH Actions)"
+	@echo "  gen-excel     -- generate mixs-templates/ Excel files (called by all)"
+	@echo "  project/class-model-tsvs-organized -- generate organized TSV files (called by all)"
+	@echo "  all-contrib   -- generate contrib/ schema transformation pipeline (called by all; used by main GH Action):"
+	@echo "                   1. structured-patterns-preferred (remove pattern field)"
+	@echo "                   2. normalized-minimized (yq cleanup, no imports)"
+	@echo "                   3. patterns-materialized (expand patterns from step 2)"
+	@echo "                   + schemasheets, dendrograms, slot usage reports"
+	@echo "  test-examples -- generate examples/output/ validated data (called by test)"
+	@echo ""
+	@echo "Quality checks:"
+	@echo "  qc            -- dependency validation with deptry (called by all, test; can fail)"
+	@echo "  linkml-lint   -- schema validation warnings (called by all, test; non-failing; has GH Action)"
+	@echo "  yaml-lint     -- YAML format warnings (called by all, test; non-failing; has GH Action)"
+	@echo ""
+	@echo "Individual tests:"
+	@echo "  test-schema   -- schema validation tests (called by test)"
+	@echo "  test-python   -- Python unit tests (called by test)"
+	@echo ""
+	@echo "Cleanup:"
+	@echo "  clean-contrib -- remove contrib/ files (called by clean)"
+	@echo ""
+	@echo "Standalone utilities:"
+	@echo "  help          -- show this help"
+	@echo "  status        -- show project info (called by help)"
+	@echo "  testdoc       -- build & serve docs locally (calls gendoc, serve)"
+	@echo "  serve         -- serve existing docs locally via mkdocs (called by testdoc)"
+	@echo "  yamlfmt-beta  -- experimental YAML formatter"
+	@echo "  create-data-harmonizer -- experimental npm tool"
 	@echo ""
 
-.PHONY: all all-assets clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib
+.PHONY: all all-contrib clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib
 
 ensure-dirs:
 	mkdir -p contrib
 	mkdir -p $(DEST)
 	mkdir -p $(DOCDIR)
 	mkdir -p $(PYMODEL)
-	mkdir -p examples/output
 	mkdir -p $(EXCEL_TEMPLATES_DIR)
-	mkdir -p project/class-model-tsvs-organized
 	mkdir -p $(DOCDIR)/javascripts
 
 status:
@@ -68,9 +98,9 @@ install:
 create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
-all: ensure-dirs site qc gen-excel project/class-model-tsvs-organized linkml-lint yaml-lint
+all: ensure-dirs site qc gen-excel project/class-model-tsvs-organized all-contrib linkml-lint yaml-lint
 
-all-assets: ensure-dirs contrib/mixs_structured_patterns_preferred.yaml contrib/mixs-normalized-minimized.yaml contrib/mixs_derived_class_term_schemasheet.tsv contrib/required_and_recommended_slot_usages.tsv contrib/extensions-dendrogram.pdf contrib/soil-vs-water-slot-usage.yaml contrib/class_summary_results.tsv contrib/mixs-schemasheets-concise.tsv contrib/mixs-schemasheets-concise-global-slots.tsv contrib/mixs-patterns-materialized.yaml
+all-contrib: ensure-dirs contrib/mixs_structured_patterns_preferred.yaml contrib/mixs-normalized-minimized.yaml contrib/mixs_derived_class_term_schemasheet.tsv contrib/required_and_recommended_slot_usages.tsv contrib/extensions-dendrogram.pdf contrib/soil-vs-water-slot-usage.yaml contrib/class_summary_results.tsv contrib/mixs-schemasheets-concise.tsv contrib/mixs-schemasheets-concise-global-slots.tsv contrib/mixs-patterns-materialized.yaml
 
 site: gen-project gendoc
 %.yaml: gen-project
@@ -160,7 +190,7 @@ gen-excel: $(SOURCE_SCHEMA_PATH)
 		--split-workbook-by-class \
 		--output $(DEST)/excel
 	mkdir -p $(EXCEL_TEMPLATES_DIR)
-	$(RUN) python src/scripts/organize_files.py \
+	$(RUN) organize-files \
 		--mixs-schema-file $< \
 		--source-directory $(DEST)/excel \
 		--base-destination-folder $(EXCEL_TEMPLATES_DIR) \
@@ -173,7 +203,7 @@ project/class-model-tsvs-organized: src/mixs/schema/mixs.yaml
 		--output-dir project/class-model-tsvs \
 		--schema-file src/mixs/schema/mixs.yaml
 	mkdir -p project/class-model-tsvs-organized
-	$(RUN) python src/scripts/organize_files.py \
+	$(RUN) organize-files \
 		--mixs-schema-file $< \
 		--source-directory project/class-model-tsvs \
 		--base-destination-folder project/class-model-tsvs-organized \
@@ -199,9 +229,9 @@ gendoc: ensure-dirs $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	rm -f $(DOCDIR)/README.md ; \
 	$(RUN) linkml generate doc ${GEN_DARGS} $(SOURCE_SCHEMA_PATH) -d $(DOCDIR) --template-directory $(TEMPLATEDIR) --use-slot-uris --use-class-uris --include src/mixs/schema/deprecated.yaml
-	$(RUN) python $(SRC)/scripts/term_list_generator.py $(TERM_LIST_FILE)
-	$(RUN) python $(SRC)/scripts/combinations_list_generator.py $(COMBINATIONS_FILE)
-	$(RUN) python $(SRC)/scripts/enumerations_list_generator.py $(ENUMERATIONS_FILE)
+	$(RUN) generate-term-list --output-file $(TERM_LIST_FILE)
+	$(RUN) generate-combinations --output-file $(COMBINATIONS_FILE)
+	$(RUN) generate-enumerations --output-file $(ENUMERATIONS_FILE)
 	mkdir -p $(DOCDIR)/javascripts
 	$(RUN) cp $(SRC)/scripts/javascripts/* $(DOCDIR)/javascripts/
 

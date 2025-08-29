@@ -47,4 +47,11 @@ docs = ["linkml", "mkdocs-material"]
 extension-distances = 'scripts.extension_distances:generate_dendrogram'
 extension-differences = 'scripts.extension_slot_differences:set_arithmetic'
 linkml2class-tsvs = 'scripts.linkml2class_tsvs:process_schema_classes'
+generate-combinations = 'scripts.combinations_list_generator:generate_combinations'
+generate-enumerations = 'scripts.enumerations_list_generator:generate_enumerations'
+generate-term-list = 'scripts.term_list_generator:generate_term_list'
+organize-files = 'scripts.organize_files:main'
+required-supersedes-recommended = 'scripts.required_supersedes_recommended:find_required_and_recommended_usages'
+describe-enums = 'scripts.describe_enums_by_slots_using:update_enum_descriptions'
+isolate-global-slots = 'scripts.isolate_slots:isolate_global_slots'
 

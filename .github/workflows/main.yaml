@@ -28,4 +28,4 @@ jobs:
         uses: snok/install-poetry@v1
 
       - name: Run release SOP
-        run: make install clean all all-assets test
+        run: make install clean all all-contrib test

@@ -34,6 +34,7 @@ jobs:
 
       - name: Generate web-based documentation
         run: |
+          make clean
           mkdir -p docs
           touch docs/.nojekyll
           make gendoc

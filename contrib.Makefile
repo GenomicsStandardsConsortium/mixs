@@ -13,7 +13,7 @@ contrib/mixs_derived_class_term_schemasheet.tsv: src/mixs/schema/mixs.yaml
 
 contrib/required_and_recommended_slot_usages.tsv: src/mixs/schema/mixs.yaml
 	mkdir -p contrib
-	$(RUN) python src/scripts/required_supersedes_recommended.py \
+	$(RUN) required-supersedes-recommended \
 		--input-schema $< \
 		--output $@
 
@@ -46,4 +46,4 @@ contrib/mixs-schemasheets-concise.tsv: src/mixs/schema/mixs.yaml
 		--report-style concise
 
 contrib/mixs-schemasheets-concise-global-slots.tsv: contrib/mixs-schemasheets-concise.tsv
-	$(RUN) python src/scripts/isolate_slots.py --source-file $< --output-file $@
+	$(RUN) isolate-global-slots --source-file $< --output-file $@
