@@ -1,0 +1,1428 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/CombinationClasses/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Subset: CombinationClasses - mixs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#subset-combinationclasses" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="mixs" class="md-header__button md-logo" aria-label="mixs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mixs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Subset: CombinationClasses
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GenomicsStandardsConsortium/mixs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="mixs" class="md-nav__button md-logo" aria-label="mixs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    mixs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GenomicsStandardsConsortium/mixs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../term_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Full term table
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combinations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Combinations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enumerations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enumerations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes-in-subset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes in subset
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="subset-combinationclasses">Subset: CombinationClasses</h1>
+<p>URI: <a href="./">CombinationClasses</a></p>
+<h2 id="classes-in-subset">Classes in subset</h2>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../0010003_0016018/">MigsBaAgriculture</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the Agriculture Extension</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016000/">MigsBaAir</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016001/">MigsBaBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the BuiltEnvironment Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016019/">MigsBaFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the FoodAnimalAndAnimalFe...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016020/">MigsBaFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the FoodFarmEnvironment E...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016021/">MigsBaFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the FoodFoodProductionFac...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016022/">MigsBaFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the FoodHumanFoods Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016002/">MigsBaHostAssociated</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the HostAssociated Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016003/">MigsBaHumanAssociated</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the HumanAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016004/">MigsBaHumanGut</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016005/">MigsBaHumanOral</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016006/">MigsBaHumanSkin</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016007/">MigsBaHumanVaginal</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the HumanVaginal Extensio...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016015/">MigsBaHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the HydrocarbonResourcesC...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016016/">MigsBaHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the HydrocarbonResourcesF...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016008/">MigsBaMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the MicrobialMatBiofilm E...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016009/">MigsBaMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the MiscellaneousNaturalO...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016010/">MigsBaPlantAssociated</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the PlantAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016011/">MigsBaSediment</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016012/">MigsBaSoil</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016023/">MigsBaSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the SymbiontAssociated Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016013/">MigsBaWastewaterSludge</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the WastewaterSludge Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010003_0016014/">MigsBaWater</a></td>
+<td>MIxS Data that comply with the MigsBa checklist and the Water Extension</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016018/">MigsEuAgriculture</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the Agriculture Extension</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016000/">MigsEuAir</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016001/">MigsEuBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the BuiltEnvironment Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016019/">MigsEuFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the FoodAnimalAndAnimalFe...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016020/">MigsEuFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the FoodFarmEnvironment E...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016021/">MigsEuFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the FoodFoodProductionFac...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016022/">MigsEuFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the FoodHumanFoods Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016002/">MigsEuHostAssociated</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the HostAssociated Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016003/">MigsEuHumanAssociated</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the HumanAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016004/">MigsEuHumanGut</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016005/">MigsEuHumanOral</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016006/">MigsEuHumanSkin</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016007/">MigsEuHumanVaginal</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the HumanVaginal Extensio...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016015/">MigsEuHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the HydrocarbonResourcesC...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016016/">MigsEuHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the HydrocarbonResourcesF...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016008/">MigsEuMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the MicrobialMatBiofilm E...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016009/">MigsEuMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the MiscellaneousNaturalO...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016010/">MigsEuPlantAssociated</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the PlantAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016011/">MigsEuSediment</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016012/">MigsEuSoil</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016023/">MigsEuSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the SymbiontAssociated Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016013/">MigsEuWastewaterSludge</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the WastewaterSludge Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010002_0016014/">MigsEuWater</a></td>
+<td>MIxS Data that comply with the MigsEu checklist and the Water Extension</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016018/">MigsOrgAgriculture</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the Agriculture Extensio...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016000/">MigsOrgAir</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016001/">MigsOrgBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the BuiltEnvironment Ext...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016019/">MigsOrgFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the FoodAnimalAndAnimalF...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016020/">MigsOrgFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the FoodFarmEnvironment ...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016021/">MigsOrgFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the FoodFoodProductionFa...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016022/">MigsOrgFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the FoodHumanFoods Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016002/">MigsOrgHostAssociated</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the HostAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016003/">MigsOrgHumanAssociated</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the HumanAssociated Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016004/">MigsOrgHumanGut</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016005/">MigsOrgHumanOral</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016006/">MigsOrgHumanSkin</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016007/">MigsOrgHumanVaginal</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the HumanVaginal Extensi...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016015/">MigsOrgHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the HydrocarbonResources...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016016/">MigsOrgHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the HydrocarbonResources...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016008/">MigsOrgMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the MicrobialMatBiofilm ...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016009/">MigsOrgMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the MiscellaneousNatural...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016010/">MigsOrgPlantAssociated</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the PlantAssociated Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016011/">MigsOrgSediment</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016012/">MigsOrgSoil</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016023/">MigsOrgSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the SymbiontAssociated E...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016013/">MigsOrgWastewaterSludge</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the WastewaterSludge Ext...</td>
+</tr>
+<tr>
+<td><a href="../0010006_0016014/">MigsOrgWater</a></td>
+<td>MIxS Data that comply with the MigsOrg checklist and the Water Extension</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016018/">MigsPlAgriculture</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the Agriculture Extension</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016000/">MigsPlAir</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016001/">MigsPlBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the BuiltEnvironment Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016019/">MigsPlFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the FoodAnimalAndAnimalFe...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016020/">MigsPlFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the FoodFarmEnvironment E...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016021/">MigsPlFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the FoodFoodProductionFac...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016022/">MigsPlFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the FoodHumanFoods Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016002/">MigsPlHostAssociated</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the HostAssociated Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016003/">MigsPlHumanAssociated</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the HumanAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016004/">MigsPlHumanGut</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016005/">MigsPlHumanOral</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016006/">MigsPlHumanSkin</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016007/">MigsPlHumanVaginal</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the HumanVaginal Extensio...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016015/">MigsPlHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the HydrocarbonResourcesC...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016016/">MigsPlHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the HydrocarbonResourcesF...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016008/">MigsPlMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the MicrobialMatBiofilm E...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016009/">MigsPlMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the MiscellaneousNaturalO...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016010/">MigsPlPlantAssociated</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the PlantAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016011/">MigsPlSediment</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016012/">MigsPlSoil</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016023/">MigsPlSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the SymbiontAssociated Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016013/">MigsPlWastewaterSludge</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the WastewaterSludge Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010004_0016014/">MigsPlWater</a></td>
+<td>MIxS Data that comply with the MigsPl checklist and the Water Extension</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016018/">MigsViAgriculture</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the Agriculture Extension</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016000/">MigsViAir</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016001/">MigsViBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the BuiltEnvironment Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016019/">MigsViFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the FoodAnimalAndAnimalFe...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016020/">MigsViFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the FoodFarmEnvironment E...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016021/">MigsViFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the FoodFoodProductionFac...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016022/">MigsViFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the FoodHumanFoods Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016002/">MigsViHostAssociated</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the HostAssociated Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016003/">MigsViHumanAssociated</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the HumanAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016004/">MigsViHumanGut</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016005/">MigsViHumanOral</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016006/">MigsViHumanSkin</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016007/">MigsViHumanVaginal</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the HumanVaginal Extensio...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016015/">MigsViHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the HydrocarbonResourcesC...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016016/">MigsViHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the HydrocarbonResourcesF...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016008/">MigsViMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the MicrobialMatBiofilm E...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016009/">MigsViMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the MiscellaneousNaturalO...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016010/">MigsViPlantAssociated</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the PlantAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016011/">MigsViSediment</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016012/">MigsViSoil</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016023/">MigsViSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the SymbiontAssociated Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016013/">MigsViWastewaterSludge</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the WastewaterSludge Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010005_0016014/">MigsViWater</a></td>
+<td>MIxS Data that comply with the MigsVi checklist and the Water Extension</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016018/">MimagAgriculture</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the Agriculture Extension</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016000/">MimagAir</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016001/">MimagBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the BuiltEnvironment Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016019/">MimagFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the FoodAnimalAndAnimalFee...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016020/">MimagFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the FoodFarmEnvironment Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016021/">MimagFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the FoodFoodProductionFaci...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016022/">MimagFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the FoodHumanFoods Extensi...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016002/">MimagHostAssociated</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the HostAssociated Extensi...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016003/">MimagHumanAssociated</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the HumanAssociated Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016004/">MimagHumanGut</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016005/">MimagHumanOral</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016006/">MimagHumanSkin</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016007/">MimagHumanVaginal</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the HumanVaginal Extension</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016015/">MimagHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the HydrocarbonResourcesCo...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016016/">MimagHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the HydrocarbonResourcesFl...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016008/">MimagMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the MicrobialMatBiofilm Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016009/">MimagMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the MiscellaneousNaturalOr...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016010/">MimagPlantAssociated</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the PlantAssociated Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016011/">MimagSediment</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016012/">MimagSoil</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016023/">MimagSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the SymbiontAssociated Ext...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016013/">MimagWastewaterSludge</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the WastewaterSludge Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010011_0016014/">MimagWater</a></td>
+<td>MIxS Data that comply with the Mimag checklist and the Water Extension</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016018/">MimarksCAgriculture</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the Agriculture Extensi...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016000/">MimarksCAir</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016001/">MimarksCBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the BuiltEnvironment Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016019/">MimarksCFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the FoodAnimalAndAnimal...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016020/">MimarksCFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the FoodFarmEnvironment...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016021/">MimarksCFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the FoodFoodProductionF...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016022/">MimarksCFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the FoodHumanFoods Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016002/">MimarksCHostAssociated</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the HostAssociated Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016003/">MimarksCHumanAssociated</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the HumanAssociated Ext...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016004/">MimarksCHumanGut</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016005/">MimarksCHumanOral</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016006/">MimarksCHumanSkin</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016007/">MimarksCHumanVaginal</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the HumanVaginal Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016015/">MimarksCHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the HydrocarbonResource...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016016/">MimarksCHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the HydrocarbonResource...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016008/">MimarksCMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the MicrobialMatBiofilm...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016009/">MimarksCMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the MiscellaneousNatura...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016010/">MimarksCPlantAssociated</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the PlantAssociated Ext...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016011/">MimarksCSediment</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016012/">MimarksCSoil</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016023/">MimarksCSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the SymbiontAssociated ...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016013/">MimarksCWastewaterSludge</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the WastewaterSludge Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010009_0016014/">MimarksCWater</a></td>
+<td>MIxS Data that comply with the MimarksC checklist and the Water Extension</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016018/">MimarksSAgriculture</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the Agriculture Extensi...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016000/">MimarksSAir</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016001/">MimarksSBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the BuiltEnvironment Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016019/">MimarksSFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the FoodAnimalAndAnimal...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016020/">MimarksSFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the FoodFarmEnvironment...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016021/">MimarksSFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the FoodFoodProductionF...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016022/">MimarksSFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the FoodHumanFoods Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016002/">MimarksSHostAssociated</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the HostAssociated Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016003/">MimarksSHumanAssociated</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the HumanAssociated Ext...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016004/">MimarksSHumanGut</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016005/">MimarksSHumanOral</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016006/">MimarksSHumanSkin</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016007/">MimarksSHumanVaginal</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the HumanVaginal Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016015/">MimarksSHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the HydrocarbonResource...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016016/">MimarksSHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the HydrocarbonResource...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016008/">MimarksSMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the MicrobialMatBiofilm...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016009/">MimarksSMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the MiscellaneousNatura...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016010/">MimarksSPlantAssociated</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the PlantAssociated Ext...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016011/">MimarksSSediment</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016012/">MimarksSSoil</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016023/">MimarksSSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the SymbiontAssociated ...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016013/">MimarksSWastewaterSludge</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the WastewaterSludge Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010008_0016014/">MimarksSWater</a></td>
+<td>MIxS Data that comply with the MimarksS checklist and the Water Extension</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016018/">MimsAgriculture</a></td>
+<td>MIxS Data that comply with the Mims checklist and the Agriculture Extension</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016000/">MimsAir</a></td>
+<td>MIxS Data that comply with the Mims checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016001/">MimsBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the Mims checklist and the BuiltEnvironment Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016019/">MimsFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the Mims checklist and the FoodAnimalAndAnimalFeed...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016020/">MimsFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the Mims checklist and the FoodFarmEnvironment Ext...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016021/">MimsFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the Mims checklist and the FoodFoodProductionFacil...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016022/">MimsFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the Mims checklist and the FoodHumanFoods Extensio...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016002/">MimsHostAssociated</a></td>
+<td>MIxS Data that comply with the Mims checklist and the HostAssociated Extensio...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016003/">MimsHumanAssociated</a></td>
+<td>MIxS Data that comply with the Mims checklist and the HumanAssociated Extensi...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016004/">MimsHumanGut</a></td>
+<td>MIxS Data that comply with the Mims checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016005/">MimsHumanOral</a></td>
+<td>MIxS Data that comply with the Mims checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016006/">MimsHumanSkin</a></td>
+<td>MIxS Data that comply with the Mims checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016007/">MimsHumanVaginal</a></td>
+<td>MIxS Data that comply with the Mims checklist and the HumanVaginal Extension</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016015/">MimsHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the Mims checklist and the HydrocarbonResourcesCor...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016016/">MimsHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the Mims checklist and the HydrocarbonResourcesFlu...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016008/">MimsMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the Mims checklist and the MicrobialMatBiofilm Ext...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016009/">MimsMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the Mims checklist and the MiscellaneousNaturalOrA...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016010/">MimsPlantAssociated</a></td>
+<td>MIxS Data that comply with the Mims checklist and the PlantAssociated Extensi...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016011/">MimsSediment</a></td>
+<td>MIxS Data that comply with the Mims checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016012/">MimsSoil</a></td>
+<td>MIxS Data that comply with the Mims checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016023/">MimsSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the Mims checklist and the SymbiontAssociated Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016013/">MimsWastewaterSludge</a></td>
+<td>MIxS Data that comply with the Mims checklist and the WastewaterSludge Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010007_0016014/">MimsWater</a></td>
+<td>MIxS Data that comply with the Mims checklist and the Water Extension</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016018/">MisagAgriculture</a></td>
+<td>MIxS Data that comply with the Misag checklist and the Agriculture Extension</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016000/">MisagAir</a></td>
+<td>MIxS Data that comply with the Misag checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016001/">MisagBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the Misag checklist and the BuiltEnvironment Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016019/">MisagFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the Misag checklist and the FoodAnimalAndAnimalFee...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016020/">MisagFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the Misag checklist and the FoodFarmEnvironment Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016021/">MisagFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the Misag checklist and the FoodFoodProductionFaci...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016022/">MisagFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the Misag checklist and the FoodHumanFoods Extensi...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016002/">MisagHostAssociated</a></td>
+<td>MIxS Data that comply with the Misag checklist and the HostAssociated Extensi...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016003/">MisagHumanAssociated</a></td>
+<td>MIxS Data that comply with the Misag checklist and the HumanAssociated Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016004/">MisagHumanGut</a></td>
+<td>MIxS Data that comply with the Misag checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016005/">MisagHumanOral</a></td>
+<td>MIxS Data that comply with the Misag checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016006/">MisagHumanSkin</a></td>
+<td>MIxS Data that comply with the Misag checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016007/">MisagHumanVaginal</a></td>
+<td>MIxS Data that comply with the Misag checklist and the HumanVaginal Extension</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016015/">MisagHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the Misag checklist and the HydrocarbonResourcesCo...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016016/">MisagHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the Misag checklist and the HydrocarbonResourcesFl...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016008/">MisagMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the Misag checklist and the MicrobialMatBiofilm Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016009/">MisagMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the Misag checklist and the MiscellaneousNaturalOr...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016010/">MisagPlantAssociated</a></td>
+<td>MIxS Data that comply with the Misag checklist and the PlantAssociated Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016011/">MisagSediment</a></td>
+<td>MIxS Data that comply with the Misag checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016012/">MisagSoil</a></td>
+<td>MIxS Data that comply with the Misag checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016023/">MisagSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the Misag checklist and the SymbiontAssociated Ext...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016013/">MisagWastewaterSludge</a></td>
+<td>MIxS Data that comply with the Misag checklist and the WastewaterSludge Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010010_0016014/">MisagWater</a></td>
+<td>MIxS Data that comply with the Misag checklist and the Water Extension</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016018/">MiuvigAgriculture</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the Agriculture Extension</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016000/">MiuvigAir</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the Air Extension</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016001/">MiuvigBuiltEnvironment</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the BuiltEnvironment Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016019/">MiuvigFoodAnimalAndAnimalFeed</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the FoodAnimalAndAnimalFe...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016020/">MiuvigFoodFarmEnvironment</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the FoodFarmEnvironment E...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016021/">MiuvigFoodFoodProductionFacility</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the FoodFoodProductionFac...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016022/">MiuvigFoodHumanFoods</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the FoodHumanFoods Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016002/">MiuvigHostAssociated</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the HostAssociated Extens...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016003/">MiuvigHumanAssociated</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the HumanAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016004/">MiuvigHumanGut</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the HumanGut Extension</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016005/">MiuvigHumanOral</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the HumanOral Extension</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016006/">MiuvigHumanSkin</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the HumanSkin Extension</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016007/">MiuvigHumanVaginal</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the HumanVaginal Extensio...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016015/">MiuvigHydrocarbonResourcesCores</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the HydrocarbonResourcesC...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016016/">MiuvigHydrocarbonResourcesFluidsSwabs</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the HydrocarbonResourcesF...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016008/">MiuvigMicrobialMatBiofilm</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the MicrobialMatBiofilm E...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016009/">MiuvigMiscellaneousNaturalOrArtificialEnvironment</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the MiscellaneousNaturalO...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016010/">MiuvigPlantAssociated</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the PlantAssociated Exten...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016011/">MiuvigSediment</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the Sediment Extension</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016012/">MiuvigSoil</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the Soil Extension</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016023/">MiuvigSymbiontAssociated</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the SymbiontAssociated Ex...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016013/">MiuvigWastewaterSludge</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the WastewaterSludge Exte...</td>
+</tr>
+<tr>
+<td><a href="../0010012_0016014/">MiuvigWater</a></td>
+<td>MIxS Data that comply with the Miuvig checklist and the Water Extension</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "search.suggest"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>

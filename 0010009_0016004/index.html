@@ -1,0 +1,3438 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/0010009_0016004/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Combination: MimarksC combined with HumanGut (MimarksCHumanGut) - mixs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#combination-mimarksc-combined-with-humangut-mimarkschumangut" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="mixs" class="md-header__button md-logo" aria-label="mixs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mixs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Combination: MimarksC combined with HumanGut (MimarksCHumanGut)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GenomicsStandardsConsortium/mixs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="mixs" class="md-nav__button md-logo" aria-label="mixs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    mixs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GenomicsStandardsConsortium/mixs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../term_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Full term table
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combinations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Combinations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enumerations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enumerations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#composition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LinkML Source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#induced" class="md-nav__link">
+    <span class="md-ellipsis">
+      Induced
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="combination-mimarksc-combined-with-humangut-mimarkschumangut">Combination: MimarksC combined with HumanGut (MimarksCHumanGut)</h1>
+<p><em>MIxS Data that comply with the MimarksC checklist and the HumanGut Extension</em></p>
+<h2 id="composition">Composition</h2>
+<p><a href="../0010009/">MimarksC</a> [Checklist] + <a href="../0016004/">HumanGut</a> [Extension]</p>
+<h2 id="terms">Terms</h2>
+<table>
+<thead>
+<tr>
+<th>MIXS ID</th>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://w3id.org/mixs/0001107">MIXS:0001107</a></td>
+<td><a href="../0001107/">samp_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>A local identifier or name that for the material sample used for extracting n...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000046">MIXS:0000046</a></td>
+<td><a href="../0000046/">pcr_primers</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>PCR primers that were used to amplify the sequence of the targeted gene, locu...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000038">MIXS:0000038</a></td>
+<td><a href="../0000038/">nucl_acid_amp</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>A link to a literature reference, electronic resource or a standard operating...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000045">MIXS:0000045</a></td>
+<td><a href="../0000045/">target_subfragment</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Name of subfragment of a gene or locus</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000113">MIXS:0000113</a></td>
+<td><a href="../0000113/">temp</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Temperature of the sample at the time of sampling</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000049">MIXS:0000049</a></td>
+<td><a href="../0000049/">pcr_cond</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Description of reaction conditions and components of polymerase chain reactio...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000037">MIXS:0000037</a></td>
+<td><a href="../0000037/">nucl_acid_ext</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>A link to a literature reference, electronic resource or a standard operating...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000001">MIXS:0000001</a></td>
+<td><a href="../0000001/">samp_size</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The total amount or size (volume (ml), mass (g) or area (m2) ) of sample coll...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000003">MIXS:0000003</a></td>
+<td><a href="../0000003/">isol_growth_condt</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Publication reference in the form of pubmed ID (pmid), digital object identif...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000094">MIXS:0000094</a></td>
+<td><a href="../0000094/">alt</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Heights of objects such as airplanes, space shuttles, rockets, atmospheric ba...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000026">MIXS:0000026</a></td>
+<td><a href="../0000026/">source_mat_id</a></td>
+<td>* <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>A unique identifier assigned to a material sample (as defined by <a href="http://rs">http://rs</a></td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000023">MIXS:0000023</a></td>
+<td><a href="../0000023/">extrachrom_elements</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Do plasmids exist of significant phenotypic consequence (e</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000111">MIXS:0000111</a></td>
+<td><a href="../0000111/">samp_vol_we_dna_ext</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Volume (ml) or mass (g) of total collected sample processed for DNA extractio...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000015">MIXS:0000015</a></td>
+<td><a href="../0000015/">rel_to_oxygen</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../RelToOxygenEnum/">RelToOxygenEnum</a></td>
+<td>Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000002">MIXS:0000002</a></td>
+<td><a href="../0000002/">samp_collect_device</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The device used to collect an environmental sample</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000028">MIXS:0000028</a></td>
+<td><a href="../0000028/">biotic_relationship</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../BioticRelationshipEnum/">BioticRelationshipEnum</a></td>
+<td>Description of relationship(s) between the subject organism and other organis...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000051">MIXS:0000051</a></td>
+<td><a href="../0000051/">seq_quality_check</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../SeqQualityCheckEnum/">SeqQualityCheckEnum</a></td>
+<td>Indicate if the sequence has been called by automatic systems (none) or under...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000092">MIXS:0000092</a></td>
+<td><a href="../0000092/">project_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Name of the project within which the sequencing was organized</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001321">MIXS:0001321</a></td>
+<td><a href="../0001321/">neg_cont_type</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../NegContTypeEnum/">NegContTypeEnum</a></td>
+<td>The substance or equipment used as a negative control in an investigation</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000052">MIXS:0000052</a></td>
+<td><a href="../0000052/">chimera_check</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Tool(s) used for chimera checking, including version number and parameters, t...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000032">MIXS:0000032</a></td>
+<td><a href="../0000032/">trophic_level</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../TrophicLevelEnum/">TrophicLevelEnum</a></td>
+<td>Trophic levels are the feeding position in a food chain</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001322">MIXS:0001322</a></td>
+<td><a href="../0001322/">pos_cont_type</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>The substance, mixture, product, or apparatus used to verify that a process w...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000020">MIXS:0000020</a></td>
+<td><a href="../0000020/">subspecf_gen_lin</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Information about the genetic distinctness of the sequenced organism below th...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000013">MIXS:0000013</a></td>
+<td><a href="../0000013/">env_local_scale</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Report the entity or entities which are in the sample or specimen s local vic...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000016">MIXS:0000016</a></td>
+<td><a href="../0000016/">samp_mat_process</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>A brief description of any processing applied to the sample during or after r...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000018">MIXS:0000018</a></td>
+<td><a href="../0000018/">depth</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>The vertical distance below local surface</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001225">MIXS:0001225</a></td>
+<td><a href="../0001225/">samp_collect_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The method employed for collecting the sample</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000014">MIXS:0000014</a></td>
+<td><a href="../0000014/">env_medium</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Report the environmental material(s) immediately surrounding the sample or sp...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001320">MIXS:0001320</a></td>
+<td><a href="../0001320/">samp_taxon_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>NCBI taxon id of the sample</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000010">MIXS:0000010</a></td>
+<td><a href="../0000010/">geo_loc_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The geographical origin of the sample as defined by the country or sea name f...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000011">MIXS:0000011</a></td>
+<td><a href="../0000011/">collection_date</a></td>
+<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>The time of sampling, either as an instance (single point in time) or interva...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000050">MIXS:0000050</a></td>
+<td><a href="../0000050/">seq_meth</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Sequencing machine used</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000009">MIXS:0000009</a></td>
+<td><a href="../0000009/">lat_lon</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The geographical origin of the sample as defined by latitude and longitude</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000093">MIXS:0000093</a></td>
+<td><a href="../0000093/">elev</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Elevation of the sampling site is its height above a fixed reference point, m...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000012">MIXS:0000012</a></td>
+<td><a href="../0000012/">env_broad_scale</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Report the major environmental system the sample or specimen came from</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000008">MIXS:0000008</a></td>
+<td><a href="../0000008/">experimental_factor</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Variable aspects of an experiment design that can be used to describe an expe...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000044">MIXS:0000044</a></td>
+<td><a href="../0000044/">target_gene</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Targeted gene or locus name for marker gene studies</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000091">MIXS:0000091</a></td>
+<td><a href="../0000091/">associated_resource</a></td>
+<td>* <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>A related resource that is referenced, cited, or otherwise associated to the ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000090">MIXS:0000090</a></td>
+<td><a href="../0000090/">sop</a></td>
+<td>* <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Standard operating procedures used in assembly and/or annotation of genomes, ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000280">MIXS:0000280</a></td>
+<td><a href="../0000280/">gastrointest_disord</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>History of gastrointestinal tract disorders; can include multiple disorders</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000282">MIXS:0000282</a></td>
+<td><a href="../0000282/">liver_disord</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>History of liver disorders; can include multiple disorders</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000905">MIXS:0000905</a></td>
+<td><a href="../0000905/">special_diet</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Specification of special diet; can include multiple special diets</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000861">MIXS:0000861</a></td>
+<td><a href="../0000861/">host_subject_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A unique identifier by which each subject can be referred to, de-identified</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000255">MIXS:0000255</a></td>
+<td><a href="../0000255/">host_age</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Age of host at the time of sampling; relevant scale depends on species and st...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000811">MIXS:0000811</a></td>
+<td><a href="../0000811/">host_sex</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Gender or physical sex of the host</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000031">MIXS:0000031</a></td>
+<td><a href="../0000031/">host_disease_stat</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>List of diseases with which the host has been diagnosed; can include multiple...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000884">MIXS:0000884</a></td>
+<td><a href="../0000884/">ihmc_medication_code</a></td>
+<td>* <br/> <a href="../Integer/">Integer</a></td>
+<td>Can include multiple medication codes</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000751">MIXS:0000751</a></td>
+<td><a href="../0000751/">chem_administration</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>List of chemical compounds administered to the host or site where sampling oc...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000867">MIXS:0000867</a></td>
+<td><a href="../0000867/">host_body_site</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Name of body site where the sample was obtained from, such as a specific orga...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000888">MIXS:0000888</a></td>
+<td><a href="../0000888/">host_body_product</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Substance produced by the body, e</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000263">MIXS:0000263</a></td>
+<td><a href="../0000263/">host_tot_mass</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Total mass of the host at collection, the unit depends on host</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000264">MIXS:0000264</a></td>
+<td><a href="../0000264/">host_height</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The height of subject</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000869">MIXS:0000869</a></td>
+<td><a href="../0000869/">host_diet</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Type of diet depending on the host, for animals omnivore, herbivore etc</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000870">MIXS:0000870</a></td>
+<td><a href="../0000870/">host_last_meal</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Content of last meal and time since feeding; can include multiple values</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000872">MIXS:0000872</a></td>
+<td><a href="../0000872/">host_fam_rel</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Relationships to other hosts in the same study; can include multiple relation...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000365">MIXS:0000365</a></td>
+<td><a href="../0000365/">host_genotype</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Observed genotype</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000874">MIXS:0000874</a></td>
+<td><a href="../0000874/">host_phenotype</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Phenotype of human or other host</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000274">MIXS:0000274</a></td>
+<td><a href="../0000274/">host_body_temp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Core body temperature of the host when sample was collected</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000317">MIXS:0000317</a></td>
+<td><a href="../0000317/">host_body_mass_index</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Body mass index, calculated as weight/(height)squared</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000895">MIXS:0000895</a></td>
+<td><a href="../0000895/">ethnicity</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>A category of people who identify with each other, usually on the basis of pr...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000896">MIXS:0000896</a></td>
+<td><a href="../0000896/">host_occupation</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Most frequent job performed by subject</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000897">MIXS:0000897</a></td>
+<td><a href="../0000897/">medic_hist_perform</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>Whether full medical history was collected</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000333">MIXS:0000333</a></td>
+<td><a href="../0000333/">host_pulse</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Resting pulse, measured as beats per minute</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000754">MIXS:0000754</a></td>
+<td><a href="../0000754/">perturbation</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Type of perturbation, e</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000183">MIXS:0000183</a></td>
+<td><a href="../0000183/">salinity</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The total concentration of all dissolved salts in a liquid or solid sample</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000753">MIXS:0000753</a></td>
+<td><a href="../0000753/">oxy_stat_samp</a></td>
+<td>0..1 <br/> <a href="../OxyStatSampEnum/">OxyStatSampEnum</a></td>
+<td>Oxygenation status of sample</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000103">MIXS:0000103</a></td>
+<td><a href="../0000103/">organism_count</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Total cell count of any organism (or group of organisms) per gram, volume or ...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000110">MIXS:0000110</a></td>
+<td><a href="../0000110/">samp_store_temp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Temperature at which sample was stored, e</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000116">MIXS:0000116</a></td>
+<td><a href="../0000116/">samp_store_dur</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Duration for which the sample was stored</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0001298">MIXS:0001298</a></td>
+<td><a href="../0001298/">host_symbiont</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>The taxonomic name of the organism(s) found living in mutualistic, commensali...</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000755">MIXS:0000755</a></td>
+<td><a href="../0000755/">samp_store_loc</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Location at which sample was stored, usually name of a specific freezer/room</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000752">MIXS:0000752</a></td>
+<td><a href="../0000752/">misc_param</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Any other measurement performed or parameter collected, that is not listed he...</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+<h3 id="direct">Direct</h3>
+<details>
+
+<pre><code class="language-yaml">name: MimarksCHumanGut
+description: MIxS Data that comply with the MimarksC checklist and the HumanGut Extension
+title: MimarksC combined with HumanGut
+in_subset:
+- combination_classes
+from_schema: https://w3id.org/mixs
+is_a: HumanGut
+mixins:
+- MimarksC
+class_uri: MIXS:0010009_0016004
+
+</code></pre>
+
+</details>
+
+<h3 id="induced">Induced</h3>
+<details>
+
+<pre><code class="language-yaml">name: MimarksCHumanGut
+description: MIxS Data that comply with the MimarksC checklist and the HumanGut Extension
+title: MimarksC combined with HumanGut
+in_subset:
+- combination_classes
+from_schema: https://w3id.org/mixs
+is_a: HumanGut
+mixins:
+- MimarksC
+attributes:
+  samp_name:
+    name: samp_name
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: ''
+    description: A local identifier or name that for the material sample used for
+      extracting nucleic acids, and subsequent sequencing. It can refer either to
+      the original material collected or to any derived sub-samples. It can have any
+      format, but we suggest that you make it concise, unique and consistent within
+      your lab, and as informative as possible. INSDC requires every sample name from
+      a single Submitter to be unique. Use of a globally unique identifier for the
+      field source_mat_id is recommended in addition to sample_name
+    title: sample name
+    examples:
+    - value: ISDsoil1
+    in_subset:
+    - investigation
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    slot_uri: MIXS:0001107
+    alias: samp_name
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Air
+    - BuiltEnvironment
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    required: true
+  pcr_primers:
+    name: pcr_primers
+    description: PCR primers that were used to amplify the sequence of the targeted
+      gene, locus or subfragment. This field should contain all the primers used for
+      a single PCR reaction if multiple forward or reverse primers are present in
+      a single PCR reaction. The primer sequence should be reported in uppercase letters
+    title: pcr primers
+    examples:
+    - value: FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - pcr
+    slot_uri: MIXS:0000046
+    alias: pcr_primers
+    owner: MimarksCHumanGut
+    domain_of:
+    - MimarksC
+    - MimarksS
+    - Agriculture
+    range: string
+    recommended: true
+    structured_pattern:
+      syntax: FWD:{ambiguous_nucleotides};REV:{ambiguous_nucleotides}
+      interpolated: true
+  nucl_acid_amp:
+    name: nucl_acid_amp
+    description: A link to a literature reference, electronic resource or a standard
+      operating procedure (SOP), that describes the enzymatic amplification (PCR,
+      TMA, NASBA) of specific nucleic acids
+    title: nucleic acid amplification
+    examples:
+    - value: https://phylogenomics.me/protocols/16s-pcr-protocol/
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    slot_uri: MIXS:0000038
+    alias: nucl_acid_amp
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    range: string
+    recommended: true
+    pattern: ^^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$$
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
+      partial_match: true
+  target_subfragment:
+    name: target_subfragment
+    description: Name of subfragment of a gene or locus. Important to e.g. identify
+      special regions on marker genes like V6 on 16S rRNA
+    title: target subfragment
+    examples:
+    - value: V6, V9, ITS
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - target
+    slot_uri: MIXS:0000045
+    alias: target_subfragment
+    owner: MimarksCHumanGut
+    domain_of:
+    - MimarksC
+    - MimarksS
+    - Agriculture
+    range: string
+    recommended: true
+  temp:
+    name: temp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+    description: Temperature of the sample at the time of sampling
+    title: temperature
+    examples:
+    - value: 25 degree Celsius
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - temperature
+    slot_uri: MIXS:0000113
+    alias: temp
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    recommended: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  pcr_cond:
+    name: pcr_cond
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
+          elongation:degrees_minutes;total cycles
+    description: Description of reaction conditions and components of polymerase chain
+      reaction performed during library preparation.
+    title: pcr conditions
+    examples:
+    - value: initial denaturation:94_3;annealing:50_1;elongation:72_1.5;final elongation:72_10;35
+    - value: initial denaturation:94degC_1.5min
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - condition
+    - pcr
+    string_serialization: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
+      elongation:degrees_minutes;total cycles
+    slot_uri: MIXS:0000049
+    alias: pcr_cond
+    owner: MimarksCHumanGut
+    domain_of:
+    - MimarksC
+    - MimarksS
+    - Agriculture
+    range: string
+    recommended: true
+  nucl_acid_ext:
+    name: nucl_acid_ext
+    description: A link to a literature reference, electronic resource or a standard
+      operating procedure (SOP), that describes the material separation to recover
+      the nucleic acid fraction from a sample
+    title: nucleic acid extraction
+    examples:
+    - value: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    slot_uri: MIXS:0000037
+    alias: nucl_acid_ext
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    recommended: true
+    pattern: ^^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$$
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
+      partial_match: true
+  samp_size:
+    name: samp_size
+    description: The total amount or size (volume (ml), mass (g) or area (m2) ) of
+      sample collected
+    title: amount or size of sample collected
+    examples:
+    - value: 5 liter
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    - size
+    slot_uri: MIXS:0000001
+    alias: samp_size
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  isol_growth_condt:
+    name: isol_growth_condt
+    description: Publication reference in the form of pubmed ID (pmid), digital object
+      identifier (doi) or url for isolation and growth condition specifications of
+      the organism/material
+    title: isolation and growth condition
+    examples:
+    - value: doi:10.1016/j.syapm.2018.01.009
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - condition
+    - growth
+    - isolation
+    slot_uri: MIXS:0000003
+    alias: isol_growth_condt
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - MimarksC
+    - Agriculture
+    range: string
+    required: true
+    pattern: ^^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$$
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
+      partial_match: true
+  alt:
+    name: alt
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: meter
+    description: Heights of objects such as airplanes, space shuttles, rockets, atmospheric
+      balloons and heights of places such as atmospheric layers and clouds. It is
+      used to measure the height of an object which is above the earth's surface.
+      In this context, the altitude measurement is the vertical distance between the
+      earth's surface above sea level and the sampled position in the air
+    title: altitude
+    examples:
+    - value: 100 meter
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    slot_uri: MIXS:0000094
+    alias: alt
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Air
+    - HostAssociated
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - SymbiontAssociated
+    range: string
+    recommended: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  source_mat_id:
+    name: source_mat_id
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: 'for cultures of microorganisms: identifiers for two culture collections;
+          for other material a unique arbitrary identifer'
+    description: A unique identifier assigned to a material sample (as defined by
+      http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular
+      digital record of a material sample) used for extracting nucleic acids, and
+      subsequent sequencing. The identifier can refer either to the original material
+      collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher,
+      /bio_material, or /culture_collection may or may not share the same value as
+      the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id
+      may both contain 'UAM:Herps:14' , referring to both the specimen voucher and
+      sampled tissue with the same identifier. However, the /culture_collection qualifier
+      may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id
+      would refer to an identifier from some derived culture from which the nucleic
+      acids were extracted (e.g. xatc123 or ark:/2154/R2)
+    title: source material identifiers
+    examples:
+    - value: MPI012345
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - identifier
+    - material
+    - source
+    slot_uri: MIXS:0000026
+    alias: source_mat_id
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - SymbiontAssociated
+    range: string
+    recommended: true
+    multivalued: true
+  extrachrom_elements:
+    name: extrachrom_elements
+    description: Do plasmids exist of significant phenotypic consequence (e.g. ones
+      that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids
+      (borrelia has 15+ plasmids)
+    title: extrachromosomal elements
+    examples:
+    - value: '5'
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    slot_uri: MIXS:0000023
+    alias: extrachrom_elements
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MimarksC
+    range: integer
+  samp_vol_we_dna_ext:
+    name: samp_vol_we_dna_ext
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: milliliter, gram, milligram, square centimeter
+    description: 'Volume (ml) or mass (g) of total collected sample processed for
+      DNA extraction. Note: total sample collected should be entered under the term
+      Sample Size (MIXS:0000001)'
+    title: sample volume or weight for DNA extraction
+    examples:
+    - value: 1500 milliliter
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - dna
+    - sample
+    - volume
+    - weight
+    slot_uri: MIXS:0000111
+    alias: samp_vol_we_dna_ext
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  rel_to_oxygen:
+    name: rel_to_oxygen
+    description: Is this organism an aerobe, anaerobe? Please note that aerobic and
+      anaerobic are valid descriptors for microbial environments
+    title: relationship to oxygen
+    examples:
+    - value: aerobe
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - oxygen
+    - relationship
+    slot_uri: MIXS:0000015
+    alias: rel_to_oxygen
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    range: RelToOxygenEnum
+    recommended: true
+  samp_collect_device:
+    name: samp_collect_device
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: device name
+    description: The device used to collect an environmental sample. This field accepts
+      terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
+      This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)
+    title: sample collection device
+    examples:
+    - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - device
+    - sample
+    string_serialization: '{termLabel} [{termID}]|{text}'
+    slot_uri: MIXS:0000002
+    alias: samp_collect_device
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+  biotic_relationship:
+    name: biotic_relationship
+    description: Description of relationship(s) between the subject organism and other
+      organism(s) it is associated with. E.g., parasite on species X; mutualist with
+      species Y. The target organism is the subject of the relationship, and the other
+      organism(s) is the object
+    title: observed biotic relationship
+    examples:
+    - value: free living
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - observed
+    - relationship
+    slot_uri: MIXS:0000028
+    alias: biotic_relationship
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsVi
+    - MimarksC
+    - Miuvig
+    - Agriculture
+    range: BioticRelationshipEnum
+    recommended: true
+  seq_quality_check:
+    name: seq_quality_check
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: none or manually edited
+    description: Indicate if the sequence has been called by automatic systems (none)
+      or undergone a manual editing procedure (e.g. by inspecting the raw data or
+      chromatograms). Applied only for sequences that are not submitted to SRA,ENA
+      or DRA
+    title: sequence quality check
+    examples:
+    - value: none
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - quality
+    slot_uri: MIXS:0000051
+    alias: seq_quality_check
+    owner: MimarksCHumanGut
+    domain_of:
+    - MimarksC
+    - MimarksS
+    - Agriculture
+    range: SeqQualityCheckEnum
+    recommended: true
+  project_name:
+    name: project_name
+    description: Name of the project within which the sequencing was organized
+    title: project name
+    examples:
+    - value: Forest soil metagenome
+    in_subset:
+    - investigation
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - project
+    slot_uri: MIXS:0000092
+    alias: project_name
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Air
+    - BuiltEnvironment
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    required: true
+  neg_cont_type:
+    name: neg_cont_type
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: enumeration or text
+    description: The substance or equipment used as a negative control in an investigation
+    title: negative control type
+    in_subset:
+    - investigation
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - type
+    slot_uri: MIXS:0001321
+    alias: neg_cont_type
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    range: NegContTypeEnum
+    recommended: true
+  chimera_check:
+    name: chimera_check
+    description: Tool(s) used for chimera checking, including version number and parameters,
+      to discover and remove chimeric sequences. A chimeric sequence is comprised
+      of two or more phylogenetically distinct parent sequences
+    title: chimera check software
+    examples:
+    - value: uchime;v4.1;default parameters
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - software
+    slot_uri: MIXS:0000052
+    alias: chimera_check
+    owner: MimarksCHumanGut
+    domain_of:
+    - MimarksC
+    - MimarksS
+    - Agriculture
+    range: string
+    recommended: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+);([^\s-]{1,2}|[^\s-]+.+[^\s-]+);([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{software};{version};{parameters}$
+      interpolated: true
+      partial_match: true
+  trophic_level:
+    name: trophic_level
+    description: Trophic levels are the feeding position in a food chain. Microbes
+      can be a range of producers (e.g. chemolithotroph)
+    title: trophic level
+    examples:
+    - value: heterotroph
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - level
+    slot_uri: MIXS:0000032
+    alias: trophic_level
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MimarksC
+    - Agriculture
+    range: TrophicLevelEnum
+    recommended: true
+  pos_cont_type:
+    name: pos_cont_type
+    description: The substance, mixture, product, or apparatus used to verify that
+      a process which is part of an investigation delivers a true positive
+    title: positive control type
+    in_subset:
+    - investigation
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - type
+    string_serialization: '{term} or {text}'
+    slot_uri: MIXS:0001322
+    alias: pos_cont_type
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    range: string
+    recommended: true
+  subspecf_gen_lin:
+    name: subspecf_gen_lin
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: Genetic lineage below lowest rank of NCBI taxonomy, which is subspecies,
+          e.g. serovar, biotype, ecotype, variety, cultivar
+    description: Information about the genetic distinctness of the sequenced organism
+      below the subspecies level, e.g., serovar, serotype, biotype, ecotype, or any
+      relevant genetic typing schemes like Group I plasmid. Subspecies should not
+      be recorded in this term, but in the NCBI taxonomy. Supply both the lineage
+      name and the lineage rank separated by a colon, e.g., biovar:abc123
+    title: subspecific genetic lineage
+    examples:
+    - value: serovar:Newport
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - lineage
+    string_serialization: '{rank name}:{text}'
+    slot_uri: MIXS:0000020
+    alias: subspecf_gen_lin
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - MimarksC
+    - FoodFoodProductionFacility
+    range: string
+    recommended: true
+  env_local_scale:
+    name: env_local_scale
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: Environmental entities having causal influences upon the entity at
+          time of sampling
+    description: 'Report the entity or entities which are in the sample or specimen
+      s local vicinity and which you believe have significant causal influences on
+      your sample or specimen. We recommend using EnvO terms which are of smaller
+      spatial grain than your entry for env_broad_scale. Terms, such as anatomical
+      sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
+      UBERON) are accepted in this field. EnvO documentation about how to use the
+      field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
+    title: local environmental context
+    examples:
+    - value: hillside [ENVO:01000333]
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - context
+    - environmental
+    slot_uri: MIXS:0000013
+    alias: env_local_scale
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    range: string
+    required: true
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
+  samp_mat_process:
+    name: samp_mat_process
+    description: A brief description of any processing applied to the sample during
+      or after retrieving the sample from environment, or a link to the relevant protocol(s)
+      performed
+    title: sample material processing
+    examples:
+    - value: filtering of seawater, storing samples in ethanol
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - material
+    - process
+    - sample
+    slot_uri: MIXS:0000016
+    alias: samp_mat_process
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    range: string
+    recommended: true
+  depth:
+    name: depth
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: meter
+    description: The vertical distance below local surface. For sediment or soil samples
+      depth is measured from sediment or soil surface, respectively. Depth can be
+      reported as an interval for subsurface samples
+    title: depth
+    examples:
+    - value: 10 meter
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - depth
+    slot_uri: MIXS:0000018
+    alias: depth
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodFarmEnvironment
+    - HostAssociated
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    recommended: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  samp_collect_method:
+    name: samp_collect_method
+    description: The method employed for collecting the sample
+    title: sample collection method
+    examples:
+    - value: swabbing
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - method
+    - sample
+    slot_uri: MIXS:0001225
+    alias: samp_collect_method
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    pattern: ^^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$|([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      interpolated: true
+      partial_match: true
+  env_medium:
+    name: env_medium
+    description: 'Report the environmental material(s) immediately surrounding the
+      sample or specimen at the time of sampling. We recommend using subclasses of
+      ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO
+      documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference
+      mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+      (e.g. a tree, a leaf, a table top)'
+    title: environmental medium
+    examples:
+    - value: bluegrass field soil [ENVO:00005789]
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - environmental
+    slot_uri: MIXS:0000014
+    alias: env_medium
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    range: string
+    required: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
+  samp_taxon_id:
+    name: samp_taxon_id
+    description: NCBI taxon id of the sample.  Maybe be a single taxon or mixed taxa
+      sample. Use 'synthetic metagenome  for mock community/positive controls, or
+      'blank sample' for negative controls
+    title: taxonomy ID of DNA sample
+    examples:
+    - value: Gut Metagenome [NCBITaxon:749906]
+    in_subset:
+    - investigation
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - dna
+    - identifier
+    - sample
+    - taxon
+    slot_uri: MIXS:0001320
+    alias: samp_taxon_id
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    range: string
+    required: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[NCBITaxon:\d+\]$
+    structured_pattern:
+      syntax: ^{text} \[{NCBItaxon_id}\]$
+      interpolated: true
+      partial_match: true
+  geo_loc_name:
+    name: geo_loc_name
+    description: The geographical origin of the sample as defined by the country or
+      sea name followed by specific region name. Country or sea names should be chosen
+      from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology
+      (http://purl.bioontology.org/ontology/GAZ)
+    title: geographic location (country and/or sea,region)
+    examples:
+    - value: 'USA: Maryland, Bethesda'
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - geographic
+    - location
+    slot_uri: MIXS:0000010
+    alias: geo_loc_name
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - SymbiontAssociated
+    range: string
+    required: true
+    pattern: '^([^\s-]{1,2}|[^\s-]+.+[^\s-]+): ([^\s-]{1,2}|[^\s-]+.+[^\s-]+), ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'
+    structured_pattern:
+      syntax: '^{text}: {text}, {text}$'
+      interpolated: true
+      partial_match: true
+  collection_date:
+    name: collection_date
+    description: 'The time of sampling, either as an instance (single point in time)
+      or interval. In case no exact time is available, the date/time can be right
+      truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10;
+      2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant'
+    title: collection date
+    examples:
+    - value: '2013-03-25T12:42:31+01:00'
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - date
+    slot_uri: MIXS:0000011
+    alias: collection_date
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - SymbiontAssociated
+    range: datetime
+    required: true
+  seq_meth:
+    name: seq_meth
+    description: Sequencing machine used. Where possible the term should be taken
+      from the OBI list of DNA sequencers (http://purl.obolibrary.org/obo/OBI_0400103)
+    title: sequencing method
+    examples:
+    - value: 454 Genome Sequencer FLX [OBI:0000702]
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - method
+    slot_uri: MIXS:0000050
+    alias: seq_meth
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    required: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+)|(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])$
+    structured_pattern:
+      syntax: ^{text}|({termLabel} \[{termID}\])$
+      interpolated: true
+      partial_match: true
+  lat_lon:
+    name: lat_lon
+    description: The geographical origin of the sample as defined by latitude and
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
+    title: geographic location (latitude and longitude)
+    examples:
+    - value: 50.586825 6.408977
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - geographic
+    - location
+    slot_uri: MIXS:0000009
+    alias: lat_lon
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - SymbiontAssociated
+    range: string
+    required: true
+    pattern: ^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$
+    structured_pattern:
+      syntax: ^{lat} {lon}$
+      interpolated: true
+      partial_match: true
+  elev:
+    name: elev
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: meter
+    description: Elevation of the sampling site is its height above a fixed reference
+      point, most commonly the mean sea level. Elevation is mainly used when referring
+      to points on the earth's surface, while altitude is used for points above the
+      surface, such as an aircraft in flight or a spacecraft in orbit
+    title: elevation
+    examples:
+    - value: 100 meter
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - elevation
+    slot_uri: MIXS:0000093
+    alias: elev
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    - Air
+    - HostAssociated
+    - HydrocarbonResourcesCores
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - Water
+    range: string
+    recommended: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  env_broad_scale:
+    name: env_broad_scale
+    description: 'Report the major environmental system the sample or specimen came
+      from. The system(s) identified should have a coarse spatial grain, to provide
+      the general environmental context of where the sampling was done (e.g. in the
+      desert or a rainforest). We recommend using subclasses of EnvO s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428.
+      EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
+    title: broad-scale environmental context
+    examples:
+    - value: rangeland biome [ENVO:01000247]
+    in_subset:
+    - environment
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - context
+    - environmental
+    slot_uri: MIXS:0000012
+    alias: env_broad_scale
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    range: string
+    required: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
+      partial_match: true
+  experimental_factor:
+    name: experimental_factor
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: text or EFO and/or OBI
+    description: Variable aspects of an experiment design that can be used to describe
+      an experiment, or set of experiments, in an increasingly detailed manner. This
+      field accepts ontology terms from Experimental Factor Ontology (EFO) and/or
+      Ontology for Biomedical Investigations (OBI)
+    title: experimental factor
+    examples:
+    - value: time series design [EFO:0001779]
+    in_subset:
+    - investigation
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - experimental
+    - factor
+    string_serialization: '{termLabel} [{termID}]|{text}'
+    slot_uri: MIXS:0000008
+    alias: experimental_factor
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    range: string
+    multivalued: true
+    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+  target_gene:
+    name: target_gene
+    description: Targeted gene or locus name for marker gene studies
+    title: target gene
+    examples:
+    - value: 16S rRNA, 18S rRNA, nif, amoA, rpo
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - target
+    slot_uri: MIXS:0000044
+    alias: target_gene
+    owner: MimarksCHumanGut
+    domain_of:
+    - MimarksC
+    - MimarksS
+    - Agriculture
+    range: string
+    required: true
+  associated_resource:
+    name: associated_resource
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: reference to resource
+    description: A related resource that is referenced, cited, or otherwise associated
+      to the sequence
+    title: relevant electronic resources
+    examples:
+    - value: http://www.earthmicrobiome.org/
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - resource
+    slot_uri: MIXS:0000091
+    alias: associated_resource
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    range: string
+    recommended: true
+    multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
+  sop:
+    name: sop
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: reference to SOP
+    description: Standard operating procedures used in assembly and/or annotation
+      of genomes, metagenomes or environmental sequences
+    title: relevant standard operating procedures
+    examples:
+    - value: http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/
+    in_subset:
+    - sequencing
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - procedures
+    slot_uri: MIXS:0000090
+    alias: sop
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsOrg
+    - MigsPl
+    - MigsVi
+    - Mimag
+    - MimarksC
+    - MimarksS
+    - Mims
+    - Misag
+    - Miuvig
+    - Agriculture
+    range: string
+    recommended: true
+    multivalued: true
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
+  gastrointest_disord:
+    name: gastrointest_disord
+    description: History of gastrointestinal tract disorders; can include multiple
+      disorders. History of blood disorders; can include multiple disorders.  The
+      terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
+      gastrointestinal system disease (https://disease-ontology.org/?id=DOID:77)
+    title: gastrointestinal tract disorder
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - disorder
+    slot_uri: MIXS:0000280
+    alias: gastrointest_disord
+    owner: MimarksCHumanGut
+    domain_of:
+    - HumanGut
+    range: string
+    multivalued: true
+  liver_disord:
+    name: liver_disord
+    description: History of liver disorders; can include multiple disorders. The terms
+      should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
+      liver disease (https://disease-ontology.org/?id=DOID:409)
+    title: liver disorder
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - disorder
+    slot_uri: MIXS:0000282
+    alias: liver_disord
+    owner: MimarksCHumanGut
+    domain_of:
+    - HumanGut
+    range: string
+    multivalued: true
+  special_diet:
+    name: special_diet
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: enumeration
+    description: Specification of special diet; can include multiple special diets
+    title: special diet
+    examples:
+    - value: other:vegan
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - diet
+    string_serialization: '[low carb|reduced calorie|vegetarian|other(to be specified)]'
+    slot_uri: MIXS:0000905
+    alias: special_diet
+    owner: MimarksCHumanGut
+    domain_of:
+    - HumanGut
+    range: string
+    multivalued: true
+  host_subject_id:
+    name: host_subject_id
+    description: A unique identifier by which each subject can be referred to, de-identified
+    title: host subject id
+    examples:
+    - value: MPI123
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - host
+    - host.
+    - identifier
+    slot_uri: MIXS:0000861
+    alias: host_subject_id
+    owner: MimarksCHumanGut
+    domain_of:
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - SymbiontAssociated
+    range: string
+  host_age:
+    name: host_age
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: year, day, hour
+    description: Age of host at the time of sampling; relevant scale depends on species
+      and study, e.g. Could be seconds for amoebae or centuries for trees
+    title: host age
+    examples:
+    - value: 30 years
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - age
+    - host
+    - host.
+    slot_uri: MIXS:0000255
+    alias: host_age
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - FoodFarmEnvironment
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - PlantAssociated
+    - SymbiontAssociated
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  host_sex:
+    name: host_sex
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: enumeration
+    description: Gender or physical sex of the host
+    title: host sex
+    comments:
+    - example of non-binary from Excel sheets does not match any of the enumerated
+      values
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - host
+    - host.
+    string_serialization: '[female|hermaphrodite|non-binary|male|transgender|transgender
+      (female to male)|transgender (male to female)
+
+      |undeclared]'
+    slot_uri: MIXS:0000811
+    alias: host_sex
+    owner: MimarksCHumanGut
+    domain_of:
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    range: string
+  host_disease_stat:
+    name: host_disease_stat
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: disease name or Disease Ontology term
+    description: List of diseases with which the host has been diagnosed; can include
+      multiple diagnoses. The value of the field depends on host; for humans the terms
+      should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org,
+      non-human host diseases are free text
+    title: host disease status
+    examples:
+    - value: measles [DOID:8622]
+    in_subset:
+    - nucleic acid sequence source
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - disease
+    - host
+    - host.
+    - status
+    string_serialization: '{termLabel} [{termID}]|{text}'
+    slot_uri: MIXS:0000031
+    alias: host_disease_stat
+    owner: MimarksCHumanGut
+    domain_of:
+    - MigsBa
+    - MigsEu
+    - MigsVi
+    - Miuvig
+    - Agriculture
+    - FoodFarmEnvironment
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - PlantAssociated
+    range: string
+  ihmc_medication_code:
+    name: ihmc_medication_code
+    description: Can include multiple medication codes
+    title: IHMC medication code
+    examples:
+    - value: '810'
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - code
+    slot_uri: MIXS:0000884
+    alias: ihmc_medication_code
+    owner: MimarksCHumanGut
+    domain_of:
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    range: integer
+    multivalued: true
+  chem_administration:
+    name: chem_administration
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: CHEBI;timestamp
+    description: List of chemical compounds administered to the host or site where
+      sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can
+      include multiple compounds. For chemical entities of biological interest ontology
+      (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    title: chemical administration
+    examples:
+    - value: agar [CHEBI:2509];2018-05-11T20:00Z
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - administration
+    string_serialization: '{termLabel} [{termID}];{timestamp}'
+    slot_uri: MIXS:0000751
+    alias: chem_administration
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodFarmEnvironment
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    multivalued: true
+  host_body_site:
+    name: host_body_site
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FMA or UBERON
+    description: Name of body site where the sample was obtained from, such as a specific
+      organ or tissue (tongue, lung etc...). Use terms from the foundational model
+      of anatomy ontology (fma) or the Uber-anatomy ontology (UBERON)
+    title: host body site
+    examples:
+    - value: Wall of gut [fma45653]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - body
+    - host
+    - site
+    string_serialization: '{termLabel} [{termID}]'
+    slot_uri: MIXS:0000867
+    alias: host_body_site
+    owner: MimarksCHumanGut
+    domain_of:
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - SymbiontAssociated
+    range: string
+  host_body_product:
+    name: host_body_product
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: FMA or UBERON
+    description: Substance produced by the body, e.g. Stool, mucus, where the sample
+      was obtained from. Use terms from the foundational model of anatomy ontology
+      (fma) or Uber-anatomy ontology (UBERON)
+    title: host body product
+    examples:
+    - value: mucus [FMA:66938]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - body
+    - host
+    - host.
+    - product
+    string_serialization: '{termLabel} [{termID}]'
+    slot_uri: MIXS:0000888
+    alias: host_body_product
+    owner: MimarksCHumanGut
+    domain_of:
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - SymbiontAssociated
+    range: string
+  host_tot_mass:
+    name: host_tot_mass
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: kilogram, gram
+    description: Total mass of the host at collection, the unit depends on host
+    title: host total mass
+    examples:
+    - value: 65 kilogram
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - host
+    - host.
+    - mass
+    - total
+    slot_uri: MIXS:0000263
+    alias: host_tot_mass
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - FoodFarmEnvironment
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - PlantAssociated
+    - SymbiontAssociated
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  host_height:
+    name: host_height
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: centimeter, millimeter, meter
+    description: The height of subject
+    title: host height
+    examples:
+    - value: 1.75 meter
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - height
+    - host
+    - host.
+    slot_uri: MIXS:0000264
+    alias: host_height
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - FoodFarmEnvironment
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - PlantAssociated
+    - SymbiontAssociated
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  host_diet:
+    name: host_diet
+    description: Type of diet depending on the host, for animals omnivore, herbivore
+      etc., for humans high-fat, meditteranean etc.; can include multiple diet types
+    title: host diet
+    examples:
+    - value: high-fat
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - diet
+    - host
+    - host.
+    slot_uri: MIXS:0000869
+    alias: host_diet
+    owner: MimarksCHumanGut
+    domain_of:
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    range: string
+    multivalued: true
+  host_last_meal:
+    name: host_last_meal
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: content;duration
+    description: Content of last meal and time since feeding; can include multiple
+      values
+    title: host last meal
+    examples:
+    - value: french fries;P5H30M
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - host
+    - host.
+    string_serialization: '{text};{duration}'
+    slot_uri: MIXS:0000870
+    alias: host_last_meal
+    owner: MimarksCHumanGut
+    domain_of:
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    range: string
+    multivalued: true
+  host_fam_rel:
+    name: host_fam_rel
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: relationship type;arbitrary identifier
+    description: Relationships to other hosts in the same study; can include multiple
+      relationships
+    title: host family relationship
+    examples:
+    - value: mother;ID298
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - family
+    - host
+    - host.
+    - relationship
+    string_serialization: '{text};{text}'
+    slot_uri: MIXS:0000872
+    alias: host_fam_rel
+    owner: MimarksCHumanGut
+    domain_of:
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - SymbiontAssociated
+    range: string
+    multivalued: true
+  host_genotype:
+    name: host_genotype
+    description: Observed genotype
+    title: host genotype
+    examples:
+    - value: ST1
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - host
+    - host.
+    slot_uri: MIXS:0000365
+    alias: host_genotype
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - FoodFarmEnvironment
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - PlantAssociated
+    - SymbiontAssociated
+    range: string
+  host_phenotype:
+    name: host_phenotype
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: PATO or HP
+    description: Phenotype of human or other host. Use terms from the phenotypic quality
+      ontology (pato) or the Human Phenotype Ontology (HP)
+    title: host phenotype
+    examples:
+    - value: Tinnitus [HP:0000360]
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - host
+    - host.
+    string_serialization: '{termLabel} [{termID}]'
+    slot_uri: MIXS:0000874
+    alias: host_phenotype
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - FoodFarmEnvironment
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - PlantAssociated
+    - SymbiontAssociated
+    range: string
+  host_body_temp:
+    name: host_body_temp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+    description: Core body temperature of the host when sample was collected
+    title: host body temperature
+    examples:
+    - value: 36.5 degree Celsius
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - body
+    - host
+    - host.
+    - temperature
+    slot_uri: MIXS:0000274
+    alias: host_body_temp
+    owner: MimarksCHumanGut
+    domain_of:
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  host_body_mass_index:
+    name: host_body_mass_index
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: kilogram per square meter
+    description: Body mass index, calculated as weight/(height)squared
+    title: host body-mass index
+    examples:
+    - value: 22 kilogram per square meter
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - host
+    - host.
+    slot_uri: MIXS:0000317
+    alias: host_body_mass_index
+    owner: MimarksCHumanGut
+    domain_of:
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  ethnicity:
+    name: ethnicity
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: text recommend from Wikipedia list
+    description: A category of people who identify with each other, usually on the
+      basis of presumed similarities such as a common language, ancestry, history,
+      society, culture, nation or social treatment within their residing area. https://en.wikipedia.org/wiki/List_of_contemporary_ethnic_groups
+    title: ethnicity
+    examples:
+    - value: native american
+    from_schema: https://w3id.org/mixs
+    slot_uri: MIXS:0000895
+    alias: ethnicity
+    owner: MimarksCHumanGut
+    domain_of:
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    range: string
+    multivalued: true
+  host_occupation:
+    name: host_occupation
+    description: Most frequent job performed by subject
+    title: host occupation
+    comments:
+    - Couldn't convert host_occupation with value veterinary to integer
+    - almost all host_occupation values in the NCBI biosample_set are strings, not
+      integers
+    examples:
+    - value: veterinary
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - host
+    - host.
+    slot_uri: MIXS:0000896
+    alias: host_occupation
+    owner: MimarksCHumanGut
+    domain_of:
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    range: string
+  medic_hist_perform:
+    name: medic_hist_perform
+    description: Whether full medical history was collected
+    title: medical history performed
+    examples:
+    - value: '1'
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - history
+    slot_uri: MIXS:0000897
+    alias: medic_hist_perform
+    owner: MimarksCHumanGut
+    domain_of:
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    range: boolean
+  host_pulse:
+    name: host_pulse
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: beats per minute
+    description: Resting pulse, measured as beats per minute
+    title: host pulse
+    examples:
+    - value: 65 beats per minute
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - host
+    - host.
+    slot_uri: MIXS:0000333
+    alias: host_pulse
+    owner: MimarksCHumanGut
+    domain_of:
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  perturbation:
+    name: perturbation
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: perturbation type name;perturbation interval and duration
+    description: Type of perturbation, e.g. chemical administration, physical disturbance,
+      etc., coupled with perturbation regimen including how many times the perturbation
+      was repeated, how long each perturbation lasted, and the start and end time
+      of the entire perturbation period; can include multiple perturbation types
+    title: perturbation
+    examples:
+    - value: antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - perturbation
+    string_serialization: '{text};{Rn/start_time/end_time/duration}'
+    slot_uri: MIXS:0000754
+    alias: perturbation
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    multivalued: true
+  salinity:
+    name: salinity
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: practical salinity unit, percentage
+    description: The total concentration of all dissolved salts in a liquid or solid
+      sample. While salinity can be measured by a complete chemical analysis, this
+      method is difficult and time consuming. More often, it is instead derived from
+      the conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater
+    title: salinity
+    examples:
+    - value: 25 practical salinity unit
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - salinity
+    slot_uri: MIXS:0000183
+    alias: salinity
+    owner: MimarksCHumanGut
+    domain_of:
+    - Air
+    - FoodFarmEnvironment
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  oxy_stat_samp:
+    name: oxy_stat_samp
+    description: Oxygenation status of sample
+    title: oxygenation status of sample
+    examples:
+    - value: aerobic
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - oxygen
+    - sample
+    - status
+    slot_uri: MIXS:0000753
+    alias: oxy_stat_samp
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - Air
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: OxyStatSampEnum
+  organism_count:
+    name: organism_count
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: organism name;measurement value;enumeration
+    description: 'Total cell count of any organism (or group of organisms) per gram,
+      volume or area of sample, should include name of organism followed by count.
+      The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should
+      also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    title: organism count
+    examples:
+    - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - count
+    - organism
+    string_serialization: '{text};{float} {unit};[ATP|MPN|qPCR|other]'
+    slot_uri: MIXS:0000103
+    alias: organism_count
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - Air
+    - BuiltEnvironment
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    multivalued: true
+  samp_store_temp:
+    name: samp_store_temp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+    description: Temperature at which sample was stored, e.g. -80 degree Celsius
+    title: sample storage temperature
+    examples:
+    - value: -80 degree Celsius
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - sample
+    - storage
+    - temperature
+    slot_uri: MIXS:0000110
+    alias: samp_store_temp
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  samp_store_dur:
+    name: samp_store_dur
+    description: Duration for which the sample was stored. Indicate the duration for
+      which the sample was stored written in ISO 8601 format
+    title: sample storage duration
+    examples:
+    - value: P1Y6M
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - duration
+    - period
+    - sample
+    - storage
+    slot_uri: MIXS:0000116
+    alias: samp_store_dur
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    pattern: ^P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)$
+    structured_pattern:
+      syntax: ^{duration}$
+      interpolated: true
+      partial_match: true
+  host_symbiont:
+    name: host_symbiont
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: species name or common name
+    description: The taxonomic name of the organism(s) found living in mutualistic,
+      commensalistic, or parasitic symbiosis with the specific host. The sampled symbiont
+      can have its own symbionts. For example, parasites may have hyperparasites (=parasites
+      of the parasite)
+    title: observed host symbionts
+    examples:
+    - value: flukeworms
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - host
+    - host.
+    - observed
+    - symbiosis
+    slot_uri: MIXS:0001298
+    alias: host_symbiont
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - PlantAssociated
+    - SymbiontAssociated
+    range: string
+    multivalued: true
+  samp_store_loc:
+    name: samp_store_loc
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: location name
+    description: Location at which sample was stored, usually name of a specific freezer/room
+    title: sample storage location
+    examples:
+    - value: Freezer no:5
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - location
+    - sample
+    - storage
+    slot_uri: MIXS:0000755
+    alias: samp_store_loc
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+  misc_param:
+    name: misc_param
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: parameter name;measurement value
+    description: Any other measurement performed or parameter collected, that is not
+      listed here
+    title: miscellaneous parameter
+    examples:
+    - value: Bicarbonate ion concentration;2075 micromole per kilogram
+    from_schema: https://w3id.org/mixs
+    keywords:
+    - parameter
+    string_serialization: '{text};{float} {unit}'
+    slot_uri: MIXS:0000752
+    alias: misc_param
+    owner: MimarksCHumanGut
+    domain_of:
+    - Agriculture
+    - Air
+    - FoodAnimalAndAnimalFeed
+    - FoodFarmEnvironment
+    - FoodFoodProductionFacility
+    - FoodHumanFoods
+    - HostAssociated
+    - HumanAssociated
+    - HumanGut
+    - HumanOral
+    - HumanSkin
+    - HumanVaginal
+    - HydrocarbonResourcesCores
+    - HydrocarbonResourcesFluidsSwabs
+    - MicrobialMatBiofilm
+    - MiscellaneousNaturalOrArtificialEnvironment
+    - PlantAssociated
+    - Sediment
+    - Soil
+    - SymbiontAssociated
+    - WastewaterSludge
+    - Water
+    range: string
+    multivalued: true
+class_uri: MIXS:0010009_0016004
+
+</code></pre>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "search.suggest"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
