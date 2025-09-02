@@ -44,13 +44,20 @@ def find_required_and_recommended_usages(input_schema, output):
 
     for class_name in class_names:
         logging.info(f"Checking {class_name}")
+        class_def = schema_view.get_class(class_name)
+        is_combination = "combination_classes" in (class_def.in_subset or [])
+        
         induced_slots = schema_view.class_induced_slots(class_name)
         for induced_slot in induced_slots:
             required_state = induced_slot.required
             recommended_state = induced_slot.recommended
             if required_state and recommended_state:
                 logging.info(f"\trequired and recommended: {class_name} {induced_slot.name}")
-                required_and_recommended_usages.append({"class_name": class_name, "slot_name": induced_slot.name})
+                required_and_recommended_usages.append({
+                    "class_name": class_name, 
+                    "slot_name": induced_slot.name,
+                    "is_combination": is_combination
+                })
 
     # logging.info(pprint.pformat(required_and_recommended_usages))
 
