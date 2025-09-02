@@ -1,4 +1,4 @@
-# RELEASE SOP: make install clean all all-assets test
+# RELEASE SOP: make install clean all all-contrib test
 
 MAKEFLAGS += --warn-undefined-variables
 SHELL := bash
