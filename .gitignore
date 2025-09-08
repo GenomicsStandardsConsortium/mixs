@@ -135,10 +135,20 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Excel files dumped in project/excel
+# Project-specific generated files
+/docs/
+/project/docs/
+/tmp/
 project/excel
-
-.DS_Store
-
-.vscode/
+/site
 linting-results*
+
+# Local development files
+/local/*
+!/local/.gitkeep
+
+# IDE files
+.vscode/
+
+# OS files
+.DS_Store
