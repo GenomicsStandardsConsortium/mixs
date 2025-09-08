@@ -123,26 +123,26 @@ The type of data specified in the expected value (`range`) of a slot (term) MUST
 
 Refer to LinkML documentation for more information on [range types](https://linkml.io/linkml-model/latest/docs/range/).
 
-## 4. Slot attributes
+## 4. LinkML slot attributes for MIxS terms
 
 ### 4.1. Minimal required LinkML slot attributes
 
-A term (slot) MUST at a minimum include following attributes:
+A term MUST at a minimum include following LinkML slot attributes:
 
-- [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions).
-- [`title`](https://linkml.io/linkml-model/latest/docs/title/).
-- [`examples`](https://linkml.io/linkml-model/latest/docs/examples/).
-- [`in_subset`](https://linkml.io/linkml-model/latest/docs/in_subset/).
-- [`keywords`](https://linkml.io/linkml-model/latest/docs/keywords/).
-- [`slot_uri`](https://linkml.io/linkml-model/latest/docs/slot_uri/).
-- [`range`](https://linkml.io/linkml/schemas/slots.html#ranges).
+- [`name`](https://linkml.io/linkml-model/latest/docs/name/) (MIxS: Structured comment name).
+- [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions) (MIxS: Definition).
+- [`title`](https://linkml.io/linkml-model/latest/docs/title/) (MIxS: Item).
+- [`examples`](https://linkml.io/linkml-model/latest/docs/examples/) (MIxS: Example).
+- [`in_subset`](https://linkml.io/linkml-model/latest/docs/in_subset/) (MIxS: Section).
+- [`slot_uri`](https://linkml.io/linkml-model/latest/docs/slot_uri/) (MIxS: MIxS ID).
+- [`range`](https://linkml.io/linkml/schemas/slots.html#ranges) (MIxS: Expected value).
 
 ### 4.2. Recommended LinkML slot attributes
 
 A term (slot) that has some level of 'requirement' (mandatory, conditional mandatory, optional) SHOULD include the following LinkML attributes:
 
-- [`recommended`](https://linkml.io/linkml/schemas/slots.html#recommended)
-- [`required`](https://linkml.io/linkml/schemas/slots.html#required)
+- [`recommended`](https://linkml.io/linkml/schemas/slots.html#recommended) (MIxS: Requirement).
+- [`required`](https://linkml.io/linkml/schemas/slots.html#required) (MIxS: Requirement).
 
 ## 5. Term definition
 
