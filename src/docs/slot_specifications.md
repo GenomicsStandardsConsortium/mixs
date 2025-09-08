@@ -73,6 +73,8 @@ The term (slot) structured comment name (`name`) MUST be unique within the MIxS 
 
 The term (slot) structured comment name (`name`) MUST be descriptive of the data it is intended to hold.
 
+The term (slot) structured comment name (`name`) SHOULD NOT include a checklist or extension specific prefix (e.g. `mimarks_`, `humanskin_`), to ensure re-use across different checklists and extensions.
+
 ### 2.5 (Structured comment) name abbreviation
 
 The term (slot) structured comment name (`name`) SHOULD be a abbreviated form of the item (title) attribute.
@@ -119,7 +121,7 @@ The type of data specified in the expected value (`range`) of a slot (term) MUST
 - `integer`
 - `float`
 - `boolean`
-- A MIxS defined enumeration
+- A MIxS defined value set ([enumeration](#143-enumerations))
 
 Refer to LinkML documentation for more information on [range types](https://linkml.io/linkml-model/latest/docs/range/).
 
@@ -209,7 +211,7 @@ Ideally, there SHOULD be a minimum of 3 examples for a term (slot).
 
 Examples SHOULD cover the full range of possible values, string formats, or any other way that information can be given to the term (slot).
 
-For example if a term (slot) accepts either an ontology term _or_ a free text string, there should be at least one example for each type.
+For example if a term (slot) accepts either an [ontology](#14-ontology-and-value-sets) term _or_ a free text string, there should be at least one example for each type.
 If a term (slot) accepts different unit types, there should be at least two examples of different units to demonstrate multiple units are accepted.
 
 ### 7.3 Examples for terms that allow more than one entry
@@ -282,6 +284,17 @@ Additional pattern components MAY be created when needed after consultation with
 
 ### 11.4 Specifying units
 
+Term (slots) that record a measurement SHOULD use a [structured pattern](#112-structured-or-formatted-text-should-use-a-structured-pattern) that includes a component for the unit of measurement.
+
+Example:
+
+```yaml
+structured_pattern:
+  syntax: ^{particulate_matter_name};{float} {unit}$
+```
+
+### 11.4 Preferred units
+
 Terms (slots) that record a measurement SHOULD specify the preferred unit of measurement for the term (slot) within a LinkmL `annotation` slot sub-attribute called `Preferred_unit:`.
 
 Example:
@@ -304,14 +317,73 @@ A term (slot) that is required to be filled in for a sample MUST have the `requi
 ### 13.2 Conditional mandatory terms
 
 A conditional term (slot) SHOULD NOT be specified as `required` as a LinkML slot attribute.
+
 A conditional term (slot) SHOULD be specified within the `slot_usage` attribute of a LinkML class attribute for a given extension.
 
 ### 13.3 Environment dependent terms
 
 An environment dependent term (slot) SHOULD NOT be specified as `required` as a LinkML slot attribute.
+
 An environment dependent term (slot) SHOULD be specified within the `slot_usage` attribute of a LinkML class attribute for a given extension.
 
 ### 13.4 Optional terms
 
 A term (slot) that is not required for a given sample MUST NOT have either the `recommended` and `required` LinkML attributes specified.
 By default LinkML attributes are assumed `false` unless specified.
+
+## 14. Ontology and Value sets
+
+### 14.1 Ontology and controlled values recommended
+
+Where possible, terms (slots) with controlled vocabularies SHOULD use standardised ontology terms or controlled vocabulary terms to specify the value of the term (slot).
+
+### 14.2 Recommended ontologies
+
+Ontologies SHOULD be from established and widely used ontologies, such as those found in the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols4/), [Open Biological and Biomedical Ontology Foundry (OBO)](https://obofoundry.org/), or [BioPortal](https://bioportal.bioontology.org/).
+
+Common ontologies used in MIxS include:
+
+- [Environment Ontology (ENVO)](https://sites.google.com/site/environmentontology/)
+- [Uberon anatomy ontology (UBERON)](https://obophenotype.github.io/uberon/)
+- [Disease Ontology (DOID)](https://disease-ontology.org/)
+- [Ontology for Biomedical Investigations (OBI)](https://obi-ontology.org/)
+- [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/)
+- [Phenotypic Quality Ontology (PATO)](https://pato-ontology.github.io/pato/)
+- [Plant Ontology (PO)](https://browser.planteome.org/amigo)
+
+### 14.3 Ontology term value format
+
+A term (slot) using an ontology term value MUST be written in the `termLabel [termID]` syntax, where the label is followed by the identifier code in square brackets.
+
+Example of ontology terms:
+
+- `Tundra biome [ENVO:01000180]`
+- `Rumen [UBERON:0007365]`
+- `Rabies [DOID:11260]`
+- `454 Genome Sequencer FLX [OBI:0000702]`
+
+### 14.4 Value sets
+
+For terms (slots) that only allow a small number fixed set of values, and otherwise no standardised ontology exists, an enumeration SHOULD be used be used to define the allowed values.
+
+The set of allowed values
+
+### 14.5 Enumerations
+
+Value sets (enumerations) MUST be defined within the `enums:` section of the LinkML schema.
+
+The name of the enumeration MUST be formatted in [Pascal Case](https://en.wikipedia.org/wiki/Camel_case), i.e. each word is capitalised and no spaces or underscores are used.
+
+For example, the value set for the term (slot) `assembly_qual` is named `AssemblyQualEnum`.
+
+## 15. Interoperability with other standards
+
+### 15.1 Importing of existing terms in other standards
+
+<!-- TODO  need decision from GSC-->
+
+## References
+
+- [https://www.gensc.org/pages/standards-intro.html#term](https://www.gensc.org/pages/standards-intro.html#term)
+- Eloe-Fadrosh, E.A., Mungall, C.J., Miller, M.A., Smith, M., Patil, S.S., Kelliher, J.M., Johnson, L.Y.D., Rodriguez, F.E., Chain, P.S.G., Hu, B., Thornton, M.B., McCue, L.A., McHardy, A.C., Harris, N.L., Reddy, T.B.K., Mukherjee, S., Hunter, C.I., Walls, R., Schriml, L.M., 2024. A practical approach to using the Genomic Standards Consortium MIxS reporting standard for comparative genomics and metagenomics. Methods Mol. Biol. 2802, 587–609. [https://doi.org/10.1007/978-1-0716-3838-5_20](https://doi.org/10.1007/978-1-0716-3838-5_20)
+- [https://linkml.io/linkml/](https://linkml.io/linkml/)
