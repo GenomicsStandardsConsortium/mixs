@@ -1,0 +1,82 @@
+name: Update Term Request
+description: "For us to assess a request to update to an existing term, we require the following details:"
+title: "Update term proposal: "
+labels: [1-TermUpdate]
+body:
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      description: >
+        Please make sure you check all these items before submitting  your feature request.
+      options:
+        - label: I have reviewed the existing MIxS checklists and extensions that the term does not exist.
+          required: true
+  - type: input
+    attributes:
+      label: Name of term to be updated
+      description: >
+        Specify the structured comment name (i.e. computer readable name) of the term to be updated.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Proposed title change
+      description: >
+        Describe the proposed change to the title of the term. If no change is proposed, leave empty
+  - type: textarea
+    attributes:
+      label: Description
+      description: >
+        Describe the proposed change to the description of the term. If no change is proposed, leave empty
+  - type: input
+    attributes:
+      label: Proposed change to pattern or range.
+      description: >
+        Describe the proposed change to the human readable description of the expected type of information the term will hold. If no change is proposed, leave empty.
+      placeholder: >
+        "e.g., text or EFO and/or OBI etc...".
+  - type: input
+    attributes:
+      label: Pattern or range syntax
+      description: >
+        Describe the proposed change to (structured) pattern of the value syntax that the term will be checked against. If no change is proposed, leave empty.
+      placeholder: >
+        "e.g. {float} {unit}|{termLabel} {[termID]}|{text}|{timestamp} etc...".
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Example
+      description: >
+        Describe the proposed change example value(s) for the term/slot. The example value must follow the pattern/syntax described above. If no change is proposed, leave empty.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Unit
+      description: >
+        Describe the proposed change to the preferred unit if appropriate. Previously known as 'Preferred unit'.  If no change is proposed, leave empty.
+      placeholder: >
+        "e.g, millliter, gram, milligram, liter".
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: Requirement
+      description: >
+        Describe the proposed change to whether the term/slot should be considered 'Required' or 'Recommended', and if so, for which checklist/extension.  If no change is proposed, leave empty.
+  - type: dropdown
+    attributes:
+      label: Multivalued
+      description: >
+        Specify the proposed change to whether the term/slot can be used multiple times in a checklist/package.  If no change is proposed, leave empty.
+      options:
+        - "Yes"
+        - "No"
+  - type: input
+    attributes:
+      label: Extensions(s)
+      description: >
+        Describe the proposed change to which checklists or extensions that the term should be included in. If no change is proposed, leave empty.
+    validations:
+      required: false
