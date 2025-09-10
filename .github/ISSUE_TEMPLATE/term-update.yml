@@ -7,9 +7,9 @@ body:
     attributes:
       label: Checklist
       description: >
-        Please make sure you check all these items before submitting  your feature request.
+        Please make sure you check all these items before submitting  your feature  change request.
       options:
-        - label: I have reviewed the existing MIxS checklists and extensions that the term does not exist.
+        - label: I have reviewed the existing MIxS checklists and extensions for no terms that may overlap with the proposed updates
           required: true
   - type: input
     attributes:
@@ -42,15 +42,11 @@ body:
         Describe the proposed change to (structured) pattern of the value syntax that the term will be checked against. If no change is proposed, leave empty.
       placeholder: >
         "e.g. {float} {unit}|{termLabel} {[termID]}|{text}|{timestamp} etc...".
-    validations:
-      required: true
   - type: input
     attributes:
       label: Example
       description: >
         Describe the proposed change example value(s) for the term/slot. The example value must follow the pattern/syntax described above. If no change is proposed, leave empty.
-    validations:
-      required: true
   - type: input
     attributes:
       label: Unit
@@ -80,3 +76,10 @@ body:
         Describe the proposed change to which checklists or extensions that the term should be included in. If no change is proposed, leave empty.
     validations:
       required: false
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: >
+        Please provide more context or justification for the proposed change, for example provide links or references to previous discussions about the proposal (if exists).
+    validations:
+      required: true
