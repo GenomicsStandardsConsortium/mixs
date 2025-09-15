@@ -384,11 +384,27 @@ The name of the enumeration MUST be formatted in [Pascal Case](https://en.wikipe
 
 For example, the value set for the term (slot) `assembly_qual` is named `AssemblyQualEnum`.
 
-## 15. Interoperability with other standards
+## 15. Importing terms from other standards
 
-### 15.1 Importing of existing terms in other standards
+### 15.1 Existing terms in other standards should be re-used if equivalent
 
-<!-- TODO  need decision from GSC-->
+Terms (slots) SHOULD be re-used from other established standards if they serve the same purpose and meaning as a proposed new MIxS term (slot).
+
+Examples of established standards include:
+
+- [Darwin Core (DwC)](https://dwc.tdwg.org/)
+
+### 15.2 Imported external standards terms requirements
+
+Term (slots) that are imported from another standard MUST be re-used in full, i.e. all attributes of the term (slot) MUST be re-used as far as they can be mapped to LinkML attributes.
+
+Term (slots) imported from another standard MUST refer to the original source of the term (slot) by specifying the relevant CURIE ([Compact URI](https://en.wikipedia.org/wiki/CURIE)) using the LinkML [mappings](https://linkml.io/linkml-model/latest/docs/mappings/) (`exact_mappings`, `close_mappings`, `related_mappings`, `narrow_mappings`, `broad_mappings`) attribute.
+
+### 15.3 Imported structured comment term name format
+
+Term (slots) structured comment (name) of external terms (slots) MUST be converted to [snake_case](https://en.wikipedia.org/wiki/Snake_case) and follow all other [MIxS naming conventions](#2-term-structured-naming) when re-used from another standard, if not already in this format.
+
+Minor modifications to the term (slot) structured comment (name) MAY BE made to ensure compliance with MIxS naming conventions.
 
 ## References
 
