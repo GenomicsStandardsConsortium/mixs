@@ -384,9 +384,53 @@ The name of the enumeration MUST be formatted in [Pascal Case](https://en.wikipe
 
 For example, the value set for the term (slot) `assembly_qual` is named `AssemblyQualEnum`.
 
-## 15. Importing terms from other standards
+## 15 Term provenance tracking
 
-### 15.1 Existing terms in other standards should be re-used if equivalent
+### 15.1 Terms should record provenance of term creation and updates
+
+Where possible, terms (slots) SHOULD include provenance information using relevant LinkML attributes:
+
+- [`created_by`](https://linkml.io/linkml-model/latest/docs/created_by/)
+- [`contributors`](https://linkml.io/linkml-model/latest/docs/contributors/)
+- [`created_on`](https://linkml.io/linkml-model/latest/docs/created_on/)
+- [`modified_by`](https://linkml.io/linkml-model/latest/docs/modified_by/)
+- [`last_updated_on`](https://linkml.io/linkml-model/latest/docs/last_updated_on/)
+
+### 15.2 Terms should record original author
+
+Terms (slots) SHOULD include the original author of the term (slot) using the LinkML [`created_by`](https://linkml.io/linkml-model/latest/docs/created_by/) attribute.
+
+Additional contributors to the slot MAY BE specified using the [`contributors`](https://linkml.io/linkml-model/latest/docs/contributors/) attribute.
+
+Original author or contributors SHOULD be referred to by a stable ID such as an [ORCID](https://orcid.org/), with the persons name included as a comment.
+
+```yaml
+created_by: orcid:0000-1234-1234-1234 # Erika Mustermann
+```
+
+### 15.3. Term creation date should be recorded
+
+The date in which the term (slot) was added to the schema SHOULD be recorded using the LinkML [`created_on`](https://linkml.io/linkml-model/latest/docs/created_on/) attribute.
+
+### 15.4 Terms should record modification author
+
+When a term (slot) is updated, the person making the update SHOULD be recorded using the LinkML [`modified_by`](https://linkml.io/linkml-model/latest/docs/modified_by/) attribute.
+
+Additional contributors to the update can be appended to the [`contributors`](https://linkml.io/linkml-model/latest/docs/contributors/) attribute.
+
+Original author or contributors SHOULD be referred to by a stable ID such as an [ORCID](https://orcid.org/), with the persons name included as a comment.
+
+```yaml
+created_by: orcid:0000-1234-1234-1234 # Erika Mustermann
+```
+
+### 15.5 Term modification date should be recorded
+
+The date in which the term (slot) was updated or modified SHOULD be recorded using the LinkML [`last_updated_on`](https://linkml.io/linkml-model/latest/docs/last_updated_on/) attribute.
+
+## 16 Importing terms from other standards
+
+### 16.1 Existing terms in other standards should be re-used if equivalent
 
 Terms (slots) SHOULD be re-used from other established standards if they serve the same purpose and meaning as a proposed new MIxS term (slot).
 
@@ -394,13 +438,13 @@ Examples of established standards include:
 
 - [Darwin Core (DwC)](https://dwc.tdwg.org/)
 
-### 15.2 Imported external standards terms requirements
+### 16.2 Imported external standards terms requirements
 
 Term (slots) that are imported from another standard MUST be re-used in full, i.e. all attributes of the term (slot) MUST be re-used as far as they can be mapped to LinkML attributes.
 
 Term (slots) imported from another standard MUST refer to the original source of the term (slot) by specifying the relevant CURIE ([Compact URI](https://en.wikipedia.org/wiki/CURIE)) using the LinkML [mappings](https://linkml.io/linkml-model/latest/docs/mappings/) (`exact_mappings`, `close_mappings`, `related_mappings`, `narrow_mappings`, `broad_mappings`) attribute.
 
-### 15.3 Imported structured comment term name format
+### 16.3 Imported structured comment term name format
 
 Term (slots) structured comment (name) of external terms (slots) MUST be converted to [snake_case](https://en.wikipedia.org/wiki/Snake_case) and follow all other [MIxS naming conventions](#2-term-structured-naming) when re-used from another standard, if not already in this format.
 
