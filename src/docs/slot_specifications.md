@@ -17,21 +17,24 @@ The key words “MUST”, “MUST NOT”, “SHOULD”, etc. are to be interpret
 This specification documentation refers to both MIxS and LinkML terminology.
 The following table can guide readers to how the terminology can be linked.
 
-| MIxS                    | LinkML               | Description                                                                                                                                                    |
-| ----------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Term                    | `slot`               | A single field of information (metadata) that has various attributes on how this information should be represented and formatted                               |
-| Structured comment name | `name`               | A short computer compatible key or ID for a given metadata field that is used to refer to the particular term (typically) within the schema internally         |
-| Item                    | `title`              | A short human readable name for the metadata term/slot                                                                                                         |
-| MIxS ID                 | `slot_uri`           | The resolvable globally unique persistent identifier associated with a MIxS metadata field with the prefix 'MIXS' that expands to https://w3id.org/gensc/mixs/ |
-| Definition              | `description`        | A detailed human-readable explanation of what information the metadata field should be holding                                                                 |
-| Expected value          | `range`              | The category of metadata the metadata field will hold (text, numbers, etc.)                                                                                    |
-| Value syntax            | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                         |
-| Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field should be filled in                                                                |
-| Section                 | `slot_group`         | A way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                       |
-| Section                 | `subset`             | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                 |
-| Requirement             | `recommended`        | Specifying the whether a metadata field is optional but should be to be filled in for a sample                                                                 |
-| Requirement             | `required`           | Specifying the whether a metadata field is mandatory to be filled in for a sample                                                                              |
-| Occurrence              | `multivalued`        | The number of times a particular metadata field can be used for a specific sample                                                                              |
+| MIxS                    | LinkML               | Description                                                                                                                                                                    |
+| ----------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Term                    | `slot`               | A single field of information (metadata) that has various attributes on how this information should be represented and formatted                                               |
+| Structured comment name | `name`               | A short computer compatible key or ID for a given metadata field that is used to refer to the particular term (typically) within the schema internally [^1]                    |
+| Item                    | `title`              | A short human readable name for the metadata term/slot [^2]                                                                                                                    |
+| MIxS ID                 | `slot_uri`           | The resolvable globally unique persistent identifier associated with a MIxS metadata field with the prefix 'MIXS' that expands to https://w3id.org/gensc/mixs/                 |
+| Definition              | `description`        | A detailed human-readable explanation of what information the metadata field should be holding                                                                                 |
+| Expected value          | `range`              | The category of metadata the metadata field will hold (text, numbers, etc.)                                                                                                    |
+| Value syntax            | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                                         |
+| Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field should be filled in                                                                                |
+| Section                 | `slot_group`         | A way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                       |
+| Section                 | `subset`             | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                 |
+| Requirement             | `recommended`        | Specifying that a metadata field is optional, but if the information is available, it is highly recommended to be filled in to increase the scientific usefulness of your data |
+| Requirement             | `required`           | Specifying whether a metadata field is mandatory to be filled in for a sample                                                                                                  |
+| Occurrence              | `multivalued`        | That a term can be specified more than one time for a single term                                                                                                              |
+
+[^1]: This structured name is used by many implementers as a key e.g. NCBI and DDBJ
+[^2]: This title name is used by many implementers as a key e.g. ENA
 
 This document will generally use MIxS terminology, but where helpful more relevant use the LinkML equivalent, with the other form in parentheses afterwards.
 
@@ -45,7 +48,7 @@ It MUST conform to any MIxS specific LinkML linting requirements as defined with
 
 ### 1.2 Slot definition
 
-A LinkML slot is the object that is used to describe a MIxS term - i.e. information that is used to describe a particular aspect of a sample, nucleic acid,, or sequence data.
+A LinkML slot is the object that is used to describe a MIxS term - i.e. information that is used to describe a particular aspect of a sample, its nucleic acids, or resulting sequence data.
 
 ### 1.3 Language
 
@@ -182,11 +185,11 @@ The item (title) should be a full sentence version of the term (slot) name, and 
 
 ### 6.2 Title length
 
-A term (slot) item (title) attribute SHOULD be as short as possible, but as long as necessary to be sufficiently descriptive, unique, and distinguishable from other terms.
+A term (slot) item (title) attribute SHOULD be lower as short as possible, but as long as necessary to be sufficiently descriptive, unique, and distinguishable from other terms.
 
 ### 6.3 Title format
 
-The item (title) SHOULD be lower case, including first character of the item.
+The item (title) SHOULD be in most circumstances lower case, including first character of the item.
 
 - Valid example: `library size`.
 - Invalid examples:
@@ -197,6 +200,10 @@ Capitalisation MAY be used when it is an acronym or abbreviation that typically 
 
 - Valid example: `MAG coverage software`.
 - Valid example: `API gravity`.
+
+### 6.4 Title uniqueness
+
+The term (slot) item (title) MUST be unique within the MIxS standard (LinkML model).
 
 ## 7. Term examples attribute
 
@@ -335,7 +342,8 @@ By default LinkML attributes are assumed `false` unless specified.
 
 ### 14.1 Ontology and controlled values recommended
 
-Where possible, terms (slots) with controlled vocabularies SHOULD use standardised ontology terms or controlled vocabulary terms to specify the value of the term (slot).
+Where possible, terms (slots) with controlled vocabularies SHOULD use standardised terms from ontologies.
+When not possible, controlled vocabulary terms (value sets) MAY be used to specify the value of the term (slot).
 
 ### 14.2 Recommended ontologies
 
