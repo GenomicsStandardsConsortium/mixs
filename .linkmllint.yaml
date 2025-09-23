@@ -4,6 +4,12 @@ rules:
     level: error
     exclude_type:
       - enum_definition
+    exclude:
+      - combination_classes
+      - sequencing
+      - environment
+      - nucleic acid sequence source
+      - investigation
   standard_naming:
     level: error
     exclude_type:
@@ -12,8 +18,8 @@ rules:
       - HACCP_term
       - IFSAC_category
       - air_PM_concen
-      - microb_start_taxID
-      - spikein_AMR
       - ferm_pH
+      - microb_start_taxID
       - soil_pH
+      - spikein_AMR
       - water_pH
