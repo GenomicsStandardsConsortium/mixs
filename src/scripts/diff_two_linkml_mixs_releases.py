@@ -1,18 +1,3 @@
-"""
-Script to compare MIxS schema releases using GitHub API.
-
-Fetches release information from GitHub, identifies mixs.yaml files across releases,
-and saves structured data for analysis. Supports GitHub API authentication via
-local/.env file for higher rate limits.
-
-Usage:
-    python diff_two_linkml_mixs_releases.py
-
-Output:
-    - Console output showing releases and YAML files
-    - local/mixs_releases.yaml with structured release data
-"""
-
 import requests
 from datetime import datetime
 import pprint
@@ -21,7 +6,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 import yaml
 from linkml_runtime.utils.schemaview import SchemaView
-from typing import List, Tuple, Dict, Optional, Any, Set
+from typing import List, Tuple, Dict, Optional, Any, Set, Union
+from dataclasses import dataclass
+from abc import ABC, abstractmethod
 import re
 
 APPROVED_DIRS = ['src', 'model']
@@ -43,6 +30,597 @@ ENUM_NAME_MAPPINGS = {}   # Will be loaded from TSV file
 SLOT_NAME_MAPPINGS = {}   # Will be loaded from TSV file
 SUBSET_NAME_MAPPINGS = {}  # Will be loaded from TSV file
 INTER_TYPE_REFACTORING = []  # Will be loaded from TSV file
+
+
+# ============================================================================
+# Systematic LinkML Comparison Framework
+# ============================================================================
+
+@dataclass
+class ValueComparison:
+    """Represents a comparison between two values."""
+    old_value: Any
+    new_value: Any
+    value_type: str  # 'scalar', 'list', 'dict', 'instance'
+    differences: List[str]
+    
+    def has_differences(self) -> bool:
+        return len(self.differences) > 0
+
+
+@dataclass
+class KeyComparison:
+    """Represents comparison of keys between two dictionaries."""
+    only_in_old: Set[str]
+    only_in_new: Set[str]
+    shared: Set[str]
+    expected_mappings: Set[str] = None
+    inter_type_refactoring: Set[str] = None
+
+
+@dataclass
+class CollectionComparison:
+    """Represents comparison of a collection (dict) with keys and values."""
+    key_comparison: KeyComparison
+    value_comparisons: Dict[str, ValueComparison]
+    
+    def has_differences(self) -> bool:
+        return (len(self.key_comparison.only_in_old) > 0 or 
+                len(self.key_comparison.only_in_new) > 0 or
+                any(vc.has_differences() for vc in self.value_comparisons.values()))
+
+
+@dataclass 
+class SchemaComparison:
+    """Top-level schema comparison result."""
+    old_info: Dict[str, Any]
+    new_info: Dict[str, Any] 
+    scalar_comparisons: Dict[str, ValueComparison]
+    collection_comparisons: Dict[str, CollectionComparison]
+
+
+class LinkMLComparator:
+    """Systematic comparison framework for LinkML schemas following cascading pattern."""
+    
+    def __init__(self, old_schema: SchemaView, new_schema: SchemaView, 
+                 old_info: Dict[str, Any], new_info: Dict[str, Any]):
+        self.old_schema = old_schema
+        self.new_schema = new_schema
+        self.old_info = old_info
+        self.new_info = new_info
+        
+        # Initialize with pattern materialization and class induction
+        self._initialize_schemas()
+        
+        # Load mappings for name change handling
+        self.class_mappings = CLASS_NAME_MAPPINGS
+        self.enum_mappings = ENUM_NAME_MAPPINGS 
+        self.slot_mappings = SLOT_NAME_MAPPINGS
+        self.subset_mappings = SUBSET_NAME_MAPPINGS
+        self.inter_type_refactoring = INTER_TYPE_REFACTORING
+    
+    def _initialize_schemas(self):
+        """Initialize schemas by materializing patterns and inducing all classes."""
+        for schema in [self.old_schema, self.new_schema]:
+            try:
+                schema.materialize_patterns()
+                # Force induction of all classes to use .attributes instead of .slots
+                for class_name in schema.all_classes():
+                    schema.induced_class(class_name)
+            except Exception as e:
+                print(f"Warning: Schema initialization issue ({e})")
+    
+    def _get_value_type(self, value: Any) -> str:
+        """Classify value type for systematic comparison."""
+        if value is None or isinstance(value, (str, int, float, bool)):
+            return 'scalar'
+        elif isinstance(value, (list, tuple)):
+            return 'list'
+        elif isinstance(value, dict):
+            return 'dict'
+        else:
+            return 'instance'  # LinkML object instance
+    
+    def _compare_scalars(self, old_value: Any, new_value: Any) -> ValueComparison:
+        """Compare scalar values."""
+        differences = []
+        if old_value != new_value:
+            differences.append(f"{old_value} vs {new_value}")
+        
+        return ValueComparison(
+            old_value=old_value,
+            new_value=new_value, 
+            value_type='scalar',
+            differences=differences
+        )
+    
+    def _compare_lists(self, old_value: List, new_value: List) -> ValueComparison:
+        """Compare list values as sets showing unique elements."""
+        differences = []
+        
+        try:
+            old_set = set(old_value) if old_value else set()
+            new_set = set(new_value) if new_value else set()
+            only_in_old = old_set - new_set
+            only_in_new = new_set - old_set
+            
+            if only_in_old:
+                differences.append(f"Only in old: {sorted(only_in_old)}")
+            if only_in_new:
+                differences.append(f"Only in new: {sorted(only_in_new)}")
+                
+        except TypeError:
+            # Non-hashable items, fall back to length comparison
+            if len(old_value) != len(new_value):
+                differences.append(f"Length differs: {len(old_value)} vs {len(new_value)}")
+        
+        return ValueComparison(
+            old_value=old_value,
+            new_value=new_value,
+            value_type='list', 
+            differences=differences
+        )
+    
+    def _compare_keys(self, old_keys: Set[str], new_keys: Set[str], 
+                     mappings: Dict[str, str] = None) -> KeyComparison:
+        """Compare keys between two dictionaries with mapping support."""
+        if mappings:
+            unique_old, unique_new, expected_mappings = filter_expected_name_changes(
+                old_keys, new_keys, mappings
+            )
+        else:
+            unique_old = old_keys - new_keys
+            unique_new = new_keys - old_keys  
+            expected_mappings = set()
+        
+        shared = old_keys & new_keys
+        
+        return KeyComparison(
+            only_in_old=unique_old,
+            only_in_new=unique_new,
+            shared=shared,
+            expected_mappings=expected_mappings
+        )
+    
+    def _compare_dict_values(self, old_dict: Dict, new_dict: Dict,
+                           mappings: Dict[str, str] = None, 
+                           element_type: str = None) -> CollectionComparison:
+        """Compare dictionary values following key-first pattern with cascading support."""
+        old_keys = set(old_dict.keys()) if old_dict else set()
+        new_keys = set(new_dict.keys()) if new_dict else set()
+        
+        # First compare keys
+        key_comparison = self._compare_keys(old_keys, new_keys, mappings)
+        
+        # Then compare values for shared keys with cascading
+        value_comparisons = {}
+        
+        for key in key_comparison.shared:
+            old_val = old_dict.get(key)
+            new_val = new_dict.get(key)
+            value_comparisons[key] = self._compare_values_with_cascading(
+                old_val, new_val, element_type, key
+            )
+        
+        # Also compare mapped values if mappings exist
+        if mappings:
+            for old_key, new_key in mappings.items():
+                if old_key in old_dict and new_key in new_dict:
+                    mapped_key = f"{old_key} -> {new_key}"
+                    value_comparisons[mapped_key] = self._compare_values_with_cascading(
+                        old_dict[old_key], new_dict[new_key], element_type, mapped_key
+                    )
+        
+        return CollectionComparison(
+            key_comparison=key_comparison,
+            value_comparisons=value_comparisons
+        )
+    
+    def _compare_instances(self, old_instance: Any, new_instance: Any) -> ValueComparison:
+        """Compare LinkML object instances using attribute-based comparison."""
+        differences = []
+        
+        if old_instance is None and new_instance is None:
+            return ValueComparison(old_instance, new_instance, 'instance', [])
+        
+        if old_instance is None or new_instance is None:
+            differences.append("One instance is None")
+            return ValueComparison(old_instance, new_instance, 'instance', differences)
+        
+        # Get attributes dynamically, excluding private/internal ones
+        old_attrs = set(dir(old_instance)) if old_instance else set()
+        new_attrs = set(dir(new_instance)) if new_instance else set()
+        
+        # Filter attributes  
+        excluded = {attr for attr in (old_attrs | new_attrs) 
+                   if attr.startswith('_') or callable(getattr(old_instance, attr, None)) 
+                   or callable(getattr(new_instance, attr, None))}
+        
+        all_attrs = (old_attrs | new_attrs) - excluded
+        
+        for attr in sorted(all_attrs):
+            old_val = getattr(old_instance, attr, None)
+            new_val = getattr(new_instance, attr, None)
+            
+            # Only report scalar differences for now (avoid recursion) 
+            if old_val != new_val and not isinstance(old_val, (dict, list)) and not isinstance(new_val, (dict, list)):
+                differences.append(f"{attr}: {old_val} vs {new_val}")
+        
+        return ValueComparison(old_instance, new_instance, 'instance', differences)
+    
+    def _compare_values(self, old_value: Any, new_value: Any) -> ValueComparison:
+        """Main value comparison dispatcher following systematic pattern."""
+        old_type = self._get_value_type(old_value)
+        new_type = self._get_value_type(new_value)
+        
+        # Handle type mismatches
+        if old_type != new_type:
+            return ValueComparison(
+                old_value=old_value,
+                new_value=new_value,
+                value_type='mixed',
+                differences=[f"Type mismatch: {old_type} vs {new_type}"]
+            )
+        
+        # Dispatch to appropriate comparison method
+        if old_type == 'scalar':
+            return self._compare_scalars(old_value, new_value)
+        elif old_type == 'list':
+            return self._compare_lists(old_value, new_value)
+        elif old_type == 'dict':
+            return self._compare_dict_values(old_value, new_value)
+        elif old_type == 'instance':
+            return self._compare_instances(old_value, new_value)
+        else:
+            return ValueComparison(old_value, new_value, old_type, ["Unknown type"])
+
+    def _compare_values_with_cascading(self, old_value: Any, new_value: Any, 
+                                     element_type: str = None, element_key: str = None) -> ValueComparison:
+        """Enhanced value comparison with cascading support for specific LinkML element types."""
+        # First do standard comparison
+        base_comparison = self._compare_values(old_value, new_value)
+        
+        # If both values are LinkML instances, apply cascading comparisons
+        if (base_comparison.value_type == 'instance' and 
+            old_value is not None and new_value is not None):
+            
+            # Apply cascading based on element type
+            if element_type == 'enums':
+                # Cascade to compare permissible_values
+                cascaded = self._cascade_enum_comparison(element_key, old_value, new_value)
+                if cascaded:
+                    # Merge cascading differences into base comparison
+                    base_comparison.differences.extend([f"Cascaded: {diff}" for diff in cascaded])
+            
+            elif element_type == 'classes':
+                # Cascade to compare attributes using induced classes
+                cascaded = self._cascade_class_comparison(element_key, old_value, new_value)
+                if cascaded:
+                    # Merge cascading differences into base comparison
+                    base_comparison.differences.extend([f"Cascaded: {diff}" for diff in cascaded])
+        
+        return base_comparison
+    
+    def _cascade_enum_comparison(self, enum_name: str, old_enum: Any, new_enum: Any) -> List[str]:
+        """Cascade down to compare enum permissible_values following the same pattern."""
+        differences = []
+        
+        # Check if enums have permissible_values to compare
+        old_pv = getattr(old_enum, 'permissible_values', None) or {}
+        new_pv = getattr(new_enum, 'permissible_values', None) or {}
+        
+        if old_pv or new_pv:
+            pv_comparison = self._compare_dict_values(old_pv, new_pv, element_type='permissible_values')
+            if pv_comparison.has_differences():
+                # Extract key difference summary
+                key_comp = pv_comparison.key_comparison
+                if key_comp.only_in_old:
+                    differences.append(f"permissible_values only in old: {len(key_comp.only_in_old)} values")
+                if key_comp.only_in_new:
+                    differences.append(f"permissible_values only in new: {len(key_comp.only_in_new)} values")
+                
+                # Value differences
+                value_diffs = sum(1 for v in pv_comparison.value_comparisons.values() if v.has_differences())
+                if value_diffs > 0:
+                    differences.append(f"permissible_values definition changes: {value_diffs} values")
+        
+        return differences
+    
+    def _cascade_class_comparison(self, class_name: str, old_class: Any, new_class: Any) -> List[str]:
+        """Cascade down to compare class attributes following the same pattern using induced classes."""
+        differences = []
+        
+        # Always use induced classes to get .attributes instead of .slots
+        try:
+            old_induced = self.old_schema.induced_class(class_name) if class_name in self.old_schema.all_classes() else old_class
+            new_induced = self.new_schema.induced_class(class_name) if class_name in self.new_schema.all_classes() else new_class
+            
+            old_attrs = getattr(old_induced, 'attributes', {}) or {}
+            new_attrs = getattr(new_induced, 'attributes', {}) or {}
+            
+            if old_attrs or new_attrs:
+                attrs_comparison = self._compare_dict_values(old_attrs, new_attrs, element_type='attributes')
+                if attrs_comparison.has_differences():
+                    # Extract key difference summary
+                    key_comp = attrs_comparison.key_comparison
+                    if key_comp.only_in_old:
+                        differences.append(f"attributes only in old: {len(key_comp.only_in_old)} attrs")
+                    if key_comp.only_in_new:
+                        differences.append(f"attributes only in new: {len(key_comp.only_in_new)} attrs")
+                    
+                    # Value differences
+                    value_diffs = sum(1 for v in attrs_comparison.value_comparisons.values() if v.has_differences())
+                    if value_diffs > 0:
+                        differences.append(f"attribute definition changes: {value_diffs} attrs")
+            
+        except Exception as e:
+            differences.append(f"Error cascading class comparison for {class_name}: {e}")
+        
+        return differences
+    
+    def compare_schemas(self) -> SchemaComparison:
+        """Main schema comparison following cascading pattern."""
+        # Get populated top-level keys
+        old_keys = populated_top_level_keys(self.old_schema)
+        new_keys = populated_top_level_keys(self.new_schema)
+        
+        scalar_comparisons = {}
+        collection_comparisons = {}
+        
+        # Helper to get value for a key 
+        def get_key_value(schema_view: SchemaView, key: str):
+            # First try raw schema
+            schema_dict = schema_view.schema._as_dict
+            if key in schema_dict and is_populated(schema_dict[key]):
+                return schema_dict[key]
+            
+            # Use metamodel-discovered collections  
+            schema_collections = get_metamodel_schema_collections()
+            if key in schema_collections:
+                try:
+                    method_name = schema_collections[key]
+                    method = getattr(schema_view, method_name)
+                    return method(imports=True)
+                except (AttributeError, TypeError):
+                    return None
+            return None
+        
+        # Compare all keys present in either schema
+        all_keys = old_keys | new_keys
+        
+        for key in sorted(all_keys):
+            old_value = get_key_value(self.old_schema, key) if key in old_keys else None
+            new_value = get_key_value(self.new_schema, key) if key in new_keys else None
+            
+            # Skip if both are empty/None
+            if not is_populated(old_value) and not is_populated(new_value):
+                continue
+            
+            value_type = self._get_value_type(old_value) if old_value is not None else self._get_value_type(new_value)
+            
+            if value_type == 'dict':
+                # Use specialized comparison for schema collections 
+                mappings = None
+                if key == 'classes':
+                    mappings = self.class_mappings
+                elif key == 'enums':
+                    mappings = self.enum_mappings
+                elif key == 'slots':
+                    mappings = self.slot_mappings
+                elif key == 'subsets':
+                    mappings = self.subset_mappings
+                
+                collection_comparisons[key] = self._compare_dict_values(
+                    old_value or {}, new_value or {}, mappings, key
+                )
+            else:
+                # Scalar or list comparison
+                scalar_comparisons[key] = self._compare_values(old_value, new_value)
+        
+        return SchemaComparison(
+            old_info=self.old_info,
+            new_info=self.new_info,
+            scalar_comparisons=scalar_comparisons,
+            collection_comparisons=collection_comparisons
+        )
+
+
+def schema_comparison_to_dict(comparison: SchemaComparison) -> dict:
+    """Convert a SchemaComparison to a structured dictionary for YAML output."""
+
+    old_tag = comparison.old_info.get('tag', 'old')
+    new_tag = comparison.new_info.get('tag', 'new')
+
+    def clean_value(value: Any) -> Any:
+        """Recursively convert linkml-runtime specific types to basic python types."""
+        if hasattr(value, '_as_dict'):  # For LinkML object instances
+            value = value._as_dict
+
+        if isinstance(value, str):  # This also handles extended_str
+            return str(value)
+        if isinstance(value, (list, tuple)):
+            return [clean_value(v) for v in value]
+        if isinstance(value, dict):
+            return {str(k): clean_value(v) for k, v in value.items()}
+        return value
+
+    def value_comparison_to_dict(value_comp: ValueComparison) -> dict:
+        """Convert a ValueComparison to a dictionary with just the old and new values."""
+        return {
+            old_tag: clean_value(value_comp.old_value),
+            new_tag: clean_value(value_comp.new_value)
+        }
+
+    def key_comparison_to_dict(key_comp: KeyComparison) -> dict:
+        """Convert a KeyComparison to a dictionary."""
+        return {
+            'only_in_old': sorted(list(key_comp.only_in_old)),
+            'only_in_new': sorted(list(key_comp.only_in_new)),
+            'shared': sorted(list(key_comp.shared)),
+            'expected_mappings': sorted(list(key_comp.expected_mappings)) if key_comp.expected_mappings else []
+        }
+
+    def collection_comparison_to_dict(coll_comp: CollectionComparison) -> dict:
+        """Convert a CollectionComparison to a dictionary."""
+        # For collections, we still want to see the key comparison info
+        return {
+            'key_comparison': key_comparison_to_dict(coll_comp.key_comparison),
+            'definition_changes': {
+                k: value_comparison_to_dict(v)
+                for k, v in coll_comp.value_comparisons.items()
+                if v.has_differences()
+            }
+        }
+
+    # Build the complete comparison dictionary
+    result = {
+        'comparison_metadata': {
+            'old_schema': {
+                'tag': comparison.old_info['tag'],
+                'date': comparison.old_info['date'],
+                'commit_sha': comparison.old_info.get('commit_sha', 'unknown')
+            },
+            'new_schema': {
+                'tag': comparison.new_info['tag'],
+                'date': comparison.new_info['date'],
+                'commit_sha': comparison.new_info.get('commit_sha', 'unknown')
+            },
+            'comparison_timestamp': datetime.now().isoformat()
+        },
+        'scalar_differences': {
+            k: value_comparison_to_dict(v)
+            for k, v in comparison.scalar_comparisons.items()
+            if v.has_differences()
+        },
+        'collection_differences': {
+            k: collection_comparison_to_dict(v)
+            for k, v in comparison.collection_comparisons.items()
+            if v.has_differences()
+        },
+        'summary': {
+            'total_scalar_differences': sum(1 for v in comparison.scalar_comparisons.values() if v.has_differences()),
+            'total_collection_differences': sum(1 for v in comparison.collection_comparisons.values() if v.has_differences()),
+            'total_schema_elements_compared': sum(
+                len(comp.key_comparison.shared) + 
+                len(comp.key_comparison.only_in_old) + 
+                len(comp.key_comparison.only_in_new) 
+                for comp in comparison.collection_comparisons.values()
+            ),
+            'collections_analyzed': list(comparison.collection_comparisons.keys()),
+            'scalar_keys_analyzed': list(comparison.scalar_comparisons.keys())
+        }
+    }
+
+    return result
+
+
+def print_schema_comparison_report(comparison: SchemaComparison) -> None:
+    """Print a structured report of the schema comparison results."""
+    print("\n" + "=" * 80)
+    print("SYSTEMATIC LINKML SCHEMA COMPARISON REPORT")
+    print("=" * 80)
+    
+    print(f"\nComparing:")
+    print(f"  OLD: {comparison.old_info['tag']} ({comparison.old_info['date']})")  
+    print(f"  NEW: {comparison.new_info['tag']} ({comparison.new_info['date']})")
+    
+    # Report scalar differences
+    if comparison.scalar_comparisons:
+        print(f"\n🔢 SCALAR VALUE DIFFERENCES ({len(comparison.scalar_comparisons)} keys)")
+        print("-" * 50)
+        
+        for key, value_comp in sorted(comparison.scalar_comparisons.items()):
+            if value_comp.has_differences():
+                print(f"  {key}:")
+                if value_comp.value_type == 'mixed':
+                    print(f"    Type mismatch: {type(value_comp.old_value).__name__} vs {type(value_comp.new_value).__name__}")
+                elif value_comp.value_type == 'list':
+                    for diff in value_comp.differences:
+                        print(f"    {diff}")
+                else:
+                    print(f"    OLD: {value_comp.old_value}")
+                    print(f"    NEW: {value_comp.new_value}")
+    
+    # Report collection differences
+    if comparison.collection_comparisons:
+        print(f"\n📚 COLLECTION DIFFERENCES ({len(comparison.collection_comparisons)} collections)")
+        print("-" * 50)
+        
+        for key, collection_comp in sorted(comparison.collection_comparisons.items()):
+            if collection_comp.has_differences():
+                print(f"\n  📁 {key.upper()}:")
+                
+                # Key differences
+                key_comp = collection_comp.key_comparison
+                if key_comp.only_in_old or key_comp.only_in_new:
+                    print(f"    Key differences:")
+                    
+                    if key_comp.only_in_old:
+                        print(f"      ➖ Only in OLD ({len(key_comp.only_in_old)}): {sorted(list(key_comp.only_in_old))[:5]}{'...' if len(key_comp.only_in_old) > 5 else ''}")
+                    
+                    if key_comp.only_in_new:
+                        print(f"      ➕ Only in NEW ({len(key_comp.only_in_new)}): {sorted(list(key_comp.only_in_new))[:5]}{'...' if len(key_comp.only_in_new) > 5 else ''}")
+                
+                if key_comp.expected_mappings:
+                    print(f"    Expected mappings ({len(key_comp.expected_mappings)}): {sorted(list(key_comp.expected_mappings))[:3]}{'...' if len(key_comp.expected_mappings) > 3 else ''}")
+                
+                # Value differences for shared/mapped keys
+                value_diffs = [(k, v) for k, v in collection_comp.value_comparisons.items() if v.has_differences()]
+                if value_diffs:
+                    print(f"    Element definition changes ({len(value_diffs)} elements):")
+                    for elem_key, value_comp in value_diffs[:5]:  # Show first 5
+                        if value_comp.value_type == 'instance' and value_comp.differences:
+                            print(f"      🔧 {elem_key}: {', '.join(value_comp.differences[:2])}{'...' if len(value_comp.differences) > 2 else ''}")
+                    
+                    if len(value_diffs) > 5:
+                        print(f"      ... and {len(value_diffs) - 5} more elements with differences")
+            
+            else:
+                print(f"  ✅ {key}: No differences detected")
+    
+    # Summary
+    total_diffs = sum(1 for v in comparison.scalar_comparisons.values() if v.has_differences())
+    total_collection_diffs = sum(1 for v in comparison.collection_comparisons.values() if v.has_differences())
+    
+    print(f"\n📊 SUMMARY:")
+    print(f"  • Scalar differences: {total_diffs}/{len(comparison.scalar_comparisons)} keys")
+    print(f"  • Collection differences: {total_collection_diffs}/{len(comparison.collection_comparisons)} collections")
+    print(f"  • Total schema elements compared: {sum(len(comp.key_comparison.shared) + len(comp.key_comparison.only_in_old) + len(comp.key_comparison.only_in_new) for comp in comparison.collection_comparisons.values())}")
+
+
+def cascade_enum_comparisons(comparator: LinkMLComparator, enum_name: str, old_enum: Any, new_enum: Any) -> Dict[str, CollectionComparison]:
+    """Cascade down to compare enum permissible_values following the same pattern."""
+    cascaded_comparisons = {}
+    
+    # Check if enums have permissible_values to compare
+    old_pv = getattr(old_enum, 'permissible_values', None) or {}
+    new_pv = getattr(new_enum, 'permissible_values', None) or {}
+    
+    if old_pv or new_pv:
+        cascaded_comparisons['permissible_values'] = comparator._compare_dict_values(old_pv, new_pv)
+    
+    return cascaded_comparisons
+
+
+def cascade_class_comparisons(comparator: LinkMLComparator, class_name: str, old_class: Any, new_class: Any) -> Dict[str, CollectionComparison]:
+    """Cascade down to compare class attributes following the same pattern."""
+    cascaded_comparisons = {}
+    
+    # Always use induced classes to get .attributes instead of .slots
+    try:
+        old_induced = comparator.old_schema.induced_class(class_name) if class_name in comparator.old_schema.all_classes() else old_class
+        new_induced = comparator.new_schema.induced_class(class_name) if class_name in comparator.new_schema.all_classes() else new_class
+        
+        old_attrs = getattr(old_induced, 'attributes', {}) or {}
+        new_attrs = getattr(new_induced, 'attributes', {}) or {}
+        
+        if old_attrs or new_attrs:
+            cascaded_comparisons['attributes'] = comparator._compare_dict_values(old_attrs, new_attrs)
+        
+    except Exception as e:
+        print(f"Warning: Could not cascade class comparison for {class_name}: {e}")
+    
+    return cascaded_comparisons
 
 
 def load_class_name_mappings() -> Dict[str, str]:
@@ -268,11 +846,56 @@ def is_populated(value: Any) -> bool:
     return True  # number, bool, LinkML objects, etc.
 
 
+def get_metamodel_schema_collections() -> Dict[str, str]:
+    """Get schema collections from LinkML metamodel dynamically.
+    
+    Returns:
+        Dict mapping slot names to their corresponding all_* method names.
+    """
+    # Load the metamodel to discover schema_definition slots dynamically
+    try:
+        meta_view = SchemaView('/Users/MAM/Documents/gitrepos/compare-mixs/main/mixs/meta.yaml')
+        
+        # Induce the schema_definition class to get its full attribute structure
+        schema_def_class = meta_view.get_class('schema_definition', strict=True)
+        induced_class = meta_view.induced_class(schema_def_class.name)
+        
+        # Map known collection slots to their SchemaView methods
+        collection_methods = {
+            'classes': 'all_classes',
+            'slots': 'all_slots', 
+            'slot_definitions': 'all_slots',  # alias for slots
+            'enums': 'all_enums',
+            'types': 'all_types', 
+            'subsets': 'all_subsets',
+        }
+        
+        # Filter to only include slots that are actually defined in schema_definition
+        schema_collections = {}
+        for slot_name in induced_class.attributes:
+            if slot_name in collection_methods:
+                schema_collections[slot_name] = collection_methods[slot_name]
+                
+        return schema_collections
+        
+    except Exception as e:
+        # Fallback to hardcoded collections if metamodel loading fails
+        print(f"Warning: Could not load metamodel ({e}), using fallback collections")
+        return {
+            'classes': 'all_classes',
+            'slots': 'all_slots',
+            'enums': 'all_enums',
+            'types': 'all_types',
+            'subsets': 'all_subsets',
+        }
+
+
 def populated_top_level_keys(schema_view: SchemaView) -> Set[str]:
     """Extract top-level keys from a SchemaView that have populated values.
     
-    This function checks both the raw schema attributes and the merged/resolved
-    collections accessible via all_* methods to get a complete picture.
+    Uses the LinkML metamodel to dynamically discover what collections should exist
+    in a SchemaDefinition, then checks both raw schema attributes and resolved
+    collections via all_* methods.
     
     Args:
         schema_view: SchemaView instance to analyze.
@@ -282,29 +905,33 @@ def populated_top_level_keys(schema_view: SchemaView) -> Set[str]:
     """
     keys = set()
     
+    # Ensure schema classes are induced before analysis
+    try:
+        schema_view.materialize_patterns()
+        # Force induction of all classes to replace slots with attributes
+        for class_name in schema_view.all_classes():
+            schema_view.induced_class(class_name)
+    except Exception as e:
+        print(f"Warning: Could not induce classes ({e})")
+    
     # Check raw schema attributes first
     schema_dict = schema_view.schema._as_dict
     for k, v in schema_dict.items():
         if is_populated(v):
             keys.add(k)
     
-    # Check merged/resolved collections via all_* methods
-    schema_collections = {
-        'classes': lambda: schema_view.all_classes(imports=True),
-        'slots': lambda: schema_view.all_slots(imports=True),
-        'enums': lambda: schema_view.all_enums(imports=True),
-        'types': lambda: schema_view.all_types(imports=True),
-        'subsets': lambda: schema_view.all_subsets(imports=True),
-    }
+    # Dynamically discover collections from metamodel
+    schema_collections = get_metamodel_schema_collections()
     
-    for key_name, method in schema_collections.items():
+    for key_name, method_name in schema_collections.items():
         try:
-            result = method()
+            method = getattr(schema_view, method_name)
+            result = method(imports=True)
             if is_populated(result):
                 keys.add(key_name)
-        except (AttributeError, TypeError):
+        except (AttributeError, TypeError) as e:
             # Skip if method doesn't exist or fails
-            pass
+            print(f"Warning: Could not access {method_name} ({e})")
     
     return keys
 
@@ -706,10 +1333,46 @@ def build_full_release_info() -> Dict[str, Dict[str, Any]]:
     return release_info
 
 
+def validate_schema_definition(schema_view: SchemaView, schema_tag: str) -> bool:
+    """Validate that a schema is a proper LinkML SchemaDefinition.
+    
+    Args:
+        schema_view: SchemaView to validate.
+        schema_tag: Human readable identifier for error messages.
+        
+    Returns:
+        True if valid, False otherwise.
+    """
+    try:
+        # Check if schema has required SchemaDefinition properties
+        schema = schema_view.schema
+        if not hasattr(schema, 'id') or not schema.id:
+            print(f"Warning: Schema {schema_tag} missing required 'id' field")
+            return False
+            
+        if not hasattr(schema, 'name') or not schema.name:
+            print(f"Warning: Schema {schema_tag} missing required 'name' field")
+            return False
+            
+        # Check if we can access core collections
+        try:
+            schema_view.all_classes()
+            schema_view.all_slots()
+        except Exception as e:
+            print(f"Warning: Schema {schema_tag} failed basic collection access: {e}")
+            return False
+            
+        return True
+        
+    except Exception as e:
+        print(f"Warning: Schema validation failed for {schema_tag}: {e}")
+        return False
+
+
 def load_schema_views(old_commit: str = DEFAULT_OLD_COMMIT,
                       new_commit: str = DEFAULT_NEW_COMMIT) -> Tuple[
     SchemaView, SchemaView, Dict[str, Any], Dict[str, Any]]:
-    """Load SchemaView objects for old and new commits.
+    """Load SchemaView objects for old and new commits with validation.
     
     Args:
         old_commit: Short commit hash for the old schema version.
@@ -750,6 +1413,14 @@ def load_schema_views(old_commit: str = DEFAULT_OLD_COMMIT,
     print(f"Loading new schema: {new_info['tag']} ({new_commit})")
     print(f"  URL: {new_url}")
     new_schema = SchemaView(new_url)
+    
+    # Validate schemas
+    print(f"Validating schemas as LinkML SchemaDefinitions...")
+    old_valid = validate_schema_definition(old_schema, old_info['tag'])
+    new_valid = validate_schema_definition(new_schema, new_info['tag'])
+    
+    if not old_valid or not new_valid:
+        print("Warning: Schema validation issues detected, but proceeding with comparison")
 
     return old_schema, new_schema, old_info, new_info
 
@@ -793,501 +1464,6 @@ def build_release_info_dict() -> Dict[str, Dict[str, Any]]:
             for k, v in release_info.items()}
 
 
-def compare_scalar_values(key: str, old_value, new_value, old_info: Dict[str, Any], new_info: Dict[str, Any]) -> None:
-    """Compare and print scalar values."""
-    print(f"    {key}:")
-    print(f"      {old_info['tag']}: {old_value}")
-    print(f"      {new_info['tag']}: {new_value}")
-
-
-def compare_list_values(key: str, old_value, new_value, old_info: Dict[str, Any], new_info: Dict[str, Any]) -> None:
-    """Compare and print list/tuple values as sets."""
-    # Keys that should never be truncated
-    no_truncate_keys = {'imports', 'settings'}
-    
-    try:
-        old_set = set(old_value)
-        new_set = set(new_value)
-        only_in_old = old_set - new_set
-        only_in_new = new_set - old_set
-        
-        print(f"    {key}:")
-        if only_in_old:
-            print(f"      Only in {old_info['tag']} ({len(only_in_old)} items):")
-            if key in no_truncate_keys or len(only_in_old) <= 20:
-                for item in sorted(only_in_old):
-                    print(f"        {item}")
-            else:
-                for item in list(sorted(only_in_old))[:20]:
-                    print(f"        {item}")
-                print(f"        ... and {len(only_in_old) - 20} more")
-                
-        if only_in_new:
-            print(f"      Only in {new_info['tag']} ({len(only_in_new)} items):")
-            if key in no_truncate_keys or len(only_in_new) <= 20:
-                for item in sorted(only_in_new):
-                    print(f"        {item}")
-            else:
-                for item in list(sorted(only_in_new))[:20]:
-                    print(f"        {item}")
-                print(f"        ... and {len(only_in_new) - 20} more")
-    except TypeError:
-        # Items not hashable, fall back to showing type/size info
-        print(f"    {key}:")
-        print(f"      {old_info['tag']}: {type(old_value).__name__} (size: {len(old_value)})")
-        print(f"      {new_info['tag']}: {type(new_value).__name__} (size: {len(new_value)})")
-
-
-def filter_mixs_compliant_slots(schema_view: SchemaView, slot_dict: Dict) -> Tuple[Dict, int]:
-    """Filter out slots with domain 'MixsCompliantData' and return filtered dict and count."""
-    filtered_slots = {}
-    mixs_compliant_count = 0
-    
-    for slot_name, slot_def in slot_dict.items():
-        try:
-            # Get the slot definition from SchemaView to check domain
-            slot_obj = schema_view.get_slot(slot_name)
-            if slot_obj and hasattr(slot_obj, 'domain') and slot_obj.domain == 'MixsCompliantData':
-                mixs_compliant_count += 1
-            else:
-                filtered_slots[slot_name] = slot_def
-        except:
-            # If we can't get slot info, include it in the comparison
-            filtered_slots[slot_name] = slot_def
-    
-    return filtered_slots, mixs_compliant_count
-
-
-def compare_schema_elements(key: str, old_value: Dict, new_value: Dict, old_info: Dict[str, Any], new_info: Dict[str, Any], 
-                          mappings: Dict[str, str] = None, show_all_flag: bool = False, 
-                          old_schema: SchemaView = None, new_schema: SchemaView = None) -> None:
-    """Unified comparison function for classes, enums, and slots."""
-    
-    old_keys = set(old_value.keys())
-    new_keys = set(new_value.keys())
-    
-    print(f"      Total old {key}: {len(old_keys)}, Total new {key}: {len(new_keys)}")
-    
-    # Apply mappings if available
-    if mappings:
-        unique_old, unique_new, expected_mappings = filter_expected_name_changes(
-            old_keys, new_keys, mappings
-        )
-        
-        print(f"      Expected {key} name changes ({len(expected_mappings)} mappings):")
-        if show_all_flag and len(expected_mappings) <= 50:
-            for mapping in sorted(expected_mappings):
-                print(f"        {mapping}")
-        elif len(expected_mappings) <= 10:
-            for mapping in sorted(expected_mappings):
-                print(f"        {mapping}")
-        else:
-            print(f"        [Many expected mappings: showing first 10]")
-            for mapping in list(sorted(expected_mappings))[:10]:
-                print(f"        {mapping}")
-            print(f"        ... and {len(expected_mappings) - 10} more expected mappings")
-        
-        # Compare mapped elements for detailed differences
-        if key in ['enums', 'classes', 'slots']:
-            print(f"      Comparing mapped {key} definitions:")
-            mapped_differences = []
-            
-            # Choose the appropriate comparison function
-            if key == 'enums':
-                diff_func = find_enum_differences
-            elif key == 'classes':
-                diff_func = find_class_differences
-            else:  # slots
-                diff_func = find_slot_differences
-            
-            # Compare ALL mapped elements
-            for old_name, new_name in sorted(mappings.items()):
-                if old_name in old_value and new_name in new_value:
-                    # Capture differences without printing immediately
-                    old_element = old_value[old_name]
-                    new_element = new_value[new_name]
-                    differences = diff_func(old_element, new_element)
-                    if differences:
-                        mapped_differences.append((f"{old_name} -> {new_name}", differences))
-            
-            # Display results with limits
-            if mapped_differences:
-                display_limit = 10
-                for i, (mapping_name, differences) in enumerate(mapped_differences):
-                    if i < display_limit:
-                        print(f"        {mapping_name}: has differences")
-                        for diff in differences:
-                            print(f"          {diff}")
-                    else:
-                        break
-                
-                if len(mapped_differences) > display_limit:
-                    print(f"        ... and {len(mapped_differences) - display_limit} more mapped {key} with differences")
-                print(f"        Total mapped {key} compared: {len(mappings)}, with differences: {len(mapped_differences)}")
-            else:
-                print(f"        All {len(mappings)} mapped {key} have identical metadata")
-        
-        only_in_old_keys = unique_old
-        only_in_new_keys = unique_new
-    else:
-        only_in_old_keys = old_keys - new_keys
-        only_in_new_keys = new_keys - old_keys
-    
-    # Apply inter-type refactoring filtering
-    element_type_map = {'classes': 'class', 'enums': 'enum', 'slots': 'slot', 'subsets': 'subset'}
-    if key in element_type_map and INTER_TYPE_REFACTORING:
-        element_type = element_type_map[key]
-        filtered_old, filtered_new, refactoring_found = filter_inter_type_refactoring(
-            element_type, only_in_old_keys, only_in_new_keys, INTER_TYPE_REFACTORING
-        )
-        
-        if refactoring_found:
-            print(f"      Expected inter-type refactoring ({len(refactoring_found)} transformations):")
-            for refactoring in sorted(refactoring_found):
-                print(f"        {refactoring}")
-        
-        only_in_old_keys = filtered_old
-        only_in_new_keys = filtered_new
-    
-    shared_keys = old_keys & new_keys
-    
-    # Show unique differences
-    print(f"      Unique {key} only in {old_info['tag']}: {len(only_in_old_keys)}")
-    if only_in_old_keys:
-        if key == 'enums' and old_schema:
-            show_enum_slot_associations(only_in_old_keys, old_schema, old_info['tag'])
-        elif key == 'slots' and old_schema:
-            show_slot_class_associations(only_in_old_keys, old_schema, old_info['tag'])
-        else:
-            show_all = show_all_flag or len(only_in_old_keys) <= 50
-            if show_all:
-                for k in sorted(only_in_old_keys):
-                    print(f"        {k}")
-            else:
-                print(f"        [LARGE DIFF: {len(only_in_old_keys)} {key} - showing sample]")
-                for k in list(sorted(only_in_old_keys))[:10]:
-                    print(f"        {k}")
-                print(f"        ... and {len(only_in_old_keys) - 10} more")
-        
-    print(f"      Unique {key} only in {new_info['tag']}: {len(only_in_new_keys)}")
-    if only_in_new_keys:
-        if key == 'enums' and new_schema:
-            show_enum_slot_associations(only_in_new_keys, new_schema, new_info['tag'])
-        elif key == 'slots' and new_schema:
-            show_slot_class_associations(only_in_new_keys, new_schema, new_info['tag'])
-        else:
-            show_all = show_all_flag or len(only_in_new_keys) <= 50
-            if show_all:
-                for k in sorted(only_in_new_keys):
-                    print(f"        {k}")
-            else:
-                print(f"        [LARGE DIFF: {len(only_in_new_keys)} {key} - showing sample]")
-                for k in list(sorted(only_in_new_keys))[:10]:
-                    print(f"        {k}")
-                print(f"        ... and {len(only_in_new_keys) - 10} more")
-    
-    # Show shared elements with different definitions
-    if shared_keys:
-        changed_keys = [k for k in shared_keys if old_value[k] != new_value[k]]
-        if changed_keys and len(changed_keys) <= 10:
-            definition_word = "definitions" if key in ['classes', 'enums', 'slots'] else "values"
-            print(f"      Shared {key} with different {definition_word} ({len(changed_keys)} {key}):")
-            for k in sorted(changed_keys):
-                if key == 'enums':
-                    # Detailed enum comparison
-                    differences = find_enum_differences(old_value[k], new_value[k])
-                    if differences:
-                        print(f"        {k}: has differences")
-                        for diff in differences:
-                            print(f"          {diff}")
-                    else:
-                        print(f"        {k}: no scalar metadata differences")
-                elif key == 'classes':
-                    # Detailed class comparison
-                    differences = find_class_differences(old_value[k], new_value[k])
-                    if differences:
-                        print(f"        {k}: has differences")
-                        for diff in differences:
-                            print(f"          {diff}")
-                    else:
-                        print(f"        {k}: no scalar metadata differences")
-                elif key == 'slots':
-                    # Detailed slot comparison
-                    differences = find_slot_differences(old_value[k], new_value[k])
-                    if differences:
-                        print(f"        {k}: has differences")
-                        for diff in differences:
-                            print(f"          {diff}")
-                    else:
-                        print(f"        {k}: no scalar metadata differences")
-                elif key == 'prefixes':
-                    # Special formatting for prefix objects
-                    old_prefix = old_value[k]
-                    new_prefix = new_value[k]
-                    
-                    # Extract meaningful parts from Prefix objects
-                    old_ref = getattr(old_prefix, 'prefix_reference', old_prefix)
-                    new_ref = getattr(new_prefix, 'prefix_reference', new_prefix)
-                    
-                    print(f"        {k}: {old_info['tag']}='{old_ref}' vs {new_info['tag']}='{new_ref}'")
-                else:
-                    print(f"        {k}: {old_info['tag']}={old_value[k]!r} vs {new_info['tag']}={new_value[k]!r}")
-        elif changed_keys:
-            definition_word = "definitions" if key in ['classes', 'enums', 'slots'] else "values"
-            print(f"      {len(changed_keys)} shared {key} have different {definition_word} (too many to show)")
-
-
-def compare_dict_values(key: str, old_value, new_value, old_info: Dict[str, Any], new_info: Dict[str, Any], old_schema: SchemaView = None, new_schema: SchemaView = None) -> None:
-    """Compare and print dictionary values by comparing keys."""
-    # Special handling for slots - filter out MixsCompliantData domain slots
-    if key == 'slots':
-        # We need access to the schema views, but they're not passed here
-        # For now, just note this in the output and handle normally
-        print(f"    {key} (Note: MixsCompliantData domain slots not filtered in this view):")
-    else:
-        print(f"    {key}:")
-    
-    # Use unified comparison for schema elements
-    if key == 'classes':
-        compare_schema_elements(key, old_value, new_value, old_info, new_info, 
-                              CLASS_NAME_MAPPINGS, SHOW_ALL_CLASS_NAMES, old_schema, new_schema)
-    elif key == 'enums':
-        compare_schema_elements(key, old_value, new_value, old_info, new_info,
-                              ENUM_NAME_MAPPINGS, SHOW_ALL_ENUM_NAMES, old_schema, new_schema)
-    elif key == 'slots':
-        # Note: Slots have special filtering that happens in compare_slots_with_filtering
-        # This branch shouldn't be reached for slots in normal operation
-        compare_schema_elements(key, old_value, new_value, old_info, new_info,
-                              SLOT_NAME_MAPPINGS, SHOW_ALL_SLOT_NAMES, old_schema, new_schema)
-    elif key == 'subsets':
-        compare_schema_elements(key, old_value, new_value, old_info, new_info,
-                              SUBSET_NAME_MAPPINGS, True, old_schema, new_schema)
-    else:
-        # Original logic for non-schema element keys
-        old_keys = set(old_value.keys())
-        new_keys = set(new_value.keys())
-        only_in_old_keys = old_keys - new_keys
-        only_in_new_keys = new_keys - old_keys
-        shared_keys = old_keys & new_keys
-        
-        show_all_keys = len(only_in_old_keys) <= 50
-        
-        if only_in_old_keys:
-            print(f"      Keys only in {old_info['tag']} ({len(only_in_old_keys)} keys):")
-            if show_all_keys:
-                for k in sorted(only_in_old_keys):
-                    print(f"        {k}")
-            else:
-                print(f"        [LARGE DIFF: {len(only_in_old_keys)} keys - showing sample]")
-                for k in list(sorted(only_in_old_keys))[:10]:
-                    print(f"        {k}")
-                print(f"        ... and {len(only_in_old_keys) - 10} more")
-        
-        show_all_new_keys = len(only_in_new_keys) <= 50
-                
-        if only_in_new_keys:
-            print(f"      Keys only in {new_info['tag']} ({len(only_in_new_keys)} keys):")
-            if show_all_new_keys:
-                for k in sorted(only_in_new_keys):
-                    print(f"        {k}")
-            else:
-                print(f"        [LARGE DIFF: {len(only_in_new_keys)} keys - showing sample]")
-                for k in list(sorted(only_in_new_keys))[:10]:
-                    print(f"        {k}")
-                print(f"        ... and {len(only_in_new_keys) - 10} more")
-        
-        if shared_keys:
-            changed_keys = [k for k in shared_keys if old_value[k] != new_value[k]]
-            if changed_keys and len(changed_keys) <= 10:
-                print(f"      Shared keys with different values ({len(changed_keys)} keys):")
-                for k in sorted(changed_keys):
-                    if key == 'prefixes':
-                        # Special formatting for prefix objects
-                        old_prefix = old_value[k]
-                        new_prefix = new_value[k]
-                        
-                        # Extract meaningful parts from Prefix objects
-                        old_ref = getattr(old_prefix, 'prefix_reference', old_prefix)
-                        new_ref = getattr(new_prefix, 'prefix_reference', new_prefix)
-                        
-                        print(f"        {k}: {old_info['tag']}='{old_ref}' vs {new_info['tag']}='{new_ref}'")
-                    else:
-                        print(f"        {k}: {old_info['tag']}={old_value[k]!r} vs {new_info['tag']}={new_value[k]!r}")
-            elif changed_keys:
-                print(f"      {len(changed_keys)} shared keys have different values (too many to show)")
-
-
-def show_enum_slot_associations(enum_names: Set[str], schema_view: SchemaView, schema_tag: str) -> None:
-    """Show which slots use the given enums."""
-    for enum_name in sorted(enum_names):
-        try:
-            slots_using_enum = schema_view.get_slots_by_enum(enum_name)
-            if slots_using_enum:
-                slot_names = [slot.name for slot in slots_using_enum]
-                print(f"        {enum_name} (used by {len(slot_names)} slots: {', '.join(sorted(slot_names))})")
-            else:
-                print(f"        {enum_name} (no slots use this enum)")
-        except Exception as e:
-            print(f"        {enum_name} (error checking slot associations: {e})")
-
-
-def show_slot_class_associations(slot_names: Set[str], schema_view: SchemaView, schema_tag: str) -> None:
-    """Show which classes use the given slots."""
-    for slot_name in sorted(slot_names):
-        try:
-            slot_obj = schema_view.get_slot(slot_name)
-            if slot_obj:
-                classes_using_slot = schema_view.get_classes_by_slot(slot_obj)
-                
-                # Check if slot is abstract
-                is_abstract = getattr(slot_obj, 'abstract', False)
-                abstract_note = " [ABSTRACT]" if is_abstract else ""
-                
-                if classes_using_slot:
-                    # classes_using_slot is already a list of class name strings
-                    print(f"        {slot_name}{abstract_note} (used by {len(classes_using_slot)} classes: {', '.join(sorted(classes_using_slot))})")
-                else:
-                    print(f"        {slot_name}{abstract_note} (no classes use this slot)")
-            else:
-                print(f"        {slot_name} (slot not found)")
-        except Exception as e:
-            print(f"        {slot_name} (error checking class usage: {e})")
-
-
-def compare_slots_with_filtering(old_value, new_value, old_schema: SchemaView, new_schema: SchemaView, old_info: Dict[str, Any], new_info: Dict[str, Any]) -> None:
-    """Compare slot dictionaries with MixsCompliantData domain filtering."""
-    # Filter out MixsCompliantData domain slots
-    old_filtered, old_mixs_count = filter_mixs_compliant_slots(old_schema, old_value)
-    new_filtered, new_mixs_count = filter_mixs_compliant_slots(new_schema, new_value)
-    
-    print(f"    slots:")
-    print(f"      Filtered out {old_mixs_count} MixsCompliantData domain slots from {old_info['tag']}")
-    print(f"      Filtered out {new_mixs_count} MixsCompliantData domain slots from {new_info['tag']}")
-    
-    # Use the unified comparison function for consistency
-    compare_schema_elements('slots', old_filtered, new_filtered, old_info, new_info,
-                          SLOT_NAME_MAPPINGS, SHOW_ALL_SLOT_NAMES, old_schema, new_schema)
-
-
-def compare_key_values(key: str, old_value, new_value, old_info: Dict[str, Any], new_info: Dict[str, Any], old_schema: SchemaView = None, new_schema: SchemaView = None) -> None:
-    """Compare two values for a given key and print differences."""
-    # Special handling for slots with domain filtering
-    if key == 'slots' and old_schema and new_schema and isinstance(old_value, dict) and isinstance(new_value, dict):
-        compare_slots_with_filtering(old_value, new_value, old_schema, new_schema, old_info, new_info)
-        return
-    
-    # Handle scalars
-    if not isinstance(old_value, (dict, list, tuple)) and not isinstance(new_value, (dict, list, tuple)):
-        compare_scalar_values(key, old_value, new_value, old_info, new_info)
-        return
-    
-    # Handle lists/tuples
-    if isinstance(old_value, (list, tuple)) and isinstance(new_value, (list, tuple)):
-        compare_list_values(key, old_value, new_value, old_info, new_info)
-        return
-    
-    # Handle dictionaries
-    if isinstance(old_value, dict) and isinstance(new_value, dict):
-        compare_dict_values(key, old_value, new_value, old_info, new_info, old_schema, new_schema)
-        return
-    
-    # Fallback for mixed types
-    print(f"    {key}:")
-    print(f"      {old_info['tag']}: {type(old_value).__name__} (size: {len(old_value) if hasattr(old_value, '__len__') else 'N/A'})")
-    print(f"      {new_info['tag']}: {type(new_value).__name__} (size: {len(new_value) if hasattr(new_value, '__len__') else 'N/A'})")
-
-
-def compare_schema_values(old_schema: SchemaView, new_schema: SchemaView,
-                          old_info: Dict[str, Any], new_info: Dict[str, Any]) -> None:
-    """Compare values that are populated in one schema but not in the other.
-
-    Args:
-        old_schema: SchemaView for the old schema version
-        new_schema: SchemaView for the new schema version
-        old_info: Metadata about the old schema
-        new_info: Metadata about the new schema
-    """
-    print("\n" + "=" * 50)
-    print("Schema Value Comparison (Populated in one, empty in other)")
-    print("=" * 50)
-
-    # Track keys that have different population status
-    old_populated_new_empty = []
-    new_populated_old_empty = []
-
-    # Check method-based attributes (all_* methods) - these access the merged schema
-    all_methods = set()
-    for method_name in dir(old_schema):
-        if method_name.startswith('all_') and callable(getattr(old_schema, method_name)):
-            all_methods.add(method_name)
-
-    for method_name in dir(new_schema):
-        if method_name.startswith('all_') and callable(getattr(new_schema, method_name)):
-            all_methods.add(method_name)
-
-    # Process all discovered methods across both schemas
-    for method_name in sorted(all_methods):
-        key_name = method_name[4:]  # Remove 'all_' prefix
-
-        try:
-            old_value = getattr(old_schema, method_name)() if hasattr(old_schema, method_name) else None
-            new_value = getattr(new_schema, method_name)() if hasattr(new_schema, method_name) else None
-
-            old_populated = is_populated(old_value)
-            new_populated = is_populated(new_value)
-
-            if old_populated and not new_populated:
-                old_populated_new_empty.append((key_name, old_value))
-            elif new_populated and not old_populated:
-                new_populated_old_empty.append((key_name, new_value))
-        except:
-            # Skip methods that fail to call
-            pass
-
-    # Also check direct attributes from both schemas
-    all_attrs = set()
-    for attr_name in dir(old_schema.schema):
-        if not attr_name.startswith('_') and not callable(getattr(old_schema.schema, attr_name)):
-            all_attrs.add(attr_name)
-
-    for attr_name in dir(new_schema.schema):
-        if not attr_name.startswith('_') and not callable(getattr(new_schema.schema, attr_name)):
-            all_attrs.add(attr_name)
-
-    for attr_name in sorted(all_attrs):
-        old_value = getattr(old_schema.schema, attr_name, None)
-        new_value = getattr(new_schema.schema, attr_name, None)
-
-        old_populated = is_populated(old_value)
-        new_populated = is_populated(new_value)
-
-        if old_populated and not new_populated:
-            old_populated_new_empty.append((attr_name, old_value))
-        elif new_populated and not old_populated:
-            new_populated_old_empty.append((attr_name, new_value))
-
-    # Print results
-    print(f"\nKeys populated in {old_info['tag']} but empty in {new_info['tag']}: {len(old_populated_new_empty)}")
-    for key, value in sorted(old_populated_new_empty, key=lambda x: x[0]):
-        print(f"  {key}:")
-        if isinstance(value, dict) and len(value) > 5:
-            print(f"    {len(value)} items")
-        elif isinstance(value, (list, tuple)) and len(value) > 5:
-            print(f"    {len(value)} items")
-        else:
-            pprint.pprint(value, indent=4, depth=1, width=80)
-
-    print(f"\nKeys populated in {new_info['tag']} but empty in {old_info['tag']}: {len(new_populated_old_empty)}")
-    for key, value in sorted(new_populated_old_empty, key=lambda x: x[0]):
-        print(f"  {key}:")
-        if isinstance(value, dict) and len(value) > 5:
-            print(f"    {len(value)} items")
-        elif isinstance(value, (list, tuple)) and len(value) > 5:
-            print(f"    {len(value)} items")
-        else:
-            pprint.pprint(value, indent=4, depth=1, width=80)
-
-
 if __name__ == "__main__":
     # Load name mappings
     CLASS_NAME_MAPPINGS = load_class_name_mappings()
@@ -1295,7 +1471,7 @@ if __name__ == "__main__":
     SLOT_NAME_MAPPINGS = load_slot_name_mappings()
     SUBSET_NAME_MAPPINGS = load_subset_name_mappings()
     INTER_TYPE_REFACTORING = load_inter_type_refactoring()
-    
+
     # Build and display release info
     release_info = build_release_info_dict()
 
@@ -1317,176 +1493,50 @@ if __name__ == "__main__":
     print("Loading schemas for comparison...")
     print("=" * 50)
 
-    old_schema, new_schema, old_info, new_info = load_schema_views(DEFAULT_OLD_COMMIT, DEFAULT_NEW_COMMIT)
+    try:
+        old_schema, new_schema, old_info, new_info = load_schema_views(
+            DEFAULT_OLD_COMMIT, DEFAULT_NEW_COMMIT
+        )
 
-    print("\nOld schema info:")
-    pprint.pprint(old_info)
+        print("\nOld schema info:")
+        pprint.pprint(old_info)
 
-    print("\nNew schema info:")
-    pprint.pprint(new_info)
+        print("\nNew schema info:")
+        pprint.pprint(new_info)
 
-    # Test the new top-level key diffing functionality
+        # Initialize the comparator and run the comparison
+        print("\n" + "=" * 80)
+        print("RUNNING NEW SYSTEMATIC LINKML COMPARISON FRAMEWORK")
+        print("=" * 80)
+        comparator = LinkMLComparator(old_schema, new_schema, old_info, new_info)
+        comparison_results = comparator.compare_schemas()
+
+        # Convert results to a dictionary
+        comparison_dict = schema_comparison_to_dict(comparison_results)
+
+        # Save the results to a YAML file
+        output_file = Path(__file__).parent.parent.parent / "local" / "schema_comparison_results.yaml"
+        with open(output_file, 'w') as f:
+            yaml.dump(comparison_dict, f, default_flow_style=False, sort_keys=False)
+        
+        summary = comparison_dict.get('summary', {})
+        print("\n" + "=" * 50)
+        print("SAVING COMPARISON RESULTS TO YAML")
+        print("=" * 50)
+        print(f"Saved systematic comparison results to: {output_file}")
+        print(f"  • Scalar differences: {summary.get('total_scalar_differences', 0)}")
+        print(f"  • Collection differences: {summary.get('total_collection_differences', 0)}")
+        print(f"  • Total schema elements compared: {summary.get('total_schema_elements_compared', 0)}")
+
+
+        # Optionally, print a summary report to the console
+        print_schema_comparison_report(comparison_results)
+
+    except ValueError as e:
+        print(f"\nERROR: {e}")
+    except Exception as e:
+        print(f"\nAn unexpected error occurred: {e}")
+
     print("\n" + "=" * 50)
-    print("Top-Level Key Diff Analysis (Using SchemaView)")
-    print("=" * 50)
-    
-    # Get populated top-level keys for each schema
-    old_top_keys = populated_top_level_keys(old_schema)
-    new_top_keys = populated_top_level_keys(new_schema)
-    
-    print(f"\nOld schema ({old_info['tag']}) populated top-level keys ({len(old_top_keys)}):")
-    for key in sorted(old_top_keys):
-        print(f"  {key}")
-    
-    print(f"\nNew schema ({new_info['tag']}) populated top-level keys ({len(new_top_keys)}):")
-    for key in sorted(new_top_keys):
-        print(f"  {key}")
-    
-    # Perform the diff
-    only_in_old, only_in_new = diff_top_keys(old_schema, new_schema)
-    
-    def get_key_value(schema_view: SchemaView, key: str):
-        """Get the value for a specific key from schema."""
-        # First try raw schema
-        schema_dict = schema_view.schema._as_dict
-        if key in schema_dict and is_populated(schema_dict[key]):
-            return schema_dict[key]
-        
-        # Then try all_* methods for collections
-        collection_methods = {
-            'classes': lambda: schema_view.all_classes(imports=True),
-            'slots': lambda: schema_view.all_slots(imports=True),
-            'enums': lambda: schema_view.all_enums(imports=True),
-            'types': lambda: schema_view.all_types(imports=True),
-            'subsets': lambda: schema_view.all_subsets(imports=True),
-        }
-        
-        if key in collection_methods:
-            try:
-                return collection_methods[key]()
-            except (AttributeError, TypeError):
-                return None
-        
-        return None
-    
-    def print_key_value(key: str, value, max_items: int = 10):
-        """Print key value with size warnings if needed."""
-        # Keys that should never be truncated
-        no_truncate_keys = {'imports', 'settings'}
-        
-        if value is None:
-            print(f"    {key}: None")
-            return
-            
-        # Special formatting for settings
-        if key == 'settings' and isinstance(value, dict):
-            print(f"    {key}:")
-            
-            # Analyze which slots use which settings (we need the schema view for this)
-            # For now, we'll just show the settings - we'll enhance this in the calling context
-            for setting_key, setting_obj in sorted(value.items()):
-                if hasattr(setting_obj, 'setting_value'):
-                    regex_value = setting_obj.setting_value
-                    # Check if regex has anchors
-                    has_start_anchor = regex_value.startswith('^')
-                    has_end_anchor = regex_value.endswith('$')
-                    
-                    if has_start_anchor and has_end_anchor:
-                        anchor_status = "[ANCHORED]"
-                    elif has_start_anchor:
-                        anchor_status = "[START ANCHOR]"
-                    elif has_end_anchor:
-                        anchor_status = "[END ANCHOR]"
-                    else:
-                        anchor_status = "[NO ANCHORS]"
-                    
-                    print(f"      {setting_key}: {regex_value} {anchor_status}")
-                else:
-                    print(f"      {setting_key}: {setting_obj}")
-            return
-            
-        if isinstance(value, dict):
-            if len(value) > max_items and key not in no_truncate_keys:
-                print(f"    {key}: [LARGE DICT with {len(value)} items - showing first {max_items}]")
-                items = list(value.items())[:max_items]
-                for k, v in items:
-                    print(f"      {k}: {type(v).__name__}")
-                print(f"      ... and {len(value) - max_items} more items")
-            else:
-                print(f"    {key}:")
-                pprint.pprint(value, indent=6, depth=2, width=100)
-        elif isinstance(value, (list, tuple)):
-            if len(value) > max_items and key not in no_truncate_keys:
-                print(f"    {key}: [LARGE LIST with {len(value)} items - showing first {max_items}]")
-                for i, item in enumerate(value[:max_items]):
-                    print(f"      [{i}]: {type(item).__name__}")
-                print(f"      ... and {len(value) - max_items} more items")
-            else:
-                print(f"    {key}:")
-                pprint.pprint(value, indent=6, depth=2, width=100)
-        else:
-            print(f"    {key}:")
-            pprint.pprint(value, indent=6, depth=1, width=100)
-
-    print(f"\nTop-level key differences:")
-    print(f"  Keys populated in {old_info['tag']} but missing/empty in {new_info['tag']}: {len(only_in_old)}")
-    for key in sorted(only_in_old):
-        value = get_key_value(old_schema, key)
-        print_key_value(key, value)
-    
-    print(f"\n  Keys populated in {new_info['tag']} but missing/empty in {old_info['tag']}: {len(only_in_new)}")
-    for key in sorted(only_in_new):
-        value = get_key_value(new_schema, key)
-        print_key_value(key, value)
-        
-        # If we just printed settings, also show which slots use which settings
-        if key == 'settings':
-            print(f"\n    Settings usage in slot structured_patterns:")
-            analysis = analyze_slot_settings_usage(new_schema)
-            settings_usage = analysis['settings_usage']
-            pattern_usage = analysis['pattern_usage']
-            undefined_settings = analysis['undefined_settings']
-            unused_settings = analysis['unused_settings']
-            
-            if settings_usage:
-                for setting_name in sorted(settings_usage.keys()):
-                    slot_list = settings_usage[setting_name]
-                    print(f"      {setting_name}: used by {len(slot_list)} slots")
-                    for slot_name in sorted(slot_list):
-                        print(f"        - {slot_name}")
-                
-                if undefined_settings:
-                    print(f"\n      ⚠️  UNDEFINED SETTINGS (used but not defined): {len(undefined_settings)}")
-                    for setting_name in sorted(undefined_settings):
-                        slots_using = settings_usage.get(setting_name, [])
-                        print(f"        {setting_name}: used by {len(slots_using)} slots")
-                        for slot_name in sorted(slots_using):
-                            print(f"          - {slot_name}")
-                
-                if unused_settings:
-                    print(f"\n      📝 UNUSED SETTINGS (defined but not used): {len(unused_settings)}")
-                    for setting_name in sorted(unused_settings):
-                        print(f"        {setting_name}")
-            else:
-                print(f"      No slots found using structured_pattern.syntax references")
-    
-    # Compare shared keys for differences
-    shared_keys = old_top_keys & new_top_keys
-    print(f"\n  Shared keys with potential differences: {len(shared_keys)}")
-    
-    differences_found = 0
-    for key in sorted(shared_keys):
-        old_value = get_key_value(old_schema, key)
-        new_value = get_key_value(new_schema, key)
-        
-        if old_value != new_value:
-            compare_key_values(key, old_value, new_value, old_info, new_info, old_schema, new_schema)
-            differences_found += 1
-    
-    if differences_found == 0:
-        print("      No differences found in shared keys")
-    
-    # Report API usage
-    print(f"\n" + "=" * 50)
     print(f"API Usage Summary: {API_CALL_COUNT} GitHub API calls made")
     print("=" * 50)

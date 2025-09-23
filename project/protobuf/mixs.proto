@@ -29,7 +29,7 @@ message Agriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -327,7 +327,7 @@ message BuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -534,7 +534,7 @@ message FoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -1384,7 +1384,7 @@ message MigsBaAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -1763,7 +1763,7 @@ message MigsBaBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -2073,7 +2073,7 @@ message MigsBaFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -4379,7 +4379,7 @@ message MigsEuAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -4758,7 +4758,7 @@ message MigsEuBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -5068,7 +5068,7 @@ message MigsEuFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -7374,7 +7374,7 @@ message MigsOrgAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -7741,7 +7741,7 @@ message MigsOrgBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -8033,7 +8033,7 @@ message MigsOrgFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -10176,7 +10176,7 @@ message MigsPlAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -10547,7 +10547,7 @@ message MigsPlBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -10845,7 +10845,7 @@ message MigsPlFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -13045,7 +13045,7 @@ message MigsViAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -13423,7 +13423,7 @@ message MigsViBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -13731,7 +13731,7 @@ message MigsViFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -16018,7 +16018,7 @@ message MimagAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -16409,7 +16409,7 @@ message MimagBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -16725,7 +16725,7 @@ message MimagFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -19097,7 +19097,7 @@ message MimarksCAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -19444,7 +19444,7 @@ message MimarksCBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -19714,7 +19714,7 @@ message MimarksCFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -21648,7 +21648,7 @@ message MimarksSAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -21998,7 +21998,7 @@ message MimarksSBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -22276,7 +22276,7 @@ message MimarksSFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -24287,7 +24287,7 @@ message MimsAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -24646,7 +24646,7 @@ message MimsBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -24930,7 +24930,7 @@ message MimsFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -26998,7 +26998,7 @@ message MisagAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -27391,7 +27391,7 @@ message MisagBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -27709,7 +27709,7 @@ message MisagFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0
@@ -30150,7 +30150,7 @@ message MiuvigAgriculture
  repeated  string waterSourceShared = 0
   float waterPH = 0
   string elev = 0
-  string season = 0
+  seasonEnum season = 0
  repeated  string solarIrradiance = 0
   string cropYield = 0
   float seasonHumidity = 0
@@ -30566,7 +30566,7 @@ message MiuvigBuiltEnvironment
   string sampFloor = 0
   integer sampRoomId = 0
   string sampTimeOut = 0
-  string season = 0
+  seasonEnum season = 0
   seasonUseEnum seasonUse = 0
   damagedRupturedEnum shadingDeviceCond = 0
   shadingDeviceLocEnum shadingDeviceLoc = 0
@@ -30912,7 +30912,7 @@ message MiuvigFoodFarmEnvironment
  repeated  tillageEnum tillage = 0
   string phMeth = 0
   string growthMedium = 0
-  string season = 0
+  seasonEnum season = 0
   string foodProductType = 0
   string sampType = 0
   farmWaterSourceEnum farmWaterSource = 0

@@ -35,6 +35,10 @@
     {
       "prefix_prefix": "SO",
       "prefix_reference": "http://purl.obolibrary.org/obo/SO_"
+    },
+    {
+      "prefix_prefix": "NCIT",
+      "prefix_reference": "http://purl.obolibrary.org/obo/NCIT_"
     }
   ],
   "default_prefix": "MIXS",
@@ -382,6 +386,128 @@
     }
   ],
   "enums": [
+    {
+      "name": "SeasonEnum",
+      "definition_uri": "https://w3id.org/mixs/SeasonEnum",
+      "from_schema": "https://w3id.org/mixs",
+      "permissible_values": [
+        {
+          "text": "autumn [NCIT:C94733]",
+          "meaning": "NCIT:C94733"
+        },
+        {
+          "text": "spring [NCIT:C94731]",
+          "meaning": "NCIT:C94731"
+        },
+        {
+          "text": "summer [NCIT:C94732]",
+          "meaning": "NCIT:C94732"
+        },
+        {
+          "text": "winter [NCIT:C94730]",
+          "meaning": "NCIT:C94730"
+        }
+      ]
+    },
+    {
+      "name": "InsdcMissingValueEnum",
+      "definition_uri": "https://w3id.org/mixs/InsdcMissingValueEnum",
+      "description": "Permissible values recommended by INSDC for reporting missing metadata values.",
+      "comments": [
+        "The International Nucleotide Database Collaboration (INSDC) have a standardised missing/null value reporting language to be used where a value of an expected format for sample metadata reporting can not be provided.",
+        "The controlled vocabulary takes into account different type of constraints. Submitters are strongly encouraged to always provide true values. However, if missing/null value reporting is required, submitters are asked to use a term with the finest granularity for their situation. See the table below for accepted missing value reporting terms.",
+        "Please use the above standardised missing value vocabulary only if a true value of an expected format for a mandatory field is missing. If a true value is missing for a recommended or an optional field, then these fields should not be used for reporting at all. When reporting a missing mandatory field, the eight granular 'reporting level' terms need to be preceded with the term \"missing:\" to declare both the absence of a true value as well as the reason."
+      ],
+      "examples": [
+        {
+          "value": "geographic location (country and/or sea): missing: data agreement-established pre-2023"
+        },
+        {
+          "value": "collection date: missing: control sample"
+        },
+        {
+          "value": "geographic location (country and/or sea): missing: human-identifiable"
+        }
+      ],
+      "from_schema": "https://w3id.org/mixs",
+      "see_also": [
+        "https://www.insdc.org/technical-specifications/missing-value-reporting/"
+      ],
+      "permissible_values": [
+        {
+          "text": "not applicable",
+          "description": "Information is inappropriate to report,  can indicate that the standard itself fails to model or represent the information appropriately\n",
+          "aliases": [
+            "n/a",
+            "na"
+          ]
+        },
+        {
+          "text": "missing",
+          "aliases": [
+            "no data",
+            "not available",
+            "unavailable",
+            "unknown",
+            "unspecified"
+          ]
+        },
+        {
+          "text": "not collected",
+          "description": "Information of an expected format was not given because it has not been collected",
+          "aliases": [
+            "not determined",
+            "not recorded"
+          ]
+        },
+        {
+          "text": "not provided",
+          "description": "Information of an expected format was not given, a value may be given at the later stage",
+          "aliases": [
+            "not reported"
+          ]
+        },
+        {
+          "text": "restricted access",
+          "description": "Information exists but can not be released openly because of privacy concerns",
+          "aliases": [
+            "restricted"
+          ]
+        },
+        {
+          "text": "missing: control sample",
+          "description": "Information is not applicable as the sample represents a negative control sample collected in a lab."
+        },
+        {
+          "text": "missing: sample group",
+          "description": "Information is not applicable as the sample represents a group of samples that do not have a single origin.  E.g. for co-assembly or transcriptome assembly.\n"
+        },
+        {
+          "text": "missing: synthetic construct",
+          "description": "Information does not exist as the sample represents an ab-initio synthetic construct."
+        },
+        {
+          "text": "missing: lab stock",
+          "description": "Information was not collected as the sample represents a cultured cell line or model organism  under long-term lab control.\n"
+        },
+        {
+          "text": "missing: third party data",
+          "description": "Information does not exist as the metadata was not collected or reported in records predating the 2023 agreement.  For use in Third PArty data submissions.\n"
+        },
+        {
+          "text": "missing: data agreement established pre-2023",
+          "description": "Data agreements were established before the 2023 INSDC standard and metadata can not be provided.  A value may be given at a later stage.\n"
+        },
+        {
+          "text": "missing: endangered species",
+          "description": "Information can not be reported as the target organism is endangered e.g. on the IUCN red-list."
+        },
+        {
+          "text": "missing: human-identifiable",
+          "description": "Information can not be reported as the metadata would make the sample human-identifiable."
+        }
+      ]
+    },
     {
       "name": "BiolStatEnum",
       "definition_uri": "https://w3id.org/mixs/BiolStatEnum",
@@ -2986,27 +3112,45 @@
       "name": "SoilHorizonEnum",
       "definition_uri": "https://w3id.org/mixs/SoilHorizonEnum",
       "from_schema": "https://w3id.org/mixs",
+      "see_also": [
+        "https://www.nrcs.usda.gov/resources/education-and-teaching-materials/a-soil-profile",
+        "https://www.ffa.org/ag-101/ag-101-soil-horizons/",
+        "https://soil.evs.buffalo.edu/index.php/Soil_Horizons",
+        "https://en.wikipedia.org/wiki/Soil_horizon",
+        "https://en.wikipedia.org/wiki/Permafrost"
+      ],
       "permissible_values": [
         {
-          "text": "A horizon"
+          "text": "A horizon",
+          "description": "The surface horizon, also called topsoil. It has a defined soil structure, and is mostly made up of humus (decayed organic matter)."
         },
         {
-          "text": "B horizon"
+          "text": "B horizon",
+          "description": "Also known as the subsoil. It is greatly composed of material illuviated (washed in from) layers above it. It is typically denser than the A horizon and has a clayey texture."
         },
         {
-          "text": "C horizon"
+          "text": "C horizon",
+          "description": "Also known as the substratum is unconsolidated material deepest in the pit and closest to the bedrock."
         },
         {
-          "text": "E horizon"
+          "text": "E horizon",
+          "description": "Used to refer to subsurface horizons that have undergone a significant loss of minerals, also known as Eluviation (or leaching)."
         },
         {
-          "text": "O horizon"
+          "text": "O horizon",
+          "description": "The organic horizon. Typically at the top of the soil structure and is made up of mostly organic matter.",
+          "meaning": "http://purl.obolibrary.org/obo/ENVO_03600018"
         },
         {
-          "text": "Permafrost"
+          "text": "Permafrost",
+          "description": "Soil that continuously remains below 0 \u00b0C (32 \u00b0F) for two years or more."
         },
         {
-          "text": "R layer"
+          "text": "R layer",
+          "description": "Hard bedrock, which is usually the lowest layer. It is characterized by tightly bound and unbreakable materials.",
+          "aliases": [
+            "R horizon"
+          ]
         }
       ]
     },
@@ -10016,15 +10160,18 @@
       "annotations": [
         {
           "tag": "Preferred_unit",
-          "value": "gram per gram, kilogram per kilogram, kilogram, pound",
+          "value": "gram per gram, kilogram per kilogram, kilogram, pound, gram per cubic meter, kilogram per cubic meter, percent",
           "@type": "Annotation"
         }
       ],
-      "description": "Actual mass of water vapor - mh20 - present in the air water vapor mixture",
+      "description": "Actual mass of water vapor present in the air water vapor mixture.",
       "title": "absolute air humidity",
+      "comments": [
+        "Can be calculated via mass of water vapor divided by the volume of the air and water vapor mixture."
+      ],
       "examples": [
         {
-          "value": "9 gram per gram",
+          "value": "7 gram per cubic meter",
           "@type": "Example"
         }
       ],
@@ -10169,7 +10316,7 @@
       ],
       "range": "string",
       "structured_pattern": {
-        "syntax": "^{integer} {text}}$",
+        "syntax": "^{integer} {text}$",
         "interpolated": true,
         "partial_match": true,
         "@type": "PatternExpression"
@@ -10231,7 +10378,7 @@
         "environment",
         "site"
       ],
-      "string_serialization": "{termLabel}{[termID]}",
+      "string_serialization": "{termLabel} [{termID}]",
       "slot_uri": "https://w3id.org/mixs/0001121",
       "owner": "FoodFarmEnvironment",
       "domain_of": [
@@ -10431,7 +10578,7 @@
         },
         {
           "tag": "Preferred_unit",
-          "value": "meter",
+          "value": "degree Celsius",
           "@type": "Annotation"
         }
       ],
@@ -10990,7 +11137,7 @@
     {
       "name": "animal_am_route",
       "definition_uri": "https://w3id.org/mixs/animal_am_route",
-      "description": "The route by which the antimicrobial is adminstered into the body of the food animal",
+      "description": "The route by which the antimicrobial is administered into the body of the food animal",
       "title": "food animal antimicrobial route of administration",
       "examples": [
         {
@@ -15370,7 +15517,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Concentration of dissolved oxygen in the oil field produced fluids as it contributes to oxgen-corrosion and microbial activity (e.g. Mic)",
+      "description": "Concentration of dissolved oxygen in the oil field produced fluids as it contributes to oxygen-corrosion and microbial activity (e.g. Mic)",
       "title": "dissolved oxygen in fluids",
       "from_schema": "https://w3id.org/mixs",
       "mappings": [
@@ -15449,7 +15596,7 @@
     {
       "name": "door_cond",
       "definition_uri": "https://w3id.org/mixs/door_cond",
-      "description": "The phsical condition of the door",
+      "description": "The physical condition of the door",
       "title": "door condition",
       "examples": [
         {
@@ -18685,7 +18832,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "The age of the food source host organim. Depending on the type of host organism, age may be more appropriate to report in days, weeks, or years",
+      "description": "The age of the food source host organism. Depending on the type of host organism, age may be more appropriate to report in days, weeks, or years",
       "title": "food source age",
       "comments": [
         "ISO 8601 period or measurement value?"
@@ -19447,7 +19594,7 @@
     {
       "name": "hall_count",
       "definition_uri": "https://w3id.org/mixs/hall_count",
-      "description": "The total count of hallways and cooridors in the built structure",
+      "description": "The total count of hallways and corridors in the built structure",
       "title": "hallway/corridor count",
       "from_schema": "https://w3id.org/mixs",
       "mappings": [
@@ -24132,8 +24279,9 @@
     {
       "name": "nose_mouth_teeth_throat_disord",
       "definition_uri": "https://w3id.org/mixs/nose_mouth_teeth_throat_disord",
-      "description": "History of nose/mouth/teeth/throat disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, nose disease (https://disease-ontology.org/?id=DOID:2825), mouth disease (https://disease-ontology.org/?id=DOID:403), tooth disease (https://disease-ontology.org/?id=DOID:1091), or upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)",
+      "description": "History of nose/mouth/teeth/throat disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, nose disease (https://disease-ontology.org/?id=DOID:2825), mouth disease (https://disease-ontology.org/?id=DOID:403),  tooth disease (https://disease-ontology.org/?id=DOID:1091), or upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)\n",
       "title": "nose/mouth/teeth/throat disorder",
+      "deprecated": "true, replace with MIXS:0000270 https://github.com/GenomicsStandardsConsortium/mixs/issues/743",
       "from_schema": "https://w3id.org/mixs",
       "mappings": [
         "https://w3id.org/mixs/0000283"
@@ -24153,9 +24301,15 @@
     {
       "name": "nose_throat_disord",
       "definition_uri": "https://w3id.org/mixs/nose_throat_disord",
-      "description": "History of nose-throat disorders; can include multiple disorders,  The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850), upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)",
+      "description": "Report any history of nose, mouth, teeth and/or throat disorders in the subject.  May include multiple disorders.\n",
       "title": "nose throat disorder",
+      "comments": [
+        "The terms should be chosen from the DO (Human Disease Ontology)  at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850),  upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)\n"
+      ],
       "from_schema": "https://w3id.org/mixs",
+      "aliases": [
+        "nose_mouth_teeth_throat_disord"
+      ],
       "mappings": [
         "https://w3id.org/mixs/0000270"
       ],
@@ -25524,7 +25678,7 @@
     {
       "name": "ph",
       "definition_uri": "https://w3id.org/mixs/ph",
-      "description": "Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid",
+      "description": "pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid",
       "title": "pH",
       "examples": [
         {
@@ -27482,7 +27636,7 @@
     {
       "name": "room_architec_elem",
       "definition_uri": "https://w3id.org/mixs/room_architec_elem",
-      "description": "The unique details and component parts that, together, form the architecture of a distinguisahable space within a built structure",
+      "description": "The unique details and component parts that, together, form the architecture of a distinguishable space within a built structure",
       "title": "room architectural elements",
       "from_schema": "https://w3id.org/mixs",
       "mappings": [
@@ -29559,8 +29713,8 @@
     {
       "name": "samp_transport_cont",
       "definition_uri": "https://w3id.org/mixs/samp_transport_cont",
-      "description": "Conatiner in which the sample was stored during transport. Indicate the location name",
-      "title": "sample transport  container",
+      "description": "Container in which the sample was stored during transport. Indicate the location name",
+      "title": "sample transport container",
       "examples": [
         {
           "value": "cooler",
@@ -29980,19 +30134,8 @@
     {
       "name": "season",
       "definition_uri": "https://w3id.org/mixs/season",
-      "annotations": [
-        {
-          "tag": "Expected_value",
-          "value": "autumn [NCIT:C94733], spring [NCIT:C94731], summer [NCIT:C94732], winter [NCIT:C94730]",
-          "@type": "Annotation"
-        }
-      ],
       "description": "The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices. This field accepts terms listed under season (http://purl.obolibrary.org/obo/NCIT_C94729)",
       "title": "season",
-      "comments": [
-        "autumn [NCIT:C94733] does not match ^\\\\S+.*\\\\S+ \\\\[[a-zA-Z]{2,}:\\\\d+\\\\]$",
-        "would require ^\\\\S+.*\\\\S+ \\\\[[a-zA-Z]{2,}:[a-zA-Z0-9]\\\\]$"
-      ],
       "examples": [
         {
           "value": "autumn [NCIT:C94733]",
@@ -30006,7 +30149,6 @@
       "keywords": [
         "season"
       ],
-      "string_serialization": "{termLabel} [{termID}]",
       "slot_uri": "https://w3id.org/mixs/0000829",
       "owner": "FoodFarmEnvironment",
       "domain_of": [
@@ -30014,8 +30156,7 @@
         "BuiltEnvironment",
         "FoodFarmEnvironment"
       ],
-      "range": "string",
-      "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:[a-zA-Z0-9]+\\]$",
+      "range": "SeasonEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -31147,6 +31288,7 @@
     {
       "name": "soil_pH",
       "definition_uri": "https://w3id.org/mixs/soil_pH",
+      "description": "pH measurement of some soil at the time of sampling",
       "title": "soil pH",
       "examples": [
         {
@@ -35746,6 +35888,7 @@
     {
       "name": "water_pH",
       "definition_uri": "https://w3id.org/mixs/water_pH",
+      "description": "pH measurement of some water at the time of sampling",
       "title": "water pH",
       "examples": [
         {
@@ -52430,38 +52573,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Agriculture_soil_pH",
-      "definition_uri": "https://w3id.org/mixs/soil_pH",
-      "description": "pH of some soil.",
-      "title": "soil pH",
-      "examples": [
-        {
-          "value": "7.2",
-          "@type": "Example"
-        }
-      ],
-      "from_schema": "https://w3id.org/mixs",
-      "mappings": [
-        "https://w3id.org/mixs/0001160"
-      ],
-      "keywords": [
-        "ph",
-        "soil"
-      ],
-      "is_a": "soil_pH",
-      "domain": "Agriculture",
-      "slot_uri": "https://w3id.org/mixs/0001160",
-      "alias": "soil_pH",
-      "owner": "Agriculture",
-      "domain_of": [
-        "Agriculture"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "soil_pH",
-      "range": "float",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "Agriculture_soil_type",
       "definition_uri": "https://w3id.org/mixs/soil_type",
       "annotations": {
@@ -53101,38 +53212,6 @@
       "usage_slot_name": "trophic_level",
       "range": "TrophicLevelEnum",
       "recommended": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "Agriculture_water_pH",
-      "definition_uri": "https://w3id.org/mixs/water_pH",
-      "description": "The pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid.",
-      "title": "water pH",
-      "examples": [
-        {
-          "value": "7.2",
-          "@type": "Example"
-        }
-      ],
-      "from_schema": "https://w3id.org/mixs",
-      "mappings": [
-        "https://w3id.org/mixs/0001175"
-      ],
-      "keywords": [
-        "ph",
-        "water"
-      ],
-      "is_a": "water_pH",
-      "domain": "Agriculture",
-      "slot_uri": "https://w3id.org/mixs/0001175",
-      "alias": "water_pH",
-      "owner": "Agriculture",
-      "domain_of": [
-        "Agriculture"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "water_pH",
-      "range": "float",
       "@type": "SlotDefinition"
     },
     {
@@ -55191,38 +55270,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "FoodFarmEnvironment_soil_pH",
-      "definition_uri": "https://w3id.org/mixs/soil_pH",
-      "description": "The pH of soil at time of sampling.",
-      "title": "soil pH",
-      "examples": [
-        {
-          "value": "7.2",
-          "@type": "Example"
-        }
-      ],
-      "from_schema": "https://w3id.org/mixs",
-      "mappings": [
-        "https://w3id.org/mixs/0001160"
-      ],
-      "keywords": [
-        "ph",
-        "soil"
-      ],
-      "is_a": "soil_pH",
-      "domain": "FoodFarmEnvironment",
-      "slot_uri": "https://w3id.org/mixs/0001160",
-      "alias": "soil_pH",
-      "owner": "FoodFarmEnvironment",
-      "domain_of": [
-        "FoodFarmEnvironment"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "soil_pH",
-      "range": "float",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "FoodFarmEnvironment_soil_type",
       "definition_uri": "https://w3id.org/mixs/soil_type",
       "annotations": {
@@ -55261,38 +55308,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "soil_type",
       "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "FoodFarmEnvironment_water_pH",
-      "definition_uri": "https://w3id.org/mixs/water_pH",
-      "description": "pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid.",
-      "title": "water pH",
-      "examples": [
-        {
-          "value": "7.2",
-          "@type": "Example"
-        }
-      ],
-      "from_schema": "https://w3id.org/mixs",
-      "mappings": [
-        "https://w3id.org/mixs/0001175"
-      ],
-      "keywords": [
-        "ph",
-        "water"
-      ],
-      "is_a": "water_pH",
-      "domain": "FoodFarmEnvironment",
-      "slot_uri": "https://w3id.org/mixs/0001175",
-      "alias": "water_pH",
-      "owner": "FoodFarmEnvironment",
-      "domain_of": [
-        "FoodFarmEnvironment"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "water_pH",
-      "range": "float",
       "@type": "SlotDefinition"
     },
     {
@@ -60512,7 +60527,7 @@
     {
       "name": "HydrocarbonResourcesCores_ph",
       "definition_uri": "https://w3id.org/mixs/ph",
-      "description": "Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid",
+      "description": "pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid",
       "title": "pH",
       "examples": [
         {
@@ -61127,7 +61142,7 @@
     {
       "name": "HydrocarbonResourcesFluidsSwabs_ph",
       "definition_uri": "https://w3id.org/mixs/ph",
-      "description": "Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid",
+      "description": "pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid",
       "title": "pH",
       "examples": [
         {
@@ -65120,7 +65135,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -65134,7 +65149,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -65790,7 +65805,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -65805,7 +65820,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -67788,7 +67803,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -67802,7 +67817,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -68620,7 +68635,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -68635,7 +68650,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -71197,7 +71212,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -71211,7 +71226,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -72029,7 +72044,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -72044,7 +72059,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -74606,7 +74621,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -74620,7 +74635,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -75408,7 +75423,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -75423,7 +75438,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -77822,7 +77837,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -77836,7 +77851,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -78634,7 +78649,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -78649,7 +78664,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -81105,7 +81120,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -81119,7 +81134,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -81934,7 +81949,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -81949,7 +81964,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -84492,7 +84507,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -84506,7 +84521,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -85342,7 +85357,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -85357,7 +85372,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -87985,7 +88000,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -87999,7 +88014,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -88745,7 +88760,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -88760,7 +88775,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -90950,7 +90965,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -90964,7 +90979,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -91721,7 +91736,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -91736,7 +91751,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -94003,7 +94018,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -94017,7 +94032,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -94789,7 +94804,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -94804,7 +94819,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -97128,7 +97143,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -97142,7 +97157,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -97982,7 +97997,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -97997,7 +98012,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -100644,7 +100659,7 @@
         "Agriculture_library_prep_kit",
         "sequencing_location",
         "soil_temp",
-        "Agriculture_soil_pH",
+        "soil_pH",
         "Agriculture_soil_conductivity",
         "Agriculture_rel_location",
         "Agriculture_soil_cover",
@@ -100658,7 +100673,7 @@
         "anim_water_method",
         "farm_water_source",
         "water_source_shared",
-        "Agriculture_water_pH",
+        "water_pH",
         "elev",
         "season",
         "solar_irradiance",
@@ -101549,7 +101564,7 @@
         "serovar_or_serotype",
         "FoodFarmEnvironment_soil_conductivity",
         "soil_cover",
-        "FoodFarmEnvironment_soil_pH",
+        "soil_pH",
         "rel_location",
         "soil_porosity",
         "soil_temp",
@@ -101564,7 +101579,7 @@
         "spikein_metal",
         "timepoint",
         "water_frequency",
-        "FoodFarmEnvironment_water_pH",
+        "water_pH",
         "water_source_shared",
         "enrichment_protocol",
         "food_quality_date",
@@ -104447,9 +104462,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "mixs.yaml",
-  "source_file_date": "2025-04-18T11:12:25",
-  "source_file_size": 703039,
-  "generation_date": "2025-04-21T19:39:15",
+  "source_file_date": "2025-07-16T07:23:03",
+  "source_file_size": 708641,
+  "generation_date": "2025-07-21T17:01:03",
   "settings": [
     {
       "setting_key": "agrochemical_name",

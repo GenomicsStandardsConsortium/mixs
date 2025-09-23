@@ -1,0 +1,947 @@
+analysis_summary:
+  defined_settings_count: 35
+  missing_settings_count: 0
+  total_token_instances: 806
+  unique_token_count: 29
+  unused_settings_count: 6
+defined_settings:
+- version
+- storage_condition_type
+- termID
+- termLabel
+- PMID
+- software
+- boolean
+- text
+- add_recov_methods
+- name
+- agrochemical_name
+- specific_location
+- room_number
+- adapter_A_DNA_sequence
+- adapter_B_DNA_sequence
+- region
+- integer
+- amount
+- NCBItaxon_id
+- scientific_float
+- duration
+- adapter
+- unit
+- ambiguous_nucleotides
+- float
+- country
+- dna
+- date_time_stamp
+- URL
+- room_name
+- particulate_matter_name
+- lat
+- DOI
+- parameters
+- lon
+missing_settings: []
+token_counts:
+  DOI: 30
+  NCBItaxon_id: 1
+  PMID: 30
+  URL: 30
+  adapter_A_DNA_sequence: 1
+  adapter_B_DNA_sequence: 1
+  add_recov_methods: 1
+  agrochemical_name: 1
+  ambiguous_nucleotides: 3
+  amount: 1
+  boolean: 1
+  date_time_stamp: 2
+  duration: 8
+  float: 13
+  integer: 20
+  lat: 1
+  lon: 1
+  name: 5
+  parameters: 6
+  particulate_matter_name: 1
+  room_name: 4
+  room_number: 4
+  scientific_float: 352
+  software: 6
+  termID: 28
+  termLabel: 28
+  text: 211
+  unit: 10
+  version: 6
+token_locations:
+  DOI:
+  - slots.al_sat_meth.structured_pattern.syntax
+  - slots.associated_resource.structured_pattern.syntax
+  - slots.cult_root_med.structured_pattern.syntax
+  - slots.cur_vegetation_meth.structured_pattern.syntax
+  - slots.enrichment_protocol.structured_pattern.syntax
+  - slots.genetic_mod.structured_pattern.syntax
+  - slots.heavy_metals_meth.structured_pattern.syntax
+  - slots.horizon_meth.structured_pattern.syntax
+  - slots.host_growth_cond.structured_pattern.syntax
+  - slots.isol_growth_condt.structured_pattern.syntax
+  - slots.link_addit_analys.structured_pattern.syntax
+  - slots.link_climate_info.structured_pattern.syntax
+  - slots.local_class_meth.structured_pattern.syntax
+  - slots.micro_biomass_meth.structured_pattern.syntax
+  - slots.nucl_acid_amp.structured_pattern.syntax
+  - slots.nucl_acid_ext.structured_pattern.syntax
+  - slots.ph_meth.structured_pattern.syntax
+  - slots.photosynt_activ_meth.structured_pattern.syntax
+  - slots.prev_land_use_meth.structured_pattern.syntax
+  - slots.ref_biomaterial.structured_pattern.syntax
+  - slots.root_cond.structured_pattern.syntax
+  - slots.samp_collect_method.structured_pattern.syntax
+  - slots.soil_texture_meth.structured_pattern.syntax
+  - slots.soil_type_meth.structured_pattern.syntax
+  - slots.sop.structured_pattern.syntax
+  - slots.tiss_cult_growth_med.structured_pattern.syntax
+  - slots.tot_nitro_cont_meth.structured_pattern.syntax
+  - slots.tot_org_c_meth.structured_pattern.syntax
+  - slots.water_cont_soil_meth.structured_pattern.syntax
+  - classes.Soil.slot_usage.heavy_metals_meth.structured_pattern.syntax
+  NCBItaxon_id:
+  - slots.samp_taxon_id.structured_pattern.syntax
+  PMID:
+  - slots.al_sat_meth.structured_pattern.syntax
+  - slots.associated_resource.structured_pattern.syntax
+  - slots.cult_root_med.structured_pattern.syntax
+  - slots.cur_vegetation_meth.structured_pattern.syntax
+  - slots.enrichment_protocol.structured_pattern.syntax
+  - slots.genetic_mod.structured_pattern.syntax
+  - slots.heavy_metals_meth.structured_pattern.syntax
+  - slots.horizon_meth.structured_pattern.syntax
+  - slots.host_growth_cond.structured_pattern.syntax
+  - slots.isol_growth_condt.structured_pattern.syntax
+  - slots.link_addit_analys.structured_pattern.syntax
+  - slots.link_climate_info.structured_pattern.syntax
+  - slots.local_class_meth.structured_pattern.syntax
+  - slots.micro_biomass_meth.structured_pattern.syntax
+  - slots.nucl_acid_amp.structured_pattern.syntax
+  - slots.nucl_acid_ext.structured_pattern.syntax
+  - slots.ph_meth.structured_pattern.syntax
+  - slots.photosynt_activ_meth.structured_pattern.syntax
+  - slots.prev_land_use_meth.structured_pattern.syntax
+  - slots.ref_biomaterial.structured_pattern.syntax
+  - slots.root_cond.structured_pattern.syntax
+  - slots.samp_collect_method.structured_pattern.syntax
+  - slots.soil_texture_meth.structured_pattern.syntax
+  - slots.soil_type_meth.structured_pattern.syntax
+  - slots.sop.structured_pattern.syntax
+  - slots.tiss_cult_growth_med.structured_pattern.syntax
+  - slots.tot_nitro_cont_meth.structured_pattern.syntax
+  - slots.tot_org_c_meth.structured_pattern.syntax
+  - slots.water_cont_soil_meth.structured_pattern.syntax
+  - classes.Soil.slot_usage.heavy_metals_meth.structured_pattern.syntax
+  URL:
+  - slots.al_sat_meth.structured_pattern.syntax
+  - slots.associated_resource.structured_pattern.syntax
+  - slots.cult_root_med.structured_pattern.syntax
+  - slots.cur_vegetation_meth.structured_pattern.syntax
+  - slots.enrichment_protocol.structured_pattern.syntax
+  - slots.genetic_mod.structured_pattern.syntax
+  - slots.heavy_metals_meth.structured_pattern.syntax
+  - slots.horizon_meth.structured_pattern.syntax
+  - slots.host_growth_cond.structured_pattern.syntax
+  - slots.isol_growth_condt.structured_pattern.syntax
+  - slots.link_addit_analys.structured_pattern.syntax
+  - slots.link_climate_info.structured_pattern.syntax
+  - slots.local_class_meth.structured_pattern.syntax
+  - slots.micro_biomass_meth.structured_pattern.syntax
+  - slots.nucl_acid_amp.structured_pattern.syntax
+  - slots.nucl_acid_ext.structured_pattern.syntax
+  - slots.ph_meth.structured_pattern.syntax
+  - slots.photosynt_activ_meth.structured_pattern.syntax
+  - slots.prev_land_use_meth.structured_pattern.syntax
+  - slots.ref_biomaterial.structured_pattern.syntax
+  - slots.root_cond.structured_pattern.syntax
+  - slots.samp_collect_method.structured_pattern.syntax
+  - slots.soil_texture_meth.structured_pattern.syntax
+  - slots.soil_type_meth.structured_pattern.syntax
+  - slots.sop.structured_pattern.syntax
+  - slots.tiss_cult_growth_med.structured_pattern.syntax
+  - slots.tot_nitro_cont_meth.structured_pattern.syntax
+  - slots.tot_org_c_meth.structured_pattern.syntax
+  - slots.water_cont_soil_meth.structured_pattern.syntax
+  - classes.Soil.slot_usage.heavy_metals_meth.structured_pattern.syntax
+  adapter_A_DNA_sequence:
+  - slots.adapters.structured_pattern.syntax
+  adapter_B_DNA_sequence:
+  - slots.adapters.structured_pattern.syntax
+  add_recov_methods:
+  - slots.add_recov_method.structured_pattern.syntax
+  agrochemical_name:
+  - slots.agrochem_addition.structured_pattern.syntax
+  ambiguous_nucleotides:
+  - slots.mid.structured_pattern.syntax
+  - slots.pcr_primers.structured_pattern.syntax
+  - slots.pcr_primers.structured_pattern.syntax
+  amount:
+  - slots.agrochem_addition.structured_pattern.syntax
+  boolean:
+  - slots.study_complt_stat.structured_pattern.syntax
+  date_time_stamp:
+  - slots.add_recov_method.structured_pattern.syntax
+  - slots.agrochem_addition.structured_pattern.syntax
+  duration:
+  - slots.cons_food_stor_dur.structured_pattern.syntax
+  - slots.ferm_time.structured_pattern.syntax
+  - slots.samp_store_dur.structured_pattern.syntax
+  - slots.samp_transport_dur.structured_pattern.syntax
+  - slots.study_inc_dur.structured_pattern.syntax
+  - slots.time_last_toothbrush.structured_pattern.syntax
+  - slots.time_since_last_wash.structured_pattern.syntax
+  - slots.timepoint.structured_pattern.syntax
+  float:
+  - slots.air_PM_concen.structured_pattern.syntax
+  - slots.animal_am_dur.structured_pattern.syntax
+  - slots.aromatics_pc.structured_pattern.syntax
+  - slots.asphaltenes_pc.structured_pattern.syntax
+  - slots.hcr_pressure.structured_pattern.syntax
+  - slots.hcr_pressure.structured_pattern.syntax
+  - slots.hcr_temp.structured_pattern.syntax
+  - slots.hcr_temp.structured_pattern.syntax
+  - slots.resins_pc.structured_pattern.syntax
+  - slots.samp_loc_corr_rate.structured_pattern.syntax
+  - slots.samp_loc_corr_rate.structured_pattern.syntax
+  - slots.samp_preserv.structured_pattern.syntax
+  - slots.saturates_pc.structured_pattern.syntax
+  integer:
+  - slots.address.structured_pattern.syntax
+  - slots.animal_intrusion.structured_pattern.syntax
+  - slots.cons_qty_purchased.structured_pattern.syntax
+  - slots.cult_result_org.structured_pattern.syntax
+  - slots.exp_pipe.structured_pattern.syntax
+  - slots.freq_cook.structured_pattern.syntax
+  - slots.max_occup.structured_pattern.syntax
+  - slots.microb_start_taxID.structured_pattern.syntax
+  - slots.number_pets.structured_pattern.syntax
+  - slots.number_plants.structured_pattern.syntax
+  - slots.number_resident.structured_pattern.syntax
+  - slots.occup_samp.structured_pattern.syntax
+  - slots.otu_class_appr.structured_pattern.syntax
+  - slots.otu_class_appr.structured_pattern.syntax
+  - slots.room_door_dist.structured_pattern.syntax
+  - slots.room_net_area.structured_pattern.syntax
+  - slots.room_occup.structured_pattern.syntax
+  - slots.room_vol.structured_pattern.syntax
+  - slots.serovar_or_serotype.structured_pattern.syntax
+  - slots.spikein_org.structured_pattern.syntax
+  lat:
+  - slots.lat_lon.structured_pattern.syntax
+  lon:
+  - slots.lat_lon.structured_pattern.syntax
+  name:
+  - slots.aromatics_pc.structured_pattern.syntax
+  - slots.asphaltenes_pc.structured_pattern.syntax
+  - slots.resins_pc.structured_pattern.syntax
+  - slots.samp_preserv.structured_pattern.syntax
+  - slots.saturates_pc.structured_pattern.syntax
+  parameters:
+  - slots.assembly_software.structured_pattern.syntax
+  - slots.chimera_check.structured_pattern.syntax
+  - slots.feat_pred.structured_pattern.syntax
+  - slots.sim_search_meth.structured_pattern.syntax
+  - slots.trna_ext_software.structured_pattern.syntax
+  - slots.x16s_recover_software.structured_pattern.syntax
+  particulate_matter_name:
+  - slots.air_PM_concen.structured_pattern.syntax
+  room_name:
+  - slots.adj_room.structured_pattern.syntax
+  - slots.room_door_share.structured_pattern.syntax
+  - slots.room_hallway.structured_pattern.syntax
+  - slots.room_wall_share.structured_pattern.syntax
+  room_number:
+  - slots.adj_room.structured_pattern.syntax
+  - slots.room_door_share.structured_pattern.syntax
+  - slots.room_hallway.structured_pattern.syntax
+  - slots.room_wall_share.structured_pattern.syntax
+  scientific_float:
+  - slots.abs_air_humidity.structured_pattern.syntax
+  - slots.abs_air_humidity.structured_pattern.syntax
+  - slots.air_temp.structured_pattern.syntax
+  - slots.air_temp.structured_pattern.syntax
+  - slots.al_sat.structured_pattern.syntax
+  - slots.al_sat.structured_pattern.syntax
+  - slots.alkalinity.structured_pattern.syntax
+  - slots.alkalinity.structured_pattern.syntax
+  - slots.alkyl_diethers.structured_pattern.syntax
+  - slots.alkyl_diethers.structured_pattern.syntax
+  - slots.alt.structured_pattern.syntax
+  - slots.alt.structured_pattern.syntax
+  - slots.aminopept_act.structured_pattern.syntax
+  - slots.aminopept_act.structured_pattern.syntax
+  - slots.ammonium.structured_pattern.syntax
+  - slots.ammonium.structured_pattern.syntax
+  - slots.amount_light.structured_pattern.syntax
+  - slots.amount_light.structured_pattern.syntax
+  - slots.animal_am_freq.structured_pattern.syntax
+  - slots.animal_am_freq.structured_pattern.syntax
+  - slots.annual_precpt.structured_pattern.syntax
+  - slots.annual_precpt.structured_pattern.syntax
+  - slots.annual_temp.structured_pattern.syntax
+  - slots.annual_temp.structured_pattern.syntax
+  - slots.api.structured_pattern.syntax
+  - slots.api.structured_pattern.syntax
+  - slots.association_duration.structured_pattern.syntax
+  - slots.association_duration.structured_pattern.syntax
+  - slots.avg_dew_point.structured_pattern.syntax
+  - slots.avg_dew_point.structured_pattern.syntax
+  - slots.avg_temp.structured_pattern.syntax
+  - slots.avg_temp.structured_pattern.syntax
+  - slots.bac_prod.structured_pattern.syntax
+  - slots.bac_prod.structured_pattern.syntax
+  - slots.bac_resp.structured_pattern.syntax
+  - slots.bac_resp.structured_pattern.syntax
+  - slots.bacteria_carb_prod.structured_pattern.syntax
+  - slots.bacteria_carb_prod.structured_pattern.syntax
+  - slots.bacterial_density.structured_pattern.syntax
+  - slots.bacterial_density.structured_pattern.syntax
+  - slots.barometric_press.structured_pattern.syntax
+  - slots.barometric_press.structured_pattern.syntax
+  - slots.benzene.structured_pattern.syntax
+  - slots.benzene.structured_pattern.syntax
+  - slots.biochem_oxygen_dem.structured_pattern.syntax
+  - slots.biochem_oxygen_dem.structured_pattern.syntax
+  - slots.bishomohopanol.structured_pattern.syntax
+  - slots.bishomohopanol.structured_pattern.syntax
+  - slots.blood_press_diast.structured_pattern.syntax
+  - slots.blood_press_diast.structured_pattern.syntax
+  - slots.blood_press_syst.structured_pattern.syntax
+  - slots.blood_press_syst.structured_pattern.syntax
+  - slots.bromide.structured_pattern.syntax
+  - slots.bromide.structured_pattern.syntax
+  - slots.built_struc_age.structured_pattern.syntax
+  - slots.built_struc_age.structured_pattern.syntax
+  - slots.calcium.structured_pattern.syntax
+  - slots.calcium.structured_pattern.syntax
+  - slots.carb_dioxide.structured_pattern.syntax
+  - slots.carb_dioxide.structured_pattern.syntax
+  - slots.carb_monoxide.structured_pattern.syntax
+  - slots.carb_monoxide.structured_pattern.syntax
+  - slots.ceil_area.structured_pattern.syntax
+  - slots.ceil_area.structured_pattern.syntax
+  - slots.ceil_thermal_mass.structured_pattern.syntax
+  - slots.ceil_thermal_mass.structured_pattern.syntax
+  - slots.chem_oxygen_dem.structured_pattern.syntax
+  - slots.chem_oxygen_dem.structured_pattern.syntax
+  - slots.chloride.structured_pattern.syntax
+  - slots.chloride.structured_pattern.syntax
+  - slots.chlorophyll.structured_pattern.syntax
+  - slots.chlorophyll.structured_pattern.syntax
+  - slots.conduc.structured_pattern.syntax
+  - slots.conduc.structured_pattern.syntax
+  - slots.crop_yield.structured_pattern.syntax
+  - slots.crop_yield.structured_pattern.syntax
+  - slots.density.structured_pattern.syntax
+  - slots.density.structured_pattern.syntax
+  - slots.depth.structured_pattern.syntax
+  - slots.depth.structured_pattern.syntax
+  - slots.dew_point.structured_pattern.syntax
+  - slots.dew_point.structured_pattern.syntax
+  - slots.diss_carb_dioxide.structured_pattern.syntax
+  - slots.diss_carb_dioxide.structured_pattern.syntax
+  - slots.diss_hydrogen.structured_pattern.syntax
+  - slots.diss_hydrogen.structured_pattern.syntax
+  - slots.diss_inorg_carb.structured_pattern.syntax
+  - slots.diss_inorg_carb.structured_pattern.syntax
+  - slots.diss_inorg_nitro.structured_pattern.syntax
+  - slots.diss_inorg_nitro.structured_pattern.syntax
+  - slots.diss_inorg_phosp.structured_pattern.syntax
+  - slots.diss_inorg_phosp.structured_pattern.syntax
+  - slots.diss_iron.structured_pattern.syntax
+  - slots.diss_iron.structured_pattern.syntax
+  - slots.diss_org_carb.structured_pattern.syntax
+  - slots.diss_org_carb.structured_pattern.syntax
+  - slots.diss_org_nitro.structured_pattern.syntax
+  - slots.diss_org_nitro.structured_pattern.syntax
+  - slots.diss_oxygen.structured_pattern.syntax
+  - slots.diss_oxygen.structured_pattern.syntax
+  - slots.diss_oxygen_fluid.structured_pattern.syntax
+  - slots.diss_oxygen_fluid.structured_pattern.syntax
+  - slots.door_size.structured_pattern.syntax
+  - slots.door_size.structured_pattern.syntax
+  - slots.down_par.structured_pattern.syntax
+  - slots.down_par.structured_pattern.syntax
+  - slots.efficiency_percent.structured_pattern.syntax
+  - slots.efficiency_percent.structured_pattern.syntax
+  - slots.elev.structured_pattern.syntax
+  - slots.elev.structured_pattern.syntax
+  - slots.ethylbenzene.structured_pattern.syntax
+  - slots.ethylbenzene.structured_pattern.syntax
+  - slots.exp_duct.structured_pattern.syntax
+  - slots.exp_duct.structured_pattern.syntax
+  - slots.ferm_rel_humidity.structured_pattern.syntax
+  - slots.ferm_rel_humidity.structured_pattern.syntax
+  - slots.ferm_temp.structured_pattern.syntax
+  - slots.ferm_temp.structured_pattern.syntax
+  - slots.floor_age.structured_pattern.syntax
+  - slots.floor_age.structured_pattern.syntax
+  - slots.floor_area.structured_pattern.syntax
+  - slots.floor_area.structured_pattern.syntax
+  - slots.floor_thermal_mass.structured_pattern.syntax
+  - slots.floor_thermal_mass.structured_pattern.syntax
+  - slots.fluor.structured_pattern.syntax
+  - slots.fluor.structured_pattern.syntax
+  - slots.food_pack_capacity.structured_pattern.syntax
+  - slots.food_pack_capacity.structured_pattern.syntax
+  - slots.food_source_age.structured_pattern.syntax
+  - slots.food_source_age.structured_pattern.syntax
+  - slots.glucosidase_act.structured_pattern.syntax
+  - slots.glucosidase_act.structured_pattern.syntax
+  - slots.hcr_fw_salinity.structured_pattern.syntax
+  - slots.hcr_fw_salinity.structured_pattern.syntax
+  - slots.height_carper_fiber.structured_pattern.syntax
+  - slots.height_carper_fiber.structured_pattern.syntax
+  - slots.host_age.structured_pattern.syntax
+  - slots.host_age.structured_pattern.syntax
+  - slots.host_body_mass_index.structured_pattern.syntax
+  - slots.host_body_mass_index.structured_pattern.syntax
+  - slots.host_body_temp.structured_pattern.syntax
+  - slots.host_body_temp.structured_pattern.syntax
+  - slots.host_dry_mass.structured_pattern.syntax
+  - slots.host_dry_mass.structured_pattern.syntax
+  - slots.host_height.structured_pattern.syntax
+  - slots.host_height.structured_pattern.syntax
+  - slots.host_length.structured_pattern.syntax
+  - slots.host_length.structured_pattern.syntax
+  - slots.host_of_host_totmass.structured_pattern.syntax
+  - slots.host_of_host_totmass.structured_pattern.syntax
+  - slots.host_pulse.structured_pattern.syntax
+  - slots.host_pulse.structured_pattern.syntax
+  - slots.host_tot_mass.structured_pattern.syntax
+  - slots.host_tot_mass.structured_pattern.syntax
+  - slots.host_wet_mass.structured_pattern.syntax
+  - slots.host_wet_mass.structured_pattern.syntax
+  - slots.humidity.structured_pattern.syntax
+  - slots.humidity.structured_pattern.syntax
+  - slots.indust_eff_percent.structured_pattern.syntax
+  - slots.indust_eff_percent.structured_pattern.syntax
+  - slots.inside_lux.structured_pattern.syntax
+  - slots.inside_lux.structured_pattern.syntax
+  - slots.iwf.structured_pattern.syntax
+  - slots.iwf.structured_pattern.syntax
+  - slots.light_intensity.structured_pattern.syntax
+  - slots.light_intensity.structured_pattern.syntax
+  - slots.magnesium.structured_pattern.syntax
+  - slots.magnesium.structured_pattern.syntax
+  - slots.mean_frict_vel.structured_pattern.syntax
+  - slots.mean_frict_vel.structured_pattern.syntax
+  - slots.mean_peak_frict_vel.structured_pattern.syntax
+  - slots.mean_peak_frict_vel.structured_pattern.syntax
+  - slots.methane.structured_pattern.syntax
+  - slots.methane.structured_pattern.syntax
+  - slots.microb_start_inoc.structured_pattern.syntax
+  - slots.microb_start_inoc.structured_pattern.syntax
+  - slots.microbial_biomass.structured_pattern.syntax
+  - slots.microbial_biomass.structured_pattern.syntax
+  - slots.nitrate.structured_pattern.syntax
+  - slots.nitrate.structured_pattern.syntax
+  - slots.nitrite.structured_pattern.syntax
+  - slots.nitrite.structured_pattern.syntax
+  - slots.nitro.structured_pattern.syntax
+  - slots.nitro.structured_pattern.syntax
+  - slots.num_samp_collect.structured_pattern.syntax
+  - slots.num_samp_collect.structured_pattern.syntax
+  - slots.org_carb.structured_pattern.syntax
+  - slots.org_carb.structured_pattern.syntax
+  - slots.org_matter.structured_pattern.syntax
+  - slots.org_matter.structured_pattern.syntax
+  - slots.org_nitro.structured_pattern.syntax
+  - slots.org_nitro.structured_pattern.syntax
+  - slots.owc_tvdss.structured_pattern.syntax
+  - slots.owc_tvdss.structured_pattern.syntax
+  - slots.oxygen.structured_pattern.syntax
+  - slots.oxygen.structured_pattern.syntax
+  - slots.part_org_carb.structured_pattern.syntax
+  - slots.part_org_carb.structured_pattern.syntax
+  - slots.part_org_nitro.structured_pattern.syntax
+  - slots.part_org_nitro.structured_pattern.syntax
+  - slots.petroleum_hydrocarb.structured_pattern.syntax
+  - slots.petroleum_hydrocarb.structured_pattern.syntax
+  - slots.phosphate.structured_pattern.syntax
+  - slots.phosphate.structured_pattern.syntax
+  - slots.photon_flux.structured_pattern.syntax
+  - slots.photon_flux.structured_pattern.syntax
+  - slots.photosynt_activ.structured_pattern.syntax
+  - slots.photosynt_activ.structured_pattern.syntax
+  - slots.potassium.structured_pattern.syntax
+  - slots.potassium.structured_pattern.syntax
+  - slots.pour_point.structured_pattern.syntax
+  - slots.pour_point.structured_pattern.syntax
+  - slots.pressure.structured_pattern.syntax
+  - slots.pressure.structured_pattern.syntax
+  - slots.primary_prod.structured_pattern.syntax
+  - slots.primary_prod.structured_pattern.syntax
+  - slots.prod_rate.structured_pattern.syntax
+  - slots.prod_rate.structured_pattern.syntax
+  - slots.redox_potential.structured_pattern.syntax
+  - slots.redox_potential.structured_pattern.syntax
+  - slots.rel_air_humidity.structured_pattern.syntax
+  - slots.rel_air_humidity.structured_pattern.syntax
+  - slots.rel_humidity_out.structured_pattern.syntax
+  - slots.rel_humidity_out.structured_pattern.syntax
+  - slots.room_air_exch_rate.structured_pattern.syntax
+  - slots.room_air_exch_rate.structured_pattern.syntax
+  - slots.salinity.structured_pattern.syntax
+  - slots.salinity.structured_pattern.syntax
+  - slots.samp_rep_biol.structured_pattern.syntax
+  - slots.samp_rep_biol.structured_pattern.syntax
+  - slots.samp_rep_tech.structured_pattern.syntax
+  - slots.samp_rep_tech.structured_pattern.syntax
+  - slots.samp_size.structured_pattern.syntax
+  - slots.samp_size.structured_pattern.syntax
+  - slots.samp_store_temp.structured_pattern.syntax
+  - slots.samp_store_temp.structured_pattern.syntax
+  - slots.samp_vol_we_dna_ext.structured_pattern.syntax
+  - slots.samp_vol_we_dna_ext.structured_pattern.syntax
+  - slots.season_humidity.structured_pattern.syntax
+  - slots.season_humidity.structured_pattern.syntax
+  - slots.season_precpt.structured_pattern.syntax
+  - slots.season_precpt.structured_pattern.syntax
+  - slots.season_temp.structured_pattern.syntax
+  - slots.season_temp.structured_pattern.syntax
+  - slots.silicate.structured_pattern.syntax
+  - slots.silicate.structured_pattern.syntax
+  - slots.size_frac_low.structured_pattern.syntax
+  - slots.size_frac_low.structured_pattern.syntax
+  - slots.size_frac_up.structured_pattern.syntax
+  - slots.size_frac_up.structured_pattern.syntax
+  - slots.slope_aspect.structured_pattern.syntax
+  - slots.slope_aspect.structured_pattern.syntax
+  - slots.slope_gradient.structured_pattern.syntax
+  - slots.slope_gradient.structured_pattern.syntax
+  - slots.sludge_retent_time.structured_pattern.syntax
+  - slots.sludge_retent_time.structured_pattern.syntax
+  - slots.sodium.structured_pattern.syntax
+  - slots.sodium.structured_pattern.syntax
+  - slots.soil_conductivity.structured_pattern.syntax
+  - slots.soil_conductivity.structured_pattern.syntax
+  - slots.soil_temp.structured_pattern.syntax
+  - slots.soil_temp.structured_pattern.syntax
+  - slots.soil_texture.structured_pattern.syntax
+  - slots.soil_texture.structured_pattern.syntax
+  - slots.solar_irradiance.structured_pattern.syntax
+  - slots.solar_irradiance.structured_pattern.syntax
+  - slots.soluble_react_phosp.structured_pattern.syntax
+  - slots.soluble_react_phosp.structured_pattern.syntax
+  - slots.specific_humidity.structured_pattern.syntax
+  - slots.specific_humidity.structured_pattern.syntax
+  - slots.study_inc_temp.structured_pattern.syntax
+  - slots.study_inc_temp.structured_pattern.syntax
+  - slots.study_timecourse.structured_pattern.syntax
+  - slots.study_timecourse.structured_pattern.syntax
+  - slots.sulfate.structured_pattern.syntax
+  - slots.sulfate.structured_pattern.syntax
+  - slots.sulfate_fw.structured_pattern.syntax
+  - slots.sulfate_fw.structured_pattern.syntax
+  - slots.sulfide.structured_pattern.syntax
+  - slots.sulfide.structured_pattern.syntax
+  - slots.surf_humidity.structured_pattern.syntax
+  - slots.surf_humidity.structured_pattern.syntax
+  - slots.surf_moisture.structured_pattern.syntax
+  - slots.surf_moisture.structured_pattern.syntax
+  - slots.surf_temp.structured_pattern.syntax
+  - slots.surf_temp.structured_pattern.syntax
+  - slots.suspend_part_matter.structured_pattern.syntax
+  - slots.suspend_part_matter.structured_pattern.syntax
+  - slots.tan.structured_pattern.syntax
+  - slots.tan.structured_pattern.syntax
+  - slots.temp.structured_pattern.syntax
+  - slots.temp.structured_pattern.syntax
+  - slots.temp_out.structured_pattern.syntax
+  - slots.temp_out.structured_pattern.syntax
+  - slots.toluene.structured_pattern.syntax
+  - slots.toluene.structured_pattern.syntax
+  - slots.tot_carb.structured_pattern.syntax
+  - slots.tot_carb.structured_pattern.syntax
+  - slots.tot_depth_water_col.structured_pattern.syntax
+  - slots.tot_depth_water_col.structured_pattern.syntax
+  - slots.tot_diss_nitro.structured_pattern.syntax
+  - slots.tot_diss_nitro.structured_pattern.syntax
+  - slots.tot_inorg_nitro.structured_pattern.syntax
+  - slots.tot_inorg_nitro.structured_pattern.syntax
+  - slots.tot_iron.structured_pattern.syntax
+  - slots.tot_iron.structured_pattern.syntax
+  - slots.tot_nitro.structured_pattern.syntax
+  - slots.tot_nitro.structured_pattern.syntax
+  - slots.tot_nitro_content.structured_pattern.syntax
+  - slots.tot_nitro_content.structured_pattern.syntax
+  - slots.tot_org_carb.structured_pattern.syntax
+  - slots.tot_org_carb.structured_pattern.syntax
+  - slots.tot_part_carb.structured_pattern.syntax
+  - slots.tot_part_carb.structured_pattern.syntax
+  - slots.tot_phosp.structured_pattern.syntax
+  - slots.tot_phosp.structured_pattern.syntax
+  - slots.tot_phosphate.structured_pattern.syntax
+  - slots.tot_phosphate.structured_pattern.syntax
+  - slots.tot_sulfur.structured_pattern.syntax
+  - slots.tot_sulfur.structured_pattern.syntax
+  - slots.turbidity.structured_pattern.syntax
+  - slots.turbidity.structured_pattern.syntax
+  - slots.tvdss_of_hcr_press.structured_pattern.syntax
+  - slots.tvdss_of_hcr_press.structured_pattern.syntax
+  - slots.tvdss_of_hcr_temp.structured_pattern.syntax
+  - slots.tvdss_of_hcr_temp.structured_pattern.syntax
+  - slots.ventilation_rate.structured_pattern.syntax
+  - slots.ventilation_rate.structured_pattern.syntax
+  - slots.vfa.structured_pattern.syntax
+  - slots.vfa.structured_pattern.syntax
+  - slots.vfa_fw.structured_pattern.syntax
+  - slots.vfa_fw.structured_pattern.syntax
+  - slots.wall_area.structured_pattern.syntax
+  - slots.wall_area.structured_pattern.syntax
+  - slots.wall_height.structured_pattern.syntax
+  - slots.wall_height.structured_pattern.syntax
+  - slots.wall_thermal_mass.structured_pattern.syntax
+  - slots.wall_thermal_mass.structured_pattern.syntax
+  - slots.water_content.structured_pattern.syntax
+  - slots.water_content.structured_pattern.syntax
+  - slots.water_current.structured_pattern.syntax
+  - slots.water_current.structured_pattern.syntax
+  - slots.water_cut.structured_pattern.syntax
+  - slots.water_cut.structured_pattern.syntax
+  - slots.water_feat_size.structured_pattern.syntax
+  - slots.water_feat_size.structured_pattern.syntax
+  - slots.water_prod_rate.structured_pattern.syntax
+  - slots.water_prod_rate.structured_pattern.syntax
+  - slots.wind_speed.structured_pattern.syntax
+  - slots.wind_speed.structured_pattern.syntax
+  - slots.xylene.structured_pattern.syntax
+  - slots.xylene.structured_pattern.syntax
+  software:
+  - slots.assembly_software.structured_pattern.syntax
+  - slots.chimera_check.structured_pattern.syntax
+  - slots.feat_pred.structured_pattern.syntax
+  - slots.sim_search_meth.structured_pattern.syntax
+  - slots.trna_ext_software.structured_pattern.syntax
+  - slots.x16s_recover_software.structured_pattern.syntax
+  termID:
+  - slots.HACCP_term.structured_pattern.syntax
+  - slots.anim_water_method.structured_pattern.syntax
+  - slots.animal_feed_equip.structured_pattern.syntax
+  - slots.animal_housing.structured_pattern.syntax
+  - slots.animal_intrusion.structured_pattern.syntax
+  - slots.cult_result_org.structured_pattern.syntax
+  - slots.env_broad_scale.structured_pattern.syntax
+  - slots.env_local_scale.structured_pattern.syntax
+  - slots.env_medium.structured_pattern.syntax
+  - slots.farm_equip.structured_pattern.syntax
+  - slots.farm_equip_shared.structured_pattern.syntax
+  - slots.fertilizer_admin.structured_pattern.syntax
+  - slots.food_name_status.structured_pattern.syntax
+  - slots.food_prod.structured_pattern.syntax
+  - slots.food_product_qual.structured_pattern.syntax
+  - slots.food_trav_mode.structured_pattern.syntax
+  - slots.microb_cult_med.structured_pattern.syntax
+  - slots.microb_start_taxID.structured_pattern.syntax
+  - slots.plant_struc.structured_pattern.syntax
+  - slots.plant_water_method.structured_pattern.syntax
+  - slots.ploidy.structured_pattern.syntax
+  - slots.samp_stor_media.structured_pattern.syntax
+  - slots.samp_type.structured_pattern.syntax
+  - slots.seq_meth.structured_pattern.syntax
+  - slots.serovar_or_serotype.structured_pattern.syntax
+  - slots.spec_intended_cons.structured_pattern.syntax
+  - slots.spikein_growth_med.structured_pattern.syntax
+  - slots.spikein_org.structured_pattern.syntax
+  termLabel:
+  - slots.HACCP_term.structured_pattern.syntax
+  - slots.anim_water_method.structured_pattern.syntax
+  - slots.animal_feed_equip.structured_pattern.syntax
+  - slots.animal_housing.structured_pattern.syntax
+  - slots.animal_intrusion.structured_pattern.syntax
+  - slots.cult_result_org.structured_pattern.syntax
+  - slots.env_broad_scale.structured_pattern.syntax
+  - slots.env_local_scale.structured_pattern.syntax
+  - slots.env_medium.structured_pattern.syntax
+  - slots.farm_equip.structured_pattern.syntax
+  - slots.farm_equip_shared.structured_pattern.syntax
+  - slots.fertilizer_admin.structured_pattern.syntax
+  - slots.food_name_status.structured_pattern.syntax
+  - slots.food_prod.structured_pattern.syntax
+  - slots.food_product_qual.structured_pattern.syntax
+  - slots.food_trav_mode.structured_pattern.syntax
+  - slots.microb_cult_med.structured_pattern.syntax
+  - slots.microb_start_taxID.structured_pattern.syntax
+  - slots.plant_struc.structured_pattern.syntax
+  - slots.plant_water_method.structured_pattern.syntax
+  - slots.ploidy.structured_pattern.syntax
+  - slots.samp_stor_media.structured_pattern.syntax
+  - slots.samp_type.structured_pattern.syntax
+  - slots.seq_meth.structured_pattern.syntax
+  - slots.serovar_or_serotype.structured_pattern.syntax
+  - slots.spec_intended_cons.structured_pattern.syntax
+  - slots.spikein_growth_med.structured_pattern.syntax
+  - slots.spikein_org.structured_pattern.syntax
+  text:
+  - slots.abs_air_humidity.structured_pattern.syntax
+  - slots.address.structured_pattern.syntax
+  - slots.air_temp.structured_pattern.syntax
+  - slots.al_sat.structured_pattern.syntax
+  - slots.alkalinity.structured_pattern.syntax
+  - slots.alkyl_diethers.structured_pattern.syntax
+  - slots.alt.structured_pattern.syntax
+  - slots.aminopept_act.structured_pattern.syntax
+  - slots.ammonium.structured_pattern.syntax
+  - slots.amount_light.structured_pattern.syntax
+  - slots.animal_am_freq.structured_pattern.syntax
+  - slots.annual_precpt.structured_pattern.syntax
+  - slots.annual_temp.structured_pattern.syntax
+  - slots.api.structured_pattern.syntax
+  - slots.association_duration.structured_pattern.syntax
+  - slots.avg_dew_point.structured_pattern.syntax
+  - slots.avg_temp.structured_pattern.syntax
+  - slots.bac_prod.structured_pattern.syntax
+  - slots.bac_resp.structured_pattern.syntax
+  - slots.bacteria_carb_prod.structured_pattern.syntax
+  - slots.bacterial_density.structured_pattern.syntax
+  - slots.barometric_press.structured_pattern.syntax
+  - slots.benzene.structured_pattern.syntax
+  - slots.biochem_oxygen_dem.structured_pattern.syntax
+  - slots.bishomohopanol.structured_pattern.syntax
+  - slots.blood_press_diast.structured_pattern.syntax
+  - slots.blood_press_syst.structured_pattern.syntax
+  - slots.bromide.structured_pattern.syntax
+  - slots.built_struc_age.structured_pattern.syntax
+  - slots.calcium.structured_pattern.syntax
+  - slots.carb_dioxide.structured_pattern.syntax
+  - slots.carb_monoxide.structured_pattern.syntax
+  - slots.ceil_area.structured_pattern.syntax
+  - slots.ceil_thermal_mass.structured_pattern.syntax
+  - slots.chem_oxygen_dem.structured_pattern.syntax
+  - slots.chloride.structured_pattern.syntax
+  - slots.chlorophyll.structured_pattern.syntax
+  - slots.conduc.structured_pattern.syntax
+  - slots.cons_qty_purchased.structured_pattern.syntax
+  - slots.crop_yield.structured_pattern.syntax
+  - slots.cult_root_med.structured_pattern.syntax
+  - slots.density.structured_pattern.syntax
+  - slots.depth.structured_pattern.syntax
+  - slots.dew_point.structured_pattern.syntax
+  - slots.diss_carb_dioxide.structured_pattern.syntax
+  - slots.diss_hydrogen.structured_pattern.syntax
+  - slots.diss_inorg_carb.structured_pattern.syntax
+  - slots.diss_inorg_nitro.structured_pattern.syntax
+  - slots.diss_inorg_phosp.structured_pattern.syntax
+  - slots.diss_iron.structured_pattern.syntax
+  - slots.diss_org_carb.structured_pattern.syntax
+  - slots.diss_org_nitro.structured_pattern.syntax
+  - slots.diss_oxygen.structured_pattern.syntax
+  - slots.diss_oxygen_fluid.structured_pattern.syntax
+  - slots.door_size.structured_pattern.syntax
+  - slots.down_par.structured_pattern.syntax
+  - slots.efficiency_percent.structured_pattern.syntax
+  - slots.elev.structured_pattern.syntax
+  - slots.enrichment_protocol.structured_pattern.syntax
+  - slots.ethylbenzene.structured_pattern.syntax
+  - slots.exp_duct.structured_pattern.syntax
+  - slots.exp_pipe.structured_pattern.syntax
+  - slots.ferm_rel_humidity.structured_pattern.syntax
+  - slots.ferm_temp.structured_pattern.syntax
+  - slots.floor_age.structured_pattern.syntax
+  - slots.floor_area.structured_pattern.syntax
+  - slots.floor_thermal_mass.structured_pattern.syntax
+  - slots.fluor.structured_pattern.syntax
+  - slots.food_dis_point.structured_pattern.syntax
+  - slots.food_dis_point.structured_pattern.syntax
+  - slots.food_dis_point.structured_pattern.syntax
+  - slots.food_origin.structured_pattern.syntax
+  - slots.food_origin.structured_pattern.syntax
+  - slots.food_origin.structured_pattern.syntax
+  - slots.food_pack_capacity.structured_pattern.syntax
+  - slots.food_source_age.structured_pattern.syntax
+  - slots.freq_cook.structured_pattern.syntax
+  - slots.geo_loc_name.structured_pattern.syntax
+  - slots.geo_loc_name.structured_pattern.syntax
+  - slots.geo_loc_name.structured_pattern.syntax
+  - slots.glucosidase_act.structured_pattern.syntax
+  - slots.hcr_fw_salinity.structured_pattern.syntax
+  - slots.height_carper_fiber.structured_pattern.syntax
+  - slots.host_age.structured_pattern.syntax
+  - slots.host_body_mass_index.structured_pattern.syntax
+  - slots.host_body_temp.structured_pattern.syntax
+  - slots.host_dry_mass.structured_pattern.syntax
+  - slots.host_growth_cond.structured_pattern.syntax
+  - slots.host_height.structured_pattern.syntax
+  - slots.host_length.structured_pattern.syntax
+  - slots.host_of_host_totmass.structured_pattern.syntax
+  - slots.host_pulse.structured_pattern.syntax
+  - slots.host_tot_mass.structured_pattern.syntax
+  - slots.host_wet_mass.structured_pattern.syntax
+  - slots.humidity.structured_pattern.syntax
+  - slots.indust_eff_percent.structured_pattern.syntax
+  - slots.inside_lux.structured_pattern.syntax
+  - slots.iwf.structured_pattern.syntax
+  - slots.light_intensity.structured_pattern.syntax
+  - slots.magnesium.structured_pattern.syntax
+  - slots.max_occup.structured_pattern.syntax
+  - slots.mean_frict_vel.structured_pattern.syntax
+  - slots.mean_peak_frict_vel.structured_pattern.syntax
+  - slots.methane.structured_pattern.syntax
+  - slots.microb_cult_med.structured_pattern.syntax
+  - slots.microb_start_inoc.structured_pattern.syntax
+  - slots.microbial_biomass.structured_pattern.syntax
+  - slots.nitrate.structured_pattern.syntax
+  - slots.nitrite.structured_pattern.syntax
+  - slots.nitro.structured_pattern.syntax
+  - slots.num_samp_collect.structured_pattern.syntax
+  - slots.number_pets.structured_pattern.syntax
+  - slots.number_plants.structured_pattern.syntax
+  - slots.number_resident.structured_pattern.syntax
+  - slots.occup_samp.structured_pattern.syntax
+  - slots.org_carb.structured_pattern.syntax
+  - slots.org_matter.structured_pattern.syntax
+  - slots.org_nitro.structured_pattern.syntax
+  - slots.otu_class_appr.structured_pattern.syntax
+  - slots.owc_tvdss.structured_pattern.syntax
+  - slots.oxygen.structured_pattern.syntax
+  - slots.part_org_carb.structured_pattern.syntax
+  - slots.part_org_nitro.structured_pattern.syntax
+  - slots.petroleum_hydrocarb.structured_pattern.syntax
+  - slots.phosphate.structured_pattern.syntax
+  - slots.photon_flux.structured_pattern.syntax
+  - slots.photosynt_activ.structured_pattern.syntax
+  - slots.photosynt_activ_meth.structured_pattern.syntax
+  - slots.potassium.structured_pattern.syntax
+  - slots.pour_point.structured_pattern.syntax
+  - slots.pressure.structured_pattern.syntax
+  - slots.primary_prod.structured_pattern.syntax
+  - slots.prod_rate.structured_pattern.syntax
+  - slots.redox_potential.structured_pattern.syntax
+  - slots.rel_air_humidity.structured_pattern.syntax
+  - slots.rel_humidity_out.structured_pattern.syntax
+  - slots.room_air_exch_rate.structured_pattern.syntax
+  - slots.room_door_dist.structured_pattern.syntax
+  - slots.room_net_area.structured_pattern.syntax
+  - slots.room_occup.structured_pattern.syntax
+  - slots.room_vol.structured_pattern.syntax
+  - slots.root_cond.structured_pattern.syntax
+  - slots.salinity.structured_pattern.syntax
+  - slots.samp_collect_method.structured_pattern.syntax
+  - slots.samp_rep_biol.structured_pattern.syntax
+  - slots.samp_rep_tech.structured_pattern.syntax
+  - slots.samp_size.structured_pattern.syntax
+  - slots.samp_stor_media.structured_pattern.syntax
+  - slots.samp_store_temp.structured_pattern.syntax
+  - slots.samp_taxon_id.structured_pattern.syntax
+  - slots.samp_vol_we_dna_ext.structured_pattern.syntax
+  - slots.season_humidity.structured_pattern.syntax
+  - slots.season_precpt.structured_pattern.syntax
+  - slots.season_temp.structured_pattern.syntax
+  - slots.seq_meth.structured_pattern.syntax
+  - slots.silicate.structured_pattern.syntax
+  - slots.size_frac_low.structured_pattern.syntax
+  - slots.size_frac_up.structured_pattern.syntax
+  - slots.slope_aspect.structured_pattern.syntax
+  - slots.slope_gradient.structured_pattern.syntax
+  - slots.sludge_retent_time.structured_pattern.syntax
+  - slots.sodium.structured_pattern.syntax
+  - slots.soil_conductivity.structured_pattern.syntax
+  - slots.soil_temp.structured_pattern.syntax
+  - slots.soil_texture.structured_pattern.syntax
+  - slots.solar_irradiance.structured_pattern.syntax
+  - slots.soluble_react_phosp.structured_pattern.syntax
+  - slots.specific_humidity.structured_pattern.syntax
+  - slots.spikein_growth_med.structured_pattern.syntax
+  - slots.study_inc_temp.structured_pattern.syntax
+  - slots.study_timecourse.structured_pattern.syntax
+  - slots.sulfate.structured_pattern.syntax
+  - slots.sulfate_fw.structured_pattern.syntax
+  - slots.sulfide.structured_pattern.syntax
+  - slots.surf_humidity.structured_pattern.syntax
+  - slots.surf_moisture.structured_pattern.syntax
+  - slots.surf_temp.structured_pattern.syntax
+  - slots.suspend_part_matter.structured_pattern.syntax
+  - slots.tan.structured_pattern.syntax
+  - slots.temp.structured_pattern.syntax
+  - slots.temp_out.structured_pattern.syntax
+  - slots.tiss_cult_growth_med.structured_pattern.syntax
+  - slots.toluene.structured_pattern.syntax
+  - slots.tot_carb.structured_pattern.syntax
+  - slots.tot_depth_water_col.structured_pattern.syntax
+  - slots.tot_diss_nitro.structured_pattern.syntax
+  - slots.tot_inorg_nitro.structured_pattern.syntax
+  - slots.tot_iron.structured_pattern.syntax
+  - slots.tot_nitro.structured_pattern.syntax
+  - slots.tot_nitro_content.structured_pattern.syntax
+  - slots.tot_org_carb.structured_pattern.syntax
+  - slots.tot_part_carb.structured_pattern.syntax
+  - slots.tot_phosp.structured_pattern.syntax
+  - slots.tot_phosphate.structured_pattern.syntax
+  - slots.tot_sulfur.structured_pattern.syntax
+  - slots.turbidity.structured_pattern.syntax
+  - slots.tvdss_of_hcr_press.structured_pattern.syntax
+  - slots.tvdss_of_hcr_temp.structured_pattern.syntax
+  - slots.ventilation_rate.structured_pattern.syntax
+  - slots.vfa.structured_pattern.syntax
+  - slots.vfa_fw.structured_pattern.syntax
+  - slots.wall_area.structured_pattern.syntax
+  - slots.wall_height.structured_pattern.syntax
+  - slots.wall_thermal_mass.structured_pattern.syntax
+  - slots.water_content.structured_pattern.syntax
+  - slots.water_current.structured_pattern.syntax
+  - slots.water_cut.structured_pattern.syntax
+  - slots.water_feat_size.structured_pattern.syntax
+  - slots.water_prod_rate.structured_pattern.syntax
+  - slots.wind_speed.structured_pattern.syntax
+  - slots.xylene.structured_pattern.syntax
+  unit:
+  - slots.agrochem_addition.structured_pattern.syntax
+  - slots.air_PM_concen.structured_pattern.syntax
+  - slots.aromatics_pc.structured_pattern.syntax
+  - slots.asphaltenes_pc.structured_pattern.syntax
+  - slots.hcr_pressure.structured_pattern.syntax
+  - slots.hcr_temp.structured_pattern.syntax
+  - slots.resins_pc.structured_pattern.syntax
+  - slots.samp_loc_corr_rate.structured_pattern.syntax
+  - slots.samp_preserv.structured_pattern.syntax
+  - slots.saturates_pc.structured_pattern.syntax
+  version:
+  - slots.assembly_software.structured_pattern.syntax
+  - slots.chimera_check.structured_pattern.syntax
+  - slots.feat_pred.structured_pattern.syntax
+  - slots.sim_search_meth.structured_pattern.syntax
+  - slots.trna_ext_software.structured_pattern.syntax
+  - slots.x16s_recover_software.structured_pattern.syntax
+unique_tokens:
+- version
+- termID
+- termLabel
+- PMID
+- software
+- boolean
+- text
+- add_recov_methods
+- name
+- agrochemical_name
+- room_number
+- adapter_A_DNA_sequence
+- adapter_B_DNA_sequence
+- integer
+- amount
+- NCBItaxon_id
+- scientific_float
+- duration
+- unit
+- ambiguous_nucleotides
+- float
+- date_time_stamp
+- URL
+- room_name
+- particulate_matter_name
+- lat
+- DOI
+- parameters
+- lon
+unused_settings:
+- adapter
+- country
+- dna
+- region
+- specific_location
+- storage_condition_type
+used_but_undefined_settings: {}

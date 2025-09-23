@@ -1,0 +1,202 @@
+# Complete MimsAgriculture record with all required fields and realistic values
+
+mims_agriculture_data:
+  - # First sample
+    collection_date: "2024-07-14T14:30:00+00:00"
+    env_broad_scale: "terrestrial biome [ENVO:00000446]"
+    env_local_scale: "agricultural field [ENVO:00000114]" 
+    env_medium: "soil [ENVO:00001998]"
+    geo_loc_name: "USA: Iowa, Ames"
+    lat_lon: "42.0308 -93.6319"
+    
+    # Agriculture extension required fields
+    depth: "0-10 centimeter"
+    elev: "296 meter"
+    season: "summer [NCIT:C94732]"
+    season_temp: "15.5 degree Celsius"
+    season_precpt: "150 millimeter"
+    season_humidity: 65
+    
+    # Mims checklist required fields  
+    samp_name: "MimsAgriculture_Field_A1_001"
+    project_name: "Agricultural Soil Microbiome Analysis"
+    seq_meth: "Illumina MiSeq [OBI:0002001]"
+    samp_taxon_id: "agricultural soil metagenome [NCBITaxon:410658]"
+    
+    # Important Mims-specific fields with proper values
+    lib_vector: "pUC19"
+    adapters: "AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT"
+    samp_mat_process: "freeze drying"
+    chem_administration: ["none"]
+    food_source: "Zea mays [FOODON:00002716]"
+    specific_host: "Zea mays [NCBITaxon:4577]"
+    pathogenicity: "non-pathogenic"
+    samp_store_dur: "P30D"
+    samp_store_loc: "-80 degree Celsius freezer"
+    host_age: "90 days"
+    host_common_name: "corn"
+    host_genotype: "B73"
+    host_height: "2.5 meter"
+    host_length: "2.5 meter"
+    host_life_stage: "mature plant"
+    host_phenotype: "healthy plant"
+    host_taxid: "4577"
+    host_tot_mass: "5 kilogram"
+    host_spec_range: ["Zea mays [NCBITaxon:4577]"]
+    pcr_primers: "FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT"
+    target_gene: "16S rRNA"
+    target_subfragment: "V4"
+    pcr_cond: "initial denaturation:94_3;denaturation:94_0.75;annealing:50_0.75;elongation:72_1.5;final elongation:72_10;25"
+    chimera_check: "uchime;version 4.2.40;default parameters"
+    soil_type_meth: "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/"
+    size_frac: "0.22-3 micrometer"
+    lib_screen: "PCR enriched"
+    ref_db: "SILVA"
+    nucl_acid_amp: "https://doi.org/10.1186/s12864-021-07508-6"
+    lib_size: 400
+    mid: "ACGTACGTACGT"
+    assembly_name: "AgricultureMetagenome_v1.0"
+    temp: "20 degree Celsius"
+    nucl_acid_ext: "https://doi.org/10.1038/nmeth.1459"
+    samp_size: "5 gram"
+    alt: "296 meter"
+    source_mat_id: ["Field_A1_composite_sample"]
+    samp_vol_we_dna_ext: "2 milliliter"
+    lib_reads_seqd: 150000
+    rel_to_oxygen: "aerobe"
+    samp_collect_device: "soil auger [ENVO:02000019]"
+    number_contig: 2547
+    lib_layout: "paired"
+    assembly_qual: "Finished genome"
+    ref_biomaterial: "https://doi.org/10.1038/s41596-018-0046-5"
+    
+    # Soil-specific fields with proper structured_pattern values
+    cur_land_use: "cropland [ENVO:00000077]"
+    cur_vegetation: "Zea mays [NCBITaxon:4577]"
+    cur_vegetation_meth: "https://doi.org/10.1016/j.ecolind.2019.105678"
+    previous_land_use: "grassland [ENVO:00000106]"
+    prev_land_use_meth: "https://doi.org/10.1016/j.landusepol.2018.04.025"
+    crop_rotation: "yes; annual rotation between corn and soybean"
+    agrochem_addition: 
+      - "nitrogen fertilizer;150 kg/ha;2024-04-15"
+      - "phosphorus fertilizer;50 kg/ha;2024-04-15"
+    tillage: ["chisel"]
+    fire: null
+    flooding: null
+    extreme_event: null
+    soil_horizon: "A horizon"
+    horizon_meth: "https://doi.org/10.2136/sssaj2008.0268"
+    sieving: "2 millimeter mesh"
+    pool_dna_extracts: "yes; 3 extracts pooled"
+    store_cond: "-80 degree Celsius freezer"
+    tot_org_carb: "28.7 gram per kilogram"
+    drainage_class: "moderately well"
+    fao_class: "Phaeozems"
+    local_class: "Clarion soil series"
+    local_class_meth: "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/"
+    soil_type: "Mollisol [ENVO:01001841]"
+    profile_position: "summit"
+    slope_gradient: "2.5 percent"
+    slope_aspect: "180 degree (south-facing)"
+    microbial_biomass: "450 microgram C per gram"
+    micro_biomass_meth: "https://doi.org/10.1016/0038-0717(87)90052-6"
+    
+    # Additional metadata fields
+    misc_param: ["sampling conducted during optimal soil moisture conditions"]
+    
+  - # Second sample showing variation in values
+    collection_date: "2024-07-14T15:15:00+00:00"
+    env_broad_scale: "terrestrial biome [ENVO:00000446]"
+    env_local_scale: "agricultural field [ENVO:00000114]"
+    env_medium: "soil [ENVO:00001998]"
+    geo_loc_name: "USA: Iowa, Ames"
+    lat_lon: "42.0312 -93.6325"
+    
+    depth: "10-20 centimeter"
+    elev: "298 meter"
+    season: "summer [NCIT:C94732]"
+    season_temp: "16.2 degree Celsius"
+    season_precpt: "175 millimeter"
+    season_humidity: 70
+    
+    samp_name: "MimsAgriculture_Field_B2_002"
+    project_name: "Agricultural Soil Microbiome Analysis"
+    seq_meth: "Illumina MiSeq [OBI:0002001]"
+    samp_taxon_id: "agricultural soil metagenome [NCBITaxon:410658]"
+    
+    size_frac: "0.22-3 micrometer"
+    lib_screen: "PCR enriched"
+    ref_db: "SILVA"
+    lib_vector: "pUC19"
+    adapters: "AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT"
+    samp_mat_process: "freeze drying"
+    chem_administration: ["none"]
+    food_source: "Glycine max [FOODON:00002681]"
+    specific_host: "Glycine max [NCBITaxon:3847]"
+    pathogenicity: "non-pathogenic"
+    samp_store_dur: "P30D"
+    samp_store_loc: "-80 degree Celsius freezer"
+    host_age: "120 days"
+    host_common_name: "soybean"
+    host_genotype: "Williams 82"
+    host_height: "1.2 meter"
+    host_length: "1.2 meter"
+    host_life_stage: "mature plant"
+    host_phenotype: "healthy plant"
+    host_taxid: "3847"
+    host_tot_mass: "2 kilogram"
+    host_spec_range: ["Glycine max [NCBITaxon:3847]"]
+    pcr_primers: "FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT"
+    target_gene: "16S rRNA"
+    target_subfragment: "V4"
+    pcr_cond: "initial denaturation:94_3;denaturation:94_0.75;annealing:50_0.75;elongation:72_1.5;final elongation:72_10;25"
+    chimera_check: "uchime;version 4.2.40;default parameters"
+    soil_type_meth: "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/"
+    nucl_acid_amp: "https://doi.org/10.1186/s12864-021-07508-6"
+    lib_size: 400
+    mid: "TGCATGCATGCA"
+    assembly_name: "AgricultureMetagenome_v1.1"
+    temp: "19 degree Celsius"
+    nucl_acid_ext: "https://doi.org/10.1038/nmeth.1459"
+    samp_size: "5 gram"
+    alt: "298 meter"
+    source_mat_id: ["Field_B2_composite_sample"]
+    samp_vol_we_dna_ext: "2 milliliter"
+    lib_reads_seqd: 148000
+    rel_to_oxygen: "aerobe"
+    samp_collect_device: "soil auger [ENVO:02000019]"
+    number_contig: 2381
+    lib_layout: "paired"
+    assembly_qual: "Finished genome"
+    ref_biomaterial: "https://doi.org/10.1038/s41596-018-0046-5"
+    
+    cur_land_use: "cropland [ENVO:00000077]"
+    cur_vegetation: "Glycine max [NCBITaxon:3847]"
+    cur_vegetation_meth: "https://doi.org/10.1016/j.ecolind.2019.105678"
+    previous_land_use: "cropland [ENVO:00000077]"
+    prev_land_use_meth: "https://doi.org/10.1016/j.landusepol.2018.04.025"
+    crop_rotation: "yes; annual rotation between corn and soybean"
+    agrochem_addition:
+      - "potassium fertilizer;75 kg/ha;2024-05-01"
+    tillage: ["strip tillage"]
+    fire: null
+    flooding: null
+    extreme_event: null
+    soil_horizon: "A horizon"
+    horizon_meth: "https://doi.org/10.2136/sssaj2008.0268"
+    sieving: "2 millimeter mesh"
+    pool_dna_extracts: "yes; 3 extracts pooled"
+    store_cond: "-80 degree Celsius freezer"
+    tot_org_carb: "31.2 gram per kilogram"
+    drainage_class: "well"
+    fao_class: "Phaeozems"
+    local_class: "Webster soil series"
+    local_class_meth: "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/"
+    soil_type: "Mollisol [ENVO:01001841]"
+    profile_position: "footslope"
+    slope_gradient: "1.8 percent"
+    slope_aspect: "225 degree (southwest-facing)"
+    microbial_biomass: "520 microgram C per gram"
+    micro_biomass_meth: "https://doi.org/10.1016/0038-0717(87)90052-6"
+    
+    misc_param: ["sampling conducted after recent rainfall"]

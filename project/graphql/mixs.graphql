@@ -642,6 +642,23 @@ enum IndoorSurfEnum
     window
   }
 
+enum InsdcMissingValueEnum
+  {
+    not_applicable
+    missing
+    not_collected
+    not_provided
+    restricted_access
+    missing__COLON___control_sample
+    missing__COLON___sample_group
+    missing__COLON___synthetic_construct
+    missing__COLON___lab_stock
+    missing__COLON___third_party_data
+    missing__COLON___data_agreement_established_pre__HYPHEN_MINUS__2023
+    missing__COLON___endangered_species
+    missing__COLON___human__HYPHEN_MINUS__identifiable
+  }
+
 enum LibLayoutEnum
   {
     other
@@ -960,6 +977,14 @@ enum ScLysisApproachEnum
     combination
     enzymatic
     physical
+  }
+
+enum SeasonEnum
+  {
+    autumn___LEFT_SQUARE_BRACKET__NCIT__COLON__C94733__RIGHT_SQUARE_BRACKET__
+    spring___LEFT_SQUARE_BRACKET__NCIT__COLON__C94731__RIGHT_SQUARE_BRACKET__
+    summer___LEFT_SQUARE_BRACKET__NCIT__COLON__C94732__RIGHT_SQUARE_BRACKET__
+    winter___LEFT_SQUARE_BRACKET__NCIT__COLON__C94730__RIGHT_SQUARE_BRACKET__
   }
 
 enum SeasonUseEnum
@@ -1410,7 +1435,7 @@ type Agriculture
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -1708,7 +1733,7 @@ type BuiltEnvironment
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -1923,7 +1948,7 @@ type FoodFarmEnvironment
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -2836,7 +2861,7 @@ type MigsBaAgriculture implements MigsBa
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -3215,7 +3240,7 @@ type MigsBaBuiltEnvironment implements MigsBa
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -3525,7 +3550,7 @@ type MigsBaFoodFarmEnvironment implements MigsBa
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -5894,7 +5919,7 @@ type MigsEuAgriculture implements MigsEu
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -6273,7 +6298,7 @@ type MigsEuBuiltEnvironment implements MigsEu
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -6583,7 +6608,7 @@ type MigsEuFoodFarmEnvironment implements MigsEu
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -8943,7 +8968,7 @@ type MigsOrgAgriculture implements MigsOrg
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -9310,7 +9335,7 @@ type MigsOrgBuiltEnvironment implements MigsOrg
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -9602,7 +9627,7 @@ type MigsOrgFoodFarmEnvironment implements MigsOrg
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -11802,7 +11827,7 @@ type MigsPlAgriculture implements MigsPl
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -12173,7 +12198,7 @@ type MigsPlBuiltEnvironment implements MigsPl
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -12471,7 +12496,7 @@ type MigsPlFoodFarmEnvironment implements MigsPl
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -14733,7 +14758,7 @@ type MigsViAgriculture implements MigsVi
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -15111,7 +15136,7 @@ type MigsViBuiltEnvironment implements MigsVi
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -15419,7 +15444,7 @@ type MigsViFoodFarmEnvironment implements MigsVi
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -17772,7 +17797,7 @@ type MimagAgriculture implements Mimag
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -18163,7 +18188,7 @@ type MimagBuiltEnvironment implements Mimag
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -18479,7 +18504,7 @@ type MimagFoodFarmEnvironment implements Mimag
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -20894,7 +20919,7 @@ type MimarksCAgriculture implements MimarksC
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -21241,7 +21266,7 @@ type MimarksCBuiltEnvironment implements MimarksC
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -21511,7 +21536,7 @@ type MimarksCFoodFarmEnvironment implements MimarksC
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -23492,7 +23517,7 @@ type MimarksSAgriculture implements MimarksS
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -23842,7 +23867,7 @@ type MimarksSBuiltEnvironment implements MimarksS
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -24120,7 +24145,7 @@ type MimarksSFoodFarmEnvironment implements MimarksS
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -26181,7 +26206,7 @@ type MimsAgriculture implements Mims
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -26540,7 +26565,7 @@ type MimsBuiltEnvironment implements Mims
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -26824,7 +26849,7 @@ type MimsFoodFarmEnvironment implements Mims
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -28959,7 +28984,7 @@ type MisagAgriculture implements Misag
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -29352,7 +29377,7 @@ type MisagBuiltEnvironment implements Misag
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -29670,7 +29695,7 @@ type MisagFoodFarmEnvironment implements Misag
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum
@@ -32192,7 +32217,7 @@ type MiuvigAgriculture implements Miuvig
     waterSourceShared: [String]
     waterPH: Float
     elev: String
-    season: String
+    season: SeasonEnum
     solarIrradiance: [String]
     cropYield: String
     seasonHumidity: Float
@@ -32608,7 +32633,7 @@ type MiuvigBuiltEnvironment implements Miuvig
     sampFloor: String
     sampRoomId: Integer
     sampTimeOut: String
-    season: String
+    season: SeasonEnum
     seasonUse: SeasonUseEnum
     shadingDeviceCond: DamagedRupturedEnum
     shadingDeviceLoc: ShadingDeviceLocEnum
@@ -32954,7 +32979,7 @@ type MiuvigFoodFarmEnvironment implements Miuvig
     tillage: [TillageEnum]
     phMeth: String
     growthMedium: String
-    season: String
+    season: SeasonEnum
     foodProductType: String!
     sampType: String!
     farmWaterSource: FarmWaterSourceEnum

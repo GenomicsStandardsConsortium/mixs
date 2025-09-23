@@ -1356,14 +1356,14 @@ tests = ["black (>=24.0.0)", "numpydantic (>=1.6.1)", "pyshacl (>=0.25.0,<0.26.0
 
 [[package]]
 name = "linkml-runtime"
-version = "1.9.1"
+version = "1.9.4"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 optional = false
-python-versions = "<4.0.0,>=3.8.1"
+python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "linkml_runtime-1.9.1-py3-none-any.whl", hash = "sha256:0eb6db453f2de854512b4b83a8f137d703226a62363094537ae44e58184f0186"},
-    {file = "linkml_runtime-1.9.1.tar.gz", hash = "sha256:cb98fa7d584f46a72277db579dc37099bcabc865747287560eedc766bf7b43d2"},
+    {file = "linkml_runtime-1.9.4-py3-none-any.whl", hash = "sha256:df54f38ea836da97a7f7e61375241d898f37f18a7a4b1f890c181dcf03998e90"},
+    {file = "linkml_runtime-1.9.4.tar.gz", hash = "sha256:ac8f01aa4f92eb32ca377bf15ce42dad63fc2d2201e08e2b955896e34016075b"},
 ]
 
 [package.dependencies]
@@ -1371,7 +1371,7 @@ click = "*"
 curies = ">=0.5.4"
 deprecated = "*"
 hbreader = "*"
-isodate = ">=0.7.2,<0.8.0"
+isodate = {version = ">=0.7.2,<1.0.0", markers = "python_version < \"3.11\""}
 json-flattener = ">=0.1.9"
 jsonasobj2 = ">=1.0.4,<2.dev0"
 jsonschema = ">=3.2.0"
@@ -3017,14 +3017,14 @@ pyasn1 = ">=0.1.3"
 
 [[package]]
 name = "schemasheets"
-version = "0.1.24"
+version = "0.4.0"
 description = "Package to author schemas using spreadsheets"
 optional = false
-python-versions = ">=3.9,<4.0"
+python-versions = "<4.0,>=3.9"
 groups = ["dev"]
 files = [
-    {file = "schemasheets-0.1.24-py3-none-any.whl", hash = "sha256:b7ebceb28e6cd61bbe743945d54e5d45540e794cfc0432b52cb228af8015c4cc"},
-    {file = "schemasheets-0.1.24.tar.gz", hash = "sha256:af18b1012994989cd6c811b770ed547ac52067a640e04b5a4a63cf32306dab3a"},
+    {file = "schemasheets-0.4.0-py3-none-any.whl", hash = "sha256:e122702605a131a30a5c7837e894bab97375a2e0633199b11f33a721de15ae85"},
+    {file = "schemasheets-0.4.0.tar.gz", hash = "sha256:0bf142a9e3691fb7ed2130b21e3010f6f094f52e78823ad3e770aa697115b353"},
 ]
 
 [package.dependencies]
@@ -3605,4 +3605,4 @@ docs = []
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9"
-content-hash = "99fd44b0332d3002506108a17c4f355f01fde105d10f9134d2f34d3062c54d48"
+content-hash = "a60d2158c27b238f1e664c4c7093c65ee98f01a0bcc7a095de5fa3720c346e2a"
