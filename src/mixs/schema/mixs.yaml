@@ -14892,6 +14892,20 @@ slots:
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
     recommended: true
+  samp_dna_conc:
+    title: sample dna concentration
+    description: DNA concentration of sample after dna extraction prior to pooling. Typically measured with nanodrop or Qubit
+    structured_pattern:
+      syntax: ^{float} {unit}$
+    examples:
+      - 15.1 ng/uL
+    annotations:
+      Preferred_unit: ng/uL
+    comments:
+      - Unit is nanograms per microliter
+    todos: 
+      - apply to urobiome extension when it's created
+      - should this be required for MISIP?
 
 classes:
   MimsMisip:
@@ -14965,6 +14979,7 @@ classes:
       - nucleobase_atom_frac
       - isotopolog_incu_time
       - internal_standard
+      - samp_dna_conc
     slot_usage:
       adapters:
         recommended: true
