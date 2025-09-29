@@ -14906,6 +14906,19 @@ slots:
     todos: 
       - apply to urobiome extension when it's created
       - should this be required for MISIP?
+  nucleic_acid_elution_vol:
+    title: nucleic acid elution volume
+    description: Volume the nucleic acid (DNA or RNA) sample is eluted in
+    structured_pattern:
+      syntax: ^{float} {unit}$
+    examples:
+      - 15 uL
+    annotations:
+      Preferred_unit: uL
+    comments:
+      - Unit is microliter
+    todos:
+      - should this be required for MISIP?
 
 classes:
   MimsMisip:
@@ -14980,6 +14993,7 @@ classes:
       - isotopolog_incu_time
       - internal_standard
       - samp_dna_conc
+      - nucleic_acid_elution_vol
     slot_usage:
       adapters:
         recommended: true
