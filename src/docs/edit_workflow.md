@@ -1,6 +1,6 @@
 # MIxS Editing Workflows and Good Practices
 
-Please try to follow this document. First read the [policies](policies) document.
+Please try to follow this document. First read the [policies](policy.md) document.
 
 # Terms
 

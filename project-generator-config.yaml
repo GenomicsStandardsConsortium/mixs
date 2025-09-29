@@ -1,16 +1,11 @@
 directory: project
 includes:
-  - graphql # warnings about re-encoding
   - jsonld
   - jsonldcontext
   - jsonschema
   - owl
   - prefixmap
-  - proto
   - python
-  - shacl
-  - shex
-  - sqltable # slow
 excludes:
   - csv # no default output? # not widely used # largely supplanted by schemasheets
   - doc # handled separately
@@ -18,15 +13,20 @@ excludes:
   - excel # handled separately
   - golang # no default output?
   - golr-views # no default output?
+  - graphql # warnings about re-encoding
   - graphviz # would need customization
   - java # no default output?
   - markdown # redundant with docs
   - namespaces # no default output?
   - plantuml # would need customization
+  - proto
   - pydantic # no default output?
   - rdf # no default output?
+  - shacl
+  - shex
   - sparql # no default output?
   - sqla # no default output?
+  - sqltable # slow
   - sssom # no default output?
   - summary # no default output?
   - terminusdb # no default output?
@@ -46,7 +46,7 @@ generator_args:
     metadata_profiles: [ ]  # List of profiles
     ontology_uri_suffix: ".owl.ttl"  # Suffix for ontology URI
     type_objects: false  # Model types as objects instead of literals # config.yaml says true
-    use_native_uris: true  # Use definition_uris instead of class_uris
+    use_native_uris: false  # true -> MIXS:filter_type ; false -> MIXS:0000765
     # custom
     add_root_classes: true  # Add LinkML metamodel classes as superclasses
     mixins_as_expressions: true  # Use OWL existential restrictions for mixins
