@@ -35,19 +35,9 @@ excludes:
   - yuml # would need customization
 generator_args:
   owl:
-    # defaults
-    add_ols_annotations: true  # Include OLS-specific annotations
-    assert_equivalent_classes: false  # Use owl:equivalentClass vs skos:exactMatch
-    default_permissible_value_type: "owl:Class"  # Or "owl:NamedIndividual"
-    enum_iri_separator: "#"  # Separator used in enum IRIs
-    format: ttl  # Options: owl, ttl
-    metaclasses: false  # Include LinkML metamodel as metaclasses # config.yaml says true
-    metadata_profile: linkml  # Options: linkml, rdfs, ols
-    metadata_profiles: [ ]  # List of profiles
-    ontology_uri_suffix: ".owl.ttl"  # Suffix for ontology URI
-    type_objects: false  # Model types as objects instead of literals # config.yaml says true
-    use_native_uris: false  # true -> MIXS:filter_type ; false -> MIXS:0000765
-    # custom
-    add_root_classes: true  # Add LinkML metamodel classes as superclasses
-    mixins_as_expressions: true  # Use OWL existential restrictions for mixins
+    mergeimports: true
+    metaclasses: false
+    type_objects: false
+    add_root_classes: true
+    mixins_as_expressions: true
 
