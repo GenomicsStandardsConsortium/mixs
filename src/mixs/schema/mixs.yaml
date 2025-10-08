@@ -14406,7 +14406,9 @@ slots:
     recommended: true
   isotopolog_dose:
     title: dose of isotopolog
-    description: Total dose of isotopolog added to the system in grams. Multiple values allowed, separated by a ; and should be orded the same as the isotopolog.
+    description: The concentration (in ppm) of isotopolog added to environmental matrix as a total mass per volume.
+    comments:
+      - isotopolog mass / total volume soil; ppm of isotopologue in total container volume
     annotations:
       Preferred_unit: ppm
     range: string
