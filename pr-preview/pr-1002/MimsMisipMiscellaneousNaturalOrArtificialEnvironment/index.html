@@ -750,7 +750,7 @@
 <td><a href="https://w3id.org/mixs/isotopolog_dose">MIXS:isotopolog_dose</a></td>
 <td><a href="../isotopolog_dose/">isotopolog_dose</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
-<td>Total dose of isotopolog added to the system in grams</td>
+<td>The concentration (in ppm) of isotopolog added to environmental matrix as a t...</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/nucleobase_atom_frac">MIXS:nucleobase_atom_frac</a></td>
@@ -2947,7 +2947,7 @@ attributes:
       be orded the same as the isotopolog.
     title: atom fraction of isotopolog
     examples:
-    - value: 0.99 or 0.99
+    - value: 0.95 or 0.99
     - value: '0.95'
     from_schema: https://w3id.org/mixs
     alias: isotopolog_atom_frac
@@ -2983,9 +2983,12 @@ attributes:
       Preferred_unit:
         tag: Preferred_unit
         value: ppm
-    description: Total dose of isotopolog added to the system in grams. Multiple values
-      allowed, separated by a ; and should be orded the same as the isotopolog.
+    description: The concentration (in ppm) of isotopolog added to environmental matrix
+      as a total mass per volume.
     title: dose of isotopolog
+    comments:
+    - isotopolog mass / total volume soil; ppm of isotopologue in total container
+      volume
     examples:
     - value: 10 ppm
     from_schema: https://w3id.org/mixs
