@@ -14419,12 +14419,12 @@ slots:
     recommended: true
   nucleobase_atom_frac:
     title: nucleobase excess atom fraction
-    description: Excess atom fraction of the nucleobases in this fraction
-    range: string
+    description: Excess atom fraction of the nucleobases in this fraction.
+    range: float
     examples:
-      - value: 25%
+      - value: 0.25
     structured_pattern:
-      syntax: ^{float}{unit}$
+      syntax: ^{float}$
     recommended: true
   isotopolog_incu_time:
     title: isotopolog incubation time
