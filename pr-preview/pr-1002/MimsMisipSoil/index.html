@@ -725,8 +725,8 @@
 <tr>
 <td><a href="https://w3id.org/mixs/gradient_pos_rel_am">MIXS:gradient_pos_rel_am</a></td>
 <td><a href="../gradient_pos_rel_am/">gradient_pos_rel_am</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
-<td>Percent of total nucleic acids loaded onto the column in this fraction</td>
+<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
+<td>The total nucleic acids loaded onto the column in this fraction as a decimal</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/sip_method">MIXS:sip_method</a></td>
@@ -2981,26 +2981,22 @@ attributes:
       syntax: ^{float}-{float} {unit} | {float} {unit}
   gradient_pos_rel_am:
     name: gradient_pos_rel_am
-    annotations:
-      Preferred_unit:
-        tag: Preferred_unit
-        value: percent
-    description: Percent of total nucleic acids loaded onto the column in this fraction.
-      If uploading 16S rRNA gene (or other amplicon) sequencing data, this value should
-      be calculated from qPCR data. If uploading untargetted sequencing data, this
-      value should be calculated from total DNA concentration.
+    description: The total nucleic acids loaded onto the column in this fraction as
+      a decimal. If uploading 16S rRNA gene (or other amplicon) sequencing data, this
+      value should be calculated from qPCR data. If uploading untargetted sequencing
+      data, this value should be calculated from total DNA concentration.
     title: relative amount of nucleic acids in the gradient position
     examples:
-    - value: 10%
+    - value: '0.1'
     from_schema: https://w3id.org/mixs
     alias: gradient_pos_rel_am
     owner: MimsMisipSoil
     domain_of:
     - MimsMisip
-    range: string
+    range: float
     recommended: true
     structured_pattern:
-      syntax: ^{float} {unit}$
+      syntax: ^{float}$
   sip_method:
     name: sip_method
     description: Method used to fractionate nucleic acids.

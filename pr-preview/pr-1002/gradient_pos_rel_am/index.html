@@ -350,21 +350,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -396,7 +381,7 @@
 
 
 <h1 id="term-relative-amount-of-nucleic-acids-in-the-gradient-position-gradient_pos_rel_am">Term: relative amount of nucleic acids in the gradient position (gradient_pos_rel_am)</h1>
-<p><em>Percent of total nucleic acids loaded onto the column in this fraction. If uploading 16S rRNA gene (or other amplicon) sequencing data, this value should be calculated from qPCR data. If uploading untargetted sequencing data, this value should be calculated from total DNA concentration.</em></p>
+<p><em>The total nucleic acids loaded onto the column in this fraction as a decimal. If uploading 16S rRNA gene (or other amplicon) sequencing data, this value should be calculated from qPCR data. If uploading untargetted sequencing data, this value should be calculated from total DNA concentration.</em></p>
 <p>URI: <a href="https://w3id.org/mixs/gradient_pos_rel_am">MIXS:gradient_pos_rel_am</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -420,12 +405,12 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Float/">Float</a></li>
 <li>
 <p>Cardinality: 0..1 <em>recommended</em></p>
 </li>
 <li>
-<p>Structured pattern: <code>^{float} {unit}$</code></p>
+<p>Structured pattern: <code>^{float}$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -437,37 +422,29 @@
 </thead>
 <tbody>
 <tr>
-<td>10%</td>
+<td>0.1</td>
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Preferred_unit: percent</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: gradient_pos_rel_am
-annotations:
-  Preferred_unit:
-    tag: Preferred_unit
-    value: percent
-description: Percent of total nucleic acids loaded onto the column in this fraction.
-  If uploading 16S rRNA gene (or other amplicon) sequencing data, this value should
-  be calculated from qPCR data. If uploading untargetted sequencing data, this value
-  should be calculated from total DNA concentration.
+description: The total nucleic acids loaded onto the column in this fraction as a
+  decimal. If uploading 16S rRNA gene (or other amplicon) sequencing data, this value
+  should be calculated from qPCR data. If uploading untargetted sequencing data, this
+  value should be calculated from total DNA concentration.
 title: relative amount of nucleic acids in the gradient position
 examples:
-- value: 10%
+- value: '0.1'
 from_schema: https://w3id.org/mixs
 alias: gradient_pos_rel_am
 domain_of:
 - MimsMisip
-range: string
+range: float
 recommended: true
 structured_pattern:
-  syntax: ^{float} {unit}$
+  syntax: ^{float}$
 
 </code></pre>
 
