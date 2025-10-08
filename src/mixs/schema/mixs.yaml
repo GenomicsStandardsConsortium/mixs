@@ -14367,14 +14367,12 @@ slots:
     recommended: true
   gradient_pos_rel_am:
     title: relative amount of nucleic acids in the gradient position
-    description: Percent of total nucleic acids loaded onto the column in this fraction. If uploading 16S rRNA gene (or other amplicon) sequencing data, this value should be calculated from qPCR data. If uploading untargetted sequencing data, this value should be calculated from total DNA concentration.
+    description: The total nucleic acids loaded onto the column in this fraction as a decimal. If uploading 16S rRNA gene (or other amplicon) sequencing data, this value should be calculated from qPCR data. If uploading untargetted sequencing data, this value should be calculated from total DNA concentration.
     structured_pattern:
-      syntax: ^{float} {unit}$
-    annotations:
-      Preferred_unit: percent
+      syntax: ^{float}$
     examples:
-      - value: 10%
-    range: string
+      - value: 0.10
+    range: float
     recommended: true
   sip_method:
     title: method for SIP fractionating
