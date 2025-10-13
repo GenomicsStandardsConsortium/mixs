@@ -14321,13 +14321,13 @@ slots:
   isotopolog:
     title: isotopolog
     description: Isotopologue (isotope source/substrate/molecule) added to the biological sample.
-    comments: List the PubChem Compound Identification (CID) number. If it's an undefined mixture, enter 0. If more than one isotopologue was used in this sample, use a ; to delimit each isotopolog.
+    comments: List the PubChem Compound Identification (CID) number. If it's an undefined mixture, enter 0. If more than one isotopologue was used in this sample, use a | to delimit each isotopolog.
     structured_pattern:
       syntax: ^{termLabel} {[termID]}
     range: string
     examples:
       - value: toluene [pubchem.compound:1140]
-      - value: toluene [pubchem.compound:1140]; water [pubchem.compound:962]
+      - value: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
       - value: "0"
     required: true
   isotopolog_label:
@@ -14385,13 +14385,11 @@ slots:
     recommended: true
   isotopolog_atom_frac:
     title: atom fraction of isotopolog
-    description: The fraction of heavy-labelled atoms out of all atoms of a given element in the isotopolog. Multiple values allowed, separated by a ; and should be orded the same as the isotopolog.
+    description: The fraction of heavy-labelled atoms out of all atoms of a given element in the isotopolog. Multiple values allowed, separated by a | and should be orded the same as the isotopolog.
     range: string
     examples:
-      - value: 0.95 or 0.99
       - value: 0.95
-    structured_pattern:
-      syntax: ^{float}|{float}-{float}$
+      - value: 0.95 | 0.98
     recommended: true
   isotopolog_atom_pos:
     title: set of labeled atoms in isotopologue
@@ -14423,8 +14421,8 @@ slots:
     range: float
     examples:
       - value: 0.25
-    structured_pattern:
-      syntax: ^{float}$
+    minimum_value: 0
+    maximum_value: 1
     recommended: true
   isotopolog_incu_time:
     title: isotopolog incubation time
