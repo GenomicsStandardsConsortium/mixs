@@ -14330,6 +14330,8 @@ slots:
       - value: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
       - value: "0"
     required: true
+    todos:
+      - This ordered slot provides how to write an example in a spreadsheet, but this will not provide a multivalued ordered slot in a database. As such, this slot also couldn't be marked as multivalued in the yaml.
   isotopolog_label:
     title: isotopolog label status
     description: List whether the isotopologue added to this biological sample was heavy-labelled or natural abundance
@@ -14391,6 +14393,8 @@ slots:
       - value: 0.95
       - value: 0.95 | 0.98
     recommended: true
+    todos:
+      - This ordered slot provides how to write an example in a spreadsheet, but this will not provide a multivalued ordered slot in a database. As such, this slot also couldn't be marked as multivalued in the yaml.
   isotopolog_atom_pos:
     title: set of labeled atoms in isotopologue
     description: InChI label designating set of all isotopically enriched atoms in isotopologue. Multiple values allowed, separated by a ; and should be orded the same as the isotopolog.
