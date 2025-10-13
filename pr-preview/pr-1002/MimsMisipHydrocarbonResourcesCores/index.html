@@ -3056,10 +3056,10 @@ attributes:
     comments:
     - List the PubChem Compound Identification (CID) number. If it's an undefined
       mixture, enter 0. If more than one isotopologue was used in this sample, use
-      a ; to delimit each isotopolog.
+      a | to delimit each isotopolog.
     examples:
     - value: toluene [pubchem.compound:1140]
-    - value: toluene [pubchem.compound:1140]; water [pubchem.compound:962]
+    - value: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
     - value: '0'
     from_schema: https://w3id.org/mixs
     alias: isotopolog
@@ -3173,12 +3173,12 @@ attributes:
   isotopolog_atom_frac:
     name: isotopolog_atom_frac
     description: The fraction of heavy-labelled atoms out of all atoms of a given
-      element in the isotopolog. Multiple values allowed, separated by a ; and should
+      element in the isotopolog. Multiple values allowed, separated by a | and should
       be orded the same as the isotopolog.
     title: atom fraction of isotopolog
     examples:
-    - value: 0.95 or 0.99
     - value: '0.95'
+    - value: 0.95 | 0.98
     from_schema: https://w3id.org/mixs
     alias: isotopolog_atom_frac
     owner: MimsMisipHydrocarbonResourcesCores
@@ -3186,8 +3186,6 @@ attributes:
     - MimsMisip
     range: string
     recommended: true
-    structured_pattern:
-      syntax: ^{float}|{float}-{float}$
   isotopolog_atom_pos:
     name: isotopolog_atom_pos
     description: InChI label designating set of all isotopically enriched atoms in
@@ -3243,8 +3241,8 @@ attributes:
     - MimsMisip
     range: float
     recommended: true
-    structured_pattern:
-      syntax: ^{float}$
+    minimum_value: 0
+    maximum_value: 1
   isotopolog_incu_time:
     name: isotopolog_incu_time
     annotations:

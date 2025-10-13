@@ -381,7 +381,7 @@
 
 
 <h1 id="term-atom-fraction-of-isotopolog-isotopolog_atom_frac">Term: atom fraction of isotopolog (isotopolog_atom_frac)</h1>
-<p><em>The fraction of heavy-labelled atoms out of all atoms of a given element in the isotopolog. Multiple values allowed, separated by a ; and should be orded the same as the isotopolog.</em></p>
+<p><em>The fraction of heavy-labelled atoms out of all atoms of a given element in the isotopolog. Multiple values allowed, separated by a | and should be orded the same as the isotopolog.</em></p>
 <p>URI: <a href="https://w3id.org/mixs/isotopolog_atom_frac">MIXS:isotopolog_atom_frac</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -406,12 +406,7 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>
-<p>Cardinality: 0..1 <em>recommended</em></p>
-</li>
-<li>
-<p>Structured pattern: <code>^{float}|{float}-{float}$</code></p>
-</li>
+<li>Cardinality: 0..1 <em>recommended</em></li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -422,7 +417,7 @@
 </thead>
 <tbody>
 <tr>
-<td>0.95 or 0.99</td>
+<td>0.95</td>
 </tr>
 <tr>
 <td>0.95</td>
@@ -434,20 +429,18 @@
 
 <pre><code class="language-yaml">name: isotopolog_atom_frac
 description: The fraction of heavy-labelled atoms out of all atoms of a given element
-  in the isotopolog. Multiple values allowed, separated by a ; and should be orded
+  in the isotopolog. Multiple values allowed, separated by a | and should be orded
   the same as the isotopolog.
 title: atom fraction of isotopolog
 examples:
-- value: 0.95 or 0.99
 - value: '0.95'
+- value: 0.95 | 0.98
 from_schema: https://w3id.org/mixs
 alias: isotopolog_atom_frac
 domain_of:
 - MimsMisip
 range: string
 recommended: true
-structured_pattern:
-  syntax: ^{float}|{float}-{float}$
 
 </code></pre>
 
