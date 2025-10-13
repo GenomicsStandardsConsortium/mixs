@@ -3358,6 +3358,10 @@ attributes:
     description: Isotopologue (isotope source/substrate/molecule) added to the biological
       sample.
     title: isotopolog
+    todos:
+    - This ordered slot provides how to write an example in a spreadsheet, but this
+      will not provide a multivalued ordered slot in a database. As such, this slot
+      also couldn't be marked as multivalued in the yaml.
     comments:
     - List the PubChem Compound Identification (CID) number. If it's an undefined
       mixture, enter 0. If more than one isotopologue was used in this sample, use
@@ -3481,6 +3485,10 @@ attributes:
       element in the isotopolog. Multiple values allowed, separated by a | and should
       be orded the same as the isotopolog.
     title: atom fraction of isotopolog
+    todos:
+    - This ordered slot provides how to write an example in a spreadsheet, but this
+      will not provide a multivalued ordered slot in a database. As such, this slot
+      also couldn't be marked as multivalued in the yaml.
     examples:
     - value: '0.95'
     - value: 0.95 | 0.98
