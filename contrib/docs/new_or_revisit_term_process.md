@@ -20,7 +20,11 @@ graph TD;
 
     in_scope -- Yes --> already_exists{Does the term already exist?}
 
-    already_exists -- "Yes (in MIxS)" --> close_issue_already_exists(["Close issue as already exists or out of scope"])
+    already_exists -- "Yes (in MIxS)" --> missing_from_extension["Is the term missing from the target MIxS extension/checklist?"] -- No --> close_issue_already_exists(["Close issue as already exists or out of scope"])
+
+      missing_from_extension -- yes --> change_issue_to_update_extension["Change issue to 'update extension/checklist'"]
+
+   change_issue_to_update_extension --> create_branch
 
     already_exists -- "Yes (in other standard)" --> reuse_existing
 
@@ -62,18 +66,21 @@ graph TD;
    1. Search the [MIxS website](https://gensc.org/mixs/) for same or related terms already within the latest MIxS standard (latest approved and completed terms)
    2. Search the [MIxS GitHub repository](https://github.com/GenomicsStandardsConsortium/mixs) for same or related terms (currently under review or in progress terms, not yet approved)
    3. Optionally, use GitHub Copilot AI to identify possible overlaps with other existing MIxS terms
-   4. Search other accepted standards for the same or similar proposed term
-4. If the term already exists in MIxS, the issue is closed as "already exists"
-5. If the term exists in another standard, evaluate if it can be imported into MIxS
-   1. If it can be imported, proceed to step 6
-   2. If it cannot be imported either consider a new or issue is closed as "out of scope"
-6. If the term does not exist in MIxS or can be imported from another standard, the term is provisionally accepted and the CIG identifies the most suitable checklist/extension for the new term
-7. CIG identifies most suitable checklist or extension for the term
+   4. Search other high-quality and established non-MIxS standards for terms with the same definition or similar to the proposed term
+4. If the term already exists in MIxS, either:
+   - Close the issue tagging as "already exists", with a link to the existing term
+   - Change issue to 'update extension/checklist' referring to the target extension that is missing the term (and continue from branch creation below)
+5. If the term exists in another standard, evaluate if it can be mapped into MIxS (i.e. copied and linked back)
+   1. If it can be mapped, proceed to step 6
+   2. If it cannot be mapped either consider a new or issue is closed as "out of scope"
+6. If the term does not exist in MIxS or can be mapped from another standard, the term is provisionally accepted and the CIG identifies the most suitable checklist/extension for the new term
+7. CIG identifies other relevant checklists or extensions the term should be added too
 8. A TWG member creates a GitHub branch from the issue
 9. The TWG member adds the new term to the source MIxS `schema.yaml` while on the branch
 10. The TWG member opens a pull request to the MIxS repository
-11. The CIG and TWG review the pull request
-12. Once approved, the pull request is merged and the issue is closed as completed and officially accepted
+11. The original requester, the CIG and TWG review the pull request
+12. Once approved by members of all three groups, the term is assigned a MIxS ID
+13. The pull request is merged and the issue is closed as completed and officially accepted
 
 ---
 
