@@ -1,6 +1,6 @@
-# Process for New MIxS Term creation or Revisiting Existing Terms
+# Process for New MIxS Term creation or Revising Existing Terms
 
-This document outlines the process for proposing new MIxS terms or revisiting existing ones.
+This document outlines the process for proposing new MIxS terms or revising existing ones.
 
 It is intended to act primarily as a reference guide for the Compliance and Interoperability (CIG) working group on the steps for adding a new term, or revisiting an existing term, in the MIxS standard.
 
