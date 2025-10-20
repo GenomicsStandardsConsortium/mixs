@@ -2,11 +2,17 @@
 
 This document outlines the process for proposing new MIxS terms or revising existing ones.
 
-It is intended to act primarily as a reference guide for the Compliance and Interoperability (CIG) working group on the steps for adding a new term, or revisiting an existing term, in the MIxS standard.
+It is intended to act primarily as a reference guide for the Compliance and Interoperability (CIG) and Technical Working Group (TWG) on the steps for adding a new term, or revisiting an existing term, in the MIxS standard.
 
 ## Decision tree
 
 ```mermaid
+---
+config:
+  flowchart:
+    subGraphTitleMargin:
+      bottom: 30
+---
 graph TD;
 
     in_scope{Is the proposed term in scope of MIxS?} -- No --> close_issue_out_of_scope(["Close issue as out of scope"])
