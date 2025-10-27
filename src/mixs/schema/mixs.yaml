@@ -3231,7 +3231,7 @@ slots:
     domain: MixsCompliantData
     slot_uri: MIXS:mims_data
     multivalued: true
-    range: Mims
+    range: MimsMisip
     inlined: true
     inlined_as_list: true
   mims_agriculture_data:
@@ -3439,6 +3439,222 @@ slots:
     slot_uri: MIXS:mims_water_data
     multivalued: true
     range: MimsWater
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_data:
+    description: Data that comply with checklist MimsMisip
+    title: MimsMisip data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_data
+    multivalued: true
+    range: Mims
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_agriculture_data:
+    description: Data that comply with MimsMisip combined with Agriculture
+    title: MimsMisipAgriculture data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_agriculture_data
+    multivalued: true
+    range: MimsMisipAgriculture
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_air_data:
+    description: Data that comply with MimsMisip combined with Air
+    title: MimsMisipAir data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_air_data
+    multivalued: true
+    range: MimsMisipAir
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_built_environment_data:
+    description: Data that comply with MimsMisip combined with BuiltEnvironment
+    title: MimsMisipBuiltEnvironment data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_built_environment_data
+    multivalued: true
+    range: MimsMisipBuiltEnvironment
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_food_animal_and_animal_feed_data:
+    description: Data that comply with MimsMisip combined with FoodAnimalAndAnimalFeed
+    title: MimsMisipFoodAnimalAndAnimalFeed data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_food_animal_and_animal_feed_data
+    multivalued: true
+    range: MimsMisipFoodAnimalAndAnimalFeed
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_food_farm_environment_data:
+    description: Data that comply with MimsMisip combined with FoodFarmEnvironment
+    title: MimsMisipFoodFarmEnvironment data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_food_farm_environment_data
+    multivalued: true
+    range: MimsMisipFoodFarmEnvironment
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_food_food_production_facility_data:
+    description: Data that comply with MimsMisip combined with FoodFoodProductionFacility
+    title: MimsMisipFoodFoodProductionFacility data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimmisip_food_food_production_facility_data
+    multivalued: true
+    range: MimsMisipFoodFoodProductionFacility
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_food_human_foods_data:
+    description: Data that comply with MimsMisip combined with FoodHumanFoods
+    title: MimsMisipFoodHumanFoods data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_food_human_foods_data
+    multivalued: true
+    range: MimsMisipFoodHumanFoods
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_host_associated_data:
+    description: Data that comply with MimsMisip combined with HostAssociated
+    title: MimsMisipHostAssociated data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_host_associated_data
+    multivalued: true
+    range: MimsMisipHostAssociated
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_human_associated_data:
+    description: Data that comply with MimsMisip combined with HumanAssociated
+    title: MimsMisipHumanAssociated data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_human_associated_data
+    multivalued: true
+    range: MimsMisipHumanAssociated
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_human_gut_data:
+    description: Data that comply with MimsMisip combined with HumanGut
+    title: MimsMisipHumanGut data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_human_gut_data
+    multivalued: true
+    range: MimsMisipHumanGut
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_human_oral_data:
+    description: Data that comply with MimsMisip combined with HumanOral
+    title: MimsMisipHumanOral data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_human_oral_data
+    multivalued: true
+    range: MimsMisipHumanOral
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_human_skin_data:
+    description: Data that comply with MimsMisip combined with HumanSkin
+    title: MimsMisipHumanSkin data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_human_skin_data
+    multivalued: true
+    range: MimsMisipHumanSkin
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_human_vaginal_data:
+    description: Data that comply with MimsMisip combined with HumanVaginal
+    title: MimsMisipHumanVaginal data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_human_vaginal_data
+    multivalued: true
+    range: MimsMisipHumanVaginal
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_hydrocarbon_resources_cores_data:
+    description: Data that comply with MimsMisip combined with HydrocarbonResourcesCores
+    title: MimsMisipHydrocarbonResourcesCores data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_hydrocarbon_resources_cores_data
+    multivalued: true
+    range: MimsMisipHydrocarbonResourcesCores
+    inlined: true
+    inlined_as_list: true
+  mimmisip_hydrocarbon_resources_fluids_swabs_data:
+    description: Data that comply with MimsMisip combined with HydrocarbonResourcesFluidsSwabs
+    title: MimsMisipHydrocarbonResourcesFluidsSwabs data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_hydrocarbon_resources_fluids_swabs_data
+    multivalued: true
+    range: MimsMisipHydrocarbonResourcesFluidsSwabs
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_microbial_mat_biofilm_data:
+    description: Data that comply with MimsMisip combined with MicrobialMatBiofilm
+    title: MimsMisipMicrobialMatBiofilm data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_microbial_mat_biofilm_data
+    multivalued: true
+    range: MimsMisipMicrobialMatBiofilm
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_miscellaneous_natural_or_artificial_environment_data:
+    description: Data that comply with MimsMisip combined with MiscellaneousNaturalOrArtificialEnvironment
+    title: MimsMisipiscellaneousNaturalOrArtificialEnvironment data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_miscellaneous_natural_or_artificial_environment_data
+    multivalued: true
+    range: MimsMisipMiscellaneousNaturalOrArtificialEnvironment
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_plant_associated_data:
+    description: Data that comply with MimsMisip combined with PlantAssociated
+    title: MimsMisipPlantAssociated data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_plant_associated_data
+    multivalued: true
+    range: MimsMisipPlantAssociated
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_sediment_data:
+    description: Data that comply with MimsMisip combined with Sediment
+    title: MimsMisipSediment data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_sediment_data
+    multivalued: true
+    range: MimsMisipSediment
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_soil_data:
+    description: Data that comply with MimsMisip combined with Soil
+    title: MimsMisipSoil data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_soil_data
+    multivalued: true
+    range: MimsMisipSoil
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_symbiont_associated_data:
+    description: Data that comply with MimsMisip combined with SymbiontAssociated
+    title: MimsMisipSymbiontAssociated data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_symbiont_associated_data
+    multivalued: true
+    range: MimsMisipSymbiontAssociated
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_wastewater_sludge_data:
+    description: Data that comply with MimsMisip combined with WastewaterSludge
+    title: MimsMisipWastewaterSludge data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_wastewater_sludge_data
+    multivalued: true
+    range: MimsMisipWastewaterSludge
+    inlined: true
+    inlined_as_list: true
+  mimsmisip_water_data:
+    description: Data that comply with MimsMisip combined with Water
+    title: MimsMisipWater data
+    domain: MixsCompliantData
+    slot_uri: MIXS:mimsmisip_water_data
+    multivalued: true
+    range: MimsMisipWater
     inlined: true
     inlined_as_list: true
   misag_data:
