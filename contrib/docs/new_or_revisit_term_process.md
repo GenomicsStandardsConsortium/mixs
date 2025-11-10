@@ -72,7 +72,7 @@ graph TD;
    - Change issue to 'update extension/checklist' referring to the target extension that is missing the term (and continue from branch creation below)
 5. If the term exists in another standard, evaluate if it can be mapped into MIxS (i.e. copied and linked back)
    1. If it can be mapped, proceed to step 6
-   2. If it cannot be mapped either consider a new or issue is closed as "out of scope"
+   2. If it cannot be mapped consider either: create new MIxS term, or close the ticket as out of scope.
 6. If the term does not exist in MIxS or can be mapped from another standard, the term is provisionally accepted and the CIG identifies the most suitable checklist/extension for the new term
 7. CIG identifies other relevant checklists or extensions the term should be added too
 8. A TWG member creates a GitHub branch from the issue
