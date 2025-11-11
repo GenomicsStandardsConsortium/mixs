@@ -14534,6 +14534,7 @@ slots:
       - value: 13C
       - value: 13C | 15N
     required: true
+    slot_uri: MIXS:0001338
   isotopolog:
     title: isotopolog
     description: Isotopologue (isotope source/substrate/molecule) added to the biological sample.
@@ -14546,6 +14547,7 @@ slots:
       - value: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
       - value: "0"
     required: true
+    slot_uri: MIXS:0001339
     todos:
       - This ordered slot provides how to write an example in a spreadsheet, but this will not provide a multivalued ordered slot in a database. As such, this slot also couldn't be marked as multivalued in the yaml.
   isotopolog_label:
@@ -14556,6 +14558,7 @@ slots:
       - value: natural abundance
       - value: isotopically labeled
     required: true
+    slot_uri: MIXS:0001340
   isotopolog_approach:
     title: Labeling approach (number of labeled isotopologs supplied)
     description: The labelling approach of this SIP experiment. Details if multiple isotopically labelled isotopologues were added to samples ("multiple"), or was only one isotopologue added to each sample ("single").
@@ -14564,6 +14567,7 @@ slots:
       - value: single
       - value: multiple
     required: true
+    slot_uri: MIXS:0001341
   gradient_position:
     title: gradient position
     description: A number designating the gradient position from heaviest (=1) to lightest. Unfractionated samples, from which fractionated samples were derived, should be denoted with –1.
@@ -14572,6 +14576,7 @@ slots:
       - value: 1
       - value: -1
     required: true
+    slot_uri: MIXS:0001342
   gradient_pos_density:
     title: density of gradient position
     description: Buoyant density of this fraction
@@ -14583,6 +14588,7 @@ slots:
       - value: 1.725 g/mL
       - value: 1.725 - 1.735 g/mL
     recommended: true
+    slot_uri: MIXS:0001343
   gradient_pos_rel_am:
     title: relative amount of nucleic acids in the gradient position
     description: The total nucleic acids loaded onto the column in this fraction as a decimal. If uploading 16S rRNA gene (or other amplicon) sequencing data, this value should be calculated from qPCR data. If uploading untargetted sequencing data, this value should be calculated from total DNA concentration.
@@ -14592,6 +14598,7 @@ slots:
       - value: 0.10
     range: float
     recommended: true
+    slot_uri: MIXS:0001344
   sip_method:
     title: method for SIP fractionating
     description: Method used to fractionate nucleic acids.
@@ -14601,6 +14608,7 @@ slots:
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
     recommended: true
+    slot_uri: MIXS:0001345
   isotopolog_atom_frac:
     title: atom fraction of isotopolog
     description: The fraction of heavy-labelled atoms out of all atoms of a given element in the isotopolog. Multiple values allowed, separated by a | and should be orded the same as the isotopolog.
@@ -14609,6 +14617,7 @@ slots:
       - value: 0.95
       - value: 0.95 | 0.98
     recommended: true
+    slot_uri: MIXS:0001346
     todos:
       - This ordered slot provides how to write an example in a spreadsheet, but this will not provide a multivalued ordered slot in a database. As such, this slot also couldn't be marked as multivalued in the yaml.
   isotopolog_atom_pos:
@@ -14622,6 +14631,7 @@ slots:
     structured_pattern:
       syntax: ^{termLabel} {[termID]}|{text}$
     recommended: true
+    slot_uri: MIXS:0001347
   isotopolog_dose:
     title: dose of isotopolog
     description: The concentration (in ppm) of isotopolog added to environmental matrix as a total mass per volume.
@@ -14635,6 +14645,7 @@ slots:
     structured_pattern:
       syntax: ^{float} {unit}$
     recommended: true
+    slot_uri: MIXS:0001348
   nucleobase_atom_frac:
     title: nucleobase excess atom fraction
     description: Excess atom fraction of the nucleobases in this fraction.
@@ -14644,6 +14655,7 @@ slots:
     minimum_value: 0
     maximum_value: 1
     recommended: true
+    slot_uri: MIXS:0001349
   isotopolog_incu_time:
     title: isotopolog incubation time
     description: Total time of incubation after isotopologue addition in hours
@@ -14655,6 +14667,7 @@ slots:
     structured_pattern:
       syntax: ^{float} {unit}$
     recommended: true
+    slot_uri: MIXS:0001350
   internal_standard:
     title: internal standard method
     description: Method used for internal standard for SIP fractionation, if an internal standard was used (i.e., spiking in a heavy-labelled DNA sequence).
@@ -14664,6 +14677,7 @@ slots:
     structured_pattern:
       syntax: ^{PMID}|{DOI}|{URL}$
     recommended: true
+    slot_uri: MIXS:0001351
   samp_dna_conc:
     title: sample dna concentration
     description: DNA concentration of sample after dna extraction prior to pooling. Typically measured spectrophotometrically or with a fluorophore.
@@ -14675,6 +14689,7 @@ slots:
       Preferred_unit: ng/uL
     comments:
       - Unit is nanograms per microliter
+    slot_uri: MIXS:0001352
     todos: 
       - apply to urobiome extension when it's created
       - should this be required for MISIP?
@@ -14689,6 +14704,7 @@ slots:
       Preferred_unit: uL
     comments:
       - Unit is microliter
+    slot_uri: MIXS:0001353
     todos:
       - should this be required for MISIP?
 
