@@ -53,7 +53,6 @@ def generate_dendrogram(schema, output):
     plt.tight_layout()
 
     plt.savefig(output, format='pdf')
-    plt.show()
 
 
 if __name__ == '__main__':

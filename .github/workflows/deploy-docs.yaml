@@ -1,43 +1,49 @@
----
-name: Auto-deployment of mixs Documentation
+name: Deploy documentation to GitHub Pages
+
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency: deploy-${{ github.ref }}
 
 jobs:
-  build-docs:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # otherwise, you will failed to push refs to dest repo
+          fetch-depth: 0
 
-      - name: Set up Python 3.
-        uses: actions/setup-python@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: '3.10'
 
-      - name: Install Poetry.
-        uses: snok/install-poetry@v1.3
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
 
-      - name: Install dependencies.
-        run: poetry install -E docs
+      - name: Install dependencies
+        run: make install
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14' # Choose the desired Node.js version
-
-      - name: Add Node.js to the system path
+      - name: Generate documentation
         run: |
-          echo 'export PATH=$HOME/.npm-global/bin:$PATH' >> $GITHUB_ENV
-
-      - name: Build documentation.
-        run: |
+          make clean
           mkdir -p docs
           touch docs/.nojekyll
           make gendoc
-          ([ ! -f docs/about.md ] && cp src/docs/about.md docs/) || true
-          poetry run mkdocs build --clean
-          make mkd-gh-deploy
+          poetry run mkdocs build -d site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
