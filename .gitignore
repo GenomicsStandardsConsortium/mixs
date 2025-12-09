@@ -146,9 +146,14 @@ linting-results*
 # Local development files
 /local/*
 !/local/.gitkeep
+!/local/.env.template
 
 # IDE files
 .vscode/
+
+# Slack MCP cache files
+.channels_cache*.json
+.users_cache*.json
 
 # OS files
 .DS_Store

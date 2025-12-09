@@ -1,0 +1,180 @@
+---
+# =============================================================================
+# MIxS Release PR Creation Workflow
+# =============================================================================
+# This workflow automates the MIxS release process by:
+# 1. Bumping version numbers in all relevant files
+# 2. Running the full build and test suite
+# 3. Generating a schema diff report
+# 4. Creating a release PR with all changes
+#
+# Trigger: Manual dispatch with version and diff parameters
+# See: https://github.com/turbomam/mixs/issues/106
+# =============================================================================
+
+name: Create Release PR
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'New version number (e.g., 6.2.1 or 7.0.0)'
+        required: true
+        type: string
+      diff_old:
+        description: 'Old version for diff comparison (tag or branch)'
+        required: true
+        default: 'mixs6.0.0'
+        type: string
+      diff_new:
+        description: 'New version for diff comparison (tag or branch)'
+        required: true
+        default: 'main'
+        type: string
+      skip_tests:
+        description: 'Skip running tests (for faster iteration during development)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  create-release-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Validate version format
+        run: |
+          if ! [[ "${{ inputs.version }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Error: Version must be in format X.Y.Z (e.g., 6.2.1 or 7.0.0)"
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for diff script
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+
+      - name: Install dependencies
+        run: poetry install --all-extras
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create release branch
+        run: |
+          git checkout -b release/v${{ inputs.version }}
+
+      - name: Bump version in pyproject.toml
+        run: |
+          sed -i 's/^version = ".*"/version = "${{ inputs.version }}"/' pyproject.toml
+
+      - name: Bump version in CITATION.cff
+        run: |
+          sed -i 's/^version: .*/version: ${{ inputs.version }}/' CITATION.cff
+          sed -i 's/^date-released: .*/date-released: "'$(date +%Y-%m-%d)'"/' CITATION.cff
+
+      - name: Bump version in .zenodo.json
+        run: |
+          sed -i 's/"version": ".*"/"version": "${{ inputs.version }}"/' .zenodo.json
+
+      - name: Update version references in documentation
+        run: |
+          # Update release/README.md - update the "Current version" link
+          # Use precise regex to match X.Y.Z version format
+          sed -i 's|Current version: \[MIxS v[0-9]\+\.[0-9]\+\.[0-9]\+\]|Current version: [MIxS v${{ inputs.version }}]|g' release/README.md
+          sed -i 's|releases/tag/v[0-9]\+\.[0-9]\+\.[0-9]\+)|releases/tag/v${{ inputs.version }})|g' release/README.md
+
+      - name: Run build and tests
+        if: ${{ !inputs.skip_tests }}
+        run: make install clean all test
+
+      - name: Run build only (skip tests)
+        if: ${{ inputs.skip_tests }}
+        run: make install clean all
+
+      - name: Generate schema diff report
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p assets/diff_results
+          poetry run diff-releases \
+            --old "GenomicsStandardsConsortium/mixs@${{ inputs.diff_old }}:src/mixs/schema/mixs.yaml" \
+            --new "GenomicsStandardsConsortium/mixs@${{ inputs.diff_new }}:src/mixs/schema/mixs.yaml" \
+            --output-dir assets/diff_results \
+            --mappings-dir assets/between_diff_mappings/6_to_pre_7 \
+            || echo "Diff generation encountered issues - check logs"
+
+      - name: Commit changes
+        run: |
+          git add -A
+          git commit -m "Release v${{ inputs.version }}
+
+          - Bump version to ${{ inputs.version }}
+          - Update CITATION.cff and .zenodo.json
+          - Generate schema diff: ${{ inputs.diff_old }} vs ${{ inputs.diff_new }}
+          - Run full build and test suite
+
+          Closes #106"
+
+      - name: Push release branch
+        run: |
+          git push -u origin release/v${{ inputs.version }}
+
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --title "Release v${{ inputs.version }}" \
+            --body "$(cat <<'EOF'
+          ## Release v${{ inputs.version }}
+
+          This PR was automatically generated by the release workflow.
+
+          ### Changes
+          - Version bumped to ${{ inputs.version }} in:
+            - `pyproject.toml`
+            - `CITATION.cff`
+            - `.zenodo.json`
+            - `release/README.md`
+          - Schema diff generated: `${{ inputs.diff_old }}` vs `${{ inputs.diff_new }}`
+          - Full build and test suite executed
+
+          ### Schema Diff
+          See `assets/diff_results/schema_comparison_results.yaml` for the structured diff.
+
+          ### Pre-merge Checklist
+          - [ ] Review version numbers are correct
+          - [ ] Review schema diff for unexpected changes
+          - [ ] Verify all tests passed
+          - [ ] TWG approval
+          - [ ] CIG approval (for major releases)
+
+          ### Post-merge Steps
+          1. Merge this PR
+          2. Create GitHub Release with tag `v${{ inputs.version }}`
+          3. Use "Generate release notes" to auto-populate PR summaries
+          4. Publish the release
+
+          ---
+          *Generated by [create-release-pr.yaml](https://github.com/${{ github.repository }}/blob/main/.github/workflows/create-release-pr.yaml)*
+          EOF
+          )" \
+            --base main \
+            --head release/v${{ inputs.version }}
