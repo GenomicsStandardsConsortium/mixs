@@ -128,9 +128,7 @@ jobs:
           - Bump version to ${{ inputs.version }}
           - Update CITATION.cff and .zenodo.json
           - Generate schema diff: ${{ inputs.diff_old }} vs ${{ inputs.diff_new }}
-          - Run full build and test suite
-
-          Closes #106"
+          - Run full build and test suite"
 
       - name: Push release branch
         run: |

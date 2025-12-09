@@ -714,9 +714,17 @@ def schema_comparison_to_dict(comparison: SchemaComparison) -> dict:
             for diff in value_comp.differences:
                 if diff.startswith("Only in old: "):
                     # Use ast.literal_eval for safe parsing instead of eval
-                    result['only_in_old'] = ast.literal_eval(diff.replace("Only in old: ", ""))
+                    try:
+                        result['only_in_old'] = ast.literal_eval(diff.replace("Only in old: ", ""))
+                    except (ValueError, SyntaxError) as e:
+                        logger.warning(f"Failed to parse diff value: {diff}. Error: {e}")
+                        result['only_in_old'] = diff.replace("Only in old: ", "")
                 elif diff.startswith("Only in new: "):
-                    result['only_in_new'] = ast.literal_eval(diff.replace("Only in new: ", ""))
+                    try:
+                        result['only_in_new'] = ast.literal_eval(diff.replace("Only in new: ", ""))
+                    except (ValueError, SyntaxError) as e:
+                        logger.warning(f"Failed to parse diff value: {diff}. Error: {e}")
+                        result['only_in_new'] = diff.replace("Only in new: ", "")
             # Clean the extracted values
             if 'only_in_old' in result:
                 result['only_in_old'] = clean_value(result['only_in_old'])
@@ -1088,14 +1096,13 @@ def load_inter_type_refactoring(mappings_dir: Path) -> List[Tuple[str, str, str,
 
 def filter_expected_name_changes(old_keys: Set[str], new_keys: Set[str], mappings: Dict[str, str]) -> Tuple[Set[str], Set[str], Set[str]]:
     """Filter out expected name changes based on mappings.
-    
+
     Returns:
         Tuple of (unique_old, unique_new, expected_mappings)
     """
     unique_old = set()
-    unique_new = set()
     expected_mappings = set()
-    
+
     # Track which new keys have been accounted for
     accounted_new_keys = set()
     
@@ -1677,11 +1684,11 @@ def validate_github_token(token: str) -> bool:
     """
     # GitHub personal access tokens patterns
     patterns = [
-        r'^ghp_[a-zA-Z0-9]{36}$',  # Personal access token
+        r'^ghp_[a-zA-Z0-9]{36}$',  # Personal access token (classic)
         r'^gho_[a-zA-Z0-9]{36}$',  # OAuth token
         r'^ghu_[a-zA-Z0-9]{36}$',  # User token
         r'^ghs_[a-zA-Z0-9]{36}$',  # Server token
-        r'^github_pat_[a-zA-Z0-9_]{82}$',  # Fine-grained personal access token
+        r'^github_pat_[a-zA-Z0-9_]{22,}$',  # Fine-grained personal access token (variable length)
     ]
 
     return any(re.match(pattern, token) for pattern in patterns)
@@ -1738,10 +1745,14 @@ def fetch_tree(owner: str, repo: str, commit_sha: str) -> List[str]:
     global API_CALL_COUNT
     headers = get_github_headers()
     url = f"https://api.github.com/repos/{owner}/{repo}/git/trees/{commit_sha}?recursive=1"
-    response = requests.get(url, headers=headers, timeout=10)
-    API_CALL_COUNT += 1
-    response.raise_for_status()
-    tree = response.json()
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        API_CALL_COUNT += 1
+        response.raise_for_status()
+        tree = response.json()
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Network error while fetching tree from {owner}/{repo}@{commit_sha}: {e}")
+        raise
 
     yaml_files = [item['path'] for item in tree['tree']
                   if item['path'].endswith(('.yaml', '.yml'))]
@@ -1789,10 +1800,14 @@ def get_releases(owner: str = DEFAULT_OWNER, repo: str = DEFAULT_REPO) -> List[T
 
     while True:
         paginated_url = f"{url}?page={page}&per_page=100"
-        response = requests.get(paginated_url, headers=headers, timeout=10)
-        API_CALL_COUNT += 1
-        response.raise_for_status()
-        releases = response.json()
+        try:
+            response = requests.get(paginated_url, headers=headers, timeout=10)
+            API_CALL_COUNT += 1
+            response.raise_for_status()
+            releases = response.json()
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Network error while fetching releases from {owner}/{repo}: {e}")
+            raise
 
         # If no releases returned, we've reached the end
         if not releases:
@@ -1824,10 +1839,14 @@ def get_yaml_files_from_release(owner: str, repo: str, tag: str) -> Tuple[List[s
     headers = get_github_headers()
     # Get commit SHA for the tag
     url = f"https://api.github.com/repos/{owner}/{repo}/git/refs/tags/{tag}"
-    response = requests.get(url, headers=headers, timeout=10)
-    API_CALL_COUNT += 1
-    response.raise_for_status()
-    commit_sha = response.json()['object']['sha']
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        API_CALL_COUNT += 1
+        response.raise_for_status()
+        commit_sha = response.json()['object']['sha']
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Network error while fetching tag {tag} from {owner}/{repo}: {e}")
+        raise
 
     yaml_files = fetch_tree(owner, repo, commit_sha)
     return yaml_files, commit_sha
@@ -1849,10 +1868,14 @@ def get_main_branch_info(owner: str, repo: str) -> Tuple[List[str], str, datetim
     headers = get_github_headers()
     # Get main branch commit
     url = f"https://api.github.com/repos/{owner}/{repo}/branches/main"
-    response = requests.get(url, headers=headers, timeout=10)
-    API_CALL_COUNT += 1
-    response.raise_for_status()
-    branch_info = response.json()
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        API_CALL_COUNT += 1
+        response.raise_for_status()
+        branch_info = response.json()
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Network error while fetching main branch from {owner}/{repo}: {e}")
+        raise
 
     commit_sha = branch_info['commit']['sha']
     commit_date = datetime.fromisoformat(branch_info['commit']['commit']['author']['date'].replace('Z', '+00:00'))
