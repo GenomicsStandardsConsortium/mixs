@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mixs"
-version = "6.2.0"
+version = "6.2.1"
 description = "MIxS: the Minimum Information about any (X) Sequence standard"
 authors = [
     "Mark Andrew Miller <MAM@lbl.gov>",
@@ -35,6 +35,8 @@ scipy = "^1.15"
 yamllint = "^1.37"
 click = "^8.1"
 pyyaml = "^6.0"
+requests = "^2.31"
+python-dotenv = "^1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
@@ -54,4 +56,5 @@ organize-files = 'scripts.organize_files:main'
 required-supersedes-recommended = 'scripts.required_supersedes_recommended:find_required_and_recommended_usages'
 describe-enums = 'scripts.describe_enums_by_slots_using:update_enum_descriptions'
 isolate-global-slots = 'scripts.isolate_slots:isolate_global_slots'
+diff-releases = 'scripts.diff_two_linkml_mixs_releases:main'
 

@@ -1,6 +1,7 @@
 {
-  "title": "MIxS: Minimum Information about any (X) Sequence",
-  "version": "7.0.0dev",
+  "title": "MIxS: Minimum Information about any (x) Sequence",
+  "description": "The Minimum Information about any (x) Sequence (MIxS) specification is a set of community-developed standards for describing sequences and their associated metadata. MIxS provides checklists and environmental extensions to ensure that sequence data is accompanied by standardized contextual information, enabling data discovery, comparison, and integration across studies.",
+  "version": "6.2.1",
   "creators": [
     {
       "name": "Hunter, Chris",
@@ -12,68 +13,106 @@
     },
     {
       "name": "Meyer, Folker",
-      "orcid": "0000-0003-1112-2284"
+      "orcid": "0000-0003-1112-2284",
+      "type": "ProjectMember"
     },
     {
       "name": "Fellows Yates, James A.",
-      "orcid": "0000-0001-5585-6277"
+      "orcid": "0000-0001-5585-6277",
+      "type": "ProjectMember"
     },
     {
       "name": "Koehorst, Jasper",
-      "orcid": "0000-0001-8172-8981"
+      "orcid": "0000-0001-8172-8981",
+      "type": "ProjectMember"
     },
     {
       "name": "Schriml, Lynn M.",
-      "orcid": "0000-0001-8910-9851"
+      "orcid": "0000-0001-8910-9851",
+      "type": "ProjectLeader"
     },
     {
-      "name": "Miller, Mark A.",
-      "orcid": "0000-0001-9076-6066"
+      "name": "Miller, Mark Andrew",
+      "orcid": "0000-0001-9076-6066",
+      "type": "DataManager"
     },
     {
       "name": "Smith, Montana",
-      "orcid": "0000-0002-8683-0050"
+      "orcid": "0000-0002-8683-0050",
+      "type": "DataManager"
     },
     {
       "name": "Woollard, Peter",
-      "orcid": "0000-0002-7654-6902"
+      "orcid": "0000-0002-7654-6902",
+      "type": "ProjectMember"
     },
     {
       "name": "Buttigieg, Pier Luigi",
-      "orcid": "0000-0002-4366-3088"
+      "orcid": "0000-0002-4366-3088",
+      "type": "ProjectMember"
     },
     {
       "name": "Yilmaz, Pelin",
-      "orcid": "0000-0003-4724-323X"
+      "orcid": "0000-0003-4724-323X",
+      "type": "ProjectMember"
     },
     {
       "name": "Walls, Ramona",
-      "orcid": "0000-0001-8815-0078"
+      "orcid": "0000-0001-8815-0078",
+      "type": "ProjectMember"
     },
     {
-      "name": "Kottmann, Renzo"
+      "name": "Kottmann, Renzo",
+      "type": "ProjectMember"
     },
     {
       "name": "Patil, Sujay",
-      "orcid": "0000-0001-6142-1106"
+      "orcid": "0000-0001-6142-1106",
+      "type": "DataManager"
     },
     {
-      "name": "Paczian, Tobias"
+      "name": "Moxon, Sierra",
+      "orcid": "0000-0002-8719-7760",
+      "type": "DataManager"
     },
     {
-      "name": "Genomic Standard Consortium"
+      "name": "Paczian, Tobias",
+      "type": "ProjectMember"
     }
   ],
-  "description": "MIxS, or the Minimum Information about any (X) Sequence is a standard for describing the contextual information about the sampling and sequencing of any genomic sequence. The standard has Terms that describe characteristics of a sample that addresses:\n\n- What is the source of the sequence?\n- In what kind of environment was the sample collected?\n- What methods were utilized to process the sample?\n",
+  "creators": [
+    {
+      "name": "Genomic Standards Consortium",
+      "affiliation": "Genomic Standards Consortium"
+    }
+  ],
   "related_identifiers": [
     {
       "identifier": "https://doi.org/10.1038/nbt.1823",
       "relation": "isPublishedIn",
       "scheme": "doi"
+    },
+    {
+      "identifier": "https://w3id.org/mixs",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/GenomicsStandardsConsortium/mixs",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.1038/nbt1360",
+      "relation": "isCitedBy",
+      "scheme": "doi"
     }
   ],
   "keywords": [
+    "genomics",
+    "metagenomics",
     "metadata",
+    "metadata standards",
     "standards",
     "linkml",
     "schema",
@@ -81,6 +120,9 @@
     "minimum information",
     "checklist",
     "reporting"
+    "sequence data",
+    "environmental samples",
+    "LinkML"
   ],
   "license": {
     "id": "CC0-1.0"
@@ -88,4 +130,9 @@
   "language": "eng",
   "access_right": "open",
   "upload_type": "dataset"
+  "communities": [
+    {
+      "identifier": "gensc"
+    }
+  ],
 }
