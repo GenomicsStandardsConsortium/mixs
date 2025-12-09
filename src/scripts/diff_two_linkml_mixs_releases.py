@@ -2038,8 +2038,8 @@ def build_full_release_info(repositories: List[Tuple[str, str]]) -> Dict[str, Di
 
             # Use repo-prefixed key if multiple repos, otherwise just short hash
             key = f"{owner}/{repo}#{short_hash}" if len(repositories) > 1 else short_hash
-            
-            release_info[key] = {
+
+            release_entry = {
                 'owner': owner,
                 'repo': repo,
                 'tag': tag,
@@ -2047,6 +2047,13 @@ def build_full_release_info(repositories: List[Tuple[str, str]]) -> Dict[str, Di
                 'schema_yaml_path': schema_yaml_path,
                 'commit_sha': commit_sha
             }
+
+            # Index by short hash
+            release_info[key] = release_entry
+
+            # Also index by tag name for convenience (allows using tag names like 'mixs6.0.0')
+            tag_key = f"{owner}/{repo}#{tag}" if len(repositories) > 1 else tag
+            release_info[tag_key] = release_entry
 
         # Add main branch info for this repository
         logger.info(f"Fetching main branch info for {owner}/{repo}...")
@@ -2056,8 +2063,8 @@ def build_full_release_info(repositories: List[Tuple[str, str]]) -> Dict[str, Di
 
         # Use repo-prefixed key if multiple repos, otherwise just short hash
         key = f"{owner}/{repo}#{short_hash}" if len(repositories) > 1 else short_hash
-        
-        release_info[key] = {
+
+        main_entry = {
             'owner': owner,
             'repo': repo,
             'tag': 'main',
@@ -2065,6 +2072,13 @@ def build_full_release_info(repositories: List[Tuple[str, str]]) -> Dict[str, Di
             'schema_yaml_path': schema_yaml_path,
             'commit_sha': commit_sha
         }
+
+        # Index by short hash
+        release_info[key] = main_entry
+
+        # Also index by 'main' for convenience (allows using 'main' as identifier)
+        main_key = f"{owner}/{repo}#main" if len(repositories) > 1 else 'main'
+        release_info[main_key] = main_entry
 
     return release_info
 
@@ -2212,10 +2226,10 @@ def build_release_info_dict(repositories: List[Tuple[str, str]] = None) -> Dict[
 
 
 @click.command()
-@click.option('--old', required=True,
-              help='Old schema in format owner/repo@commit:path (e.g., GenomicsStandardsConsortium/mixs@mixs6.0.0:src/mixs/schema/mixs.yaml)')
-@click.option('--new', required=True,
-              help='New schema in format owner/repo@commit:path (e.g., GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml)')
+@click.option('--old', default=None,
+              help='Old schema in format owner/repo@commit:path (e.g., GenomicsStandardsConsortium/mixs@mixs6.0.0:src/mixs/schema/mixs.yaml). Required unless --list-releases.')
+@click.option('--new', default=None,
+              help='New schema in format owner/repo@commit:path (e.g., GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml). Required unless --list-releases.')
 @click.option('--no-cache', is_flag=True, default=False,
               help='Skip caching schemas locally (use remote URLs directly)')
 @click.option('--output-dir', type=click.Path(path_type=Path), 
@@ -2267,6 +2281,10 @@ def main(old: str, new: str, no_cache: bool, output_dir: Path, mappings_dir: Pat
         logger.info("Available releases:")
         print_releases()
         return
+
+    # Validate required arguments when not listing releases
+    if not old or not new:
+        raise click.UsageError("--old and --new are required unless --list-releases is used")
 
     # Build and display release info
     logger.info("Building release information dictionary...")
