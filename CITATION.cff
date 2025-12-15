@@ -1,34 +1,65 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
 cff-version: 1.2.0
 title: "MIxS: Minimum Information about any (x) Sequence"
-message: "If you use MIxS in your research, please cite it using the metadata from this file."
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
 type: dataset
 authors:
-  - name: "Genomic Standards Consortium"
-    website: "https://www.gensc.org/"
+  - family-names: Hunter
+    given-names: Chris
+    orcid: "https://orcid.org/0000-0002-1335-0881"
+  - family-names: Mungall
+    given-names: Chris
+    orcid: "https://orcid.org/0000-0002-6601-2165"
+  - family-names: Meyer
+    given-names: Folker
+    orcid: "https://orcid.org/0000-0003-1112-2284"
+  - family-names: Fellows Yates
+    given-names: James A.
+    orcid: "https://orcid.org/0000-0001-5585-6277"
+  - family-names: Koehorst
+    given-names: Jasper
+    orcid: "https://orcid.org/0000-0001-8172-8981"
   - family-names: Schriml
-    given-names: Lynn
-    affiliation: "University of Maryland School of Medicine"
-    orcid: "0000-0001-8910-9851"
-  - family-names: Walls
-    given-names: Ramona
-    affiliation: "Critical Path Institute"
-    orcid: "0000-0001-8815-0078"
+    given-names: Lynn M.
+    orcid: "https://orcid.org/0000-0001-8910-9851"
   - family-names: Miller
     given-names: Mark Andrew
-    affiliation: "Lawrence Berkeley National Laboratory"
-    orcid: "0000-0001-9076-6066"
+    orcid: "https://orcid.org/0000-0001-9076-6066"
   - family-names: Smith
     given-names: Montana
-    affiliation: "Lawrence Berkeley National Laboratory"
-    orcid: "0000-0002-8683-0050"
-  - family-names: Moxon
-    given-names: Sierra
-    affiliation: "Lawrence Berkeley National Laboratory"
-    orcid: "0000-0002-8719-7760"
+    orcid: "https://orcid.org/0000-0002-8683-0050"
+  - family-names: Woollard
+    given-names: Peter
+    orcid: "https://orcid.org/0000-0002-7654-6902"
+  - family-names: Buttigieg
+    given-names: Pier Luigi
+    orcid: "https://orcid.org/0000-0002-4366-3088"
+  - family-names: Yilmaz
+    given-names: Pelin
+    orcid: "https://orcid.org/0000-0003-4724-323X"
+  - family-names: Walls
+    given-names: Ramona
+    orcid: "https://orcid.org/0000-0001-8815-0078"
+  - family-names: Kottmann
+    given-names: Renzo
   - family-names: Patil
     given-names: Sujay
-    affiliation: "Lawrence Berkeley National Laboratory"
-    orcid: "0000-0001-6142-1106"
+    orcid: "https://orcid.org/0000-0001-6142-1106"
+  - family-names: Moxon
+    given-names: Sierra
+    orcid: "https://orcid.org/0000-0002-8719-7760"
+  - family-names: Paczian
+    given-names: Tobias
+  - name: "Genomic Standards Consortium"
+    website: "https://www.gensc.org"
+identifiers:
+  - type: url
+    value: "https://w3id.org/mixs"
+    description: "Permanent URL for MIxS"
 repository-code: "https://github.com/GenomicsStandardsConsortium/mixs"
 url: "https://w3id.org/mixs"
 abstract: >-
@@ -40,17 +71,20 @@ abstract: >-
 keywords:
   - genomics
   - metagenomics
+  - metadata
   - metadata standards
+  - standards
+  - linkml
+  - schema
+  - bioinformatics
+  - minimum information
+  - checklist
+  - reporting
   - sequence data
   - environmental samples
-  - bioinformatics
 license: CC0-1.0
 version: 6.2.2
 date-released: "2025-12-09"
-identifiers:
-  - type: url
-    value: "https://w3id.org/mixs"
-    description: "Permanent URL for MIxS"
 references:
   - type: article
     title: "The minimum information about a genome sequence (MIGS) specification"
@@ -82,3 +116,53 @@ references:
     start: 541
     end: 547
     doi: "10.1038/nbt1360"
+  - type: article
+    title: "Minimum information about a marker gene sequence (MIMARKS) and minimum information about any (x) sequence (MIxS) specifications"
+    authors:
+      - family-names: Yilmaz
+        given-names: Pelin
+      - family-names: Kottmann
+        given-names: Renzo
+      - family-names: Field
+        given-names: Dawn
+      - family-names: Knight
+        given-names: Rob
+      - family-names: Cole
+        given-names: James R
+      - family-names: Amaral-Zettler
+        given-names: Linda
+      - family-names: Gilbert
+        given-names: Jack A
+      - family-names: Karsch-Mizrachi
+        given-names: Ilene
+      - family-names: Johnston
+        given-names: Anjanette
+      - family-names: Cochrane
+        given-names: Guy
+      - family-names: Vaughan
+        given-names: Robert
+      - family-names: Hunter
+        given-names: Christopher
+      - family-names: Park
+        given-names: Joonhong
+      - family-names: Morrison
+        given-names: Norman
+      - family-names: Rocca-Serra
+        given-names: Philippe
+      - family-names: Sterk
+        given-names: Peter
+      - family-names: Arumugam
+        given-names: Manimozhiyan
+      - family-names: Bailey
+        given-names: Mark
+      - family-names: Whetzel
+        given-names: Patricia L
+      - family-names: Garrity
+        given-names: George
+    journal: "Nature Biotechnology"
+    year: 2011
+    volume: 29
+    issue: 5
+    start: 415
+    end: 420
+    doi: "10.1038/nbt.1823"
