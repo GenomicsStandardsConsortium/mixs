@@ -58,3 +58,6 @@ describe-enums = 'scripts.describe_enums_by_slots_using:update_enum_descriptions
 isolate-global-slots = 'scripts.isolate_slots:isolate_global_slots'
 diff-releases = 'scripts.diff_two_linkml_mixs_releases:main'
 
+[tool.deptry.package_module_name_map]
+pyyaml = "yaml"
+python-dotenv = "dotenv"

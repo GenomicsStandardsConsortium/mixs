@@ -1,0 +1,48 @@
+# Valid examples for structured pattern fixes (issue #1094)
+# Tests: previous_land_use format (no space after semicolon, no colon before T), timestamps
+
+mims_soil_data:
+  - samp_name: soil-pattern-test-1
+    project_name: Soil pattern validation test
+    depth: 0.5 m
+    elev: 200 m
+    env_local_scale: agricultural soil [ENVO:00002259]
+    env_medium: soil [ENVO:00001998]
+    env_broad_scale: agricultural ecosystem [ENVO:01001245]
+    samp_taxon_id: soil metagenome [NCBITaxon:410658]
+    geo_loc_name: "USA: Iowa"
+    collection_date: "2024-05-20T09:15:00-05:00"
+    lat_lon: 41.9 -93.6
+    seq_meth: "PMID:98765432"
+    # Valid previous_land_use: tests corrected format (no space after semicolon, no colon before T)
+    previous_land_use: "corn cultivation;2020-09-15T10:00:00Z"
+
+  - samp_name: soil-pattern-test-2
+    project_name: Soil timestamp test
+    depth: 1.0 m
+    elev: 150 m
+    env_local_scale: grassland soil [ENVO:00005750]
+    env_medium: soil [ENVO:00001998]
+    env_broad_scale: grassland ecosystem [ENVO:01001206]
+    samp_taxon_id: soil metagenome [NCBITaxon:410658]
+    geo_loc_name: "USA: Kansas"
+    collection_date: "2024-04-10T00:00:00Z"
+    lat_lon: 38.5 -98.8
+    seq_meth: "doi:10.1126/science.abc1234"
+    # Valid previous_land_use with date-only timestamp
+    previous_land_use: "wheat farming;2019-06-20"
+
+  - samp_name: soil-pattern-test-3
+    project_name: Soil minimal timestamp test
+    depth: 0.3 m
+    elev: 180 m
+    env_local_scale: forest soil [ENVO:00002261]
+    env_medium: soil [ENVO:00001998]
+    env_broad_scale: forest ecosystem [ENVO:01001179]
+    samp_taxon_id: soil metagenome [NCBITaxon:410658]
+    geo_loc_name: "Germany: Bavaria"
+    collection_date: "2024-03-01T08:00:00+01:00"
+    lat_lon: 48.1 11.6
+    seq_meth: "https://www.ebi.ac.uk/ena/browser/view/PRJEB12345"
+    # Valid previous_land_use with year-only timestamp
+    previous_land_use: "fallow;2018"
