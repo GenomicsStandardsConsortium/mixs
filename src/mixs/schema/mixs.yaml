@@ -3936,7 +3936,7 @@ slots:
       field
     title: secondary and tertiary recovery methods and start date
     examples:
-      - value: Polymer Addition;2018-06-21T14:30Z
+      - value: Polymer Addition;2018-06-21T14:30:00Z
     keywords:
       - date
       - method
@@ -3944,7 +3944,7 @@ slots:
       - secondary
       - start
     structured_pattern:
-      syntax: '^{add_recov_methods};{date_time_stamp}$'
+      syntax: '^({add_recov_methods});{date_time_stamp}$'
       interpolated: true
       partial_match: true
     slot_uri: MIXS:0001009

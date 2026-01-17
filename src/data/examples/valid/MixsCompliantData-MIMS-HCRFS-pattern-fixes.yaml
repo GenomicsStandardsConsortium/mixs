@@ -1,5 +1,6 @@
 # Valid examples for structured pattern fixes (issue #1094)
-# Tests: add_recov_method pattern (no unnecessary parens), PMID/DOI/URL patterns (no anchors)
+# Tests: add_recov_method pattern, PMID/DOI/URL patterns with proper anchoring
+# Pattern: ^({PMID}|{DOI}|{URL})$ - grouping ensures ALL alternatives are fully anchored
 
 mims_hydrocarbon_resources_fluids_swabs_data:
   - samp_name: pattern-test-1
@@ -25,9 +26,7 @@ mims_hydrocarbon_resources_fluids_swabs_data:
     sulfide: 5 milligram per liter
     nitrate: 10 milligram per liter
     api: 35 degree API
-    # Valid add_recov_method: tests pattern without unnecessary parentheses
     add_recov_method: "Water Injection;2020-01-15T08:00:00Z"
-    # Valid seq_meth with PMID (tests anchor-free PMID pattern)
     seq_meth: "PMID:12345678"
 
   - samp_name: pattern-test-2
@@ -38,7 +37,7 @@ mims_hydrocarbon_resources_fluids_swabs_data:
     env_medium: petroleum [ENVO:00002984]
     env_broad_scale: petroleum reservoir [ENVO:00000453]
     samp_taxon_id: Archaea [NCBITaxon:2157]
-    geo_loc_name: "Canada: Alberta"
+    geo_loc_name: "Canada: Alberta, Athabasca"
     collection_date: "2024-07-20T14:45:30-06:00"
     lat_lon: 56.7 -111.4
     temp: 90 degree Celsius
@@ -53,9 +52,7 @@ mims_hydrocarbon_resources_fluids_swabs_data:
     sulfide: 8 milligram per liter
     nitrate: 15 milligram per liter
     api: 10 degree API
-    # Valid add_recov_method with different recovery method
     add_recov_method: "Gas Injection;2019-06-01T12:00:00Z"
-    # Valid seq_meth with DOI (tests anchor-free DOI pattern)
     seq_meth: "doi:10.1038/s41586-020-2649-2"
 
   - samp_name: pattern-test-3
@@ -66,7 +63,7 @@ mims_hydrocarbon_resources_fluids_swabs_data:
     env_medium: petroleum [ENVO:00002984]
     env_broad_scale: petroleum reservoir [ENVO:00000453]
     samp_taxon_id: Bacteria [NCBITaxon:2]
-    geo_loc_name: "Norway: North Sea"
+    geo_loc_name: "Norway: North Sea, Troll Field"
     collection_date: "2024-08-10T00:00:00Z"
     lat_lon: 60.5 2.5
     temp: 95 degree Celsius
@@ -81,7 +78,5 @@ mims_hydrocarbon_resources_fluids_swabs_data:
     sulfide: 3 milligram per liter
     nitrate: 8 milligram per liter
     api: 40 degree API
-    # Valid add_recov_method with date-only timestamp
     add_recov_method: "Polymer Addition;2021-03-15"
-    # Valid seq_meth with URL (tests anchor-free URL pattern)
     seq_meth: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC123456/"
