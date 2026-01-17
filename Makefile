@@ -126,7 +126,7 @@ yaml-lint: # Run yamllint on schema files
 
 test-examples: examples/output
 
-examples/output: src/mixs/schema/mixs.yaml
+examples/output: contrib/mixs-patterns-materialized.yaml
 	mkdir -p $@
 	$(RUN) linkml examples \
 		--output-formats json \
