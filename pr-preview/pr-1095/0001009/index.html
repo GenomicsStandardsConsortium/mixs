@@ -410,7 +410,7 @@
 <p>Cardinality: 1</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{add_recov_methods};{date_time_stamp}$</code></p>
+<p>Structured pattern: <code>^({add_recov_methods});{date_time_stamp}$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -422,7 +422,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Polymer Addition;2018-06-21T14:30Z</td>
+<td>Polymer Addition;2018-06-21T14:30:00Z</td>
 </tr>
 </tbody>
 </table>
@@ -435,7 +435,7 @@ description: Additional (i.e. Secondary, tertiary, etc.) recovery methods deploy
   them. If &quot;other&quot; is specified, please propose entry in &quot;additional info&quot; field
 title: secondary and tertiary recovery methods and start date
 examples:
-- value: Polymer Addition;2018-06-21T14:30Z
+- value: Polymer Addition;2018-06-21T14:30:00Z
 from_schema: https://w3id.org/mixs
 keywords:
 - date
@@ -450,7 +450,7 @@ domain_of:
 range: string
 required: true
 structured_pattern:
-  syntax: ^{add_recov_methods};{date_time_stamp}$
+  syntax: ^({add_recov_methods});{date_time_stamp}$
   interpolated: true
   partial_match: true
 
