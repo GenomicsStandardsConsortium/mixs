@@ -397,6 +397,11 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../0010007/">Mims</a></td>
+<td>Metagenome or Environmental</td>
+<td>Checklist</td>
+</tr>
+<tr>
 <td><a href="../0010012/">Miuvig</a></td>
 <td>Minimum Information About an Uncultivated Virus Genome</td>
 <td>Checklist</td>
@@ -404,31 +409,6 @@
 <tr>
 <td><a href="../0010006/">MigsOrg</a></td>
 <td>Minimal Information about a Genome Sequence: organelle</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010005/">MigsVi</a></td>
-<td>Minimal Information about a Genome Sequence: virus</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010007/">Mims</a></td>
-<td>Metagenome or Environmental</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010002/">MigsEu</a></td>
-<td>Minimal Information about a Genome Sequence: eukaryote</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010004/">MigsPl</a></td>
-<td>Minimal Information about a Genome Sequence: plasmid</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010011/">Mimag</a></td>
-<td>Minimum Information About a Metagenome-Assembled Genome</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -441,6 +421,26 @@
 <td>Minimal Information about a Genome Sequence: cultured bacteria/archaea</td>
 <td>Checklist</td>
 </tr>
+<tr>
+<td><a href="../0010005/">MigsVi</a></td>
+<td>Minimal Information about a Genome Sequence: virus</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0010011/">Mimag</a></td>
+<td>Minimum Information About a Metagenome-Assembled Genome</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0010004/">MigsPl</a></td>
+<td>Minimal Information about a Genome Sequence: plasmid</td>
+<td>Checklist</td>
+</tr>
+<tr>
+<td><a href="../0010002/">MigsEu</a></td>
+<td>Minimal Information about a Genome Sequence: eukaryote</td>
+<td>Checklist</td>
+</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
@@ -450,7 +450,7 @@
 <p>Cardinality: 0..1</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{PMID}|{DOI}|{URL}$</code></p>
+<p>Structured pattern: <code>^({PMID}|{DOI}|{URL})$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -492,7 +492,7 @@ domain_of:
 - Miuvig
 range: string
 structured_pattern:
-  syntax: ^{PMID}|{DOI}|{URL}$
+  syntax: ^({PMID}|{DOI}|{URL})$
   interpolated: true
   partial_match: true
 

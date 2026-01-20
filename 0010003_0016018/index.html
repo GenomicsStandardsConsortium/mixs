@@ -1730,7 +1730,7 @@ attributes:
     required: true
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   lib_size:
@@ -1919,7 +1919,7 @@ attributes:
     required: true
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   samp_size:
@@ -1990,7 +1990,7 @@ attributes:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   alt:
@@ -2519,7 +2519,7 @@ attributes:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   project_name:
@@ -3165,7 +3165,7 @@ attributes:
     - FoodHumanFoods
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   specific_host:
@@ -3620,7 +3620,7 @@ attributes:
     recommended: true
     multivalued: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
   sop:
     name: sop
@@ -3658,7 +3658,7 @@ attributes:
     recommended: true
     multivalued: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
   plant_growth_med:
     name: plant_growth_med
@@ -3730,7 +3730,7 @@ attributes:
     recommended: true
     multivalued: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   enrichment_protocol:
@@ -3757,7 +3757,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   library_prep_kit:
@@ -3987,7 +3987,7 @@ attributes:
     - Soil
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   host_symbiont:
@@ -4723,7 +4723,7 @@ attributes:
     - PlantAssociated
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
   food_product_type:
     name: food_product_type
@@ -6042,7 +6042,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   soil_type:
@@ -6092,7 +6092,7 @@ attributes:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   soil_horizon:
@@ -6132,7 +6132,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   link_class_info:
@@ -6165,7 +6165,7 @@ attributes:
     description: Previous land use and dates
     title: history/previous land use
     examples:
-    - value: fallow; 2018-05-11:T14:30Z
+    - value: fallow;2018-05-11T14:30Z
     from_schema: https://w3id.org/mixs
     keywords:
     - history
@@ -6200,7 +6200,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   crop_rotation:
@@ -6332,7 +6332,7 @@ attributes:
     - Soil
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   annual_temp:
@@ -6596,7 +6596,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   cur_vegetation:
@@ -6636,7 +6636,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   tot_org_carb:
@@ -6691,7 +6691,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   tot_nitro_content:
@@ -6742,7 +6742,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   microbial_biomass:
@@ -6793,7 +6793,7 @@ attributes:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   heavy_metals_meth:
@@ -6816,7 +6816,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   tot_carb:

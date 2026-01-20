@@ -415,7 +415,7 @@
 <p>Cardinality: 0..1</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{PMID}|{DOI}|{URL}|{text}$</code></p>
+<p>Structured pattern: <code>^({PMID}|{DOI}|{URL}|{text})$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -452,7 +452,7 @@ domain_of:
 - SymbiontAssociated
 range: string
 structured_pattern:
-  syntax: ^{PMID}|{DOI}|{URL}|{text}$
+  syntax: ^({PMID}|{DOI}|{URL}|{text})$
   interpolated: true
   partial_match: true
 

@@ -397,13 +397,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0016010/">PlantAssociated</a></td>
-<td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
+<td><a href="../0016020/">FoodFarmEnvironment</a></td>
+<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0016020/">FoodFarmEnvironment</a></td>
-<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
+<td><a href="../0016010/">PlantAssociated</a></td>
+<td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
 <td>Extension</td>
 </tr>
 </tbody>
@@ -415,7 +415,7 @@
 <p>Cardinality: 0..1</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{PMID}|{DOI}|{URL}|{text}$</code></p>
+<p>Structured pattern: <code>^({PMID}|{DOI}|{URL}|{text})$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -450,7 +450,7 @@ domain_of:
 - PlantAssociated
 range: string
 structured_pattern:
-  syntax: ^{PMID}|{DOI}|{URL}|{text}$
+  syntax: ^({PMID}|{DOI}|{URL}|{text})$
   interpolated: true
   partial_match: true
 

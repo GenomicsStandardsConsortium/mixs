@@ -397,7 +397,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0016022/">FoodHumanFoods</a></td>
+<td><a href="../0016020/">FoodFarmEnvironment</a></td>
 <td>A collection of terms appropriate when collecting samples and performing sequ...</td>
 <td>Extension</td>
 </tr>
@@ -407,18 +407,18 @@
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0016020/">FoodFarmEnvironment</a></td>
+<td><a href="../0016021/">FoodFoodProductionFacility</a></td>
+<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
+<td>Extension</td>
+</tr>
+<tr>
+<td><a href="../0016022/">FoodHumanFoods</a></td>
 <td>A collection of terms appropriate when collecting samples and performing sequ...</td>
 <td>Extension</td>
 </tr>
 <tr>
 <td><a href="../0016018/">Agriculture</a></td>
 <td>A collection of terms appropriate when sequencing samples obtained in an agri...</td>
-<td>Extension</td>
-</tr>
-<tr>
-<td><a href="../0016021/">FoodFoodProductionFacility</a></td>
-<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
 <td>Extension</td>
 </tr>
 </tbody>
@@ -430,7 +430,7 @@
 <p>Cardinality: 0..1</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{PMID}|{DOI}|{URL}|{text}$</code></p>
+<p>Structured pattern: <code>^({PMID}|{DOI}|{URL}|{text})$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -470,7 +470,7 @@ domain_of:
 - FoodHumanFoods
 range: string
 structured_pattern:
-  syntax: ^{PMID}|{DOI}|{URL}|{text}$
+  syntax: ^({PMID}|{DOI}|{URL}|{text})$
   interpolated: true
   partial_match: true
 

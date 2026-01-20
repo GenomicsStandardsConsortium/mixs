@@ -388,8 +388,18 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0010008/">MimarksS</a></td>
-<td>Minimal Information about a Marker Sequence: survey</td>
+<td><a href="../0016019/">FoodAnimalAndAnimalFeed</a></td>
+<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
+<td>Extension</td>
+</tr>
+<tr>
+<td><a href="../0016021/">FoodFoodProductionFacility</a></td>
+<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
+<td>Extension</td>
+</tr>
+<tr>
+<td><a href="../0010007/">Mims</a></td>
+<td>Metagenome or Environmental</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -403,19 +413,14 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010005/">MigsVi</a></td>
-<td>Minimal Information about a Genome Sequence: virus</td>
+<td><a href="../0010010/">Misag</a></td>
+<td>Minimum Information About a Single Amplified Genome</td>
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010007/">Mims</a></td>
-<td>Metagenome or Environmental</td>
+<td><a href="../0010003/">MigsBa</a></td>
+<td>Minimal Information about a Genome Sequence: cultured bacteria/archaea</td>
 <td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0016019/">FoodAnimalAndAnimalFeed</a></td>
-<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
-<td>Extension</td>
 </tr>
 <tr>
 <td><a href="../0016022/">FoodHumanFoods</a></td>
@@ -423,13 +428,13 @@
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0010002/">MigsEu</a></td>
-<td>Minimal Information about a Genome Sequence: eukaryote</td>
+<td><a href="../0010009/">MimarksC</a></td>
+<td>Minimal Information about a Marker Sequence: specimen</td>
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010004/">MigsPl</a></td>
-<td>Minimal Information about a Genome Sequence: plasmid</td>
+<td><a href="../0010005/">MigsVi</a></td>
+<td>Minimal Information about a Genome Sequence: virus</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -438,13 +443,8 @@
 <td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010010/">Misag</a></td>
-<td>Minimum Information About a Single Amplified Genome</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010009/">MimarksC</a></td>
-<td>Minimal Information about a Marker Sequence: specimen</td>
+<td><a href="../0010004/">MigsPl</a></td>
+<td>Minimal Information about a Genome Sequence: plasmid</td>
 <td>Checklist</td>
 </tr>
 <tr>
@@ -453,13 +453,13 @@
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0016021/">FoodFoodProductionFacility</a></td>
-<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
-<td>Extension</td>
+<td><a href="../0010008/">MimarksS</a></td>
+<td>Minimal Information about a Marker Sequence: survey</td>
+<td>Checklist</td>
 </tr>
 <tr>
-<td><a href="../0010003/">MigsBa</a></td>
-<td>Minimal Information about a Genome Sequence: cultured bacteria/archaea</td>
+<td><a href="../0010002/">MigsEu</a></td>
+<td>Minimal Information about a Genome Sequence: eukaryote</td>
 <td>Checklist</td>
 </tr>
 </tbody>
@@ -471,7 +471,7 @@
 <p>Cardinality: 0..1</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{PMID}|{DOI}|{URL}|{text}$</code></p>
+<p>Structured pattern: <code>^({PMID}|{DOI}|{URL}|{text})$</code></p>
 </li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -506,7 +506,7 @@ domain_of:
 - FoodHumanFoods
 range: string
 structured_pattern:
-  syntax: ^{PMID}|{DOI}|{URL}|{text}$
+  syntax: ^({PMID}|{DOI}|{URL}|{text})$
   interpolated: true
   partial_match: true
 

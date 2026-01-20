@@ -1614,7 +1614,7 @@ attributes:
     - PlantAssociated
     range: string
     structured_pattern:
-      syntax: ^{text}|{PMID}|{DOI}|{URL}$
+      syntax: ^({text}|{PMID}|{DOI}|{URL})$
       interpolated: true
   fertilizer_regm:
     name: fertilizer_regm
@@ -1715,7 +1715,7 @@ attributes:
     - PlantAssociated
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
   gravity:
     name: gravity
@@ -2733,7 +2733,7 @@ attributes:
     - PlantAssociated
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   root_med_carbon:
@@ -3303,7 +3303,7 @@ attributes:
     - PlantAssociated
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   water_temp_regm:

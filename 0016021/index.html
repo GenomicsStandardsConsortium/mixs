@@ -1718,7 +1718,7 @@ attributes:
     - FoodHumanFoods
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   organism_count:
@@ -2163,7 +2163,7 @@ attributes:
     - PlantAssociated
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
   coll_site_geo_feat:
     name: coll_site_geo_feat
@@ -2601,7 +2601,7 @@ attributes:
     - FoodHumanFoods
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   num_samp_collect:
@@ -2841,7 +2841,7 @@ attributes:
     - FoodHumanFoods
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   cult_target:

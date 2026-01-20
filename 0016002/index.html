@@ -1323,7 +1323,7 @@ attributes:
     - PlantAssociated
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
   host_common_name:
     name: host_common_name
@@ -1848,7 +1848,7 @@ attributes:
     - SymbiontAssociated
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   host_substrate:

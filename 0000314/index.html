@@ -388,13 +388,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0016018/">Agriculture</a></td>
-<td>A collection of terms appropriate when sequencing samples obtained in an agri...</td>
+<td><a href="../0016012/">Soil</a></td>
+<td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0016012/">Soil</a></td>
-<td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
+<td><a href="../0016018/">Agriculture</a></td>
+<td>A collection of terms appropriate when sequencing samples obtained in an agri...</td>
 <td>Extension</td>
 </tr>
 </tbody>
@@ -406,7 +406,7 @@
 <p>Cardinality: 0..1</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{PMID}|{DOI}|{URL}$</code></p>
+<p>Structured pattern: <code>^({PMID}|{DOI}|{URL})$</code></p>
 </li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -426,7 +426,7 @@ domain_of:
 - Soil
 range: string
 structured_pattern:
-  syntax: ^{PMID}|{DOI}|{URL}$
+  syntax: ^({PMID}|{DOI}|{URL})$
   interpolated: true
   partial_match: true
 

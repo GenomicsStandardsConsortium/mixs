@@ -410,7 +410,7 @@
 <p>Cardinality: 0..1</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{text}|{PMID}|{DOI}|{URL}$</code></p>
+<p>Structured pattern: <code>^({text}|{PMID}|{DOI}|{URL})$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -446,7 +446,7 @@ domain_of:
 - PlantAssociated
 range: string
 structured_pattern:
-  syntax: ^{text}|{PMID}|{DOI}|{URL}$
+  syntax: ^({text}|{PMID}|{DOI}|{URL})$
   interpolated: true
 
 </code></pre>
