@@ -4112,7 +4112,7 @@ slots:
     slot_uri: MIXS:0000324
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   alkalinity:
@@ -4630,7 +4630,7 @@ slots:
     keywords:
       - resource
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
     slot_uri: MIXS:0000091
     multivalued: true
@@ -5635,7 +5635,7 @@ slots:
     keywords:
       - culture
     structured_pattern:
-      syntax: ^{text}|{PMID}|{DOI}|{URL}$
+      syntax: ^({text}|{PMID}|{DOI}|{URL})$
       interpolated: true
     slot_uri: MIXS:0001041
   cult_target:
@@ -5697,7 +5697,7 @@ slots:
     slot_uri: MIXS:0000314
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   date_extr_weath:
@@ -6278,7 +6278,7 @@ slots:
     slot_uri: MIXS:0001177
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   env_broad_scale:
@@ -7532,7 +7532,7 @@ slots:
     examples:
       - value: PMID:19497774  # PMID for review of infection in sickle cell disease
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
     slot_uri: MIXS:0000859
   geo_loc_name:
@@ -7831,7 +7831,7 @@ slots:
     slot_uri: MIXS:0000343
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   height_carper_fiber:
@@ -7872,7 +7872,7 @@ slots:
     slot_uri: MIXS:0000321
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   host_age:
@@ -8087,7 +8087,7 @@ slots:
     slot_uri: MIXS:0000871
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   host_height:
@@ -8794,7 +8794,7 @@ slots:
     slot_uri: MIXS:0000003
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   iw_bt_date_well:
@@ -8993,7 +8993,7 @@ slots:
     slot_uri: MIXS:0000340
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   link_class_info:
@@ -9016,7 +9016,7 @@ slots:
     slot_uri: MIXS:0000328
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   lithology:
@@ -9058,7 +9058,7 @@ slots:
     slot_uri: MIXS:0000331
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   lot_number:
@@ -9220,7 +9220,7 @@ slots:
     slot_uri: MIXS:0000339
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   microb_cult_med:
@@ -9529,7 +9529,7 @@ slots:
     slot_uri: MIXS:0000038
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   nucl_acid_ext:
@@ -9544,7 +9544,7 @@ slots:
     slot_uri: MIXS:0000037
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   nucl_acid_ext_kit:
@@ -10044,7 +10044,7 @@ slots:
     slot_uri: MIXS:0001106
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   ph_regm:
@@ -10138,7 +10138,7 @@ slots:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   plant_growth_med:
@@ -10410,7 +10410,7 @@ slots:
     slot_uri: MIXS:0000316
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   previous_land_use:
@@ -10419,7 +10419,7 @@ slots:
     description: Previous land use and dates
     title: history/previous land use
     examples:
-      - value: fallow; 2018-05-11:T14:30Z
+      - value: fallow;2018-05-11T14:30Z
     keywords:
       - history
       - land
@@ -10628,7 +10628,7 @@ slots:
     slot_uri: MIXS:0000025
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   ref_db:
@@ -10976,7 +10976,7 @@ slots:
     slot_uri: MIXS:0001061
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   root_med_carbon:
@@ -11141,7 +11141,7 @@ slots:
     slot_uri: MIXS:0001225
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   samp_collect_point:
@@ -12237,7 +12237,7 @@ slots:
     slot_uri: MIXS:0000336
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   soil_type:
@@ -12266,7 +12266,7 @@ slots:
     slot_uri: MIXS:0000334
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   solar_irradiance:
@@ -12342,7 +12342,7 @@ slots:
     keywords:
       - procedures
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
     slot_uri: MIXS:0000090
     multivalued: true
@@ -13205,7 +13205,7 @@ slots:
     slot_uri: MIXS:0001070
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   toluene:
@@ -13330,7 +13330,7 @@ slots:
     slot_uri: MIXS:0000338
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   tot_nitro_content:
@@ -13361,7 +13361,7 @@ slots:
     slot_uri: MIXS:0000337
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   tot_org_carb:
@@ -13887,7 +13887,7 @@ slots:
     slot_uri: MIXS:0000323
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   water_content:
@@ -18398,7 +18398,7 @@ classes:
         required: true
       heavy_metals_meth:
         structured_pattern:
-          syntax: ^{PMID}|{DOI}|{URL}$
+          syntax: ^({PMID}|{DOI}|{URL})$
           interpolated: true
       pool_dna_extracts:
         string_serialization: '{boolean};{integer}'
@@ -21498,9 +21498,9 @@ settings:
   amount: '[-+]?[0-9]*\.?[0-9]+'
   boolean: '(?:yes|no)'  # a non-capturing group matching either 'yes' or 'no'
   country: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
-  date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?$'
+  date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d)(:([0-5]\d))?(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?'  # ISO 8601 timestamp; seconds optional; alias of 'timestamp'
   dna_bases: '[ACGT]' 
-  DOI: '^doi:10.\d{2,9}/.*$'
+  DOI: 'doi:10.\d{2,9}/.*'
   duration: P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)
   float: '[-+]?[0-9]*\.?[0-9]+'
   integer: '[1-9][0-9]*'
@@ -21510,7 +21510,7 @@ settings:
   NCBItaxon_id: NCBITaxon:\d+
   parameters: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   particulate_matter_name: '.*'
-  PMID: ^PMID:\d+$
+  PMID: 'PMID:\d+'
   primer_adapter_codes: '[ACGTRYSWKMBDHVNI]'
   region: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   room_name: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
@@ -21522,6 +21522,7 @@ settings:
   termID: '[a-zA-Z]{2,}:[a-zA-Z0-9]\d+'
   termLabel: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   text: '.*'
+  timestamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d)(:([0-5]\d))?(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?'  # ISO 8601 timestamp; seconds optional; alias of 'date_time_stamp'
   unit: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
-  URL: ^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$
+  URL: 'https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)'
   version: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)

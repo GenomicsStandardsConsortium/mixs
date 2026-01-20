@@ -1,0 +1,15 @@
+# Invalid: URL with leading text (tests start anchor)
+mims_soil_data:
+  - samp_name: soil-invalid-url-leading
+    project_name: URL at end with leading text
+    depth: 0.3 m
+    elev: 180 m
+    env_local_scale: forest soil [ENVO:00002261]
+    env_medium: soil [ENVO:00001998]
+    env_broad_scale: forest ecosystem [ENVO:01001179]
+    samp_taxon_id: soil metagenome [NCBITaxon:410658]
+    geo_loc_name: "Germany: Bavaria, Munich"
+    collection_date: "2024-03-01T08:00:00+01:00"
+    lat_lon: 48.1 11.6
+    seq_meth: "https://www.ebi.ac.uk/ena/browser/view/PRJEB12345"
+    al_sat_meth: "see link: https://example.com/method"
