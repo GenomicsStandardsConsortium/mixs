@@ -3936,7 +3936,7 @@ slots:
       field
     title: secondary and tertiary recovery methods and start date
     examples:
-      - value: Polymer Addition;2018-06-21T14:30:00Z
+      - value: Polymer Addition;2018-06-21T14:30Z
     keywords:
       - date
       - method
@@ -21498,7 +21498,7 @@ settings:
   amount: '[-+]?[0-9]*\.?[0-9]+'
   boolean: '(?:yes|no)'  # a non-capturing group matching either 'yes' or 'no'
   country: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
-  date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?'  # ISO 8601 timestamp; alias of 'timestamp'
+  date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d)(:([0-5]\d))?(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?'  # ISO 8601 timestamp; seconds optional; alias of 'timestamp'
   dna_bases: '[ACGT]' 
   DOI: 'doi:10.\d{2,9}/.*'
   duration: P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)
@@ -21522,7 +21522,7 @@ settings:
   termID: '[a-zA-Z]{2,}:[a-zA-Z0-9]\d+'
   termLabel: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   text: '.*'
-  timestamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?'  # ISO 8601 timestamp; alias of 'date_time_stamp'
+  timestamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d)(:([0-5]\d))?(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?'  # ISO 8601 timestamp; seconds optional; alias of 'date_time_stamp'
   unit: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   URL: 'https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)'
   version: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
