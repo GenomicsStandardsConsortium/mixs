@@ -40,9 +40,9 @@ This section will be update or deleted after the release of MIxS 7.
 <a id="contributions"></a>
 ## Guidelines for Contributions and Requests
 
-Please review the [MIxS editing policies](policy.md) before making contributions to this repo.
+Please review the [MIxS editing policies](src/docs/policy.md) before making contributions to this repo.
 
-For guidance on how to request a new checklist or package, request a new term or update to an existing term, or report an issue with the MIxS code, please see [the workflows document](worklow.md).
+For guidance on how to request a new checklist or package, request a new term or update to an existing term, or report an issue with the MIxS code, please see [the workflows document](src/docs/edit_workflow.md).
 
 For guidance on how to use LinkML or contribute to the core LinkML code, please see [the LinkML documentation](https://linkml.io/linkml/).
 
