@@ -21,6 +21,64 @@ Define what they are
 
 # Releases
 
+MIxS uses an automated GitHub Actions workflow to create release PRs. This ensures consistent versioning across all files and generates schema diffs automatically.
+
+## Triggering a Release
+
+1. Go to [Actions → Create Release PR](https://github.com/GenomicsStandardsConsortium/mixs/actions/workflows/create-release-pr.yaml)
+2. Click **Run workflow**
+3. Enter parameters:
+   - `version`: New version number (e.g., `6.2.2` or `7.0.0`)
+   - `diff_old`: Old version for comparison (default: `mixs6.0.0`)
+   - `diff_new`: New version for comparison (default: `main`)
+   - `skip_tests`: Optional, for faster iteration during development
+4. Click **Run workflow**
+
+The workflow will:
+- Bump version numbers in `pyproject.toml`, `CITATION.cff`, `.zenodo.json`, and `release/README.md`
+- Run the full build and test suite
+- Generate a schema diff report in `assets/diff_results/`
+- Create a release PR with all changes
+
+## Reviewing a Release PR
+
+### Pre-merge Checklist
+- [ ] Review version numbers are correct
+- [ ] Review schema diff for unexpected changes (see `assets/diff_results/schema_comparison_results.yaml`)
+- [ ] Verify all tests passed
+- [ ] TWG approval required
+- [ ] CIG approval required (for major releases only)
+
+### Review Guidance
+If the review process identifies problems that were already merged into main by previous PRs, new issues should be opened to address them rather than blocking the release PR.
+
+## Publishing a Release (Post-merge)
+
+After the release PR is merged:
+
+1. Go to [Releases → New Release](https://github.com/GenomicsStandardsConsortium/mixs/releases/new)
+2. Click **Choose a tag** in the upper left
+3. Type the new version with `v` prefix (e.g., `v6.2.2`)
+4. Click **Create new tag: vX.Y.Z on publish**
+5. Set the target to `main`
+6. Click **Generate release notes** to auto-populate from PR titles
+7. Review and edit the release notes as needed
+8. Click **Publish release**
+
+## Release Publishing Permissions
+
+Users with release publishing permission:
+- **Admins**: @lschriml, @only1chunts
+- **Maintain**: @sujaypatil96, @turbomam
+
+## Versioning
+
+MIxS uses [semantic versioning](https://semver.org/) with three digits: `major.minor.patch`
+
+- **Major** (e.g., 6.0.0 → 7.0.0): Significant changes, breaking changes, or major milestones
+- **Minor** (e.g., 6.2.0 → 6.3.0): New features, new terms, or substantial additions
+- **Patch** (e.g., 6.2.1 → 6.2.2): Bug fixes, typo corrections, minor clarifications
+
 # LinkML Updates 
 
 # Documentation
@@ -55,12 +113,7 @@ Content copied over:
 
 - When a pull request is merged, the associated branch should be deleted and issue closed.
 
-- The GSC will create releases (ADD Details, # of PRs? on a schedule?)
-  - The GSC will use semantic versioning for releases: 3 digits (major, minor, patch)
-  - Create a project for the release or other large change set
-  - A change log for a release will be generated from all the pull requests that are part of the repository since the last release.
-
-- All issues that pertain to a release should be part of a project for that release.
+- See the [Releases](#releases) section above for the automated release workflow.
 
 - Contributions should NOT be made in a fork. 
   - If external parties make a fork, it should be tied to an issue. Forks will only be merged back in following the above criteria for branches and small changes.
