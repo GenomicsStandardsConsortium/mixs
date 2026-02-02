@@ -1,0 +1,15 @@
+# Invalid: DOI with leading text (tests start anchor)
+mims_soil_data:
+  - samp_name: soil-invalid-doi-leading
+    project_name: DOI with leading text
+    depth: 1.0 m
+    elev: 150 m
+    env_local_scale: grassland soil [ENVO:00005750]
+    env_medium: soil [ENVO:00001998]
+    env_broad_scale: grassland ecosystem [ENVO:01001206]
+    samp_taxon_id: soil metagenome [NCBITaxon:410658]
+    geo_loc_name: "USA: Kansas, Topeka"
+    collection_date: "2024-04-10T00:00:00Z"
+    lat_lon: 38.5 -98.8
+    seq_meth: "doi:10.1126/science.abc1234"
+    al_sat_meth: "method from doi:10.1016/j.soilbio.2020.107890"

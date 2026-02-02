@@ -4346,7 +4346,7 @@ slots:
     slot_uri: MIXS:0000324
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   alkalinity:
@@ -4766,8 +4766,8 @@ slots:
   aromatics_pc:
     annotations:
       Preferred_unit: percent
-    description: 'Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis
-      method that divides  crude oil  components according to their polarizability
+    description: 'Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis
+      method that divides crude oil components according to their polarizability
       and polarity. There are three main methods to obtain SARA results. The most
       popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
       https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
@@ -4782,8 +4782,8 @@ slots:
   asphaltenes_pc:
     annotations:
       Preferred_unit: percent
-    description: 'Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis
-      method that divides  crude oil  components according to their polarizability
+    description: 'Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis
+      method that divides crude oil components according to their polarizability
       and polarity. There are three main methods to obtain SARA results. The most
       popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
       https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
@@ -4864,7 +4864,7 @@ slots:
     keywords:
       - resource
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
     slot_uri: MIXS:0000091
     multivalued: true
@@ -5869,7 +5869,7 @@ slots:
     keywords:
       - culture
     structured_pattern:
-      syntax: ^{text}|{PMID}|{DOI}|{URL}$
+      syntax: ^({text}|{PMID}|{DOI}|{URL})$
       interpolated: true
     slot_uri: MIXS:0001041
   cult_target:
@@ -5931,7 +5931,7 @@ slots:
     slot_uri: MIXS:0000314
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   date_extr_weath:
@@ -6512,7 +6512,7 @@ slots:
     slot_uri: MIXS:0001177
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   env_broad_scale:
@@ -7766,7 +7766,7 @@ slots:
     examples:
       - value: PMID:19497774  # PMID for review of infection in sickle cell disease
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
     slot_uri: MIXS:0000859
   geo_loc_name:
@@ -8065,7 +8065,7 @@ slots:
     slot_uri: MIXS:0000343
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   height_carper_fiber:
@@ -8106,7 +8106,7 @@ slots:
     slot_uri: MIXS:0000321
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   host_age:
@@ -8321,7 +8321,7 @@ slots:
     slot_uri: MIXS:0000871
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   host_height:
@@ -8512,7 +8512,7 @@ slots:
       (e.g. intestines, heart).MIxS . Terms from other OBO ontologies are permissible
       as long as they reference mass/volume nouns (e.g. air, water, blood) and not
       discrete, countable entities (e.g. intestines, heart)'
-    title: host of the symbiotic host environemental medium
+    title: host of the symbiotic host environmental medium
     examples:
       - value: feces[uberon:0001988]
     keywords:
@@ -9028,7 +9028,7 @@ slots:
     slot_uri: MIXS:0000003
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   iw_bt_date_well:
@@ -9227,7 +9227,7 @@ slots:
     slot_uri: MIXS:0000340
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   link_class_info:
@@ -9250,7 +9250,7 @@ slots:
     slot_uri: MIXS:0000328
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   lithology:
@@ -9292,7 +9292,7 @@ slots:
     slot_uri: MIXS:0000331
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   lot_number:
@@ -9454,7 +9454,7 @@ slots:
     slot_uri: MIXS:0000339
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   microb_cult_med:
@@ -9763,7 +9763,7 @@ slots:
     slot_uri: MIXS:0000038
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   nucl_acid_ext:
@@ -9778,7 +9778,7 @@ slots:
     slot_uri: MIXS:0000037
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   nucl_acid_ext_kit:
@@ -10278,7 +10278,7 @@ slots:
     slot_uri: MIXS:0001106
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   ph_regm:
@@ -10372,7 +10372,7 @@ slots:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   plant_growth_med:
@@ -10555,9 +10555,9 @@ slots:
     annotations:
       Preferred_unit: degree Celsius
     description: 'Temperature at which a liquid becomes semi solid and loses its flow
-      characteristics. In crude oil a high  pour point  is generally associated with
+      characteristics. In crude oil a high pour point is generally associated with
       a high paraffin content, typically found in crude deriving from a larger proportion
-      of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)'
+      of plant material. (source: https://en.wikipedia.org/wiki/pour_point)'
     title: pour point
     slot_uri: MIXS:0000127
     range: string
@@ -10644,7 +10644,7 @@ slots:
     slot_uri: MIXS:0000316
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   previous_land_use:
@@ -10653,7 +10653,7 @@ slots:
     description: Previous land use and dates
     title: history/previous land use
     examples:
-      - value: fallow; 2018-05-11:T14:30Z
+      - value: fallow;2018-05-11T14:30Z
     keywords:
       - history
       - land
@@ -10862,7 +10862,7 @@ slots:
     slot_uri: MIXS:0000025
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   ref_db:
@@ -10973,8 +10973,8 @@ slots:
   resins_pc:
     annotations:
       Preferred_unit: percent
-    description: 'Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis
-      method that divides  crude oil  components according to their polarizability
+    description: 'Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis
+      method that divides crude oil components according to their polarizability
       and polarity. There are three main methods to obtain SARA results. The most
       popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
       https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
@@ -11210,7 +11210,7 @@ slots:
     slot_uri: MIXS:0001061
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   root_med_carbon:
@@ -11375,7 +11375,7 @@ slots:
     slot_uri: MIXS:0001225
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   samp_collect_point:
@@ -11916,8 +11916,8 @@ slots:
   saturates_pc:
     annotations:
       Preferred_unit: percent
-    description: 'Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis
-      method that divides  crude oil  components according to their polarizability
+    description: 'Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis
+      method that divides crude oil components according to their polarizability
       and polarity. There are three main methods to obtain SARA results. The most
       popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
       https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
@@ -12471,7 +12471,7 @@ slots:
     slot_uri: MIXS:0000336
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   soil_type:
@@ -12500,7 +12500,7 @@ slots:
     slot_uri: MIXS:0000334
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   solar_irradiance:
@@ -12576,7 +12576,7 @@ slots:
     keywords:
       - procedures
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
     slot_uri: MIXS:0000090
     multivalued: true
@@ -13255,9 +13255,9 @@ slots:
   tan:
     annotations:
       Preferred_unit: milligram per liter
-    description: 'Total Acid Number  (TAN) is a measurement of acidity that is determined
-      by the amount of  potassium hydroxide  in milligrams that is needed to neutralize
-      the acids in one gram of oil.  It is an important quality measurement of  crude
+    description: 'Total Acid Number (TAN) is a measurement of acidity that is determined
+      by the amount of potassium hydroxide in milligrams that is needed to neutralize
+      the acids in one gram of oil. It is an important quality measurement of crude
       oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)'
     title: total acid number
     keywords:
@@ -13439,7 +13439,7 @@ slots:
     slot_uri: MIXS:0001070
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}|{text}$
+      syntax: ^({PMID}|{DOI}|{URL}|{text})$
       interpolated: true
       partial_match: true
   toluene:
@@ -13564,7 +13564,7 @@ slots:
     slot_uri: MIXS:0000338
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   tot_nitro_content:
@@ -13595,7 +13595,7 @@ slots:
     slot_uri: MIXS:0000337
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   tot_org_carb:
@@ -13976,8 +13976,8 @@ slots:
     annotations:
       Expected_value: measurement value;measurement value
       Preferred_unit: cP at degree Celsius
-    description: A measure of oil's resistance  to gradual deformation by  shear stress  or  tensile
-      stress (e.g. 3.5 cp; 100   C)
+    description: A measure of oil's resistance to gradual deformation by shear stress or tensile
+      stress (e.g. 3.5 cp; 100 °C)
     title: viscosity
     string_serialization: '{float} {unit};{float} {unit}'
     slot_uri: MIXS:0000126
@@ -14121,7 +14121,7 @@ slots:
     slot_uri: MIXS:0000323
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   water_content:
@@ -18619,8 +18619,8 @@ classes:
       - MIxS-miscellaneous natural or artificial environment
   PlantAssociated:
     description: >-
-      A collection of terms appropriate when collecting samples and sequencing samples
-      obtained from a plant to examine it’s plant-associated microbiome.
+      A collection of terms appropriate when collecting samples and sequencing samples 
+      obtained from a plant to examine its plant-associated microbiome.
     title: plant-associated
     is_a: Extension
     slots:
@@ -18948,7 +18948,7 @@ classes:
         required: true
       heavy_metals_meth:
         structured_pattern:
-          syntax: ^{PMID}|{DOI}|{URL}$
+          syntax: ^({PMID}|{DOI}|{URL})$
           interpolated: true
       pool_dna_extracts:
         string_serialization: '{boolean};{integer}'
@@ -22295,9 +22295,9 @@ settings:
   amount: '[-+]?[0-9]*\.?[0-9]+'
   boolean: '(?:yes|no)'  # a non-capturing group matching either 'yes' or 'no'
   country: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
-  date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?$'
+  date_time_stamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d)(:([0-5]\d))?(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?'  # ISO 8601 timestamp; seconds optional; alias of 'timestamp'
   dna_bases: '[ACGT]' 
-  DOI: '^doi:10.\d{2,9}/.*$'
+  DOI: 'doi:10.\d{2,9}/.*'
   duration: P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)
   float: '[-+]?[0-9]*\.?[0-9]+'
   integer: '[1-9][0-9]*'
@@ -22307,7 +22307,7 @@ settings:
   NCBItaxon_id: NCBITaxon:\d+
   parameters: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   particulate_matter_name: '.*'
-  PMID: ^PMID:\d+$
+  PMID: 'PMID:\d+'
   primer_adapter_codes: '[ACGTRYSWKMBDHVNI]'
   region: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   room_name: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
@@ -22319,6 +22319,7 @@ settings:
   termID: '[a-zA-Z]{2,}:[a-zA-Z0-9]\d+'
   termLabel: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   text: '.*'
+  timestamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d)(:([0-5]\d))?(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?'  # ISO 8601 timestamp; seconds optional; alias of 'date_time_stamp'
   unit: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
-  URL: ^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$
+  URL: 'https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)'
   version: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
