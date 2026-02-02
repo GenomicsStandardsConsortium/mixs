@@ -26,7 +26,7 @@ The following table can guide readers to how the terminology can be linked.
 | Definition              | `description`        | A detailed human-readable explanation of what information the metadata field should be holding                                                                                 |
 | Expected value          | `range`              | The category of metadata the metadata field will hold (text, numbers, etc.)                                                                                                    |
 | Value syntax            | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                                         |
-| Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field should be filled in                                                                                |
+| Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field could be filled in                                                                                |
 | Section                 | `slot_group`         | A way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                       |
 | Section                 | `subset`             | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                 |
 | Requirement             | `recommended`        | Specifying that a metadata field is optional, but if the information is available, it is highly recommended to be filled in to increase the scientific usefulness of your data |
@@ -62,7 +62,7 @@ All MIxS terms attributes MUST be written in English.
 
 The term (slot) structured comment name (`name`) MUST be in [snake_case](https://en.wikipedia.org/wiki/Snake_case).
 
-All words must be lower case and underscores (`_`) MUST be used to separate words in the slot name.
+All words must be lower case and underscores (`_`) MUST be used to separate words in the term (slot) name.
 
 ### 2.2 (Structured comment) name length
 
@@ -74,9 +74,9 @@ The term (slot) structured comment name (`name`) MUST be unique within the MIxS 
 
 ### 2.4 (Structured comment) name descriptiveness
 
-The term (slot) structured comment name (`name`) MUST be descriptive of the data it is intended to hold.
+The term (slot) structured comment name (`name`) MUST be descriptive of the data it is intended to represent.
 
-The term (slot) structured comment name (`name`) SHOULD NOT include a checklist or extension specific prefix (e.g. `mimarks_`, `humanskin_`), to ensure re-use across different checklists and extensions.
+The term (slot) structured comment name (`name`) SHOULD NOT include a checklist or extension specific prefix (e.g. `mimarks_`, `soil_`), to ensure re-use across different checklists and extensions.
 
 ### 2.5 (Structured comment) name abbreviation
 
@@ -118,7 +118,7 @@ Examples:
 
 ### 3.1 Term expected value must be valid LinkML range types
 
-The type of data specified in the expected value (`range`) of a slot (term) MUST be in the form of a valid LinkML `range` type:
+The type of data specified in the expected value (`range`) of a term (slot) MUST be in the form of a valid LinkML `range` type:
 
 - `string`
 - `integer`
@@ -132,7 +132,7 @@ Refer to LinkML documentation for more information on [range types](https://link
 
 ### 4.1. Minimal required LinkML slot attributes
 
-A term MUST at a minimum include following LinkML slot attributes:
+A term MUST at a minimum include following attributes:
 
 - [`name`](https://linkml.io/linkml-model/latest/docs/name/) (MIxS: Structured comment name).
 - [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions) (MIxS: Definition).
@@ -260,7 +260,7 @@ It MAY ALSO include each descriptive part of the title (item) in full words (e.g
 
 ### 10.1 MIxS ID requirement
 
-The term MUST have a MIxS ID (slot_uri) that is unique within the MIxS model.
+The term MUST have a MIxS ID (slot_uri) that is unique within the MIxS ID space.
 
 ### 10.2 MIxS ID format
 
