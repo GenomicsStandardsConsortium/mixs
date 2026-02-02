@@ -26,7 +26,7 @@ The following table can guide readers to how the terminology can be linked.
 | Definition              | `description`        | A detailed human-readable explanation describing the context of the metadata field.                                                                                            |
 | Expected value          | `range`              | The category of metadata the metadata field will hold (text, numbers, etc.)                                                                                                    |
 | Value syntax            | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                                         |
-| Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field could be filled in                                                                                |
+| Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field could be filled in                                                                                 |
 | Section                 | `slot_group`         | A way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                       |
 | Section                 | `subset`             | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                 |
 | Requirement             | `recommended`        | Specifying that a metadata field is optional, but if the information is available, it is highly recommended to be filled in to increase the scientific usefulness of your data |
@@ -55,7 +55,9 @@ A LinkML slot is the object that is used to describe a MIxS term - i.e. informat
 
 All MIxS terms attributes MUST be written in English.
 
-<!-- JFY comment: may be being a bit strict here, I guess you could have 'translated name' column or something like that, should rephrase to allow those exceptions -->
+> [!NOTE]
+> This is currently only a convention.
+> If there is a community need for supporting other languages, please contact the CIG.
 
 ## 2. Term structured naming
 
@@ -71,7 +73,7 @@ The term (slot) structured comment name (`name`) must be a maximum of 20 charact
 
 ### 2.3 (Structured comment) name uniqueness
 
-The term (slot) structured comment name (`name`) MUST be unique within the MIxS LinkML model.
+The term (slot) structured comment name (`name`) MUST be unique within MIxS and the MIxS LinkML model.
 
 ### 2.4 (Structured comment) name descriptiveness
 
@@ -79,7 +81,7 @@ The term (slot) structured comment name (`name`) MUST be descriptive of the data
 
 The term (slot) structured comment name (`name`) SHOULD NOT include a checklist or extension specific prefix (e.g. `mimarks_`, `soil_`), to ensure re-use across different checklists and extensions.
 
-### 2.5 (Structured comment) name abbreviation
+### 2.5 (Structured comment) name abbreviations
 
 The term (slot) structured comment name (`name`) SHOULD be a abbreviated form of the item (title) attribute.
 
@@ -93,7 +95,24 @@ Examples:
 | sample volume or weight for DNA extraction      | `samp_vol_we_dna_ext`            |
 | collection site geographic feature              | `coll_site_geo_feat`             |
 
-### 2.6 (Structured comment) name common prefix
+### 2.6 (Structured comment) name abbreviations should be reused
+
+The term (slot) structured comment name (`name`) SHOULD reuse commonly used abbreviations when using the same word.
+
+Examples:
+
+| Word        | Abbreviation | Structured comment name / `name` |
+| ----------- | ------------ | -------------------------------- |
+| `culture`   | `cult_`      | `cult_isol_date`                 |
+| `culture`   | `cult_`      | `cult_result`                    |
+| `culture`   | `cult_`      | `cult_result_org`                |
+| `culture`   | `cult_`      | `cult_root_med`                  |
+| `dissolved` | `diss_`      | `diss_carb_dioxide`              |
+| `dissovled` | `diss_`      | `diss_hydrogen`                  |
+| `dissolved` | `diss_`      | `diss_inorg_carb`                |
+| `dissolved` | `diss_`      | `diss_inorg_nitro`               |
+
+### 2.7 (Structured comment) name common prefix of related terms
 
 When related to existing terms, the term (slot) structured comment name (`name`) SHOULD use a common prefix that allow grouping of related terms.
 
@@ -125,13 +144,13 @@ The type of data specified in the expected value (`range`) of a term (slot) MUST
 - `integer`
 - `float`
 - `boolean`
-- A MIxS defined value set ([enumeration](#143-enumerations))
+- An '[enumeration](#145-enumerations)' (i.e., controlled vocabulary') predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L28)).
 
 Refer to LinkML documentation for more information on [range types](https://linkml.io/linkml-model/latest/docs/range/).
 
-## 4. LinkML slot attributes for MIxS terms
+## 4. Attributes for MIxS terms
 
-### 4.1. Minimal required LinkML slot attributes
+### 4.1. Minimal required MIxS term (LinkML slot) attributes
 
 A term MUST at a minimum include following attributes:
 
