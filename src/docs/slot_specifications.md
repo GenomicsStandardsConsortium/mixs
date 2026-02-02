@@ -1,10 +1,10 @@
 # MIxS term specifications in the LinkML framework
 
-| Metadata         | Value                                                                               |
-| ---------------- | ----------------------------------------------------------------------------------- |
-| Version          | 0.0.1                                                                               |
-| Last updated     | 2025-05-05                                                                          |
-| Document Authors | James Fellows Yates (@jfy133), Mark Miller (@turbomam), Chris Hunter (@only1chunts), Lynn Schriml (@lschriml) |
+| Metadata         | Value                                                                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version          | 0.0.1                                                                                                                                          |
+| Last updated     | 2025-05-05                                                                                                                                     |
+| Document Authors | James Fellows Yates (@jfy133), Mark Miller (@turbomam), Chris Hunter (@only1chunts), Peter Woollard (@Woolly-at-EBI), Lynn Schriml (@lschriml) |
 
 ## Preamble
 
@@ -20,10 +20,10 @@ The following table can guide readers to how the terminology can be linked.
 | MIxS                    | LinkML               | Description                                                                                                                                                                    |
 | ----------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Term                    | `slot`               | A single field of information (metadata) that has various attributes on how this information should be represented and formatted                                               |
-| Structured comment name | `name`               | A short computer compatible key or ID for a given metadata field that is used to refer to the particular term (typically) within the schema internally [^1]                    |
-| Item                    | `title`              | A short human readable name for the metadata term/slot [^2]                                                                                                                    |
+| Structured comment name | `name`               | A short and unique computer compatible key or name for a given metadata field that is used to refer to the particular term (typically) within the schema internally [^1]       |
+| Item                    | `title`              | A short and unique human readable name for the metadata term/slot [^2]                                                                                                         |
 | MIxS ID                 | `slot_uri`           | The resolvable globally unique persistent identifier associated with a MIxS metadata field with the prefix 'MIXS' that expands to https://w3id.org/gensc/mixs/                 |
-| Definition              | `description`        | A detailed human-readable explanation of what information the metadata field should be holding                                                                                 |
+| Definition              | `description`        | A detailed human-readable explanation describing the context of the metadata field.                                                                                            |
 | Expected value          | `range`              | The category of metadata the metadata field will hold (text, numbers, etc.)                                                                                                    |
 | Value syntax            | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                                         |
 | Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field should be filled in                                                                                |
@@ -34,6 +34,7 @@ The following table can guide readers to how the terminology can be linked.
 | Occurrence              | `multivalued`        | That a term can be specified more than one time for a single term                                                                                                              |
 
 [^1]: This structured name is used by many implementers as a key e.g. NCBI and DDBJ
+
 [^2]: This title name is used by many implementers as a key e.g. ENA
 
 This document will generally use MIxS terminology, but where helpful more relevant use the LinkML equivalent, with the other form in parentheses afterwards.
