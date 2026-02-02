@@ -7,27 +7,19 @@ It is intended to act primarily as a reference guide for the Compliance and Inte
 ## Decision tree
 
 ```mermaid
----
-config:
-  flowchart:
-    subGraphTitleMargin:
-      bottom: 30
----
 graph TD;
 
     in_scope{Is the proposed term in scope of MIxS?} -- No --> close_issue_out_of_scope(["Close issue as out of scope"])
-
 
     in_scope -- Yes --> already_exists{Does the term already exist?}
 
     already_exists -- "Yes (in MIxS)" --> missing_from_extension["Is the term missing from the target MIxS extension/checklist?"] -- No --> close_issue_already_exists(["Close issue as already exists or out of scope"])
 
-      missing_from_extension -- yes --> change_issue_to_update_extension["Change issue to 'update extension/checklist'"]
+      missing_from_extension -- Yes --> change_issue_to_update_extension["Change issue to 'update extension/checklist'"]
 
    change_issue_to_update_extension --> create_branch
 
     already_exists -- "Yes (in other standard)" --> reuse_existing
-
 
     already_exists -- No --> accepted
 
@@ -43,9 +35,7 @@ graph TD;
 
     reuse_existing -- "No (out of scope)" --> close_issue_already_exists
 
-
-
-    accepted(Provisional Accepted) -- Yes --> identify_suitable_checklist_extension("Identify suitable checklist/extension for new term") --> create_branch("Create GitHub branch from issue")
+    accepted(Provisionally Accepted) -- Yes --> identify_suitable_checklist_extension("Identify suitable checklist/extension for new term") --> create_branch("Create GitHub branch from issue")
 
     create_branch --> add_to_yaml("Add new term to source MIxS schema.yaml")
 
@@ -53,7 +43,15 @@ graph TD;
 
     open_pull_request --> review("CIG and TWG Review")
 
-    review([Merge PR and close Issue as completed as officially accepted])
+    review --> final_review{Does CIG/TWG approve final version of new term?}
+
+    final_review -- Yes --> merge_and_close
+
+    final_review -- No --> update_pull_request(Update PR based on feedback)
+
+    update_pull_request --> review
+
+    merge_and_close([Merge PR and close Issue as completed as officially accepted])
 ```
 
 ## Detailed Description of Steps
