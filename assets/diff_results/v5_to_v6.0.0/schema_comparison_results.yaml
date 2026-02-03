@@ -9,7 +9,7 @@ comparison_metadata:
     source: GenomicsStandardsConsortium/mixs@mixs6.0.0:model/schema/mixs.yaml
     format: linkml
     term_count: 804
-  comparison_timestamp: '2026-02-03T13:00:18.062677'
+  comparison_timestamp: '2026-02-03T13:10:49.334107'
 term_differences:
   key_comparison:
     shared:
@@ -99,10 +99,7 @@ term_differences:
     - wga_amp_appr
     - wga_amp_kit
     only_in_old:
-    - 16s_recover
-    - 16s_recover_software
     - env_package
-    - health_disease_stat
     - investigation_type
     - submitted_to_insdc
     - votu_class_appr
@@ -395,7 +392,6 @@ term_differences:
     - host_common_name
     - host_dependence
     - host_diet
-    - host_disease_stat
     - host_dry_mass
     - host_family_relation
     - host_family_relationship
@@ -825,101 +821,12 @@ term_differences:
     - window_type
     - window_vert_pos
     - window_water_mold
-    - x_16s_recover
-    - x_16s_recover_software
     - xylene
+    expected_mappings:
+    - 16s_recover -> x_16s_recover
+    - 16s_recover_software -> x_16s_recover_software
+    - health_disease_stat -> host_disease_stat
   definition_changes:
-    single_cell_lysis_appr:
-      expected_value:
-        old: enumeration
-        new: single_cell_lysis_appr_enum
-      value_syntax:
-        old: '[chemical|enzymatic|physical|combination]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    tax_ident:
-      expected_value:
-        old: enumeration
-        new: tax_ident_enum
-      value_syntax:
-        old: '[16S rRNA gene|multi-marker approach|other]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    project_name:
-      expected_value:
-        old: ''
-        new: string
-      value_syntax:
-        old: '{text}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: investigation
-        new: ''
-    ref_db:
-      expected_value:
-        old: names, versions, and references of databases
-        new: string
-      value_syntax:
-        old: '{database};{version};{reference}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    target_subfragment:
-      expected_value:
-        old: gene fragment name
-        new: string
-      value_syntax:
-        old: '{text}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    seq_quality_check:
-      expected_value:
-        old: none or manually edited
-        new: string
-      value_syntax:
-        old: '[none|manually edited]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    lib_layout:
-      expected_value:
-        old: enumeration
-        new: lib_layout_enum
-      value_syntax:
-        old: '[paired|single|vector|other]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
     specific_host:
       item:
         old: specific host
@@ -944,9 +851,90 @@ term_differences:
       section:
         old: nucleic acid sequence source
         new: ''
-    wga_amp_kit:
+    depth:
+      item:
+        old: geographic location (depth)
+        new: depth
+      definition:
+        old: Please refer to the definitions of depth in the environmental packages
+        new: The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment
+          or soil surface, respectively. Depth can be reported as an interval for subsurface samples.
+      example:
+        old: ''
+        new: 10 meter
       expected_value:
-        old: kit name
+        old: '-'
+        new: quantity value
+      value_syntax:
+        old: '-'
+        new: ''
+      occurrence:
+        old: '0'
+        new: ''
+      section:
+        old: environment
+        new: ''
+    biotic_relationship:
+      expected_value:
+        old: enumeration
+        new: biotic_relationship_enum
+      value_syntax:
+        old: '[free living|parasitism|commensalism|symbiotic|mutualism]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: nucleic acid sequence source
+        new: ''
+    sop:
+      expected_value:
+        old: reference to SOP
+        new: string
+      value_syntax:
+        old: '{PMID}|{DOI}|{URL}'
+        new: ''
+      occurrence:
+        old: m
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    env_broad_scale:
+      definition:
+        old: 'In this field, report which major environmental system your sample or specimen came from. The systems identified
+          should have a coarse spatial grain, to provide the general environmental context of where the sampling was done
+          (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428.
+          Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel
+          [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic
+          epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical
+          moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here:
+          http://www.obofoundry.org/ontology/envo.html'
+        new: 'Report the major environmental system the sample or specimen came from. The system(s) identified should have
+          a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the
+          desert or a rainforest). We recommend using subclasses of EnvO’s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428.
+          EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
+      example:
+        old: forest biome [ENVO:01000174]
+        new: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water sample from the photic zone in middle of
+          the Atlantic Ocean
+      expected_value:
+        old: 'Add terms that identify the major environment type(s) where your sample was collected. Recommend subclasses
+          of biome [ENVO:00000428]. Multiple terms can be separated by one or more pipes e.g.:  mangrove biome [ENVO:01000181]|estuarine
+          biome [ENVO:01000020]'
+        new: string
+      value_syntax:
+        old: '{termLabel} {[termID]}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: environment
+        new: ''
+    host_pred_est_acc:
+      expected_value:
+        old: false discovery rate
         new: string
       value_syntax:
         old: '{text}'
@@ -957,18 +945,31 @@ term_differences:
       section:
         old: sequencing
         new: ''
-    pathogenicity:
+    tax_ident:
       expected_value:
-        old: names of organisms that the entity is pathogenic to
-        new: string
+        old: enumeration
+        new: tax_ident_enum
       value_syntax:
-        old: '{text}'
+        old: '[16S rRNA gene|multi-marker approach|other]'
         new: ''
       occurrence:
         old: '1'
         new: ''
       section:
-        old: nucleic acid sequence source
+        old: sequencing
+        new: ''
+    number_contig:
+      expected_value:
+        old: value
+        new: integer
+      value_syntax:
+        old: '{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
         new: ''
     source_uvig:
       expected_value:
@@ -985,12 +986,110 @@ term_differences:
       section:
         old: nucleic acid sequence source
         new: ''
-    nucl_acid_amp:
+    estimated_size:
       expected_value:
-        old: PMID, DOI or URL
+        old: number of base pairs
         new: string
       value_syntax:
-        old: '{PMID}|{DOI}|{URL}'
+        old: '{integer} bp'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: nucleic acid sequence source
+        new: ''
+    compl_score:
+      expected_value:
+        old: quality;percent completeness
+        new: string
+      value_syntax:
+        old: '[high|med|low];{percentage}'
+        new: ^(high|med|low);(0|([0-9]{1,2})|100)%$
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    sim_search_meth:
+      expected_value:
+        old: names and versions of software(s), parameters used
+        new: string
+      value_syntax:
+        old: '{software};{version};{parameters}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    lib_size:
+      expected_value:
+        old: number of clones
+        new: integer
+      value_syntax:
+        old: '{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    lat_lon:
+      expected_value:
+        old: decimal degrees
+        new: string
+      value_syntax:
+        old: '{float} {float}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: environment
+        new: ''
+    elev:
+      definition:
+        old: Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level.
+          Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above
+          the surface, such as an aircraft in flight or a spacecraft in orbit
+        new: Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level.
+          Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above
+          the surface, such as an aircraft in flight or a spacecraft in orbit.
+      expected_value:
+        old: measurement value
+        new: quantity value
+      value_syntax:
+        old: '{float} {unit}'
+        new: ''
+      occurrence:
+        old: '0'
+        new: ''
+      section:
+        old: environment
+        new: ''
+    ref_db:
+      expected_value:
+        old: names, versions, and references of databases
+        new: string
+      value_syntax:
+        old: '{database};{version};{reference}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    annot:
+      expected_value:
+        old: name of tool or pipeline used, or annotation source description
+        new: string
+      value_syntax:
+        old: '{text}'
         new: ''
       occurrence:
         old: '1'
@@ -1011,32 +1110,139 @@ term_differences:
       section:
         old: sequencing
         new: ''
-    size_frac:
+    contam_score:
+      example:
+        old: '0.01'
+        new: 1%
       expected_value:
-        old: filter size value range
+        old: value
         new: string
       value_syntax:
-        old: '{float}-{float} {unit}'
+        old: '{float} percentage'
         new: ''
       occurrence:
         old: '1'
         new: ''
       section:
-        old: nucleic acid sequence source
+        old: sequencing
         new: ''
-    propagation:
+    adapters:
+      expected_value:
+        old: adapter A and B sequence
+        new: string
+      value_syntax:
+        old: '{dna};{dna}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    nucl_acid_amp:
+      expected_value:
+        old: PMID, DOI or URL
+        new: string
+      value_syntax:
+        old: '{PMID}|{DOI}|{URL}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    env_local_scale:
       definition:
-        old: 'This field is specific to different taxa. For phages: lytic/lysogenic, for plasmids: incompatibility group,
-          for eukaryotes: sexual/asexual (Note: there is the strong opinion to name phage propagation obligately lytic or
-          temperate, therefore we also give this choice'
-        new: 'The type of reproduction from the parent stock. Values for this field is specific to different taxa. For phage
-          or virus: lytic/lysogenic/temperate/obligately lytic. For plasmids: incompatibility group. For eukaryotes: sexual/asexual.'
+        old: 'In this field, report the entity or entities which are in your sample or specimen’s local vicinity and which
+          you believe have significant causal influences on your sample or specimen. Please use terms that are present in
+          ENVO and which are of smaller spatial grain than your entry for env_broad_scale. Format (one term): termLabel [termID];
+          Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a pooled
+          sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter
+          layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]. If needed, request new terms on the ENVO
+          tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
+        new: 'Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have
+          significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial
+          grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which
+          interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field:
+          https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
+      example:
+        old: litter layer [ENVO:01000338]
+        new: 'litter layer [ENVO:01000338]; Annotating a pooled sample taken from various vegetation layers in a forest consider:
+          canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub
+          layer [ENVO:01000336].'
       expected_value:
-        old: 'for virus: lytic, lysogenic, temperate, obligately lytic; for plasmid: incompatibility group; for eukaryote:
-          asexual, sexual'
+        old: 'Add terms that identify environmental entities having causal influences upon the entity at time of sampling,
+          multiple terms can be separated by pipes, e.g.:  shoreline [ENVO:00000486]|intertidal zone [ENVO:00000316]'
         new: string
       value_syntax:
-        old: '{text}'
+        old: '{termLabel} {[termID]}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: environment
+        new: ''
+    contam_screen_param:
+      expected_value:
+        old: enumeration;value or name
+        new: string
+      value_syntax:
+        old: '[ref db|kmer|coverage|combination];{text|integer}'
+        new: ^(ref db|kmer|coverage|combination);.+
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    lib_reads_seqd:
+      expected_value:
+        old: number of reads sequenced
+        new: integer
+      value_syntax:
+        old: '{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    wga_amp_appr:
+      expected_value:
+        old: enumeration
+        new: string
+      value_syntax:
+        old: '[pcr based|mda based]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    pred_genome_struc:
+      expected_value:
+        old: enumeration
+        new: pred_genome_struc_enum
+      value_syntax:
+        old: '[segmented|non-segmented|undetermined]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    virus_enrich_appr:
+      expected_value:
+        old: enumeration
+        new: virus_enrich_appr_enum
+      value_syntax:
+        old: '[filtration|ultrafiltration|centrifugation|ultracentrifugation|PEG Precipitation|FeCl Precipitation|CsCl density
+          gradient|DNAse|RNAse|targeted sequence capture|other|none]'
         new: ''
       occurrence:
         old: '1'
@@ -1044,12 +1250,12 @@ term_differences:
       section:
         old: nucleic acid sequence source
         new: ''
-    lib_vector:
+    detec_type:
       expected_value:
-        old: vector
+        old: enumeration
         new: string
       value_syntax:
-        old: '{text}'
+        old: '[independent sequence (UViG)|provirus (UpViG)]'
         new: ''
       occurrence:
         old: '1'
@@ -1086,18 +1292,34 @@ term_differences:
       section:
         old: environment
         new: ''
-    feat_pred:
+    tax_class:
       expected_value:
-        old: names and versions of software(s), parameters used
+        old: classification method, database name, and other parameters
         new: string
       value_syntax:
-        old: '{software};{version};{parameters}'
+        old: '{text}'
         new: ''
       occurrence:
         old: '1'
         new: ''
       section:
         old: sequencing
+        new: ''
+    host_spec_range:
+      definition:
+        old: The NCBI taxonomy identifier of the specific host if it is known
+        new: The range and diversity of host species that an organism is capable of infecting, defined by NCBI taxonomy identifier.
+      expected_value:
+        old: NCBI taxid
+        new: integer
+      value_syntax:
+        old: '{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: nucleic acid sequence source
         new: ''
     assembly_software:
       expected_value:
@@ -1125,12 +1347,12 @@ term_differences:
       section:
         old: sequencing
         new: ''
-    contam_screen_input:
+    compl_software:
       expected_value:
-        old: enumeration
+        old: names and versions of software(s) used
         new: string
       value_syntax:
-        old: '[reads| contigs]'
+        old: '{software};{version}'
         new: ''
       occurrence:
         old: '1'
@@ -1138,9 +1360,151 @@ term_differences:
       section:
         old: sequencing
         new: ''
-    extrachrom_elements:
+    bin_param:
       expected_value:
-        old: number of extrachromosmal elements
+        old: enumeration
+        new: bin_param_enum
+      value_syntax:
+        old: '[homology search|kmer|coverage|codon usage|combination]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    single_cell_lysis_prot:
+      expected_value:
+        old: kit, protocol name
+        new: string
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    samp_collect_device:
+      item:
+        old: sample collection device or method
+        new: sample collection device
+      definition:
+        old: The method or device employed for collecting the sample
+        new: The device used to collect an environmental sample. This field accepts terms listed under environmental sampling
+          device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device
+          (http://purl.obolibrary.org/obo/GENEPIO_0002094).
+      example:
+        old: biopsy, niskin bottle, push core
+        new: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
+      expected_value:
+        old: type name
+        new: string
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: nucleic acid sequence source
+        new: ''
+    pcr_cond:
+      expected_value:
+        old: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
+          cycles
+        new: string
+      value_syntax:
+        old: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
+          cycles
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    samp_size:
+      definition:
+        old: Amount or size of sample (volume, mass or area) that was collected
+        new: The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.
+      expected_value:
+        old: measurement value
+        new: quantity value
+      value_syntax:
+        old: '{float} {unit}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      preferred_unit:
+        old: millliter, gram, milligram, liter
+        new: ''
+      section:
+        old: nucleic acid sequence source
+        new: ''
+    mag_cov_software:
+      expected_value:
+        old: enumeration
+        new: mag_cov_software_enum
+      value_syntax:
+        old: '[bwa|bbmap|bowtie|other]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    seq_quality_check:
+      expected_value:
+        old: none or manually edited
+        new: string
+      value_syntax:
+        old: '[none|manually edited]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    host_pred_appr:
+      expected_value:
+        old: enumeration
+        new: host_pred_appr_enum
+      value_syntax:
+        old: '[provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co-occurrence|combination|other]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    alt:
+      definition:
+        old: Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric
+          balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object
+          which is above the earth‚Äôs surface. In this context, the altitude measurement is the vertical distance between
+          the earth's surface above sea level and the sampled position in the air
+        new: Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric
+          balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object
+          which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the
+          earth's surface above sea level and the sampled position in the air
+      expected_value:
+        old: measurement value
+        new: quantity value
+      value_syntax:
+        old: '{float} {unit}'
+        new: ''
+      section:
+        old: environment
+        new: ''
+    num_replicons:
+      expected_value:
+        old: 'for eukaryotes and bacteria: chromosomes (haploid count); for viruses: segments'
         new: integer
       value_syntax:
         old: '{integer}'
@@ -1151,22 +1515,158 @@ term_differences:
       section:
         old: nucleic acid sequence source
         new: ''
-    lat_lon:
+    nucl_acid_ext:
       expected_value:
-        old: decimal degrees
+        old: PMID, DOI or URL
         new: string
       value_syntax:
-        old: '{float} {float}'
+        old: '{PMID}|{DOI}|{URL}'
         new: ''
       occurrence:
         old: '1'
         new: ''
       section:
-        old: environment
+        old: sequencing
+        new: ''
+    lib_layout:
+      expected_value:
+        old: enumeration
+        new: lib_layout_enum
+      value_syntax:
+        old: '[paired|single|vector|other]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    source_mat_id:
+      expected_value:
+        old: 'for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary
+          identifer'
+        new: string
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: m
+        new: ''
+      section:
+        old: nucleic acid sequence source
+        new: ''
+    single_cell_lysis_appr:
+      expected_value:
+        old: enumeration
+        new: single_cell_lysis_appr_enum
+      value_syntax:
+        old: '[chemical|enzymatic|physical|combination]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    ploidy:
+      expected_value:
+        old: PATO
+        new: string
+      value_syntax:
+        old: '{termLabel} {[termID]}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: nucleic acid sequence source
+        new: ''
+    experimental_factor:
+      expected_value:
+        old: text or EFO and/or OBI
+        new: string
+      value_syntax:
+        old: '{termLabel} {[termID]}|{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: investigation
         new: ''
     isol_growth_condt:
       expected_value:
         old: PMID,DOI or URL
+        new: string
+      value_syntax:
+        old: '{PMID}|{DOI}|{URL}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: nucleic acid sequence source
+        new: ''
+    chimera_check:
+      item:
+        old: chimera check
+        new: chimera check software
+      definition:
+        old: A chimeric sequence, or chimera for short, is a sequence comprised of two or more phylogenetically distinct parent
+          sequences. Chimeras are usually PCR artifacts thought to occur when a prematurely terminated amplicon reanneals
+          to a foreign DNA strand and is copied to completion in the following PCR cycles. The point at which the chimeric
+          sequence changes from one parent to the next is called the breakpoint or conversion point
+        new: Tool(s) used for chimera checking, including version number and parameters, to discover and remove chimeric sequences.
+          A chimeric sequence is comprised of two or more phylogenetically distinct parent sequences.
+      expected_value:
+        old: name and version of software, parameters used
+        new: string
+      value_syntax:
+        old: '{software};{version};{parameters}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    pcr_primers:
+      expected_value:
+        old: 'FWD: forward primer sequence;REV:reverse primer sequence'
+        new: string
+      value_syntax:
+        old: FWD:{dna};REV:{dna}
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    samp_mat_process:
+      definition:
+        old: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
+          OBI, for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI
+        new: A brief description of any processing applied to the sample during or after retrieving the sample from environment,
+          or a link to the relevant protocol(s) performed.
+      expected_value:
+        old: text or OBI
+        new: string
+      value_syntax:
+        old: '{text}|{termLabel} {[termID]}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: nucleic acid sequence source
+        new: ''
+    ref_biomaterial:
+      definition:
+        old: Primary publication if isolated before genome publication; otherwise, primary genome report
+        new: Primary publication if isolated before genome publication; otherwise, primary genome report.
+      expected_value:
+        old: PMID, DOI or URL
         new: string
       value_syntax:
         old: '{PMID}|{DOI}|{URL}'
@@ -1208,246 +1708,9 @@ term_differences:
       section:
         old: environment
         new: ''
-    adapters:
+    extrachrom_elements:
       expected_value:
-        old: adapter A and B sequence
-        new: string
-      value_syntax:
-        old: '{dna};{dna}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    nucl_acid_ext:
-      expected_value:
-        old: PMID, DOI or URL
-        new: string
-      value_syntax:
-        old: '{PMID}|{DOI}|{URL}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    single_cell_lysis_prot:
-      expected_value:
-        old: kit, protocol name
-        new: string
-      value_syntax:
-        old: '{text}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    url:
-      definition:
-        old: ''
-        new: A related resource that is referenced, cited, or otherwise associated to the sequence.
-      example:
-        old: http://www.earthmicrobiome.org/
-        new: ''
-      expected_value:
-        old: URL
-        new: string
-      value_syntax:
-        old: '{URL}'
-        new: ''
-      occurrence:
-        old: m
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    number_contig:
-      expected_value:
-        old: value
-        new: integer
-      value_syntax:
-        old: '{integer}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    contam_screen_param:
-      expected_value:
-        old: enumeration;value or name
-        new: string
-      value_syntax:
-        old: '[ref db|kmer|coverage|combination];{text|integer}'
-        new: ^(ref db|kmer|coverage|combination);.+
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    seq_meth:
-      definition:
-        old: Sequencing method used; e.g. Sanger, pyrosequencing, ABI-solid
-        new: Sequencing machine used. Where possible the term should be taken from the OBI list of DNA sequencers (http://purl.obolibrary.org/obo/OBI_0400103).
-      example:
-        old: Illumina HiSeq 1500
-        new: 454 Genome Sequencer FLX [OBI:0000702]
-      expected_value:
-        old: enumeration
-        new: string
-      value_syntax:
-        old: '[MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina
-          Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina
-          HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina
-          HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB
-          SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic
-          Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent
-          S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL
-          Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    compl_software:
-      expected_value:
-        old: names and versions of software(s) used
-        new: string
-      value_syntax:
-        old: '{software};{version}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    sop:
-      expected_value:
-        old: reference to SOP
-        new: string
-      value_syntax:
-        old: '{PMID}|{DOI}|{URL}'
-        new: ''
-      occurrence:
-        old: m
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    lib_screen:
-      expected_value:
-        old: screening strategy name
-        new: string
-      value_syntax:
-        old: '{text}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    assembly_qual:
-      expected_value:
-        old: enumeration
-        new: assembly_qual_enum
-      value_syntax:
-        old: '[Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality draft genome|Genome fragment(s)]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    subspecf_gen_lin:
-      definition:
-        old: This should provide further information about the genetic distinctness of the sequenced organism by recording
-          additional information e.g. serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group
-          I plasmid. It can also contain alternative taxonomic information. It should contain both the lineage name, and the
-          lineage rank, i.e. biovar:abc123
-        new: Information about the genetic distinctness of the sequenced organism below the subspecies level, e.g., serovar,
-          serotype, biotype, ecotype, or any relevant genetic typing schemes like Group I plasmid. Subspecies should not be
-          recorded in this term, but in the NCBI taxonomy. Supply both the lineage name and the lineage rank separated by
-          a colon, e.g., biovar:abc123.
-      expected_value:
-        old: genetic lineage below lowest rank of NCBI taxonomy, which is subspecies, e.g. serovar, biotype, ecotype
-        new: string
-      value_syntax:
-        old: '{rank name}:{text}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: nucleic acid sequence source
-        new: ''
-    source_mat_id:
-      expected_value:
-        old: 'for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary
-          identifer'
-        new: string
-      value_syntax:
-        old: '{text}'
-        new: ''
-      occurrence:
-        old: m
-        new: ''
-      section:
-        old: nucleic acid sequence source
-        new: ''
-    lib_size:
-      expected_value:
-        old: number of clones
-        new: integer
-      value_syntax:
-        old: '{integer}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    chimera_check:
-      item:
-        old: chimera check
-        new: chimera check software
-      definition:
-        old: A chimeric sequence, or chimera for short, is a sequence comprised of two or more phylogenetically distinct parent
-          sequences. Chimeras are usually PCR artifacts thought to occur when a prematurely terminated amplicon reanneals
-          to a foreign DNA strand and is copied to completion in the following PCR cycles. The point at which the chimeric
-          sequence changes from one parent to the next is called the breakpoint or conversion point
-        new: Tool(s) used for chimera checking, including version number and parameters, to discover and remove chimeric sequences.
-          A chimeric sequence is comprised of two or more phylogenetically distinct parent sequences.
-      expected_value:
-        old: name and version of software, parameters used
-        new: string
-      value_syntax:
-        old: '{software};{version};{parameters}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    host_spec_range:
-      definition:
-        old: The NCBI taxonomy identifier of the specific host if it is known
-        new: The range and diversity of host species that an organism is capable of infecting, defined by NCBI taxonomy identifier.
-      expected_value:
-        old: NCBI taxid
+        old: number of extrachromosmal elements
         new: integer
       value_syntax:
         old: '{integer}'
@@ -1458,233 +1721,12 @@ term_differences:
       section:
         old: nucleic acid sequence source
         new: ''
-    rel_to_oxygen:
-      expected_value:
-        old: enumeration
-        new: rel_to_oxygen_enum
-      value_syntax:
-        old: '[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|obligate anaerobe]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: nucleic acid sequence source
-        new: ''
-    contam_score:
-      example:
-        old: '0.01'
-        new: 1%
-      expected_value:
-        old: value
-        new: string
-      value_syntax:
-        old: '{float} percentage'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    assembly_name:
-      expected_value:
-        old: name and version of assembly
-        new: string
-      value_syntax:
-        old: '{text} {text}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    trna_ext_software:
-      expected_value:
-        old: names and versions of software(s), parameters used
-        new: string
-      value_syntax:
-        old: '{software};{version};{parameters}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    depth:
-      item:
-        old: geographic location (depth)
-        new: depth
-      definition:
-        old: Please refer to the definitions of depth in the environmental packages
-        new: The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment
-          or soil surface, respectively. Depth can be reported as an interval for subsurface samples.
-      example:
-        old: ''
-        new: 10 meter
-      expected_value:
-        old: '-'
-        new: quantity value
-      value_syntax:
-        old: '-'
-        new: ''
-      occurrence:
-        old: '0'
-        new: ''
-      section:
-        old: environment
-        new: ''
-    mag_cov_software:
-      expected_value:
-        old: enumeration
-        new: mag_cov_software_enum
-      value_syntax:
-        old: '[bwa|bbmap|bowtie|other]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    detec_type:
+    contam_screen_input:
       expected_value:
         old: enumeration
         new: string
       value_syntax:
-        old: '[independent sequence (UViG)|provirus (UpViG)]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    annot:
-      expected_value:
-        old: name of tool or pipeline used, or annotation source description
-        new: string
-      value_syntax:
-        old: '{text}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    reassembly_bin:
-      expected_value:
-        old: boolean
-        new: string
-      value_syntax:
-        old: '{boolean}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    alt:
-      definition:
-        old: Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric
-          balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object
-          which is above the earth‚Äôs surface. In this context, the altitude measurement is the vertical distance between
-          the earth's surface above sea level and the sampled position in the air
-        new: Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric
-          balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object
-          which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the
-          earth's surface above sea level and the sampled position in the air
-      expected_value:
-        old: measurement value
-        new: quantity value
-      value_syntax:
-        old: '{float} {unit}'
-        new: ''
-      section:
-        old: environment
-        new: ''
-    tax_class:
-      expected_value:
-        old: classification method, database name, and other parameters
-        new: string
-      value_syntax:
-        old: '{text}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    host_pred_appr:
-      expected_value:
-        old: enumeration
-        new: host_pred_appr_enum
-      value_syntax:
-        old: '[provirus|host sequence similarity|CRISPR spacer match|kmer similarity|co-occurrence|combination|other]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    pcr_cond:
-      expected_value:
-        old: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
-          cycles
-        new: string
-      value_syntax:
-        old: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
-          cycles
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    estimated_size:
-      expected_value:
-        old: number of base pairs
-        new: string
-      value_syntax:
-        old: '{integer} bp'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: nucleic acid sequence source
-        new: ''
-    samp_mat_process:
-      definition:
-        old: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
-          OBI, for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI
-        new: A brief description of any processing applied to the sample during or after retrieving the sample from environment,
-          or a link to the relevant protocol(s) performed.
-      expected_value:
-        old: text or OBI
-        new: string
-      value_syntax:
-        old: '{text}|{termLabel} {[termID]}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: nucleic acid sequence source
-        new: ''
-    pcr_primers:
-      expected_value:
-        old: 'FWD: forward primer sequence;REV:reverse primer sequence'
-        new: string
-      value_syntax:
-        old: FWD:{dna};REV:{dna}
+        old: '[reads| contigs]'
         new: ''
       occurrence:
         old: '1'
@@ -1715,23 +1757,34 @@ term_differences:
       section:
         old: environment
         new: ''
-    samp_collect_device:
-      item:
-        old: sample collection device or method
-        new: sample collection device
-      definition:
-        old: The method or device employed for collecting the sample
-        new: The device used to collect an environmental sample. This field accepts terms listed under environmental sampling
-          device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device
-          (http://purl.obolibrary.org/obo/GENEPIO_0002094).
-      example:
-        old: biopsy, niskin bottle, push core
-        new: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
+    reassembly_bin:
       expected_value:
-        old: type name
+        old: boolean
         new: string
       value_syntax:
-        old: '{text}'
+        old: '{boolean}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    subspecf_gen_lin:
+      definition:
+        old: This should provide further information about the genetic distinctness of the sequenced organism by recording
+          additional information e.g. serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group
+          I plasmid. It can also contain alternative taxonomic information. It should contain both the lineage name, and the
+          lineage rank, i.e. biovar:abc123
+        new: Information about the genetic distinctness of the sequenced organism below the subspecies level, e.g., serovar,
+          serotype, biotype, ecotype, or any relevant genetic typing schemes like Group I plasmid. Subspecies should not be
+          recorded in this term, but in the NCBI taxonomy. Supply both the lineage name and the lineage rank separated by
+          a colon, e.g., biovar:abc123.
+      expected_value:
+        old: genetic lineage below lowest rank of NCBI taxonomy, which is subspecies, e.g. serovar, biotype, ecotype
+        new: string
+      value_syntax:
+        old: '{rank name}:{text}'
         new: ''
       occurrence:
         old: '1'
@@ -1739,41 +1792,22 @@ term_differences:
       section:
         old: nucleic acid sequence source
         new: ''
-    env_broad_scale:
-      definition:
-        old: 'In this field, report which major environmental system your sample or specimen came from. The systems identified
-          should have a coarse spatial grain, to provide the general environmental context of where the sampling was done
-          (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428.
-          Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel
-          [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic
-          epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical
-          moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here:
-          http://www.obofoundry.org/ontology/envo.html'
-        new: 'Report the major environmental system the sample or specimen came from. The system(s) identified should have
-          a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the
-          desert or a rainforest). We recommend using subclasses of EnvO’s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428.
-          EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
-      example:
-        old: forest biome [ENVO:01000174]
-        new: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water sample from the photic zone in middle of
-          the Atlantic Ocean
+    decontam_software:
       expected_value:
-        old: 'Add terms that identify the major environment type(s) where your sample was collected. Recommend subclasses
-          of biome [ENVO:00000428]. Multiple terms can be separated by one or more pipes e.g.:  mangrove biome [ENVO:01000181]|estuarine
-          biome [ENVO:01000020]'
-        new: string
+        old: enumeration
+        new: decontam_software_enum
       value_syntax:
-        old: '{termLabel} {[termID]}'
+        old: '[checkm/refinem|anvi''o|prodege|bbtools:decontaminate.sh|acdc|combination]'
         new: ''
       occurrence:
         old: '1'
         new: ''
       section:
-        old: environment
+        old: sequencing
         new: ''
-    sim_search_meth:
+    vir_ident_software:
       expected_value:
-        old: names and versions of software(s), parameters used
+        old: software name, version and relevant parameters
         new: string
       value_syntax:
         old: '{software};{version};{parameters}'
@@ -1784,41 +1818,9 @@ term_differences:
       section:
         old: sequencing
         new: ''
-    env_local_scale:
-      definition:
-        old: 'In this field, report the entity or entities which are in your sample or specimen’s local vicinity and which
-          you believe have significant causal influences on your sample or specimen. Please use terms that are present in
-          ENVO and which are of smaller spatial grain than your entry for env_broad_scale. Format (one term): termLabel [termID];
-          Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a pooled
-          sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter
-          layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]. If needed, request new terms on the ENVO
-          tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
-        new: 'Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have
-          significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial
-          grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which
-          interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field:
-          https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-      example:
-        old: litter layer [ENVO:01000338]
-        new: 'litter layer [ENVO:01000338]; Annotating a pooled sample taken from various vegetation layers in a forest consider:
-          canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub
-          layer [ENVO:01000336].'
+    target_gene:
       expected_value:
-        old: 'Add terms that identify environmental entities having causal influences upon the entity at time of sampling,
-          multiple terms can be separated by pipes, e.g.:  shoreline [ENVO:00000486]|intertidal zone [ENVO:00000316]'
-        new: string
-      value_syntax:
-        old: '{termLabel} {[termID]}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: environment
-        new: ''
-    host_pred_est_acc:
-      expected_value:
-        old: false discovery rate
+        old: gene name
         new: string
       value_syntax:
         old: '{text}'
@@ -1829,80 +1831,18 @@ term_differences:
       section:
         old: sequencing
         new: ''
-    wga_amp_appr:
+    pathogenicity:
       expected_value:
-        old: enumeration
+        old: names of organisms that the entity is pathogenic to
         new: string
       value_syntax:
-        old: '[pcr based|mda based]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    experimental_factor:
-      expected_value:
-        old: text or EFO and/or OBI
-        new: string
-      value_syntax:
-        old: '{termLabel} {[termID]}|{text}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: investigation
-        new: ''
-    ref_biomaterial:
-      definition:
-        old: Primary publication if isolated before genome publication; otherwise, primary genome report
-        new: Primary publication if isolated before genome publication; otherwise, primary genome report.
-      expected_value:
-        old: PMID, DOI or URL
-        new: string
-      value_syntax:
-        old: '{PMID}|{DOI}|{URL}'
+        old: '{text}'
         new: ''
       occurrence:
         old: '1'
         new: ''
       section:
         old: nucleic acid sequence source
-        new: ''
-    num_replicons:
-      expected_value:
-        old: 'for eukaryotes and bacteria: chromosomes (haploid count); for viruses: segments'
-        new: integer
-      value_syntax:
-        old: '{integer}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: nucleic acid sequence source
-        new: ''
-    elev:
-      definition:
-        old: Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level.
-          Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above
-          the surface, such as an aircraft in flight or a spacecraft in orbit
-        new: Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level.
-          Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above
-          the surface, such as an aircraft in flight or a spacecraft in orbit.
-      expected_value:
-        old: measurement value
-        new: quantity value
-      value_syntax:
-        old: '{float} {unit}'
-        new: ''
-      occurrence:
-        old: '0'
-        new: ''
-      section:
-        old: environment
         new: ''
     trnas:
       expected_value:
@@ -1910,6 +1850,65 @@ term_differences:
         new: integer
       value_syntax:
         old: '{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    lib_screen:
+      expected_value:
+        old: screening strategy name
+        new: string
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    propagation:
+      definition:
+        old: 'This field is specific to different taxa. For phages: lytic/lysogenic, for plasmids: incompatibility group,
+          for eukaryotes: sexual/asexual (Note: there is the strong opinion to name phage propagation obligately lytic or
+          temperate, therefore we also give this choice'
+        new: 'The type of reproduction from the parent stock. Values for this field is specific to different taxa. For phage
+          or virus: lytic/lysogenic/temperate/obligately lytic. For plasmids: incompatibility group. For eukaryotes: sexual/asexual.'
+      expected_value:
+        old: 'for virus: lytic, lysogenic, temperate, obligately lytic; for plasmid: incompatibility group; for eukaryote:
+          asexual, sexual'
+        new: string
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: nucleic acid sequence source
+        new: ''
+    wga_amp_kit:
+      expected_value:
+        old: kit name
+        new: string
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    target_subfragment:
+      expected_value:
+        old: gene fragment name
+        new: string
+      value_syntax:
+        old: '{text}'
         new: ''
       occurrence:
         old: '1'
@@ -1937,71 +1936,6 @@ term_differences:
       section:
         old: sequencing
         new: ''
-    pred_genome_struc:
-      expected_value:
-        old: enumeration
-        new: pred_genome_struc_enum
-      value_syntax:
-        old: '[segmented|non-segmented|undetermined]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    vir_ident_software:
-      expected_value:
-        old: software name, version and relevant parameters
-        new: string
-      value_syntax:
-        old: '{software};{version};{parameters}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    lib_reads_seqd:
-      expected_value:
-        old: number of reads sequenced
-        new: integer
-      value_syntax:
-        old: '{integer}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    target_gene:
-      expected_value:
-        old: gene name
-        new: string
-      value_syntax:
-        old: '{text}'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    compl_score:
-      expected_value:
-        old: quality;percent completeness
-        new: string
-      value_syntax:
-        old: '[high|med|low];{percentage}'
-        new: ^(high|med|low);(0|([0-9]{1,2})|100)%$
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
     compl_appr:
       definition:
         old: The approach used to determine the completeness of a given SAG or MAG, which would typically make use of a set
@@ -2022,18 +1956,128 @@ term_differences:
       section:
         old: sequencing
         new: ''
-    ploidy:
+    assembly_name:
       expected_value:
-        old: PATO
+        old: name and version of assembly
         new: string
       value_syntax:
-        old: '{termLabel} {[termID]}'
+        old: '{text} {text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    feat_pred:
+      expected_value:
+        old: names and versions of software(s), parameters used
+        new: string
+      value_syntax:
+        old: '{software};{version};{parameters}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    rel_to_oxygen:
+      expected_value:
+        old: enumeration
+        new: rel_to_oxygen_enum
+      value_syntax:
+        old: '[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|obligate anaerobe]'
         new: ''
       occurrence:
         old: '1'
         new: ''
       section:
         old: nucleic acid sequence source
+        new: ''
+    lib_vector:
+      expected_value:
+        old: vector
+        new: string
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    url:
+      definition:
+        old: ''
+        new: A related resource that is referenced, cited, or otherwise associated to the sequence.
+      example:
+        old: http://www.earthmicrobiome.org/
+        new: ''
+      expected_value:
+        old: URL
+        new: string
+      value_syntax:
+        old: '{URL}'
+        new: ''
+      occurrence:
+        old: m
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    size_frac:
+      expected_value:
+        old: filter size value range
+        new: string
+      value_syntax:
+        old: '{float}-{float} {unit}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: nucleic acid sequence source
+        new: ''
+    seq_meth:
+      definition:
+        old: Sequencing method used; e.g. Sanger, pyrosequencing, ABI-solid
+        new: Sequencing machine used. Where possible the term should be taken from the OBI list of DNA sequencers (http://purl.obolibrary.org/obo/OBI_0400103).
+      example:
+        old: Illumina HiSeq 1500
+        new: 454 Genome Sequencer FLX [OBI:0000702]
+      expected_value:
+        old: enumeration
+        new: string
+      value_syntax:
+        old: '[MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina
+          Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina
+          HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina
+          HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB
+          SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic
+          Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent
+          S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL
+          Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
+        new: ''
+    assembly_qual:
+      expected_value:
+        old: enumeration
+        new: assembly_qual_enum
+      value_syntax:
+        old: '[Finished genome|High-quality draft genome|Medium-quality draft genome|Low-quality draft genome|Genome fragment(s)]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: sequencing
         new: ''
     trophic_level:
       expected_value:
@@ -2048,45 +2092,31 @@ term_differences:
       section:
         old: nucleic acid sequence source
         new: ''
-    decontam_software:
+    project_name:
       expected_value:
-        old: enumeration
-        new: decontam_software_enum
+        old: ''
+        new: string
       value_syntax:
-        old: '[checkm/refinem|anvi''o|prodege|bbtools:decontaminate.sh|acdc|combination]'
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: investigation
+        new: ''
+    trna_ext_software:
+      expected_value:
+        old: names and versions of software(s), parameters used
+        new: string
+      value_syntax:
+        old: '{software};{version};{parameters}'
         new: ''
       occurrence:
         old: '1'
         new: ''
       section:
         old: sequencing
-        new: ''
-    bin_param:
-      expected_value:
-        old: enumeration
-        new: bin_param_enum
-      value_syntax:
-        old: '[homology search|kmer|coverage|codon usage|combination]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: sequencing
-        new: ''
-    virus_enrich_appr:
-      expected_value:
-        old: enumeration
-        new: virus_enrich_appr_enum
-      value_syntax:
-        old: '[filtration|ultrafiltration|centrifugation|ultracentrifugation|PEG Precipitation|FeCl Precipitation|CsCl density
-          gradient|DNAse|RNAse|targeted sequence capture|other|none]'
-        new: ''
-      occurrence:
-        old: '1'
-        new: ''
-      section:
-        old: nucleic acid sequence source
         new: ''
     mid:
       expected_value:
@@ -2101,12 +2131,24 @@ term_differences:
       section:
         old: sequencing
         new: ''
-    biotic_relationship:
+    health_disease_stat -> host_disease_stat:
+      item:
+        old: health or disease status of specific host at time of collection
+        new: host disease status
+      definition:
+        old: Health or disease status of specific host at time of collection
+        new: List of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field
+          depends on host; for humans the terms should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org,
+          non-human host diseases are free text
+      example:
+        old: dead
+        new: rabies [DOID:11260]
       expected_value:
         old: enumeration
-        new: biotic_relationship_enum
+        new: string
       value_syntax:
-        old: '[free living|parasitism|commensalism|symbiotic|mutualism]'
+        old: '[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing condition|pathological|life
+          threatening|congenital]'
         new: ''
       occurrence:
         old: '1'
@@ -2114,24 +2156,31 @@ term_differences:
       section:
         old: nucleic acid sequence source
         new: ''
-    samp_size:
-      definition:
-        old: Amount or size of sample (volume, mass or area) that was collected
-        new: The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.
+    16s_recover -> x_16s_recover:
       expected_value:
-        old: measurement value
-        new: quantity value
+        old: boolean
+        new: string
       value_syntax:
-        old: '{float} {unit}'
+        old: '{boolean}'
         new: ''
       occurrence:
         old: '1'
         new: ''
-      preferred_unit:
-        old: millliter, gram, milligram, liter
+      section:
+        old: sequencing
+        new: ''
+    16s_recover_software -> x_16s_recover_software:
+      expected_value:
+        old: names and versions of software(s), parameters used
+        new: string
+      value_syntax:
+        old: '{software};{version};{parameters}'
+        new: ''
+      occurrence:
+        old: '1'
         new: ''
       section:
-        old: nucleic acid sequence source
+        old: sequencing
         new: ''
 package_differences:
   key_comparison:

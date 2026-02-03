@@ -16,17 +16,14 @@ NEW SCHEMA: v5
 TERM COMPARISON
 ----------------------------------------
   Shared terms: 47
-  Only in old: 8
-  Only in new: 47
-  Terms with definition changes: 47
+  Only in old: 4
+  Only in new: 43
+  Expected mappings: 4
+  Terms with definition changes: 51
 
   Terms only in OLD (removed):
     - alt_elev
-    - annot_source
     - assembly
-    - env_biome
-    - env_feature
-    - env_material
     - finishing_strategy
     - lib_const_meth
 
@@ -34,7 +31,6 @@ TERM COMPARISON
     + 16s_recover
     + 16s_recover_software
     + alt
-    + annot
     + assembly_qual
     + assembly_software
     + bin_param
@@ -48,10 +44,11 @@ TERM COMPARISON
     + decontam_software
     + detec_type
     + elev
-    + env_broad_scale
-    + env_local_scale
-    + env_medium
-    ... and 27 more
+    + feat_pred
+    + host_pred_appr
+    + host_pred_est_acc
+    + lib_layout
+    ... and 23 more
 
 ----------------------------------------
 PACKAGE COMPARISON
@@ -68,5 +65,5 @@ CHECKLIST COMPARISON
   Only in new: 3
 
 ================================================================================
-Generated: 2026-02-03T13:07:44.099103
+Generated: 2026-02-03T13:10:33.013820
 ================================================================================
