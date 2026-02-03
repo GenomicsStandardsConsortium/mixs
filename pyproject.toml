@@ -38,6 +38,17 @@ pyyaml = "^6.0"
 requests = "^2.31"
 python-dotenv = "^1.0"
 
+# Optional dependency group for legacy-diff tool
+# These dependencies are only needed for comparing historical MIxS schemas
+# (Excel, Word, XSD formats from v1-v5). Install with: poetry install --with legacy-diff
+[tool.poetry.group.legacy-diff]
+optional = true
+
+[tool.poetry.group.legacy-diff.dependencies]
+openpyxl = "^3.1.0"      # .xlsx reading (MIxS v5, 2018)
+xlrd = ">=1.2.0,<2.0.0"  # .xls reading (MIxS v2-v4, 2009-2014) - xlrd 2.0+ dropped .xls support
+python-docx = "^1.0.0"   # .docx reading (pre-2009 Word documents)
+
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry_dynamic_versioning.backend"
@@ -57,7 +68,9 @@ required-supersedes-recommended = 'scripts.required_supersedes_recommended:find_
 describe-enums = 'scripts.describe_enums_by_slots_using:update_enum_descriptions'
 isolate-global-slots = 'scripts.isolate_slots:isolate_global_slots'
 diff-releases = 'scripts.diff_two_linkml_mixs_releases:main'
+mixs-legacy-diff = 'mixs.diff.cli:main'
 
 [tool.deptry.package_module_name_map]
 pyyaml = "yaml"
 python-dotenv = "dotenv"
+python-docx = "docx"
