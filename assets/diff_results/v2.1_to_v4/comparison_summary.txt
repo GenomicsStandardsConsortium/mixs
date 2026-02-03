@@ -3,9 +3,9 @@ MIXS LEGACY SCHEMA COMPARISON SUMMARY
 ================================================================================
 
 OLD SCHEMA: v2.1
-  Source: ../mixs-legacy/2011/Migs_mims_miens_v2.1.xlsx
+  Source: Migs_mims_miens_v2.1.xlsx + MIMARKS_26_01_11.xlsx
   Format: xlsx
-  Terms: 49
+  Terms: 57
 
 NEW SCHEMA: v4
   Source: ../mixs-legacy/mixs4/MIxS_210514.xls
@@ -15,20 +15,23 @@ NEW SCHEMA: v4
 ----------------------------------------
 TERM COMPARISON
 ----------------------------------------
-  Shared terms: 45
+  Shared terms: 50
   Only in old: 0
-  Only in new: 4
+  Only in new: 2
   Expected mappings: 3
-  Terms with definition changes: 48
+  Terms with definition changes: 53
 
   Term splits (1 old → N new):
     environment → env_biome, env_feature, env_material
 
+  Terms intentionally removed:
+    - biome: MIMARKS term; superseded by env_biome in v4 (same concept, new naming)
+    - feature: MIMARKS term; superseded by env_feature in v4 (same concept, new naming)
+    - material: MIMARKS term; superseded by env_material in v4 (same concept, new naming)
+
   Terms only in NEW (added):
-    + adapters
     + annot_source
     + assembly_name
-    + lib_const_meth
 
 ----------------------------------------
 PACKAGE COMPARISON
@@ -45,5 +48,5 @@ CHECKLIST COMPARISON
   Only in new: 0
 
 ================================================================================
-Generated: 2026-02-03T13:39:20.442264
+Generated: 2026-02-03T14:12:30.266548
 ================================================================================
