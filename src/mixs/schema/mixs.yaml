@@ -14538,18 +14538,17 @@ slots:
   isotopolog:
     title: isotopolog
     description: Isotopologue (isotope source/substrate/molecule) added to the biological sample.
-    comments: List the PubChem Compound Identification (CID) number. If it's an undefined mixture, enter 0. If more than one isotopologue was used in this sample, use a | to delimit each isotopolog.
+    comments: List the PubChem Compound Identification (CID) number. If it's an undefined mixture, enter 0.
     structured_pattern:
-      syntax: ^{termLabel} {[termID]}
+      syntax: ^{termLabel} \[{termID}\]$
+      interpolated: true
     range: string
+    multivalued: true
     examples:
       - value: toluene [pubchem.compound:1140]
-      - value: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
       - value: "0"
     required: true
     slot_uri: MIXS:0001339
-    todos:
-      - This ordered slot provides how to write an example in a spreadsheet, but this will not provide a multivalued ordered slot in a database. As such, this slot also couldn't be marked as multivalued in the yaml.
   isotopolog_label:
     title: isotopolog label status
     description: List whether the isotopologue added to this biological sample was heavy-labelled or natural abundance
@@ -14581,12 +14580,13 @@ slots:
     title: density of gradient position
     description: Buoyant density of this fraction
     structured_pattern:
-      syntax: ^{float}-{float} {unit} | {float} {unit}
+      syntax: ^{float}-{float} {unit}|{float} {unit}$
+      interpolated: true
     annotations:
       Preferred_unit: g/mL
     examples:
       - value: 1.725 g/mL
-      - value: 1.725 - 1.735 g/mL
+      - value: 1.725-1.735 g/mL
     recommended: true
     slot_uri: MIXS:0001343
   gradient_pos_rel_am:

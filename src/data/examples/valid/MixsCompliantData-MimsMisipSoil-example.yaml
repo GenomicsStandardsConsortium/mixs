@@ -15,7 +15,9 @@ mimsmisip_soil_data:
     isotope: 
       - 13C
       - 15N
-    isotopolog: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
+    isotopolog:
+      - toluene [pubchem.compound:1140]
+      - water [pubchem.compound:962]
     isotopolog_label: natural abundance
     isotopolog_approach: multiple
     gradient_position: 1
