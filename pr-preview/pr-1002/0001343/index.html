@@ -425,7 +425,7 @@
 <p>Cardinality: 0..1 <em>recommended</em></p>
 </li>
 <li>
-<p>Structured pattern: <code>^{float}-{float} {unit} | {float} {unit}</code></p>
+<p>Structured pattern: <code>^{float}-{float} {unit}|{float} {unit}$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -440,7 +440,7 @@
 <td>1.725 g/mL</td>
 </tr>
 <tr>
-<td>1.725 - 1.735 g/mL</td>
+<td>1.725-1.735 g/mL</td>
 </tr>
 </tbody>
 </table>
@@ -460,7 +460,7 @@ description: Buoyant density of this fraction
 title: density of gradient position
 examples:
 - value: 1.725 g/mL
-- value: 1.725 - 1.735 g/mL
+- value: 1.725-1.735 g/mL
 from_schema: https://w3id.org/mixs
 slot_uri: MIXS:0001343
 alias: gradient_pos_density
@@ -469,7 +469,8 @@ domain_of:
 range: string
 recommended: true
 structured_pattern:
-  syntax: ^{float}-{float} {unit} | {float} {unit}
+  syntax: ^{float}-{float} {unit}|{float} {unit}$
+  interpolated: true
 
 </code></pre>
 

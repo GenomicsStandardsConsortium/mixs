@@ -407,10 +407,10 @@
 <ul>
 <li>Range: <a href="../String/">String</a></li>
 <li>
-<p>Cardinality: 1</p>
+<p>Cardinality: 1..*</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{termLabel} {[termID]}</code></p>
+<p>Structured pattern: <code>^{termLabel} \[{termID}\]$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -421,9 +421,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>toluene [pubchem.compound:1140]</td>
-</tr>
 <tr>
 <td>toluene [pubchem.compound:1140]</td>
 </tr>
@@ -439,17 +436,11 @@
 description: Isotopologue (isotope source/substrate/molecule) added to the biological
   sample.
 title: isotopolog
-todos:
-- This ordered slot provides how to write an example in a spreadsheet, but this will
-  not provide a multivalued ordered slot in a database. As such, this slot also couldn't
-  be marked as multivalued in the yaml.
 comments:
 - List the PubChem Compound Identification (CID) number. If it's an undefined mixture,
-  enter 0. If more than one isotopologue was used in this sample, use a | to delimit
-  each isotopolog.
+  enter 0.
 examples:
 - value: toluene [pubchem.compound:1140]
-- value: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
 - value: '0'
 from_schema: https://w3id.org/mixs
 slot_uri: MIXS:0001339
@@ -458,8 +449,10 @@ domain_of:
 - MimsMisip
 range: string
 required: true
+multivalued: true
 structured_pattern:
-  syntax: ^{termLabel} {[termID]}
+  syntax: ^{termLabel} \[{termID}\]$
+  interpolated: true
 
 </code></pre>
 
