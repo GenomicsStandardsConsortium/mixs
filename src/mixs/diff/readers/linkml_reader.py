@@ -275,33 +275,36 @@ class LinkMLReader(BaseReader):
         # v6.0.0 uses "MIGS eukaryote", v6.2.0+ uses "MigsBa"
         checklist_prefixes = ["migs", "mims", "mimarks", "misag", "mimag", "miuvig"]
 
-        # Known environmental package names - normalized to lowercase without spaces/underscores
+        # Known environmental package names - normalized to lowercase without spaces/underscores/slashes
         # v6.0.0 uses "air", "built environment"; v6.2.0+ uses "Air", "BuiltEnvironment"
         package_names_normalized = {
             "agriculture", "air", "builtenvironment", "hostassociated",
             "humanassociated", "humangut", "humanoral", "humanskin", "humanvaginal",
             "hydrocarbonresourcescores", "hydrocarbonresourcesfluidsswabs",
-            "microbialmatbiofilm", "miscellaneousnaturalOrartificialenvironment",
+            "microbialmatbiofilm", "miscellaneousnaturaloartificialenvironment",
             "plantassociated", "sediment", "soil", "symbiontassociated",
-            "wastewatrsludge", "wastewatrsludge", "water",
+            "wastewatersludge", "water",
             "foodanimalandanimalfeed", "foodfarmenvironment",
             "foodfoodproductionfacility", "foodhumanfoods",
         }
 
         def normalize_name(name: str) -> str:
-            """Normalize class name for matching (lowercase, no spaces/underscores)."""
-            return name.lower().replace(" ", "").replace("_", "")
+            """Normalize class name for matching (lowercase, no spaces/underscores/slashes)."""
+            return name.lower().replace(" ", "").replace("_", "").replace("/", "").replace("-", "")
 
         for class_name, class_def in all_classes.items():
-            # Skip abstract classes and mixins
-            if class_def.abstract or class_def.mixin:
-                continue
-
             normalized = normalize_name(class_name)
 
             # Determine if this is a checklist or package (case-insensitive)
             is_checklist = any(normalized.startswith(prefix) for prefix in checklist_prefixes)
             is_package = normalized in package_names_normalized
+
+            # Skip abstract classes, but allow mixins that are checklists
+            # (v6.0.0 uses mixins for checklist definitions)
+            if class_def.abstract:
+                continue
+            if class_def.mixin and not is_checklist:
+                continue
 
             if is_checklist or is_package:
                 # Get slots for this class
@@ -342,34 +345,70 @@ class LinkMLReader(BaseReader):
                             schema.terms[slot_name].package_membership[package_normalized] = req
 
     def _normalize_checklist_name(self, class_name: str) -> str:
-        """Normalize checklist class name to standard format."""
-        # Convert CamelCase to lowercase with underscores
-        name = re.sub(r'([A-Z])', r'_\1', class_name).lower().strip('_')
+        """Normalize checklist class name to standard format.
 
-        # Map common names to standard abbreviations
-        mappings = {
-            "migs_ba": "migs_ba",
-            "migs_eu": "migs_eu",
-            "migs_pl": "migs_pl",
-            "migs_vi": "migs_vi",
-            "migs_org": "migs_org",
+        Handles various naming conventions:
+        - v6.0.0: "MIGS eukaryote", "MIMARKS specimen"
+        - v6.2.0+: "MigsBa", "MimarksS"
+        """
+        name_lower = class_name.lower()
+
+        # Direct mappings for known checklist names
+        # Map full names to standard abbreviations
+        checklist_mappings = {
+            # MIGS variants
+            "migs eukaryote": "migs_eu",
+            "migs bacteria": "migs_ba",
+            "migs plant": "migs_pl",
+            "migs virus": "migs_vi",
+            "migs org": "migs_org",
+            "migseu": "migs_eu",
+            "migsba": "migs_ba",
+            "migspl": "migs_pl",
+            "migsvi": "migs_vi",
+            "migsorg": "migs_org",
+            # MIMARKS variants
+            "mimarks specimen": "mimarks_s",
+            "mimarks survey": "mimarks_c",
+            "mimarkss": "mimarks_s",
+            "mimarksc": "mimarks_c",
+            "mimarksspecimen": "mimarks_s",
+            "mimarkssurvey": "mimarks_c",
+            # Simple ones
             "mims": "mims",
-            "mimarks_s": "mimarks_s",
-            "mimarks_c": "mimarks_c",
             "misag": "misag",
             "mimag": "mimag",
             "miuvig": "miuvig",
             "me": "me",
         }
 
-        for standard, normalized in mappings.items():
-            if standard in name:
-                return normalized
+        # Try direct match first
+        if name_lower in checklist_mappings:
+            return checklist_mappings[name_lower]
 
+        # Try without spaces/underscores
+        name_compact = name_lower.replace(" ", "").replace("_", "").replace("-", "")
+        if name_compact in checklist_mappings:
+            return checklist_mappings[name_compact]
+
+        # Fall back to simple snake_case conversion
+        name = name_lower.replace(" ", "_").replace("-", "_")
+        name = re.sub(r'_+', '_', name)
         return name
 
     def _normalize_package_name(self, class_name: str) -> str:
-        """Normalize package class name to standard format."""
-        # Convert CamelCase to snake_case
-        name = re.sub(r'([A-Z])', r'_\1', class_name).lower().strip('_')
+        """Normalize package class name to standard format.
+
+        Converts various formats to consistent snake_case:
+        - "BuiltEnvironment" -> "built_environment"
+        - "built environment" -> "built_environment"
+        - "host-associated" -> "host_associated"
+        - "wastewater_sludge" -> "wastewater_sludge"
+        """
+        # First convert spaces and hyphens to underscores
+        name = class_name.replace(" ", "_").replace("/", "_").replace("-", "_")
+        # Then handle CamelCase
+        name = re.sub(r'([A-Z])', r'_\1', name).lower().strip('_')
+        # Clean up double underscores
+        name = re.sub(r'_+', '_', name)
         return name
