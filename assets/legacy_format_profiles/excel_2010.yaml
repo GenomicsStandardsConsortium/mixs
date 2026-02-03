@@ -1,0 +1,69 @@
+# MIxS 2010 Excel Format Profile (v2.0)
+# Files in 2010/ directory
+# This format has headers at row 16 (rows 1-15 contain descriptions/legends)
+description: "MIxS 2010 Excel format (v2.0, headers at row 16)"
+
+# Pattern matching for auto-detection
+# Note: These patterns are matched against the full path, so we need specific patterns
+# to distinguish from the 2010_2011 profile
+version_patterns:
+  - "/2010/"
+  - "MIGS_MIMS_07_12_10"
+  - "MIGS_MIMS_18_10_10"
+  - "MIENS_12_11_10"
+  - "MIENS_18_10_10"
+
+# Header row offset (0-indexed, so row 16 = index 15)
+header_row: 15
+
+# Sheet names to look for (in priority order)
+sheet_names:
+  main_terms:
+    - "MIGS_MIMS"
+    - "MIENS"
+    - "MIxS"
+  packages:
+    - "environmental_packages"
+    - "environmental packages"
+
+# Column header mappings
+column_mappings:
+  name:
+    - "Structured comment name"
+  item:
+    - "Item"
+  definition:
+    - "Definition"
+  example:
+    - "Example"
+  expected_value:
+    - "Expected value"
+  section:
+    - "Section"
+  value_syntax:
+    - "Value syntax"
+  occurrence:
+    - "Occurrence"
+    - "Occurence"
+  position:
+    - "Position"
+
+# Checklist column mappings (uppercase style)
+checklist_columns:
+  eu: "migs_eu"
+  ba: "migs_ba"
+  pl: "migs_pl"
+  vi: "migs_vi"
+  org: "migs_org"
+  me: "me"
+
+# Term names need normalization (e.g., "project name" -> "project_name")
+normalize_term_names: true
+
+notes: |
+  The 2010 format has:
+  - Row 1: Multi-line legend/description
+  - Rows 2-15: Additional descriptions or empty
+  - Row 16: Column headers
+  - Row 17+: Data
+  MIGS/MIMS and MIENS were in separate files during this period.

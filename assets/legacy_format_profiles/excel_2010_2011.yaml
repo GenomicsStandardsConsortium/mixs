@@ -1,12 +1,14 @@
-# MIxS 2010-2011 Excel Format Profile
-# Files in 2010/ and 2011/ directories
-# Transitional format between 2009 and v4
-description: "MIxS 2010-2011 Excel format (transitional period)"
+# MIxS 2011 Excel Format Profile (v2.1)
+# Files in 2011/ directory - consolidated format with headers at row 1
+# The 2010/ directory files have headers at row 16 and use excel_2010.yaml profile
+description: "MIxS 2011 Excel format (v2.1, headers at row 1)"
 
 # Pattern matching for auto-detection
+# Only match 2011 directory, not 2010 (different header row)
 version_patterns:
-  - "2010"
-  - "2011"
+  - "/2011/"
+  - "Migs_mims_miens_v2.1"
+  - "MIMARKS_26_01_11"
 
 # Sheet names to look for (in priority order)
 # May use either old or new naming conventions

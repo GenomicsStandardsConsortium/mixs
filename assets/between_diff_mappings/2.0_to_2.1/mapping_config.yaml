@@ -1,0 +1,30 @@
+# MIxS v2.0 to v2.1 term mapping configuration
+# Documents renames, merges, and intentional changes between versions
+# Note: Several v2.1 naming changes were reverted in v4
+
+renames:
+  # Naming changes in v2.1 (later reverted in v4)
+  geo_loc_name: country
+  submitted_to_insdc: submit_to_insdc
+  source_mat_id: source_mat_identifiers
+
+merges:
+  # v2.0 had separate biome/feature/material terms, v2.1 consolidated to "environment"
+  # This was later split back out in v4 to env_biome/env_feature/env_material
+  environment:
+    sources:
+      - biome
+      - feature
+      - material
+    description: "v2.0 separate ENVO terms consolidated into single 'environment' field in v2.1"
+
+deletions:
+  # These sequencing terms were in v2.0, removed in v2.1, and re-added in v4
+  adapters:
+    reason: "Removed in v2.1; re-added in v4"
+  annot_source:
+    reason: "Removed in v2.1; re-added in v4"
+  assembly_name:
+    reason: "Removed in v2.1; re-added in v4"
+  lib_const_meth:
+    reason: "Removed in v2.1; re-added in v4"
