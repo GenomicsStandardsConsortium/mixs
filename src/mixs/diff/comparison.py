@@ -41,6 +41,7 @@ class KeyComparison:
     shared: Set[str] = field(default_factory=set)
     expected_mappings: Set[str] = field(default_factory=set)
     expected_splits: Dict[str, List[str]] = field(default_factory=dict)  # old -> [new1, new2]
+    expected_merges: Dict[str, List[str]] = field(default_factory=dict)  # new -> [old1, old2]
     expected_deletions: Dict[str, str] = field(default_factory=dict)  # old -> reason
 
     def to_dict(self) -> Dict[str, Any]:
@@ -56,6 +57,8 @@ class KeyComparison:
             result["expected_mappings"] = sorted(self.expected_mappings)
         if self.expected_splits:
             result["expected_splits"] = {k: sorted(v) for k, v in sorted(self.expected_splits.items())}
+        if self.expected_merges:
+            result["expected_merges"] = {k: sorted(v) for k, v in sorted(self.expected_merges.items())}
         if self.expected_deletions:
             result["expected_deletions"] = dict(sorted(self.expected_deletions.items()))
         return result
@@ -117,10 +120,12 @@ class SchemaComparisonResult:
 
 @dataclass
 class MappingConfig:
-    """Extended mapping configuration including renames, splits, and deletions."""
+    """Extended mapping configuration including renames, splits, merges, and deletions."""
     renames: Dict[str, str] = field(default_factory=dict)
-    splits: Dict[str, List[str]] = field(default_factory=dict)
+    splits: Dict[str, List[str]] = field(default_factory=dict)  # 1:N old -> [new1, new2]
     split_descriptions: Dict[str, str] = field(default_factory=dict)
+    merges: Dict[str, List[str]] = field(default_factory=dict)  # N:1 new_name -> [old1, old2]
+    merge_descriptions: Dict[str, str] = field(default_factory=dict)
     deletions: Dict[str, str] = field(default_factory=dict)  # term -> reason
 
 
@@ -216,11 +221,11 @@ class LegacySchemaComparator:
         old_names = set(old_schema.terms.keys())
         new_names = set(new_schema.terms.keys())
 
-        # Track terms accounted for by splits and deletions
+        # Track terms accounted for by splits, merges, and deletions
         accounted_old = set()
         accounted_new = set()
 
-        # Process splits
+        # Process splits (1:N old -> [new1, new2])
         for old_name, new_names_list in self.mapping_config.splits.items():
             if old_name in old_names:
                 # Check if all split targets exist in new schema
@@ -229,6 +234,16 @@ class LegacySchemaComparator:
                     result.term_key_comparison.expected_splits[old_name] = found_targets
                     accounted_old.add(old_name)
                     accounted_new.update(found_targets)
+
+        # Process merges (N:1 [old1, old2] -> new)
+        for new_name, old_names_list in self.mapping_config.merges.items():
+            if new_name in new_names:
+                # Check if any merge sources exist in old schema
+                found_sources = [n for n in old_names_list if n in old_names]
+                if found_sources:
+                    result.term_key_comparison.expected_merges[new_name] = found_sources
+                    accounted_old.update(found_sources)
+                    accounted_new.add(new_name)
 
         # Process deletions
         for old_name, reason in self.mapping_config.deletions.items():
@@ -413,7 +428,7 @@ def load_mapping_config(mappings_dir: Path) -> MappingConfig:
 
         config.renames = data.get('renames', {}) or {}
 
-        # Load splits with descriptions
+        # Load splits with descriptions (1:N old -> [new1, new2])
         splits_data = data.get('splits', {}) or {}
         for old_name, split_info in splits_data.items():
             if isinstance(split_info, list):
@@ -422,6 +437,16 @@ def load_mapping_config(mappings_dir: Path) -> MappingConfig:
                 config.splits[old_name] = split_info.get('targets', split_info.get('new_names', []))
                 if 'description' in split_info:
                     config.split_descriptions[old_name] = split_info['description']
+
+        # Load merges with descriptions (N:1 [old1, old2] -> new)
+        merges_data = data.get('merges', {}) or {}
+        for new_name, merge_info in merges_data.items():
+            if isinstance(merge_info, list):
+                config.merges[new_name] = merge_info
+            elif isinstance(merge_info, dict):
+                config.merges[new_name] = merge_info.get('sources', merge_info.get('old_names', []))
+                if 'description' in merge_info:
+                    config.merge_descriptions[new_name] = merge_info['description']
 
         # Load deletions with reasons
         deletions_data = data.get('deletions', {}) or {}
@@ -432,7 +457,8 @@ def load_mapping_config(mappings_dir: Path) -> MappingConfig:
                 config.deletions[old_name] = deletion_info.get('reason', 'Removed')
 
         logger.info(f"Loaded mapping config: {len(config.renames)} renames, "
-                   f"{len(config.splits)} splits, {len(config.deletions)} deletions")
+                   f"{len(config.splits)} splits, {len(config.merges)} merges, "
+                   f"{len(config.deletions)} deletions")
 
     except Exception as e:
         logger.error(f"Could not load mapping config: {e}")

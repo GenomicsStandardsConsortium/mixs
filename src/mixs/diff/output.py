@@ -124,6 +124,13 @@ def write_summary_report(
             lines.append(f"    {old_name} → {', '.join(new_names)}")
         lines.append("")
 
+    # List expected merges
+    if key_comp.expected_merges:
+        lines.append("  Term merges (N old → 1 new):")
+        for new_name, old_names in sorted(key_comp.expected_merges.items()):
+            lines.append(f"    {', '.join(old_names)} → {new_name}")
+        lines.append("")
+
     # List expected deletions
     if key_comp.expected_deletions:
         lines.append("  Terms intentionally removed:")

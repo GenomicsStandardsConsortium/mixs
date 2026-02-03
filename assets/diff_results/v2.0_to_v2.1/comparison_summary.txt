@@ -1,0 +1,59 @@
+================================================================================
+MIXS LEGACY SCHEMA COMPARISON SUMMARY
+================================================================================
+
+OLD SCHEMA: v2.0
+  Source: ../mixs-legacy/2010/MIGS_MIMS_07_12_10.xlsx
+  Format: xlsx
+  Terms: 47
+
+NEW SCHEMA: v2.1
+  Source: ../mixs-legacy/2011/Migs_mims_miens_v2.1.xlsx
+  Format: xlsx
+  Terms: 49
+
+----------------------------------------
+TERM COMPARISON
+----------------------------------------
+  Shared terms: 37
+  Only in old: 0
+  Only in new: 8
+  Expected mappings: 3
+  Terms with definition changes: 40
+
+  Term merges (N old → 1 new):
+    biome, feature, material → environment
+
+  Terms intentionally removed:
+    - adapters: Removed in v2.1; re-added in v4
+    - annot_source: Removed in v2.1; re-added in v4
+    - assembly_name: Removed in v2.1; re-added in v4
+    - lib_const_meth: Removed in v2.1; re-added in v4
+
+  Terms only in NEW (added):
+    + alt_elev
+    + chimera_check
+    + depth
+    + pcr_cond
+    + pcr_primers
+    + seq_quality_check
+    + target_gene
+    + target_subfragment
+
+----------------------------------------
+PACKAGE COMPARISON
+----------------------------------------
+  Shared packages: 0
+  Only in old: 0
+  Only in new: 14
+
+----------------------------------------
+CHECKLIST COMPARISON
+----------------------------------------
+  Shared checklists: 6
+  Only in old: 0
+  Only in new: 2
+
+================================================================================
+Generated: 2026-02-03T13:52:09.965348
+================================================================================

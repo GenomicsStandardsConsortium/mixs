@@ -34,6 +34,8 @@ class FormatProfile:
         self.checklist_columns = profile_data.get("checklist_columns", {})
         self.normalize_term_names = profile_data.get("normalize_term_names", False)
         self.notes = profile_data.get("notes", "")
+        # Header row offset (0-indexed, default 0 means row 1)
+        self.header_row = profile_data.get("header_row", 0)
 
     @classmethod
     def load(cls, path: Path) -> "FormatProfile":
@@ -256,7 +258,13 @@ class ExcelReader(BaseReader):
         if not rows:
             return
 
-        headers = [str(h).strip() if h else "" for h in rows[0]]
+        # Use header_row from profile (0-indexed)
+        header_row_idx = profile.header_row
+        if header_row_idx >= len(rows):
+            logger.warning(f"Header row {header_row_idx} exceeds available rows {len(rows)}")
+            return
+
+        headers = [str(h).strip() if h else "" for h in rows[header_row_idx]]
         col_map = self._build_column_map(headers, profile)
         checklist_cols = self._find_checklist_columns(headers, profile)
 
@@ -264,7 +272,7 @@ class ExcelReader(BaseReader):
         for checklist_name in checklist_cols.values():
             schema.checklists[checklist_name] = []
 
-        for row in rows[1:]:
+        for row in rows[header_row_idx + 1:]:
             if not row or not row[0]:
                 continue
 
@@ -284,7 +292,13 @@ class ExcelReader(BaseReader):
         if sheet.nrows == 0:
             return
 
-        headers = [str(sheet.cell_value(0, c)).strip() for c in range(sheet.ncols)]
+        # Use header_row from profile (0-indexed)
+        header_row_idx = profile.header_row
+        if header_row_idx >= sheet.nrows:
+            logger.warning(f"Header row {header_row_idx} exceeds available rows {sheet.nrows}")
+            return
+
+        headers = [str(sheet.cell_value(header_row_idx, c)).strip() for c in range(sheet.ncols)]
         col_map = self._build_column_map(headers, profile)
         checklist_cols = self._find_checklist_columns(headers, profile)
 
@@ -292,7 +306,7 @@ class ExcelReader(BaseReader):
         for checklist_name in checklist_cols.values():
             schema.checklists[checklist_name] = []
 
-        for row_idx in range(1, sheet.nrows):
+        for row_idx in range(header_row_idx + 1, sheet.nrows):
             row = [sheet.cell_value(row_idx, c) for c in range(sheet.ncols)]
             if not row or not row[0]:
                 continue
