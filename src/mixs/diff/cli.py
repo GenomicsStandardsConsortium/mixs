@@ -137,6 +137,16 @@ def validate_path_or_spec(ctx, param, value: str) -> str:
     default=None,
     help='Notes about the new schema source (recorded in output metadata).'
 )
+@click.option(
+    '--old-additional',
+    multiple=True,
+    help='Additional files to merge into old schema (can be specified multiple times).'
+)
+@click.option(
+    '--new-additional',
+    multiple=True,
+    help='Additional files to merge into new schema (can be specified multiple times).'
+)
 def main(
     old: str,
     new: str,
@@ -151,6 +161,8 @@ def main(
     summary: bool,
     old_notes: Optional[str],
     new_notes: Optional[str],
+    old_additional: tuple,
+    new_additional: tuple,
 ):
     """Compare MIxS schemas across formats and versions.
 
@@ -189,11 +201,35 @@ def main(
         # Read schemas
         logger.info("Reading old schema...")
         old_schema = old_reader.read(old, version=old_version)
+
+        # Merge additional old files
+        if old_additional:
+            for additional_path in old_additional:
+                logger.info(f"Merging additional old file: {additional_path}")
+                additional_reader = get_reader(additional_path, profiles_dir=profile_dir)
+                additional_schema = additional_reader.read(additional_path, version=old_version)
+                old_schema.merge(additional_schema)
+            # Update source path to indicate multiple files
+            all_old_paths = [old] + list(old_additional)
+            old_schema.source_path = " + ".join(Path(p).name for p in all_old_paths)
+
         if old_notes:
             old_schema.metadata["notes"] = old_notes
 
         logger.info("Reading new schema...")
         new_schema = new_reader.read(new, version=new_version)
+
+        # Merge additional new files
+        if new_additional:
+            for additional_path in new_additional:
+                logger.info(f"Merging additional new file: {additional_path}")
+                additional_reader = get_reader(additional_path, profiles_dir=profile_dir)
+                additional_schema = additional_reader.read(additional_path, version=new_version)
+                new_schema.merge(additional_schema)
+            # Update source path to indicate multiple files
+            all_new_paths = [new] + list(new_additional)
+            new_schema.source_path = " + ".join(Path(p).name for p in all_new_paths)
+
         if new_notes:
             new_schema.metadata["notes"] = new_notes
 

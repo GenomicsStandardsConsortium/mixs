@@ -1,30 +1,34 @@
-# MIxS v2.0 to v2.1 term mapping configuration
-# Documents renames, merges, and intentional changes between versions
-# Note: Several v2.1 naming changes were reverted in v4
+# MIxS v2.0 to v2.1 term mapping configuration (POOLED FILES)
+#
+# IMPORTANT: This config is for comparing POOLED files:
+#   v2.0: MIGS_MIMS + MIENS
+#   v2.1: Migs_mims_miens + MIMARKS
+#
+# Key observations about v2.1:
+# - The core checklist (Migs_mims_miens) renamed several terms and consolidated environment
+# - MIMARKS kept the OLD term names (geo_loc_name, source_mat_id, submitted_to_insdc)
+# - MIMARKS also kept separate biome/feature/material terms
+# - MIMARKS kept adapters and lib_const_meth terms
+#
+# When pooled, v2.1 contains BOTH old and new naming conventions because
+# MIMARKS didn't follow the same renaming as the core checklists.
+#
+# Therefore: NO renames or merges are needed for pooled comparisons.
+# The "new" terms in v2.1 are genuine additions from the core checklist reorganization:
+# - country (renamed from geo_loc_name in core, but geo_loc_name kept in MIMARKS)
+# - environment (consolidated from biome/feature/material in core, but originals kept in MIMARKS)
+# - source_mat_identifiers (renamed from source_mat_id in core, but original kept in MIMARKS)
+# - submit_to_insdc (renamed from submitted_to_insdc in core, but original kept in MIMARKS)
 
-renames:
-  # Naming changes in v2.1 (later reverted in v4)
-  geo_loc_name: country
-  submitted_to_insdc: submit_to_insdc
-  source_mat_id: source_mat_identifiers
+# No renames needed - MIMARKS kept old names, core has new names, both exist in pooled v2.1
 
-merges:
-  # v2.0 had separate biome/feature/material terms, v2.1 consolidated to "environment"
-  # This was later split back out in v4 to env_biome/env_feature/env_material
-  environment:
-    sources:
-      - biome
-      - feature
-      - material
-    description: "v2.0 separate ENVO terms consolidated into single 'environment' field in v2.1"
+# No merges needed - biome/feature/material exist in both versions (v2.0 and v2.1 MIMARKS)
 
 deletions:
-  # These sequencing terms were in v2.0, removed in v2.1, and re-added in v4
-  adapters:
-    reason: "Removed in v2.1; re-added in v4"
+  # Only these terms were fully removed in v2.1 (not in core OR MIMARKS)
   annot_source:
     reason: "Removed in v2.1; re-added in v4"
   assembly_name:
     reason: "Removed in v2.1; re-added in v4"
-  lib_const_meth:
-    reason: "Removed in v2.1; re-added in v4"
+  # Note: adapters and lib_const_meth were removed from core but kept in MIMARKS,
+  # so they are shared terms when comparing pooled files

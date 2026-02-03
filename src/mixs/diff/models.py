@@ -128,3 +128,33 @@ class NormalizedSchema:
     def get_checklist_names(self) -> List[str]:
         """Get sorted list of all checklist names."""
         return sorted(self.checklists.keys())
+
+    def merge(self, other: "NormalizedSchema") -> None:
+        """Merge another schema into this one.
+
+        This combines terms, packages, and checklists from another schema.
+        If a term exists in both, the existing term is preserved (first wins).
+
+        Args:
+            other: The schema to merge into this one.
+        """
+        # Merge terms (existing terms take precedence)
+        for name, term in other.terms.items():
+            if name not in self.terms:
+                self.terms[name] = term
+
+        # Merge packages (combine term lists, avoid duplicates)
+        for pkg_name, term_names in other.packages.items():
+            if pkg_name not in self.packages:
+                self.packages[pkg_name] = []
+            for term_name in term_names:
+                if term_name not in self.packages[pkg_name]:
+                    self.packages[pkg_name].append(term_name)
+
+        # Merge checklists (combine term lists, avoid duplicates)
+        for checklist_name, term_names in other.checklists.items():
+            if checklist_name not in self.checklists:
+                self.checklists[checklist_name] = []
+            for term_name in term_names:
+                if term_name not in self.checklists[checklist_name]:
+                    self.checklists[checklist_name].append(term_name)
