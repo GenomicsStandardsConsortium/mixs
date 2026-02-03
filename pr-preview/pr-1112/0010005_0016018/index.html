@@ -1320,7 +1320,7 @@
 <td><a href="https://w3id.org/mixs/0001082">MIXS:0001082</a></td>
 <td><a href="../0001082/">soil_horizon</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../SoilHorizonEnum/">SoilHorizonEnum</a></td>
-<td>Specific layer in the land area that is oriented parallel to the soil surface...</td>
+<td>Specific layer in the land area approximately parallel to the land surface wi...</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/0000321">MIXS:0000321</a></td>
@@ -6102,13 +6102,18 @@ attributes:
       partial_match: true
   soil_horizon:
     name: soil_horizon
-    description: Specific layer in the land area that is oriented parallel to the
-      soil surface and possesses physical characteristics which differ from the layers
-      above and beneath
+    description: Specific layer in the land area approximately parallel to the land
+      surface with physical characteristics that differ from the layers above and
+      beneath. Horizon thickness is measured perpendicular to the soil surface
     title: soil horizon
+    comments:
+    - Definition adapted from the USDA Natural Resources Conservation Service and
+      the Soil Science Society of America
     examples:
     - value: A horizon
     from_schema: https://w3id.org/mixs
+    see_also:
+    - https://www.nrcs.usda.gov/resources/education-and-teaching-materials/a-soil-profile
     keywords:
     - horizon
     - soil
