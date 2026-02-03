@@ -16,18 +16,15 @@ NEW SCHEMA: mixs6.0.0
 TERM COMPARISON
 ----------------------------------------
   Shared terms: 85
-  Only in old: 6
-  Only in new: 716
-  Expected mappings: 3
-  Terms with definition changes: 88
+  Only in old: 0
+  Only in new: 713
+  Expected mappings: 6
+  Terms with definition changes: 91
 
-  Terms only in OLD (removed):
-    - env_package
-    - investigation_type
-    - submitted_to_insdc
-    - votu_class_appr
-    - votu_db
-    - votu_seq_comp_appr
+  Terms intentionally removed:
+    - env_package: Structural change in v6; package membership now handled via class hierarchy rather than explicit field
+    - investigation_type: Removed in v6; investigation type now implicit in checklist selection
+    - submitted_to_insdc: Removed in v6; INSDC submission status not tracked in schema
 
   Terms only in NEW (added):
     + Food_Product_type
@@ -50,14 +47,14 @@ TERM COMPARISON
     + al_sat
     + al_sat_meth
     + alkalinity
-    ... and 696 more
+    ... and 693 more
 
 ----------------------------------------
 PACKAGE COMPARISON
 ----------------------------------------
-  Shared packages: 0
-  Only in old: 17
-  Only in new: 0
+  Shared packages: 4
+  Only in old: 13
+  Only in new: 3
 
 ----------------------------------------
 CHECKLIST COMPARISON
@@ -67,5 +64,5 @@ CHECKLIST COMPARISON
   Only in new: 0
 
 ================================================================================
-Generated: 2026-02-03T13:10:49.413678
+Generated: 2026-02-03T13:19:16.704466
 ================================================================================

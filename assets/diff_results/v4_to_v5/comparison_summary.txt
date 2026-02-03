@@ -16,23 +16,22 @@ NEW SCHEMA: v5
 TERM COMPARISON
 ----------------------------------------
   Shared terms: 47
-  Only in old: 4
-  Only in new: 43
+  Only in old: 0
+  Only in new: 39
   Expected mappings: 4
   Terms with definition changes: 51
 
-  Terms only in OLD (removed):
-    - alt_elev
-    - assembly
-    - finishing_strategy
-    - lib_const_meth
+  Term splits (1 old → N new):
+    alt_elev → alt, elev
+    assembly → assembly_qual, assembly_software
+
+  Terms intentionally removed:
+    - finishing_strategy: Removed in v5; finishing strategy concepts merged into assembly_qual
+    - lib_const_meth: Removed in v5; library construction method not carried forward as a distinct term
 
   Terms only in NEW (added):
     + 16s_recover
     + 16s_recover_software
-    + alt
-    + assembly_qual
-    + assembly_software
     + bin_param
     + bin_software
     + compl_appr
@@ -43,12 +42,15 @@ TERM COMPARISON
     + contam_screen_param
     + decontam_software
     + detec_type
-    + elev
     + feat_pred
     + host_pred_appr
     + host_pred_est_acc
     + lib_layout
-    ... and 23 more
+    + mag_cov_software
+    + number_contig
+    + pred_genome_struc
+    + pred_genome_type
+    ... and 19 more
 
 ----------------------------------------
 PACKAGE COMPARISON
@@ -65,5 +67,5 @@ CHECKLIST COMPARISON
   Only in new: 3
 
 ================================================================================
-Generated: 2026-02-03T13:10:33.013820
+Generated: 2026-02-03T13:18:55.434488
 ================================================================================
