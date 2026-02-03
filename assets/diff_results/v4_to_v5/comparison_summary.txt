@@ -1,0 +1,72 @@
+================================================================================
+MIXS LEGACY SCHEMA COMPARISON SUMMARY
+================================================================================
+
+OLD SCHEMA: v4
+  Source: ../mixs-legacy/mixs4/MIxS_210514.xls
+  Format: xls
+  Terms: 55
+
+NEW SCHEMA: v5
+  Source: ../mixs-legacy/mixs5/mixs_v5.xlsx
+  Format: xlsx
+  Terms: 94
+
+----------------------------------------
+TERM COMPARISON
+----------------------------------------
+  Shared terms: 47
+  Only in old: 8
+  Only in new: 47
+  Terms with definition changes: 47
+
+  Terms only in OLD (removed):
+    - alt_elev
+    - annot_source
+    - assembly
+    - env_biome
+    - env_feature
+    - env_material
+    - finishing_strategy
+    - lib_const_meth
+
+  Terms only in NEW (added):
+    + 16s_recover
+    + 16s_recover_software
+    + alt
+    + annot
+    + assembly_qual
+    + assembly_software
+    + bin_param
+    + bin_software
+    + compl_appr
+    + compl_score
+    + compl_software
+    + contam_score
+    + contam_screen_input
+    + contam_screen_param
+    + decontam_software
+    + detec_type
+    + elev
+    + env_broad_scale
+    + env_local_scale
+    + env_medium
+    ... and 27 more
+
+----------------------------------------
+PACKAGE COMPARISON
+----------------------------------------
+  Shared packages: 15
+  Only in old: 0
+  Only in new: 2
+
+----------------------------------------
+CHECKLIST COMPARISON
+----------------------------------------
+  Shared checklists: 8
+  Only in old: 0
+  Only in new: 3
+
+================================================================================
+Generated: 2026-02-03T13:03:39.513498
+================================================================================
