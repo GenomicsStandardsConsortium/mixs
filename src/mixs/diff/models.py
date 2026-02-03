@@ -26,7 +26,7 @@ Purpose:
 """
 
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Optional, Any, Set
 
 
 @dataclass
@@ -76,6 +76,262 @@ class NormalizedTerm:
             result["package_membership"] = self.package_membership
         if self.extra:
             result["extra"] = self.extra
+        return result
+
+
+@dataclass
+class MembershipChange:
+    """Track a single membership change for a term in a checklist or package.
+
+    This captures when a term is added to, removed from, or has its requirement
+    level changed within a specific checklist or package.
+    """
+    term_name: str
+    group_name: str  # checklist or package name
+    group_type: str  # "checklist" or "package"
+    old_requirement: Optional[str]  # None if added
+    new_requirement: Optional[str]  # None if removed
+
+    @property
+    def change_type(self) -> str:
+        """Determine the type of change."""
+        if self.old_requirement is None:
+            return "added"
+        elif self.new_requirement is None:
+            return "removed"
+        elif self.old_requirement != self.new_requirement:
+            return "requirement_changed"
+        return "unchanged"
+
+    @property
+    def is_strengthened(self) -> bool:
+        """Check if requirement was strengthened (X/- → M).
+
+        Only applies to requirement changes, not additions/removals.
+        """
+        if self.change_type != "requirement_changed":
+            return False
+        weak = {"X", "x", "-", ""}
+        strong = {"M", "m"}
+        return (
+            self.old_requirement in weak and
+            self.new_requirement in strong
+        )
+
+    @property
+    def is_weakened(self) -> bool:
+        """Check if requirement was weakened (M → X/-).
+
+        Only applies to requirement changes, not additions/removals.
+        """
+        if self.change_type != "requirement_changed":
+            return False
+        weak = {"X", "x", "-", ""}
+        strong = {"M", "m"}
+        return (
+            self.old_requirement in strong and
+            self.new_requirement in weak
+        )
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for serialization."""
+        return {
+            "term_name": self.term_name,
+            "group_name": self.group_name,
+            "group_type": self.group_type,
+            "old_requirement": self.old_requirement,
+            "new_requirement": self.new_requirement,
+            "change_type": self.change_type,
+        }
+
+
+@dataclass
+class MembershipComparison:
+    """Complete membership comparison between two schemas.
+
+    Tracks all changes in term membership within checklists and packages,
+    including additions, removals, and requirement level changes.
+    """
+    # Individual changes
+    checklist_changes: List[MembershipChange] = field(default_factory=list)
+    package_changes: List[MembershipChange] = field(default_factory=list)
+
+    # Aggregated views by group
+    terms_added_to_checklists: Dict[str, List[str]] = field(default_factory=dict)
+    terms_removed_from_checklists: Dict[str, List[str]] = field(default_factory=dict)
+    terms_added_to_packages: Dict[str, List[str]] = field(default_factory=dict)
+    terms_removed_from_packages: Dict[str, List[str]] = field(default_factory=dict)
+
+    # Requirement changes
+    made_mandatory: List[MembershipChange] = field(default_factory=list)  # X/- → M
+    made_optional: List[MembershipChange] = field(default_factory=list)  # M → X/-
+
+    def add_checklist_change(self, change: MembershipChange) -> None:
+        """Add a checklist membership change and update aggregations."""
+        self.checklist_changes.append(change)
+
+        if change.change_type == "added":
+            if change.group_name not in self.terms_added_to_checklists:
+                self.terms_added_to_checklists[change.group_name] = []
+            self.terms_added_to_checklists[change.group_name].append(change.term_name)
+        elif change.change_type == "removed":
+            if change.group_name not in self.terms_removed_from_checklists:
+                self.terms_removed_from_checklists[change.group_name] = []
+            self.terms_removed_from_checklists[change.group_name].append(change.term_name)
+
+        if change.is_strengthened:
+            self.made_mandatory.append(change)
+        elif change.is_weakened:
+            self.made_optional.append(change)
+
+    def add_package_change(self, change: MembershipChange) -> None:
+        """Add a package membership change and update aggregations."""
+        self.package_changes.append(change)
+
+        if change.change_type == "added":
+            if change.group_name not in self.terms_added_to_packages:
+                self.terms_added_to_packages[change.group_name] = []
+            self.terms_added_to_packages[change.group_name].append(change.term_name)
+        elif change.change_type == "removed":
+            if change.group_name not in self.terms_removed_from_packages:
+                self.terms_removed_from_packages[change.group_name] = []
+            self.terms_removed_from_packages[change.group_name].append(change.term_name)
+
+        if change.is_strengthened:
+            self.made_mandatory.append(change)
+        elif change.is_weakened:
+            self.made_optional.append(change)
+
+    def has_changes(self) -> bool:
+        """Check if there are any membership changes."""
+        return bool(self.checklist_changes or self.package_changes)
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for serialization."""
+        result: Dict[str, Any] = {}
+
+        # Build checklist changes grouped by checklist
+        if self.checklist_changes:
+            checklist_summary: Dict[str, Dict[str, Any]] = {}
+            for change in self.checklist_changes:
+                if change.group_name not in checklist_summary:
+                    checklist_summary[change.group_name] = {
+                        "terms_added": [],
+                        "terms_removed": [],
+                        "requirement_changes": {},
+                    }
+                summary = checklist_summary[change.group_name]
+                if change.change_type == "added":
+                    summary["terms_added"].append(change.term_name)
+                elif change.change_type == "removed":
+                    summary["terms_removed"].append(change.term_name)
+                elif change.change_type == "requirement_changed":
+                    summary["requirement_changes"][change.term_name] = {
+                        "old": change.old_requirement,
+                        "new": change.new_requirement,
+                    }
+            result["checklist_changes"] = checklist_summary
+
+        # Build package changes grouped by package
+        if self.package_changes:
+            package_summary: Dict[str, Dict[str, Any]] = {}
+            for change in self.package_changes:
+                if change.group_name not in package_summary:
+                    package_summary[change.group_name] = {
+                        "terms_added": [],
+                        "terms_removed": [],
+                        "requirement_changes": {},
+                    }
+                summary = package_summary[change.group_name]
+                if change.change_type == "added":
+                    summary["terms_added"].append(change.term_name)
+                elif change.change_type == "removed":
+                    summary["terms_removed"].append(change.term_name)
+                elif change.change_type == "requirement_changed":
+                    summary["requirement_changes"][change.term_name] = {
+                        "old": change.old_requirement,
+                        "new": change.new_requirement,
+                    }
+            result["package_changes"] = package_summary
+
+        # Add summary statistics
+        result["summary"] = {
+            "total_checklist_changes": len(self.checklist_changes),
+            "total_package_changes": len(self.package_changes),
+            "made_mandatory": len(self.made_mandatory),
+            "made_optional": len(self.made_optional),
+        }
+
+        return result
+
+
+@dataclass
+class PackageCompositionChange:
+    """Track composition changes for a single package."""
+    package_name: str
+    terms_added: List[str] = field(default_factory=list)
+    terms_removed: List[str] = field(default_factory=list)
+
+    def has_changes(self) -> bool:
+        """Check if there are any composition changes."""
+        return bool(self.terms_added or self.terms_removed)
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for serialization."""
+        return {
+            "terms_added": sorted(self.terms_added),
+            "terms_removed": sorted(self.terms_removed),
+        }
+
+
+@dataclass
+class PackageCompositionComparison:
+    """Complete package composition comparison between two schemas.
+
+    Tracks which terms exist in each package, independent of membership
+    requirement levels (which are tracked by MembershipComparison).
+    """
+    # Package name -> composition change
+    changes: Dict[str, PackageCompositionChange] = field(default_factory=dict)
+
+    # Packages only in old/new
+    packages_only_in_old: Set[str] = field(default_factory=set)
+    packages_only_in_new: Set[str] = field(default_factory=set)
+
+    def has_changes(self) -> bool:
+        """Check if there are any composition changes."""
+        return bool(
+            self.changes or
+            self.packages_only_in_old or
+            self.packages_only_in_new
+        )
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for serialization."""
+        result: Dict[str, Any] = {}
+
+        if self.changes:
+            result["composition_changes"] = {
+                name: change.to_dict()
+                for name, change in sorted(self.changes.items())
+                if change.has_changes()
+            }
+
+        if self.packages_only_in_old:
+            result["packages_only_in_old"] = sorted(self.packages_only_in_old)
+
+        if self.packages_only_in_new:
+            result["packages_only_in_new"] = sorted(self.packages_only_in_new)
+
+        # Summary
+        total_added = sum(len(c.terms_added) for c in self.changes.values())
+        total_removed = sum(len(c.terms_removed) for c in self.changes.values())
+        result["summary"] = {
+            "packages_with_changes": len([c for c in self.changes.values() if c.has_changes()]),
+            "total_terms_added": total_added,
+            "total_terms_removed": total_removed,
+        }
+
         return result
 
 

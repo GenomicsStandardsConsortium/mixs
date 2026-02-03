@@ -128,6 +128,11 @@ def validate_path_or_spec(ctx, param, value: str) -> str:
     help='Generate human-readable summary report (default: yes).'
 )
 @click.option(
+    '--include-membership/--no-include-membership',
+    default=True,
+    help='Include term membership comparison in output (default: yes).'
+)
+@click.option(
     '--old-notes',
     default=None,
     help='Notes about the old schema source (recorded in output metadata).'
@@ -159,6 +164,7 @@ def main(
     profile_dir: Optional[Path],
     log_level: str,
     summary: bool,
+    include_membership: bool,
     old_notes: Optional[str],
     new_notes: Optional[str],
     old_additional: tuple,
@@ -246,11 +252,11 @@ def main(
 
         # Write outputs
         logger.info(f"Writing outputs to {output_dir}")
-        yaml_path = write_comparison_yaml(result, output_dir)
+        yaml_path = write_comparison_yaml(result, output_dir, include_membership=include_membership)
         click.echo(f"Wrote comparison results to: {yaml_path}")
 
         if summary:
-            summary_path = write_summary_report(result, output_dir)
+            summary_path = write_summary_report(result, output_dir, include_membership=include_membership)
             click.echo(f"Wrote summary report to: {summary_path}")
 
         # Print brief summary to console
@@ -262,6 +268,12 @@ def main(
         click.echo(f"  Only in old: {len(result.term_key_comparison.only_in_old)}")
         click.echo(f"  Only in new: {len(result.term_key_comparison.only_in_new)}")
         click.echo(f"  Terms with changes: {len(result.term_comparisons)}")
+
+        if include_membership and result.membership_comparison.has_changes():
+            mem_comp = result.membership_comparison
+            click.echo(f"  Membership changes: {len(mem_comp.checklist_changes) + len(mem_comp.package_changes)}")
+            click.echo(f"  Made mandatory: {len(mem_comp.made_mandatory)}")
+            click.echo(f"  Made optional: {len(mem_comp.made_optional)}")
 
         logger.info("Comparison complete!")
 
