@@ -1,0 +1,477 @@
+# MIxS term specifications in the LinkML framework
+
+| Metadata         | Value                                                                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version          | 0.0.1                                                                                                                                          |
+| Last updated     | 2025-05-05                                                                                                                                     |
+| Document Authors | James Fellows Yates (@jfy133), Mark Miller (@turbomam), Chris Hunter (@only1chunts), Peter Woollard (@Woolly-at-EBI), Lynn Schriml (@lschriml) |
+
+## Preamble
+
+This document describes how MIxS metadata terms are represented within the LinkML framework of the MIxS schema.
+
+### Terminology
+
+The key words “MUST”, “MUST NOT”, “SHOULD”, etc. are to be interpreted as described in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
+
+This specification documentation refers to both MIxS and LinkML terminology.
+The following table can guide readers to how the terminology can be linked.
+
+| MIxS                    | LinkML               | Description                                                                                                                                                                    |
+| ----------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Term                    | `slot`               | A single field of information (metadata) that has various attributes on how this information should be represented and formatted                                               |
+| Structured comment name | `name`               | A short and unique computer compatible key or name for a given metadata field that is used to refer to the particular term (typically) within the schema internally [^1]       |
+| Item                    | `title`              | A short and unique human readable name for the metadata term/slot [^2]                                                                                                         |
+| MIxS ID                 | `slot_uri`           | The resolvable globally unique persistent identifier associated with a MIxS metadata field with the prefix 'MIXS' that expands to https://w3id.org/gensc/mixs/                 |
+| Definition              | `description`        | A detailed human-readable explanation describing the context of the metadata field.                                                                                            |
+| Expected value          | `range`              | The category of metadata the metadata field will hold (text, numbers, etc.)                                                                                                    |
+| Value syntax            | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                                         |
+| Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field could be filled in                                                                                 |
+| Section                 | `slot_group`         | A way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                       |
+| Section                 | `subset`             | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                 |
+| Requirement             | `recommended`        | Specifying that a metadata field is optional, but if the information is available, it is highly recommended to be filled in to increase the scientific usefulness of your data |
+| Requirement             | `required`           | Specifying whether a metadata field is mandatory to be filled in for a sample                                                                                                  |
+| Occurrence              | `multivalued`        | That a term can be specified more than one time for a single term                                                                                                              |
+
+[^1]: This structured name is used by many implementers as a key e.g. NCBI and DDBJ
+
+[^2]: This title name is used by many implementers as a key e.g. ENA
+
+This document will generally use MIxS terminology, but where helpful more relevant use the LinkML equivalent, with the other form in parentheses afterwards.
+
+## 1. General
+
+### 1.1 LinkML compatibility
+
+A MIxS term (slot) MUST be written in and compatible with the [LinkML](https://linkml.io/) model, and any of it's requirements (e.g. in YAML format).
+
+It MUST conform to any MIxS specific LinkML linting requirements as defined within the [MIxS GitHub repository](https://github.com/GenomicsStandardsConsortium/mixs).
+
+### 1.2 Slot definition
+
+A LinkML slot is the object that is used to describe a MIxS term - i.e. information that is used to describe a particular aspect of a sample, its nucleic acids, or resulting sequence data.
+
+### 1.3 Language
+
+All MIxS terms attributes MUST be written in English.
+
+> [!NOTE]
+> This is currently only a convention.
+> If there is a community need for supporting other languages, please contact the CIG.
+
+## 2. Term structured naming
+
+### 2.1 (Structured comment) name format
+
+The term (slot) structured comment name (`name`) MUST be in [snake_case](https://en.wikipedia.org/wiki/Snake_case).
+
+All words must be lower case and underscores (`_`) MUST be used to separate words in the term (slot) name.
+
+### 2.2 (Structured comment) name length
+
+The term (slot) structured comment name (`name`) must be a maximum of 20 characters in length as per INSDC guidelines ([https://www.insdc.org/submitting-standards/feature-table/#3.1](https://www.insdc.org/submitting-standards/feature-table/#3.1)).
+
+### 2.3 (Structured comment) name uniqueness
+
+The term (slot) structured comment name (`name`) MUST be unique within MIxS and the MIxS LinkML model.
+
+### 2.4 (Structured comment) name descriptiveness
+
+The term (slot) structured comment name (`name`) MUST be descriptive of the data it is intended to represent.
+
+The term (slot) structured comment name (`name`) SHOULD NOT include a checklist or extension specific prefix (e.g. `mimarks_`, `soil_`), to ensure re-use across different checklists and extensions.
+
+### 2.5 (Structured comment) name abbreviations
+
+The term (slot) structured comment name (`name`) SHOULD be a abbreviated form of the item (title) attribute.
+
+Examples:
+
+| Term Item / `title`                             | Structured comment name / `name` |
+| ----------------------------------------------- | -------------------------------- |
+| geographic location (country and/or sea,region) | `geo_loc_name`                   |
+| isolation and growth condition                  | `isol_growth_condt`              |
+| pcr conditions                                  | `pcr_cond`                       |
+| sample volume or weight for DNA extraction      | `samp_vol_we_dna_ext`            |
+| collection site geographic feature              | `coll_site_geo_feat`             |
+
+### 2.6 (Structured comment) name abbreviations should be reused
+
+The term (slot) structured comment name (`name`) SHOULD reuse commonly used abbreviations when using the same word.
+
+Examples:
+
+| Word        | Abbreviation | Structured comment name / `name` |
+| ----------- | ------------ | -------------------------------- |
+| `culture`   | `cult_`      | `cult_isol_date`                 |
+| `culture`   | `cult_`      | `cult_result`                    |
+| `culture`   | `cult_`      | `cult_result_org`                |
+| `culture`   | `cult_`      | `cult_root_med`                  |
+| `dissolved` | `diss_`      | `diss_carb_dioxide`              |
+| `dissovled` | `diss_`      | `diss_hydrogen`                  |
+| `dissolved` | `diss_`      | `diss_inorg_carb`                |
+| `dissolved` | `diss_`      | `diss_inorg_nitro`               |
+
+### 2.7 (Structured comment) name common prefix of related terms
+
+When related to existing terms, the term (slot) structured comment name (`name`) SHOULD use a common prefix that allow grouping of related terms.
+
+Examples:
+
+- Terms related to `sample` should use the prefix `samp_`.
+
+  | Term Item / `title`              | Structured comment name / `name` |
+  | -------------------------------- | -------------------------------- |
+  | sample storage temperature       | `samp_store_temp`                |
+  | sample storage duration          | `samp_store_dur`                 |
+  | sample volume for DNA extraction | `samp_vol_we_dna_ext`            |
+
+- Terms related to assembly metadata term (slots) should use the prefix `assembly_`.
+
+  | Term Item / `title`          | Structured comment name / `name` |
+  | ---------------------------- | -------------------------------- |
+  | name and version of assembly | `assembly_name`                  |
+  | assembly software            | `assembly_software`              |
+  | assembly quality             | `assembly_qual`                  |
+
+## 3. Term expected value types
+
+### 3.1 Term expected value must be valid LinkML range types
+
+The type of data specified in the expected value (`range`) of a term (slot) MUST be in the form of a valid LinkML `range` type:
+
+- `string`
+- `integer`
+- `float`
+- `boolean`
+- An '[enumeration](#145-enumerations)' (i.e., controlled vocabulary') predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L28)).
+
+Refer to LinkML documentation for more information on [range types](https://linkml.io/linkml-model/latest/docs/range/).
+
+## 4. Attributes for MIxS terms
+
+### 4.1. Minimal required MIxS term (LinkML slot) attributes
+
+A term MUST at a minimum include following attributes:
+
+- [`name`](https://linkml.io/linkml-model/latest/docs/name/) (MIxS: Structured comment name).
+- [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions) (MIxS: Definition).
+- [`title`](https://linkml.io/linkml-model/latest/docs/title/) (MIxS: Item).
+- [`examples`](https://linkml.io/linkml-model/latest/docs/examples/) (MIxS: Example).
+- [`in_subset`](https://linkml.io/linkml-model/latest/docs/in_subset/) (MIxS: Section).
+- [`slot_uri`](https://linkml.io/linkml-model/latest/docs/slot_uri/) (MIxS: MIxS ID).
+- [`range`](https://linkml.io/linkml/schemas/slots.html#ranges) (MIxS: Expected value).
+
+### 4.2. Recommended LinkML slot attributes
+
+A term (slot) that has some level of 'requirement' (mandatory, conditional mandatory, optional) SHOULD include the following LinkML attributes:
+
+- [`recommended`](https://linkml.io/linkml/schemas/slots.html#recommended) (MIxS: Requirement).
+- [`required`](https://linkml.io/linkml/schemas/slots.html#required) (MIxS: Requirement).
+
+## 5. Term definition
+
+### 5.1 Definition contents
+
+The definition (description) SHOULD aim to be precise enough for a user to understand the data the term (slot) is intended to hold, how it should be filled, and used.
+
+Links to external resources (e.g. ontologies, databases, or other documentation) SHOULD be included in the definition (description) when relevant.
+
+### 5.2 Definition length
+
+The definition (description) MUST be at a minimum 1 sentence long that is longer than the term (slot) title.
+
+The definition (description) MAY be multiple sentences long, but should be as concise as possible to ensure readability.
+
+### 5.3 Definition examples
+
+The definition (description) SHOULD NOT include basic examples of the data the term (slot) is intended to hold (this is covered by the `examples` attribute).
+
+The definition (description) MAY include examples when the information for the term (slot) requires different formatting depending on certain conditions. The definition (description) MAY also include examples when it requires additional understanding that cannot be inferred by looking purely at the `examples` section.
+
+### 5.4 Definition external resources
+
+Links or URLs used in the definition (description) to point a reader to an external resource MUST be valid and generally accessible via the public world wide web.
+
+External resources SHOULD only be referred to when from a stable and established resource (i.e., not a personal or website, or a resource that is not widely used).
+
+URLs in external resources specified within descriptions SHOULD also be defined within a LinkML [`see_also` slot attribute](https://linkml.io/linkml-model/latest/docs/see_also/).
+
+## 6. Term item title attribute
+
+### 6.1 Title contents
+
+The item (title) should be a full sentence version of the term (slot) name, and MUST be descriptive of the data it is intended to hold.
+
+### 6.2 Title length
+
+A term (slot) item (title) attribute SHOULD be lower as short as possible, but as long as necessary to be sufficiently descriptive, unique, and distinguishable from other terms.
+
+### 6.3 Title format
+
+The item (title) SHOULD be in most circumstances lower case, including first character of the item.
+
+- Valid example: `library size`.
+- Invalid examples:
+  - `Library size` (capitalisation of first character).
+  - `Library Size` (capitalisation of of all words).
+
+Capitalisation MAY be used when it is an acronym or abbreviation that typically used capitalisation in the English language (e.g. `DNA`, `API`, `pH`).
+
+- Valid example: `MAG coverage software`.
+- Valid example: `API gravity`.
+
+### 6.4 Title uniqueness
+
+The term (slot) item (title) MUST be unique within the MIxS standard (LinkML model).
+
+## 7. Term examples attribute
+
+<!-- JFY comment: this is a new guideline I would like to propose, so requires discussion  -->
+
+### 7.1 Minimum number of examples
+
+There MUST have minimum of 1 examples for a term (slot).
+Ideally, there SHOULD be a minimum of 3 examples for a term (slot).
+
+### 7.2 Scope of examples
+
+Examples SHOULD cover the full range of possible values, string formats, or any other way that information can be given to the term (slot).
+
+For example if a term (slot) accepts either an [ontology](#14-ontology-and-value-sets) term _or_ a free text string, there should be at least one example for each type.
+If a term (slot) accepts different unit types, there should be at least two examples of different units to demonstrate multiple units are accepted.
+
+### 7.3 Examples for terms that allow more than one entry
+
+If a term (slot) allows multiple occurrences ('multivalued'), the examples MUST include at a minimum two examples, one to show inputting a single value, and another to show how to fill the term with multiple values.
+
+## 8. Term section attribute
+
+> [!WARNING]
+> The guidance in this section regarding `subset`s may be replaced with the use of `slot-group` in the future.
+
+### 8.1 All core terms must be assigned a subset
+
+All core checklist terms (slot) MUST be assigned to a section (subset).
+
+### 8.2 All extension terms must be assigned the environment subset
+
+A term (slot) defined in an extension (rather than a core checklist term) MUST be assigned to the 'Environment' section (subset).
+
+## 9. Term keywords attribute
+
+### 9.1 Number of keywords
+
+All term (slots) MUST have at least one keyword.
+
+### 9.2 Keywords should be re-used
+
+Re-using existing keywords SHOULD be preferred, but new keywords MAY be created if needed.
+
+### 9.3 Keyword types
+
+Keywords SHOULD be descriptive of the data the term is intended to hold in a way it can be grouped with with other terms (slots).
+
+This can correspond to stage of project, domain of research, or the sample type (or extension) the term is intended to be used with.
+
+It MAY ALSO include each descriptive part of the title (item) in full words (e.g. `air_temp` could have keywords `air` and `temperature`).
+
+## 10. Term MIxS ID attribute
+
+### 10.1 MIxS ID requirement
+
+The term MUST have a MIxS ID (slot_uri) that is unique within the MIxS ID space.
+
+### 10.2 MIxS ID format
+
+The MIxS ID (slot_uri) must begin with the string `MIXS`, a colon, and followed by a 7 digit number.
+
+Example: `MIXS:0000010`.
+
+> [!NOTE]
+> MIxS IDs are only able to be assigned by the GSC's Compliance and Integration Working Group (CIG).
+
+## 11. Slot range attribute
+
+### 11.1 Range options should be valid LinkML types
+
+See section [4](#4-data-types).
+
+### 11.2 Structured or formatted text should use a structured pattern
+
+A term that requires a specific value syntax or a structured string layout SHOULD use the `structured_pattern` slot attribute, where the pattern components SHOULD be predefined in the `settings:` section of the schema when theoretically could be used more than once.
+
+A slot MAY use `pattern:` attribute when XYZ <!-- TODO -->.
+
+### 11.3 Structured or formatted text components should be reused
+
+A structured pattern SHOULD re-use existing pattern components when as far as possible.
+
+Additional pattern components MAY be created when needed after consultation with the GSC's Compliance and Integration Working Group (CIG).
+
+### 11.4 Specifying units
+
+Term (slots) that record a measurement SHOULD use a [structured pattern](#112-structured-or-formatted-text-should-use-a-structured-pattern) that includes a component for the unit of measurement.
+
+Example:
+
+```yaml
+structured_pattern:
+  syntax: ^{particulate_matter_name};{float} {unit}$
+```
+
+### 11.4 Preferred units
+
+Terms (slots) that record a measurement SHOULD specify the preferred unit of measurement for the term (slot) within a LinkmL `annotation` slot sub-attribute called `Preferred_unit:`.
+
+Example:
+
+```yaml
+annotations:
+  Preferred_unit: degree Celsius
+```
+
+## 12. Multiple occurrence
+
+A term (slot) that allows multiple values for a single sample SHOULD be specified by setting the LinkML `multivalued` boolean to `true`.
+
+## 13. Level of requirement
+
+### 13.1 Mandatory terms
+
+A term (slot) that is required to be filled in for a sample MUST have the `required` attribute set to `true`.
+
+### 13.2 Conditional mandatory terms
+
+A conditional term (slot) SHOULD NOT be specified as `required` as a LinkML slot attribute.
+
+A conditional term (slot) SHOULD be specified within the `slot_usage` attribute of a LinkML class attribute for a given extension.
+
+### 13.3 Environment dependent terms
+
+An environment dependent term (slot) SHOULD NOT be specified as `required` as a LinkML slot attribute.
+
+An environment dependent term (slot) SHOULD be specified within the `slot_usage` attribute of a LinkML class attribute for a given extension.
+
+### 13.4 Optional terms
+
+A term (slot) that is not required for a given sample MUST NOT have either the `recommended` and `required` LinkML attributes specified.
+By default LinkML attributes are assumed `false` unless specified.
+
+## 14. Ontology and Value sets
+
+### 14.1 Ontology and controlled values recommended
+
+Where possible, terms (slots) with controlled vocabularies SHOULD use standardised terms from ontologies.
+When not possible, controlled vocabulary terms (value sets) MAY be used to specify the value of the term (slot).
+
+### 14.2 Recommended ontologies
+
+Ontologies SHOULD be from established and widely used ontologies, such as those found in the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols4/), [Open Biological and Biomedical Ontology Foundry (OBO)](https://obofoundry.org/), or [BioPortal](https://bioportal.bioontology.org/).
+
+Common ontologies used in MIxS include:
+
+- [Environment Ontology (ENVO)](https://sites.google.com/site/environmentontology/)
+- [Uberon anatomy ontology (UBERON)](https://obophenotype.github.io/uberon/)
+- [Disease Ontology (DOID)](https://disease-ontology.org/)
+- [Ontology for Biomedical Investigations (OBI)](https://obi-ontology.org/)
+- [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/)
+- [Phenotypic Quality Ontology (PATO)](https://pato-ontology.github.io/pato/)
+- [Plant Ontology (PO)](https://browser.planteome.org/amigo)
+
+### 14.3 Ontology term value format
+
+A term (slot) using an ontology term value MUST be written in the `termLabel [termID]` syntax, where the label is followed by the identifier code in square brackets.
+
+Example of ontology terms:
+
+- `Tundra biome [ENVO:01000180]`
+- `Rumen [UBERON:0007365]`
+- `Rabies [DOID:11260]`
+- `454 Genome Sequencer FLX [OBI:0000702]`
+
+### 14.4 Value sets
+
+For terms (slots) that only allow a small number fixed set of values, and otherwise no standardised ontology exists, an enumeration SHOULD be used be used to define the allowed values.
+
+The set of allowed values
+
+### 14.5 Enumerations
+
+Value sets (enumerations) MUST be defined within the `enums:` section of the LinkML schema.
+
+The name of the enumeration MUST be formatted in [Pascal Case](https://en.wikipedia.org/wiki/Camel_case), i.e. each word is capitalised and no spaces or underscores are used.
+
+For example, the value set for the term (slot) `assembly_qual` is named `AssemblyQualEnum`.
+
+## 15 Term provenance tracking
+
+### 15.1 Terms should record provenance of term creation and updates
+
+Where possible, terms (slots) SHOULD include provenance information using relevant LinkML attributes:
+
+- [`created_by`](https://linkml.io/linkml-model/latest/docs/created_by/)
+- [`contributors`](https://linkml.io/linkml-model/latest/docs/contributors/)
+- [`created_on`](https://linkml.io/linkml-model/latest/docs/created_on/)
+- [`modified_by`](https://linkml.io/linkml-model/latest/docs/modified_by/)
+- [`last_updated_on`](https://linkml.io/linkml-model/latest/docs/last_updated_on/)
+
+### 15.2 Terms should record original author
+
+Terms (slots) SHOULD include the original author of the term (slot) using the LinkML [`created_by`](https://linkml.io/linkml-model/latest/docs/created_by/) attribute.
+
+Additional contributors to the slot MAY BE specified using the [`contributors`](https://linkml.io/linkml-model/latest/docs/contributors/) attribute.
+
+Original author or contributors SHOULD be referred to by a stable ID such as an [ORCID](https://orcid.org/), with the persons name included as a comment.
+
+```yaml
+created_by: orcid:0000-1234-1234-1234 # Erika Mustermann
+```
+
+### 15.3. Term creation date should be recorded
+
+The date in which the term (slot) was added to the schema SHOULD be recorded using the LinkML [`created_on`](https://linkml.io/linkml-model/latest/docs/created_on/) attribute.
+
+### 15.4 Terms should record modification author
+
+When a term (slot) is updated, the person making the update SHOULD be recorded using the LinkML [`modified_by`](https://linkml.io/linkml-model/latest/docs/modified_by/) attribute.
+
+Additional contributors to the update can be appended to the [`contributors`](https://linkml.io/linkml-model/latest/docs/contributors/) attribute.
+
+Original author or contributors SHOULD be referred to by a stable ID such as an [ORCID](https://orcid.org/), with the persons name included as a comment.
+
+```yaml
+created_by: orcid:0000-1234-1234-1234 # Erika Mustermann
+```
+
+### 15.5 Term modification date should be recorded
+
+The date in which the term (slot) was updated or modified SHOULD be recorded using the LinkML [`last_updated_on`](https://linkml.io/linkml-model/latest/docs/last_updated_on/) attribute.
+
+## 16 Importing terms from other standards
+
+### 16.1 Existing terms in other standards should be re-used if equivalent
+
+Terms (slots) SHOULD be re-used from other established standards if they serve the same purpose and meaning as a proposed new MIxS term (slot).
+
+Examples of established standards include:
+
+- [Darwin Core (DwC)](https://dwc.tdwg.org/)
+
+### 16.2 Imported external standards terms requirements
+
+Term (slots) that are imported from another standard MUST be re-used in full, i.e. all attributes of the term (slot) MUST be re-used as far as they can be mapped to LinkML attributes.
+
+Term (slots) imported from another standard MUST refer to the original source of the term (slot) by specifying the relevant CURIE ([Compact URI](https://en.wikipedia.org/wiki/CURIE)) using the LinkML [mappings](https://linkml.io/linkml-model/latest/docs/mappings/) (`exact_mappings`, `close_mappings`, `related_mappings`, `narrow_mappings`, `broad_mappings`) attribute.
+
+### 16.3 Imported structured comment term name format
+
+Term (slots) structured comment (name) of external terms (slots) MUST be converted to [snake_case](https://en.wikipedia.org/wiki/Snake_case) and follow all other [MIxS naming conventions](#2-term-structured-naming) when re-used from another standard, if not already in this format.
+
+Minor modifications to the term (slot) structured comment (name) MAY BE made to ensure compliance with MIxS naming conventions.
+
+## References
+
+- [https://www.gensc.org/pages/standards-intro.html#term](https://www.gensc.org/pages/standards-intro.html#term)
+- Eloe-Fadrosh, E.A., Mungall, C.J., Miller, M.A., Smith, M., Patil, S.S., Kelliher, J.M., Johnson, L.Y.D., Rodriguez, F.E., Chain, P.S.G., Hu, B., Thornton, M.B., McCue, L.A., McHardy, A.C., Harris, N.L., Reddy, T.B.K., Mukherjee, S., Hunter, C.I., Walls, R., Schriml, L.M., 2024. A practical approach to using the Genomic Standards Consortium MIxS reporting standard for comparative genomics and metagenomics. Methods Mol. Biol. 2802, 587–609. [https://doi.org/10.1007/978-1-0716-3838-5_20](https://doi.org/10.1007/978-1-0716-3838-5_20)
+- [https://linkml.io/linkml/](https://linkml.io/linkml/)
