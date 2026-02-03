@@ -271,28 +271,37 @@ class LinkMLReader(BaseReader):
         """Extract checklist and package information from classes."""
         all_classes = schema_view.all_classes(imports=True)
 
-        # Known checklist class prefixes
-        checklist_prefixes = ["Migs", "Mims", "Mimarks", "Misag", "Mimag", "Miuvig", "Me"]
+        # Known checklist class prefixes (case-insensitive matching)
+        # v6.0.0 uses "MIGS eukaryote", v6.2.0+ uses "MigsBa"
+        checklist_prefixes = ["migs", "mims", "mimarks", "misag", "mimag", "miuvig"]
 
-        # Known environmental package names (extensions)
-        package_names = [
-            "Agriculture", "Air", "BuiltEnvironment", "HostAssociated",
-            "HumanAssociated", "HumanGut", "HumanOral", "HumanSkin", "HumanVaginal",
-            "HydrocarbonResourcesCores", "HydrocarbonResourcesFluidsSwabs",
-            "MicrobialMatBiofilm", "MiscellaneousNaturalOrArtificialEnvironment",
-            "PlantAssociated", "Sediment", "Soil", "SymbiontAssociated",
-            "WastewaterSludge", "Water", "FoodAnimalAndAnimalFeed", "FoodFarmEnvironment",
-            "FoodFoodProductionFacility", "FoodHumanFoods",
-        ]
+        # Known environmental package names - normalized to lowercase without spaces/underscores
+        # v6.0.0 uses "air", "built environment"; v6.2.0+ uses "Air", "BuiltEnvironment"
+        package_names_normalized = {
+            "agriculture", "air", "builtenvironment", "hostassociated",
+            "humanassociated", "humangut", "humanoral", "humanskin", "humanvaginal",
+            "hydrocarbonresourcescores", "hydrocarbonresourcesfluidsswabs",
+            "microbialmatbiofilm", "miscellaneousnaturalOrartificialenvironment",
+            "plantassociated", "sediment", "soil", "symbiontassociated",
+            "wastewatrsludge", "wastewatrsludge", "water",
+            "foodanimalandanimalfeed", "foodfarmenvironment",
+            "foodfoodproductionfacility", "foodhumanfoods",
+        }
+
+        def normalize_name(name: str) -> str:
+            """Normalize class name for matching (lowercase, no spaces/underscores)."""
+            return name.lower().replace(" ", "").replace("_", "")
 
         for class_name, class_def in all_classes.items():
             # Skip abstract classes and mixins
             if class_def.abstract or class_def.mixin:
                 continue
 
-            # Determine if this is a checklist or package
-            is_checklist = any(class_name.startswith(prefix) for prefix in checklist_prefixes)
-            is_package = class_name in package_names
+            normalized = normalize_name(class_name)
+
+            # Determine if this is a checklist or package (case-insensitive)
+            is_checklist = any(normalized.startswith(prefix) for prefix in checklist_prefixes)
+            is_package = normalized in package_names_normalized
 
             if is_checklist or is_package:
                 # Get slots for this class

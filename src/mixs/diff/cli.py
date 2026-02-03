@@ -34,7 +34,7 @@ from typing import Optional
 import click
 
 from mixs.diff.readers.base import get_reader, detect_format
-from mixs.diff.comparison import LegacySchemaComparator, load_name_mappings
+from mixs.diff.comparison import LegacySchemaComparator, load_mapping_config
 from mixs.diff.output import write_comparison_yaml, write_summary_report
 
 # Set up logging
@@ -197,15 +197,15 @@ def main(
         if new_notes:
             new_schema.metadata["notes"] = new_notes
 
-        # Load name mappings if provided
-        name_mappings = {}
+        # Load mapping config if provided
+        mapping_config = None
         if mappings_dir:
-            logger.info(f"Loading name mappings from {mappings_dir}")
-            name_mappings = load_name_mappings(mappings_dir)
+            logger.info(f"Loading mapping config from {mappings_dir}")
+            mapping_config = load_mapping_config(mappings_dir)
 
         # Compare schemas
         logger.info("Comparing schemas...")
-        comparator = LegacySchemaComparator(name_mappings=name_mappings)
+        comparator = LegacySchemaComparator(mapping_config=mapping_config)
         result = comparator.compare(old_schema, new_schema)
 
         # Write outputs

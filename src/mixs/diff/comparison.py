@@ -40,6 +40,8 @@ class KeyComparison:
     only_in_new: Set[str] = field(default_factory=set)
     shared: Set[str] = field(default_factory=set)
     expected_mappings: Set[str] = field(default_factory=set)
+    expected_splits: Dict[str, List[str]] = field(default_factory=dict)  # old -> [new1, new2]
+    expected_deletions: Dict[str, str] = field(default_factory=dict)  # old -> reason
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for serialization."""
@@ -52,6 +54,10 @@ class KeyComparison:
             result["only_in_new"] = sorted(self.only_in_new)
         if self.expected_mappings:
             result["expected_mappings"] = sorted(self.expected_mappings)
+        if self.expected_splits:
+            result["expected_splits"] = {k: sorted(v) for k, v in sorted(self.expected_splits.items())}
+        if self.expected_deletions:
+            result["expected_deletions"] = dict(sorted(self.expected_deletions.items()))
         return result
 
 
@@ -109,21 +115,39 @@ class SchemaComparisonResult:
         return result
 
 
+@dataclass
+class MappingConfig:
+    """Extended mapping configuration including renames, splits, and deletions."""
+    renames: Dict[str, str] = field(default_factory=dict)
+    splits: Dict[str, List[str]] = field(default_factory=dict)
+    split_descriptions: Dict[str, str] = field(default_factory=dict)
+    deletions: Dict[str, str] = field(default_factory=dict)  # term -> reason
+
+
 class LegacySchemaComparator:
     """Compare two NormalizedSchema instances."""
 
     def __init__(
         self,
         name_mappings: Optional[Dict[str, str]] = None,
+        mapping_config: Optional[MappingConfig] = None,
         ignore_fields: Optional[Set[str]] = None,
     ):
         """Initialize comparator.
 
         Args:
             name_mappings: Optional dict mapping old term names to new term names.
+                          Deprecated: use mapping_config instead.
+            mapping_config: Optional extended mapping configuration.
             ignore_fields: Optional set of field names to ignore in comparison.
         """
-        self.name_mappings = name_mappings or {}
+        # Support both old-style name_mappings and new mapping_config
+        if mapping_config:
+            self.mapping_config = mapping_config
+            self.name_mappings = mapping_config.renames
+        else:
+            self.mapping_config = MappingConfig(renames=name_mappings or {})
+            self.name_mappings = name_mappings or {}
         self.ignore_fields = ignore_fields or {"position", "mixs_id"}
 
     def compare(
@@ -192,17 +216,37 @@ class LegacySchemaComparator:
         old_names = set(old_schema.terms.keys())
         new_names = set(new_schema.terms.keys())
 
-        # Apply name mappings
+        # Track terms accounted for by splits and deletions
+        accounted_old = set()
+        accounted_new = set()
+
+        # Process splits
+        for old_name, new_names_list in self.mapping_config.splits.items():
+            if old_name in old_names:
+                # Check if all split targets exist in new schema
+                found_targets = [n for n in new_names_list if n in new_names]
+                if found_targets:
+                    result.term_key_comparison.expected_splits[old_name] = found_targets
+                    accounted_old.add(old_name)
+                    accounted_new.update(found_targets)
+
+        # Process deletions
+        for old_name, reason in self.mapping_config.deletions.items():
+            if old_name in old_names and old_name not in new_names:
+                result.term_key_comparison.expected_deletions[old_name] = reason
+                accounted_old.add(old_name)
+
+        # Apply name mappings (renames)
         if self.name_mappings:
             unique_old, unique_new, expected = self._filter_expected_mappings(
-                old_names, new_names, self.name_mappings
+                old_names - accounted_old, new_names - accounted_new, self.name_mappings
             )
             result.term_key_comparison.only_in_old = unique_old
             result.term_key_comparison.only_in_new = unique_new
             result.term_key_comparison.expected_mappings = expected
         else:
-            result.term_key_comparison.only_in_old = old_names - new_names
-            result.term_key_comparison.only_in_new = new_names - old_names
+            result.term_key_comparison.only_in_old = (old_names - new_names) - accounted_old
+            result.term_key_comparison.only_in_new = (new_names - old_names) - accounted_new
 
         result.term_key_comparison.shared = old_names & new_names
 
@@ -214,7 +258,7 @@ class LegacySchemaComparator:
             if comp.has_differences():
                 result.term_comparisons[name] = comp
 
-        # Compare mapped terms
+        # Compare mapped terms (renames)
         for old_name, new_name in self.name_mappings.items():
             if old_name in old_schema.terms and new_name in new_schema.terms:
                 old_term = old_schema.terms[old_name]
@@ -342,3 +386,55 @@ def load_name_mappings(mappings_dir: Path) -> Dict[str, str]:
         logger.error(f"Could not load name mappings: {e}")
 
     return mappings
+
+
+def load_mapping_config(mappings_dir: Path) -> MappingConfig:
+    """Load extended mapping configuration from YAML file.
+
+    Args:
+        mappings_dir: Directory containing mapping files.
+
+    Returns:
+        MappingConfig with renames, splits, and deletions.
+    """
+    import yaml
+
+    config = MappingConfig()
+    config_file = mappings_dir / "mapping_config.yaml"
+
+    if not config_file.exists():
+        # Fall back to TSV-only mode
+        config.renames = load_name_mappings(mappings_dir)
+        return config
+
+    try:
+        with open(config_file, 'r') as f:
+            data = yaml.safe_load(f) or {}
+
+        config.renames = data.get('renames', {}) or {}
+
+        # Load splits with descriptions
+        splits_data = data.get('splits', {}) or {}
+        for old_name, split_info in splits_data.items():
+            if isinstance(split_info, list):
+                config.splits[old_name] = split_info
+            elif isinstance(split_info, dict):
+                config.splits[old_name] = split_info.get('targets', split_info.get('new_names', []))
+                if 'description' in split_info:
+                    config.split_descriptions[old_name] = split_info['description']
+
+        # Load deletions with reasons
+        deletions_data = data.get('deletions', {}) or {}
+        for old_name, deletion_info in deletions_data.items():
+            if isinstance(deletion_info, str):
+                config.deletions[old_name] = deletion_info
+            elif isinstance(deletion_info, dict):
+                config.deletions[old_name] = deletion_info.get('reason', 'Removed')
+
+        logger.info(f"Loaded mapping config: {len(config.renames)} renames, "
+                   f"{len(config.splits)} splits, {len(config.deletions)} deletions")
+
+    except Exception as e:
+        logger.error(f"Could not load mapping config: {e}")
+
+    return config

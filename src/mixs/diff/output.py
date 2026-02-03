@@ -117,9 +117,23 @@ def write_summary_report(
     lines.append(f"  Terms with definition changes: {len(result.term_comparisons)}")
     lines.append("")
 
-    # List removed terms
+    # List expected splits
+    if key_comp.expected_splits:
+        lines.append("  Term splits (1 old → N new):")
+        for old_name, new_names in sorted(key_comp.expected_splits.items()):
+            lines.append(f"    {old_name} → {', '.join(new_names)}")
+        lines.append("")
+
+    # List expected deletions
+    if key_comp.expected_deletions:
+        lines.append("  Terms intentionally removed:")
+        for name, reason in sorted(key_comp.expected_deletions.items()):
+            lines.append(f"    - {name}: {reason}")
+        lines.append("")
+
+    # List removed terms (unexplained)
     if key_comp.only_in_old:
-        lines.append("  Terms only in OLD (removed):")
+        lines.append("  Terms only in OLD (unexplained removals):")
         for name in sorted(key_comp.only_in_old)[:20]:
             lines.append(f"    - {name}")
         if len(key_comp.only_in_old) > 20:
