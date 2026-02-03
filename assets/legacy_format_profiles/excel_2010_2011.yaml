@@ -1,0 +1,82 @@
+# MIxS 2010-2011 Excel Format Profile
+# Files in 2010/ and 2011/ directories
+# Transitional format between 2009 and v4
+description: "MIxS 2010-2011 Excel format (transitional period)"
+
+# Pattern matching for auto-detection
+version_patterns:
+  - "2010"
+  - "2011"
+
+# Sheet names to look for (in priority order)
+# May use either old or new naming conventions
+sheet_names:
+  main_terms:
+    - "MIxS"
+    - "Recovered_Sheet1"
+    - "dereplicated param list"
+  packages:
+    - "environmental_packages"
+    - "environmental packages"
+
+# Column header mappings
+# Mixed conventions during this period
+column_mappings:
+  name:
+    - "Structured comment name"
+    - "Item"
+    - "Parameter"
+  item:
+    - "Item"
+    - "Package item"
+    - "Parameter"
+  definition:
+    - "Definition"
+  description:
+    - "Description"
+  example:
+    - "Example"
+  expected_value:
+    - "Expected value"
+  value_syntax:
+    - "Value syntax"
+  occurrence:
+    - "Occurence"
+    - "Occurrence"
+  preferred_unit:
+    - "Preferred unit"
+  section:
+    - "Section"
+  position:
+    - "Position"
+    - "pos"
+  requirement:
+    - "Requirement"
+  package_name:
+    - "Environmental package"
+    - "Package"
+
+# Checklist column mappings
+# May use either old uppercase or newer lowercase
+checklist_columns:
+  # Uppercase (2009 style)
+  EU: "migs_eu"
+  BA: "migs_ba"
+  PL: "migs_pl"
+  VI: "migs_vi"
+  ORG: "migs_org"
+  ME: "me"
+  MIENS_S: "mimarks_s"
+  MIENS_C: "mimarks_c"
+  # Lowercase (v4 style)
+  eu: "migs_eu"
+  ba: "migs_ba"
+  pl: "migs_pl"
+  vi: "migs_vi"
+  org: "migs_org"
+  me: "me"
+  "MIMARKS Survey": "mimarks_s"
+  "MIMARKS Specimen": "mimarks_c"
+
+# May need normalization depending on which format conventions are used
+normalize_term_names: true

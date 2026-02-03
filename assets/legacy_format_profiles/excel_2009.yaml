@@ -1,0 +1,67 @@
+# MIxS 2009 Excel Format Profile
+# Files: Migs_mims_miens_*.xlsx in 2009/ directory
+# This early format has significantly different structure from later versions
+description: "MIxS 2009 Excel format (early development)"
+
+# Pattern matching for auto-detection (checked against filename and path)
+version_patterns:
+  - "2009"
+  - "migs_mims_miens"
+  - "miens"
+
+# Sheet names to look for (in priority order)
+# Note: 2009 files use "Recovered_Sheet1" instead of "MIxS"
+sheet_names:
+  main_terms:
+    - "Recovered_Sheet1"
+    - "dereplicated param list"
+  packages:
+    - "environmental packages"
+
+# Column header mappings
+# 2009 format uses "Item" as the term name and "Description" for expected value hints
+column_mappings:
+  name:
+    - "Item"
+    - "Parameter"
+  item:
+    - "Item"
+    - "Parameter"
+  definition:
+    - "Definition"
+  description:  # 2009 uses this for expected value hints
+    - "Description"
+  expected_value:
+    - "Expected value"
+  section:
+    - "Section"
+  position:
+    - "pos"
+    - "Position"
+  package_name:
+    - "Package"
+    - "Environmental package"
+
+# Checklist column mappings
+# 2009 uses uppercase short names and "MIENS" instead of "MIMARKS"
+checklist_columns:
+  EU: "migs_eu"
+  BA: "migs_ba"
+  PL: "migs_pl"
+  VI: "migs_vi"
+  ORG: "migs_org"
+  ME: "me"
+  MIENS_S: "mimarks_s"  # 2009 name for MIMARKS Survey
+  MIENS_C: "mimarks_c"  # 2009 name for MIMARKS Specimen
+
+# 2009 format uses human-readable names like "project name" that need normalization
+normalize_term_names: true
+
+# Additional notes for this format
+notes: |
+  The 2009 format predates standardization. Key differences:
+  - Sheet named "Recovered_Sheet1" (possibly from file recovery)
+  - "Item" column contains term names (e.g., "project name")
+  - "Description" column contains expected value type hints (e.g., "[boolean]")
+  - Checklist columns use uppercase (EU, BA, etc.)
+  - "MIENS" was later renamed to "MIMARKS"
