@@ -6,11 +6,13 @@ Wraps SchemaView to produce NormalizedSchema for comparison with legacy formats.
 import logging
 import os
 import re
+import shutil
 import tempfile
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 
 import requests
+import yaml as pyyaml
 from linkml_runtime.utils.schemaview import SchemaView
 
 from mixs.diff.models import NormalizedSchema, NormalizedTerm
@@ -82,6 +84,9 @@ class LinkMLReader(BaseReader):
     def _load_from_github(self, spec: str, version: Optional[str] = None) -> tuple:
         """Load SchemaView from GitHub specification.
 
+        Handles both single-file schemas (v6.2.0+) and multi-file schemas (v6.0.0, v6.1.x)
+        by downloading imported files to a temp directory.
+
         Args:
             spec: GitHub specification in format "owner/repo@commit:path"
             version: Optional version override
@@ -91,30 +96,98 @@ class LinkMLReader(BaseReader):
         """
         # Parse specification
         owner, repo, commit, file_path = self._parse_github_spec(spec)
+        base_dir = str(Path(file_path).parent)
 
         # Construct raw file URL
-        raw_url = f"https://raw.githubusercontent.com/{owner}/{repo}/{commit}/{file_path}"
+        base_url = f"https://raw.githubusercontent.com/{owner}/{repo}/{commit}"
+        raw_url = f"{base_url}/{file_path}"
 
         logger.info(f"Fetching schema from: {raw_url}")
 
-        # Download to temp file
+        # Download main file
         response = requests.get(raw_url, timeout=30)
         response.raise_for_status()
+        main_content = response.text
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.yaml', delete=False) as f:
-            f.write(response.text)
-            temp_path = f.name
+        # Create temp directory and download schema files
+        temp_dir = tempfile.mkdtemp(prefix="mixs_schema_")
+        main_filename = Path(file_path).name
+        main_path = Path(temp_dir) / main_filename
 
         try:
-            schema_view = SchemaView(temp_path)
-        finally:
-            os.unlink(temp_path)
+            # Write main file
+            with open(main_path, 'w') as f:
+                f.write(main_content)
+
+            # Parse imports from the main file and download them
+            self._download_imports(main_content, base_url, base_dir, temp_dir)
+
+            schema_view = SchemaView(str(main_path))
+        except Exception:
+            # Clean up temp directory on error
+            shutil.rmtree(temp_dir, ignore_errors=True)
+            raise
+
+        # Note: We intentionally don't delete the temp directory here
+        # because SchemaView may need to access imported files lazily.
+        # The OS will clean it up eventually, or we could add cleanup later.
 
         # Use commit/tag as version if not provided
         if version is None:
             version = commit
 
         return schema_view, version
+
+    def _download_imports(self, yaml_content: str, base_url: str, base_dir: str, temp_dir: str) -> None:
+        """Download imported schema files to temp directory.
+
+        Parses the 'imports:' section of a YAML file and recursively downloads
+        any local imports (not linkml: prefixed).
+
+        Args:
+            yaml_content: Content of the main YAML file
+            base_url: Base GitHub raw URL (e.g., https://raw.githubusercontent.com/owner/repo/commit)
+            base_dir: Directory containing the schema files in the repo
+            temp_dir: Local temp directory to save files
+        """
+        try:
+            data = pyyaml.safe_load(yaml_content)
+        except Exception as e:
+            logger.warning(f"Could not parse YAML for imports: {e}")
+            return
+
+        imports = data.get('imports', [])
+        if not imports:
+            return
+
+        for imp in imports:
+            # Skip linkml built-in imports
+            if imp.startswith('linkml:'):
+                continue
+
+            # Construct import file path
+            import_filename = f"{imp}.yaml" if not imp.endswith('.yaml') else imp
+            import_url = f"{base_url}/{base_dir}/{import_filename}"
+            local_path = Path(temp_dir) / import_filename
+
+            # Skip if already downloaded
+            if local_path.exists():
+                continue
+
+            logger.debug(f"Downloading import: {import_filename}")
+
+            try:
+                response = requests.get(import_url, timeout=30)
+                response.raise_for_status()
+
+                with open(local_path, 'w') as f:
+                    f.write(response.text)
+
+                # Recursively download imports from this file
+                self._download_imports(response.text, base_url, base_dir, temp_dir)
+
+            except requests.RequestException as e:
+                logger.warning(f"Could not download import {import_filename}: {e}")
 
     def _parse_github_spec(self, spec: str) -> tuple:
         """Parse GitHub specification string.

@@ -1,0 +1,73 @@
+================================================================================
+MIXS LEGACY SCHEMA COMPARISON SUMMARY
+================================================================================
+
+OLD SCHEMA: v5
+  Source: ../mixs-legacy/mixs5/mixs_v5.xlsx
+  Format: xlsx
+  Terms: 94
+
+NEW SCHEMA: mixs6.0.0
+  Source: GenomicsStandardsConsortium/mixs@mixs6.0.0:model/schema/mixs.yaml
+  Format: linkml
+  Terms: 804
+
+----------------------------------------
+TERM COMPARISON
+----------------------------------------
+  Shared terms: 85
+  Only in old: 9
+  Only in new: 719
+  Terms with definition changes: 85
+
+  Terms only in OLD (removed):
+    - 16s_recover
+    - 16s_recover_software
+    - env_package
+    - health_disease_stat
+    - investigation_type
+    - submitted_to_insdc
+    - votu_class_appr
+    - votu_db
+    - votu_seq_comp_appr
+
+  Terms only in NEW (added):
+    + Food_Product_type
+    + Food_source
+    + HACCP_term
+    + IFSAC_category
+    + abs_air_humidity
+    + add_recov_method
+    + additional_info
+    + address
+    + adj_room
+    + adjacent_environment
+    + aero_struc
+    + agrochem_addition
+    + air particulate matter concentration
+    + air_PM_concen
+    + air_flow_impede
+    + air_temp
+    + air_temp_regm
+    + al_sat
+    + al_sat_meth
+    + alkalinity
+    ... and 699 more
+
+----------------------------------------
+PACKAGE COMPARISON
+----------------------------------------
+  Shared packages: 0
+  Only in old: 17
+  Only in new: 0
+
+----------------------------------------
+CHECKLIST COMPARISON
+----------------------------------------
+  Shared checklists: 0
+  Only in old: 11
+  Only in new: 0
+
+================================================================================
+Generated: 2026-02-03T13:00:18.140477
+================================================================================
