@@ -31,6 +31,7 @@ def write_comparison_yaml(
     result: SchemaComparisonResult,
     output_dir: Path,
     filename: str = "schema_comparison_results.yaml",
+    include_membership: bool = True,
 ) -> Path:
     """Write comparison results to YAML file.
 
@@ -38,6 +39,7 @@ def write_comparison_yaml(
         result: The comparison result to write.
         output_dir: Directory to write output file.
         filename: Name of the output file.
+        include_membership: Whether to include membership comparison in output.
 
     Returns:
         Path to the written file.
@@ -47,6 +49,11 @@ def write_comparison_yaml(
 
     # Build output dict
     output_dict = result.to_dict()
+
+    # Optionally remove membership sections
+    if not include_membership:
+        output_dict.pop("membership_differences", None)
+        output_dict.pop("package_composition_differences", None)
 
     # Add timestamp
     output_dict["comparison_metadata"]["comparison_timestamp"] = datetime.now().isoformat()
@@ -70,6 +77,7 @@ def write_summary_report(
     result: SchemaComparisonResult,
     output_dir: Path,
     filename: str = "comparison_summary.txt",
+    include_membership: bool = True,
 ) -> Path:
     """Write human-readable summary report.
 
@@ -77,6 +85,7 @@ def write_summary_report(
         result: The comparison result to summarize.
         output_dir: Directory to write output file.
         filename: Name of the output file.
+        include_membership: Whether to include membership comparison in output.
 
     Returns:
         Path to the written file.
@@ -177,6 +186,80 @@ def write_summary_report(
         lines.append(f"  Only in old: {len(cl_comp.only_in_old)}")
         lines.append(f"  Only in new: {len(cl_comp.only_in_new)}")
         lines.append("")
+
+    # Membership changes summary
+    if include_membership and result.membership_comparison.has_changes():
+        lines.append("-" * 40)
+        lines.append("MEMBERSHIP CHANGES")
+        lines.append("-" * 40)
+        mem_comp = result.membership_comparison
+
+        # Count totals
+        checklist_added = sum(len(terms) for terms in mem_comp.terms_added_to_checklists.values())
+        checklist_removed = sum(len(terms) for terms in mem_comp.terms_removed_from_checklists.values())
+        package_added = sum(len(terms) for terms in mem_comp.terms_added_to_packages.values())
+        package_removed = sum(len(terms) for terms in mem_comp.terms_removed_from_packages.values())
+
+        lines.append(f"  Terms added to checklists: {checklist_added}")
+        lines.append(f"  Terms removed from checklists: {checklist_removed}")
+        lines.append(f"  Terms added to packages: {package_added}")
+        lines.append(f"  Terms removed from packages: {package_removed}")
+        lines.append(f"  Made mandatory (was optional): {len(mem_comp.made_mandatory)}")
+        lines.append(f"  Made optional (was mandatory): {len(mem_comp.made_optional)}")
+        lines.append("")
+
+        # List requirement changes if any
+        if mem_comp.made_mandatory:
+            lines.append("  Made mandatory:")
+            for change in mem_comp.made_mandatory[:10]:
+                lines.append(f"    {change.term_name} in {change.group_name}: {change.old_requirement} → {change.new_requirement}")
+            if len(mem_comp.made_mandatory) > 10:
+                lines.append(f"    ... and {len(mem_comp.made_mandatory) - 10} more")
+            lines.append("")
+
+        if mem_comp.made_optional:
+            lines.append("  Made optional:")
+            for change in mem_comp.made_optional[:10]:
+                lines.append(f"    {change.term_name} in {change.group_name}: {change.old_requirement} → {change.new_requirement}")
+            if len(mem_comp.made_optional) > 10:
+                lines.append(f"    ... and {len(mem_comp.made_optional) - 10} more")
+            lines.append("")
+
+    # Package composition changes summary
+    if include_membership and result.package_composition.has_changes():
+        lines.append("-" * 40)
+        lines.append("PACKAGE COMPOSITION CHANGES")
+        lines.append("-" * 40)
+        pkg_comp = result.package_composition
+
+        # List packages with composition changes
+        changes_with_content = [
+            (name, change)
+            for name, change in sorted(pkg_comp.changes.items())
+            if change.has_changes()
+        ]
+
+        if changes_with_content:
+            for pkg_name, change in changes_with_content[:15]:
+                added_count = len(change.terms_added)
+                removed_count = len(change.terms_removed)
+                lines.append(f"  {pkg_name}: +{added_count} terms, -{removed_count} terms")
+            if len(changes_with_content) > 15:
+                lines.append(f"  ... and {len(changes_with_content) - 15} more packages")
+            lines.append("")
+
+        # List new/removed packages
+        if pkg_comp.packages_only_in_new:
+            lines.append("  Packages added:")
+            for pkg in sorted(pkg_comp.packages_only_in_new):
+                lines.append(f"    + {pkg}")
+            lines.append("")
+
+        if pkg_comp.packages_only_in_old:
+            lines.append("  Packages removed:")
+            for pkg in sorted(pkg_comp.packages_only_in_old):
+                lines.append(f"    - {pkg}")
+            lines.append("")
 
     lines.append("=" * 80)
     lines.append(f"Generated: {datetime.now().isoformat()}")

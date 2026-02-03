@@ -5,7 +5,14 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Set, Tuple, Optional, Any
 
-from mixs.diff.models import NormalizedSchema, NormalizedTerm
+from mixs.diff.models import (
+    NormalizedSchema,
+    NormalizedTerm,
+    MembershipChange,
+    MembershipComparison,
+    PackageCompositionChange,
+    PackageCompositionComparison,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -80,6 +87,12 @@ class SchemaComparisonResult:
     # Checklist comparisons
     checklist_key_comparison: KeyComparison = field(default_factory=KeyComparison)
 
+    # Membership comparisons (term membership in checklists/packages)
+    membership_comparison: MembershipComparison = field(default_factory=MembershipComparison)
+
+    # Package composition comparisons (which terms are in each package)
+    package_composition: PackageCompositionComparison = field(default_factory=PackageCompositionComparison)
+
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for serialization."""
         # Build term differences
@@ -114,6 +127,14 @@ class SchemaComparisonResult:
             result["checklist_differences"] = {
                 "key_comparison": self.checklist_key_comparison.to_dict(),
             }
+
+        # Add membership comparison if there are changes
+        if self.membership_comparison.has_changes():
+            result["membership_differences"] = self.membership_comparison.to_dict()
+
+        # Add package composition comparison if there are changes
+        if self.package_composition.has_changes():
+            result["package_composition_differences"] = self.package_composition.to_dict()
 
         return result
 
@@ -208,6 +229,12 @@ class LegacySchemaComparator:
             new_schema.checklists,
             result.checklist_key_comparison,
         )
+
+        # Compare term memberships in checklists and packages
+        self._compare_memberships(old_schema, new_schema, result)
+
+        # Compare package composition (which terms are in each package)
+        self._compare_package_composition(old_schema, new_schema, result)
 
         return result
 
@@ -368,6 +395,169 @@ class LegacySchemaComparator:
         # Normalize whitespace
         normalized = " ".join(value.split())
         return normalized.lower()
+
+    def _compare_memberships(
+        self,
+        old_schema: NormalizedSchema,
+        new_schema: NormalizedSchema,
+        result: SchemaComparisonResult,
+    ) -> None:
+        """Compare term memberships in checklists and packages.
+
+        For each shared term, compares the checklist_membership and package_membership
+        dictionaries to detect:
+        - Terms added to/removed from checklists and packages
+        - Requirement level changes (M→X, X→M, etc.)
+        """
+        # Compare memberships for shared terms
+        for term_name in result.term_key_comparison.shared:
+            old_term = old_schema.terms[term_name]
+            new_term = new_schema.terms[term_name]
+
+            # Compare checklist membership
+            self._compare_term_membership(
+                term_name,
+                old_term.checklist_membership,
+                new_term.checklist_membership,
+                "checklist",
+                result.membership_comparison,
+            )
+
+            # Compare package membership
+            self._compare_term_membership(
+                term_name,
+                old_term.package_membership,
+                new_term.package_membership,
+                "package",
+                result.membership_comparison,
+            )
+
+        # Also compare memberships for mapped terms (renames)
+        for old_name, new_name in self.name_mappings.items():
+            if old_name in old_schema.terms and new_name in new_schema.terms:
+                old_term = old_schema.terms[old_name]
+                new_term = new_schema.terms[new_name]
+
+                # Use the new name for tracking (since that's the canonical name going forward)
+                self._compare_term_membership(
+                    f"{old_name} -> {new_name}",
+                    old_term.checklist_membership,
+                    new_term.checklist_membership,
+                    "checklist",
+                    result.membership_comparison,
+                )
+
+                self._compare_term_membership(
+                    f"{old_name} -> {new_name}",
+                    old_term.package_membership,
+                    new_term.package_membership,
+                    "package",
+                    result.membership_comparison,
+                )
+
+    def _compare_term_membership(
+        self,
+        term_name: str,
+        old_membership: Dict[str, str],
+        new_membership: Dict[str, str],
+        group_type: str,
+        comparison: MembershipComparison,
+    ) -> None:
+        """Compare membership for a single term across versions.
+
+        Args:
+            term_name: The name of the term being compared.
+            old_membership: Dict mapping group name to requirement level in old schema.
+            new_membership: Dict mapping group name to requirement level in new schema.
+            group_type: Either "checklist" or "package".
+            comparison: The MembershipComparison object to update.
+        """
+        old_groups = set(old_membership.keys())
+        new_groups = set(new_membership.keys())
+
+        # Find groups where term was added
+        for group in new_groups - old_groups:
+            change = MembershipChange(
+                term_name=term_name,
+                group_name=group,
+                group_type=group_type,
+                old_requirement=None,
+                new_requirement=new_membership[group],
+            )
+            if group_type == "checklist":
+                comparison.add_checklist_change(change)
+            else:
+                comparison.add_package_change(change)
+
+        # Find groups where term was removed
+        for group in old_groups - new_groups:
+            change = MembershipChange(
+                term_name=term_name,
+                group_name=group,
+                group_type=group_type,
+                old_requirement=old_membership[group],
+                new_requirement=None,
+            )
+            if group_type == "checklist":
+                comparison.add_checklist_change(change)
+            else:
+                comparison.add_package_change(change)
+
+        # Find groups where requirement level changed
+        for group in old_groups & new_groups:
+            old_req = old_membership[group]
+            new_req = new_membership[group]
+            if old_req != new_req:
+                change = MembershipChange(
+                    term_name=term_name,
+                    group_name=group,
+                    group_type=group_type,
+                    old_requirement=old_req,
+                    new_requirement=new_req,
+                )
+                if group_type == "checklist":
+                    comparison.add_checklist_change(change)
+                else:
+                    comparison.add_package_change(change)
+
+    def _compare_package_composition(
+        self,
+        old_schema: NormalizedSchema,
+        new_schema: NormalizedSchema,
+        result: SchemaComparisonResult,
+    ) -> None:
+        """Compare package composition (which terms are in each package).
+
+        This compares the schema-level package definitions (packages dict mapping
+        package name to list of term names), independent of the per-term membership
+        tracking.
+        """
+        old_packages = old_schema.packages
+        new_packages = new_schema.packages
+
+        old_pkg_names = set(old_packages.keys())
+        new_pkg_names = set(new_packages.keys())
+
+        # Track packages only in old/new
+        result.package_composition.packages_only_in_old = old_pkg_names - new_pkg_names
+        result.package_composition.packages_only_in_new = new_pkg_names - old_pkg_names
+
+        # Compare term lists for shared packages
+        shared_packages = old_pkg_names & new_pkg_names
+        for pkg_name in shared_packages:
+            old_terms = set(old_packages[pkg_name])
+            new_terms = set(new_packages[pkg_name])
+
+            terms_added = new_terms - old_terms
+            terms_removed = old_terms - new_terms
+
+            if terms_added or terms_removed:
+                change = PackageCompositionChange(
+                    package_name=pkg_name,
+                    terms_added=sorted(terms_added),
+                    terms_removed=sorted(terms_removed),
+                )
+                result.package_composition.changes[pkg_name] = change
 
 
 def load_name_mappings(mappings_dir: Path) -> Dict[str, str]:
