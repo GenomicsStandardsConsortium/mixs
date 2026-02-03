@@ -10,21 +10,28 @@ version_patterns:
   - "miens"
 
 # Sheet names to look for (in priority order)
-# Note: 2009 files use "Recovered_Sheet1" instead of "MIxS"
+# Note: 2009 files use various naming conventions
 sheet_names:
   main_terms:
     - "Recovered_Sheet1"
+    - "migs_mims_miens"
+    - "MIGS_MIMS"
+    - "MIENS"
     - "dereplicated param list"
+    - "all_items"
   packages:
     - "environmental packages"
+    - "environmental_packages"
 
 # Column header mappings
 # 2009 format uses "Item" as the term name and "Description" for expected value hints
 column_mappings:
   name:
+    - "Structured comment name"
     - "Item"
     - "Parameter"
   item:
+    - "Checklist item"
     - "Item"
     - "Parameter"
   definition:
