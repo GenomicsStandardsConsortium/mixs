@@ -1,0 +1,17 @@
+# MIxS v2.1 to v4 term mapping configuration
+# Documents renames, splits, and intentional deletions between versions
+
+renames:
+  # Simple 1:1 renames
+  country: geo_loc_name
+  source_mat_identifiers: source_mat_id
+  submit_to_insdc: submitted_to_insdc
+
+splits:
+  # Terms split into multiple new terms
+  environment:
+    targets:
+      - env_biome
+      - env_feature
+      - env_material
+    description: "Single 'environment' field was split into three ENVO-based terms for greater precision"
