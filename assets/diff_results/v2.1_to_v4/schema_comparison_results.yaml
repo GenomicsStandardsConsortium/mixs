@@ -1,20 +1,19 @@
 comparison_metadata:
   old_schema:
     version: v2.1
-    source: ../mixs-legacy/2011/Migs_mims_miens_v2.1.xlsx
+    source: Migs_mims_miens_v2.1.xlsx + MIMARKS_26_01_11.xlsx
     format: xlsx
-    term_count: 49
-    notes: Core MIGS/MIMS/MIENS terms only; MIMARKS was in separate file (MIMARKS_v2.1.xlsx)
+    term_count: 57
   new_schema:
     version: v4
     source: ../mixs-legacy/mixs4/MIxS_210514.xls
     format: xls
     term_count: 55
-    notes: Main term definitions file; package-specific files (MIxS{air,builtenv,etc}_210514.xls) not included
-  comparison_timestamp: '2026-02-03T13:39:20.407966'
+  comparison_timestamp: '2026-02-03T14:12:30.225457'
 term_differences:
   key_comparison:
     shared:
+    - adapters
     - alt_elev
     - assembly
     - biotic_relationship
@@ -27,11 +26,13 @@ term_differences:
     - experimental_factor
     - extrachrom_elements
     - finishing_strategy
+    - geo_loc_name
     - health_disease_stat
     - host_spec_range
     - investigation_type
     - isol_growth_condt
     - lat_lon
+    - lib_const_meth
     - lib_reads_seqd
     - lib_screen
     - lib_size
@@ -54,17 +55,17 @@ term_differences:
     - seq_meth
     - seq_quality_check
     - sop
+    - source_mat_id
     - specific_host
+    - submitted_to_insdc
     - subspecf_gen_lin
     - target_gene
     - target_subfragment
     - trophic_level
     - url
     only_in_new:
-    - adapters
     - annot_source
     - assembly_name
-    - lib_const_meth
     expected_mappings:
     - country -> geo_loc_name
     - source_mat_identifiers -> source_mat_id
@@ -74,97 +75,90 @@ term_differences:
       - env_biome
       - env_feature
       - env_material
+    expected_deletions:
+      biome: MIMARKS term; superseded by env_biome in v4 (same concept, new naming)
+      feature: MIMARKS term; superseded by env_feature in v4 (same concept, new naming)
+      material: MIMARKS term; superseded by env_material in v4 (same concept, new naming)
   definition_changes:
-    ref_biomaterial:
-      definition:
-        old: ''
-        new: primary publication if isolated before genome publication; otherwise, primary genome report
-      expected_value:
-        old: ''
-        new: PMID, DOI or URL
-      value_syntax:
-        old: ''
-        new: '{PMID|DOI|URL}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    specific_host:
-      expected_value:
-        old: ''
-        new: host taxid, unknown, environmental
-      occurrence:
-        old: ''
-        new: '1.0'
-    trophic_level:
-      definition:
-        old: 'Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph).
-          Possible types are: autotroph, carboxydotroph, chemoautotroph, chemoheterotroph, chemolithoautotroph, chemolithotroph,
-          chemoorganoheterotroph, chemoorganotroph, chemosynthetic, chemotroph, copiotroph, diazotroph, facultative, autotroph,
-          heterotroph, lithoautotroph, lithoheterotroph, lithotroph, methanotroph, methylotroph, mixotroph, obligate, chemoautolithotroph,
-          oligotroph, organoheterotroph, organotroph, photoautotroph, photoheterotroph, photolithoautotroph, photolithotroph,
-          photosynthetic, phototroph'
-        new: Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph)
+    rel_to_oxygen:
       expected_value:
         old: ''
         new: enumeration
       value_syntax:
         old: ''
-        new: '[autotroph| carboxydotroph| chemoautotroph| chemoheterotroph| chemolithoautotroph| chemolithotroph| chemoorganoheterotroph|
-          chemoorganotroph| chemosynthetic| chemotroph| copiotroph| diazotroph| facultative| autotroph| heterotroph| lithoautotroph|
-          lithoheterotroph| lithotroph| methanotroph| methylotroph| mixotroph| obligate| chemoautolithotroph| oligotroph|
-          organoheterotroph| organotroph| photoautotroph| photoheterotroph| photolithoautotroph| photolithotroph| photosynthetic|
-          phototroph]'
+        new: '[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|obligate anaerobe]'
       occurrence:
         old: ''
         new: '1.0'
-    propagation:
+    ploidy:
+      definition:
+        old: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
+          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
+          For terms, please select terms listed under class ploidy (PATO:001374) of PATO, and for a browser of PATO please
+          refer to http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=PATO
+        new: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
+          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
+          For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and
+          for a browser of PATO (v 2013-10-28) please refer to http://purl.bioontology.org/ontology/PATO
+      example:
+        old: ''
+        new: allopolyploid, polyploid
       expected_value:
         old: ''
-        new: 'for virus: lytic, lysogenic, temperate, obligately lytic; for plasmid: incompatibility group; for eukaryote:
-          asexual, sexual) [CV'
+        new: PATO
       value_syntax:
         old: ''
         new: '{term}'
       occurrence:
         old: ''
         new: '1.0'
-    pcr_primers:
+    source_mat_id:
       definition:
-        old: PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should
-          contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single
-          PCR reaction. The primer sequence should be reported in uppercase letters.
-        new: PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should
-          contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single
-          PCR reaction. The primer sequence should be reported in uppercase letters
+        old: The name of the culture collection, holder of the voucher or an institution. Could enumerate a list of common
+          resources, just as the American Type Culture Collection (ATCC), German Collection of Microorganisms and Cell Cultures
+          (DSMZ) etc. Can select not deposited
+        new: A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID,
+          and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent
+          sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The
+          INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as
+          the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain 'UAM:Herps:14'
+          , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection
+          qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier
+          from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2).
+      example:
+        old: '-'
+        new: ''
+      expected_value:
+        old: 'for cultures of microorganisms: identifiers for two culture collections; for specimens (e.g., organelles and
+          Eukarya): voucher condition and location'
+        new: 'for cultures of microorganisms: identifiers for two culture collections; for other material a unique arbitrary
+          identifer'
+      value_syntax:
+        old: '{PMID|DOI|URL|text}'
+        new: '{text}'
+    collection_date:
       expected_value:
         old: ''
-        new: 'FWD: forward primer sequence REV:reverse primer sequence'
+        new: date and time
       value_syntax:
         old: ''
-        new: FWD:{dna} REV:{dna}
+        new: '{timestamp}'
       occurrence:
         old: ''
         new: '1.0'
-    experimental_factor:
-      definition:
-        old: Experimental factors are essentially the variable aspects of an experiment design which can be used to describe
-          an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from
-          EFO and/or OBI. For a browser of EFO terms, please see http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=EFO;
-          for a browser of OBI terms please see http://bioportal.bioontology.org/visualize/40547
-        new: Experimental factors are essentially the variable aspects of an experiment design which can be used to describe
-          an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from
-          Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v
-          2.43) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2013-10-25) terms please
-          see http://purl.bioontology.org/ontology/OBI
+    samp_size:
       expected_value:
         old: ''
-        new: text or EFO and/or OBI
+        new: measurement value
       value_syntax:
         old: ''
-        new: '{term|text}'
+        new: '{float} {unit}'
       occurrence:
         old: ''
         new: '1.0'
+      preferred_unit:
+        old: ''
+        new: millliter, gram, milligram
     finishing_strategy:
       expected_value:
         old: ''
@@ -175,17 +169,18 @@ term_differences:
       occurrence:
         old: ''
         new: '1.0'
-    project_name:
-      value_syntax:
+    target_subfragment:
+      definition:
+        old: Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on
+          16S rRNA.
+        new: Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on
+          16S rRNA
+      example:
         old: ''
-        new: '{text}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    encoded_traits:
+        new: V6, V9, ITS
       expected_value:
         old: ''
-        new: 'for plasmid: antibiotic resistance; for phage: converting genes'
+        new: gene fragment name
       value_syntax:
         old: ''
         new: '{text}'
@@ -214,123 +209,35 @@ term_differences:
       section:
         old: mims/miens extension
         new: migs/mims/mimarks extension
-    sop:
+    num_replicons:
+      expected_value:
+        old: ''
+        new: 'for eukaryotes and bacteria: chromosomes (haploid count); for viruses: segments'
+      value_syntax:
+        old: ''
+        new: '{integer}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    trophic_level:
       definition:
-        old: A standard operating procedure is a set of instructions having the force of a directive, covering those features
-          of operations that lend themselves to a definite or standardized procedure without loss of effectiveness
-        new: Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences
-      expected_value:
-        old: ''
-        new: reference to SOP
-      value_syntax:
-        old: ''
-        new: '{PMID|DOI|URL}'
-      occurrence:
-        old: ''
-        new: m
-    seq_meth:
-      example:
-        old: ''
-        new: Sanger dideoxysequencing, pyrosequencing, polony
-      value_syntax:
-        old: ''
-        new: '{text}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    investigation_type:
-      definition:
-        old: Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic
-          Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome, miens-survey
-          or miens-culture)
-        new: Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic
-          Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome,mimarks-survey,
-          or mimarks-specimen
-      expected_value:
-        old: ''
-        new: eukaryote, bacteria_archaea, plasmid, virus, organelle, metagenome,mimarks-survey or mimarks-specimen
-      value_syntax:
-        old: ''
-        new: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|mimarks-survey|mimarks-specimen]'
-      occurrence:
-        old: ''
-        new: '1.0'
-    samp_mat_process:
-      definition:
-        old: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
-          OBI (Ontology for Biomedical Investigations), for a browser of OBI terms please see http://bioportal.bioontology.org/visualize/40547
-        new: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
-          OBI, for a browser of OBI (v 2013-10-25) terms please see http://purl.bioontology.org/ontology/OBI
-      example:
-        old: ''
-        new: filtering of seawater, storing samples in ethanol
-      expected_value:
-        old: ''
-        new: text or OBI
-      value_syntax:
-        old: ''
-        new: '{text|term}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    subspecf_gen_lin:
-      definition:
-        old: This should provide further information about the genetic distinctness of this lineage by recording additional
-          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
-          It can also contain alternative taxonomic information. This field accepts the subspecific genetic lineage information
-          from CABRI. For CABRI, please refer to http://www.cabri.org
-        new: This should provide further information about the genetic distinctness of this lineage by recording additional
-          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
-          It can also contain alternative taxonomic information
-      expected_value:
-        old: ''
-        new: genetic lineage below lowest rank of NCBI taxonomy, which is subspecies, e.g. serovar, biotype, ecotype
-      value_syntax:
-        old: ''
-        new: '{text}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    nucl_acid_ext:
-      expected_value:
-        old: ''
-        new: PMID, DOI or URL
-      value_syntax:
-        old: ''
-        new: '{PMID|DOI|URL}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    lib_screen:
-      example:
-        old: ''
-        new: enriched, screened, normalized
-      expected_value:
-        old: ''
-        new: screening strategy name
-      value_syntax:
-        old: ''
-        new: '{text}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    rel_to_oxygen:
+        old: 'Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph).
+          Possible types are: autotroph, carboxydotroph, chemoautotroph, chemoheterotroph, chemolithoautotroph, chemolithotroph,
+          chemoorganoheterotroph, chemoorganotroph, chemosynthetic, chemotroph, copiotroph, diazotroph, facultative, autotroph,
+          heterotroph, lithoautotroph, lithoheterotroph, lithotroph, methanotroph, methylotroph, mixotroph, obligate, chemoautolithotroph,
+          oligotroph, organoheterotroph, organotroph, photoautotroph, photoheterotroph, photolithoautotroph, photolithotroph,
+          photosynthetic, phototroph'
+        new: Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph)
       expected_value:
         old: ''
         new: enumeration
       value_syntax:
         old: ''
-        new: '[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|obligate anaerobe]'
-      occurrence:
-        old: ''
-        new: '1.0'
-    nucl_acid_amp:
-      expected_value:
-        old: ''
-        new: reference to amplification method; clean-up method
-      value_syntax:
-        old: ''
-        new: '{PMID|DOI|URL}'
+        new: '[autotroph| carboxydotroph| chemoautotroph| chemoheterotroph| chemolithoautotroph| chemolithotroph| chemoorganoheterotroph|
+          chemoorganotroph| chemosynthetic| chemotroph| copiotroph| diazotroph| facultative| autotroph| heterotroph| lithoautotroph|
+          lithoheterotroph| lithotroph| methanotroph| methylotroph| mixotroph| obligate| chemoautolithotroph| oligotroph|
+          organoheterotroph| organotroph| photoautotroph| photoheterotroph| photolithoautotroph| photolithotroph| photosynthetic|
+          phototroph]'
       occurrence:
         old: ''
         new: '1.0'
@@ -353,149 +260,91 @@ term_differences:
       occurrence:
         old: ''
         new: '1.0'
-    collection_date:
-      expected_value:
-        old: ''
-        new: date and time
-      value_syntax:
-        old: ''
-        new: '{timestamp}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    biotic_relationship:
+    lib_size:
       definition:
-        old: Is it free-living or in a host and if the latter what type of relationship is observed (e.g. pathogen, commensal,
-          symbiont, opportunist)
-        new: Is it free-living or in a host and if the latter what type of relationship is observed
+        old: Total number of clones in library prepared for the project
+        new: Total number of clones in the library prepared for the project
       expected_value:
         old: ''
-        new: enumeration
-      value_syntax:
-        old: ''
-        new: '[free living|parasite|commensal|symbiont]'
-      occurrence:
-        old: ''
-        new: '1.0'
-    target_subfragment:
-      definition:
-        old: Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on
-          16S rRNA.
-        new: Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on
-          16S rRNA
-      example:
-        old: ''
-        new: V6, V9, ITS
-      expected_value:
-        old: ''
-        new: gene fragment name
-      value_syntax:
-        old: ''
-        new: '{text}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    seq_quality_check:
-      expected_value:
-        old: ''
-        new: none or manually edited
-      value_syntax:
-        old: ''
-        new: '[none|manually edited]'
-      occurrence:
-        old: ''
-        new: '1.0'
-    assembly:
-      expected_value:
-        old: ''
-        new: assembly method; estimated error rate; method of calculation
-      value_syntax:
-        old: ''
-        new: '{text};{text};{text}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    host_spec_range:
-      expected_value:
-        old: ''
-        new: NCBI taxid
+        new: number of clones
       value_syntax:
         old: ''
         new: '{integer}'
       occurrence:
         old: ''
         new: '1.0'
-    extrachrom_elements:
+    sop:
       definition:
-        old: For eukarya (optional) and bacteria (mimimum), do plasmids exist of significant phenotypic consequence (e.g.
-          ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids)
-        new: Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance).
-          Megaplasmids? Other plasmids (borrelia has 15+ plasmids)
+        old: A standard operating procedure is a set of instructions having the force of a directive, covering those features
+          of operations that lend themselves to a definite or standardized procedure without loss of effectiveness
+        new: Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences
       expected_value:
         old: ''
-        new: number of extrachromosmal elements
+        new: reference to SOP
       value_syntax:
         old: ''
-        new: '{integer}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    lib_reads_seqd:
-      definition:
-        old: Total number of clones sequenced
-        new: Total number of clones sequenced from the library
-      expected_value:
-        old: ''
-        new: number of reads sequenced
-      value_syntax:
-        old: ''
-        new: '{integer}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    samp_size:
-      expected_value:
-        old: ''
-        new: measurement value
-      value_syntax:
-        old: ''
-        new: '{float} {unit}'
-      occurrence:
-        old: ''
-        new: '1.0'
-      preferred_unit:
-        old: ''
-        new: millliter, gram, milligram
-    lib_vector:
-      expected_value:
-        old: ''
-        new: vector
-      value_syntax:
-        old: ''
-        new: '{text}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    url:
-      definition:
-        old: ''''''
-        new: ''
-      expected_value:
-        old: ''
-        new: URL
-      value_syntax:
-        old: ''
-        new: '{URL}'
+        new: '{PMID|DOI|URL}'
       occurrence:
         old: ''
         new: m
-    lat_lon:
+    nucl_acid_ext:
       expected_value:
         old: ''
-        new: decimal degrees
+        new: PMID, DOI or URL
       value_syntax:
         old: ''
-        new: '{float} {float}'
+        new: '{PMID|DOI|URL}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    geo_loc_name:
+      definition:
+        old: The geographical origin of the sample as defined by the country or sea name followed by specific region name.
+          Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology
+          (v1.446) (http://bioportal.bioontology.org/visualize/40651)
+        new: The geographical origin of the sample as defined by the country or sea name followed by specific region name.
+          Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology
+          (v 1.512) (http://purl.bioontology.org/ontology/GAZ)
+      occurrence:
+        old: '1'
+        new: '1.0'
+    pcr_cond:
+      expected_value:
+        old: ''
+        new: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
+          total cycles'
+      value_syntax:
+        old: ''
+        new: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
+          total cycles'
+      occurrence:
+        old: ''
+        new: '1.0'
+    seq_meth:
+      example:
+        old: ''
+        new: Sanger dideoxysequencing, pyrosequencing, polony
+      value_syntax:
+        old: ''
+        new: '{text}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    subspecf_gen_lin:
+      definition:
+        old: This should provide further information about the genetic distinctness of this lineage by recording additional
+          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
+          It can also contain alternative taxonomic information. This field accepts the subspecific genetic lineage information
+          from CABRI. For CABRI, please refer to http://www.cabri.org
+        new: This should provide further information about the genetic distinctness of this lineage by recording additional
+          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
+          It can also contain alternative taxonomic information
+      expected_value:
+        old: ''
+        new: genetic lineage below lowest rank of NCBI taxonomy, which is subspecies, e.g. serovar, biotype, ecotype
+      value_syntax:
+        old: ''
+        new: '{text}'
       occurrence:
         old: ''
         new: '1.0'
@@ -514,6 +363,46 @@ term_differences:
       occurrence:
         old: ''
         new: '0.0'
+    nucl_acid_amp:
+      expected_value:
+        old: ''
+        new: reference to amplification method; clean-up method
+      value_syntax:
+        old: ''
+        new: '{PMID|DOI|URL}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    lib_vector:
+      expected_value:
+        old: ''
+        new: vector
+      value_syntax:
+        old: ''
+        new: '{text}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    assembly:
+      expected_value:
+        old: ''
+        new: assembly method; estimated error rate; method of calculation
+      value_syntax:
+        old: ''
+        new: '{text};{text};{text}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    encoded_traits:
+      expected_value:
+        old: ''
+        new: 'for plasmid: antibiotic resistance; for phage: converting genes'
+      value_syntax:
+        old: ''
+        new: '{text}'
+      occurrence:
+        old: ''
+        new: '1.0'
     health_disease_stat:
       definition:
         old: Health or disease status of specific host at time of collection
@@ -525,22 +414,6 @@ term_differences:
       value_syntax:
         old: ''
         new: '{term}'
-      occurrence:
-        old: ''
-        new: '1.0'
-    samp_collect_device:
-      definition:
-        old: The method or deviced employed for collecting the sample
-        new: The method or device employed for collecting the sample
-      example:
-        old: ''
-        new: biopsy, niskin bottle, push core
-      expected_value:
-        old: ''
-        new: type name
-      value_syntax:
-        old: ''
-        new: '{text}'
       occurrence:
         old: ''
         new: '1.0'
@@ -557,29 +430,101 @@ term_differences:
       occurrence:
         old: ''
         new: '1.0'
-    pathogenicity:
-      definition:
-        old: To what is the entity pathogenic, which can be one of the following; human, animal, plant, fungi, bacteria etc...
-        new: To what is the entity pathogenic.
+    lib_screen:
       example:
         old: ''
-        new: human, animal, plant, fungi, bacteria
+        new: enriched, screened, normalized
       expected_value:
         old: ''
-        new: CV
+        new: screening strategy name
       value_syntax:
         old: ''
-        new: '{term}'
+        new: '{text}'
       occurrence:
         old: ''
         new: '1.0'
-    num_replicons:
+    submitted_to_insdc:
+      definition:
+        old: Depending on the study (large-scale e.g. done with next generation sequencing technology, or small-scale) sequences
+          have to be submitted to SRA (Sequence Read Archive), DRA (DDBJ Read Archive) or via the classical Webin/Sequin systems
+          to Genbank, ENA and DDBJ
+        new: Depending on the study (large-scale e.g. done with next generation sequencing technology, or small-scale) sequences
+          have to be submitted to SRA (Sequence Read Archive), DRA (DDBJ Read Archive) or via the classical Webin/Sequin systems
+          to Genbank, ENA and DDBJ. Although this field is mandatory, it is meant as a self-test field, therefore it is not
+          necessary to include this field in contextual data submitted to databases
+      example:
+        old: '-'
+        new: ''
+      occurrence:
+        old: '1'
+        new: '1.0'
+    biotic_relationship:
+      definition:
+        old: Is it free-living or in a host and if the latter what type of relationship is observed (e.g. pathogen, commensal,
+          symbiont, opportunist)
+        new: Is it free-living or in a host and if the latter what type of relationship is observed
       expected_value:
         old: ''
-        new: 'for eukaryotes and bacteria: chromosomes (haploid count); for viruses: segments'
+        new: enumeration
+      value_syntax:
+        old: ''
+        new: '[free living|parasite|commensal|symbiont]'
+      occurrence:
+        old: ''
+        new: '1.0'
+    lib_reads_seqd:
+      definition:
+        old: Total number of clones sequenced
+        new: Total number of clones sequenced from the library
+      expected_value:
+        old: ''
+        new: number of reads sequenced
       value_syntax:
         old: ''
         new: '{integer}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    mid:
+      expected_value:
+        old: ''
+        new: multiplex identifier sequence
+      value_syntax:
+        old: ''
+        new: '{dna}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    ref_biomaterial:
+      definition:
+        old: ''
+        new: primary publication if isolated before genome publication; otherwise, primary genome report
+      expected_value:
+        old: ''
+        new: PMID, DOI or URL
+      value_syntax:
+        old: ''
+        new: '{PMID|DOI|URL}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    experimental_factor:
+      definition:
+        old: Experimental factors are essentially the variable aspects of an experiment design which can be used to describe
+          an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from
+          EFO and/or OBI. For a browser of EFO terms, please see http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=EFO;
+          for a browser of OBI terms please see http://bioportal.bioontology.org/visualize/40547
+        new: Experimental factors are essentially the variable aspects of an experiment design which can be used to describe
+          an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from
+          Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v
+          2.43) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2013-10-25) terms please
+          see http://purl.bioontology.org/ontology/OBI
+      expected_value:
+        old: ''
+        new: text or EFO and/or OBI
+      value_syntax:
+        old: ''
+        new: '{term|text}'
       occurrence:
         old: ''
         new: '1.0'
@@ -615,39 +560,102 @@ term_differences:
       occurrence:
         old: ''
         new: '1.0'
-    pcr_cond:
+    samp_collect_device:
+      definition:
+        old: The method or deviced employed for collecting the sample
+        new: The method or device employed for collecting the sample
+      example:
+        old: ''
+        new: biopsy, niskin bottle, push core
       expected_value:
         old: ''
-        new: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
-          total cycles'
+        new: type name
       value_syntax:
         old: ''
-        new: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
-          total cycles'
+        new: '{text}'
       occurrence:
         old: ''
         new: '1.0'
-    ploidy:
-      definition:
-        old: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
-          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
-          For terms, please select terms listed under class ploidy (PATO:001374) of PATO, and for a browser of PATO please
-          refer to http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=PATO
-        new: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
-          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
-          For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and
-          for a browser of PATO (v 2013-10-28) please refer to http://purl.bioontology.org/ontology/PATO
-      example:
-        old: ''
-        new: allopolyploid, polyploid
+    seq_quality_check:
       expected_value:
         old: ''
-        new: PATO
+        new: none or manually edited
+      value_syntax:
+        old: ''
+        new: '[none|manually edited]'
+      occurrence:
+        old: ''
+        new: '1.0'
+    extrachrom_elements:
+      definition:
+        old: For eukarya (optional) and bacteria (mimimum), do plasmids exist of significant phenotypic consequence (e.g.
+          ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids)
+        new: Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance).
+          Megaplasmids? Other plasmids (borrelia has 15+ plasmids)
+      expected_value:
+        old: ''
+        new: number of extrachromosmal elements
+      value_syntax:
+        old: ''
+        new: '{integer}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    propagation:
+      expected_value:
+        old: ''
+        new: 'for virus: lytic, lysogenic, temperate, obligately lytic; for plasmid: incompatibility group; for eukaryote:
+          asexual, sexual) [CV'
       value_syntax:
         old: ''
         new: '{term}'
       occurrence:
         old: ''
+        new: '1.0'
+    pcr_primers:
+      definition:
+        old: PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should
+          contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single
+          PCR reaction. The primer sequence should be reported in uppercase letters.
+        new: PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should
+          contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single
+          PCR reaction. The primer sequence should be reported in uppercase letters
+      expected_value:
+        old: ''
+        new: 'FWD: forward primer sequence REV:reverse primer sequence'
+      value_syntax:
+        old: ''
+        new: FWD:{dna} REV:{dna}
+      occurrence:
+        old: ''
+        new: '1.0'
+    project_name:
+      value_syntax:
+        old: ''
+        new: '{text}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    specific_host:
+      expected_value:
+        old: ''
+        new: host taxid, unknown, environmental
+      occurrence:
+        old: ''
+        new: '1.0'
+    host_spec_range:
+      expected_value:
+        old: ''
+        new: NCBI taxid
+      value_syntax:
+        old: ''
+        new: '{integer}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    lib_const_meth:
+      occurrence:
+        old: '1'
         new: '1.0'
     isol_growth_condt:
       expected_value:
@@ -659,26 +667,84 @@ term_differences:
       occurrence:
         old: ''
         new: '1.0'
-    lib_size:
+    samp_mat_process:
       definition:
-        old: Total number of clones in library prepared for the project
-        new: Total number of clones in the library prepared for the project
+        old: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
+          OBI (Ontology for Biomedical Investigations), for a browser of OBI terms please see http://bioportal.bioontology.org/visualize/40547
+        new: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
+          OBI, for a browser of OBI (v 2013-10-25) terms please see http://purl.bioontology.org/ontology/OBI
+      example:
+        old: ''
+        new: filtering of seawater, storing samples in ethanol
       expected_value:
         old: ''
-        new: number of clones
+        new: text or OBI
       value_syntax:
         old: ''
-        new: '{integer}'
+        new: '{text|term}'
       occurrence:
         old: ''
         new: '1.0'
-    mid:
+    adapters:
+      example:
+        old: '-'
+        new: ''
+      occurrence:
+        old: '1'
+        new: '1.0'
+    investigation_type:
+      definition:
+        old: Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic
+          Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome, miens-survey
+          or miens-culture)
+        new: Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic
+          Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome,mimarks-survey,
+          or mimarks-specimen
       expected_value:
         old: ''
-        new: multiplex identifier sequence
+        new: eukaryote, bacteria_archaea, plasmid, virus, organelle, metagenome,mimarks-survey or mimarks-specimen
       value_syntax:
         old: ''
-        new: '{dna}'
+        new: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|mimarks-survey|mimarks-specimen]'
+      occurrence:
+        old: ''
+        new: '1.0'
+    url:
+      definition:
+        old: ''''''
+        new: ''
+      expected_value:
+        old: ''
+        new: URL
+      value_syntax:
+        old: ''
+        new: '{URL}'
+      occurrence:
+        old: ''
+        new: m
+    lat_lon:
+      expected_value:
+        old: ''
+        new: decimal degrees
+      value_syntax:
+        old: ''
+        new: '{float} {float}'
+      occurrence:
+        old: ''
+        new: '1.0'
+    pathogenicity:
+      definition:
+        old: To what is the entity pathogenic, which can be one of the following; human, animal, plant, fungi, bacteria etc...
+        new: To what is the entity pathogenic.
+      example:
+        old: ''
+        new: human, animal, plant, fungi, bacteria
+      expected_value:
+        old: ''
+        new: CV
+      value_syntax:
+        old: ''
+        new: '{term}'
       occurrence:
         old: ''
         new: '1.0'

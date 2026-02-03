@@ -1,17 +1,36 @@
-# MIxS v2.1 to v4 term mapping configuration
-# Documents renames, splits, and intentional deletions between versions
+# MIxS v2.1 to v4 term mapping configuration (POOLED v2.1)
+#
+# IMPORTANT: This config is for comparing POOLED v2.1 files:
+#   v2.1: Migs_mims_miens + MIMARKS
+#   v4: MIxS_210514.xls (single file)
+#
+# The pooled v2.1 contains:
+# - Core terms: environment, country, source_mat_identifiers, submit_to_insdc
+# - MIMARKS terms: biome, feature, material, geo_loc_name, source_mat_id, submitted_to_insdc
+#
+# v4 standardized on env_* naming and restored some terms removed in v2.1.
 
 renames:
-  # Simple 1:1 renames
+  # Core v2.1 renames (new names back to old names in v4)
   country: geo_loc_name
   source_mat_identifiers: source_mat_id
   submit_to_insdc: submitted_to_insdc
 
 splits:
-  # Terms split into multiple new terms
+  # Core v2.1's consolidated 'environment' was split back into three terms
   environment:
     targets:
       - env_biome
       - env_feature
       - env_material
     description: "Single 'environment' field was split into three ENVO-based terms for greater precision"
+
+deletions:
+  # MIMARKS terms that were superseded by the env_* terms in v4
+  # (The env_* terms are accounted for by the environment split above)
+  biome:
+    reason: "MIMARKS term; superseded by env_biome in v4 (same concept, new naming)"
+  feature:
+    reason: "MIMARKS term; superseded by env_feature in v4 (same concept, new naming)"
+  material:
+    reason: "MIMARKS term; superseded by env_material in v4 (same concept, new naming)"
