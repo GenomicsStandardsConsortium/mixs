@@ -468,5 +468,9 @@ class ExcelReader(BaseReader):
         return normalized.strip("_")
 
     def _normalize_package_name(self, name: str) -> str:
-        """Normalize package name."""
-        return name.lower().replace(" ", "_").replace("-", "_")
+        """Normalize package name to consistent snake_case."""
+        import re
+        name = name.lower().replace(" ", "_").replace("-", "_").replace("/", "_")
+        # Clean up double underscores
+        name = re.sub(r'_+', '_', name)
+        return name
