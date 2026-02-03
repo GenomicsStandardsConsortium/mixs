@@ -1,0 +1,434 @@
+comparison_metadata:
+  old_schema:
+    version: v1.2
+    source: /home/mark/gitrepos/mixs-legacy/pre-2009/MIGS_1.2_Candidate_v3.docx
+    format: docx
+    term_count: 19
+    notes: MIGS 1.2 Candidate Word document
+  new_schema:
+    version: v1.5-may2009
+    source: /home/mark/gitrepos/mixs-legacy/2009/Migs_mims_miens_051109.xlsx
+    format: xlsx
+    term_count: 57
+    notes: May 2009 Excel - first Excel format
+  comparison_timestamp: '2026-02-03T16:12:14.716829'
+term_differences:
+  key_comparison:
+    shared:
+    - assembly
+    - collection_date
+    - estimated_size
+    - extrachromosomal_elements
+    - finishing_strategy
+    - geographic_location
+    - number_of_replicons
+    - reference_for_biomaterial
+    - sequencing_method
+    - source_material_identifiers
+    - specific_host
+    only_in_new:
+    - air
+    - amount_or_size_of_sample_collected
+    - chimera_check
+    - encoded_traits
+    - environment
+    - experimental_factor
+    - host_associated
+    - human_associated
+    - human_gut
+    - human_oral
+    - human_skin
+    - human_vaginal
+    - investigation_type
+    - isolation_and_growth_condition
+    - known_pathogenicity
+    - library_reads_sequenced
+    - library_screening_strategy
+    - library_size
+    - library_vector
+    - microbial_mat/biofilm
+    - miscellaneous_natural_or_artificial_environment
+    - pcr_conditions
+    - pcr_primers
+    - plant_associated
+    - project_name
+    - propagation
+    - relationship_to_oxygen
+    - relevant_electronic_resources
+    - relevant_standard_operating_procedures
+    - sample_collection_device_or_method
+    - sample_material_treatment
+    - sediment
+    - sequence_quality_check
+    - soil
+    - submit_to_insdc
+    - target_gene
+    - trophic_level
+    - wastewater/sludge
+    - water
+    expected_mappings:
+    - biotic_relationship -> observed_biotic_relationship
+    - genetic_lineage -> subspecific_genetic_lineage
+    - health_disease_status -> health_or_disease_status_of_specific_host_at_time_of_collection
+    - host_specificity_range -> host_specificty_or_range
+    - ploidy_level -> ploidy
+    expected_splits:
+      nucleic_acid_preparation:
+      - nucleic_acid_amplification
+      - nucleic_acid_extraction
+    expected_deletions:
+      annotation_source: |
+        Removed in May 2009 Excel format. This term tracks annotation methodology and was not carried forward in the first Excel specification. It is re-added in later versions (v4).
+      habitat: |
+        Absorbed into environmental packages structure. May 2009 introduces environmental packages (air, water, soil, host_associated, etc.) which provide more structured habitat information than a single field.
+  definition_changes:
+    extrachromosomal_elements:
+      definition:
+        old: integer count
+        new: For eukarya (optional) and bacteria (mimimum), do plasmids exist of significant phenotypic consequence (e.g.
+          ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids)
+      expected_value:
+        old: ''
+        new: '[integer]'
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    assembly:
+      definition:
+        old: assembly method, coverage
+        new: How was the assembly done (e.g. with a text based assembler like phrap or a flowgram assembler); estimated error
+          rate associated with the finished sequences (e.g. error rate of 1 in 1000 bp); and the method of calculation
+      expected_value:
+        old: ''
+        new: (assembly method [CV]; estimated error rate [unit]; and method of calculation [CV])
+      section:
+        old: DATA PROCESSING
+        new: sequencing
+    source_material_identifiers:
+      definition:
+        old: 'cultures of micro-organisms: identifiers for two culture collections'
+        new: The name of the culture collection, holder of the voucher or an institution. Could enumerate a list of common
+          resources, just as the American Type Culture Collection (ATCC), German Collection of Microorganisms and Cell Cultures
+          (DSMZ) etc. Can select not deposited. Any treatment applied to the sample while or after retrieving the sample from
+          environment. This field accepts OBI (Ontology for Biomedical Investigations), for a browser of OBI terms please
+          see http://bioportal.bioontology.org/visualize/40547
+      expected_value:
+        old: ''
+        new: '(cultures of microorganisms: identifiers [alphanumeric] for two culture collections [OBI]; specimens (e.g.,
+          organelles and Eukarya): voucher condition and location [CV])'
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    sequencing_method:
+      definition:
+        old: ''
+        new: Sequencing method used; e.g. Sanger, pyrosequencing, ABI-solid
+      expected_value:
+        old: ''
+        new: (e.g. dideoxysequencing, pyrosequencing, polony) [OBI]
+      section:
+        old: SAMPLE PROCESSING
+        new: sequencing
+    specific_host:
+      definition:
+        old: host taxid, unknown, or applicable
+        new: ''
+      expected_value:
+        old: ''
+        new: (e.g. host taxid, unknown, environmental) [EnvO]
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    geographic_location:
+      definition:
+        old: latitude longitude, depth, altitude
+        new: The geographical origin of the sample as defined by latitude,longitude, depth and/or altitude. The latitude and
+          longitude should be reported in the WGS84 system. Depth can be reported as an interval for subsurface samples.
+      expected_value:
+        old: ''
+        new: (latitude and longitude [float, point, transect and region]; depth[integer, point, interval]; elevation of site
+          [integer]; altitude of sample [integer]; country [INSDC])
+    estimated_size:
+      definition:
+        old: prior to sequencing; to be refined when sequencing is done
+        new: 'The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic)
+          genome which could remain in draft form for a long or unspecified period. Input: integer, size in bp. Example: 300000'
+      expected_value:
+        old: ''
+        new: before sequencing; to apply to all draft genomes [integer; base pairs]
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    finishing_strategy:
+      item:
+        old: Finishing strategy/quality
+        new: finishing strategy
+      definition:
+        old: status, contigs
+        new: Was the genome project intended to produce a complete or draft genome, Coverage, the fold coverage of the sequencing
+          expressed as 2x, 3x, 18x  etc, and how many contigs were produced for the genome
+      expected_value:
+        old: ''
+        new: (status e.g. complete or draft [CV]; coverage [integer]; and contigs [integer])
+      section:
+        old: DATA PROCESSING
+        new: sequencing
+    collection_date:
+      item:
+        old: Date/time of collection
+        new: collection date
+      definition:
+        old: ''
+        new: 'The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available,
+          the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10;
+          2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO6801 compliant'
+      expected_value:
+        old: ''
+        new: '[UCT]'
+    number_of_replicons:
+      definition:
+        old: 'nuclear genome: chromosomes, organelles'
+        new: Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or
+          the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote
+      expected_value:
+        old: ''
+        new: '(for eukaryotes and bacteria: chromosomes (haploid count); for viruses: segments) [integer]'
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    reference_for_biomaterial:
+      definition:
+        old: primary publication or resource
+        new: ''
+      expected_value:
+        old: ''
+        new: (primary publication if isolated before genome publication; otherwise, primary genome report) [PMID or DOI]
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    biotic_relationship -> observed_biotic_relationship:
+      item:
+        old: Biotic Relationship
+        new: observed biotic relationship
+      definition:
+        old: e.g. free-living, parasite, commensal, symbiont
+        new: Is it free-living or in a host and if the latter what type of relationship is observed (e.g. pathogen, commensal,
+          symbiont, opportunist)
+      expected_value:
+        old: ''
+        new: (e.g. free living, parasite, commensal, symbiont)
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    health_disease_status -> health_or_disease_status_of_specific_host_at_time_of_collection:
+      item:
+        old: Health/disease status of specific host
+        new: health or disease status of specific host at time of collection
+      definition:
+        old: at time of collection
+        new: ''
+      expected_value:
+        old: ''
+        new: (e.g. alive, asymptomatic, dead) [PATO]
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    genetic_lineage -> subspecific_genetic_lineage:
+      item:
+        old: Complete genetic lineage
+        new: subspecific genetic lineage
+      definition:
+        old: below lowest rank of NCBI taxonomy
+        new: This should provide further information about the genetic distinctness of this lineage by recording additional
+          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
+          It can also contain alternative taxonomic information. This field accepts the subspecific genetic lineage information
+          from CABRI. For CABRI (Common Access to Biological Resources and Information), please refer to http://www.cabri.org
+      expected_value:
+        old: ''
+        new: (below lowest rank of NCBI taxonomy, which is subspecies, e.g. serovar, biotype, ecotype) [CABRI]
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    ploidy_level -> ploidy:
+      item:
+        old: Ploidy level
+        new: ploidy
+      definition:
+        old: MGED ontology or NCI thesaurus
+        new: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
+          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
+          For PATO (Phenotypic Quality Ontology), please refer to http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=PATO
+      expected_value:
+        old: ''
+        new: (e.g. allopolyploid, polyploid) [PATO]
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    host_specificity_range -> host_specificty_or_range:
+      item:
+        old: Host specificity/range
+        new: host specificty or range
+      expected_value:
+        old: ''
+        new: '[taxid]'
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+checklist_differences:
+  key_comparison:
+    shared:
+    - me
+    - migs_ba
+    - migs_eu
+    - migs_org
+    - migs_pl
+    - migs_vi
+    only_in_new:
+    - miens_c
+    - miens_s
+membership_differences:
+  checklist_changes:
+    migs_org:
+      terms_added:
+      - extrachromosomal_elements
+      - number_of_replicons
+      - biotic_relationship -> observed_biotic_relationship
+      - ploidy_level -> ploidy
+      terms_removed: []
+      requirement_changes:
+        estimated_size:
+          old: X
+          new: R
+        finishing_strategy:
+          old: M
+          new: X
+        reference_for_biomaterial:
+          old: X
+          new: R
+    miens_c:
+      terms_added:
+      - extrachromosomal_elements
+      - assembly
+      - source_material_identifiers
+      - sequencing_method
+      - specific_host
+      - geographic_location
+      - estimated_size
+      - finishing_strategy
+      - collection_date
+      - number_of_replicons
+      - reference_for_biomaterial
+      - biotic_relationship -> observed_biotic_relationship
+      - health_disease_status -> health_or_disease_status_of_specific_host_at_time_of_collection
+      - genetic_lineage -> subspecific_genetic_lineage
+      - ploidy_level -> ploidy
+      - host_specificity_range -> host_specificty_or_range
+      terms_removed: []
+      requirement_changes: {}
+    me:
+      terms_added:
+      - extrachromosomal_elements
+      - estimated_size
+      - number_of_replicons
+      - biotic_relationship -> observed_biotic_relationship
+      - genetic_lineage -> subspecific_genetic_lineage
+      - ploidy_level -> ploidy
+      terms_removed: []
+      requirement_changes:
+        reference_for_biomaterial:
+          old: X
+          new: R
+    migs_vi:
+      terms_added:
+      - extrachromosomal_elements
+      - ploidy_level -> ploidy
+      terms_removed: []
+      requirement_changes:
+        estimated_size:
+          old: X
+          new: R
+        finishing_strategy:
+          old: M
+          new: X
+        reference_for_biomaterial:
+          old: X
+          new: R
+        biotic_relationship -> observed_biotic_relationship:
+          old: X
+          new: R
+    migs_pl:
+      terms_added:
+      - extrachromosomal_elements
+      - number_of_replicons
+      - biotic_relationship -> observed_biotic_relationship
+      - ploidy_level -> ploidy
+      terms_removed: []
+      requirement_changes:
+        estimated_size:
+          old: X
+          new: R
+        finishing_strategy:
+          old: M
+          new: X
+        reference_for_biomaterial:
+          old: X
+          new: R
+        host_specificity_range -> host_specificty_or_range:
+          old: X
+          new: R
+    miens_s:
+      terms_added:
+      - extrachromosomal_elements
+      - assembly
+      - source_material_identifiers
+      - sequencing_method
+      - specific_host
+      - geographic_location
+      - estimated_size
+      - finishing_strategy
+      - collection_date
+      - number_of_replicons
+      - reference_for_biomaterial
+      - biotic_relationship -> observed_biotic_relationship
+      - health_disease_status -> health_or_disease_status_of_specific_host_at_time_of_collection
+      - genetic_lineage -> subspecific_genetic_lineage
+      - ploidy_level -> ploidy
+      - host_specificity_range -> host_specificty_or_range
+      terms_removed: []
+      requirement_changes: {}
+    migs_eu:
+      terms_added: []
+      terms_removed: []
+      requirement_changes:
+        extrachromosomal_elements:
+          old: X
+          new: R
+        specific_host:
+          old: X
+          new: R
+        reference_for_biomaterial:
+          old: X
+          new: R
+        biotic_relationship -> observed_biotic_relationship:
+          old: X
+          new: R
+        host_specificity_range -> host_specificty_or_range:
+          old: X
+          new: R
+    migs_ba:
+      terms_added:
+      - health_disease_status -> health_or_disease_status_of_specific_host_at_time_of_collection
+      - ploidy_level -> ploidy
+      terms_removed: []
+      requirement_changes:
+        estimated_size:
+          old: X
+          new: R
+        host_specificity_range -> host_specificty_or_range:
+          old: X
+          new: R
+  summary:
+    total_checklist_changes: 69
+    total_package_changes: 0
+    made_mandatory: 0
+    made_optional: 3

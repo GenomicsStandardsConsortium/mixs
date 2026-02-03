@@ -126,6 +126,15 @@ def write_summary_report(
     lines.append(f"  Terms with definition changes: {len(result.term_comparisons)}")
     lines.append("")
 
+    # List applied renames (from expected_mappings)
+    if key_comp.expected_mappings:
+        lines.append("  Term renames applied:")
+        for mapping in sorted(key_comp.expected_mappings)[:15]:
+            lines.append(f"    {mapping}")
+        if len(key_comp.expected_mappings) > 15:
+            lines.append(f"    ... and {len(key_comp.expected_mappings) - 15} more")
+        lines.append("")
+
     # List expected splits
     if key_comp.expected_splits:
         lines.append("  Term splits (1 old → N new):")

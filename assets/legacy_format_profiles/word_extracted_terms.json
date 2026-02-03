@@ -1,0 +1,310 @@
+{
+  "_comment": "Pre-extracted terms from early MIGS Word documents. These documents have complex table structures that require manual interpretation.",
+  "_extraction_method": "Terms were extracted by Claude Code through interactive analysis of the Word document table structures. The python-docx library was used to read raw table data, which was then manually interpreted to identify term names, definitions, sections, and checklist requirements. This approach was necessary because the Word documents use a non-standard table layout with merged cells, section headers mixed with data rows, and abbreviated term descriptions that require human/AI interpretation to normalize into structured term names.",
+  "_extraction_date": "2026-02-03",
+  "_source_documents": [
+    "MIGS_1.1._v1.docx - earliest MIGS specification (~2005-2006)",
+    "MIGS_1.2_Candidate_v3.docx - draft revision before XSD format"
+  ],
+
+  "MIGS_1.1._v1.docx": {
+    "version": "v1.1",
+    "checklists": ["migs_eu", "migs_ba", "migs_pl", "migs_vi", "migs_org", "me"],
+    "terms": [
+      {
+        "term_name": "genetic_lineage",
+        "item": "Complete genetic lineage",
+        "definition": "below lowest rank of NCBI taxonomy",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "-"}
+      },
+      {
+        "term_name": "number_of_replicons",
+        "item": "Number of replicons",
+        "definition": "Virus: number of segments",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "-", "migs_vi": "M", "migs_org": "-", "me": "-"}
+      },
+      {
+        "term_name": "estimated_size",
+        "item": "Estimated size",
+        "definition": "prior to sequencing",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "X", "migs_pl": "", "migs_vi": "", "migs_org": "", "me": "-"}
+      },
+      {
+        "term_name": "reference_for_biomaterial",
+        "item": "Reference for biomaterial",
+        "definition": "primary publication or resource",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "X", "migs_ba": "M", "migs_pl": "X", "migs_vi": "X", "migs_org": "X", "me": "X"}
+      },
+      {
+        "term_name": "source_material_identifiers",
+        "item": "Source material identifiers",
+        "definition": "cultures of micro-organisms: identifiers for two culture collections, specimens (e.g. organelles and eukarya): voucher condition and location",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "", "migs_vi": "M", "migs_org": "M", "me": ""}
+      },
+      {
+        "term_name": "host",
+        "item": "Host",
+        "definition": "host organism",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "X", "migs_ba": "", "migs_pl": "M", "migs_vi": "M", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "host_specificity_range",
+        "item": "Host specificity/range",
+        "definition": "",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "X", "migs_ba": "X", "migs_pl": "X", "migs_vi": "M", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "health_disease_status",
+        "item": "Health/disease status of host",
+        "definition": "at time of collection",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "", "migs_ba": "", "migs_pl": "", "migs_vi": "M", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "estimated_community_diversity",
+        "item": "Estimated community diversity",
+        "definition": "abundances of specific taxonomic groups",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "-", "migs_ba": "-", "migs_pl": "-", "migs_vi": "-", "migs_org": "-", "me": "M"}
+      },
+      {
+        "term_name": "trophic_level",
+        "item": "Trophic level",
+        "definition": "Phage: lytic/lysogenic",
+        "section": "PHENOTYPE",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "", "migs_vi": "", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "encoded_traits",
+        "item": "Encoded traits",
+        "definition": "e.g antibiotic resistance",
+        "section": "PHENOTYPE",
+        "checklist_requirements": {"migs_eu": "", "migs_ba": "", "migs_pl": "M", "migs_vi": "", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "geographic_location",
+        "item": "Geographic location",
+        "definition": "latitude longitude, depth / altitude of sample",
+        "section": "ENVIRONMENT",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "collection_date",
+        "item": "Date and time of sample collection",
+        "definition": "",
+        "section": "ENVIRONMENT",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "habitat_type",
+        "item": "Habitat type",
+        "definition": "",
+        "section": "ENVIRONMENT",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "sample_volume",
+        "item": "Volume of sample",
+        "definition": "",
+        "section": "SAMPLE PROCESSING",
+        "checklist_requirements": {"migs_eu": "", "migs_ba": "", "migs_pl": "", "migs_vi": "", "migs_org": "", "me": "M"}
+      },
+      {
+        "term_name": "sampling_strategy",
+        "item": "Sampling strategy",
+        "definition": "enriched, screened, normalized",
+        "section": "SAMPLE PROCESSING",
+        "checklist_requirements": {"migs_eu": "", "migs_ba": "", "migs_pl": "", "migs_vi": "", "migs_org": "", "me": "M"}
+      },
+      {
+        "term_name": "nucleic_acid_preparation",
+        "item": "Nucleic acid preparation",
+        "definition": "extraction method amplification e.g. MDA, emPCR",
+        "section": "SAMPLE PROCESSING",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "library_construction",
+        "item": "Library Construction",
+        "definition": "library size, number of clones sequenced",
+        "section": "SAMPLE PROCESSING",
+        "checklist_requirements": {"migs_eu": "", "migs_ba": "", "migs_pl": "", "migs_vi": "", "migs_org": "", "me": "M"}
+      },
+      {
+        "term_name": "sequencing_method",
+        "item": "Sequencing Method",
+        "definition": "e.g. dideoxysequencing, pyrosequencing, polony",
+        "section": "SAMPLE PROCESSING",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "assembly",
+        "item": "Assembly",
+        "definition": "assembly method, estimated error rate and method of calculation",
+        "section": "DATA PROCESSING",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "finishing_strategy",
+        "item": "Finishing strategy",
+        "definition": "status e.g. complete or draft, coverage, contigs",
+        "section": "DATA PROCESSING",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "X", "migs_vi": "X", "migs_org": "X", "me": "X"}
+      },
+      {
+        "term_name": "binning_method",
+        "item": "Classification (binning) method",
+        "definition": "for fragments",
+        "section": "DATA PROCESSING",
+        "checklist_requirements": {"migs_eu": "-", "migs_ba": "-", "migs_pl": "-", "migs_vi": "-", "migs_org": "-", "me": "M"}
+      }
+    ]
+  },
+
+  "MIGS_1.2_Candidate_v3.docx": {
+    "version": "v1.2",
+    "checklists": ["migs_eu", "migs_ba", "migs_pl", "migs_vi", "migs_org", "me"],
+    "terms": [
+      {
+        "term_name": "genetic_lineage",
+        "item": "Complete genetic lineage",
+        "definition": "below lowest rank of NCBI taxonomy",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "-"}
+      },
+      {
+        "term_name": "ploidy_level",
+        "item": "Ploidy level",
+        "definition": "MGED ontology or NCI thesaurus",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "-", "migs_pl": "", "migs_vi": "", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "number_of_replicons",
+        "item": "Number of replicons",
+        "definition": "nuclear genome: chromosomes, organelles",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "-", "migs_vi": "M", "migs_org": "-", "me": "-"}
+      },
+      {
+        "term_name": "extrachromosomal_elements",
+        "item": "Extrachromosomal elements",
+        "definition": "integer count",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "X", "migs_ba": "M", "migs_pl": "", "migs_vi": "", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "estimated_size",
+        "item": "Estimated size",
+        "definition": "prior to sequencing; to be refined when sequencing is done",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "X", "migs_pl": "X", "migs_vi": "X", "migs_org": "X", "me": "-"}
+      },
+      {
+        "term_name": "reference_for_biomaterial",
+        "item": "Reference for biomaterial",
+        "definition": "primary publication or resource",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "X", "migs_ba": "M", "migs_pl": "X", "migs_vi": "X", "migs_org": "X", "me": "X"}
+      },
+      {
+        "term_name": "source_material_identifiers",
+        "item": "Source material identifiers",
+        "definition": "cultures of micro-organisms: identifiers for two culture collections",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "biotic_relationship",
+        "item": "Biotic Relationship",
+        "definition": "e.g. free-living, parasite, commensal, symbiont",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "X", "migs_ba": "M", "migs_pl": "", "migs_vi": "X", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "specific_host",
+        "item": "Specific Host",
+        "definition": "host taxid, unknown, or applicable",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "X", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "host_specificity_range",
+        "item": "Host specificity/range",
+        "definition": "",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "X", "migs_ba": "X", "migs_pl": "X", "migs_vi": "M", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "health_disease_status",
+        "item": "Health/disease status of specific host",
+        "definition": "at time of collection",
+        "section": "ORGANISM",
+        "checklist_requirements": {"migs_eu": "", "migs_ba": "", "migs_pl": "", "migs_vi": "M", "migs_org": "", "me": ""}
+      },
+      {
+        "term_name": "geographic_location",
+        "item": "Geographic location",
+        "definition": "latitude longitude, depth, altitude",
+        "section": "ENVIRONMENT",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "collection_date",
+        "item": "Date/time of collection",
+        "definition": "",
+        "section": "ENVIRONMENT",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "habitat",
+        "item": "Habitat",
+        "definition": "environmental feature, biome, material",
+        "section": "ENVIRONMENT",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "nucleic_acid_preparation",
+        "item": "Nucleic acid preparation",
+        "definition": "extraction, amplification",
+        "section": "SAMPLE PROCESSING",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "sequencing_method",
+        "item": "Sequencing method",
+        "definition": "",
+        "section": "SAMPLE PROCESSING",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "assembly",
+        "item": "Assembly",
+        "definition": "assembly method, coverage",
+        "section": "DATA PROCESSING",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "M"}
+      },
+      {
+        "term_name": "finishing_strategy",
+        "item": "Finishing strategy/quality",
+        "definition": "status, contigs",
+        "section": "DATA PROCESSING",
+        "checklist_requirements": {"migs_eu": "M", "migs_ba": "M", "migs_pl": "M", "migs_vi": "M", "migs_org": "M", "me": "X"}
+      },
+      {
+        "term_name": "annotation_source",
+        "item": "Annotation source",
+        "definition": "",
+        "section": "DATA PROCESSING",
+        "checklist_requirements": {"migs_eu": "X", "migs_ba": "X", "migs_pl": "X", "migs_vi": "X", "migs_org": "X", "me": "X"}
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+# MIxS May 2009 Excel Format Profile (Early/Headerless)
+# File: Migs_mims_miens_051109.xlsx
+# This very early format has NO HEADER ROW - data starts at row 2
+description: "MIxS May 2009 Excel format (headerless, early development)"
+
+# Pattern matching for auto-detection
+version_patterns:
+  - "051109"
+  - "migs_mims_miens_05"
+
+# Sheet names
+sheet_names:
+  main_terms:
+    - "MIGSMIMSMIENS"
+  packages:
+    - "environments"
+
+# This format has NO HEADERS - columns are positional
+# Row 1 is empty, data starts at row 2
+# Columns: term_name, expected_value, definition, section, EU, BA, PL, VI, ORG, ME, MIENS_S, MIENS_C
+has_headers: false
+data_start_row: 2
+
+# Column positions (0-indexed)
+column_positions:
+  name: 0           # Column A: term name (e.g., "submit to insdc")
+  expected_value: 1 # Column B: expected value type (e.g., "[boolean]")
+  definition: 2     # Column C: definition text
+  section: 3        # Column D: section (e.g., "investigation")
+  # Columns E-L are checklist requirement columns
+
+# Checklist columns by position (0-indexed)
+checklist_column_positions:
+  4: "migs_eu"    # Column E
+  5: "migs_ba"    # Column F
+  6: "migs_pl"    # Column G
+  7: "migs_vi"    # Column H
+  8: "migs_org"   # Column I
+  9: "me"         # Column J (MIMS/metagenome)
+  10: "miens_s"   # Column K (later MIMARKS survey)
+  11: "miens_c"   # Column L (later MIMARKS specimen)
+
+# Environment packages sheet format
+# Columns: package_name, term_name, expected_value, definition
+packages_column_positions:
+  package_name: 0
+  term_name: 1
+  expected_value: 2
+  definition: 3
+
+# Term name normalization (e.g., "project name" -> "project_name")
+normalize_term_names: true
+
+notes: |
+  The May 2009 file (051109) is the earliest Excel format in the corpus.
+  Key characteristics:
+  - NO header row - row 1 is empty
+  - Data starts at row 2
+  - Fixed column positions (not column names)
+  - "MIENS" terminology (later renamed to "MIMARKS")
+  - Very early development version, pre-dates official releases

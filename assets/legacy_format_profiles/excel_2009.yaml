@@ -4,10 +4,10 @@
 description: "MIxS 2009 Excel format (early development)"
 
 # Pattern matching for auto-detection (checked against filename and path)
+# Note: Does NOT match 051109 (May 2009) - that uses excel_2009_early.yaml
 version_patterns:
-  - "2009"
-  - "migs_mims_miens"
-  - "miens"
+  - "231109"  # November 2009 file specifically
+  - "Migs_mims_miens_23"
 
 # Sheet names to look for (in priority order)
 # Note: 2009 files use various naming conventions
