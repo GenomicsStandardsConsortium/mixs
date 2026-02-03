@@ -4,13 +4,11 @@
 description: "MIxS 2010 Excel format (v2.0, headers at row 16)"
 
 # Pattern matching for auto-detection
-# Note: These patterns are matched against the full path, so we need specific patterns
-# to distinguish from the 2010_2011 profile
+# Note: MIENS_12_11_10 has headers at row 1 and uses excel_2010_miens.yaml
+# MIENS_18_10_10 has headers at row 16 like MIGS_MIMS and uses this profile
 version_patterns:
-  - "/2010/"
   - "MIGS_MIMS_07_12_10"
   - "MIGS_MIMS_18_10_10"
-  - "MIENS_12_11_10"
   - "MIENS_18_10_10"
 
 # Header row offset (0-indexed, so row 16 = index 15)
@@ -56,6 +54,9 @@ checklist_columns:
   vi: "migs_vi"
   org: "migs_org"
   me: "me"
+  # MIENS checklist columns (for MIENS_18_10_10.xlsx)
+  "MIENS SURVEY": "mimarks_s"
+  "MIENS CULTURE": "mimarks_c"
 
 # Term names need normalization (e.g., "project name" -> "project_name")
 normalize_term_names: true

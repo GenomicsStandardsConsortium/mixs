@@ -68,3 +68,49 @@ The `mixs-legacy-diff` tool automatically selects a profile based on:
 3. Fallback to a default profile
 
 You can also use `--profile-dir` to specify a custom profiles directory.
+
+## Word Document Extraction (`word_extracted_terms.json`)
+
+Pre-extracted terms from early MIGS Word documents (v1.1, v1.2).
+
+### Why Pre-extraction?
+
+The Word documents use a complex table structure that cannot be reliably parsed with rule-based code:
+
+1. **No standard headers** - Section names (ORGANISM, ENVIRONMENT) appear as row content, not column headers
+2. **Merged cells** - The table uses merged cells for visual grouping
+3. **Embedded definitions** - Term names include parenthetical clarifications that need interpretation
+4. **Abbreviated text** - Terms like "Reference for (" are truncated and need context to understand
+
+### Extraction Method
+
+Terms were extracted through interactive analysis using Claude Code:
+
+1. The `python-docx` library read raw table data from each Word document
+2. Claude Code analyzed the table structure to identify:
+   - Section boundaries (uppercase headers like ORGANISM, ENVIRONMENT)
+   - Term rows (lowercase text with M/X/- requirement columns)
+   - Checklist columns (EU, BA, PL, VI, OR, ME)
+3. For each term row, Claude Code interpreted:
+   - The normalized term name (e.g., "Geographic location (latitude..." → `geographic_location`)
+   - The human-readable item name
+   - Any definition text extracted from parenthetical notes
+   - Checklist requirements from the M/X/- columns
+4. Results were saved to `word_extracted_terms.json` for use by the Word reader
+
+### Re-extraction
+
+If the Word documents need to be re-processed:
+
+1. Use `python-docx` to dump the table structure:
+   ```python
+   from docx import Document
+   doc = Document('path/to/file.docx')
+   for i, row in enumerate(doc.tables[0].rows):
+       cells = [c.text.strip() for c in row.cells]
+       print(f'Row {i}: {cells}')
+   ```
+2. Manually or interactively analyze the output to identify terms
+3. Update `word_extracted_terms.json` with the new extraction
+
+No external API keys or services are required - the extraction was done interactively during development.

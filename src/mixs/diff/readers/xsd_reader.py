@@ -73,36 +73,44 @@ class XsdReader(BaseReader):
         return schema
 
     def _extract_elements(self, root: ET.Element, schema: NormalizedSchema) -> None:
-        """Extract top-level elements from XSD."""
-        for elem in root.findall(f"{XS_NS}element"):
+        """Extract ALL elements from XSD recursively.
+
+        The 2006 MIGS XSD has deeply nested elements representing actual MIGS fields
+        like temperature, pH, salinity, etc. We need to extract all of them.
+        """
+        # Skip structural container elements - these are not MIGS fields
+        structural_elements = {
+            'migs', 'genome_catalogue', 'Investigation', 'Study', 'Biomaterial',
+            'phenotype', 'sources', 'assay', 'extensions', 'sediment', 'water_body',
+            'soil', 'air', 'sediment_pore_water', 'host_associated', 'mat_biofilm',
+        }
+
+        # Find ALL xs:element tags anywhere in the document
+        for elem in root.iter(f"{XS_NS}element"):
             name = elem.get("name")
             if not name:
                 continue
 
+            # Skip structural containers
+            if name in structural_elements:
+                continue
+
             term = self._element_to_term(elem)
-            if term:
+            if term and term.name not in schema.terms:
                 schema.terms[term.name] = term
 
     def _extract_complex_types(self, root: ET.Element, schema: NormalizedSchema) -> None:
-        """Extract complex type definitions from XSD."""
+        """Extract named complex type definitions from XSD.
+
+        These define reusable types that may have additional documentation.
+        """
         for complex_type in root.findall(f"{XS_NS}complexType"):
             type_name = complex_type.get("name")
             if not type_name:
                 continue
 
-            # Extract elements within the complex type
-            for sequence in complex_type.findall(f".//{XS_NS}sequence"):
-                for elem in sequence.findall(f"{XS_NS}element"):
-                    term = self._element_to_term(elem, parent_type=type_name)
-                    if term and term.name not in schema.terms:
-                        schema.terms[term.name] = term
-
-            # Also check for all/choice constructs
-            for container in complex_type.findall(f".//{XS_NS}all") + complex_type.findall(f".//{XS_NS}choice"):
-                for elem in container.findall(f"{XS_NS}element"):
-                    term = self._element_to_term(elem, parent_type=type_name)
-                    if term and term.name not in schema.terms:
-                        schema.terms[term.name] = term
+            # Store complex type info in metadata
+            # (elements within are already extracted by _extract_elements)
 
     def _element_to_term(self, elem: ET.Element, parent_type: str = "") -> Optional[NormalizedTerm]:
         """Convert an XSD element to a NormalizedTerm."""

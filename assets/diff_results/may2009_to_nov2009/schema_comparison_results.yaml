@@ -1,0 +1,771 @@
+comparison_metadata:
+  old_schema:
+    version: v1.5-may2009
+    source: /home/mark/gitrepos/mixs-legacy/2009/Migs_mims_miens_051109.xlsx
+    format: xlsx
+    term_count: 57
+  new_schema:
+    version: v1.6-nov2009
+    source: /home/mark/gitrepos/mixs-legacy/2009/Migs_mims_miens_231109.xlsx
+    format: xlsx
+    term_count: 47
+  comparison_timestamp: '2026-02-03T16:02:42.317320'
+term_differences:
+  key_comparison:
+    shared:
+    - amount_or_size_of_sample_collected
+    - assembly
+    - chimera_check
+    - collection_date
+    - encoded_traits
+    - environment
+    - estimated_size
+    - experimental_factor
+    - extrachromosomal_elements
+    - finishing_strategy
+    - health_or_disease_status_of_specific_host_at_time_of_collection
+    - host_specificty_or_range
+    - investigation_type
+    - isolation_and_growth_condition
+    - known_pathogenicity
+    - library_reads_sequenced
+    - library_screening_strategy
+    - library_size
+    - library_vector
+    - nucleic_acid_amplification
+    - nucleic_acid_extraction
+    - number_of_replicons
+    - observed_biotic_relationship
+    - pcr_conditions
+    - pcr_primers
+    - ploidy
+    - project_name
+    - propagation
+    - reference_for_biomaterial
+    - relationship_to_oxygen
+    - relevant_electronic_resources
+    - relevant_standard_operating_procedures
+    - sample_collection_device_or_method
+    - sample_material_treatment
+    - sequence_quality_check
+    - sequencing_method
+    - source_material_identifiers
+    - specific_host
+    - submit_to_insdc
+    - subspecific_genetic_lineage
+    - target_gene
+    - trophic_level
+    only_in_new:
+    - environmental_package
+    expected_splits:
+      geographic_location:
+      - geographic_location_(altitude/elevation)
+      - geographic_location_(country)
+      - geographic_location_(depth)
+      - geographic_location_(latitude_and_longitude)
+    expected_deletions:
+      air: Package name moved to package metadata; not a term
+      host_associated: Package name moved to package metadata; not a term
+      human_associated: Package name moved to package metadata; not a term
+      human_gut: Package name moved to package metadata; not a term
+      human_oral: Package name moved to package metadata; not a term
+      human_skin: Package name moved to package metadata; not a term
+      human_vaginal: Package name moved to package metadata; not a term
+      microbial_mat/biofilm: Package name moved to package metadata; not a term
+      miscellaneous_natural_or_artificial_environment: Package name moved to package metadata; not a term
+      plant_associated: Package name moved to package metadata; not a term
+      sediment: Package name moved to package metadata; not a term
+      soil: Package name moved to package metadata; not a term
+      wastewater/sludge: Package name moved to package metadata; not a term
+      water: Package name moved to package metadata; not a term
+  definition_changes:
+    investigation_type:
+      expected_value:
+        old: '[eukoryote, bacteria, plasmid, virus, organelle, metagenome,miens-survey or miens-culture]'
+        new: '[eukaryote, bacteria_archaea, plasmid, virus, organelle, metagenome,miens-survey or miens-culture]'
+    relevant_electronic_resources:
+      definition:
+        old: ''
+        new: ''''
+    health_or_disease_status_of_specific_host_at_time_of_collection:
+      definition:
+        old: ''
+        new: Health or disease status of specific host at time of collection
+    project_name:
+      expected_value:
+        old: ''
+        new: ''''
+    pcr_primers:
+      definition:
+        old: PCR primers, barcodes and adaptors that were used to amplify the sequence. This field should contain all the
+          primers used for a single PCR reaction if multiple forward or reverse primers are present in a single PCR reaction.
+          The primer sequence should be reported in uppercase letters, however in case of the presence of a barcode or adaptor
+          sequence, the relevant strectches of nucleotides should be reported in lowercase letters.
+        new: PCR primers, barcodes and adaptors that were used to amplify the sequence of the targeted gene or locus. This
+          field should contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present
+          in a single PCR reaction. The primer sequence should be reported in uppercase letters, however in case of the presence
+          of a barcode or adaptor sequence, the relevant strectches of nucleotides should be reported in lowercase letters.
+    finishing_strategy:
+      expected_value:
+        old: (status e.g. complete or draft [CV]; coverage [integer]; and contigs [integer])
+        new: (status e.g. complete or draft [CV]; coverage [integer]; contigs [integer])
+    assembly:
+      expected_value:
+        old: (assembly method [CV]; estimated error rate [unit]; and method of calculation [CV])
+        new: (assembly method [CV]; estimated error rate [unit]; method of calculation [CV])
+    nucleic_acid_amplification:
+      expected_value:
+        old: (amplification method and clean-up method) [PMID, DOI or url]
+        new: (amplification method; clean-up method) [PMID, DOI or url]
+    library_screening_strategy:
+      expected_value:
+        old: (enriched, screened, normalized) [CV]
+        new: (e.g. enriched, screened, normalized) [CV]
+    reference_for_biomaterial:
+      definition:
+        old: ''
+        new: ''''
+    ploidy:
+      definition:
+        old: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
+          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
+          For PATO (Phenotypic Quality Ontology), please refer to http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=PATO
+        new: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
+          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
+          For terms, please select terms listed under class ploidy (PATO:001374) of PATO (Phenotypic Quality Ontology), please
+          refer to http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=PATO
+    experimental_factor:
+      definition:
+        old: 'A factor is a variable which is deliberately varied between trials, in order to study its influence on the outcome.
+          There are two main types of variables to consider: treatment factors, when you are especially interested in studying
+          how the outcome varies as a function of these factors; and confounders, other factors or covariates, such as temperature,
+          pH, humidity, drift over time, etc... that may influence the outcome. In the biological or health sciences, age,
+          sex and other characteristics of an individual may be confounders. This field accepts ontology terms from EFO. For
+          a browser of EFO terms, please see http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=EFO'
+        new: 'A factor is a variable which is deliberately varied between trials, in order to study its influence on the outcome.
+          There are two main types of variables to consider: treatment factors, when you are especially interested in studying
+          how the outcome varies as a function of these factors; and confounders, other factors or covariates, such as temperature,
+          pH, humidity, drift over time, etc... that may influence the outcome. In the biological or health sciences, age,
+          sex and other characteristics of an individual may be confounders. This field accepts ontology terms from EFO. For
+          a browser of EFO terms, please see http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=EFO, Any treatment applied
+          to the sample while or after retrieving the sample from environment. This field accepts OBI (Ontology for Biomedical
+          Investigations), for a browser of OBI terms please see http://bioportal.bioontology.org/visualize/40547'
+      expected_value:
+        old: (the experimental design of the study) [EFO]
+        new: (the experimental design of the study) [EFO and/or OBI]
+    known_pathogenicity:
+      expected_value:
+        old: ''
+        new: ''''
+    isolation_and_growth_condition:
+      definition:
+        old: Publication reference in the form of pubmed ID (pmid) or digital object identifier (doi) for isolation and growth
+          condition specifications of the organism/material
+        new: Publication reference in the form of pubmed ID (pmid), digital object identifier (doi) or url for isolation and
+          growth condition specifications of the organism/material
+      expected_value:
+        old: '[PMID or DOI]'
+        new: '[PMID,DOI or url]'
+    host_specificty_or_range:
+      definition:
+        old: ''
+        new: The NCBI taxonomy identifier of the specific host if it is known
+    submit_to_insdc:
+      definition:
+        old: Depending on the study (large-scale e.g. done with next generation sequencing technology or small-scale) sequences
+          have to be submitted to SRA (Short Read Archives), ENA (European Nucleotide Archive) or via the classical Webin/Sequin
+          systems to Genbank and EMBL
+        new: Depending on the study (large-scale e.g. done with next generation sequencing technology or small-scale) sequences
+          have to be submitted to SRA (Short Read Archives), ENA (European Nucleotide Archive), DRA (DDBJ Read Archive) or
+          via the classical Webin/Sequin systems to Genbank, EMBL and DDBJ
+    specific_host:
+      definition:
+        old: ''
+        new: If there is a host involved, please provide its taxid (or environmental if not actually isolated from the dead
+          or alive host - i.e. pathogen could be isolated from a swipe of a bench etc) and report whether it is a laboratory
+          or natural host). From this we can calculate any number of groupings of hosts (e.g. animal vs plant, all fish hosts,
+          etc)
+    collection_date:
+      definition:
+        old: 'The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available,
+          the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10;
+          2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO6801 compliant'
+        new: 'The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available,
+          the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10;
+          2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant'
+      expected_value:
+        old: '[UCT]'
+        new: '[ISO8601]'
+package_differences:
+  key_comparison:
+    only_in_new:
+    - air
+    - host_associated
+    - human_associated
+    - human_gut
+    - human_oral
+    - human_skin
+    - human_vaginal
+    - microbial_mat_biofilm
+    - miscellaneous_natural_or_artificial_environment
+    - plant_associated
+    - sediment
+    - soil
+    - wastewater_sludge
+    - water
+checklist_differences:
+  key_comparison:
+    shared:
+    - me
+    - migs_ba
+    - migs_eu
+    - migs_org
+    - migs_pl
+    - migs_vi
+    only_in_old:
+    - miens_c
+    - miens_s
+    only_in_new:
+    - mimarks_c
+    - mimarks_s
+membership_differences:
+  checklist_changes:
+    migs_vi:
+      terms_added:
+      - pcr_conditions
+      - sequence_quality_check
+      - chimera_check
+      - pcr_primers
+      - library_size
+      - amount_or_size_of_sample_collected
+      - sample_material_treatment
+      - library_screening_strategy
+      - sample_collection_device_or_method
+      - library_vector
+      - library_reads_sequenced
+      terms_removed: []
+      requirement_changes:
+        relevant_electronic_resources:
+          old: M
+          new: C
+        observed_biotic_relationship:
+          old: R
+          new: X
+        health_or_disease_status_of_specific_host_at_time_of_collection:
+          old: M
+          new: C
+        relevant_standard_operating_procedures:
+          old: M
+          new: C
+        encoded_traits:
+          old: M
+          new: C
+        nucleic_acid_amplification:
+          old: M
+          new: C
+        reference_for_biomaterial:
+          old: R
+          new: X
+        experimental_factor:
+          old: M
+          new: C
+        known_pathogenicity:
+          old: M
+          new: C
+        estimated_size:
+          old: R
+          new: X
+        host_specificty_or_range:
+          old: M
+          new: C
+        subspecific_genetic_lineage:
+          old: M
+          new: C
+        specific_host:
+          old: M
+          new: C
+        source_material_identifiers:
+          old: M
+          new: C
+        nucleic_acid_extraction:
+          old: M
+          new: C
+    migs_org:
+      terms_added:
+      - pcr_conditions
+      - sequence_quality_check
+      - health_or_disease_status_of_specific_host_at_time_of_collection
+      - chimera_check
+      - pcr_primers
+      - library_size
+      - amount_or_size_of_sample_collected
+      - sample_material_treatment
+      - library_screening_strategy
+      - known_pathogenicity
+      - host_specificty_or_range
+      - specific_host
+      - sample_collection_device_or_method
+      - library_vector
+      - library_reads_sequenced
+      terms_removed: []
+      requirement_changes:
+        relevant_electronic_resources:
+          old: M
+          new: C
+        relevant_standard_operating_procedures:
+          old: M
+          new: C
+        nucleic_acid_amplification:
+          old: M
+          new: C
+        reference_for_biomaterial:
+          old: R
+          new: X
+        experimental_factor:
+          old: M
+          new: C
+        estimated_size:
+          old: R
+          new: X
+        subspecific_genetic_lineage:
+          old: M
+          new: C
+        source_material_identifiers:
+          old: M
+          new: C
+        nucleic_acid_extraction:
+          old: M
+          new: C
+    migs_pl:
+      terms_added:
+      - pcr_conditions
+      - sequence_quality_check
+      - health_or_disease_status_of_specific_host_at_time_of_collection
+      - chimera_check
+      - pcr_primers
+      - library_size
+      - amount_or_size_of_sample_collected
+      - sample_material_treatment
+      - library_screening_strategy
+      - known_pathogenicity
+      - sample_collection_device_or_method
+      - library_vector
+      - library_reads_sequenced
+      terms_removed: []
+      requirement_changes:
+        relevant_electronic_resources:
+          old: M
+          new: C
+        relevant_standard_operating_procedures:
+          old: M
+          new: C
+        encoded_traits:
+          old: M
+          new: C
+        nucleic_acid_amplification:
+          old: M
+          new: C
+        reference_for_biomaterial:
+          old: R
+          new: X
+        experimental_factor:
+          old: M
+          new: C
+        estimated_size:
+          old: R
+          new: X
+        host_specificty_or_range:
+          old: R
+          new: X
+        subspecific_genetic_lineage:
+          old: M
+          new: C
+        specific_host:
+          old: M
+          new: C
+        source_material_identifiers:
+          old: M
+          new: C
+        nucleic_acid_extraction:
+          old: M
+          new: C
+    migs_eu:
+      terms_added:
+      - pcr_conditions
+      - sequence_quality_check
+      - relationship_to_oxygen
+      - health_or_disease_status_of_specific_host_at_time_of_collection
+      - chimera_check
+      - pcr_primers
+      - library_size
+      - amount_or_size_of_sample_collected
+      - sample_material_treatment
+      - library_screening_strategy
+      - known_pathogenicity
+      - sample_collection_device_or_method
+      - library_vector
+      - library_reads_sequenced
+      terms_removed: []
+      requirement_changes:
+        relevant_electronic_resources:
+          old: M
+          new: C
+        observed_biotic_relationship:
+          old: R
+          new: X
+        relevant_standard_operating_procedures:
+          old: M
+          new: C
+        nucleic_acid_amplification:
+          old: M
+          new: C
+        reference_for_biomaterial:
+          old: R
+          new: X
+        experimental_factor:
+          old: M
+          new: C
+        extrachromosomal_elements:
+          old: R
+          new: X
+        host_specificty_or_range:
+          old: R
+          new: X
+        subspecific_genetic_lineage:
+          old: M
+          new: C
+        specific_host:
+          old: R
+          new: X
+        source_material_identifiers:
+          old: M
+          new: C
+        nucleic_acid_extraction:
+          old: M
+          new: C
+    mimarks_s:
+      terms_added:
+      - pcr_conditions
+      - sequence_quality_check
+      - environment
+      - propagation
+      - investigation_type
+      - sequencing_method
+      - relevant_electronic_resources
+      - observed_biotic_relationship
+      - relationship_to_oxygen
+      - health_or_disease_status_of_specific_host_at_time_of_collection
+      - chimera_check
+      - project_name
+      - pcr_primers
+      - library_size
+      - finishing_strategy
+      - amount_or_size_of_sample_collected
+      - number_of_replicons
+      - assembly
+      - sample_material_treatment
+      - relevant_standard_operating_procedures
+      - target_gene
+      - encoded_traits
+      - nucleic_acid_amplification
+      - library_screening_strategy
+      - reference_for_biomaterial
+      - ploidy
+      - experimental_factor
+      - known_pathogenicity
+      - extrachromosomal_elements
+      - estimated_size
+      - trophic_level
+      - isolation_and_growth_condition
+      - host_specificty_or_range
+      - subspecific_genetic_lineage
+      - submit_to_insdc
+      - specific_host
+      - sample_collection_device_or_method
+      - source_material_identifiers
+      - library_vector
+      - nucleic_acid_extraction
+      - library_reads_sequenced
+      - collection_date
+      terms_removed: []
+      requirement_changes: {}
+    migs_ba:
+      terms_added:
+      - pcr_conditions
+      - sequence_quality_check
+      - chimera_check
+      - pcr_primers
+      - library_size
+      - amount_or_size_of_sample_collected
+      - sample_material_treatment
+      - library_screening_strategy
+      - sample_collection_device_or_method
+      - library_vector
+      - library_reads_sequenced
+      terms_removed: []
+      requirement_changes:
+        relevant_electronic_resources:
+          old: M
+          new: C
+        health_or_disease_status_of_specific_host_at_time_of_collection:
+          old: M
+          new: C
+        relevant_standard_operating_procedures:
+          old: M
+          new: C
+        encoded_traits:
+          old: R
+          new: X
+        nucleic_acid_amplification:
+          old: M
+          new: C
+        experimental_factor:
+          old: M
+          new: C
+        known_pathogenicity:
+          old: M
+          new: C
+        extrachromosomal_elements:
+          old: M
+          new: C
+        estimated_size:
+          old: R
+          new: X
+        host_specificty_or_range:
+          old: R
+          new: X
+        subspecific_genetic_lineage:
+          old: M
+          new: C
+        specific_host:
+          old: M
+          new: C
+        source_material_identifiers:
+          old: M
+          new: C
+        nucleic_acid_extraction:
+          old: M
+          new: C
+    me:
+      terms_added:
+      - pcr_conditions
+      - sequence_quality_check
+      - health_or_disease_status_of_specific_host_at_time_of_collection
+      - chimera_check
+      - pcr_primers
+      - known_pathogenicity
+      - host_specificty_or_range
+      - specific_host
+      terms_removed: []
+      requirement_changes:
+        relevant_electronic_resources:
+          old: M
+          new: C
+        relationship_to_oxygen:
+          old: R
+          new: X
+        library_size:
+          old: M
+          new: C
+        sample_material_treatment:
+          old: M
+          new: C
+        relevant_standard_operating_procedures:
+          old: M
+          new: C
+        encoded_traits:
+          old: R
+          new: '-'
+        nucleic_acid_amplification:
+          old: M
+          new: C
+        library_screening_strategy:
+          old: M
+          new: C
+        reference_for_biomaterial:
+          old: R
+          new: X
+        experimental_factor:
+          old: M
+          new: C
+        isolation_and_growth_condition:
+          old: R
+          new: X
+        sample_collection_device_or_method:
+          old: M
+          new: C
+        source_material_identifiers:
+          old: M
+          new: C
+        library_vector:
+          old: M
+          new: C
+        nucleic_acid_extraction:
+          old: M
+          new: C
+        library_reads_sequenced:
+          old: M
+          new: C
+    mimarks_c:
+      terms_added:
+      - pcr_conditions
+      - sequence_quality_check
+      - environment
+      - propagation
+      - investigation_type
+      - sequencing_method
+      - relevant_electronic_resources
+      - observed_biotic_relationship
+      - relationship_to_oxygen
+      - health_or_disease_status_of_specific_host_at_time_of_collection
+      - chimera_check
+      - project_name
+      - pcr_primers
+      - library_size
+      - finishing_strategy
+      - amount_or_size_of_sample_collected
+      - number_of_replicons
+      - assembly
+      - sample_material_treatment
+      - relevant_standard_operating_procedures
+      - target_gene
+      - encoded_traits
+      - nucleic_acid_amplification
+      - library_screening_strategy
+      - reference_for_biomaterial
+      - ploidy
+      - experimental_factor
+      - known_pathogenicity
+      - extrachromosomal_elements
+      - estimated_size
+      - trophic_level
+      - isolation_and_growth_condition
+      - host_specificty_or_range
+      - subspecific_genetic_lineage
+      - submit_to_insdc
+      - specific_host
+      - sample_collection_device_or_method
+      - source_material_identifiers
+      - library_vector
+      - nucleic_acid_extraction
+      - library_reads_sequenced
+      - collection_date
+      terms_removed: []
+      requirement_changes: {}
+    miens_c:
+      terms_added: []
+      terms_removed:
+      - pcr_conditions
+      - sequence_quality_check
+      - environment
+      - propagation
+      - investigation_type
+      - sequencing_method
+      - relevant_electronic_resources
+      - observed_biotic_relationship
+      - relationship_to_oxygen
+      - health_or_disease_status_of_specific_host_at_time_of_collection
+      - chimera_check
+      - project_name
+      - pcr_primers
+      - library_size
+      - finishing_strategy
+      - amount_or_size_of_sample_collected
+      - number_of_replicons
+      - assembly
+      - sample_material_treatment
+      - relevant_standard_operating_procedures
+      - target_gene
+      - encoded_traits
+      - nucleic_acid_amplification
+      - library_screening_strategy
+      - reference_for_biomaterial
+      - ploidy
+      - experimental_factor
+      - known_pathogenicity
+      - extrachromosomal_elements
+      - estimated_size
+      - trophic_level
+      - isolation_and_growth_condition
+      - host_specificty_or_range
+      - subspecific_genetic_lineage
+      - submit_to_insdc
+      - specific_host
+      - sample_collection_device_or_method
+      - source_material_identifiers
+      - library_vector
+      - nucleic_acid_extraction
+      - library_reads_sequenced
+      - collection_date
+      requirement_changes: {}
+    miens_s:
+      terms_added: []
+      terms_removed:
+      - pcr_conditions
+      - sequence_quality_check
+      - environment
+      - propagation
+      - investigation_type
+      - sequencing_method
+      - relevant_electronic_resources
+      - observed_biotic_relationship
+      - relationship_to_oxygen
+      - health_or_disease_status_of_specific_host_at_time_of_collection
+      - chimera_check
+      - project_name
+      - pcr_primers
+      - library_size
+      - finishing_strategy
+      - amount_or_size_of_sample_collected
+      - number_of_replicons
+      - assembly
+      - sample_material_treatment
+      - relevant_standard_operating_procedures
+      - target_gene
+      - encoded_traits
+      - nucleic_acid_amplification
+      - library_screening_strategy
+      - reference_for_biomaterial
+      - ploidy
+      - experimental_factor
+      - known_pathogenicity
+      - extrachromosomal_elements
+      - estimated_size
+      - trophic_level
+      - isolation_and_growth_condition
+      - host_specificty_or_range
+      - subspecific_genetic_lineage
+      - submit_to_insdc
+      - specific_host
+      - sample_collection_device_or_method
+      - source_material_identifiers
+      - library_vector
+      - nucleic_acid_extraction
+      - library_reads_sequenced
+      - collection_date
+      requirement_changes: {}
+  summary:
+    total_checklist_changes: 318
+    total_package_changes: 0
+    made_mandatory: 0
+    made_optional: 0
+package_composition_differences:
+  packages_only_in_new:
+  - air
+  - host_associated
+  - human_associated
+  - human_gut
+  - human_oral
+  - human_skin
+  - human_vaginal
+  - microbial_mat_biofilm
+  - miscellaneous_natural_or_artificial_environment
+  - plant_associated
+  - sediment
+  - soil
+  - wastewater_sludge
+  - water
+  summary:
+    packages_with_changes: 0
+    total_terms_added: 0
+    total_terms_removed: 0

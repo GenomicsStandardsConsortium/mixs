@@ -1,0 +1,153 @@
+comparison_metadata:
+  old_schema:
+    version: v1.1
+    source: /home/mark/gitrepos/mixs-legacy/pre-2009/MIGS_1.1._v1.docx
+    format: docx
+    term_count: 22
+    notes: MIGS 1.1 Word document - earliest specification
+  new_schema:
+    version: v1.2
+    source: /home/mark/gitrepos/mixs-legacy/pre-2009/MIGS_1.2_Candidate_v3.docx
+    format: docx
+    term_count: 19
+    notes: MIGS 1.2 Candidate - pre-release draft
+  comparison_timestamp: '2026-02-03T16:14:10.517151'
+term_differences:
+  key_comparison:
+    shared:
+    - assembly
+    - collection_date
+    - estimated_size
+    - finishing_strategy
+    - genetic_lineage
+    - geographic_location
+    - health_disease_status
+    - host_specificity_range
+    - nucleic_acid_preparation
+    - number_of_replicons
+    - reference_for_biomaterial
+    - sequencing_method
+    - source_material_identifiers
+    only_in_new:
+    - annotation_source
+    - biotic_relationship
+    - extrachromosomal_elements
+    - ploidy_level
+    - specific_host
+    expected_mappings:
+    - habitat_type -> habitat
+    expected_deletions:
+      binning_method: |
+        Metagenomics-related term removed in v1.2 Candidate draft. Not restored in main spec lineage.
+      encoded_traits: |
+        Removed in v1.2 Candidate. Restored in May 2009 Excel version.
+      estimated_community_diversity: |
+        Metagenomics term removed in v1.2 Candidate. Not restored in main spec lineage.
+      host: |
+        Removed in v1.2 Candidate. A new term 'specific_host' was added with different semantics (taxonomic identification vs general host concept). The terms are related but not a direct rename.
+      library_construction: |
+        Removed in v1.2 Candidate. Related concepts appear later as library_reads_sequenced, library_screening_strategy, library_size, library_vector in May 2009 Excel.
+      sample_volume: |
+        Sampling detail removed in v1.2 Candidate. Related concept amount_or_size_of_sample_collected added in May 2009 Excel.
+      sampling_strategy: |
+        Removed in v1.2 Candidate. Related concepts sample_collection_device_or_method and sample_material_treatment added in May 2009 Excel.
+      trophic_level: |
+        Removed in v1.2 Candidate. Restored in May 2009 Excel version.
+  definition_changes:
+    estimated_size:
+      definition:
+        old: prior to sequencing
+        new: prior to sequencing; to be refined when sequencing is done
+    source_material_identifiers:
+      definition:
+        old: 'cultures of micro-organisms: identifiers for two culture collections, specimens (e.g. organelles and eukarya):
+          voucher condition and location'
+        new: 'cultures of micro-organisms: identifiers for two culture collections'
+    nucleic_acid_preparation:
+      definition:
+        old: extraction method amplification e.g. MDA, emPCR
+        new: extraction, amplification
+    number_of_replicons:
+      definition:
+        old: 'Virus: number of segments'
+        new: 'nuclear genome: chromosomes, organelles'
+    sequencing_method:
+      definition:
+        old: e.g. dideoxysequencing, pyrosequencing, polony
+        new: ''
+    health_disease_status:
+      item:
+        old: Health/disease status of host
+        new: Health/disease status of specific host
+    assembly:
+      definition:
+        old: assembly method, estimated error rate and method of calculation
+        new: assembly method, coverage
+    geographic_location:
+      definition:
+        old: latitude longitude, depth / altitude of sample
+        new: latitude longitude, depth, altitude
+    finishing_strategy:
+      item:
+        old: Finishing strategy
+        new: Finishing strategy/quality
+      definition:
+        old: status e.g. complete or draft, coverage, contigs
+        new: status, contigs
+    collection_date:
+      item:
+        old: Date and time of sample collection
+        new: Date/time of collection
+    habitat_type -> habitat:
+      item:
+        old: Habitat type
+        new: Habitat
+      definition:
+        old: ''
+        new: environmental feature, biome, material
+checklist_differences:
+  key_comparison:
+    shared:
+    - me
+    - migs_ba
+    - migs_eu
+    - migs_org
+    - migs_pl
+    - migs_vi
+membership_differences:
+  checklist_changes:
+    migs_pl:
+      terms_added:
+      - estimated_size
+      - source_material_identifiers
+      terms_removed: []
+      requirement_changes:
+        finishing_strategy:
+          old: X
+          new: M
+    migs_org:
+      terms_added:
+      - estimated_size
+      terms_removed: []
+      requirement_changes:
+        finishing_strategy:
+          old: X
+          new: M
+    migs_vi:
+      terms_added:
+      - estimated_size
+      terms_removed: []
+      requirement_changes:
+        finishing_strategy:
+          old: X
+          new: M
+    me:
+      terms_added:
+      - source_material_identifiers
+      terms_removed: []
+      requirement_changes: {}
+  summary:
+    total_checklist_changes: 8
+    total_package_changes: 0
+    made_mandatory: 3
+    made_optional: 0
