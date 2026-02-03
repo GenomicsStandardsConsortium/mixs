@@ -127,6 +127,16 @@ def validate_path_or_spec(ctx, param, value: str) -> str:
     default=True,
     help='Generate human-readable summary report (default: yes).'
 )
+@click.option(
+    '--old-notes',
+    default=None,
+    help='Notes about the old schema source (recorded in output metadata).'
+)
+@click.option(
+    '--new-notes',
+    default=None,
+    help='Notes about the new schema source (recorded in output metadata).'
+)
 def main(
     old: str,
     new: str,
@@ -139,6 +149,8 @@ def main(
     profile_dir: Optional[Path],
     log_level: str,
     summary: bool,
+    old_notes: Optional[str],
+    new_notes: Optional[str],
 ):
     """Compare MIxS schemas across formats and versions.
 
@@ -177,9 +189,13 @@ def main(
         # Read schemas
         logger.info("Reading old schema...")
         old_schema = old_reader.read(old, version=old_version)
+        if old_notes:
+            old_schema.metadata["notes"] = old_notes
 
         logger.info("Reading new schema...")
         new_schema = new_reader.read(new, version=new_version)
+        if new_notes:
+            new_schema.metadata["notes"] = new_notes
 
         # Load name mappings if provided
         name_mappings = {}

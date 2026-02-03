@@ -140,19 +140,27 @@ class LegacySchemaComparator:
         Returns:
             SchemaComparisonResult with all comparison details.
         """
+        old_info = {
+            "version": old_schema.version,
+            "source": old_schema.source_path,
+            "format": old_schema.source_format,
+            "term_count": len(old_schema.terms),
+        }
+        if old_schema.metadata.get("notes"):
+            old_info["notes"] = old_schema.metadata["notes"]
+
+        new_info = {
+            "version": new_schema.version,
+            "source": new_schema.source_path,
+            "format": new_schema.source_format,
+            "term_count": len(new_schema.terms),
+        }
+        if new_schema.metadata.get("notes"):
+            new_info["notes"] = new_schema.metadata["notes"]
+
         result = SchemaComparisonResult(
-            old_schema_info={
-                "version": old_schema.version,
-                "source": old_schema.source_path,
-                "format": old_schema.source_format,
-                "term_count": len(old_schema.terms),
-            },
-            new_schema_info={
-                "version": new_schema.version,
-                "source": new_schema.source_path,
-                "format": new_schema.source_format,
-                "term_count": len(new_schema.terms),
-            },
+            old_schema_info=old_info,
+            new_schema_info=new_info,
         )
 
         # Compare terms

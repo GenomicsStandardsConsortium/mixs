@@ -4,12 +4,13 @@ comparison_metadata:
     source: ../mixs-legacy/mixs4/MIxS_210514.xls
     format: xls
     term_count: 55
+    notes: 'Did not use: ../mixs-legacy/MIxS_v4.xls, ../mixs-legacy/mixs4/MIxS{air,builtenv,hostassoc,humanassoc,humangut,humanoral,humanskin,humanvaginal,matbiofilm,misc,plantassoc,sediment,soil,wastesludge,water}_210514.xls'
   new_schema:
     version: v5
     source: ../mixs-legacy/mixs5/mixs_v5.xlsx
     format: xlsx
     term_count: 94
-  comparison_timestamp: '2026-02-03T13:03:39.484723'
+  comparison_timestamp: '2026-02-03T13:07:44.070125'
 term_differences:
   key_comparison:
     shared:
@@ -118,69 +119,7 @@ term_differences:
     - wga_amp_appr
     - wga_amp_kit
   definition_changes:
-    mid:
-      example:
-        old: ''
-        new: GTGAATAT
-      occurrence:
-        old: '1.0'
-        new: '1'
-    project_name:
-      example:
-        old: ''
-        new: Forest soil metagenome
-      occurrence:
-        old: '1.0'
-        new: '1'
-    host_spec_range:
-      example:
-        old: ''
-        new: '9606'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    lib_screen:
-      definition:
-        old: Specific enrichment or screening methods applied before and/or after creating clone libraries
-        new: Specific enrichment or screening methods applied before and/or after creating libraries
-      occurrence:
-        old: '1.0'
-        new: '1'
-    target_subfragment:
-      occurrence:
-        old: '1.0'
-        new: '1'
-    source_mat_id:
-      example:
-        old: ''
-        new: MPI012345
-    samp_mat_process:
-      definition:
-        old: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
-          OBI, for a browser of OBI (v 2013-10-25) terms please see http://purl.bioontology.org/ontology/OBI
-        new: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
-          OBI, for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI
-      value_syntax:
-        old: '{text|term}'
-        new: '{text}|{termLabel} {[termID]}'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    url:
-      example:
-        old: ''
-        new: http://www.earthmicrobiome.org/
-    trophic_level:
-      example:
-        old: ''
-        new: heterotroph
-      value_syntax:
-        old: '[autotroph| carboxydotroph| chemoautotroph| chemoheterotroph| chemolithoautotroph| chemolithotroph| chemoorganoheterotroph|
-          chemoorganotroph| chemosynthetic| chemotroph| copiotroph| diazotroph| facultative| autotroph| heterotroph| lithoautotroph|
-          lithoheterotroph| lithotroph| methanotroph| methylotroph| mixotroph| obligate| chemoautolithotroph| oligotroph|
-          organoheterotroph| organotroph| photoautotroph| photoheterotroph| photolithoautotroph| photolithotroph| photosynthetic|
-          phototroph]'
-        new: '[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]'
+    target_gene:
       occurrence:
         old: '1.0'
         new: '1'
@@ -205,13 +144,6 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
-    num_replicons:
-      example:
-        old: ''
-        new: '2'
-      occurrence:
-        old: '1.0'
-        new: '1'
     extrachrom_elements:
       example:
         old: ''
@@ -219,17 +151,214 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
+    estimated_size:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    investigation_type:
+      definition:
+        old: Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic
+          Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome,mimarks-survey,
+          or mimarks-specimen
+        new: Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic
+          Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome,mimarks-survey,
+          mimarks-specimen, metatranscriptome, single amplified genome, metagenome-assembled genome, or uncultivated viral
+          genome
+      example:
+        old: ''
+        new: metagenome
+      expected_value:
+        old: eukaryote, bacteria_archaea, plasmid, virus, organelle, metagenome,mimarks-survey or mimarks-specimen
+        new: eukaryote, bacteria_archaea, plasmid, virus, organelle, metagenome,mimarks-survey, mimarks-specimen, metatranscriptome,
+          single amplified genome, metagenome-assembled genome, or uncultivated viral genomes
+      value_syntax:
+        old: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|mimarks-survey|mimarks-specimen]'
+        new: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    seq_meth:
+      example:
+        old: Sanger dideoxysequencing, pyrosequencing, polony
+        new: Illumina HiSeq 1500
+      expected_value:
+        old: ''
+        new: enumeration
+      value_syntax:
+        old: '{text}'
+        new: '[MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina
+          Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina
+          HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina
+          HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB
+          SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic
+          Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent
+          S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL
+          Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]'
+      occurrence:
+        old: '1.0'
+        new: '1'
     samp_collect_device:
       occurrence:
         old: '1.0'
         new: '1'
-    ref_biomaterial:
+    pcr_cond:
+      definition:
+        old: Description of reaction conditions and components for PCR in the form of  'initial denaturation:94degC_1.5min;
+          annealing=...'
+        new: Description of reaction conditions and components of PCR in the form of  'initial denaturation:94degC_1.5min;
+          annealing=...'
       example:
         old: ''
-        new: doi:10.1016/j.syapm.2018.01.009
+        new: initial denaturation:94_3;annealing:50_1;elongation:72_1.5;final elongation:72_10;35
+      expected_value:
+        old: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
+          total cycles'
+        new: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
+          cycles
+      value_syntax:
+        old: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
+          total cycles'
+        new: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
+          cycles
+      occurrence:
+        old: '1.0'
+        new: '1'
+    adapters:
+      example:
+        old: ''
+        new: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+      value_syntax:
+        old: '{dna},{dna}'
+        new: '{dna};{dna}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    isol_growth_condt:
+      example:
+        old: ''
+        new: 'doi: 10.1016/j.syapm.2018.01.009'
       value_syntax:
         old: '{PMID|DOI|URL}'
         new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    health_disease_stat:
+      definition:
+        old: Health or disease status of specific host at time of collection. This field accepts PATO (v 2013-10-28) terms,
+          for a browser please see http://purl.bioontology.org/ontology/PATO
+        new: Health or disease status of specific host at time of collection
+      example:
+        old: ''
+        new: dead
+      expected_value:
+        old: PATO
+        new: enumeration
+      value_syntax:
+        old: '{term}'
+        new: '[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing condition|pathological|life
+          threatening|congenital]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    submitted_to_insdc:
+      example:
+        old: ''
+        new: 'yes'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    lib_vector:
+      example:
+        old: ''
+        new: Bacteriophage P1
+      occurrence:
+        old: '1.0'
+        new: '1'
+    ploidy:
+      definition:
+        old: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
+          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
+          For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and
+          for a browser of PATO (v 2013-10-28) please refer to http://purl.bioontology.org/ontology/PATO
+        new: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
+          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
+          For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and
+          for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO
+      example:
+        old: allopolyploid, polyploid
+        new: allopolyploidy [PATO:0001379]
+      value_syntax:
+        old: '{term}'
+        new: '{termLabel} {[termID]}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    url:
+      example:
+        old: ''
+        new: http://www.earthmicrobiome.org/
+    num_replicons:
+      example:
+        old: ''
+        new: '2'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    pcr_primers:
+      example:
+        old: ''
+        new: FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT
+      expected_value:
+        old: 'FWD: forward primer sequence REV:reverse primer sequence'
+        new: 'FWD: forward primer sequence;REV:reverse primer sequence'
+      value_syntax:
+        old: FWD:{dna} REV:{dna}
+        new: FWD:{dna};REV:{dna}
+      occurrence:
+        old: '1.0'
+        new: '1'
+    pathogenicity:
+      definition:
+        old: To what is the entity pathogenic.
+        new: To what is the entity pathogenic
+      expected_value:
+        old: CV
+        new: names of organisms that the entity is pathogenic to
+      value_syntax:
+        old: '{term}'
+        new: '{text}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    collection_date:
+      example:
+        old: ''
+        new: '2018-05-11T10:00:00+01:00'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    samp_size:
+      example:
+        old: ''
+        new: 5 liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: millliter, gram, milligram
+        new: millliter, gram, milligram, liter
+    mid:
+      example:
+        old: ''
+        new: GTGAATAT
+      occurrence:
+        old: '1.0'
+        new: '1'
+    lib_reads_seqd:
+      example:
+        old: ''
+        new: '20'
       occurrence:
         old: '1.0'
         new: '1'
@@ -244,6 +373,19 @@ term_differences:
       value_syntax:
         old: '{PMID|DOI|URL}'
         new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    geo_loc_name:
+      example:
+        old: Germany:Sylt:Hausstrand
+        new: Germany;North Rhine-Westphalia;Eifel National Park
+      expected_value:
+        old: country or sea name (INSDC or GAZ):region(GAZ):specific location name
+        new: country or sea name (INSDC or GAZ);region(GAZ);specific location name
+      value_syntax:
+        old: '{term}:{term}:{text}'
+        new: '{term};{term};{text}'
       occurrence:
         old: '1.0'
         new: '1'
@@ -269,6 +411,156 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
+    depth:
+      occurrence:
+        old: '0.0'
+        new: '0'
+    subspecf_gen_lin:
+      definition:
+        old: This should provide further information about the genetic distinctness of this lineage by recording additional
+          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
+          It can also contain alternative taxonomic information
+        new: This should provide further information about the genetic distinctness of the sequenced organism by recording
+          additional information e.g. serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group
+          I plasmid. It can also contain alternative taxonomic information. It should contain both the lineage name, and the
+          lineage rank, i.e. biovar:abc123
+      example:
+        old: ''
+        new: serovar:Newport
+      value_syntax:
+        old: '{text}'
+        new: '{rank name}:{text}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    encoded_traits:
+      example:
+        old: ''
+        new: beta-lactamase class A
+      occurrence:
+        old: '1.0'
+        new: '1'
+    ref_biomaterial:
+      example:
+        old: ''
+        new: doi:10.1016/j.syapm.2018.01.009
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    lib_size:
+      example:
+        old: ''
+        new: '50'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    assembly_name:
+      expected_value:
+        old: name and version of assemby
+        new: name and version of assembly
+      occurrence:
+        old: '1.0'
+        new: '1'
+    source_mat_id:
+      example:
+        old: ''
+        new: MPI012345
+    target_subfragment:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    trophic_level:
+      example:
+        old: ''
+        new: heterotroph
+      value_syntax:
+        old: '[autotroph| carboxydotroph| chemoautotroph| chemoheterotroph| chemolithoautotroph| chemolithotroph| chemoorganoheterotroph|
+          chemoorganotroph| chemosynthetic| chemotroph| copiotroph| diazotroph| facultative| autotroph| heterotroph| lithoautotroph|
+          lithoheterotroph| lithotroph| methanotroph| methylotroph| mixotroph| obligate| chemoautolithotroph| oligotroph|
+          organoheterotroph| organotroph| photoautotroph| photoheterotroph| photolithoautotroph| photolithotroph| photosynthetic|
+          phototroph]'
+        new: '[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    chimera_check:
+      example:
+        old: ''
+        new: uchime;v4.1;default parameters
+      expected_value:
+        old: name and version of software
+        new: name and version of software, parameters used
+      value_syntax:
+        old: '{text} {text}'
+        new: '{software};{version};{parameters}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_spec_range:
+      example:
+        old: ''
+        new: '9606'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    project_name:
+      example:
+        old: ''
+        new: Forest soil metagenome
+      occurrence:
+        old: '1.0'
+        new: '1'
+    samp_mat_process:
+      definition:
+        old: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
+          OBI, for a browser of OBI (v 2013-10-25) terms please see http://purl.bioontology.org/ontology/OBI
+        new: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
+          OBI, for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI
+      value_syntax:
+        old: '{text|term}'
+        new: '{text}|{termLabel} {[termID]}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    lib_screen:
+      definition:
+        old: Specific enrichment or screening methods applied before and/or after creating clone libraries
+        new: Specific enrichment or screening methods applied before and/or after creating libraries
+      occurrence:
+        old: '1.0'
+        new: '1'
+    biotic_relationship:
+      definition:
+        old: Is it free-living or in a host and if the latter what type of relationship is observed
+        new: Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g.,
+          parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the
+          other organism(s) is the object
+      example:
+        old: ''
+        new: free living
+      value_syntax:
+        old: '[free living|parasite|commensal|symbiont]'
+        new: '[free living|parasitism|commensalism|symbiotic|mutualism]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    seq_quality_check:
+      example:
+        old: ''
+        new: none
+      occurrence:
+        old: '1.0'
+        new: '1'
+    lat_lon:
+      example:
+        old: ''
+        new: 50.586825 6.408977
+      occurrence:
+        old: '1.0'
+        new: '1'
     sop:
       example:
         old: ''
@@ -276,16 +568,30 @@ term_differences:
       value_syntax:
         old: '{PMID|DOI|URL}'
         new: '{PMID}|{DOI}|{URL}'
-    samp_size:
+    rel_to_oxygen:
       example:
         old: ''
-        new: 5 liter
+        new: aerobe
       occurrence:
         old: '1.0'
         new: '1'
-      preferred_unit:
-        old: millliter, gram, milligram
-        new: millliter, gram, milligram, liter
+    nucl_acid_amp:
+      definition:
+        old: Link to a literature reference, electronic resource or a standard operating procedure (SOP)
+        new: A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes
+          the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids
+      example:
+        old: ''
+        new: https://phylogenomics.me/protocols/16s-pcr-protocol/
+      expected_value:
+        old: reference to amplification method; clean-up method
+        new: PMID, DOI or URL
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
     env_package:
       definition:
         old: MIGS/MIMS/MIMARKS extension for reporting of measurements and observations obtained from one or more of the environments
@@ -312,275 +618,6 @@ term_differences:
       section:
         old: migs/mims/mimarks extension
         new: mixs extension
-    pathogenicity:
-      definition:
-        old: To what is the entity pathogenic.
-        new: To what is the entity pathogenic
-      expected_value:
-        old: CV
-        new: names of organisms that the entity is pathogenic to
-      value_syntax:
-        old: '{term}'
-        new: '{text}'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    pcr_cond:
-      definition:
-        old: Description of reaction conditions and components for PCR in the form of  'initial denaturation:94degC_1.5min;
-          annealing=...'
-        new: Description of reaction conditions and components of PCR in the form of  'initial denaturation:94degC_1.5min;
-          annealing=...'
-      example:
-        old: ''
-        new: initial denaturation:94_3;annealing:50_1;elongation:72_1.5;final elongation:72_10;35
-      expected_value:
-        old: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
-          total cycles'
-        new: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
-          cycles
-      value_syntax:
-        old: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
-          total cycles'
-        new: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
-          cycles
-      occurrence:
-        old: '1.0'
-        new: '1'
-    isol_growth_condt:
-      example:
-        old: ''
-        new: 'doi: 10.1016/j.syapm.2018.01.009'
-      value_syntax:
-        old: '{PMID|DOI|URL}'
-        new: '{PMID}|{DOI}|{URL}'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    estimated_size:
-      occurrence:
-        old: '1.0'
-        new: '1'
-    lib_reads_seqd:
-      example:
-        old: ''
-        new: '20'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    biotic_relationship:
-      definition:
-        old: Is it free-living or in a host and if the latter what type of relationship is observed
-        new: Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g.,
-          parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the
-          other organism(s) is the object
-      example:
-        old: ''
-        new: free living
-      value_syntax:
-        old: '[free living|parasite|commensal|symbiont]'
-        new: '[free living|parasitism|commensalism|symbiotic|mutualism]'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    investigation_type:
-      definition:
-        old: Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic
-          Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome,mimarks-survey,
-          or mimarks-specimen
-        new: Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic
-          Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome,mimarks-survey,
-          mimarks-specimen, metatranscriptome, single amplified genome, metagenome-assembled genome, or uncultivated viral
-          genome
-      example:
-        old: ''
-        new: metagenome
-      expected_value:
-        old: eukaryote, bacteria_archaea, plasmid, virus, organelle, metagenome,mimarks-survey or mimarks-specimen
-        new: eukaryote, bacteria_archaea, plasmid, virus, organelle, metagenome,mimarks-survey, mimarks-specimen, metatranscriptome,
-          single amplified genome, metagenome-assembled genome, or uncultivated viral genomes
-      value_syntax:
-        old: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|mimarks-survey|mimarks-specimen]'
-        new: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|metatranscriptome|mimarks-survey|mimarks-specimen|misag|mimag|miuvig]'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    nucl_acid_amp:
-      definition:
-        old: Link to a literature reference, electronic resource or a standard operating procedure (SOP)
-        new: A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes
-          the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids
-      example:
-        old: ''
-        new: https://phylogenomics.me/protocols/16s-pcr-protocol/
-      expected_value:
-        old: reference to amplification method; clean-up method
-        new: PMID, DOI or URL
-      value_syntax:
-        old: '{PMID|DOI|URL}'
-        new: '{PMID}|{DOI}|{URL}'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    submitted_to_insdc:
-      example:
-        old: ''
-        new: 'yes'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    chimera_check:
-      example:
-        old: ''
-        new: uchime;v4.1;default parameters
-      expected_value:
-        old: name and version of software
-        new: name and version of software, parameters used
-      value_syntax:
-        old: '{text} {text}'
-        new: '{software};{version};{parameters}'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    seq_meth:
-      example:
-        old: Sanger dideoxysequencing, pyrosequencing, polony
-        new: Illumina HiSeq 1500
-      expected_value:
-        old: ''
-        new: enumeration
-      value_syntax:
-        old: '{text}'
-        new: '[MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina
-          Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina
-          HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina
-          HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB
-          SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic
-          Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent
-          S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL
-          Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    assembly_name:
-      expected_value:
-        old: name and version of assemby
-        new: name and version of assembly
-      occurrence:
-        old: '1.0'
-        new: '1'
-    health_disease_stat:
-      definition:
-        old: Health or disease status of specific host at time of collection. This field accepts PATO (v 2013-10-28) terms,
-          for a browser please see http://purl.bioontology.org/ontology/PATO
-        new: Health or disease status of specific host at time of collection
-      example:
-        old: ''
-        new: dead
-      expected_value:
-        old: PATO
-        new: enumeration
-      value_syntax:
-        old: '{term}'
-        new: '[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing condition|pathological|life
-          threatening|congenital]'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    rel_to_oxygen:
-      example:
-        old: ''
-        new: aerobe
-      occurrence:
-        old: '1.0'
-        new: '1'
-    geo_loc_name:
-      example:
-        old: Germany:Sylt:Hausstrand
-        new: Germany;North Rhine-Westphalia;Eifel National Park
-      expected_value:
-        old: country or sea name (INSDC or GAZ):region(GAZ):specific location name
-        new: country or sea name (INSDC or GAZ);region(GAZ);specific location name
-      value_syntax:
-        old: '{term}:{term}:{text}'
-        new: '{term};{term};{text}'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    adapters:
-      example:
-        old: ''
-        new: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
-      value_syntax:
-        old: '{dna},{dna}'
-        new: '{dna};{dna}'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    lib_size:
-      example:
-        old: ''
-        new: '50'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    ploidy:
-      definition:
-        old: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
-          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
-          For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and
-          for a browser of PATO (v 2013-10-28) please refer to http://purl.bioontology.org/ontology/PATO
-        new: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
-          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
-          For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and
-          for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO
-      example:
-        old: allopolyploid, polyploid
-        new: allopolyploidy [PATO:0001379]
-      value_syntax:
-        old: '{term}'
-        new: '{termLabel} {[termID]}'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    pcr_primers:
-      example:
-        old: ''
-        new: FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT
-      expected_value:
-        old: 'FWD: forward primer sequence REV:reverse primer sequence'
-        new: 'FWD: forward primer sequence;REV:reverse primer sequence'
-      value_syntax:
-        old: FWD:{dna} REV:{dna}
-        new: FWD:{dna};REV:{dna}
-      occurrence:
-        old: '1.0'
-        new: '1'
-    subspecf_gen_lin:
-      definition:
-        old: This should provide further information about the genetic distinctness of this lineage by recording additional
-          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
-          It can also contain alternative taxonomic information
-        new: This should provide further information about the genetic distinctness of the sequenced organism by recording
-          additional information e.g. serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group
-          I plasmid. It can also contain alternative taxonomic information. It should contain both the lineage name, and the
-          lineage rank, i.e. biovar:abc123
-      example:
-        old: ''
-        new: serovar:Newport
-      value_syntax:
-        old: '{text}'
-        new: '{rank name}:{text}'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    lat_lon:
-      example:
-        old: ''
-        new: 50.586825 6.408977
-      occurrence:
-        old: '1.0'
-        new: '1'
     specific_host:
       definition:
         old: If there is a host involved, please provide its taxid (or environmental if not actually isolated from the dead
@@ -599,42 +636,6 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
-    lib_vector:
-      example:
-        old: ''
-        new: Bacteriophage P1
-      occurrence:
-        old: '1.0'
-        new: '1'
-    target_gene:
-      occurrence:
-        old: '1.0'
-        new: '1'
-    seq_quality_check:
-      example:
-        old: ''
-        new: none
-      occurrence:
-        old: '1.0'
-        new: '1'
-    encoded_traits:
-      example:
-        old: ''
-        new: beta-lactamase class A
-      occurrence:
-        old: '1.0'
-        new: '1'
-    collection_date:
-      example:
-        old: ''
-        new: '2018-05-11T10:00:00+01:00'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    depth:
-      occurrence:
-        old: '0.0'
-        new: '0'
 package_differences:
   key_comparison:
     shared:
