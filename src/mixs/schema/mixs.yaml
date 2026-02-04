@@ -12145,12 +12145,14 @@ slots:
     string_serialization: bare soil [ENVO:01001616]
     slot_uri: MIXS:0001159
   soil_horizon:
-    description: Specific layer in the land area which measures perpendicular to the soil
-      surface and possesses physical characteristics which differ from the layers
-      above and beneath
+    description: Specific layer in the land area approximately parallel to the land
+      surface with physical characteristics that differ from the layers above and
+      beneath
     title: soil horizon
     examples:
       - value: A horizon
+    see_also:
+      - https://www.nrcs.usda.gov/resources/education-and-teaching-materials/a-soil-profile
     keywords:
       - horizon
       - soil
