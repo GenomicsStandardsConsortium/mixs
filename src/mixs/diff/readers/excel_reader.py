@@ -390,7 +390,10 @@ class ExcelReader(BaseReader):
                         schema.checklists[checklist_name].append(term.name)
 
     def _process_packages_sheet_xlsx(self, sheet, schema: NormalizedSchema, profile: FormatProfile) -> None:
-        """Process the packages sheet from xlsx."""
+        """Process the packages sheet from xlsx.
+
+        Creates new terms if they don't exist, and updates package membership.
+        """
         rows = list(sheet.iter_rows(values_only=True))
         if not rows:
             return
@@ -422,16 +425,52 @@ class ExcelReader(BaseReader):
 
             if pkg_name_normalized not in schema.packages:
                 schema.packages[pkg_name_normalized] = []
-            schema.packages[pkg_name_normalized].append(term_name)
+            if term_name not in schema.packages[pkg_name_normalized]:
+                schema.packages[pkg_name_normalized].append(term_name)
 
-            # Update term's package membership if term exists
-            if term_name in schema.terms:
-                req_idx = col_map.get("requirement")
-                requirement = str(row[req_idx]).strip() if req_idx and row[req_idx] else ""
-                schema.terms[term_name].package_membership[pkg_name_normalized] = requirement
+            # Create term if it doesn't exist
+            if term_name not in schema.terms:
+                term = NormalizedTerm(name=term_name)
+                # Extract available fields from the row
+                if col_map.get("item") is not None:
+                    val = row[col_map["item"]]
+                    term.item = str(val).strip() if val else ""
+                if col_map.get("definition") is not None:
+                    val = row[col_map["definition"]]
+                    term.definition = str(val).strip() if val else ""
+                if col_map.get("expected_value") is not None:
+                    val = row[col_map["expected_value"]]
+                    term.expected_value = str(val).strip() if val else ""
+                if col_map.get("value_syntax") is not None:
+                    val = row[col_map["value_syntax"]]
+                    term.value_syntax = str(val).strip() if val else ""
+                if col_map.get("example") is not None:
+                    val = row[col_map["example"]]
+                    term.example = str(val).strip() if val else ""
+                if col_map.get("section") is not None:
+                    val = row[col_map["section"]]
+                    term.section = str(val).strip() if val else ""
+                if col_map.get("preferred_unit") is not None:
+                    val = row[col_map["preferred_unit"]]
+                    term.preferred_unit = str(val).strip() if val else ""
+                if col_map.get("occurrence") is not None:
+                    val = row[col_map["occurrence"]]
+                    term.occurrence = str(val).strip() if val else ""
+                if col_map.get("mixs_id") is not None:
+                    val = row[col_map["mixs_id"]]
+                    term.mixs_id = str(val).strip() if val else ""
+                schema.terms[term_name] = term
+
+            # Update term's package membership
+            req_idx = col_map.get("requirement")
+            requirement = str(row[req_idx]).strip() if req_idx and row[req_idx] else ""
+            schema.terms[term_name].package_membership[pkg_name_normalized] = requirement
 
     def _process_packages_sheet_xls(self, sheet, schema: NormalizedSchema, profile: FormatProfile) -> None:
-        """Process the packages sheet from xls."""
+        """Process the packages sheet from xls.
+
+        Creates new terms if they don't exist, and updates package membership.
+        """
         if sheet.nrows == 0:
             return
 
@@ -461,12 +500,46 @@ class ExcelReader(BaseReader):
 
             if pkg_name_normalized not in schema.packages:
                 schema.packages[pkg_name_normalized] = []
-            schema.packages[pkg_name_normalized].append(term_name)
+            if term_name not in schema.packages[pkg_name_normalized]:
+                schema.packages[pkg_name_normalized].append(term_name)
 
-            if term_name in schema.terms:
-                req_idx = col_map.get("requirement")
-                requirement = str(row[req_idx]).strip() if req_idx and row[req_idx] else ""
-                schema.terms[term_name].package_membership[pkg_name_normalized] = requirement
+            # Create term if it doesn't exist
+            if term_name not in schema.terms:
+                term = NormalizedTerm(name=term_name)
+                # Extract available fields from the row
+                if col_map.get("item") is not None:
+                    val = row[col_map["item"]]
+                    term.item = str(val).strip() if val else ""
+                if col_map.get("definition") is not None:
+                    val = row[col_map["definition"]]
+                    term.definition = str(val).strip() if val else ""
+                if col_map.get("expected_value") is not None:
+                    val = row[col_map["expected_value"]]
+                    term.expected_value = str(val).strip() if val else ""
+                if col_map.get("value_syntax") is not None:
+                    val = row[col_map["value_syntax"]]
+                    term.value_syntax = str(val).strip() if val else ""
+                if col_map.get("example") is not None:
+                    val = row[col_map["example"]]
+                    term.example = str(val).strip() if val else ""
+                if col_map.get("section") is not None:
+                    val = row[col_map["section"]]
+                    term.section = str(val).strip() if val else ""
+                if col_map.get("preferred_unit") is not None:
+                    val = row[col_map["preferred_unit"]]
+                    term.preferred_unit = str(val).strip() if val else ""
+                if col_map.get("occurrence") is not None:
+                    val = row[col_map["occurrence"]]
+                    term.occurrence = str(val).strip() if val else ""
+                if col_map.get("mixs_id") is not None:
+                    val = row[col_map["mixs_id"]]
+                    term.mixs_id = str(val).strip() if val else ""
+                schema.terms[term_name] = term
+
+            # Update term's package membership
+            req_idx = col_map.get("requirement")
+            requirement = str(row[req_idx]).strip() if req_idx and row[req_idx] else ""
+            schema.terms[term_name].package_membership[pkg_name_normalized] = requirement
 
     def _build_column_map(self, headers: List[str], profile: FormatProfile) -> Dict[str, int]:
         """Build mapping from normalized field names to column indices using profile."""
