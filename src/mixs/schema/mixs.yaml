@@ -22316,7 +22316,9 @@ settings:
   software: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   specific_location: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   storage_condition_type: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
-  termID: '[a-zA-Z]{2,}:[a-zA-Z0-9]\d+'
+  # UPDATED: termID pattern now supports dotted prefixes (e.g., pubchem.compound) and numeric-only local IDs (e.g., 1140)
+  # Previously: '[a-zA-Z]{2,}:[a-zA-Z0-9]\d+' - required letter prefix and alphanumeric+digit ID
+  termID: '[a-zA-Z][a-zA-Z0-9._]*:[a-zA-Z0-9]+'
   termLabel: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
   text: '.*'
   timestamp: '(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d)(:([0-5]\d))?(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?'  # ISO 8601 timestamp; seconds optional; alias of 'date_time_stamp'
