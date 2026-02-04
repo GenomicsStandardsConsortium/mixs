@@ -1,105 +1,625 @@
 comparison_metadata:
   old_schema:
     version: v4
-    source: ../mixs-legacy/mixs4/MIxS_210514.xls
+    source: /home/mark/gitrepos/mixs-legacy/mixs4/MIxS_210514.xls
     format: xls
-    term_count: 55
+    term_count: 343
   new_schema:
     version: v5
-    source: ../mixs-legacy/mixs5/mixs_v5.xlsx
+    source: /home/mark/gitrepos/mixs-legacy/mixs5/mixs_v5.xlsx
     format: xlsx
-    term_count: 94
-  comparison_timestamp: '2026-02-03T14:55:28.563407'
+    term_count: 600
+  comparison_timestamp: '2026-02-03T21:34:56.821695'
 term_differences:
   key_comparison:
     shared:
+    - abs_air_humidity
     - adapters
+    - agrochem_addition
+    - air_temp
+    - air_temp_regm
+    - al_sat
+    - al_sat_meth
+    - alkalinity
+    - alkyl_diethers
+    - alt
+    - aminopept_act
+    - ammonium
+    - amniotic_fluid_color
+    - antibiotic_regm
     - assembly_name
+    - atmospheric_data
+    - bac_prod
+    - bac_resp
+    - bacteria_carb_prod
+    - barometric_press
+    - biochem_oxygen_dem
+    - biomass
     - biotic_relationship
+    - birth_control
+    - bishomohopanol
+    - blood_blood_disord
+    - bromide
+    - build_occup_type
+    - building_setting
+    - calcium
+    - carb_dioxide
+    - carb_monoxide
+    - carb_nitro_ratio
+    - chem_administration
+    - chem_mutagen
+    - chem_oxygen_dem
     - chimera_check
+    - chloride
+    - chlorophyll
+    - climate_environment
     - collection_date
+    - conduc
+    - crop_rotation
+    - cur_land_use
+    - cur_vegetation
+    - cur_vegetation_meth
+    - density
     - depth
+    - dermatology_disord
+    - dew_point
+    - diet_last_six_month
+    - diether_lipids
+    - diss_carb_dioxide
+    - diss_hydrogen
+    - diss_inorg_carb
+    - diss_inorg_nitro
+    - diss_inorg_phosp
+    - diss_org_carb
+    - diss_org_nitro
+    - diss_oxygen
+    - dominant_hand
+    - douche
+    - down_par
+    - drainage_class
+    - drug_usage
+    - efficiency_percent
+    - elev
+    - emulsions
     - encoded_traits
     - env_package
     - estimated_size
     - experimental_factor
     - extrachrom_elements
+    - extreme_event
+    - extreme_salinity
+    - fao_class
+    - fertilizer_regm
+    - filter_type
+    - fire
+    - flooding
+    - fluor
+    - foetal_health_stat
+    - fungicide_regm
+    - gaseous_environment
+    - gaseous_substances
+    - gastrointest_disord
     - geo_loc_name
+    - gestation_state
+    - glucosidase_act
+    - gravidity
+    - gravity
+    - growth_hormone_regm
+    - gynecologic_disord
     - health_disease_stat
+    - heat_cool_type
+    - heavy_metals
+    - heavy_metals_meth
+    - herbicide_regm
+    - horizon
+    - horizon_meth
+    - host_age
+    - host_blood_press_diast
+    - host_blood_press_syst
+    - host_body_habitat
+    - host_body_mass_index
+    - host_body_product
+    - host_body_site
+    - host_body_temp
+    - host_color
+    - host_common_name
+    - host_diet
+    - host_disease_stat
+    - host_dry_mass
+    - host_family_relationship
+    - host_genotype
+    - host_growth_cond
+    - host_height
+    - host_hiv_stat
+    - host_infra_specific_name
+    - host_infra_specific_rank
+    - host_last_meal
+    - host_length
+    - host_life_stage
+    - host_occupation
+    - host_phenotype
+    - host_pulse
+    - host_sex
+    - host_shape
     - host_spec_range
+    - host_subject_id
+    - host_substrate
+    - host_taxid
+    - host_tot_mass
+    - host_wet_mass
+    - hrt
+    - humidity
+    - humidity_regm
+    - hysterectomy
+    - ihmc_ethnicity
+    - ihmc_medication_code
+    - indoor_space
+    - indoor_surf
+    - indust_eff_percent
+    - inorg_particles
     - investigation_type
     - isol_growth_condt
+    - kidney_disord
     - lat_lon
     - lib_reads_seqd
     - lib_screen
     - lib_size
     - lib_vector
+    - light_intensity
+    - light_type
+    - link_addit_analys
+    - link_class_info
+    - link_climate_info
+    - liver_disord
+    - local_class
+    - local_class_meth
+    - magnesium
+    - maternal_health_stat
+    - mean_frict_vel
+    - mean_peak_frict_vel
+    - mechanical_damage
+    - medic_hist_perform
+    - menarche
+    - menopause
+    - methane
+    - microbial_biomass
+    - microbial_biomass_meth
     - mid
+    - mineral_nutr_regm
+    - misc_param
+    - n_alkanes
+    - nitrate
+    - nitrite
+    - nitro
+    - non_mineral_nutr_regm
+    - nose_mouth_teeth_throat_disord
+    - nose_throat_disord
     - nucl_acid_amp
     - nucl_acid_ext
     - num_replicons
+    - occup_samp
+    - org_carb
+    - org_matter
+    - org_nitro
+    - org_particles
+    - organism_count
+    - oxy_stat_samp
+    - oxygen
+    - part_org_carb
+    - part_org_nitro
+    - particle_class
     - pathogenicity
     - pcr_cond
     - pcr_primers
+    - perturbation
+    - pesticide_regm
+    - pet_farm_animal
+    - petroleum_hydrocarb
+    - ph
+    - ph_meth
+    - ph_regm
+    - phaeopigments
+    - phosphate
+    - phosplipid_fatt_acid
+    - photon_flux
+    - plant_product
     - ploidy
+    - pollutants
+    - pool_dna_extracts
+    - porosity
+    - potassium
+    - pre_treatment
+    - pregnancy
+    - pressure
+    - previous_land_use
+    - previous_land_use_meth
+    - primary_prod
+    - primary_treatment
+    - profile_position
     - project_name
     - propagation
+    - pulmonary_disord
+    - radiation_regm
+    - rainfall_regm
+    - reactor_type
+    - redox_potential
     - ref_biomaterial
+    - rel_air_humidity
     - rel_to_oxygen
+    - resp_part_matter
+    - salinity
+    - salinity_meth
+    - salt_regm
     - samp_collect_device
     - samp_mat_process
+    - samp_salinity
     - samp_size
+    - samp_sort_meth
+    - samp_store_dur
+    - samp_store_loc
+    - samp_store_temp
+    - samp_vol_we_dna_ext
+    - season_environment
+    - secondary_treatment
+    - sediment_type
     - seq_meth
     - seq_quality_check
+    - sewage_type
+    - sexual_act
+    - sieving
+    - silicate
+    - slope_aspect
+    - slope_gradient
+    - sludge_retent_time
+    - smoker
+    - sodium
+    - soil_type
+    - soil_type_meth
+    - solar_irradiance
+    - soluble_inorg_mat
+    - soluble_org_mat
+    - soluble_react_phosp
     - sop
     - source_mat_id
+    - space_typ_state
+    - special_diet
     - specific_host
+    - standing_water_regm
+    - store_cond
+    - study_complt_stat
     - submitted_to_insdc
     - subspecf_gen_lin
+    - substructure_type
+    - sulfate
+    - sulfide
+    - surf_air_cont
+    - surf_humidity
+    - surf_material
+    - surf_moisture
+    - surf_moisture_ph
+    - surf_temp
+    - suspend_part_matter
+    - suspend_solids
     - target_gene
     - target_subfragment
+    - temp
+    - tertiary_treatment
+    - texture
+    - texture_meth
+    - tidal_stage
+    - tillage
+    - time_last_toothbrush
+    - time_since_last_wash
+    - tiss_cult_growth_med
+    - tot_carb
+    - tot_depth_water_col
+    - tot_diss_nitro
+    - tot_inorg_nitro
+    - tot_nitro
+    - tot_org_c_meth
+    - tot_org_carb
+    - tot_part_carb
+    - tot_phosp
+    - tot_phosphate
+    - travel_out_six_month
     - trophic_level
+    - turbidity
+    - twin_sibling
+    - urine_collect_meth
     - url
+    - urogenit_disord
+    - urogenit_tract_disor
+    - ventilation_rate
+    - ventilation_type
+    - volatile_org_comp
+    - wastewater_type
+    - water_content
+    - water_content_soil_meth
+    - water_current
+    - water_temp_regm
+    - watering_regm
+    - weight_loss_3_month
+    - wind_direction
+    - wind_speed
+    only_in_old:
+    - alt
+    - annual_season_precpt
+    - annual_season_temp
+    - elev
+    - finishing_strategy
+    - growth_med
+    - lib_const_meth
+    - occupant_dens_samp
+    - plant_body_site
+    - tot_n_meth
+    - typ_occupant_dens
     only_in_new:
     - 16s_recover
     - 16s_recover_software
+    - add_recov_method
+    - additional_info
+    - address
+    - adj_room
+    - aero_struc
+    - alkalinity_method
+    - amount_light
+    - ances_data
+    - annual_precpt
+    - annual_temp
+    - api
+    - arch_struc
+    - aromatics_pc
+    - asphaltenes_pc
+    - avg_dew_point
+    - avg_occup
+    - avg_temp
+    - basin
+    - bathroom_count
+    - bedroom_count
+    - benzene
     - bin_param
     - bin_software
+    - biocide
+    - biocide_admin_method
+    - biol_stat
+    - biotic_regm
+    - build_docs
+    - built_struc_age
+    - built_struc_set
+    - built_struc_type
+    - ceil_area
+    - ceil_cond
+    - ceil_finish_mat
+    - ceil_struc
+    - ceil_texture
+    - ceil_thermal_mass
+    - ceil_type
+    - ceil_water_mold
+    - chem_treatment
+    - chem_treatment_method
     - compl_appr
     - compl_score
     - compl_software
     - contam_score
     - contam_screen_input
     - contam_screen_param
+    - cool_syst_id
+    - cult_root_med
+    - date_last_rain
     - decontam_software
+    - depos_env
     - detec_type
+    - diss_iron
+    - diss_oxygen_fluid
+    - door_comp_type
+    - door_cond
+    - door_direct
+    - door_loc
+    - door_mat
+    - door_move
+    - door_size
+    - door_type
+    - door_type_metal
+    - door_type_wood
+    - door_water_mold
+    - drawings
+    - elevator
+    - escalator
+    - ethylbenzene
+    - exp_duct
+    - exp_pipe
+    - ext_door
+    - ext_wall_orient
+    - ext_window_orient
     - feat_pred
+    - field
+    - fireplace_type
+    - floor_age
+    - floor_area
+    - floor_cond
+    - floor_count
+    - floor_finish_mat
+    - floor_struc
+    - floor_thermal_mass
+    - floor_water_mold
+    - freq_clean
+    - freq_cook
+    - furniture
+    - gender_restroom
+    - genetic_mod
+    - growth_facil
+    - growth_habit
+    - hall_count
+    - handidness
+    - hc_produced
+    - hcr
+    - hcr_fw_salinity
+    - hcr_geol_age
+    - hcr_pressure
+    - hcr_temp
+    - heat_deliv_loc
+    - heat_system_deliv_meth
+    - heat_system_id
+    - height_carper_fiber
     - host_pred_appr
     - host_pred_est_acc
+    - inside_lux
+    - int_wall_cond
+    - iw_bt_date_well
+    - iwf
+    - last_clean
     - lib_layout
+    - light_regm
+    - lithology
     - mag_cov_software
+    - max_occup
+    - mech_struc
     - number_contig
+    - number_pets
+    - number_plants
+    - number_resident
+    - occup_density_samp
+    - occup_document
+    - organism_count_qpcr_info
+    - owc_tvdss
+    - permeability
+    - plant_growth_med
+    - plant_sex
+    - plant_struc
+    - pour_point
     - pred_genome_struc
     - pred_genome_type
+    - pres_animal
+    - prod_rate
+    - prod_start_date
+    - quad_pos
     - reassembly_bin
     - ref_db
+    - rel_humidity_out
+    - rel_samp_loc
+    - reservoir
+    - resins_pc
+    - room_air_exch_rate
+    - room_architec_element
+    - room_condt
+    - room_connected
+    - room_count
+    - room_dim
+    - room_door_dist
+    - room_door_share
+    - room_hallway
+    - room_loc
+    - room_moist_damage_hist
+    - room_net_area
+    - room_occup
+    - room_samp_pos
+    - room_type
+    - room_vol
+    - room_wall_share
+    - room_window_count
+    - root_cond
+    - root_med_carbon
+    - root_med_macronutr
+    - root_med_micronutr
+    - root_med_ph
+    - root_med_regl
+    - root_med_solid
+    - root_med_suppl
+    - samp_capt_status
+    - samp_collection_point
+    - samp_dis_stage
+    - samp_floor
+    - samp_loc_corr_rate
+    - samp_md
+    - samp_preserv
+    - samp_room_id
+    - samp_subtype
+    - samp_time_out
+    - samp_transport_cond
+    - samp_tvdss
+    - samp_type
+    - samp_weather
+    - samp_well_name
+    - saturates_pc
+    - season
+    - season_precpt
+    - season_temp
+    - season_use
+    - shading_device_cond
+    - shading_device_loc
+    - shading_device_mat
+    - shading_device_type
+    - shading_device_water_mold
     - sim_search_meth
     - single_cell_lysis_appr
     - single_cell_lysis_prot
     - size_frac
+    - size_frac_low
+    - size_frac_up
     - sort_tech
     - source_uvig
+    - specific
+    - specific_humidity
+    - sr_dep_env
+    - sr_geol_age
+    - sr_kerog_type
+    - sr_lithology
+    - sulfate_fw
+    - tan
     - tax_class
     - tax_ident
+    - temp_out
+    - toluene
+    - tot_iron
+    - tot_nitro_content
+    - tot_nitro_content_meth
+    - tot_sulfur
+    - train_line
+    - train_stat_loc
+    - train_stop_loc
     - trna_ext_software
     - trnas
+    - tvdss_of_hcr_pressure
+    - tvdss_of_hcr_temp
+    - typ_occup_density
+    - vfa
+    - vfa_fw
     - vir_ident_software
     - virus_enrich_appr
+    - vis_media
+    - viscosity
     - votu_class_appr
     - votu_db
     - votu_seq_comp_appr
+    - wall_area
+    - wall_const_type
+    - wall_finish_mat
+    - wall_height
+    - wall_loc
+    - wall_surf_treatment
+    - wall_texture
+    - wall_thermal_mass
+    - wall_water_mold
+    - water_cut
+    - water_feat_size
+    - water_feat_type
+    - water_production_rate
+    - weekday
     - wga_amp_appr
     - wga_amp_kit
+    - win
+    - window_cond
+    - window_cover
+    - window_horiz_pos
+    - window_loc
+    - window_mat
+    - window_open_freq
+    - window_size
+    - window_status
+    - window_type
+    - window_vert_pos
+    - window_water_mold
+    - xylene
     expected_mappings:
     - annot_source -> annot
     - env_biome -> env_broad_scale
@@ -112,52 +632,491 @@ term_differences:
       assembly:
       - assembly_qual
       - assembly_software
-    expected_deletions:
-      finishing_strategy: Removed in v5; finishing strategy concepts merged into assembly_qual
-      lib_const_meth: Removed in v5; library construction method not carried forward as a distinct term
   definition_changes:
-    lat_lon:
+    lib_vector:
       example:
         old: ''
-        new: 50.586825 6.408977
+        new: Bacteriophage P1
       occurrence:
         old: '1.0'
         new: '1'
-    pcr_primers:
-      example:
-        old: ''
-        new: FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT
-      expected_value:
-        old: 'FWD: forward primer sequence REV:reverse primer sequence'
-        new: 'FWD: forward primer sequence;REV:reverse primer sequence'
-      value_syntax:
-        old: FWD:{dna} REV:{dna}
-        new: FWD:{dna};REV:{dna}
-      occurrence:
-        old: '1.0'
-        new: '1'
-    mid:
-      example:
-        old: ''
-        new: GTGAATAT
-      occurrence:
-        old: '1.0'
-        new: '1'
-    subspecf_gen_lin:
+    herbicide_regm:
       definition:
-        old: This should provide further information about the genetic distinctness of this lineage by recording additional
-          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
-          It can also contain alternative taxonomic information
-        new: This should provide further information about the genetic distinctness of the sequenced organism by recording
-          additional information e.g. serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group
-          I plasmid. It can also contain alternative taxonomic information. It should contain both the lineage name, and the
-          lineage rank, i.e. biovar:abc123
+        old: information about treatment involving use of herbicides; information about treatment involving use of growth
+          hormones; should include the name of herbicide, amount administered, treatment duration, interval and total experimental
+          duration; can include multiple regimens
+        new: Information about treatment involving use of herbicides; information about treatment involving use of growth
+          hormones; should include the name of herbicide, amount administered, treatment regimen including how many times
+          the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment;
+          can include multiple regimens
       example:
         old: ''
-        new: serovar:Newport
+        new: atrazine;10 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: herbicide name;herbicide amount;treatment duration;interval;experimental duration
+        new: herbicide name;herbicide amount;treatment interval and duration
+      value_syntax:
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    turbidity:
+      definition:
+        old: turbidity measurement
+        new: Measure of the amount of cloudiness or haziness in water caused by individual particles
+      example:
+        old: ''
+        new: 0.3 nephelometric turbidity units
+      occurrence:
+        old: '1.0'
+        new: '1'
+    tot_nitro:
+      item:
+        old: total nitrogen
+        new: total nitrogen concentration
+      definition:
+        old: total nitrogen content of the sample
+        new: 'Total nitrogen concentration of water samples, calculated by: total nitrogen = total dissolved nitrogen + particulate
+          nitrogen. Can also be measured without filtering, reported as nitrogen'
+      example:
+        old: ''
+        new: 50 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: microgram per liter, micromole per liter
+        new: microgram per liter, micromole per liter, milligram per liter
+    source_mat_id:
+      example:
+        old: ''
+        new: MPI012345
+    light_type:
+      example:
+        old: ''
+        new: desk lamp
+      value_syntax:
+        old: '[natural light|electric light|no light]'
+        new: '[natural light|electric light|desk lamp|flourescent lights|natural light|none]'
+    porosity:
+      expected_value:
+        old: measurement value
+        new: measurement value or range
+      value_syntax:
+        old: '{float} {unit}'
+        new: '{float} - {float} {unit}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    secondary_treatment:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    seq_meth:
+      example:
+        old: Sanger dideoxysequencing, pyrosequencing, polony
+        new: Illumina HiSeq 1500
+      expected_value:
+        old: ''
+        new: enumeration
       value_syntax:
         old: '{text}'
-        new: '{rank name}:{text}'
+        new: '[MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina
+          Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina
+          HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina
+          HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB
+          SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic
+          Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent
+          S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL
+          Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    org_matter:
+      example:
+        old: ''
+        new: 1.75 milligram per cubic meter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    diss_org_carb:
+      definition:
+        old: concentration of dissolved organic carbon
+        new: Concentration of dissolved organic carbon in the sample, liquid portion of the sample, or aqueous phase of the
+          fluid
+      example:
+        old: ''
+        new: 197 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter
+        new: micromole per liter, milligram per liter
+    atmospheric_data:
+      example:
+        old: ''
+        new: wind speed;9 knots
+    sulfide:
+      definition:
+        old: concentration of sulfide
+        new: Concentration of sulfide in the sample
+      example:
+        old: ''
+        new: 2 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter, milligram per liter
+        new: micromole per liter, milligram per liter, parts per million
+    host_phenotype:
+      definition:
+        old: phenotype of host. For Phenotypic quality Ontology (PATO) (v 2013-10-28) terms, please see http://purl.bioontology.org/ontology/PATO
+        new: Phenotype of human or other host. For phenotypic quality ontology (pato) (v 2018-03-27) terms, please see http://purl.bioontology.org/ontology/pato.
+          For Human Phenotype Ontology (HP) (v 2018-06-13) please see http://purl.bioontology.org/ontology/HP
+      example:
+        old: ''
+        new: elongated [PATO:0001154]
+      expected_value:
+        old: PATO
+        new: PATO or HP
+      value_syntax:
+        old: '{term}'
+        new: '{termLabel} {[termID]}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    pressure:
+      definition:
+        old: pressure to which the sample is subject, in atmospheres
+        new: Pressure to which the sample is subject to, in atmospheres
+      example:
+        old: ''
+        new: 50 atmosphere
+      occurrence:
+        old: '1.0'
+        new: '1'
+    samp_store_temp:
+      example:
+        old: ''
+        new: -80 degree Celsius
+      occurrence:
+        old: '1.0'
+        new: '1'
+    pregnancy:
+      example:
+        old: ''
+        new: '2018-05-11 00:00:00'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    phaeopigments:
+      example:
+        old: ''
+        new: 2.5 milligram per cubic meter
+    host_length:
+      example:
+        old: ''
+        new: 1 meter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    primary_prod:
+      definition:
+        old: measurement of primary production
+        new: Measurement of primary production, generally measured as isotope uptake
+      example:
+        old: ''
+        new: 100 milligram per cubic meter per day
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_hiv_stat:
+      example:
+        old: ''
+        new: yes;yes
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_color:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    nucl_acid_ext:
+      definition:
+        old: Link to a literature reference, electronic resource or a standard operating procedure (SOP)
+        new: A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes
+          the material separation to recover the nucleic acid fraction from a sample
+      example:
+        old: ''
+        new: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    target_gene:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    target_subfragment:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    assembly_name:
+      expected_value:
+        old: name and version of assemby
+        new: name and version of assembly
+      occurrence:
+        old: '1.0'
+        new: '1'
+    heat_cool_type:
+      example:
+        old: ''
+        new: heat pump
+    sulfate:
+      definition:
+        old: concentration of sulfate
+        new: Concentration of sulfate in the sample
+      example:
+        old: ''
+        new: 5 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter, milligram per liter
+        new: micromole per liter, milligram per liter, parts per million
+    host_body_product:
+      definition:
+        old: substance produced by the body, e.g. stool, mucus, where the sample was obtained from
+        new: Substance produced by the body, e.g. Stool, mucus, where the sample was obtained from. For foundational model
+          of anatomy ontology (fma) or Uber-anatomy ontology (UBERON) terms, please see https://www.ebi.ac.uk/ols/ontologies/fma
+          or https://www.ebi.ac.uk/ols/ontologies/uberon
+      example:
+        old: ''
+        new: Portion of mucus [fma66938]
+      expected_value:
+        old: FMA
+        new: FMA or UBERON
+      value_syntax:
+        old: '{term}'
+        new: '{termLabel} {[termID]}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    medic_hist_perform:
+      example:
+        old: ''
+        new: 'true'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    indust_eff_percent:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    pollutants:
+      example:
+        old: ''
+        new: lead;0.15 microgram per cubic meter
+      preferred_unit:
+        old: gram, mole per liter, milligram per liter
+        new: gram, mole per liter, milligram per liter, microgram per cubic meter
+    host_genotype:
+      example:
+        old: ''
+        new: C57BL/6
+      occurrence:
+        old: '1.0'
+        new: '1'
+    ammonium:
+      definition:
+        old: concentration of ammonium
+        new: Concentration of ammonium in the sample
+      example:
+        old: ''
+        new: 1.5 milligram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter
+        new: micromole per liter, milligram per liter, parts per million
+    mineral_nutr_regm:
+      definition:
+        old: information about treatment involving the use of mineral supplements; should include the name of mineral nutrient,
+          amount administered, treatment duration, interval and total experimental duration; can include multiple mineral
+          nutrient regimens
+        new: Information about treatment involving the use of mineral supplements; should include the name of mineral nutrient,
+          amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment
+          lasted, and the start and end time of the entire treatment; can include multiple mineral nutrient regimens
+      example:
+        old: ''
+        new: potassium;15 gram;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: mineral nutrient name;mineral nutrient amount;treatment duration;interval;experimental duration
+        new: mineral nutrient name;mineral nutrient amount;treatment interval and duration
+      value_syntax:
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    encoded_traits:
+      example:
+        old: ''
+        new: beta-lactamase class A
+      occurrence:
+        old: '1.0'
+        new: '1'
+    mean_frict_vel:
+      example:
+        old: ''
+        new: 0.5 meter per second
+      occurrence:
+        old: '1.0'
+        new: '1'
+    surf_moisture_ph:
+      example:
+        old: ''
+        new: '7'
+      value_syntax:
+        old: '{integer [0-14]}'
+        new: '{float}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    maternal_health_stat:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    chloride:
+      definition:
+        old: concentration of chloride
+        new: Concentration of chloride in the sample
+      example:
+        old: ''
+        new: 5000 milligram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: milligram per liter
+        new: milligram per liter, parts per million
+    host_subject_id:
+      example:
+        old: ''
+        new: MPI123
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_family_relationship:
+      example:
+        old: ''
+        new: offspring;Mussel25
+    estimated_size:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    heavy_metals_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_tot_mass:
+      example:
+        old: ''
+        new: 2500 gram
+      occurrence:
+        old: '1.0'
+        new: '1'
+    tot_org_carb:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    water_content:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    volatile_org_comp:
+      example:
+        old: ''
+        new: formaldehyde;500 nanogram per liter
+      preferred_unit:
+        old: microgram per cubic meter, parts per million
+        new: microgram per cubic meter, parts per million, nanogram per liter
+    tidal_stage:
+      example:
+        old: ''
+        new: high tide
+      value_syntax:
+        old: '[low|high]'
+        new: '[low tide|ebb tide|flood tide|high tide]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    water_temp_regm:
+      definition:
+        old: information about treatment involving an exposure to water with varying degree of temperature; can include multiple
+          regimens
+        new: Information about treatment involving an exposure to water with varying degree of temperature, treatment regimen
+          including how many times the treatment was repeated, how long each treatment lasted, and the start and end time
+          of the entire treatment; can include multiple regimens
+      example:
+        old: ''
+        new: 15 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: measurement value;treatment duration;interval;experimental duration
+        new: measurement value;treatment interval and duration
+      value_syntax:
+        old: '{float} {unit};{period};{interval};{period}'
+        new: '{float} {unit};{Rn/start_time/end_time/duration}'
+    depth:
+      occurrence:
+        old: '0.0'
+        new: '0'
+    host_body_site:
+      definition:
+        old: name of body site where the sample was obtained from
+        new: Name of body site where the sample was obtained from, such as a specific organ or tissue (tongue, lung etc...).
+          For foundational model of anatomy ontology (fma) (v 4.11.0) or Uber-anatomy ontology (UBERON) (v releases/2014-06-15)
+          terms, please see http://purl.bioontology.org/ontology/FMA or http://purl.bioontology.org/ontology/UBERON
+      example:
+        old: ''
+        new: gill [UBERON:0002535]
+      expected_value:
+        old: FMA
+        new: FMA or UBERON
+      value_syntax:
+        old: '{term}'
+        new: '{termLabel} {[termID]}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    hysterectomy:
+      example:
+        old: ''
+        new: 'no'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    diss_inorg_nitro:
+      example:
+        old: ''
+        new: 761 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: microgram per liter
+        new: microgram per liter, micromole per liter
+    air_temp:
+      example:
+        old: ''
+        new: 20 degree Celsius
+      value_syntax:
+        old: '{float} {unit} [deg C]'
+        new: '{float} {unit}'
       occurrence:
         old: '1.0'
         new: '1'
@@ -187,95 +1146,141 @@ term_differences:
       section:
         old: migs/mims/mimarks extension
         new: mixs extension
-    num_replicons:
+    conduc:
       example:
         old: ''
-        new: '2'
+        new: 10 milliSiemens per centimeter
       occurrence:
         old: '1.0'
         new: '1'
-    health_disease_stat:
+    fire:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    watering_regm:
       definition:
-        old: Health or disease status of specific host at time of collection. This field accepts PATO (v 2013-10-28) terms,
-          for a browser please see http://purl.bioontology.org/ontology/PATO
-        new: Health or disease status of specific host at time of collection
+        old: information about treatment involving an exposure to watering frequencies; can include multiple regimens
+        new: Information about treatment involving an exposure to watering frequencies, treatment regimen including how many
+          times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment;
+          can include multiple regimens
       example:
         old: ''
-        new: dead
+        new: 1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
       expected_value:
-        old: PATO
-        new: enumeration
+        old: measurement value;treatment duration;interval;experimental duration
+        new: measurement value;treatment interval and duration
       value_syntax:
-        old: '{term}'
-        new: '[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing condition|pathological|life
-          threatening|congenital]'
+        old: '{float} {unit};{period};{interval};{period}'
+        new: '{float} {unit};{Rn/start_time/end_time/duration}'
+    surf_moisture:
+      example:
+        old: ''
+        new: 0.01 gram per square meter
       occurrence:
         old: '1.0'
         new: '1'
-    seq_meth:
+    host_age:
       example:
-        old: Sanger dideoxysequencing, pyrosequencing, polony
-        new: Illumina HiSeq 1500
-      expected_value:
         old: ''
-        new: enumeration
-      value_syntax:
-        old: '{text}'
-        new: '[MinION|GridION|PromethION|454 GS|454 GS 20|454 GS FLX|454 GS FLX+|454 GS FLX Titanium|454 GS Junior|Illumina
-          Genome Analyzer|Illumina Genome Analyzer II|Illumina Genome Analyzer IIx|Illumina HiSeq 4000|Illumina HiSeq 3000|Illumina
-          HiSeq 2500|Illumina HiSeq 2000|Illumina HiSeq 1500|Illumina HiSeq 1000|Illumina HiScanSQ|Illumina MiSeq|Illumina
-          HiSeq X Five|Illumina HiSeq X Ten|Illumina NextSeq 500|Illumina NextSeq 550|AB SOLiD System|AB SOLiD System 2.0|AB
-          SOLiD System 3.0|AB SOLiD 3 Plus System|AB SOLiD 4 System|AB SOLiD 4hq System|AB SOLiD PI System|AB 5500 Genetic
-          Analyzer|AB 5500xl Genetic Analyzer|AB 5500xl-W Genetic Analysis System|Ion Torrent PGM|Ion Torrent Proton|Ion Torrent
-          S5|Ion Torrent S5 XL|PacBio RS|PacBio RS II|Sequel|AB 3730xL Genetic Analyzer|AB 3730 Genetic Analyzer|AB 3500xL
-          Genetic Analyzer|AB 3500 Genetic Analyzer|AB 3130xL Genetic Analyzer|AB 3130 Genetic Analyzer|AB 310 Genetic Analyzer|BGISEQ-500]'
+        new: 10 days
       occurrence:
         old: '1.0'
         new: '1'
-    specific_host:
+    pool_dna_extracts:
       definition:
-        old: If there is a host involved, please provide its taxid (or environmental if not actually isolated from the dead
-          or alive host - i.e. pathogen could be isolated from a swipe of a bench etc) and report whether it is a laboratory
-          or natural host). From this we can calculate any number of groupings of hosts (e.g. animal vs plant, all fish hosts,
-          etc)
-        new: If there is a host involved, please provide its taxid (or environmental if not actually isolated from the dead
-          or alive host - i.e. a pathogen could be isolated from a swipe of a bench etc) and report whether it is a laboratory
-          or natural host)
+        old: were multiple DNA extractions mixed? how many?
+        new: Indicate whether multiple DNA extractions were mixed. If the answer yes, the number of extracts that were pooled
+          should be given
       example:
         old: ''
-        new: '9606'
-      value_syntax:
-        old: ''
-        new: '{NCBI taxid}|{text}'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    pcr_cond:
-      definition:
-        old: Description of reaction conditions and components for PCR in the form of  'initial denaturation:94degC_1.5min;
-          annealing=...'
-        new: Description of reaction conditions and components of PCR in the form of  'initial denaturation:94degC_1.5min;
-          annealing=...'
-      example:
-        old: ''
-        new: initial denaturation:94_3;annealing:50_1;elongation:72_1.5;final elongation:72_10;35
+        new: yes;5
       expected_value:
-        old: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
-          total cycles'
-        new: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
-          cycles
+        old: pooling status;measurement value
+        new: pooling status;number of pooled extracts
       value_syntax:
-        old: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
-          total cycles'
-        new: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
-          cycles
+        old: '{boolean};{float} {unit}'
+        new: '{boolean};{integer}'
       occurrence:
         old: '1.0'
         new: '1'
-    host_spec_range:
+      preferred_unit:
+        old: gram, milliliter, microliter
+        new: ''
+    diss_inorg_carb:
+      definition:
+        old: dissolved inorganic carbon concentration
+        new: Dissolved inorganic carbon concentration in the sample, typically measured after filtering the sample using a
+          0.45 micrometer filter
       example:
         old: ''
-        new: '9606'
+        new: 2059 micromole per kilogram
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: microgram per liter
+        new: microgram per liter, milligram per liter, parts per million
+    experimental_factor:
+      definition:
+        old: Experimental factors are essentially the variable aspects of an experiment design which can be used to describe
+          an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from
+          Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v
+          2.43) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2013-10-25) terms please
+          see http://purl.bioontology.org/ontology/OBI
+        new: Experimental factors are essentially the variable aspects of an experiment design which can be used to describe
+          an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from
+          Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v
+          2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please
+          see http://purl.bioontology.org/ontology/OBI
+      example:
+        old: ''
+        new: time series design [EFO:EFO_0001779]
+      value_syntax:
+        old: '{term|text}'
+        new: '{termLabel} {[termID]}|{text}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    bishomohopanol:
+      example:
+        old: ''
+        new: 14 microgram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    potassium:
+      definition:
+        old: concentration of potassium
+        new: Concentration of potassium in the sample
+      example:
+        old: ''
+        new: 463 milligram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: parts per million
+        new: milligram per liter, parts per million
+    fungicide_regm:
+      definition:
+        old: information about treatment involving use of fungicides; should include the name of fungicide, amount administered,
+          treatment duration, interval and total experimental duration; can include multiple fungicide regimens
+        new: Information about treatment involving use of fungicides; should include the name of fungicide, amount administered,  treatment
+          regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end
+          time of the entire treatment; can include multiple fungicide regimens
+      example:
+        old: ''
+        new: bifonazole;1 mole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: fungicide name;fungicide amount;treatment duration;interval;experimental duration
+        new: fungicide name;fungicide amount;treatment interval and duration
+      value_syntax:
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    tot_depth_water_col:
+      example:
+        old: ''
+        new: 500 meter
       occurrence:
         old: '1.0'
         new: '1'
@@ -298,30 +1303,46 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
-    samp_collect_device:
+    local_class:
       occurrence:
         old: '1.0'
         new: '1'
-    chimera_check:
+    fertilizer_regm:
+      definition:
+        old: information about treatment involving the use of fertilizers; should include the name fertilizer, amount administered,
+          treatment duration, interval and total experimental duration; can include multiple fertilizer regimens
+        new: Information about treatment involving the use of fertilizers; should include the name of fertilizer, amount administered,
+          treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start
+          and end time of the entire treatment; can include multiple fertilizer regimens
       example:
         old: ''
-        new: uchime;v4.1;default parameters
+        new: urea;0.6 milligram per liter;R2/2018-05-11:T14:30/2018-05-11T19:30/P1H30M
       expected_value:
-        old: name and version of software
-        new: name and version of software, parameters used
+        old: fertilizer name;fertilizer amount;treatment duration;interval;experimental duration
+        new: fertilizer name;fertilizer amount;treatment interval and duration
       value_syntax:
-        old: '{text} {text}'
-        new: '{software};{version};{parameters}'
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    dew_point:
+      example:
+        old: ''
+        new: 22 degree Celsius
+      value_syntax:
+        old: '{float} {unit} [deg C]'
+        new: '{float} {unit}'
       occurrence:
         old: '1.0'
         new: '1'
-    sop:
+      preferred_unit:
+        old: gram, millimeter
+        new: degree Celsius
+    diet_last_six_month:
       example:
         old: ''
-        new: http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/
-      value_syntax:
-        old: '{PMID|DOI|URL}'
-        new: '{PMID}|{DOI}|{URL}'
+        new: yes;vegetarian diet
+      occurrence:
+        old: '1.0'
+        new: '1'
     geo_loc_name:
       example:
         old: Germany:Sylt:Hausstrand
@@ -335,56 +1356,738 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
-    estimated_size:
-      occurrence:
-        old: '1.0'
-        new: '1'
-    target_subfragment:
-      occurrence:
-        old: '1.0'
-        new: '1'
-    collection_date:
-      example:
-        old: ''
-        new: '2018-05-11T10:00:00+01:00'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    adapters:
-      example:
-        old: ''
-        new: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+    salinity_meth:
       value_syntax:
-        old: '{dna},{dna}'
-        new: '{dna};{dna}'
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
       occurrence:
         old: '1.0'
         new: '1'
-    pathogenicity:
+    indoor_space:
+      example:
+        old: ''
+        new: foyer
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_pulse:
+      example:
+        old: ''
+        new: 65 beats per minute
+      occurrence:
+        old: '1.0'
+        new: '1'
+    lib_reads_seqd:
+      example:
+        old: ''
+        new: '20'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_occupation:
+      example:
+        old: ''
+        new: veterinary
+      occurrence:
+        old: '1.0'
+        new: '1'
+    weight_loss_3_month:
+      example:
+        old: ''
+        new: yes;5 kilogram
+      occurrence:
+        old: '1.0'
+        new: '1'
+    previous_land_use:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    standing_water_regm:
       definition:
-        old: To what is the entity pathogenic.
-        new: To what is the entity pathogenic
+        old: treatment involving an exposure to standing water during a plant's life span, types can be flood water or standing
+          water; can include multiple regimens
+        new: Treatment involving an exposure to standing water during a plant's life span, types can be flood water or standing
+          water, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and
+          the start and end time of the entire treatment; can include multiple regimens
+      example:
+        old: ''
+        new: standing water;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
       expected_value:
-        old: CV
-        new: names of organisms that the entity is pathogenic to
+        old: standing water type;treatment duration;interval;experimental duration
+        new: standing water type;treatment interval and duration
+      value_syntax:
+        old: '{text};{period};{interval};{period}'
+        new: '{text};{Rn/start_time/end_time/duration}'
+    al_sat:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    sieving:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    crop_rotation:
+      example:
+        old: ''
+        new: yes;R2/2017-01-01/2018-12-31/P6M
+      value_syntax:
+        old: '{boolean};Rn/{timestamp}/{period}'
+        new: '{boolean};{Rn/start_time/end_time/duration}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    amniotic_fluid_color:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    profile_position:
+      example:
+        old: ''
+        new: summit
+      occurrence:
+        old: '1.0'
+        new: '1'
+    sediment_type:
+      example:
+        old: ''
+        new: biogenous
+      occurrence:
+        old: '1.0'
+        new: '1'
+    humidity_regm:
+      definition:
+        old: information about treatment involving an exposure to varying degree of humidity; information about treatment
+          involving use of growth hormones; should include amount of humidity administered, treatment duration, interval and
+          total experimental duration; can include multiple regimens
+        new: Information about treatment involving an exposure to varying degree of humidity; information about treatment
+          involving use of growth hormones; should include amount of humidity administered, treatment regimen including how
+          many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire
+          treatment; can include multiple regimens
+      example:
+        old: ''
+        new: 25 gram per cubic meter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: humidity value;treatment duration;interval;experimental duration
+        new: humidity value;treatment interval and duration
+      value_syntax:
+        old: '{float} {unit};{period};{interval};{period}'
+        new: '{float} {unit};{Rn/start_time/end_time/duration}'
+    carb_nitro_ratio:
+      example:
+        old: ''
+        new: '0.417361111111111'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    ihmc_ethnicity:
+      example:
+        old: ''
+        new: caucasian
+      value_syntax:
+        old: '{integer|text}'
+        new: '{integer}|{text}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_substrate:
+      example:
+        old: ''
+        new: rock
+      occurrence:
+        old: '1.0'
+        new: '1'
+    subspecf_gen_lin:
+      definition:
+        old: This should provide further information about the genetic distinctness of this lineage by recording additional
+          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
+          It can also contain alternative taxonomic information
+        new: This should provide further information about the genetic distinctness of the sequenced organism by recording
+          additional information e.g. serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group
+          I plasmid. It can also contain alternative taxonomic information. It should contain both the lineage name, and the
+          lineage rank, i.e. biovar:abc123
+      example:
+        old: ''
+        new: serovar:Newport
+      value_syntax:
+        old: '{text}'
+        new: '{rank name}:{text}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    ventilation_type:
+      example:
+        old: ''
+        new: Operable windows
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_infra_specific_name:
+      example:
+        old: ''
+        new: borealis
+      occurrence:
+        old: '1.0'
+        new: '1'
+    primary_treatment:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    tot_inorg_nitro:
+      example:
+        old: ''
+        new: 40 microgram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    horizon_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    diss_inorg_phosp:
+      definition:
+        old: concentration of dissolved inorganic phosphorus
+        new: Concentration of dissolved inorganic phosphorus in the sample
+      example:
+        old: ''
+        new: 56.5 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: microgram per liter
+        new: microgram per liter, milligram per liter, parts per million
+    tot_part_carb:
+      example:
+        old: ''
+        new: 35 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    douche:
+      example:
+        old: ''
+        new: '2018-05-11 00:00:00'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    soil_type_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    part_org_carb:
+      example:
+        old: ''
+        new: 1.92 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    samp_collect_device:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    org_nitro:
+      example:
+        old: ''
+        new: 4 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_growth_cond:
+      example:
+        old: ''
+        new: https://academic.oup.com/icesjms/article/68/2/349/617247
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}|{text}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    pesticide_regm:
+      definition:
+        old: information about treatment involving use of insecticides; should include the name of pesticide, amount administered,
+          treatment duration, interval and total experimental duration; can include multiple pesticide regimens
+        new: Information about treatment involving use of insecticides; should include the name of pesticide, amount administered,
+          treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start
+          and end time of the entire treatment; can include multiple pesticide regimens
+      example:
+        old: ''
+        new: pyrethrum;0.6 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: pesticide name;pesticide amount;treatment duration;interval;experimental duration
+        new: pesticide name;pesticide amount;treatment interval and duration
+      value_syntax:
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    time_last_toothbrush:
+      example:
+        old: ''
+        new: P2H45M
+      expected_value:
+        old: timestamp
+        new: duration
+      value_syntax:
+        old: '{timestamp}'
+        new: '{duration}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_spec_range:
+      example:
+        old: ''
+        new: '9606'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    samp_size:
+      example:
+        old: ''
+        new: 5 liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: millliter, gram, milligram
+        new: millliter, gram, milligram, liter
+    horizon:
+      example:
+        old: ''
+        new: A horizon
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_taxid:
+      example:
+        old: ''
+        new: '7955'
+      value_syntax:
+        old: '{integer}'
+        new: '{NCBI taxid}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    aminopept_act:
+      example:
+        old: ''
+        new: 0.269 mole per liter per hour
+      occurrence:
+        old: '1.0'
+        new: '1'
+    light_intensity:
+      example:
+        old: ''
+        new: 0.3 lux
+      occurrence:
+        old: '1.0'
+        new: '1'
+    carb_dioxide:
+      example:
+        old: ''
+        new: 410 parts per million
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter
+        new: micromole per liter, parts per million
+    tot_phosp:
+      definition:
+        old: 'total phosphorus concentration, calculated by: total phosphorus = total dissolved phosphorus + particulate phosphorus.
+          Can also be measured without filtering, reported as phosphorus'
+        new: 'Total phosphorus concentration in the sample, calculated by: total phosphorus = total dissolved phosphorus +
+          particulate phosphorus'
+      example:
+        old: ''
+        new: 0.03 milligram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter
+        new: micromole per liter, milligram per liter, parts per million
+    ventilation_rate:
+      example:
+        old: ''
+        new: 750 cubic meter per minute
+      occurrence:
+        old: '1.0'
+        new: '1'
+    trophic_level:
+      example:
+        old: ''
+        new: heterotroph
+      value_syntax:
+        old: '[autotroph| carboxydotroph| chemoautotroph| chemoheterotroph| chemolithoautotroph| chemolithotroph| chemoorganoheterotroph|
+          chemoorganotroph| chemosynthetic| chemotroph| copiotroph| diazotroph| facultative| autotroph| heterotroph| lithoautotroph|
+          lithoheterotroph| lithotroph| methanotroph| methylotroph| mixotroph| obligate| chemoautolithotroph| oligotroph|
+          organoheterotroph| organotroph| photoautotroph| photoheterotroph| photolithoautotroph| photolithotroph| photosynthetic|
+          phototroph]'
+        new: '[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    chem_mutagen:
+      definition:
+        old: treatment involving use of mutagens; should include the name of mutagen, amount administered, treatment duration,
+          interval and total experimental duration; can include multiple mutagen regimens
+        new: Treatment involving use of mutagens; should include the name of mutagen, amount administered, treatment regimen
+          including how many times the treatment was repeated, how long each treatment lasted, and the start and end time
+          of the entire treatment; can include multiple mutagen regimens
+      example:
+        old: ''
+        new: nitrous acid;0.5 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: mutagen name;mutagen amount;treatment duration;interval;experimental duration
+        new: mutagen name;mutagen amount;treatment interval and duration
+      value_syntax:
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    bac_prod:
+      example:
+        old: ''
+        new: 5 milligram per cubic meter per day
+      occurrence:
+        old: '1.0'
+        new: '1'
+    samp_store_dur:
+      definition:
+        old: duration for which sample was stored
+        new: Duration for which the sample was stored
+      example:
+        old: ''
+        new: P1Y6M
+      expected_value:
+        old: time interval
+        new: duration
+      value_syntax:
+        old: '{interval}'
+        new: '{duration}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    tot_org_c_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_blood_press_diast:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    petroleum_hydrocarb:
+      example:
+        old: ''
+        new: 0.05 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    lib_size:
+      example:
+        old: ''
+        new: '50'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    density:
+      definition:
+        old: density of sample
+        new: Density of the sample, which is its mass per unit volume (aka volumetric mass density)
+      example:
+        old: ''
+        new: 1000 kilogram per cubic meter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: gram per cubic meter
+        new: gram per cubic meter, gram per cubic centimeter
+    chimera_check:
+      example:
+        old: ''
+        new: uchime;v4.1;default parameters
+      expected_value:
+        old: name and version of software
+        new: name and version of software, parameters used
+      value_syntax:
+        old: '{text} {text}'
+        new: '{software};{version};{parameters}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    chem_administration:
+      definition:
+        old: list of chemical compounds administered to the host or site where sampling occurred, and when (e.g. antibiotics,
+          N fertilizer, air filter); can include multiple compounds. For Chemical Entities of Biological Interest ontology
+          (CHEBI) (v 111), http://purl.bioontology.org/ontology/CHEBI
+        new: List of chemical compounds administered to the host or site where sampling occurred, and when (e.g. Antibiotics,
+          n fertilizer, air filter); can include multiple compounds. For chemical entities of biological interest ontology
+          (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+      example:
+        old: ''
+        new: agar [CHEBI:2509];2018-05-11T20:00Z
+      value_syntax:
+        old: '{term}; {timestamp}'
+        new: '{termLabel} {[termID]};{timestamp}'
+    magnesium:
+      definition:
+        old: concentration of magnesium
+        new: Concentration of magnesium in the sample
+      example:
+        old: ''
+        new: 52.8 micromole per kilogram
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: mole per liter, milligram per liter, parts per million
+        new: mole per liter, milligram per liter, parts per million, micromole per kilogram
+    alkyl_diethers:
+      example:
+        old: ''
+        new: 0.005 mole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    rainfall_regm:
+      definition:
+        old: information about treatment involving an exposure to a given amount of rainfall; can include multiple regimens
+        new: Information about treatment involving an exposure to a given amount of rainfall, treatment regimen including
+          how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire
+          treatment; can include multiple regimens
+      example:
+        old: ''
+        new: 15 millimeter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: measurement value;treatment duration;interval;experimental duration
+        new: measurement value;treatment interval and duration
+      value_syntax:
+        old: '{float} {unit};{period};{interval};{period}'
+        new: '{float} {unit};{Rn/start_time/end_time/duration}'
+    sodium:
+      definition:
+        old: sodium concentration
+        new: Sodium concentration in the sample
+      example:
+        old: ''
+        new: 10.5 milligram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: parts per million
+        new: milligram per liter, parts per million
+    oxygen:
+      example:
+        old: ''
+        new: 600 parts per million
+      occurrence:
+        old: '1.0'
+        new: '1'
+    mid:
+      example:
+        old: ''
+        new: GTGAATAT
+      occurrence:
+        old: '1.0'
+        new: '1'
+    mechanical_damage:
+      example:
+        old: ''
+        new: pruning;bark
+    previous_land_use_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    misc_param:
+      example:
+        old: ''
+        new: Bicarbonate ion concentration;2075 micromole per kilogram
+    indoor_surf:
+      example:
+        old: ''
+        new: wall
+      occurrence:
+        old: '1.0'
+        new: '1'
+    ph_regm:
+      definition:
+        old: information about treatment involving exposure of plants to varying levels of pH of the growth media; can include
+          multiple regimen
+        new: Information about treatment involving exposure of plants to varying levels of ph of the growth media, treatment
+          regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end
+          time of the entire treatment; can include multiple regimen
+      example:
+        old: ''
+        new: 7.6;R2/2018-05-11:T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: measurement value;treatment duration;interval;experimental duration
+        new: measurement value;treatment interval and duration
+      value_syntax:
+        old: '{float};{period};{interval};{period}'
+        new: '{float};{Rn/start_time/end_time/duration}'
+    url:
+      example:
+        old: ''
+        new: http://www.earthmicrobiome.org/
+    chem_oxygen_dem:
+      definition:
+        old: a measure of the relative oxygen-depletion effect of a waste contaminant
+        new: A measure of the capacity of water to consume oxygen during the decomposition of organic matter and the oxidation
+          of inorganic chemicals such as ammonia and nitrite
+      occurrence:
+        old: '1.0'
+        new: '1'
+    health_disease_stat:
+      definition:
+        old: Health or disease status of specific host at time of collection. This field accepts PATO (v 2013-10-28) terms,
+          for a browser please see http://purl.bioontology.org/ontology/PATO
+        new: Health or disease status of specific host at time of collection
+      example:
+        old: ''
+        new: dead
+      expected_value:
+        old: PATO
+        new: enumeration
       value_syntax:
         old: '{term}'
-        new: '{text}'
+        new: '[healthy|diseased|dead|disease-free|undetermined|recovering|resolving|pre-existing condition|pathological|life
+          threatening|congenital]'
       occurrence:
         old: '1.0'
         new: '1'
-    biotic_relationship:
+    cur_vegetation_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    non_mineral_nutr_regm:
       definition:
-        old: Is it free-living or in a host and if the latter what type of relationship is observed
-        new: Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g.,
-          parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the
-          other organism(s) is the object
+        old: information about treatment involving the exposure of plant to non-mineral nutrient such as oxygen, hydrogen
+          or carbon; should include the name of non-mineral nutrient, amount administered, treatment duration, interval and
+          total experimental duration; can include multiple non-mineral nutrient regimens
+        new: Information about treatment involving the exposure of plant to non-mineral nutrient such as oxygen, hydrogen
+          or carbon; should include the name of non-mineral nutrient, amount administered, treatment regimen including how
+          many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire
+          treatment; can include multiple non-mineral nutrient regimens
       example:
         old: ''
-        new: free living
+        new: carbon dioxide;10 mole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: non-mineral nutrient name;non-mineral nutrient amount;treatment duration;interval;experimental duration
+        new: non-mineral nutrient name;non-mineral nutrient amount;treatment interval and duration
       value_syntax:
-        old: '[free living|parasite|commensal|symbiont]'
-        new: '[free living|parasitism|commensalism|symbiotic|mutualism]'
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    samp_vol_we_dna_ext:
+      definition:
+        old: volume (mL) or weight (g) of sample processed for DNA extraction
+        new: Volume (ml), weight (g) of processed sample, or surface area swabbed from sample for DNA extraction
+      example:
+        old: ''
+        new: 1500 milliliter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: millliter, gram, milligram
+        new: millliter, gram, milligram, square centimeter
+    solar_irradiance:
+      example:
+        old: ''
+        new: 1.36 kilowatts per square meter per day
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: watts per square meter, ergs per square centimeter per second
+        new: kilowatts per square meter per day, ergs per square centimeter per second
+    alt:
+      definition:
+        old: the altitude of the sample is the vertical distance between Earth's surface above sea level and the sampled position
+          in the air
+        new: Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric
+          balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object
+          which is above the earth‚Äôs surface. In this context, the altitude measurement is the vertical distance between
+          the earth's surface above sea level and the sampled position in the air
+      example:
+        old: ''
+        new: 100 meter
+      value_syntax:
+        old: '{float} m'
+        new: '{float} {unit}'
+      occurrence:
+        old: '1.0'
+        new: ''
+      preferred_unit:
+        old: meter
+        new: ''
+      section:
+        old: ''
+        new: environment
+    foetal_health_stat:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    antibiotic_regm:
+      definition:
+        old: information about treatment involving antibiotic administration; should include the name of antibiotic, amount
+          administered, treatment duration, interval and total experimental duration; can include multiple antibiotic regimens
+        new: Information about treatment involving antibiotic administration; should include the name of antibiotic, amount
+          administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted,
+          and the start and end time of the entire treatment; can include multiple antibiotic regimens
+      example:
+        old: ''
+        new: penicillin;5 milligram;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: antibiotic name;antibiotic amount;treatment duration;interval;experimental duration
+        new: antibiotic name;antibiotic amount;treatment interval and duration
+      value_syntax:
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    ph_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    bacteria_carb_prod:
+      example:
+        old: ''
+        new: 2.53 microgram per liter per hour
+      occurrence:
+        old: '1.0'
+        new: '1'
+    oxy_stat_samp:
+      example:
+        old: ''
+        new: aerobic
+      value_syntax:
+        old: '[aerobic|anaerobic]'
+        new: '[aerobic|anaerobic|other]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    ihmc_medication_code:
+      example:
+        old: ''
+        new: '810'
+    twin_sibling:
+      example:
+        old: ''
+        new: 'yes'
       occurrence:
         old: '1.0'
         new: '1'
@@ -398,6 +2101,156 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
+    microbial_biomass_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    nitrite:
+      definition:
+        old: concentration of nitrite
+        new: Concentration of nitrite in the sample
+      example:
+        old: ''
+        new: 0.5 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter
+        new: micromole per liter, milligram per liter, parts per million
+    link_addit_analys:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    sexual_act:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    lat_lon:
+      example:
+        old: ''
+        new: 50.586825 6.408977
+      occurrence:
+        old: '1.0'
+        new: '1'
+    tertiary_treatment:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    rel_air_humidity:
+      example:
+        old: ''
+        new: '0.8'
+      value_syntax:
+        old: '{float} {unit} [%]'
+        new: '{float} {unit}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    temp:
+      definition:
+        old: temperature of the sample at time of sampling
+        new: Temperature of the sample at the time of sampling
+      example:
+        old: ''
+        new: 25 degree Celsius
+      occurrence:
+        old: '1.0'
+        new: '1'
+    calcium:
+      definition:
+        old: concentration of calcium
+        new: Concentration of calcium in the sample
+      example:
+        old: ''
+        new: 0.2 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    texture_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    resp_part_matter:
+      example:
+        old: ''
+        new: PM2.5;10 microgram per cubic meter
+    host_wet_mass:
+      example:
+        old: ''
+        new: 1500 gram
+      occurrence:
+        old: '1.0'
+        new: '1'
+    surf_material:
+      example:
+        old: ''
+        new: wood
+      occurrence:
+        old: '1.0'
+        new: '1'
+    link_climate_info:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    time_since_last_wash:
+      example:
+        old: ''
+        new: P1D
+      expected_value:
+        old: timestamp
+        new: duration
+      value_syntax:
+        old: '{timestamp}'
+        new: '{duration}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    plant_product:
+      example:
+        old: ''
+        new: xylem sap [PO:0025539]
+      occurrence:
+        old: '1.0'
+        new: '1'
+    phosplipid_fatt_acid:
+      example:
+        old: ''
+        new: 2.98 milligram per liter
+    pcr_cond:
+      definition:
+        old: Description of reaction conditions and components for PCR in the form of  'initial denaturation:94degC_1.5min;
+          annealing=...'
+        new: Description of reaction conditions and components of PCR in the form of  'initial denaturation:94degC_1.5min;
+          annealing=...'
+      example:
+        old: ''
+        new: initial denaturation:94_3;annealing:50_1;elongation:72_1.5;final elongation:72_10;35
+      expected_value:
+        old: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
+          total cycles'
+        new: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
+          cycles
+      value_syntax:
+        old: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
+          total cycles'
+        new: initial denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final elongation:degrees_minutes;total
+          cycles
+      occurrence:
+        old: '1.0'
+        new: '1'
     isol_growth_condt:
       example:
         old: ''
@@ -408,41 +2261,175 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
-    nucl_acid_amp:
+    menopause:
+      example:
+        old: ''
+        new: '2018-05-11 00:00:00'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    gestation_state:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    hrt:
+      example:
+        old: ''
+        new: '2018-05-11 00:00:00'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    surf_air_cont:
+      example:
+        old: ''
+        new: radon
+    pathogenicity:
       definition:
-        old: Link to a literature reference, electronic resource or a standard operating procedure (SOP)
-        new: A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes
-          the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids
-      example:
-        old: ''
-        new: https://phylogenomics.me/protocols/16s-pcr-protocol/
+        old: To what is the entity pathogenic.
+        new: To what is the entity pathogenic
       expected_value:
-        old: reference to amplification method; clean-up method
-        new: PMID, DOI or URL
+        old: CV
+        new: names of organisms that the entity is pathogenic to
       value_syntax:
-        old: '{PMID|DOI|URL}'
-        new: '{PMID}|{DOI}|{URL}'
+        old: '{term}'
+        new: '{text}'
       occurrence:
         old: '1.0'
         new: '1'
-    extrachrom_elements:
+    climate_environment:
+      definition:
+        old: treatment involving an exposure to a particular climate; can include multiple climates
+        new: Treatment involving an exposure to a particular climate; treatment regimen including how many times the treatment
+          was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple
+          climates
       example:
         old: ''
-        new: '5'
+        new: tropical climate;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: climate name;treatment duration;interval;experimental duration
+        new: climate name;treatment interval and duration
+      value_syntax:
+        old: '{text};{period};{interval};{period}'
+        new: '{text};{Rn/start_time/end_time/duration}'
+    adapters:
+      example:
+        old: ''
+        new: AATGATACGGCGACCACCGAGATCTACACGCT;CAAGCAGAAGACGGCATACGAGAT
+      value_syntax:
+        old: '{dna},{dna}'
+        new: '{dna};{dna}'
       occurrence:
         old: '1.0'
         new: '1'
-    submitted_to_insdc:
-      example:
-        old: ''
-        new: 'yes'
+    efficiency_percent:
       occurrence:
         old: '1.0'
         new: '1'
-    rel_to_oxygen:
+    diss_oxygen:
       example:
         old: ''
-        new: aerobe
+        new: 175 micromole per kilogram
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per kilogram
+        new: micromole per kilogram, milligram per liter
+    bromide:
+      example:
+        old: ''
+        new: 0.05 parts per million
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_infra_specific_rank:
+      example:
+        old: ''
+        new: subspecies
+      occurrence:
+        old: '1.0'
+        new: '1'
+    glucosidase_act:
+      example:
+        old: ''
+        new: 5 mol per liter per hour
+      occurrence:
+        old: '1.0'
+        new: '1'
+    drug_usage:
+      example:
+        old: ''
+        new: Lipitor;2/day
+    alkalinity:
+      example:
+        old: ''
+        new: 50 milligram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: milliequivalent per liter
+        new: milliequivalent per liter, milligram per liter
+    num_replicons:
+      example:
+        old: ''
+        new: '2'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    org_carb:
+      example:
+        old: ''
+        new: 1.5 microgram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    extreme_event:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    barometric_press:
+      example:
+        old: ''
+        new: 5 millibar
+      occurrence:
+        old: '1.0'
+        new: '1'
+    part_org_nitro:
+      example:
+        old: ''
+        new: 0.3 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: microgram per liter
+        new: microgram per liter, micromole per liter
+    host_body_temp:
+      example:
+        old: ''
+        new: 15 degree Celsius
+      occurrence:
+        old: '1.0'
+        new: '1'
+    diether_lipids:
+      example:
+        old: ''
+        new: 0.2 nanogram per liter
+    fao_class:
+      example:
+        old: ''
+        new: Luvisols
+      value_syntax:
+        old: '{term}'
+        new: '[Acrisols|Andosols|Arenosols|Cambisols|Chernozems|Ferralsols|Fluvisols|Gleysols|Greyzems|Gypsisols|Histosols|Kastanozems|Lithosols|Luvisols|Nitosols|Phaeozems|Planosols|Podzols|Podzoluvisols|Rankers|Regosols|Rendzinas|Solonchaks|Solonetz|Vertisols|Yermosols]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_height:
+      example:
+        old: ''
+        new: 0.1 meter
       occurrence:
         old: '1.0'
         new: '1'
@@ -468,46 +2455,225 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
-    encoded_traits:
-      example:
-        old: ''
-        new: beta-lactamase class A
-      occurrence:
-        old: '1.0'
-        new: '1'
-    url:
-      example:
-        old: ''
-        new: http://www.earthmicrobiome.org/
-    experimental_factor:
+    diss_carb_dioxide:
       definition:
-        old: Experimental factors are essentially the variable aspects of an experiment design which can be used to describe
-          an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from
-          Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v
-          2.43) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2013-10-25) terms please
-          see http://purl.bioontology.org/ontology/OBI
-        new: Experimental factors are essentially the variable aspects of an experiment design which can be used to describe
-          an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from
-          Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v
-          2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please
-          see http://purl.bioontology.org/ontology/OBI
+        old: concentration of dissolved carbon dioxide
+        new: Concentration of dissolved carbon dioxide in the sample or liquid portion of the sample
       example:
         old: ''
-        new: time series design [EFO:EFO_0001779]
-      value_syntax:
-        old: '{term|text}'
-        new: '{termLabel} {[termID]}|{text}'
+        new: 5 milligram per liter
       occurrence:
         old: '1.0'
         new: '1'
-    depth:
-      occurrence:
-        old: '0.0'
-        new: '0'
-    source_mat_id:
+      preferred_unit:
+        old: micromole per liter
+        new: micromole per liter, milligram per liter
+    silicate:
       example:
         old: ''
-        new: MPI012345
+        new: 0.05 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    space_typ_state:
+      example:
+        old: ''
+        new: typically occupied
+      value_syntax:
+        old: '[typical occupied|typically unoccupied]'
+        new: '[typically occupied|typically unoccupied]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    project_name:
+      example:
+        old: ''
+        new: Forest soil metagenome
+      occurrence:
+        old: '1.0'
+        new: '1'
+    nitro:
+      example:
+        old: ''
+        new: 4.2 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    samp_mat_process:
+      definition:
+        old: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
+          OBI, for a browser of OBI (v 2013-10-25) terms please see http://purl.bioontology.org/ontology/OBI
+        new: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
+          OBI, for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI
+      value_syntax:
+        old: '{text|term}'
+        new: '{text}|{termLabel} {[termID]}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    build_occup_type:
+      example:
+        old: ''
+        new: market
+      value_syntax:
+        old: '[airport|agricultural|commercial|educational|government|health care|high rise|industrial|low rise|market|military|office|parking|residential|restaurant|school|sports
+          complex|storage|religious|transport|high rise|wood framed]'
+        new: '[office|market|restaurant|residence|school|residential|commercial|low rise|high rise|wood framed|office|health
+          care|school|airport|sports complex]'
+    microbial_biomass:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    rel_to_oxygen:
+      example:
+        old: ''
+        new: aerobe
+      occurrence:
+        old: '1.0'
+        new: '1'
+    biochem_oxygen_dem:
+      definition:
+        old: a measure of the relative oxygen-depletion effect of a waste contaminant
+        new: Amount of dissolved oxygen needed by aerobic biological organisms in a body of water to break down organic material
+          present in a given water sample at certain temperature over a specific time period
+      occurrence:
+        old: '1.0'
+        new: '1'
+    submitted_to_insdc:
+      example:
+        old: ''
+        new: 'yes'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    substructure_type:
+      example:
+        old: ''
+        new: basement
+    slope_gradient:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    study_complt_stat:
+      example:
+        old: ''
+        new: no;non-compliance
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_dry_mass:
+      example:
+        old: ''
+        new: 500 gram
+      occurrence:
+        old: '1.0'
+        new: '1'
+    water_content_soil_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    growth_hormone_regm:
+      definition:
+        old: information about treatment involving use of growth hormones; should include the name of growth hormone, amount
+          administered, treatment duration, interval and total experimental duration; can include multiple growth hormone
+          regimens
+        new: Information about treatment involving use of growth hormones; should include the name of growth hormone, amount
+          administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted,
+          and the start and end time of the entire treatment; can include multiple growth hormone regimens
+      example:
+        old: ''
+        new: abscisic acid;0.5 milligram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: growth hormone name;growth hormone amount;treatment duration;interval;experimental duration
+        new: growth hormone name;growth hormone amount;treatment interval and duration
+      value_syntax:
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    cur_land_use:
+      example:
+        old: ''
+        new: conifers
+      occurrence:
+        old: '1.0'
+        new: '1'
+    wastewater_type:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_last_meal:
+      example:
+        old: ''
+        new: corn feed;P2H
+      expected_value:
+        old: content;time interval
+        new: content;duration
+      value_syntax:
+        old: '{text};{period}'
+        new: '{text};{duration}'
+    samp_store_loc:
+      example:
+        old: ''
+        new: Freezer no:5
+      occurrence:
+        old: '1.0'
+        new: '1'
+    surf_humidity:
+      example:
+        old: ''
+        new: '0.1'
+      value_syntax:
+        old: '{float} {unit} [%]'
+        new: '{float} {unit}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    extreme_salinity:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_body_habitat:
+      example:
+        old: ''
+        new: nasopharynx
+      expected_value:
+        old: FMA
+        new: free text
+      value_syntax:
+        old: '{term}'
+        new: '{text}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    air_temp_regm:
+      definition:
+        old: information about treatment involving an exposure to varying temperatures; should include the temperature, treatment
+          duration, interval and total experimental duration; can include different temperature regimens
+        new: Information about treatment involving an exposure to varying temperatures; should include the temperature, treatment
+          regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end
+          time of the entire treatment; can include different temperature regimens
+      example:
+        old: ''
+        new: 25 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: temperature value;treatment duration;interval;experimental duration
+        new: temperature value;treatment interval and duration
+      value_syntax:
+        old: '{float} {unit};{period};{interval};{period}'
+        new: '{float} {unit};{Rn/start_time/end_time/duration}'
+    host_blood_press_syst:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    sop:
+      example:
+        old: ''
+        new: http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/its/
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
     lib_screen:
       definition:
         old: Specific enrichment or screening methods applied before and/or after creating clone libraries
@@ -515,17 +2681,58 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
-    nucl_acid_ext:
+    host_common_name:
+      example:
+        old: ''
+        new: mussel
+      occurrence:
+        old: '1.0'
+        new: '1'
+    nucl_acid_amp:
       definition:
         old: Link to a literature reference, electronic resource or a standard operating procedure (SOP)
         new: A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes
-          the material separation to recover the nucleic acid fraction from a sample
+          the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids
       example:
         old: ''
-        new: https://mobio.com/media/wysiwyg/pdfs/protocols/12888.pdf
+        new: https://phylogenomics.me/protocols/16s-pcr-protocol/
+      expected_value:
+        old: reference to amplification method; clean-up method
+        new: PMID, DOI or URL
       value_syntax:
         old: '{PMID|DOI|URL}'
         new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    salinity:
+      definition:
+        old: salinity measurement
+        new: Salinity is the total concentration of all dissolved salts in a water sample. While salinity can be measured
+          by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived
+          from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance
+          of the sample to a salinity standard such as seawater
+      example:
+        old: ''
+        new: 25 practical salinity unit
+      occurrence:
+        old: '1.0'
+        new: '1'
+    sludge_retent_time:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    urine_collect_meth:
+      example:
+        old: ''
+        new: catheter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    humidity:
+      example:
+        old: ''
+        new: 25 gram per cubic meter
       occurrence:
         old: '1.0'
         new: '1'
@@ -551,13 +2758,411 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
-    lib_reads_seqd:
+    menarche:
       example:
         old: ''
-        new: '20'
+        new: '2018-05-11 00:00:00'
       occurrence:
         old: '1.0'
         new: '1'
+    reactor_type:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    surf_temp:
+      example:
+        old: ''
+        new: 15 degree Celsius
+      value_syntax:
+        old: '{float} {unit} [deg C]'
+        new: '{float} {unit}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    season_environment:
+      definition:
+        old: treatment involving an exposure to a particular season (e.g. winter, summer, rabi, rainy etc.)
+        new: Treatment involving an exposure to a particular season (e.g. Winter, summer, rabi, rainy etc.), treatment regimen
+          including how many times the treatment was repeated, how long each treatment lasted, and the start and end time
+          of the entire treatment
+      example:
+        old: ''
+        new: rainy;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: seasonal environment name;treatment duration;interval;experimental duration
+        new: seasonal environment name;treatment interval and duration
+      value_syntax:
+        old: '{text};{period};{interval};{period}'
+        new: '{text};{Rn/start_time/end_time/duration}'
+    host_shape:
+      example:
+        old: ''
+        new: round
+      occurrence:
+        old: '1.0'
+        new: '1'
+    soil_type:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    elev:
+      definition:
+        old: the elevation of the sampling site as measured by the vertical distance from mean sea level
+        new: Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level.
+          Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above
+          the surface, such as an aircraft in flight or a spacecraft in orbit
+      example:
+        old: ''
+        new: 100 meter
+      occurrence:
+        old: '1.0'
+        new: '0'
+      preferred_unit:
+        old: meter
+        new: ''
+      section:
+        old: ''
+        new: environment
+    carb_monoxide:
+      example:
+        old: ''
+        new: 0.1 parts per million
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter
+        new: micromole per liter, parts per million
+    occup_samp:
+      example:
+        old: ''
+        new: '10'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    collection_date:
+      example:
+        old: ''
+        new: '2018-05-11T10:00:00+01:00'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    birth_control:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    diss_org_nitro:
+      example:
+        old: ''
+        new: 0.05 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_life_stage:
+      example:
+        old: ''
+        new: adult
+      occurrence:
+        old: '1.0'
+        new: '1'
+    ph:
+      definition:
+        old: pH measurement
+        new: Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid
+      example:
+        old: ''
+        new: '7.2'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    salt_regm:
+      definition:
+        old: information about treatment involving use of salts as supplement to liquid and soil growth media; should include
+          the name of salt, amount administered, treatment duration, interval and total experimental duration; can include
+          multiple salt regimens
+        new: Information about treatment involving use of salts as supplement to liquid and soil growth media; should include
+          the name of salt, amount administered, treatment regimen including how many times the treatment was repeated, how
+          long each treatment lasted, and the start and end time of the entire treatment; can include multiple salt regimens
+      example:
+        old: ''
+        new: NaCl;5 gram per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: salt name;salt amount;treatment duration;interval;experimental duration
+        new: salt name;salt amount;treatment interval and duration
+      value_syntax:
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    abs_air_humidity:
+      example:
+        old: ''
+        new: 9 gram per gram
+      value_syntax:
+        old: '{float} {unit} [kg|lb]'
+        new: '{float} {unit}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: kilogram
+        new: gram per gram, kilogram per kilogram, kilogram, pound
+    soluble_react_phosp:
+      example:
+        old: ''
+        new: 0.1 milligram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter
+        new: micromole per liter, milligram per liter, parts per million
+    phosphate:
+      example:
+        old: ''
+        new: 0.7 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_body_mass_index:
+      example:
+        old: ''
+        new: 22 kilogram per square meter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    water_current:
+      example:
+        old: ''
+        new: 10 cubic meter per second
+      occurrence:
+        old: '1.0'
+        new: '1'
+    texture:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    drainage_class:
+      example:
+        old: ''
+        new: well
+      occurrence:
+        old: '1.0'
+        new: '1'
+    agrochem_addition:
+      example:
+        old: ''
+        new: roundup;5 milligram per liter;2018-06-21
+    host_diet:
+      example:
+        old: ''
+        new: herbivore
+    al_sat_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    building_setting:
+      example:
+        old: ''
+        new: rural
+      value_syntax:
+        old: '[exurban|rural|suburbanlurban]'
+        new: '[urban|suburban|exurban|rural]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    dominant_hand:
+      example:
+        old: ''
+        new: right
+      occurrence:
+        old: '1.0'
+        new: '1'
+    biomass:
+      example:
+        old: ''
+        new: total;20 gram
+    nitrate:
+      definition:
+        old: concentration of nitrate
+        new: Concentration of nitrate in the sample
+      example:
+        old: ''
+        new: 65 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter
+        new: micromole per liter, milligram per liter, parts per million
+    host_sex:
+      example:
+        old: ''
+        new: female
+      occurrence:
+        old: '1.0'
+        new: '1'
+    special_diet:
+      example:
+        old: ''
+        new: other:vegan
+    gaseous_environment:
+      example:
+        old: ''
+        new: nitric oxide;0.5 micromole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: gaseous compound name;gaseous compound amount;treatment duration;interval;experimental duration
+        new: gaseous compound name;gaseous compound amount;treatment interval and duration
+      value_syntax:
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+    pcr_primers:
+      example:
+        old: ''
+        new: FWD:GTGCCAGCMGCCGCGGTAA;REV:GGACTACHVGGGTWTCTAAT
+      expected_value:
+        old: 'FWD: forward primer sequence REV:reverse primer sequence'
+        new: 'FWD: forward primer sequence;REV:reverse primer sequence'
+      value_syntax:
+        old: FWD:{dna} REV:{dna}
+        new: FWD:{dna};REV:{dna}
+      occurrence:
+        old: '1.0'
+        new: '1'
+    redox_potential:
+      example:
+        old: ''
+        new: 300 millivolt
+      occurrence:
+        old: '1.0'
+        new: '1'
+    extrachrom_elements:
+      example:
+        old: ''
+        new: '5'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    fluor:
+      example:
+        old: ''
+        new: 2.5 volts
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: milligram chlorophyll a per cubic meter
+        new: milligram chlorophyll a per cubic meter, volts
+    wind_speed:
+      example:
+        old: ''
+        new: 21 kilometer per hour
+      occurrence:
+        old: '1.0'
+        new: '1'
+    down_par:
+      example:
+        old: ''
+        new: 28.71 microEinstein per square meter per second
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: microEinstein per meter per second
+        new: microEinstein per square meter per second, microEinstein per square centimeter per second
+    photon_flux:
+      example:
+        old: ''
+        new: 3.926 micromole photons per second per square meter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per square meter per second
+        new: number of photons per second per unit area
+    tiss_cult_growth_med:
+      example:
+        old: ''
+        new: https://link.springer.com/content/pdf/10.1007/BF02796489.pdf
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}|{text}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    gravidity:
+      example:
+        old: ''
+        new: yes;due date:2018-05-11
+      occurrence:
+        old: '1.0'
+        new: '1'
+    host_disease_stat:
+      example:
+        old: ''
+        new: rabies [DOID:11260]
+      value_syntax:
+        old: '{term}'
+        new: '{termLabel} {[termID]}|{text}'
+    diss_hydrogen:
+      example:
+        old: ''
+        new: 0.3 micromole per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    chlorophyll:
+      example:
+        old: ''
+        new: 5 milligram per cubic meter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    local_class_meth:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    tot_phosphate:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    cur_vegetation:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    pet_farm_animal:
+      example:
+        old: ''
+        new: yes; 5 cats
+    samp_salinity:
+      definition:
+        old: salinity of sample, i.e. measure of total salt concentration
+        new: Salinity is the total concentration of all dissolved salts in a liquid or solid (in the form of an extract obtained
+          by centrifugation) sample. While salinity can be measured by a complete chemical analysis, this method is difficult
+          and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical
+          salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater
+      example:
+        old: ''
+        new: 1 milligram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: practical salinity unit, percentage
+        new: milligram per liter, practical salinity unit, percentage
+    suspend_solids:
+      definition:
+        old: concentration of substances including a wide variety of material, such as silt, decaying plant and animal matter,
+          etc,; can include multiple substances
+        new: Concentration of substances including a wide variety of material, such as silt, decaying plant and animal matter;
+          can include multiple substances
+      preferred_unit:
+        old: gram, microgram, mole per liter, gram per liter, part per million
+        new: gram, microgram, milligram per liter, mole per liter, gram per liter, part per million
     seq_quality_check:
       example:
         old: ''
@@ -565,71 +3170,233 @@ term_differences:
       occurrence:
         old: '1.0'
         new: '1'
-    samp_size:
+    wind_direction:
       example:
         old: ''
-        new: 5 liter
+        new: Northwest
+      occurrence:
+        old: '1.0'
+        new: '1'
+    tot_diss_nitro:
+      example:
+        old: ''
+        new: 40 microgram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    store_cond:
+      definition:
+        old: explain how and for how long the soil sample was stored before DNA extraction.
+        new: Explain how and for how long the soil sample was stored before DNA extraction
+      example:
+        old: ''
+        new: -20 degree Celsius freezer;P2Y10D
+      value_syntax:
+        old: '{text};{period}'
+        new: '{text};{duration}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    bac_resp:
+      definition:
+        old: measurement of bacterial resporation in the water column
+        new: Measurement of bacterial respiration in the water column
+      example:
+        old: ''
+        new: 300 micromole oxygen per liter per hour
       occurrence:
         old: '1.0'
         new: '1'
       preferred_unit:
-        old: millliter, gram, milligram
-        new: millliter, gram, milligram, liter
-    trophic_level:
-      example:
-        old: ''
-        new: heterotroph
-      value_syntax:
-        old: '[autotroph| carboxydotroph| chemoautotroph| chemoheterotroph| chemolithoautotroph| chemolithotroph| chemoorganoheterotroph|
-          chemoorganotroph| chemosynthetic| chemotroph| copiotroph| diazotroph| facultative| autotroph| heterotroph| lithoautotroph|
-          lithoheterotroph| lithotroph| methanotroph| methylotroph| mixotroph| obligate| chemoautolithotroph| oligotroph|
-          organoheterotroph| organotroph| photoautotroph| photoheterotroph| photolithoautotroph| photolithotroph| photosynthetic|
-          phototroph]'
-        new: '[autotroph|carboxydotroph|chemoautotroph|chemoheterotroph|chemolithoautotroph|chemolithotroph|chemoorganoheterotroph|chemoorganotroph|chemosynthetic|chemotroph|copiotroph|diazotroph|facultative|autotroph|heterotroph|lithoautotroph|lithoheterotroph|lithotroph|methanotroph|methylotroph|mixotroph|obligate|chemoautolithotroph|oligotroph|organoheterotroph|organotroph|photoautotroph|photoheterotroph|photolithoautotroph|photolithotroph|photosynthetic|phototroph]'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    assembly_name:
-      expected_value:
-        old: name and version of assemby
-        new: name and version of assembly
-      occurrence:
-        old: '1.0'
-        new: '1'
-    lib_vector:
-      example:
-        old: ''
-        new: Bacteriophage P1
-      occurrence:
-        old: '1.0'
-        new: '1'
-    lib_size:
-      example:
-        old: ''
-        new: '50'
-      occurrence:
-        old: '1.0'
-        new: '1'
-    target_gene:
-      occurrence:
-        old: '1.0'
-        new: '1'
-    samp_mat_process:
+        old: milligram per cubic meter per day
+        new: milligram per cubic meter per day, micromole oxygen per liter per hour
+    samp_sort_meth:
       definition:
-        old: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
-          OBI, for a browser of OBI (v 2013-10-25) terms please see http://purl.bioontology.org/ontology/OBI
-        new: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
-          OBI, for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI
+        old: method by which samples are sorted
+        new: Method by which samples are sorted; open face filter collecting total suspended particles, prefilter to remove
+          particles larger than X micrometers in diameter, where common values of X would be 10 and 2.5 full size sorting
+          in a cascade impactor.
       value_syntax:
-        old: '{text|term}'
-        new: '{text}|{termLabel} {[termID]}'
+        old: open face filter collecting total suspended particles, "prefilter to remove particles larger than X micrometers
+          in diameter, where common values of X would be 10 and 2.5 full size sorting in a cascade impactor"
+        new: '{text}'
+    flooding:
       occurrence:
         old: '1.0'
         new: '1'
-    project_name:
+    tot_carb:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    radiation_regm:
+      definition:
+        old: information about treatment involving exposure of plant or a plant part to a particular radiation regimen; should
+          include the radiation type, amount or intensity administered, treatment duration, interval and total experimental
+          duration; can include multiple radiation regimens
+        new: Information about treatment involving exposure of plant or a plant part to a particular radiation regimen; should
+          include the radiation type, amount or intensity administered, treatment regimen including how many times the treatment
+          was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple
+          radiation regimens
       example:
         old: ''
-        new: Forest soil metagenome
+        new: gamma radiation;60 gray;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: radiation type name;radiation amount;treatment duration;interval;experimental duration
+        new: radiation type name;radiation amount;treatment interval and duration
+      value_syntax:
+        old: '{text};{float} {unit};{period};{interval};{period}'
+        new: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
+      preferred_unit:
+        old: becquerel
+        new: rad, gray
+    perturbation:
+      definition:
+        old: type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with time that perturbation
+          occurred; can include multiple perturbation types
+        new: Type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with perturbation regimen
+          including how many times the perturbation was repeated, how long each perturbation lasted, and the start and end
+          time of the entire perturbation period; can include multiple perturbation types
+      example:
+        old: ''
+        new: antibiotic addition;R2/2018-05-11T14:30Z/2018-05-11T19:30Z/P1H30M
+      expected_value:
+        old: perturbation type name;time interval
+        new: perturbation type name;perturbation interval and duration
+      value_syntax:
+        old: '{text};{interval}'
+        new: '{text};{Rn/start_time/end_time/duration}'
+    sewage_type:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    suspend_part_matter:
+      example:
+        old: ''
+        new: 0.5 milligram per liter
+      occurrence:
+        old: '1.0'
+        new: '1'
+    filter_type:
+      example:
+        old: ''
+        new: HEPA
+      value_syntax:
+        old: '[chemical air filter|electrostatic air treatment|gas-phase air treatment|HEPA filter|low-MERV pleated media|particulate
+          air filter|ultraviolet air treatment]'
+        new: '[particulate air filter|chemical air filter|low-MERV pleated media|HEPA|electrostatic|gas-phase or ultraviolet
+          air treatments]'
+    methane:
+      example:
+        old: ''
+        new: 1800 parts per billion
+      occurrence:
+        old: '1.0'
+        new: '1'
+      preferred_unit:
+        old: micromole per liter
+        new: micromole per liter, parts per billion, parts per million
+    link_class_info:
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: '{PMID}|{DOI}|{URL}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    tillage:
+      example:
+        old: ''
+        new: chisel
+    slope_aspect:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    n_alkanes:
+      example:
+        old: ''
+        new: n-hexadecane;100 milligram per liter
+    pre_treatment:
+      occurrence:
+        old: '1.0'
+        new: '1'
+    gravity:
+      definition:
+        old: information about treatment involving use of gravity factor to study various types of responses in presence,
+          absence or modified levels of gravity; can include multiple treatments
+        new: Information about treatment involving use of gravity factor to study various types of responses in presence,
+          absence or modified levels of gravity; treatment regimen including how many times the treatment was repeated, how
+          long each treatment lasted, and the start and end time of the entire treatment; can include multiple treatments
+      example:
+        old: ''
+        new: 12 g;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+      expected_value:
+        old: gravity factor value;treatment duration;interval;experimental duration
+        new: gravity factor value;treatment interval and duration
+      value_syntax:
+        old: '{float} {unit};{period};{interval};{period}'
+        new: '{float} {unit};{Rn/start_time/end_time/duration}'
+    specific_host:
+      definition:
+        old: If there is a host involved, please provide its taxid (or environmental if not actually isolated from the dead
+          or alive host - i.e. pathogen could be isolated from a swipe of a bench etc) and report whether it is a laboratory
+          or natural host). From this we can calculate any number of groupings of hosts (e.g. animal vs plant, all fish hosts,
+          etc)
+        new: If there is a host involved, please provide its taxid (or environmental if not actually isolated from the dead
+          or alive host - i.e. a pathogen could be isolated from a swipe of a bench etc) and report whether it is a laboratory
+          or natural host)
+      example:
+        old: ''
+        new: '9606'
+      value_syntax:
+        old: ''
+        new: '{NCBI taxid}|{text}'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    organism_count:
+      definition:
+        old: total count of any organism per gram or volume of sample, should include name of organism followed by count;
+          can include multiple organism counts
+        new: 'Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include
+          name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should
+          also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+      example:
+        old: ''
+        new: total prokaryotes;3.5e7 cells per milliliter;qPCR
+      expected_value:
+        old: organism name;measurement value
+        new: organism name;measurement value;enumeration
+      value_syntax:
+        old: '{text};{float} {unit}'
+        new: '{text};{float} {unit};[qPCR|ATP|MPN|other]'
+      preferred_unit:
+        old: number of organism per cubic meter
+        new: number of cells per cubic meter, number of cells per milliliter, number of cells per cubic centimeter
+    biotic_relationship:
+      definition:
+        old: Is it free-living or in a host and if the latter what type of relationship is observed
+        new: Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g.,
+          parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the
+          other organism(s) is the object
+      example:
+        old: ''
+        new: free living
+      value_syntax:
+        old: '[free living|parasite|commensal|symbiont]'
+        new: '[free living|parasitism|commensalism|symbiotic|mutualism]'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    smoker:
+      example:
+        old: ''
+        new: 'yes'
+      occurrence:
+        old: '1.0'
+        new: '1'
+    mean_peak_frict_vel:
+      example:
+        old: ''
+        new: 1 meter per second
       occurrence:
         old: '1.0'
         new: '1'
@@ -775,55 +3542,57 @@ checklist_differences:
     - miuvig
 membership_differences:
   checklist_changes:
-    misag:
+    miuvig:
       terms_added:
-      - lat_lon
-      - pcr_primers
-      - mid
-      - subspecf_gen_lin
-      - env_package
-      - num_replicons
-      - health_disease_stat
-      - seq_meth
-      - specific_host
-      - pcr_cond
-      - host_spec_range
-      - ploidy
-      - samp_collect_device
-      - chimera_check
-      - sop
-      - geo_loc_name
-      - estimated_size
-      - target_subfragment
-      - collection_date
-      - adapters
-      - pathogenicity
-      - biotic_relationship
-      - ref_biomaterial
-      - isol_growth_condt
-      - nucl_acid_amp
-      - extrachrom_elements
-      - submitted_to_insdc
-      - rel_to_oxygen
-      - investigation_type
-      - encoded_traits
-      - url
-      - experimental_factor
-      - depth
+      - lib_vector
       - source_mat_id
-      - lib_screen
+      - seq_meth
       - nucl_acid_ext
-      - propagation
+      - target_gene
+      - target_subfragment
+      - assembly_name
+      - encoded_traits
+      - estimated_size
+      - depth
+      - env_package
+      - experimental_factor
+      - ploidy
+      - geo_loc_name
       - lib_reads_seqd
-      - seq_quality_check
+      - subspecf_gen_lin
+      - samp_collect_device
+      - host_spec_range
       - samp_size
       - trophic_level
-      - assembly_name
-      - lib_vector
       - lib_size
-      - target_gene
-      - samp_mat_process
+      - chimera_check
+      - mid
+      - url
+      - health_disease_stat
+      - alt
+      - ref_biomaterial
+      - lat_lon
+      - pcr_cond
+      - isol_growth_condt
+      - pathogenicity
+      - adapters
+      - num_replicons
+      - investigation_type
       - project_name
+      - samp_mat_process
+      - rel_to_oxygen
+      - submitted_to_insdc
+      - sop
+      - lib_screen
+      - nucl_acid_amp
+      - propagation
+      - elev
+      - collection_date
+      - pcr_primers
+      - extrachrom_elements
+      - seq_quality_check
+      - specific_host
+      - biotic_relationship
       - env_biome -> env_broad_scale
       - env_feature -> env_local_scale
       - env_material -> env_medium
@@ -832,193 +3601,315 @@ membership_differences:
       requirement_changes: {}
     mimag:
       terms_added:
-      - lat_lon
-      - pcr_primers
-      - mid
-      - subspecf_gen_lin
-      - env_package
-      - num_replicons
-      - health_disease_stat
-      - seq_meth
-      - specific_host
-      - pcr_cond
-      - host_spec_range
-      - ploidy
-      - samp_collect_device
-      - chimera_check
-      - sop
-      - geo_loc_name
-      - estimated_size
-      - target_subfragment
-      - collection_date
-      - adapters
-      - pathogenicity
-      - biotic_relationship
-      - ref_biomaterial
-      - isol_growth_condt
-      - nucl_acid_amp
-      - extrachrom_elements
-      - submitted_to_insdc
-      - rel_to_oxygen
-      - investigation_type
-      - encoded_traits
-      - url
-      - experimental_factor
-      - depth
+      - lib_vector
       - source_mat_id
-      - lib_screen
+      - seq_meth
       - nucl_acid_ext
-      - propagation
+      - target_gene
+      - target_subfragment
+      - assembly_name
+      - encoded_traits
+      - estimated_size
+      - depth
+      - env_package
+      - experimental_factor
+      - ploidy
+      - geo_loc_name
       - lib_reads_seqd
-      - seq_quality_check
+      - subspecf_gen_lin
+      - samp_collect_device
+      - host_spec_range
       - samp_size
       - trophic_level
-      - assembly_name
-      - lib_vector
       - lib_size
-      - target_gene
-      - samp_mat_process
+      - chimera_check
+      - mid
+      - url
+      - health_disease_stat
+      - alt
+      - ref_biomaterial
+      - lat_lon
+      - pcr_cond
+      - isol_growth_condt
+      - pathogenicity
+      - adapters
+      - num_replicons
+      - investigation_type
       - project_name
+      - samp_mat_process
+      - rel_to_oxygen
+      - submitted_to_insdc
+      - sop
+      - lib_screen
+      - nucl_acid_amp
+      - propagation
+      - elev
+      - collection_date
+      - pcr_primers
+      - extrachrom_elements
+      - seq_quality_check
+      - specific_host
+      - biotic_relationship
       - env_biome -> env_broad_scale
       - env_feature -> env_local_scale
       - env_material -> env_medium
       - annot_source -> annot
       terms_removed: []
       requirement_changes: {}
-    miuvig:
+    misag:
       terms_added:
-      - lat_lon
-      - pcr_primers
-      - mid
-      - subspecf_gen_lin
-      - env_package
-      - num_replicons
-      - health_disease_stat
-      - seq_meth
-      - specific_host
-      - pcr_cond
-      - host_spec_range
-      - ploidy
-      - samp_collect_device
-      - chimera_check
-      - sop
-      - geo_loc_name
-      - estimated_size
-      - target_subfragment
-      - collection_date
-      - adapters
-      - pathogenicity
-      - biotic_relationship
-      - ref_biomaterial
-      - isol_growth_condt
-      - nucl_acid_amp
-      - extrachrom_elements
-      - submitted_to_insdc
-      - rel_to_oxygen
-      - investigation_type
-      - encoded_traits
-      - url
-      - experimental_factor
-      - depth
+      - lib_vector
       - source_mat_id
-      - lib_screen
+      - seq_meth
       - nucl_acid_ext
-      - propagation
+      - target_gene
+      - target_subfragment
+      - assembly_name
+      - encoded_traits
+      - estimated_size
+      - depth
+      - env_package
+      - experimental_factor
+      - ploidy
+      - geo_loc_name
       - lib_reads_seqd
-      - seq_quality_check
+      - subspecf_gen_lin
+      - samp_collect_device
+      - host_spec_range
       - samp_size
       - trophic_level
-      - assembly_name
-      - lib_vector
       - lib_size
-      - target_gene
-      - samp_mat_process
+      - chimera_check
+      - mid
+      - url
+      - health_disease_stat
+      - alt
+      - ref_biomaterial
+      - lat_lon
+      - pcr_cond
+      - isol_growth_condt
+      - pathogenicity
+      - adapters
+      - num_replicons
+      - investigation_type
       - project_name
+      - samp_mat_process
+      - rel_to_oxygen
+      - submitted_to_insdc
+      - sop
+      - lib_screen
+      - nucl_acid_amp
+      - propagation
+      - elev
+      - collection_date
+      - pcr_primers
+      - extrachrom_elements
+      - seq_quality_check
+      - specific_host
+      - biotic_relationship
       - env_biome -> env_broad_scale
       - env_feature -> env_local_scale
       - env_material -> env_medium
       - annot_source -> annot
       terms_removed: []
       requirement_changes: {}
-    migs_pl:
-      terms_added: []
+    migs_eu:
+      terms_added:
+      - alt
+      - elev
       terms_removed: []
       requirement_changes:
+        estimated_size:
+          old: M
+          new: X
         env_package:
           old: M
           new: C
+        ploidy:
+          old: M
+          new: X
+        num_replicons:
+          old: M
+          new: X
+        propagation:
+          old: M
+          new: C
     migs_org:
-      terms_added: []
+      terms_added:
+      - alt
+      - elev
       terms_removed: []
       requirement_changes:
         env_package:
           old: M
           new: C
     mimarks_c:
-      terms_added: []
-      terms_removed: []
-      requirement_changes:
-        env_package:
-          old: M
-          new: C
-    mimarks_s:
-      terms_added: []
-      terms_removed: []
-      requirement_changes:
-        env_package:
-          old: M
-          new: C
-    migs_vi:
-      terms_added: []
+      terms_added:
+      - alt
+      - elev
       terms_removed: []
       requirement_changes:
         env_package:
           old: M
           new: C
     me:
-      terms_added: []
+      terms_added:
+      - alt
+      - elev
       terms_removed: []
       requirement_changes:
         env_package:
           old: M
           new: C
-    migs_eu:
-      terms_added: []
+    mimarks_s:
+      terms_added:
+      - alt
+      - elev
       terms_removed: []
       requirement_changes:
         env_package:
           old: M
           new: C
-        num_replicons:
-          old: M
-          new: X
-        ploidy:
-          old: M
-          new: X
-        estimated_size:
-          old: M
-          new: X
-        propagation:
+    migs_vi:
+      terms_added:
+      - alt
+      - elev
+      terms_removed: []
+      requirement_changes:
+        env_package:
           old: M
           new: C
     migs_ba:
-      terms_added: []
+      terms_added:
+      - alt
+      - elev
+      terms_removed: []
+      requirement_changes:
+        env_package:
+          old: M
+          new: C
+    migs_pl:
+      terms_added:
+      - alt
+      - elev
       terms_removed: []
       requirement_changes:
         env_package:
           old: M
           new: C
   package_changes:
+    water:
+      terms_added:
+      - turbidity
+      terms_removed:
+      - alt
+      requirement_changes: {}
+    hydrocarbon_resources_fluids_swabs:
+      terms_added:
+      - tot_nitro
+      - diss_org_carb
+      - sulfide
+      - pressure
+      - samp_store_temp
+      - sulfate
+      - ammonium
+      - chloride
+      - diss_inorg_carb
+      - potassium
+      - diss_inorg_phosp
+      - tot_phosp
+      - samp_store_dur
+      - density
+      - magnesium
+      - sodium
+      - misc_param
+      - samp_vol_we_dna_ext
+      - oxy_stat_samp
+      - nitrite
+      - temp
+      - calcium
+      - alkalinity
+      - diss_carb_dioxide
+      - samp_store_loc
+      - ph
+      - nitrate
+      - samp_salinity
+      - suspend_solids
+      - organism_count
+      terms_removed: []
+      requirement_changes: {}
+    hydrocarbon_resources_cores:
+      terms_added:
+      - tot_nitro
+      - porosity
+      - diss_org_carb
+      - sulfide
+      - pressure
+      - samp_store_temp
+      - sulfate
+      - ammonium
+      - chloride
+      - diss_inorg_carb
+      - potassium
+      - diss_inorg_phosp
+      - tot_phosp
+      - samp_store_dur
+      - density
+      - magnesium
+      - sodium
+      - misc_param
+      - samp_vol_we_dna_ext
+      - oxy_stat_samp
+      - nitrite
+      - temp
+      - calcium
+      - alkalinity
+      - diss_carb_dioxide
+      - samp_store_loc
+      - elev
+      - ph
+      - nitrate
+      - samp_salinity
+      - suspend_solids
+      - organism_count
+      terms_removed: []
+      requirement_changes: {}
+    soil:
+      terms_added: []
+      terms_removed:
+      - tot_nitro
+      - alt
+      requirement_changes: {}
+    sediment:
+      terms_added:
+      - tot_depth_water_col
+      terms_removed:
+      - tot_nitro
+      - alt
+      requirement_changes:
+        elev:
+          old: M
+          new: C
     microbial_mat_biofilm:
       terms_added: []
-      terms_removed: []
+      terms_removed:
+      - tot_nitro
+      - alt
       requirement_changes:
         depth:
           old: M
           new: C
+        elev:
+          old: M
+          new: C
+    plant_associated:
+      terms_added: []
+      terms_removed:
+      - alt
+      requirement_changes: {}
   summary:
-    total_checklist_changes: 165
-    total_package_changes: 1
+    total_checklist_changes: 187
+    total_package_changes: 75
     made_mandatory: 0
     made_optional: 3
 package_composition_differences:
