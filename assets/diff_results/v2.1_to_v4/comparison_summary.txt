@@ -5,26 +5,39 @@ MIXS LEGACY SCHEMA COMPARISON SUMMARY
 OLD SCHEMA: v2.1
   Source: Migs_mims_miens_v2.1.xlsx + MIMARKS_26_01_11.xlsx
   Format: xlsx
-  Terms: 57
+  Terms: 321
 
 NEW SCHEMA: v4
   Source: /home/mark/gitrepos/mixs-legacy/mixs4/MIxS_210514.xls
   Format: xls
-  Terms: 55
+  Terms: 343
 
 ----------------------------------------
 TERM COMPARISON
 ----------------------------------------
-  Shared terms: 50
+  Shared terms: 282
   Only in old: 0
-  Only in new: 2
-  Expected mappings: 3
-  Terms with definition changes: 53
+  Only in new: 30
+  Expected mappings: 34
+  Terms with definition changes: 316
 
   Term renames applied:
+    age -> host_age
+    blood_press_diast -> host_blood_press_diast
+    blood_press_syst -> host_blood_press_syst
+    body_habitat -> host_body_habitat
+    body_mass_index -> host_body_mass_index
+    body_product -> host_body_product
+    body_site -> host_body_site
     country -> geo_loc_name
-    source_mat_identifiers -> source_mat_id
-    submit_to_insdc -> submitted_to_insdc
+    current -> water_current
+    diet -> host_diet
+    disease_stat -> host_disease_stat
+    dry_mass -> host_dry_mass
+    family_relationship -> host_family_relationship
+    genotype -> host_genotype
+    height -> host_height
+    ... and 19 more
 
   Term splits (1 old → N new):
     environment → env_biome, env_feature, env_material
@@ -33,10 +46,55 @@ TERM COMPARISON
     - biome: MIMARKS term; superseded by env_biome in v4 (same concept, new naming)
     - feature: MIMARKS term; superseded by env_feature in v4 (same concept, new naming)
     - material: MIMARKS term; superseded by env_material in v4 (same concept, new naming)
+    - other: Generic term removed; replaced with specific fields
 
   Terms only in NEW (added):
+    + abs_air_humidity
+    + air_temp
     + annot_source
     + assembly_name
+    + bac_prod
+    + bac_resp
+    + build_occup_type
+    + building_setting
+    + conduc
+    + dew_point
+    + down_par
+    + filter_type
+    + fluor
+    + heat_cool_type
+    + indoor_space
+    + indoor_surf
+    + light_type
+    + occup_samp
+    + occupant_dens_samp
+    + rel_air_humidity
+    ... and 10 more
+
+----------------------------------------
+DEFINITION CHANGES (showing diff)
+----------------------------------------
+  alkalinity:
+    [-alkalinity measurement-] [+alkalinity, the ability+]
+  alt:
+    [-The-] [+the+] altitude of ... surface above [-Sea Level-] [+sea level+] and the ... in the [-air.-] [+air+]
+  alt_elev:
+    [-The geographical origin-] [+Please refer to+] of [+either altitude or elevation in+] the [-sample as defined-] [+envir...
+  annual_season_precpt:
+    mean annual ... seasonal precipitation [-(mm)-]
+  annual_season_temp:
+    mean annual ... seasonal temperature [-(oC)-]
+  biotic_relationship:
+    Is it ... is observed [-(e.g. pathogen, commensal, symbiont, opportunist)-]
+  chem_administration:
+    list of ... include multiple [-compounds-] [+compounds. For Chemical+]
+  chimera_check:
+    A chimeric ... or conversion [-point.-] [+point+]
+  country -> geo_loc_name:
+    The geographical ... by the [-country.-] [+country or sea+] Country [+or sea+] names should ... the INSDC [+country+] li...
+  current -> water_current:
+    measurement of [-current-] [+magnitude and direction+]
+  ... and 47 more definition changes
 
 ----------------------------------------
 PACKAGE COMPARISON
@@ -57,18 +115,18 @@ MEMBERSHIP CHANGES
 ----------------------------------------
   Terms added to checklists: 40
   Terms removed from checklists: 0
-  Terms added to packages: 8
-  Terms removed from packages: 0
+  Terms added to packages: 37
+  Terms removed from packages: 1
   Made mandatory (was optional): 6
   Made optional (was mandatory): 0
 
   Made mandatory:
-    env_package in migs_pl: X → M
     env_package in migs_org: X → M
-    env_package in migs_eu: X → M
+    env_package in migs_pl: X → M
     env_package in mimarks_c: X → M
-    env_package in migs_ba: X → M
     env_package in migs_vi: X → M
+    env_package in migs_ba: X → M
+    env_package in migs_eu: X → M
 
 ----------------------------------------
 PACKAGE COMPOSITION CHANGES
@@ -116,5 +174,5 @@ PACKAGE COMPOSITION CHANGES
     + built_environment
 
 ================================================================================
-Generated: 2026-02-03T16:27:26.418418
+Generated: 2026-02-03T21:37:41.610629
 ================================================================================

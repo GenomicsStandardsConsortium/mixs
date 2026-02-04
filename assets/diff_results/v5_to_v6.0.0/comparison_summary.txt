@@ -3,51 +3,110 @@ MIXS LEGACY SCHEMA COMPARISON SUMMARY
 ================================================================================
 
 OLD SCHEMA: v5
-  Source: ../mixs-legacy/mixs5/mixs_v5.xlsx
+  Source: /home/mark/gitrepos/mixs-legacy/mixs5/mixs_v5.xlsx
   Format: xlsx
-  Terms: 94
+  Terms: 600
 
-NEW SCHEMA: mixs6.0.0
-  Source: GenomicsStandardsConsortium/mixs@mixs6.0.0:model/schema/mixs.yaml
+NEW SCHEMA: v6.0.0
+  Source: src/mixs/schema/mixs.yaml
   Format: linkml
-  Terms: 804
+  Terms: 1059
 
 ----------------------------------------
 TERM COMPARISON
 ----------------------------------------
-  Shared terms: 85
-  Only in old: 0
-  Only in new: 713
-  Expected mappings: 6
-  Terms with definition changes: 91
+  Shared terms: 560
+  Only in old: 28
+  Only in new: 491
+  Expected mappings: 9
+  Terms with definition changes: 569
+
+  Term renames applied:
+    16s_recover -> x16s_recover
+    16s_recover_software -> x16s_recover_software
+    health_disease_stat -> host_disease_stat
+    horizon -> soil_horizon
+    texture -> soil_texture
+    texture_meth -> soil_texture_meth
+    votu_class_appr -> otu_class_appr
+    votu_db -> otu_db
+    votu_seq_comp_appr -> otu_seq_comp_appr
 
   Terms intentionally removed:
-    - env_package: Structural change in v6; package membership now handled via class hierarchy rather than explicit field
+    - env_package: Structural change in v6; package membership now handled via class hierarchy
     - investigation_type: Removed in v6; investigation type now implicit in checklist selection
     - submitted_to_insdc: Removed in v6; INSDC submission status not tracked in schema
 
+  Terms only in OLD (unexplained removals):
+    - chem_treatment_method
+    - extreme_salinity
+    - heat_system_deliv_meth
+    - host_blood_press_diast
+    - host_blood_press_syst
+    - host_family_relationship
+    - host_infra_specific_name
+    - host_infra_specific_rank
+    - ihmc_ethnicity
+    - microbial_biomass_meth
+    - non_mineral_nutr_regm
+    - organism_count_qpcr_info
+    - pres_animal
+    - previous_land_use_meth
+    - resp_part_matter
+    - room_architec_element
+    - room_moist_damage_hist
+    - salinity_meth
+    - samp_collection_point
+    - samp_salinity
+    ... and 8 more
+
   Terms only in NEW (added):
-    + Food_Product_type
-    + Food_source
     + HACCP_term
     + IFSAC_category
-    + abs_air_humidity
-    + add_recov_method
-    + additional_info
-    + address
-    + adj_room
     + adjacent_environment
-    + aero_struc
-    + agrochem_addition
-    + air particulate matter concentration
+    + agriculture_data
     + air_PM_concen
+    + air_data
     + air_flow_impede
-    + air_temp
-    + air_temp_regm
-    + al_sat
-    + al_sat_meth
-    + alkalinity
-    ... and 693 more
+    + anim_water_method
+    + animal_am
+    + animal_am_dur
+    + animal_am_freq
+    + animal_am_route
+    + animal_am_use
+    + animal_body_cond
+    + animal_diet
+    + animal_feed_equip
+    + animal_group_size
+    + animal_housing
+    + animal_intrusion
+    + animal_sex
+    ... and 471 more
+
+----------------------------------------
+DEFINITION CHANGES (showing diff)
+----------------------------------------
+  abs_air_humidity:
+    Actual mass ... water vapor [-- mh20 --] present in ... water vapor [-mixture-] [+mixture.+]
+  address:
+    The street ... the sampling [-occurred.-] [+occurred+]
+  alt:
+    [-Altitude is a-] [+Heights+] of objects ... above the [-earth‚Äôs-] [+earth's+] surface. In ... the air
+  annual_precpt:
+    The average ... or Isohyetal [-maps.-] [+maps+]
+  api:
+    API gravity ... https://en.wikipedia.org/wiki/API_gravity) (e.g. [-31.1¬∞-] [+31.1+] API)
+  aromatics_pc:
+    Saturate, Aromatic, Resin and [-Asphaltene¬†(SARA)-] [+Asphaltene (SARA)+] is an ... method that [-divides¬†crude oil¬†c...
+  asphaltenes_pc:
+    Saturate, Aromatic, Resin and [-Asphaltene¬†(SARA)-] [+Asphaltene (SARA)+] is an ... method that [-divides¬†crude oil¬†c...
+  assembly_qual:
+    The assembly ... of the [-23S, 16S and-] [+large subunit (LSU)+] 5S rRNA [-genes and at-] [+depending on whether+] Mediu...
+  avg_occup:
+    Daily average occupancy of [+room. Indicate the number of+...] room
+  bin_software:
+    Tool(s) used ... from metagenomic [-datasets-] [+datasets, where possible+]
+  ... and 91 more definition changes
 
 ----------------------------------------
 PACKAGE COMPARISON
@@ -61,36 +120,64 @@ CHECKLIST COMPARISON
 ----------------------------------------
   Shared checklists: 10
   Only in old: 1
-  Only in new: 1
+  Only in new: 254
 
 ----------------------------------------
 MEMBERSHIP CHANGES
 ----------------------------------------
-  Terms added to checklists: 34
-  Terms removed from checklists: 558
-  Terms added to packages: 187
-  Terms removed from packages: 3
+  Terms added to checklists: 25038
+  Terms removed from checklists: 489
+  Terms added to packages: 323
+  Terms removed from packages: 44
   Made mandatory (was optional): 0
   Made optional (was mandatory): 0
 
 ----------------------------------------
 PACKAGE COMPOSITION CHANGES
 ----------------------------------------
-  air: +9 terms, -3 terms
-  built_environment: +15 terms, -5 terms
-  host_associated: +12 terms, -8 terms
-  human_associated: +13 terms, -5 terms
-  human_gut: +13 terms, -5 terms
-  human_oral: +14 terms, -6 terms
-  human_skin: +13 terms, -5 terms
-  human_vaginal: +13 terms, -4 terms
-  hydrocarbon_resources_cores: +11 terms, -4 terms
-  hydrocarbon_resources_fluids_swabs: +15 terms, -7 terms
-  microbial_mat_biofilm: +7 terms, -1 terms
-  plant_associated: +11 terms, -6 terms
-  sediment: +7 terms, -1 terms
-  soil: +17 terms, -9 terms
-  wastewater_sludge: +9 terms, -2 terms
+  air: +4 terms, -2 terms
+    added: air_PM_concen, project_name, salinity, samp_name
+    removed: resp_part_matter, samp_salinity
+  built_environment: +7 terms, -5 terms
+    added: heat_sys_deliv_meth, pres_animal_insect, project_name, room_architec_elem, room_moist_dam_hist (+2 more)
+    removed: heat_system_deliv_meth, pres_animal, room_architec_element, room_moist_damage_hist, shading_device_water_mold
+  host_associated: +8 terms, -6 terms
+    added: blood_press_diast, blood_press_syst, host_fam_rel, host_subspecf_genlin, host_symbiont (+3 more)
+    removed: host_blood_press_diast, host_blood_press_syst, host_family_relationship, host_infra_specific_name, host_infra_specific_rank (+1 more)
+  human_associated: +6 terms, -3 terms
+    added: ethnicity, host_fam_rel, host_symbiont, project_name, salinity (+1 more)
+    removed: host_family_relationship, ihmc_ethnicity, samp_salinity
+  human_gut: +6 terms, -3 terms
+    added: ethnicity, host_fam_rel, host_symbiont, project_name, salinity (+1 more)
+    removed: host_family_relationship, ihmc_ethnicity, samp_salinity
+  human_oral: +6 terms, -3 terms
+    added: ethnicity, host_fam_rel, host_symbiont, project_name, salinity (+1 more)
+    removed: host_family_relationship, ihmc_ethnicity, samp_salinity
+  human_skin: +6 terms, -3 terms
+    added: ethnicity, host_fam_rel, host_symbiont, project_name, salinity (+1 more)
+    removed: host_family_relationship, ihmc_ethnicity, samp_salinity
+  human_vaginal: +6 terms, -3 terms
+    added: ethnicity, host_fam_rel, host_symbiont, project_name, salinity (+1 more)
+    removed: host_family_relationship, ihmc_ethnicity, samp_salinity
+  hydrocarbon_resources_cores: +5 terms, -3 terms
+    added: org_count_qpcr_info, project_name, salinity, samp_name, tvdss_of_hcr_press
+    removed: organism_count_qpcr_info, samp_salinity, tvdss_of_hcr_pressure
+  hydrocarbon_resources_fluids_swabs: +8 terms, -6 terms
+    added: chem_treat_method, org_count_qpcr_info, project_name, salinity, samp_collect_point (+3 more)
+    removed: chem_treatment_method, organism_count_qpcr_info, samp_collection_point, samp_salinity, tvdss_of_hcr_pressure (+1 more)
+  microbial_mat_biofilm: +2 terms, -0 terms
+    added: project_name, samp_name
+  plant_associated: +6 terms, -4 terms
+    added: host_subspecf_genlin, host_symbiont, non_min_nutr_regm, project_name, salinity (+1 more)
+    removed: host_infra_specific_name, host_infra_specific_rank, non_mineral_nutr_regm, samp_salinity
+  sediment: +2 terms, -0 terms
+    added: project_name, samp_name
+  soil: +12 terms, -9 terms
+    added: micro_biomass_meth, org_matter, org_nitro, prev_land_use_meth, project_name (+7 more)
+    removed: extreme_salinity, horizon, microbial_biomass_meth, previous_land_use_meth, salinity_meth (+4 more)
+  wastewater_sludge: +3 terms, -1 terms
+    added: project_name, salinity, samp_name
+    removed: samp_salinity
   ... and 1 more packages
 
   Packages added:
@@ -105,5 +192,5 @@ PACKAGE COMPOSITION CHANGES
     - miscellaneous_natural_or_artificial_environment
 
 ================================================================================
-Generated: 2026-02-03T14:55:43.027681
+Generated: 2026-02-03T21:32:23.389973
 ================================================================================
