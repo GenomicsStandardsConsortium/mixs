@@ -8,7 +8,7 @@ OLD SCHEMA: v2.1
   Terms: 57
 
 NEW SCHEMA: v4
-  Source: ../mixs-legacy/mixs4/MIxS_210514.xls
+  Source: /home/mark/gitrepos/mixs-legacy/mixs4/MIxS_210514.xls
   Format: xls
   Terms: 55
 
@@ -20,6 +20,11 @@ TERM COMPARISON
   Only in new: 2
   Expected mappings: 3
   Terms with definition changes: 53
+
+  Term renames applied:
+    country -> geo_loc_name
+    source_mat_identifiers -> source_mat_id
+    submit_to_insdc -> submitted_to_insdc
 
   Term splits (1 old → N new):
     environment → env_biome, env_feature, env_material
@@ -58,34 +63,58 @@ MEMBERSHIP CHANGES
   Made optional (was mandatory): 0
 
   Made mandatory:
-    env_package in migs_vi: X → M
-    env_package in migs_ba: X → M
-    env_package in migs_eu: X → M
     env_package in migs_pl: X → M
     env_package in migs_org: X → M
+    env_package in migs_eu: X → M
     env_package in mimarks_c: X → M
+    env_package in migs_ba: X → M
+    env_package in migs_vi: X → M
 
 ----------------------------------------
 PACKAGE COMPOSITION CHANGES
 ----------------------------------------
   air: +1 terms, -0 terms
+    added: samp_vol_we_dna_ext
   host_associated: +22 terms, -20 terms
+    added: host_age, host_blood_press_diast, host_blood_press_syst, host_body_habitat, host_body_product (+17 more)
+    removed: age, blood_press_diast, blood_press_syst, body_habitat, body_product (+15 more)
   human_associated: +17 terms, -16 terms
+    added: host_age, host_body_mass_index, host_body_product, host_body_site, host_diet (+12 more)
+    removed: age, body_mass_index, body_product, body_site, diet (+11 more)
   human_gut: +16 terms, -15 terms
+    added: host_age, host_body_mass_index, host_body_product, host_body_site, host_diet (+11 more)
+    removed: age, body_mass_index, body_product, body_site, diet (+10 more)
   human_oral: +16 terms, -15 terms
+    added: host_age, host_body_mass_index, host_body_product, host_body_site, host_diet (+11 more)
+    removed: age, body_mass_index, body_product, body_site, diet (+10 more)
   human_skin: +16 terms, -15 terms
+    added: host_age, host_body_mass_index, host_body_product, host_body_site, host_diet (+11 more)
+    removed: age, body_mass_index, body_product, body_site, diet (+10 more)
   human_vaginal: +16 terms, -15 terms
+    added: host_age, host_body_mass_index, host_body_product, host_body_site, host_diet (+11 more)
+    removed: age, body_mass_index, body_product, body_site, diet (+10 more)
   microbial_mat_biofilm: +1 terms, -0 terms
+    added: samp_vol_we_dna_ext
   miscellaneous_natural_or_artificial_environment: +2 terms, -1 terms
+    added: samp_vol_we_dna_ext, water_current
+    removed: current
   plant_associated: +13 terms, -12 terms
+    added: host_age, host_disease_stat, host_dry_mass, host_genotype, host_height (+8 more)
+    removed: age, body_product, disease_stat, dry_mass, genotype (+7 more)
   sediment: +1 terms, -0 terms
+    added: samp_vol_we_dna_ext
   soil: +3 terms, -5 terms
+    added: samp_vol_we_dna_ext, tot_nitro, water_content
+    removed: other, samp_weight_dna_ext, tot_n, tot_org_c, water_content_soil
   wastewater_sludge: +1 terms, -0 terms
+    added: samp_vol_we_dna_ext
   water: +7 terms, -1 terms
+    added: bac_prod, bac_resp, conduc, down_par, fluor (+2 more)
+    removed: current
 
   Packages added:
     + built_environment
 
 ================================================================================
-Generated: 2026-02-03T14:55:22.726420
+Generated: 2026-02-03T16:27:26.418418
 ================================================================================

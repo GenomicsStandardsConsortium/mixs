@@ -2,14 +2,60 @@
 
 import logging
 from datetime import datetime
+from difflib import SequenceMatcher
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, List, Tuple
 
 import yaml
 
 from mixs.diff.comparison import SchemaComparisonResult
 
 logger = logging.getLogger(__name__)
+
+
+def compute_inline_diff(old_text: str, new_text: str, max_len: int = 100) -> str:
+    """Compute a simple inline diff showing changes.
+
+    Returns a string like: "old text [-removed-] [+added+] more text"
+    Truncates if result is too long.
+    """
+    if not old_text and not new_text:
+        return "(no change)"
+    if not old_text:
+        return f"[+{new_text[:max_len]}+]" + ("..." if len(new_text) > max_len else "")
+    if not new_text:
+        return f"[-{old_text[:max_len]}-]" + ("..." if len(old_text) > max_len else "")
+
+    # For short texts, just show old -> new
+    if len(old_text) < 30 and len(new_text) < 30:
+        return f"'{old_text}' → '{new_text}'"
+
+    # Use SequenceMatcher for longer texts
+    matcher = SequenceMatcher(None, old_text.split(), new_text.split())
+    result_parts: List[str] = []
+
+    for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+        old_words = old_text.split()[i1:i2]
+        new_words = new_text.split()[j1:j2]
+
+        if tag == 'equal':
+            # Show context (first/last few words)
+            if len(old_words) <= 4:
+                result_parts.append(' '.join(old_words))
+            else:
+                result_parts.append(' '.join(old_words[:2]) + ' ... ' + ' '.join(old_words[-2:]))
+        elif tag == 'delete':
+            result_parts.append('[-' + ' '.join(old_words[:5]) + ('-...]' if len(old_words) > 5 else '-]'))
+        elif tag == 'insert':
+            result_parts.append('[+' + ' '.join(new_words[:5]) + ('+...]' if len(new_words) > 5 else '+]'))
+        elif tag == 'replace':
+            result_parts.append('[-' + ' '.join(old_words[:3]) + '-]')
+            result_parts.append('[+' + ' '.join(new_words[:3]) + '+]')
+
+    result = ' '.join(result_parts)
+    if len(result) > max_len:
+        result = result[:max_len] + "..."
+    return result
 
 
 class ComparisonYAMLDumper(yaml.SafeDumper):
@@ -174,6 +220,30 @@ def write_summary_report(
             lines.append(f"    ... and {len(key_comp.only_in_new) - 20} more")
         lines.append("")
 
+    # Definition changes with inline diffs
+    if result.term_comparisons:
+        # Filter to terms with definition changes
+        def_changes = [
+            (name, comp)
+            for name, comp in sorted(result.term_comparisons.items())
+            if 'definition' in comp.field_differences
+        ]
+
+        if def_changes:
+            lines.append("-" * 40)
+            lines.append("DEFINITION CHANGES (showing diff)")
+            lines.append("-" * 40)
+
+            for name, comp in def_changes[:10]:
+                old_def, new_def = comp.field_differences.get('definition', ('', ''))
+                diff_text = compute_inline_diff(old_def, new_def, max_len=120)
+                lines.append(f"  {name}:")
+                lines.append(f"    {diff_text}")
+
+            if len(def_changes) > 10:
+                lines.append(f"  ... and {len(def_changes) - 10} more definition changes")
+            lines.append("")
+
     # Package comparison summary
     if result.package_key_comparison.shared or result.package_key_comparison.only_in_old or result.package_key_comparison.only_in_new:
         lines.append("-" * 40)
@@ -253,6 +323,19 @@ def write_summary_report(
                 added_count = len(change.terms_added)
                 removed_count = len(change.terms_removed)
                 lines.append(f"  {pkg_name}: +{added_count} terms, -{removed_count} terms")
+                # Show specific terms (up to 5 each)
+                if change.terms_added:
+                    added_list = sorted(change.terms_added)[:5]
+                    added_str = ", ".join(added_list)
+                    if len(change.terms_added) > 5:
+                        added_str += f" (+{len(change.terms_added) - 5} more)"
+                    lines.append(f"    added: {added_str}")
+                if change.terms_removed:
+                    removed_list = sorted(change.terms_removed)[:5]
+                    removed_str = ", ".join(removed_list)
+                    if len(change.terms_removed) > 5:
+                        removed_str += f" (+{len(change.terms_removed) - 5} more)"
+                    lines.append(f"    removed: {removed_str}")
             if len(changes_with_content) > 15:
                 lines.append(f"  ... and {len(changes_with_content) - 15} more packages")
             lines.append("")

@@ -4,14 +4,12 @@ comparison_metadata:
     source: /home/mark/gitrepos/mixs-legacy/pre-2009/MIGS_1.2_Candidate_v3.docx
     format: docx
     term_count: 19
-    notes: MIGS 1.2 Candidate Word document
   new_schema:
     version: v1.5-may2009
     source: /home/mark/gitrepos/mixs-legacy/2009/Migs_mims_miens_051109.xlsx
     format: xlsx
     term_count: 57
-    notes: May 2009 Excel - first Excel format
-  comparison_timestamp: '2026-02-03T16:12:14.716829'
+  comparison_timestamp: '2026-02-03T19:31:16.898830'
 term_differences:
   key_comparison:
     shared:
@@ -82,6 +80,74 @@ term_differences:
       habitat: |
         Absorbed into environmental packages structure. May 2009 introduces environmental packages (air, water, soil, host_associated, etc.) which provide more structured habitat information than a single field.
   definition_changes:
+    finishing_strategy:
+      item:
+        old: Finishing strategy/quality
+        new: finishing strategy
+      definition:
+        old: status, contigs
+        new: Was the genome project intended to produce a complete or draft genome, Coverage, the fold coverage of the sequencing
+          expressed as 2x, 3x, 18x  etc, and how many contigs were produced for the genome
+      expected_value:
+        old: ''
+        new: (status e.g. complete or draft [CV]; coverage [integer]; and contigs [integer])
+      section:
+        old: DATA PROCESSING
+        new: sequencing
+    sequencing_method:
+      definition:
+        old: ''
+        new: Sequencing method used; e.g. Sanger, pyrosequencing, ABI-solid
+      expected_value:
+        old: ''
+        new: (e.g. dideoxysequencing, pyrosequencing, polony) [OBI]
+      section:
+        old: SAMPLE PROCESSING
+        new: sequencing
+    number_of_replicons:
+      definition:
+        old: 'nuclear genome: chromosomes, organelles'
+        new: Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or
+          the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote
+      expected_value:
+        old: ''
+        new: '(for eukaryotes and bacteria: chromosomes (haploid count); for viruses: segments) [integer]'
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    collection_date:
+      item:
+        old: Date/time of collection
+        new: collection date
+      definition:
+        old: ''
+        new: 'The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available,
+          the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10;
+          2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO6801 compliant'
+      expected_value:
+        old: ''
+        new: '[UCT]'
+    estimated_size:
+      definition:
+        old: prior to sequencing; to be refined when sequencing is done
+        new: 'The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic)
+          genome which could remain in draft form for a long or unspecified period. Input: integer, size in bp. Example: 300000'
+      expected_value:
+        old: ''
+        new: before sequencing; to apply to all draft genomes [integer; base pairs]
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
+    specific_host:
+      definition:
+        old: host taxid, unknown, or applicable
+        new: ''
+      expected_value:
+        old: ''
+        new: (e.g. host taxid, unknown, environmental) [EnvO]
+      section:
+        old: ORGANISM
+        new: nucleic acid sequence source
     extrachromosomal_elements:
       definition:
         old: integer count
@@ -119,26 +185,6 @@ term_differences:
       section:
         old: ORGANISM
         new: nucleic acid sequence source
-    sequencing_method:
-      definition:
-        old: ''
-        new: Sequencing method used; e.g. Sanger, pyrosequencing, ABI-solid
-      expected_value:
-        old: ''
-        new: (e.g. dideoxysequencing, pyrosequencing, polony) [OBI]
-      section:
-        old: SAMPLE PROCESSING
-        new: sequencing
-    specific_host:
-      definition:
-        old: host taxid, unknown, or applicable
-        new: ''
-      expected_value:
-        old: ''
-        new: (e.g. host taxid, unknown, environmental) [EnvO]
-      section:
-        old: ORGANISM
-        new: nucleic acid sequence source
     geographic_location:
       definition:
         old: latitude longitude, depth, altitude
@@ -148,54 +194,6 @@ term_differences:
         old: ''
         new: (latitude and longitude [float, point, transect and region]; depth[integer, point, interval]; elevation of site
           [integer]; altitude of sample [integer]; country [INSDC])
-    estimated_size:
-      definition:
-        old: prior to sequencing; to be refined when sequencing is done
-        new: 'The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic)
-          genome which could remain in draft form for a long or unspecified period. Input: integer, size in bp. Example: 300000'
-      expected_value:
-        old: ''
-        new: before sequencing; to apply to all draft genomes [integer; base pairs]
-      section:
-        old: ORGANISM
-        new: nucleic acid sequence source
-    finishing_strategy:
-      item:
-        old: Finishing strategy/quality
-        new: finishing strategy
-      definition:
-        old: status, contigs
-        new: Was the genome project intended to produce a complete or draft genome, Coverage, the fold coverage of the sequencing
-          expressed as 2x, 3x, 18x  etc, and how many contigs were produced for the genome
-      expected_value:
-        old: ''
-        new: (status e.g. complete or draft [CV]; coverage [integer]; and contigs [integer])
-      section:
-        old: DATA PROCESSING
-        new: sequencing
-    collection_date:
-      item:
-        old: Date/time of collection
-        new: collection date
-      definition:
-        old: ''
-        new: 'The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available,
-          the date/time can be right truncated i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10;
-          2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO6801 compliant'
-      expected_value:
-        old: ''
-        new: '[UCT]'
-    number_of_replicons:
-      definition:
-        old: 'nuclear genome: chromosomes, organelles'
-        new: Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or
-          the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote
-      expected_value:
-        old: ''
-        new: '(for eukaryotes and bacteria: chromosomes (haploid count); for viruses: segments) [integer]'
-      section:
-        old: ORGANISM
-        new: nucleic acid sequence source
     reference_for_biomaterial:
       definition:
         old: primary publication or resource
@@ -288,35 +286,18 @@ checklist_differences:
     - miens_s
 membership_differences:
   checklist_changes:
-    migs_org:
-      terms_added:
-      - extrachromosomal_elements
-      - number_of_replicons
-      - biotic_relationship -> observed_biotic_relationship
-      - ploidy_level -> ploidy
-      terms_removed: []
-      requirement_changes:
-        estimated_size:
-          old: X
-          new: R
-        finishing_strategy:
-          old: M
-          new: X
-        reference_for_biomaterial:
-          old: X
-          new: R
     miens_c:
       terms_added:
+      - finishing_strategy
+      - sequencing_method
+      - number_of_replicons
+      - collection_date
+      - estimated_size
+      - specific_host
       - extrachromosomal_elements
       - assembly
       - source_material_identifiers
-      - sequencing_method
-      - specific_host
       - geographic_location
-      - estimated_size
-      - finishing_strategy
-      - collection_date
-      - number_of_replicons
       - reference_for_biomaterial
       - biotic_relationship -> observed_biotic_relationship
       - health_disease_status -> health_or_disease_status_of_specific_host_at_time_of_collection
@@ -325,17 +306,44 @@ membership_differences:
       - host_specificity_range -> host_specificty_or_range
       terms_removed: []
       requirement_changes: {}
-    me:
+    miens_s:
       terms_added:
-      - extrachromosomal_elements
-      - estimated_size
+      - finishing_strategy
+      - sequencing_method
       - number_of_replicons
+      - collection_date
+      - estimated_size
+      - specific_host
+      - extrachromosomal_elements
+      - assembly
+      - source_material_identifiers
+      - geographic_location
+      - reference_for_biomaterial
       - biotic_relationship -> observed_biotic_relationship
+      - health_disease_status -> health_or_disease_status_of_specific_host_at_time_of_collection
       - genetic_lineage -> subspecific_genetic_lineage
+      - ploidy_level -> ploidy
+      - host_specificity_range -> host_specificty_or_range
+      terms_removed: []
+      requirement_changes: {}
+    migs_pl:
+      terms_added:
+      - number_of_replicons
+      - extrachromosomal_elements
+      - biotic_relationship -> observed_biotic_relationship
       - ploidy_level -> ploidy
       terms_removed: []
       requirement_changes:
+        finishing_strategy:
+          old: M
+          new: X
+        estimated_size:
+          old: X
+          new: R
         reference_for_biomaterial:
+          old: X
+          new: R
+        host_specificity_range -> host_specificty_or_range:
           old: X
           new: R
     migs_vi:
@@ -344,75 +352,46 @@ membership_differences:
       - ploidy_level -> ploidy
       terms_removed: []
       requirement_changes:
-        estimated_size:
-          old: X
-          new: R
         finishing_strategy:
           old: M
           new: X
+        estimated_size:
+          old: X
+          new: R
         reference_for_biomaterial:
           old: X
           new: R
         biotic_relationship -> observed_biotic_relationship:
           old: X
           new: R
-    migs_pl:
+    migs_org:
       terms_added:
-      - extrachromosomal_elements
       - number_of_replicons
+      - extrachromosomal_elements
       - biotic_relationship -> observed_biotic_relationship
       - ploidy_level -> ploidy
       terms_removed: []
       requirement_changes:
-        estimated_size:
-          old: X
-          new: R
         finishing_strategy:
           old: M
           new: X
+        estimated_size:
+          old: X
+          new: R
         reference_for_biomaterial:
           old: X
           new: R
-        host_specificity_range -> host_specificty_or_range:
-          old: X
-          new: R
-    miens_s:
+    me:
       terms_added:
-      - extrachromosomal_elements
-      - assembly
-      - source_material_identifiers
-      - sequencing_method
-      - specific_host
-      - geographic_location
-      - estimated_size
-      - finishing_strategy
-      - collection_date
       - number_of_replicons
-      - reference_for_biomaterial
+      - estimated_size
+      - extrachromosomal_elements
       - biotic_relationship -> observed_biotic_relationship
-      - health_disease_status -> health_or_disease_status_of_specific_host_at_time_of_collection
       - genetic_lineage -> subspecific_genetic_lineage
       - ploidy_level -> ploidy
-      - host_specificity_range -> host_specificty_or_range
-      terms_removed: []
-      requirement_changes: {}
-    migs_eu:
-      terms_added: []
       terms_removed: []
       requirement_changes:
-        extrachromosomal_elements:
-          old: X
-          new: R
-        specific_host:
-          old: X
-          new: R
         reference_for_biomaterial:
-          old: X
-          new: R
-        biotic_relationship -> observed_biotic_relationship:
-          old: X
-          new: R
-        host_specificity_range -> host_specificty_or_range:
           old: X
           new: R
     migs_ba:
@@ -422,6 +401,25 @@ membership_differences:
       terms_removed: []
       requirement_changes:
         estimated_size:
+          old: X
+          new: R
+        host_specificity_range -> host_specificty_or_range:
+          old: X
+          new: R
+    migs_eu:
+      terms_added: []
+      terms_removed: []
+      requirement_changes:
+        specific_host:
+          old: X
+          new: R
+        extrachromosomal_elements:
+          old: X
+          new: R
+        reference_for_biomaterial:
+          old: X
+          new: R
+        biotic_relationship -> observed_biotic_relationship:
           old: X
           new: R
         host_specificity_range -> host_specificty_or_range:

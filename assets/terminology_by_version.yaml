@@ -8,8 +8,13 @@
 # INTERNAL USE ONLY: For use with mixs-legacy-diff tool.
 #
 # Version history:
-#   v2.0 (2011): First standardized version with Excel format
-#   v2.1 (2012): Introduced MIMARKS, consolidated some terms
+#   v1.1 (~2005): Earliest MIGS Word document
+#   v1.2 (~2006): MIGS Candidate draft, trimmed spec
+#   v1.5-may2009: First Excel format
+#   v1.6-nov2009: Structural reorganization (packages extracted)
+#   v1.8-oct2010: Systematic term abbreviation
+#   v2.0 (Dec 2010): Standardized Excel format
+#   v2.1 (Jan 2011): Introduced MIMARKS (renamed from MIENS)
 #   v4 (2014): Restored env_* terms, added built_environment package
 #   v5 (2017): Naming standardization, added MIXS IDs
 #   v6.0 (2020): LinkML migration, CamelCase naming
@@ -20,6 +25,45 @@ terminology:
   # CHECKLIST TERMINOLOGY
   # ==========================================================================
   checklist:
+    v1.1_v1.2:
+      names:
+        - MIGS_EU  # MIGS for Eukaryotes
+        - MIGS_BA  # MIGS for Bacteria/Archaea
+        - MIGS_PL  # MIGS for Plasmids
+        - MIGS_VI  # MIGS for Viruses
+        - MIGS_ORG  # MIGS for Organelles
+        - ME  # Metagenome/Environmental
+      format: "UPPERCASE_UNDERSCORE"
+      notes: |
+        Word document era. ME = Metagenome/Environmental sequences.
+        These were the original MIGS checklists from the earliest specs.
+
+    v1.5_may2009:
+      names:
+        - MIGS_EU, MIGS_BA, MIGS_PL, MIGS_VI, MIGS_ORG
+        - ME (replaced by MIMS in later versions)
+        - MIENS_S  # Environmental Sequences - survey
+        - MIENS_C  # Environmental Sequences - cultured
+      format: "UPPERCASE_UNDERSCORE"
+      notes: |
+        First Excel format. MIENS (Minimum Information about any ENvironmental
+        Sequence) introduced for marker gene sequences.
+
+    v1.6_nov2009:
+      names:
+        - MIGS_EU, MIGS_BA, MIGS_PL, MIGS_VI, MIGS_ORG
+        - MIMS  # Renamed from ME
+        - MIMARKS_S  # Renamed from MIENS_S
+        - MIMARKS_C  # Renamed from MIENS_C
+      format: "UPPERCASE_UNDERSCORE"
+      changes_from_may2009:
+        - renamed: "ME -> MIMS"
+        - renamed: "MIENS_S -> MIMARKS_S"
+        - renamed: "MIENS_C -> MIMARKS_C"
+      notes: |
+        MIENS renamed to MIMARKS (Marker gene Sequences).
+        ME renamed to MIMS (Metagenome/Environmental Sequences).
+
     v2.0:
       names:
         - MIGS_EU  # MIGS for Eukaryotes
@@ -272,6 +316,56 @@ terminology:
   # TERM NAMING CONVENTIONS
   # ==========================================================================
   term_naming:
+    v1.1_v1.2:
+      format: "Descriptive_phrases_with_underscores"
+      examples:
+        - finishing_strategy
+        - health_disease_status
+        - geographic_location
+        - nucleic_acid_preparation
+      id_scheme: null
+      notes: |
+        Word document era. Human-readable term names.
+        Some used slashes (microbial_mat/biofilm) or parentheses.
+
+    v1.5_may2009:
+      format: "verbose_underscore_with_parentheses"
+      examples:
+        - observed_biotic_relationship
+        - health_or_disease_status_of_specific_host_at_time_of_collection
+        - host_specificty_or_range  # Note: typo preserved from original
+        - amount_or_size_of_sample_collected
+      id_scheme: null
+      notes: |
+        First Excel format used very descriptive names.
+        Some names extremely long for clarity.
+        Package names (air, water, soil) initially mixed with terms.
+
+    v1.6_nov2009:
+      format: "verbose_underscore_with_parentheses"
+      examples:
+        - geographic_location_(latitude_and_longitude)
+        - geographic_location_(depth)
+        - geographic_location_(altitude/elevation)
+        - geographic_location_(country)
+      id_scheme: null
+      notes: |
+        geographic_location split into component fields.
+        Package names moved out of term list.
+
+    v1.8_oct2010:
+      format: "abbreviated_underscore"
+      examples:
+        - lat_lon  # was geographic_location_(latitude_and_longitude)
+        - seq_meth  # was sequencing_method
+        - nucl_acid_ext  # was nucleic_acid_extraction
+        - health_disease_stat  # was health_or_disease_status_of_specific_host...
+      id_scheme: null
+      notes: |
+        Systematic abbreviation of all term names.
+        33+ terms renamed to shorter forms.
+        This naming convention persisted through v5.
+
     v2.0:
       format: "lowercase_underscore"
       examples:
@@ -327,6 +421,44 @@ terminology:
 # STRUCTURAL NOTES
 # ==========================================================================
 structural_notes:
+  - version: "v1.1"
+    format: "Word"
+    notes: |
+      Earliest MIGS specification. Word document with tables.
+      22 terms defined. Included metagenomics terms (binning_method,
+      estimated_community_diversity) that were later removed.
+
+  - version: "v1.2"
+    format: "Word"
+    notes: |
+      MIGS Candidate draft. Trimmed to 19 terms.
+      Removed metagenomics-specific terms.
+      Some terms like 'host' replaced with 'specific_host'.
+
+  - version: "v1.5-may2009"
+    format: "Excel (headerless)"
+    notes: |
+      First Excel format. 57 terms.
+      Package names (air, water, soil, etc.) initially counted as terms.
+      MIENS introduced for marker gene sequences.
+      Early format without header rows.
+
+  - version: "v1.6-nov2009"
+    format: "Excel (with headers)"
+    notes: |
+      Major structural reorganization.
+      Package names moved to proper package metadata (14 removed from terms).
+      geographic_location split into 4 component fields.
+      environmental_package term added as selector.
+      Headers added to Excel format.
+
+  - version: "v1.8-oct2010"
+    format: "Excel"
+    notes: |
+      Systematic term name abbreviation.
+      33+ terms renamed to shorter forms (e.g., sequencing_method -> seq_meth).
+      Format stabilized.
+
   - version: "v2.0"
     format: "Excel"
     notes: |
