@@ -61,6 +61,31 @@ TERM COMPARISON
     ... and 19 more
 
 ----------------------------------------
+DEFINITION CHANGES (showing diff)
+----------------------------------------
+  assembly:
+    [+How was the+] assembly [-method, coverage-] [+done (e.g. with+]
+  biotic_relationship -> observed_biotic_relationship:
+    [-e.g. free-living, parasite,-] [+Is it free-living+] commensal, [-symbiont-] [+symbiont, opportunist)+]
+  collection_date:
+    [+The time of sampling, either as an instance (single point in time) or interval. In case no exact time is available, the +]...
+  estimated_size:
+    [+The estimated size of the+...] prior to [-sequencing; to be-] [+sequencing. Of particular+] sequencing [-is done-] [+o...
+  extrachromosomal_elements:
+    [-integer count-] [+For eukarya (optional)+]
+  finishing_strategy:
+    [-status,-] [+Was the genome+] contigs [+were produced for the genome+]
+  genetic_lineage -> subspecific_genetic_lineage:
+    [-below lowest rank-] [+This should provide+] of [-NCBI taxonomy-] [+this lineage by+]
+  geographic_location:
+    [+The geographical origin of the+...] latitude [-longitude, depth, altitude-] [+and longitude should+]
+  health_disease_status -> health_or_disease_status_of_specific_host_at_time_of_collection:
+    [-at time of collection-]
+  number_of_replicons:
+    [+Reports the number of replicons+...] nuclear [-genome: chromosomes, organelles-] [+genome of eukaryotes,+]
+  ... and 5 more definition changes
+
+----------------------------------------
 CHECKLIST COMPARISON
 ----------------------------------------
   Shared checklists: 6
@@ -78,10 +103,10 @@ MEMBERSHIP CHANGES
   Made optional (was mandatory): 3
 
   Made optional:
-    finishing_strategy in migs_org: M → X
-    finishing_strategy in migs_vi: M → X
     finishing_strategy in migs_pl: M → X
+    finishing_strategy in migs_vi: M → X
+    finishing_strategy in migs_org: M → X
 
 ================================================================================
-Generated: 2026-02-03T16:12:14.735354
+Generated: 2026-02-03T19:31:16.917914
 ================================================================================
