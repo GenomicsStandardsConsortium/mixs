@@ -31,8 +31,8 @@ kidney_disord	urine/kidney disorder	MIXS:0000277		History of kidney disorders; c
 maternal_health_stat	amniotic fluid/maternal health status	MIXS:0000273		Specification of the maternal health status			status			string						
 medic_hist_perform	medical history performed	MIXS:0000897		Whether full medical history was collected	{'value': '1'}		history			boolean						
 misc_param	miscellaneous parameter	MIXS:0000752		Any other measurement performed or parameter collected, that is not listed here	{'value': 'Bicarbonate ion concentration;2075 micromole per kilogram'}		parameter	True		string			{text};{float} {unit}		parameter name;measurement value	
-nose_throat_disord	nose throat disorder	MIXS:0000270	"The terms should be chosen from the DO (Human Disease Ontology)  at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850),  upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)
-"	"Report any history of nose, mouth, teeth and/or throat disorders in the subject.  May include multiple disorders.
+nose_throat_disord	nose throat disorder	MIXS:0000270	"The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850), upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)
+"	"Report any history of nose, mouth, teeth and/or throat disorders in the subject. May include multiple disorders.
 "			disorder	True		string						
 organism_count	organism count	MIXS:0000103		Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)	{'value': 'total prokaryotes;3.5e7 cells per milliliter;qPCR'}		count|organism	True		string			{text};{float} {unit};[ATP|MPN|qPCR|other]		organism name;measurement value;enumeration	
 oxy_stat_samp	oxygenation status of sample	MIXS:0000753		Oxygenation status of sample	{'value': 'aerobic'}		oxygen|sample|status			OxyStatSampEnum						

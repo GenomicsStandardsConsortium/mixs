@@ -1,3 +1,33 @@
+## MixsCompliantData-MimsSoil-example2
+### Input
+```yaml
+mims_soil_data:
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  lat_lon: 45.1 45.9
+  project_name: absolutely any text
+  samp_name: msd1
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  lat_lon: 45.1 45.9
+  project_name: absolutely any text
+  samp_name: msd2
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+
+```
 ## MixsCompliantData-MimsSoil-pattern-fixes
 ### Input
 ```yaml
@@ -76,6 +106,44 @@ mims_soil_data:
   samp_name: msd2
   samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
   seq_meth: absolutely any text
+
+```
+## MixsCompliantData-MimsMisipSoil-example
+### Input
+```yaml
+mimsmisip_soil_data:
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  gradient_pos_density: 1.725 g/mL
+  gradient_pos_rel_am: 0.1
+  gradient_position: 1
+  internal_standard: https://doi.org/10.1101/2022.12.20.521340
+  isotope:
+  - 13C
+  - 15N
+  isotopolog:
+  - toluene [pubchem.compound:1140]
+  - water [pubchem.compound:962]
+  isotopolog_approach: multiple
+  isotopolog_atom_frac: 0.95 | 0.98
+  isotopolog_atom_pos: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1
+    | 1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h1,3-6,8-12H,2H2/t3-,4+,5+,6+/m0/s1
+  isotopolog_dose: 10 ppm
+  isotopolog_incu_time: 12 hour
+  isotopolog_label: natural abundance
+  lat_lon: 45.1 45.9
+  nucleobase_atom_frac: 0.25
+  project_name: absolutely any text
+  samp_dna_conc: "12.34 ng/\xB5L"
+  samp_name: msd1
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+  sip_method: https://doi.org/10.1038/s41396-018-0279-6
 
 ```
 ## MixsCompliantData-MIMS-HCRFS-example
@@ -209,6 +277,39 @@ mims_soil_data:
   seq_meth: PMID:98765432
 
 ```
+## MimsMisipSoil-isotopolog_atom_frac
+### Input
+```yaml
+mimsmisip_soil_data:
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  gradient_pos_density: 1.725 g/mL
+  gradient_pos_rel_am: 0.1
+  gradient_position: 1
+  internal_standard: https://doi.org/10.1101/2022.12.20.521340
+  isotope: 13C | 15N
+  isotopolog: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
+  isotopolog_approach: multiple
+  isotopolog_atom_frac: 95
+  isotopolog_atom_pos: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1
+    | 1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h1,3-6,8-12H,2H2/t3-,4+,5+,6+/m0/s1
+  isotopolog_dose: 10 ppm
+  isotopolog_incu_time: 12 hour
+  isotopolog_label: natural abundance
+  lat_lon: 45.1 45.9
+  nucleobase_atom_frac: 0.25
+  project_name: absolutely any text
+  samp_name: msd1
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+  sip_method: https://doi.org/10.1038/s41396-018-0279-6
+
+```
 ## MixsCompliantData-MimsSoil-example-undefined-slot
 ### Input
 ```yaml
@@ -237,6 +338,39 @@ undefined_slot:
   samp_name: msd2
   samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
   seq_meth: absolutely any text
+
+```
+## MimsMisipSoil-isotopolog_incu_time
+### Input
+```yaml
+mimsmisip_soil_data:
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  gradient_pos_density: 1.725 g/mL
+  gradient_pos_rel_am: 0.1
+  gradient_position: 1
+  internal_standard: https://doi.org/10.1101/2022.12.20.521340
+  isotope: 13C | 15N
+  isotopolog: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
+  isotopolog_approach: multiple
+  isotopolog_atom_frac: 0.95
+  isotopolog_atom_pos: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1
+    | 1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h1,3-6,8-12H,2H2/t3-,4+,5+,6+/m0/s1
+  isotopolog_dose: 10 ppm
+  isotopolog_incu_time: 12
+  isotopolog_label: natural abundance
+  lat_lon: 45.1 45.9
+  nucleobase_atom_frac: 0.25
+  project_name: absolutely any text
+  samp_name: msd1
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+  sip_method: https://doi.org/10.1038/s41396-018-0279-6
 
 ```
 ## MixsCompliantData-MimsSoil-invalid-al_sat_meth-url-leading
@@ -275,5 +409,38 @@ mims_soil_data:
   samp_name: soil-invalid-doi-leading
   samp_taxon_id: soil metagenome [NCBITaxon:410658]
   seq_meth: doi:10.1126/science.abc1234
+
+```
+## MimsMisipSoil-nucleobase_atom_frac
+### Input
+```yaml
+mimsmisip_soil_data:
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  gradient_pos_density: 1.725 g/mL
+  gradient_pos_rel_am: 0.1
+  gradient_position: 1
+  internal_standard: https://doi.org/10.1101/2022.12.20.521340
+  isotope: 13C | 15N
+  isotopolog: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
+  isotopolog_approach: multiple
+  isotopolog_atom_frac: 0.95
+  isotopolog_atom_pos: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1
+    | 1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h1,3-6,8-12H,2H2/t3-,4+,5+,6+/m0/s1
+  isotopolog_dose: 10 ppm
+  isotopolog_incu_time: 12 hour
+  isotopolog_label: natural abundance
+  lat_lon: 45.1 45.9
+  nucleobase_atom_frac: 25
+  project_name: absolutely any text
+  samp_name: msd1
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+  sip_method: https://doi.org/10.1038/s41396-018-0279-6
 
 ```
