@@ -1,0 +1,370 @@
+# MIxS Terminology by Version
+# ============================
+#
+# Documents naming conventions, grouping terminology, and structural changes
+# across MIxS schema versions. This glossary helps understand what changed
+# between versions and why diffs may show certain patterns.
+#
+# INTERNAL USE ONLY: For use with mixs-legacy-diff tool.
+#
+# Version history:
+#   v2.0 (2011): First standardized version with Excel format
+#   v2.1 (2012): Introduced MIMARKS, consolidated some terms
+#   v4 (2014): Restored env_* terms, added built_environment package
+#   v5 (2017): Naming standardization, added MIXS IDs
+#   v6.0 (2020): LinkML migration, CamelCase naming
+#   v6.2+ (2022+): Schema refinements, new extensions
+
+terminology:
+  # ==========================================================================
+  # CHECKLIST TERMINOLOGY
+  # ==========================================================================
+  checklist:
+    v2.0:
+      names:
+        - MIGS_EU  # MIGS for Eukaryotes
+        - MIGS_BA  # MIGS for Bacteria
+        - MIGS_PL  # MIGS for Plasmids
+        - MIGS_VI  # MIGS for Viruses
+        - MIGS_ORG  # MIGS for Organelles
+        - MIMS  # Metagenome sequences
+        - MIENS_S  # Environmental Sequences - survey
+        - MIENS_C  # Environmental Sequences - cultured
+      format: "UPPERCASE_UNDERSCORE"
+      notes: |
+        MIENS = Minimum Information about any ENvironmental Sequence
+        This was the original naming before MIMARKS was introduced.
+
+    v2.1:
+      names:
+        - MIGS_EU
+        - MIGS_BA
+        - MIGS_PL
+        - MIGS_VI
+        - MIGS_ORG
+        - MIMS
+        - MIMARKS_S  # Renamed from MIENS_S
+        - MIMARKS_C  # Renamed from MIENS_C
+      format: "UPPERCASE_UNDERSCORE"
+      changes_from_v2.0:
+        - renamed: "MIENS_S -> MIMARKS_S"
+        - renamed: "MIENS_C -> MIMARKS_C"
+      notes: |
+        MIMARKS = Minimum Information about a MARKer gene Sequence
+        MIENS was renamed to MIMARKS to better reflect marker gene focus.
+
+    v4:
+      names:
+        - MIGS.eu
+        - MIGS.ba
+        - MIGS.pl
+        - MIGS.vi
+        - MIGS.org
+        - MIMS
+        - MIMARKS.survey
+        - MIMARKS.specimen
+      format: "MixedCase.suffix"
+      changes_from_v2.1:
+        - renamed: "MIGS_EU -> MIGS.eu"
+        - renamed: "MIGS_BA -> MIGS.ba"
+        - renamed: "MIMARKS_S -> MIMARKS.survey"
+        - renamed: "MIMARKS_C -> MIMARKS.specimen"
+      notes: |
+        Switched from underscore to dot notation.
+        MIMARKS_C renamed to MIMARKS.specimen for clarity.
+
+    v5:
+      names:
+        - MIGS.eu
+        - MIGS.ba
+        - MIGS.pl
+        - MIGS.vi
+        - MIGS.org
+        - MIMS
+        - MIMARKS.survey
+        - MIMARKS.specimen
+      format: "MixedCase.suffix"
+      notes: "Same as v4, naming stabilized."
+
+    v6.0:
+      names:
+        - MigsEu
+        - MigsBa
+        - MigsPl
+        - MigsVi
+        - MigsOrg
+        - Mims
+        - MimarksS
+        - MimarksC
+      format: "CamelCase"
+      changes_from_v5:
+        - renamed: "MIGS.eu -> MigsEu"
+        - renamed: "MIGS.ba -> MigsBa"
+        - renamed: "MIMARKS.survey -> MimarksS"
+        - renamed: "MIMARKS.specimen -> MimarksC"
+      notes: |
+        LinkML migration introduced CamelCase class names.
+        All dots and underscores removed for LinkML compatibility.
+
+  # ==========================================================================
+  # PACKAGE/EXTENSION TERMINOLOGY
+  # ==========================================================================
+  package:
+    v2.0:
+      term: "Environmental Package"
+      names:
+        - air
+        - host-associated
+        - human-associated
+        - human-gut
+        - human-oral
+        - human-skin
+        - human-vaginal
+        - microbial mat/biofilm
+        - miscellaneous natural or artificial environment
+        - plant-associated
+        - sediment
+        - soil
+        - wastewater/sludge
+        - water
+      format: "lowercase-hyphenated"
+      count: 14
+      notes: "Original environmental packages covering major habitat types."
+
+    v2.1:
+      term: "Environmental Package"
+      names:
+        - air
+        - host-associated
+        - human-associated
+        - human-gut
+        - human-oral
+        - human-skin
+        - human-vaginal
+        - microbial mat/biofilm
+        - miscellaneous natural or artificial environment
+        - plant-associated
+        - sediment
+        - soil
+        - wastewater/sludge
+        - water
+      format: "lowercase-hyphenated"
+      count: 14
+      notes: "Same as v2.0."
+
+    v4:
+      term: "Environmental Package"
+      names:
+        - air
+        - built_environment
+        - host-associated
+        - human-associated
+        - human-gut
+        - human-oral
+        - human-skin
+        - human-vaginal
+        - microbial mat/biofilm
+        - miscellaneous natural or artificial environment
+        - plant-associated
+        - sediment
+        - soil
+        - wastewater/sludge
+        - water
+      format: "lowercase-mixed"
+      count: 15
+      changes_from_v2.1:
+        - added: "built_environment"
+      notes: |
+        Added built_environment package for indoor/constructed environments.
+        Mixed format: some hyphenated, some underscored.
+
+    v5:
+      term: "Environmental Package"
+      names:
+        - air
+        - built environment
+        - host-associated
+        - human-associated
+        - human-gut
+        - human-oral
+        - human-skin
+        - human-vaginal
+        - microbial mat/biofilm
+        - miscellaneous natural or artificial environment
+        - plant-associated
+        - sediment
+        - soil
+        - wastewater/sludge
+        - water
+      format: "lowercase-mixed"
+      count: 15
+      changes_from_v4:
+        - renamed: "built_environment -> built environment"
+      notes: "Minor formatting change in built environment."
+
+    v6.0:
+      term: "Environmental Extension"
+      names:
+        - Air
+        - BuiltEnvironment
+        - HostAssociated
+        - HumanAssociated
+        - HumanGut
+        - HumanOral
+        - HumanSkin
+        - HumanVaginal
+        - MicrobialMatBiofilm
+        - MiscellaneousNaturalOrArtificialEnvironment
+        - PlantAssociated
+        - Sediment
+        - Soil
+        - WastewaterSludge
+        - Water
+        - Agriculture
+        - FoodAnimalAndAnimalFeed
+        - FoodFarmEnvironment
+        - FoodFoodProductionFacility
+        - FoodHumanFoods
+        - HydrocarbonResourcesCores
+        - HydrocarbonResourcesFluidsSwabs
+        - Symbiont-associated
+      format: "CamelCase"
+      count: 23
+      changes_from_v5:
+        - renamed: "air -> Air"
+        - renamed: "built environment -> BuiltEnvironment"
+        - renamed: "host-associated -> HostAssociated"
+        - added: "Agriculture"
+        - added: "FoodAnimalAndAnimalFeed"
+        - added: "FoodFarmEnvironment"
+        - added: "FoodFoodProductionFacility"
+        - added: "FoodHumanFoods"
+        - added: "HydrocarbonResourcesCores"
+        - added: "HydrocarbonResourcesFluidsSwabs"
+        - added: "Symbiont-associated"
+      terminology_change: "Package -> Extension"
+      notes: |
+        Terminology changed from "Environmental Package" to "Extension".
+        All names converted to CamelCase for LinkML.
+        Added 8 new extensions for food, agriculture, and hydrocarbon domains.
+
+  # ==========================================================================
+  # REQUIREMENT CODES
+  # ==========================================================================
+  requirement_codes:
+    M:
+      meaning: "Mandatory"
+      description: "Must be provided for valid submission"
+    X:
+      meaning: "Optional"
+      description: "May be provided but not required"
+    C:
+      meaning: "Conditional"
+      description: "Required under certain conditions (see term definition)"
+    E:
+      meaning: "Environment-dependent"
+      description: "Required depending on environmental package"
+    "-":
+      meaning: "Not applicable"
+      description: "This term does not apply to this checklist/package"
+
+  # ==========================================================================
+  # TERM NAMING CONVENTIONS
+  # ==========================================================================
+  term_naming:
+    v2.0:
+      format: "lowercase_underscore"
+      examples:
+        - geo_loc_name
+        - source_mat_id
+        - env_biome
+      id_scheme: null
+      notes: "Structured comment names, no formal IDs."
+
+    v2.1:
+      format: "lowercase_underscore"
+      examples:
+        - country  # renamed from geo_loc_name
+        - source_mat_identifiers  # renamed from source_mat_id
+        - environment  # consolidated from env_biome/feature/material
+      id_scheme: null
+      notes: "Some terms consolidated or renamed."
+
+    v4:
+      format: "lowercase_underscore"
+      examples:
+        - geo_loc_name  # restored from 'country'
+        - source_mat_id  # restored
+        - env_biome  # restored
+      id_scheme: null
+      notes: "Reverted some v2.1 changes, restored env_* naming."
+
+    v5:
+      format: "lowercase_underscore"
+      examples:
+        - geo_loc_name
+        - source_mat_id
+        - env_biome
+      id_scheme: "MIXS:XXXXXXX"
+      notes: "Added MIXS IDs (7-digit numeric) for persistent identifiers."
+
+    v6.0:
+      format: "snake_case"
+      slot_uri_format: "MIXS:XXXXXXX"
+      examples:
+        - geo_loc_name
+        - source_mat_id
+        - env_broad_scale  # renamed from env_biome
+        - env_local_scale  # renamed from env_feature
+        - env_medium  # renamed from env_material
+      id_scheme: "MIXS:XXXXXXX"
+      notes: |
+        Term names (slot names) remain snake_case.
+        env_* terms renamed to *_scale/*_medium for clarity.
+        MIXS IDs preserved and extended.
+
+# ==========================================================================
+# STRUCTURAL NOTES
+# ==========================================================================
+structural_notes:
+  - version: "v2.0"
+    format: "Excel"
+    notes: |
+      Separate Excel files for checklists and packages.
+      Terms spread across multiple worksheets.
+
+  - version: "v2.1"
+    format: "Excel"
+    notes: |
+      Similar structure to v2.0.
+      MIMARKS introduced as separate file.
+      Some term consolidation (environment).
+
+  - version: "v4"
+    format: "Excel"
+    notes: |
+      Single consolidated Excel file.
+      Restored some v2.0 term names.
+      Added built_environment package.
+
+  - version: "v5"
+    format: "Excel"
+    notes: |
+      Continued Excel format.
+      Added MIXS IDs for all terms.
+      Improved validation syntax.
+
+  - version: "v6.0"
+    format: "LinkML YAML"
+    notes: |
+      Major format change to LinkML.
+      Class hierarchy replaces explicit package membership.
+      All names converted to language-compatible formats.
+      Semantic web integration (URIs, ontology references).
+
+  - version: "v6.2+"
+    format: "LinkML YAML"
+    notes: |
+      Continued LinkML development.
+      Added new extensions (food, agriculture, hydrocarbon).
+      Enhanced validation and documentation.

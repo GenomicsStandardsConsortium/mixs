@@ -1,0 +1,30 @@
+# MIxS v4 to v5 Term Mapping Configuration
+#
+# Documents all term changes between versions for accurate diff reporting.
+
+# 1:1 renames (old_name → new_name)
+renames:
+  env_biome: env_broad_scale
+  env_feature: env_local_scale
+  env_material: env_medium
+  annot_source: annot
+
+# 1:N splits (one term became multiple terms)
+splits:
+  alt_elev:
+    targets:
+      - alt
+      - elev
+    description: "Altitude/elevation was split into separate terms"
+  assembly:
+    targets:
+      - assembly_qual
+      - assembly_software
+    description: "Assembly was split into quality metrics and software used"
+
+# Terms intentionally removed (not renamed, truly deleted)
+deletions:
+  finishing_strategy:
+    reason: "Removed in v5; finishing strategy concepts merged into assembly_qual"
+  lib_const_meth:
+    reason: "Removed in v5; library construction method not carried forward as a distinct term"

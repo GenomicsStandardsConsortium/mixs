@@ -1,0 +1,24 @@
+# MIxS v5 to v6 Term Mapping Configuration
+#
+# Documents all term changes between versions for accurate diff reporting.
+
+# 1:1 renames (old_name → new_name)
+renames:
+  health_disease_stat: host_disease_stat
+  16s_recover: x_16s_recover
+  16s_recover_software: x_16s_recover_software
+  votu_class_appr: otu_class_appr
+  votu_db: otu_db
+  votu_seq_comp_appr: otu_seq_comp_appr
+
+# 1:N splits (one term became multiple terms)
+splits: {}
+
+# Terms intentionally removed (not renamed, truly deleted)
+deletions:
+  env_package:
+    reason: "Structural change in v6; package membership now handled via class hierarchy rather than explicit field"
+  investigation_type:
+    reason: "Removed in v6; investigation type now implicit in checklist selection"
+  submitted_to_insdc:
+    reason: "Removed in v6; INSDC submission status not tracked in schema"

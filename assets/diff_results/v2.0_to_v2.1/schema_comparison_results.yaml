@@ -1,0 +1,1006 @@
+comparison_metadata:
+  old_schema:
+    version: v2.0
+    source: MIGS_MIMS_07_12_10.xlsx + MIENS_12_11_10.xlsx
+    format: xlsx
+    term_count: 55
+  new_schema:
+    version: v2.1
+    source: Migs_mims_miens_v2.1.xlsx + MIMARKS_26_01_11.xlsx
+    format: xlsx
+    term_count: 57
+  comparison_timestamp: '2026-02-03T14:55:16.157042'
+term_differences:
+  key_comparison:
+    shared:
+    - adapters
+    - alt_elev
+    - assembly
+    - biome
+    - biotic_relationship
+    - chimera_check
+    - collection_date
+    - depth
+    - encoded_traits
+    - env_package
+    - estimated_size
+    - experimental_factor
+    - extrachrom_elements
+    - feature
+    - finishing_strategy
+    - geo_loc_name
+    - health_disease_stat
+    - host_spec_range
+    - investigation_type
+    - isol_growth_condt
+    - lat_lon
+    - lib_const_meth
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - material
+    - mid
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - num_replicons
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - project_name
+    - propagation
+    - ref_biomaterial
+    - rel_to_oxygen
+    - samp_collect_device
+    - samp_mat_process
+    - samp_size
+    - seq_meth
+    - seq_quality_check
+    - sop
+    - source_mat_id
+    - specific_host
+    - submitted_to_insdc
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - trophic_level
+    - url
+    only_in_new:
+    - country
+    - environment
+    - source_mat_identifiers
+    - submit_to_insdc
+    expected_deletions:
+      annot_source: Removed in v2.1; re-added in v4
+      assembly_name: Removed in v2.1; re-added in v4
+  definition_changes:
+    nucl_acid_ext:
+      expected_value:
+        old: PMID, DOI or URL
+        new: ''
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    samp_size:
+      expected_value:
+        old: measurement value
+        new: ''
+      value_syntax:
+        old: '{float} {unit}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    biome:
+      example:
+        old: ''
+        new: '-'
+    isol_growth_condt:
+      expected_value:
+        old: PMID,DOI or URL
+        new: ''
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    experimental_factor:
+      definition:
+        old: Experimental factors are essentially the variable aspects of an experiment design which can be used to describe
+          an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from
+          Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v132)
+          terms, please see http://bioportal.bioontology.org/visualize/44641; for a browser of OBI (v1.0) terms please see
+          http://bioportal.bioontology.org/visualize/40832
+        new: Experimental factors are essentially the variable aspects of an experiment design which can be used to describe
+          an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from
+          EFO and/or OBI. For a browser of EFO terms, please see http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=EFO;
+          for a browser of OBI terms please see http://bioportal.bioontology.org/visualize/40547
+      expected_value:
+        old: text or EFO and/or OBI
+        new: ''
+      value_syntax:
+        old: '{term|text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    health_disease_stat:
+      definition:
+        old: Health or disease status of specific host at time of collection. This field accepts PATO (v1.269) terms, for
+          a browser please see http://bioportal.bioontology.org/visualize/44601
+        new: Health or disease status of specific host at time of collection
+      expected_value:
+        old: PATO
+        new: ''
+      value_syntax:
+        old: '{term}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    rel_to_oxygen:
+      example:
+        old: ''''
+        new: ''
+      expected_value:
+        old: enumeration
+        new: ''
+      value_syntax:
+        old: '[aerobe|anaerobe|facultative|microaerophilic|microanaerobe|obligate aerobe|obligate anaerobe]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    host_spec_range:
+      expected_value:
+        old: NCBI taxid
+        new: ''
+      value_syntax:
+        old: '{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    seq_meth:
+      example:
+        old: Sanger dideoxysequencing, pyrosequencing, polony
+        new: ''
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    trophic_level:
+      definition:
+        old: Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph)
+        new: 'Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph).
+          Possible types are: autotroph, carboxydotroph, chemoautotroph, chemoheterotroph, chemolithoautotroph, chemolithotroph,
+          chemoorganoheterotroph, chemoorganotroph, chemosynthetic, chemotroph, copiotroph, diazotroph, facultative, autotroph,
+          heterotroph, lithoautotroph, lithoheterotroph, lithotroph, methanotroph, methylotroph, mixotroph, obligate, chemoautolithotroph,
+          oligotroph, organoheterotroph, organotroph, photoautotroph, photoheterotroph, photolithoautotroph, photolithotroph,
+          photosynthetic, phototroph'
+      example:
+        old: '"'
+        new: ''
+      expected_value:
+        old: enumeration
+        new: ''
+      value_syntax:
+        old: '[autotroph| carboxydotroph| chemoautotroph| chemoheterotroph| chemolithoautotroph| chemolithotroph| chemoorganoheterotroph|
+          chemoorganotroph| chemosynthetic| chemotroph| copiotroph| diazotroph| facultative| autotroph| heterotroph| lithoautotroph|
+          lithoheterotroph| lithotroph| methanotroph| methylotroph| mixotroph| obligate| chemoautolithotroph| oligotroph|
+          organoheterotroph| organotroph| photoautotroph| photoheterotroph| photolithoautotroph| photolithotroph| photosynthetic|
+          phototroph]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    samp_mat_process:
+      definition:
+        old: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
+          OBI, for a browser of OBI (v1.0) terms please see http://bioportal.bioontology.org/visualize/40832
+        new: Any processing applied to the sample during or after retrieving the sample from environment. This field accepts
+          OBI (Ontology for Biomedical Investigations), for a browser of OBI terms please see http://bioportal.bioontology.org/visualize/40547
+      example:
+        old: filtering of seawater, storing samples in ethanol
+        new: ''
+      expected_value:
+        old: text or OBI
+        new: ''
+      value_syntax:
+        old: '{text|term}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    propagation:
+      expected_value:
+        old: 'for virus: lytic, lysogenic, temperate, obligately lytic; for plasmid: incompatibility group; for eukaryote:
+          asexual, sexual) [CV'
+        new: ''
+      value_syntax:
+        old: '{term}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    target_subfragment:
+      definition:
+        old: Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on
+          16S rRNA
+        new: Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on
+          16S rRNA.
+      expected_value:
+        old: gene fragment name
+        new: ''
+    ploidy:
+      definition:
+        old: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
+          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
+          For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and
+          for a browser of PATO (v1.269) please refer to http://bioportal.bioontology.org/visualize/44601/?conceptid=PATO%3A0001374
+        new: The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications
+          for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly).
+          For terms, please select terms listed under class ploidy (PATO:001374) of PATO, and for a browser of PATO please
+          refer to http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=PATO
+      example:
+        old: allopolyploid, polyploid
+        new: ''
+      expected_value:
+        old: PATO
+        new: ''
+      value_syntax:
+        old: '{term}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    material:
+      example:
+        old: ''
+        new: '-'
+    extrachrom_elements:
+      definition:
+        old: Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance).
+          Megaplasmids? Other plasmids (borrelia has 15+ plasmids)
+        new: For eukarya (optional) and bacteria (mimimum), do plasmids exist of significant phenotypic consequence (e.g.
+          ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids)
+      expected_value:
+        old: number of extrachromosmal elements
+        new: ''
+      value_syntax:
+        old: '{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    lib_size:
+      definition:
+        old: Total number of clones in the library prepared for the project
+        new: Total number of clones in library prepared for the project
+      expected_value:
+        old: number of clones
+        new: ''
+      value_syntax:
+        old: '{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    project_name:
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    nucl_acid_amp:
+      expected_value:
+        old: reference to amplification method; clean-up method
+        new: ''
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    sop:
+      definition:
+        old: Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences
+        new: A standard operating procedure is a set of instructions having the force of a directive, covering those features
+          of operations that lend themselves to a definite or standardized procedure without loss of effectiveness
+      expected_value:
+        old: reference to SOP
+        new: ''
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: ''
+      occurrence:
+        old: m
+        new: ''
+    pcr_primers:
+      definition:
+        old: PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should
+          contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single
+          PCR reaction. The primer sequence should be reported in uppercase letters
+        new: PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should
+          contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single
+          PCR reaction. The primer sequence should be reported in uppercase letters.
+      expected_value:
+        old: 'FWD: forward primer sequence REV:reverse primer sequence'
+        new: ''
+    encoded_traits:
+      expected_value:
+        old: 'for plasmid: antibiotic resistance; for phage: converting genes'
+        new: ''
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    submitted_to_insdc:
+      example:
+        old: ''
+        new: '-'
+    assembly:
+      expected_value:
+        old: assembly method; estimated error rate; method of calculation
+        new: ''
+      value_syntax:
+        old: '{text};{text};{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    samp_collect_device:
+      example:
+        old: biopsy, niskin bottle, push core
+        new: ''
+      expected_value:
+        old: type name
+        new: ''
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    lib_vector:
+      expected_value:
+        old: vector
+        new: ''
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    num_replicons:
+      expected_value:
+        old: 'for eukaryotes and bacteria: chromosomes (haploid count); for viruses: segments'
+        new: ''
+      value_syntax:
+        old: '{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    depth:
+      definition:
+        old: Please refer to the definitions of depth in the environmental packages
+        new: The geographical origin of the sample as defined by depth. Depth is defined as the distance from surface, e.g.
+          for sediment samples depth is measured from sediment surface. Depth can be reported as an interval for subsurface
+          samples
+      expected_value:
+        old: '-'
+        new: ''
+    collection_date:
+      expected_value:
+        old: date and time
+        new: ''
+      value_syntax:
+        old: '{timestamp}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    url:
+      definition:
+        old: ''
+        new: ''''''
+      expected_value:
+        old: URL
+        new: ''
+      value_syntax:
+        old: '{URL}'
+        new: ''
+      occurrence:
+        old: m
+        new: ''
+    pathogenicity:
+      definition:
+        old: To what is the entity pathogenic.
+        new: To what is the entity pathogenic, which can be one of the following; human, animal, plant, fungi, bacteria etc...
+      example:
+        old: human, animal, plant, fungi, bacteria
+        new: ''
+      expected_value:
+        old: CV
+        new: ''
+      value_syntax:
+        old: '{term}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    source_mat_id:
+      example:
+        old: ''
+        new: '-'
+      expected_value:
+        old: 'for cultures of microorganisms: identifiers for two culture collections; for specimens (e.g., organelles and
+          Eukarya): voucher condition and location [CV]'
+        new: 'for cultures of microorganisms: identifiers for two culture collections; for specimens (e.g., organelles and
+          Eukarya): voucher condition and location'
+    lib_reads_seqd:
+      definition:
+        old: Total number of clones sequenced from the library
+        new: Total number of clones sequenced
+      expected_value:
+        old: number of reads sequenced
+        new: ''
+      value_syntax:
+        old: '{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    adapters:
+      example:
+        old: ''
+        new: '-'
+    feature:
+      example:
+        old: ''
+        new: '-'
+    subspecf_gen_lin:
+      definition:
+        old: This should provide further information about the genetic distinctness of this lineage by recording additional
+          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
+          It can also contain alternative taxonomic information
+        new: This should provide further information about the genetic distinctness of this lineage by recording additional
+          information i.e biovar, serovar, serotype, biovar, or any relevant genetic typing schemes like Group I plasmid.
+          It can also contain alternative taxonomic information. This field accepts the subspecific genetic lineage information
+          from CABRI. For CABRI, please refer to http://www.cabri.org
+      expected_value:
+        old: genetic lineage below lowest rank of NCBI taxonomy, which is subspecies, e.g. serovar, biotype, ecotype
+        new: ''
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    investigation_type:
+      definition:
+        old: Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic
+          Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome, miens-survey
+          or miens-culture
+        new: Nucleic Acid Sequence Report is the root element of all MIGS/MIMS compliant reports as standardized by Genomic
+          Standards Consortium. This field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome, miens-survey
+          or miens-culture)
+      expected_value:
+        old: eukaryote, bacteria_archaea, plasmid, virus, organelle, metagenome,miens-survey or miens-culture
+        new: ''
+      value_syntax:
+        old: '[eukaryote|bacteria_archaea|plasmid|virus|organelle|metagenome|miens-survey|miens-culture]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    seq_quality_check:
+      definition:
+        old: Indicate if the sequence has been called by automatic systems (none) or undergone a manual editing procedure
+          (e.g. by inspecting the raw data or chromatograms). Applied only for sequences that are not submitted to SRA or
+          DRA
+        new: Indicate if the sequence has been called by automatic systems (none) or undergone a manual editing procedure
+          (e.g. by inspecting the raw data or chromatograms). Applied only for sequences that are not submitted to SRA,ENA
+          or DRA
+      expected_value:
+        old: none or manually edited
+        new: ''
+    estimated_size:
+      definition:
+        old: The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic)
+          genome which could remain in draft form for a long or unspecified period.
+        new: 'The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic)
+          genome which could remain in draft form for a long or unspecified period. Input: integer, size in bp. Example: 300000'
+      example:
+        old: 300000 bp
+        new: ''
+      expected_value:
+        old: number of base pairs
+        new: ''
+      value_syntax:
+        old: '{integer} bp'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    finishing_strategy:
+      expected_value:
+        old: status; coverage; number of contigs
+        new: ''
+      value_syntax:
+        old: '[complete|draft];{integer};{integer}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    lat_lon:
+      expected_value:
+        old: decimal degrees
+        new: ''
+      value_syntax:
+        old: '{float} {float}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    specific_host:
+      expected_value:
+        old: host taxid, unknown, environmental
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    lib_screen:
+      example:
+        old: enriched, screened, normalized
+        new: ''
+      expected_value:
+        old: screening strategy name
+        new: ''
+      value_syntax:
+        old: '{text}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    alt_elev:
+      definition:
+        old: Please refer to the definitions of either altitude or elevation in the environmental packages
+        new: The geographical origin of the sample as defined by altitude and/or elevation. The altitude of the sample is
+          the distance between surface and the sampled position. The elevation of the site is measured from the sea level
+      expected_value:
+        old: '-'
+        new: ''
+    mid:
+      expected_value:
+        old: multiplex identifier sequence
+        new: ''
+      value_syntax:
+        old: '{dna}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    ref_biomaterial:
+      definition:
+        old: primary publication if isolated before genome publication; otherwise, primary genome report
+        new: ''
+      expected_value:
+        old: PMID, DOI or URL
+        new: ''
+      value_syntax:
+        old: '{PMID|DOI|URL}'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    chimera_check:
+      definition:
+        old: A chimeric sequence, or chimera for short, is a sequence comprised of two or more phylogenetically distinct parent
+          sequences. Chimeras are usually PCR artifacts thought to occur when a prematurely terminated amplicon reanneals
+          to a foreign DNA strand and is copied to completion in the following PCR cycles. The point at which the chimeric
+          sequence changes from one parent to the next is called the breakpoint or conversion point
+        new: A chimeric sequence, or chimera for short, is a sequence comprised of two or more phylogenetically distinct parent
+          sequences. Chimeras are usually PCR artifacts thought to occur when a prematurely terminated amplicon reanneals
+          to a foreign DNA strand and is copied to completion in the following PCR cycles. The point at which the chimeric
+          sequence changes from one parent to the next is called the breakpoint or conversion point.
+      expected_value:
+        old: name and version of software
+        new: ''
+    target_gene:
+      expected_value:
+        old: gene name
+        new: ''
+    biotic_relationship:
+      definition:
+        old: Is it free-living or in a host and if the latter what type of relationship is observed
+        new: Is it free-living or in a host and if the latter what type of relationship is observed (e.g. pathogen, commensal,
+          symbiont, opportunist)
+      example:
+        old: '"'
+        new: ''
+      expected_value:
+        old: enumeration
+        new: ''
+      value_syntax:
+        old: '[free living|parasite|commensal|symbiont]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+    pcr_cond:
+      expected_value:
+        old: 'initial denaturation:degrees_minutes; annealing:degrees_minutes; elongation: degrees_minutes; final elongation:degrees_minutes;
+          total cycles'
+        new: ''
+    env_package:
+      definition:
+        old: MIGS/MIMS/MIENS extension for reporting of measurements and observations obtained from one or more of the environments
+          where the sample was obtained. All environmental packages listed here are further defined in separate subtables.
+          By giving the name of the environmental package, a selection of fields can be made from the subtables and can be
+          reported
+        new: MIMS/MIENS extension for reporting of parameters obtained from one or more of the environments listed. All the
+          environments listed here have separate subtables of fields. After indicating which environmental package(s) was
+          used, a selection of fields can be made from the subtables and can be reported within the MIENS report
+      expected_value:
+        old: CV
+        new: ''
+      value_syntax:
+        old: '[air|host-associated|human-associated|human-skin|human-oral|human-gut|human-vaginal|microbial mat/biofilm|misc
+          environment|plant-associated|sediment|soil|wastewater/sludge|water]'
+        new: ''
+      occurrence:
+        old: '1'
+        new: ''
+      section:
+        old: migs/mims/miens extension
+        new: mims/miens extension
+package_differences:
+  key_comparison:
+    shared:
+    - air
+    - host_associated
+    - human_associated
+    - human_gut
+    - human_oral
+    - human_skin
+    - human_vaginal
+    - microbial_mat_biofilm
+    - miscellaneous_natural_or_artificial_environment
+    - plant_associated
+    - sediment
+    - soil
+    - wastewater_sludge
+    - water
+checklist_differences:
+  key_comparison:
+    shared:
+    - me
+    - migs_ba
+    - migs_eu
+    - migs_org
+    - migs_pl
+    - migs_vi
+    only_in_new:
+    - mimarks_c
+    - mimarks_s
+membership_differences:
+  checklist_changes:
+    mimarks_c:
+      terms_added:
+      - nucl_acid_ext
+      - samp_size
+      - isol_growth_condt
+      - experimental_factor
+      - health_disease_stat
+      - rel_to_oxygen
+      - host_spec_range
+      - seq_meth
+      - trophic_level
+      - samp_mat_process
+      - propagation
+      - target_subfragment
+      - ploidy
+      - extrachrom_elements
+      - lib_size
+      - project_name
+      - nucl_acid_amp
+      - sop
+      - pcr_primers
+      - encoded_traits
+      - assembly
+      - samp_collect_device
+      - lib_vector
+      - num_replicons
+      - depth
+      - collection_date
+      - url
+      - pathogenicity
+      - lib_reads_seqd
+      - subspecf_gen_lin
+      - investigation_type
+      - seq_quality_check
+      - estimated_size
+      - finishing_strategy
+      - lat_lon
+      - specific_host
+      - lib_screen
+      - alt_elev
+      - mid
+      - ref_biomaterial
+      - chimera_check
+      - target_gene
+      - biotic_relationship
+      - pcr_cond
+      - env_package
+      terms_removed: []
+      requirement_changes: {}
+    mimarks_s:
+      terms_added:
+      - nucl_acid_ext
+      - samp_size
+      - isol_growth_condt
+      - experimental_factor
+      - health_disease_stat
+      - rel_to_oxygen
+      - host_spec_range
+      - seq_meth
+      - trophic_level
+      - samp_mat_process
+      - propagation
+      - target_subfragment
+      - ploidy
+      - extrachrom_elements
+      - lib_size
+      - project_name
+      - nucl_acid_amp
+      - sop
+      - pcr_primers
+      - encoded_traits
+      - assembly
+      - samp_collect_device
+      - lib_vector
+      - num_replicons
+      - depth
+      - collection_date
+      - url
+      - pathogenicity
+      - lib_reads_seqd
+      - subspecf_gen_lin
+      - investigation_type
+      - seq_quality_check
+      - estimated_size
+      - finishing_strategy
+      - lat_lon
+      - specific_host
+      - lib_screen
+      - alt_elev
+      - mid
+      - ref_biomaterial
+      - chimera_check
+      - target_gene
+      - biotic_relationship
+      - pcr_cond
+      - env_package
+      terms_removed: []
+      requirement_changes: {}
+    me:
+      terms_added:
+      - target_subfragment
+      - pcr_primers
+      - depth
+      - seq_quality_check
+      - alt_elev
+      - chimera_check
+      - target_gene
+      - pcr_cond
+      terms_removed:
+      - biome
+      - lib_const_meth
+      - material
+      - submitted_to_insdc
+      - geo_loc_name
+      - source_mat_id
+      - adapters
+      - feature
+      requirement_changes:
+        samp_size:
+          old: C
+          new: M
+        env_package:
+          old: M
+          new: C
+    migs_ba:
+      terms_added:
+      - target_subfragment
+      - pcr_primers
+      - depth
+      - seq_quality_check
+      - alt_elev
+      - chimera_check
+      - target_gene
+      - pcr_cond
+      terms_removed:
+      - biome
+      - lib_const_meth
+      - material
+      - submitted_to_insdc
+      - geo_loc_name
+      - source_mat_id
+      - adapters
+      - feature
+      requirement_changes:
+        rel_to_oxygen:
+          old: C
+          new: M
+        trophic_level:
+          old: C
+          new: M
+        biotic_relationship:
+          old: C
+          new: M
+        env_package:
+          old: M
+          new: X
+    migs_org:
+      terms_added:
+      - target_subfragment
+      - pcr_primers
+      - depth
+      - seq_quality_check
+      - alt_elev
+      - chimera_check
+      - target_gene
+      - pcr_cond
+      terms_removed:
+      - biome
+      - lib_const_meth
+      - material
+      - submitted_to_insdc
+      - geo_loc_name
+      - source_mat_id
+      - adapters
+      - feature
+      requirement_changes:
+        env_package:
+          old: M
+          new: X
+    migs_pl:
+      terms_added:
+      - target_subfragment
+      - pcr_primers
+      - depth
+      - seq_quality_check
+      - alt_elev
+      - chimera_check
+      - target_gene
+      - pcr_cond
+      terms_removed:
+      - biome
+      - lib_const_meth
+      - material
+      - submitted_to_insdc
+      - geo_loc_name
+      - source_mat_id
+      - adapters
+      - feature
+      requirement_changes:
+        env_package:
+          old: M
+          new: X
+    migs_vi:
+      terms_added:
+      - target_subfragment
+      - pcr_primers
+      - depth
+      - seq_quality_check
+      - alt_elev
+      - chimera_check
+      - target_gene
+      - pcr_cond
+      terms_removed:
+      - biome
+      - lib_const_meth
+      - material
+      - submitted_to_insdc
+      - geo_loc_name
+      - source_mat_id
+      - adapters
+      - feature
+      requirement_changes:
+        env_package:
+          old: M
+          new: X
+    migs_eu:
+      terms_added:
+      - target_subfragment
+      - pcr_primers
+      - depth
+      - seq_quality_check
+      - alt_elev
+      - chimera_check
+      - target_gene
+      - pcr_cond
+      terms_removed:
+      - biome
+      - lib_const_meth
+      - material
+      - submitted_to_insdc
+      - geo_loc_name
+      - source_mat_id
+      - adapters
+      - feature
+      requirement_changes:
+        trophic_level:
+          old: C
+          new: M
+        env_package:
+          old: M
+          new: X
+  package_changes:
+    host_associated:
+      terms_added: []
+      terms_removed:
+      - depth
+      requirement_changes: {}
+    soil:
+      terms_added: []
+      terms_removed:
+      - depth
+      requirement_changes: {}
+    wastewater_sludge:
+      terms_added: []
+      terms_removed:
+      - depth
+      requirement_changes: {}
+    microbial_mat_biofilm:
+      terms_added: []
+      terms_removed:
+      - depth
+      requirement_changes: {}
+    plant_associated:
+      terms_added: []
+      terms_removed:
+      - depth
+      requirement_changes: {}
+    miscellaneous_natural_or_artificial_environment:
+      terms_added: []
+      terms_removed:
+      - depth
+      requirement_changes: {}
+    water:
+      terms_added: []
+      terms_removed:
+      - depth
+      requirement_changes: {}
+    sediment:
+      terms_added: []
+      terms_removed:
+      - depth
+      requirement_changes: {}
+  summary:
+    total_checklist_changes: 197
+    total_package_changes: 8
+    made_mandatory: 0
+    made_optional: 5
+package_composition_differences:
+  composition_changes:
+    soil:
+      terms_added:
+      - tot_org_c
+      terms_removed: []
+  summary:
+    packages_with_changes: 1
+    total_terms_added: 1
+    total_terms_removed: 0

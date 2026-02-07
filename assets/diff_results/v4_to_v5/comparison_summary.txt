@@ -1,0 +1,101 @@
+================================================================================
+MIXS LEGACY SCHEMA COMPARISON SUMMARY
+================================================================================
+
+OLD SCHEMA: v4
+  Source: ../mixs-legacy/mixs4/MIxS_210514.xls
+  Format: xls
+  Terms: 55
+
+NEW SCHEMA: v5
+  Source: ../mixs-legacy/mixs5/mixs_v5.xlsx
+  Format: xlsx
+  Terms: 94
+
+----------------------------------------
+TERM COMPARISON
+----------------------------------------
+  Shared terms: 47
+  Only in old: 0
+  Only in new: 39
+  Expected mappings: 4
+  Terms with definition changes: 51
+
+  Term splits (1 old → N new):
+    alt_elev → alt, elev
+    assembly → assembly_qual, assembly_software
+
+  Terms intentionally removed:
+    - finishing_strategy: Removed in v5; finishing strategy concepts merged into assembly_qual
+    - lib_const_meth: Removed in v5; library construction method not carried forward as a distinct term
+
+  Terms only in NEW (added):
+    + 16s_recover
+    + 16s_recover_software
+    + bin_param
+    + bin_software
+    + compl_appr
+    + compl_score
+    + compl_software
+    + contam_score
+    + contam_screen_input
+    + contam_screen_param
+    + decontam_software
+    + detec_type
+    + feat_pred
+    + host_pred_appr
+    + host_pred_est_acc
+    + lib_layout
+    + mag_cov_software
+    + number_contig
+    + pred_genome_struc
+    + pred_genome_type
+    ... and 19 more
+
+----------------------------------------
+PACKAGE COMPARISON
+----------------------------------------
+  Shared packages: 15
+  Only in old: 0
+  Only in new: 2
+
+----------------------------------------
+CHECKLIST COMPARISON
+----------------------------------------
+  Shared checklists: 8
+  Only in old: 0
+  Only in new: 3
+
+----------------------------------------
+MEMBERSHIP CHANGES
+----------------------------------------
+  Terms added to checklists: 153
+  Terms removed from checklists: 0
+  Terms added to packages: 0
+  Terms removed from packages: 0
+  Made mandatory (was optional): 0
+  Made optional (was mandatory): 3
+
+  Made optional:
+    num_replicons in migs_eu: M → X
+    ploidy in migs_eu: M → X
+    estimated_size in migs_eu: M → X
+
+----------------------------------------
+PACKAGE COMPOSITION CHANGES
+----------------------------------------
+  built_environment: +136 terms, -2 terms
+  host_associated: +5 terms, -0 terms
+  microbial_mat_biofilm: +1 terms, -2 terms
+  plant_associated: +21 terms, -3 terms
+  sediment: +2 terms, -2 terms
+  soil: +6 terms, -5 terms
+  water: +4 terms, -1 terms
+
+  Packages added:
+    + hydrocarbon_resources_cores
+    + hydrocarbon_resources_fluids_swabs
+
+================================================================================
+Generated: 2026-02-03T14:55:28.609375
+================================================================================

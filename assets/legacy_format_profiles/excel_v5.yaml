@@ -1,0 +1,67 @@
+# MIxS v5 Excel Format Profile (2018)
+# Files: mixs_v5.xlsx, MIxS*_20180621.xlsx
+description: "MIxS v5 Excel format (.xlsx, 2018)"
+
+# Pattern matching for auto-detection (checked against filename)
+version_patterns:
+  - "mixs5"
+  - "v5"
+  - "20180621"
+
+# Sheet names to look for (in priority order)
+sheet_names:
+  main_terms:
+    - "MIxS"
+  packages:
+    - "environmental_packages"
+
+# Column header mappings
+# Format: normalized_field_name -> list of possible column headers (in priority order)
+column_mappings:
+  name:
+    - "Structured comment name"
+  item:
+    - "Item"
+    - "Package item"
+  definition:
+    - "Definition"
+  example:
+    - "Example"
+  expected_value:
+    - "Expected value"
+  value_syntax:
+    - "Value syntax"
+  occurrence:
+    - "Occurence"  # Note: typo in original spreadsheet
+    - "Occurrence"
+  preferred_unit:
+    - "Preferred unit"
+  section:
+    - "Section"
+  position:
+    - "Position"
+  mixs_id:
+    - "MIXS ID"
+  requirement:
+    - "Requirement"
+  package_name:
+    - "Environmental package"
+
+# Checklist column mappings
+# Format: column_header -> normalized_checklist_name
+checklist_columns:
+  migs_eu: "migs_eu"
+  migs_ba: "migs_ba"
+  migs_pl: "migs_pl"
+  migs_vi: "migs_vi"
+  migs_org: "migs_org"
+  me: "me"
+  mimarks_s: "mimarks_s"
+  mimarks_c: "mimarks_c"
+  misag: "misag"
+  mimag: "mimag"
+  miuvig: "miuvig"
+
+# Whether term names need normalization (spaces->underscores, lowercase)
+# v5 already uses structured comment names with underscores
+normalize_term_names: false

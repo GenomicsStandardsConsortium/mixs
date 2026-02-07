@@ -1,0 +1,251 @@
+# MIxS Version Registry
+#
+# Comprehensive catalog of all known MIxS versions/releases with metadata.
+# Used by mixs-legacy-diff for version discovery and comparison.
+#
+# Fields:
+#   version: Numeric version (for ordering)
+#   date: Release/artifact date (ISO 8601)
+#   date_confidence: high|medium|low
+#   date_source: How the date was determined
+#   format: linkml|xlsx|xls|docx|xsd
+#   location: Path or GitHub spec
+#   format_profile: Reference to legacy_format_profiles/ file (for Excel)
+#   notes: Additional context
+
+versions:
+
+  # ============================================================================
+  # Pre-release drafts (2005-2006)
+  # ============================================================================
+
+  migs_draft_2005:
+    version: 0.7
+    date: "2005-01"
+    date_confidence: high
+    date_source: "Word doc header 'DRAFT for discussion - Jan, 2005'; file metadata last_saved=2006-02-01"
+    format: doc
+    location: "sourceforge:gensc/OldFiles/checklist.tar.gz#GSC_MIGS_checklist_07.doc"
+    notes: "Earliest known MIGS artifact; author DFIELD"
+
+  # ============================================================================
+  # Version 1.x (2006-2007) - Word docs and XSD
+  # ============================================================================
+
+  migs_1.1:
+    version: 1.1
+    date: "2006-09-27"
+    date_confidence: high
+    date_source: "Word doc track changes XML; edits span 2006-09-08 to 2006-09-27"
+    format: docx
+    location: "mixs-legacy:pre-2009/MIGS_1.1._v1.docx"
+    notes: "Author DFIELD (Dawn Field)"
+
+  migs_xsd:
+    version: null  # No version number assigned
+    date: "2006-11-13"
+    date_confidence: high
+    date_source: "XSD internal XML comment: 'Last update: Nov 13, 2006'"
+    format: xsd
+    location: "mixs-legacy:pre-2009/Migs.xsd"
+    notes: "Editor Kelvin LI (JCVI); references 'Nat Biotech in review'"
+
+  migs_1.2:
+    version: 1.2
+    date: "2007-05-28"
+    date_confidence: high
+    date_source: "Word doc track changes XML; edits span 2007-05-27 to 2007-05-28"
+    format: docx
+    location: "mixs-legacy:pre-2009/MIGS_1.2_Candidate_v3.docx"
+    notes: "Author DFIELD"
+
+  # ============================================================================
+  # Version 2.x (2009-2011) - Excel spreadsheets, separate checklists
+  # ============================================================================
+
+  migs_mims_051109:
+    version: 2.0
+    date: "2009-11-05"
+    date_confidence: high
+    date_source: "xlsx dcterms:created=2009-11-05T11:58:36Z matches filename DDMMYY"
+    format: xlsx
+    location: "mixs-legacy:2009/Migs_mims_miens_051109.xlsx"
+    format_profile: excel_2009.yaml
+    notes: "Creator Pelin Yilmaz"
+
+  migs_mims_231109:
+    version: 2.0
+    date: "2009-11-23"
+    date_confidence: medium
+    date_source: "Filename DDMMYY encoding; xlsx metadata corrupted (shows 2019)"
+    format: xlsx
+    location: "mixs-legacy:2009/Migs_mims_miens_231109.xlsx"
+    format_profile: excel_2009.yaml
+
+  migs_mims_181010:
+    version: 2.0
+    date: "2010-10-18"
+    date_confidence: medium
+    date_source: "Filename DD_MM_YY encoding"
+    format: xlsx
+    location: "mixs-legacy:2010/MIGS_MIMS_18_10_10.xlsx"
+    format_profile: excel_2010_2011.yaml
+
+  miens_181010:
+    version: 2.0
+    date: "2010-10-18"
+    date_confidence: medium
+    date_source: "Filename DD_MM_YY encoding"
+    format: xlsx
+    location: "mixs-legacy:2010/MIENS_18_10_10.xlsx"
+    format_profile: excel_2010_2011.yaml
+
+  miens_121110:
+    version: 2.0
+    date: "2010-11-12"
+    date_confidence: high
+    date_source: "xlsx dcterms:created=2010-11-12T13:46:45Z matches filename"
+    format: xlsx
+    location: "mixs-legacy:2010/MIENS_12_11_10.xlsx"
+    format_profile: excel_2010_2011.yaml
+
+  migs_mims_071210:
+    version: 2.0
+    date: "2010-12-07"
+    date_confidence: medium
+    date_source: "Filename DD_MM_YY; xlsx metadata says 2010-12-01"
+    format: xlsx
+    location: "mixs-legacy:2010/MIGS_MIMS_07_12_10.xlsx"
+    format_profile: excel_2010_2011.yaml
+
+  mimarks_260111:
+    version: 2.1
+    date: "2011-01-26"
+    date_confidence: medium
+    date_source: "Filename DD_MM_YY; xlsx metadata shows template date"
+    format: xlsx
+    location: "mixs-legacy:2011/MIMARKS_26_01_11.xlsx"
+    format_profile: excel_2010_2011.yaml
+
+  migs_mims_v2.1:
+    version: 2.1
+    date: "2011"
+    date_confidence: low
+    date_source: "Filename version string only"
+    format: xlsx
+    location: "mixs-legacy:2011/Migs_mims_miens_v2.1.xlsx"
+    format_profile: excel_2010_2011.yaml
+
+  # ============================================================================
+  # Version 3.0 (2011) - CONCEPTUAL ONLY
+  # ============================================================================
+
+  mixs_3.0:
+    version: 3.0
+    date: "2011-05-06"
+    date_confidence: high
+    date_source: "Yilmaz et al. Nat Biotechnol 29:415-420; DOI 10.1038/nbt.1823"
+    format: null  # No artifact - publication only
+    location: null
+    notes: "CONCEPTUAL ONLY - paper introduces MIxS framework but no spreadsheet was created"
+
+  # ============================================================================
+  # Version 4.0 (2014) - First unified MIxS spreadsheet
+  # ============================================================================
+
+  mixs_v4:
+    version: 4.0
+    date: "2014-05-21"
+    date_confidence: medium
+    date_source: "Filename DDMMYY encoding (210514)"
+    format: xls
+    location: "mixs-legacy:mixs4/MIxS_210514.xls"
+    format_profile: excel_v4.yaml
+    notes: "First unified MIxS spreadsheet; 16 package-specific files also available"
+
+  # ============================================================================
+  # Version 5.0 (2018)
+  # ============================================================================
+
+  mixs_v5:
+    version: 5.0
+    date: "2018-06-21"
+    date_confidence: medium
+    date_source: "Filename YYYYMMDD encoding on package files (*_20180621.xlsx)"
+    format: xlsx
+    location: "mixs-legacy:mixs5/mixs_v5.xlsx"
+    format_profile: excel_v5.yaml
+    notes: "17 package-specific files also available"
+
+  # ============================================================================
+  # Version 6.x (2022+) - LinkML YAML
+  # ============================================================================
+
+  mixs_6.0.0:
+    version: 6.0.0
+    date: "2022-03-24"
+    date_confidence: high
+    date_source: "GitHub releases API; tag created 2022-03-23T17:09:46Z"
+    format: linkml
+    location: "GenomicsStandardsConsortium/mixs@mixs6.0.0:model/schema/mixs.yaml"
+    github_tag: mixs6.0.0
+
+  mixs_6.1.0:
+    version: 6.1.0
+    date: "2022-07-05"
+    date_confidence: high
+    date_source: "GitHub releases API"
+    format: linkml
+    location: "GenomicsStandardsConsortium/mixs@mixs6.1.0:model/schema/mixs.yaml"
+    github_tag: mixs6.1.0
+
+  mixs_6.1.1:
+    version: 6.1.1
+    date: "2023-10-09"
+    date_confidence: high
+    date_source: "GitHub releases API; tag created 2023-09-21, published 2023-10-09"
+    format: linkml
+    location: "GenomicsStandardsConsortium/mixs@mixs6.1.1:model/schema/mixs.yaml"
+    github_tag: mixs6.1.1
+
+  mixs_6.2.0:
+    version: 6.2.0
+    date: "2023-10-18"
+    date_confidence: high
+    date_source: "GitHub releases API"
+    format: linkml
+    location: "GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml"
+    github_tag: v6.2.0
+
+  mixs_6.2.1:
+    version: 6.2.1
+    date: "2025-12-09"
+    date_confidence: high
+    date_source: "Git commit 69445c274; no tag created"
+    format: linkml
+    location: null  # Never released
+    github_tag: null
+    notes: "UNTAGGED - commit exists but superseded by v6.2.2 six days later"
+
+  mixs_6.2.2:
+    version: 6.2.2
+    date: "2025-12-15"
+    date_confidence: high
+    date_source: "GitHub releases API"
+    format: linkml
+    location: "GenomicsStandardsConsortium/mixs@v6.2.2:src/mixs/schema/mixs.yaml"
+    github_tag: v6.2.2
+
+  mixs_6.2.3:
+    version: 6.2.3
+    date: "2026-01-21"
+    date_confidence: high
+    date_source: "GitHub releases API"
+    format: linkml
+    location: "GenomicsStandardsConsortium/mixs@v6.2.3:src/mixs/schema/mixs.yaml"
+    github_tag: v6.2.3
+
+# Location prefixes:
+#   mixs-legacy: -> https://github.com/GenomicsStandardsConsortium/mixs-legacy/blob/master/
+#   sourceforge: -> https://sourceforge.net/projects/gensc/files/
+#   GenomicsStandardsConsortium/mixs@<tag>:<path> -> GitHub spec for main repo
