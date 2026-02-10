@@ -15,6 +15,7 @@ plugins:
 markdown_extensions:
   - tables
   - pymdownx.magiclink
+  - footnotes
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/tablesort.js
@@ -28,7 +29,6 @@ site_url: https://GenomicsStandardsConsortium.github.io/mixs
 repo_url: https://github.com/GenomicsStandardsConsortium/mixs
 
 docs_dir: docs
-
 # Uncomment this block to enable use of Google Analytics.
 # Replace the property value with your own ID.
 # extra:
