@@ -6611,15 +6611,17 @@ slots:
       - count
     slot_uri: MIXS:0000800
     range: integer
-  estimated_size:
+  estimated_genome_size:
     annotations:
       Expected_value: number of base pairs
     description: The estimated size of the genome prior to sequencing. Of particular
       importance in the sequencing of (eukaryotic) genome which could remain in draft
       form for a long or unspecified period
-    title: estimated size
+    title: estimated genome size
     examples:
       - value: 300000 bp
+    comments:
+      - Slot updated 2026-02-10 `estimated_size` and title `estimated size`
     in_subset:
       - nucleic acid sequence source
     keywords:
