@@ -1,15 +1,40 @@
 ---
-name: Publish Python Package
+# =============================================================================
+# DISABLED WORKFLOW - PyPI Publishing
+# =============================================================================
+# This workflow is DISABLED because MIxS has never been published to PyPI
+# and there are no current plans to do so. The 'mixs' package does not exist
+# on PyPI (verified December 2025).
+#
+# If PyPI publishing is needed in the future:
+# 1. Create a PyPI account and API token
+# 2. Add PYPI_PASSWORD secret to this repository
+# 3. Enable poetry-dynamic-versioning in pyproject.toml
+# 4. Uncomment the triggers below
+#
+# See: https://github.com/turbomam/mixs/issues/106
+# =============================================================================
+
+name: "[DISABLED] Publish Python Package"
 
 on:
-  release:
-    types: [created]
+  # DISABLED - uncomment to re-enable:
+  # release:
+  #   types: [created]
   workflow_dispatch:
+    inputs:
+      confirm_publish:
+        description: 'Type "publish" to confirm (THIS WORKFLOW IS DISABLED)'
+        required: true
 
 jobs:
   build-n-publish:
-    name: Build and publish Python 🐍 distributions 📦 to PyPI
+    name: Build and publish Python distributions to PyPI
     runs-on: ubuntu-latest
+    # DISABLED: This job is intentionally disabled by the '&& false' clause below.
+    # The MIxS package has never been published to PyPI.
+    # To re-enable in the future, remove '&& false' from the condition.
+    if: ${{ github.event.inputs.confirm_publish == 'publish' && false }}
 
     steps:
       - uses: actions/checkout@v4
@@ -24,17 +49,14 @@ jobs:
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
-      
+
       - name: Add poetry-dynamic-versioning plugin
         run: poetry self add "poetry-dynamic-versioning[plugin]"
-
-      # - name: Install dependencies
-      #   run: poetry install --no-interaction
 
       - name: Build source and wheel archives
         run: poetry build
 
-      - name: Publish distribution 📦 to PyPI
+      - name: Publish distribution to PyPI
         uses: pypa/gh-action-pypi-publish@v1.13.0
         with:
           user: __token__
