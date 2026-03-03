@@ -74,9 +74,11 @@ help: status
 	@echo "  serve         -- serve existing docs locally via mkdocs (called by testdoc)"
 	@echo "  yamlfmt-beta  -- experimental YAML formatter"
 	@echo "  create-data-harmonizer -- experimental npm tool"
+	@echo "  normalize-tsv-demo       -- normalize heterogeneous list formatting in messy TSV"
+	@echo "  normalize-tsv-roundtrip  -- round-trip: normalized TSV → YAML → TSV"
 	@echo ""
 
-.PHONY: all all-contrib clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib
+.PHONY: all all-contrib clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib normalize-tsv-demo normalize-tsv-roundtrip
 
 ensure-dirs:
 	mkdir -p contrib
@@ -267,5 +269,48 @@ clean-contrib:
 	       contrib/mixs_derived_class_term_schemasheet_* \
 	       contrib/extensions-dendrogram.pdf \
 	       contrib/soil-vs-water-slot-usage.yaml
+
+TSV_NORM_DIR = src/data/examples/tsv-normalization
+TSV_NORM_SCRIPT = $(TSV_NORM_DIR)/normalize_tsv_lists.py
+TSV_NORM_INPUT = $(TSV_NORM_DIR)/MimsSoil-messy-lists.tsv
+TSV_NORM_OUTPUT = $(TSV_NORM_DIR)/MimsSoil-normalized-lists.tsv
+TSV_NORM_YAML = $(TSV_NORM_DIR)/MimsSoil-normalized.yaml
+
+# Normalize heterogeneous list formatting in a messy TSV using schema awareness.
+# Shows: bare pipes, spaced pipes, and bracketed pipes all converge to canonical format.
+normalize-tsv-demo: $(TSV_NORM_OUTPUT)
+
+$(TSV_NORM_OUTPUT): $(TSV_NORM_INPUT) $(TSV_NORM_SCRIPT) $(SOURCE_SCHEMA_PATH)
+	@echo "=== Normalizing messy TSV lists ==="
+	$(RUN) python $(TSV_NORM_SCRIPT) \
+		--schema $(SOURCE_SCHEMA_PATH) \
+		--target-class MimsSoil \
+		--input $(TSV_NORM_INPUT) \
+		--output $(TSV_NORM_OUTPUT)
+	@echo ""
+	@echo "=== Before (multivalued columns) ==="
+	@awk -F'\t' 'NR==1{for(i=1;i<=NF;i++)h[i]=$$i} NR>0{printf "%s\t%s\t%s\n",$$1,$$5,$$6}' $(TSV_NORM_INPUT)
+	@echo ""
+	@echo "=== After (multivalued columns) ==="
+	@awk -F'\t' 'NR==1{for(i=1;i<=NF;i++)h[i]=$$i} NR>0{printf "%s\t%s\t%s\n",$$1,$$5,$$6}' $(TSV_NORM_OUTPUT)
+
+# Round-trip: normalized TSV → YAML → TSV to prove linkml-convert can parse it.
+normalize-tsv-roundtrip: $(TSV_NORM_OUTPUT) contrib/mixs-patterns-materialized.yaml
+	@echo "=== Converting normalized TSV → YAML ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f tsv -t yaml --no-validate \
+		$(TSV_NORM_OUTPUT) > $(TSV_NORM_YAML)
+	@echo "Output: $(TSV_NORM_YAML)"
+	@echo ""
+	@cat $(TSV_NORM_YAML)
+	@echo ""
+	@echo "=== Round-trip: YAML → TSV ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f yaml -t tsv --no-validate \
+		$(TSV_NORM_YAML)
 
 include contrib.Makefile
