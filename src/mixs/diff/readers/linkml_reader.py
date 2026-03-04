@@ -9,7 +9,7 @@ import re
 import shutil
 import tempfile
 from pathlib import Path
-from typing import Dict, List, Optional, Any
+from typing import Optional
 
 import requests
 import yaml as pyyaml

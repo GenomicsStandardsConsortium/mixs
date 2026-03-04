@@ -13,7 +13,7 @@ documents require manual interpretation.
 import json
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional, Any
+from typing import Dict, Optional
 
 from mixs.diff.models import NormalizedSchema, NormalizedTerm
 from mixs.diff.readers.base import BaseReader, detect_format

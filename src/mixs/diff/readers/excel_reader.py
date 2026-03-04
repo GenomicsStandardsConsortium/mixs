@@ -9,6 +9,7 @@ maintained without code changes.
 """
 
 import logging
+import re
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 
@@ -170,9 +171,9 @@ class ExcelReader(BaseReader):
     def _detect_version(self, path: str) -> str:
         """Attempt to detect MIxS version from file path."""
         path_lower = path.lower()
-        if "mixs5" in path_lower or "v5" in path_lower or "20180621" in path:
+        if "mixs5" in path_lower or "v5" in path_lower or "20180621" in path_lower:
             return "v5"
-        elif "mixs4" in path_lower or "v4" in path_lower or "210514" in path:
+        elif "mixs4" in path_lower or "v4" in path_lower or "210514" in path_lower:
             return "v4"
         elif "2011" in path:
             return "v2.1"
@@ -195,23 +196,24 @@ class ExcelReader(BaseReader):
 
         wb = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
 
-        schema = NormalizedSchema(
-            version=version,
-            source_path=str(file_path),
-            source_format="xlsx",
-        )
+        try:
+            schema = NormalizedSchema(
+                version=version,
+                source_path=str(file_path),
+                source_format="xlsx",
+            )
 
-        # Find main terms sheet using profile
-        main_sheet = self._find_sheet(wb.sheetnames, profile.sheet_names.get("main_terms", []))
-        if main_sheet:
-            self._process_main_sheet_xlsx(wb[main_sheet], schema, profile)
+            # Find main terms sheet using profile
+            main_sheet = self._find_sheet(wb.sheetnames, profile.sheet_names.get("main_terms", []))
+            if main_sheet:
+                self._process_main_sheet_xlsx(wb[main_sheet], schema, profile)
 
-        # Find packages sheet using profile
-        pkg_sheet = self._find_sheet(wb.sheetnames, profile.sheet_names.get("packages", []))
-        if pkg_sheet:
-            self._process_packages_sheet_xlsx(wb[pkg_sheet], schema, profile)
-
-        wb.close()
+            # Find packages sheet using profile
+            pkg_sheet = self._find_sheet(wb.sheetnames, profile.sheet_names.get("packages", []))
+            if pkg_sheet:
+                self._process_packages_sheet_xlsx(wb[pkg_sheet], schema, profile)
+        finally:
+            wb.close()
 
         logger.info(f"Loaded {len(schema.terms)} terms, {len(schema.packages)} packages, "
                    f"{len(schema.checklists)} checklists from {file_path.name}")
@@ -623,7 +625,6 @@ class ExcelReader(BaseReader):
 
     def _normalize_package_name(self, name: str) -> str:
         """Normalize package name to consistent snake_case."""
-        import re
         name = name.lower().replace(" ", "_").replace("-", "_").replace("/", "_")
         # Clean up double underscores
         name = re.sub(r'_+', '_', name)

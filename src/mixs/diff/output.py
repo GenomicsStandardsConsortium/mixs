@@ -4,7 +4,7 @@ import logging
 from datetime import datetime
 from difflib import SequenceMatcher
 from pathlib import Path
-from typing import Dict, Any, List, Tuple
+from typing import List
 
 import yaml
 
