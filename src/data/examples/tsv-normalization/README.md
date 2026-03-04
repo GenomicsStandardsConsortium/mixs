@@ -65,7 +65,7 @@ make normalize-tsv-roundtrip
 # Step 3: Dump YAML → bare-pipe TSV using --list-wrapper none
 make src/data/examples/tsv-normalization/MimsSoil-bare-pipes.tsv
 
-# Step 4: Full bare-pipe round-trip (dump + load; load blocked by linkml#3250)
+# Step 4: Full bare-pipe round-trip (dump + load)
 make tsv-bare-pipe-roundtrip
 ```
 
@@ -75,9 +75,10 @@ make tsv-bare-pipe-roundtrip
    which columns are multivalued — it only touches those columns
 2. **Bracket format was previously required**: `json_flattener` only recognized
    `[a|b|c]` as a list; bare `a|b|c` was treated as a single value
-3. **`--list-wrapper none` dump works**: With both linkml packages from git main,
-   `linkml-convert` dumps bare-pipe format correctly. Loading crashes on empty
-   multivalued cells ([linkml#3250](https://github.com/linkml/linkml/issues/3250))
+3. **`--list-wrapper none` round-trip works**: With both linkml packages from the
+   `fix-3250-empty-cell-crash` branch, `linkml-convert` dumps and loads bare-pipe
+   format correctly. The empty-cell crash ([linkml#3250](https://github.com/linkml/linkml/issues/3250),
+   fixed in [PR #3251](https://github.com/linkml/linkml/pull/3251)) is resolved
 4. **Validator gap remains**: `linkml-validate` and `linkml examples` still
    cannot parse multivalued TSV fields ([linkml#3147](https://github.com/linkml/linkml/issues/3147))
 
