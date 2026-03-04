@@ -9,7 +9,8 @@ Note: Only 1 file in the legacy corpus uses this format (pre-2009/Migs.xsd).
 import logging
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import Dict, List, Optional, Any
+import re
+from typing import Optional
 
 from mixs.diff.models import NormalizedSchema, NormalizedTerm
 from mixs.diff.readers.base import BaseReader, detect_format
@@ -168,7 +169,6 @@ class XsdReader(BaseReader):
     def _normalize_term_name(self, name: str) -> str:
         """Normalize XSD element name to structured comment format."""
         # Convert camelCase to snake_case
-        import re
         s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
         normalized = re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
         return normalized
