@@ -14,9 +14,33 @@ submitters format them inconsistently:
 | Bare pipes | `chisel\|ridge till` | **No** — treated as single string |
 | Spaced pipes | `chisel \| ridge till` | **No** — treated as single string |
 
-The `linkml-convert` TSV loader (via `json_flattener`) requires `[square bracket]`
-wrapping to recognize list values. Without brackets, pipes are literal text,
-causing enum validation errors or silently wrong data.
+Without `--list-wrapper` / `--list-delimiter` flags, `linkml-convert`'s TSV
+loader (via `json_flattener`) requires `[square bracket]` wrapping to recognize
+list values. Bare pipes are treated as literal text, causing enum validation
+errors or silently wrong data.
+
+With linkml PR [#3134](https://github.com/linkml/linkml/pull/3134) (merged
+2026-02-27, not yet in a PyPI release), `linkml-convert` can load and dump
+all three styles using `--list-wrapper none`:
+
+```bash
+# Load bare-pipe TSV → YAML
+linkml-convert -s schema.yaml -C MixsCompliantData -S mims_soil_data \
+  -f tsv -t yaml --list-wrapper none --no-validate input.tsv
+
+# Dump YAML → bare-pipe TSV
+linkml-convert -s schema.yaml -C MixsCompliantData -S mims_soil_data \
+  -f yaml -t tsv --list-wrapper none --no-validate input.yaml
+```
+
+Until the next linkml release, both `linkml` and `linkml-runtime` must be
+installed from git main to avoid version skew
+([linkml#3241](https://github.com/linkml/linkml/issues/3241)).
+
+**Note:** `linkml-validate` uses a completely separate CSV/TSV loader (raw
+`csv.DictReader`, no json_flattener) that does not support these flags. TSV
+validation of multivalued fields is tracked in
+[linkml#3147](https://github.com/linkml/linkml/issues/3147).
 
 ## Files
 
@@ -32,7 +56,7 @@ causing enum validation errors or silently wrong data.
 # Step 1: Normalize messy TSV (uses schema to identify multivalued slots)
 make normalize-tsv-demo
 
-# Step 2: Verify normalized TSV loads cleanly
+# Step 2: Round-trip normalized TSV through linkml-convert
 make normalize-tsv-roundtrip
 ```
 
@@ -40,14 +64,17 @@ make normalize-tsv-roundtrip
 
 1. **Schema awareness matters**: The normalizer uses `SchemaView` to find
    which columns are multivalued — it only touches those columns
-2. **Bracket format is currently required**: `json_flattener` 0.1.9 only
-   recognizes `[a|b|c]` as a list; bare `a|b|c` is treated as a single value
-3. **Future**: linkml PR #3134 added `--list-wrapper` and `--list-delimiter`
-   CLI flags to `linkml-convert`, but the runtime/json_flattener plumbing
-   (linkml/linkml#3147) needs updating before they work end-to-end
+2. **Bracket format was previously required**: `json_flattener` only recognized
+   `[a|b|c]` as a list; bare `a|b|c` was treated as a single value
+3. **`--list-wrapper none` now works**: With both linkml packages from git main,
+   `linkml-convert` loads and dumps bare-pipe format correctly
+4. **Validator gap remains**: `linkml-validate` and `linkml examples` still
+   cannot parse multivalued TSV fields ([linkml#3147](https://github.com/linkml/linkml/issues/3147))
 
 ## Related Issues
 
-- [linkml#2581](https://github.com/linkml/linkml/issues/2581) — Configurable inlined multivalued strings syntax
+- [linkml#3134](https://github.com/linkml/linkml/pull/3134) — Configurable list formatting (merged, awaiting release)
+- [linkml#3241](https://github.com/linkml/linkml/issues/3241) — Version skew crash when packages are from different sources
 - [linkml#3147](https://github.com/linkml/linkml/issues/3147) — Validator CSV/TSV loader lacks schema-aware parsing
+- [linkml#2581](https://github.com/linkml/linkml/issues/2581) — Original feature request for configurable list syntax
 - [mixs#1060](https://github.com/GenomicsStandardsConsortium/mixs/issues/1060) — Cardinality and syntax of env triad slots

@@ -17,7 +17,7 @@ include = ["README.md", "project", "src/mixs", "src/scripts"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-linkml-runtime = "^1.10"
+linkml-runtime = {git = "https://github.com/linkml/linkml.git", branch = "main", subdirectory = "packages/linkml_runtime"}
 jsonasobj2 = "^1.0" # used transitively in src/scripts/mixs/datamodel/mixs.py
 
 [tool.poetry.group.dev.dependencies]
