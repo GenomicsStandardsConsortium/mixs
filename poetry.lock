@@ -1464,7 +1464,7 @@ files = [
 
 [[package]]
 name = "linkml"
-version = "1.10.0.post78.dev0+1f5d5fa3e"
+version = "1.10.0.post94.dev0+b262b9402"
 description = "Linked Open Data Modeling Language"
 optional = false
 python-versions = ">=3.10"
@@ -1474,7 +1474,7 @@ develop = false
 
 [package.dependencies]
 antlr4-python3-runtime = ">=4.9.0,<4.10"
-click = ">=8.0,<8.2"
+click = ">=8.0"
 graphviz = ">=0.10.1"
 hbreader = "*"
 isodate = ">=0.6.0"
@@ -1502,13 +1502,13 @@ watchdog = ">=0.9.0"
 [package.source]
 type = "git"
 url = "https://github.com/linkml/linkml.git"
-reference = "main"
-resolved_reference = "1f5d5fa3e271b383cedcc44d1249cf0334034857"
+reference = "fix-3250-empty-cell-crash"
+resolved_reference = "b262b94020f1bda1197c30e095f5b62e67ab42ef"
 subdirectory = "packages/linkml"
 
 [[package]]
 name = "linkml-runtime"
-version = "1.10.0.post93.dev0+aafcce614"
+version = "1.10.0.post94.dev0+b262b9402"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 optional = false
 python-versions = ">=3.10"
@@ -1538,8 +1538,8 @@ dev = ["coverage", "requests-cache"]
 [package.source]
 type = "git"
 url = "https://github.com/linkml/linkml.git"
-reference = "main"
-resolved_reference = "aafcce614bc45feb4787e0fe05f398c839428ff4"
+reference = "fix-3250-empty-cell-crash"
+resolved_reference = "b262b94020f1bda1197c30e095f5b62e67ab42ef"
 subdirectory = "packages/linkml_runtime"
 
 [[package]]
@@ -4229,4 +4229,4 @@ docs = []
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "3770194d2c419cb463e8f8d6988afddf893a656941921f2d461e7ad9394df86b"
+content-hash = "367a972372334c62b1e68c1756285f759478195e12a82ff5474cf20c9f0f6abd"
