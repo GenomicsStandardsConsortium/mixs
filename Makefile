@@ -77,7 +77,7 @@ help: status
 	@echo "  normalize-tsv-demo       -- normalize heterogeneous list formatting in messy TSV"
 	@echo "  normalize-tsv-roundtrip  -- round-trip: normalized TSV → YAML → TSV"
 	@echo "  $(TSV_BARE_PIPE_OUTPUT)  -- dump YAML → bare-pipe TSV (--list-wrapper none)"
-	@echo "  tsv-bare-pipe-roundtrip  -- dump + load (load blocked by linkml#3250)"
+	@echo "  tsv-bare-pipe-roundtrip  -- dump + load bare-pipe round-trip"
 	@echo ""
 
 .PHONY: all all-contrib clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib normalize-tsv-demo normalize-tsv-roundtrip tsv-bare-pipe-roundtrip
@@ -332,20 +332,20 @@ $(TSV_BARE_PIPE_OUTPUT): $(TSV_NORM_YAML) contrib/mixs-patterns-materialized.yam
 	@echo ""
 	@cat $(TSV_BARE_PIPE_OUTPUT)
 
-# Load: bare-pipe TSV → YAML. Blocked by linkml#3250 (empty multivalued cells crash).
-# Uncomment the linkml-convert call once that issue is fixed.
+# Load: bare-pipe TSV → YAML (requires linkml PR #3251 or later).
 $(TSV_BARE_PIPE_YAML): $(TSV_BARE_PIPE_OUTPUT) contrib/mixs-patterns-materialized.yaml
 	@echo "=== Loading bare-pipe TSV → YAML (--list-wrapper none) ==="
-	@echo "NOTE: blocked by linkml#3250 — empty multivalued cells crash the loader."
-	@echo "Uncomment the linkml-convert call below once the fix lands."
-	# $(RUN) linkml-convert \
-	# 	-s contrib/mixs-patterns-materialized.yaml \
-	# 	-C MixsCompliantData -S mims_soil_data \
-	# 	-f tsv -t yaml --no-validate \
-	# 	--list-wrapper none \
-	# 	$(TSV_BARE_PIPE_OUTPUT) > $(TSV_BARE_PIPE_YAML)
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f tsv -t yaml --no-validate \
+		--list-wrapper none \
+		$(TSV_BARE_PIPE_OUTPUT) > $(TSV_BARE_PIPE_YAML)
+	@echo "Output: $(TSV_BARE_PIPE_YAML)"
+	@echo ""
+	@cat $(TSV_BARE_PIPE_YAML)
 
-# Metatarget: dump + load (load currently blocked by linkml#3250).
+# Metatarget: dump + load.
 tsv-bare-pipe-roundtrip: $(TSV_BARE_PIPE_OUTPUT) $(TSV_BARE_PIPE_YAML)
 
 include contrib.Makefile
