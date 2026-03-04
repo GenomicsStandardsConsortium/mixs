@@ -1,0 +1,154 @@
+================================================================================
+MIXS LEGACY SCHEMA COMPARISON SUMMARY
+================================================================================
+
+OLD SCHEMA: v4
+  Source: /home/mark/gitrepos/mixs-legacy/mixs4/MIxS_210514.xls
+  Format: xls
+  Terms: 343
+
+NEW SCHEMA: v5
+  Source: /home/mark/gitrepos/mixs-legacy/mixs5/mixs_v5.xlsx
+  Format: xlsx
+  Terms: 600
+
+----------------------------------------
+TERM COMPARISON
+----------------------------------------
+  Shared terms: 328
+  Only in old: 11
+  Only in new: 266
+  Expected mappings: 4
+  Terms with definition changes: 312
+
+  Term renames applied:
+    annot_source -> annot
+    env_biome -> env_broad_scale
+    env_feature -> env_local_scale
+    env_material -> env_medium
+
+  Term splits (1 old → N new):
+    alt_elev → alt, elev
+    assembly → assembly_qual, assembly_software
+
+  Terms only in OLD (unexplained removals):
+    - alt
+    - annual_season_precpt
+    - annual_season_temp
+    - elev
+    - finishing_strategy
+    - growth_med
+    - lib_const_meth
+    - occupant_dens_samp
+    - plant_body_site
+    - tot_n_meth
+    - typ_occupant_dens
+
+  Terms only in NEW (added):
+    + 16s_recover
+    + 16s_recover_software
+    + add_recov_method
+    + additional_info
+    + address
+    + adj_room
+    + aero_struc
+    + alkalinity_method
+    + amount_light
+    + ances_data
+    + annual_precpt
+    + annual_temp
+    + api
+    + arch_struc
+    + aromatics_pc
+    + asphaltenes_pc
+    + avg_dew_point
+    + avg_occup
+    + avg_temp
+    + basin
+    ... and 246 more
+
+----------------------------------------
+DEFINITION CHANGES (showing diff)
+----------------------------------------
+  air_temp_regm:
+    [-information-] [+Information+] about treatment ... temperature, treatment [-duration, interval-] [+regimen including ho...
+  alt:
+    [+Altitude is a term used+...] the altitude [-of the sample-] [+measurement+] is the ... distance between [-Earth's-] [+...
+  ammonium:
+    [-concentration-] [+Concentration+] of ammonium [+in the sample+]
+  annot_source -> annot:
+    [-For-] [+Tool used for+] cases where ... specific submitter
+  antibiotic_regm:
+    [-information-] [+Information+] about treatment ... administered, treatment [-duration, interval-] [+regimen including h...
+  bac_resp:
+    [-measurement-] [+Measurement+] of bacterial [-resporation-] [+respiration+] in the water column
+  biochem_oxygen_dem:
+    [+Amount of dissolved oxygen needed+...] a [-measure-] [+body+] of [-the relative oxygen-depletion-] [+water to break+] ...
+  biotic_relationship:
+    [-Is-] [+Description of relationship(s)+] it [-free-living or in-] [+is associated with.+] and [-if-] the [-latter what ...
+  calcium:
+    [-concentration-] [+Concentration+] of calcium [+in the sample+]
+  chem_administration:
+    [-list-] [+List+] of chemical ... when (e.g. [-antibiotics, N-] [+Antibiotics, n+] fertilizer, air ... compounds. For [-...
+  ... and 71 more definition changes
+
+----------------------------------------
+PACKAGE COMPARISON
+----------------------------------------
+  Shared packages: 15
+  Only in old: 0
+  Only in new: 2
+
+----------------------------------------
+CHECKLIST COMPARISON
+----------------------------------------
+  Shared checklists: 8
+  Only in old: 0
+  Only in new: 3
+
+----------------------------------------
+MEMBERSHIP CHANGES
+----------------------------------------
+  Terms added to checklists: 175
+  Terms removed from checklists: 0
+  Terms added to packages: 64
+  Terms removed from packages: 8
+  Made mandatory (was optional): 0
+  Made optional (was mandatory): 3
+
+  Made optional:
+    estimated_size in migs_eu: M → X
+    ploidy in migs_eu: M → X
+    num_replicons in migs_eu: M → X
+
+----------------------------------------
+PACKAGE COMPOSITION CHANGES
+----------------------------------------
+  built_environment: +136 terms, -2 terms
+    added: address, adj_room, aero_struc, amount_light, arch_struc (+131 more)
+    removed: occupant_dens_samp, typ_occupant_dens
+  host_associated: +5 terms, -0 terms
+    added: ances_data, biol_stat, genetic_mod, samp_capt_status, samp_dis_stage
+  microbial_mat_biofilm: +1 terms, -2 terms
+    added: tot_nitro_content
+    removed: alt, tot_nitro
+  plant_associated: +21 terms, -3 terms
+    added: ances_data, biol_stat, biotic_regm, cult_root_med, genetic_mod (+16 more)
+    removed: alt, growth_med, plant_body_site
+  sediment: +2 terms, -2 terms
+    added: tot_depth_water_col, tot_nitro_content
+    removed: alt, tot_nitro
+  soil: +6 terms, -5 terms
+    added: annual_precpt, annual_temp, season_precpt, season_temp, tot_nitro_content (+1 more)
+    removed: alt, annual_season_precpt, annual_season_temp, tot_n_meth, tot_nitro
+  water: +4 terms, -1 terms
+    added: alkalinity_method, size_frac_low, size_frac_up, turbidity
+    removed: alt
+
+  Packages added:
+    + hydrocarbon_resources_cores
+    + hydrocarbon_resources_fluids_swabs
+
+================================================================================
+Generated: 2026-02-03T21:34:57.051503
+================================================================================

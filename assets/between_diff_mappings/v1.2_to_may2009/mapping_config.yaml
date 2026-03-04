@@ -1,0 +1,35 @@
+# Mapping configuration for v1.2 Word → May 2009 Excel transition
+# This transition marks the move from Word documents to Excel format
+# and includes significant naming convention changes and term reorganization.
+
+# Renames: old_name → new_name
+renames:
+  # More descriptive names adopted in Excel format
+  biotic_relationship: observed_biotic_relationship
+  health_disease_status: health_or_disease_status_of_specific_host_at_time_of_collection
+  genetic_lineage: subspecific_genetic_lineage
+
+  # Shortened names
+  ploidy_level: ploidy
+
+  # Renamed with slight variation (note: typo "specificty" in May 2009 Excel)
+  host_specificity_range: host_specificty_or_range
+
+# Splits: one term becomes multiple terms
+splits:
+  nucleic_acid_preparation:
+    - nucleic_acid_amplification
+    - nucleic_acid_extraction
+
+# Deletions: terms removed with documented reasons
+deletions:
+  habitat:
+    reason: >
+      Absorbed into environmental packages structure. May 2009 introduces
+      environmental packages (air, water, soil, host_associated, etc.) which
+      provide more structured habitat information than a single field.
+  annotation_source:
+    reason: >
+      Removed in May 2009 Excel format. This term tracks annotation methodology
+      and was not carried forward in the first Excel specification. It is
+      re-added in later versions (v4).

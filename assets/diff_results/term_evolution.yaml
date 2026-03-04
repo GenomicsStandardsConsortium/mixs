@@ -1,0 +1,8423 @@
+metadata:
+  description: MIxS term evolution across all versions
+  version_chain:
+  - v1.1
+  - v1.2
+  - v1.5-may2009
+  - v1.6-nov2009
+  - v1.8-oct2010
+  - v2.0
+  - v2.1
+  - v4
+  - v5
+  - v6.0.0
+terms:
+  16s_recover:
+    canonical_name: 16s_recover
+    aliases:
+    - x_16s_recover
+    events:
+    - version: v5
+      event: added
+    - version: v6.0.0
+      event: renamed
+      from: 16s_recover
+      to: x_16s_recover
+    versions:
+      v5:
+        exists: true
+  16s_recover_software:
+    canonical_name: 16s_recover_software
+    aliases:
+    - x_16s_recover_software
+    events:
+    - version: v5
+      event: added
+    - version: v6.0.0
+      event: renamed
+      from: 16s_recover_software
+      to: x_16s_recover_software
+    versions:
+      v5:
+        exists: true
+  Food_Product_type:
+    canonical_name: Food_Product_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  Food_source:
+    canonical_name: Food_source
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  HACCP_term:
+    canonical_name: HACCP_term
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  IFSAC_category:
+    canonical_name: IFSAC_category
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  abs_air_humidity:
+    canonical_name: abs_air_humidity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  adapters:
+    canonical_name: adapters
+    events:
+    - version: v1.8-oct2010
+      event: added
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_org: X
+          mimarks_s: X
+          mimag: X
+          migs_pl: X
+          migs_eu: X
+          migs_ba: X
+          miuvig: X
+          misag: X
+  add_recov_method:
+    canonical_name: add_recov_method
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  additional_info:
+    canonical_name: additional_info
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  address:
+    canonical_name: address
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  adj_room:
+    canonical_name: adj_room
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  adjacent_environment:
+    canonical_name: adjacent_environment
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  aero_struc:
+    canonical_name: aero_struc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  agrochem_addition:
+    canonical_name: agrochem_addition
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  air:
+    canonical_name: air
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  air particulate matter concentration:
+    canonical_name: air particulate matter concentration
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  air_PM_concen:
+    canonical_name: air_PM_concen
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  air_flow_impede:
+    canonical_name: air_flow_impede
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  air_temp:
+    canonical_name: air_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  air_temp_regm:
+    canonical_name: air_temp_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  al_sat:
+    canonical_name: al_sat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  al_sat_meth:
+    canonical_name: al_sat_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  alkalinity:
+    canonical_name: alkalinity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  alkalinity_method:
+    canonical_name: alkalinity_method
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  alkyl_diethers:
+    canonical_name: alkyl_diethers
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  alt:
+    canonical_name: alt
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  aminopept_act:
+    canonical_name: aminopept_act
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ammonium:
+    canonical_name: ammonium
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  amniotic_fluid_color:
+    canonical_name: amniotic_fluid_color
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  amount_light:
+    canonical_name: amount_light
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  amount_or_size_of_sample_collected:
+    canonical_name: amount_or_size_of_sample_collected
+    aliases:
+    - samp_size
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: amount_or_size_of_sample_collected
+      to: samp_size
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+        checklists:
+          me: M
+      v4:
+        exists: true
+        checklists:
+          me: C
+          mimarks_s: C
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_s: X
+          mimag: X
+          miuvig: X
+          misag: X
+  ances_data:
+    canonical_name: ances_data
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  anim_water_method:
+    canonical_name: anim_water_method
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_am:
+    canonical_name: animal_am
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_am_dur:
+    canonical_name: animal_am_dur
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_am_freq:
+    canonical_name: animal_am_freq
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_am_route:
+    canonical_name: animal_am_route
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_am_use:
+    canonical_name: animal_am_use
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_body_cond:
+    canonical_name: animal_body_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_diet:
+    canonical_name: animal_diet
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_feed_equip:
+    canonical_name: animal_feed_equip
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_group_size:
+    canonical_name: animal_group_size
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_housing:
+    canonical_name: animal_housing
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_intrusion:
+    canonical_name: animal_intrusion
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  animal_sex:
+    canonical_name: animal_sex
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  annot_source:
+    canonical_name: annot_source
+    aliases:
+    - annot
+    events:
+    - version: v1.8-oct2010
+      event: added
+    - version: v2.1
+      event: removed
+      reason: Removed in v2.1; re-added in v4
+    - version: v5
+      event: renamed
+      from: annot_source
+      to: annot
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_org: X
+          migs_pl: X
+          migs_eu: X
+          migs_ba: X
+  annotation_source:
+    canonical_name: annotation_source
+    events:
+    - version: v1.2
+      event: added
+    - version: v1.5-may2009
+      event: removed
+      reason: Removed in May 2009 Excel format. This term tracks annotation methodology
+        and was not carried forward in the first Excel specification. It is re-added
+        in later versions (v4).
+    versions:
+      v1.2:
+        exists: true
+  annual_precpt:
+    canonical_name: annual_precpt
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  annual_temp:
+    canonical_name: annual_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  antibiotic_regm:
+    canonical_name: antibiotic_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  api:
+    canonical_name: api
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  arch_struc:
+    canonical_name: arch_struc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  area_samp_size:
+    canonical_name: area_samp_size
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  aromatics_pc:
+    canonical_name: aromatics_pc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  asphaltenes_pc:
+    canonical_name: asphaltenes_pc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  assembly:
+    canonical_name: assembly
+    events:
+    - version: v5
+      event: split
+      from: assembly
+      to:
+        targets:
+        - assembly_qual
+        - assembly_software
+        description: Assembly was split into quality metrics and software used
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+  assembly_name:
+    canonical_name: assembly_name
+    events:
+    - version: v1.8-oct2010
+      event: added
+    - version: v2.1
+      event: removed
+      reason: Removed in v2.1; re-added in v4
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_org: X
+          mimag: X
+          migs_pl: X
+          migs_eu: X
+          migs_ba: X
+          miuvig: X
+          misag: X
+  assembly_qual:
+    canonical_name: assembly_qual
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  assembly_quality:
+    canonical_name: assembly_quality
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  assembly_software:
+    canonical_name: assembly_software
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_s: X
+  associated resource:
+    canonical_name: associated resource
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  association_duration:
+    canonical_name: association_duration
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  atmospheric_data:
+    canonical_name: atmospheric_data
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  avg_dew_point:
+    canonical_name: avg_dew_point
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  avg_occup:
+    canonical_name: avg_occup
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  avg_temp:
+    canonical_name: avg_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  bac_prod:
+    canonical_name: bac_prod
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  bac_resp:
+    canonical_name: bac_resp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  bacteria_carb_prod:
+    canonical_name: bacteria_carb_prod
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  bacterial_density:
+    canonical_name: bacterial_density
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  barometric_press:
+    canonical_name: barometric_press
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  basin:
+    canonical_name: basin
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  bathroom_count:
+    canonical_name: bathroom_count
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  bedroom_count:
+    canonical_name: bedroom_count
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  benzene:
+    canonical_name: benzene
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  bin_param:
+    canonical_name: bin_param
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  bin_software:
+    canonical_name: bin_software
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  binning_method:
+    canonical_name: binning_method
+    events:
+    - version: v1.2
+      event: removed
+      reason: Metagenomics-related term removed in v1.2 Candidate draft. Not restored
+        in main spec lineage.
+  biochem_oxygen_dem:
+    canonical_name: biochem_oxygen_dem
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  biocide:
+    canonical_name: biocide
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  biocide_admin_method:
+    canonical_name: biocide_admin_method
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  biocide_used:
+    canonical_name: biocide_used
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  biol_stat:
+    canonical_name: biol_stat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  biomass:
+    canonical_name: biomass
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  biome:
+    canonical_name: biome
+    events:
+    - version: v1.8-oct2010
+      event: created_from_split
+      source: environment
+    - version: v4
+      event: removed
+      reason: MIMARKS term; superseded by env_biome in v4 (same concept, new naming)
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+  biotic_regm:
+    canonical_name: biotic_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  biotic_relationship:
+    canonical_name: biotic_relationship
+    aliases:
+    - observed_biotic_relationship
+    events:
+    - version: v1.2
+      event: added
+    - version: v1.5-may2009
+      event: renamed
+      from: biotic_relationship
+      to: observed_biotic_relationship
+    - version: v1.8-oct2010
+      event: renamed
+      from: observed_biotic_relationship
+      to: biotic_relationship
+    versions:
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_eu: X
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+        checklists:
+          migs_ba: M
+      v4:
+        exists: true
+        checklists:
+          migs_ba: C
+          mimarks_c: C
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          migs_ba: X
+  birth_control:
+    canonical_name: birth_control
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  bishomohopanol:
+    canonical_name: bishomohopanol
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  blood_blood_disord:
+    canonical_name: blood_blood_disord
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  blood_press_diast:
+    canonical_name: blood_press_diast
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  blood_press_syst:
+    canonical_name: blood_press_syst
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  bromide:
+    canonical_name: bromide
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  build_docs:
+    canonical_name: build_docs
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  build_occup_type:
+    canonical_name: build_occup_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  building_setting:
+    canonical_name: building_setting
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  built_struc_age:
+    canonical_name: built_struc_age
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  built_struc_set:
+    canonical_name: built_struc_set
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  built_struc_type:
+    canonical_name: built_struc_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  calcium:
+    canonical_name: calcium
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  carb_dioxide:
+    canonical_name: carb_dioxide
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  carb_monoxide:
+    canonical_name: carb_monoxide
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  carb_nitro_ratio:
+    canonical_name: carb_nitro_ratio
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ceil_area:
+    canonical_name: ceil_area
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ceil_cond:
+    canonical_name: ceil_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ceil_finish_mat:
+    canonical_name: ceil_finish_mat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ceil_struc:
+    canonical_name: ceil_struc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ceil_texture:
+    canonical_name: ceil_texture
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ceil_thermal_mass:
+    canonical_name: ceil_thermal_mass
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ceil_type:
+    canonical_name: ceil_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ceil_water_mold:
+    canonical_name: ceil_water_mold
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  chem_administration:
+    canonical_name: chem_administration
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  chem_mutagen:
+    canonical_name: chem_mutagen
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  chem_oxygen_dem:
+    canonical_name: chem_oxygen_dem
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  chem_treat_method:
+    canonical_name: chem_treat_method
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  chem_treatment:
+    canonical_name: chem_treatment
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  chimera_check:
+    canonical_name: chimera_check
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: removed
+      reason: Removed in Oct 2010; re-added later as chimera_check
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          mimarks_s: X
+  chloride:
+    canonical_name: chloride
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  chlorophyll:
+    canonical_name: chlorophyll
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  climate_environment:
+    canonical_name: climate_environment
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  coll_site_geo_feat:
+    canonical_name: coll_site_geo_feat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  collection_date:
+    canonical_name: collection_date
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  compl_appr:
+    canonical_name: compl_appr
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  compl_score:
+    canonical_name: compl_score
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  compl_software:
+    canonical_name: compl_software
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  conduc:
+    canonical_name: conduc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cons_food_stor_dur:
+    canonical_name: cons_food_stor_dur
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cons_food_stor_temp:
+    canonical_name: cons_food_stor_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cons_purch_date:
+    canonical_name: cons_purch_date
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cons_qty_purchased:
+    canonical_name: cons_qty_purchased
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  contam_score:
+    canonical_name: contam_score
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  contam_screen_input:
+    canonical_name: contam_screen_input
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  contam_screen_param:
+    canonical_name: contam_screen_param
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  cool_syst_id:
+    canonical_name: cool_syst_id
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  core field:
+    canonical_name: core field
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  country:
+    canonical_name: country
+    aliases:
+    - geo_loc_name
+    events:
+    - version: v2.1
+      event: added
+    - version: v4
+      event: renamed
+      from: country
+      to: geo_loc_name
+    versions:
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  crop_rotation:
+    canonical_name: crop_rotation
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  crop_yield:
+    canonical_name: crop_yield
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cult_isol_date:
+    canonical_name: cult_isol_date
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cult_result:
+    canonical_name: cult_result
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cult_result_org:
+    canonical_name: cult_result_org
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cult_root_med:
+    canonical_name: cult_root_med
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cult_target:
+    canonical_name: cult_target
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cur_land_use:
+    canonical_name: cur_land_use
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cur_vegetation:
+    canonical_name: cur_vegetation
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  cur_vegetation_meth:
+    canonical_name: cur_vegetation_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  date_extr_weath:
+    canonical_name: date_extr_weath
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  date_last_rain:
+    canonical_name: date_last_rain
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  decontam_software:
+    canonical_name: decontam_software
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  density:
+    canonical_name: density
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  depos_env:
+    canonical_name: depos_env
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  dermatology_disord:
+    canonical_name: dermatology_disord
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  description:
+    canonical_name: description
+    events:
+    - version: v4
+      event: created_from_split
+      source: environment
+    - version: v5
+      event: created_from_split
+      source: alt_elev
+    - version: v5
+      event: created_from_split
+      source: assembly
+  detec_type:
+    canonical_name: detec_type
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  dew_point:
+    canonical_name: dew_point
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diet_last_six_month:
+    canonical_name: diet_last_six_month
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  dietary_claim_use:
+    canonical_name: dietary_claim_use
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diether_lipids:
+    canonical_name: diether_lipids
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diss_carb_dioxide:
+    canonical_name: diss_carb_dioxide
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diss_hydrogen:
+    canonical_name: diss_hydrogen
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diss_inorg_carb:
+    canonical_name: diss_inorg_carb
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diss_inorg_nitro:
+    canonical_name: diss_inorg_nitro
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diss_inorg_phosp:
+    canonical_name: diss_inorg_phosp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diss_iron:
+    canonical_name: diss_iron
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diss_org_carb:
+    canonical_name: diss_org_carb
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diss_org_nitro:
+    canonical_name: diss_org_nitro
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diss_oxygen:
+    canonical_name: diss_oxygen
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  diss_oxygen_fluid:
+    canonical_name: diss_oxygen_fluid
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  dominant_hand:
+    canonical_name: dominant_hand
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_comp_type:
+    canonical_name: door_comp_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_cond:
+    canonical_name: door_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_direct:
+    canonical_name: door_direct
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_loc:
+    canonical_name: door_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_mat:
+    canonical_name: door_mat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_move:
+    canonical_name: door_move
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_size:
+    canonical_name: door_size
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_type:
+    canonical_name: door_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_type_metal:
+    canonical_name: door_type_metal
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_type_wood:
+    canonical_name: door_type_wood
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  door_water_mold:
+    canonical_name: door_water_mold
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  douche:
+    canonical_name: douche
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  down_par:
+    canonical_name: down_par
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  drainage_class:
+    canonical_name: drainage_class
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  drawings:
+    canonical_name: drawings
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  drug_usage:
+    canonical_name: drug_usage
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  efficiency_percent:
+    canonical_name: efficiency_percent
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  elev:
+    canonical_name: elev
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  elevator:
+    canonical_name: elevator
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  emulsions:
+    canonical_name: emulsions
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  encoded_traits:
+    canonical_name: encoded_traits
+    events:
+    - version: v1.2
+      event: removed
+      reason: Removed in v1.2 Candidate. Restored in May 2009 Excel version.
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_pl: C
+          migs_ba: X
+          me: '-'
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_pl: X
+  enrichment_protocol:
+    canonical_name: enrichment_protocol
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  env_biome:
+    canonical_name: env_biome
+    aliases:
+    - env_broad_scale
+    events:
+    - version: v5
+      event: renamed
+      from: env_biome
+      to: env_broad_scale
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  env_feature:
+    canonical_name: env_feature
+    aliases:
+    - env_local_scale
+    events:
+    - version: v5
+      event: renamed
+      from: env_feature
+      to: env_local_scale
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  env_material:
+    canonical_name: env_material
+    aliases:
+    - env_medium
+    events:
+    - version: v5
+      event: renamed
+      from: env_material
+      to: env_medium
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  env_monitoring_zone:
+    canonical_name: env_monitoring_zone
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  environment:
+    canonical_name: environment
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: split
+      from: environment
+      to:
+      - biome
+      - feature
+      - material
+    - version: v4
+      event: split
+      from: environment
+      to:
+        targets:
+        - env_biome
+        - env_feature
+        - env_material
+        description: Single 'environment' field was split into three ENVO-based terms
+          for greater precision
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v2.1:
+        exists: true
+  environment field:
+    canonical_name: environment field
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  environmental_package:
+    canonical_name: environmental_package
+    aliases:
+    - env_package
+    events:
+    - version: v1.6-nov2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: environmental_package
+      to: env_package
+    - version: v6.0.0
+      event: removed
+      reason: Structural change in v6; package membership now handled via class hierarchy
+        rather than explicit field
+    versions:
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_org: X
+          migs_ba: X
+          me: C
+          migs_pl: X
+          migs_eu: X
+      v4:
+        exists: true
+        checklists:
+          migs_vi: M
+          migs_ba: M
+          migs_eu: M
+          migs_pl: M
+          migs_org: M
+          me: M
+          mimarks_s: M
+          mimarks_c: M
+      v5:
+        exists: true
+        checklists:
+          migs_pl: C
+          migs_org: C
+          mimarks_c: C
+          mimarks_s: C
+          migs_vi: C
+          me: C
+          migs_eu: C
+          migs_ba: C
+  escalator:
+    canonical_name: escalator
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  estimated_community_diversity:
+    canonical_name: estimated_community_diversity
+    events:
+    - version: v1.2
+      event: removed
+      reason: Metagenomics term removed in v1.2 Candidate. Not restored in main spec
+        lineage.
+  estimated_size:
+    canonical_name: estimated_size
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+        checklists:
+          migs_org: R
+          migs_vi: R
+          migs_pl: R
+          migs_ba: R
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_org: X
+          migs_pl: X
+          migs_ba: X
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+        checklists:
+          migs_eu: X
+      v6.0.0:
+        exists: true
+  ethnicity:
+    canonical_name: ethnicity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ethylbenzene:
+    canonical_name: ethylbenzene
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  exp_duct:
+    canonical_name: exp_duct
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  exp_pipe:
+    canonical_name: exp_pipe
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  experimental_factor:
+    canonical_name: experimental_factor
+    events:
+    - version: v1.5-may2009
+      event: added
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_org: C
+          migs_pl: C
+          migs_eu: C
+          migs_ba: C
+          me: C
+      v1.8-oct2010:
+        exists: true
+        checklists:
+          migs_pl: X
+          migs_eu: X
+          migs_vi: X
+          migs_ba: X
+          migs_org: X
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_s: X
+          mimag: X
+          miuvig: X
+          misag: X
+  ext_door:
+    canonical_name: ext_door
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ext_wall_orient:
+    canonical_name: ext_wall_orient
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ext_window_orient:
+    canonical_name: ext_window_orient
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  extr_weather_event:
+    canonical_name: extr_weather_event
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  extrachromosomal_elements:
+    canonical_name: extrachromosomal_elements
+    aliases:
+    - extrachrom_elements
+    events:
+    - version: v1.2
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: extrachromosomal_elements
+      to: extrachrom_elements
+    versions:
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+        checklists:
+          migs_eu: R
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_eu: X
+          migs_ba: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_org: X
+          migs_ba: X
+  extreme_event:
+    canonical_name: extreme_event
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  facility_type:
+    canonical_name: facility_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  fao_class:
+    canonical_name: fao_class
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  farm_equip:
+    canonical_name: farm_equip
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  farm_equip_san:
+    canonical_name: farm_equip_san
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  farm_equip_san_freq:
+    canonical_name: farm_equip_san_freq
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  farm_equip_shared:
+    canonical_name: farm_equip_shared
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  farm_water_source:
+    canonical_name: farm_water_source
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  feat_pred:
+    canonical_name: feat_pred
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  feature:
+    canonical_name: feature
+    events:
+    - version: v1.8-oct2010
+      event: created_from_split
+      source: environment
+    - version: v4
+      event: removed
+      reason: MIMARKS term; superseded by env_feature in v4 (same concept, new naming)
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+  ferm_chem_add:
+    canonical_name: ferm_chem_add
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ferm_chem_add_perc:
+    canonical_name: ferm_chem_add_perc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ferm_headspace_oxy:
+    canonical_name: ferm_headspace_oxy
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ferm_medium:
+    canonical_name: ferm_medium
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ferm_pH:
+    canonical_name: ferm_pH
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ferm_rel_humidity:
+    canonical_name: ferm_rel_humidity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ferm_temp:
+    canonical_name: ferm_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ferm_time:
+    canonical_name: ferm_time
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ferm_vessel:
+    canonical_name: ferm_vessel
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  fertilizer_admin:
+    canonical_name: fertilizer_admin
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  fertilizer_date:
+    canonical_name: fertilizer_date
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  fertilizer_regm:
+    canonical_name: fertilizer_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  field:
+    canonical_name: field
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  filter_type:
+    canonical_name: filter_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  finishing_strategy:
+    canonical_name: finishing_strategy
+    events:
+    - version: v5
+      event: removed
+      reason: Removed in v5; finishing strategy concepts merged into assembly_qual
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+        checklists:
+          migs_pl: M
+          migs_org: M
+          migs_vi: M
+      v1.5-may2009:
+        exists: true
+        checklists:
+          migs_org: X
+          migs_vi: X
+          migs_pl: X
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+  fire:
+    canonical_name: fire
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  fireplace_type:
+    canonical_name: fireplace_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  flooding:
+    canonical_name: flooding
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  floor_age:
+    canonical_name: floor_age
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  floor_area:
+    canonical_name: floor_area
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  floor_cond:
+    canonical_name: floor_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  floor_count:
+    canonical_name: floor_count
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  floor_finish_mat:
+    canonical_name: floor_finish_mat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  floor_struc:
+    canonical_name: floor_struc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  floor_thermal_mass:
+    canonical_name: floor_thermal_mass
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  floor_water_mold:
+    canonical_name: floor_water_mold
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  fluor:
+    canonical_name: fluor
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  foetal_health_stat:
+    canonical_name: foetal_health_stat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_additive:
+    canonical_name: food_additive
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_allergen_label:
+    canonical_name: food_allergen_label
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_clean_proc:
+    canonical_name: food_clean_proc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_contact_surf:
+    canonical_name: food_contact_surf
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_contain_wrap:
+    canonical_name: food_contain_wrap
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_cooking_proc:
+    canonical_name: food_cooking_proc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_dis_point:
+    canonical_name: food_dis_point
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_dis_point_city:
+    canonical_name: food_dis_point_city
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_harvest_proc:
+    canonical_name: food_harvest_proc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_ingredient:
+    canonical_name: food_ingredient
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_name_status:
+    canonical_name: food_name_status
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_origin:
+    canonical_name: food_origin
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_pack_capacity:
+    canonical_name: food_pack_capacity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_pack_integrity:
+    canonical_name: food_pack_integrity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_pack_medium:
+    canonical_name: food_pack_medium
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_preserv_proc:
+    canonical_name: food_preserv_proc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_prior_contact:
+    canonical_name: food_prior_contact
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_prod:
+    canonical_name: food_prod
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_prod_char:
+    canonical_name: food_prod_char
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_prod_synonym:
+    canonical_name: food_prod_synonym
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_product_qual:
+    canonical_name: food_product_qual
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_product_type:
+    canonical_name: food_product_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_quality_date:
+    canonical_name: food_quality_date
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_source:
+    canonical_name: food_source
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_source_age:
+    canonical_name: food_source_age
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_trace_list:
+    canonical_name: food_trace_list
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_trav_mode:
+    canonical_name: food_trav_mode
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_trav_vehic:
+    canonical_name: food_trav_vehic
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  food_treat_proc:
+    canonical_name: food_treat_proc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  freq_clean:
+    canonical_name: freq_clean
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  freq_cook:
+    canonical_name: freq_cook
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  fungicide_regm:
+    canonical_name: fungicide_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  furniture:
+    canonical_name: furniture
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  gaseous_environment:
+    canonical_name: gaseous_environment
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  gaseous_substances:
+    canonical_name: gaseous_substances
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  gastrointest_disord:
+    canonical_name: gastrointest_disord
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  gender_restroom:
+    canonical_name: gender_restroom
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  genetic_lineage:
+    canonical_name: genetic_lineage
+    aliases:
+    - subspecific_genetic_lineage
+    - subspecf_gen_lin
+    events:
+    - version: v1.5-may2009
+      event: renamed
+      from: genetic_lineage
+      to: subspecific_genetic_lineage
+    - version: v1.8-oct2010
+      event: renamed
+      from: subspecific_genetic_lineage
+      to: subspecf_gen_lin
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_org: C
+          migs_pl: C
+          migs_eu: C
+          migs_ba: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          migs_vi: X
+          migs_org: X
+          migs_pl: X
+          migs_eu: X
+          migs_ba: X
+  genetic_mod:
+    canonical_name: genetic_mod
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  geographic_location:
+    canonical_name: geographic_location
+    events:
+    - version: v1.6-nov2009
+      event: split
+      from: geographic_location
+      to:
+      - geographic_location_(latitude_and_longitude)
+      - geographic_location_(depth)
+      - geographic_location_(altitude/elevation)
+      - geographic_location_(country)
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+  geographic_location_(altitude/elevation):
+    canonical_name: geographic_location_(altitude/elevation)
+    aliases:
+    - alt_elev
+    events:
+    - version: v1.6-nov2009
+      event: created_from_split
+      source: geographic_location
+    - version: v1.8-oct2010
+      event: renamed
+      from: geographic_location_(altitude/elevation)
+      to: alt_elev
+    - version: v5
+      event: split
+      from: alt_elev
+      to:
+        targets:
+        - alt
+        - elev
+        description: Altitude/elevation was split into separate terms
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+        checklists:
+          mimarks_c: M
+          mimarks_s: M
+      v4:
+        exists: true
+        checklists:
+          migs_vi: E
+          migs_ba: E
+          migs_eu: E
+          migs_pl: E
+          migs_org: E
+          me: E
+          mimarks_s: E
+          mimarks_c: E
+  geographic_location_(country):
+    canonical_name: geographic_location_(country)
+    aliases:
+    - geo_loc_name
+    events:
+    - version: v1.6-nov2009
+      event: created_from_split
+      source: geographic_location
+    - version: v1.8-oct2010
+      event: renamed
+      from: geographic_location_(country)
+      to: geo_loc_name
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+  geographic_location_(depth):
+    canonical_name: geographic_location_(depth)
+    aliases:
+    - depth
+    events:
+    - version: v1.6-nov2009
+      event: created_from_split
+      source: geographic_location
+    - version: v1.8-oct2010
+      event: renamed
+      from: geographic_location_(depth)
+      to: depth
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+        checklists:
+          mimarks_c: M
+          mimarks_s: M
+      v4:
+        exists: true
+        checklists:
+          migs_vi: E
+          migs_ba: E
+          migs_eu: E
+          migs_pl: E
+          migs_org: E
+          me: E
+          mimarks_s: E
+          mimarks_c: E
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  geographic_location_(latitude_and_longitude):
+    canonical_name: geographic_location_(latitude_and_longitude)
+    aliases:
+    - lat_lon
+    events:
+    - version: v1.6-nov2009
+      event: created_from_split
+      source: geographic_location
+    - version: v1.8-oct2010
+      event: renamed
+      from: geographic_location_(latitude_and_longitude)
+      to: lat_lon
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  gestation_state:
+    canonical_name: gestation_state
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  glucosidase_act:
+    canonical_name: glucosidase_act
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  gravidity:
+    canonical_name: gravidity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  gravity:
+    canonical_name: gravity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  growth_facil:
+    canonical_name: growth_facil
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  growth_habit:
+    canonical_name: growth_habit
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  growth_hormone_regm:
+    canonical_name: growth_hormone_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  growth_medium:
+    canonical_name: growth_medium
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  gynecologic_disord:
+    canonical_name: gynecologic_disord
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  habitat_type:
+    canonical_name: habitat_type
+    aliases:
+    - habitat
+    events:
+    - version: v1.2
+      event: renamed
+      from: habitat_type
+      to: habitat
+    - version: v1.5-may2009
+      event: removed
+      reason: Absorbed into environmental packages structure. May 2009 introduces
+        environmental packages (air, water, soil, host_associated, etc.) which provide
+        more structured habitat information than a single field.
+  hall_count:
+    canonical_name: hall_count
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  handidness:
+    canonical_name: handidness
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  has numeric value:
+    canonical_name: has numeric value
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  has raw value:
+    canonical_name: has raw value
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  has unit:
+    canonical_name: has unit
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  hc_produced:
+    canonical_name: hc_produced
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  hcr:
+    canonical_name: hcr
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  hcr_fw_salinity:
+    canonical_name: hcr_fw_salinity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  hcr_geol_age:
+    canonical_name: hcr_geol_age
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  hcr_pressure:
+    canonical_name: hcr_pressure
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  hcr_temp:
+    canonical_name: hcr_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  health_disease_status:
+    canonical_name: health_disease_status
+    aliases:
+    - health_or_disease_status_of_specific_host_at_time_of_collection
+    - health_disease_stat
+    - host_disease_stat
+    events:
+    - version: v1.5-may2009
+      event: renamed
+      from: health_disease_status
+      to: health_or_disease_status_of_specific_host_at_time_of_collection
+    - version: v1.8-oct2010
+      event: renamed
+      from: health_or_disease_status_of_specific_host_at_time_of_collection
+      to: health_disease_stat
+    - version: v6.0.0
+      event: renamed
+      from: health_disease_stat
+      to: host_disease_stat
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_ba: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+  heat_cool_type:
+    canonical_name: heat_cool_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  heat_deliv_loc:
+    canonical_name: heat_deliv_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  heat_sys_deliv_meth:
+    canonical_name: heat_sys_deliv_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  heat_system_id:
+    canonical_name: heat_system_id
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  heavy_metals:
+    canonical_name: heavy_metals
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  heavy_metals_meth:
+    canonical_name: heavy_metals_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  height_carper_fiber:
+    canonical_name: height_carper_fiber
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  herbicide_regm:
+    canonical_name: herbicide_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  horizon:
+    canonical_name: horizon
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  horizon_meth:
+    canonical_name: horizon_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host:
+    canonical_name: host
+    events:
+    - version: v1.2
+      event: removed
+      reason: Removed in v1.2 Candidate. A new term 'specific_host' was added with
+        different semantics (taxonomic identification vs general host concept). The
+        terms are related but not a direct rename.
+  host_age:
+    canonical_name: host_age
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_associated:
+    canonical_name: host_associated
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  host_body_habitat:
+    canonical_name: host_body_habitat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_body_mass_index:
+    canonical_name: host_body_mass_index
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_body_product:
+    canonical_name: host_body_product
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_body_site:
+    canonical_name: host_body_site
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_body_temp:
+    canonical_name: host_body_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_cellular_loc:
+    canonical_name: host_cellular_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_color:
+    canonical_name: host_color
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_common_name:
+    canonical_name: host_common_name
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_dependence:
+    canonical_name: host_dependence
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_diet:
+    canonical_name: host_diet
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_dry_mass:
+    canonical_name: host_dry_mass
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_family_relation:
+    canonical_name: host_family_relation
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_family_relationship:
+    canonical_name: host_family_relationship
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_genotype:
+    canonical_name: host_genotype
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_growth_cond:
+    canonical_name: host_growth_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_height:
+    canonical_name: host_height
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_hiv_stat:
+    canonical_name: host_hiv_stat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_infra_specific_name:
+    canonical_name: host_infra_specific_name
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_infra_specific_rank:
+    canonical_name: host_infra_specific_rank
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_last_meal:
+    canonical_name: host_last_meal
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_length:
+    canonical_name: host_length
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_life_stage:
+    canonical_name: host_life_stage
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_number:
+    canonical_name: host_number
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_occupation:
+    canonical_name: host_occupation
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_coinf:
+    canonical_name: host_of_host_coinf
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_disease:
+    canonical_name: host_of_host_disease
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_env_loc:
+    canonical_name: host_of_host_env_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_env_med:
+    canonical_name: host_of_host_env_med
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_fam_rel:
+    canonical_name: host_of_host_fam_rel
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_geno:
+    canonical_name: host_of_host_geno
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_gravid:
+    canonical_name: host_of_host_gravid
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_infname:
+    canonical_name: host_of_host_infname
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_infrank:
+    canonical_name: host_of_host_infrank
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_name:
+    canonical_name: host_of_host_name
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_pheno:
+    canonical_name: host_of_host_pheno
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_sub_id:
+    canonical_name: host_of_host_sub_id
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_taxid:
+    canonical_name: host_of_host_taxid
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_of_host_totmass:
+    canonical_name: host_of_host_totmass
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_phenotype:
+    canonical_name: host_phenotype
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_pred_appr:
+    canonical_name: host_pred_appr
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  host_pred_est_acc:
+    canonical_name: host_pred_est_acc
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  host_pulse:
+    canonical_name: host_pulse
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_sex:
+    canonical_name: host_sex
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_shape:
+    canonical_name: host_shape
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_specificity:
+    canonical_name: host_specificity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_specificity_range:
+    canonical_name: host_specificity_range
+    aliases:
+    - host_specificty_or_range
+    - host_spec_range
+    events:
+    - version: v1.5-may2009
+      event: renamed
+      from: host_specificity_range
+      to: host_specificty_or_range
+    - version: v1.8-oct2010
+      event: renamed
+      from: host_specificty_or_range
+      to: host_spec_range
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_pl: X
+          migs_eu: X
+          migs_ba: X
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_vi: X
+  host_subject_id:
+    canonical_name: host_subject_id
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_subspecf_genlin:
+    canonical_name: host_subspecf_genlin
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_substrate:
+    canonical_name: host_substrate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_symbiont:
+    canonical_name: host_symbiont
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_taxid:
+    canonical_name: host_taxid
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_tot_mass:
+    canonical_name: host_tot_mass
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  host_wet_mass:
+    canonical_name: host_wet_mass
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  hrt:
+    canonical_name: hrt
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  human_associated:
+    canonical_name: human_associated
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  human_gut:
+    canonical_name: human_gut
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  human_oral:
+    canonical_name: human_oral
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  human_skin:
+    canonical_name: human_skin
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  human_vaginal:
+    canonical_name: human_vaginal
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  humidity:
+    canonical_name: humidity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  humidity_regm:
+    canonical_name: humidity_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  hygienic_area:
+    canonical_name: hygienic_area
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  hysterectomy:
+    canonical_name: hysterectomy
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ihmc_medication_code:
+    canonical_name: ihmc_medication_code
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  indoor_space:
+    canonical_name: indoor_space
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  indoor_surf:
+    canonical_name: indoor_surf
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  indust_eff_percent:
+    canonical_name: indust_eff_percent
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  inorg_particles:
+    canonical_name: inorg_particles
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  inside_lux:
+    canonical_name: inside_lux
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  int_wall_cond:
+    canonical_name: int_wall_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  intended_consumer:
+    canonical_name: intended_consumer
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  investigation field:
+    canonical_name: investigation field
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  investigation_type:
+    canonical_name: investigation_type
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v6.0.0
+      event: removed
+      reason: Removed in v6; investigation type now implicit in checklist selection
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+  isolation_and_growth_condition:
+    canonical_name: isolation_and_growth_condition
+    aliases:
+    - isol_growth_condt
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: isolation_and_growth_condition
+      to: isol_growth_condt
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          me: X
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  iw_bt_date_well:
+    canonical_name: iw_bt_date_well
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  iwf:
+    canonical_name: iwf
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  kidney_disord:
+    canonical_name: kidney_disord
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  known_pathogenicity:
+    canonical_name: known_pathogenicity
+    aliases:
+    - pathogenicity
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: known_pathogenicity
+      to: pathogenicity
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_ba: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_eu: X
+          migs_ba: X
+  last_clean:
+    canonical_name: last_clean
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  lib_const_meth:
+    canonical_name: lib_const_meth
+    events:
+    - version: v1.8-oct2010
+      event: added
+    - version: v5
+      event: removed
+      reason: Removed in v5; library construction method not carried forward as a
+        distinct term
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+  lib_layout:
+    canonical_name: lib_layout
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_s: X
+          mimag: X
+          miuvig: X
+          misag: X
+  library_construction:
+    canonical_name: library_construction
+    events:
+    - version: v1.2
+      event: removed
+      reason: Removed in v1.2 Candidate. Related concepts appear later as library_reads_sequenced,
+        library_screening_strategy, library_size, library_vector in May 2009 Excel.
+  library_prep_kit:
+    canonical_name: library_prep_kit
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  library_reads_sequenced:
+    canonical_name: library_reads_sequenced
+    aliases:
+    - lib_reads_seqd
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: library_reads_sequenced
+      to: lib_reads_seqd
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_ba: X
+          migs_eu: X
+          migs_pl: X
+          migs_org: X
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_s: X
+          mimag: X
+          miuvig: X
+          misag: X
+  library_screening_strategy:
+    canonical_name: library_screening_strategy
+    aliases:
+    - lib_screen
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: library_screening_strategy
+      to: lib_screen
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_ba: X
+          migs_eu: X
+          migs_pl: X
+          migs_org: X
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_s: X
+          mimag: X
+          miuvig: X
+          misag: X
+  library_size:
+    canonical_name: library_size
+    aliases:
+    - lib_size
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: library_size
+      to: lib_size
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_ba: X
+          migs_eu: X
+          migs_pl: X
+          migs_org: X
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_s: X
+          mimag: X
+          miuvig: X
+          misag: X
+  library_vector:
+    canonical_name: library_vector
+    aliases:
+    - lib_vector
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: library_vector
+      to: lib_vector
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_ba: X
+          migs_eu: X
+          migs_pl: X
+          migs_org: X
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_s: X
+          mimag: X
+          miuvig: X
+          misag: X
+  light_intensity:
+    canonical_name: light_intensity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  light_regm:
+    canonical_name: light_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  light_type:
+    canonical_name: light_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  link_addit_analys:
+    canonical_name: link_addit_analys
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  link_class_info:
+    canonical_name: link_class_info
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  link_climate_info:
+    canonical_name: link_climate_info
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  lithology:
+    canonical_name: lithology
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  liver_disord:
+    canonical_name: liver_disord
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  local_class:
+    canonical_name: local_class
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  local_class_meth:
+    canonical_name: local_class_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  lot_number:
+    canonical_name: lot_number
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  mag_cov_software:
+    canonical_name: mag_cov_software
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  magnesium:
+    canonical_name: magnesium
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  material:
+    canonical_name: material
+    events:
+    - version: v1.8-oct2010
+      event: created_from_split
+      source: environment
+    - version: v4
+      event: removed
+      reason: MIMARKS term; superseded by env_material in v4 (same concept, new naming)
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+  maternal_health_stat:
+    canonical_name: maternal_health_stat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  max_occup:
+    canonical_name: max_occup
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  mean_frict_vel:
+    canonical_name: mean_frict_vel
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  mean_peak_frict_vel:
+    canonical_name: mean_peak_frict_vel
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  mech_struc:
+    canonical_name: mech_struc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  mechanical_damage:
+    canonical_name: mechanical_damage
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  medic_hist_perform:
+    canonical_name: medic_hist_perform
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  menarche:
+    canonical_name: menarche
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  menopause:
+    canonical_name: menopause
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  methane:
+    canonical_name: methane
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  micro_biomass_meth:
+    canonical_name: micro_biomass_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  microb_cult_med:
+    canonical_name: microb_cult_med
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  microb_start:
+    canonical_name: microb_start
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  microb_start_count:
+    canonical_name: microb_start_count
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  microb_start_inoc:
+    canonical_name: microb_start_inoc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  microb_start_prep:
+    canonical_name: microb_start_prep
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  microb_start_source:
+    canonical_name: microb_start_source
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  microb_start_taxID:
+    canonical_name: microb_start_taxID
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  microbial_biomass:
+    canonical_name: microbial_biomass
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  microbial_biomass_meth:
+    canonical_name: microbial_biomass_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  microbial_mat/biofilm:
+    canonical_name: microbial_mat/biofilm
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  mid:
+    canonical_name: mid
+    events:
+    - version: v1.8-oct2010
+      event: added
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_s: X
+          mimag: X
+          miuvig: X
+          misag: X
+  mineral_nutr_regm:
+    canonical_name: mineral_nutr_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  misc_param:
+    canonical_name: misc_param
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  miscellaneous_natural_or_artificial_environment:
+    canonical_name: miscellaneous_natural_or_artificial_environment
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  mixs extension field:
+    canonical_name: mixs extension field
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  mode_transmission:
+    canonical_name: mode_transmission
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  n_alkanes:
+    canonical_name: n_alkanes
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  neg_cont_type:
+    canonical_name: neg_cont_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  nitrate:
+    canonical_name: nitrate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  nitrite:
+    canonical_name: nitrite
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  nitro:
+    canonical_name: nitro
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  non_min_nutr_regm:
+    canonical_name: non_min_nutr_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  non_mineral_nutr_regm:
+    canonical_name: non_mineral_nutr_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  nose_throat_disord:
+    canonical_name: nose_throat_disord
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  nucl_acid_ext_kit:
+    canonical_name: nucl_acid_ext_kit
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  nucleic acid sequence source field:
+    canonical_name: nucleic acid sequence source field
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  nucleic_acid_amplification:
+    canonical_name: nucleic_acid_amplification
+    aliases:
+    - nucl_acid_amp
+    events:
+    - version: v1.5-may2009
+      event: created_from_split
+      source: nucleic_acid_preparation
+    - version: v1.8-oct2010
+      event: renamed
+      from: nucleic_acid_amplification
+      to: nucl_acid_amp
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_org: C
+          migs_pl: C
+          migs_eu: C
+          migs_ba: C
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          migs_vi: X
+          migs_org: X
+          mimarks_s: X
+          mimag: X
+          migs_pl: X
+          migs_eu: X
+          migs_ba: X
+          miuvig: X
+          misag: X
+  nucleic_acid_extraction:
+    canonical_name: nucleic_acid_extraction
+    aliases:
+    - nucl_acid_ext
+    events:
+    - version: v1.5-may2009
+      event: created_from_split
+      source: nucleic_acid_preparation
+    - version: v1.8-oct2010
+      event: renamed
+      from: nucleic_acid_extraction
+      to: nucl_acid_ext
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_org: C
+          migs_pl: C
+          migs_eu: C
+          migs_ba: C
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          migs_vi: X
+          migs_org: X
+          mimarks_s: X
+          mimag: X
+          migs_pl: X
+          migs_eu: X
+          migs_ba: X
+          miuvig: X
+          misag: X
+  nucleic_acid_preparation:
+    canonical_name: nucleic_acid_preparation
+    events:
+    - version: v1.5-may2009
+      event: split
+      from: nucleic_acid_preparation
+      to:
+      - nucleic_acid_amplification
+      - nucleic_acid_extraction
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+  num_samp_collect:
+    canonical_name: num_samp_collect
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  number_contig:
+    canonical_name: number_contig
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  number_of_replicons:
+    canonical_name: number_of_replicons
+    aliases:
+    - num_replicons
+    events:
+    - version: v1.8-oct2010
+      event: renamed
+      from: number_of_replicons
+      to: num_replicons
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+        checklists:
+          migs_eu: X
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_vi: X
+  number_pets:
+    canonical_name: number_pets
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  number_plants:
+    canonical_name: number_plants
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  number_resident:
+    canonical_name: number_resident
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  occup_density_samp:
+    canonical_name: occup_density_samp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  occup_document:
+    canonical_name: occup_document
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  occup_samp:
+    canonical_name: occup_samp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  org_carb:
+    canonical_name: org_carb
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  org_count_qpcr_info:
+    canonical_name: org_count_qpcr_info
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  org_matter:
+    canonical_name: org_matter
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  org_nitro:
+    canonical_name: org_nitro
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  org_particles:
+    canonical_name: org_particles
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  organism_count:
+    canonical_name: organism_count
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  owc_tvdss:
+    canonical_name: owc_tvdss
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  oxy_stat_samp:
+    canonical_name: oxy_stat_samp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  oxygen:
+    canonical_name: oxygen
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  part_org_carb:
+    canonical_name: part_org_carb
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  part_org_nitro:
+    canonical_name: part_org_nitro
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  part_plant_animal:
+    canonical_name: part_plant_animal
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  particle_class:
+    canonical_name: particle_class
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  pathogenicity:
+    canonical_name: pathogenicity
+    events:
+    - version: v1.8-oct2010
+      event: renamed
+      from: pathogenicity
+      to: pathogenicity
+  pcr_conditions:
+    canonical_name: pcr_conditions
+    aliases:
+    - pcr_cond
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: pcr_conditions
+      to: pcr_cond
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          mimarks_s: X
+  pcr_primers:
+    canonical_name: pcr_primers
+    events:
+    - version: v1.5-may2009
+      event: added
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          mimarks_s: X
+  permeability:
+    canonical_name: permeability
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  perturbation:
+    canonical_name: perturbation
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  pesticide_regm:
+    canonical_name: pesticide_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  pet_farm_animal:
+    canonical_name: pet_farm_animal
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  petroleum_hydrocarb:
+    canonical_name: petroleum_hydrocarb
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ph:
+    canonical_name: ph
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ph_meth:
+    canonical_name: ph_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ph_regm:
+    canonical_name: ph_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  phaeopigments:
+    canonical_name: phaeopigments
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  phosphate:
+    canonical_name: phosphate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  phosplipid_fatt_acid:
+    canonical_name: phosplipid_fatt_acid
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  photon_flux:
+    canonical_name: photon_flux
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  photosynt_activ:
+    canonical_name: photosynt_activ
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  photosynt_activ_meth:
+    canonical_name: photosynt_activ_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  plant_associated:
+    canonical_name: plant_associated
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  plant_growth_med:
+    canonical_name: plant_growth_med
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  plant_part_maturity:
+    canonical_name: plant_part_maturity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  plant_product:
+    canonical_name: plant_product
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  plant_reprod_crop:
+    canonical_name: plant_reprod_crop
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  plant_sex:
+    canonical_name: plant_sex
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  plant_struc:
+    canonical_name: plant_struc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  plant_water_method:
+    canonical_name: plant_water_method
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ploidy_level:
+    canonical_name: ploidy_level
+    aliases:
+    - ploidy
+    events:
+    - version: v1.2
+      event: added
+    - version: v1.5-may2009
+      event: renamed
+      from: ploidy_level
+      to: ploidy
+    versions:
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+        checklists:
+          migs_eu: X
+      v6.0.0:
+        exists: true
+  pollutants:
+    canonical_name: pollutants
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  pool_dna_extracts:
+    canonical_name: pool_dna_extracts
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  porosity:
+    canonical_name: porosity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  pos_cont_type:
+    canonical_name: pos_cont_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  potassium:
+    canonical_name: potassium
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  pour_point:
+    canonical_name: pour_point
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  pre_treatment:
+    canonical_name: pre_treatment
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  pred_genome_struc:
+    canonical_name: pred_genome_struc
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  pred_genome_type:
+    canonical_name: pred_genome_type
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  pregnancy:
+    canonical_name: pregnancy
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  pres_animal_insect:
+    canonical_name: pres_animal_insect
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  pressure:
+    canonical_name: pressure
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  prev_land_use_meth:
+    canonical_name: prev_land_use_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  previous_land_use:
+    canonical_name: previous_land_use
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  previous_land_use_meth:
+    canonical_name: previous_land_use_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  primary_prod:
+    canonical_name: primary_prod
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  primary_treatment:
+    canonical_name: primary_treatment
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  prod_label_claims:
+    canonical_name: prod_label_claims
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  prod_rate:
+    canonical_name: prod_rate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  prod_start_date:
+    canonical_name: prod_start_date
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  profile_position:
+    canonical_name: profile_position
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  project_name:
+    canonical_name: project_name
+    events:
+    - version: v1.5-may2009
+      event: added
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  propagation:
+    canonical_name: propagation
+    events:
+    - version: v1.5-may2009
+      event: added
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+        checklists:
+          migs_eu: C
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_eu: X
+  pulmonary_disord:
+    canonical_name: pulmonary_disord
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  quad_pos:
+    canonical_name: quad_pos
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  radiation_regm:
+    canonical_name: radiation_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  rainfall_regm:
+    canonical_name: rainfall_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  reactor_type:
+    canonical_name: reactor_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  reassembly_bin:
+    canonical_name: reassembly_bin
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  redox_potential:
+    canonical_name: redox_potential
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ref_db:
+    canonical_name: ref_db
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  reference_for_biomaterial:
+    canonical_name: reference_for_biomaterial
+    aliases:
+    - ref_biomaterial
+    events:
+    - version: v1.8-oct2010
+      event: renamed
+      from: reference_for_biomaterial
+      to: ref_biomaterial
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+        checklists:
+          migs_org: R
+          me: R
+          migs_vi: R
+          migs_pl: R
+          migs_eu: R
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_org: X
+          migs_pl: X
+          migs_eu: X
+          me: X
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  rel_air_humidity:
+    canonical_name: rel_air_humidity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  rel_humidity_out:
+    canonical_name: rel_humidity_out
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  rel_location:
+    canonical_name: rel_location
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  rel_samp_loc:
+    canonical_name: rel_samp_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  relationship_to_oxygen:
+    canonical_name: relationship_to_oxygen
+    aliases:
+    - rel_to_oxygen
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: relationship_to_oxygen
+      to: rel_to_oxygen
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          me: X
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+        checklists:
+          migs_ba: M
+      v4:
+        exists: true
+        checklists:
+          migs_ba: C
+          mimarks_c: C
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          migs_ba: X
+  relevant_electronic_resources:
+    canonical_name: relevant_electronic_resources
+    aliases:
+    - url
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: relevant_electronic_resources
+      to: url
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_org: C
+          migs_pl: C
+          migs_eu: C
+          migs_ba: C
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  relevant_standard_operating_procedures:
+    canonical_name: relevant_standard_operating_procedures
+    aliases:
+    - sop
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: relevant_standard_operating_procedures
+      to: sop
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_org: C
+          migs_pl: C
+          migs_eu: C
+          migs_ba: C
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          migs_vi: X
+          migs_org: X
+          mimarks_s: X
+          mimag: X
+          migs_pl: X
+          migs_eu: X
+          migs_ba: X
+          miuvig: X
+          misag: X
+  repository_name:
+    canonical_name: repository_name
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  reservoir:
+    canonical_name: reservoir
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  resins_pc:
+    canonical_name: resins_pc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_air_exch_rate:
+    canonical_name: room_air_exch_rate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_architec_elem:
+    canonical_name: room_architec_elem
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_condt:
+    canonical_name: room_condt
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_connected:
+    canonical_name: room_connected
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_count:
+    canonical_name: room_count
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_dim:
+    canonical_name: room_dim
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_door_dist:
+    canonical_name: room_door_dist
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_door_share:
+    canonical_name: room_door_share
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_hallway:
+    canonical_name: room_hallway
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_loc:
+    canonical_name: room_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_moist_dam_hist:
+    canonical_name: room_moist_dam_hist
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_net_area:
+    canonical_name: room_net_area
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_occup:
+    canonical_name: room_occup
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_samp_pos:
+    canonical_name: room_samp_pos
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_type:
+    canonical_name: room_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_vol:
+    canonical_name: room_vol
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_wall_share:
+    canonical_name: room_wall_share
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  room_window_count:
+    canonical_name: room_window_count
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  root_cond:
+    canonical_name: root_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  root_med_carbon:
+    canonical_name: root_med_carbon
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  root_med_macronutr:
+    canonical_name: root_med_macronutr
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  root_med_micronutr:
+    canonical_name: root_med_micronutr
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  root_med_ph:
+    canonical_name: root_med_ph
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  root_med_regl:
+    canonical_name: root_med_regl
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  root_med_solid:
+    canonical_name: root_med_solid
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  root_med_suppl:
+    canonical_name: root_med_suppl
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  route_transmission:
+    canonical_name: route_transmission
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  salinity:
+    canonical_name: salinity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  salinity_meth:
+    canonical_name: salinity_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  salt_regm:
+    canonical_name: salt_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_capt_status:
+    canonical_name: samp_capt_status
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_collec_device:
+    canonical_name: samp_collec_device
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_collec_method:
+    canonical_name: samp_collec_method
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_collect_method:
+    canonical_name: samp_collect_method
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_collect_point:
+    canonical_name: samp_collect_point
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_dis_stage:
+    canonical_name: samp_dis_stage
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_floor:
+    canonical_name: samp_floor
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_loc_condition:
+    canonical_name: samp_loc_condition
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_loc_corr_rate:
+    canonical_name: samp_loc_corr_rate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_md:
+    canonical_name: samp_md
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_name:
+    canonical_name: samp_name
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_pooling:
+    canonical_name: samp_pooling
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_preserv:
+    canonical_name: samp_preserv
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_purpose:
+    canonical_name: samp_purpose
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_rep_biol:
+    canonical_name: samp_rep_biol
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_rep_tech:
+    canonical_name: samp_rep_tech
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_room_id:
+    canonical_name: samp_room_id
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_salinity:
+    canonical_name: samp_salinity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_sort_meth:
+    canonical_name: samp_sort_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_source_mat_cat:
+    canonical_name: samp_source_mat_cat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_stor_device:
+    canonical_name: samp_stor_device
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_stor_dur:
+    canonical_name: samp_stor_dur
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_stor_loc:
+    canonical_name: samp_stor_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_stor_media:
+    canonical_name: samp_stor_media
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_stor_temp:
+    canonical_name: samp_stor_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_store_dur:
+    canonical_name: samp_store_dur
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_store_loc:
+    canonical_name: samp_store_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_store_sol:
+    canonical_name: samp_store_sol
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_store_temp:
+    canonical_name: samp_store_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_subtype:
+    canonical_name: samp_subtype
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_surf_moisture:
+    canonical_name: samp_surf_moisture
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_taxon_id:
+    canonical_name: samp_taxon_id
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_time_out:
+    canonical_name: samp_time_out
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_transport_cond:
+    canonical_name: samp_transport_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_transport_cont:
+    canonical_name: samp_transport_cont
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_transport_dur:
+    canonical_name: samp_transport_dur
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_transport_temp:
+    canonical_name: samp_transport_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_tvdss:
+    canonical_name: samp_tvdss
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_type:
+    canonical_name: samp_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_vol_we_dna_ext:
+    canonical_name: samp_vol_we_dna_ext
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_weather:
+    canonical_name: samp_weather
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  samp_well_name:
+    canonical_name: samp_well_name
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sample_collec_method:
+    canonical_name: sample_collec_method
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sample_collection_device_or_method:
+    canonical_name: sample_collection_device_or_method
+    aliases:
+    - samp_collect_device
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: sample_collection_device_or_method
+      to: samp_collect_device
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  sample_material_treatment:
+    canonical_name: sample_material_treatment
+    aliases:
+    - samp_mat_process
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: sample_material_treatment
+      to: samp_mat_process
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          mimarks_s: X
+          mimag: X
+          miuvig: X
+          misag: X
+  sample_name:
+    canonical_name: sample_name
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sample_volume:
+    canonical_name: sample_volume
+    events:
+    - version: v1.2
+      event: removed
+      reason: Sampling detail removed in v1.2 Candidate. Related concept amount_or_size_of_sample_collected
+        added in May 2009 Excel.
+  sampling_strategy:
+    canonical_name: sampling_strategy
+    events:
+    - version: v1.2
+      event: removed
+      reason: Removed in v1.2 Candidate. Related concepts sample_collection_device_or_method
+        and sample_material_treatment added in May 2009 Excel.
+  saturates_pc:
+    canonical_name: saturates_pc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  season:
+    canonical_name: season
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  season_environment:
+    canonical_name: season_environment
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  season_humidity:
+    canonical_name: season_humidity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  season_precpt:
+    canonical_name: season_precpt
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  season_temp:
+    canonical_name: season_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  season_use:
+    canonical_name: season_use
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  secondary_treatment:
+    canonical_name: secondary_treatment
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sediment:
+    canonical_name: sediment
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  sediment_type:
+    canonical_name: sediment_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sequence_quality_check:
+    canonical_name: sequence_quality_check
+    aliases:
+    - seq_quality_check
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: sequence_quality_check
+      to: seq_quality_check
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          mimarks_s: X
+  sequencing field:
+    canonical_name: sequencing field
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sequencing_kit:
+    canonical_name: sequencing_kit
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sequencing_location:
+    canonical_name: sequencing_location
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sequencing_method:
+    canonical_name: sequencing_method
+    aliases:
+    - seq_meth
+    events:
+    - version: v1.8-oct2010
+      event: renamed
+      from: sequencing_method
+      to: seq_meth
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  serovar_or_serotype:
+    canonical_name: serovar_or_serotype
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sewage_type:
+    canonical_name: sewage_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sexual_act:
+    canonical_name: sexual_act
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  shad_dev_water_mold:
+    canonical_name: shad_dev_water_mold
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  shading_device_cond:
+    canonical_name: shading_device_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  shading_device_loc:
+    canonical_name: shading_device_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  shading_device_mat:
+    canonical_name: shading_device_mat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  shading_device_type:
+    canonical_name: shading_device_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sieving:
+    canonical_name: sieving
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  silicate:
+    canonical_name: silicate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sim_search_meth:
+    canonical_name: sim_search_meth
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  single_cell_lysis_appr:
+    canonical_name: single_cell_lysis_appr
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  single_cell_lysis_prot:
+    canonical_name: single_cell_lysis_prot
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  size_frac:
+    canonical_name: size_frac
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  size_frac_low:
+    canonical_name: size_frac_low
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  size_frac_up:
+    canonical_name: size_frac_up
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  slope_aspect:
+    canonical_name: slope_aspect
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  slope_gradient:
+    canonical_name: slope_gradient
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sludge_retent_time:
+    canonical_name: sludge_retent_time
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  smoker:
+    canonical_name: smoker
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sodium:
+    canonical_name: sodium
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil:
+    canonical_name: soil
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  soil_conductivity:
+    canonical_name: soil_conductivity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_cover:
+    canonical_name: soil_cover
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_depth:
+    canonical_name: soil_depth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_horizon:
+    canonical_name: soil_horizon
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_pH:
+    canonical_name: soil_pH
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_porosity:
+    canonical_name: soil_porosity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_temp:
+    canonical_name: soil_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_text_measure:
+    canonical_name: soil_text_measure
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_texture_class:
+    canonical_name: soil_texture_class
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_texture_meth:
+    canonical_name: soil_texture_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_type:
+    canonical_name: soil_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soil_type_meth:
+    canonical_name: soil_type_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  solar_irradiance:
+    canonical_name: solar_irradiance
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soluble_inorg_mat:
+    canonical_name: soluble_inorg_mat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soluble_org_mat:
+    canonical_name: soluble_org_mat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  soluble_react_phosp:
+    canonical_name: soluble_react_phosp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sort_tech:
+    canonical_name: sort_tech
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  source_mat_identifiers:
+    canonical_name: source_mat_identifiers
+    aliases:
+    - source_mat_id
+    events:
+    - version: v2.1
+      event: added
+    - version: v4
+      event: renamed
+      from: source_mat_identifiers
+      to: source_mat_id
+    versions:
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          migs_vi: X
+          migs_org: X
+          mimarks_s: X
+          mimag: X
+          migs_pl: X
+          migs_eu: X
+          migs_ba: X
+          miuvig: X
+          misag: X
+  source_material_identifiers:
+    canonical_name: source_material_identifiers
+    aliases:
+    - source_mat_id
+    events:
+    - version: v1.8-oct2010
+      event: renamed
+      from: source_material_identifiers
+      to: source_mat_id
+    versions:
+      v1.1:
+        exists: true
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_org: C
+          migs_pl: C
+          migs_eu: C
+          migs_ba: C
+          me: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+  source_uvig:
+    canonical_name: source_uvig
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  space_typ_state:
+    canonical_name: space_typ_state
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  spec_intended_cons:
+    canonical_name: spec_intended_cons
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  special_diet:
+    canonical_name: special_diet
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  specific:
+    canonical_name: specific
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  specific_host:
+    canonical_name: specific_host
+    events:
+    - version: v1.2
+      event: added
+    versions:
+      v1.2:
+        exists: true
+      v1.5-may2009:
+        exists: true
+        checklists:
+          migs_eu: R
+      v1.6-nov2009:
+        exists: true
+        checklists:
+          migs_vi: C
+          migs_pl: C
+          migs_eu: X
+          migs_ba: C
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_pl: X
+          migs_ba: X
+  specific_humidity:
+    canonical_name: specific_humidity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  spikein_AMR:
+    canonical_name: spikein_AMR
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  spikein_antibiotic:
+    canonical_name: spikein_antibiotic
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  spikein_count:
+    canonical_name: spikein_count
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  spikein_growth_med:
+    canonical_name: spikein_growth_med
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  spikein_metal:
+    canonical_name: spikein_metal
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  spikein_org:
+    canonical_name: spikein_org
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  spikein_serovar:
+    canonical_name: spikein_serovar
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  spikein_strain:
+    canonical_name: spikein_strain
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sr_dep_env:
+    canonical_name: sr_dep_env
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sr_geol_age:
+    canonical_name: sr_geol_age
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sr_kerog_type:
+    canonical_name: sr_kerog_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sr_lithology:
+    canonical_name: sr_lithology
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  standing_water_regm:
+    canonical_name: standing_water_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ster_meth_samp_room:
+    canonical_name: ster_meth_samp_room
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  store_cond:
+    canonical_name: store_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  study_complt_stat:
+    canonical_name: study_complt_stat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  study_design:
+    canonical_name: study_design
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  study_inc_dur:
+    canonical_name: study_inc_dur
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  study_inc_temp:
+    canonical_name: study_inc_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  study_timecourse:
+    canonical_name: study_timecourse
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  study_tmnt:
+    canonical_name: study_tmnt
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  submit_to_insdc:
+    canonical_name: submit_to_insdc
+    aliases:
+    - submitted_to_insdc
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.8-oct2010
+      event: renamed
+      from: submit_to_insdc
+      to: submitted_to_insdc
+    - version: v4
+      event: renamed
+      from: submit_to_insdc
+      to: submitted_to_insdc
+    - version: v6.0.0
+      event: removed
+      reason: Removed in v6; INSDC submission status not tracked in schema
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+  submitted_to_insdc:
+    canonical_name: submitted_to_insdc
+    events:
+    - version: v1.8-oct2010
+      event: renamed
+      from: submitted_to_insdc
+      to: submitted_to_insdc
+  substructure_type:
+    canonical_name: substructure_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sulfate:
+    canonical_name: sulfate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sulfate_fw:
+    canonical_name: sulfate_fw
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sulfide:
+    canonical_name: sulfide
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  surf_air_cont:
+    canonical_name: surf_air_cont
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  surf_humidity:
+    canonical_name: surf_humidity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  surf_material:
+    canonical_name: surf_material
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  surf_moisture:
+    canonical_name: surf_moisture
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  surf_moisture_ph:
+    canonical_name: surf_moisture_ph
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  surf_temp:
+    canonical_name: surf_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  suspend_part_matter:
+    canonical_name: suspend_part_matter
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  suspend_solids:
+    canonical_name: suspend_solids
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  sym_life_cycle_type:
+    canonical_name: sym_life_cycle_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  symbiont_host_role:
+    canonical_name: symbiont_host_role
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tan:
+    canonical_name: tan
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  target_gene:
+    canonical_name: target_gene
+    events:
+    - version: v1.5-may2009
+      event: added
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  target_subfragment:
+    canonical_name: target_subfragment
+    events:
+    - version: v1.8-oct2010
+      event: added
+    versions:
+      v1.8-oct2010:
+        exists: true
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+      v4:
+        exists: true
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          mimarks_s: X
+  targets:
+    canonical_name: targets
+    events:
+    - version: v4
+      event: created_from_split
+      source: environment
+    - version: v5
+      event: created_from_split
+      source: alt_elev
+    - version: v5
+      event: created_from_split
+      source: assembly
+  tax_class:
+    canonical_name: tax_class
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  tax_ident:
+    canonical_name: tax_ident
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_vi: X
+          migs_org: X
+          migs_pl: X
+          migs_eu: X
+          migs_ba: X
+  temp:
+    canonical_name: temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  temp_out:
+    canonical_name: temp_out
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tertiary_treatment:
+    canonical_name: tertiary_treatment
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  texture:
+    canonical_name: texture
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  texture_meth:
+    canonical_name: texture_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tidal_stage:
+    canonical_name: tidal_stage
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tillage:
+    canonical_name: tillage
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  time_last_toothbrush:
+    canonical_name: time_last_toothbrush
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  time_since_last_wash:
+    canonical_name: time_since_last_wash
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  timepoint:
+    canonical_name: timepoint
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tiss_cult_growth_med:
+    canonical_name: tiss_cult_growth_med
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  toluene:
+    canonical_name: toluene
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_car:
+    canonical_name: tot_car
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_carb:
+    canonical_name: tot_carb
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_depth_water_col:
+    canonical_name: tot_depth_water_col
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_diss_nitro:
+    canonical_name: tot_diss_nitro
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_inorg_nitro:
+    canonical_name: tot_inorg_nitro
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_iron:
+    canonical_name: tot_iron
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_n_meth:
+    canonical_name: tot_n_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_nitro:
+    canonical_name: tot_nitro
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_nitro_cont_meth:
+    canonical_name: tot_nitro_cont_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_nitro_content:
+    canonical_name: tot_nitro_content
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_org_c_meth:
+    canonical_name: tot_org_c_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_org_carb:
+    canonical_name: tot_org_carb
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_part_carb:
+    canonical_name: tot_part_carb
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_phos:
+    canonical_name: tot_phos
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_phosp:
+    canonical_name: tot_phosp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_phosphate:
+    canonical_name: tot_phosphate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tot_sulfur:
+    canonical_name: tot_sulfur
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  train_line:
+    canonical_name: train_line
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  train_stat_loc:
+    canonical_name: train_stat_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  train_stop_loc:
+    canonical_name: train_stop_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  travel_out_six_month:
+    canonical_name: travel_out_six_month
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  trna_ext_software:
+    canonical_name: trna_ext_software
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  trnas:
+    canonical_name: trnas
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  trophic_level:
+    canonical_name: trophic_level
+    events:
+    - version: v1.2
+      event: removed
+      reason: Removed in v1.2 Candidate. Restored in May 2009 Excel version.
+    versions:
+      v1.5-may2009:
+        exists: true
+      v1.6-nov2009:
+        exists: true
+      v1.8-oct2010:
+        exists: true
+        checklists:
+          migs_eu: C
+          migs_ba: C
+      v2.0:
+        exists: true
+      v2.1:
+        exists: true
+        checklists:
+          migs_ba: M
+          migs_eu: M
+      v4:
+        exists: true
+        checklists:
+          migs_ba: C
+          migs_eu: C
+          mimarks_c: C
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          mimarks_c: X
+          migs_eu: X
+          migs_ba: X
+  turbidity:
+    canonical_name: turbidity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tvdss_of_hcr_press:
+    canonical_name: tvdss_of_hcr_press
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  tvdss_of_hcr_temp:
+    canonical_name: tvdss_of_hcr_temp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  twin_sibling:
+    canonical_name: twin_sibling
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  typ_occup_density:
+    canonical_name: typ_occup_density
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  type_of_symbiosis:
+    canonical_name: type_of_symbiosis
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  urine_collect_meth:
+    canonical_name: urine_collect_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  urogenit_disord:
+    canonical_name: urogenit_disord
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  urogenit_tract_disor:
+    canonical_name: urogenit_tract_disor
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ventilation_rate:
+    canonical_name: ventilation_rate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  ventilation_type:
+    canonical_name: ventilation_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  vfa:
+    canonical_name: vfa
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  vfa_fw:
+    canonical_name: vfa_fw
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  vir_ident_software:
+    canonical_name: vir_ident_software
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+  virus_enrich_appr:
+    canonical_name: virus_enrich_appr
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          migs_vi: X
+  vis_media:
+    canonical_name: vis_media
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  viscosity:
+    canonical_name: viscosity
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  volatile_org_comp:
+    canonical_name: volatile_org_comp
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  votu_class_appr:
+    canonical_name: votu_class_appr
+    aliases:
+    - otu_class_appr
+    events:
+    - version: v5
+      event: added
+    - version: v6.0.0
+      event: renamed
+      from: votu_class_appr
+      to: otu_class_appr
+    versions:
+      v5:
+        exists: true
+  votu_db:
+    canonical_name: votu_db
+    aliases:
+    - otu_db
+    events:
+    - version: v5
+      event: added
+    - version: v6.0.0
+      event: renamed
+      from: votu_db
+      to: otu_db
+    versions:
+      v5:
+        exists: true
+  votu_seq_comp_appr:
+    canonical_name: votu_seq_comp_appr
+    aliases:
+    - otu_seq_comp_appr
+    events:
+    - version: v5
+      event: added
+    - version: v6.0.0
+      event: renamed
+      from: votu_seq_comp_appr
+      to: otu_seq_comp_appr
+    versions:
+      v5:
+        exists: true
+  wall_area:
+    canonical_name: wall_area
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wall_const_type:
+    canonical_name: wall_const_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wall_finish_mat:
+    canonical_name: wall_finish_mat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wall_height:
+    canonical_name: wall_height
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wall_loc:
+    canonical_name: wall_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wall_surf_treatment:
+    canonical_name: wall_surf_treatment
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wall_texture:
+    canonical_name: wall_texture
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wall_thermal_mass:
+    canonical_name: wall_thermal_mass
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wall_water_mold:
+    canonical_name: wall_water_mold
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wastewater/sludge:
+    canonical_name: wastewater/sludge
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  wastewater_type:
+    canonical_name: wastewater_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water:
+    canonical_name: water
+    events:
+    - version: v1.5-may2009
+      event: added
+    - version: v1.6-nov2009
+      event: removed
+      reason: Package name moved to package metadata; not a term
+    versions:
+      v1.5-may2009:
+        exists: true
+  water_cont_soil_meth:
+    canonical_name: water_cont_soil_meth
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_content:
+    canonical_name: water_content
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_current:
+    canonical_name: water_current
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_cut:
+    canonical_name: water_cut
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_feat_size:
+    canonical_name: water_feat_size
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_feat_type:
+    canonical_name: water_feat_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_frequency:
+    canonical_name: water_frequency
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_pH:
+    canonical_name: water_pH
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_prod_rate:
+    canonical_name: water_prod_rate
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_source_adjac:
+    canonical_name: water_source_adjac
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_source_shared:
+    canonical_name: water_source_shared
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  water_temp_regm:
+    canonical_name: water_temp_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  watering_regm:
+    canonical_name: watering_regm
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  weekday:
+    canonical_name: weekday
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  weight_loss_3_month:
+    canonical_name: weight_loss_3_month
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wga_amp_appr:
+    canonical_name: wga_amp_appr
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  wga_amp_kit:
+    canonical_name: wga_amp_kit
+    events:
+    - version: v5
+      event: added
+    versions:
+      v5:
+        exists: true
+      v6.0.0:
+        exists: true
+        checklists:
+          miuvig: X
+  win:
+    canonical_name: win
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wind_direction:
+    canonical_name: wind_direction
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  wind_speed:
+    canonical_name: wind_speed
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_cond:
+    canonical_name: window_cond
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_cover:
+    canonical_name: window_cover
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_horiz_pos:
+    canonical_name: window_horiz_pos
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_loc:
+    canonical_name: window_loc
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_mat:
+    canonical_name: window_mat
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_open_freq:
+    canonical_name: window_open_freq
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_size:
+    canonical_name: window_size
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_status:
+    canonical_name: window_status
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_type:
+    canonical_name: window_type
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_vert_pos:
+    canonical_name: window_vert_pos
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  window_water_mold:
+    canonical_name: window_water_mold
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true
+  xylene:
+    canonical_name: xylene
+    events:
+    - version: v6.0.0
+      event: added
+    versions:
+      v6.0.0:
+        exists: true

@@ -1,0 +1,59 @@
+# MIxS 2010 MIENS Excel Format Profile
+# Files: MIENS_*.xlsx from late 2010
+# This format has headers at row 1 (unlike MIGS_MIMS which has headers at row 16)
+description: "MIxS 2010 MIENS Excel format (headers at row 1)"
+
+# Pattern matching for auto-detection
+# Note: MIENS_18_10_10 has headers at row 16 like MIGS_MIMS, so it uses excel_2010.yaml
+# Only MIENS_12_11_10 has headers at row 1
+version_patterns:
+  - "MIENS_12_11_10"
+
+# Header row offset (0-indexed, so row 1 = index 0)
+header_row: 0
+
+# Sheet names to look for (in priority order)
+sheet_names:
+  main_terms:
+    - "MIENS"
+  packages:
+    - "environmental_packages"
+    - "environmental packages"
+
+# Column header mappings
+column_mappings:
+  name:
+    - "Structured comment name"
+  item:
+    - "Item"
+  definition:
+    - "Definition"
+  example:
+    - "Example"
+  expected_value:
+    - "Expected value"
+  section:
+    - "Section"
+  value_syntax:
+    - "Value syntax"
+  occurrence:
+    - "Occurrence"
+    - "Occurence"
+  position:
+    - "Position"
+
+# Checklist column mappings for MIENS
+checklist_columns:
+  "MIENS SURVEY": "mimarks_s"
+  "MIENS CULTURE": "mimarks_c"
+  "miens_s": "mimarks_s"
+  "miens_c": "mimarks_c"
+
+# Term names need normalization
+normalize_term_names: true
+
+notes: |
+  The 2010 MIENS files have:
+  - Row 1: Column headers (unlike MIGS_MIMS which has headers at row 16)
+  - MIENS = Minimum Information about ENvironmental Sequences (later renamed to MIMARKS)
+  - Checklists: MIENS SURVEY, MIENS CULTURE

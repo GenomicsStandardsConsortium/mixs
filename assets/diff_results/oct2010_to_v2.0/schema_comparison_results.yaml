@@ -1,0 +1,86 @@
+comparison_metadata:
+  old_schema:
+    version: v1.8-oct2010
+    source: MIGS_MIMS_18_10_10.xlsx + MIENS_18_10_10.xlsx
+    format: xlsx
+    term_count: 55
+  new_schema:
+    version: v2.0
+    source: MIGS_MIMS_07_12_10.xlsx + MIENS_12_11_10.xlsx
+    format: xlsx
+    term_count: 55
+  comparison_timestamp: '2026-02-03T16:04:56.793172'
+term_differences:
+  key_comparison:
+    shared:
+    - adapters
+    - alt_elev
+    - annot_source
+    - assembly
+    - assembly_name
+    - biome
+    - biotic_relationship
+    - chimera_check
+    - collection_date
+    - depth
+    - encoded_traits
+    - env_package
+    - estimated_size
+    - experimental_factor
+    - extrachrom_elements
+    - feature
+    - finishing_strategy
+    - geo_loc_name
+    - health_disease_stat
+    - host_spec_range
+    - investigation_type
+    - isol_growth_condt
+    - lat_lon
+    - lib_const_meth
+    - lib_reads_seqd
+    - lib_screen
+    - lib_size
+    - lib_vector
+    - material
+    - mid
+    - nucl_acid_amp
+    - nucl_acid_ext
+    - num_replicons
+    - pathogenicity
+    - pcr_cond
+    - pcr_primers
+    - ploidy
+    - project_name
+    - propagation
+    - ref_biomaterial
+    - rel_to_oxygen
+    - samp_collect_device
+    - samp_mat_process
+    - samp_size
+    - seq_meth
+    - seq_quality_check
+    - sop
+    - source_mat_id
+    - specific_host
+    - submitted_to_insdc
+    - subspecf_gen_lin
+    - target_gene
+    - target_subfragment
+    - trophic_level
+    - url
+  definition_changes:
+    rel_to_oxygen:
+      example:
+        old: ''
+        new: ''''
+checklist_differences:
+  key_comparison:
+    shared:
+    - me
+    - migs_ba
+    - migs_eu
+    - migs_org
+    - migs_pl
+    - migs_vi
+    - mimarks_c
+    - mimarks_s
