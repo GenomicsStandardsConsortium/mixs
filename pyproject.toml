@@ -70,6 +70,9 @@ isolate-global-slots = 'scripts.isolate_slots:isolate_global_slots'
 diff-releases = 'scripts.diff_two_linkml_mixs_releases:main'
 mixs-legacy-diff = 'mixs.diff.cli:main'
 
+[tool.deptry]
+known_first_party = ["mixs"]
+
 [tool.deptry.package_module_name_map]
 pyyaml = "yaml"
 python-dotenv = "dotenv"
