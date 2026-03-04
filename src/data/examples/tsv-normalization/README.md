@@ -49,15 +49,24 @@ validation of multivalued fields is tracked in
   slot definitions from the LinkML schema and rewrites all list values to
   canonical `[pipe|delimited]` format
 - `MimsSoil-normalized-lists.tsv` — Output after normalization (generated)
+- `MimsSoil-bare-pipes.tsv` — Output after dumping with `--list-wrapper none` (generated)
 
 ## Usage
+
+All targets below are standalone demos, not part of `make all` or `make test`.
 
 ```bash
 # Step 1: Normalize messy TSV (uses schema to identify multivalued slots)
 make normalize-tsv-demo
 
-# Step 2: Round-trip normalized TSV through linkml-convert
+# Step 2: Round-trip normalized TSV through linkml-convert (bracket format)
 make normalize-tsv-roundtrip
+
+# Step 3: Dump YAML → bare-pipe TSV using --list-wrapper none
+make src/data/examples/tsv-normalization/MimsSoil-bare-pipes.tsv
+
+# Step 4: Full bare-pipe round-trip (dump + load; load blocked by linkml#3250)
+make tsv-bare-pipe-roundtrip
 ```
 
 ## What This Demonstrates
@@ -66,8 +75,9 @@ make normalize-tsv-roundtrip
    which columns are multivalued — it only touches those columns
 2. **Bracket format was previously required**: `json_flattener` only recognized
    `[a|b|c]` as a list; bare `a|b|c` was treated as a single value
-3. **`--list-wrapper none` now works**: With both linkml packages from git main,
-   `linkml-convert` loads and dumps bare-pipe format correctly
+3. **`--list-wrapper none` dump works**: With both linkml packages from git main,
+   `linkml-convert` dumps bare-pipe format correctly. Loading crashes on empty
+   multivalued cells ([linkml#3250](https://github.com/linkml/linkml/issues/3250))
 4. **Validator gap remains**: `linkml-validate` and `linkml examples` still
    cannot parse multivalued TSV fields ([linkml#3147](https://github.com/linkml/linkml/issues/3147))
 
@@ -76,5 +86,6 @@ make normalize-tsv-roundtrip
 - [linkml#3134](https://github.com/linkml/linkml/pull/3134) — Configurable list formatting (merged, awaiting release)
 - [linkml#3241](https://github.com/linkml/linkml/issues/3241) — Version skew crash when packages are from different sources
 - [linkml#3147](https://github.com/linkml/linkml/issues/3147) — Validator CSV/TSV loader lacks schema-aware parsing
+- [linkml#3250](https://github.com/linkml/linkml/issues/3250) — Empty multivalued cells crash loader with `--list-wrapper none`
 - [linkml#2581](https://github.com/linkml/linkml/issues/2581) — Original feature request for configurable list syntax
 - [mixs#1060](https://github.com/GenomicsStandardsConsortium/mixs/issues/1060) — Cardinality and syntax of env triad slots

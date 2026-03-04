@@ -67,7 +67,7 @@ help: status
 	@echo "Cleanup:"
 	@echo "  clean-contrib -- remove contrib/ files (called by clean)"
 	@echo ""
-	@echo "Standalone utilities:"
+	@echo "Standalone demos (not part of 'make all' or 'make test'):"
 	@echo "  help          -- show this help"
 	@echo "  status        -- show project info (called by help)"
 	@echo "  testdoc       -- build & serve docs locally (calls gendoc, serve)"
