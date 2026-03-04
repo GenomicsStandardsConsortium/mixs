@@ -115,9 +115,58 @@ between the two packages causes crashes
    cannot parse multivalued TSV fields
    ([linkml#3147](https://github.com/linkml/linkml/issues/3147)).
 
+## Next Steps
+
+### Boolean slot demo
+
+MIxS has 6 boolean slots (`reassembly_bin`, `x16s_recover`, `smoker`,
+`twin_sibling`, `medic_hist_perform`, `hysterectomy`) but **none appear in
+any existing example data**. The current demos only exercise list formatting.
+
+linkml PR [#3144](https://github.com/linkml/linkml/pull/3144) adds
+`--boolean-truthy`, `--boolean-falsy`, and `--boolean-output` flags to
+`linkml-convert`. To demonstrate both features together:
+
+1. Create a **Mimag** or **HumanAssociated** example YAML/TSV that includes
+   boolean slots (e.g. `reassembly_bin: yes`, `x16s_recover: no`) alongside
+   multivalued list slots
+2. Add a Makefile target that round-trips with both `--list-wrapper none` and
+   `--boolean-truthy yes,no` — showing lists and booleans handled in one pass
+3. Show the before/after: without `--boolean-truthy`, `yes`/`no` stay as
+   strings; with it, they coerce to `true`/`false`
+
+This requires either merging #3144 to main or pointing MIxS at a branch that
+combines #3251 (empty-cell fix) + #3144 (boolean handling).
+
+### Validator integration
+
+`linkml-validate` uses a separate CSV/TSV code path (raw `csv.DictReader`)
+that doesn't support `--list-wrapper` or boolean coercion. Once
+[linkml#3147](https://github.com/linkml/linkml/issues/3147) is addressed,
+add validation targets that confirm TSV example data passes schema validation.
+
+### Schema-level annotations
+
+Instead of passing `--list-wrapper none` on the CLI every time, MIxS could
+add schema-level annotations so the loader/dumper picks up defaults
+automatically:
+
+```yaml
+annotations:
+  list_wrapper: none
+  inner_delimiter: "|"
+  list_strip_whitespace: true
+  boolean_truthy: "yes,on,1"
+  boolean_falsy: "no,off,0"
+```
+
+This would make `linkml-convert -s mixs.yaml -f tsv -t yaml` do the right
+thing without extra flags.
+
 ## Related Issues
 
 - [linkml#3134](https://github.com/linkml/linkml/pull/3134) — Configurable list formatting (merged, awaiting PyPI release)
+- [linkml#3144](https://github.com/linkml/linkml/pull/3144) — Boolean truthy/falsy handling for CSV/TSV
 - [linkml#3251](https://github.com/linkml/linkml/pull/3251) — Empty multivalued cells crash fix
 - [linkml#3250](https://github.com/linkml/linkml/issues/3250) — Empty multivalued cells crash with `--list-wrapper none`
 - [linkml#3241](https://github.com/linkml/linkml/issues/3241) — Version skew crash between linkml and linkml-runtime
