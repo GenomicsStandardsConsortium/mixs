@@ -17,13 +17,17 @@ include = ["README.md", "project", "src/mixs", "src/scripts"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-linkml-runtime = "^1.9"
+# TODO: Switch back to branch = "main" (or a PyPI release) once linkml PR #3251
+# (fix empty multivalued cell crash) merges to main. Tracking: linkml/linkml#3250
+linkml-runtime = {git = "https://github.com/linkml/linkml.git", branch = "fix-3250-empty-cell-crash", subdirectory = "packages/linkml_runtime"}
 jsonasobj2 = "^1.0" # used transitively in src/scripts/mixs/datamodel/mixs.py
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.1"
 deptry = "^0.23"
-linkml = "^1.9"
+# TODO: Switch back to branch = "main" (or a PyPI release) once linkml PR #3251
+# (fix empty multivalued cell crash) merges to main. Tracking: linkml/linkml#3250
+linkml = {git = "https://github.com/linkml/linkml.git", branch = "fix-3250-empty-cell-crash", subdirectory = "packages/linkml"}
 matplotlib = "^3.10"
 mkdocs-material = "^9.6"
 mkdocs-mermaid2-plugin = "^1.2"

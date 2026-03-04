@@ -67,16 +67,20 @@ help: status
 	@echo "Cleanup:"
 	@echo "  clean-contrib -- remove contrib/ files (called by clean)"
 	@echo ""
-	@echo "Standalone utilities:"
+	@echo "Standalone demos (not part of 'make all' or 'make test'):"
 	@echo "  help          -- show this help"
 	@echo "  status        -- show project info (called by help)"
 	@echo "  testdoc       -- build & serve docs locally (calls gendoc, serve)"
 	@echo "  serve         -- serve existing docs locally via mkdocs (called by testdoc)"
 	@echo "  yamlfmt-beta  -- experimental YAML formatter"
 	@echo "  create-data-harmonizer -- experimental npm tool"
+	@echo "  normalize-tsv-demo       -- normalize heterogeneous list formatting in messy TSV"
+	@echo "  normalize-tsv-roundtrip  -- round-trip: normalized TSV → YAML → TSV"
+	@echo "  $(TSV_BARE_PIPE_OUTPUT)  -- dump YAML → bare-pipe TSV (--list-wrapper none)"
+	@echo "  tsv-bare-pipe-roundtrip  -- dump + load bare-pipe round-trip"
 	@echo ""
 
-.PHONY: all all-contrib clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib
+.PHONY: all all-contrib clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib normalize-tsv-demo normalize-tsv-roundtrip tsv-bare-pipe-roundtrip
 
 ensure-dirs:
 	mkdir -p contrib
@@ -267,5 +271,81 @@ clean-contrib:
 	       contrib/mixs_derived_class_term_schemasheet_* \
 	       contrib/extensions-dendrogram.pdf \
 	       contrib/soil-vs-water-slot-usage.yaml
+
+TSV_NORM_DIR = src/data/examples/tsv-normalization
+TSV_NORM_SCRIPT = $(TSV_NORM_DIR)/normalize_tsv_lists.py
+TSV_NORM_INPUT = $(TSV_NORM_DIR)/MimsSoil-messy-lists.tsv
+TSV_NORM_OUTPUT = $(TSV_NORM_DIR)/MimsSoil-normalized-lists.tsv
+TSV_NORM_YAML = $(TSV_NORM_DIR)/MimsSoil-normalized.yaml
+TSV_BARE_PIPE_OUTPUT = $(TSV_NORM_DIR)/MimsSoil-bare-pipes.tsv
+TSV_BARE_PIPE_YAML = $(TSV_NORM_DIR)/MimsSoil-bare-pipes-reloaded.yaml
+
+# Normalize heterogeneous list formatting in a messy TSV using schema awareness.
+# Shows: bare pipes, spaced pipes, and bracketed pipes all converge to canonical format.
+normalize-tsv-demo: $(TSV_NORM_OUTPUT)
+
+$(TSV_NORM_OUTPUT): $(TSV_NORM_INPUT) $(TSV_NORM_SCRIPT) $(SOURCE_SCHEMA_PATH)
+	@echo "=== Normalizing messy TSV lists ==="
+	$(RUN) python $(TSV_NORM_SCRIPT) \
+		--schema $(SOURCE_SCHEMA_PATH) \
+		--target-class MimsSoil \
+		--input $(TSV_NORM_INPUT) \
+		--output $(TSV_NORM_OUTPUT)
+	@echo ""
+	@echo "=== Before (multivalued columns) ==="
+	@awk -F'\t' 'NR==1{for(i=1;i<=NF;i++)h[i]=$$i} NR>0{printf "%s\t%s\t%s\n",$$1,$$5,$$6}' $(TSV_NORM_INPUT)
+	@echo ""
+	@echo "=== After (multivalued columns) ==="
+	@awk -F'\t' 'NR==1{for(i=1;i<=NF;i++)h[i]=$$i} NR>0{printf "%s\t%s\t%s\n",$$1,$$5,$$6}' $(TSV_NORM_OUTPUT)
+
+# Round-trip: normalized TSV → YAML → TSV to prove linkml-convert can parse it.
+normalize-tsv-roundtrip: $(TSV_NORM_OUTPUT) contrib/mixs-patterns-materialized.yaml
+	@echo "=== Converting normalized TSV → YAML ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f tsv -t yaml --no-validate \
+		$(TSV_NORM_OUTPUT) > $(TSV_NORM_YAML)
+	@echo "Output: $(TSV_NORM_YAML)"
+	@echo ""
+	@cat $(TSV_NORM_YAML)
+	@echo ""
+	@echo "=== Round-trip: YAML → TSV ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f yaml -t tsv --no-validate \
+		$(TSV_NORM_YAML)
+
+# --- Bare-pipe TSV demo (exercises --list-wrapper none from linkml PR #3134) ---
+
+# Dump: YAML → bare-pipe TSV (works now).
+$(TSV_BARE_PIPE_OUTPUT): $(TSV_NORM_YAML) contrib/mixs-patterns-materialized.yaml
+	@echo "=== Dumping YAML → bare-pipe TSV (--list-wrapper none) ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f yaml -t tsv --no-validate \
+		--list-wrapper none \
+		$(TSV_NORM_YAML) > $(TSV_BARE_PIPE_OUTPUT)
+	@echo "Output: $(TSV_BARE_PIPE_OUTPUT)"
+	@echo ""
+	@cat $(TSV_BARE_PIPE_OUTPUT)
+
+# Load: bare-pipe TSV → YAML (requires linkml PR #3251 or later).
+$(TSV_BARE_PIPE_YAML): $(TSV_BARE_PIPE_OUTPUT) contrib/mixs-patterns-materialized.yaml
+	@echo "=== Loading bare-pipe TSV → YAML (--list-wrapper none) ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f tsv -t yaml --no-validate \
+		--list-wrapper none \
+		$(TSV_BARE_PIPE_OUTPUT) > $(TSV_BARE_PIPE_YAML)
+	@echo "Output: $(TSV_BARE_PIPE_YAML)"
+	@echo ""
+	@cat $(TSV_BARE_PIPE_YAML)
+
+# Metatarget: dump + load.
+tsv-bare-pipe-roundtrip: $(TSV_BARE_PIPE_OUTPUT) $(TSV_BARE_PIPE_YAML)
 
 include contrib.Makefile
