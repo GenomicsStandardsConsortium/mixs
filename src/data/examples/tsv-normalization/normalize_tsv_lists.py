@@ -25,7 +25,6 @@ See also:
 
 import argparse
 import csv
-import re
 import sys
 from pathlib import Path
 
@@ -37,8 +36,8 @@ def get_multivalued_slots(schema_path: str, target_class: str) -> set[str]:
     sv = SchemaView(schema_path)
     mv_slots = set()
     for slot_name in sv.class_slots(target_class):
-        slot = sv.get_slot(slot_name)
-        if slot.multivalued:
+        slot = sv.induced_slot(slot_name, target_class)
+        if slot and slot.multivalued:
             mv_slots.add(slot_name)
     return mv_slots
 
@@ -143,10 +142,6 @@ def main():
     parser.add_argument(
         '--output', required=True,
         help='Output TSV file with normalized list formatting'
-    )
-    parser.add_argument(
-        '--delimiter', default='|',
-        help='List delimiter character (default: pipe)'
     )
     args = parser.parse_args()
 
