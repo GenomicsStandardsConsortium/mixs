@@ -1,16 +1,37 @@
 #!/usr/bin/env python3
 """Normalize heterogeneous list formatting in MIxS TSV files.
 
-Demonstrates the problem: MIxS data submitters use inconsistent list syntax
-in TSV files. Some wrap multivalued fields in [square brackets], some use
-bare pipes, some add whitespace around delimiters. The linkml CSV/TSV loader
-(via json_flattener) requires [bracket|delimited] syntax to recognize lists.
+Why this script exists
+----------------------
+``linkml-convert`` expects a *single* list wrapper style per invocation
+(``--list-wrapper square`` or ``--list-wrapper none``).  Real-world MIxS
+TSV files often contain a *mix* of styles within the same file — some rows
+use ``[a|b]``, others use bare ``a|b``, others use spaced ``a | b``.
+``linkml-convert`` cannot parse such mixed-format files directly.
 
-This script uses SchemaView to identify multivalued slots, then normalizes
-all list values to canonical [pipe|delimited] format so linkml-convert can
-parse them correctly.
+This script is a **pre-processing step** that normalizes all multivalued
+cells to a single canonical style (``[pipe|delimited]`` by default) so
+``linkml-convert`` can then load the file successfully.
 
-Usage:
+How it works
+------------
+1. Uses ``SchemaView.induced_slot()`` to identify which columns in a given
+   class are multivalued (respects class-level ``slot_usage`` overrides).
+2. For each multivalued cell, strips outer brackets if present, splits on
+   pipe, trims whitespace, and re-joins in canonical ``[a|b|c]`` format.
+3. Single-valued and empty cells are left untouched.
+
+When you need this vs. when you don't
+--------------------------------------
+- **Mixed-format input** (e.g. data merged from multiple submitters):
+  Run this script first, then ``linkml-convert``.
+- **Uniform bare-pipe input**: Use ``linkml-convert --list-wrapper none``
+  directly — no pre-processing needed.
+- **Uniform bracketed input**: Use ``linkml-convert`` with defaults — no
+  pre-processing needed.
+
+Usage::
+
     python normalize_tsv_lists.py \\
         --schema src/mixs/schema/mixs.yaml \\
         --target-class MimsSoil \\
@@ -19,6 +40,7 @@ Usage:
 
 See also:
     - linkml/linkml#2581  Configurable inlined multivalued strings syntax
+    - linkml/linkml#3134  Configurable list formatting (merged)
     - linkml/linkml#3147  Validator CSV/TSV loader lacks schema-aware parsing
     - GSC/mixs#1060       Cardinality and syntax of env triad slots
 """
