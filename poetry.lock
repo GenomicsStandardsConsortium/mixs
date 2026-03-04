@@ -1508,15 +1508,13 @@ subdirectory = "packages/linkml"
 
 [[package]]
 name = "linkml-runtime"
-version = "1.10.0"
+version = "1.10.0.post93.dev0+aafcce614"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
-files = [
-    {file = "linkml_runtime-1.10.0-py3-none-any.whl", hash = "sha256:b7caf806e1b49bf62005d8f398b070c282742c5f6626469fdc1660add0c9da58"},
-    {file = "linkml_runtime-1.10.0.tar.gz", hash = "sha256:899889d584ce8056c5c44512b2d247bdc84a8484c3aa228aeb2db283e3a9d2ec"},
-]
+files = []
+develop = false
 
 [package.dependencies]
 click = "*"
@@ -1536,6 +1534,13 @@ requests = "*"
 
 [package.extras]
 dev = ["coverage", "requests-cache"]
+
+[package.source]
+type = "git"
+url = "https://github.com/linkml/linkml.git"
+reference = "main"
+resolved_reference = "aafcce614bc45feb4787e0fe05f398c839428ff4"
+subdirectory = "packages/linkml_runtime"
 
 [[package]]
 name = "markdown"
@@ -4239,4 +4244,4 @@ docs = []
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "588ee5d8a472b734932c155df59968e1654cb1141ec989ae370075690f1df071"
+content-hash = "3770194d2c419cb463e8f8d6988afddf893a656941921f2d461e7ad9394df86b"
