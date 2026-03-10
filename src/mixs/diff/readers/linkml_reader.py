@@ -4,7 +4,6 @@ Wraps SchemaView to produce NormalizedSchema for comparison with legacy formats.
 """
 
 import logging
-import os
 import re
 import shutil
 import tempfile

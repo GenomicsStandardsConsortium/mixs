@@ -198,8 +198,8 @@ def main(
 
         logger.info(f"Detected formats - Old: {old_fmt}, New: {new_fmt}")
 
-        old_reader = get_reader(old, profiles_dir=profile_dir)
-        new_reader = get_reader(new, profiles_dir=profile_dir)
+        old_reader = get_reader(old, profiles_dir=profile_dir, format_override=old_fmt if old_format != 'auto' else None)
+        new_reader = get_reader(new, profiles_dir=profile_dir, format_override=new_fmt if new_format != 'auto' else None)
 
         # Read schemas
         logger.info("Reading old schema...")

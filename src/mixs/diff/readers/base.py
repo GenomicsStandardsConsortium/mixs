@@ -64,12 +64,14 @@ class BaseReader(ABC):
         return False
 
 
-def get_reader(path: str, profiles_dir: Optional[Path] = None) -> BaseReader:
+def get_reader(path: str, profiles_dir: Optional[Path] = None, format_override: Optional[str] = None) -> BaseReader:
     """Get appropriate reader for the given path.
 
     Args:
         path: File path or GitHub specification.
         profiles_dir: Optional custom directory for format profiles (Excel only).
+        format_override: Optional format string ('xlsx', 'xls', 'linkml') to use
+            instead of auto-detecting from the file path.
 
     Returns:
         Appropriate reader instance.
@@ -80,7 +82,7 @@ def get_reader(path: str, profiles_dir: Optional[Path] = None) -> BaseReader:
     from mixs.diff.readers.excel_reader import ExcelReader
     from mixs.diff.readers.linkml_reader import LinkMLReader
 
-    fmt = detect_format(path)
+    fmt = format_override if format_override else detect_format(path)
 
     if fmt in ("xlsx", "xls"):
         return ExcelReader(profiles_dir=profiles_dir)

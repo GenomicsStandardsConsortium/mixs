@@ -392,7 +392,7 @@ class ExcelReader(BaseReader):
 
             # Update term's package membership
             req_idx = col_map.get("requirement")
-            requirement = str(row[req_idx]).strip() if req_idx and row[req_idx] else ""
+            requirement = str(row[req_idx]).strip() if req_idx is not None and row[req_idx] else ""
             schema.terms[term_name].package_membership[pkg_name_normalized] = requirement
 
     def _process_packages_sheet_xls(self, sheet, schema: NormalizedSchema, profile: FormatProfile) -> None:
@@ -467,7 +467,7 @@ class ExcelReader(BaseReader):
 
             # Update term's package membership
             req_idx = col_map.get("requirement")
-            requirement = str(row[req_idx]).strip() if req_idx and row[req_idx] else ""
+            requirement = str(row[req_idx]).strip() if req_idx is not None and row[req_idx] else ""
             schema.terms[term_name].package_membership[pkg_name_normalized] = requirement
 
     def _build_column_map(self, headers: List[str], profile: FormatProfile) -> Dict[str, int]:

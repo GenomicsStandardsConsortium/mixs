@@ -4,7 +4,6 @@ Downloads Excel test files from the public GenomicsStandardsConsortium/mixs-lega
 repo on GitHub if they aren't available locally (e.g. in CI).
 """
 
-import os
 import urllib.request
 from pathlib import Path
 

@@ -10,6 +10,7 @@ Excel-reading deps (openpyxl, xlrd) must be installed: poetry install --with leg
 """
 
 import shutil
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -163,9 +164,7 @@ class TestV4ToV5Comparison(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.v4_file, cls.v5_file = ensure_legacy_files()
-        cls.output_dir = Path("/tmp/test_legacy_diff_v4_to_v5")
-        if cls.output_dir.exists():
-            shutil.rmtree(cls.output_dir)
+        cls.output_dir = Path(tempfile.mkdtemp(prefix="test_legacy_diff_v4_to_v5_"))
         cls.result, cls.parsed, cls.summary_path = _run_comparison(
             cls.v4_file, cls.v5_file, cls.output_dir,
             mappings_dir=MAPPINGS_DIR / "4_to_5",
@@ -221,9 +220,7 @@ class TestV5ToV6Comparison(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         _v4, cls.v5_file = ensure_legacy_files()
-        cls.output_dir = Path("/tmp/test_legacy_diff_v5_to_v6")
-        if cls.output_dir.exists():
-            shutil.rmtree(cls.output_dir)
+        cls.output_dir = Path(tempfile.mkdtemp(prefix="test_legacy_diff_v5_to_v6_"))
         cls.result, cls.parsed, cls.summary_path = _run_comparison(
             cls.v5_file, MIXS_SCHEMA, cls.output_dir,
             mappings_dir=MAPPINGS_DIR / "5_to_6",
@@ -268,9 +265,7 @@ class TestV6ToV6Comparison(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """Compare current schema against itself — should show zero key differences."""
-        cls.output_dir = Path("/tmp/test_legacy_diff_v6_self")
-        if cls.output_dir.exists():
-            shutil.rmtree(cls.output_dir)
+        cls.output_dir = Path(tempfile.mkdtemp(prefix="test_legacy_diff_v6_self_"))
         cls.result, cls.parsed, cls.summary_path = _run_comparison(
             MIXS_SCHEMA, MIXS_SCHEMA, cls.output_dir,
         )
