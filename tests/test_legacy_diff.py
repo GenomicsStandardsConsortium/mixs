@@ -4,6 +4,9 @@ Tests cover the three supported comparison paths:
 - v4 Excel (.xls) → v5 Excel (.xlsx)
 - v5 Excel (.xlsx) → v6+ LinkML YAML
 - v6 LinkML YAML → v6+ LinkML YAML (release-to-release)
+
+Excel test files are fetched automatically from GitHub if not available locally.
+Excel-reading deps (openpyxl, xlrd) must be installed: poetry install --with legacy-diff
 """
 
 import shutil
@@ -12,30 +15,22 @@ from pathlib import Path
 
 import yaml
 
+from tests.conftest import ensure_legacy_files, get_legacy_file
+
 ROOT = Path(__file__).parent.parent
-MIXS_LEGACY = ROOT.parent / "mixs-legacy"
 MIXS_SCHEMA = ROOT / "src" / "mixs" / "schema" / "mixs.yaml"
 PROFILES_DIR = ROOT / "assets" / "legacy_format_profiles"
 MAPPINGS_DIR = ROOT / "assets" / "between_diff_mappings"
 
-# Skip tests if mixs-legacy repo or legacy-diff deps are missing
-LEGACY_AVAILABLE = MIXS_LEGACY.exists()
-V4_FILE = MIXS_LEGACY / "mixs4" / "MIxS_210514.xls"
-V5_FILE = MIXS_LEGACY / "mixs5" / "mixs_v5.xlsx"
-
 try:
-    import openpyxl
-    import xlrd
+    import openpyxl  # noqa: F401
+    import xlrd  # noqa: F401
 
-    DEPS_AVAILABLE = True
+    EXCEL_DEPS = True
 except ImportError:
-    DEPS_AVAILABLE = False
+    EXCEL_DEPS = False
 
-SKIP_REASON = (
-    "mixs-legacy repo not found" if not LEGACY_AVAILABLE
-    else "legacy-diff dependencies not installed" if not DEPS_AVAILABLE
-    else None
-)
+SKIP_EXCEL = None if EXCEL_DEPS else "legacy-diff dependencies (openpyxl, xlrd) not installed"
 
 
 def _run_comparison(old_path, new_path, output_dir, mappings_dir=None, old_version=None, new_version=None):
@@ -66,15 +61,19 @@ def _run_comparison(old_path, new_path, output_dir, mappings_dir=None, old_versi
     return result, parsed, summary_path
 
 
-@unittest.skipIf(SKIP_REASON, SKIP_REASON or "")
+@unittest.skipIf(SKIP_EXCEL, SKIP_EXCEL or "")
 class TestExcelReaderV4(unittest.TestCase):
     """Test reading MIxS v4 .xls files."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.v4_file = get_legacy_file("mixs4/MIxS_210514.xls")
 
     def test_read_v4_xls(self):
         from mixs.diff.readers.excel_reader import ExcelReader
 
         reader = ExcelReader(profiles_dir=PROFILES_DIR)
-        schema = reader.read(str(V4_FILE))
+        schema = reader.read(str(self.v4_file))
 
         self.assertEqual(schema.version, "v4")
         self.assertEqual(schema.source_format, "xls")
@@ -86,7 +85,7 @@ class TestExcelReaderV4(unittest.TestCase):
         from mixs.diff.readers.excel_reader import ExcelReader
 
         reader = ExcelReader(profiles_dir=PROFILES_DIR)
-        schema = reader.read(str(V4_FILE))
+        schema = reader.read(str(self.v4_file))
 
         for term in ["investigation_type", "project_name", "lat_lon", "geo_loc_name",
                       "collection_date", "env_biome", "env_feature", "env_material"]:
@@ -96,7 +95,7 @@ class TestExcelReaderV4(unittest.TestCase):
         from mixs.diff.readers.excel_reader import ExcelReader
 
         reader = ExcelReader(profiles_dir=PROFILES_DIR)
-        schema = reader.read(str(V4_FILE))
+        schema = reader.read(str(self.v4_file))
 
         term = schema.terms.get("lat_lon")
         self.assertIsNotNone(term)
@@ -104,15 +103,19 @@ class TestExcelReaderV4(unittest.TestCase):
         self.assertTrue(term.checklist_membership, "lat_lon should have checklist memberships")
 
 
-@unittest.skipIf(SKIP_REASON, SKIP_REASON or "")
+@unittest.skipIf(SKIP_EXCEL, SKIP_EXCEL or "")
 class TestExcelReaderV5(unittest.TestCase):
     """Test reading MIxS v5 .xlsx files."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.v4_file, cls.v5_file = ensure_legacy_files()
 
     def test_read_v5_xlsx(self):
         from mixs.diff.readers.excel_reader import ExcelReader
 
         reader = ExcelReader(profiles_dir=PROFILES_DIR)
-        schema = reader.read(str(V5_FILE))
+        schema = reader.read(str(self.v5_file))
 
         self.assertEqual(schema.version, "v5")
         self.assertEqual(schema.source_format, "xlsx")
@@ -123,16 +126,15 @@ class TestExcelReaderV5(unittest.TestCase):
         from mixs.diff.readers.excel_reader import ExcelReader
 
         reader = ExcelReader(profiles_dir=PROFILES_DIR)
-        v4 = reader.read(str(V4_FILE))
-        v5 = reader.read(str(V5_FILE))
+        v4 = reader.read(str(self.v4_file))
+        v5 = reader.read(str(self.v5_file))
 
         self.assertGreater(len(v5.terms), len(v4.terms),
                            "v5 should have more terms than v4")
 
 
-@unittest.skipIf(SKIP_REASON, SKIP_REASON or "")
 class TestLinkMLReader(unittest.TestCase):
-    """Test reading LinkML YAML schemas."""
+    """Test reading LinkML YAML schemas (CI-compatible, no Excel deps needed)."""
 
     def test_read_local_linkml(self):
         from mixs.diff.readers.linkml_reader import LinkMLReader
@@ -154,17 +156,18 @@ class TestLinkMLReader(unittest.TestCase):
         self.assertGreater(terms_with_ids, 500, "Most LinkML terms should have MIxS IDs")
 
 
-@unittest.skipIf(SKIP_REASON, SKIP_REASON or "")
+@unittest.skipIf(SKIP_EXCEL, SKIP_EXCEL or "")
 class TestV4ToV5Comparison(unittest.TestCase):
     """Test v4 Excel → v5 Excel comparison."""
 
     @classmethod
     def setUpClass(cls):
+        cls.v4_file, cls.v5_file = ensure_legacy_files()
         cls.output_dir = Path("/tmp/test_legacy_diff_v4_to_v5")
         if cls.output_dir.exists():
             shutil.rmtree(cls.output_dir)
         cls.result, cls.parsed, cls.summary_path = _run_comparison(
-            V4_FILE, V5_FILE, cls.output_dir,
+            cls.v4_file, cls.v5_file, cls.output_dir,
             mappings_dir=MAPPINGS_DIR / "4_to_5",
         )
 
@@ -211,17 +214,18 @@ class TestV4ToV5Comparison(unittest.TestCase):
         self.assertIn("Shared terms", content)
 
 
-@unittest.skipIf(SKIP_REASON, SKIP_REASON or "")
+@unittest.skipIf(SKIP_EXCEL, SKIP_EXCEL or "")
 class TestV5ToV6Comparison(unittest.TestCase):
     """Test v5 Excel → v6+ LinkML comparison."""
 
     @classmethod
     def setUpClass(cls):
+        _v4, cls.v5_file = ensure_legacy_files()
         cls.output_dir = Path("/tmp/test_legacy_diff_v5_to_v6")
         if cls.output_dir.exists():
             shutil.rmtree(cls.output_dir)
         cls.result, cls.parsed, cls.summary_path = _run_comparison(
-            V5_FILE, MIXS_SCHEMA, cls.output_dir,
+            cls.v5_file, MIXS_SCHEMA, cls.output_dir,
             mappings_dir=MAPPINGS_DIR / "5_to_6",
         )
 
@@ -257,7 +261,7 @@ class TestV5ToV6Comparison(unittest.TestCase):
         self.assertIn("membership_differences", self.parsed)
 
 
-@unittest.skipIf(SKIP_REASON, SKIP_REASON or "")
+@unittest.skipIf(SKIP_EXCEL, SKIP_EXCEL or "")
 class TestV6ToV6Comparison(unittest.TestCase):
     """Test LinkML → LinkML comparison (release-to-release)."""
 

@@ -1,0 +1,473 @@
+version_pair: 6.x to pre-7
+description: Mapping hints for comparing MIxS v6.x releases against the pre-v7 development branch. Covers CamelCase naming
+  transition, slot abbreviation changes, and structural refactoring.
+renames:
+  slots:
+    air particulate matter concentration: air_PM_concen
+    assembly_quality: assembly_qual
+    associated resource: associated_resource
+    Food_Product_type: food_product_type
+    Food_source: food_source
+    host_family_relation: host_fam_rel
+    host_family_relationship: host_fam_rel
+    host_infra_specific_name: host_infra_spec_name
+    host_infra_specific_rank: host_infra_spec_rank
+    microbial_biomass_meth: micro_biomass_meth
+    non_mineral_nutr_regm: non_min_nutr_regm
+    previous_land_use_meth: prev_land_use_meth
+    samp_collec_device: samp_collect_device
+    samp_collec_method: samp_collect_method
+    sample_collec_method: samp_collect_method
+    sample_name: samp_name
+    samp_stor_dur: samp_store_dur
+    samp_stor_loc: samp_store_loc
+    samp_stor_temp: samp_store_temp
+    single_cell_lysis_appr: sc_lysis_approach
+    single_cell_lysis_prot: sc_lysis_method
+    horizon: soil_horizon
+    texture: soil_texture
+    tot_car: tot_carb
+    x_16s_recover: x16s_recover
+    x_16s_recover_software: x16s_recover_software
+  classes:
+    MIGS bacteria: MigsBa
+    MIGS eukaryote: MigsEu
+    MIGS org: MigsOrg
+    MIGS plant: MigsPl
+    MIGS virus: MigsVi
+    MIMAG: Mimag
+    MIMARKS specimen: MimarksC
+    MIMARKS survey: MimarksS
+    MIMS: Mims
+    MISAG: Misag
+    MIUVIG: Miuvig
+    agriculture: Agriculture
+    agriculture MIGS bacteria: MigsBaAgriculture
+    agriculture MIGS eukaryote: MigsEuAgriculture
+    agriculture MIGS org: MigsOrgAgriculture
+    agriculture MIGS plant: MigsPlAgriculture
+    agriculture MIGS virus: MigsViAgriculture
+    agriculture MIMAG: MimagAgriculture
+    agriculture MIMARKS specimen: MimarksCAgriculture
+    agriculture MIMARKS survey: MimarksSAgriculture
+    agriculture MIMS: MimsAgriculture
+    agriculture MISAG: MisagAgriculture
+    agriculture MIUVIG: MiuvigAgriculture
+    air: Air
+    air MIGS bacteria: MigsBaAir
+    air MIGS eukaryote: MigsEuAir
+    air MIGS org: MigsOrgAir
+    air MIGS plant: MigsPlAir
+    air MIGS virus: MigsViAir
+    air MIMAG: MimagAir
+    air MIMARKS specimen: MimarksCAir
+    air MIMARKS survey: MimarksSAir
+    air MIMS: MimsAir
+    air MISAG: MisagAir
+    air MIUVIG: MiuvigAir
+    built environment: BuiltEnvironment
+    built environment MIGS bacteria: MigsBaBuiltEnvironment
+    built environment MIGS eukaryote: MigsEuBuiltEnvironment
+    built environment MIGS org: MigsOrgBuiltEnvironment
+    built environment MIGS plant: MigsPlBuiltEnvironment
+    built environment MIGS virus: MigsViBuiltEnvironment
+    built environment MIMAG: MimagBuiltEnvironment
+    built environment MIMARKS specimen: MimarksCBuiltEnvironment
+    built environment MIMARKS survey: MimarksSBuiltEnvironment
+    built environment MIMS: MimsBuiltEnvironment
+    built environment MISAG: MisagBuiltEnvironment
+    built environment MIUVIG: MiuvigBuiltEnvironment
+    food-animal and animal feed: FoodAnimalAndAnimalFeed
+    food-animal and animal feed MIGS bacteria: MigsBaFoodAnimalAndAnimalFeed
+    food-animal and animal feed MIGS eukaryote: MigsEuFoodAnimalAndAnimalFeed
+    food-animal and animal feed MIGS org: MigsOrgFoodAnimalAndAnimalFeed
+    food-animal and animal feed MIGS plant: MigsPlFoodAnimalAndAnimalFeed
+    food-animal and animal feed MIGS virus: MigsViFoodAnimalAndAnimalFeed
+    food-animal and animal feed MIMAG: MimagFoodAnimalAndAnimalFeed
+    food-animal and animal feed MIMARKS specimen: MimarksCFoodAnimalAndAnimalFeed
+    food-animal and animal feed MIMARKS survey: MimarksSFoodAnimalAndAnimalFeed
+    food-animal and animal feed MIMS: MimsFoodAnimalAndAnimalFeed
+    food-animal and animal feed MISAG: MisagFoodAnimalAndAnimalFeed
+    food-animal and animal feed MIUVIG: MiuvigFoodAnimalAndAnimalFeed
+    food-farm environment: FoodFarmEnvironment
+    food-farm environment MIGS bacteria: MigsBaFoodFarmEnvironment
+    food-farm environment MIGS eukaryote: MigsEuFoodFarmEnvironment
+    food-farm environment MIGS org: MigsOrgFoodFarmEnvironment
+    food-farm environment MIGS plant: MigsPlFoodFarmEnvironment
+    food-farm environment MIGS virus: MigsViFoodFarmEnvironment
+    food-farm environment MIMAG: MimagFoodFarmEnvironment
+    food-farm environment MIMARKS specimen: MimarksCFoodFarmEnvironment
+    food-farm environment MIMARKS survey: MimarksSFoodFarmEnvironment
+    food-farm environment MIMS: MimsFoodFarmEnvironment
+    food-farm environment MISAG: MisagFoodFarmEnvironment
+    food-farm environment MIUVIG: MiuvigFoodFarmEnvironment
+    food-food production facility: FoodFoodProductionFacility
+    food-food production facility MIGS bacteria: MigsBaFoodFoodProductionFacility
+    food-food production facility MIGS eukaryote: MigsEuFoodFoodProductionFacility
+    food-food production facility MIGS org: MigsOrgFoodFoodProductionFacility
+    food-food production facility MIGS plant: MigsPlFoodFoodProductionFacility
+    food-food production facility MIGS virus: MigsViFoodFoodProductionFacility
+    food-food production facility MIMAG: MimagFoodFoodProductionFacility
+    food-food production facility MIMARKS specimen: MimarksCFoodFoodProductionFacility
+    food-food production facility MIMARKS survey: MimarksSFoodFoodProductionFacility
+    food-food production facility MIMS: MimsFoodFoodProductionFacility
+    food-food production facility MISAG: MisagFoodFoodProductionFacility
+    food-food production facility MIUVIG: MiuvigFoodFoodProductionFacility
+    food-human foods: FoodHumanFoods
+    food-human foods MIGS bacteria: MigsBaFoodHumanFoods
+    food-human foods MIGS eukaryote: MigsEuFoodHumanFoods
+    food-human foods MIGS org: MigsOrgFoodHumanFoods
+    food-human foods MIGS plant: MigsPlFoodHumanFoods
+    food-human foods MIGS virus: MigsViFoodHumanFoods
+    food-human foods MIMAG: MimagFoodHumanFoods
+    food-human foods MIMARKS specimen: MimarksCFoodHumanFoods
+    food-human foods MIMARKS survey: MimarksSFoodHumanFoods
+    food-human foods MIMS: MimsFoodHumanFoods
+    food-human foods MISAG: MisagFoodHumanFoods
+    food-human foods MIUVIG: MiuvigFoodHumanFoods
+    host-associated: HostAssociated
+    host-associated MIGS bacteria: MigsBaHostAssociated
+    host-associated MIGS eukaryote: MigsEuHostAssociated
+    host-associated MIGS org: MigsOrgHostAssociated
+    host-associated MIGS plant: MigsPlHostAssociated
+    host-associated MIGS virus: MigsViHostAssociated
+    host-associated MIMAG: MimagHostAssociated
+    host-associated MIMARKS specimen: MimarksCHostAssociated
+    host-associated MIMARKS survey: MimarksSHostAssociated
+    host-associated MIMS: MimsHostAssociated
+    host-associated MISAG: MisagHostAssociated
+    host-associated MIUVIG: MiuvigHostAssociated
+    human-associated: HumanAssociated
+    human-associated MIGS bacteria: MigsBaHumanAssociated
+    human-associated MIGS eukaryote: MigsEuHumanAssociated
+    human-associated MIGS org: MigsOrgHumanAssociated
+    human-associated MIGS plant: MigsPlHumanAssociated
+    human-associated MIGS virus: MigsViHumanAssociated
+    human-associated MIMAG: MimagHumanAssociated
+    human-associated MIMARKS specimen: MimarksCHumanAssociated
+    human-associated MIMARKS survey: MimarksSHumanAssociated
+    human-associated MIMS: MimsHumanAssociated
+    human-associated MISAG: MisagHumanAssociated
+    human-associated MIUVIG: MiuvigHumanAssociated
+    human-gut: HumanGut
+    human-gut MIGS bacteria: MigsBaHumanGut
+    human-gut MIGS eukaryote: MigsEuHumanGut
+    human-gut MIGS org: MigsOrgHumanGut
+    human-gut MIGS plant: MigsPlHumanGut
+    human-gut MIGS virus: MigsViHumanGut
+    human-gut MIMAG: MimagHumanGut
+    human-gut MIMARKS specimen: MimarksCHumanGut
+    human-gut MIMARKS survey: MimarksSHumanGut
+    human-gut MIMS: MimsHumanGut
+    human-gut MISAG: MisagHumanGut
+    human-gut MIUVIG: MiuvigHumanGut
+    human-oral: HumanOral
+    human-oral MIGS bacteria: MigsBaHumanOral
+    human-oral MIGS eukaryote: MigsEuHumanOral
+    human-oral MIGS org: MigsOrgHumanOral
+    human-oral MIGS plant: MigsPlHumanOral
+    human-oral MIGS virus: MigsViHumanOral
+    human-oral MIMAG: MimagHumanOral
+    human-oral MIMARKS specimen: MimarksCHumanOral
+    human-oral MIMARKS survey: MimarksSHumanOral
+    human-oral MIMS: MimsHumanOral
+    human-oral MISAG: MisagHumanOral
+    human-oral MIUVIG: MiuvigHumanOral
+    human-skin: HumanSkin
+    human-skin MIGS bacteria: MigsBaHumanSkin
+    human-skin MIGS eukaryote: MigsEuHumanSkin
+    human-skin MIGS org: MigsOrgHumanSkin
+    human-skin MIGS plant: MigsPlHumanSkin
+    human-skin MIGS virus: MigsViHumanSkin
+    human-skin MIMAG: MimagHumanSkin
+    human-skin MIMARKS specimen: MimarksCHumanSkin
+    human-skin MIMARKS survey: MimarksSHumanSkin
+    human-skin MIMS: MimsHumanSkin
+    human-skin MISAG: MisagHumanSkin
+    human-skin MIUVIG: MiuvigHumanSkin
+    human-vaginal: HumanVaginal
+    human-vaginal MIGS bacteria: MigsBaHumanVaginal
+    human-vaginal MIGS eukaryote: MigsEuHumanVaginal
+    human-vaginal MIGS org: MigsOrgHumanVaginal
+    human-vaginal MIGS plant: MigsPlHumanVaginal
+    human-vaginal MIGS virus: MigsViHumanVaginal
+    human-vaginal MIMAG: MimagHumanVaginal
+    human-vaginal MIMARKS specimen: MimarksCHumanVaginal
+    human-vaginal MIMARKS survey: MimarksSHumanVaginal
+    human-vaginal MIMS: MimsHumanVaginal
+    human-vaginal MISAG: MisagHumanVaginal
+    human-vaginal MIUVIG: MiuvigHumanVaginal
+    hydrocarbon resources-cores: HydrocarbonResourcesCores
+    hydrocarbon resources-cores MIGS bacteria: MigsBaHydrocarbonResourcesCores
+    hydrocarbon resources-cores MIGS eukaryote: MigsEuHydrocarbonResourcesCores
+    hydrocarbon resources-cores MIGS org: MigsOrgHydrocarbonResourcesCores
+    hydrocarbon resources-cores MIGS plant: MigsPlHydrocarbonResourcesCores
+    hydrocarbon resources-cores MIGS virus: MigsViHydrocarbonResourcesCores
+    hydrocarbon resources-cores MIMAG: MimagHydrocarbonResourcesCores
+    hydrocarbon resources-cores MIMARKS specimen: MimarksCHydrocarbonResourcesCores
+    hydrocarbon resources-cores MIMARKS survey: MimarksSHydrocarbonResourcesCores
+    hydrocarbon resources-cores MIMS: MimsHydrocarbonResourcesCores
+    hydrocarbon resources-cores MISAG: MisagHydrocarbonResourcesCores
+    hydrocarbon resources-cores MIUVIG: MiuvigHydrocarbonResourcesCores
+    hydrocarbon resources-fluids_swabs: HydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MIGS bacteria: MigsBaHydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MIGS eukaryote: MigsEuHydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MIGS org: MigsOrgHydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MIGS plant: MigsPlHydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MIGS virus: MigsViHydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MIMAG: MimagHydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MIMARKS specimen: MimarksCHydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MIMARKS survey: MimarksSHydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MIMS: MimsHydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MISAG: MisagHydrocarbonResourcesFluidsSwabs
+    hydrocarbon resources-fluids_swabs MIUVIG: MiuvigHydrocarbonResourcesFluidsSwabs
+    microbial mat_biofilm: MicrobialMatBiofilm
+    microbial mat_biofilm MIGS bacteria: MigsBaMicrobialMatBiofilm
+    microbial mat_biofilm MIGS eukaryote: MigsEuMicrobialMatBiofilm
+    microbial mat_biofilm MIGS org: MigsOrgMicrobialMatBiofilm
+    microbial mat_biofilm MIGS plant: MigsPlMicrobialMatBiofilm
+    microbial mat_biofilm MIGS virus: MigsViMicrobialMatBiofilm
+    microbial mat_biofilm MIMAG: MimagMicrobialMatBiofilm
+    microbial mat_biofilm MIMARKS specimen: MimarksCMicrobialMatBiofilm
+    microbial mat_biofilm MIMARKS survey: MimarksSMicrobialMatBiofilm
+    microbial mat_biofilm MIMS: MimsMicrobialMatBiofilm
+    microbial mat_biofilm MISAG: MisagMicrobialMatBiofilm
+    microbial mat_biofilm MIUVIG: MiuvigMicrobialMatBiofilm
+    miscellaneous natural or artificial environment: MiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MIGS bacteria: MigsBaMiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MIGS eukaryote: MigsEuMiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MIGS org: MigsOrgMiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MIGS plant: MigsPlMiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MIGS virus: MigsViMiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MIMAG: MimagMiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MIMARKS specimen: MimarksCMiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MIMARKS survey: MimarksSMiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MIMS: MimsMiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MISAG: MisagMiscellaneousNaturalOrArtificialEnvironment
+    miscellaneous natural or artificial environment MIUVIG: MiuvigMiscellaneousNaturalOrArtificialEnvironment
+    plant-associated: PlantAssociated
+    plant-associated MIGS bacteria: MigsBaPlantAssociated
+    plant-associated MIGS eukaryote: MigsEuPlantAssociated
+    plant-associated MIGS org: MigsOrgPlantAssociated
+    plant-associated MIGS plant: MigsPlPlantAssociated
+    plant-associated MIGS virus: MigsViPlantAssociated
+    plant-associated MIMAG: MimagPlantAssociated
+    plant-associated MIMARKS specimen: MimarksCPlantAssociated
+    plant-associated MIMARKS survey: MimarksSPlantAssociated
+    plant-associated MIMS: MimsPlantAssociated
+    plant-associated MISAG: MisagPlantAssociated
+    plant-associated MIUVIG: MiuvigPlantAssociated
+    sediment: Sediment
+    sediment MIGS bacteria: MigsBaSediment
+    sediment MIGS eukaryote: MigsEuSediment
+    sediment MIGS org: MigsOrgSediment
+    sediment MIGS plant: MigsPlSediment
+    sediment MIGS virus: MigsViSediment
+    sediment MIMAG: MimagSediment
+    sediment MIMARKS specimen: MimarksCSediment
+    sediment MIMARKS survey: MimarksSSediment
+    sediment MIMS: MimsSediment
+    sediment MISAG: MisagSediment
+    sediment MIUVIG: MiuvigSediment
+    soil: Soil
+    soil MIGS bacteria: MigsBaSoil
+    soil MIGS eukaryote: MigsEuSoil
+    soil MIGS org: MigsOrgSoil
+    soil MIGS plant: MigsPlSoil
+    soil MIGS virus: MigsViSoil
+    soil MIMAG: MimagSoil
+    soil MIMARKS specimen: MimarksCSoil
+    soil MIMARKS survey: MimarksSSoil
+    soil MIMS: MimsSoil
+    soil MISAG: MisagSoil
+    soil MIUVIG: MiuvigSoil
+    symbiont-associated: SymbiontAssociated
+    symbiont-associated MIGS bacteria: MigsBaSymbiontAssociated
+    symbiont-associated MIGS eukaryote: MigsEuSymbiontAssociated
+    symbiont-associated MIGS org: MigsOrgSymbiontAssociated
+    symbiont-associated MIGS plant: MigsPlSymbiontAssociated
+    symbiont-associated MIGS virus: MigsViSymbiontAssociated
+    symbiont-associated MIMAG: MimagSymbiontAssociated
+    symbiont-associated MIMARKS specimen: MimarksCSymbiontAssociated
+    symbiont-associated MIMARKS survey: MimarksSSymbiontAssociated
+    symbiont-associated MIMS: MimsSymbiontAssociated
+    symbiont-associated MISAG: MisagSymbiontAssociated
+    symbiont-associated MIUVIG: MiuvigSymbiontAssociated
+    wastewater_sludge: WastewaterSludge
+    wastewater_sludge MIGS bacteria: MigsBaWastewaterSludge
+    wastewater_sludge MIGS eukaryote: MigsEuWastewaterSludge
+    wastewater_sludge MIGS org: MigsOrgWastewaterSludge
+    wastewater_sludge MIGS plant: MigsPlWastewaterSludge
+    wastewater_sludge MIGS virus: MigsViWastewaterSludge
+    wastewater_sludge MIMAG: MimagWastewaterSludge
+    wastewater_sludge MIMARKS specimen: MimarksCWastewaterSludge
+    wastewater_sludge MIMARKS survey: MimarksSWastewaterSludge
+    wastewater_sludge MIMS: MimsWastewaterSludge
+    wastewater_sludge MISAG: MisagWastewaterSludge
+    wastewater_sludge MIUVIG: MiuvigWastewaterSludge
+    water: Water
+    water MIGS bacteria: MigsBaWater
+    water MIGS eukaryote: MigsEuWater
+    water MIGS org: MigsOrgWater
+    water MIGS plant: MigsPlWater
+    water MIGS virus: MigsViWater
+    water MIMAG: MimagWater
+    water MIMARKS specimen: MimarksCWater
+    water MIMARKS survey: MimarksSWater
+    water MIMS: MimsWater
+    water MISAG: MisagWater
+    water MIUVIG: MiuvigWater
+  enums:
+    animal_body_cond_enum: AnimalBodyCondEnum
+    animal_sex_enum: AnimalSexEnum
+    arch_struc_enum: ArchStrucEnum
+    assembly_qual_enum: AssemblyQualEnum
+    bin_param_enum: BinParamEnum
+    biol_stat_enum: BiolStatEnum
+    biotic_relationship_enum: BioticRelationshipEnum
+    build_docs_enum: BuildDocsEnum
+    building_setting_enum: BuildingSettingEnum
+    build_occup_type_enum: BuildOccupTypeEnum
+    ceil_finish_mat_enum: CeilFinishMatEnum
+    ceil_texture_enum: CeilingWallTextureEnum
+    wall_texture_enum: CeilingWallTextureEnum
+    ceil_type_enum: CeilTypeEnum
+    ext_wall_orient_enum: CompassDirections8Enum
+    ext_window_orient_enum: CompassDirections8Enum
+    compl_appr_enum: ComplApprEnum
+    contam_screen_param_enum: ContamScreenInputEnum
+    cult_result_enum: CultResultEnum
+    ceil_cond_enum: DamagedEnum
+    floor_cond_enum: DamagedEnum
+    int_wall_cond_enum: DamagedEnum
+    door_cond_enum: DamagedRupturedEnum
+    shading_device_cond_enum: DamagedRupturedEnum
+    window_cond_enum: DamagedRupturedEnum
+    depos_env_enum: DeposEnvEnum
+    dominant_hand_enum: DominantHandEnum
+    door_comp_type_enum: DoorCompTypeEnum
+    door_direct_enum: DoorDirectEnum
+    door_mat_enum: DoorMatEnum
+    door_move_enum: DoorMoveEnum
+    door_type_enum: DoorTypeEnum
+    door_type_metal_enum: DoorTypeMetalEnum
+    drainage_class_enum: DrainageClassEnum
+    drawings_enum: DrawingsEnum
+    extr_weather_event_enum: ExtrWeatherEventEnum
+    facility_type_enum: FacilityTypeEnum
+    fao_class_enum: FaoClassEnum
+    farm_water_source_enum: FarmWaterSourceEnum
+    filter_type_enum: FilterTypeEnum
+    floor_struc_enum: FloorStrucEnum
+    floor_water_mold_enum: FloorWaterMoldEnum
+    food_clean_proc_enum: FoodCleanProcEnum
+    food_trace_list_enum: FoodTraceListEnum
+    freq_clean_enum: FreqCleanEnum
+    furniture_enum: FurnitureEnum
+    gender_restroom_enum: GenderRestroomEnum
+    hcr_geol_age_enum: GeolAgeEnum
+    sr_geol_age_enum: GeolAgeEnum
+    growth_habit_enum: GrowthHabitEnum
+    handidness_enum: HandidnessEnum
+    hc_produced_enum: HcProducedEnum
+    hcr_enum: HcrEnum
+    heat_cool_type_enum: HeatCoolTypeEnum
+    heat_deliv_loc_enum: HeatSysDelivMethEnum
+    host_cellular_loc_enum: HostCellularLocEnum
+    host_pred_appr_enum: HostPredApprEnum
+    host_specificity_enum: HostSpecificityEnum
+    indoor_space_enum: IndoorSpaceEnum
+    indoor_surf_enum: IndoorSurfEnum
+    lib_layout_enum: LibLayoutEnum
+    light_type_enum: LightTypeEnum
+    lithology_enum: LithologyEnum
+    mag_cov_software_enum: MagCovSoftwareEnum
+    mech_struc_enum: MechStrucEnum
+    mode_transmission_enum: ModeTransmissionEnum
+    neg_cont_type_enum: NegContTypeEnum
+    occup_document_enum: OccupDocumentEnum
+    oxy_stat_samp_enum: OxyStatSampEnum
+    plant_reprod_crop_enum: PlantReprodCropEnum
+    plant_sex_enum: PlantSexEnum
+    pred_genome_struc_enum: PredGenomeStrucEnum
+    profile_position_enum: ProfilePositionEnum
+    quad_pos_enum: QuadPosEnum
+    rel_samp_loc_enum: RelSampLocEnum
+    rel_to_oxygen_enum: RelToOxygenEnum
+    room_condt_enum: RoomCondtEnum
+    room_connected_enum: RoomConnectedEnum
+    room_loc_enum: RoomLocEnum
+    room_samp_pos_enum: RoomSampPosEnum
+    route_transmission_enum: RouteTransmissionEnum
+    samp_capt_status_enum: SampCaptStatusEnum
+    samp_collect_point_enum: SampCollectPointEnum
+    samp_dis_stage_enum: SampDisStageEnum
+    samp_loc_condition_enum: SampLocConditionEnum
+    samp_subtype_enum: SampSubtypeEnum
+    samp_surf_moisture_enum: SampSurfMoistureEnum
+    samp_transport_cont_enum: SampTransportContEnum
+    samp_weather_enum: SampWeatherEnum
+    single_cell_lysis_appr_enum: ScLysisApproachEnum
+    season_use_enum: SeasonUseEnum
+    sediment_type_enum: SedimentTypeEnum
+    shading_device_type_enum: ShadingDeviceTypeEnum
+    horizon_enum: SoilHorizonEnum
+    soil_horizon_enum: SoilHorizonEnum
+    soil_texture_class_enum: SoilTextureClassEnum
+    sort_tech_enum: SortTechEnum
+    specific_enum: SpecificEnum
+    sr_dep_env_enum: SrDepEnvEnum
+    sr_kerog_type_enum: SrKerogTypeEnum
+    sr_lithology_enum: SrLithologyEnum
+    substructure_type_enum: SubstructureTypeEnum
+    surf_air_cont_enum: SurfAirContEnum
+    surf_material_enum: SurfMaterialEnum
+    symbiont_host_role_enum: SymbiontHostRoleEnum
+    tax_ident_enum: TaxIdentEnum
+    tidal_stage_enum: TidalStageEnum
+    tillage_enum: TillageEnum
+    train_line_enum: TrainLineEnum
+    train_stat_loc_enum: TrainStatLocEnum
+    train_stop_loc_enum: TrainStopLocEnum
+    trophic_level_enum: TrophicLevelEnum
+    type_of_symbiosis_enum: TypeOfSymbiosisEnum
+    pred_genome_type_enum: ViralGenomeTypeEnum
+    virus_enrich_appr_enum: VirusEnrichApprEnum
+    wall_const_type_enum: WallConstTypeEnum
+    wall_finish_mat_enum: WallFinishMatEnum
+    wall_surf_treatment_enum: WallSurfTreatmentEnum
+    water_feat_type_enum: WaterFeatTypeEnum
+    weekday_enum: WeekdayEnum
+    window_cover_enum: WindowCoverEnum
+    window_horiz_pos_enum: WindowHorizPosEnum
+    window_mat_enum: WindowMatEnum
+    window_type_enum: WindowTypeEnum
+    window_vert_pos_enum: WindowVertPosEnum
+  subsets:
+    checklist_package_combination: combination_classes
+splits: {}
+merges: {}
+deletions:
+  slots:
+    soil_text_measure: Removed in v7 transition
+    texture_meth: Removed in v7 transition
+    tot_n_meth: Removed in v7 transition
+    tot_phos: Removed in v7 transition
+    url: Removed in v7 transition
+type_changes:
+- old_type: slot
+  old_name: environment field
+  new_type: subset
+  new_name: environment
+- old_type: slot
+  old_name: investigation field
+  new_type: subset
+  new_name: investigation
+- old_type: slot
+  old_name: nucleic acid sequence source field
+  new_type: subset
+  new_name: nucleic acid sequence source
+- old_type: slot
+  old_name: sequencing field
+  new_type: subset
+  new_name: sequencing

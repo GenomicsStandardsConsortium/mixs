@@ -616,7 +616,16 @@ def load_mapping_config(mappings_dir: Path) -> MappingConfig:
         with open(config_file, 'r') as f:
             data = yaml.safe_load(f) or {}
 
-        config.renames = data.get('renames', {}) or {}
+        # Renames can be flat {old: new} or grouped {slots: {old: new}, classes: {old: new}}
+        renames_data = data.get('renames', {}) or {}
+        config.renames = {}
+        for key, value in renames_data.items():
+            if isinstance(value, dict):
+                # Grouped by entity type — flatten into one dict
+                config.renames.update(value)
+            else:
+                # Flat rename: old_name -> new_name
+                config.renames[key] = value
 
         # Load splits with descriptions (1:N old -> [new1, new2])
         splits_data = data.get('splits', {}) or {}
@@ -638,13 +647,19 @@ def load_mapping_config(mappings_dir: Path) -> MappingConfig:
                 if 'description' in merge_info:
                     config.merge_descriptions[new_name] = merge_info['description']
 
-        # Load deletions with reasons
+        # Load deletions with reasons (flat or grouped by entity type)
         deletions_data = data.get('deletions', {}) or {}
-        for old_name, deletion_info in deletions_data.items():
+        for key, deletion_info in deletions_data.items():
             if isinstance(deletion_info, str):
-                config.deletions[old_name] = deletion_info
+                config.deletions[key] = deletion_info
             elif isinstance(deletion_info, dict):
-                config.deletions[old_name] = deletion_info.get('reason', 'Removed')
+                # Could be grouped {slots: {name: reason}} or single {reason: "..."}
+                if 'reason' in deletion_info:
+                    config.deletions[key] = deletion_info['reason']
+                else:
+                    # Grouped by entity type — flatten
+                    for name, reason in deletion_info.items():
+                        config.deletions[name] = reason if isinstance(reason, str) else 'Removed'
 
         logger.info(f"Loaded mapping config: {len(config.renames)} renames, "
                    f"{len(config.splits)} splits, {len(config.merges)} merges, "

@@ -22,14 +22,14 @@ on:
         required: true
         type: string
       diff_old:
-        description: 'Old version for diff comparison (tag or branch)'
+        description: 'Old schema GitHub spec (owner/repo@ref:path). Pre-v6.2 tags use model/schema/mixs.yaml'
         required: true
-        default: 'mixs6.0.0'
+        default: 'GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml'
         type: string
       diff_new:
-        description: 'New version for diff comparison (tag or branch)'
+        description: 'New schema GitHub spec (owner/repo@ref:path)'
         required: true
-        default: 'main'
+        default: 'GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml'
         type: string
       skip_tests:
         description: 'Skip running tests (for faster iteration during development)'
@@ -108,14 +108,17 @@ jobs:
         if: ${{ inputs.skip_tests }}
         run: make install clean all
 
+      - name: Install legacy-diff dependencies
+        run: poetry install --with legacy-diff
+
       - name: Generate schema diff report
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p assets/diff_results
-          poetry run diff-releases \
-            --old "GenomicsStandardsConsortium/mixs@${{ inputs.diff_old }}:src/mixs/schema/mixs.yaml" \
-            --new "GenomicsStandardsConsortium/mixs@${{ inputs.diff_new }}:src/mixs/schema/mixs.yaml" \
+          poetry run mixs-legacy-diff \
+            --old "${{ inputs.diff_old }}" \
+            --new "${{ inputs.diff_new }}" \
             --output-dir assets/diff_results \
             --mappings-dir assets/between_diff_mappings/6_to_pre_7 \
             || echo "Diff generation encountered issues - check logs"
@@ -152,6 +155,7 @@ jobs:
             - `.zenodo.json`
             - `release/README.md`
           - Schema diff generated: `${{ inputs.diff_old }}` vs `${{ inputs.diff_new }}`
+          - Note: pre-v6.2 tags use `model/schema/mixs.yaml`; v6.2+ use `src/mixs/schema/mixs.yaml`
           - Full build and test suite executed
 
           ### Schema Diff
