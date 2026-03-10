@@ -80,7 +80,7 @@ help: status
 	@echo "  tsv-bare-pipe-roundtrip  -- dump + load bare-pipe round-trip"
 	@echo ""
 
-.PHONY: all all-contrib clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib normalize-tsv-demo normalize-tsv-roundtrip tsv-bare-pipe-roundtrip
+.PHONY: all all-contrib clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib normalize-tsv-demo normalize-tsv-roundtrip tsv-bare-pipe-roundtrip $(TSV_NORM_OUTPUT)
 
 ensure-dirs:
 	mkdir -p contrib
@@ -316,6 +316,17 @@ normalize-tsv-roundtrip: $(TSV_NORM_OUTPUT) contrib/mixs-patterns-materialized.y
 		-C MixsCompliantData -S mims_soil_data \
 		-f yaml -t tsv --no-validate \
 		$(TSV_NORM_YAML)
+
+# Explicit rule for the normalized YAML -- needed because $(TSV_BARE_PIPE_OUTPUT)
+# depends on it, but it was previously only created as a side effect of
+# normalize-tsv-roundtrip.
+$(TSV_NORM_YAML): $(TSV_NORM_OUTPUT) contrib/mixs-patterns-materialized.yaml
+	@echo "=== Converting normalized TSV -> YAML ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f tsv -t yaml --no-validate \
+		$(TSV_NORM_OUTPUT) > $(TSV_NORM_YAML)
 
 # --- Bare-pipe TSV demo (exercises --list-wrapper none from linkml PR #3134) ---
 

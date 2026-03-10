@@ -63,8 +63,8 @@ at all. TSV validation of multivalued fields is tracked in
 |------|-----------|-------------|
 | `MimsSoil-messy-lists.tsv` | Yes | 4 rows with 3 different list styles (brackets, bare, spaced) |
 | `normalize_tsv_lists.py` | Yes | Schema-aware normalizer: mixed styles → canonical `[pipe\|delimited]` |
-| `MimsSoil-normalized-lists.tsv` | No (generated) | Output of normalization step |
-| `MimsSoil-normalized.yaml` | No (generated) | YAML from round-tripping the normalized TSV |
+| `MimsSoil-normalized-lists.tsv` | Yes (generated, committed for reference) | Output of normalization step |
+| `MimsSoil-normalized.yaml` | Yes (generated, committed for reference) | YAML from round-tripping the normalized TSV |
 | `MimsSoil-bare-pipes.tsv` | No (generated) | Bare-pipe TSV dumped with `--list-wrapper none` |
 | `MimsSoil-bare-pipes-reloaded.yaml` | No (generated) | YAML from loading the bare-pipe TSV back |
 

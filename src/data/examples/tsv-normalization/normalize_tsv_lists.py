@@ -120,6 +120,11 @@ def normalize_tsv(
     with open(input_path, newline='') as inf:
         reader = csv.DictReader(inf, delimiter='\t')
         fieldnames = reader.fieldnames
+        if fieldnames is None:
+            raise ValueError(
+                f'No header row found in {input_path}. '
+                'The file may be empty or not a valid TSV.'
+            )
 
         with open(output_path, 'w', newline='') as outf:
             writer = csv.DictWriter(outf, fieldnames=fieldnames, delimiter='\t')
