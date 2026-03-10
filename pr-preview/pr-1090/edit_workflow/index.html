@@ -361,14 +361,14 @@
 </ol>
 <p>The workflow will:
 - Bump version numbers in <code>pyproject.toml</code>, <code>CITATION.cff</code>, <code>.zenodo.json</code>, and <code>release/README.md</code>
-- Run the full build and test suite
+- Run the full build and test suite (unless <code>skip_tests</code> is set to true)
 - Generate a schema diff report in <code>assets/diff_results/</code>
 - Create a release PR with all changes</p>
 <h2 id="reviewing-a-release-pr">Reviewing a Release PR</h2>
 <h3 id="pre-merge-checklist">Pre-merge Checklist</h3>
 <ul>
 <li>[ ] Review version numbers are correct</li>
-<li>[ ] Review schema diff for unexpected changes (see <code>assets/diff_results/schema_comparison_results.yaml</code>)</li>
+<li>[ ] Review schema diff for unexpected changes (see <code>assets/diff_results/schema_comparison_results.yaml</code>). If the diff file appears missing or incomplete, check the Actions workflow logs — diff generation errors are handled silently</li>
 <li>[ ] Verify all tests passed</li>
 <li>[ ] TWG approval required</li>
 <li>[ ] CIG approval required (for major releases only)</li>
@@ -388,9 +388,7 @@
 <li>Click <strong>Publish release</strong></li>
 </ol>
 <h2 id="release-publishing-permissions">Release Publishing Permissions</h2>
-<p>Users with release publishing permission:
-- <strong>Admins</strong>: @lschriml, @only1chunts
-- <strong>Maintain</strong>: @sujaypatil96, @turbomam</p>
+<p>Release publishing requires the <strong>Maintain</strong> or <strong>Admin</strong> role on this repository. See <a href="https://github.com/GenomicsStandardsConsortium/mixs/settings/access">Settings &gt; Collaborators</a> for the current list of users with these permissions.</p>
 <h2 id="versioning">Versioning</h2>
 <p>MIxS uses <a href="https://semver.org/">semantic versioning</a> with three digits: <code>major.minor.patch</code></p>
 <ul>
