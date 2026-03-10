@@ -71,7 +71,7 @@ When regenerating, update:
 ### Added in Main Branch (9a865a63b)
 
 - `comments` - Notes about slot titles associated with multiple slot names
-- `source` - Reference to mixs_v6.xls spreadsheet
+- `source` - Reference to mixs_v6.xlsx spreadsheet
 - `version` - v6.2.0
 - `default_range` - string
 - `settings` - Structured pattern definitions (see below)
@@ -115,17 +115,32 @@ lon: '-?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})'
 termID: '[a-zA-Z]{2,}:[a-zA-Z0-9]\d+'
 termLabel: '([^\s-]{1,2}|[^\s-]+.+[^\s-]+)'
 unit: '([^\s-]{1,2}|[^\s-]+.+[^\s-]+)'
+
+# Free-text / label patterns
+name: '.*'
+country: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
+parameters: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
+room_name: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
+room_number: '[1-9][0-9]*'
+software: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
+specific_location: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
+storage_condition_type: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
+version: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
 ```
 
 ### Settings Usage Analysis
 
-**Low usage patterns (1 use each):**
+**Low usage patterns (1 use each in `structured_pattern`):**
 - NCBItaxon_id, adapter_A_DNA_sequence, adapter_B_DNA_sequence
 - add_recov_methods, agrochemical_name, amount, boolean
 - lat, lon, particulate_matter_name
 
-**Unused settings (6 total):**
-- adapter, country, dna, region, specific_location, storage_condition_type
+**Used only in `string_serialization` (not `structured_pattern`):**
+- dna
+
+**Unused in both `structured_pattern` and `string_serialization` (11 total):**
+- adapter, country, name, parameters, region, room_name, room_number
+- software, specific_location, storage_condition_type, version
 
 ## Prefix Changes
 
@@ -135,7 +150,8 @@ unit: '([^\s-]{1,2}|[^\s-]+.+[^\s-]+)'
 | Removed | MIGS | https://w3id.org/mixs/migs/ | - |
 | Changed | MIXS | https://w3id.org/mixs/terms/ | https://w3id.org/mixs/ |
 | Added | SO | - | http://purl.obolibrary.org/obo/SO_ |
-| Unchanged | linkml, xsd, shex, schema | (same) | (same) |
+| Unchanged | linkml | (same) | (same) |
+| Added (explicit) | xsd, shex, schema | (inherited via `linkml:types`) | (explicitly declared) |
 
 ## Subset Reorganization
 
@@ -356,7 +372,7 @@ To regenerate the structured diff locally:
 
 ```shell
 poetry run diff-releases \
-    --old "GenomicsStandardsConsortium/mixs@v6.0.0:src/mixs/schema/mixs.yaml" \
+    --old "GenomicsStandardsConsortium/mixs@mixs6.0.0:model/schema/mixs.yaml" \
     --new "GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml" \
     --output-dir assets/diff_results \
     --mappings-dir assets/between_diff_mappings/6_to_pre_7
