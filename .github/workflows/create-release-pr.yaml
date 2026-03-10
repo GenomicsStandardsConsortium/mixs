@@ -22,12 +22,17 @@ on:
         required: true
         type: string
       diff_old:
-        description: 'Old schema GitHub spec (owner/repo@ref:path). Pre-v6.2 tags use model/schema/mixs.yaml'
+        description: >-
+          Old schema: owner/repo@tag:path — path is src/mixs/schema/mixs.yaml
+          for v6.2.0+, model/schema/mixs.yaml for mixs6.0.0-mixs6.1.1.
+          See src/mixs/diff/README.md for the full tag/path table.
         required: true
         default: 'GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml'
         type: string
       diff_new:
-        description: 'New schema GitHub spec (owner/repo@ref:path)'
+        description: >-
+          New schema: owner/repo@tag:path — usually main or the new release tag.
+          Same path rules as diff_old.
         required: true
         default: 'GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml'
         type: string
