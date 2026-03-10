@@ -150,6 +150,7 @@ version: ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)
 | Removed | MIGS | https://w3id.org/mixs/migs/ | - |
 | Changed | MIXS | https://w3id.org/mixs/terms/ | https://w3id.org/mixs/ |
 | Added | SO | - | http://purl.obolibrary.org/obo/SO_ |
+| Added | NCIT | - | http://purl.obolibrary.org/obo/NCIT_ |
 | Unchanged | linkml | (same) | (same) |
 | Added (explicit) | xsd, shex, schema | (inherited via `linkml:types`) | (explicitly declared) |
 
