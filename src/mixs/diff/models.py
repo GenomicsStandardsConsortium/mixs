@@ -343,7 +343,7 @@ class NormalizedSchema:
     """
     version: str  # Version identifier (e.g., "v4", "v5", "v6.2.3")
     source_path: str  # Original file path or URL
-    source_format: str  # Format: "xlsx", "xls", "docx", "xsd", "linkml"
+    source_format: str  # Format: "xlsx", "xls", "linkml"
 
     # Core term dictionary: name -> NormalizedTerm
     terms: Dict[str, NormalizedTerm] = field(default_factory=dict)

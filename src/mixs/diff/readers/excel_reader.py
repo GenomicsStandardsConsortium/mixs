@@ -1,6 +1,6 @@
 """Excel reader for .xls and .xlsx MIxS schema files.
 
-Supports MIxS versions 2-5 which were distributed as Excel spreadsheets.
+Supports MIxS v4 (.xls, 2014) and v5 (.xlsx, 2018).
 Format-specific parsing rules are loaded from YAML profiles in:
     assets/legacy_format_profiles/
 
@@ -37,12 +37,6 @@ class FormatProfile:
         self.notes = profile_data.get("notes", "")
         # Header row offset (0-indexed, default 0 means row 1)
         self.header_row = profile_data.get("header_row", 0)
-        # Support for headerless formats (like May 2009)
-        self.has_headers = profile_data.get("has_headers", True)
-        self.data_start_row = profile_data.get("data_start_row", 1)  # 1-indexed for user convenience
-        self.column_positions = profile_data.get("column_positions", {})
-        self.checklist_column_positions = profile_data.get("checklist_column_positions", {})
-        self.packages_column_positions = profile_data.get("packages_column_positions", {})
 
     @classmethod
     def load(cls, path: Path) -> "FormatProfile":
@@ -175,12 +169,6 @@ class ExcelReader(BaseReader):
             return "v5"
         elif "mixs4" in path_lower or "v4" in path_lower or "210514" in path_lower:
             return "v4"
-        elif "2011" in path:
-            return "v2.1"
-        elif "2010" in path:
-            return "v2.0"
-        elif "2009" in path:
-            return "v2.0"
         else:
             return "unknown"
 
@@ -266,11 +254,6 @@ class ExcelReader(BaseReader):
         if not rows:
             return
 
-        # Handle headerless formats (like May 2009)
-        if not profile.has_headers:
-            self._process_headerless_sheet(rows, schema, profile)
-            return
-
         # Use header_row from profile (0-indexed)
         header_row_idx = profile.header_row
         if header_row_idx >= len(rows):
@@ -299,62 +282,6 @@ class ExcelReader(BaseReader):
                         if checklist_name not in schema.checklists:
                             schema.checklists[checklist_name] = []
                         schema.checklists[checklist_name].append(term.name)
-
-    def _process_headerless_sheet(self, rows: List, schema: NormalizedSchema, profile: FormatProfile) -> None:
-        """Process a sheet without headers using column positions from profile."""
-        # data_start_row is 1-indexed in profile, convert to 0-indexed
-        start_row_idx = profile.data_start_row - 1
-        if start_row_idx >= len(rows):
-            logger.warning(f"Data start row {profile.data_start_row} exceeds available rows {len(rows)}")
-            return
-
-        col_pos = profile.column_positions
-        checklist_pos = profile.checklist_column_positions
-
-        # Initialize checklists from position mapping
-        for col_idx, checklist_name in checklist_pos.items():
-            schema.checklists[checklist_name] = []
-
-        for row in rows[start_row_idx:]:
-            if not row or not row[0]:
-                continue
-
-            # Extract term data using column positions
-            name_idx = col_pos.get("name", 0)
-            term_name = str(row[name_idx]).strip() if len(row) > name_idx and row[name_idx] else ""
-
-            if not term_name:
-                continue
-
-            # Normalize term name if configured
-            if profile.normalize_term_names:
-                term_name = self._normalize_term_name(term_name)
-
-            # Extract other fields
-            definition_idx = col_pos.get("definition", 2)
-            expected_value_idx = col_pos.get("expected_value", 1)
-            section_idx = col_pos.get("section", 3)
-
-            term = NormalizedTerm(
-                name=term_name,
-                item=str(row[name_idx]).strip() if len(row) > name_idx and row[name_idx] else "",
-                definition=str(row[definition_idx]).strip() if len(row) > definition_idx and row[definition_idx] else "",
-                expected_value=str(row[expected_value_idx]).strip() if len(row) > expected_value_idx and row[expected_value_idx] else "",
-                section=str(row[section_idx]).strip() if len(row) > section_idx and row[section_idx] else "",
-            )
-
-            # Extract checklist memberships using column positions
-            for col_idx, checklist_name in checklist_pos.items():
-                col_idx = int(col_idx)  # Ensure it's an int (YAML may load as string)
-                if len(row) > col_idx and row[col_idx]:
-                    requirement = str(row[col_idx]).strip()
-                    if requirement:
-                        term.checklist_membership[checklist_name] = requirement
-                        if checklist_name not in schema.checklists:
-                            schema.checklists[checklist_name] = []
-                        schema.checklists[checklist_name].append(term.name)
-
-            schema.terms[term.name] = term
 
     def _process_main_sheet_xls(self, sheet, schema: NormalizedSchema, profile: FormatProfile) -> None:
         """Process the main terms sheet from an xls file."""

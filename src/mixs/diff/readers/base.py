@@ -14,7 +14,7 @@ def detect_format(path: str) -> str:
         path: File path or GitHub specification string.
 
     Returns:
-        Format string: 'xlsx', 'xls', 'docx', 'xsd', 'linkml', or 'unknown'.
+        Format string: 'xlsx', 'xls', 'linkml', or 'unknown'.
     """
     path_lower = path.lower()
 
@@ -28,10 +28,6 @@ def detect_format(path: str) -> str:
         return "xlsx"
     elif path_lower.endswith(".xls"):
         return "xls"
-    elif path_lower.endswith(".docx"):
-        return "docx"
-    elif path_lower.endswith(".xsd"):
-        return "xsd"
     elif path_lower.endswith((".yaml", ".yml")):
         return "linkml"
     else:
@@ -90,13 +86,8 @@ def get_reader(path: str, profiles_dir: Optional[Path] = None) -> BaseReader:
         return ExcelReader(profiles_dir=profiles_dir)
     elif fmt == "linkml":
         return LinkMLReader()
-    elif fmt == "docx":
-        # Import lazily to avoid dependency issues
-        from mixs.diff.readers.word_reader import WordReader
-        return WordReader()
-    elif fmt == "xsd":
-        # Import lazily to avoid dependency issues
-        from mixs.diff.readers.xsd_reader import XsdReader
-        return XsdReader()
     else:
-        raise ValueError(f"No reader available for format '{fmt}' (path: {path})")
+        raise ValueError(
+            f"No reader available for format '{fmt}' (path: {path}). "
+            f"Supported formats: .xls, .xlsx (MIxS v4-v5), .yaml/.yml (LinkML v6+)"
+        )

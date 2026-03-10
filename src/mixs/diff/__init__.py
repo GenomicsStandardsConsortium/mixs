@@ -1,10 +1,9 @@
-"""MIxS Legacy Diff Tool - Compare MIxS schemas across any combination of formats and versions.
+"""MIxS Legacy Diff Tool - Compare MIxS schemas across formats and versions (v4+).
 
 This module provides tools for comparing MIxS schemas across different formats:
-- Excel (.xls, .xlsx) from MIxS v2-v5 (2009-2018)
-- Word (.docx) from pre-2009 specifications
-- XSD (.xsd) from 2006 MIGS schema
-- LinkML YAML from v6+ (2020+)
+- Excel (.xls) from MIxS v4 (2014)
+- Excel (.xlsx) from MIxS v5 (2018)
+- LinkML YAML from v6+ (2022+)
 
 Installation:
     This tool requires optional dependencies. Install with:

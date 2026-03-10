@@ -1,10 +1,9 @@
 """CLI entry point for mixs-legacy-diff tool.
 
-This tool compares MIxS schemas across any combination of formats and versions:
-- Excel (.xls, .xlsx) from MIxS v2-v5
-- Word (.docx) from pre-2009
-- XSD (.xsd) from 2006
-- LinkML YAML from v6+
+Compare MIxS schemas across formats and versions (v4+):
+- Excel (.xls) from MIxS v4 (2014)
+- Excel (.xlsx) from MIxS v5 (2018)
+- LinkML YAML from v6+ (2022+)
 
 Usage Examples:
     # Compare v4 .xls to v5 .xlsx
@@ -78,13 +77,13 @@ def validate_path_or_spec(ctx, param, value: str) -> str:
 )
 @click.option(
     '--old-format',
-    type=click.Choice(['auto', 'xlsx', 'xls', 'docx', 'xsd', 'linkml']),
+    type=click.Choice(['auto', 'xlsx', 'xls', 'linkml']),
     default='auto',
     help='Force format for old schema (default: auto-detect).'
 )
 @click.option(
     '--new-format',
-    type=click.Choice(['auto', 'xlsx', 'xls', 'docx', 'xsd', 'linkml']),
+    type=click.Choice(['auto', 'xlsx', 'xls', 'linkml']),
     default='auto',
     help='Force format for new schema (default: auto-detect).'
 )
@@ -170,11 +169,9 @@ def main(
     old_additional: tuple,
     new_additional: tuple,
 ):
-    """Compare MIxS schemas across formats and versions.
+    """Compare MIxS schemas across formats and versions (v4+).
 
-    This tool compares MIxS schemas from different eras and formats,
-    producing a normalized comparison output. Supports Excel (v2-v5),
-    Word (pre-2009), XSD (2006), and LinkML YAML (v6+).
+    Supports Excel (.xls v4, .xlsx v5) and LinkML YAML (v6+).
 
     Examples:
 
