@@ -36,7 +36,7 @@ MIxS uses an automated GitHub Actions workflow to create release PRs. This ensur
 
 The workflow will:
 - Bump version numbers in `pyproject.toml`, `CITATION.cff`, `.zenodo.json`, and `release/README.md`
-- Run the full build and test suite
+- Run the full build and test suite (unless `skip_tests` is set to true)
 - Generate a schema diff report in `assets/diff_results/`
 - Create a release PR with all changes
 
@@ -44,7 +44,7 @@ The workflow will:
 
 ### Pre-merge Checklist
 - [ ] Review version numbers are correct
-- [ ] Review schema diff for unexpected changes (see `assets/diff_results/schema_comparison_results.yaml`)
+- [ ] Review schema diff for unexpected changes (see `assets/diff_results/schema_comparison_results.yaml`). If the diff file appears missing or incomplete, check the Actions workflow logs — diff generation errors are handled silently
 - [ ] Verify all tests passed
 - [ ] TWG approval required
 - [ ] CIG approval required (for major releases only)
@@ -67,9 +67,7 @@ After the release PR is merged:
 
 ## Release Publishing Permissions
 
-Users with release publishing permission:
-- **Admins**: @lschriml, @only1chunts
-- **Maintain**: @sujaypatil96, @turbomam
+Release publishing requires the **Maintain** or **Admin** role on this repository. See [Settings > Collaborators](https://github.com/GenomicsStandardsConsortium/mixs/settings/access) for the current list of users with these permissions.
 
 ## Versioning
 
