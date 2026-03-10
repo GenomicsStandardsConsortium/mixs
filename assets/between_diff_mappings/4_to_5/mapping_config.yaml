@@ -1,0 +1,36 @@
+# MIxS v4 to v5 Term Mapping Configuration
+#
+# Documents term RENAMES, SPLITS, and MERGES between versions.
+# Terms that were removed without replacement are discovered by the diff engine
+# and reported as "unexplained removals" so users can see what was lost.
+
+# 1:1 renames (old_name → new_name)
+renames:
+  env_biome: env_broad_scale
+  env_feature: env_local_scale
+  env_material: env_medium
+  annot_source: annot
+
+# 1:N splits (one term became multiple terms)
+splits:
+  assembly:
+    targets:
+      - assembly_qual
+      - assembly_software
+    description: "Assembly was split into quality metrics and software used"
+
+  alt_elev:
+    targets:
+      - alt
+      - elev
+    description: "Consolidated alt_elev was split into separate altitude and elevation terms"
+
+# N:1 merges (multiple terms became one term)
+merges:
+  finishing_strategy:
+    target: assembly_qual
+    description: "Finishing strategy concepts merged into assembly_qual"
+
+# Terms intentionally removed (only for structural changes with specific explanations)
+# Most removed terms should be discovered by the diff engine as "unexplained removals"
+deletions: {}

@@ -59,8 +59,9 @@ In addition to the multiple releases of MIxS provided by GSC, there are various 
 systems, like the ENA and NCBI Biosample databases that participate in the International Sequence Database Collection.
 The INSDC databases generally update their implantation after each **major** MIxS release by GSC, and changes from *
 *minor** releases may not be reflected. As such, when using the MIxS standard, users are responsible to understand the
-version they’re accessing and how it may differ from the most recent GSC release. GSC’s Technical Working Group is
-working to develop more robust methods to detect differences between MIxS releases.
+version they’re accessing and how it may differ from the most recent GSC release. The `mixs-legacy-diff` tool compares
+schemas across formats and versions (v4 Excel through current LinkML). See
+[src/mixs/diff/README.md](../src/mixs/diff/README.md) for usage and the tag/path reference table.
 
 ## [Key Changes](#key-changes)
 
@@ -210,7 +211,8 @@ formats for many users. Our ongoing efforts include:
 
 We are actively working on:
 
-1. Developing robust difference detection methods for easier tracking of changes between versions
+1. Schema comparison tooling (`mixs-legacy-diff`) for tracking changes between versions — supports v4 Excel through
+   current LinkML, with mapping hints for known renames and structural changes
 2. Improving our documentation to clearly distinguish between authoritative representations and derived, shareable
    formats
 3. Expanding community engagement to ensure MIxS continues to meet the evolving needs of its users

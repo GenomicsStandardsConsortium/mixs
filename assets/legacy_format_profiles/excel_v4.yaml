@@ -1,0 +1,63 @@
+# MIxS v4 Excel Format Profile (2014)
+# Files: MIxS_210514.xls, MIxS*_210514.xls
+description: "MIxS v4 Excel format (.xls, 2014)"
+
+# Pattern matching for auto-detection (checked against filename)
+version_patterns:
+  - "mixs4"
+  - "v4"
+  - "210514"
+
+# Sheet names to look for (in priority order)
+sheet_names:
+  main_terms:
+    - "MIxS"
+  packages:
+    - "environmental_packages"
+
+# Column header mappings
+# Format: normalized_field_name -> list of possible column headers (in priority order)
+column_mappings:
+  name:
+    - "Structured comment name"
+  item:
+    - "Item"
+    - "Package item"
+  definition:
+    - "Definition"
+  example:
+    - "Example"
+  expected_value:
+    - "Expected value"
+  value_syntax:
+    - "Value syntax"
+  occurrence:
+    - "Occurence"  # Note: typo in original spreadsheet
+    - "Occurrence"
+  preferred_unit:
+    - "Preferred unit"
+  section:
+    - "Section"
+  position:
+    - "Position"
+  requirement:
+    - "Requirement"
+  package_name:
+    - "Environmental package"
+
+# Checklist column mappings
+# v4 uses short column names without "migs_" prefix
+# Format: column_header -> normalized_checklist_name
+checklist_columns:
+  eu: "migs_eu"
+  ba: "migs_ba"
+  pl: "migs_pl"
+  vi: "migs_vi"
+  org: "migs_org"
+  me: "me"
+  "MIMARKS Survey": "mimarks_s"
+  "MIMARKS Specimen": "mimarks_c"
+
+# Whether term names need normalization (spaces->underscores, lowercase)
+# v4 already uses structured comment names with underscores
+normalize_term_names: false

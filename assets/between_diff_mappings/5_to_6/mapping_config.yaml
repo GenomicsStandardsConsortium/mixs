@@ -1,0 +1,39 @@
+# MIxS v5 to v6 Term Mapping Configuration
+#
+# Documents term RENAMES and SPLITS between versions.
+# Terms that were removed without replacement are discovered by the diff engine
+# and reported as "unexplained removals" so users can see what was lost.
+#
+# v6 uses LinkML format which requires some naming convention changes.
+
+# 1:1 renames (old_name → new_name)
+renames:
+  # Core renames
+  health_disease_stat: host_disease_stat
+
+  # Numeric prefix requires 'x' in LinkML (Python identifiers can't start with numbers)
+  16s_recover: x16s_recover
+  16s_recover_software: x16s_recover_software
+
+  # votu -> otu prefix change
+  votu_class_appr: otu_class_appr
+  votu_db: otu_db
+  votu_seq_comp_appr: otu_seq_comp_appr
+
+  # Soil terms renamed for specificity
+  horizon: soil_horizon
+  texture: soil_texture
+  texture_meth: soil_texture_meth
+
+# 1:N splits (one term became multiple terms)
+splits: {}
+
+# Terms intentionally removed (only for structural changes with specific explanations)
+# Most removed terms should be discovered by the diff engine as "unexplained removals"
+deletions:
+  env_package:
+    reason: "Structural change in v6; package membership now handled via class hierarchy"
+  investigation_type:
+    reason: "Removed in v6; investigation type now implicit in checklist selection"
+  submitted_to_insdc:
+    reason: "Removed in v6; INSDC submission status not tracked in schema"

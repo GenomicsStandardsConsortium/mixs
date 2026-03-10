@@ -22,14 +22,19 @@ on:
         required: true
         type: string
       diff_old:
-        description: 'Old version for diff comparison (tag or branch)'
+        description: >-
+          Old schema: owner/repo@tag:path — path is src/mixs/schema/mixs.yaml
+          for v6.2.0+, model/schema/mixs.yaml for mixs6.0.0-mixs6.1.1.
+          See src/mixs/diff/README.md for the full tag/path table.
         required: true
-        default: 'mixs6.0.0'
+        default: 'GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml'
         type: string
       diff_new:
-        description: 'New version for diff comparison (tag or branch)'
+        description: >-
+          New schema: owner/repo@tag:path — usually main or the new release tag.
+          Same path rules as diff_old.
         required: true
-        default: 'main'
+        default: 'GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml'
         type: string
       skip_tests:
         description: 'Skip running tests (for faster iteration during development)'
@@ -108,14 +113,17 @@ jobs:
         if: ${{ inputs.skip_tests }}
         run: make install clean all
 
+      - name: Install legacy-diff dependencies
+        run: poetry install --with legacy-diff
+
       - name: Generate schema diff report
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p assets/diff_results
-          poetry run diff-releases \
-            --old "GenomicsStandardsConsortium/mixs@${{ inputs.diff_old }}:src/mixs/schema/mixs.yaml" \
-            --new "GenomicsStandardsConsortium/mixs@${{ inputs.diff_new }}:src/mixs/schema/mixs.yaml" \
+          poetry run mixs-legacy-diff \
+            --old "${{ inputs.diff_old }}" \
+            --new "${{ inputs.diff_new }}" \
             --output-dir assets/diff_results \
             --mappings-dir assets/between_diff_mappings/6_to_pre_7 \
             || echo "Diff generation encountered issues - check logs"
@@ -152,6 +160,7 @@ jobs:
             - `.zenodo.json`
             - `release/README.md`
           - Schema diff generated: `${{ inputs.diff_old }}` vs `${{ inputs.diff_new }}`
+          - Note: pre-v6.2 tags use `model/schema/mixs.yaml`; v6.2+ use `src/mixs/schema/mixs.yaml`
           - Full build and test suite executed
 
           ### Schema Diff
