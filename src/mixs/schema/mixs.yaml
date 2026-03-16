@@ -16878,12 +16878,14 @@ classes:
       air_temp:
         examples:
           - value: 20 degree Celsius
-        required: true
+        required: false
+        recommended: true
       avg_occup:
         examples:
           - value: '2'
       carb_dioxide:
-        required: true
+        required: false
+        recommended: true
       freq_clean:
         string_serialization: '[ Daily| Weekly| Monthly| Quarterly | Annually| other]'
       indoor_surf:
@@ -16892,7 +16894,8 @@ classes:
       organism_count:
         examples:
           - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
-        required: true
+        required: false
+        recommended: true
       surf_material:
         required: true
         recommended: true
@@ -16902,7 +16905,7 @@ classes:
     aliases:
       - MIxS-BE (built environment)
     annotations:
-      use_cases: microbiology studies of the built environment, NASA space station sampling, MetaSUB transit system sampling, home, hospitals, office buildings
+      use_cases: microbiology studies of the built environment, NASA space station sampling, European Space Agency(ESA) cleanrooms, MetaSUB transit system sampling, home, hospitals, office buildings
   FoodAnimalAndAnimalFeed:
     description: >-
       A collection of terms appropriate when collecting samples and performing sequencing of samples
