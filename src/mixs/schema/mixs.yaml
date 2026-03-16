@@ -588,18 +588,23 @@ enums:
     permissible_values:
       bathroom:
       bedroom:
+      cleanroom:
       elevator:
       foyer:
       hallway:
       kitchen:
       locker room:
       office:
+      space analog:
+      space habitat:
+      space station:
   IndoorSurfEnum:
     permissible_values:
       cabinet:
       ceiling:
       counter top:
       door:
+      floor:
       shelving:
       vent cover:
       wall:
@@ -1056,6 +1061,7 @@ enums:
       carpet:
       cinder blocks:
       concrete:
+      epoxy resin:
       glass:
       hay bales:
       metal:
@@ -11160,8 +11166,8 @@ slots:
       - room
       - type
     string_serialization: '[attic|bathroom|closet|conference room|elevator|examining
-      room|hallway|kitchen|mail room|private office|open office|stairwell|,restroom|lobby|vestibule|mechanical
-      or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse]'
+      room|hallway|kitchen|mail room|private office|open office|stairwell|restroom|lobby|vestibule|mechanical
+      or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse|cleanroom ISO 1|cleanroom ISO 5|cleanroom ISO 7|cleanroom ISO 8]'
     slot_uri: MIXS:0000825
   room_vol:
     annotations:
@@ -16820,7 +16826,7 @@ classes:
       - room_net_area
       - room_occup
       - room_samp_pos
-      - room_type
+      - 
       - room_vol
       - room_window_count
       - room_connected
@@ -16872,12 +16878,14 @@ classes:
       air_temp:
         examples:
           - value: 20 degree Celsius
-        required: true
+        required: false
+        recommended: true
       avg_occup:
         examples:
           - value: '2'
       carb_dioxide:
-        required: true
+        required: false
+        recommended: true
       freq_clean:
         string_serialization: '[ Daily| Weekly| Monthly| Quarterly | Annually| other]'
       indoor_surf:
@@ -16886,7 +16894,8 @@ classes:
       organism_count:
         examples:
           - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
-        required: true
+        required: false
+        recommended: true
       surf_material:
         required: true
         recommended: true
@@ -16896,7 +16905,7 @@ classes:
     aliases:
       - MIxS-BE (built environment)
     annotations:
-      use_cases: microbiology studies of the built environment, NASA space station sampling, MetaSUB transit system sampling, home, hospitals, office buildings
+      use_cases: microbiology studies of the built environment, NASA space station sampling, European Space Agency(ESA) cleanrooms, MetaSUB transit system sampling, home, hospitals, office buildings
   FoodAnimalAndAnimalFeed:
     description: >-
       A collection of terms appropriate when collecting samples and performing sequencing of samples
