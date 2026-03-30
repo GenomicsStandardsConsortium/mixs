@@ -14487,11 +14487,13 @@ slots:
     slot_uri: MIXS:0000854
     range: MoldVisibilityEnum
   x16s_recover:
-    deprecated: >-
-      true, replace with marker_gene_recov (MIXS:0001354),
-      https://github.com/GenomicsStandardsConsortium/mixs/issues/1186
+    deprecated: Replaced by taxon-neutral marker gene recovery term. See https://github.com/GenomicsStandardsConsortium/mixs/issues/1186
     deprecated_element_has_exact_replacement: MIXS:0001354
     last_updated_on: "2026-03-30"
+    modified_by: orcid:0000-0001-9076-6066
+    see_also:
+      - https://github.com/GenomicsStandardsConsortium/mixs/pull/974
+      - https://github.com/GenomicsStandardsConsortium/mixs/issues/1186
     description: Can a 16S gene be recovered from the submitted SAG or MAG?
     title: 16S recovered
     examples:
@@ -14503,11 +14505,13 @@ slots:
     slot_uri: MIXS:0000065
     range: boolean
   x16s_recover_software:
-    deprecated: >-
-      true, replace with marker_gene_recov_sw (MIXS:0001355),
-      https://github.com/GenomicsStandardsConsortium/mixs/issues/1186
+    deprecated: Replaced by taxon-neutral marker gene recovery software term. See https://github.com/GenomicsStandardsConsortium/mixs/issues/1186
     deprecated_element_has_exact_replacement: MIXS:0001355
     last_updated_on: "2026-03-30"
+    modified_by: orcid:0000-0001-9076-6066
+    see_also:
+      - https://github.com/GenomicsStandardsConsortium/mixs/pull/974
+      - https://github.com/GenomicsStandardsConsortium/mixs/issues/1186
     description: Tools used for 16S rRNA gene extraction
     title: 16S recovery software
     examples:
