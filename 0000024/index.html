@@ -18,7 +18,7 @@
     
     
       
-        <title>Term: estimated size (estimated_size) - mixs</title>
+        <title>Term: estimated genome size (estimated_genome_size) - mixs</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#term-estimated-size-estimated_size" class="md-skip">
+        <a href="#term-estimated-genome-size-estimated_genome_size" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Term: estimated size (estimated_size)
+              Term: estimated genome size (estimated_genome_size)
             
           </span>
         </div>
@@ -395,13 +395,13 @@
   
 
 
-<h1 id="term-estimated-size-estimated_size">Term: estimated size (estimated_size)</h1>
+<h1 id="term-estimated-genome-size-estimated_genome_size">Term: estimated genome size (estimated_genome_size)</h1>
 <p><em>The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period</em></p>
 <p>URI: <a href="https://w3id.org/mixs/0000024">MIXS:0000024</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-checklists-and-extensions">Applicable <a href="../#checklists">Checklists</a> and <a href="../#extensions">Extensions</a></h2>
-<p><b>NOTE:</b> does not include <a href="../combinations/">Combinations</a> (of checklists and extensions) that use estimated_size.</p>
+<p><b>NOTE:</b> does not include <a href="../combinations/">Combinations</a> (of checklists and extensions) that use estimated_genome_size.</p>
 <table>
 <thead>
 <tr>
@@ -411,6 +411,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../0010003/">MigsBa</a></td>
+<td>Minimal Information about a Genome Sequence: cultured bacteria/archaea</td>
+<td>Checklist</td>
+</tr>
 <tr>
 <td><a href="../0010012/">Miuvig</a></td>
 <td>Minimum Information About an Uncultivated Virus Genome</td>
@@ -434,11 +439,6 @@
 <tr>
 <td><a href="../0010006/">MigsOrg</a></td>
 <td>Minimal Information about a Genome Sequence: organelle</td>
-<td>Checklist</td>
-</tr>
-<tr>
-<td><a href="../0010003/">MigsBa</a></td>
-<td>Minimal Information about a Genome Sequence: cultured bacteria/archaea</td>
 <td>Checklist</td>
 </tr>
 </tbody>
@@ -468,7 +468,7 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: estimated_size
+<pre><code class="language-yaml">name: estimated_genome_size
 annotations:
   Expected_value:
     tag: Expected_value
@@ -476,7 +476,9 @@ annotations:
 description: The estimated size of the genome prior to sequencing. Of particular importance
   in the sequencing of (eukaryotic) genome which could remain in draft form for a
   long or unspecified period
-title: estimated size
+title: estimated genome size
+comments:
+- Slot updated 2026-02-10 `estimated_size` and title 'estimated size'
 examples:
 - value: 300000 bp
 in_subset:
@@ -486,7 +488,7 @@ keywords:
 - size
 string_serialization: '{integer} bp'
 slot_uri: MIXS:0000024
-alias: estimated_size
+alias: estimated_genome_size
 domain_of:
 - MigsBa
 - MigsEu
