@@ -12004,10 +12004,8 @@ slots:
     range: string
     slot_uri: MIXS:0000054
   season:
-    annotations:
     description: The season when sampling occurred. Any of the four periods into which
-      the year is divided by the equinoxes and solstices. This field accepts terms
-      listed under season (http://purl.obolibrary.org/obo/NCIT_C94729)
+      the year is divided by the equinoxes and solstices.
     title: season
     examples:
       - value: autumn [NCIT:C94733]
@@ -12066,6 +12064,8 @@ slots:
   season_temp:
     annotations:
       Preferred_unit: degree Celsius
+    comments:
+      - this slot should not be populated unless season is also populated
     description: Mean seasonal temperature
     title: mean seasonal temperature
     examples:
@@ -18985,6 +18985,7 @@ classes:
       - al_sat
       - al_sat_meth
       - misc_param
+      - season
     slot_usage:
       crop_rotation:
         string_serialization: '{boolean};{Rn/start_time/end_time/duration}'
