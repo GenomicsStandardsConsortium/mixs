@@ -13450,7 +13450,7 @@ slots:
     slot_uri: MIXS:0001259
     multivalued: true
   store_cond:
-    description:  Explain how and for how long the sample was stored before DNA extraction (for example, fresh/frozen/other).
+    description: Explain how and for how long the sample was stored before DNA extraction (for example, fresh/frozen/other).
       Include factors that may influence nucleic acid recovery or library construction.
       For example, specify temperature, humidity, presence of microbial overgrowth etc..
     title: storage conditions
@@ -15243,7 +15243,12 @@ slots:
   orig_site_name:
     annotations:
       Expected_value: Name of site or location where sample was originated
-    description: Designated name of the archaeological or ecological site, ancient settlement, or location etc. where the sample was originally collected. Can be a non-geographical name, such as a field-specific name or code, the official name of an excavation, or a colloquial name that is used in academic literature. Typically names that would not be found on official maps. If the site name is unclear please use the name of the closest location or region as best as possible. Can also include different transliterations or languages used in the literature.
+    description: >- 
+      Designated name of the archaeological or ecological site, ancient settlement, or location etc. where the sample was originally collected.
+      Can be a non-geographical name, such as a field-specific name or code, the official name of an excavation, or a colloquial name that is used in academic literature.
+      Typically names that would not be found on official maps.
+      If the site name is unclear please use the name of the closest location or region as best as possible.
+      Can also include different transliterations or languages used in the literature.
     title: name of site or location where sample originated
     examples:
     - value: Valley of the Kings
@@ -15284,7 +15289,10 @@ slots:
     structured_pattern:
       syntax: "^{country}: {region}, {specific_location}$"
   orig_site_lat:
-    description: The latitude coordinate of the original geographical origin of the sample, e.g. the original place the sample was buried, deposited, or formed. In cases where the sample was directly sampled in the burial environment for the purposes of scientific investigation, this will be the same as geo_loc_name, and lat_lon.  For samples kept in collections, the geo_loc_name and lat_lon terms are used to refer to the collection where the sample is stored, but this term is used for the original geographic location the sample existed in prior to archiving in a collection (i.e., should correspond to  orig_site_loc, not the collection itself as recorded in site_name). The values should be reported in decimal degrees, limited to 8 decimal points, and in WGS84 system.
+    description: >-
+      The latitude coordinate of the original geographical origin of the sample, e.g. the original place the sample was buried, deposited, or formed. In cases where the sample was directly sampled in the burial environment for the purposes of scientific investigation, this will be the same as geo_loc_name, and lat_lon.
+      For samples kept in collections, the geo_loc_name and lat_lon terms are used to refer to the collection where the sample is stored, but this term is used for the original geographic location the sample existed in prior to archiving in a collection (i.e., should correspond to  orig_site_loc, not the collection itself as recorded in site_name).
+      The values should be reported in decimal degrees, limited to 8 decimal points, and in WGS84 system.
     title: original geographic location (latitude)
     in_subset:
     - environment
@@ -15300,7 +15308,11 @@ slots:
       interpolated: true
       partial_match: true
   orig_site_lon:
-    description: The longitude coordinate of the original geographical origin of the sample, e.g. the original place the sample was buried, deposited, or formed. In cases where the sample was directly sampled in the burial environment for the purposes of scientific investigation, this will be the same as geo_loc_name, and lat_lon.  For samples kept in collections, the geo_loc_name and lat_lon terms are used to refer to the collection where the sample is stored, but this term is used for the original geographic location the sample existed in prior to archiving in a collection (i.e., should correspond to orig_site_loc, not the collection itself, as recorded in site_name). The values should be reported in decimal degrees, limited to 8 decimal points, and in WGS84 system.
+    description: >-
+      The longitude coordinate of the original geographical origin of the sample, e.g. the original place the sample was buried, deposited, or formed.
+      In cases where the sample was directly sampled in the burial environment for the purposes of scientific investigation, this will be the same as geo_loc_name, and lat_lon.
+      For samples kept in collections, the geo_loc_name and lat_lon terms are used to refer to the collection where the sample is stored, but this term is used for the original geographic location the sample existed in prior to archiving in a collection (i.e., should correspond to orig_site_loc, not the collection itself, as recorded in site_name).
+      The values should be reported in decimal degrees, limited to 8 decimal points, and in WGS84 system.
     title: original geographic location (longitude)
     examples:
     - value: '6.408977'
@@ -15316,7 +15328,12 @@ slots:
       interpolated: true
       partial_match: true
   past_env_broad:
-    description: "Report information about the general ancient broad environmental system that the sample or specimen existed or lived within, as it was at the time of deposition or burial (e.g. in the desert or a forest). This should not describe the environment as it is today (e.g. farmland), but specifically the state as it was in the past (i.e. the palaeo- or (pre)historical ecosystem). Compared to `env_broad_scale` which is taken from direct observation, the information about the past environment will normally be derived from inference from archaeological, palaeontological, geological, or other scientific methods. We recommend using subclasses of EnvO s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field for present day equivalents: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS\""
+    description: >- 
+      Report information about the general ancient broad environmental system that the sample or specimen existed or lived within, as it was at the time of deposition or burial (e.g. in the desert or a forest).
+      This should not describe the environment as it is today (e.g. farmland), but specifically the state as it was in the past (i.e. the palaeo- or (pre)historical ecosystem).
+      Compared to `env_broad_scale` which is taken from direct observation, the information about the past environment will normally be derived from inference from archaeological, palaeontological, geological, or other scientific methods.
+      We recommend using subclasses of EnvO s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428.
+      EnvO documentation about how to use the field for present day equivalents: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS\""
     title: broad-scale past environmental context
     examples:
     - value: "dessert biome [ENVO:01000247]"
@@ -15338,7 +15355,13 @@ slots:
   past_env_local:
     annotations:
       Expected_value: Report information about smaller environmental entities having causal influences upon the sample or specimen at/during the time of burial
-    description: "Report information about the smaller-scale environmental system of the local vicinity of the sample or specimen at the time of deposition or burial (e.g. in hillside, burial mound, or midden). This should not describe the environment as it is today (e.g. carpark), but specifically the entity or entities surrounding the sample that may have significant causal influences as it was in the past. Compared to `env_local_scale` which is taken from direct observation, the information about the past environment will normally be derived from inference from archaeological, palaeontological, geological, or other scientific methods. We recommend using EnvO terms which are of smaller than your entry for past_env_broad. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field for present day equivalents: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS\""
+    description: >-
+      Report information about the smaller-scale environmental system of the local vicinity of the sample or specimen at the time of deposition or burial (e.g. in hillside, burial mound, or midden).
+      This should not describe the environment as it is today (e.g. carpark), but specifically the entity or entities surrounding the sample that may have significant causal influences as it was in the past.
+      Compared to `env_local_scale` which is taken from direct observation, the information about the past environment will normally be derived from inference from archaeological, palaeontological, geological, or other scientific methods.
+      We recommend using EnvO terms which are of smaller than your entry for past_env_broad.
+      Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field.
+      EnvO documentation about how to use the field for present day equivalents: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS\
     title: local past environmental context
     examples:
     - value: "hillside [ENVO:01000333]"
@@ -15877,7 +15900,11 @@ slots:
     required: true
     recommended: true
   lib_gener_technique:
-    description: The technique used to generate the library, i.e., amplicon, enriched, or shotgun. An amplicon library is a library that has been amplified to target a single specific region of a genome (e.g. a specific gene). An enriched library is a library that has had a particular genome or multiple genomic regions/positions 'captured' or enriched typically via baits/probes. A shotgun library has undergone no type of targeted amplification/enrichment for a particular genomic region or genome, i.e., random sequencing of any nucleic acid molecule contained in a genomic library.
+    description: >-
+      The technique used to generate the library, i.e., amplicon, enriched, or shotgun.
+      An amplicon library is a library that has been amplified to target a single specific region of a genome (e.g. a specific gene).
+      An enriched library is a library that has had a particular genome or multiple genomic regions/positions 'captured' or enriched typically via baits/probes.
+      A shotgun library has undergone no type of targeted amplification/enrichment for a particular genomic region or genome, i.e., random sequencing of any nucleic acid molecule contained in a genomic library.
     title: library generation technique
     examples:
     - value: shotgun
