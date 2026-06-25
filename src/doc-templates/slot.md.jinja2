@@ -60,6 +60,12 @@ URI: {{ gen.uri_link(element) }}
 {% if element.pattern %}
 * Regex pattern: {{ '`' }}{{  element.pattern }}{{ '`' }}
 {% endif -%}
+{% if element.in_subset %}
+* Subsets: {% for subset in element.in_subset %}{{ gen.link(subset) }}{% if not loop.last %}, {% endif %}{% endfor %}
+{% endif -%}
+{% if element.slot_group %}
+* Slot group: {{ gen.link(element.slot_group) }}
+{% endif -%}
 
 
 {% if schemaview.usage_index().get(element.name) %}
