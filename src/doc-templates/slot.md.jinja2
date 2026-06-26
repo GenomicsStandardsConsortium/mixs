@@ -67,6 +67,22 @@ URI: {{ gen.uri_link(element) }}
 * Slot group: {{ gen.link(element.slot_group) }}
 {% endif -%}
 
+{% set group_member_slots = [] %}
+{% for member_name, member_slot in schemaview.all_slots().items() %}
+{%- if member_slot.slot_group == element.name %}{% set _ = group_member_slots.append(member_slot) %}{% endif -%}
+{% endfor %}
+{% if group_member_slots %}
+## Slots in this group
+
+This slot is used as a `slot_group`. The following slots are assigned to it.
+
+| Slot | Description |
+| --- | --- |
+{% for member_slot in group_member_slots -%}
+| {{ gen.link(member_slot) }} | {{ member_slot.description|enshorten }} |
+{% endfor %}
+{% endif %}
+
 
 {% if schemaview.usage_index().get(element.name) %}
 ## Usages
