@@ -335,13 +335,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-mixs-and-nmdc-schema-use-these-today" class="md-nav__link">
+  <a href="#how-mixs-uses-these-today" class="md-nav__link">
     <span class="md-ellipsis">
-      How MIxS and nmdc-schema use these today
+      How MIxS uses these today
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How MIxS and nmdc-schema use these today">
+    <nav class="md-nav" aria-label="How MIxS uses these today">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -486,53 +486,44 @@ others are not used as grouping devices in MIxS.</p>
 <p>The referent type for each comes from the LinkML metamodel: <code>is_a</code> has range
 <code>definition</code>, <code>in_subset</code> has range <code>subset_definition</code>, and <code>slot_group</code> has
 range <code>slot_definition</code>.</p>
-<h2 id="how-mixs-and-nmdc-schema-use-these-today">How MIxS and nmdc-schema use these today</h2>
-<p>The two schemas have almost opposite centers of gravity, which is worth knowing
-before adding a new grouping.</p>
+<h2 id="how-mixs-uses-these-today">How MIxS uses these today</h2>
 <table>
 <thead>
 <tr>
 <th>usage</th>
 <th>MIxS (<code>mixs.yaml</code>)</th>
-<th>nmdc-schema (<code>src/schema</code>)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>class <code>is_a</code></td>
 <td>335 of 338 classes (the checklist / extension / combination backbone)</td>
-<td>68 classes</td>
 </tr>
 <tr>
 <td>slot <code>is_a</code></td>
-<td><strong>0</strong></td>
-<td>94 slots</td>
+<td>0</td>
 </tr>
 <tr>
 <td><code>in_subset</code></td>
 <td>100 slots, 299 classes, across 5 subsets</td>
-<td>9 slots, across 10 subsets (portal / data views)</td>
 </tr>
 <tr>
 <td><code>slot_group</code></td>
-<td><strong>0</strong></td>
-<td>21 slots (form groups such as JGI-Metagenomics, Sample ID)</td>
+<td>0</td>
 </tr>
 <tr>
 <td>abstract slots / classes</td>
 <td>0 / 0</td>
-<td>13 / 14</td>
 </tr>
 </tbody>
 </table>
-<p>So MIxS groups at the class level and tags slots flatly with subsets; it has no
-slot <code>is_a</code>, no abstract slot, and no <code>slot_group</code>. nmdc-schema groups at the
-slot level, using slot <code>is_a</code>, abstract parent slots, and <code>slot_group</code> for form
-layout. A consequence for MIxS: introducing a grouping parent slot for the
-environmental triad would be the first slot <code>is_a</code> and first abstract slot in the
-schema, whereas a new subset is the established MIxS idiom. Both can be true at
-once, because they group on different axes (a subset is a flat tag; an <code>is_a</code>
-parent is a hierarchy node that also reaches the OWL).</p>
+<p>MIxS groups at the class level and tags slots flatly with subsets. It uses no
+slot <code>is_a</code>, no abstract slot, and no <code>slot_group</code> today. A consequence:
+introducing a grouping parent slot (for example, to bind the environmental triad
+together) would be the first slot <code>is_a</code> and the first abstract slot in the
+schema, whereas a new subset is the established MIxS idiom. The two group on
+different axes: a subset is a flat tag, while an <code>is_a</code> parent is a hierarchy
+node that also reaches the OWL.</p>
 <h3 id="the-five-mixs-subsets">The five MIxS subsets</h3>
 <p>MIxS defines five subsets: <code>investigation</code>, <code>environment</code>, <code>sequencing</code>,
 <code>nucleic acid sequence source</code>, and <code>combination_classes</code>. These carry what GSC
@@ -647,6 +638,11 @@ tooling), so a typo is never looked up and ships silently. <code>linkml-validate
 checks data against the schema and never inspects the schema's own internal
 referential integrity, so antecedents are out of its scope entirely. The test
 below is what closes this gap, and it reports cleanly instead of crashing.</p>
+<p>LinkML is adding native linter rules for exactly these referents, proposed in
+<a href="https://github.com/linkml/linkml/pull/3680">linkml#3680 "Add linter rules for slot_group and in_subset referential
+integrity"</a>. Once those ship,
+<code>linkml lint</code> will flag a dangling <code>in_subset</code> or <code>slot_group</code> directly, and the
+test below becomes a backstop rather than the only check.</p>
 <h2 id="the-test">The test</h2>
 <p><code>tests/test_grouping_integrity.py</code> (run by <code>make test-python</code>) reads the schema
 through <code>SchemaView</code>, so referents defined in imported files are resolved, and
