@@ -23,27 +23,23 @@ The referent type for each comes from the LinkML metamodel: `is_a` has range
 `definition`, `in_subset` has range `subset_definition`, and `slot_group` has
 range `slot_definition`.
 
-## How MIxS and nmdc-schema use these today
+## How MIxS uses these today
 
-The two schemas have almost opposite centers of gravity, which is worth knowing
-before adding a new grouping.
+| usage | MIxS (`mixs.yaml`) |
+|---|---|
+| class `is_a` | 335 of 338 classes (the checklist / extension / combination backbone) |
+| slot `is_a` | 0 |
+| `in_subset` | 100 slots, 299 classes, across 5 subsets |
+| `slot_group` | 0 |
+| abstract slots / classes | 0 / 0 |
 
-| usage | MIxS (`mixs.yaml`) | nmdc-schema (`src/schema`) |
-|---|---|---|
-| class `is_a` | 335 of 338 classes (the checklist / extension / combination backbone) | 68 classes |
-| slot `is_a` | **0** | 94 slots |
-| `in_subset` | 100 slots, 299 classes, across 5 subsets | 9 slots, across 10 subsets (portal / data views) |
-| `slot_group` | **0** | 21 slots (form groups such as JGI-Metagenomics, Sample ID) |
-| abstract slots / classes | 0 / 0 | 13 / 14 |
-
-So MIxS groups at the class level and tags slots flatly with subsets; it has no
-slot `is_a`, no abstract slot, and no `slot_group`. nmdc-schema groups at the
-slot level, using slot `is_a`, abstract parent slots, and `slot_group` for form
-layout. A consequence for MIxS: introducing a grouping parent slot for the
-environmental triad would be the first slot `is_a` and first abstract slot in the
-schema, whereas a new subset is the established MIxS idiom. Both can be true at
-once, because they group on different axes (a subset is a flat tag; an `is_a`
-parent is a hierarchy node that also reaches the OWL).
+MIxS groups at the class level and tags slots flatly with subsets. It uses no
+slot `is_a`, no abstract slot, and no `slot_group` today. A consequence:
+introducing a grouping parent slot (for example, to bind the environmental triad
+together) would be the first slot `is_a` and the first abstract slot in the
+schema, whereas a new subset is the established MIxS idiom. The two group on
+different axes: a subset is a flat tag, while an `is_a` parent is a hierarchy
+node that also reaches the OWL.
 
 ### The five MIxS subsets
 
@@ -119,6 +115,12 @@ tooling), so a typo is never looked up and ships silently. `linkml-validate`
 checks data against the schema and never inspects the schema's own internal
 referential integrity, so antecedents are out of its scope entirely. The test
 below is what closes this gap, and it reports cleanly instead of crashing.
+
+LinkML is adding native linter rules for exactly these referents, proposed in
+[linkml#3680 "Add linter rules for slot_group and in_subset referential
+integrity"](https://github.com/linkml/linkml/pull/3680). Once those ship,
+`linkml lint` will flag a dangling `in_subset` or `slot_group` directly, and the
+test below becomes a backstop rather than the only check.
 
 ## The test
 
