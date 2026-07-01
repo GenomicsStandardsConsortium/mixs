@@ -10,7 +10,7 @@ Both versions here are finished releases, pinned by commit and tag, so the scrip
 takes no arguments and the result never changes. It writes a structured diff and
 a short summary to assets/diff_results/v5_to_v6.0.0/.
 
-Needs openpyxl to read the v5 Excel file:  poetry install --with legacy-v5-diff
+Needs openpyxl to read the v5 Excel file (installed by `poetry install`).
 
 How it works:
 - The v5 Excel spreads its 600 terms over two sheets: "MIxS" (94 core terms) and
