@@ -695,21 +695,33 @@
 <li>opens a release pull request from a <code>release/vX.Y.Z</code> branch.</li>
 </ul>
 <p>This action only prepares the PR. It does not publish a release.</p>
-<h2 id="adding-the-human-readable-schema-diff-summary">Adding the human-readable schema-diff summary</h2>
+<h2 id="adding-the-schema-diff-summaries-and-publishing-them">Adding the schema-diff summaries and publishing them</h2>
 <p>The structured diff is complete but large. Before the release PR is reviewed, add
-a readable summary to the release branch:</p>
+readable summaries to the release branch and put them on the docs site:</p>
 <ol>
 <li>Check out the <code>release/vX.Y.Z</code> branch.</li>
-<li>Run the <code>mixs-diff-summary</code> skill (<code>/mixs-diff-summary
-   assets/diff_results/schema_comparison_results.yaml</code>), defined in
-   <code>.claude/skills/mixs-diff-summary/</code>. It produces a short Markdown summary that
-   groups cosmetic mass-edits and highlights added, removed, renamed, and
-   cardinality or range changes.</li>
-<li>Commit the summary (for example <code>assets/diff_results/agent_summary.md</code>) to the
-   branch and push.</li>
+<li>Make sure the diff outputs live in a per-release folder,
+   <code>assets/diff_results/&lt;old&gt;_to_&lt;new&gt;/</code> (for example <code>v6.2.0_to_v6.3.0/</code>). The
+   docs build only picks up summaries from these per-diff folders, so if the diff
+   was written to the top of <code>assets/diff_results/</code>, move it into that folder.</li>
+<li>Run the <code>mixs-diff-summary</code> skill on the structured diff, for example
+   <code>/mixs-diff-summary assets/diff_results/&lt;old&gt;_to_&lt;new&gt;/schema_comparison_results.yaml</code>.
+   It writes <code>agent_summary.md</code> next to the structured diff.</li>
+<li>Commit both <code>agent_summary.md</code> (the readable summary) and <code>tool_summary.md</code>
+   (the counts) in that folder.</li>
+<li>Add the two pages to the site nav. In <code>mkdocs.yml</code>, under the <code>Version changes</code>
+   group, add two lines for this release:
+   ```yaml<ul>
+<li><old> to <new>: version-changes/<old><em>to</em><new>.md</li>
+<li><old> to <new> (counts): version-changes/<old><em>to</em><new>-counts.md
+   <code>``
+   The</code>gendoc<code>build step copies the two summaries out of</code>assets/diff_results/<old><em>to</em><new>/<code>into</code>docs/version-changes/`
+   automatically, so no other change is needed.</li>
+</ul>
+</li>
 </ol>
-<p>This step runs on the branch, done by a maintainer or an agent, not in CI. It
-needs no API keys, and the summary is reviewed like any other change before merge.</p>
+<p>This runs on the branch, done by a maintainer or an agent, not in CI. It needs no
+API keys, and everything is reviewed like any other change before merge.</p>
 <h2 id="reviewing-and-publishing">Reviewing and publishing</h2>
 <ul>
 <li>A TWG member other than the PR author reviews the version bumps and the schema
