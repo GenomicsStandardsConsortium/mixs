@@ -44,13 +44,13 @@ The structured diff is complete but large. Before the release PR is reviewed, ad
 a readable summary to the release branch:
 
 1. Check out the `release/vX.Y.Z` branch.
-2. Run the diff-summary skill
-   ([contrib/diff-summary-skill/](../../contrib/diff-summary-skill/README.md)) on
-   `assets/diff_results/schema_comparison_results.yaml`. It produces a short
-   Markdown summary that groups cosmetic mass-edits and highlights added, removed,
-   renamed, and cardinality or range changes.
-3. Commit the summary (for example `assets/diff_results/SUMMARY.md`) to the branch
-   and push.
+2. Run the `mixs-diff-summary` skill (`/mixs-diff-summary
+   assets/diff_results/schema_comparison_results.yaml`), defined in
+   `.claude/skills/mixs-diff-summary/`. It produces a short Markdown summary that
+   groups cosmetic mass-edits and highlights added, removed, renamed, and
+   cardinality or range changes.
+3. Commit the summary (for example `assets/diff_results/agent_summary.md`) to the
+   branch and push.
 
 This step runs on the branch, done by a maintainer or an agent, not in CI. It
 needs no API keys, and the summary is reviewed like any other change before merge.

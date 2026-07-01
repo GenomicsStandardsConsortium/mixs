@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-One-time, hardcoded reproducer for the MIxS v5 (2018 Excel) -> v6.0.0 (2022 LinkML) diff.
+One-time script for the MIxS v5 (2018 Excel) to v6.0.0 (2022 LinkML) diff.
 
-This is NOT the reusable, forward-compatible diff tool. For comparing any two
+This is NOT the reusable diff tool. For comparing any two
 LinkML versions of MIxS (v6 onward), use `diff-releases`
 (src/scripts/diff_two_linkml_mixs_releases.py). See ./README.md for why this one
 exists and how it was validated.
@@ -34,7 +34,7 @@ from engine.readers.base import get_reader  # noqa: E402
 from engine.comparison import LegacySchemaComparator, load_mapping_config  # noqa: E402
 from engine.output import write_comparison_yaml, write_summary_report  # noqa: E402
 
-# --- hardcoded, frozen inputs -------------------------------------------------
+# --- fixed inputs (set here; both are finished releases) ----------------------
 # v5: last pre-LinkML formulation, an Excel file pinned to the "final version"
 # commit in the public GenomicsStandardsConsortium/mixs-legacy repo. The Excel
 # reader takes a local path, so we fetch this pinned binary at runtime.
@@ -49,7 +49,10 @@ NEW_VERSION = "v6.0.0"
 
 MAPPINGS_DIR = HERE                 # holds mapping_config.yaml (validated)
 PROFILE_DIR = HERE / "profiles"     # holds excel_v5.yaml (Excel parse profile)
-OUTPUT_DIR = HERE / "output"
+# Frozen output goes to the conventional diff-results location, not next to the
+# code. HERE is src/scripts/v5_to_v6_onetime_diff/, so the repo root is 3 up.
+REPO_ROOT = HERE.parents[2]
+OUTPUT_DIR = REPO_ROOT / "assets" / "diff_results" / "v5_to_v6.0.0"
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s", datefmt="%H:%M:%S")
 logger = logging.getLogger(__name__)
@@ -78,10 +81,10 @@ def main() -> None:
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     yaml_path = write_comparison_yaml(result, OUTPUT_DIR, include_membership=True)
-    summary_path = write_summary_report(result, OUTPUT_DIR, include_membership=True)
+    summary_path = write_summary_report(result, OUTPUT_DIR, filename="tool_summary.md", include_membership=True)
 
-    print(f"\nWrote: {yaml_path}")
-    print(f"Wrote: {summary_path}")
+    print(f"\nWrote structured diff: {yaml_path}")
+    print(f"Wrote tool summary:    {summary_path}")
     print("\nSummary:")
     print(f"  Old: {old_schema.version} ({old_schema.source_format}) - {len(old_schema.terms)} terms")
     print(f"  New: {new_schema.version} ({new_schema.source_format}) - {len(new_schema.terms)} terms")

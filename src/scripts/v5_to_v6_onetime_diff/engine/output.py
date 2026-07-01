@@ -110,7 +110,7 @@ def write_comparison_yaml(
             f,
             Dumper=ComparisonYAMLDumper,
             default_flow_style=False,
-            sort_keys=True,  # deterministic ordering so re-runs are byte-stable (one-time reproducer)
+            sort_keys=True,  # stable key order so re-runs write the same file
             allow_unicode=True,
             width=120,
         )
@@ -122,7 +122,7 @@ def write_comparison_yaml(
 def write_summary_report(
     result: SchemaComparisonResult,
     output_dir: Path,
-    filename: str = "comparison_summary.txt",
+    filename: str = "comparison_summary.md",
     include_membership: bool = True,
 ) -> Path:
     """Write human-readable summary report.
@@ -139,226 +139,193 @@ def write_summary_report(
     output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / filename
 
-    lines = []
-    lines.append("=" * 80)
-    lines.append("MIXS LEGACY SCHEMA COMPARISON SUMMARY")
-    lines.append("=" * 80)
-    lines.append("")
-
-    # Schema info
     old_info = result.old_schema_info
     new_info = result.new_schema_info
-    lines.append(f"OLD SCHEMA: {old_info.get('version', 'unknown')}")
-    lines.append(f"  Source: {old_info.get('source', 'unknown')}")
-    lines.append(f"  Format: {old_info.get('format', 'unknown')}")
-    lines.append(f"  Terms: {old_info.get('term_count', 0)}")
-    lines.append("")
-    lines.append(f"NEW SCHEMA: {new_info.get('version', 'unknown')}")
-    lines.append(f"  Source: {new_info.get('source', 'unknown')}")
-    lines.append(f"  Format: {new_info.get('format', 'unknown')}")
-    lines.append(f"  Terms: {new_info.get('term_count', 0)}")
-    lines.append("")
+    md = []
+    md.append(f"# MIxS schema comparison: {old_info.get('version', 'unknown')} to {new_info.get('version', 'unknown')}")
+    md.append("")
+    md.append(f"- **Old:** {old_info.get('version', 'unknown')} "
+              f"({old_info.get('format', 'unknown')}), {old_info.get('term_count', 0)} terms. "
+              f"Source: `{old_info.get('source', 'unknown')}`")
+    md.append(f"- **New:** {new_info.get('version', 'unknown')} "
+              f"({new_info.get('format', 'unknown')}), {new_info.get('term_count', 0)} terms. "
+              f"Source: `{new_info.get('source', 'unknown')}`")
+    md.append("")
 
-    # Term comparison summary
-    lines.append("-" * 40)
-    lines.append("TERM COMPARISON")
-    lines.append("-" * 40)
+    # Term comparison
     key_comp = result.term_key_comparison
-    lines.append(f"  Shared terms: {len(key_comp.shared)}")
-    lines.append(f"  Only in old: {len(key_comp.only_in_old)}")
-    lines.append(f"  Only in new: {len(key_comp.only_in_new)}")
+    md.append("## Term comparison")
+    md.append("")
+    md.append(f"- Shared terms: {len(key_comp.shared)}")
+    md.append(f"- Only in old: {len(key_comp.only_in_old)}")
+    md.append(f"- Only in new: {len(key_comp.only_in_new)}")
     if key_comp.expected_mappings:
-        lines.append(f"  Expected mappings: {len(key_comp.expected_mappings)}")
-    lines.append(f"  Terms with definition changes: {len(result.term_comparisons)}")
-    lines.append("")
+        md.append(f"- Renames applied: {len(key_comp.expected_mappings)}")
+    md.append(f"- Terms with definition changes: {len(result.term_comparisons)}")
+    md.append("")
 
-    # List applied renames (from expected_mappings)
     if key_comp.expected_mappings:
-        lines.append("  Term renames applied:")
+        md.append("### Renames applied")
+        md.append("")
         for mapping in sorted(key_comp.expected_mappings)[:15]:
-            lines.append(f"    {mapping}")
+            md.append(f"- {mapping}")
         if len(key_comp.expected_mappings) > 15:
-            lines.append(f"    ... and {len(key_comp.expected_mappings) - 15} more")
-        lines.append("")
+            md.append(f"- ... and {len(key_comp.expected_mappings) - 15} more")
+        md.append("")
 
-    # List expected splits
     if key_comp.expected_splits:
-        lines.append("  Term splits (1 old → N new):")
+        md.append("### Term splits (1 old to N new)")
+        md.append("")
         for old_name, new_names in sorted(key_comp.expected_splits.items()):
-            lines.append(f"    {old_name} → {', '.join(new_names)}")
-        lines.append("")
+            md.append(f"- {old_name} to {', '.join(new_names)}")
+        md.append("")
 
-    # List expected merges
     if key_comp.expected_merges:
-        lines.append("  Term merges (N old → 1 new):")
+        md.append("### Term merges (N old to 1 new)")
+        md.append("")
         for new_name, old_names in sorted(key_comp.expected_merges.items()):
-            lines.append(f"    {', '.join(old_names)} → {new_name}")
-        lines.append("")
+            md.append(f"- {', '.join(old_names)} to {new_name}")
+        md.append("")
 
-    # List expected deletions
     if key_comp.expected_deletions:
-        lines.append("  Terms intentionally removed:")
+        md.append("### Terms intentionally removed")
+        md.append("")
         for name, reason in sorted(key_comp.expected_deletions.items()):
-            lines.append(f"    - {name}: {reason}")
-        lines.append("")
+            md.append(f"- {name}: {reason}")
+        md.append("")
 
-    # List removed terms (unexplained)
     if key_comp.only_in_old:
-        lines.append("  Terms only in OLD (unexplained removals):")
+        md.append("### Terms only in old (removed)")
+        md.append("")
         for name in sorted(key_comp.only_in_old)[:20]:
-            lines.append(f"    - {name}")
+            md.append(f"- {name}")
         if len(key_comp.only_in_old) > 20:
-            lines.append(f"    ... and {len(key_comp.only_in_old) - 20} more")
-        lines.append("")
+            md.append(f"- ... and {len(key_comp.only_in_old) - 20} more")
+        md.append("")
 
-    # List added terms
     if key_comp.only_in_new:
-        lines.append("  Terms only in NEW (added):")
+        md.append("### Terms only in new (added)")
+        md.append("")
         for name in sorted(key_comp.only_in_new)[:20]:
-            lines.append(f"    + {name}")
+            md.append(f"- {name}")
         if len(key_comp.only_in_new) > 20:
-            lines.append(f"    ... and {len(key_comp.only_in_new) - 20} more")
-        lines.append("")
+            md.append(f"- ... and {len(key_comp.only_in_new) - 20} more")
+        md.append("")
 
-    # Definition changes with inline diffs
     if result.term_comparisons:
-        # Filter to terms with definition changes
         def_changes = [
             (name, comp)
             for name, comp in sorted(result.term_comparisons.items())
             if 'definition' in comp.field_differences
         ]
-
         if def_changes:
-            lines.append("-" * 40)
-            lines.append("DEFINITION CHANGES (showing diff)")
-            lines.append("-" * 40)
-
+            md.append("## Definition changes")
+            md.append("")
             for name, comp in def_changes[:10]:
                 old_def, new_def = comp.field_differences.get('definition', ('', ''))
                 diff_text = compute_inline_diff(old_def, new_def, max_len=120)
-                lines.append(f"  {name}:")
-                lines.append(f"    {diff_text}")
-
+                md.append(f"- **{name}:** {diff_text}")
             if len(def_changes) > 10:
-                lines.append(f"  ... and {len(def_changes) - 10} more definition changes")
-            lines.append("")
+                md.append(f"- ... and {len(def_changes) - 10} more definition changes")
+            md.append("")
 
-    # Package comparison summary
     if result.package_key_comparison.shared or result.package_key_comparison.only_in_old or result.package_key_comparison.only_in_new:
-        lines.append("-" * 40)
-        lines.append("PACKAGE COMPARISON")
-        lines.append("-" * 40)
         pkg_comp = result.package_key_comparison
-        lines.append(f"  Shared packages: {len(pkg_comp.shared)}")
-        lines.append(f"  Only in old: {len(pkg_comp.only_in_old)}")
-        lines.append(f"  Only in new: {len(pkg_comp.only_in_new)}")
-        lines.append("")
+        md.append("## Package comparison")
+        md.append("")
+        md.append(f"- Shared packages: {len(pkg_comp.shared)}")
+        md.append(f"- Only in old: {len(pkg_comp.only_in_old)}")
+        md.append(f"- Only in new: {len(pkg_comp.only_in_new)}")
+        md.append("")
 
-    # Checklist comparison summary
     if result.checklist_key_comparison.shared or result.checklist_key_comparison.only_in_old or result.checklist_key_comparison.only_in_new:
-        lines.append("-" * 40)
-        lines.append("CHECKLIST COMPARISON")
-        lines.append("-" * 40)
         cl_comp = result.checklist_key_comparison
-        lines.append(f"  Shared checklists: {len(cl_comp.shared)}")
-        lines.append(f"  Only in old: {len(cl_comp.only_in_old)}")
-        lines.append(f"  Only in new: {len(cl_comp.only_in_new)}")
-        lines.append("")
+        md.append("## Checklist comparison")
+        md.append("")
+        md.append(f"- Shared checklists: {len(cl_comp.shared)}")
+        md.append(f"- Only in old: {len(cl_comp.only_in_old)}")
+        md.append(f"- Only in new: {len(cl_comp.only_in_new)}")
+        md.append("")
 
-    # Membership changes summary
     if include_membership and result.membership_comparison.has_changes():
-        lines.append("-" * 40)
-        lines.append("MEMBERSHIP CHANGES")
-        lines.append("-" * 40)
         mem_comp = result.membership_comparison
-
-        # Count totals
         checklist_added = sum(len(terms) for terms in mem_comp.terms_added_to_checklists.values())
         checklist_removed = sum(len(terms) for terms in mem_comp.terms_removed_from_checklists.values())
         package_added = sum(len(terms) for terms in mem_comp.terms_added_to_packages.values())
         package_removed = sum(len(terms) for terms in mem_comp.terms_removed_from_packages.values())
-
-        lines.append(f"  Terms added to checklists: {checklist_added}")
-        lines.append(f"  Terms removed from checklists: {checklist_removed}")
-        lines.append(f"  Terms added to packages: {package_added}")
-        lines.append(f"  Terms removed from packages: {package_removed}")
-        lines.append(f"  Made mandatory (was optional): {len(mem_comp.made_mandatory)}")
-        lines.append(f"  Made optional (was mandatory): {len(mem_comp.made_optional)}")
-        lines.append("")
-
-        # List requirement changes if any
+        md.append("## Membership changes")
+        md.append("")
+        md.append(f"- Terms added to checklists: {checklist_added}")
+        md.append(f"- Terms removed from checklists: {checklist_removed}")
+        md.append(f"- Terms added to packages: {package_added}")
+        md.append(f"- Terms removed from packages: {package_removed}")
+        md.append(f"- Made mandatory (was optional): {len(mem_comp.made_mandatory)}")
+        md.append(f"- Made optional (was mandatory): {len(mem_comp.made_optional)}")
+        md.append("")
         if mem_comp.made_mandatory:
-            lines.append("  Made mandatory:")
+            md.append("### Made mandatory")
+            md.append("")
             for change in mem_comp.made_mandatory[:10]:
-                lines.append(f"    {change.term_name} in {change.group_name}: {change.old_requirement} → {change.new_requirement}")
+                md.append(f"- {change.term_name} in {change.group_name}: {change.old_requirement} to {change.new_requirement}")
             if len(mem_comp.made_mandatory) > 10:
-                lines.append(f"    ... and {len(mem_comp.made_mandatory) - 10} more")
-            lines.append("")
-
+                md.append(f"- ... and {len(mem_comp.made_mandatory) - 10} more")
+            md.append("")
         if mem_comp.made_optional:
-            lines.append("  Made optional:")
+            md.append("### Made optional")
+            md.append("")
             for change in mem_comp.made_optional[:10]:
-                lines.append(f"    {change.term_name} in {change.group_name}: {change.old_requirement} → {change.new_requirement}")
+                md.append(f"- {change.term_name} in {change.group_name}: {change.old_requirement} to {change.new_requirement}")
             if len(mem_comp.made_optional) > 10:
-                lines.append(f"    ... and {len(mem_comp.made_optional) - 10} more")
-            lines.append("")
+                md.append(f"- ... and {len(mem_comp.made_optional) - 10} more")
+            md.append("")
 
-    # Package composition changes summary
     if include_membership and result.package_composition.has_changes():
-        lines.append("-" * 40)
-        lines.append("PACKAGE COMPOSITION CHANGES")
-        lines.append("-" * 40)
         pkg_comp = result.package_composition
-
-        # List packages with composition changes
+        md.append("## Package composition changes")
+        md.append("")
         changes_with_content = [
             (name, change)
             for name, change in sorted(pkg_comp.changes.items())
             if change.has_changes()
         ]
-
         if changes_with_content:
             for pkg_name, change in changes_with_content[:15]:
                 added_count = len(change.terms_added)
                 removed_count = len(change.terms_removed)
-                lines.append(f"  {pkg_name}: +{added_count} terms, -{removed_count} terms")
-                # Show specific terms (up to 5 each)
+                md.append(f"- **{pkg_name}:** +{added_count} terms, -{removed_count} terms")
                 if change.terms_added:
                     added_list = sorted(change.terms_added)[:5]
                     added_str = ", ".join(added_list)
                     if len(change.terms_added) > 5:
                         added_str += f" (+{len(change.terms_added) - 5} more)"
-                    lines.append(f"    added: {added_str}")
+                    md.append(f"    - added: {added_str}")
                 if change.terms_removed:
                     removed_list = sorted(change.terms_removed)[:5]
                     removed_str = ", ".join(removed_list)
                     if len(change.terms_removed) > 5:
                         removed_str += f" (+{len(change.terms_removed) - 5} more)"
-                    lines.append(f"    removed: {removed_str}")
+                    md.append(f"    - removed: {removed_str}")
             if len(changes_with_content) > 15:
-                lines.append(f"  ... and {len(changes_with_content) - 15} more packages")
-            lines.append("")
-
-        # List new/removed packages
+                md.append(f"- ... and {len(changes_with_content) - 15} more packages")
+            md.append("")
         if pkg_comp.packages_only_in_new:
-            lines.append("  Packages added:")
+            md.append("### Packages added")
+            md.append("")
             for pkg in sorted(pkg_comp.packages_only_in_new):
-                lines.append(f"    + {pkg}")
-            lines.append("")
-
+                md.append(f"- {pkg}")
+            md.append("")
         if pkg_comp.packages_only_in_old:
-            lines.append("  Packages removed:")
+            md.append("### Packages removed")
+            md.append("")
             for pkg in sorted(pkg_comp.packages_only_in_old):
-                lines.append(f"    - {pkg}")
-            lines.append("")
+                md.append(f"- {pkg}")
+            md.append("")
 
-    lines.append("=" * 80)
-    lines.append(f"Generated: {datetime.now().isoformat()}")
-    lines.append("=" * 80)
+    md.append("---")
+    md.append(f"_Generated: {datetime.now().isoformat()}_")
 
     with open(output_path, 'w') as f:
-        f.write('\n'.join(lines))
+        f.write('\n'.join(md) + '\n')
 
     logger.info(f"Wrote summary report to {output_path}")
     return output_path

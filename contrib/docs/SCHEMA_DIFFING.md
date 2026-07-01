@@ -125,11 +125,12 @@ combination class at once. The summary step below is where that gets explained.
 ## Turning the YAML diff into a readable summary
 
 `schema_comparison_results.yaml` is thorough but large. To produce a short,
-human-readable Markdown summary from it, use the recipe in
-[`diff-summary-skill/`](../diff-summary-skill/README.md). It takes the structured
-YAML and writes a summary that groups cosmetic mass-edits, highlights structural
-changes, and calls out cardinality and range changes. A worked example of the
-kind of output it produces is kept alongside that recipe.
+human-readable Markdown summary from it, use the `mixs-diff-summary` skill
+(`/mixs-diff-summary <path-to-schema_comparison_results.yaml>`), defined in
+`.claude/skills/mixs-diff-summary/`. It reads the structured YAML and writes a
+summary that groups cosmetic mass-edits, highlights structural changes, and calls
+out cardinality and range changes. A worked example is
+`assets/diff_results/v5_to_v6.0.0/agent_summary.md`.
 
 At release time, the release workflow generates the structured diff on the
 release branch, and a maintainer runs this skill on that branch to add the
@@ -163,7 +164,7 @@ old and new names to the matching TSV.
 This tool compares LinkML versions only. The general multi-format diff machinery
 (v4 Excel, Word, XSD) has been retired. The one transition worth recording, v5
 (2018 Excel) to v6.0.0 (2022 LinkML), is kept as a separate, clearly labeled
-one-time reproducer with its own frozen output, in
-[`contrib/v5_to_v6_onetime_diff/`](../v5_to_v6_onetime_diff/README.md). That
-directory is deliberately walled off from this reusable tool: it is hardcoded to
-two frozen releases and is not part of the release workflow.
+one-time diff: the code is in `src/scripts/v5_to_v6_onetime_diff/` and its
+finished output in `assets/diff_results/v5_to_v6.0.0/`. It is kept apart from this
+reusable tool: the two versions are set in the script, and it is not part of the
+release workflow.
