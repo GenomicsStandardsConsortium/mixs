@@ -688,8 +688,8 @@
 <ul>
 <li>bumps the version in <code>pyproject.toml</code>, <code>CITATION.cff</code>, and <code>.zenodo.json</code>,</li>
 <li>runs the full build and tests,</li>
-<li>generates a structured schema diff between the two refs into
-  <code>assets/diff_results/schema_comparison_results.yaml</code>, using the reusable
+<li>generates a structured schema diff between the two refs into a per-release
+  folder <code>assets/diff_results/&lt;old&gt;_to_&lt;new&gt;/</code>, using the reusable
   <code>diff-releases</code> tool (see
   <a href="../SCHEMA_DIFFING/">SCHEMA_DIFFING.md</a>),</li>
 <li>opens a release pull request from a <code>release/vX.Y.Z</code> branch.</li>
@@ -700,10 +700,10 @@
 readable summaries to the release branch and put them on the docs site:</p>
 <ol>
 <li>Check out the <code>release/vX.Y.Z</code> branch.</li>
-<li>Make sure the diff outputs live in a per-release folder,
-   <code>assets/diff_results/&lt;old&gt;_to_&lt;new&gt;/</code> (for example <code>v6.2.0_to_v6.3.0/</code>). The
-   docs build only picks up summaries from these per-diff folders, so if the diff
-   was written to the top of <code>assets/diff_results/</code>, move it into that folder.</li>
+<li>The release action already wrote the diff into a per-release folder,
+   <code>assets/diff_results/&lt;old&gt;_to_&lt;new&gt;/</code> (for example <code>v6.2.0_to_v6.3.0/</code>). Work
+   in that folder. (The docs build publishes summaries only from these
+   per-release folders.)</li>
 <li>Run the <code>mixs-diff-summary</code> skill on the structured diff, for example
    <code>/mixs-diff-summary assets/diff_results/&lt;old&gt;_to_&lt;new&gt;/schema_comparison_results.yaml</code>.
    It writes <code>agent_summary.md</code> next to the structured diff.</li>
