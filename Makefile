@@ -234,6 +234,14 @@ gendoc: ensure-dirs $(DOCDIR)
 	$(RUN) generate-enumerations --output-file $(ENUMERATIONS_FILE)
 	mkdir -p $(DOCDIR)/javascripts
 	$(RUN) cp $(SRC)/scripts/javascripts/* $(DOCDIR)/javascripts/
+	# Publish each committed version-diff's summaries (agent + tool) as site pages.
+	mkdir -p $(DOCDIR)/version-changes
+	@for d in assets/diff_results/*/; do \
+	  [ -d "$$d" ] || continue; \
+	  name=$$(basename "$$d"); \
+	  if [ -f "$$d/agent_summary.md" ]; then cp "$$d/agent_summary.md" "$(DOCDIR)/version-changes/$$name.md"; fi; \
+	  if [ -f "$$d/tool_summary.md" ]; then cp "$$d/tool_summary.md" "$(DOCDIR)/version-changes/$$name-counts.md"; fi; \
+	done
 
 testdoc: gendoc serve
 
