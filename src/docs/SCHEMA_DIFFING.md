@@ -128,7 +128,8 @@ poetry run diff-releases \
 
 ### What it writes
 
-Into the output directory (default `assets/diff_results/`):
+Into the output directory (default `assets/diff_results/<old_ref>_to_<new_ref>/`, a
+per-release folder; pass `--output-dir` to override):
 
 - `releases.yaml`: which two versions were compared, with commit and date.
 - `schema_comparison_results.yaml`: the structured diff. Each collection (slots,
