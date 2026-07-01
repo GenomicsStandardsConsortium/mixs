@@ -17,13 +17,18 @@ include = ["README.md", "project", "src/mixs", "src/scripts"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-linkml-runtime = "^1.9"
+# TEMPORARY: build OWL against a linkml feature branch that declares the
+# metamodel grouping classes (e.g. linkml:EnumDefinition) that EBI OLS needs to
+# group enum instances/subclasses. Revert to a linkml release once the branch is
+# merged and released. See the linked "revert to linkml release" issue.
+linkml-runtime = {git = "https://github.com/turbomam/linkml.git", branch = "owl-declare-grouping-classes", subdirectory = "packages/linkml_runtime"}
 jsonasobj2 = "^1.0" # used transitively in src/scripts/mixs/datamodel/mixs.py
 
 [tool.poetry.group.dev.dependencies]
 black = "^26.3"
 deptry = "^0.23"
-linkml = "^1.9"
+# TEMPORARY: see the linkml-runtime note above (same feature branch).
+linkml = {git = "https://github.com/turbomam/linkml.git", branch = "owl-declare-grouping-classes", subdirectory = "packages/linkml"}
 matplotlib = "^3.10"
 mkdocs-material = "^9.6"
 mkdocs-mermaid2-plugin = "^1.2"
