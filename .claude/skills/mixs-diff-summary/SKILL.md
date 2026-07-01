@@ -58,15 +58,33 @@ Emit these sections, in order, omitting any that are empty:
 8. **Cosmetic changes (grouped)**: one line per shared mass-edit, with a count.
 9. **Notes**: anything that needed a judgment call.
 
-List added, removed, renamed, cardinality, range, and pattern changes
-individually. Group cosmetic text-only changes. Keep the whole summary under one
-page. State plainly anything you were unsure how to classify.
+## What makes a good summary
+
+The structured YAML and the tool's own `tool_summary.md` already carry the raw
+counts and the full lists. Do not just restate them. The value of this summary is
+to help a reader understand **patterns whose evidence is spread across the large
+diff file** and would take a long time to see by hand. It is fine for the summary
+to run longer than the tool summary if the extra length adds understanding; avoid
+repeating the same item in several sections.
+
+Look for cross-cutting patterns such as:
+
+- **Systematic naming conventions** behind the renames (for example, consistent
+  abbreviations like `content` to `cont`, or dropped prefixes), rather than
+  listing every rename.
+- **Thematic clusters** among the added elements (for example, a whole new
+  package or domain arriving at once), by grouping shared name stems.
+- **A common driver** behind the definition changes (for example, many
+  definitions gaining an ontology reference they lacked before, or shifting from
+  describing a concept to naming a tool), rather than one line per changed
+  definition.
+- **What the numbers overstate or understate** once you account for those
+  patterns (for example, renames that would otherwise read as removals).
+
+Group individual items under the pattern that explains them. Keep the concrete
+lists for the things that genuinely need to be seen one by one (structural
+removals, cardinality and range changes, rename candidates). State plainly
+anything you were unsure how to classify.
 
 Write the result to `agent_summary.md` in the same directory as the input file,
 and also print it.
-
-## Worked example
-
-`assets/diff_results/v5_to_v6.0.0/agent_summary.md` is a summary produced by this
-skill from the v5-to-v6.0.0 diff. Match that structure so summaries from
-different diffs read like siblings.
