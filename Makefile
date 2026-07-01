@@ -268,15 +268,17 @@ clean-contrib:
 	       contrib/extensions-dendrogram.pdf \
 	       contrib/soil-vs-water-slot-usage.yaml
 
-# Purge the regeneratable diff outputs under assets/diff_results/ (structured
-# diffs and their .md summaries). Safeguard: it refuses to run if that directory
-# has any uncommitted change (modified, staged, or new untracked file), so it can
-# only ever delete files that are committed and therefore recoverable with
-# `git restore assets/diff_results/`. That way it can never destroy an
-# uncommitted diff you have not saved yet.
-.PHONY: clean-diff-results
-clean-diff-results:
-	@test -z "$$(git status --porcelain -- assets/diff_results)" || { echo "refusing: assets/diff_results has uncommitted changes; commit them, or 'git restore assets/diff_results && git clean -fd assets/diff_results' to discard, then rerun"; exit 1; }
-	find assets/diff_results -type f \( -name '*.yaml' -o -iname '*summary*.md' \) -delete
+# Purge one diff's output folder. You must name which diff, so a purge can never
+# remove more than you asked for. Example:
+#   make purge-diff DIFF=v5_to_v6.0.0
+# The outputs are committed, so if you purge one by mistake, get it back with:
+#   git restore assets/diff_results/<name>
+DIFF ?=
+.PHONY: purge-diff
+purge-diff:
+	@test -n "$(DIFF)" || { echo "Say which diff to purge, for example:  make purge-diff DIFF=v5_to_v6.0.0"; echo "Diffs you can purge:"; find assets/diff_results -mindepth 1 -maxdepth 1 -type d -exec basename {} \; ; exit 1; }
+	@test -d "assets/diff_results/$(DIFF)" || { echo "No diff folder assets/diff_results/$(DIFF). Diffs you can purge:"; find assets/diff_results -mindepth 1 -maxdepth 1 -type d -exec basename {} \; ; exit 1; }
+	rm -rf "assets/diff_results/$(DIFF)"
+	@echo "Purged assets/diff_results/$(DIFF).  Undo with:  git restore assets/diff_results/$(DIFF)"
 
 include contrib.Makefile

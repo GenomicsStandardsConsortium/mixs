@@ -174,9 +174,19 @@ def main() -> None:
         f"- definition changed: {c['definition_changed']}\n"
         + (f"\n## Possible missed renames (review, then add to RENAMES)\n\n{cand}"
            if rename_candidates else ""))
-    print("counts:", c)
+    print(f"MIxS v5 ({len(v5)} terms) to v6.0.0 ({len(v6)} terms)")
+    print(f"  shared:               {c['shared']}")
+    print(f"  renamed:              {c['renamed']}")
+    print(f"  removed:              {c['removed']}")
+    print(f"  removed on purpose:   {c['deleted']}")
+    print(f"  added:                {c['added']}")
+    print(f"  definitions changed:  {c['definition_changed']}")
     if rename_candidates:
-        print("possible missed renames:", rename_candidates)
+        print("  possible missed renames (please review):")
+        for old_name, new_name in sorted(rename_candidates.items()):
+            print(f"    {old_name} may be renamed to {new_name}")
+    print(f"wrote {OUT_DIR}/schema_comparison_results.yaml")
+    print(f"wrote {OUT_DIR}/tool_summary.md")
 
 
 if __name__ == "__main__":

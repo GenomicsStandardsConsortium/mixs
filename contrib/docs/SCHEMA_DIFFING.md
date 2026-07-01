@@ -92,12 +92,10 @@ cd mixs
 poetry env use python3.13
 poetry install
 
-# 3. Clear this diff's previously generated outputs so you regenerate them fresh.
-#    (These files are committed. Do not commit and push their deletion unless you
-#    mean to remove them. Steps 4 and 5 write them back.)
-rm -f assets/diff_results/v5_to_v6.0.0/schema_comparison_results.yaml \
-      assets/diff_results/v5_to_v6.0.0/tool_summary.md \
-      assets/diff_results/v5_to_v6.0.0/agent_summary.md
+# 3. Purge this diff's previously generated outputs so you regenerate them fresh.
+#    You name the diff, so nothing else is touched. The files are committed, so
+#    steps 4 and 5 write them back (or recover with git restore).
+make purge-diff DIFF=v5_to_v6.0.0
 
 # 4. Run the one-time v5 to v6.0.0 diff (no arguments; the inputs are fixed).
 poetry run python src/scripts/v5_to_v6_onetime_diff.py
@@ -114,11 +112,10 @@ Code, write the readable summary with the skill:
 That writes `assets/diff_results/v5_to_v6.0.0/agent_summary.md`, which completes
 the three files in that directory.
 
-To clear the outputs of *all* diffs at once (this one and the reusable tool's, in
-`assets/diff_results/`), use `make clean-diff-results` instead. It is broader than
-this walkthrough restores: regenerate the reusable tool's outputs by running that
-tool (see "Running a diff" below), or `git restore assets/diff_results/` to bring
-back the committed files.
+To purge a diff you no longer want, run `make purge-diff DIFF=<name>` (with no
+name it lists the diffs you can purge). It removes only the folder you name, and
+because the outputs are committed you can undo it with
+`git restore assets/diff_results/<name>`.
 
 The rest of this document describes the reusable, forward-looking tool for
 comparing any two LinkML versions of MIxS.
