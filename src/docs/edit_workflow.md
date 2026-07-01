@@ -38,22 +38,33 @@ Run the `Create Release PR` GitHub Action
 
 This action only prepares the PR. It does not publish a release.
 
-## Adding the human-readable schema-diff summary
+## Adding the schema-diff summaries and publishing them
 
 The structured diff is complete but large. Before the release PR is reviewed, add
-a readable summary to the release branch:
+readable summaries to the release branch and put them on the docs site:
 
 1. Check out the `release/vX.Y.Z` branch.
-2. Run the `mixs-diff-summary` skill (`/mixs-diff-summary
-   assets/diff_results/schema_comparison_results.yaml`), defined in
-   `.claude/skills/mixs-diff-summary/`. It produces a short Markdown summary that
-   groups cosmetic mass-edits and highlights added, removed, renamed, and
-   cardinality or range changes.
-3. Commit the summary (for example `assets/diff_results/agent_summary.md`) to the
-   branch and push.
+2. Make sure the diff outputs live in a per-release folder,
+   `assets/diff_results/<old>_to_<new>/` (for example `v6.2.0_to_v6.3.0/`). The
+   docs build only picks up summaries from these per-diff folders, so if the diff
+   was written to the top of `assets/diff_results/`, move it into that folder.
+3. Run the `mixs-diff-summary` skill on the structured diff, for example
+   `/mixs-diff-summary assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`.
+   It writes `agent_summary.md` next to the structured diff.
+4. Commit both `agent_summary.md` (the readable summary) and `tool_summary.md`
+   (the counts) in that folder.
+5. Add the two pages to the site nav. In `mkdocs.yml`, under the `Version changes`
+   group, add two lines for this release:
+   ```yaml
+     - <old> to <new>: version-changes/<old>_to_<new>.md
+     - <old> to <new> (counts): version-changes/<old>_to_<new>-counts.md
+   ```
+   The `gendoc` build step copies the two summaries out of
+   `assets/diff_results/<old>_to_<new>/` into `docs/version-changes/`
+   automatically, so no other change is needed.
 
-This step runs on the branch, done by a maintainer or an agent, not in CI. It
-needs no API keys, and the summary is reviewed like any other change before merge.
+This runs on the branch, done by a maintainer or an agent, not in CI. It needs no
+API keys, and everything is reviewed like any other change before merge.
 
 ## Reviewing and publishing
 
