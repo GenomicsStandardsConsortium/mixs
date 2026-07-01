@@ -109,7 +109,7 @@ site: gen-project gendoc
 gen-project: ensure-dirs $(PYMODEL)
 	$(RUN) linkml generate project --log_level WARNING --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-test: qc test-schema test-python test-examples linkml-lint yaml-lint
+test: qc test-schema test-python test-examples linkml-lint yaml-lint tsv-roundtrip-test
 
 test-schema:
 	@echo "Schema re-generation in test phase eliminated due to long run time"
@@ -267,5 +267,76 @@ clean-contrib:
 	       contrib/mixs_derived_class_term_schemasheet_* \
 	       contrib/extensions-dendrogram.pdf \
 	       contrib/soil-vs-water-slot-usage.yaml
+
+# =============================================================================
+# Multivalued TSV round-trip (demonstration + equivalence test)
+# =============================================================================
+# Shows that multivalued MIxS data survives a YAML -> TSV -> YAML round-trip once
+# linkml can serialize/parse pipe-delimited multivalued cells (linkml #3134 list
+# formatting and #3251 empty-cell load, both released in linkml 1.11).
+.PHONY: normalize-tsv-demo normalize-tsv-roundtrip tsv-bare-pipe-roundtrip tsv-roundtrip-test
+
+TSV_NORM_DIR = src/data/examples/tsv-normalization
+TSV_NORM_SCRIPT = $(TSV_NORM_DIR)/normalize_tsv_lists.py
+TSV_NORM_INPUT = $(TSV_NORM_DIR)/MimsSoil-messy-lists.tsv
+TSV_NORM_OUTPUT = $(TSV_NORM_DIR)/MimsSoil-normalized-lists.tsv
+TSV_NORM_YAML = $(TSV_NORM_DIR)/MimsSoil-normalized.yaml
+TSV_BARE_PIPE_OUTPUT = $(TSV_NORM_DIR)/MimsSoil-bare-pipes.tsv
+TSV_BARE_PIPE_YAML = $(TSV_NORM_DIR)/MimsSoil-bare-pipes-reloaded.yaml
+
+# Normalize heterogeneous list formatting in a messy TSV using schema awareness.
+normalize-tsv-demo: $(TSV_NORM_OUTPUT)
+
+$(TSV_NORM_OUTPUT): $(TSV_NORM_INPUT) $(TSV_NORM_SCRIPT) $(SOURCE_SCHEMA_PATH)
+	@echo "=== Normalizing messy TSV lists ==="
+	$(RUN) python $(TSV_NORM_SCRIPT) \
+		--schema $(SOURCE_SCHEMA_PATH) \
+		--target-class MimsSoil \
+		--input $(TSV_NORM_INPUT) \
+		--output $(TSV_NORM_OUTPUT)
+
+# Round-trip: normalized TSV -> YAML -> TSV to prove linkml-convert can parse it.
+normalize-tsv-roundtrip: $(TSV_NORM_YAML)
+	@echo "=== Round-trip: YAML -> TSV ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f yaml -t tsv --no-validate \
+		$(TSV_NORM_YAML)
+
+$(TSV_NORM_YAML): $(TSV_NORM_OUTPUT) contrib/mixs-patterns-materialized.yaml
+	@echo "=== Converting normalized TSV -> YAML ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f tsv -t yaml --no-validate \
+		$(TSV_NORM_OUTPUT) > $(TSV_NORM_YAML)
+
+# Bare-pipe dump: YAML -> bare-pipe TSV (--list-wrapper none, linkml #3134).
+$(TSV_BARE_PIPE_OUTPUT): $(TSV_NORM_YAML) contrib/mixs-patterns-materialized.yaml
+	@echo "=== Dumping YAML -> bare-pipe TSV (--list-wrapper none) ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f yaml -t tsv --no-validate --list-wrapper none \
+		$(TSV_NORM_YAML) > $(TSV_BARE_PIPE_OUTPUT)
+
+# Bare-pipe load: bare-pipe TSV -> YAML (requires linkml #3251, released in 1.11).
+$(TSV_BARE_PIPE_YAML): $(TSV_BARE_PIPE_OUTPUT) contrib/mixs-patterns-materialized.yaml
+	@echo "=== Loading bare-pipe TSV -> YAML (--list-wrapper none) ==="
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f tsv -t yaml --no-validate --list-wrapper none \
+		$(TSV_BARE_PIPE_OUTPUT) > $(TSV_BARE_PIPE_YAML)
+
+tsv-bare-pipe-roundtrip: $(TSV_BARE_PIPE_OUTPUT) $(TSV_BARE_PIPE_YAML)
+
+# Equivalence test (runs in CI via `make test`): the normalized YAML must reload
+# identically after a YAML -> bare-pipe TSV -> YAML round-trip.
+tsv-roundtrip-test: $(TSV_BARE_PIPE_YAML)
+	@echo "=== TSV round-trip equivalence check ==="
+	$(RUN) python $(TSV_NORM_DIR)/check_roundtrip_equivalence.py \
+		$(TSV_NORM_YAML) $(TSV_BARE_PIPE_YAML)
 
 include contrib.Makefile

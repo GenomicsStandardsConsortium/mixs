@@ -17,13 +17,16 @@ include = ["README.md", "project", "src/mixs", "src/scripts"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-linkml-runtime = "^1.9"
+# 1.11 is the first release with the multivalued-cell TSV fixes (linkml #3134
+# configurable list formatting and #3251 empty-cell load), which the TSV
+# round-trip below depends on.
+linkml-runtime = "^1.11"
 jsonasobj2 = "^1.0" # used transitively in src/scripts/mixs/datamodel/mixs.py
 
 [tool.poetry.group.dev.dependencies]
 black = "^26.3"
 deptry = "^0.23"
-linkml = "^1.9"
+linkml = "^1.11"
 matplotlib = "^3.10"
 mkdocs-material = "^9.6"
 mkdocs-mermaid2-plugin = "^1.2"
