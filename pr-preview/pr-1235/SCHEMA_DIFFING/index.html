@@ -969,7 +969,8 @@ one addition (see <a href="#maintaining-the-rename-mapping-files">Maintaining th
   --mappings-dir assets/between_diff_mappings/6_to_pre_7
 </code></pre>
 <h3 id="what-it-writes">What it writes</h3>
-<p>Into the output directory (default <code>assets/diff_results/</code>):</p>
+<p>Into the output directory (default <code>assets/diff_results/&lt;old_ref&gt;_to_&lt;new_ref&gt;/</code>, a
+per-release folder; pass <code>--output-dir</code> to override):</p>
 <ul>
 <li><code>releases.yaml</code>: which two versions were compared, with commit and date.</li>
 <li><code>schema_comparison_results.yaml</code>: the structured diff. Each collection (slots,
