@@ -1,0 +1,91 @@
+---
+name: mixs-diff-summary
+description: Turn a MIxS schema-diff YAML into a short, readable Markdown summary. Use when reviewing a release diff, or when asked to summarize how the MIxS schema changed between two versions. Reads the output of both the reusable diff-releases tool and the one-time v5-to-v6.0.0 diff script.
+argument-hint: [path to schema_comparison_results.yaml]
+allowed-tools: Read, Write, Bash
+---
+
+# Summarize a MIxS schema diff
+
+Produce a short, readable Markdown summary of a MIxS schema-diff YAML.
+
+The input file is `$ARGUMENTS`. If that is empty, ask which diff file to
+summarize. Diffs live in per-release folders, so the file is usually
+`assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`; if there is
+exactly one such folder, you may use its `schema_comparison_results.yaml`.
+
+## Step 1: read the diff and detect which tool produced it
+
+Read the YAML. Two shapes are possible; handle both and read them the same way:
+
+- If the top level has **`collection_differences`**, it came from the reusable
+  `diff-releases` tool. Each kind (slots, classes, enums, prefixes, settings) has
+  `key_comparison.{only_in_new, only_in_old, shared}` and `definition_changes`.
+  The two versions and dates are in `comparison_metadata`.
+- If the top level has **`added` / `removed` / `renamed`** (and a `comparison`
+  block), it came from the one-time v5-to-v6.0.0 diff script. Read `added`,
+  `removed`, `renamed`, `deleted`, `definition_changed`, and `rename_candidates`
+  directly; the two versions are in `comparison`.
+
+If the diff has a **`rename_candidates`** section (removed names that closely
+match an added name but are not in the confirmed rename map), always call it out
+in the summary: these are likely missed renames that a maintainer should confirm
+and promote into the tool's rename map. Do not silently treat them as removals.
+
+## Step 2: separate real change from cosmetic mass-edits
+
+For each entry in a collection's `definition_changes`, compare the old and new
+definition field by field. If the only differing fields are text fields
+(`description`, `title`) and they are equal after lowercasing and collapsing
+whitespace, treat the change as cosmetic. When many entries in one collection
+share the same cosmetic change, report them as a single grouped line with a count
+and one example, never one line per entry.
+
+## Step 3: write the summary
+
+Emit these sections, in order, omitting any that are empty:
+
+1. A one-line header naming both versions and their dates.
+2. **Added** named elements, by kind.
+3. **Removed** named elements, by kind.
+4. **Renamed**, listed old to new.
+5. **Possible missed renames**: the `rename_candidates`, if any, with a note that
+   a maintainer should confirm and add real ones to the rename map.
+6. **Cardinality and range changes**: any `required`, `multivalued`, or `range`
+   change. List these individually; they change what data is valid. (The
+   v5-to-v6.0.0 diff has no such fields, so omit this section for it.)
+7. **Pattern changes**: changes to `pattern` or `structured_pattern`, summarized
+   (do not paste every regex).
+8. **Cosmetic changes (grouped)**: one line per shared mass-edit, with a count.
+9. **Notes**: anything that needed a judgment call.
+
+## What makes a good summary
+
+The structured YAML and the tool's own `tool_summary.md` already carry the raw
+counts and the full lists. Do not just restate them. The value of this summary is
+to help a reader understand **patterns whose evidence is spread across the large
+diff file** and would take a long time to see by hand. It is fine for the summary
+to run longer than the tool summary if the extra length adds understanding; avoid
+repeating the same item in several sections.
+
+Look for cross-cutting patterns such as:
+
+- **Systematic naming conventions** behind the renames (for example, consistent
+  abbreviations like `content` to `cont`, or dropped prefixes), rather than
+  listing every rename.
+- **Thematic clusters** among the added elements (for example, a whole new
+  package or domain arriving at once), by grouping shared name stems.
+- **A common driver** behind the definition changes (for example, many
+  definitions gaining an ontology reference they lacked before, or shifting from
+  describing a concept to naming a tool), rather than one line per changed
+  definition.
+- **What the numbers overstate or understate** once you account for those
+  patterns (for example, renames that would otherwise read as removals).
+
+Group individual items under the pattern that explains them. Keep the concrete
+lists for the things that genuinely need to be seen one by one (structural
+removals, cardinality and range changes, rename candidates). State plainly
+anything you were unsure how to classify.
+
+Write the result to `agent_summary.md` in the same directory as the input file,
+and also print it.

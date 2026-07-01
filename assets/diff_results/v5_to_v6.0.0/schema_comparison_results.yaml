@@ -1,0 +1,626 @@
+added:
+- Food_Product_type
+- Food_source
+- HACCP_term
+- IFSAC_category
+- adjacent_environment
+- air particulate matter concentration
+- air_PM_concen
+- air_flow_impede
+- anim_water_method
+- animal_am
+- animal_am_dur
+- animal_am_freq
+- animal_am_route
+- animal_am_use
+- animal_body_cond
+- animal_diet
+- animal_feed_equip
+- animal_group_size
+- animal_housing
+- animal_intrusion
+- animal_sex
+- area_samp_size
+- assembly_quality
+- associated resource
+- association_duration
+- bacterial_density
+- biocide_used
+- coll_site_geo_feat
+- cons_food_stor_dur
+- cons_food_stor_temp
+- cons_purch_date
+- cons_qty_purchased
+- core field
+- crop_yield
+- cult_isol_date
+- cult_result
+- cult_result_org
+- cult_target
+- date_extr_weath
+- dietary_claim_use
+- enrichment_protocol
+- env_monitoring_zone
+- environment field
+- extr_weather_event
+- facility_type
+- farm_equip
+- farm_equip_san
+- farm_equip_san_freq
+- farm_equip_shared
+- farm_water_source
+- ferm_chem_add
+- ferm_chem_add_perc
+- ferm_headspace_oxy
+- ferm_medium
+- ferm_pH
+- ferm_rel_humidity
+- ferm_temp
+- ferm_time
+- ferm_vessel
+- fertilizer_admin
+- fertilizer_date
+- food_additive
+- food_allergen_label
+- food_clean_proc
+- food_contact_surf
+- food_contain_wrap
+- food_cooking_proc
+- food_dis_point
+- food_dis_point_city
+- food_harvest_proc
+- food_ingredient
+- food_name_status
+- food_origin
+- food_pack_capacity
+- food_pack_integrity
+- food_pack_medium
+- food_preserv_proc
+- food_prior_contact
+- food_prod
+- food_prod_char
+- food_prod_synonym
+- food_product_qual
+- food_product_type
+- food_quality_date
+- food_source
+- food_source_age
+- food_trace_list
+- food_trav_mode
+- food_trav_vehic
+- food_treat_proc
+- growth_medium
+- has numeric value
+- has raw value
+- has unit
+- host_cellular_loc
+- host_dependence
+- host_family_relation
+- host_number
+- host_of_host_coinf
+- host_of_host_disease
+- host_of_host_env_loc
+- host_of_host_env_med
+- host_of_host_fam_rel
+- host_of_host_geno
+- host_of_host_gravid
+- host_of_host_infname
+- host_of_host_infrank
+- host_of_host_name
+- host_of_host_pheno
+- host_of_host_sub_id
+- host_of_host_taxid
+- host_of_host_totmass
+- host_specificity
+- host_subspecf_genlin
+- host_symbiont
+- hygienic_area
+- intended_consumer
+- investigation field
+- library_prep_kit
+- lot_number
+- micro_biomass_meth
+- microb_cult_med
+- microb_start
+- microb_start_count
+- microb_start_inoc
+- microb_start_prep
+- microb_start_source
+- microb_start_taxID
+- mixs extension field
+- mode_transmission
+- neg_cont_type
+- non_min_nutr_regm
+- nucl_acid_ext_kit
+- nucleic acid sequence source field
+- num_samp_collect
+- part_plant_animal
+- photosynt_activ
+- photosynt_activ_meth
+- plant_part_maturity
+- plant_reprod_crop
+- plant_water_method
+- pos_cont_type
+- pres_animal_insect
+- prev_land_use_meth
+- prod_label_claims
+- rel_location
+- repository_name
+- route_transmission
+- samp_collec_device
+- samp_collec_method
+- samp_collect_method
+- samp_loc_condition
+- samp_name
+- samp_pooling
+- samp_purpose
+- samp_rep_biol
+- samp_rep_tech
+- samp_source_mat_cat
+- samp_stor_device
+- samp_stor_dur
+- samp_stor_loc
+- samp_stor_media
+- samp_stor_temp
+- samp_store_sol
+- samp_surf_moisture
+- samp_taxon_id
+- samp_transport_cont
+- samp_transport_dur
+- samp_transport_temp
+- sample_collec_method
+- sample_name
+- season_humidity
+- sequencing field
+- sequencing_kit
+- sequencing_location
+- serovar_or_serotype
+- soil_conductivity
+- soil_cover
+- soil_depth
+- soil_horizon
+- soil_pH
+- soil_porosity
+- soil_temp
+- soil_text_measure
+- soil_texture_class
+- soil_texture_meth
+- spec_intended_cons
+- spikein_AMR
+- spikein_antibiotic
+- spikein_count
+- spikein_growth_med
+- spikein_metal
+- spikein_org
+- spikein_serovar
+- spikein_strain
+- ster_meth_samp_room
+- study_design
+- study_inc_dur
+- study_inc_temp
+- study_timecourse
+- study_tmnt
+- sym_life_cycle_type
+- symbiont_host_role
+- timepoint
+- tot_car
+- tot_n_meth
+- tot_phos
+- type_of_symbiosis
+- water_frequency
+- water_pH
+- water_source_adjac
+- water_source_shared
+comparison:
+  new:
+    source: GenomicsStandardsConsortium/mixs@mixs6.0.0:model/schema/mixs.yaml
+    terms: 804
+    version: v6.0.0
+  old:
+    source: https://raw.githubusercontent.com/GenomicsStandardsConsortium/mixs-legacy/9628b5e5aa89/mixs5/mixs_v5.xlsx
+    terms: 600
+    version: v5
+counts:
+  added: 212
+  definition_changed: 65
+  deleted: 3
+  removed: 4
+  rename_candidates: 1
+  renamed: 20
+  shared: 573
+definition_changed:
+  alt:
+    v5: Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets,
+      atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to
+      measure the height of an object which is above the earth‚Äôs surface. In this context, the altitude
+      measurement is the vertical distance between the earth's surface above sea level and the sampled
+      position in the air
+    v6.0.0: Altitude is a term used to identify heights of objects such as airplanes, space shuttles,
+      rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is
+      used to measure the height of an object which is above the earth's surface. In this context, the
+      altitude measurement is the vertical distance between the earth's surface above sea level and the
+      sampled position in the air
+  avg_occup:
+    v5: Daily average  occupancy of room
+    v6.0.0: Daily average occupancy of room. Indicate the number of person(s) daily occupying the sampling
+      room.
+  bin_software:
+    v5: Tool(s) used for the extraction of genomes from metagenomic datasets
+    v6.0.0: Tool(s) used for the extraction of genomes from metagenomic datasets, where possible include
+      a product ID (PID) of the tool(s) used.
+  biol_stat:
+    v5: The level of genome modification
+    v6.0.0: The level of genome modification.
+  blood_blood_disord:
+    v5: History of blood disorders; can include multiple disorders
+    v6.0.0: History of blood disorders; can include multiple disorders.  The terms should be chosen from
+      the DO (Human Disease Ontology) at http://www.disease-ontology.org, hematopoietic system disease
+      (https://disease-ontology.org/?id=DOID:74).
+  chem_treatment:
+    v5: List of chemical compounds administered upstream the sampling location where sampling occurred
+      (e.g. Glycols, H2S scavenger, corrosion and scale inhibitors, demulsifiers, and other production
+      chemicals etc.). The commercial name of the product and name of the supplier should be provided.  The
+      date of administration should also be included
+    v6.0.0: List of chemical compounds administered upstream the sampling location where sampling occurred
+      (e.g. Glycols, H2S scavenger, corrosion and scale inhibitors, demulsifiers, and other production
+      chemicals etc.). The commercial name of the product and name of the supplier should be provided.
+      The date of administration should also be included
+  chimera_check:
+    v5: 'A chimeric sequence, or chimera for short, is a sequence comprised of two or more phylogenetically
+      distinct parent sequences. Chimeras are usually PCR artifacts thought to occur when a prematurely
+      terminated amplicon reanneals to a foreign DNA strand and is copied to completion in the following
+      PCR cycles. The point at which the chimeric sequence changes from one parent to the next is called
+      the breakpoint or conversion point '
+    v6.0.0: Tool(s) used for chimera checking, including version number and parameters, to discover and
+      remove chimeric sequences. A chimeric sequence is comprised of two or more phylogenetically distinct
+      parent sequences.
+  compl_appr:
+    v5: The approach used to determine the completeness of a given SAG or MAG, which would typically make
+      use of a set of conserved marker genes or a closely related reference genome. For UViG completeness,
+      include reference genome or group used, and contig feature suggesting a complete genome
+    v6.0.0: The approach used to determine the completeness of a given genomic assembly, which would typically
+      make use of a set of conserved marker genes or a closely related reference genome. For UViG completeness,
+      include reference genome or group used, and contig feature suggesting a complete genome
+  depth:
+    v5: Please refer to the definitions of depth in the environmental packages
+    v6.0.0: The vertical distance below local surface, e.g. for sediment or soil samples depth is measured
+      from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface
+      samples.
+  dermatology_disord:
+    v5: History of dermatology disorders; can include multiple disorders
+    v6.0.0: History of dermatology disorders; can include multiple disorders. The terms should be chosen
+      from the DO (Human Disease Ontology) at http://www.disease-ontology.org, skin disease (https://disease-ontology.org/?id=DOID:37).
+  elev:
+    v5: Elevation of the sampling site is its height above a fixed reference point, most commonly the
+      mean sea level. Elevation is mainly used when referring to points on the earth's surface, while
+      altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in
+      orbit
+    v6.0.0: Elevation of the sampling site is its height above a fixed reference point, most commonly
+      the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while
+      altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in
+      orbit.
+  env_broad_scale:
+    v5: 'In this field, report which major environmental system your sample or specimen came from. The
+      systems identified should have a coarse spatial grain, to provide the general environmental context
+      of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using
+      subclasses of ENVO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term):
+      termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID].
+      Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider:
+      oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest
+      consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on
+      the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
+    v6.0.0: 'Report the major environmental system the sample or specimen came from. The system(s) identified
+      should have a coarse spatial grain, to provide the general environmental context of where the sampling
+      was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428.
+      EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
+  env_local_scale:
+    v5: 'In this field, report the entity or entities which are in your sample or specimen’s local vicinity
+      and which you believe have significant causal influences on your sample or specimen. Please use
+      terms that are present in ENVO and which are of smaller spatial grain than your entry for env_broad_scale.
+      Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel
+      [termID]. Example: Annotating a pooled sample taken from various vegetation layers in a forest consider:
+      canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory
+      [01000335]|shrub layer [ENVO:01000336]. If needed, request new terms on the ENVO tracker, identified
+      here: http://www.obofoundry.org/ontology/envo.html'
+    v6.0.0: 'Report the entity or entities which are in the sample or specimen’s local vicinity and which
+      you believe have significant causal influences on your sample or specimen. We recommend using EnvO
+      terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical
+      sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted
+      in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
+  env_medium:
+    v5: 'In this field, report which environmental material or materials (pipe separated) immediately
+      surrounded your sample or specimen prior to sampling, using one or more subclasses of ENVO’s environmental
+      material class: http://purl.obolibrary.org/obo/ENVO_00010483. Format (one term): termLabel [termID];
+      Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating
+      a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151].
+      Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]|air ENVO_00002005. If
+      needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
+    v6.0.0: 'Report the environmental material(s) immediately surrounding the sample or specimen at the
+      time of sampling. We recommend using subclasses of ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483).
+      EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g.
+      air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).'
+  freq_clean:
+    v5: The number of times the building is cleaned per week
+    v6.0.0: The number of times the sample location is cleaned. Frequency of cleaning might be on a Daily
+      basis, Weekly, Monthly, Quarterly or Annually.
+  fungicide_regm:
+    v5: Information about treatment involving use of fungicides; should include the name of fungicide,
+      amount administered,  treatment regimen including how many times the treatment was repeated, how
+      long each treatment lasted, and the start and end time of the entire treatment; can include multiple
+      fungicide regimens
+    v6.0.0: Information about treatment involving use of fungicides; should include the name of fungicide,
+      amount administered, treatment regimen including how many times the treatment was repeated, how
+      long each treatment lasted, and the start and end time of the entire treatment; can include multiple
+      fungicide regimens
+  gastrointest_disord:
+    v5: 'History of gastrointestinal tract disorders; can include multiple disorders '
+    v6.0.0: History of gastrointestinal tract disorders; can include multiple disorders. History of blood
+      disorders; can include multiple disorders.  The terms should be chosen from the DO (Human Disease
+      Ontology) at http://www.disease-ontology.org, gastrointestinal system disease (https://disease-ontology.org/?id=DOID:77).
+  geo_loc_name:
+    v5: The geographical origin of the sample as defined by the country or sea name followed by specific
+      region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html),
+      or the GAZ ontology (v 1.512) (http://purl.bioontology.org/ontology/GAZ)
+    v6.0.0: The geographical origin of the sample as defined by the country or sea name followed by specific
+      region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html),
+      or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+  gynecologic_disord:
+    v5: History of gynecological disorders; can include multiple disorders
+    v6.0.0: History of gynecological disorders; can include multiple disorders. The terms should be chosen
+      from the DO (Human Disease Ontology) at http://www.disease-ontology.org, female reproductive system
+      disease (https://disease-ontology.org/?id=DOID:229).
+  hcr:
+    v5: Main Hydrocarbon Resource type. The term "Hydrocarbon Resource" HCR defined as a natural environmental
+      feature containing large amounts of hydrocarbons at high concentrations potentially suitable for
+      commercial exploitation.  This term should not be confused with the Hydrocarbon Occurrence term
+      which also includes hydrocarbon-rich environments with currently limited commercial interest such
+      as seeps, outcrops, gas hydrates etc. If "other" is specified, please propose entry in "additional
+      info" field
+    v6.0.0: Main Hydrocarbon Resource type. The term "Hydrocarbon Resource" HCR defined as a natural environmental
+      feature containing large amounts of hydrocarbons at high concentrations potentially suitable for
+      commercial exploitation. This term should not be confused with the Hydrocarbon Occurrence term which
+      also includes hydrocarbon-rich environments with currently limited commercial interest such as seeps,
+      outcrops, gas hydrates etc. If "other" is specified, please propose entry in "additional info" field
+  health_disease_stat:
+    v5: Health or disease status of specific host at time of collection
+    v6.0.0: List of diseases with which the host has been diagnosed; can include multiple diagnoses. The
+      value of the field depends on host; for humans the terms should be chosen from the DO (Human Disease
+      Ontology) at https://www.disease-ontology.org, non-human host diseases are free text
+  heavy_metals:
+    v5: Heavy metals present and concentrationsany drug used by subject and the frequency of usage; can
+      include multiple heavy metals and concentrations
+    v6.0.0: Heavy metals present in the sequenced sample and their concentrations. For multiple heavy
+      metals and concentrations, add multiple copies of this field.
+  host_common_name:
+    v5: Common name of the host, e.g. Human
+    v6.0.0: Common name of the host.
+  host_disease_stat:
+    v5: List of diseases with which the host has been diagnosed; can include multiple diagnoses. The value
+      of the field depends on host; for humans the terms should be chosen from do (disease ontology) at
+      http://www.disease-ontology.org, other hosts are free text
+    v6.0.0: List of diseases with which the host has been diagnosed; can include multiple diagnoses. The
+      value of the field depends on host; for humans the terms should be chosen from the DO (Human Disease
+      Ontology) at https://www.disease-ontology.org, non-human host diseases are free text
+  host_family_relationship:
+    v5: Relationships to other hosts in the same study; can include multiple relationships
+    v6.0.0: Relationships to other hosts in the same study; can include multiple relationships.
+  host_infra_specific_name:
+    v5: Taxonomic information about the host below subspecies level
+    v6.0.0: Taxonomic information about the host below subspecies level.
+  host_sex:
+    v5: Physical sex of the host
+    v6.0.0: Gender or physical sex of the host.
+  host_spec_range:
+    v5: The NCBI taxonomy identifier of the specific host if it is known
+    v6.0.0: The range and diversity of host species that an organism is capable of infecting, defined
+      by NCBI taxonomy identifier.
+  host_subject_id:
+    v5: 'A unique identifier by which each subject can be referred to, de-identified, e.g. #131'
+    v6.0.0: A unique identifier by which each subject can be referred to, de-identified.
+  host_substrate:
+    v5: 'The growth substrate of the host '
+    v6.0.0: The growth substrate of the host.
+  ihmc_ethnicity:
+    v5: Ethnicity of the subject
+    v6.0.0: A category of people who identify with each other, usually on the basis of presumed similarities
+      such as a common language, ancestry, history, society, culture, nation or social treatment within
+      their residing area. https://en.wikipedia.org/wiki/List_of_contemporary_ethnic_groups
+  iw_bt_date_well:
+    v5: Injection water breakthrough date per well following a  secondary and/or tertiary recovery
+    v6.0.0: Injection water breakthrough date per well following a secondary and/or tertiary recovery
+  kidney_disord:
+    v5: History of kidney disorders; can include multiple disorders
+    v6.0.0: History of kidney disorders; can include multiple disorders. The terms should be chosen from
+      the DO (Human Disease Ontology) at http://www.disease-ontology.org, kidney disease (https://disease-ontology.org/?id=DOID:557).
+  liver_disord:
+    v5: History of liver disorders; can include multiple disorders
+    v6.0.0: History of liver disorders; can include multiple disorders. The terms should be chosen from
+      the DO (Human Disease Ontology) at http://www.disease-ontology.org, liver disease (https://disease-ontology.org/?id=DOID:409).
+  nose_throat_disord:
+    v5: History of nose-throat disorders; can include multiple disorders
+    v6.0.0: History of nose-throat disorders; can include multiple disorders,  The terms should be chosen
+      from the DO (Human Disease Ontology) at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850),
+      upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974).
+  pcr_cond:
+    v5: Description of reaction conditions and components of PCR in the form of  'initial denaturation:94degC_1.5min;
+      annealing=...'
+    v6.0.0: Description of reaction conditions and components of PCR in the form of 'initial denaturation:94degC_1.5min;
+      annealing=...'
+  pour_point:
+    v5: 'Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude
+      oil a high¬†pour point¬†is generally associated with a high paraffin content, typically found in
+      crude deriving from a larger proportion of plant material.  (soure: https://en.wikipedia.org/wiki/pour_point)'
+    v6.0.0: 'Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude
+      oil a high¬†pour point¬†is generally associated with a high paraffin content, typically found in
+      crude deriving from a larger proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)'
+  propagation:
+    v5: 'This field is specific to different taxa. For phages: lytic/lysogenic, for plasmids: incompatibility
+      group, for eukaryotes: sexual/asexual (Note: there is the strong opinion to name phage propagation
+      obligately lytic or temperate, therefore we also give this choice'
+    v6.0.0: 'The type of reproduction from the parent stock. Values for this field is specific to different
+      taxa. For phage or virus: lytic/lysogenic/temperate/obligately lytic. For plasmids: incompatibility
+      group. For eukaryotes: sexual/asexual.'
+  pulmonary_disord:
+    v5: History of pulmonary disorders; can include multiple disorders
+    v6.0.0: History of pulmonary disorders; can include multiple disorders. The terms should be chosen
+      from the DO (Human Disease Ontology) at http://www.disease-ontology.org, lung disease (https://disease-ontology.org/?id=DOID:850).
+  ref_biomaterial:
+    v5: Primary publication if isolated before genome publication; otherwise, primary genome report
+    v6.0.0: Primary publication if isolated before genome publication; otherwise, primary genome report.
+  salinity:
+    v5: Salinity is the total concentration of all dissolved salts in a water sample. While salinity can
+      be measured by a complete chemical analysis, this method is difficult and time consuming. More often,
+      it is instead derived from the conductivity measurement. This is known as practical salinity. These
+      derivations compare the specific conductance of the sample to a salinity standard such as seawater
+    v6.0.0: The total concentration of all dissolved salts in a liquid or solid sample. While salinity
+      can be measured by a complete chemical analysis, this method is difficult and time consuming. More
+      often, it is instead derived from the conductivity measurement. This is known as practical salinity.
+      These derivations compare the specific conductance of the sample to a salinity standard such as
+      seawater.
+  samp_collect_device:
+    v5: The method or device employed for collecting the sample
+    v6.0.0: The device used to collect an environmental sample. This field accepts terms listed under
+      environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms
+      listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
+  samp_collection_point:
+    v5: Sampling  point on the asset were sample was collected (e.g. Wellhead, storage tank, separator,
+      etc). If "other" is specified, please propose entry in "additional info" field
+    v6.0.0: Sampling point on the asset were sample was collected (e.g. Wellhead, storage tank, separator,
+      etc). If "other" is specified, please propose entry in "additional info" field
+  samp_mat_process:
+    v5: Any processing applied to the sample during or after retrieving the sample from environment. This
+      field accepts OBI, for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI
+    v6.0.0: A brief description of any processing applied to the sample during or after retrieving the
+      sample from environment, or a link to the relevant protocol(s) performed.
+  samp_size:
+    v5: Amount or size of sample (volume, mass or area) that was collected
+    v6.0.0: The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.
+  samp_type:
+    v5: Type of material (i.e. sample) collected. Includes types like core, rock trimmings, drill cuttings,
+      piping section, coupon, pigging debris, solid deposit, produced fluid, produced water, injected
+      water, swabs, etc. If "other" is specified, please propose entry in "additional info" field
+    v6.0.0: The type of material from which the sample was obtained. For the Hydrocarbon package, samples
+      include types like core, rock trimmings, drill cuttings, piping section, coupon, pigging debris,
+      solid deposit, produced fluid, produced water, injected water, swabs, etc. For the Food Package,
+      samples are usually categorized as food, body products or tissues, or environmental material. This
+      field accepts terms listed under environmental specimen (http://purl.obolibrary.org/obo/GENEPIO_0001246).
+  samp_vol_we_dna_ext:
+    v5: Volume (ml), weight (g) of processed sample, or surface area swabbed from sample for DNA extraction
+    v6.0.0: 'Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total
+      sample collected should be entered under the term Sample Size (MIXS:0000001).'
+  season:
+    v5: The season when sampling occurred
+    v6.0.0: The season when sampling occurred. Any of the four periods into which the year is divided
+      by the equinoxes and solstices. This field accepts terms listed under season (http://purl.obolibrary.org/obo/NCIT_C94729).
+  seq_meth:
+    v5: Sequencing method used; e.g. Sanger, pyrosequencing, ABI-solid
+    v6.0.0: Sequencing machine used. Where possible the term should be taken from the OBI list of DNA
+      sequencers (http://purl.obolibrary.org/obo/OBI_0400103).
+  soil_type:
+    v5: Soil series name or other lower-level classification
+    v6.0.0: Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple
+      terms can be separated by pipes.
+  specific_host:
+    v5: If there is a host involved, please provide its taxid (or environmental if not actually isolated
+      from the dead or alive host - i.e. a pathogen could be isolated from a swipe of a bench etc) and
+      report whether it is a laboratory or natural host)
+    v6.0.0: Report the host's taxonomic name and/or NCBI taxonomy ID.
+  store_cond:
+    v5: Explain how and for how long the soil sample was stored before DNA extraction
+    v6.0.0: Explain how and for how long the soil sample was stored before DNA extraction (fresh/frozen/other).
+  subspecf_gen_lin:
+    v5: This should provide further information about the genetic distinctness of the sequenced organism
+      by recording additional information e.g. serovar, serotype, biotype, ecotype, or any relevant genetic
+      typing schemes like Group I plasmid. It can also contain alternative taxonomic information. It should
+      contain both the lineage name, and the lineage rank, i.e. biovar:abc123
+    v6.0.0: Information about the genetic distinctness of the sequenced organism below the subspecies
+      level, e.g., serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group
+      I plasmid. Subspecies should not be recorded in this term, but in the NCBI taxonomy. Supply both
+      the lineage name and the lineage rank separated by a colon, e.g., biovar:abc123.
+  temp:
+    v5: Temperature of the sample at the time of sampling
+    v6.0.0: Temperature of the sample at the time of sampling.
+  texture_meth:
+    v5: Reference or method used in determining soil texture
+    v6.0.0: Reference or method used in determining soil texture.
+  tvdss_of_hcr_pressure:
+    v5: True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original pressure was
+      measured (e.g. 1578 m )
+    v6.0.0: True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original pressure
+      was measured (e.g. 1578 m).
+  tvdss_of_hcr_temp:
+    v5: True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original temperature
+      was measured (e.g. 1345 m)
+    v6.0.0: True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original temperature
+      was measured (e.g. 1345 m).
+  url:
+    v5: ''
+    v6.0.0: A related resource that is referenced, cited, or otherwise associated to the sequence.
+  urogenit_disord:
+    v5: History of urogenital disorders, can include multiple disorders
+    v6.0.0: History of urogenital disorders, can include multiple disorders. The terms should be chosen
+      from the DO (Human Disease Ontology) at http://www.disease-ontology.org, reproductive system disease
+      (https://disease-ontology.org/?id=DOID:15) or urinary system disease (https://disease-ontology.org/?id=DOID:18).
+  urogenit_tract_disor:
+    v5: History of urogenitaltract disorders; can include multiple disorders
+    v6.0.0: History of urogenital tract disorders; can include multiple disorders. The terms should be
+      chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, urinary system disease
+      (https://disease-ontology.org/?id=DOID:18).
+  vir_ident_software:
+    v5: Tool(s) used for the identification of UViG as a viral genome, software or protocol name  including
+      version number, parameters, and cutoffs used
+    v6.0.0: Tool(s) used for the identification of UViG as a viral genome, software or protocol name including
+      version number, parameters, and cutoffs used
+  viscosity:
+    v5: A measure of oil's resistance¬†to gradual deformation by¬†shear stress¬†or¬†tensile stress (e.g.
+      3.5 cp;  100 ¬∞C)
+    v6.0.0: A measure of oil's resistance¬†to gradual deformation by¬†shear stress¬†or¬†tensile stress
+      (e.g. 3.5 cp; 100 ¬∞C)
+  votu_class_appr:
+    v5: Cutoffs and approach used when clustering new UViGs in “species-level” vOTUs. Note that results
+      from standard 95% ANI / 85% AF clustering should be provided alongside vOTUS defined from another
+      set of thresholds, even if the latter are the ones primarily used during the analysis
+    v6.0.0: Cutoffs and approach used when clustering “species-level” OTUs. Note that results from standard
+      95% ANI / 85% AF clustering should be provided alongside OTUS defined from another set of thresholds,
+      even if the latter are the ones primarily used during the analysis
+  votu_db:
+    v5: Reference database (i.e. sequences not generated as part of the current study) used to cluster
+      new genomes in "species-level" vOTUs, if any
+    v6.0.0: Reference database (i.e. sequences not generated as part of the current study) used to cluster
+      new genomes in "species-level" OTUs, if any
+  votu_seq_comp_appr:
+    v5: Tool and thresholds used to compare sequences when computing "species-level" vOTUs
+    v6.0.0: Tool and thresholds used to compare sequences when computing "species-level" OTUs
+deleted:
+- env_package
+- investigation_type
+- submitted_to_insdc
+removed:
+- extreme_salinity
+- nose_mouth_teeth_throat_disord
+- pres_animal
+- resp_part_matter
+rename_candidates:
+  pres_animal: pres_animal_insect
+renamed:
+  16s_recover: x_16s_recover
+  16s_recover_software: x_16s_recover_software
+  chem_treatment_method: chem_treat_method
+  health_disease_stat: host_disease_stat
+  heat_system_deliv_meth: heat_sys_deliv_meth
+  host_blood_press_diast: blood_press_diast
+  host_blood_press_syst: blood_press_syst
+  ihmc_ethnicity: ethnicity
+  organism_count_qpcr_info: org_count_qpcr_info
+  room_architec_element: room_architec_elem
+  room_moist_damage_hist: room_moist_dam_hist
+  samp_collection_point: samp_collect_point
+  shading_device_water_mold: shad_dev_water_mold
+  tot_nitro_content_meth: tot_nitro_cont_meth
+  tvdss_of_hcr_pressure: tvdss_of_hcr_press
+  votu_class_appr: otu_class_appr
+  votu_db: otu_db
+  votu_seq_comp_appr: otu_seq_comp_appr
+  water_content_soil_meth: water_cont_soil_meth
+  water_production_rate: water_prod_rate

@@ -112,11 +112,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mkdir -p assets/diff_results
+          mkdir -p "assets/diff_results/${{ inputs.diff_old }}_to_${{ inputs.diff_new }}"
           poetry run diff-releases \
             --old "GenomicsStandardsConsortium/mixs@${{ inputs.diff_old }}:src/mixs/schema/mixs.yaml" \
             --new "GenomicsStandardsConsortium/mixs@${{ inputs.diff_new }}:src/mixs/schema/mixs.yaml" \
-            --output-dir assets/diff_results \
+            --output-dir "assets/diff_results/${{ inputs.diff_old }}_to_${{ inputs.diff_new }}" \
             --mappings-dir assets/between_diff_mappings/6_to_pre_7 \
             || echo "Diff generation encountered issues - check logs"
 
@@ -155,11 +155,15 @@ jobs:
           - Full build and test suite executed
 
           ### Schema Diff
-          See `assets/diff_results/schema_comparison_results.yaml` for the structured diff.
+          The structured diff is in `assets/diff_results/${{ inputs.diff_old }}_to_${{ inputs.diff_new }}/schema_comparison_results.yaml`.
+          Before review, add a readable summary to this branch by running the
+          diff-summary skill on that file and committing the result (see
+          `src/docs/edit_workflow.md`, "Adding the human-readable schema-diff summary").
 
           ### Pre-merge Checklist
           - [ ] Review version numbers are correct
-          - [ ] Review schema diff for unexpected changes
+          - [ ] Generate and commit the schema-diff summary on this branch
+          - [ ] Review schema diff summary for unexpected changes
           - [ ] Verify all tests passed
           - [ ] TWG approval
           - [ ] CIG approval (for major releases)

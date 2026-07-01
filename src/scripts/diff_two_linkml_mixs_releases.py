@@ -2255,12 +2255,14 @@ def build_release_info_dict(repositories: List[Tuple[str, str]] = None) -> Dict[
               help='New schema in format owner/repo@commit:path (e.g., GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml). Required unless --list-releases.')
 @click.option('--no-cache', is_flag=True, default=False,
               help='Skip caching schemas locally (use remote URLs directly)')
-@click.option('--output-dir', type=click.Path(path_type=Path), 
-              default=Path(__file__).parent.parent.parent / "assets" / "diff_results",
-              help='Directory to save output files (default: assets/diff_results)')
+@click.option('--output-dir', type=click.Path(path_type=Path), default=None,
+              help='Directory to save output files '
+                   '(default: assets/diff_results/<old_ref>_to_<new_ref>, a per-release folder)')
 @click.option('--mappings-dir', type=click.Path(path_type=Path),
-              default=Path(__file__).parent.parent.parent / "assets" / "between_diff_mappings",
-              help='Directory containing mapping TSV files (default: assets/between_diff_mappings)')
+              default=Path(__file__).parent.parent.parent / "assets" / "between_diff_mappings" / "6_to_pre_7",
+              help='Directory containing mapping TSV files (default: assets/between_diff_mappings/6_to_pre_7). '
+                   'The TSV files live in a per-transition subdirectory; pointing at the parent finds no '
+                   'mappings and silently skips rename detection.')
 @click.option('--log-level', type=click.Choice(['DEBUG', 'INFO', 'WARNING', 'ERROR']),
               default='INFO', help='Set logging level (default: INFO)')
 @click.option('--list-releases', is_flag=True, default=False,
@@ -2308,6 +2310,16 @@ def main(old: str, new: str, no_cache: bool, output_dir: Path, mappings_dir: Pat
     # Validate required arguments when not listing releases
     if not old or not new:
         raise click.UsageError("--old and --new are required unless --list-releases is used")
+
+    # Default the output directory to a per-release folder, so each diff is
+    # self-contained. This matches the release workflow and `make purge-diff`,
+    # and avoids writing loose files at the top of assets/diff_results/.
+    if output_dir is None:
+        def _ref(spec: str) -> str:
+            ref = spec.split("@", 1)[1].split(":", 1)[0] if ("@" in spec and ":" in spec) else spec
+            return ref.replace("/", "-")
+        output_dir = Path(__file__).parent.parent.parent / "assets" / "diff_results" / f"{_ref(old)}_to_{_ref(new)}"
+        logger.info(f"No --output-dir given; using {output_dir}")
 
     # Build and display release info
     logger.info("Building release information dictionary...")

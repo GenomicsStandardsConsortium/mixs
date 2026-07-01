@@ -21,6 +21,57 @@ Define what they are
 
 # Releases
 
+The GSC creates releases using semantic versioning (major.minor.patch).
+
+## Preparing a release PR
+
+Run the `Create Release PR` GitHub Action
+(`.github/workflows/create-release-pr.yaml`). Given an old and a new ref, it:
+
+- bumps the version in `pyproject.toml`, `CITATION.cff`, and `.zenodo.json`,
+- runs the full build and tests,
+- generates a structured schema diff between the two refs into a per-release
+  folder `assets/diff_results/<old>_to_<new>/`, using the reusable
+  `diff-releases` tool (see
+  [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md)),
+- opens a release pull request from a `release/vX.Y.Z` branch.
+
+This action only prepares the PR. It does not publish a release.
+
+## Adding the schema-diff summaries and publishing them
+
+The structured diff is complete but large. Before the release PR is reviewed, add
+readable summaries to the release branch and put them on the docs site:
+
+1. Check out the `release/vX.Y.Z` branch.
+2. The release action already wrote the diff into a per-release folder,
+   `assets/diff_results/<old>_to_<new>/` (for example `v6.2.0_to_v6.3.0/`). Work
+   in that folder. (The docs build publishes summaries only from these
+   per-release folders.)
+3. Run the `mixs-diff-summary` skill on the structured diff, for example
+   `/mixs-diff-summary assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`.
+   It writes `agent_summary.md` next to the structured diff.
+4. Commit both `agent_summary.md` (the readable summary) and `tool_summary.md`
+   (the counts) in that folder.
+5. Add the two pages to the site nav. In `mkdocs.yml`, under the `Version changes`
+   group, add two lines for this release:
+   ```yaml
+     - <old> to <new>: version-changes/<old>_to_<new>.md
+     - <old> to <new> (counts): version-changes/<old>_to_<new>-counts.md
+   ```
+   The `gendoc` build step copies the two summaries out of
+   `assets/diff_results/<old>_to_<new>/` into `docs/version-changes/`
+   automatically, so no other change is needed.
+
+This runs on the branch, done by a maintainer or an agent, not in CI. It needs no
+API keys, and everything is reviewed like any other change before merge.
+
+## Reviewing and publishing
+
+- A TWG member other than the PR author reviews the version bumps and the schema
+  diff summary. The pre-merge checklist is in the PR body.
+- After merge, create the GitHub Release with tag `vX.Y.Z` and publish.
+
 # LinkML Updates 
 
 # Documentation

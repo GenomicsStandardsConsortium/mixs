@@ -234,6 +234,14 @@ gendoc: ensure-dirs $(DOCDIR)
 	$(RUN) generate-enumerations --output-file $(ENUMERATIONS_FILE)
 	mkdir -p $(DOCDIR)/javascripts
 	$(RUN) cp $(SRC)/scripts/javascripts/* $(DOCDIR)/javascripts/
+	# Publish each committed version-diff's summaries (agent + tool) as site pages.
+	mkdir -p $(DOCDIR)/version-changes
+	@for d in assets/diff_results/*/; do \
+	  [ -d "$$d" ] || continue; \
+	  name=$$(basename "$$d"); \
+	  if [ -f "$$d/agent_summary.md" ]; then cp "$$d/agent_summary.md" "$(DOCDIR)/version-changes/$$name.md"; fi; \
+	  if [ -f "$$d/tool_summary.md" ]; then cp "$$d/tool_summary.md" "$(DOCDIR)/version-changes/$$name-counts.md"; fi; \
+	done
 
 testdoc: gendoc serve
 
@@ -267,5 +275,18 @@ clean-contrib:
 	       contrib/mixs_derived_class_term_schemasheet_* \
 	       contrib/extensions-dendrogram.pdf \
 	       contrib/soil-vs-water-slot-usage.yaml
+
+# Purge one diff's output folder. You must name which diff, so a purge can never
+# remove more than you asked for. Example:
+#   make purge-diff DIFF=v5_to_v6.0.0
+# The outputs are committed, so if you purge one by mistake, get it back with:
+#   git restore assets/diff_results/<name>
+DIFF ?=
+.PHONY: purge-diff
+purge-diff:
+	@test -n "$(DIFF)" || { echo "Say which diff to purge, for example:  make purge-diff DIFF=v5_to_v6.0.0"; echo "Diffs you can purge:"; find assets/diff_results -mindepth 1 -maxdepth 1 -type d -exec basename {} \; ; exit 1; }
+	@test -d "assets/diff_results/$(DIFF)" || { echo "No diff folder assets/diff_results/$(DIFF). Diffs you can purge:"; find assets/diff_results -mindepth 1 -maxdepth 1 -type d -exec basename {} \; ; exit 1; }
+	rm -rf "assets/diff_results/$(DIFF)"
+	@echo "Purged assets/diff_results/$(DIFF).  Undo with:  git restore assets/diff_results/$(DIFF)"
 
 include contrib.Makefile
