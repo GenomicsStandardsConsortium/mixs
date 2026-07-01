@@ -155,11 +155,15 @@ jobs:
           - Full build and test suite executed
 
           ### Schema Diff
-          See `assets/diff_results/schema_comparison_results.yaml` for the structured diff.
+          The structured diff is in `assets/diff_results/schema_comparison_results.yaml`.
+          Before review, add a readable summary to this branch by running the
+          diff-summary skill on that file and committing the result (see
+          `src/docs/edit_workflow.md`, "Adding the human-readable schema-diff summary").
 
           ### Pre-merge Checklist
           - [ ] Review version numbers are correct
-          - [ ] Review schema diff for unexpected changes
+          - [ ] Generate and commit the schema-diff summary on this branch
+          - [ ] Review schema diff summary for unexpected changes
           - [ ] Verify all tests passed
           - [ ] TWG approval
           - [ ] CIG approval (for major releases)

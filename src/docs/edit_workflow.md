@@ -21,6 +21,46 @@ Define what they are
 
 # Releases
 
+The GSC creates releases using semantic versioning (major.minor.patch).
+
+## Preparing a release PR
+
+Run the `Create Release PR` GitHub Action
+(`.github/workflows/create-release-pr.yaml`). Given an old and a new ref, it:
+
+- bumps the version in `pyproject.toml`, `CITATION.cff`, and `.zenodo.json`,
+- runs the full build and tests,
+- generates a structured schema diff between the two refs into
+  `assets/diff_results/schema_comparison_results.yaml`, using the reusable
+  `diff-releases` tool (see
+  [contrib/docs/SCHEMA_DIFFING.md](../../contrib/docs/SCHEMA_DIFFING.md)),
+- opens a release pull request from a `release/vX.Y.Z` branch.
+
+This action only prepares the PR. It does not publish a release.
+
+## Adding the human-readable schema-diff summary
+
+The structured diff is complete but large. Before the release PR is reviewed, add
+a readable summary to the release branch:
+
+1. Check out the `release/vX.Y.Z` branch.
+2. Run the diff-summary skill
+   ([contrib/diff-summary-skill/](../../contrib/diff-summary-skill/README.md)) on
+   `assets/diff_results/schema_comparison_results.yaml`. It produces a short
+   Markdown summary that groups cosmetic mass-edits and highlights added, removed,
+   renamed, and cardinality or range changes.
+3. Commit the summary (for example `assets/diff_results/SUMMARY.md`) to the branch
+   and push.
+
+This step runs on the branch, done by a maintainer or an agent, not in CI. It
+needs no API keys, and the summary is reviewed like any other change before merge.
+
+## Reviewing and publishing
+
+- A TWG member other than the PR author reviews the version bumps and the schema
+  diff summary. The pre-merge checklist is in the PR body.
+- After merge, create the GitHub Release with tag `vX.Y.Z` and publish.
+
 # LinkML Updates 
 
 # Documentation

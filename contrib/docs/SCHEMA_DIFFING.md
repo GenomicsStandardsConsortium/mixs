@@ -131,6 +131,11 @@ YAML and writes a summary that groups cosmetic mass-edits, highlights structural
 changes, and calls out cardinality and range changes. A worked example of the
 kind of output it produces is kept alongside that recipe.
 
+At release time, the release workflow generates the structured diff on the
+release branch, and a maintainer runs this skill on that branch to add the
+summary before review. See `src/docs/edit_workflow.md`, section "Releases". The
+summary step is deliberately not run in CI, so it needs no API keys.
+
 ## Maintaining the rename-mapping files
 
 The mapping files live in `assets/between_diff_mappings/<from>_to_<to>/`. They
