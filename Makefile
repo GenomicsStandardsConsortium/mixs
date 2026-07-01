@@ -109,7 +109,7 @@ site: gen-project gendoc
 gen-project: ensure-dirs $(PYMODEL)
 	$(RUN) linkml generate project --log_level WARNING --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-test: qc test-schema test-python test-examples linkml-lint yaml-lint
+test: qc test-schema test-python test-examples linkml-lint yaml-lint tsv-roundtrip-test
 
 test-schema:
 	@echo "Schema re-generation in test phase eliminated due to long run time"
@@ -267,5 +267,43 @@ clean-contrib:
 	       contrib/mixs_derived_class_term_schemasheet_* \
 	       contrib/extensions-dendrogram.pdf \
 	       contrib/soil-vs-water-slot-usage.yaml
+
+# =============================================================================
+# Multivalued TSV round-trip (demonstration + equivalence test)
+# =============================================================================
+# Proves that multivalued MIxS data survives a YAML -> TSV -> YAML round-trip
+# using only the standard `linkml-convert` tool (no custom conversion code), now
+# that linkml can serialize and parse pipe-delimited multivalued cells (linkml
+# #3134 list formatting and #3251 empty-cell load, both released in linkml 1.11).
+.PHONY: tsv-roundtrip tsv-roundtrip-test
+
+TSV_DIR = src/data/examples/tsv-normalization
+TSV_YAML = $(TSV_DIR)/MimsSoil.yaml
+TSV_TSV = $(TSV_DIR)/MimsSoil.tsv
+TSV_RELOADED = $(TSV_DIR)/MimsSoil.reloaded.yaml
+
+# YAML -> bare-pipe TSV, standard linkml-convert.
+$(TSV_TSV): $(TSV_YAML) contrib/mixs-patterns-materialized.yaml
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f yaml -t tsv --no-validate --list-wrapper none \
+		$(TSV_YAML) > $(TSV_TSV)
+
+# bare-pipe TSV -> YAML, standard linkml-convert.
+$(TSV_RELOADED): $(TSV_TSV) contrib/mixs-patterns-materialized.yaml
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f tsv -t yaml --no-validate --list-wrapper none \
+		$(TSV_TSV) > $(TSV_RELOADED)
+
+tsv-roundtrip: $(TSV_RELOADED)
+
+# Equivalence test (runs in CI via `make test`): the reloaded YAML must equal the
+# original after YAML -> TSV -> YAML.
+tsv-roundtrip-test: $(TSV_RELOADED)
+	@echo "=== TSV round-trip equivalence check ==="
+	$(RUN) python $(TSV_DIR)/check_roundtrip_equivalence.py $(TSV_YAML) $(TSV_RELOADED)
 
 include contrib.Makefile
