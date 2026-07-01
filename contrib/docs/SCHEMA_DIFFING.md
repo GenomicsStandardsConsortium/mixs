@@ -73,6 +73,44 @@ poetry run diff-releases --help
 poetry run diff-releases --list-releases   # lists taggable versions it can fetch
 ```
 
+## End to end: regenerate the v5 to v6.0.0 diff
+
+To go from nothing to a fresh clone, a built environment, cleared old outputs, the
+one-time v5 to v6.0.0 diff, and a readable summary, run these in order:
+
+```bash
+# 1. Clone and enter the repository
+mkdir -p ~/gitrepos && cd ~/gitrepos
+git clone https://github.com/GenomicsStandardsConsortium/mixs.git
+cd mixs
+
+# 2. Build the environment (Python 3.13; installs openpyxl and the rest)
+poetry env use python3.13
+poetry install
+
+# 3. Clear previously generated diff outputs.
+#    DANGER: these files are committed. If you clear them and then commit and
+#    push, you remove them from the repository. Do not run this if you intend to
+#    push your current work. See the Makefile comment on this target.
+make clean-diff-results
+
+# 4. Run the one-time v5 to v6.0.0 diff (no arguments; the inputs are fixed).
+poetry run python src/scripts/v5_to_v6_onetime_diff.py
+```
+
+Step 4 writes `assets/diff_results/v5_to_v6.0.0/schema_comparison_results.yaml`
+(the structured diff) and `tool_summary.md` (a short summary). Then, in Claude
+Code, write the readable summary with the skill:
+
+```
+/mixs-diff-summary assets/diff_results/v5_to_v6.0.0/schema_comparison_results.yaml
+```
+
+That writes `assets/diff_results/v5_to_v6.0.0/agent_summary.md`.
+
+The rest of this document describes the reusable, forward-looking tool for
+comparing any two LinkML versions of MIxS.
+
 ## Running a diff
 
 Each side is given as `owner/repo@ref:path`, where `ref` is a tag, branch, or

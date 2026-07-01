@@ -58,8 +58,8 @@ List added, removed, renamed, cardinality, range, and pattern changes
 individually. Group cosmetic text-only changes. Keep the whole summary under one
 page. State plainly anything you were unsure how to classify.
 
-Write the result to `SUMMARY.md` in the same directory as the input file (or, for
-a release, to `assets/diff_results/SUMMARY.md`), and also print it.
+Write the result to `agent_summary.md` in the same directory as the input file,
+and also print it.
 
 ## Worked example
 
