@@ -38,8 +38,8 @@ pyyaml = "^6.0"
 requests = "^2.33"
 python-dotenv = "^1.0"
 
-# Optional deps for the one-time v5->v6.0.0 diff reproducer
-# (contrib/v5_to_v6_onetime_diff/). Not needed for the reusable LinkML diff tool.
+# Optional dep for the one-time v5->v6.0.0 diff script
+# (src/scripts/v5_to_v6_onetime_diff.py). Not needed for the reusable LinkML diff tool.
 [tool.poetry.group.legacy-v5-diff]
 optional = true
 

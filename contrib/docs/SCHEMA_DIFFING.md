@@ -164,7 +164,7 @@ old and new names to the matching TSV.
 This tool compares LinkML versions only. The general multi-format diff machinery
 (v4 Excel, Word, XSD) has been retired. The one transition worth recording, v5
 (2018 Excel) to v6.0.0 (2022 LinkML), is kept as a separate, clearly labeled
-one-time diff: the code is in `src/scripts/v5_to_v6_onetime_diff/` and its
-finished output in `assets/diff_results/v5_to_v6.0.0/`. It is kept apart from this
+one-time diff: the code is the single file `src/scripts/v5_to_v6_onetime_diff.py`
+and its finished output is in `assets/diff_results/v5_to_v6.0.0/`. It is kept apart from this
 reusable tool: the two versions are set in the script, and it is not part of the
 release workflow.
