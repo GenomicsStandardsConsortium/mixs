@@ -38,6 +38,26 @@ Below are descriptions for the various user-facing directories in this repositor
       * [src/mixs/schema/mixs.yaml](src/mixs/schema/mixs.yaml) - LinkML YAML schema representing the MIxS standard
   * [src/docs](src/docs) - markdown files that can be converted to HTML and included in the web documentation pages
 
+## Local setup
+
+To build and work with the schema locally:
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/GenomicsStandardsConsortium/mixs.git
+   cd mixs
+   ```
+2. Use a supported Python. The project supports Python 3.10 through 3.13 (3.13 recommended; some dependencies do not yet resolve on 3.14). If you do not have one installed, install it first (for example with pyenv or Homebrew), then point Poetry at it:
+   ```bash
+   poetry env use python3.13
+   ```
+3. Install the project and its dependencies:
+   ```bash
+   poetry install
+   ```
+
+That gives you the environment used by the `make` targets and the scripts in [src/scripts/](src/scripts/). For comparing two versions of the schema, see [contrib/docs/SCHEMA_DIFFING.md](contrib/docs/SCHEMA_DIFFING.md).
+
 ## Developer Documentation
 Note: Developer documention is specifically included here for the use of members of the GSC's CIG and TWG committees.
 <details>

@@ -9,66 +9,37 @@ supported (see [Scope](#scope-and-history) at the end). The release workflow
 (`.github/workflows/create-release-pr.yaml`) runs this same tool to attach a diff
 to every release pull request.
 
-## From a clean machine to a working diff
+## Setup
 
-Follow these steps even if you already have a MIxS clone somewhere on disk.
+First set up the MIxS environment as described in the repository README's "Local
+setup" section (clone the repo, use Python 3.10 through 3.13, run `poetry
+install`). That installs the dependencies and registers the `diff-releases`
+command. If `poetry run diff-releases` reports `No module named 'scripts'`, the
+project was not installed; run `poetry install` first.
 
-> **Use a fresh clone, not an old one.** MIxS computes its version from git tags
-> (`poetry-dynamic-versioning`), so a clone that is missing tags, or an old fork,
-> will fail to build or report the wrong version. A stale checkout can also have a
-> `main` that is months behind. Start clean in a known location.
+Three things are specific to diffing:
 
-### 1. Clone the canonical repository
-
-```bash
-mkdir -p ~/gitrepos && cd ~/gitrepos
-git clone https://github.com/GenomicsStandardsConsortium/mixs.git
-cd mixs
-```
-
-Confirm you got the tags (dynamic versioning needs them):
+**Use a fresh clone with its tags.** MIxS computes its version from git tags
+(`poetry-dynamic-versioning`), so a clone that is missing tags, or an old fork,
+can build wrong or report the wrong version. After cloning, confirm the tags
+arrived; if none appear, run `git fetch --tags`:
 
 ```bash
 git tag | grep -E '^v6' | head     # should list v6.x tags, e.g. v6.2.0
 ```
 
-If no tags appear, fetch them: `git fetch --tags`.
-
-### 2. Use a supported Python
-
-The project supports Python 3.10 through 3.13 (3.13 recommended; some dependencies
-do not yet resolve on 3.14). This step assumes such an interpreter is already
-installed and on your `PATH`; if you have none in that range, install one first
-(for example with pyenv or Homebrew). Then point Poetry at it before installing:
-
-```bash
-poetry env use python3.13     # or python3.12, or the full path to a 3.10-3.13 interpreter
-```
-
-### 3. Install the project
-
-This installs MIxS and registers the `diff-releases` command:
-
-```bash
-poetry install --all-extras   # the Makefile target `make install` does the same
-```
-
-Installing is required. Without it, `poetry run diff-releases` reports
-`No module named 'scripts'`.
-
-### 4. Provide a GitHub token (recommended)
-
-The tool fetches schema files through the GitHub API. Without a token you share
-the anonymous limit of 60 requests per hour, which a multi-version diff can
-exhaust. With a token the limit is 5000 per hour. The tool reads `GITHUB_TOKEN`
-from the environment first, then from a `.env` file in the repo root.
+**Provide a GitHub token (recommended).** The tool fetches schema files through
+the GitHub API. Without a token you share the anonymous limit of 60 requests per
+hour, which a multi-version diff can exhaust; with a token it is 5000 per hour.
+The tool reads `GITHUB_TOKEN` from the environment first, then from a `.env` file
+in the repo root:
 
 ```bash
 export GITHUB_TOKEN=$(gh auth token)     # if you use the GitHub CLI
 # or add a line GITHUB_TOKEN=ghp_... to a .env file (never commit it)
 ```
 
-### 5. Verify
+**Verify:**
 
 ```bash
 poetry run diff-releases --help
