@@ -1,0 +1,108 @@
+# Default Excel Format Profile
+# Used as fallback when no specific version is matched
+# Combines all known column variations to maximize compatibility
+description: "Default Excel format profile (fallback)"
+
+# This profile matches anything not matched by more specific profiles
+version_patterns: []
+
+# Sheet names to look for (comprehensive list)
+sheet_names:
+  main_terms:
+    - "MIxS"
+    - "Recovered_Sheet1"
+    - "dereplicated param list"
+  packages:
+    - "environmental_packages"
+    - "environmental packages"
+
+# Column header mappings (comprehensive - all known variations)
+column_mappings:
+  name:
+    - "Structured comment name"
+    - "structured comment name"
+    - "Item"
+    - "item"
+    - "Parameter"
+    - "NCBI name"
+  item:
+    - "Item"
+    - "item"
+    - "Package item"
+    - "Parameter"
+  definition:
+    - "Definition"
+    - "definition"
+  description:
+    - "Description"
+    - "description"
+  example:
+    - "Example"
+    - "example"
+  expected_value:
+    - "Expected value"
+    - "expected value"
+  value_syntax:
+    - "Value syntax"
+    - "value syntax"
+  occurrence:
+    - "Occurence"
+    - "Occurrence"
+    - "occurence"
+    - "occurrence"
+  preferred_unit:
+    - "Preferred unit"
+    - "preferred unit"
+  section:
+    - "Section"
+    - "section"
+  position:
+    - "Position"
+    - "position"
+    - "pos"
+  mixs_id:
+    - "MIXS ID"
+    - "mixs_id"
+    - "MIxS ID"
+  requirement:
+    - "Requirement"
+    - "requirement"
+  package_name:
+    - "Environmental package"
+    - "environmental package"
+    - "Package"
+
+# Checklist column mappings (all known variations)
+checklist_columns:
+  # v5 style (lowercase with prefix)
+  migs_eu: "migs_eu"
+  migs_ba: "migs_ba"
+  migs_pl: "migs_pl"
+  migs_vi: "migs_vi"
+  migs_org: "migs_org"
+  me: "me"
+  mimarks_s: "mimarks_s"
+  mimarks_c: "mimarks_c"
+  misag: "misag"
+  mimag: "mimag"
+  miuvig: "miuvig"
+  # v4 style (lowercase without prefix)
+  eu: "migs_eu"
+  ba: "migs_ba"
+  pl: "migs_pl"
+  vi: "migs_vi"
+  org: "migs_org"
+  "MIMARKS Survey": "mimarks_s"
+  "MIMARKS Specimen": "mimarks_c"
+  # 2009 style (uppercase)
+  EU: "migs_eu"
+  BA: "migs_ba"
+  PL: "migs_pl"
+  VI: "migs_vi"
+  ORG: "migs_org"
+  ME: "me"
+  MIENS_S: "mimarks_s"
+  MIENS_C: "mimarks_c"
+
+# Enable normalization by default for maximum compatibility
+normalize_term_names: true

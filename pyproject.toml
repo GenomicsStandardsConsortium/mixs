@@ -38,6 +38,16 @@ pyyaml = "^6.0"
 requests = "^2.33"
 python-dotenv = "^1.0"
 
+# Optional deps for the one-time v5->v6.0.0 diff reproducer
+# (contrib/v5_to_v6_onetime_diff/). Not needed for the reusable LinkML diff tool.
+[tool.poetry.group.legacy-v5-diff]
+optional = true
+
+[tool.poetry.group.legacy-v5-diff.dependencies]
+# Only openpyxl is new here; linkml-runtime (a main dependency) already provides
+# pyyaml and requests transitively, and the LinkML side is read via SchemaView.
+openpyxl = "^3.1"   # read the v5 .xlsx (linkml has no Excel reader)
+
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry_dynamic_versioning.backend"
