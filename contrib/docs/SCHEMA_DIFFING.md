@@ -201,6 +201,21 @@ token use down by skill. On a Claude Max or Pro subscription the dollar figure i
 shows is a local estimate, not a bill. `npx ccusage@latest` gives per-session
 totals from the local logs.
 
+One observed run, as a rough reference (2026-07-01):
+
+- **Setup:** Claude Code on macOS, model Claude Opus 4.8 (1M-context window),
+  Claude Max subscription, run in a fresh clone with Python 3.13 via Poetry.
+- **Wall time:** the skill invocation felt like about 3.5 minutes to the user.
+- **Tokens and cost:** per `/usage`, `mixs-diff-summary` was about 1% of the
+  session. For scale, the whole session (which included other work) reported
+  $1.07 and, on Opus, 6.1k input / 17.8k output / 160k cache-read / 51.4k
+  cache-write tokens; 1% of that is roughly a couple hundred output tokens and
+  about one cent.
+- **Takeaway:** the summary itself is cheap. The minutes are wall-clock model
+  latency on Opus, not token volume, which is why a faster mid-tier model is a
+  reasonable choice. This is a single data point; it scales with the model, the
+  size of the diff, and how much context is loaded.
+
 The skill's `SKILL.md` format and the `/mixs-diff-summary` invocation are specific
 to Claude Code, so other agent command-line tools will not discover or run it
 automatically. The instructions themselves are plain, model-agnostic Markdown, so
