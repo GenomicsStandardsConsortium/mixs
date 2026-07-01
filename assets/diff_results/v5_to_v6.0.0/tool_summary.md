@@ -4,8 +4,12 @@
 - v6.0.0 (LinkML): 804 terms
 
 - shared: 573
-- renamed: 6
-- removed: 18
+- renamed: 20
+- removed: 4
 - deleted (structural): 3
-- added: 226
-- definition changed: 62
+- added: 212
+- definition changed: 65
+
+## Possible missed renames (review, then add to RENAMES)
+
+- pres_animal -> pres_animal_insect

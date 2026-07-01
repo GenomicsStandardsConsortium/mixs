@@ -21,6 +21,7 @@ How it works:
 - A small, checked rename and deletion map (below) accounts for the names that
   changed or were removed between v5 and v6.0.0.
 """
+import difflib
 import os
 import subprocess
 import sys
@@ -49,7 +50,11 @@ V5_XLSX_URL = (
 V6_TAG = "mixs6.0.0"
 V6_SCHEMA = "model/schema/mixs.yaml"
 
-# v5 -> v6.0.0 name changes, each target checked against the mixs6.0.0 tag.
+# v5 -> v6.0.0 name changes, each target checked to exist in the mixs6.0.0 tag.
+# Several are abbreviations introduced at v6.0.0 (for example content -> cont,
+# collection -> collect, dropped host_/ihmc_ prefixes). The rename_candidates
+# section in the output flags any further removed/added pairs that look like
+# renames but are not listed here, so missed renames surface on the next run.
 RENAMES = {
     "16s_recover": "x_16s_recover",
     "16s_recover_software": "x_16s_recover_software",
@@ -57,6 +62,20 @@ RENAMES = {
     "votu_class_appr": "otu_class_appr",
     "votu_db": "otu_db",
     "votu_seq_comp_appr": "otu_seq_comp_appr",
+    "chem_treatment_method": "chem_treat_method",
+    "heat_system_deliv_meth": "heat_sys_deliv_meth",
+    "host_blood_press_diast": "blood_press_diast",
+    "host_blood_press_syst": "blood_press_syst",
+    "ihmc_ethnicity": "ethnicity",
+    "organism_count_qpcr_info": "org_count_qpcr_info",
+    "room_architec_element": "room_architec_elem",
+    "room_moist_damage_hist": "room_moist_dam_hist",
+    "samp_collection_point": "samp_collect_point",
+    "shading_device_water_mold": "shad_dev_water_mold",
+    "tot_nitro_content_meth": "tot_nitro_cont_meth",
+    "tvdss_of_hcr_pressure": "tvdss_of_hcr_press",
+    "water_content_soil_meth": "water_cont_soil_meth",
+    "water_production_rate": "water_prod_rate",
 }
 # Terms removed on purpose at v6.0.0 (structural), not counted as unexplained.
 DELETIONS = {"env_package", "investigation_type", "submitted_to_insdc"}
@@ -113,6 +132,16 @@ def main() -> None:
             definition_changed[name] = {"v5": v5[name], "v6.0.0": v6[target]}
     added = sorted(v6_names - set(shared.values()) - set(renamed.values()))
 
+    # Self-check: a removed name that closely matches an added name is probably a
+    # rename that is missing from RENAMES. Flag those for review; promote real
+    # ones into RENAMES so they stop showing as a removal plus an addition.
+    rename_candidates = {}
+    for r in removed:
+        best = max(added, default=None,
+                   key=lambda a: difflib.SequenceMatcher(None, r, a).ratio())
+        if best and difflib.SequenceMatcher(None, r, best).ratio() >= 0.75:
+            rename_candidates[r] = best
+
     result = {
         "comparison": {
             "old": {"version": "v5", "source": V5_XLSX_URL, "terms": len(v5)},
@@ -122,8 +151,10 @@ def main() -> None:
         },
         "counts": {"shared": len(shared), "renamed": len(renamed),
                    "removed": len(removed), "deleted": len(DELETIONS),
-                   "added": len(added), "definition_changed": len(definition_changed)},
+                   "added": len(added), "definition_changed": len(definition_changed),
+                   "rename_candidates": len(rename_candidates)},
         "renamed": renamed,
+        "rename_candidates": rename_candidates,
         "deleted": sorted(DELETIONS),
         "removed": sorted(removed),
         "added": added,
@@ -134,13 +165,18 @@ def main() -> None:
     (OUT_DIR / "schema_comparison_results.yaml").write_text(
         yaml.safe_dump(result, sort_keys=True, allow_unicode=True, width=100))
     c = result["counts"]
+    cand = "".join(f"- {o} -> {n}\n" for o, n in sorted(rename_candidates.items()))
     (OUT_DIR / "tool_summary.md").write_text(
         f"# MIxS v5 to v6.0.0 diff\n\n"
         f"- v5 (Excel): {len(v5)} terms\n- v6.0.0 (LinkML): {len(v6)} terms\n\n"
         f"- shared: {c['shared']}\n- renamed: {c['renamed']}\n- removed: {c['removed']}\n"
         f"- deleted (structural): {c['deleted']}\n- added: {c['added']}\n"
-        f"- definition changed: {c['definition_changed']}\n")
+        f"- definition changed: {c['definition_changed']}\n"
+        + (f"\n## Possible missed renames (review, then add to RENAMES)\n\n{cand}"
+           if rename_candidates else ""))
     print("counts:", c)
+    if rename_candidates:
+        print("possible missed renames:", rename_candidates)
 
 
 if __name__ == "__main__":

@@ -26,9 +26,6 @@ added:
 - association_duration
 - bacterial_density
 - biocide_used
-- blood_press_diast
-- blood_press_syst
-- chem_treat_method
 - coll_site_geo_feat
 - cons_food_stor_dur
 - cons_food_stor_temp
@@ -45,7 +42,6 @@ added:
 - enrichment_protocol
 - env_monitoring_zone
 - environment field
-- ethnicity
 - extr_weather_event
 - facility_type
 - farm_equip
@@ -97,7 +93,6 @@ added:
 - has numeric value
 - has raw value
 - has unit
-- heat_sys_deliv_meth
 - host_cellular_loc
 - host_dependence
 - host_family_relation
@@ -139,7 +134,6 @@ added:
 - nucl_acid_ext_kit
 - nucleic acid sequence source field
 - num_samp_collect
-- org_count_qpcr_info
 - part_plant_animal
 - photosynt_activ
 - photosynt_activ_meth
@@ -152,13 +146,10 @@ added:
 - prod_label_claims
 - rel_location
 - repository_name
-- room_architec_elem
-- room_moist_dam_hist
 - route_transmission
 - samp_collec_device
 - samp_collec_method
 - samp_collect_method
-- samp_collect_point
 - samp_loc_condition
 - samp_name
 - samp_pooling
@@ -184,7 +175,6 @@ added:
 - sequencing_kit
 - sequencing_location
 - serovar_or_serotype
-- shad_dev_water_mold
 - soil_conductivity
 - soil_cover
 - soil_depth
@@ -215,14 +205,10 @@ added:
 - timepoint
 - tot_car
 - tot_n_meth
-- tot_nitro_cont_meth
 - tot_phos
-- tvdss_of_hcr_press
 - type_of_symbiosis
-- water_cont_soil_meth
 - water_frequency
 - water_pH
-- water_prod_rate
 - water_source_adjac
 - water_source_shared
 comparison:
@@ -235,11 +221,12 @@ comparison:
     terms: 600
     version: v5
 counts:
-  added: 226
-  definition_changed: 62
+  added: 212
+  definition_changed: 65
   deleted: 3
-  removed: 18
-  renamed: 6
+  removed: 4
+  rename_candidates: 1
+  renamed: 20
   shared: 573
 definition_changed:
   alt:
@@ -434,6 +421,11 @@ definition_changed:
   host_substrate:
     v5: 'The growth substrate of the host '
     v6.0.0: The growth substrate of the host.
+  ihmc_ethnicity:
+    v5: Ethnicity of the subject
+    v6.0.0: A category of people who identify with each other, usually on the basis of presumed similarities
+      such as a common language, ancestry, history, society, culture, nation or social treatment within
+      their residing area. https://en.wikipedia.org/wiki/List_of_contemporary_ethnic_groups
   iw_bt_date_well:
     v5: Injection water breakthrough date per well following a  secondary and/or tertiary recovery
     v6.0.0: Injection water breakthrough date per well following a secondary and/or tertiary recovery
@@ -491,6 +483,11 @@ definition_changed:
     v6.0.0: The device used to collect an environmental sample. This field accepts terms listed under
       environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms
       listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
+  samp_collection_point:
+    v5: Sampling  point on the asset were sample was collected (e.g. Wellhead, storage tank, separator,
+      etc). If "other" is specified, please propose entry in "additional info" field
+    v6.0.0: Sampling point on the asset were sample was collected (e.g. Wellhead, storage tank, separator,
+      etc). If "other" is specified, please propose entry in "additional info" field
   samp_mat_process:
     v5: Any processing applied to the sample during or after retrieving the sample from environment. This
       field accepts OBI, for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI
@@ -547,6 +544,11 @@ definition_changed:
   texture_meth:
     v5: Reference or method used in determining soil texture
     v6.0.0: Reference or method used in determining soil texture.
+  tvdss_of_hcr_pressure:
+    v5: True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original pressure was
+      measured (e.g. 1578 m )
+    v6.0.0: True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original pressure
+      was measured (e.g. 1578 m).
   tvdss_of_hcr_temp:
     v5: True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original temperature
       was measured (e.g. 1345 m)
@@ -595,28 +597,30 @@ deleted:
 - investigation_type
 - submitted_to_insdc
 removed:
-- chem_treatment_method
 - extreme_salinity
-- heat_system_deliv_meth
-- host_blood_press_diast
-- host_blood_press_syst
-- ihmc_ethnicity
 - nose_mouth_teeth_throat_disord
-- organism_count_qpcr_info
 - pres_animal
 - resp_part_matter
-- room_architec_element
-- room_moist_damage_hist
-- samp_collection_point
-- shading_device_water_mold
-- tot_nitro_content_meth
-- tvdss_of_hcr_pressure
-- water_content_soil_meth
-- water_production_rate
+rename_candidates:
+  pres_animal: pres_animal_insect
 renamed:
   16s_recover: x_16s_recover
   16s_recover_software: x_16s_recover_software
+  chem_treatment_method: chem_treat_method
   health_disease_stat: host_disease_stat
+  heat_system_deliv_meth: heat_sys_deliv_meth
+  host_blood_press_diast: blood_press_diast
+  host_blood_press_syst: blood_press_syst
+  ihmc_ethnicity: ethnicity
+  organism_count_qpcr_info: org_count_qpcr_info
+  room_architec_element: room_architec_elem
+  room_moist_damage_hist: room_moist_dam_hist
+  samp_collection_point: samp_collect_point
+  shading_device_water_mold: shad_dev_water_mold
+  tot_nitro_content_meth: tot_nitro_cont_meth
+  tvdss_of_hcr_pressure: tvdss_of_hcr_press
   votu_class_appr: otu_class_appr
   votu_db: otu_db
   votu_seq_comp_appr: otu_seq_comp_appr
+  water_content_soil_meth: water_cont_soil_meth
+  water_production_rate: water_prod_rate

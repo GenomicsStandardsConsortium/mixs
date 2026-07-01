@@ -20,14 +20,16 @@ Read the YAML. Two shapes are possible; handle both and read them the same way:
 - If the top level has **`collection_differences`**, it came from the reusable
   `diff-releases` tool. Each kind (slots, classes, enums, prefixes, settings) has
   `key_comparison.{only_in_new, only_in_old, shared}` and `definition_changes`.
-- If the top level has **`term_differences`**, it came from the one-time
-  v5-to-v6.0.0 diff script. Use `term_differences` as the "slots" group. Renames
-  are listed explicitly in `key_comparison.expected_mappings`, and structural
-  deletions in `key_comparison.expected_deletions`. Its
-  `package_differences`/`checklist_differences` sections may be summarized in one
-  line each if present.
+  The two versions and dates are in `comparison_metadata`.
+- If the top level has **`added` / `removed` / `renamed`** (and a `comparison`
+  block), it came from the one-time v5-to-v6.0.0 diff script. Read `added`,
+  `removed`, `renamed`, `deleted`, `definition_changed`, and `rename_candidates`
+  directly; the two versions are in `comparison`.
 
-Use `comparison_metadata` for the two versions and dates.
+If the diff has a **`rename_candidates`** section (removed names that closely
+match an added name but are not in the confirmed rename map), always call it out
+in the summary: these are likely missed renames that a maintainer should confirm
+and promote into the tool's rename map. Do not silently treat them as removals.
 
 ## Step 2: separate real change from cosmetic mass-edits
 
@@ -43,16 +45,18 @@ and one example, never one line per entry.
 Emit these sections, in order, omitting any that are empty:
 
 1. A one-line header naming both versions and their dates.
-2. **Added** named elements (`only_in_new`), by kind.
-3. **Removed** named elements (`only_in_old`), by kind.
-4. **Renamed** (from `expected_mappings` when present).
-5. **Cardinality and range changes**: any `required`, `multivalued`, or `range`
-   change in `definition_changes`. List these individually; they change what data
-   is valid.
-6. **Pattern changes**: changes to `pattern` or `structured_pattern`, summarized
+2. **Added** named elements, by kind.
+3. **Removed** named elements, by kind.
+4. **Renamed**, listed old to new.
+5. **Possible missed renames**: the `rename_candidates`, if any, with a note that
+   a maintainer should confirm and add real ones to the rename map.
+6. **Cardinality and range changes**: any `required`, `multivalued`, or `range`
+   change. List these individually; they change what data is valid. (The
+   v5-to-v6.0.0 diff has no such fields, so omit this section for it.)
+7. **Pattern changes**: changes to `pattern` or `structured_pattern`, summarized
    (do not paste every regex).
-7. **Cosmetic changes (grouped)**: one line per shared mass-edit, with a count.
-8. **Notes**: anything that needed a judgment call.
+8. **Cosmetic changes (grouped)**: one line per shared mass-edit, with a count.
+9. **Notes**: anything that needed a judgment call.
 
 List added, removed, renamed, cardinality, range, and pattern changes
 individually. Group cosmetic text-only changes. Keep the whole summary under one
