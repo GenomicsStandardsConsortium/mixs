@@ -2259,8 +2259,10 @@ def build_release_info_dict(repositories: List[Tuple[str, str]] = None) -> Dict[
               default=Path(__file__).parent.parent.parent / "assets" / "diff_results",
               help='Directory to save output files (default: assets/diff_results)')
 @click.option('--mappings-dir', type=click.Path(path_type=Path),
-              default=Path(__file__).parent.parent.parent / "assets" / "between_diff_mappings",
-              help='Directory containing mapping TSV files (default: assets/between_diff_mappings)')
+              default=Path(__file__).parent.parent.parent / "assets" / "between_diff_mappings" / "6_to_pre_7",
+              help='Directory containing mapping TSV files (default: assets/between_diff_mappings/6_to_pre_7). '
+                   'The TSV files live in a per-transition subdirectory; pointing at the parent finds no '
+                   'mappings and silently skips rename detection.')
 @click.option('--log-level', type=click.Choice(['DEBUG', 'INFO', 'WARNING', 'ERROR']),
               default='INFO', help='Set logging level (default: INFO)')
 @click.option('--list-releases', is_flag=True, default=False,
