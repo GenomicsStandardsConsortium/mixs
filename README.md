@@ -56,7 +56,7 @@ To build and work with the schema locally:
    poetry install
    ```
 
-That gives you the environment used by the `make` targets and the scripts in [src/scripts/](src/scripts/). For comparing two versions of the schema, see [contrib/docs/SCHEMA_DIFFING.md](contrib/docs/SCHEMA_DIFFING.md).
+That gives you the environment used by the `make` targets and the scripts in [src/scripts/](src/scripts/). For comparing two versions of the schema, see [src/docs/SCHEMA_DIFFING.md](src/docs/SCHEMA_DIFFING.md).
 
 ## Developer Documentation
 Note: Developer documention is specifically included here for the use of members of the GSC's CIG and TWG committees.

@@ -155,8 +155,8 @@ hand.
 
 At release time, the release workflow generates the structured diff on the
 release branch, and a maintainer runs this skill on that branch to add the
-summary before review. See `src/docs/edit_workflow.md`, section "Releases". The
-summary step is deliberately not run in CI, so it needs no API keys.
+summary before review. See [edit_workflow.md](edit_workflow.md), section
+"Releases". The summary step is deliberately not run in CI, so it needs no API keys.
 
 ### Cost, model, and portability
 

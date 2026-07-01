@@ -33,7 +33,7 @@ Run the `Create Release PR` GitHub Action
 - generates a structured schema diff between the two refs into
   `assets/diff_results/schema_comparison_results.yaml`, using the reusable
   `diff-releases` tool (see
-  [contrib/docs/SCHEMA_DIFFING.md](../../contrib/docs/SCHEMA_DIFFING.md)),
+  [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md)),
 - opens a release pull request from a `release/vX.Y.Z` branch.
 
 This action only prepares the PR. It does not publish a release.

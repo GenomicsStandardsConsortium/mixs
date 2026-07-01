@@ -4,7 +4,7 @@ One-time MIxS v5 (2018 Excel) to v6.0.0 (2022 LinkML) diff.
 
 This is NOT the reusable diff tool. For comparing any two LinkML versions of MIxS
 (v6 onward), use src/scripts/diff_two_linkml_mixs_releases.py, documented in
-contrib/docs/SCHEMA_DIFFING.md.
+src/docs/SCHEMA_DIFFING.md.
 
 Both versions here are finished releases, pinned by commit and tag, so the script
 takes no arguments and the result never changes. It writes a structured diff and
