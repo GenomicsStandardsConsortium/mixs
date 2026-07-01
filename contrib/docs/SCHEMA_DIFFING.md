@@ -92,11 +92,12 @@ cd mixs
 poetry env use python3.13
 poetry install
 
-# 3. Clear previously generated diff outputs.
-#    DANGER: these files are committed. If you clear them and then commit and
-#    push, you remove them from the repository. Do not run this if you intend to
-#    push your current work. See the Makefile comment on this target.
-make clean-diff-results
+# 3. Clear this diff's previously generated outputs so you regenerate them fresh.
+#    (These files are committed. Do not commit and push their deletion unless you
+#    mean to remove them. Steps 4 and 5 write them back.)
+rm -f assets/diff_results/v5_to_v6.0.0/schema_comparison_results.yaml \
+      assets/diff_results/v5_to_v6.0.0/tool_summary.md \
+      assets/diff_results/v5_to_v6.0.0/agent_summary.md
 
 # 4. Run the one-time v5 to v6.0.0 diff (no arguments; the inputs are fixed).
 poetry run python src/scripts/v5_to_v6_onetime_diff.py
@@ -110,7 +111,14 @@ Code, write the readable summary with the skill:
 /mixs-diff-summary assets/diff_results/v5_to_v6.0.0/schema_comparison_results.yaml
 ```
 
-That writes `assets/diff_results/v5_to_v6.0.0/agent_summary.md`.
+That writes `assets/diff_results/v5_to_v6.0.0/agent_summary.md`, which completes
+the three files in that directory.
+
+To clear the outputs of *all* diffs at once (this one and the reusable tool's, in
+`assets/diff_results/`), use `make clean-diff-results` instead. It is broader than
+this walkthrough restores: regenerate the reusable tool's outputs by running that
+tool (see "Running a diff" below), or `git restore assets/diff_results/` to bring
+back the committed files.
 
 The rest of this document describes the reusable, forward-looking tool for
 comparing any two LinkML versions of MIxS.
