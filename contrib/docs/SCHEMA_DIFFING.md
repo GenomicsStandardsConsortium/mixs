@@ -175,14 +175,37 @@ combination class at once. The summary step below is where that gets explained.
 human-readable Markdown summary from it, use the `mixs-diff-summary` skill
 (`/mixs-diff-summary <path-to-schema_comparison_results.yaml>`), defined in
 `.claude/skills/mixs-diff-summary/`. It reads the structured YAML and writes a
-summary that groups cosmetic mass-edits, highlights structural changes, and calls
-out cardinality and range changes. A worked example is
-`assets/diff_results/v5_to_v6.0.0/agent_summary.md`.
+summary that groups repetitive edits, highlights the changes that affect data,
+and surfaces patterns spread across the file (naming conventions behind renames,
+themes among additions, a common driver behind definition changes). Running it on
+the v5-to-v6.0.0 diff writes `assets/diff_results/v5_to_v6.0.0/agent_summary.md`.
+The summary is only produced by invoking the skill, not by editing that file by
+hand.
 
 At release time, the release workflow generates the structured diff on the
 release branch, and a maintainer runs this skill on that branch to add the
 summary before review. See `src/docs/edit_workflow.md`, section "Releases". The
 summary step is deliberately not run in CI, so it needs no API keys.
+
+### Cost, model, and portability
+
+The summary is one small model call: it reads the structured diff (tens of
+thousands of input tokens, most of them cacheable) and writes about a page (a few
+hundred to a couple of thousand output tokens). Any current Claude model can do
+it; the task is not demanding, so a mid-tier model such as Sonnet is enough. A
+larger model such as Opus also works but is slower and costs more for no real gain
+on a diff this size.
+
+To see what a run actually used, run Claude Code's `/usage` command, which breaks
+token use down by skill. On a Claude Max or Pro subscription the dollar figure it
+shows is a local estimate, not a bill. `npx ccusage@latest` gives per-session
+totals from the local logs.
+
+The skill's `SKILL.md` format and the `/mixs-diff-summary` invocation are specific
+to Claude Code, so other agent command-line tools will not discover or run it
+automatically. The instructions themselves are plain, model-agnostic Markdown, so
+a user of another tool could point that tool at `SKILL.md` and the diff file and
+get the same kind of summary.
 
 ## Maintaining the rename-mapping files
 
