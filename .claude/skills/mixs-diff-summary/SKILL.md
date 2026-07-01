@@ -10,8 +10,9 @@ allowed-tools: Read, Write, Bash
 Produce a short, readable Markdown summary of a MIxS schema-diff YAML.
 
 The input file is `$ARGUMENTS`. If that is empty, ask which diff file to
-summarize, or default to `assets/diff_results/schema_comparison_results.yaml` if
-it exists.
+summarize. Diffs live in per-release folders, so the file is usually
+`assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`; if there is
+exactly one such folder, you may use its `schema_comparison_results.yaml`.
 
 ## Step 1: read the diff and detect which tool produced it
 
