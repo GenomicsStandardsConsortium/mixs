@@ -30,8 +30,8 @@ Run the `Create Release PR` GitHub Action
 
 - bumps the version in `pyproject.toml`, `CITATION.cff`, and `.zenodo.json`,
 - runs the full build and tests,
-- generates a structured schema diff between the two refs into
-  `assets/diff_results/schema_comparison_results.yaml`, using the reusable
+- generates a structured schema diff between the two refs into a per-release
+  folder `assets/diff_results/<old>_to_<new>/`, using the reusable
   `diff-releases` tool (see
   [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md)),
 - opens a release pull request from a `release/vX.Y.Z` branch.
@@ -44,10 +44,10 @@ The structured diff is complete but large. Before the release PR is reviewed, ad
 readable summaries to the release branch and put them on the docs site:
 
 1. Check out the `release/vX.Y.Z` branch.
-2. Make sure the diff outputs live in a per-release folder,
-   `assets/diff_results/<old>_to_<new>/` (for example `v6.2.0_to_v6.3.0/`). The
-   docs build only picks up summaries from these per-diff folders, so if the diff
-   was written to the top of `assets/diff_results/`, move it into that folder.
+2. The release action already wrote the diff into a per-release folder,
+   `assets/diff_results/<old>_to_<new>/` (for example `v6.2.0_to_v6.3.0/`). Work
+   in that folder. (The docs build publishes summaries only from these
+   per-release folders.)
 3. Run the `mixs-diff-summary` skill on the structured diff, for example
    `/mixs-diff-summary assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`.
    It writes `agent_summary.md` next to the structured diff.
