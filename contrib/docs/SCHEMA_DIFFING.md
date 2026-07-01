@@ -36,11 +36,13 @@ If no tags appear, fetch them: `git fetch --tags`.
 
 ### 2. Use a supported Python
 
-The project supports Python 3.10 through 3.13. Use **3.13**; some dependencies do
-not yet resolve on 3.14. Point Poetry at the right interpreter before installing:
+The project supports Python 3.10 through 3.13 (3.13 recommended; some dependencies
+do not yet resolve on 3.14). This step assumes such an interpreter is already
+installed and on your `PATH`; if you have none in that range, install one first
+(for example with pyenv or Homebrew). Then point Poetry at it before installing:
 
 ```bash
-poetry env use python3.13     # or the full path to a 3.13 interpreter
+poetry env use python3.13     # or python3.12, or the full path to a 3.10-3.13 interpreter
 ```
 
 ### 3. Install the project
@@ -84,7 +86,9 @@ mkdir -p ~/gitrepos && cd ~/gitrepos
 git clone https://github.com/GenomicsStandardsConsortium/mixs.git
 cd mixs
 
-# 2. Build the environment (Python 3.13; installs openpyxl and the rest)
+# 2. Build the environment. Requires a Python 3.10-3.13 interpreter already
+#    installed and on PATH (3.13 recommended, not 3.14); install one first if you
+#    have none. This installs openpyxl and the rest.
 poetry env use python3.13
 poetry install
 
