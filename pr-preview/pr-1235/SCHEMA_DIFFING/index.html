@@ -946,9 +946,11 @@ because the outputs are committed you can undo it with
 comparing any two LinkML versions of MIxS.</p>
 <h2 id="running-a-diff">Running a diff</h2>
 <p>Each side is given as <code>owner/repo@ref:path</code>, where <code>ref</code> is a tag, branch, or
-commit, and <code>path</code> is the schema file at that ref. Always pass <code>--mappings-dir</code>
-so renamed elements are recognized as renames rather than as one deletion plus
-one addition (see <a href="#maintaining-the-rename-mapping-files">Maintaining the mappings</a>).</p>
+commit, and <code>path</code> is the schema file at that ref. <code>--mappings-dir</code> defaults to
+<code>assets/between_diff_mappings/6_to_pre_7</code>, so renamed elements are recognized as
+renames rather than as one deletion plus one addition; pass it explicitly only to
+use a different mapping set (see
+<a href="#maintaining-the-rename-mapping-files">Maintaining the mappings</a>).</p>
 <p><strong>A tagged release against current main:</strong></p>
 <pre><code class="language-bash">poetry run diff-releases \
   --old &quot;GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml&quot; \
