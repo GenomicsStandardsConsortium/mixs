@@ -3,7 +3,6 @@ includes:
   - jsonld
   - jsonldcontext
   - jsonschema
-  - owl
   - prefixmap
   - python
 excludes:
@@ -33,12 +32,10 @@ excludes:
   - typescript # no default output?
   - yaml # would be useful for structured pattern materialization once the materializations are removed from src/mixs/schema/mixs.yaml
   - yuml # would need customization
-generator_args:
-  owl:
-    mergeimports: true
-    metaclasses: false
-    type_objects: false
-    add_root_classes: true
-    mixins_as_expressions: true
-    use_native_uris: false
+  # owl is built by the dedicated `owl` Makefile target: gen-owl with the OLS
+  # metadata profile and a resolvable ontology IRI, then SPARQL post-processing
+  # (src/sparql/ols/). metadata_profile must be passed on the gen-owl CLI, not as
+  # a generator_arg here, because owlgen compares it against an enum and a YAML
+  # string is ignored.
+  - owl
 
