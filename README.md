@@ -49,7 +49,7 @@ Building and testing MIxS locally requires these tools on your `PATH`:
 * **[yq](https://github.com/mikefarah/yq) v4, the Go implementation by mikefarah.** The build uses `yq` extensively to transform the schema (the `contrib/` pipeline and the TSV round-trip test). This is **not** the Python `yq` (`pip install yq`, the kislyuk wrapper); the two have incompatible syntax, and the Python one causes build errors. Install with `brew install yq` (macOS) or see the [yq install docs](https://github.com/mikefarah/yq#install).
 * **make** and **bash**.
 
-`npm`/`node` are needed only for the experimental `make create-data-harmonizer` target, not for the normal build. CI relies on the `yq` preinstalled on the GitHub `ubuntu-latest` runner.
+`npm`/`node` are needed only for the experimental `make create-data-harmonizer` target, not for the normal build. As of this writing, CI does not install `yq` itself; it relies on the `yq` v4 that ships preinstalled on the GitHub `ubuntu-latest` runner. That is an assumption about the current runner image, not a guarantee: if a future image drops or changes `yq`, the workflows will need to install a pinned version (see [#1242](https://github.com/GenomicsStandardsConsortium/mixs/issues/1242)).
 
 <details>
 Use the `make` command to generate project artefacts:
