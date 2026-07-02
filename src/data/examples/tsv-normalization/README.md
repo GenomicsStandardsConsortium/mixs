@@ -5,8 +5,10 @@ MIxS data survives a YAML to TSV and back to YAML round-trip without loss.
 
 Multivalued fields (for example a list of agrochemical additions) are written in
 a single TSV cell as pipe-delimited values (`a|b|c`) with `--list-wrapper none`.
-This relies on linkml's pipe-delimited multivalued serialization (linkml #3134)
-and the empty-cell load fix (linkml #3251), both released in linkml 1.11.
+This relies on linkml's pipe-delimited multivalued serialization (linkml #3134),
+released in linkml 1.11. The separate empty-cell load fix (linkml #3251) is not
+yet in a released `linkml-runtime`, which is why the example is kept dense (see
+"Case that does not round-trip yet" below).
 
 ## Input
 
