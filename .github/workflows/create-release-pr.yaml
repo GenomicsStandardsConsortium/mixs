@@ -117,6 +117,14 @@ jobs:
           DIFF_OLD: ${{ inputs.diff_old }}
           DIFF_NEW: ${{ inputs.diff_new }}
         run: |
+          # Guard against path traversal / nesting: these refs become a directory
+          # name, so reject anything but a simple ref token (tags, main, etc.).
+          for ref in "$DIFF_OLD" "$DIFF_NEW"; do
+            if ! [[ "$ref" =~ ^[A-Za-z0-9._-]+$ ]]; then
+              echo "Error: diff ref '$ref' must contain only letters, digits, '.', '_', or '-' (no '/' or '..')"
+              exit 1
+            fi
+          done
           out_dir="assets/diff_results/${DIFF_OLD}_to_${DIFF_NEW}"
           mkdir -p "$out_dir"
           poetry run diff-releases \
