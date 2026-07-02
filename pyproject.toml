@@ -17,22 +17,23 @@ include = ["README.md", "project", "src/mixs", "src/scripts"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-# TEMPORARY: build OWL against a linkml feature branch that declares the
-# metamodel grouping classes (e.g. linkml:EnumDefinition) that EBI OLS needs to
-# group enum instances/subclasses. Pinned to a fixed commit (rev) rather than the
-# moving branch owl-declare-grouping-classes so the generated OWL is reproducible.
+# TEMPORARY: build OWL against a linkml integration branch that combines two owlgen
+# changes MIxS needs for EBI OLS: (1) declaring the metamodel grouping classes
+# (e.g. linkml:EnumDefinition) with UpperCamelCase labels, and (2) not asserting
+# skos:exactMatch to synthetic, never-declared name-based URIs. Pinned to a fixed
+# commit (rev) on turbomam/linkml owlgen-ols-integration so the OWL is reproducible.
 # Note this is a git-based runtime dependency, so installing MIxS requires git and
-# network access to GitHub, not just PyPI. Revert to a linkml release once the
-# branch is merged and released; tracked in
+# network access to GitHub, not just PyPI. Revert to a linkml release once both
+# changes are merged and released; tracked in
 # https://github.com/GenomicsStandardsConsortium/mixs/issues/1237
-linkml-runtime = {git = "https://github.com/turbomam/linkml.git", rev = "3de07ab16b12b6edf5734de973465c2e5b715e03", subdirectory = "packages/linkml_runtime"}
+linkml-runtime = {git = "https://github.com/turbomam/linkml.git", rev = "87be127ce0cbbcc94b793803e41dd327149e5cd2", subdirectory = "packages/linkml_runtime"}
 jsonasobj2 = "^1.0" # used transitively in src/scripts/mixs/datamodel/mixs.py
 
 [tool.poetry.group.dev.dependencies]
 black = "^26.3"
 deptry = "^0.23"
 # TEMPORARY: see the linkml-runtime note above (same commit, pinned by rev).
-linkml = {git = "https://github.com/turbomam/linkml.git", rev = "3de07ab16b12b6edf5734de973465c2e5b715e03", subdirectory = "packages/linkml"}
+linkml = {git = "https://github.com/turbomam/linkml.git", rev = "87be127ce0cbbcc94b793803e41dd327149e5cd2", subdirectory = "packages/linkml"}
 matplotlib = "^3.10"
 mkdocs-material = "^9.6"
 mkdocs-mermaid2-plugin = "^1.2"

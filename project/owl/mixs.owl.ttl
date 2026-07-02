@@ -48,13 +48,13 @@ SO:0001201 a owl:Class ;
 	rdfs:label "ssRNA (+)" ;
 	rdfs:subClassOf linkml:PermissibleValue , MIXS:ViralGenomeTypeEnum .
 linkml:ClassDefinition a owl:Class ;
-	rdfs:label "class_definition" ;
+	rdfs:label "ClassDefinition" ;
 	skos:definition "an element whose instances are complex objects that may have slot-value assignments" .
 linkml:EnumDefinition a owl:Class ;
-	rdfs:label "enum_definition" ;
+	rdfs:label "EnumDefinition" ;
 	skos:definition "an element whose instances must be drawn from a specified set of permissible values" .
 linkml:PermissibleValue a owl:Class ;
-	rdfs:label "permissible_value" ;
+	rdfs:label "PermissibleValue" ;
 	skos:definition "a permissible value, accompanied by intended text and an optional mapping to a concept URI" .
 <https://w3id.org/mixs.owl.ttl> dcterms:source <https://github.com/GenomicsStandardsConsortium/mixs/raw/issue-610-temp-mixs-xlsx-home/mixs/excel/mixs_v6.xlsx> ;
 	pav:version "v6.2.0" ;
@@ -5765,168 +5765,144 @@ MIXS:0010002 dcterms:title "MIGS eukaryote" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "migs_eu" ;
 	skos:definition "Minimal Information about a Genome Sequence: eukaryote" ;
-	skos:exactMatch MIXS:MigsEu ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016000 dcterms:title "MigsEu combined with Air" ;
 	a owl:Class ;
 	rdfs:label "MigsEuAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n5163 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MigsEuAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016001 dcterms:title "MigsEu combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsEuBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n2689 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsEuBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016002 dcterms:title "MigsEu combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsEuHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n2450 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MigsEuHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016003 dcterms:title "MigsEu combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsEuHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n129 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MigsEuHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016004 dcterms:title "MigsEu combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MigsEuHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n4500 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MigsEuHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016005 dcterms:title "MigsEu combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MigsEuHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n13 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MigsEuHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016006 dcterms:title "MigsEu combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MigsEuHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n5435 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MigsEuHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016007 dcterms:title "MigsEu combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MigsEuHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n196 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MigsEuHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016008 dcterms:title "MigsEu combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MigsEuMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n6011 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MigsEuMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016009 dcterms:title "MigsEu combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsEuMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n637 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsEuMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016010 dcterms:title "MigsEu combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsEuPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n2674 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MigsEuPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016011 dcterms:title "MigsEu combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MigsEuSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n3396 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MigsEuSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016012 dcterms:title "MigsEu combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MigsEuSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n5317 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MigsEuSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016013 dcterms:title "MigsEu combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MigsEuWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n2688 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MigsEuWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016014 dcterms:title "MigsEu combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MigsEuWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n552 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MigsEuWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016015 dcterms:title "MigsEu combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MigsEuHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n4838 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MigsEuHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016016 dcterms:title "MigsEu combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MigsEuHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n1023 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MigsEuHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016018 dcterms:title "MigsEu combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MigsEuAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n2629 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MigsEuAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016019 dcterms:title "MigsEu combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MigsEuFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n2210 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MigsEuFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016020 dcterms:title "MigsEu combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsEuFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n5531 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsEuFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016021 dcterms:title "MigsEu combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MigsEuFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n2461 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MigsEuFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016022 dcterms:title "MigsEu combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MigsEuFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n4763 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MigsEuFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010002_0016023 dcterms:title "MigsEu combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsEuSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n783 ;
 	skos:definition "MIxS Data that comply with the MigsEu checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MigsEuSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003 dcterms:title "MIGS bacteria" ;
 	a owl:Class ;
@@ -5934,168 +5910,144 @@ MIXS:0010003 dcterms:title "MIGS bacteria" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "migs_ba" ;
 	skos:definition "Minimal Information about a Genome Sequence: cultured bacteria/archaea" ;
-	skos:exactMatch MIXS:MigsBa ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016000 dcterms:title "MigsBa combined with Air" ;
 	a owl:Class ;
 	rdfs:label "MigsBaAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n4527 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MigsBaAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016001 dcterms:title "MigsBa combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsBaBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n1741 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsBaBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016002 dcterms:title "MigsBa combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsBaHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n2333 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MigsBaHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016003 dcterms:title "MigsBa combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsBaHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n985 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MigsBaHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016004 dcterms:title "MigsBa combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MigsBaHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n4939 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MigsBaHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016005 dcterms:title "MigsBa combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MigsBaHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n5658 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MigsBaHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016006 dcterms:title "MigsBa combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MigsBaHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n741 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MigsBaHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016007 dcterms:title "MigsBa combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MigsBaHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n447 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MigsBaHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016008 dcterms:title "MigsBa combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MigsBaMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n3322 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MigsBaMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016009 dcterms:title "MigsBa combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsBaMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n5769 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsBaMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016010 dcterms:title "MigsBa combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsBaPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n679 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MigsBaPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016011 dcterms:title "MigsBa combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MigsBaSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n36 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MigsBaSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016012 dcterms:title "MigsBa combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MigsBaSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n3821 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MigsBaSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016013 dcterms:title "MigsBa combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MigsBaWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n4650 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MigsBaWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016014 dcterms:title "MigsBa combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MigsBaWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n4531 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MigsBaWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016015 dcterms:title "MigsBa combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MigsBaHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n1117 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MigsBaHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016016 dcterms:title "MigsBa combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MigsBaHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n1481 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MigsBaHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016018 dcterms:title "MigsBa combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MigsBaAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n1820 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MigsBaAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016019 dcterms:title "MigsBa combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MigsBaFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n2959 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MigsBaFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016020 dcterms:title "MigsBa combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsBaFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n690 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsBaFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016021 dcterms:title "MigsBa combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MigsBaFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n3091 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MigsBaFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016022 dcterms:title "MigsBa combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MigsBaFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n5109 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MigsBaFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010003_0016023 dcterms:title "MigsBa combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsBaSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n1626 ;
 	skos:definition "MIxS Data that comply with the MigsBa checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MigsBaSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004 dcterms:title "MIGS pl" ;
 	a owl:Class ;
@@ -6103,168 +6055,144 @@ MIXS:0010004 dcterms:title "MIGS pl" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "migs_pl" ;
 	skos:definition "Minimal Information about a Genome Sequence: plasmid" ;
-	skos:exactMatch MIXS:MigsPl ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016000 dcterms:title "MigsPl combined with Air" ;
 	a owl:Class ;
 	rdfs:label "MigsPlAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n2726 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MigsPlAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016001 dcterms:title "MigsPl combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsPlBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n1332 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsPlBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016002 dcterms:title "MigsPl combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsPlHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n2276 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MigsPlHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016003 dcterms:title "MigsPl combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsPlHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n4300 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MigsPlHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016004 dcterms:title "MigsPl combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MigsPlHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n5429 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MigsPlHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016005 dcterms:title "MigsPl combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MigsPlHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n158 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MigsPlHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016006 dcterms:title "MigsPl combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MigsPlHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n5374 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MigsPlHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016007 dcterms:title "MigsPl combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MigsPlHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n308 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MigsPlHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016008 dcterms:title "MigsPl combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MigsPlMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n4202 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MigsPlMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016009 dcterms:title "MigsPl combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsPlMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n3224 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsPlMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016010 dcterms:title "MigsPl combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsPlPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n235 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MigsPlPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016011 dcterms:title "MigsPl combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MigsPlSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n2527 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MigsPlSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016012 dcterms:title "MigsPl combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MigsPlSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n453 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MigsPlSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016013 dcterms:title "MigsPl combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MigsPlWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n5455 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MigsPlWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016014 dcterms:title "MigsPl combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MigsPlWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n134 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MigsPlWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016015 dcterms:title "MigsPl combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MigsPlHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n632 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MigsPlHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016016 dcterms:title "MigsPl combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MigsPlHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n863 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MigsPlHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016018 dcterms:title "MigsPl combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MigsPlAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n4727 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MigsPlAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016019 dcterms:title "MigsPl combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MigsPlFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n96 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MigsPlFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016020 dcterms:title "MigsPl combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsPlFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n4340 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsPlFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016021 dcterms:title "MigsPl combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MigsPlFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n3210 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MigsPlFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016022 dcterms:title "MigsPl combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MigsPlFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n1875 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MigsPlFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010004_0016023 dcterms:title "MigsPl combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsPlSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n408 ;
 	skos:definition "MIxS Data that comply with the MigsPl checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MigsPlSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005 dcterms:title "MIGS virus" ;
 	a owl:Class ;
@@ -6272,168 +6200,144 @@ MIXS:0010005 dcterms:title "MIGS virus" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "migs_vi" ;
 	skos:definition "Minimal Information about a Genome Sequence: virus" ;
-	skos:exactMatch MIXS:MigsVi ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016000 dcterms:title "MigsVi combined with Air" ;
 	a owl:Class ;
 	rdfs:label "MigsViAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n619 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MigsViAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016001 dcterms:title "MigsVi combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsViBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n5884 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsViBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016002 dcterms:title "MigsVi combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsViHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n5088 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MigsViHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016003 dcterms:title "MigsVi combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsViHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n5065 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MigsViHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016004 dcterms:title "MigsVi combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MigsViHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n2608 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MigsViHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016005 dcterms:title "MigsVi combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MigsViHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n5359 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MigsViHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016006 dcterms:title "MigsVi combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MigsViHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n1131 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MigsViHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016007 dcterms:title "MigsVi combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MigsViHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n1697 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MigsViHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016008 dcterms:title "MigsVi combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MigsViMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n6015 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MigsViMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016009 dcterms:title "MigsVi combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsViMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n1765 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsViMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016010 dcterms:title "MigsVi combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsViPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n4175 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MigsViPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016011 dcterms:title "MigsVi combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MigsViSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n5928 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MigsViSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016012 dcterms:title "MigsVi combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MigsViSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n3778 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MigsViSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016013 dcterms:title "MigsVi combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MigsViWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n1722 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MigsViWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016014 dcterms:title "MigsVi combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MigsViWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n3960 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MigsViWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016015 dcterms:title "MigsVi combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MigsViHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n6574 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MigsViHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016016 dcterms:title "MigsVi combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MigsViHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n2817 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MigsViHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016018 dcterms:title "MigsVi combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MigsViAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n2933 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MigsViAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016019 dcterms:title "MigsVi combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MigsViFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n4261 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MigsViFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016020 dcterms:title "MigsVi combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsViFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n3714 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsViFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016021 dcterms:title "MigsVi combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MigsViFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n2858 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MigsViFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016022 dcterms:title "MigsVi combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MigsViFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n4101 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MigsViFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010005_0016023 dcterms:title "MigsVi combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsViSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n6603 ;
 	skos:definition "MIxS Data that comply with the MigsVi checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MigsViSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006 dcterms:title "MIGS org" ;
 	a owl:Class ;
@@ -6441,168 +6345,144 @@ MIXS:0010006 dcterms:title "MIGS org" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "migs_org" ;
 	skos:definition "Minimal Information about a Genome Sequence: organelle" ;
-	skos:exactMatch MIXS:MigsOrg ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016000 dcterms:title "MigsOrg combined with Air" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n1529 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MigsOrgAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016001 dcterms:title "MigsOrg combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n772 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsOrgBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016002 dcterms:title "MigsOrg combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n2053 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MigsOrgHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016003 dcterms:title "MigsOrg combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n2332 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MigsOrgHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016004 dcterms:title "MigsOrg combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n1200 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MigsOrgHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016005 dcterms:title "MigsOrg combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n5265 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MigsOrgHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016006 dcterms:title "MigsOrg combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n6448 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MigsOrgHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016007 dcterms:title "MigsOrg combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n2510 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MigsOrgHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016008 dcterms:title "MigsOrg combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n2884 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MigsOrgMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016009 dcterms:title "MigsOrg combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n2128 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsOrgMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016010 dcterms:title "MigsOrg combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n3832 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MigsOrgPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016011 dcterms:title "MigsOrg combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n3344 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MigsOrgSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016012 dcterms:title "MigsOrg combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n5718 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MigsOrgSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016013 dcterms:title "MigsOrg combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n673 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MigsOrgWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016014 dcterms:title "MigsOrg combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n3408 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MigsOrgWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016015 dcterms:title "MigsOrg combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n3516 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MigsOrgHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016016 dcterms:title "MigsOrg combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n1524 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MigsOrgHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016018 dcterms:title "MigsOrg combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n6099 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MigsOrgAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016019 dcterms:title "MigsOrg combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n742 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MigsOrgFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016020 dcterms:title "MigsOrg combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n4268 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MigsOrgFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016021 dcterms:title "MigsOrg combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n94 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MigsOrgFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016022 dcterms:title "MigsOrg combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n3213 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MigsOrgFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010006_0016023 dcterms:title "MigsOrg combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MigsOrgSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n2766 ;
 	skos:definition "MIxS Data that comply with the MigsOrg checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MigsOrgSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007 dcterms:title "MIMS" ;
 	a owl:Class ;
@@ -6610,168 +6490,144 @@ MIXS:0010007 dcterms:title "MIMS" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "mims" ;
 	skos:definition "Metagenome or Environmental" ;
-	skos:exactMatch MIXS:Mims ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016000 dcterms:title "Mims combined with Air" ;
 	a owl:Class ;
 	rdfs:label "MimsAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n3171 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MimsAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016001 dcterms:title "Mims combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimsBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n1434 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MimsBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016002 dcterms:title "Mims combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimsHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n5003 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MimsHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016003 dcterms:title "Mims combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimsHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n224 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MimsHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016004 dcterms:title "Mims combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MimsHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n3179 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MimsHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016005 dcterms:title "Mims combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MimsHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n475 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MimsHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016006 dcterms:title "Mims combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MimsHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n5404 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MimsHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016007 dcterms:title "Mims combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MimsHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n2198 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MimsHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016008 dcterms:title "Mims combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MimsMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n1443 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MimsMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016009 dcterms:title "Mims combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimsMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n5683 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MimsMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016010 dcterms:title "Mims combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimsPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n5182 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MimsPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016011 dcterms:title "Mims combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MimsSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n3731 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MimsSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016012 dcterms:title "Mims combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MimsSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n582 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MimsSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016013 dcterms:title "Mims combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MimsWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n3153 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MimsWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016014 dcterms:title "Mims combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MimsWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n2953 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MimsWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016015 dcterms:title "Mims combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MimsHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n2788 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MimsHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016016 dcterms:title "Mims combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MimsHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n4392 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MimsHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016018 dcterms:title "Mims combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MimsAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n2916 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MimsAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016019 dcterms:title "Mims combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MimsFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n3917 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MimsFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016020 dcterms:title "Mims combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimsFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n6645 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MimsFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016021 dcterms:title "Mims combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MimsFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n2545 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MimsFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016022 dcterms:title "Mims combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MimsFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n4052 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MimsFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010007_0016023 dcterms:title "Mims combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimsSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n3991 ;
 	skos:definition "MIxS Data that comply with the Mims checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MimsSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008 dcterms:title "MIMARKS survey" ;
 	a owl:Class ;
@@ -6779,7 +6635,6 @@ MIXS:0010008 dcterms:title "MIMARKS survey" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "MIMARKS-SP" , "MIMARKS-survey" , "mimarks_s" ;
 	skos:definition "Minimal Information about a Marker Sequence: survey" ;
-	skos:exactMatch MIXS:MimarksS ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "for marker gene sequences obtained directly from the environment" .
 MIXS:0010008_0016000 dcterms:title "MimarksS combined with Air" ;
@@ -6787,161 +6642,138 @@ MIXS:0010008_0016000 dcterms:title "MimarksS combined with Air" ;
 	rdfs:label "MimarksSAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n3696 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MimarksSAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016001 dcterms:title "MimarksS combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimarksSBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n4918 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MimarksSBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016002 dcterms:title "MimarksS combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksSHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n5780 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksSHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016003 dcterms:title "MimarksS combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksSHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n1307 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksSHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016004 dcterms:title "MimarksS combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MimarksSHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n2797 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MimarksSHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016005 dcterms:title "MimarksS combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MimarksSHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n771 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MimarksSHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016006 dcterms:title "MimarksS combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MimarksSHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n3042 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MimarksSHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016007 dcterms:title "MimarksS combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MimarksSHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n1842 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MimarksSHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016008 dcterms:title "MimarksS combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MimarksSMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n4684 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MimarksSMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016009 dcterms:title "MimarksS combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimarksSMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n1698 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MimarksSMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016010 dcterms:title "MimarksS combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksSPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n5053 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksSPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016011 dcterms:title "MimarksS combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MimarksSSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n3805 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MimarksSSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016012 dcterms:title "MimarksS combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MimarksSSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n1416 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MimarksSSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016013 dcterms:title "MimarksS combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MimarksSWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n3826 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MimarksSWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016014 dcterms:title "MimarksS combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MimarksSWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n1141 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MimarksSWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016015 dcterms:title "MimarksS combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MimarksSHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n2466 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MimarksSHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016016 dcterms:title "MimarksS combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MimarksSHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n5113 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MimarksSHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016018 dcterms:title "MimarksS combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MimarksSAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n474 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MimarksSAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016019 dcterms:title "MimarksS combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MimarksSFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n6051 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MimarksSFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016020 dcterms:title "MimarksS combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimarksSFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n1119 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MimarksSFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016021 dcterms:title "MimarksS combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MimarksSFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n6050 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MimarksSFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016022 dcterms:title "MimarksS combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MimarksSFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n424 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MimarksSFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010008_0016023 dcterms:title "MimarksS combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksSSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n1981 ;
 	skos:definition "MIxS Data that comply with the MimarksS checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksSSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009 dcterms:title "MIMARKS specimen" ;
 	a owl:Class ;
@@ -6949,7 +6781,6 @@ MIXS:0010009 dcterms:title "MIMARKS specimen" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "MIMARKS-SU" , "MIMARKS-specimen" , "mimarks_c" ;
 	skos:definition "Minimal Information about a Marker Sequence: specimen" ;
-	skos:exactMatch MIXS:MimarksC ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "for marker gene sequences from cultured or voucher-identifiable specimens" .
 MIXS:0010009_0016000 dcterms:title "MimarksC combined with Air" ;
@@ -6957,161 +6788,138 @@ MIXS:0010009_0016000 dcterms:title "MimarksC combined with Air" ;
 	rdfs:label "MimarksCAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n3274 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MimarksCAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016001 dcterms:title "MimarksC combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimarksCBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n3039 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MimarksCBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016002 dcterms:title "MimarksC combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksCHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n3833 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksCHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016003 dcterms:title "MimarksC combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksCHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n1305 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksCHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016004 dcterms:title "MimarksC combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MimarksCHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n596 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MimarksCHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016005 dcterms:title "MimarksC combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MimarksCHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n3431 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MimarksCHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016006 dcterms:title "MimarksC combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MimarksCHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n749 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MimarksCHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016007 dcterms:title "MimarksC combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MimarksCHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n3604 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MimarksCHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016008 dcterms:title "MimarksC combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n1543 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MimarksCMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016009 dcterms:title "MimarksC combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n796 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MimarksCMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016010 dcterms:title "MimarksC combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksCPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n4082 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksCPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016011 dcterms:title "MimarksC combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MimarksCSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n1479 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MimarksCSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016012 dcterms:title "MimarksC combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MimarksCSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n4667 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MimarksCSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016013 dcterms:title "MimarksC combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MimarksCWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n6023 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MimarksCWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016014 dcterms:title "MimarksC combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MimarksCWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n2233 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MimarksCWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016015 dcterms:title "MimarksC combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MimarksCHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n1118 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MimarksCHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016016 dcterms:title "MimarksC combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MimarksCHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n4 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MimarksCHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016018 dcterms:title "MimarksC combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MimarksCAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n2591 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MimarksCAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016019 dcterms:title "MimarksC combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MimarksCFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n1013 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MimarksCFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016020 dcterms:title "MimarksC combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimarksCFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n6573 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MimarksCFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016021 dcterms:title "MimarksC combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MimarksCFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n1060 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MimarksCFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016022 dcterms:title "MimarksC combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MimarksCFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n3127 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MimarksCFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010009_0016023 dcterms:title "MimarksC combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksCSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n3420 ;
 	skos:definition "MIxS Data that comply with the MimarksC checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksCSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010 dcterms:title "Minimum Information About a Single Amplified Genome" ;
 	a owl:Class ;
@@ -7119,168 +6927,144 @@ MIXS:0010010 dcterms:title "Minimum Information About a Single Amplified Genome"
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "misag" ;
 	skos:definition "Minimum Information About a Single Amplified Genome" ;
-	skos:exactMatch MIXS:Misag ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016000 dcterms:title "Misag combined with Air" ;
 	a owl:Class ;
 	rdfs:label "MisagAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n95 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MisagAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016001 dcterms:title "Misag combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MisagBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n5958 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MisagBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016002 dcterms:title "Misag combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MisagHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n2607 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MisagHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016003 dcterms:title "Misag combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MisagHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n6598 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MisagHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016004 dcterms:title "Misag combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MisagHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n389 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MisagHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016005 dcterms:title "Misag combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MisagHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n1877 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MisagHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016006 dcterms:title "Misag combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MisagHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n2328 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MisagHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016007 dcterms:title "Misag combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MisagHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n3852 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MisagHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016008 dcterms:title "Misag combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MisagMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n3100 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MisagMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016009 dcterms:title "Misag combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MisagMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n3584 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MisagMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016010 dcterms:title "Misag combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MisagPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n5795 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MisagPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016011 dcterms:title "Misag combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MisagSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n2163 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MisagSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016012 dcterms:title "Misag combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MisagSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n2998 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MisagSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016013 dcterms:title "Misag combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MisagWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n1664 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MisagWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016014 dcterms:title "Misag combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MisagWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n3686 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MisagWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016015 dcterms:title "Misag combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MisagHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n874 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MisagHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016016 dcterms:title "Misag combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MisagHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n1577 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MisagHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016018 dcterms:title "Misag combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MisagAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n3400 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MisagAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016019 dcterms:title "Misag combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MisagFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n1087 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MisagFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016020 dcterms:title "Misag combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MisagFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n980 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MisagFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016021 dcterms:title "Misag combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MisagFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n4481 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MisagFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016022 dcterms:title "Misag combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MisagFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n3870 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MisagFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010010_0016023 dcterms:title "Misag combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MisagSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n5271 ;
 	skos:definition "MIxS Data that comply with the Misag checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MisagSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011 dcterms:title "MIMAG" ;
 	a owl:Class ;
@@ -7288,168 +7072,144 @@ MIXS:0010011 dcterms:title "MIMAG" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "mimag" ;
 	skos:definition "Minimum Information About a Metagenome-Assembled Genome" ;
-	skos:exactMatch MIXS:Mimag ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016000 dcterms:title "Mimag combined with Air" ;
 	a owl:Class ;
 	rdfs:label "MimagAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n1726 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MimagAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016001 dcterms:title "Mimag combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimagBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n6436 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MimagBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016002 dcterms:title "Mimag combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimagHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n616 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MimagHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016003 dcterms:title "Mimag combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimagHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n1486 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MimagHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016004 dcterms:title "Mimag combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MimagHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n5733 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MimagHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016005 dcterms:title "Mimag combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MimagHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n2952 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MimagHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016006 dcterms:title "Mimag combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MimagHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n707 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MimagHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016007 dcterms:title "Mimag combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MimagHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n718 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MimagHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016008 dcterms:title "Mimag combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MimagMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n294 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MimagMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016009 dcterms:title "Mimag combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimagMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n599 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MimagMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016010 dcterms:title "Mimag combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimagPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n1666 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MimagPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016011 dcterms:title "Mimag combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MimagSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n5218 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MimagSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016012 dcterms:title "Mimag combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MimagSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n5459 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MimagSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016013 dcterms:title "Mimag combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MimagWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n5307 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MimagWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016014 dcterms:title "Mimag combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MimagWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n648 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MimagWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016015 dcterms:title "Mimag combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MimagHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n2038 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MimagHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016016 dcterms:title "Mimag combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MimagHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n3460 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MimagHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016018 dcterms:title "Mimag combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MimagAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n5355 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MimagAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016019 dcterms:title "Mimag combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MimagFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n1122 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MimagFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016020 dcterms:title "Mimag combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimagFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n727 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MimagFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016021 dcterms:title "Mimag combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MimagFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n5146 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MimagFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016022 dcterms:title "Mimag combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MimagFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n826 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MimagFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010011_0016023 dcterms:title "Mimag combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimagSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n5921 ;
 	skos:definition "MIxS Data that comply with the Mimag checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MimagSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012 dcterms:title "Minimum Information About an Uncultivated Virus Genome" ;
 	a owl:Class ;
@@ -7457,168 +7217,144 @@ MIXS:0010012 dcterms:title "Minimum Information About an Uncultivated Virus Geno
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "miuvig" ;
 	skos:definition "Minimum Information About an Uncultivated Virus Genome" ;
-	skos:exactMatch MIXS:Miuvig ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016000 dcterms:title "Miuvig combined with Air" ;
 	a owl:Class ;
 	rdfs:label "MiuvigAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n1231 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MiuvigAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016001 dcterms:title "Miuvig combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MiuvigBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n734 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MiuvigBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016002 dcterms:title "Miuvig combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MiuvigHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n5239 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MiuvigHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016003 dcterms:title "Miuvig combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MiuvigHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n5950 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MiuvigHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016004 dcterms:title "Miuvig combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MiuvigHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n5579 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MiuvigHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016005 dcterms:title "Miuvig combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MiuvigHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n3145 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MiuvigHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016006 dcterms:title "Miuvig combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MiuvigHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n5669 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MiuvigHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016007 dcterms:title "Miuvig combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MiuvigHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n438 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MiuvigHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016008 dcterms:title "Miuvig combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MiuvigMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n1135 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MiuvigMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016009 dcterms:title "Miuvig combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MiuvigMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n5610 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MiuvigMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016010 dcterms:title "Miuvig combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MiuvigPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n152 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MiuvigPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016011 dcterms:title "Miuvig combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MiuvigSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n5091 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MiuvigSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016012 dcterms:title "Miuvig combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MiuvigSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n6151 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MiuvigSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016013 dcterms:title "Miuvig combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MiuvigWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n5772 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MiuvigWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016014 dcterms:title "Miuvig combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MiuvigWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n1324 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MiuvigWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016015 dcterms:title "Miuvig combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MiuvigHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n1534 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MiuvigHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016016 dcterms:title "Miuvig combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MiuvigHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n5473 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MiuvigHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016018 dcterms:title "Miuvig combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MiuvigAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n2340 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MiuvigAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016019 dcterms:title "Miuvig combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MiuvigFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n5448 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MiuvigFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016020 dcterms:title "Miuvig combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MiuvigFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n5442 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MiuvigFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016021 dcterms:title "Miuvig combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MiuvigFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n6419 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MiuvigFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016022 dcterms:title "Miuvig combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MiuvigFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n5470 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MiuvigFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010012_0016023 dcterms:title "Miuvig combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MiuvigSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n6175 ;
 	skos:definition "MIxS Data that comply with the Miuvig checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MiuvigSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014 dcterms:title "MIMS-MISIP" ;
 	a owl:Class ;
@@ -7626,7 +7362,6 @@ MIXS:0010014 dcterms:title "MIMS-MISIP" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "misip" ;
 	skos:definition "Metagenome or Environmental with SIP" ;
-	skos:exactMatch MIXS:MimsMisip ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "Any changes made to MIMS should be reflected here, in MIMS-MISIP. This checklist includes all MIMS terms and additional MISIP terms." .
 MIXS:0010014_0016000 dcterms:title "MimsMisip combined with Air" ;
@@ -7634,161 +7369,138 @@ MIXS:0010014_0016000 dcterms:title "MimsMisip combined with Air" ;
 	rdfs:label "MimsMisipAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n5800 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MimsMisipAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016001 dcterms:title "MimsMisip combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n3620 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MimsMisipBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016002 dcterms:title "MimsMisip combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n2733 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MimsMisipHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016003 dcterms:title "MimsMisip combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n1076 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MimsMisipHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016004 dcterms:title "MimsMisip combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n5976 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MimsMisipHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016005 dcterms:title "MimsMisip combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n216 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MimsMisipHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016006 dcterms:title "MimsMisip combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n4541 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MimsMisipHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016007 dcterms:title "MimsMisip combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n1704 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MimsMisipHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016008 dcterms:title "MimsMisip combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n3656 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MimsMisipMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016009 dcterms:title "MimsMisip combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n2725 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MimsMisipMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016010 dcterms:title "MimsMisip combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n4605 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MimsMisipPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016011 dcterms:title "MimsMisip combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n2188 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MimsMisipSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016012 dcterms:title "MimsMisip combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n6501 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MimsMisipSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016013 dcterms:title "MimsMisip combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n746 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MimsMisipWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016014 dcterms:title "MimsMisip combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n1960 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MimsMisipWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016015 dcterms:title "MimsMisip combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n3259 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MimsMisipHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016016 dcterms:title "MimsMisip combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n3847 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MimsMisipHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016018 dcterms:title "MimsMisip combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n476 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MimsMisipAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016019 dcterms:title "MimsMisip combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n5491 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MimsMisipFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016020 dcterms:title "MimsMisip combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n4982 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MimsMisipFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016021 dcterms:title "MimsMisip combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n1439 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MimsMisipFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016022 dcterms:title "MimsMisip combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n1426 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MimsMisipFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010014_0016023 dcterms:title "MimsMisip combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimsMisipSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n5458 ;
 	skos:definition "MIxS Data that comply with the MimsMisip checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MimsMisipSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015 dcterms:title "MIMARKS specimen-MISIP" ;
 	a owl:Class ;
@@ -7796,7 +7508,6 @@ MIXS:0010015 dcterms:title "MIMARKS specimen-MISIP" ;
 	rdfs:subClassOf MIXS:Checklist ;
 	skos:altLabel "MIMARKS-SU-MISIP" , "MIMARKS-specimen-MISIP" , "mimarks_c_misip" , "misip" ;
 	skos:definition "Marker Sequence-specimen with SIP" ;
-	skos:exactMatch MIXS:MimarksCMisip ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "Any changes made to MIMARKS-specimen (MimarksC) should be reflected here. This checklist includes all MIMARKS-specimen terms and additional MISIP terms." .
 MIXS:0010015_0016000 dcterms:title "MimarksCMisip combined with Air" ;
@@ -7804,161 +7515,138 @@ MIXS:0010015_0016000 dcterms:title "MimarksCMisip combined with Air" ;
 	rdfs:label "MimarksCMisipAir" ;
 	rdfs:subClassOf MIXS:0016000 , _:c14n6578 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the Air Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipAir ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016001 dcterms:title "MimarksCMisip combined with BuiltEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipBuiltEnvironment" ;
 	rdfs:subClassOf MIXS:0016001 , _:c14n2149 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the BuiltEnvironment Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipBuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016002 dcterms:title "MimarksCMisip combined with HostAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipHostAssociated" ;
 	rdfs:subClassOf MIXS:0016002 , _:c14n5995 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the HostAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipHostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016003 dcterms:title "MimarksCMisip combined with HumanAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipHumanAssociated" ;
 	rdfs:subClassOf MIXS:0016003 , _:c14n4805 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the HumanAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipHumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016004 dcterms:title "MimarksCMisip combined with HumanGut" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipHumanGut" ;
 	rdfs:subClassOf MIXS:0016004 , _:c14n5793 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the HumanGut Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipHumanGut ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016005 dcterms:title "MimarksCMisip combined with HumanOral" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipHumanOral" ;
 	rdfs:subClassOf MIXS:0016005 , _:c14n1221 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the HumanOral Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipHumanOral ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016006 dcterms:title "MimarksCMisip combined with HumanSkin" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipHumanSkin" ;
 	rdfs:subClassOf MIXS:0016006 , _:c14n2535 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the HumanSkin Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipHumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016007 dcterms:title "MimarksCMisip combined with HumanVaginal" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipHumanVaginal" ;
 	rdfs:subClassOf MIXS:0016007 , _:c14n6444 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the HumanVaginal Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipHumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016008 dcterms:title "MimarksCMisip combined with MicrobialMatBiofilm" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipMicrobialMatBiofilm" ;
 	rdfs:subClassOf MIXS:0016008 , _:c14n55 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the MicrobialMatBiofilm Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipMicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016009 dcterms:title "MimarksCMisip combined with MiscellaneousNaturalOrArtificialEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipMiscellaneousNaturalOrArtificialEnvironment" ;
 	rdfs:subClassOf MIXS:0016009 , _:c14n555 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the MiscellaneousNaturalOrArtificialEnvironment Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipMiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016010 dcterms:title "MimarksCMisip combined with PlantAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipPlantAssociated" ;
 	rdfs:subClassOf MIXS:0016010 , _:c14n3599 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the PlantAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipPlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016011 dcterms:title "MimarksCMisip combined with Sediment" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipSediment" ;
 	rdfs:subClassOf MIXS:0016011 , _:c14n2292 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the Sediment Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipSediment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016012 dcterms:title "MimarksCMisip combined with Soil" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipSoil" ;
 	rdfs:subClassOf MIXS:0016012 , _:c14n3647 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the Soil Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipSoil ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016013 dcterms:title "MimarksCMisip combined with WastewaterSludge" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipWastewaterSludge" ;
 	rdfs:subClassOf MIXS:0016013 , _:c14n6031 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the WastewaterSludge Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipWastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016014 dcterms:title "MimarksCMisip combined with Water" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipWater" ;
 	rdfs:subClassOf MIXS:0016014 , _:c14n4141 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the Water Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipWater ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016015 dcterms:title "MimarksCMisip combined with HydrocarbonResourcesCores" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipHydrocarbonResourcesCores" ;
 	rdfs:subClassOf MIXS:0016015 , _:c14n6539 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the HydrocarbonResourcesCores Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipHydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016016 dcterms:title "MimarksCMisip combined with HydrocarbonResourcesFluidsSwabs" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipHydrocarbonResourcesFluidsSwabs" ;
 	rdfs:subClassOf MIXS:0016016 , _:c14n2418 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the HydrocarbonResourcesFluidsSwabs Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipHydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016018 dcterms:title "MimarksCMisip combined with Agriculture" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipAgriculture" ;
 	rdfs:subClassOf MIXS:0016018 , _:c14n4361 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the Agriculture Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipAgriculture ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016019 dcterms:title "MimarksCMisip combined with FoodAnimalAndAnimalFeed" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipFoodAnimalAndAnimalFeed" ;
 	rdfs:subClassOf MIXS:0016019 , _:c14n2759 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the FoodAnimalAndAnimalFeed Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipFoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016020 dcterms:title "MimarksCMisip combined with FoodFarmEnvironment" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipFoodFarmEnvironment" ;
 	rdfs:subClassOf MIXS:0016020 , _:c14n3622 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the FoodFarmEnvironment Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipFoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016021 dcterms:title "MimarksCMisip combined with FoodFoodProductionFacility" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipFoodFoodProductionFacility" ;
 	rdfs:subClassOf MIXS:0016021 , _:c14n2678 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the FoodFoodProductionFacility Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipFoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016022 dcterms:title "MimarksCMisip combined with FoodHumanFoods" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipFoodHumanFoods" ;
 	rdfs:subClassOf MIXS:0016022 , _:c14n4399 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the FoodHumanFoods Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipFoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0010015_0016023 dcterms:title "MimarksCMisip combined with SymbiontAssociated" ;
 	a owl:Class ;
 	rdfs:label "MimarksCMisipSymbiontAssociated" ;
 	rdfs:subClassOf MIXS:0016023 , _:c14n4552 ;
 	skos:definition "MIxS Data that comply with the MimarksCMisip checklist and the SymbiontAssociated Extension" ;
-	skos:exactMatch MIXS:MimarksCMisipSymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0016000 dcterms:title "air" ;
 	a owl:Class ;
@@ -7966,7 +7654,6 @@ MIXS:0016000 dcterms:title "air" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1018 , _:c14n1091 , _:c14n1099 , _:c14n118 , _:c14n1185 , _:c14n1287 , _:c14n1321 , _:c14n1358 , _:c14n1432 , _:c14n1436 , _:c14n1553 , _:c14n1586 , _:c14n167 , _:c14n1739 , _:c14n1818 , _:c14n201 , _:c14n2044 , _:c14n221 , _:c14n2220 , _:c14n2389 , _:c14n2400 , _:c14n244 , _:c14n2446 , _:c14n252 , _:c14n273 , _:c14n277 , _:c14n2845 , _:c14n2881 , _:c14n2920 , _:c14n2945 , _:c14n2962 , _:c14n3244 , _:c14n3255 , _:c14n3437 , _:c14n3454 , _:c14n3459 , _:c14n3484 , _:c14n3552 , _:c14n3646 , _:c14n3715 , _:c14n3748 , _:c14n3793 , _:c14n3802 , _:c14n3829 , _:c14n3969 , _:c14n3973 , _:c14n4012 , _:c14n4044 , _:c14n4136 , _:c14n4149 , _:c14n4523 , _:c14n4583 , _:c14n4617 , _:c14n4633 , _:c14n4635 , _:c14n4637 , _:c14n4741 , _:c14n4869 , _:c14n4888 , _:c14n4929 , _:c14n5085 , _:c14n5122 , _:c14n5133 , _:c14n5157 , _:c14n5315 , _:c14n5457 , _:c14n5731 , _:c14n5814 , _:c14n6067 , _:c14n6177 , _:c14n6421 , _:c14n6526 , _:c14n656 , _:c14n67 , _:c14n6701 , _:c14n89 , _:c14n940 , _:c14n997 ;
 	skos:altLabel "MIxS-air" ;
 	skos:definition "A collection of terms appropriate when collecting and sequencing samples obtained from a gaseous environment." ;
-	skos:exactMatch MIXS:Air ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "bioaerosol samples, pathogen load in urban air, aerosols" .
 MIXS:0016001 dcterms:title "built environment" ;
@@ -7975,7 +7662,6 @@ MIXS:0016001 dcterms:title "built environment" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1004 , _:c14n1012 , _:c14n1026 , _:c14n1044 , _:c14n1064 , _:c14n1077 , _:c14n109 , _:c14n1140 , _:c14n1170 , _:c14n1171 , _:c14n1174 , _:c14n1177 , _:c14n1184 , _:c14n1188 , _:c14n1192 , _:c14n121 , _:c14n1213 , _:c14n1239 , _:c14n1241 , _:c14n1253 , _:c14n1267 , _:c14n1271 , _:c14n1273 , _:c14n1276 , _:c14n130 , _:c14n1311 , _:c14n1312 , _:c14n1347 , _:c14n1373 , _:c14n1374 , _:c14n1397 , _:c14n14 , _:c14n1405 , _:c14n1407 , _:c14n1415 , _:c14n1424 , _:c14n1469 , _:c14n1477 , _:c14n1490 , _:c14n1495 , _:c14n1502 , _:c14n1525 , _:c14n1536 , _:c14n1551 , _:c14n1556 , _:c14n1557 , _:c14n1566 , _:c14n1574 , _:c14n1581 , _:c14n1620 , _:c14n1631 , _:c14n1648 , _:c14n166 , _:c14n1677 , _:c14n1693 , _:c14n1716 , _:c14n1720 , _:c14n1734 , _:c14n1746 , _:c14n1748 , _:c14n1764 , _:c14n1774 , _:c14n1788 , _:c14n1792 , _:c14n1805 , _:c14n1824 , _:c14n1852 , _:c14n1855 , _:c14n1858 , _:c14n1872 , _:c14n1884 , _:c14n1898 , _:c14n1922 , _:c14n1928 , _:c14n193 , _:c14n1933 , _:c14n1939 , _:c14n1956 , _:c14n1961 , _:c14n1965 , _:c14n1967 , _:c14n197 , _:c14n2043 , _:c14n2060 , _:c14n2073 , _:c14n2095 , _:c14n2101 , _:c14n2102 , _:c14n2106 , _:c14n2123 , _:c14n2134 , _:c14n2139 , _:c14n2145 , _:c14n2173 , _:c14n2176 , _:c14n2177 , _:c14n2185 , _:c14n2195 , _:c14n2207 , _:c14n2212 , _:c14n222 , _:c14n2224 , _:c14n2231 , _:c14n2261 , _:c14n2263 , _:c14n2272 , _:c14n2283 , _:c14n229 , _:c14n2299 , _:c14n2321 , _:c14n2325 , _:c14n2341 , _:c14n2349 , _:c14n2353 , _:c14n2380 , _:c14n2387 , _:c14n2429 , _:c14n2443 , _:c14n2444 , _:c14n2467 , _:c14n247 , _:c14n2481 , _:c14n2488 , _:c14n2503 , _:c14n2507 , _:c14n2509 , _:c14n2515 , _:c14n2532 , _:c14n2539 , _:c14n2546 , _:c14n256 , _:c14n2571 , _:c14n2579 , _:c14n259 , _:c14n2613 , _:c14n2615 , _:c14n262 , _:c14n2628 , _:c14n263 , _:c14n2640 , _:c14n2645 , _:c14n2661 , _:c14n2677 , _:c14n269 , _:c14n2704 , _:c14n2713 , _:c14n2737 , _:c14n2739 , _:c14n274 , _:c14n2745 , _:c14n275 , _:c14n2799 , _:c14n2800 , _:c14n2811 , _:c14n2820 , _:c14n2826 , _:c14n2844 , _:c14n2846 , _:c14n286 , _:c14n2868 , _:c14n2880 , _:c14n2891 , _:c14n2927 , _:c14n2928 , _:c14n2934 , _:c14n2970 , _:c14n2972 , _:c14n2978 , _:c14n2987 , _:c14n2988 , _:c14n3002 , _:c14n3004 , _:c14n301 , _:c14n3010 , _:c14n3011 , _:c14n3038 , _:c14n3057 , _:c14n306 , _:c14n3062 , _:c14n3094 , _:c14n3113 , _:c14n3115 , _:c14n3126 , _:c14n3142 , _:c14n3148 , _:c14n3161 , _:c14n3186 , _:c14n3190 , _:c14n3196 , _:c14n321 , _:c14n3217 , _:c14n3222 , _:c14n3241 , _:c14n3268 , _:c14n3285 , _:c14n3294 , _:c14n3296 , _:c14n3308 , _:c14n3311 , _:c14n3312 , _:c14n3321 , _:c14n3323 , _:c14n3328 , _:c14n3339 , _:c14n3349 , _:c14n3359 , _:c14n3376 , _:c14n3427 , _:c14n3430 , _:c14n346 , _:c14n3476 , _:c14n3498 , _:c14n3504 , _:c14n351 , _:c14n3535 , _:c14n3555 , _:c14n3559 , _:c14n3573 , _:c14n3580 , _:c14n3615 , _:c14n3629 , _:c14n3632 , _:c14n3637 , _:c14n3644 , _:c14n3664 , _:c14n3666 , _:c14n3685 , _:c14n369 , _:c14n3691 , _:c14n3702 , _:c14n3705 , _:c14n3707 , _:c14n371 , _:c14n3713 , _:c14n372 , _:c14n3782 , _:c14n3791 , _:c14n3801 , _:c14n3807 , _:c14n3813 , _:c14n3816 , _:c14n3836 , _:c14n3840 , _:c14n3853 , _:c14n3859 , _:c14n3866 , _:c14n3868 , _:c14n3884 , _:c14n3885 , _:c14n3893 , _:c14n3914 , _:c14n3916 , _:c14n395 , _:c14n3963 , _:c14n3964 , _:c14n3966 , _:c14n3968 , _:c14n3977 , _:c14n4017 , _:c14n4022 , _:c14n4050 , _:c14n4063 , _:c14n4077 , _:c14n4084 , _:c14n4112 , _:c14n4113 , _:c14n4118 , _:c14n4137 , _:c14n4140 , _:c14n415 , _:c14n4165 , _:c14n42 , _:c14n4229 , _:c14n4275 , _:c14n4283 , _:c14n4314 , _:c14n432 , _:c14n4322 , _:c14n4323 , _:c14n4329 , _:c14n4354 , _:c14n4381 , _:c14n4409 , _:c14n441 , _:c14n4420 , _:c14n4447 , _:c14n445 , _:c14n446 , _:c14n4461 , _:c14n4464 , _:c14n4497 , _:c14n4504 , _:c14n4507 , _:c14n4512 , _:c14n4522 , _:c14n4528 , _:c14n4544 , _:c14n4545 , _:c14n4553 , _:c14n4556 , _:c14n4560 , _:c14n4561 , _:c14n462 , _:c14n4639 , _:c14n4659 , _:c14n4673 , _:c14n4677 , _:c14n4681 , _:c14n4695 , _:c14n4698 , _:c14n4700 , _:c14n4718 , _:c14n4722 , _:c14n4733 , _:c14n4739 , _:c14n4753 , _:c14n4767 , _:c14n4781 , _:c14n48 , _:c14n4800 , _:c14n4829 , _:c14n4859 , _:c14n4873 , _:c14n4875 , _:c14n4877 , _:c14n4893 , _:c14n4899 , _:c14n4928 , _:c14n4933 , _:c14n4934 , _:c14n4947 , _:c14n4956 , _:c14n4975 , _:c14n4978 , _:c14n4989 , _:c14n4992 , _:c14n4996 , _:c14n5027 , _:c14n5066 , _:c14n5067 , _:c14n5079 , _:c14n508 , _:c14n5112 , _:c14n5115 , _:c14n5151 , _:c14n5155 , _:c14n5156 , _:c14n5161 , _:c14n5165 , _:c14n5166 , _:c14n5192 , _:c14n5209 , _:c14n5215 , _:c14n5216 , _:c14n5220 , _:c14n5230 , _:c14n5235 , _:c14n5241 , _:c14n5253 , _:c14n5262 , _:c14n5309 , _:c14n5399 , _:c14n5413 , _:c14n5463 , _:c14n5475 , _:c14n5477 , _:c14n5497 , _:c14n5498 , _:c14n5509 , _:c14n5512 , _:c14n5522 , _:c14n5527 , _:c14n553 , _:c14n5540 , _:c14n5543 , _:c14n5560 , _:c14n5566 , _:c14n5573 , _:c14n5577 , _:c14n5590 , _:c14n5599 , _:c14n562 , _:c14n5621 , _:c14n5628 , _:c14n567 , _:c14n5678 , _:c14n570 , _:c14n5719 , _:c14n572 , _:c14n573 , _:c14n5735 , _:c14n5742 , _:c14n5749 , _:c14n5756 , _:c14n5788 , _:c14n5790 , _:c14n5799 , _:c14n5825 , _:c14n5852 , _:c14n5888 , _:c14n5908 , _:c14n5917 , _:c14n5919 , _:c14n5923 , _:c14n5937 , _:c14n595 , _:c14n5954 , _:c14n5968 , _:c14n5969 , _:c14n5972 , _:c14n6024 , _:c14n6028 , _:c14n6057 , _:c14n6058 , _:c14n6060 , _:c14n6079 , _:c14n6084 , _:c14n6087 , _:c14n6110 , _:c14n6120 , _:c14n6128 , _:c14n6148 , _:c14n6150 , _:c14n618 , _:c14n6186 , _:c14n6213 , _:c14n6214 , _:c14n6238 , _:c14n6257 , _:c14n6267 , _:c14n6286 , _:c14n6299 , _:c14n6342 , _:c14n6345 , _:c14n6363 , _:c14n6372 , _:c14n6408 , _:c14n6488 , _:c14n6497 , _:c14n6499 , _:c14n6506 , _:c14n6527 , _:c14n653 , _:c14n6558 , _:c14n6566 , _:c14n6570 , _:c14n6587 , _:c14n6596 , _:c14n6599 , _:c14n6602 , _:c14n6612 , _:c14n6626 , _:c14n6648 , _:c14n6693 , _:c14n6706 , _:c14n6713 , _:c14n726 , _:c14n737 , _:c14n740 , _:c14n747 , _:c14n754 , _:c14n756 , _:c14n806 , _:c14n820 , _:c14n841 , _:c14n846 , _:c14n866 , _:c14n879 , _:c14n881 , _:c14n906 , _:c14n91 , _:c14n919 , _:c14n92 , _:c14n922 , _:c14n939 , _:c14n968 , _:c14n989 ;
 	skos:altLabel "MIxS-BE (built environment)" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained in the built-up environment, which includes terms for surface material, humidity, temperature, moisture and occupancy type along with specific metadata terms describing the indoor air, building and sample properties." ;
-	skos:exactMatch MIXS:BuiltEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "microbiology studies of the built environment, NASA space station sampling, MetaSUB transit system sampling, home, hospitals, office buildings" .
 MIXS:0016002 dcterms:title "host-associated" ;
@@ -7984,7 +7670,6 @@ MIXS:0016002 dcterms:title "host-associated" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1034 , _:c14n1151 , _:c14n123 , _:c14n1272 , _:c14n1289 , _:c14n1300 , _:c14n1371 , _:c14n1391 , _:c14n1462 , _:c14n148 , _:c14n1494 , _:c14n1499 , _:c14n1560 , _:c14n1570 , _:c14n163 , _:c14n1634 , _:c14n1696 , _:c14n171 , _:c14n1740 , _:c14n1760 , _:c14n1799 , _:c14n1871 , _:c14n195 , _:c14n2017 , _:c14n2019 , _:c14n2150 , _:c14n219 , _:c14n22 , _:c14n2294 , _:c14n231 , _:c14n2315 , _:c14n2348 , _:c14n2372 , _:c14n2377 , _:c14n2452 , _:c14n2472 , _:c14n2499 , _:c14n2556 , _:c14n2576 , _:c14n2593 , _:c14n264 , _:c14n2667 , _:c14n2681 , _:c14n271 , _:c14n2818 , _:c14n287 , _:c14n2937 , _:c14n3068 , _:c14n3079 , _:c14n3090 , _:c14n3112 , _:c14n3197 , _:c14n3215 , _:c14n3247 , _:c14n3257 , _:c14n3303 , _:c14n3360 , _:c14n3364 , _:c14n3414 , _:c14n3499 , _:c14n3520 , _:c14n3557 , _:c14n3571 , _:c14n3725 , _:c14n3764 , _:c14n3843 , _:c14n3864 , _:c14n3981 , _:c14n3984 , _:c14n4096 , _:c14n4183 , _:c14n4185 , _:c14n4187 , _:c14n4230 , _:c14n4252 , _:c14n4302 , _:c14n4454 , _:c14n4498 , _:c14n4499 , _:c14n4524 , _:c14n4540 , _:c14n4546 , _:c14n4580 , _:c14n4644 , _:c14n468 , _:c14n4724 , _:c14n473 , _:c14n4742 , _:c14n4747 , _:c14n4819 , _:c14n4820 , _:c14n489 , _:c14n4926 , _:c14n5 , _:c14n50 , _:c14n502 , _:c14n5023 , _:c14n5060 , _:c14n5094 , _:c14n5118 , _:c14n514 , _:c14n5284 , _:c14n5354 , _:c14n5401 , _:c14n5478 , _:c14n5584 , _:c14n5600 , _:c14n5604 , _:c14n5639 , _:c14n5760 , _:c14n5782 , _:c14n5791 , _:c14n5848 , _:c14n5929 , _:c14n6026 , _:c14n6091 , _:c14n6155 , _:c14n6220 , _:c14n6243 , _:c14n6287 , _:c14n6344 , _:c14n6381 , _:c14n6400 , _:c14n6403 , _:c14n6465 , _:c14n6492 , _:c14n6494 , _:c14n6572 , _:c14n6624 , _:c14n6640 , _:c14n6683 , _:c14n6687 , _:c14n672 , _:c14n703 , _:c14n71 , _:c14n791 , _:c14n799 , _:c14n858 , _:c14n935 , _:c14n937 , _:c14n946 ;
 	skos:altLabel "MIxS-host-associated" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from a non-human host, to examine the host-associated microbiome or genome." ;
-	skos:exactMatch MIXS:HostAssociated ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "This is a very broad package, intended to capture many kinds of sequences derived from the bodies of or derived from an organism. Where possible, please use a more specific package. For example, consider using food-animal and animal feed extension for sampling of farm animals reared for consumption. For human stool microbiomes, consider MIxS-human-gut. Incidental associations of environmental material with an organism may also be better served by other packages. For example, nucleic acids derived from soil that was sampled from the hoof of a cow may be better described by terms from the soil extension; however, soil embedded in a wound on a cow’s leg would be best described by terms in this extension" ;
 	MIXS:use_cases "elephant fecal matter or cat oral cavity" .
@@ -7994,7 +7679,6 @@ MIXS:0016003 dcterms:title "human-associated" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n105 , _:c14n1052 , _:c14n1080 , _:c14n1108 , _:c14n1116 , _:c14n1205 , _:c14n128 , _:c14n1282 , _:c14n133 , _:c14n1338 , _:c14n1445 , _:c14n1454 , _:c14n1497 , _:c14n1504 , _:c14n1518 , _:c14n1527 , _:c14n1542 , _:c14n1599 , _:c14n1606 , _:c14n1619 , _:c14n1625 , _:c14n1663 , _:c14n1732 , _:c14n1736 , _:c14n1756 , _:c14n1902 , _:c14n2126 , _:c14n2250 , _:c14n23 , _:c14n2313 , _:c14n2329 , _:c14n2366 , _:c14n2402 , _:c14n2413 , _:c14n2469 , _:c14n2470 , _:c14n2511 , _:c14n2520 , _:c14n2601 , _:c14n2620 , _:c14n2633 , _:c14n2644 , _:c14n27 , _:c14n2722 , _:c14n2901 , _:c14n2902 , _:c14n2936 , _:c14n2941 , _:c14n30 , _:c14n3047 , _:c14n3059 , _:c14n3084 , _:c14n3089 , _:c14n3201 , _:c14n3205 , _:c14n3301 , _:c14n3324 , _:c14n3385 , _:c14n3444 , _:c14n3450 , _:c14n348 , _:c14n3490 , _:c14n3509 , _:c14n3529 , _:c14n367 , _:c14n373 , _:c14n3776 , _:c14n3825 , _:c14n3830 , _:c14n3896 , _:c14n4025 , _:c14n4073 , _:c14n4094 , _:c14n4100 , _:c14n4111 , _:c14n4120 , _:c14n4146 , _:c14n4148 , _:c14n4159 , _:c14n4163 , _:c14n4198 , _:c14n4201 , _:c14n4237 , _:c14n4258 , _:c14n4339 , _:c14n4345 , _:c14n4611 , _:c14n4612 , _:c14n4621 , _:c14n4627 , _:c14n4692 , _:c14n4876 , _:c14n4879 , _:c14n4968 , _:c14n507 , _:c14n5074 , _:c14n5227 , _:c14n5255 , _:c14n5276 , _:c14n5314 , _:c14n5332 , _:c14n5358 , _:c14n5492 , _:c14n5534 , _:c14n5547 , _:c14n5601 , _:c14n5605 , _:c14n5764 , _:c14n5856 , _:c14n5964 , _:c14n6173 , _:c14n6184 , _:c14n6202 , _:c14n622 , _:c14n6265 , _:c14n6356 , _:c14n6358 , _:c14n6376 , _:c14n641 , _:c14n6489 , _:c14n6495 , _:c14n6515 , _:c14n6529 , _:c14n6549 , _:c14n6565 , _:c14n6577 , _:c14n6675 , _:c14n6680 , _:c14n6684 , _:c14n674 , _:c14n680 , _:c14n708 , _:c14n79 , _:c14n793 , _:c14n839 , _:c14n84 , _:c14n847 , _:c14n857 , _:c14n918 , _:c14n967 , _:c14n976 ;
 	skos:altLabel "MIxS-human-associated" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from a person to examine their human-associated microbiome or genome, that does not have a specific extension (e.g., skin, gut, vaginal)." ;
-	skos:exactMatch MIXS:HumanAssociated ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "For stool samples use MIxS-human-gut extension." ;
 	MIXS:use_cases "blood samples or biopsy samples." .
@@ -8004,7 +7688,6 @@ MIXS:0016004 dcterms:title "human-gut" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1062 , _:c14n1084 , _:c14n1100 , _:c14n1342 , _:c14n1365 , _:c14n1387 , _:c14n1449 , _:c14n15 , _:c14n1500 , _:c14n1605 , _:c14n161 , _:c14n1640 , _:c14n1651 , _:c14n1657 , _:c14n1759 , _:c14n1787 , _:c14n1806 , _:c14n1867 , _:c14n1883 , _:c14n1973 , _:c14n2084 , _:c14n2092 , _:c14n2108 , _:c14n2254 , _:c14n2284 , _:c14n2285 , _:c14n236 , _:c14n2369 , _:c14n2610 , _:c14n2686 , _:c14n2761 , _:c14n2763 , _:c14n2807 , _:c14n2810 , _:c14n29 , _:c14n300 , _:c14n3110 , _:c14n3184 , _:c14n3270 , _:c14n3271 , _:c14n341 , _:c14n3424 , _:c14n3449 , _:c14n3491 , _:c14n3521 , _:c14n3524 , _:c14n3698 , _:c14n380 , _:c14n3818 , _:c14n3912 , _:c14n3930 , _:c14n397 , _:c14n4048 , _:c14n4061 , _:c14n4276 , _:c14n4317 , _:c14n4330 , _:c14n4350 , _:c14n4428 , _:c14n4573 , _:c14n4802 , _:c14n4833 , _:c14n4904 , _:c14n4919 , _:c14n4995 , _:c14n5229 , _:c14n5247 , _:c14n5313 , _:c14n5323 , _:c14n540 , _:c14n5410 , _:c14n5496 , _:c14n5504 , _:c14n5516 , _:c14n5640 , _:c14n5654 , _:c14n5715 , _:c14n5810 , _:c14n5824 , _:c14n5944 , _:c14n5970 , _:c14n6169 , _:c14n6194 , _:c14n6200 , _:c14n6293 , _:c14n633 , _:c14n6347 , _:c14n6441 , _:c14n6472 , _:c14n6557 , _:c14n6579 , _:c14n6627 , _:c14n6715 , _:c14n699 , _:c14n705 , _:c14n773 , _:c14n829 , _:c14n859 ;
 	skos:altLabel "MIxS-human-gut" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from a person to examine their gut-associated microbiome." ;
-	skos:exactMatch MIXS:HumanGut ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "human stool or fecal samples, or samples collected directly from the gut." .
 MIXS:0016005 dcterms:title "human-oral" ;
@@ -8013,7 +7696,6 @@ MIXS:0016005 dcterms:title "human-oral" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1083 , _:c14n1194 , _:c14n1218 , _:c14n1280 , _:c14n1376 , _:c14n1398 , _:c14n1428 , _:c14n150 , _:c14n1521 , _:c14n1573 , _:c14n1609 , _:c14n165 , _:c14n1779 , _:c14n1798 , _:c14n1811 , _:c14n1814 , _:c14n1918 , _:c14n1984 , _:c14n2009 , _:c14n2012 , _:c14n2068 , _:c14n2192 , _:c14n2196 , _:c14n2204 , _:c14n2228 , _:c14n2247 , _:c14n2269 , _:c14n2411 , _:c14n2544 , _:c14n2563 , _:c14n2649 , _:c14n2757 , _:c14n2776 , _:c14n2798 , _:c14n2801 , _:c14n2812 , _:c14n2827 , _:c14n284 , _:c14n2872 , _:c14n2890 , _:c14n2924 , _:c14n3016 , _:c14n3027 , _:c14n3030 , _:c14n3151 , _:c14n3252 , _:c14n3350 , _:c14n3433 , _:c14n361 , _:c14n3744 , _:c14n3747 , _:c14n387 , _:c14n3918 , _:c14n394 , _:c14n398 , _:c14n4128 , _:c14n4153 , _:c14n4166 , _:c14n4224 , _:c14n4246 , _:c14n425 , _:c14n4423 , _:c14n4435 , _:c14n4520 , _:c14n4525 , _:c14n4620 , _:c14n4665 , _:c14n4674 , _:c14n4847 , _:c14n4864 , _:c14n4865 , _:c14n5139 , _:c14n5212 , _:c14n5238 , _:c14n5337 , _:c14n5406 , _:c14n543 , _:c14n5453 , _:c14n5506 , _:c14n5511 , _:c14n5602 , _:c14n6086 , _:c14n6189 , _:c14n6328 , _:c14n6445 , _:c14n6548 , _:c14n6567 , _:c14n6571 , _:c14n6591 , _:c14n6607 , _:c14n6617 , _:c14n6618 , _:c14n6714 , _:c14n751 , _:c14n763 , _:c14n81 , _:c14n811 ;
 	skos:altLabel "MIxS-human-oral" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from a person to examine their oral-associated microbiome." ;
-	skos:exactMatch MIXS:HumanOral ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "mouth swab sampling, dental microbiome samples, microbiome of oral swabs, nasal, mouth, throat, teeth, tongue microbiome studies" .
 MIXS:0016006 dcterms:title "human-skin" ;
@@ -8022,7 +7704,6 @@ MIXS:0016006 dcterms:title "human-skin" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1055 , _:c14n1233 , _:c14n1389 , _:c14n143 , _:c14n1463 , _:c14n1590 , _:c14n1772 , _:c14n1789 , _:c14n1865 , _:c14n1901 , _:c14n1998 , _:c14n2030 , _:c14n2099 , _:c14n2140 , _:c14n2256 , _:c14n2280 , _:c14n2287 , _:c14n230 , _:c14n2370 , _:c14n239 , _:c14n2589 , _:c14n2599 , _:c14n270 , _:c14n272 , _:c14n2732 , _:c14n2744 , _:c14n2805 , _:c14n288 , _:c14n2931 , _:c14n2996 , _:c14n3105 , _:c14n311 , _:c14n315 , _:c14n3216 , _:c14n3368 , _:c14n3380 , _:c14n3395 , _:c14n3466 , _:c14n3511 , _:c14n3546 , _:c14n363 , _:c14n3649 , _:c14n3738 , _:c14n3739 , _:c14n3880 , _:c14n3927 , _:c14n3942 , _:c14n4013 , _:c14n4129 , _:c14n4253 , _:c14n4263 , _:c14n4341 , _:c14n4376 , _:c14n4478 , _:c14n4534 , _:c14n4542 , _:c14n4557 , _:c14n4585 , _:c14n467 , _:c14n4694 , _:c14n4734 , _:c14n477 , _:c14n4840 , _:c14n4924 , _:c14n4937 , _:c14n5051 , _:c14n5096 , _:c14n5100 , _:c14n5188 , _:c14n5290 , _:c14n5444 , _:c14n5449 , _:c14n551 , _:c14n5594 , _:c14n5613 , _:c14n5647 , _:c14n5778 , _:c14n5797 , _:c14n581 , _:c14n5865 , _:c14n5867 , _:c14n5895 , _:c14n592 , _:c14n5989 , _:c14n6029 , _:c14n6102 , _:c14n6124 , _:c14n6182 , _:c14n6274 , _:c14n6335 , _:c14n6350 , _:c14n6435 , _:c14n6594 , _:c14n661 , _:c14n6659 , _:c14n6686 , _:c14n696 , _:c14n845 , _:c14n913 , _:c14n962 ;
 	skos:altLabel "MIxS-human-skin" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from a person to examine their skin-associated microbiome." ;
-	skos:exactMatch MIXS:HumanSkin ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "swab samples taken on a person’s skin surface." .
 MIXS:0016007 dcterms:title "human-vaginal" ;
@@ -8031,7 +7712,6 @@ MIXS:0016007 dcterms:title "human-vaginal" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1081 , _:c14n1153 , _:c14n1165 , _:c14n1234 , _:c14n1243 , _:c14n1299 , _:c14n1349 , _:c14n1383 , _:c14n1423 , _:c14n1444 , _:c14n1450 , _:c14n1461 , _:c14n1468 , _:c14n1517 , _:c14n1584 , _:c14n1632 , _:c14n1645 , _:c14n1859 , _:c14n2048 , _:c14n2079 , _:c14n2083 , _:c14n2088 , _:c14n2141 , _:c14n2191 , _:c14n2213 , _:c14n2454 , _:c14n249 , _:c14n2494 , _:c14n2600 , _:c14n2751 , _:c14n2842 , _:c14n2853 , _:c14n2942 , _:c14n2957 , _:c14n2960 , _:c14n2982 , _:c14n3014 , _:c14n3017 , _:c14n3025 , _:c14n3044 , _:c14n34 , _:c14n340 , _:c14n3513 , _:c14n3592 , _:c14n3689 , _:c14n3771 , _:c14n3798 , _:c14n3811 , _:c14n3854 , _:c14n386 , _:c14n393 , _:c14n3933 , _:c14n4000 , _:c14n410 , _:c14n4122 , _:c14n4131 , _:c14n4297 , _:c14n430 , _:c14n4375 , _:c14n4489 , _:c14n4496 , _:c14n4558 , _:c14n4586 , _:c14n4613 , _:c14n4672 , _:c14n4712 , _:c14n4720 , _:c14n4757 , _:c14n4796 , _:c14n480 , _:c14n4807 , _:c14n4867 , _:c14n4874 , _:c14n4880 , _:c14n494 , _:c14n4969 , _:c14n500 , _:c14n5149 , _:c14n5158 , _:c14n5184 , _:c14n5249 , _:c14n5270 , _:c14n5357 , _:c14n5407 , _:c14n5437 , _:c14n5450 , _:c14n5643 , _:c14n5695 , _:c14n5709 , _:c14n5730 , _:c14n5753 , _:c14n5846 , _:c14n5878 , _:c14n5977 , _:c14n5988 , _:c14n5993 , _:c14n605 , _:c14n6095 , _:c14n6123 , _:c14n6164 , _:c14n6191 , _:c14n6244 , _:c14n6255 , _:c14n6262 , _:c14n6263 , _:c14n6301 , _:c14n6306 , _:c14n6315 , _:c14n6339 , _:c14n6364 , _:c14n6380 , _:c14n6500 , _:c14n6519 , _:c14n6550 , _:c14n6564 , _:c14n6606 , _:c14n77 , _:c14n792 , _:c14n801 , _:c14n813 ;
 	skos:altLabel "MIxS-human-vaginal" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from a person to examine their vaginal-associated microbiome." ;
-	skos:exactMatch MIXS:HumanVaginal ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "vaginal swabbing" .
 MIXS:0016008 dcterms:title "microbial mat/biofilm" ;
@@ -8040,7 +7720,6 @@ MIXS:0016008 dcterms:title "microbial mat/biofilm" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n10 , _:c14n1003 , _:c14n1008 , _:c14n103 , _:c14n1040 , _:c14n1047 , _:c14n1067 , _:c14n1111 , _:c14n1148 , _:c14n117 , _:c14n1186 , _:c14n1196 , _:c14n1270 , _:c14n1274 , _:c14n1328 , _:c14n1345 , _:c14n1351 , _:c14n1356 , _:c14n1363 , _:c14n1372 , _:c14n1392 , _:c14n141 , _:c14n1457 , _:c14n1475 , _:c14n154 , _:c14n1592 , _:c14n1603 , _:c14n1608 , _:c14n1617 , _:c14n1701 , _:c14n1703 , _:c14n1712 , _:c14n1753 , _:c14n1763 , _:c14n1836 , _:c14n1895 , _:c14n1924 , _:c14n1951 , _:c14n1972 , _:c14n1975 , _:c14n1994 , _:c14n1999 , _:c14n2006 , _:c14n2014 , _:c14n2047 , _:c14n205 , _:c14n2122 , _:c14n2135 , _:c14n2137 , _:c14n2154 , _:c14n2180 , _:c14n2237 , _:c14n2289 , _:c14n2323 , _:c14n233 , _:c14n2334 , _:c14n2356 , _:c14n2375 , _:c14n2404 , _:c14n2474 , _:c14n2530 , _:c14n2548 , _:c14n2672 , _:c14n2690 , _:c14n2862 , _:c14n2914 , _:c14n2930 , _:c14n296 , _:c14n3134 , _:c14n3136 , _:c14n3156 , _:c14n3262 , _:c14n3266 , _:c14n3272 , _:c14n3282 , _:c14n3299 , _:c14n3357 , _:c14n3425 , _:c14n3440 , _:c14n3598 , _:c14n3634 , _:c14n3659 , _:c14n374 , _:c14n3756 , _:c14n3797 , _:c14n3823 , _:c14n3844 , _:c14n3858 , _:c14n3875 , _:c14n388 , _:c14n3899 , _:c14n3902 , _:c14n40 , _:c14n4001 , _:c14n4009 , _:c14n4034 , _:c14n4051 , _:c14n412 , _:c14n4223 , _:c14n4242 , _:c14n4244 , _:c14n4277 , _:c14n431 , _:c14n4335 , _:c14n4380 , _:c14n4405 , _:c14n4432 , _:c14n4439 , _:c14n4505 , _:c14n4521 , _:c14n4614 , _:c14n469 , _:c14n4792 , _:c14n4793 , _:c14n4809 , _:c14n4852 , _:c14n4868 , _:c14n4921 , _:c14n4959 , _:c14n4971 , _:c14n5037 , _:c14n5082 , _:c14n5107 , _:c14n5145 , _:c14n5159 , _:c14n5164 , _:c14n519 , _:c14n5277 , _:c14n5311 , _:c14n532 , _:c14n5339 , _:c14n5343 , _:c14n5377 , _:c14n5393 , _:c14n5411 , _:c14n5428 , _:c14n5467 , _:c14n5503 , _:c14n5517 , _:c14n5526 , _:c14n5548 , _:c14n5552 , _:c14n5586 , _:c14n5609 , _:c14n5696 , _:c14n5699 , _:c14n5743 , _:c14n5806 , _:c14n5864 , _:c14n5873 , _:c14n5896 , _:c14n5932 , _:c14n5943 , _:c14n5949 , _:c14n6002 , _:c14n604 , _:c14n6043 , _:c14n6097 , _:c14n6221 , _:c14n6223 , _:c14n6249 , _:c14n6275 , _:c14n6290 , _:c14n630 , _:c14n6327 , _:c14n6338 , _:c14n6425 , _:c14n6430 , _:c14n6469 , _:c14n6613 , _:c14n6622 , _:c14n6628 , _:c14n6647 , _:c14n6658 , _:c14n6695 , _:c14n677 , _:c14n687 , _:c14n72 , _:c14n776 , _:c14n824 , _:c14n875 , _:c14n882 , _:c14n897 ;
 	skos:altLabel "MIxS-microbial mat/biofilm" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from biofilm environments including microbial mats." ;
-	skos:exactMatch MIXS:MicrobialMatBiofilm ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "samples from microbial mats at cold seeps" .
 MIXS:0016009 dcterms:title "miscellaneous natural or artificial environment" ;
@@ -8049,7 +7728,6 @@ MIXS:0016009 dcterms:title "miscellaneous natural or artificial environment" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n104 , _:c14n1107 , _:c14n1150 , _:c14n1183 , _:c14n1297 , _:c14n1384 , _:c14n139 , _:c14n1512 , _:c14n1569 , _:c14n1576 , _:c14n1628 , _:c14n1638 , _:c14n1668 , _:c14n1685 , _:c14n170 , _:c14n1737 , _:c14n182 , _:c14n1879 , _:c14n188 , _:c14n19 , _:c14n1912 , _:c14n1943 , _:c14n2033 , _:c14n2066 , _:c14n2087 , _:c14n2205 , _:c14n2311 , _:c14n2344 , _:c14n2581 , _:c14n2611 , _:c14n2669 , _:c14n2795 , _:c14n2814 , _:c14n2864 , _:c14n2911 , _:c14n2932 , _:c14n3013 , _:c14n3053 , _:c14n3064 , _:c14n3177 , _:c14n3189 , _:c14n3203 , _:c14n3231 , _:c14n3232 , _:c14n3284 , _:c14n3297 , _:c14n3310 , _:c14n3313 , _:c14n3319 , _:c14n3525 , _:c14n3526 , _:c14n3586 , _:c14n376 , _:c14n3786 , _:c14n382 , _:c14n3908 , _:c14n3932 , _:c14n3939 , _:c14n4138 , _:c14n4204 , _:c14n4205 , _:c14n4301 , _:c14n4352 , _:c14n4414 , _:c14n4466 , _:c14n4469 , _:c14n4597 , _:c14n4608 , _:c14n4616 , _:c14n4647 , _:c14n465 , _:c14n4723 , _:c14n4776 , _:c14n4789 , _:c14n4795 , _:c14n481 , _:c14n4909 , _:c14n4949 , _:c14n4987 , _:c14n5000 , _:c14n5103 , _:c14n5302 , _:c14n533 , _:c14n5361 , _:c14n5392 , _:c14n5481 , _:c14n5495 , _:c14n5508 , _:c14n5520 , _:c14n5578 , _:c14n5665 , _:c14n5666 , _:c14n5732 , _:c14n5741 , _:c14n5748 , _:c14n578 , _:c14n5829 , _:c14n5837 , _:c14n5866 , _:c14n5876 , _:c14n590 , _:c14n5927 , _:c14n594 , _:c14n5953 , _:c14n597 , _:c14n6042 , _:c14n6063 , _:c14n6082 , _:c14n617 , _:c14n6266 , _:c14n6288 , _:c14n6296 , _:c14n6329 , _:c14n6369 , _:c14n6392 , _:c14n6473 , _:c14n6484 , _:c14n6498 , _:c14n6562 , _:c14n6580 , _:c14n6582 , _:c14n667 , _:c14n6700 , _:c14n681 , _:c14n767 , _:c14n896 , _:c14n916 , _:c14n943 , _:c14n957 , _:c14n958 , _:c14n959 ;
 	skos:altLabel "MIxS-miscellaneous natural or artificial environment" ;
 	skos:definition "A collection of generic terms appropriate when collecting and sequencing samples obtained from environments, where there is no specific extension already available." ;
-	skos:exactMatch MIXS:MiscellaneousNaturalOrArtificialEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> .
 MIXS:0016010 dcterms:title "plant-associated" ;
 	a owl:Class ;
@@ -8057,7 +7735,6 @@ MIXS:0016010 dcterms:title "plant-associated" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1007 , _:c14n1014 , _:c14n1039 , _:c14n1046 , _:c14n1061 , _:c14n111 , _:c14n1132 , _:c14n1145 , _:c14n1236 , _:c14n1252 , _:c14n1310 , _:c14n1350 , _:c14n1491 , _:c14n1526 , _:c14n1537 , _:c14n1540 , _:c14n157 , _:c14n1571 , _:c14n1598 , _:c14n1616 , _:c14n1642 , _:c14n1643 , _:c14n1647 , _:c14n1699 , _:c14n1735 , _:c14n1771 , _:c14n1791 , _:c14n1795 , _:c14n184 , _:c14n1853 , _:c14n1891 , _:c14n1936 , _:c14n1962 , _:c14n2002 , _:c14n2028 , _:c14n2138 , _:c14n2170 , _:c14n2214 , _:c14n2221 , _:c14n2346 , _:c14n2378 , _:c14n2383 , _:c14n2405 , _:c14n2432 , _:c14n2451 , _:c14n2477 , _:c14n2497 , _:c14n2523 , _:c14n2550 , _:c14n2555 , _:c14n2568 , _:c14n2590 , _:c14n2609 , _:c14n2631 , _:c14n2634 , _:c14n2662 , _:c14n2666 , _:c14n268 , _:c14n2724 , _:c14n2774 , _:c14n2778 , _:c14n281 , _:c14n2815 , _:c14n2822 , _:c14n2823 , _:c14n2834 , _:c14n2852 , _:c14n2912 , _:c14n2968 , _:c14n3008 , _:c14n3035 , _:c14n3069 , _:c14n3118 , _:c14n3143 , _:c14n3170 , _:c14n3188 , _:c14n3198 , _:c14n3214 , _:c14n3237 , _:c14n3240 , _:c14n3265 , _:c14n3314 , _:c14n3327 , _:c14n3329 , _:c14n3352 , _:c14n3375 , _:c14n3405 , _:c14n3415 , _:c14n3417 , _:c14n3421 , _:c14n3482 , _:c14n353 , _:c14n3530 , _:c14n3667 , _:c14n3703 , _:c14n3721 , _:c14n3890 , _:c14n3892 , _:c14n3922 , _:c14n3937 , _:c14n3954 , _:c14n3962 , _:c14n3976 , _:c14n3982 , _:c14n3998 , _:c14n4143 , _:c14n4197 , _:c14n4227 , _:c14n4267 , _:c14n4279 , _:c14n4309 , _:c14n4346 , _:c14n4357 , _:c14n4383 , _:c14n4390 , _:c14n4395 , _:c14n443 , _:c14n4430 , _:c14n4448 , _:c14n4462 , _:c14n4503 , _:c14n4543 , _:c14n4598 , _:c14n4619 , _:c14n4638 , _:c14n4725 , _:c14n4780 , _:c14n4898 , _:c14n4900 , _:c14n491 , _:c14n4948 , _:c14n4950 , _:c14n4970 , _:c14n5045 , _:c14n5055 , _:c14n5106 , _:c14n5127 , _:c14n5132 , _:c14n5147 , _:c14n5162 , _:c14n5172 , _:c14n5179 , _:c14n5213 , _:c14n522 , _:c14n5221 , _:c14n5286 , _:c14n5300 , _:c14n5342 , _:c14n5352 , _:c14n5387 , _:c14n5443 , _:c14n5482 , _:c14n5549 , _:c14n5581 , _:c14n5593 , _:c14n5674 , _:c14n5686 , _:c14n5704 , _:c14n5774 , _:c14n5777 , _:c14n5898 , _:c14n5990 , _:c14n6 , _:c14n6035 , _:c14n6038 , _:c14n6064 , _:c14n6094 , _:c14n6138 , _:c14n6162 , _:c14n6227 , _:c14n6231 , _:c14n6310 , _:c14n6407 , _:c14n6433 , _:c14n6450 , _:c14n6478 , _:c14n6521 , _:c14n6524 , _:c14n6552 , _:c14n6619 , _:c14n6629 , _:c14n664 , _:c14n6708 , _:c14n7 , _:c14n728 , _:c14n752 , _:c14n784 , _:c14n803 , _:c14n848 , _:c14n895 , _:c14n921 , _:c14n924 , _:c14n952 , _:c14n966 , _:c14n99 ;
 	skos:altLabel "MIxS-plant-associated" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples  obtained from a plant to examine its plant-associated microbiome." ;
-	skos:exactMatch MIXS:PlantAssociated ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "plant surface swabs, root soil or rhizosphere, cultivated plants, plant phenotyping" .
 MIXS:0016011 dcterms:title "sediment" ;
@@ -8066,7 +7743,6 @@ MIXS:0016011 dcterms:title "sediment" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1089 , _:c14n1120 , _:c14n1127 , _:c14n1161 , _:c14n1211 , _:c14n1215 , _:c14n1269 , _:c14n1277 , _:c14n1316 , _:c14n1323 , _:c14n1359 , _:c14n1378 , _:c14n1430 , _:c14n1433 , _:c14n1437 , _:c14n1440 , _:c14n1498 , _:c14n1580 , _:c14n1635 , _:c14n1644 , _:c14n1646 , _:c14n1684 , _:c14n1728 , _:c14n1752 , _:c14n1769 , _:c14n1770 , _:c14n1776 , _:c14n1821 , _:c14n2 , _:c14n2008 , _:c14n2133 , _:c14n2147 , _:c14n2153 , _:c14n2202 , _:c14n2259 , _:c14n2391 , _:c14n2415 , _:c14n2422 , _:c14n2428 , _:c14n2442 , _:c14n2522 , _:c14n2552 , _:c14n2564 , _:c14n2583 , _:c14n2648 , _:c14n2729 , _:c14n2756 , _:c14n2772 , _:c14n2775 , _:c14n2787 , _:c14n2867 , _:c14n2870 , _:c14n2909 , _:c14n2947 , _:c14n2999 , _:c14n3005 , _:c14n3009 , _:c14n3067 , _:c14n3097 , _:c14n3121 , _:c14n3128 , _:c14n3147 , _:c14n3158 , _:c14n3206 , _:c14n3229 , _:c14n3249 , _:c14n3258 , _:c14n3305 , _:c14n3317 , _:c14n3336 , _:c14n3358 , _:c14n3363 , _:c14n337 , _:c14n3391 , _:c14n3438 , _:c14n3479 , _:c14n3503 , _:c14n3508 , _:c14n3512 , _:c14n3545 , _:c14n356 , _:c14n3595 , _:c14n3661 , _:c14n3677 , _:c14n3769 , _:c14n3788 , _:c14n379 , _:c14n3800 , _:c14n3873 , _:c14n3881 , _:c14n3907 , _:c14n3911 , _:c14n392 , _:c14n3920 , _:c14n4014 , _:c14n403 , _:c14n4030 , _:c14n4032 , _:c14n4033 , _:c14n4047 , _:c14n4089 , _:c14n4097 , _:c14n4124 , _:c14n4147 , _:c14n4156 , _:c14n4179 , _:c14n4199 , _:c14n4214 , _:c14n4235 , _:c14n4256 , _:c14n4272 , _:c14n4326 , _:c14n4332 , _:c14n4364 , _:c14n4377 , _:c14n4389 , _:c14n4456 , _:c14n4471 , _:c14n4477 , _:c14n448 , _:c14n4502 , _:c14n4530 , _:c14n4533 , _:c14n4536 , _:c14n4623 , _:c14n4682 , _:c14n4758 , _:c14n4779 , _:c14n4783 , _:c14n4784 , _:c14n4848 , _:c14n4892 , _:c14n4922 , _:c14n4938 , _:c14n4961 , _:c14n4963 , _:c14n5030 , _:c14n5049 , _:c14n5063 , _:c14n5073 , _:c14n5077 , _:c14n5116 , _:c14n5176 , _:c14n5198 , _:c14n5231 , _:c14n5316 , _:c14n5350 , _:c14n5375 , _:c14n5382 , _:c14n5396 , _:c14n5412 , _:c14n5541 , _:c14n5619 , _:c14n5681 , _:c14n5727 , _:c14n5747 , _:c14n5752 , _:c14n5758 , _:c14n5771 , _:c14n5776 , _:c14n5803 , _:c14n5850 , _:c14n5855 , _:c14n586 , _:c14n5874 , _:c14n5886 , _:c14n5887 , _:c14n5902 , _:c14n5930 , _:c14n6004 , _:c14n6007 , _:c14n6034 , _:c14n6071 , _:c14n6107 , _:c14n6112 , _:c14n6167 , _:c14n6188 , _:c14n6204 , _:c14n6219 , _:c14n6236 , _:c14n6270 , _:c14n6278 , _:c14n6281 , _:c14n6283 , _:c14n6366 , _:c14n6432 , _:c14n6503 , _:c14n6504 , _:c14n651 , _:c14n6510 , _:c14n6534 , _:c14n6546 , _:c14n721 , _:c14n74 , _:c14n76 , _:c14n802 , _:c14n876 , _:c14n934 , _:c14n975 , _:c14n996 ;
 	skos:altLabel "MIxS-sediment" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from the sedimentary area of aquatic environments." ;
-	skos:exactMatch MIXS:Sediment ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "Sedimentary layers in terrestrial environments will probably be better served by the soil extension." ;
 	MIXS:use_cases "river bed or sea floor." .
@@ -8077,7 +7753,6 @@ MIXS:0016012 dcterms:title "soil" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1016 , _:c14n1057 , _:c14n1078 , _:c14n1113 , _:c14n1147 , _:c14n1168 , _:c14n122 , _:c14n1238 , _:c14n1306 , _:c14n1334 , _:c14n147 , _:c14n1519 , _:c14n1531 , _:c14n1579 , _:c14n1624 , _:c14n1650 , _:c14n1656 , _:c14n1658 , _:c14n176 , _:c14n181 , _:c14n1843 , _:c14n186 , _:c14n1870 , _:c14n1890 , _:c14n1938 , _:c14n1940 , _:c14n1986 , _:c14n2026 , _:c14n2078 , _:c14n2156 , _:c14n2178 , _:c14n2298 , _:c14n2324 , _:c14n2395 , _:c14n2399 , _:c14n2441 , _:c14n2464 , _:c14n2517 , _:c14n2524 , _:c14n2558 , _:c14n2566 , _:c14n257 , _:c14n2580 , _:c14n2654 , _:c14n2659 , _:c14n2696 , _:c14n2710 , _:c14n2721 , _:c14n2906 , _:c14n2935 , _:c14n2986 , _:c14n3003 , _:c14n3019 , _:c14n3052 , _:c14n3066 , _:c14n3133 , _:c14n3159 , _:c14n3164 , _:c14n3219 , _:c14n3264 , _:c14n3304 , _:c14n3345 , _:c14n3353 , _:c14n3371 , _:c14n3377 , _:c14n3453 , _:c14n3517 , _:c14n3533 , _:c14n3581 , _:c14n3594 , _:c14n3653 , _:c14n3654 , _:c14n3658 , _:c14n3921 , _:c14n3935 , _:c14n3953 , _:c14n4087 , _:c14n4142 , _:c14n422 , _:c14n4233 , _:c14n4282 , _:c14n4287 , _:c14n4307 , _:c14n4325 , _:c14n4370 , _:c14n4416 , _:c14n4446 , _:c14n4491 , _:c14n4526 , _:c14n4550 , _:c14n4568 , _:c14n4574 , _:c14n4711 , _:c14n4766 , _:c14n4821 , _:c14n4831 , _:c14n4843 , _:c14n488 , _:c14n4911 , _:c14n5019 , _:c14n5070 , _:c14n5080 , _:c14n5108 , _:c14n5169 , _:c14n5191 , _:c14n5193 , _:c14n5203 , _:c14n5251 , _:c14n5280 , _:c14n5334 , _:c14n5335 , _:c14n5381 , _:c14n541 , _:c14n5415 , _:c14n5446 , _:c14n5456 , _:c14n5539 , _:c14n5589 , _:c14n5615 , _:c14n5635 , _:c14n5670 , _:c14n5675 , _:c14n5787 , _:c14n580 , _:c14n5842 , _:c14n5844 , _:c14n5845 , _:c14n5875 , _:c14n5909 , _:c14n591 , _:c14n5941 , _:c14n5942 , _:c14n5946 , _:c14n5951 , _:c14n6027 , _:c14n6030 , _:c14n6101 , _:c14n6105 , _:c14n6178 , _:c14n6218 , _:c14n6254 , _:c14n629 , _:c14n6337 , _:c14n6361 , _:c14n6474 , _:c14n6475 , _:c14n6483 , _:c14n6528 , _:c14n6563 , _:c14n6586 , _:c14n6601 , _:c14n6631 , _:c14n6632 , _:c14n6644 , _:c14n6694 , _:c14n6702 , _:c14n723 , _:c14n725 , _:c14n743 , _:c14n744 , _:c14n781 , _:c14n818 , _:c14n834 , _:c14n880 , _:c14n893 , _:c14n97 , _:c14n981 ;
 	skos:altLabel "MIxS-soil" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from the uppermost layer of Earth's crust, contributed by the Terragenome Consortium." ;
-	skos:exactMatch MIXS:Soil ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "soil collection, island microbiome sampling, farm land or forest floor." .
 MIXS:0016013 dcterms:title "wastewater/sludge" ;
@@ -8086,7 +7761,6 @@ MIXS:0016013 dcterms:title "wastewater/sludge" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1154 , _:c14n1223 , _:c14n1355 , _:c14n1451 , _:c14n1478 , _:c14n1514 , _:c14n1532 , _:c14n1545 , _:c14n1568 , _:c14n1611 , _:c14n1689 , _:c14n1766 , _:c14n1773 , _:c14n192 , _:c14n1971 , _:c14n2050 , _:c14n215 , _:c14n2249 , _:c14n2266 , _:c14n2307 , _:c14n237 , _:c14n2374 , _:c14n2376 , _:c14n240 , _:c14n2406 , _:c14n2431 , _:c14n2490 , _:c14n2565 , _:c14n2618 , _:c14n2655 , _:c14n266 , _:c14n2671 , _:c14n2684 , _:c14n2838 , _:c14n2908 , _:c14n2950 , _:c14n3 , _:c14n312 , _:c14n3131 , _:c14n3246 , _:c14n3286 , _:c14n3361 , _:c14n3445 , _:c14n3506 , _:c14n3543 , _:c14n3553 , _:c14n3593 , _:c14n3694 , _:c14n3753 , _:c14n3780 , _:c14n3810 , _:c14n3819 , _:c14n3834 , _:c14n3846 , _:c14n3895 , _:c14n3925 , _:c14n3940 , _:c14n3995 , _:c14n4139 , _:c14n4269 , _:c14n4303 , _:c14n4351 , _:c14n4445 , _:c14n4514 , _:c14n4688 , _:c14n4754 , _:c14n4772 , _:c14n4803 , _:c14n4835 , _:c14n4862 , _:c14n4930 , _:c14n5009 , _:c14n511 , _:c14n5152 , _:c14n5189 , _:c14n5272 , _:c14n5372 , _:c14n5388 , _:c14n5447 , _:c14n5571 , _:c14n5687 , _:c14n5816 , _:c14n5828 , _:c14n5924 , _:c14n5952 , _:c14n6017 , _:c14n6019 , _:c14n6048 , _:c14n6146 , _:c14n6163 , _:c14n6192 , _:c14n6210 , _:c14n6269 , _:c14n63 , _:c14n6420 , _:c14n6452 , _:c14n6493 , _:c14n6511 , _:c14n6585 , _:c14n6634 , _:c14n6650 , _:c14n6652 , _:c14n6656 , _:c14n6698 , _:c14n689 , _:c14n759 , _:c14n761 , _:c14n933 , _:c14n963 ;
 	skos:altLabel "MIxS-wastewater/sludge" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from any solid, semisolid or liquid waste." ;
-	skos:exactMatch MIXS:WastewaterSludge ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "sewerage or industrial wastewater" .
 MIXS:0016014 dcterms:title "water" ;
@@ -8096,7 +7770,6 @@ MIXS:0016014 dcterms:title "water" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1019 , _:c14n1021 , _:c14n1038 , _:c14n106 , _:c14n1068 , _:c14n1093 , _:c14n1102 , _:c14n1112 , _:c14n1146 , _:c14n1159 , _:c14n1160 , _:c14n1176 , _:c14n1178 , _:c14n1180 , _:c14n1197 , _:c14n12 , _:c14n1207 , _:c14n1214 , _:c14n1224 , _:c14n1256 , _:c14n1268 , _:c14n1286 , _:c14n1337 , _:c14n1340 , _:c14n135 , _:c14n1411 , _:c14n1456 , _:c14n1484 , _:c14n1505 , _:c14n1585 , _:c14n160 , _:c14n1623 , _:c14n1680 , _:c14n1715 , _:c14n1719 , _:c14n1721 , _:c14n1749 , _:c14n1812 , _:c14n1830 , _:c14n1838 , _:c14n1840 , _:c14n1889 , _:c14n1893 , _:c14n1900 , _:c14n1949 , _:c14n1988 , _:c14n1995 , _:c14n2077 , _:c14n2218 , _:c14n2270 , _:c14n2288 , _:c14n2303 , _:c14n2312 , _:c14n2335 , _:c14n2338 , _:c14n2385 , _:c14n2403 , _:c14n2416 , _:c14n243 , _:c14n2430 , _:c14n2433 , _:c14n253 , _:c14n2559 , _:c14n2596 , _:c14n2598 , _:c14n2642 , _:c14n2668 , _:c14n2699 , _:c14n2711 , _:c14n2717 , _:c14n2730 , _:c14n2746 , _:c14n2770 , _:c14n278 , _:c14n2861 , _:c14n2878 , _:c14n2910 , _:c14n2922 , _:c14n2977 , _:c14n2995 , _:c14n2997 , _:c14n3026 , _:c14n3037 , _:c14n3054 , _:c14n3073 , _:c14n3096 , _:c14n3160 , _:c14n3163 , _:c14n3169 , _:c14n3212 , _:c14n322 , _:c14n3226 , _:c14n3333 , _:c14n3347 , _:c14n3392 , _:c14n3398 , _:c14n3403 , _:c14n3468 , _:c14n3481 , _:c14n350 , _:c14n3538 , _:c14n3539 , _:c14n3540 , _:c14n3575 , _:c14n358 , _:c14n3585 , _:c14n3611 , _:c14n3641 , _:c14n3687 , _:c14n3706 , _:c14n3775 , _:c14n3787 , _:c14n381 , _:c14n384 , _:c14n385 , _:c14n3943 , _:c14n3955 , _:c14n396 , _:c14n3986 , _:c14n3999 , _:c14n4054 , _:c14n4083 , _:c14n409 , _:c14n4102 , _:c14n4103 , _:c14n4169 , _:c14n4180 , _:c14n4236 , _:c14n4318 , _:c14n4327 , _:c14n4384 , _:c14n4421 , _:c14n4444 , _:c14n4450 , _:c14n4485 , _:c14n4495 , _:c14n45 , _:c14n4569 , _:c14n4579 , _:c14n4587 , _:c14n4622 , _:c14n4645 , _:c14n4690 , _:c14n4705 , _:c14n4728 , _:c14n4759 , _:c14n4788 , _:c14n4804 , _:c14n4824 , _:c14n4827 , _:c14n4861 , _:c14n4866 , _:c14n4907 , _:c14n4910 , _:c14n497 , _:c14n4979 , _:c14n4986 , _:c14n5004 , _:c14n5015 , _:c14n5018 , _:c14n5050 , _:c14n5062 , _:c14n5097 , _:c14n516 , _:c14n5195 , _:c14n5201 , _:c14n5217 , _:c14n526 , _:c14n5281 , _:c14n5289 , _:c14n5298 , _:c14n5348 , _:c14n5371 , _:c14n539 , _:c14n5418 , _:c14n5433 , _:c14n5438 , _:c14n5493 , _:c14n5542 , _:c14n5558 , _:c14n5624 , _:c14n5625 , _:c14n5627 , _:c14n5631 , _:c14n5641 , _:c14n5644 , _:c14n566 , _:c14n5676 , _:c14n568 , _:c14n5705 , _:c14n5707 , _:c14n5710 , _:c14n5725 , _:c14n5734 , _:c14n5779 , _:c14n5781 , _:c14n5792 , _:c14n58 , _:c14n5834 , _:c14n5916 , _:c14n5935 , _:c14n5982 , _:c14n5986 , _:c14n5999 , _:c14n6014 , _:c14n602 , _:c14n6033 , _:c14n6088 , _:c14n6134 , _:c14n6143 , _:c14n6144 , _:c14n6158 , _:c14n6207 , _:c14n6216 , _:c14n6228 , _:c14n6323 , _:c14n6331 , _:c14n644 , _:c14n6449 , _:c14n6454 , _:c14n6541 , _:c14n655 , _:c14n6554 , _:c14n6576 , _:c14n659 , _:c14n6636 , _:c14n6653 , _:c14n6664 , _:c14n6667 , _:c14n6671 , _:c14n6689 , _:c14n6690 , _:c14n6704 , _:c14n732 , _:c14n739 , _:c14n768 , _:c14n810 , _:c14n840 , _:c14n843 , _:c14n888 , _:c14n9 , _:c14n903 , _:c14n904 , _:c14n927 , _:c14n964 ;
 	skos:altLabel "MIxS-water" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing water samples obtained from any aquatic environment." ;
-	skos:exactMatch MIXS:Water ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "sea or river water, global ocean sampling day" .
 MIXS:0016015 dcterms:title "hydrocarbon resources-cores" ;
@@ -8105,7 +7778,6 @@ MIXS:0016015 dcterms:title "hydrocarbon resources-cores" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n0 , _:c14n100 , _:c14n1042 , _:c14n1070 , _:c14n1073 , _:c14n1123 , _:c14n1172 , _:c14n1182 , _:c14n1209 , _:c14n1232 , _:c14n1302 , _:c14n1329 , _:c14n1352 , _:c14n1368 , _:c14n1401 , _:c14n1417 , _:c14n1419 , _:c14n1489 , _:c14n1501 , _:c14n1513 , _:c14n1520 , _:c14n1528 , _:c14n1530 , _:c14n164 , _:c14n1679 , _:c14n1706 , _:c14n172 , _:c14n1723 , _:c14n1729 , _:c14n1755 , _:c14n1796 , _:c14n1801 , _:c14n1841 , _:c14n1906 , _:c14n1909 , _:c14n1976 , _:c14n1978 , _:c14n2001 , _:c14n2007 , _:c14n2064 , _:c14n2075 , _:c14n2082 , _:c14n2115 , _:c14n2146 , _:c14n2238 , _:c14n2243 , _:c14n2258 , _:c14n2295 , _:c14n2306 , _:c14n2316 , _:c14n2322 , _:c14n238 , _:c14n2412 , _:c14n2425 , _:c14n2436 , _:c14n2447 , _:c14n2484 , _:c14n2486 , _:c14n2501 , _:c14n2506 , _:c14n2518 , _:c14n2521 , _:c14n2529 , _:c14n2537 , _:c14n2577 , _:c14n2578 , _:c14n26 , _:c14n261 , _:c14n2639 , _:c14n2641 , _:c14n2647 , _:c14n2702 , _:c14n2709 , _:c14n2785 , _:c14n2874 , _:c14n2879 , _:c14n2973 , _:c14n2976 , _:c14n2991 , _:c14n3012 , _:c14n3023 , _:c14n3092 , _:c14n3093 , _:c14n313 , _:c14n317 , _:c14n3185 , _:c14n3230 , _:c14n327 , _:c14n328 , _:c14n3309 , _:c14n3342 , _:c14n3348 , _:c14n3366 , _:c14n3383 , _:c14n3406 , _:c14n3478 , _:c14n3488 , _:c14n3492 , _:c14n3496 , _:c14n3554 , _:c14n3560 , _:c14n3624 , _:c14n3628 , _:c14n3633 , _:c14n3648 , _:c14n3668 , _:c14n3679 , _:c14n3682 , _:c14n3684 , _:c14n3711 , _:c14n3722 , _:c14n3789 , _:c14n3835 , _:c14n3838 , _:c14n3941 , _:c14n402 , _:c14n4068 , _:c14n4071 , _:c14n4090 , _:c14n4144 , _:c14n4186 , _:c14n4191 , _:c14n4195 , _:c14n421 , _:c14n4217 , _:c14n4257 , _:c14n429 , _:c14n4344 , _:c14n4365 , _:c14n4386 , _:c14n4391 , _:c14n4397 , _:c14n440 , _:c14n444 , _:c14n4441 , _:c14n4492 , _:c14n4547 , _:c14n455 , _:c14n46 , _:c14n4641 , _:c14n466 , _:c14n4701 , _:c14n4708 , _:c14n4715 , _:c14n4777 , _:c14n4871 , _:c14n4887 , _:c14n4890 , _:c14n4925 , _:c14n4945 , _:c14n4974 , _:c14n4998 , _:c14n5013 , _:c14n5069 , _:c14n5081 , _:c14n5105 , _:c14n5111 , _:c14n5175 , _:c14n5178 , _:c14n5186 , _:c14n5199 , _:c14n52 , _:c14n5208 , _:c14n524 , _:c14n5283 , _:c14n5287 , _:c14n530 , _:c14n5338 , _:c14n5346 , _:c14n5362 , _:c14n5367 , _:c14n5398 , _:c14n5439 , _:c14n5445 , _:c14n5485 , _:c14n549 , _:c14n550 , _:c14n5500 , _:c14n5510 , _:c14n5532 , _:c14n556 , _:c14n5574 , _:c14n56 , _:c14n5637 , _:c14n5650 , _:c14n5664 , _:c14n5685 , _:c14n5703 , _:c14n5706 , _:c14n5726 , _:c14n575 , _:c14n5754 , _:c14n576 , _:c14n5784 , _:c14n5801 , _:c14n5827 , _:c14n5835 , _:c14n5847 , _:c14n5853 , _:c14n5868 , _:c14n5885 , _:c14n5889 , _:c14n5893 , _:c14n5955 , _:c14n6032 , _:c14n6073 , _:c14n6152 , _:c14n6165 , _:c14n6230 , _:c14n6268 , _:c14n6272 , _:c14n6324 , _:c14n6379 , _:c14n6391 , _:c14n64 , _:c14n6401 , _:c14n6427 , _:c14n6459 , _:c14n649 , _:c14n6513 , _:c14n6688 , _:c14n669 , _:c14n6692 , _:c14n697 , _:c14n709 , _:c14n711 , _:c14n790 , _:c14n80 , _:c14n821 , _:c14n825 , _:c14n855 , _:c14n865 , _:c14n890 , _:c14n912 , _:c14n93 , _:c14n931 , _:c14n941 , _:c14n942 , _:c14n944 , _:c14n954 , _:c14n986 , _:c14n993 , _:c14n994 ;
 	skos:altLabel "MIxS-HCR (hydrocarbon resources-cores)" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from environments pertaining to hydrocarbon resources, specifically core samples." ;
-	skos:exactMatch MIXS:HydrocarbonResourcesCores ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "The microbial characterization of hydrocarbon occurrences, defined as the natural and artificial environmental features that are rich in hydrocarbons, from hydrocarbon rich formations, such as reservoir cores." .
 MIXS:0016016 dcterms:title "hydrocarbon resources-fluids/swabs" ;
@@ -8114,7 +7786,6 @@ MIXS:0016016 dcterms:title "hydrocarbon resources-fluids/swabs" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1010 , _:c14n1027 , _:c14n1036 , _:c14n1088 , _:c14n1101 , _:c14n1128 , _:c14n1152 , _:c14n1181 , _:c14n1229 , _:c14n1259 , _:c14n1309 , _:c14n1427 , _:c14n144 , _:c14n1465 , _:c14n1487 , _:c14n1493 , _:c14n159 , _:c14n1630 , _:c14n1653 , _:c14n1705 , _:c14n1733 , _:c14n1742 , _:c14n177 , _:c14n178 , _:c14n1784 , _:c14n1785 , _:c14n18 , _:c14n1809 , _:c14n1833 , _:c14n1848 , _:c14n1854 , _:c14n1869 , _:c14n1873 , _:c14n1886 , _:c14n1897 , _:c14n1907 , _:c14n1947 , _:c14n1954 , _:c14n2029 , _:c14n2031 , _:c14n2032 , _:c14n2057 , _:c14n2062 , _:c14n2067 , _:c14n2121 , _:c14n2124 , _:c14n2127 , _:c14n2151 , _:c14n2184 , _:c14n2209 , _:c14n2217 , _:c14n2229 , _:c14n225 , _:c14n2252 , _:c14n2267 , _:c14n227 , _:c14n2320 , _:c14n2354 , _:c14n2362 , _:c14n2363 , _:c14n2381 , _:c14n2384 , _:c14n2388 , _:c14n24 , _:c14n2440 , _:c14n2455 , _:c14n2457 , _:c14n2495 , _:c14n2505 , _:c14n2557 , _:c14n2619 , _:c14n2683 , _:c14n2753 , _:c14n2860 , _:c14n2863 , _:c14n2873 , _:c14n2885 , _:c14n2888 , _:c14n2905 , _:c14n2907 , _:c14n2929 , _:c14n2943 , _:c14n2949 , _:c14n2951 , _:c14n297 , _:c14n2979 , _:c14n2984 , _:c14n299 , _:c14n3036 , _:c14n3051 , _:c14n3070 , _:c14n3095 , _:c14n3149 , _:c14n3235 , _:c14n3295 , _:c14n3386 , _:c14n3399 , _:c14n3412 , _:c14n3446 , _:c14n3451 , _:c14n3456 , _:c14n3457 , _:c14n3473 , _:c14n3480 , _:c14n3486 , _:c14n3510 , _:c14n3519 , _:c14n352 , _:c14n3562 , _:c14n3613 , _:c14n3618 , _:c14n3621 , _:c14n3645 , _:c14n3672 , _:c14n3709 , _:c14n3726 , _:c14n3867 , _:c14n3948 , _:c14n3970 , _:c14n4015 , _:c14n4031 , _:c14n4036 , _:c14n4132 , _:c14n4171 , _:c14n4182 , _:c14n4212 , _:c14n426 , _:c14n4260 , _:c14n428 , _:c14n4305 , _:c14n4315 , _:c14n4336 , _:c14n4356 , _:c14n4396 , _:c14n4398 , _:c14n4427 , _:c14n4468 , _:c14n4470 , _:c14n4490 , _:c14n4506 , _:c14n456 , _:c14n4567 , _:c14n457 , _:c14n4596 , _:c14n4602 , _:c14n4606 , _:c14n4609 , _:c14n4615 , _:c14n4640 , _:c14n4671 , _:c14n4738 , _:c14n4749 , _:c14n4762 , _:c14n4787 , _:c14n4823 , _:c14n4825 , _:c14n485 , _:c14n4857 , _:c14n4881 , _:c14n4891 , _:c14n4916 , _:c14n4927 , _:c14n493 , _:c14n4932 , _:c14n4953 , _:c14n4981 , _:c14n5008 , _:c14n5010 , _:c14n5083 , _:c14n5121 , _:c14n5128 , _:c14n5141 , _:c14n5153 , _:c14n5171 , _:c14n520 , _:c14n5200 , _:c14n5226 , _:c14n5243 , _:c14n5294 , _:c14n5295 , _:c14n5296 , _:c14n5308 , _:c14n5345 , _:c14n5351 , _:c14n5368 , _:c14n5370 , _:c14n5380 , _:c14n54 , _:c14n545 , _:c14n5519 , _:c14n5521 , _:c14n5538 , _:c14n5551 , _:c14n5564 , _:c14n5565 , _:c14n5570 , _:c14n5575 , _:c14n5603 , _:c14n5612 , _:c14n5630 , _:c14n5648 , _:c14n5655 , _:c14n5680 , _:c14n5736 , _:c14n5762 , _:c14n579 , _:c14n5805 , _:c14n5819 , _:c14n5879 , _:c14n5892 , _:c14n5914 , _:c14n5947 , _:c14n5963 , _:c14n601 , _:c14n603 , _:c14n6045 , _:c14n6053 , _:c14n6055 , _:c14n6076 , _:c14n6077 , _:c14n6092 , _:c14n6117 , _:c14n612 , _:c14n6121 , _:c14n6129 , _:c14n6154 , _:c14n6157 , _:c14n6211 , _:c14n6212 , _:c14n6240 , _:c14n6291 , _:c14n6300 , _:c14n6359 , _:c14n6375 , _:c14n6386 , _:c14n6390 , _:c14n6399 , _:c14n6410 , _:c14n6415 , _:c14n6438 , _:c14n6520 , _:c14n6525 , _:c14n6540 , _:c14n66 , _:c14n6600 , _:c14n6643 , _:c14n6668 , _:c14n700 , _:c14n717 , _:c14n770 , _:c14n774 , _:c14n88 , _:c14n90 , _:c14n900 , _:c14n902 ;
 	skos:altLabel "MIxS-HCR (hydrocarbon resources-fluids/swabs)" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from environments pertaining to hydrocarbon resources, specifically run-off liquids samples and swabs." ;
-	skos:exactMatch MIXS:HydrocarbonResourcesFluidsSwabs ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "The microbial characterization of hydrocarbon occurrences,  defined as the natural and artificial environmental features that are rich in hydrocarbons, from hydrocarbon resource fluids." .
 MIXS:0016018 dcterms:title "agriculture" ;
@@ -8123,7 +7794,6 @@ MIXS:0016018 dcterms:title "agriculture" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1001 , _:c14n1005 , _:c14n1031 , _:c14n1037 , _:c14n1103 , _:c14n1110 , _:c14n1115 , _:c14n1126 , _:c14n1130 , _:c14n1136 , _:c14n1156 , _:c14n1157 , _:c14n1164 , _:c14n1166 , _:c14n1212 , _:c14n1228 , _:c14n1240 , _:c14n125 , _:c14n1257 , _:c14n1260 , _:c14n1262 , _:c14n1285 , _:c14n131 , _:c14n1319 , _:c14n1335 , _:c14n140 , _:c14n1410 , _:c14n1441 , _:c14n1458 , _:c14n1470 , _:c14n1485 , _:c14n1503 , _:c14n1506 , _:c14n1508 , _:c14n1510 , _:c14n1515 , _:c14n153 , _:c14n1539 , _:c14n155 , _:c14n1555 , _:c14n1583 , _:c14n1587 , _:c14n1601 , _:c14n1649 , _:c14n1652 , _:c14n1661 , _:c14n1676 , _:c14n1682 , _:c14n1730 , _:c14n1757 , _:c14n1794 , _:c14n1807 , _:c14n1822 , _:c14n1864 , _:c14n1868 , _:c14n1896 , _:c14n1921 , _:c14n1926 , _:c14n1937 , _:c14n1952 , _:c14n1966 , _:c14n1969 , _:c14n1980 , _:c14n199 , _:c14n1997 , _:c14n20 , _:c14n2011 , _:c14n202 , _:c14n2021 , _:c14n2040 , _:c14n2061 , _:c14n2070 , _:c14n2076 , _:c14n208 , _:c14n2085 , _:c14n209 , _:c14n2094 , _:c14n2109 , _:c14n2116 , _:c14n2144 , _:c14n2158 , _:c14n2160 , _:c14n2171 , _:c14n2179 , _:c14n2222 , _:c14n223 , _:c14n2234 , _:c14n2251 , _:c14n2253 , _:c14n2255 , _:c14n2264 , _:c14n2282 , _:c14n2293 , _:c14n2314 , _:c14n2343 , _:c14n2352 , _:c14n2360 , _:c14n2379 , _:c14n2386 , _:c14n2397 , _:c14n2417 , _:c14n2420 , _:c14n2437 , _:c14n2448 , _:c14n2462 , _:c14n248 , _:c14n2482 , _:c14n2512 , _:c14n2514 , _:c14n2519 , _:c14n2533 , _:c14n2553 , _:c14n2572 , _:c14n2612 , _:c14n2614 , _:c14n2621 , _:c14n2643 , _:c14n2646 , _:c14n2653 , _:c14n2657 , _:c14n2660 , _:c14n2676 , _:c14n2694 , _:c14n2703 , _:c14n2723 , _:c14n2743 , _:c14n2755 , _:c14n2784 , _:c14n28 , _:c14n2816 , _:c14n2819 , _:c14n282 , _:c14n2841 , _:c14n2850 , _:c14n2893 , _:c14n2915 , _:c14n2956 , _:c14n2958 , _:c14n2981 , _:c14n2992 , _:c14n2993 , _:c14n3022 , _:c14n3028 , _:c14n3029 , _:c14n304 , _:c14n3058 , _:c14n3065 , _:c14n3098 , _:c14n3101 , _:c14n3107 , _:c14n3120 , _:c14n3137 , _:c14n3138 , _:c14n3178 , _:c14n3180 , _:c14n3183 , _:c14n319 , _:c14n3195 , _:c14n3204 , _:c14n3209 , _:c14n3236 , _:c14n3238 , _:c14n3275 , _:c14n330 , _:c14n3306 , _:c14n3330 , _:c14n3335 , _:c14n3373 , _:c14n3378 , _:c14n3388 , _:c14n3389 , _:c14n3397 , _:c14n3448 , _:c14n3495 , _:c14n3497 , _:c14n35 , _:c14n3505 , _:c14n3507 , _:c14n3515 , _:c14n3547 , _:c14n3565 , _:c14n3568 , _:c14n3596 , _:c14n3601 , _:c14n3626 , _:c14n3662 , _:c14n37 , _:c14n3716 , _:c14n3719 , _:c14n3724 , _:c14n3732 , _:c14n3741 , _:c14n3761 , _:c14n3779 , _:c14n3806 , _:c14n3808 , _:c14n3827 , _:c14n3837 , _:c14n3856 , _:c14n3876 , _:c14n3877 , _:c14n3898 , _:c14n3906 , _:c14n391 , _:c14n3928 , _:c14n3931 , _:c14n3945 , _:c14n3947 , _:c14n3950 , _:c14n3972 , _:c14n3974 , _:c14n3975 , _:c14n3987 , _:c14n4005 , _:c14n4006 , _:c14n401 , _:c14n4024 , _:c14n4027 , _:c14n4035 , _:c14n4039 , _:c14n4043 , _:c14n4058 , _:c14n4081 , _:c14n4106 , _:c14n4181 , _:c14n4188 , _:c14n4192 , _:c14n4207 , _:c14n4228 , _:c14n4250 , _:c14n4266 , _:c14n4271 , _:c14n4281 , _:c14n4289 , _:c14n4294 , _:c14n4296 , _:c14n4306 , _:c14n4316 , _:c14n4358 , _:c14n4363 , _:c14n4366 , _:c14n4371 , _:c14n4408 , _:c14n4440 , _:c14n4442 , _:c14n4452 , _:c14n4479 , _:c14n4482 , _:c14n450 , _:c14n4501 , _:c14n451 , _:c14n4518 , _:c14n4549 , _:c14n4555 , _:c14n4562 , _:c14n4566 , _:c14n4577 , _:c14n4588 , _:c14n459 , _:c14n4599 , _:c14n4604 , _:c14n4629 , _:c14n4630 , _:c14n4652 , _:c14n4654 , _:c14n4657 , _:c14n4663 , _:c14n4686 , _:c14n4687 , _:c14n4696 , _:c14n4703 , _:c14n4704 , _:c14n4706 , _:c14n4707 , _:c14n4732 , _:c14n4746 , _:c14n4755 , _:c14n4761 , _:c14n4773 , _:c14n4797 , _:c14n4801 , _:c14n4812 , _:c14n4841 , _:c14n486 , _:c14n4863 , _:c14n4882 , _:c14n4897 , _:c14n4936 , _:c14n5017 , _:c14n5020 , _:c14n5036 , _:c14n5041 , _:c14n5042 , _:c14n5086 , _:c14n509 , _:c14n5101 , _:c14n5102 , _:c14n5119 , _:c14n5129 , _:c14n513 , _:c14n5150 , _:c14n5183 , _:c14n5194 , _:c14n5196 , _:c14n5197 , _:c14n5204 , _:c14n5232 , _:c14n5252 , _:c14n5260 , _:c14n5282 , _:c14n5292 , _:c14n5304 , _:c14n5319 , _:c14n5321 , _:c14n5325 , _:c14n5329 , _:c14n5344 , _:c14n5349 , _:c14n5366 , _:c14n5379 , _:c14n5386 , _:c14n5420 , _:c14n5424 , _:c14n5430 , _:c14n5434 , _:c14n5440 , _:c14n5451 , _:c14n5460 , _:c14n5471 , _:c14n5472 , _:c14n548 , _:c14n5488 , _:c14n5499 , _:c14n5505 , _:c14n5528 , _:c14n5569 , _:c14n557 , _:c14n5582 , _:c14n5587 , _:c14n5596 , _:c14n5608 , _:c14n561 , _:c14n5626 , _:c14n5629 , _:c14n5642 , _:c14n5645 , _:c14n5653 , _:c14n5673 , _:c14n5682 , _:c14n5684 , _:c14n5691 , _:c14n5701 , _:c14n5712 , _:c14n5744 , _:c14n5783 , _:c14n5785 , _:c14n5802 , _:c14n5851 , _:c14n5854 , _:c14n5881 , _:c14n5899 , _:c14n5903 , _:c14n5912 , _:c14n5913 , _:c14n5940 , _:c14n5971 , _:c14n6005 , _:c14n6012 , _:c14n6037 , _:c14n6047 , _:c14n6049 , _:c14n6059 , _:c14n608 , _:c14n6080 , _:c14n6118 , _:c14n6131 , _:c14n6141 , _:c14n6145 , _:c14n6156 , _:c14n6190 , _:c14n6193 , _:c14n6206 , _:c14n6208 , _:c14n6242 , _:c14n627 , _:c14n6271 , _:c14n6276 , _:c14n6302 , _:c14n6309 , _:c14n6311 , _:c14n6333 , _:c14n6349 , _:c14n6354 , _:c14n6378 , _:c14n6394 , _:c14n6422 , _:c14n6443 , _:c14n6446 , _:c14n6457 , _:c14n6471 , _:c14n6477 , _:c14n6480 , _:c14n6486 , _:c14n6516 , _:c14n652 , _:c14n6555 , _:c14n6588 , _:c14n6592 , _:c14n6604 , _:c14n6616 , _:c14n662 , _:c14n6621 , _:c14n6633 , _:c14n6657 , _:c14n6666 , _:c14n6669 , _:c14n670 , _:c14n6709 , _:c14n678 , _:c14n691 , _:c14n704 , _:c14n730 , _:c14n738 , _:c14n789 , _:c14n795 , _:c14n828 , _:c14n862 , _:c14n869 , _:c14n870 , _:c14n887 , _:c14n899 , _:c14n907 , _:c14n909 , _:c14n951 , _:c14n971 , _:c14n982 , _:c14n984 , _:c14n991 , _:c14n992 , _:c14n995 , _:c14n998 ;
 	skos:altLabel "MIxS-Ag (agriculture)" ;
 	skos:definition "A collection of terms appropriate when sequencing samples obtained in an agricultural environment. Suitable to capture metadata appropriate to enhance crop productivity and agroecosystem health with the aim to facilitate research of agricultural microbiomes and their relationships to plant productivity and sustainable crop production from diverse crop management contexts." ;
-	skos:exactMatch MIXS:Agriculture ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "Agricultural Microbiomes Research Coordination Network, model cropping and plant systems focused on agricultural plant and soil microbe; microbiome studies in agricultural sites; long-term ecological research in croplands; eDNA in manure samples; describing agricultural microbiome studies" .
 MIXS:0016019 dcterms:title "food-animal and animal feed" ;
@@ -8132,7 +7802,6 @@ MIXS:0016019 dcterms:title "food-animal and animal feed" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1009 , _:c14n1020 , _:c14n1030 , _:c14n1069 , _:c14n107 , _:c14n1106 , _:c14n1109 , _:c14n1129 , _:c14n113 , _:c14n1143 , _:c14n1202 , _:c14n1208 , _:c14n1248 , _:c14n1249 , _:c14n1258 , _:c14n1264 , _:c14n1283 , _:c14n1396 , _:c14n1408 , _:c14n1429 , _:c14n1438 , _:c14n1548 , _:c14n1552 , _:c14n156 , _:c14n1562 , _:c14n1597 , _:c14n1607 , _:c14n1610 , _:c14n1622 , _:c14n1636 , _:c14n1660 , _:c14n1710 , _:c14n1711 , _:c14n1781 , _:c14n1813 , _:c14n1819 , _:c14n1844 , _:c14n1846 , _:c14n1861 , _:c14n1931 , _:c14n194 , _:c14n1990 , _:c14n1993 , _:c14n2004 , _:c14n2015 , _:c14n2024 , _:c14n2034 , _:c14n2091 , _:c14n2107 , _:c14n211 , _:c14n2117 , _:c14n2166 , _:c14n218 , _:c14n220 , _:c14n2211 , _:c14n2235 , _:c14n2236 , _:c14n2274 , _:c14n2309 , _:c14n2310 , _:c14n2331 , _:c14n2351 , _:c14n2355 , _:c14n2373 , _:c14n2435 , _:c14n2504 , _:c14n2508 , _:c14n2547 , _:c14n255 , _:c14n2582 , _:c14n2682 , _:c14n2697 , _:c14n2750 , _:c14n2754 , _:c14n280 , _:c14n2821 , _:c14n2832 , _:c14n2939 , _:c14n2994 , _:c14n3021 , _:c14n3074 , _:c14n3117 , _:c14n3122 , _:c14n3207 , _:c14n3245 , _:c14n3260 , _:c14n3263 , _:c14n3278 , _:c14n3279 , _:c14n3326 , _:c14n3340 , _:c14n3372 , _:c14n3394 , _:c14n3401 , _:c14n3441 , _:c14n3518 , _:c14n3522 , _:c14n3570 , _:c14n3588 , _:c14n3609 , _:c14n362 , _:c14n3625 , _:c14n3627 , _:c14n3631 , _:c14n3635 , _:c14n3643 , _:c14n365 , _:c14n366 , _:c14n3665 , _:c14n3669 , _:c14n3723 , _:c14n3750 , _:c14n3752 , _:c14n3755 , _:c14n3766 , _:c14n3767 , _:c14n3783 , _:c14n3857 , _:c14n3861 , _:c14n3872 , _:c14n3905 , _:c14n3946 , _:c14n3959 , _:c14n3978 , _:c14n3979 , _:c14n400 , _:c14n4010 , _:c14n4011 , _:c14n4018 , _:c14n4042 , _:c14n4060 , _:c14n4067 , _:c14n4104 , _:c14n4110 , _:c14n4116 , _:c14n413 , _:c14n4130 , _:c14n4167 , _:c14n4178 , _:c14n4189 , _:c14n4209 , _:c14n4210 , _:c14n4219 , _:c14n423 , _:c14n4311 , _:c14n435 , _:c14n4359 , _:c14n4372 , _:c14n4379 , _:c14n4404 , _:c14n4407 , _:c14n4410 , _:c14n442 , _:c14n4422 , _:c14n4429 , _:c14n4443 , _:c14n4460 , _:c14n4559 , _:c14n4565 , _:c14n4603 , _:c14n4636 , _:c14n4655 , _:c14n4658 , _:c14n4771 , _:c14n4782 , _:c14n4790 , _:c14n4798 , _:c14n482 , _:c14n4834 , _:c14n4850 , _:c14n4894 , _:c14n4935 , _:c14n4960 , _:c14n4962 , _:c14n4966 , _:c14n4976 , _:c14n4991 , _:c14n5012 , _:c14n5016 , _:c14n5039 , _:c14n5048 , _:c14n5058 , _:c14n5075 , _:c14n5120 , _:c14n5148 , _:c14n5174 , _:c14n5202 , _:c14n5305 , _:c14n5336 , _:c14n5378 , _:c14n5466 , _:c14n5474 , _:c14n5490 , _:c14n5507 , _:c14n5576 , _:c14n5580 , _:c14n5659 , _:c14n5663 , _:c14n569 , _:c14n5722 , _:c14n5738 , _:c14n5740 , _:c14n5767 , _:c14n5815 , _:c14n5817 , _:c14n5839 , _:c14n5869 , _:c14n5883 , _:c14n598 , _:c14n5994 , _:c14n5997 , _:c14n6009 , _:c14n6010 , _:c14n6020 , _:c14n6022 , _:c14n6036 , _:c14n6098 , _:c14n6125 , _:c14n6140 , _:c14n6199 , _:c14n6253 , _:c14n6264 , _:c14n6289 , _:c14n631 , _:c14n6319 , _:c14n6334 , _:c14n6348 , _:c14n6362 , _:c14n6367 , _:c14n6389 , _:c14n6398 , _:c14n6412 , _:c14n6413 , _:c14n647 , _:c14n6514 , _:c14n6517 , _:c14n6545 , _:c14n658 , _:c14n663 , _:c14n6637 , _:c14n6641 , _:c14n6654 , _:c14n6655 , _:c14n6676 , _:c14n6678 , _:c14n6705 , _:c14n698 , _:c14n716 , _:c14n733 , _:c14n736 , _:c14n753 , _:c14n762 , _:c14n785 , _:c14n798 , _:c14n808 , _:c14n835 , _:c14n842 , _:c14n85 , _:c14n86 , _:c14n861 , _:c14n885 , _:c14n932 ;
 	skos:altLabel "MIxS-Food (animal and animal feed)" ;
 	skos:definition "A collection of terms appropriate when collecting samples and performing sequencing of samples obtained from farm animals and their feed." ;
-	skos:exactMatch MIXS:FoodAnimalAndAnimalFeed ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "This extension is intended to work alongside the other food extensions (farm environment, food production facility, and human foods) for capturing contextual data across the food supply-chain environment." ;
 	MIXS:use_cases "Microbiome of farm animals, their feed, and pet food." .
@@ -8142,7 +7811,6 @@ MIXS:0016020 dcterms:title "food-farm environment" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1011 , _:c14n1041 , _:c14n1043 , _:c14n1054 , _:c14n108 , _:c14n1090 , _:c14n1096 , _:c14n1114 , _:c14n1124 , _:c14n1125 , _:c14n1169 , _:c14n1173 , _:c14n1189 , _:c14n1198 , _:c14n1206 , _:c14n1226 , _:c14n1242 , _:c14n1244 , _:c14n1251 , _:c14n1290 , _:c14n1298 , _:c14n1308 , _:c14n1320 , _:c14n1330 , _:c14n1353 , _:c14n1361 , _:c14n1366 , _:c14n1377 , _:c14n1385 , _:c14n1390 , _:c14n1399 , _:c14n1404 , _:c14n1418 , _:c14n1473 , _:c14n149 , _:c14n1507 , _:c14n1533 , _:c14n1546 , _:c14n1613 , _:c14n1627 , _:c14n1654 , _:c14n1659 , _:c14n1690 , _:c14n1731 , _:c14n1744 , _:c14n1745 , _:c14n175 , _:c14n1790 , _:c14n1800 , _:c14n1817 , _:c14n1827 , _:c14n1845 , _:c14n1849 , _:c14n1851 , _:c14n1857 , _:c14n1862 , _:c14n1880 , _:c14n1915 , _:c14n1950 , _:c14n1974 , _:c14n1985 , _:c14n1996 , _:c14n2020 , _:c14n2025 , _:c14n2035 , _:c14n204 , _:c14n2041 , _:c14n2045 , _:c14n2046 , _:c14n2071 , _:c14n2080 , _:c14n2081 , _:c14n2194 , _:c14n2197 , _:c14n2203 , _:c14n2206 , _:c14n2241 , _:c14n226 , _:c14n2271 , _:c14n2278 , _:c14n2301 , _:c14n2339 , _:c14n2364 , _:c14n2365 , _:c14n2393 , _:c14n2394 , _:c14n2398 , _:c14n2401 , _:c14n242 , _:c14n2445 , _:c14n2449 , _:c14n246 , _:c14n2463 , _:c14n2471 , _:c14n250 , _:c14n2526 , _:c14n2536 , _:c14n2569 , _:c14n2573 , _:c14n2585 , _:c14n2605 , _:c14n2625 , _:c14n2630 , _:c14n267 , _:c14n2685 , _:c14n2687 , _:c14n2691 , _:c14n2707 , _:c14n2728 , _:c14n2736 , _:c14n2738 , _:c14n276 , _:c14n2791 , _:c14n2803 , _:c14n2828 , _:c14n2831 , _:c14n2847 , _:c14n2866 , _:c14n2869 , _:c14n2876 , _:c14n2892 , _:c14n2899 , _:c14n2904 , _:c14n2919 , _:c14n295 , _:c14n2955 , _:c14n2974 , _:c14n2975 , _:c14n2983 , _:c14n302 , _:c14n3034 , _:c14n3046 , _:c14n305 , _:c14n3076 , _:c14n309 , _:c14n310 , _:c14n3116 , _:c14n3130 , _:c14n3132 , _:c14n3144 , _:c14n3166 , _:c14n3172 , _:c14n3173 , _:c14n3174 , _:c14n3193 , _:c14n32 , _:c14n326 , _:c14n3276 , _:c14n329 , _:c14n3362 , _:c14n3382 , _:c14n3393 , _:c14n3404 , _:c14n3411 , _:c14n3419 , _:c14n3432 , _:c14n3436 , _:c14n3452 , _:c14n3458 , _:c14n3472 , _:c14n3483 , _:c14n3487 , _:c14n349 , _:c14n3493 , _:c14n3528 , _:c14n3569 , _:c14n357 , _:c14n3576 , _:c14n3579 , _:c14n3591 , _:c14n3606 , _:c14n3617 , _:c14n3623 , _:c14n3630 , _:c14n3678 , _:c14n3704 , _:c14n3718 , _:c14n3728 , _:c14n3729 , _:c14n3730 , _:c14n3740 , _:c14n3742 , _:c14n3768 , _:c14n3824 , _:c14n383 , _:c14n3863 , _:c14n3865 , _:c14n3878 , _:c14n3886 , _:c14n3913 , _:c14n3961 , _:c14n4056 , _:c14n406 , _:c14n4091 , _:c14n4093 , _:c14n411 , _:c14n4133 , _:c14n4184 , _:c14n4190 , _:c14n4193 , _:c14n4196 , _:c14n4220 , _:c14n4247 , _:c14n4262 , _:c14n4290 , _:c14n4295 , _:c14n4337 , _:c14n4343 , _:c14n4349 , _:c14n4353 , _:c14n4362 , _:c14n4387 , _:c14n4393 , _:c14n4402 , _:c14n4411 , _:c14n4412 , _:c14n4434 , _:c14n4457 , _:c14n4472 , _:c14n4575 , _:c14n4595 , _:c14n4600 , _:c14n4646 , _:c14n4656 , _:c14n4691 , _:c14n4693 , _:c14n4699 , _:c14n470 , _:c14n4709 , _:c14n4729 , _:c14n4735 , _:c14n4737 , _:c14n4765 , _:c14n4785 , _:c14n4826 , _:c14n4839 , _:c14n4886 , _:c14n4901 , _:c14n4943 , _:c14n4965 , _:c14n4997 , _:c14n501 , _:c14n5024 , _:c14n5025 , _:c14n5028 , _:c14n5038 , _:c14n504 , _:c14n5047 , _:c14n5068 , _:c14n5084 , _:c14n5137 , _:c14n5181 , _:c14n5205 , _:c14n5236 , _:c14n5259 , _:c14n5266 , _:c14n5267 , _:c14n527 , _:c14n528 , _:c14n5303 , _:c14n5318 , _:c14n5328 , _:c14n5347 , _:c14n538 , _:c14n5385 , _:c14n5395 , _:c14n5400 , _:c14n5402 , _:c14n546 , _:c14n5469 , _:c14n547 , _:c14n5487 , _:c14n5553 , _:c14n5557 , _:c14n5563 , _:c14n5567 , _:c14n5585 , _:c14n5611 , _:c14n5620 , _:c14n5657 , _:c14n5661 , _:c14n5700 , _:c14n5711 , _:c14n5720 , _:c14n5739 , _:c14n5763 , _:c14n5775 , _:c14n5804 , _:c14n5826 , _:c14n5830 , _:c14n5860 , _:c14n5872 , _:c14n588 , _:c14n5891 , _:c14n5925 , _:c14n5936 , _:c14n5939 , _:c14n5967 , _:c14n600 , _:c14n6006 , _:c14n6013 , _:c14n606 , _:c14n6065 , _:c14n6069 , _:c14n6070 , _:c14n6072 , _:c14n6083 , _:c14n6108 , _:c14n6137 , _:c14n614 , _:c14n6147 , _:c14n615 , _:c14n6153 , _:c14n6174 , _:c14n6196 , _:c14n6201 , _:c14n6215 , _:c14n624 , _:c14n6250 , _:c14n6252 , _:c14n6256 , _:c14n6258 , _:c14n6273 , _:c14n6277 , _:c14n6280 , _:c14n6305 , _:c14n6318 , _:c14n6321 , _:c14n6330 , _:c14n6336 , _:c14n6340 , _:c14n6360 , _:c14n6374 , _:c14n638 , _:c14n6396 , _:c14n6409 , _:c14n6416 , _:c14n6451 , _:c14n6458 , _:c14n6479 , _:c14n6481 , _:c14n6505 , _:c14n6509 , _:c14n6518 , _:c14n6531 , _:c14n6536 , _:c14n6537 , _:c14n6583 , _:c14n6608 , _:c14n6639 , _:c14n665 , _:c14n6703 , _:c14n684 , _:c14n695 , _:c14n724 , _:c14n757 , _:c14n804 , _:c14n819 , _:c14n868 , _:c14n871 , _:c14n908 , _:c14n915 , _:c14n917 , _:c14n923 , _:c14n950 , _:c14n956 , _:c14n961 , _:c14n978 , _:c14n987 , _:c14n990 ;
 	skos:altLabel "MIxS-Food (farm environment)" ;
 	skos:definition "A collection of terms appropriate when collecting samples and performing sequencing of samples obtained from the farm environment, including soil, manure, and food harvesting equipment." ;
-	skos:exactMatch MIXS:FoodFarmEnvironment ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "This extension is intended to work alongside the other food extensions (animals and animal feed, food production facility, and human foods) for capturing contextual data across the food supply-chain environment." ;
 	MIXS:use_cases "Microbiome of farm and field crops as well as environmental samples including irrigation, soil amendments, and farm equipment." .
@@ -8152,7 +7820,6 @@ MIXS:0016021 dcterms:title "food-food production facility" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1002 , _:c14n1050 , _:c14n1074 , _:c14n1137 , _:c14n1142 , _:c14n115 , _:c14n120 , _:c14n1222 , _:c14n1227 , _:c14n1261 , _:c14n1284 , _:c14n1327 , _:c14n1331 , _:c14n1339 , _:c14n1420 , _:c14n1446 , _:c14n1447 , _:c14n1535 , _:c14n1588 , _:c14n1655 , _:c14n1674 , _:c14n1678 , _:c14n168 , _:c14n1683 , _:c14n1686 , _:c14n1691 , _:c14n1692 , _:c14n1694 , _:c14n1707 , _:c14n1718 , _:c14n1725 , _:c14n1727 , _:c14n1743 , _:c14n1762 , _:c14n1777 , _:c14n1797 , _:c14n1826 , _:c14n183 , _:c14n1866 , _:c14n187 , _:c14n189 , _:c14n1903 , _:c14n1932 , _:c14n1983 , _:c14n1989 , _:c14n2042 , _:c14n2119 , _:c14n2120 , _:c14n2148 , _:c14n2168 , _:c14n217 , _:c14n2182 , _:c14n2187 , _:c14n2201 , _:c14n2219 , _:c14n2239 , _:c14n234 , _:c14n2350 , _:c14n2359 , _:c14n2361 , _:c14n2459 , _:c14n2460 , _:c14n2480 , _:c14n2531 , _:c14n2587 , _:c14n2594 , _:c14n2595 , _:c14n2623 , _:c14n2626 , _:c14n2637 , _:c14n2670 , _:c14n2675 , _:c14n2712 , _:c14n2767 , _:c14n2783 , _:c14n2786 , _:c14n2809 , _:c14n2836 , _:c14n2837 , _:c14n2856 , _:c14n289 , _:c14n2895 , _:c14n2897 , _:c14n2918 , _:c14n2923 , _:c14n2925 , _:c14n2938 , _:c14n3033 , _:c14n3040 , _:c14n3043 , _:c14n3078 , _:c14n3150 , _:c14n3176 , _:c14n3181 , _:c14n3200 , _:c14n3243 , _:c14n3343 , _:c14n335 , _:c14n3355 , _:c14n3365 , _:c14n3370 , _:c14n3423 , _:c14n3514 , _:c14n3532 , _:c14n354 , _:c14n3663 , _:c14n3712 , _:c14n3772 , _:c14n3774 , _:c14n3781 , _:c14n3799 , _:c14n3820 , _:c14n3842 , _:c14n3848 , _:c14n3879 , _:c14n3882 , _:c14n3891 , _:c14n3980 , _:c14n3983 , _:c14n3985 , _:c14n4019 , _:c14n4066 , _:c14n4085 , _:c14n4119 , _:c14n4160 , _:c14n4172 , _:c14n4174 , _:c14n4206 , _:c14n4221 , _:c14n4239 , _:c14n4251 , _:c14n4264 , _:c14n433 , _:c14n4331 , _:c14n4367 , _:c14n4374 , _:c14n4417 , _:c14n4494 , _:c14n4513 , _:c14n4515 , _:c14n4519 , _:c14n4538 , _:c14n4564 , _:c14n4570 , _:c14n4578 , _:c14n4584 , _:c14n4593 , _:c14n4594 , _:c14n4601 , _:c14n4618 , _:c14n4626 , _:c14n4632 , _:c14n4664 , _:c14n4670 , _:c14n4675 , _:c14n4678 , _:c14n4679 , _:c14n4702 , _:c14n4721 , _:c14n4743 , _:c14n4778 , _:c14n4814 , _:c14n4832 , _:c14n4851 , _:c14n4858 , _:c14n4870 , _:c14n4878 , _:c14n4883 , _:c14n4902 , _:c14n4931 , _:c14n4944 , _:c14n4972 , _:c14n4973 , _:c14n4983 , _:c14n4988 , _:c14n4994 , _:c14n5005 , _:c14n5014 , _:c14n503 , _:c14n5032 , _:c14n5046 , _:c14n5078 , _:c14n5089 , _:c14n5180 , _:c14n5237 , _:c14n5246 , _:c14n5256 , _:c14n5261 , _:c14n5274 , _:c14n53 , _:c14n531 , _:c14n5330 , _:c14n536 , _:c14n5360 , _:c14n5369 , _:c14n5383 , _:c14n5537 , _:c14n5554 , _:c14n5561 , _:c14n5617 , _:c14n5632 , _:c14n5677 , _:c14n5694 , _:c14n5768 , _:c14n5773 , _:c14n5789 , _:c14n5794 , _:c14n584 , _:c14n5871 , _:c14n589 , _:c14n5897 , _:c14n5900 , _:c14n5901 , _:c14n5910 , _:c14n5911 , _:c14n5922 , _:c14n5960 , _:c14n5983 , _:c14n5996 , _:c14n6046 , _:c14n6056 , _:c14n6113 , _:c14n6127 , _:c14n6149 , _:c14n6168 , _:c14n6176 , _:c14n6239 , _:c14n6241 , _:c14n625 , _:c14n6284 , _:c14n6313 , _:c14n6325 , _:c14n6370 , _:c14n6385 , _:c14n6440 , _:c14n6447 , _:c14n645 , _:c14n6466 , _:c14n6491 , _:c14n6522 , _:c14n6523 , _:c14n6535 , _:c14n6556 , _:c14n6559 , _:c14n6665 , _:c14n6674 , _:c14n6682 , _:c14n6712 , _:c14n676 , _:c14n682 , _:c14n713 , _:c14n715 , _:c14n729 , _:c14n745 , _:c14n75 , _:c14n755 , _:c14n760 , _:c14n800 , _:c14n823 , _:c14n856 , _:c14n936 , _:c14n949 , _:c14n972 , _:c14n973 ;
 	skos:altLabel "MIxS-Food(food production facility)" ;
 	skos:definition "A collection of terms appropriate when collecting samples and performing sequencing of samples obtained from food production facilities." ;
-	skos:exactMatch MIXS:FoodFoodProductionFacility ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "This extension is intended to work alongside the other food extensions (animals and animal feed, farm environment, and human foods) for capturing contextual data across the food supply-chain environment." ;
 	MIXS:use_cases "Microbiome of food production facilities/factories" .
@@ -8162,7 +7829,6 @@ MIXS:0016022 dcterms:title "food-human foods" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1000 , _:c14n1015 , _:c14n1017 , _:c14n102 , _:c14n1058 , _:c14n1059 , _:c14n1066 , _:c14n1085 , _:c14n1094 , _:c14n1104 , _:c14n114 , _:c14n1163 , _:c14n119 , _:c14n1230 , _:c14n1265 , _:c14n1294 , _:c14n1333 , _:c14n1344 , _:c14n1357 , _:c14n1369 , _:c14n1412 , _:c14n1455 , _:c14n146 , _:c14n1509 , _:c14n1538 , _:c14n1544 , _:c14n1582 , _:c14n1670 , _:c14n1672 , _:c14n1750 , _:c14n1751 , _:c14n1758 , _:c14n1782 , _:c14n1786 , _:c14n179 , _:c14n1828 , _:c14n1876 , _:c14n1942 , _:c14n1945 , _:c14n1948 , _:c14n2010 , _:c14n2058 , _:c14n2074 , _:c14n2086 , _:c14n2100 , _:c14n212 , _:c14n2132 , _:c14n2167 , _:c14n2193 , _:c14n2227 , _:c14n2246 , _:c14n2275 , _:c14n228 , _:c14n2368 , _:c14n2382 , _:c14n2409 , _:c14n241 , _:c14n2414 , _:c14n2465 , _:c14n2492 , _:c14n2493 , _:c14n2496 , _:c14n25 , _:c14n2528 , _:c14n254 , _:c14n2543 , _:c14n2584 , _:c14n260 , _:c14n2602 , _:c14n2638 , _:c14n2650 , _:c14n2651 , _:c14n2663 , _:c14n2665 , _:c14n2693 , _:c14n2735 , _:c14n2740 , _:c14n2747 , _:c14n2781 , _:c14n2843 , _:c14n2857 , _:c14n2875 , _:c14n2882 , _:c14n2887 , _:c14n2894 , _:c14n2898 , _:c14n2926 , _:c14n2954 , _:c14n2980 , _:c14n3031 , _:c14n3041 , _:c14n3050 , _:c14n307 , _:c14n3075 , _:c14n3082 , _:c14n3114 , _:c14n3152 , _:c14n3154 , _:c14n3175 , _:c14n3234 , _:c14n3289 , _:c14n3315 , _:c14n3416 , _:c14n3439 , _:c14n347 , _:c14n3470 , _:c14n3534 , _:c14n3549 , _:c14n355 , _:c14n3551 , _:c14n3582 , _:c14n3597 , _:c14n3600 , _:c14n3602 , _:c14n3651 , _:c14n3673 , _:c14n3676 , _:c14n368 , _:c14n3693 , _:c14n3717 , _:c14n3743 , _:c14n3803 , _:c14n3815 , _:c14n3822 , _:c14n3831 , _:c14n3860 , _:c14n3894 , _:c14n3904 , _:c14n3909 , _:c14n3938 , _:c14n3967 , _:c14n3971 , _:c14n3996 , _:c14n4016 , _:c14n4023 , _:c14n4037 , _:c14n404 , _:c14n4041 , _:c14n4046 , _:c14n4059 , _:c14n4062 , _:c14n4065 , _:c14n4086 , _:c14n4121 , _:c14n4127 , _:c14n4145 , _:c14n4152 , _:c14n416 , _:c14n4161 , _:c14n4164 , _:c14n4170 , _:c14n4176 , _:c14n4194 , _:c14n4208 , _:c14n4211 , _:c14n4225 , _:c14n4231 , _:c14n4232 , _:c14n4310 , _:c14n4320 , _:c14n4419 , _:c14n4424 , _:c14n4426 , _:c14n4449 , _:c14n4455 , _:c14n4465 , _:c14n4475 , _:c14n4591 , _:c14n4607 , _:c14n4625 , _:c14n463 , _:c14n464 , _:c14n4642 , _:c14n4648 , _:c14n4651 , _:c14n4661 , _:c14n4719 , _:c14n4744 , _:c14n4756 , _:c14n4854 , _:c14n4917 , _:c14n495 , _:c14n4955 , _:c14n4957 , _:c14n4958 , _:c14n496 , _:c14n4964 , _:c14n499 , _:c14n5002 , _:c14n5044 , _:c14n5061 , _:c14n5092 , _:c14n5104 , _:c14n5138 , _:c14n5144 , _:c14n5167 , _:c14n525 , _:c14n5258 , _:c14n5264 , _:c14n5273 , _:c14n5297 , _:c14n5301 , _:c14n5306 , _:c14n5324 , _:c14n5389 , _:c14n5390 , _:c14n5421 , _:c14n5431 , _:c14n5436 , _:c14n5461 , _:c14n5515 , _:c14n5555 , _:c14n5556 , _:c14n5568 , _:c14n5572 , _:c14n5591 , _:c14n5597 , _:c14n5623 , _:c14n5634 , _:c14n564 , _:c14n5679 , _:c14n5688 , _:c14n5708 , _:c14n5713 , _:c14n5721 , _:c14n5746 , _:c14n577 , _:c14n5813 , _:c14n5820 , _:c14n583 , _:c14n5849 , _:c14n5858 , _:c14n5870 , _:c14n5905 , _:c14n5920 , _:c14n5938 , _:c14n5948 , _:c14n5966 , _:c14n5984 , _:c14n6025 , _:c14n607 , _:c14n6085 , _:c14n6103 , _:c14n6132 , _:c14n6160 , _:c14n6172 , _:c14n6187 , _:c14n6245 , _:c14n6251 , _:c14n6292 , _:c14n6307 , _:c14n6312 , _:c14n6314 , _:c14n6343 , _:c14n636 , _:c14n6393 , _:c14n6411 , _:c14n6418 , _:c14n6428 , _:c14n6434 , _:c14n6453 , _:c14n6463 , _:c14n6487 , _:c14n6502 , _:c14n6533 , _:c14n6560 , _:c14n657 , _:c14n6605 , _:c14n6609 , _:c14n666 , _:c14n6699 , _:c14n720 , _:c14n750 , _:c14n765 , _:c14n775 , _:c14n797 , _:c14n817 , _:c14n873 , _:c14n901 , _:c14n914 , _:c14n928 , _:c14n947 , _:c14n953 , _:c14n988 , _:c14n999 ;
 	skos:altLabel "MIxS-Food (human foods)" ;
 	skos:definition "A collection of terms appropriate when collecting samples and performing sequencing of samples obtained from human food products." ;
-	skos:exactMatch MIXS:FoodHumanFoods ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	skos:note "This extension is intended to work alongside the other food extensions (animals and animal feed, farm environment, and food production facilities) for capturing contextual data across the food supply-chain environment." ;
 	MIXS:use_cases "Microbiome of foods intended for human consumption." .
@@ -8172,7 +7838,6 @@ MIXS:0016023 dcterms:title "symbiont-associated" ;
 	rdfs:subClassOf MIXS:Extension , _:c14n1032 , _:c14n1079 , _:c14n110 , _:c14n1155 , _:c14n1158 , _:c14n1245 , _:c14n1250 , _:c14n1304 , _:c14n1322 , _:c14n1325 , _:c14n1364 , _:c14n137 , _:c14n1395 , _:c14n142 , _:c14n1422 , _:c14n1488 , _:c14n151 , _:c14n1554 , _:c14n1559 , _:c14n1572 , _:c14n1673 , _:c14n1714 , _:c14n1761 , _:c14n1780 , _:c14n1802 , _:c14n190 , _:c14n1908 , _:c14n1911 , _:c14n1916 , _:c14n1958 , _:c14n198 , _:c14n2003 , _:c14n203 , _:c14n2052 , _:c14n2089 , _:c14n2110 , _:c14n2111 , _:c14n2157 , _:c14n2162 , _:c14n2281 , _:c14n2308 , _:c14n2371 , _:c14n2475 , _:c14n2479 , _:c14n2483 , _:c14n2554 , _:c14n2562 , _:c14n2656 , _:c14n2679 , _:c14n2701 , _:c14n2714 , _:c14n2719 , _:c14n2731 , _:c14n2734 , _:c14n2748 , _:c14n279 , _:c14n2802 , _:c14n2829 , _:c14n283 , _:c14n2849 , _:c14n2871 , _:c14n2961 , _:c14n3049 , _:c14n3071 , _:c14n3083 , _:c14n3103 , _:c14n3106 , _:c14n3155 , _:c14n3167 , _:c14n3168 , _:c14n3191 , _:c14n3199 , _:c14n3202 , _:c14n3248 , _:c14n3291 , _:c14n3293 , _:c14n33 , _:c14n3300 , _:c14n3381 , _:c14n3409 , _:c14n3426 , _:c14n3443 , _:c14n3489 , _:c14n3501 , _:c14n3502 , _:c14n359 , _:c14n3697 , _:c14n370 , _:c14n3708 , _:c14n3735 , _:c14n3745 , _:c14n3763 , _:c14n3765 , _:c14n3817 , _:c14n3841 , _:c14n3855 , _:c14n3871 , _:c14n3883 , _:c14n3889 , _:c14n3915 , _:c14n3951 , _:c14n3958 , _:c14n3988 , _:c14n4026 , _:c14n4151 , _:c14n4158 , _:c14n417 , _:c14n418 , _:c14n4213 , _:c14n4274 , _:c14n43 , _:c14n4308 , _:c14n4348 , _:c14n437 , _:c14n4474 , _:c14n4510 , _:c14n452 , _:c14n4529 , _:c14n4628 , _:c14n4643 , _:c14n4683 , _:c14n4760 , _:c14n4775 , _:c14n4794 , _:c14n4822 , _:c14n4830 , _:c14n4846 , _:c14n4860 , _:c14n487 , _:c14n4951 , _:c14n4952 , _:c14n5035 , _:c14n5059 , _:c14n5099 , _:c14n5228 , _:c14n5233 , _:c14n5242 , _:c14n5340 , _:c14n5405 , _:c14n5408 , _:c14n5419 , _:c14n5464 , _:c14n5465 , _:c14n5483 , _:c14n5486 , _:c14n5523 , _:c14n5525 , _:c14n5583 , _:c14n559 , _:c14n5649 , _:c14n5692 , _:c14n5698 , _:c14n5723 , _:c14n5822 , _:c14n5894 , _:c14n5945 , _:c14n5957 , _:c14n5962 , _:c14n5974 , _:c14n5975 , _:c14n5978 , _:c14n6003 , _:c14n6052 , _:c14n6062 , _:c14n609 , _:c14n6093 , _:c14n6136 , _:c14n6185 , _:c14n621 , _:c14n623 , _:c14n6233 , _:c14n6295 , _:c14n6297 , _:c14n634 , _:c14n6341 , _:c14n6384 , _:c14n6388 , _:c14n6405 , _:c14n6423 , _:c14n6429 , _:c14n6442 , _:c14n6461 , _:c14n6508 , _:c14n6530 , _:c14n6593 , _:c14n6679 , _:c14n6696 , _:c14n68 , _:c14n722 , _:c14n777 , _:c14n807 , _:c14n898 , _:c14n905 , _:c14n910 , _:c14n926 , _:c14n929 , _:c14n955 ;
 	skos:altLabel "MIxS-SA (symbiont-associated)" ;
 	skos:definition "A collection of terms appropriate when collecting samples and sequencing samples obtained from an organism that lives in close association with any other organism(s)." ;
-	skos:exactMatch MIXS:SymbiontAssociated ;
 	skos:inScheme <https://w3id.org/mixs> ;
 	MIXS:use_cases "the microbiome sequence of a flea sampled from a farm animal" .
 MIXS:AeroStrucEnum\#glider a owl:Class ;
