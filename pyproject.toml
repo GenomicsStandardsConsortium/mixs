@@ -55,6 +55,7 @@ generate-term-list = 'scripts.term_list_generator:generate_term_list'
 organize-files = 'scripts.organize_files:main'
 required-supersedes-recommended = 'scripts.required_supersedes_recommended:find_required_and_recommended_usages'
 describe-enums = 'scripts.describe_enums_by_slots_using:update_enum_descriptions'
+apply-sparql-updates = 'scripts.apply_sparql_updates:main'
 isolate-global-slots = 'scripts.isolate_slots:isolate_global_slots'
 diff-releases = 'scripts.diff_two_linkml_mixs_releases:main'
 
