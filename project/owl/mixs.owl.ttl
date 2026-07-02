@@ -56,12 +56,11 @@ linkml:EnumDefinition a owl:Class ;
 linkml:PermissibleValue a owl:Class ;
 	rdfs:label "permissible_value" ;
 	skos:definition "a permissible value, accompanied by intended text and an optional mapping to a concept URI" .
-<https://w3id.org/mixs.owl.ttl> dcterms:source <https://github.com/GenomicsStandardsConsortium/mixs/raw/issue-610-temp-mixs-xlsx-home/mixs/excel/mixs_v6.xlsx> ;
-	pav:version "v6.2.0" ;
+<https://w3id.org/mixs.owl.ttl> pav:version "6.3.1" ;
 	a owl:Ontology ;
 	rdfs:label "mixs" ;
-	skos:definition "This file contains a YAML-formatted specification of the Minimum Information about any (x) Sequence (MIxS) standard, generated using LinkML (https://linkml.io/linkml/). This file is released by the Genomic Standards Consortium (GSC; https://www.gensc.org/) for use by anyone handling data or information about biological sequences. This file is also used as an authoritative 'source of truth' to generate downstream GSC artifacts, available here: https://github.com/GenomicsStandardsConsortium/mixs/tree/main/project" ;
-	skos:note "slot titles that are associated with more than one slot name/SCN: host sex" .
+	rdfs:seeAlso <https://doi.org/10.1038/nbt.1823> ;
+	skos:definition "MIxS, the Minimum Information about any (x) Sequence, is a standard from the Genomic Standards Consortium (GSC, https://www.gensc.org/) for reporting contextual metadata about sequenced samples. It defines checklists for genomic sequence types (for example genomes, metagenomes, and marker genes), environmental extensions, and the terms that populate them. See https://genomicsstandardsconsortium.github.io/mixs/." .
 MIXS:0000001 dcterms:title "amount or size of sample collected" ;
 	schema1:keywords "sample" , "size" ;
 	a owl:DatatypeProperty ;
