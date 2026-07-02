@@ -21,8 +21,10 @@ python = "^3.10"
 # metamodel grouping classes (e.g. linkml:EnumDefinition) that EBI OLS needs to
 # group enum instances/subclasses. Pinned to a fixed commit (rev) rather than the
 # moving branch owl-declare-grouping-classes so the generated OWL is reproducible.
-# Revert to a linkml release once the branch is merged and released. See the
-# linked "revert to linkml release" issue.
+# Note this is a git-based runtime dependency, so installing MIxS requires git and
+# network access to GitHub, not just PyPI. Revert to a linkml release once the
+# branch is merged and released; tracked in
+# https://github.com/GenomicsStandardsConsortium/mixs/issues/1237
 linkml-runtime = {git = "https://github.com/turbomam/linkml.git", rev = "3de07ab16b12b6edf5734de973465c2e5b715e03", subdirectory = "packages/linkml_runtime"}
 jsonasobj2 = "^1.0" # used transitively in src/scripts/mixs/datamodel/mixs.py
 
