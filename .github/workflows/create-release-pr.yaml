@@ -93,6 +93,10 @@ jobs:
         run: |
           sed -i 's/"version": ".*"/"version": "${{ inputs.version }}"/' .zenodo.json
 
+      - name: Bump version in the schema
+        run: |
+          sed -i 's/^version: .*/version: ${{ inputs.version }}/' src/mixs/schema/mixs.yaml
+
       - name: Update version references in documentation
         run: |
           # Update release/README.md - update the "Current version" link
