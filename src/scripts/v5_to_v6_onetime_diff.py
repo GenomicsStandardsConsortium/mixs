@@ -84,34 +84,41 @@ DELETIONS = {"env_package", "investigation_type", "submitted_to_insdc"}
 def read_v5_terms() -> dict:
     """Return {term_name: definition} from the two term sheets of the v5 Excel."""
     tmp = tempfile.NamedTemporaryFile(suffix=".xlsx", delete=False)
-    urllib.request.urlretrieve(V5_XLSX_URL, tmp.name)
-    wb = load_workbook(tmp.name, read_only=True, data_only=True)
-    terms: dict = {}
-    for sheet in ("MIxS", "environmental_packages"):
-        rows = wb[sheet].iter_rows(values_only=True)
-        header = list(next(rows))
-        name_i = header.index("Structured comment name")
-        def_i = header.index("Definition")
-        for row in rows:
-            name = row[name_i]
-            if not name:
-                continue
-            terms.setdefault(str(name).strip(), (row[def_i] or "") if def_i < len(row) else "")
-    wb.close()
-    os.unlink(tmp.name)
+    tmp.close()  # close the handle; we only need the path
+    try:
+        urllib.request.urlretrieve(V5_XLSX_URL, tmp.name)
+        wb = load_workbook(tmp.name, read_only=True, data_only=True)
+        terms: dict = {}
+        try:
+            for sheet in ("MIxS", "environmental_packages"):
+                rows = wb[sheet].iter_rows(values_only=True)
+                header = list(next(rows))
+                name_i = header.index("Structured comment name")
+                def_i = header.index("Definition")
+                for row in rows:
+                    name = row[name_i]
+                    if not name:
+                        continue
+                    terms.setdefault(str(name).strip(), (row[def_i] or "") if def_i < len(row) else "")
+        finally:
+            wb.close()
+    finally:
+        os.unlink(tmp.name)  # always remove the temp file, even on error
     return terms
 
 
 def read_v6_terms() -> dict:
     """Return {slot_name: description} from the mixs6.0.0 tag (induced slots)."""
-    tmp = tempfile.mkdtemp(prefix="mixs600_")
-    with open(Path(tmp) / "schema.tar", "wb") as out:
-        subprocess.run(["git", "archive", V6_TAG, "model/schema"],
-                       check=True, stdout=out, cwd=REPO_ROOT)
-    subprocess.run(["tar", "-xf", "schema.tar"], check=True, cwd=tmp)
-    sv = SchemaView(str(Path(tmp) / V6_SCHEMA))
-    return {name: (sv.induced_slot(name, imports=True).description or "")
-            for name in sv.all_slots(imports=True)}
+    with tempfile.TemporaryDirectory(prefix="mixs600_") as tmp:
+        with open(Path(tmp) / "schema.tar", "wb") as out:
+            subprocess.run(["git", "archive", V6_TAG, "model/schema"],
+                           check=True, stdout=out, cwd=REPO_ROOT)
+        subprocess.run(["tar", "-xf", "schema.tar"], check=True, cwd=tmp)
+        sv = SchemaView(str(Path(tmp) / V6_SCHEMA))
+        # Build the dict inside the context so the extracted files still exist,
+        # and the temp directory is removed on exit.
+        return {name: (sv.induced_slot(name, imports=True).description or "")
+                for name in sv.all_slots(imports=True)}
 
 
 def main() -> None:

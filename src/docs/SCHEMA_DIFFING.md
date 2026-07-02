@@ -94,9 +94,11 @@ comparing any two LinkML versions of MIxS.
 ## Running a diff
 
 Each side is given as `owner/repo@ref:path`, where `ref` is a tag, branch, or
-commit, and `path` is the schema file at that ref. Always pass `--mappings-dir`
-so renamed elements are recognized as renames rather than as one deletion plus
-one addition (see [Maintaining the mappings](#maintaining-the-rename-mapping-files)).
+commit, and `path` is the schema file at that ref. `--mappings-dir` defaults to
+`assets/between_diff_mappings/6_to_pre_7`, so renamed elements are recognized as
+renames rather than as one deletion plus one addition; pass it explicitly only to
+use a different mapping set (see
+[Maintaining the mappings](#maintaining-the-rename-mapping-files)).
 
 **A tagged release against current main:**
 
