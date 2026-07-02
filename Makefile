@@ -303,9 +303,15 @@ $(TSV_RELOADED): $(TSV_TSV) contrib/mixs-patterns-materialized.yaml
 tsv-roundtrip: $(TSV_RELOADED)
 
 # Equivalence test (runs in CI via `make test`): the reloaded YAML must equal the
-# original after YAML -> TSV -> YAML.
+# original after YAML -> TSV -> YAML. Compare with standard tools only: sort keys
+# with yq so ordering is not significant, then diff. diff exits non-zero (and
+# prints the difference) if they are not equivalent, failing the target.
 tsv-roundtrip-test: $(TSV_RELOADED)
 	@echo "=== TSV round-trip equivalence check ==="
-	$(RUN) python $(TSV_DIR)/check_roundtrip_equivalence.py $(TSV_YAML) $(TSV_RELOADED)
+	@if diff <(yq -P 'sort_keys(..)' $(TSV_YAML)) <(yq -P 'sort_keys(..)' $(TSV_RELOADED)); then \
+		echo "round-trip equivalence OK: $(TSV_YAML) == $(TSV_RELOADED)"; \
+	else \
+		echo "ROUND-TRIP MISMATCH: $(TSV_YAML) != $(TSV_RELOADED) (see diff above)"; exit 1; \
+	fi
 
 include contrib.Makefile
