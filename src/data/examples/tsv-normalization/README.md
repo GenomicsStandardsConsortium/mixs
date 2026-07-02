@@ -15,10 +15,17 @@ The round-trip input is a standard valid example,
 is schema-validated by `make test-examples` like every other valid example and
 reused here as the round-trip source.
 
-Every record populates each multivalued field. A record that omits a multivalued
-field produces an empty cell in the rectangular TSV, and loading that cell back
-currently crashes linkml (see the linked linkml issue); keeping the example dense
-avoids that path until the fix is released.
+## Case that does not round-trip yet
+
+Every record populates each multivalued field on purpose. A record that omits a
+multivalued field produces an empty cell in the rectangular TSV, and reloading
+that cell currently crashes the released `linkml-runtime` 1.11.1 with
+`TypeError: list indices must be integers or slices, not NoneType`. That is linkml
+issue https://github.com/linkml/linkml/issues/3250, fixed by
+https://github.com/linkml/linkml/pull/3251 but not yet in a released
+`linkml-runtime`. Keeping every record dense avoids that path for now; lifting the
+workaround once the fix ships is tracked in
+https://github.com/GenomicsStandardsConsortium/mixs/issues/1239.
 
 ## Files
 
