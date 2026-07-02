@@ -36,9 +36,17 @@ def main(owl_path: str, sparql_dir: str) -> None:
     updates = sorted(Path(sparql_dir).glob("*.ru"))
     if not updates:
         raise click.ClickException(f"no *.ru files in {sparql_dir}")
+    # Feed the ontology's own prefixes to update() so PName resolution works across
+    # every operation. rdflib does not propagate a request's PREFIX prologue to the
+    # later `;`-separated operations, which otherwise fails on e.g. `mixs:`.
+    init_ns = dict(graph.namespaces())
+    # The OWL binds the MIxS namespace as `MIXS`; also expose lowercase aliases so
+    # updates can use conventional prefixes like `mixs:`.
+    for prefix, uri in list(init_ns.items()):
+        init_ns.setdefault(prefix.lower(), uri)
     for update in updates:
         before = len(graph)
-        graph.update(update.read_text())
+        graph.update(update.read_text(), initNs=init_ns)
         click.echo(f"applied {update.name}: {before} -> {len(graph)} triples")
     graph.serialize(destination=owl_path, format="turtle")
 
