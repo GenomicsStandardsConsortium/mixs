@@ -278,9 +278,11 @@ clean-contrib:
 .PHONY: tsv-roundtrip tsv-roundtrip-test
 
 TSV_DIR = src/data/examples/tsv-normalization
-TSV_YAML = $(TSV_DIR)/MimsSoil.yaml
-TSV_TSV = $(TSV_DIR)/MimsSoil.tsv
-TSV_RELOADED = $(TSV_DIR)/MimsSoil.reloaded.yaml
+# Round-trip input is a standard valid example, so it is schema-validated by
+# test-examples and reused here.
+TSV_YAML = src/data/examples/valid/MixsCompliantData-MimsSoil-multivalued-example.yaml
+TSV_TSV = $(TSV_DIR)/roundtrip.tsv
+TSV_RELOADED = $(TSV_DIR)/roundtrip.reloaded.yaml
 
 # YAML -> bare-pipe TSV, standard linkml-convert.
 $(TSV_TSV): $(TSV_YAML) contrib/mixs-patterns-materialized.yaml
