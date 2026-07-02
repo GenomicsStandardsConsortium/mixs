@@ -1504,13 +1504,15 @@ files = [
 
 [[package]]
 name = "linkml"
-version = "1.11.0.post91.dev0+c491a6627"
+version = "1.11.1"
 description = "Linked Open Data Modeling Language"
 optional = false
 python-versions = ">=3.10"
 groups = ["dev"]
-files = []
-develop = false
+files = [
+    {file = "linkml-1.11.1-py3-none-any.whl", hash = "sha256:d1bbb97a8b1ea4a99b145007875733a5e5e89b3acfe3e9d1e369fa4a582990ed"},
+    {file = "linkml-1.11.1.tar.gz", hash = "sha256:2f6774e13628270cadaeecda3313db0437ecc15cd44ee35c6c2655dbe31c8524"},
+]
 
 [package.dependencies]
 antlr4-python3-runtime = ">=4.9.0,<4.10"
@@ -1527,9 +1529,9 @@ parse = "*"
 prefixcommons = ">=0.1.7"
 prefixmaps = ">=0.2.2"
 pydantic = ">=2.0.0,<3.0.0"
-pyjsg = ">=0.12.3"
-pyshex = ">=0.9.0"
-pyshexc = ">=0.10.3"
+pyjsg = ">=0.11.6"
+pyshex = ">=0.7.20"
+pyshexc = ">=0.8.3"
 python-dateutil = "*"
 pyyaml = "*"
 rdflib = ">=6.0.0"
@@ -1539,22 +1541,17 @@ sqlalchemy = ">=1.4.31"
 typing-extensions = {version = ">=4.6.0", markers = "python_version < \"3.12\""}
 watchdog = ">=0.9.0"
 
-[package.source]
-type = "git"
-url = "https://github.com/turbomam/linkml.git"
-reference = "c491a66278b0bae982a83973ab435f1392ed8120"
-resolved_reference = "c491a66278b0bae982a83973ab435f1392ed8120"
-subdirectory = "packages/linkml"
-
 [[package]]
 name = "linkml-runtime"
-version = "1.11.0.post91.dev0+c491a6627"
+version = "1.11.1"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
-files = []
-develop = false
+files = [
+    {file = "linkml_runtime-1.11.1-py3-none-any.whl", hash = "sha256:b22c77d8fd920d0f4f43a6ece31393dc0b28bb47790f3e1c114210318c36b3da"},
+    {file = "linkml_runtime-1.11.1.tar.gz", hash = "sha256:e71300b596c4f35aeccd9dca096806678402213dbdb2c5e8e68f507e21320754"},
+]
 
 [package.dependencies]
 click = ">=8.2"
@@ -1568,20 +1565,12 @@ jsonschema = ">=3.2.0"
 prefixcommons = ">=0.1.12"
 prefixmaps = ">=0.1.4"
 pydantic = ">=1.10.2,<3.0.0"
-pyoxigraph = ">=0.5.6"
 pyyaml = "*"
 rdflib = ">=6.0.0"
 requests = "*"
 
 [package.extras]
 dev = ["coverage", "requests-cache"]
-
-[package.source]
-type = "git"
-url = "https://github.com/turbomam/linkml.git"
-reference = "c491a66278b0bae982a83973ab435f1392ed8120"
-resolved_reference = "c491a66278b0bae982a83973ab435f1392ed8120"
-subdirectory = "packages/linkml_runtime"
 
 [[package]]
 name = "markdown"
@@ -2741,51 +2730,6 @@ pyyaml = "*"
 
 [package.extras]
 extra = ["pygments (>=2.19.1)"]
-
-[[package]]
-name = "pyoxigraph"
-version = "0.5.9"
-description = "Python bindings of Oxigraph, a SPARQL database and RDF toolkit"
-optional = false
-python-versions = ">=3.8"
-groups = ["main", "dev"]
-files = [
-    {file = "pyoxigraph-0.5.9-cp310-cp310-manylinux_2_28_aarch64.whl", hash = "sha256:c711156407663e2182e4ea07c959f8e471f1b6ecaee1f00ce3accca7a53d9917"},
-    {file = "pyoxigraph-0.5.9-cp310-cp310-manylinux_2_28_x86_64.whl", hash = "sha256:70ac4792acee8c86f795b0db785b467afbb02daf58e2beb6e6ef3c3f43f4c222"},
-    {file = "pyoxigraph-0.5.9-cp310-cp310-win_amd64.whl", hash = "sha256:95347d64417299f91128ccfee486dcb14d2c6674a9b9a62e5c6978b651a2ccf2"},
-    {file = "pyoxigraph-0.5.9-cp311-cp311-manylinux_2_28_aarch64.whl", hash = "sha256:baffb41d914b761b06cde61eeb0a35dd5f0fa4808f71ae9902fdd1179e70e553"},
-    {file = "pyoxigraph-0.5.9-cp311-cp311-manylinux_2_28_x86_64.whl", hash = "sha256:56b78aab5a5688ede88404372574785ba74e8d82b2cd1c0b0623a03b7069967f"},
-    {file = "pyoxigraph-0.5.9-cp311-cp311-win_amd64.whl", hash = "sha256:eee3db30ecb6836fdc05ddcbc6aa79ed521afcbfa707a8561b7e5891c4fb4ff8"},
-    {file = "pyoxigraph-0.5.9-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:6ab699861035163e89bc512ce20aa6e91b654e4d33114c9f5facab08f0fe3d7e"},
-    {file = "pyoxigraph-0.5.9-cp312-cp312-manylinux_2_28_x86_64.whl", hash = "sha256:5a8a1b2debadb5fe79f8b89cbe1193e9c0e6fc1cf0c9431b6be706234beeabbe"},
-    {file = "pyoxigraph-0.5.9-cp312-cp312-win_amd64.whl", hash = "sha256:d04806073905f448a48811b217115e71224be7f1d4075d1f5f5ec07a016f42ae"},
-    {file = "pyoxigraph-0.5.9-cp312-cp312-win_arm64.whl", hash = "sha256:379bef7f8fc38f638f358b1e12bc5bdc908a0e7d47157f4399bf103c727a66da"},
-    {file = "pyoxigraph-0.5.9-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:bcac65148bddcd0ae24ee1bf20a2e89cc225a926b9e9996eb64dcce60400d1a3"},
-    {file = "pyoxigraph-0.5.9-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:57f3619c7860f4c95ddab077e4a3dedb7ca4cf191bd81096db835264d414ec5b"},
-    {file = "pyoxigraph-0.5.9-cp313-cp313-win_amd64.whl", hash = "sha256:4f8ff48b873157ab38e2595a56d6d2008471a45853f5fffc645658c6f69c07db"},
-    {file = "pyoxigraph-0.5.9-cp313-cp313-win_arm64.whl", hash = "sha256:b829233ea4445ccd1032d02e9189432a77e16888a79313498aa501b8731dc925"},
-    {file = "pyoxigraph-0.5.9-cp313-cp313t-win_amd64.whl", hash = "sha256:e9ca7cd7666336fcbafd9a2ec7d598dd859b7bd2ca7b0838a0f7b92dd3828c28"},
-    {file = "pyoxigraph-0.5.9-cp314-cp314-manylinux_2_28_aarch64.whl", hash = "sha256:f9154bea122c0bab11eda7604b27ceb424ab8ba1637250503008b8c6632ea405"},
-    {file = "pyoxigraph-0.5.9-cp314-cp314-manylinux_2_28_x86_64.whl", hash = "sha256:4558d430bbad6e6b4ba98e0e89a2e28402211069d38e6e9b00083ae2d9d2d175"},
-    {file = "pyoxigraph-0.5.9-cp314-cp314-win_amd64.whl", hash = "sha256:79caf78136a8312e506beb607910cc5a93662a05a173aa9b560ce9d08801384f"},
-    {file = "pyoxigraph-0.5.9-cp314-cp314t-manylinux_2_28_aarch64.whl", hash = "sha256:917d976dcb813d613d0ddd7da1c9dec6ad02ee815015f393c703cf0804946653"},
-    {file = "pyoxigraph-0.5.9-cp314-cp314t-manylinux_2_28_x86_64.whl", hash = "sha256:68f8daf082ea4bf9583abd10b64e23cd2c4a3285338a5ec24254181d45e63083"},
-    {file = "pyoxigraph-0.5.9-cp314-cp314t-win_amd64.whl", hash = "sha256:b8884b0ce3ccbac99ebc2c995614a13dc5f5d86b0adb847f36aeb1c713d12946"},
-    {file = "pyoxigraph-0.5.9-cp38-abi3-macosx_10_14_x86_64.whl", hash = "sha256:8b998bc479a54a8905cdeaad621d0f7fed212abf9f1cbededfde4c51fc8e3bb8"},
-    {file = "pyoxigraph-0.5.9-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:5c9f93db5e14a03ac1e3934cece3fb6f7c0a9f4bde33082c72c788c12bf65ba4"},
-    {file = "pyoxigraph-0.5.9-cp38-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:afe19bd1835a7245caad06cc9bb1a5c861882dc074fdfa24ba2626e3bbf9866a"},
-    {file = "pyoxigraph-0.5.9-cp38-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:3bd1925a8185320bcb8c549cccafbb423cc3957513890e6f420b8e355055052a"},
-    {file = "pyoxigraph-0.5.9-cp38-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:f619aac7199b2ba91cade2fe69f64b4c73abb1e6b33735b0ff7205a753e609cd"},
-    {file = "pyoxigraph-0.5.9-cp38-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:09071f6c08b9489723dec96e2d96f64a15b9be2d165d3bbf67d40712884ba7a3"},
-    {file = "pyoxigraph-0.5.9-cp38-abi3-win_amd64.whl", hash = "sha256:efd3d03bd2a36f9b0bdf3ce70d76ce5278c481fe961d14c2bb6efcac10f57ae2"},
-    {file = "pyoxigraph-0.5.9-cp38-abi3-win_arm64.whl", hash = "sha256:94c2a8b52c1ed6e445a235a4f89cd460eea936f399d28df5e9927826bf52f032"},
-    {file = "pyoxigraph-0.5.9-cp38-cp38-win_amd64.whl", hash = "sha256:276ca12ca2cc20b123812af78a489d35f871f1ee5579d9f98d6c65f038fcd9ee"},
-    {file = "pyoxigraph-0.5.9-cp39-cp39-win_amd64.whl", hash = "sha256:dd3a801b56c383cf4b078bd51cc1b86498b1a1f6e3e2f56406a00c3239fc97ca"},
-    {file = "pyoxigraph-0.5.9-pp311-pypy311_pp73-manylinux_2_28_aarch64.whl", hash = "sha256:f39a6175a80a55c837981d4d68f42380071bb1d45af124de488fcc8a61a81af3"},
-    {file = "pyoxigraph-0.5.9-pp311-pypy311_pp73-manylinux_2_28_x86_64.whl", hash = "sha256:71dba053e5efc0002fbd4ace3119b9d3aec8a6c5b164ed7409a2429bf71171b8"},
-    {file = "pyoxigraph-0.5.9-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:70ffb46ae49f52b18a49c3fb63d906ae9c189de4fe4dbf5453279bda4d27af4e"},
-    {file = "pyoxigraph-0.5.9.tar.gz", hash = "sha256:fe2bea0f41f5284b6dad99ea718d7ff03600068cdf8736b63a9e6cd05f056b19"},
-]
 
 [[package]]
 name = "pyparsing"
@@ -4382,4 +4326,4 @@ docs = []
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "98df75e81def88f6ab5d120380021d77084b34f4e060ddc8136b88adab5efd9a"
+content-hash = "9a4859cfe22f8f02b6851cf40934312f3bdc0651094869aebff4da01318c6d7a"

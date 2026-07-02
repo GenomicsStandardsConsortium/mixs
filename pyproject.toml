@@ -17,22 +17,13 @@ include = ["README.md", "project", "src/mixs", "src/scripts"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-# TEMPORARY: build OWL against a linkml feature branch that declares the
-# metamodel grouping classes (e.g. linkml:EnumDefinition) that EBI OLS needs to
-# group enum instances/subclasses. Pinned to a fixed commit (rev) rather than the
-# moving branch owl-declare-grouping-classes so the generated OWL is reproducible.
-# Note this is a git-based runtime dependency, so installing MIxS requires git and
-# network access to GitHub, not just PyPI. Revert to a linkml release once the
-# branch is merged and released; tracked in
-# https://github.com/GenomicsStandardsConsortium/mixs/issues/1237
-linkml-runtime = {git = "https://github.com/turbomam/linkml.git", rev = "c491a66278b0bae982a83973ab435f1392ed8120", subdirectory = "packages/linkml_runtime"}
+linkml-runtime = "^1.9"
 jsonasobj2 = "^1.0" # used transitively in src/scripts/mixs/datamodel/mixs.py
 
 [tool.poetry.group.dev.dependencies]
 black = "^26.3"
 deptry = "^0.23"
-# TEMPORARY: see the linkml-runtime note above (same commit, pinned by rev).
-linkml = {git = "https://github.com/turbomam/linkml.git", rev = "c491a66278b0bae982a83973ab435f1392ed8120", subdirectory = "packages/linkml"}
+linkml = "^1.9"
 matplotlib = "^3.10"
 mkdocs-material = "^9.6"
 mkdocs-mermaid2-plugin = "^1.2"
