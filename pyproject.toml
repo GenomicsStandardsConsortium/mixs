@@ -37,6 +37,7 @@ click = "^8.1"
 pyyaml = "^6.0"
 requests = "^2.33"
 python-dotenv = "^1.0"
+openpyxl = "^3.1"  # read the v5 Excel file in src/scripts/v5_to_v6_onetime_diff.py
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
