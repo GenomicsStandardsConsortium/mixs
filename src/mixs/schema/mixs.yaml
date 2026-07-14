@@ -6838,8 +6838,9 @@ slots:
     slot_uri: MIXS:0000014
     range: string
     required: true
+    multivalued: true
     structured_pattern:
-      syntax: ^{termLabel} \[{termID}\]$
+      syntax: ^{termLabel} \[{termID}\](; {termLabel} \[{termID}\])*$
       interpolated: true
       partial_match: true
   env_monitoring_zone:
