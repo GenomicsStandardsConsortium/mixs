@@ -11,7 +11,7 @@ WHERE {
        skos:definition ?d .
   BIND(CONCAT(?d,
     " NOTE: MIxS is offered in OLS to take advantage of the search, hierarchical browsing, ",
-    "API access and pre-computed, embeddings-based identification of similar classes ",
+    "API access and pre-computed embeddings-based identification of similar classes ",
     "and similar properties. It is not an ontology and users should anticipate some ",
     "pragmatic reuse of ontology-browser features."
   ) AS ?withNote)
