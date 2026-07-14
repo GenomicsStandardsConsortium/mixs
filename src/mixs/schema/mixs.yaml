@@ -1,11 +1,18 @@
 ---
 name: mixs
 description: >-
-  This file contains a YAML-formatted specification of the Minimum Information about any (x) Sequence (MIxS) standard, generated using LinkML (https://linkml.io/linkml/). This file is released by the Genomic Standards Consortium (GSC; https://www.gensc.org/) for use by anyone handling data or information about biological sequences. This file is also used as an authoritative 'source of truth' to generate downstream GSC artifacts, available here: https://github.com/GenomicsStandardsConsortium/mixs/tree/main/project
+  MIxS, the Minimum Information about any (x) Sequence, is a standard from the
+  Genomic Standards Consortium (GSC, https://www.gensc.org/) for reporting
+  contextual metadata about sequenced samples. It defines checklists for genomic
+  sequence types (for example genomes, metagenomes, and marker genes),
+  environmental extensions, and the terms that populate them. See
+  https://genomicsstandardsconsortium.github.io/mixs/.
 comments:
   - 'slot titles that are associated with more than one slot name/SCN: host sex'
 id: https://w3id.org/mixs
-version: v6.2.0
+see_also:
+  - https://doi.org/10.1038/nbt.1823
+version: 6.3.1
 imports:
   - linkml:types
 prefixes:
@@ -12219,10 +12226,8 @@ slots:
     range: string
     slot_uri: MIXS:0000054
   season:
-    annotations:
     description: The season when sampling occurred. Any of the four periods into which
-      the year is divided by the equinoxes and solstices. This field accepts terms
-      listed under season (http://purl.obolibrary.org/obo/NCIT_C94729)
+      the year is divided by the equinoxes and solstices.
     title: season
     examples:
       - value: autumn [NCIT:C94733]
@@ -12281,6 +12286,8 @@ slots:
   season_temp:
     annotations:
       Preferred_unit: degree Celsius
+    comments:
+      - this slot should not be populated unless season is also populated
     description: Mean seasonal temperature
     title: mean seasonal temperature
     examples:
@@ -19321,6 +19328,7 @@ classes:
       - al_sat
       - al_sat_meth
       - misc_param
+      - season
     slot_usage:
       crop_rotation:
         string_serialization: '{boolean};{Rn/start_time/end_time/duration}'
