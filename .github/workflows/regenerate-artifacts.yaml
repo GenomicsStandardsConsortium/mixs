@@ -1,0 +1,81 @@
+name: Regenerate and verify generated artifacts
+
+# The generated artifacts committed under project/ and src/mixs/datamodel/ are consumed
+# directly by downstream tools. In particular EBI OLS loads project/owl/mixs.owl.ttl from
+# raw main, so that file must never lag src/mixs/schema/mixs.yaml.
+#
+# On push to main: regenerate the artifacts from the schema and commit them if they changed,
+# so the committed OWL is always in sync (addresses #1240, the stale-artifact half).
+# On pull_request / manual dispatch: regenerate and FAIL if the committed artifacts differ
+# from what the schema produces, so a PR cannot merge stale artifacts (the CI-verify half).
+#
+# The push trigger is scoped to the schema and its build inputs, so the regeneration commit
+# (which only touches project/ and src/mixs/datamodel/) does not re-trigger this workflow.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/mixs/schema/mixs.yaml'
+      - 'src/sparql/**'
+      - 'project-generator-config.yaml'
+      - 'Makefile'
+  pull_request:
+    paths:
+      - 'src/mixs/schema/mixs.yaml'
+      - 'src/sparql/**'
+      - 'project-generator-config.yaml'
+      - 'Makefile'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Poetry
+        run: pipx install poetry
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Regenerate artifacts
+        run: |
+          make gen-project
+          make owl
+
+      - name: Commit regenerated artifacts (push to main only)
+        if: github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add project/ src/mixs/datamodel/
+          if git diff --staged --quiet; then
+            echo "Artifacts already in sync; nothing to commit."
+          else
+            git commit -m "Regenerate artifacts from mixs.yaml [skip ci]"
+            git push
+          fi
+
+      - name: Verify committed artifacts are in sync (PR and manual runs)
+        if: github.event_name != 'push'
+        run: |
+          if git diff --quiet -- project/ src/mixs/datamodel/; then
+            echo "Committed artifacts match the schema."
+          else
+            echo "::error::Committed artifacts are out of sync with src/mixs/schema/mixs.yaml. Run 'make gen-project && make owl' and commit the result."
+            git diff --stat -- project/ src/mixs/datamodel/
+            exit 1
+          fi

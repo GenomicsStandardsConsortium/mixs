@@ -21,6 +21,24 @@ Define what they are
 
 # Releases
 
+## Version strings
+
+MIxS carries two version numbers, managed differently. Both use bare `X.Y.Z` values (no `v`); the `v` is a git tag label only.
+
+- **Python package version** (`pyproject.toml`): derived from the git tag by `poetry-dynamic-versioning`. It is not edited by hand; `pyproject.toml` holds a `0.0.0` placeholder on `main`, and the real value is stamped from the tag at build time.
+- **Schema version** (`src/mixs/schema/mixs.yaml` `version:`): this is content. It flows into the generated OWL (`pav:version`), which EBI OLS reads, and into the JSON Schema and datamodel. It is bumped by hand as part of a release (see below), following the same pattern as `biolink-model`.
+
+## Cutting a release
+
+1. Bump the schema version by editing the `version:` field near the top of `src/mixs/schema/mixs.yaml` to the new release number (bare `X.Y.Z`). Commit it to `main` via the normal PR process. Pushing this to `main` triggers the "Regenerate and verify generated artifacts" workflow, which regenerates the OWL and other `project/` artifacts so they carry the new version.
+2. Run the "Create Release PR" GitHub Action (manual dispatch) with the same version. It bumps `CITATION.cff`, `.zenodo.json`, and `release/README.md`, generates the schema diff, and opens a `release/vX.Y.Z` PR. It does not touch `pyproject.toml` (dynamic) or `mixs.yaml` (already bumped in step 1).
+3. Review and merge the release PR.
+4. Create a GitHub Release with tag `vX.Y.Z` and generate release notes.
+
+## Keeping generated artifacts current
+
+The committed artifacts under `project/` and `src/mixs/datamodel/` are generated from the schema. The "Regenerate and verify generated artifacts" workflow keeps them in sync: on a push to `main` that changes the schema or its build inputs it regenerates and commits them, and on a pull request it fails if the committed artifacts do not match the schema. Do not hand-edit generated artifacts.
+
 # LinkML Updates 
 
 # Documentation
