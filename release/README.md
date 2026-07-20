@@ -5,7 +5,7 @@ Consortium (GSC). MIxS provides a framework for describing sequences and samples
 
 ## [Accessing MIxS Versions](#accessing-mixs-versions)
 
-- Current version: [MIxS v6.3.1](https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.1)
+- Current version: [MIxS v9.9.9](https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v9.9.9)
 - Last major release: [mixs6.0.0](https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.0.0)
 - [View all releases on GitHub](https://github.com/GenomicsStandardsConsortium/mixs/releases)
 - [Report issues or contribute](https://github.com/GenomicsStandardsConsortium/mixs/issues)
