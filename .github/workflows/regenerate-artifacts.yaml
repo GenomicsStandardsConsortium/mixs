@@ -61,10 +61,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add project/ src/mixs/datamodel/
-          if git diff --staged --quiet; then
-            echo "Artifacts already in sync; nothing to commit."
+          # Ignore the embedded generation timestamps so timestamp-only regeneration does
+          # not create churn commits; only commit when the schema content actually changed.
+          if git diff --quiet -I'generation_date' -I'source_file_date' -I'Generation date' -- project/ src/mixs/datamodel/; then
+            echo "No substantive artifact changes (only generation timestamps); skipping commit."
+            git checkout -- project/ src/mixs/datamodel/
           else
+            git add project/ src/mixs/datamodel/
             git commit -m "Regenerate artifacts from mixs.yaml [skip ci]"
             git push
           fi
@@ -72,8 +75,8 @@ jobs:
       - name: Verify committed artifacts are in sync (PR and manual runs)
         if: github.event_name != 'push'
         run: |
-          if git diff --quiet -- project/ src/mixs/datamodel/; then
-            echo "Committed artifacts match the schema."
+          if git diff --quiet -I'generation_date' -I'source_file_date' -I'Generation date' -- project/ src/mixs/datamodel/; then
+            echo "Committed artifacts match the schema (ignoring generation timestamps)."
           else
             echo "::error::Committed artifacts are out of sync with src/mixs/schema/mixs.yaml. Run 'make gen-project && make owl' and commit the result."
             git diff --stat -- project/ src/mixs/datamodel/
