@@ -1,16 +1,17 @@
 name: Regenerate and verify generated artifacts
 
-# The generated artifacts committed under project/ and src/mixs/datamodel/ are consumed
-# directly by downstream tools. In particular EBI OLS loads project/owl/mixs.owl.ttl from
-# raw main, so that file must never lag src/mixs/schema/mixs.yaml.
+# The generated artifacts committed under project/, src/mixs/datamodel/, and contrib/ are
+# consumed by downstream tools; EBI OLS loads project/owl/mixs.owl.ttl from raw main, so the
+# committed artifacts must not lag src/mixs/schema/mixs.yaml (#1240).
 #
-# On push to main: regenerate the artifacts from the schema and commit them if they changed,
-# so the committed OWL is always in sync (addresses #1240, the stale-artifact half).
-# On pull_request / manual dispatch: regenerate and FAIL if the committed artifacts differ
-# from what the schema produces, so a PR cannot merge stale artifacts (the CI-verify half).
-#
-# The push trigger is scoped to the schema and its build inputs, so the regeneration commit
-# (which only touches project/ and src/mixs/datamodel/) does not re-trigger this workflow.
+# The OWL is not byte-reproducible: RDF/Turtle serialization reorders triples and relabels
+# blank nodes on every run (same 46k triples, different text), so it cannot be verified by a
+# text diff. project/jsonschema/mixs.schema.json IS fully deterministic and carries no
+# generation timestamp, and it is a complete representation of the schema, so it is used as the
+# canary for whether the schema content actually changed:
+#   - pull_request / manual dispatch: regenerate and FAIL if the committed JSON Schema differs.
+#   - push to main: regenerate everything and, only when the JSON Schema changed, commit the
+#     refreshed artifacts (including the reordered OWL) so the committed OWL stays current.
 
 on:
   push:
@@ -28,12 +29,18 @@ on:
       - 'Makefile'
   workflow_dispatch:
 
+# Least privilege by default; only the push-to-main job that commits needs write.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  regenerate:
+  verify:
+    # Runs on pull requests and manual dispatch with a read-only token, so untrusted PR code
+    # executed via `make` cannot push to the repo.
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,39 +53,67 @@ jobs:
           python-version: '3.10'
 
       - name: Install Poetry
-        run: pipx install poetry
+        uses: snok/install-poetry@v1
 
       - name: Install dependencies
         run: make install
 
-      - name: Regenerate artifacts
+      - name: Regenerate the JSON Schema (the deterministic canary)
+        run: make gen-project
+
+      - name: Fail if the committed JSON Schema is out of sync
+        run: |
+          # git add -A so a newly created (untracked) output is detected, not just edits.
+          git add -A project/jsonschema/
+          if git diff --staged --quiet -- project/jsonschema/; then
+            echo "project/jsonschema/mixs.schema.json is in sync with the schema."
+          else
+            echo "::error::project/jsonschema/mixs.schema.json is out of sync with src/mixs/schema/mixs.yaml. Run 'make gen-project' (and 'make owl' / 'make all-contrib') and commit the results."
+            git diff --staged --stat -- project/jsonschema/
+            exit 1
+          fi
+
+  regenerate:
+    # Runs only on push to main, with a write token, to refresh the committed artifacts.
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Regenerate all artifacts
         run: |
           make gen-project
           make owl
+          make all-contrib
 
-      - name: Commit regenerated artifacts (push to main only)
-        if: github.event_name == 'push'
+      - name: Commit refreshed artifacts when the schema content changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Ignore the embedded generation timestamps so timestamp-only regeneration does
-          # not create churn commits; only commit when the schema content actually changed.
-          if git diff --quiet -I'generation_date' -I'source_file_date' -I'Generation date' -- project/ src/mixs/datamodel/; then
-            echo "No substantive artifact changes (only generation timestamps); skipping commit."
-            git checkout -- project/ src/mixs/datamodel/
+          # The JSON Schema is deterministic, so use it to decide whether content actually
+          # changed. The OWL reorders on every run, so gating on the JSON Schema avoids
+          # churning the OWL on no-op runs. git add -A catches newly created outputs too.
+          git add -A project/jsonschema/
+          if git diff --staged --quiet -- project/jsonschema/; then
+            echo "No schema content change (JSON Schema unchanged); nothing to commit."
           else
-            git add project/ src/mixs/datamodel/
+            git add -A project/ src/mixs/datamodel/ contrib/
             git commit -m "Regenerate artifacts from mixs.yaml [skip ci]"
             git push
-          fi
-
-      - name: Verify committed artifacts are in sync (PR and manual runs)
-        if: github.event_name != 'push'
-        run: |
-          if git diff --quiet -I'generation_date' -I'source_file_date' -I'Generation date' -- project/ src/mixs/datamodel/; then
-            echo "Committed artifacts match the schema (ignoring generation timestamps)."
-          else
-            echo "::error::Committed artifacts are out of sync with src/mixs/schema/mixs.yaml. Run 'make gen-project && make owl' and commit the result."
-            git diff --stat -- project/ src/mixs/datamodel/
-            exit 1
           fi

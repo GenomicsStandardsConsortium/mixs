@@ -37,7 +37,9 @@ MIxS carries two version numbers, managed differently. Both use bare `X.Y.Z` val
 
 ## Keeping generated artifacts current
 
-The committed artifacts under `project/` and `src/mixs/datamodel/` are generated from the schema. The "Regenerate and verify generated artifacts" workflow keeps them in sync: on a push to `main` that changes the schema or its build inputs it regenerates and commits them, and on a pull request it fails if the committed artifacts do not match the schema. Do not hand-edit generated artifacts.
+The committed artifacts under `project/`, `src/mixs/datamodel/`, and `contrib/` are generated from the schema. The "Regenerate and verify generated artifacts" workflow keeps them in sync. On a push to `main` that changes the schema or its build inputs, it regenerates everything and commits the refreshed artifacts. On a pull request it regenerates and fails if the committed artifacts are stale.
+
+The check uses `project/jsonschema/mixs.schema.json` as its signal, because that file regenerates deterministically. The OWL (`project/owl/mixs.owl.ttl`) is not byte-reproducible: RDF/Turtle serialization reorders triples and blank nodes on every run, so it is regenerated and committed but not compared by diff. Do not hand-edit generated artifacts.
 
 # LinkML Updates 
 
