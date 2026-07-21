@@ -114,7 +114,7 @@ samp_room_id	sampling room ID or name	MIXS:0000244		Sampling room number. This I
 samp_sort_meth	sample size sorting method	MIXS:0000216		Method by which samples are sorted; open face filter collecting total suspended particles, prefilter to remove particles larger than X micrometers in diameter, where common values of X would be 10 and 2.5 full size sorting in a cascade impactor			method|sample|size	True		string						
 samp_time_out	sampling time outside	MIXS:0000196		The recent and long term history of outside sampling			time			string			{float}		time	hour
 samp_weather	sampling day weather	MIXS:0000827		The weather on the sampling day	{'value': 'foggy'}		day|weather			SampWeatherEnum						
-season	season	MIXS:0000829		The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices. This field accepts terms listed under season (http://purl.obolibrary.org/obo/NCIT_C94729)	{'value': 'autumn [NCIT:C94733]'}		season			SeasonEnum						
+season	season	MIXS:0000829		The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices.	{'value': 'autumn [NCIT:C94733]'}		season			SeasonEnum						
 season_use	seasonal use	MIXS:0000830		The seasons the space is occupied	{'value': 'Winter'}		season|use			SeasonUseEnum						
 shad_dev_water_mold	shading device signs of water/mold	MIXS:0000834		Signs of the presence of mold or mildew on the shading device	{'value': 'no presence of mold visible'}		device			MoldVisibilityEnum						
 shading_device_cond	shading device condition	MIXS:0000831		The physical condition of the shading device at the time of sampling	{'value': 'new'}		condition|device			DamagedRupturedEnum						
