@@ -49,3 +49,48 @@ make tsv-roundtrip-test   # the round-trip, then assert reloaded == original
 
 `tsv-roundtrip-test` is part of `make test`, so CI runs the equivalence check on
 every build.
+
+## Convention: how multivalued values are packed
+
+MIxS uses one convention for multivalued fields, and this round-trip is its reference:
+
+- A multivalued slot is a list. Each value is a separate list element. In a TSV
+  cell, the elements of one field are separated by the vertical pipe `|` (`a|b|c`).
+  The pipe is the only value separator.
+- Do not pack several values into one string with an in-cell delimiter (for example
+  a semicolon-joined list, or a `structured_pattern` that allows `term; term; ...`).
+  That conflicts with `multivalued: true`, because one list element would then hold
+  more than one value. Use the list, not a delimited string.
+- The semicolon is reserved for the internal parts of a single compound value. For
+  example, `agrochem_addition` is one value shaped as `term;concentration;timestamp`
+  (`roundup;5 milligram per liter;2018-06-21`). Several such values are still
+  separated by `|`; the `;` only separates parts within one value.
+
+In short: `|` separates values, `;` (where a slot defines it) separates the parts
+inside one compound value. A multivalued slot's per-element `structured_pattern`
+must match a single value, never a delimited list of them.
+
+## Slots this applies to
+
+Every multivalued scalar slot follows this convention. That already covers many
+string-range slots (for example `tillage`, `sop`, `HACCP_term`, `animal_diet`,
+`biotic_regm`) and every slot converted to multivalued from here on.
+
+- `env_medium` is the first slot being deliberately converted to multivalued (#1261,
+  closing #470). It must adopt the list model: keep the single-term
+  `structured_pattern` `^{termLabel} \[{termID}\]$`, not a semicolon-list pattern.
+  Multiple environmental media are multiple list elements, pipe-delimited in TSV.
+- `env_broad_scale` and `env_local_scale` (the rest of the environmental triad) are
+  the natural next candidates if the triad is made consistent.
+
+Note: no slot on `main` currently packs multiple values into one string via an
+in-cell delimiter, so there is no legacy backlog to migrate; this is a forward
+convention, and `env_medium` is where it starts.
+
+## What still needs doing
+
+- Ensure each multivalued slot's inline `examples:` and the shipped example data
+  files show multivalued usage (more than one value) in this style, so the docs and
+  examples model it consistently.
+- Grow the round-trip example (`MixsCompliantData-MimsSoil-multivalued-example.yaml`)
+  to cover more multivalued scalar slots, including `env_medium` once #1261 lands.
