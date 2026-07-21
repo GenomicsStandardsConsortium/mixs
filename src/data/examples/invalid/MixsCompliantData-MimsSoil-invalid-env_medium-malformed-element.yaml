@@ -1,0 +1,27 @@
+# Invalid: env_medium is multivalued, and each list element must match the
+# single-term pattern ^{termLabel} \[{termID}\]$. The second element here is
+# missing its [termID], so per-element validation rejects the record.
+#
+# Note: the single-term pattern does NOT catch several terms crammed into one
+# element (e.g. 'soil [ENVO:..]; water [ENVO:..]'); the shared termLabel setting
+# is too permissive. That gap is tracked in
+# https://github.com/GenomicsStandardsConsortium/mixs/issues/1269 . The intended
+# way to record multiple media is separate list items (packed with '|' in TSV,
+# see PR #1236).
+mims_soil_data:
+  - samp_name: soil-invalid-env_medium-malformed-element
+    project_name: each env_medium element must carry a [termID]
+    depth: 0.5 m
+    elev: 200 m
+    env_local_scale: agricultural soil [ENVO:00002259]
+    env_medium:
+      - soil [ENVO:00001998]
+      - petroleum
+    env_broad_scale: agricultural ecosystem [ENVO:01001245]
+    samp_taxon_id: soil metagenome [NCBITaxon:410658]
+    geo_loc_name: "USA: Iowa, Ames"
+    collection_date: "2024-05-20T09:15:00-05:00"
+    lat_lon: 41.9 -93.6
+    seq_meth: "PMID:98765432"
+    al_sat_meth: "PMID:12345678"
+    previous_land_use: "corn cultivation;2020-09-15T10:00:00Z"
