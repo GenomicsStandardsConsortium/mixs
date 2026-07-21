@@ -79,6 +79,11 @@ should match a single value, never a delimited list of them. Note that the share
 pattern does not by itself reject a crammed element (`soil [ENVO:..]; water [ENVO:..]`
 still matches); that gap is tracked in #1269.
 
+A slot's inline `examples:` are separate from the data files above. Their values are
+strings (LinkML `Example.value` is string-typed), so a numeric or multivalued example
+cannot go in `value:`; it needs `value_object` (range: Anything). Rendering
+`value_object` in the generated docs is not solved yet. Both are tracked in #446.
+
 ## Slots this applies to
 
 Every multivalued scalar slot follows this convention. That already covers many
