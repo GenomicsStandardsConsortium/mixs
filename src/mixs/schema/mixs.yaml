@@ -6840,7 +6840,7 @@ slots:
     required: true
     multivalued: true
     structured_pattern:
-      syntax: ^{termLabel} \[{termID}\](; {termLabel} \[{termID}\])*$
+      syntax: ^{termLabel} \[{termID}\]$
       interpolated: true
       partial_match: true
   env_monitoring_zone:
