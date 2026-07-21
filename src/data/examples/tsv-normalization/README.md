@@ -55,8 +55,14 @@ every build.
 MIxS uses one convention for multivalued fields, and this round-trip is its reference:
 
 - A multivalued slot is a list. Each value is a separate list element. In a TSV
-  cell, the elements of one field are separated by the vertical pipe `|` (`a|b|c`).
-  The pipe is the only value separator.
+  cell, the elements of one field are separated by the vertical pipe `|` (`a|b|c`),
+  with no spaces around the bar. Padding is not safe: whether whitespace around the
+  separator is allowed is unsettled (#465), and a padded value can parse with a
+  leading or trailing space that then fails the term pattern. The pipe is the only
+  value separator.
+- A single value is still a list. In YAML or JSON a multivalued slot holding one
+  value is a one-item list; a bare scalar no longer validates. In a TSV cell a
+  single value is just the one term, with no pipe.
 - Do not pack several values into one string with an in-cell delimiter (for example
   a semicolon-joined list, or a `structured_pattern` that allows `term; term; ...`).
   That conflicts with `multivalued: true`, because one list element would then hold
@@ -68,7 +74,10 @@ MIxS uses one convention for multivalued fields, and this round-trip is its refe
 
 In short: `|` separates values, `;` (where a slot defines it) separates the parts
 inside one compound value. A multivalued slot's per-element `structured_pattern`
-must match a single value, never a delimited list of them.
+should match a single value, never a delimited list of them. Note that the shared
+`termLabel` used by the ontology-term slots is permissive enough that the single-term
+pattern does not by itself reject a crammed element (`soil [ENVO:..]; water [ENVO:..]`
+still matches); that gap is tracked in #1269.
 
 ## Slots this applies to
 
@@ -77,7 +86,7 @@ string-range slots (for example `tillage`, `sop`, `HACCP_term`, `animal_diet`,
 `biotic_regm`) and every slot converted to multivalued from here on.
 
 - `env_medium` is the first slot being deliberately converted to multivalued (#1261,
-  closing #470). It must adopt the list model: keep the single-term
+  part of #470). It must adopt the list model: keep the single-term
   `structured_pattern` `^{termLabel} \[{termID}\]$`, not a semicolon-list pattern.
   Multiple environmental media are multiple list elements, pipe-delimited in TSV.
 - `env_broad_scale` and `env_local_scale` (the rest of the environmental triad) are
