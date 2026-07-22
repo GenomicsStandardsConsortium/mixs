@@ -61,6 +61,8 @@ Please review GitHub's overview article,
 Please review GitHub's article, ["About Pull Requests"][about-pulls],
 and make your changes on a [new branch][about-branches].
 
+If your pull request comes from a fork, the LinkML Linting check still runs the linter on your schema, but it reports the result in the workflow's Actions log rather than as a pull request comment. A fork pull request has a read-only token and cannot post the comment, so only the comment is skipped, not the lint. A green check means the lint ran; open the "LinkML Linting" job to read the details.
+
 [about-branches]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches
 [about-issues]: https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues
 [about-pulls]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests

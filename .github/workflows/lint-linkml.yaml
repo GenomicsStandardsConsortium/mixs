@@ -51,9 +51,11 @@ jobs:
           cat linting-results.md
 
       - name: Comment linting results on PR
-        # Skip on fork PRs: they get a read-only token, so createComment fails
-        # with "Resource not accessible by integration" and reddens the job even
-        # though the lint passed. Same guard used in test_pages_build.yaml.
+        # Only the PR-comment is skipped on fork PRs, NOT the lint. A fork PR gets
+        # a read-only token, so createComment fails with "Resource not accessible
+        # by integration" and reddens the job even though the lint passed. The
+        # "Run LinkML Linting" step above still runs on forks; its output is in the
+        # Actions log for this job. Same guard as test_pages_build.yaml.
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/github-script@v7
         with:
