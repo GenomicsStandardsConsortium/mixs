@@ -6844,6 +6844,7 @@ slots:
     slot_uri: MIXS:0000014
     range: string
     required: true
+    multivalued: true
     structured_pattern:
       syntax: ^{termLabel} \[{termID}\]$
       interpolated: true
