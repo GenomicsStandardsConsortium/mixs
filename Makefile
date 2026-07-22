@@ -102,12 +102,25 @@ all: ensure-dirs site qc gen-excel project/class-model-tsvs-organized all-contri
 
 all-contrib: ensure-dirs contrib/mixs_structured_patterns_preferred.yaml contrib/mixs-normalized-minimized.yaml contrib/mixs_derived_class_term_schemasheet.tsv contrib/required_and_recommended_slot_usages.tsv contrib/extensions-dendrogram.pdf contrib/soil-vs-water-slot-usage.yaml contrib/class_summary_results.tsv contrib/mixs-schemasheets-concise.tsv contrib/mixs-schemasheets-concise-global-slots.tsv contrib/mixs-patterns-materialized.yaml
 
-site: gen-project gendoc
+site: gen-project owl gendoc
 %.yaml: gen-project
 
 # generates all project files
 gen-project: ensure-dirs $(PYMODEL)
 	$(RUN) linkml generate project --log_level WARNING --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
+
+OLS_SPARQL_DIR = src/sparql/ols
+
+# The published MIxS OWL is generated with OLS-oriented options (the ols metadata
+# profile, and a resolvable ontology IRI at https://w3id.org/mixs/mixs.owl.ttl) and
+# post-processed with SPARQL (src/sparql/ols/). Built here rather than via
+# `linkml generate project` because metadata_profile must be passed on the gen-owl
+# CLI: owlgen compares it against an enum and ignores a YAML config string.
+owl: project/owl/mixs.owl.ttl
+project/owl/mixs.owl.ttl: $(SOURCE_SCHEMA_PATH) $(wildcard $(OLS_SPARQL_DIR)/*.ru)
+	mkdir -p project/owl
+	$(RUN) gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions --no-use-native-uris --metadata-profile ols --ontology-uri-suffix /mixs.owl.ttl $(SOURCE_SCHEMA_PATH) > project/owl/mixs.owl.ttl
+	$(RUN) apply-sparql-updates --owl project/owl/mixs.owl.ttl --sparql-dir $(OLS_SPARQL_DIR)
 
 test: qc test-schema test-python test-examples linkml-lint yaml-lint
 
