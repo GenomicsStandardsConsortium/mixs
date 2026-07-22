@@ -467,7 +467,7 @@
 <ul>
 <li>Range: <a href="../String/">String</a></li>
 <li>
-<p>Cardinality: 1</p>
+<p>Cardinality: 1..*</p>
 </li>
 <li>
 <p>Structured pattern: <code>^{termLabel} \[{termID}\]$</code></p>
@@ -522,6 +522,7 @@ domain_of:
 - Miuvig
 range: string
 required: true
+multivalued: true
 structured_pattern:
   syntax: ^{termLabel} \[{termID}\]$
   interpolated: true

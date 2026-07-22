@@ -725,7 +725,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000014">MIXS:0000014</a></td>
 <td><a href="../0000014/">env_medium</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
 <td>Report the environmental material(s) immediately surrounding the sample or sp...</td>
 </tr>
 <tr>
@@ -3115,6 +3115,7 @@ attributes:
     - Miuvig
     range: string
     required: true
+    multivalued: true
     structured_pattern:
       syntax: ^{termLabel} \[{termID}\]$
       interpolated: true
