@@ -10011,7 +10011,8 @@ slots:
     keywords:
       - disorder
     slot_uri: MIXS:0000270
-    aliases: nose_mouth_teeth_throat_disord
+    aliases:
+      - nose_mouth_teeth_throat_disord
     comments:
       - >
         The terms should be chosen from the DO (Human Disease Ontology)
@@ -12620,7 +12621,8 @@ slots:
       partial_match: true
   soil_conductivity:
     description: Conductivity of some soil.
-    comments: Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
+    comments:
+      - Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
     annotations:
       Preferred_unit: milliSiemens per centimeter
     title: soil conductivity
@@ -14806,7 +14808,8 @@ slots:
   isotopolog:
     title: isotopolog
     description: Isotopologue (isotope source/substrate/molecule) added to the biological sample.
-    comments: List the PubChem Compound Identification (CID) number. If it's an undefined mixture, enter 0.
+    comments:
+      - List the PubChem Compound Identification (CID) number. If it's an undefined mixture, enter 0.
     structured_pattern:
       syntax: ^{termLabel} \[{termID}\]$
       interpolated: true
@@ -14840,8 +14843,8 @@ slots:
     description: A number designating the gradient position from heaviest (=1) to lightest. Unfractionated samples, from which fractionated samples were derived, should be denoted with –1.
     range: integer
     examples:
-      - value: 1
-      - value: -1
+      - value: "1"
+      - value: "-1"
     required: true
     slot_uri: MIXS:0001342
   gradient_pos_density:
@@ -14863,7 +14866,7 @@ slots:
     structured_pattern:
       syntax: ^{float}$
     examples:
-      - value: 0.10
+      - value: "0.10"
     range: float
     recommended: true
     slot_uri: MIXS:0001344
@@ -14882,7 +14885,7 @@ slots:
     description: The fraction of heavy-labelled atoms out of all atoms of a given element in the isotopolog. Multiple values allowed, separated by a | and should be orded the same as the isotopolog.
     range: string
     examples:
-      - value: 0.95
+      - value: "0.95"
       - value: 0.95 | 0.98
     recommended: true
     slot_uri: MIXS:0001346
@@ -14919,7 +14922,7 @@ slots:
     description: Excess atom fraction of the nucleobases in this fraction.
     range: float
     examples:
-      - value: 0.25
+      - value: "0.25"
     minimum_value: 0
     maximum_value: 1
     recommended: true
@@ -14979,7 +14982,8 @@ slots:
 classes:
   MimsMisip:
     description: Metagenome or Environmental with SIP
-    comments: Any changes made to MIMS should be reflected here, in MIMS-MISIP. This checklist includes all MIMS terms and additional MISIP terms.
+    comments:
+      - Any changes made to MIMS should be reflected here, in MIMS-MISIP. This checklist includes all MIMS terms and additional MISIP terms.
     todos:
       - Add a validation or test to check the MIMS slots and MIMS-MISIP slots don't diverge
     title: MIMS-MISIP
@@ -15111,7 +15115,8 @@ classes:
 
   MimarksCMisip:
     description: Marker Sequence-specimen with SIP
-    comments: Any changes made to MIMARKS-specimen (MimarksC) should be reflected here. This checklist includes all MIMARKS-specimen terms and additional MISIP terms.
+    comments:
+      - Any changes made to MIMARKS-specimen (MimarksC) should be reflected here. This checklist includes all MIMARKS-specimen terms and additional MISIP terms.
     todos:
       - Add a validation or test to check the MIMARKSC slots and MIMARKSC-MISIP slots don't diverge
     title: MIMARKS specimen-MISIP
@@ -16982,7 +16987,8 @@ classes:
         recommended: true
       soil_conductivity:
         description: Conductivity of some soil.
-        comments: Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
+        comments:
+          - Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
       soil_cover:
         recommended: true
       soil_horizon:
@@ -17652,7 +17658,8 @@ classes:
           - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
       soil_conductivity:
         description: Conductivity of soil at time of sampling.
-        comments: Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
+        comments:
+          - Soil electrical conductivity (EC) is a measure of how well soil water can carry an electrical current. Electrical conductivity of soil solution is a reliable indicator of its solute (cation or anion) concentration with 1 dS/m approximately equivalent to 10 meq/L (U.S. Salinity Laboratory Staff, 1954).
       soil_type:
         string_serialization: '{termLabel} [{termID}]'
       wind_direction:
