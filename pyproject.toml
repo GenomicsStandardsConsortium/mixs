@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mixs"
-version = "6.3.1"
+version = "0.0.0"  # placeholder; the package version is derived from the git tag at build (poetry-dynamic-versioning). The schema version is in src/mixs/schema/mixs.yaml and is bumped by hand at release.
 description = "MIxS: the Minimum Information about any (X) Sequence standard"
 authors = [
     "Mark Andrew Miller <MAM@lbl.gov>",
@@ -10,10 +10,15 @@ license = "CC0-1.0 license"
 readme = "README.md"
 include = ["README.md", "project", "src/mixs", "src/scripts"]
 
-#[tool.poetry-dynamic-versioning]
-#enable = true
-#vcs = "git"
-#style = "pep440"
+[tool.poetry-dynamic-versioning]
+# The package version is derived from the git tag (e.g. v6.3.1 -> 6.3.1). `enable = false`
+# keeps `poetry install` using the 0.0.0 placeholder, so CI installs never depend on tag
+# fetching; run `poetry dynamic-versioning` before `poetry build`/publish to stamp the real
+# version. This does NOT set the schema version in src/mixs/schema/mixs.yaml, which is content
+# read by ontology browsers and is bumped by hand at release.
+enable = false
+vcs = "git"
+style = "pep440"
 
 [tool.poetry.dependencies]
 python = "^3.10"
