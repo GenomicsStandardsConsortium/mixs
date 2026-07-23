@@ -67,6 +67,7 @@ Documentation about the contents of the developer-focussed folders/directories i
     * [src/mixs/schema/](src/mixs/schema/)
       * [src/mixs/schema/mixs.yaml](src/mixs/schema/mixs.yaml) - LinkML YAML schema representing the MIxS standard
   * [src/doc-templates/](src/doc-templates/) - jinja2 files that are responsible for the customization of layout and content of web documentation pages
+  * [src/docs/grouping-mechanisms.md](src/docs/grouping-mechanisms.md) - how MIxS uses the `is_a`, `in_subset`, and `slot_group` grouping mechanisms, what metadata each grouping referent needs, and the test that checks referents are defined
   * [src/scripts](src/scripts) - Python scripts for specific discovery/exploration/inference based on the MIxS YAML schema
 * [tests/](tests/) - test data files
 * [config.yaml](config.yaml) - config file to custom specify arguments for the LinkML project generator
