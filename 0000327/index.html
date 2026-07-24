@@ -412,7 +412,7 @@
 
 
 <h1 id="term-storage-conditions-store_cond">Term: storage conditions (store_cond)</h1>
-<p><em>Explain how and for how long the soil sample was stored before DNA extraction (fresh/frozen/other)</em></p>
+<p><em>Explain how and for how long the sample was stored before DNA extraction (for example, fresh/frozen/other). Include factors that may influence nucleic acid recovery or library construction. For example, specify temperature, humidity, presence of microbial overgrowth etc..</em></p>
 <p>URI: <a href="https://w3id.org/mixs/0000327">MIXS:0000327</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -433,9 +433,54 @@
 <td>Extension</td>
 </tr>
 <tr>
+<td><a href="../9999903/">Ancient</a></td>
+<td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
+<td>Extension</td>
+</tr>
+<tr>
 <td><a href="../0016012/">Soil</a></td>
 <td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
 <td>Extension</td>
+</tr>
+<tr>
+<td><a href="../10007_16002_9999903/">MimsHostAssociatedAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and HostAssociated and Ancient...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16003_9999903/">MimsHumanAssociatedAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and HumanAssociated and Ancien...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16005_9999903/">MimsHumanOralAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and HumanOral and Ancient exte...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16004_9999903/">MimsHumanGutAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and HumanGut and Ancient exten...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16006_9999903/">MimsHumanSkinAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and HumanSkin and Ancient exte...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16011_9999903/">MimsSedimentAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and Sediment and Ancient exten...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16012_9999903/">MimsSoilAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and Soil and Ancient extension...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16010_9999903/">MimsPlantAssociatedAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and PlantAssociated and Ancien...</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -460,17 +505,35 @@
 <tr>
 <td>-20 degree Celsius freezer;P2Y10D</td>
 </tr>
+<tr>
+<td>climate-controlled</td>
+</tr>
+<tr>
+<td>Mould growth in storage box observed</td>
+</tr>
+<tr>
+<td>Stored at -20oC until 2025-05-15</td>
+</tr>
+<tr>
+<td>Stored in the museum from 1924 to 2021</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: store_cond
-description: Explain how and for how long the soil sample was stored before DNA extraction
-  (fresh/frozen/other)
+description: Explain how and for how long the sample was stored before DNA extraction
+  (for example, fresh/frozen/other). Include factors that may influence nucleic acid
+  recovery or library construction. For example, specify temperature, humidity, presence
+  of microbial overgrowth etc..
 title: storage conditions
 examples:
 - value: -20 degree Celsius freezer;P2Y10D
+- value: climate-controlled
+- value: Mould growth in storage box observed
+- value: Stored at -20oC until 2025-05-15
+- value: Stored in the museum from 1924 to 2021
 from_schema: https://w3id.org/mixs
 keywords:
 - condition
@@ -478,7 +541,16 @@ keywords:
 slot_uri: MIXS:0000327
 domain_of:
 - Agriculture
+- Ancient
 - Soil
+- MimsHostAssociatedAncient
+- MimsHumanAssociatedAncient
+- MimsHumanOralAncient
+- MimsHumanGutAncient
+- MimsHumanSkinAncient
+- MimsSedimentAncient
+- MimsSoilAncient
+- MimsPlantAssociatedAncient
 range: string
 structured_pattern:
   syntax: ^{storage_condition_type};{duration}$

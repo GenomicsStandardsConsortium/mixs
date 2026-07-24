@@ -990,6 +990,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     required: true
   project_name:
@@ -1041,6 +1049,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     required: true
   menarche:
@@ -1196,6 +1212,11 @@ attributes:
     - HumanSkin
     - HumanVaginal
     - SymbiontAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
   host_age:
     name: host_age
@@ -1226,6 +1247,12 @@ attributes:
     - HumanVaginal
     - PlantAssociated
     - SymbiontAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1257,6 +1284,11 @@ attributes:
     - HumanOral
     - HumanSkin
     - HumanVaginal
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
   host_disease_stat:
     name: host_disease_stat
@@ -1296,6 +1328,12 @@ attributes:
     - HumanSkin
     - HumanVaginal
     - PlantAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsPlantAssociatedAncient
     range: string
   ihmc_medication_code:
     name: ihmc_medication_code
@@ -1314,6 +1352,10 @@ attributes:
     - HumanOral
     - HumanSkin
     - HumanVaginal
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: integer
     multivalued: true
   chem_administration:
@@ -1352,6 +1394,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   host_body_site:
@@ -1382,6 +1431,11 @@ attributes:
     - HumanSkin
     - HumanVaginal
     - SymbiontAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
   host_body_product:
     name: host_body_product
@@ -1412,6 +1466,11 @@ attributes:
     - HumanSkin
     - HumanVaginal
     - SymbiontAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
   host_tot_mass:
     name: host_tot_mass
@@ -1442,6 +1501,12 @@ attributes:
     - HumanVaginal
     - PlantAssociated
     - SymbiontAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1475,6 +1540,12 @@ attributes:
     - HumanVaginal
     - PlantAssociated
     - SymbiontAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1501,6 +1572,11 @@ attributes:
     - HumanOral
     - HumanSkin
     - HumanVaginal
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
     multivalued: true
   host_last_meal:
@@ -1528,6 +1604,11 @@ attributes:
     - HumanOral
     - HumanSkin
     - HumanVaginal
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
     multivalued: true
   host_fam_rel:
@@ -1558,6 +1639,11 @@ attributes:
     - HumanSkin
     - HumanVaginal
     - SymbiontAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
     multivalued: true
   host_genotype:
@@ -1583,6 +1669,12 @@ attributes:
     - HumanVaginal
     - PlantAssociated
     - SymbiontAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsPlantAssociatedAncient
     range: string
   host_phenotype:
     name: host_phenotype
@@ -1613,6 +1705,12 @@ attributes:
     - HumanVaginal
     - PlantAssociated
     - SymbiontAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsPlantAssociatedAncient
     range: string
   host_body_temp:
     name: host_body_temp
@@ -1639,6 +1737,11 @@ attributes:
     - HumanOral
     - HumanSkin
     - HumanVaginal
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1666,6 +1769,10 @@ attributes:
     - HumanOral
     - HumanSkin
     - HumanVaginal
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1692,6 +1799,10 @@ attributes:
     - HumanOral
     - HumanSkin
     - HumanVaginal
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
     multivalued: true
   host_occupation:
@@ -1716,6 +1827,10 @@ attributes:
     - HumanOral
     - HumanSkin
     - HumanVaginal
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
   medic_hist_perform:
     name: medic_hist_perform
@@ -1734,6 +1849,10 @@ attributes:
     - HumanOral
     - HumanSkin
     - HumanVaginal
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: boolean
   host_pulse:
     name: host_pulse
@@ -1757,6 +1876,10 @@ attributes:
     - HumanOral
     - HumanSkin
     - HumanVaginal
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1800,6 +1923,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   salinity:
@@ -1840,6 +1970,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1876,6 +2013,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: OxyStatSampEnum
   temp:
     name: temp
@@ -1929,6 +2073,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1977,6 +2129,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   samp_vol_we_dna_ext:
@@ -2037,6 +2196,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2081,6 +2248,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2124,6 +2298,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
   samp_store_dur:
     name: samp_store_dur
@@ -2162,6 +2343,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{duration}$
@@ -2198,6 +2386,12 @@ attributes:
     - HumanVaginal
     - PlantAssociated
     - SymbiontAssociated
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   misc_param:
@@ -2240,6 +2434,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
 class_uri: MIXS:0016007

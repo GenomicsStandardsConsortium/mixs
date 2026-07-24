@@ -1056,6 +1056,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     required: true
   project_name:
@@ -1107,6 +1115,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     required: true
   depth:
@@ -1153,6 +1169,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     recommended: true
     structured_pattern:
@@ -1204,6 +1228,14 @@ attributes:
     - Soil
     - SymbiontAssociated
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     recommended: true
     structured_pattern:
@@ -1234,6 +1266,7 @@ attributes:
     - Sediment
     - WastewaterSludge
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1252,6 +1285,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1274,6 +1308,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1299,6 +1334,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1320,6 +1356,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1350,6 +1387,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     multivalued: true
   bishomohopanol:
@@ -1369,6 +1407,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1392,6 +1431,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1417,6 +1457,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1444,6 +1485,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: float
   chem_administration:
     name: chem_administration
@@ -1481,6 +1523,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   chloride:
@@ -1503,6 +1552,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1526,6 +1576,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1554,6 +1605,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     multivalued: true
   diss_carb_dioxide:
@@ -1580,6 +1632,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1605,6 +1658,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1635,6 +1689,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1664,6 +1719,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1688,6 +1744,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1714,6 +1771,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1736,6 +1794,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1761,6 +1820,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1786,6 +1846,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1812,6 +1873,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1834,6 +1896,7 @@ attributes:
     - Air
     - MicrobialMatBiofilm
     - Sediment
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1879,6 +1942,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   n_alkanes:
@@ -1899,6 +1970,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     multivalued: true
   nitrate:
@@ -1924,6 +1996,7 @@ attributes:
     - Sediment
     - WastewaterSludge
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1951,6 +2024,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1976,6 +2050,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1998,6 +2073,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2024,6 +2100,8 @@ attributes:
     - Sediment
     - Soil
     - Water
+    - MimsSedimentAncient
+    - MimsSoilAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2047,6 +2125,8 @@ attributes:
     - Sediment
     - Soil
     - Water
+    - MimsSedimentAncient
+    - MimsSoilAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2095,6 +2175,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   oxy_stat_samp:
@@ -2128,6 +2215,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: OxyStatSampEnum
   ph:
     name: ph
@@ -2151,6 +2245,8 @@ attributes:
     - Soil
     - WastewaterSludge
     - Water
+    - MimsSedimentAncient
+    - MimsSoilAncient
     range: float
   part_org_carb:
     name: part_org_carb
@@ -2170,6 +2266,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2213,6 +2310,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   petroleum_hydrocarb:
@@ -2235,6 +2339,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2261,6 +2366,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     multivalued: true
   phosphate:
@@ -2284,6 +2390,7 @@ attributes:
     - Sediment
     - WastewaterSludge
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2308,6 +2415,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     multivalued: true
   potassium:
@@ -2330,6 +2438,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2357,6 +2466,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2380,6 +2490,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2423,6 +2534,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2465,6 +2583,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{duration}$
@@ -2508,6 +2633,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
   samp_store_temp:
     name: samp_store_temp
@@ -2548,6 +2680,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2611,6 +2750,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2634,6 +2781,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2660,6 +2808,7 @@ attributes:
     - Sediment
     - WastewaterSludge
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2687,6 +2836,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2714,6 +2864,7 @@ attributes:
     - MiscellaneousNaturalOrArtificialEnvironment
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2771,6 +2922,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2790,6 +2949,7 @@ attributes:
     - Agriculture
     - MicrobialMatBiofilm
     - Sediment
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2814,6 +2974,8 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Soil
+    - MimsSedimentAncient
+    - MimsSoilAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2842,6 +3004,8 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Soil
+    - MimsSedimentAncient
+    - MimsSoilAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2862,6 +3026,7 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -2886,6 +3051,8 @@ attributes:
     - MicrobialMatBiofilm
     - Sediment
     - Soil
+    - MimsSedimentAncient
+    - MimsSoilAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$

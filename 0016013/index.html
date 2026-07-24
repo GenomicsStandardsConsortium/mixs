@@ -868,6 +868,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     required: true
   project_name:
@@ -919,6 +927,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     required: true
   depth:
@@ -965,6 +981,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     recommended: true
     structured_pattern:
@@ -995,6 +1019,7 @@ attributes:
     - Sediment
     - WastewaterSludge
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1058,6 +1083,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   chem_oxygen_dem:
@@ -1227,6 +1259,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   nitrate:
@@ -1252,6 +1292,7 @@ attributes:
     - Sediment
     - WastewaterSludge
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1323,6 +1364,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   oxy_stat_samp:
@@ -1356,6 +1404,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: OxyStatSampEnum
   ph:
     name: ph
@@ -1379,6 +1434,8 @@ attributes:
     - Soil
     - WastewaterSludge
     - Water
+    - MimsSedimentAncient
+    - MimsSoilAncient
     range: float
   perturbation:
     name: perturbation
@@ -1418,6 +1475,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     multivalued: true
   phosphate:
@@ -1441,6 +1505,7 @@ attributes:
     - Sediment
     - WastewaterSludge
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1536,6 +1601,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1578,6 +1650,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{duration}$
@@ -1621,6 +1700,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
   samp_store_temp:
     name: samp_store_temp
@@ -1661,6 +1747,13 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1724,6 +1817,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1804,6 +1905,7 @@ attributes:
     - Sediment
     - WastewaterSludge
     - Water
+    - MimsSedimentAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
@@ -1935,6 +2037,14 @@ attributes:
     - SymbiontAssociated
     - WastewaterSludge
     - Water
+    - MimsHostAssociatedAncient
+    - MimsHumanAssociatedAncient
+    - MimsHumanOralAncient
+    - MimsHumanGutAncient
+    - MimsHumanSkinAncient
+    - MimsSedimentAncient
+    - MimsSoilAncient
+    - MimsPlantAssociatedAncient
     range: string
     structured_pattern:
       syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
