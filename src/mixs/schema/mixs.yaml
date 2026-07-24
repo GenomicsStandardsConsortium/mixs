@@ -17319,13 +17319,11 @@ classes:
       air_temp:
         examples:
           - value: 20 degree Celsius
-        required: false
         recommended: true
       avg_occup:
         examples:
           - value: '2'
       carb_dioxide:
-        required: false
         recommended: true
       freq_clean:
         string_serialization: '[ Daily| Weekly| Monthly| Quarterly | Annually| other]'
@@ -17335,7 +17333,6 @@ classes:
       organism_count:
         examples:
           - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
-        required: false
         recommended: true
       surf_material:
         required: true
