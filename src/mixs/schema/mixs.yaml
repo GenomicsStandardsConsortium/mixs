@@ -797,6 +797,44 @@ enums:
       southeast corner:
       southwest corner:
       west corner:
+  RoomTypeEnum:
+    title: room type
+    description: Controlled values for the main purpose or activity of a sampling
+      room in the built environment.
+    permissible_values:
+      attic:
+      auditorium:
+      bathroom:
+      cafe:
+      # KNOWN MODELING ISSUE: "cleanroom ISO N" is an ISO 14644 air-cleanliness
+      # class, not a room type. These are included so ESA cleanroom submissions
+      # validate, but the cleanliness class is a separate dimension and should
+      # move to a dedicated slot. See the todos on the room_type slot.
+      cleanroom ISO 1:
+      cleanroom ISO 5:
+      cleanroom ISO 7:
+      cleanroom ISO 8:
+      closet:
+      conference room:
+      data center:
+      elevator:
+      examining room:
+      gymnasium:
+      hallway:
+      kitchen:
+      laboratory_dry:
+      laboratory_wet:
+      lobby:
+      lockers:
+      mail room:
+      mechanical or electrical room:
+      natatorium:
+      open office:
+      private office:
+      restroom:
+      stairwell:
+      vestibule:
+      warehouse:
   RouteTransmissionEnum:
     permissible_values:
       environmental:faecal-oral:
@@ -11424,20 +11462,22 @@ slots:
     slot_uri: MIXS:0000824
     range: RoomSampPosEnum
   room_type:
-    annotations:
-      Expected_value: enumeration
     description: The main purpose or activity of the sampling room. A room is any
       distinguishable space within a structure
     title: room type
+    todos:
+      - 'RoomTypeEnum includes cleanroom ISO 1/5/7/8 so ESA cleanroom submissions
+        validate, but an ISO 14644 cleanliness class is not a room type. It is a
+        separate dimension (air-cleanliness grade) and should move to its own slot
+        rather than stay a room_type value. A cleanroom as a space is already
+        recorded via indoor_space. Needs a dedicated slot or term proposal.'
     examples:
       - value: bathroom
     keywords:
       - room
       - type
-    string_serialization: '[attic|bathroom|closet|conference room|elevator|examining
-      room|hallway|kitchen|mail room|private office|open office|stairwell|restroom|lobby|vestibule|mechanical
-      or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse|cleanroom ISO 1|cleanroom ISO 5|cleanroom ISO 7|cleanroom ISO 8]'
     slot_uri: MIXS:0000825
+    range: RoomTypeEnum
   room_vol:
     annotations:
       Preferred_unit: cubic feet, cubic meter
