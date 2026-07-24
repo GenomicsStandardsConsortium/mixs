@@ -809,7 +809,8 @@ enums:
       # KNOWN MODELING ISSUE: "cleanroom ISO N" is an ISO 14644 air-cleanliness
       # class, not a room type. These are included so ESA cleanroom submissions
       # validate, but the cleanliness class is a separate dimension and should
-      # move to a dedicated slot. See the todos on the room_type slot.
+      # move to a dedicated slot. Tracked in
+      # https://github.com/GenomicsStandardsConsortium/mixs/issues/1282
       cleanroom ISO 1:
       cleanroom ISO 5:
       cleanroom ISO 7:
@@ -11470,7 +11471,8 @@ slots:
         validate, but an ISO 14644 cleanliness class is not a room type. It is a
         separate dimension (air-cleanliness grade) and should move to its own slot
         rather than stay a room_type value. A cleanroom as a space is already
-        recorded via indoor_space. Needs a dedicated slot or term proposal.'
+        recorded via indoor_space. Tracked in
+        https://github.com/GenomicsStandardsConsortium/mixs/issues/1282'
     examples:
       - value: bathroom
     keywords:
