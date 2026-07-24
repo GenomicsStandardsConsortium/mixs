@@ -149,6 +149,15 @@ def main() -> None:
         if best and difflib.SequenceMatcher(None, r, best).ratio() >= 0.75:
             rename_candidates[r] = best
 
+    # Report only deletions that actually hold: present in v5 and absent from
+    # v6.0.0 after any rename. A DELETIONS entry that does not hold means the map
+    # has drifted, so surface it instead of reporting a deletion that did not happen.
+    deleted = sorted(n for n in DELETIONS if n in v5 and RENAMES.get(n, n) not in v6_names)
+    stale_deletions = sorted(DELETIONS - set(deleted))
+    if stale_deletions:
+        print("  WARNING: DELETIONS entries not actually deleted "
+              f"(absent from v5 or still present in v6.0.0): {stale_deletions}")
+
     result = {
         "comparison": {
             "old": {"version": "v5", "source": V5_XLSX_URL, "terms": len(v5)},
@@ -157,12 +166,12 @@ def main() -> None:
                     "terms": len(v6)},
         },
         "counts": {"shared": len(shared), "renamed": len(renamed),
-                   "removed": len(removed), "deleted": len(DELETIONS),
+                   "removed": len(removed), "deleted": len(deleted),
                    "added": len(added), "definition_changed": len(definition_changed),
                    "rename_candidates": len(rename_candidates)},
         "renamed": renamed,
         "rename_candidates": rename_candidates,
-        "deleted": sorted(DELETIONS),
+        "deleted": deleted,
         "removed": sorted(removed),
         "added": added,
         "definition_changed": definition_changed,
