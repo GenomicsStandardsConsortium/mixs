@@ -17,13 +17,17 @@ include = ["README.md", "project", "src/mixs", "src/scripts"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-linkml-runtime = "^1.9"
+# 1.11 is the first release with linkml's pipe-delimited multivalued TSV
+# serialization (linkml #3134), which the dense TSV round-trip below depends on.
+# The empty-cell load fix #3251 is not yet in a released linkml-runtime, so the
+# round-trip example avoids empty multivalued cells.
+linkml-runtime = "^1.11"
 jsonasobj2 = "^1.0" # used transitively in src/scripts/mixs/datamodel/mixs.py
 
 [tool.poetry.group.dev.dependencies]
 black = "^26.3"
 deptry = "^0.23"
-linkml = "^1.9"
+linkml = "^1.11"
 matplotlib = "^3.10"
 mkdocs-material = "^9.6"
 mkdocs-mermaid2-plugin = "^1.2"

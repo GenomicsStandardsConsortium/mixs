@@ -122,7 +122,7 @@ project/owl/mixs.owl.ttl: $(SOURCE_SCHEMA_PATH) $(wildcard $(OLS_SPARQL_DIR)/*.r
 	$(RUN) gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions --no-use-native-uris --metadata-profile ols --ontology-uri-suffix /mixs.owl.ttl $(SOURCE_SCHEMA_PATH) > project/owl/mixs.owl.ttl
 	$(RUN) apply-sparql-updates --owl project/owl/mixs.owl.ttl --sparql-dir $(OLS_SPARQL_DIR)
 
-test: qc test-schema test-python test-examples linkml-lint yaml-lint
+test: qc test-schema test-python test-examples linkml-lint yaml-lint tsv-roundtrip-test
 
 test-schema:
 	@echo "Schema re-generation in test phase eliminated due to long run time"
@@ -280,5 +280,51 @@ clean-contrib:
 	       contrib/mixs_derived_class_term_schemasheet_* \
 	       contrib/extensions-dendrogram.pdf \
 	       contrib/soil-vs-water-slot-usage.yaml
+
+# =============================================================================
+# Multivalued TSV round-trip (demonstration + equivalence test)
+# =============================================================================
+# Proves that multivalued MIxS data survives a YAML -> TSV -> YAML round-trip
+# using only the standard `linkml-convert` tool (no custom conversion code), now
+# that linkml can serialize and parse pipe-delimited multivalued cells (linkml
+# #3134 list formatting and #3251 empty-cell load, both released in linkml 1.11).
+.PHONY: tsv-roundtrip tsv-roundtrip-test
+
+TSV_DIR = src/data/examples/tsv-normalization
+# Round-trip input is a standard valid example, so it is schema-validated by
+# test-examples and reused here.
+TSV_YAML = src/data/examples/valid/MixsCompliantData-MimsSoil-multivalued-example.yaml
+TSV_TSV = $(TSV_DIR)/roundtrip.tsv
+TSV_RELOADED = $(TSV_DIR)/roundtrip.reloaded.yaml
+
+# YAML -> bare-pipe TSV, standard linkml-convert.
+$(TSV_TSV): $(TSV_YAML) contrib/mixs-patterns-materialized.yaml
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f yaml -t tsv --no-validate --list-wrapper none \
+		$(TSV_YAML) > $(TSV_TSV)
+
+# bare-pipe TSV -> YAML, standard linkml-convert.
+$(TSV_RELOADED): $(TSV_TSV) contrib/mixs-patterns-materialized.yaml
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f tsv -t yaml --no-validate --list-wrapper none \
+		$(TSV_TSV) > $(TSV_RELOADED)
+
+tsv-roundtrip: $(TSV_RELOADED)
+
+# Equivalence test (runs in CI via `make test`): the reloaded YAML must equal the
+# original after YAML -> TSV -> YAML. Compare with standard tools only: sort keys
+# with yq so ordering is not significant, then diff. diff exits non-zero (and
+# prints the difference) if they are not equivalent, failing the target.
+tsv-roundtrip-test: $(TSV_RELOADED)
+	@echo "=== TSV round-trip equivalence check ==="
+	@if diff <(yq -P 'sort_keys(..)' $(TSV_YAML)) <(yq -P 'sort_keys(..)' $(TSV_RELOADED)); then \
+		echo "round-trip equivalence OK: $(TSV_YAML) == $(TSV_RELOADED)"; \
+	else \
+		echo "ROUND-TRIP MISMATCH: $(TSV_YAML) != $(TSV_RELOADED) (see diff above)"; exit 1; \
+	fi
 
 include contrib.Makefile
