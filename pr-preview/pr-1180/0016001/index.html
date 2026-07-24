@@ -1110,7 +1110,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000825">MIXS:0000825</a></td>
 <td><a href="../0000825/">room_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../RoomTypeEnum/">RoomTypeEnum</a></td>
 <td>The main purpose or activity of the sampling room</td>
 </tr>
 <tr>
@@ -3741,28 +3741,26 @@ attributes:
     range: RoomSampPosEnum
   room_type:
     name: room_type
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: enumeration
     description: The main purpose or activity of the sampling room. A room is any
       distinguishable space within a structure
     title: room type
+    todos:
+    - RoomTypeEnum includes cleanroom ISO 1/5/7/8 so ESA cleanroom submissions validate,
+      but an ISO 14644 cleanliness class is not a room type. It is a separate dimension
+      (air-cleanliness grade) and should move to its own slot rather than stay a room_type
+      value. A cleanroom as a space is already recorded via indoor_space. Needs a
+      dedicated slot or term proposal.
     examples:
     - value: bathroom
     from_schema: https://w3id.org/mixs
     keywords:
     - room
     - type
-    string_serialization: '[attic|bathroom|closet|conference room|elevator|examining
-      room|hallway|kitchen|mail room|private office|open office|stairwell|restroom|lobby|vestibule|mechanical
-      or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse|cleanroom
-      ISO 1|cleanroom ISO 5|cleanroom ISO 7|cleanroom ISO 8]'
     slot_uri: MIXS:0000825
     owner: BuiltEnvironment
     domain_of:
     - BuiltEnvironment
-    range: string
+    range: RoomTypeEnum
   room_vol:
     name: room_vol
     annotations:

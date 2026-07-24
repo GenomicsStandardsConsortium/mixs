@@ -350,21 +350,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -420,7 +405,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../RoomTypeEnum/">RoomTypeEnum</a></li>
 <li>Cardinality: 0..1</li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -436,35 +421,29 @@
 </tr>
 </tbody>
 </table>
-<h3 id="annotations">Annotations</h3>
-<ul>
-<li>Expected_value: enumeration</li>
-</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: room_type
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: enumeration
 description: The main purpose or activity of the sampling room. A room is any distinguishable
   space within a structure
 title: room type
+todos:
+- RoomTypeEnum includes cleanroom ISO 1/5/7/8 so ESA cleanroom submissions validate,
+  but an ISO 14644 cleanliness class is not a room type. It is a separate dimension
+  (air-cleanliness grade) and should move to its own slot rather than stay a room_type
+  value. A cleanroom as a space is already recorded via indoor_space. Needs a dedicated
+  slot or term proposal.
 examples:
 - value: bathroom
 from_schema: https://w3id.org/mixs
 keywords:
 - room
 - type
-string_serialization: '[attic|bathroom|closet|conference room|elevator|examining room|hallway|kitchen|mail
-  room|private office|open office|stairwell|restroom|lobby|vestibule|mechanical or
-  electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse|cleanroom
-  ISO 1|cleanroom ISO 5|cleanroom ISO 7|cleanroom ISO 8]'
 slot_uri: MIXS:0000825
 domain_of:
 - BuiltEnvironment
-range: string
+range: RoomTypeEnum
 
 </code></pre>
 
