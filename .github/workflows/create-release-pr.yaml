@@ -87,7 +87,7 @@ jobs:
       - name: Bump version in CITATION.cff
         run: |
           sed -i 's/^version: .*/version: ${{ inputs.version }}/' CITATION.cff
-          sed -i 's/^date-released: .*/date-released: "'$(date +%Y-%m-%d)'"/' CITATION.cff
+          sed -i 's/^date-released: .*/date-released: "'"$(date +%Y-%m-%d)"'"/' CITATION.cff
 
       - name: Bump version in .zenodo.json
         run: |
