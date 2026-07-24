@@ -8,7 +8,8 @@ mims_soil_data:
     depth: 0.5 m
     elev: 200 m
     env_local_scale: agricultural soil [ENVO:00002259]
-    env_medium: soil [ENVO:00001998]
+    env_medium:
+      - soil [ENVO:00001998]
     env_broad_scale: agricultural ecosystem [ENVO:01001245]
     samp_taxon_id: soil metagenome [NCBITaxon:410658]
     geo_loc_name: "USA: Iowa, Ames"
@@ -23,7 +24,8 @@ mims_soil_data:
     depth: 1.0 m
     elev: 150 m
     env_local_scale: grassland soil [ENVO:00005750]
-    env_medium: soil [ENVO:00001998]
+    env_medium:
+      - soil [ENVO:00001998]
     env_broad_scale: grassland ecosystem [ENVO:01001206]
     samp_taxon_id: soil metagenome [NCBITaxon:410658]
     geo_loc_name: "USA: Kansas, Topeka"
@@ -38,7 +40,8 @@ mims_soil_data:
     depth: 0.3 m
     elev: 180 m
     env_local_scale: forest soil [ENVO:00002261]
-    env_medium: soil [ENVO:00001998]
+    env_medium:
+      - soil [ENVO:00001998]
     env_broad_scale: forest ecosystem [ENVO:01001179]
     samp_taxon_id: soil metagenome [NCBITaxon:410658]
     geo_loc_name: "Germany: Bavaria, Munich"
