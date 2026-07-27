@@ -1021,11 +1021,12 @@ arrived; if none appear, run <code>git fetch --tags</code>:</p>
 <p><strong>Provide a GitHub token (recommended).</strong> The tool fetches schema files through
 the GitHub API. Without a token you share the anonymous limit of 60 requests per
 hour, which a multi-version diff can exhaust; with a token it is 5000 per hour.
-The tool reads <code>GITHUB_TOKEN</code> from the environment first, then from a <code>.env</code> file
-in the repo root:</p>
+The tool reads <code>GITHUB_TOKEN</code> from the environment first, then from <code>local/.env</code>:</p>
 <pre><code class="language-bash">export GITHUB_TOKEN=$(gh auth token)     # if you use the GitHub CLI
-# or add a line GITHUB_TOKEN=ghp_... to a .env file (never commit it)
+# or add a line GITHUB_TOKEN=ghp_... to local/.env
 </code></pre>
+<p><code>local/</code> is git-ignored, which is why the token goes there rather than in a
+<code>.env</code> at the repo root.</p>
 <p><strong>Verify:</strong></p>
 <pre><code class="language-bash">poetry run diff-releases --help
 poetry run diff-releases --list-releases   # lists taggable versions it can fetch
