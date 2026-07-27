@@ -61,7 +61,39 @@ Please review GitHub's overview article,
 Please review GitHub's article, ["About Pull Requests"][about-pulls],
 and make your changes on a [new branch][about-branches].
 
-If your pull request comes from a fork, the LinkML Linting check still runs the linter on your schema, but it reports the result in the workflow's Actions log rather than as a pull request comment. A fork pull request has a read-only token and cannot post the comment, so only the comment is skipped, not the lint. A green check means the lint ran; open the "LinkML Linting" job to read the details.
+#### Linting checks
+
+Two checks lint the schema on every pull request that touches it, and **both fail
+when they find a problem**. A red check means there is something to fix.
+
+- **LinkML Linting** validates the schema against the LinkML metamodel.
+- **Yamllint** checks the YAML formatting of `src/mixs/schema`.
+
+Findings appear in three places, so you should not need to dig through logs:
+
+1. The **job summary**, at the top of the workflow run page, listing every finding.
+2. **Annotations on the diff** of your pull request, for Yamllint.
+3. A **pull request comment**, when the pull request comes from a branch in this
+   repository.
+
+The comment is the only one of those that needs write access, and a pull request
+from a fork gets a read-only token, so forks get the job summary and annotations
+instead. The checks themselves, and their pass or fail result, are identical either
+way. Nothing about the linting is skipped for a fork.
+
+Trailing whitespace is the most common Yamllint failure and is invisible in most
+editors. To fix it:
+
+```bash
+make fix-whitespace
+```
+
+You can run either linter locally before pushing:
+
+```bash
+make linkml-lint
+make yaml-lint
+```
 
 [about-branches]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches
 [about-issues]: https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues

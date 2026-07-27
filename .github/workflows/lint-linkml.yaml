@@ -35,28 +35,35 @@ jobs:
       - name: Install dependencies
         run: make install
 
-      # Run the LinkML linting command
+      # Run the LinkML linting command. The exit status is kept so the check fails
+      # when the linter finds a problem; the results are written to the job summary
+      # first, so the findings are visible even on a fork pull request, where the
+      # comment step below cannot run.
       - name: Run LinkML Linting
         run: |
-          # Create linting results with timestamp header
-          echo "# LinkML Linting Results" > linting-results.md
-          echo "Generated on: $(date)" >> linting-results.md
-          echo "" >> linting-results.md
-          
-          # Run the linter and capture output (continue even if linter finds issues)
-          poetry run linkml lint --ignore-warnings -f markdown src/mixs/schema/mixs.yaml > linting-results.md || true
-          
-          # Show results in the action log for immediate visibility
+          set -o pipefail
+          status=0
+          poetry run linkml lint --ignore-warnings -f markdown src/mixs/schema/mixs.yaml > linting-results.md || status=$?
+
+          {
+            echo "## LinkML Linting Results"
+            echo
+            cat linting-results.md
+          } >> "$GITHUB_STEP_SUMMARY"
+
           echo "=== Linting Results ==="
           cat linting-results.md
+          exit $status
 
       - name: Comment linting results on PR
-        # Only the PR-comment is skipped on fork PRs, NOT the lint. A fork PR gets
-        # a read-only token, so createComment fails with "Resource not accessible
-        # by integration" and reddens the job even though the lint passed. The
-        # "Run LinkML Linting" step above still runs on forks; its output is in the
-        # Actions log for this job. Same guard as test_pages_build.yaml.
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        # always() so the comment is still posted when the lint step fails, which is
+        # when it is most worth reading.
+        #
+        # Only this comment is skipped on fork pull requests, never the lint itself.
+        # A fork pull request gets a read-only token, so createComment fails with
+        # "Resource not accessible by integration". The findings are in the job
+        # summary either way, so nothing is lost for a fork contributor.
+        if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         with:
           script: |
