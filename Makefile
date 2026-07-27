@@ -102,14 +102,27 @@ all: ensure-dirs site qc gen-excel project/class-model-tsvs-organized all-contri
 
 all-contrib: ensure-dirs contrib/mixs_structured_patterns_preferred.yaml contrib/mixs-normalized-minimized.yaml contrib/mixs_derived_class_term_schemasheet.tsv contrib/required_and_recommended_slot_usages.tsv contrib/extensions-dendrogram.pdf contrib/soil-vs-water-slot-usage.yaml contrib/class_summary_results.tsv contrib/mixs-schemasheets-concise.tsv contrib/mixs-schemasheets-concise-global-slots.tsv contrib/mixs-patterns-materialized.yaml
 
-site: gen-project gendoc
+site: gen-project owl gendoc
 %.yaml: gen-project
 
 # generates all project files
 gen-project: ensure-dirs $(PYMODEL)
 	$(RUN) linkml generate project --log_level WARNING --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-test: qc test-schema test-python test-examples linkml-lint yaml-lint
+OLS_SPARQL_DIR = src/sparql/ols
+
+# The published MIxS OWL is generated with OLS-oriented options (the ols metadata
+# profile, and a resolvable ontology IRI at https://w3id.org/mixs/mixs.owl.ttl) and
+# post-processed with SPARQL (src/sparql/ols/). Built here rather than via
+# `linkml generate project` because metadata_profile must be passed on the gen-owl
+# CLI: owlgen compares it against an enum and ignores a YAML config string.
+owl: project/owl/mixs.owl.ttl
+project/owl/mixs.owl.ttl: $(SOURCE_SCHEMA_PATH) $(wildcard $(OLS_SPARQL_DIR)/*.ru)
+	mkdir -p project/owl
+	$(RUN) gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions --no-use-native-uris --metadata-profile ols --ontology-uri-suffix /mixs.owl.ttl $(SOURCE_SCHEMA_PATH) > project/owl/mixs.owl.ttl
+	$(RUN) apply-sparql-updates --owl project/owl/mixs.owl.ttl --sparql-dir $(OLS_SPARQL_DIR)
+
+test: qc test-schema test-python test-examples linkml-lint yaml-lint tsv-roundtrip-test
 
 test-schema:
 	@echo "Schema re-generation in test phase eliminated due to long run time"
@@ -126,7 +139,7 @@ yaml-lint: # Run yamllint on schema files
 
 test-examples: examples/output
 
-examples/output: src/mixs/schema/mixs.yaml
+examples/output: contrib/mixs-patterns-materialized.yaml
 	mkdir -p $@
 	$(RUN) linkml examples \
 		--output-formats json \
@@ -267,5 +280,51 @@ clean-contrib:
 	       contrib/mixs_derived_class_term_schemasheet_* \
 	       contrib/extensions-dendrogram.pdf \
 	       contrib/soil-vs-water-slot-usage.yaml
+
+# =============================================================================
+# Multivalued TSV round-trip (demonstration + equivalence test)
+# =============================================================================
+# Proves that multivalued MIxS data survives a YAML -> TSV -> YAML round-trip
+# using only the standard `linkml-convert` tool (no custom conversion code), now
+# that linkml can serialize and parse pipe-delimited multivalued cells (linkml
+# #3134 list formatting and #3251 empty-cell load, both released in linkml 1.11).
+.PHONY: tsv-roundtrip tsv-roundtrip-test
+
+TSV_DIR = src/data/examples/tsv-normalization
+# Round-trip input is a standard valid example, so it is schema-validated by
+# test-examples and reused here.
+TSV_YAML = src/data/examples/valid/MixsCompliantData-MimsSoil-multivalued-example.yaml
+TSV_TSV = $(TSV_DIR)/roundtrip.tsv
+TSV_RELOADED = $(TSV_DIR)/roundtrip.reloaded.yaml
+
+# YAML -> bare-pipe TSV, standard linkml-convert.
+$(TSV_TSV): $(TSV_YAML) contrib/mixs-patterns-materialized.yaml
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f yaml -t tsv --no-validate --list-wrapper none \
+		$(TSV_YAML) > $(TSV_TSV)
+
+# bare-pipe TSV -> YAML, standard linkml-convert.
+$(TSV_RELOADED): $(TSV_TSV) contrib/mixs-patterns-materialized.yaml
+	$(RUN) linkml-convert \
+		-s contrib/mixs-patterns-materialized.yaml \
+		-C MixsCompliantData -S mims_soil_data \
+		-f tsv -t yaml --no-validate --list-wrapper none \
+		$(TSV_TSV) > $(TSV_RELOADED)
+
+tsv-roundtrip: $(TSV_RELOADED)
+
+# Equivalence test (runs in CI via `make test`): the reloaded YAML must equal the
+# original after YAML -> TSV -> YAML. Compare with standard tools only: sort keys
+# with yq so ordering is not significant, then diff. diff exits non-zero (and
+# prints the difference) if they are not equivalent, failing the target.
+tsv-roundtrip-test: $(TSV_RELOADED)
+	@echo "=== TSV round-trip equivalence check ==="
+	@if diff <(yq -P 'sort_keys(..)' $(TSV_YAML)) <(yq -P 'sort_keys(..)' $(TSV_RELOADED)); then \
+		echo "round-trip equivalence OK: $(TSV_YAML) == $(TSV_RELOADED)"; \
+	else \
+		echo "ROUND-TRIP MISMATCH: $(TSV_YAML) != $(TSV_RELOADED) (see diff above)"; exit 1; \
+	fi
 
 include contrib.Makefile
