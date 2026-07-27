@@ -47,7 +47,7 @@ To build and work with the schema locally:
    git clone https://github.com/GenomicsStandardsConsortium/mixs.git
    cd mixs
    ```
-2. Use a supported Python. The project supports Python 3.10 through 3.13 (3.13 recommended; some dependencies do not yet resolve on 3.14). If you do not have one installed, install it first (for example with pyenv or Homebrew), then point Poetry at it:
+2. Use a supported Python. The project supports Python 3.10 through 3.13, and CI tests both ends of that range. 3.13 is recommended: 3.10 reaches end of life in October 2026, and some dependencies do not yet resolve on 3.14. If you do not have one installed, install it first (for example with pyenv or Homebrew), then point Poetry at it:
    ```bash
    poetry env use python3.13
    ```
