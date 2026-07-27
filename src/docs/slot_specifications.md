@@ -152,7 +152,7 @@ The type of data specified in the expected value (`range`) of a term MUST be in 
 - `integer`
 - `float`
 - `boolean`
-- An [enumeration](#135-enumerations), that is a controlled vocabulary, predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L28)).
+- An [enumeration](#125-enumerations), that is a controlled vocabulary, predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L28)).
 
 Refer to LinkML documentation for more information on [range types](https://linkml.io/linkml-model/latest/docs/range/).
 
@@ -242,7 +242,7 @@ Ideally, there SHOULD be a minimum of 3 examples for a term.
 
 Examples SHOULD cover the full range of possible values, string formats, or any other way that information can be given to the term.
 
-For example if a term accepts either an [ontology](#13-ontology-and-value-sets) term _or_ a free text string, there should be at least one example for each type.
+For example if a term accepts either an [ontology](#12-ontology-and-value-sets) term _or_ a free text string, there should be at least one example for each type.
 If a term accepts different unit types, there should be at least two examples of different units to demonstrate multiple units are accepted.
 
 ### 7.3 Examples for terms that allow more than one entry
@@ -323,41 +323,37 @@ annotations:
   Preferred_unit: degree Celsius
 ```
 
-## 11. Multiple occurrence
+## 11. Level of requirement
 
-A term that allows multiple values for a single sample SHOULD be specified by setting the LinkML `multivalued` boolean to `true`.
-
-## 12. Level of requirement
-
-### 12.1 Mandatory terms
+### 11.1 Mandatory terms
 
 A term that is required to be filled in for a sample MUST have the `required` attribute set to `true`.
 
-### 12.2 Conditional mandatory terms
+### 11.2 Conditional mandatory terms
 
 A conditional term SHOULD NOT be specified as `required` as a LinkML slot attribute.
 
 A conditional term SHOULD be specified within the `slot_usage` attribute of a LinkML class attribute for a given extension.
 
-### 12.3 Environment dependent terms
+### 11.3 Environment dependent terms
 
 An environment dependent term SHOULD NOT be specified as `required` as a LinkML slot attribute.
 
 An environment dependent term SHOULD be specified within the `slot_usage` attribute of a LinkML class attribute for a given extension.
 
-### 12.4 Optional terms
+### 11.4 Optional terms
 
 A term that is not required for a given sample MUST NOT have either the `recommended` and `required` LinkML attributes specified.
 By default LinkML attributes are assumed `false` unless specified.
 
-## 13. Ontology and Value sets
+## 12. Ontology and Value sets
 
-### 13.1 Ontology and controlled values recommended
+### 12.1 Ontology and controlled values recommended
 
 Where possible, terms (slots) with controlled vocabularies SHOULD use standardised terms from ontologies.
 When not possible, controlled vocabulary terms (value sets) MAY be used to specify the value of the term.
 
-### 13.2 Recommended ontologies
+### 12.2 Recommended ontologies
 
 Ontologies SHOULD be from established and widely used ontologies, such as those found in the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols4/), [Open Biological and Biomedical Ontology Foundry (OBO)](https://obofoundry.org/), or [BioPortal](https://bioportal.bioontology.org/).
 
@@ -371,7 +367,7 @@ Common ontologies used in MIxS include:
 - [Phenotypic Quality Ontology (PATO)](https://pato-ontology.github.io/pato/)
 - [Plant Ontology (PO)](https://browser.planteome.org/amigo)
 
-### 13.3 Ontology term value format
+### 12.3 Ontology term value format
 
 A term using an ontology term value MUST be written in the `termLabel [termID]` syntax, where the label is followed by the identifier code in square brackets.
 
@@ -382,13 +378,13 @@ Example of ontology terms:
 - `Rabies [DOID:11260]`
 - `454 Genome Sequencer FLX [OBI:0000702]`
 
-### 13.4 Value sets
+### 12.4 Value sets
 
 For a term that allows only a small fixed set of values, and for which no suitable standardised ontology exists, an enumeration SHOULD be used to define the allowed values.
 
 The set of allowed values is defined in the `enums:` section of the schema, as described in 13.5.
 
-### 13.5 Enumerations
+### 12.5 Enumerations
 
 Value sets (enumerations) MUST be defined within the `enums:` section of the LinkML schema.
 
@@ -396,9 +392,9 @@ The name of the enumeration MUST be formatted in [Pascal Case](https://en.wikipe
 
 For example, the value set for the term `assembly_qual` is named `AssemblyQualEnum`.
 
-## 14 Importing terms from other standards
+## 13 Importing terms from other standards
 
-### 14.1 Existing terms in other standards should be re-used if equivalent
+### 13.1 Existing terms in other standards should be re-used if equivalent
 
 Terms (slots) SHOULD be re-used from other established standards if they serve the same purpose and meaning as a proposed new MIxS term.
 
@@ -406,13 +402,13 @@ Examples of established standards include:
 
 - [Darwin Core (DwC)](https://dwc.tdwg.org/)
 
-### 14.2 Imported external standards terms requirements
+### 13.2 Imported external standards terms requirements
 
 Terms that are imported from another standard MUST be re-used in full, i.e. all attributes of the term MUST be re-used as far as they can be mapped to LinkML attributes.
 
 Terms imported from another standard MUST refer to the original source of the term by specifying the relevant CURIE ([Compact URI](https://en.wikipedia.org/wiki/CURIE)) using the LinkML [mappings](https://linkml.io/linkml-model/latest/docs/mappings/) (`exact_mappings`, `close_mappings`, `related_mappings`, `narrow_mappings`, `broad_mappings`) attribute.
 
-### 14.3 Imported structured comment term name format
+### 13.3 Imported structured comment term name format
 
 Terms structured comment (name) of external terms (slots) MUST be converted to [snake_case](https://en.wikipedia.org/wiki/Snake_case) and follow all other [MIxS naming conventions](#2-term-structured-naming) when re-used from another standard, if not already in this format.
 
