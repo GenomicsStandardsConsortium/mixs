@@ -36,8 +36,6 @@ Every MIxS LinkML slot should have at a minimum the following attributes:
 - [`title`](https://linkml.io/linkml-model/latest/docs/title/): a short human readable 'title' for the slot
 - [`examples`](https://linkml.io/linkml-model/latest/docs/examples/): examples values demonstrating how the slot should be used
 - [`in_subset`](https://linkml.io/linkml-model/latest/docs/in_subset/): the section of the schema that the slot belongs based on a [fix list of MIxS categories](https://github.com/GenomicsStandardsConsortium/mixs/blob/609b0f567486f64cb7061246588d8006f87fa138/src/mixs/schema/mixs.yaml#L21-L26)
-  - **WARNING**: this system may be replaced in the near future!
-- [`keywords`](https://linkml.io/linkml-model/latest/docs/keywords/): useful keywords to allow grouping of related slots together
 - [`slot_uri`](https://linkml.io/linkml-model/latest/docs/slot_uri/): a unique ID assigned by MIxS
   - This likely only gets assigned upon acceptance and merging by the core GSC MIxS team
   - During development you can use a dummy value for this
@@ -75,8 +73,6 @@ lib_reads_seqd:
     - value: "20"
   in_subset:
     - sequencing
-  keywords:
-    - library
   slot_uri: MIXS:0000040
   range: integer
 ```
@@ -96,8 +92,6 @@ ph:
   title: pH
   examples:
     - value: "7.2"
-  keywords:
-    - ph
   slot_uri: MIXS:0001001
   range: float
 ```
@@ -119,8 +113,6 @@ wga_amp_kit:
     - value: qiagen repli-g
   in_subset:
     - sequencing
-  keywords:
-    - kit
   range: string
   slot_uri: MIXS:0000006
 ```
@@ -162,8 +154,6 @@ assembly_qual:
     - value: High-quality draft genome
   in_subset:
     - sequencing
-  keywords:
-    - quality
   range: AssemblyQualEnum
   slot_uri: MIXS:0000056
 ```
@@ -186,8 +176,6 @@ x16s_recover:
     - value: "yes"
   in_subset:
     - sequencing
-  keywords:
-    - recover
   slot_uri: MIXS:0000065
   range: boolean
 ```
@@ -245,9 +233,6 @@ experimental_factor:
     - value: time series design [EFO:0001779]
   in_subset:
     - investigation
-  keywords:
-    - experimental
-    - factor
   string_serialization: "{termLabel} [{termID}]|{text}"
   slot_uri: MIXS:0000008
   multivalued: true
@@ -273,9 +258,6 @@ size_frac:
     - value: 0-0.22 micrometer
   in_subset:
     - nucleic acid sequence source
-  keywords:
-    - fraction
-    - size
   string_serialization: "{float}-{float} {unit}"
   slot_uri: MIXS:0000017
 ```
@@ -309,8 +291,6 @@ env_medium:
     - value: bluegrass field soil [ENVO:00005789]
   in_subset:
     - environment
-  keywords:
-    - environmental
   slot_uri: MIXS:0000014
   range: string
   required: true
@@ -341,10 +321,6 @@ isol_growth_condt:
     - value: doi:10.1016/j.syapm.2018.01.009
   in_subset:
     - nucleic acid sequence source
-  keywords:
-    - condition
-    - growth
-    - isolation
   slot_uri: MIXS:0000003
   range: string
   pattern: ^^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$$
@@ -373,9 +349,6 @@ microb_cult_med:
   title: microbiological culture medium
   examples:
     - value: brain heart infusion agar [MICRO:0000566]
-  keywords:
-    - culture
-    - microbiological
   slot_uri: MIXS:0001216
   range: string
   pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+)|(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])$
