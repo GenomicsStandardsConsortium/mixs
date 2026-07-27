@@ -49,7 +49,7 @@ This document will generally use MIxS terminology, but where helpful more releva
 
 ### 1.1 LinkML compatibility
 
-A MIxS term MUST be written in and compatible with the [LinkML](https://linkml.io/) model, and any of it's requirements (e.g. in YAML format).
+A MIxS term MUST be written in and compatible with the [LinkML](https://linkml.io/) model, and any of its requirements (e.g. in YAML format).
 
 It MUST conform to any MIxS specific LinkML linting requirements as defined within the [MIxS GitHub repository](https://github.com/GenomicsStandardsConsortium/mixs).
 
@@ -91,7 +91,7 @@ The term structured comment name (`name`) SHOULD NOT include a checklist or exte
 
 ### 2.5 (Structured comment) name abbreviations
 
-The term structured comment name (`name`) SHOULD be a abbreviated form of the item (title) attribute.
+The term structured comment name (`name`) SHOULD be an abbreviated form of the item (title) attribute.
 
 Examples:
 
@@ -116,7 +116,7 @@ Examples:
 | `culture`   | `cult_`      | `cult_result_org`                |
 | `culture`   | `cult_`      | `cult_root_med`                  |
 | `dissolved` | `diss_`      | `diss_carb_dioxide`              |
-| `dissovled` | `diss_`      | `diss_hydrogen`                  |
+| `dissolved` | `diss_`      | `diss_hydrogen`                  |
 | `dissolved` | `diss_`      | `diss_inorg_carb`                |
 | `dissolved` | `diss_`      | `diss_inorg_nitro`               |
 
@@ -152,7 +152,7 @@ The type of data specified in the expected value (`range`) of a term MUST be in 
 - `integer`
 - `float`
 - `boolean`
-- An '[enumeration](#135-enumerations)' (i.e., controlled vocabulary') predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L28)).
+- An [enumeration](#135-enumerations), that is a controlled vocabulary, predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L28)).
 
 Refer to LinkML documentation for more information on [range types](https://linkml.io/linkml-model/latest/docs/range/).
 
@@ -211,7 +211,7 @@ The item (title) should be a full sentence version of the term name, and MUST be
 
 ### 6.2 Title length
 
-A term item (title) attribute SHOULD be lower as short as possible, but as long as necessary to be sufficiently descriptive, unique, and distinguishable from other terms.
+A term item (title) attribute SHOULD be as short as possible, but as long as necessary to be sufficiently descriptive, unique, and distinguishable from other terms.
 
 ### 6.3 Title format
 
@@ -220,7 +220,7 @@ The item (title) SHOULD be in most circumstances lower case, including first cha
 - Valid example: `library size`.
 - Invalid examples:
   - `Library size` (capitalisation of first character).
-  - `Library Size` (capitalisation of of all words).
+  - `Library Size` (capitalisation of all words).
 
 Capitalisation MAY be used when it is an acronym or abbreviation that typically used capitalisation in the English language (e.g. `DNA`, `API`, `pH`).
 
@@ -235,7 +235,7 @@ The term item (title) MUST be unique within the MIxS standard (LinkML model).
 
 ### 7.1 Minimum number of examples
 
-There MUST have minimum of 1 examples for a term.
+There MUST be a minimum of 1 example for a term.
 Ideally, there SHOULD be a minimum of 3 examples for a term.
 
 ### 7.2 Scope of examples
@@ -382,9 +382,9 @@ Example of ontology terms:
 
 ### 13.4 Value sets
 
-For terms (slots) that only allow a small number fixed set of values, and otherwise no standardised ontology exists, an enumeration SHOULD be used be used to define the allowed values.
+For a term that allows only a small fixed set of values, and for which no suitable standardised ontology exists, an enumeration SHOULD be used to define the allowed values.
 
-The set of allowed values
+The set of allowed values is defined in the `enums:` section of the schema, as described in 13.5.
 
 ### 13.5 Enumerations
 
