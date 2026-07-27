@@ -12,7 +12,7 @@ to every release pull request.
 ## Setup
 
 First set up the MIxS environment as described in the repository README's "Local
-setup" section (clone the repo, use Python 3.10 through 3.13, run `poetry
+setup" section (clone the repo, use Python 3.13, run `poetry
 install`). That installs the dependencies and registers the `diff-releases`
 command. If `poetry run diff-releases` reports `No module named 'scripts'`, the
 project was not installed; run `poetry install` first.
@@ -57,9 +57,9 @@ mkdir -p ~/gitrepos && cd ~/gitrepos
 git clone https://github.com/GenomicsStandardsConsortium/mixs.git
 cd mixs
 
-# 2. Build the environment. Requires a Python 3.10-3.13 interpreter already
-#    installed and on PATH (3.13 recommended, not 3.14); install one first if you
-#    have none. This installs openpyxl and the rest.
+# 2. Build the environment. Requires Python 3.13 already installed and on PATH
+#    (not 3.14, which some dependencies do not resolve on); install it first if
+#    you have none. This installs openpyxl and the rest.
 poetry env use python3.13
 poetry install
 

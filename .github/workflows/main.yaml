@@ -13,11 +13,10 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
-      # Both ends of the range pyproject.toml declares (python = "^3.10").
-      # 3.10 is the floor linkml requires and reaches end of life in October
-      # 2026; 3.13 is what the README tells contributors to develop on.
+      # 3.13 is the version MIxS uses and recommends everywhere. 3.10 is only
+      # the floor linkml requires, and it reaches end of life in October 2026.
       matrix:
-        python-version: ["3.10", "3.13"]
+        python-version: ["3.13"]
 
     steps:
 
