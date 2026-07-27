@@ -23,20 +23,22 @@ Define what they are
 
 The GSC creates releases using semantic versioning (major.minor.patch).
 
-## Preparing a release PR
+## Version strings
 
-Run the `Create Release PR` GitHub Action
-(`.github/workflows/create-release-pr.yaml`). Given an old and a new ref, it:
+MIxS carries two version numbers, managed differently. Both use bare `X.Y.Z` values (no `v`); the `v` is a git tag label only.
 
-- bumps the version in `pyproject.toml`, `CITATION.cff`, and `.zenodo.json`,
-- runs the full build and tests,
-- generates a structured schema diff between the two refs into a per-release
-  folder `assets/diff_results/<old>_to_<new>/`, using the reusable
-  `diff-releases` tool (see
-  [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md)),
-- opens a release pull request from a `release/vX.Y.Z` branch.
+- **Python package version** (`pyproject.toml`): derived from the git tag by `poetry-dynamic-versioning`. It is not edited by hand; `pyproject.toml` holds a `0.0.0` placeholder on `main`, and the real value is stamped from the tag at build time.
+- **Schema version** (`src/mixs/schema/mixs.yaml` `version:`): this is content. It flows into the generated OWL (`pav:version`), which EBI OLS reads, and into the JSON Schema and datamodel. It is bumped by hand as part of a release (see below), following the same pattern as `biolink-model`.
 
-This action only prepares the PR. It does not publish a release.
+## Cutting a release
+
+1. Bump the schema version by editing the `version:` field near the top of `src/mixs/schema/mixs.yaml` to the new release number (bare `X.Y.Z`). Commit it to `main` via the normal PR process. Pushing this to `main` triggers the "Regenerate and verify generated artifacts" workflow, which regenerates the OWL and other `project/` artifacts so they carry the new version.
+2. Run the "Create Release PR" GitHub Action (manual dispatch) with the same version. It bumps `CITATION.cff`, `.zenodo.json`, and `release/README.md`, generates the schema diff, and opens a `release/vX.Y.Z` PR. It does not touch `pyproject.toml` (dynamic) or `mixs.yaml` (already bumped in step 1).
+3. Add the schema-diff summaries to the release branch (see below).
+4. Review and merge the release PR.
+5. Create a GitHub Release with tag `vX.Y.Z` and generate release notes.
+
+The structured diff in step 2 is produced by the reusable `diff-releases` tool; see [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md).
 
 ## Adding the schema-diff summaries and publishing them
 
@@ -71,6 +73,13 @@ API keys, and everything is reviewed like any other change before merge.
 - A TWG member other than the PR author reviews the version bumps and the schema
   diff summary. The pre-merge checklist is in the PR body.
 - After merge, create the GitHub Release with tag `vX.Y.Z` and publish.
+
+## Keeping generated artifacts current
+
+The committed artifacts under `project/`, `src/mixs/datamodel/`, and `contrib/` are generated from the schema. The "Regenerate and verify generated artifacts" workflow keeps them in sync. On a push to `main` that changes the schema or its build inputs, it regenerates everything and commits the refreshed artifacts. On a pull request it regenerates and fails if the committed artifacts are stale.
+
+The check uses `project/jsonschema/mixs.schema.json` as its signal, because that file regenerates deterministically. The OWL (`project/owl/mixs.owl.ttl`) is not byte-reproducible: RDF/Turtle serialization reorders triples and blank nodes on every run, so it is regenerated and committed but not compared by diff. Do not hand-edit generated artifacts.
+
 
 # LinkML Updates 
 
