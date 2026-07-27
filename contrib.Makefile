@@ -34,6 +34,7 @@ contrib/class_summary_results.tsv: src/mixs/schema/mixs.yaml contrib/templates/c
 	mkdir -p contrib
 	$(RUN) linkml2sheets \
 		--schema $(word 1,$^) \
+		--overwrite \
 		 --output $@ $(word 2,$^)
 
 contrib/mixs-schemasheets-concise.tsv: src/mixs/schema/mixs.yaml
