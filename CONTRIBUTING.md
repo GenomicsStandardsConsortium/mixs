@@ -61,6 +61,27 @@ Please review GitHub's overview article,
 Please review GitHub's article, ["About Pull Requests"][about-pulls],
 and make your changes on a [new branch][about-branches].
 
+#### What to edit
+
+`src/mixs/schema/mixs.yaml` is the only file you should edit by hand to change
+the standard. Everything under `project/`, `contrib/`, `src/mixs/datamodel/`, and
+`docs/` is generated from it, and an edit there is overwritten the next time the
+artifacts are regenerated.
+
+#### Naming branches and pull requests
+
+Name things for what changed, so a reviewer can tell without opening the diff.
+
+- **Branch**: name it for the change, not for a person or a requesting group, and
+  prefix it with the issue number when you have one.
+  Avoid `partner-request` or `updates`; prefer `1234-add-water-depth-enum-values`.
+- **Pull request title**: state the change in the title.
+  Avoid "Changes to accommodate a collaborator's needs"; prefer "Add enum values
+  for water depth ranges".
+- **Pull request description**: lead with why the change is needed, and link the
+  issue. The diff already shows what changed, so keep any itemised list as
+  supporting detail rather than the whole description.
+
 #### Linting checks
 
 Two checks lint the schema on every pull request that touches it, and **both fail

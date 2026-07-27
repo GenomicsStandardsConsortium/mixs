@@ -27,6 +27,11 @@ on:
         description: 'Type "publish" to confirm (THIS WORKFLOW IS DISABLED)'
         required: true
 
+# Publishing needs no repository write access; the upload is authenticated with
+# the PyPI token, not the GitHub token.
+permissions:
+  contents: read
+
 jobs:
   build-n-publish:
     name: Build and publish Python distributions to PyPI
