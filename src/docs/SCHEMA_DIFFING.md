@@ -31,13 +31,15 @@ git tag | grep -E '^v6' | head     # should list v6.x tags, e.g. v6.2.0
 **Provide a GitHub token (recommended).** The tool fetches schema files through
 the GitHub API. Without a token you share the anonymous limit of 60 requests per
 hour, which a multi-version diff can exhaust; with a token it is 5000 per hour.
-The tool reads `GITHUB_TOKEN` from the environment first, then from a `.env` file
-in the repo root:
+The tool reads `GITHUB_TOKEN` from the environment first, then from `local/.env`:
 
 ```bash
 export GITHUB_TOKEN=$(gh auth token)     # if you use the GitHub CLI
-# or add a line GITHUB_TOKEN=ghp_... to a .env file (never commit it)
+# or add a line GITHUB_TOKEN=ghp_... to local/.env
 ```
+
+`local/` is git-ignored, which is why the token goes there rather than in a
+`.env` at the repo root.
 
 **Verify:**
 
