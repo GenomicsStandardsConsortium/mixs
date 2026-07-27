@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mixs"
-version = "6.2.0"
+version = "0.0.0"  # placeholder; the package version is derived from the git tag at build (poetry-dynamic-versioning). The schema version is in src/mixs/schema/mixs.yaml and is bumped by hand at release.
 description = "MIxS: the Minimum Information about any (X) Sequence standard"
 authors = [
     "Mark Andrew Miller <MAM@lbl.gov>",
@@ -10,31 +10,42 @@ license = "CC0-1.0 license"
 readme = "README.md"
 include = ["README.md", "project", "src/mixs", "src/scripts"]
 
-#[tool.poetry-dynamic-versioning]
-#enable = true
-#vcs = "git"
-#style = "pep440"
+[tool.poetry-dynamic-versioning]
+# The package version is derived from the git tag (e.g. v6.3.1 -> 6.3.1). `enable = false`
+# keeps `poetry install` using the 0.0.0 placeholder, so CI installs never depend on tag
+# fetching; run `poetry dynamic-versioning` before `poetry build`/publish to stamp the real
+# version. This does NOT set the schema version in src/mixs/schema/mixs.yaml, which is content
+# read by ontology browsers and is bumped by hand at release.
+enable = false
+vcs = "git"
+style = "pep440"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-linkml-runtime = "^1.9"
+# 1.11 is the first release with linkml's pipe-delimited multivalued TSV
+# serialization (linkml #3134), which the dense TSV round-trip below depends on.
+# The empty-cell load fix #3251 is not yet in a released linkml-runtime, so the
+# round-trip example avoids empty multivalued cells.
+linkml-runtime = "^1.11"
 jsonasobj2 = "^1.0" # used transitively in src/scripts/mixs/datamodel/mixs.py
 
 [tool.poetry.group.dev.dependencies]
-black = "^25.1"
+black = "^26.3"
 deptry = "^0.23"
-linkml = "^1.9"
+linkml = "^1.11"
 matplotlib = "^3.10"
 mkdocs-material = "^9.6"
 mkdocs-mermaid2-plugin = "^1.2"
 pandas = "^2.3"
-pyarrow = "^21.0"
+pyarrow = ">=21,<24"
 rdflib = "^7.1"
 schemasheets = "^0.4"
 scipy = "^1.15"
 yamllint = "^1.37"
 click = "^8.1"
 pyyaml = "^6.0"
+requests = "^2.33"
+python-dotenv = "^1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
@@ -53,5 +64,10 @@ generate-term-list = 'scripts.term_list_generator:generate_term_list'
 organize-files = 'scripts.organize_files:main'
 required-supersedes-recommended = 'scripts.required_supersedes_recommended:find_required_and_recommended_usages'
 describe-enums = 'scripts.describe_enums_by_slots_using:update_enum_descriptions'
+apply-sparql-updates = 'scripts.apply_sparql_updates:main'
 isolate-global-slots = 'scripts.isolate_slots:isolate_global_slots'
+diff-releases = 'scripts.diff_two_linkml_mixs_releases:main'
 
+[tool.deptry.package_module_name_map]
+pyyaml = "yaml"
+python-dotenv = "dotenv"
