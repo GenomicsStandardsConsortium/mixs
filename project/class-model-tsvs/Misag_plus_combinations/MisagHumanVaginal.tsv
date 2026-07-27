@@ -54,6 +54,8 @@ lib_reads_seqd	library reads sequenced	MIXS:0000040		Total number of clones sequ
 lib_screen	library screening strategy	MIXS:0000043		Specific enrichment or screening methods applied before and/or after creating libraries	{'value': 'enriched, screened, normalized'}	sequencing	library			string	True				screening strategy name	
 lib_size	library size	MIXS:0000039		Total number of clones in the library prepared for the project	{'value': '50'}	sequencing	library|size			integer	True					
 lib_vector	library vector	MIXS:0000042		Cloning vector type(s) used in construction of libraries	{'value': 'Bacteriophage P1'}	sequencing	library			string	True				vector	
+marker_gene_recov	taxonomic marker gene recovered	MIXS:0001354		Recovery status of taxonomic marker genes from the assembled genome	{'value': 'true'}	sequencing	recover|marker gene|taxonomy			boolean						
+marker_gene_recov_sw	taxonomic marker gene recovery software	MIXS:0001355		Tools used for taxonomic marker gene extraction from assembled genomes	{'value': 'metaxa2;2.2;-t bacteria'}	sequencing	recover|software|marker gene|taxonomy			string				{'syntax': '^{software};{version};{parameters}$', 'interpolated': True, 'partial_match': True}		
 medic_hist_perform	medical history performed	MIXS:0000897		Whether full medical history was collected	{'value': '1'}		history			boolean						
 menarche	menarche	MIXS:0000965		Date of most recent menstruation	{'value': '2013-03-25T12:42:31+01:00'}					datetime						
 menopause	menopause	MIXS:0000968		Date of onset of menopause	{'value': '2013-03-25T12:42:31+01:00'}					datetime						
