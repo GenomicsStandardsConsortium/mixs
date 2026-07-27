@@ -6,6 +6,11 @@
 > match it. The normative rules live in
 > [MIxS term specifications](slot_specifications.md); this page shows what they look
 > like in practice.
+>
+> The examples are copied from real terms but omit `keywords:`, which MIxS is
+> retiring rather than maintaining
+> ([#1283](https://github.com/GenomicsStandardsConsortium/mixs/issues/1283)).
+> A new term should not add them.
 
 ## Introduction
 
@@ -241,7 +246,9 @@ experimental_factor:
 ```
 
 > [!WARNING]
-> This slot example includes a `string_serialization:` attribute, which is discouraged as standard practice for a basic `pattern:` slot!
+> This term carries `string_serialization`. A new term MUST NOT use it: see section
+> 10.2 of [MIxS term specifications](slot_specifications.md). Use `structured_pattern`
+> instead. It is shown here because it is still present on terms that predate that rule.
 
 
 ### Structured text (numeric with unit, measurement)
@@ -267,10 +274,10 @@ The value is a float, however the particular unit can be defined by the user (or
 In this example the measurement is made as a range of values, however the value itself could also be a single value such as `{float} {unit}`.
 In this particular case, the `string_serialization:` attribute is used to define the format of the string in a different way to the `structured_pattern:` attribute.
 
-> [!NOTE]
-> This term uses `string_serialization` rather than `structured_pattern`. New terms
-> should use `structured_pattern`; `string_serialization` is retained on older terms
-> and is being retired.
+> [!WARNING]
+> This term carries `string_serialization`. A new term MUST NOT use it: see section
+> 10.2 of [MIxS term specifications](slot_specifications.md). Use `structured_pattern`
+> instead. It is shown here because it is still present on terms that predate that rule.
 
 
 ### Structured text (ontology term)
