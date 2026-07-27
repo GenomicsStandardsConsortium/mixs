@@ -15,6 +15,7 @@ For a more detailed guide to MIxS editing and contributing policies, see the [co
 * [Best Practices](#best-practices)
   * [How to write a great issue](#great-issues)
   * [How to create a great pull/merge request](#great-pulls)
+* [Guidelines for GSC developers](#gsc-devs)
 
 <a id="introduction"></a>
 ## Introduction
@@ -39,9 +40,9 @@ This section will be update or deleted after the release of MIxS 7.
 <a id="contributions"></a>
 ## Guidelines for Contributions and Requests
 
-Please review the [MIxS editing policies](policy.md) before making contributions to this repo.
+Please review the [MIxS editing policies](src/docs/policy.md) before making contributions to this repo.
 
-For guidance on how to request a new checklist or package, request a new term or update to an existing term, or report an issue with the MIxS code, please see [the workflows document](worklow.md).
+For guidance on how to request a new checklist or package, request a new term or update to an existing term, or report an issue with the MIxS code, please see [the workflows document](src/docs/edit_workflow.md).
 
 For guidance on how to use LinkML or contribute to the core LinkML code, please see [the LinkML documentation](https://linkml.io/linkml/).
 
@@ -60,8 +61,27 @@ Please review GitHub's overview article,
 Please review GitHub's article, ["About Pull Requests"][about-pulls],
 and make your changes on a [new branch][about-branches].
 
+If your pull request comes from a fork, the LinkML Linting check still runs the linter on your schema, but it reports the result in the workflow's Actions log rather than as a pull request comment. A fork pull request has a read-only token and cannot post the comment, so only the comment is skipped, not the lint. A green check means the lint ran; open the "LinkML Linting" job to read the details.
+
 [about-branches]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches
 [about-issues]: https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues
 [about-pulls]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
 [issues]: https://github.com/GenomicsStandardsConsortium/mixs/issues/
 [pulls]: https://github.com/GenomicsStandardsConsortium/mixs/pulls/
+
+<a id="gsc-devs"></a>
+
+## Guidelines for GSC developers
+
+If you're a GSC developer with editing rights, the advice and guidelines above still hold. You should always create an issue for each proposed change (keeping them atomic: one issue per logical change), create a branch from that issue, and - once you've made your changes on the branch - create a pull request for review and validation. 
+
+However, here are some guidelines on where and what to edit for a few routine tasks.
+
+### Editing the MIxS specification 
+
+To edit the MIxS terms, you'll need to edit the YAML file that drives the creation of the MIxS specification in its various serialisations.
+This file is located in:
+`/src/mixs/schema/`
+
+Once you've created an issue, branch, and done some editing on that branch, create a PR to have your proposed changes reviewed by the Technical WG. 
+Minor edits (e.g. fixing typos, clarifying edits of descriptions, etc) can be included in a patch, while any new terms or consequential edits to terms or their properties should be coordinated with minor / major release processes.
