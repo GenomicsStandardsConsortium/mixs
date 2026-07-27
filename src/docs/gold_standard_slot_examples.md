@@ -1,4 +1,11 @@
-# Gold Standard MIxS LinkML Slots Examples
+# Gold Standard MIxS LinkML Slot Examples
+
+> [!IMPORTANT]
+> These are worked examples for **writing a new or revised term**. They are not a
+> description of every term already in MIxS: many predate this guidance and do not
+> match it. The normative rules live in
+> [MIxS term specifications](slot_specifications.md); this page shows what they look
+> like in practice.
 
 ## Introduction
 
@@ -76,14 +83,6 @@ lib_reads_seqd:
 
 This example slot allows a single bit of information in the form of a singular integer value.
 
-<!--
-JFY comment: I don't like this so much as:
-
-- the description is very minimal, the example value is in quotes
-- single example (I like a few, even for very simple terms)
-- only one keyword
-- no recommended or required
--->
 
 ### Float
 
@@ -105,14 +104,6 @@ ph:
 
 This example slot allows a single bit of information in the form of a float value, i .e. allows decimal numbers.
 
-<!--
-JFY comment: I don't like this so much as:
-
-- the description is very minimal, the example value is in quotes
-- single example (I like a few, even for very simple terms)
-- only one keyword
-- no recommended or required
--->
 
 ### String
 
@@ -139,13 +130,6 @@ You can consider this to be 'free text' in that the user can add any bit of info
 
 As a rule this range type is generally preferred to be avoided in metadata slots, as it does not allow standardisation or consistency of the information stored within it.
 
-<!--
-JFY comment: I don't like this so much as:
-
-- single example
-- missing subset
-- single keyword
--->
 
 ### Fixed list
 
@@ -189,11 +173,6 @@ The `range:` attribute refers to a pre-defined [LinkML `enum`eration](https://li
 The contents of the range can be of any type (e.g., string, integer, float), but the values are fixed and cannot be changed without adding the value to the list.
 In most implementations, this will be rendered as a drop-down menu of options to select from.
 
-<!--
-JFY comment: I don't like this so much as:
-
-- single example
--->
 
 ### Boolean
 
@@ -215,12 +194,6 @@ x16s_recover:
 
 This example slot allows a binary choice of true or false, yes or no.
 
-<!--
-JFY comment: I don't like this so much as:
-
-- no recommended or required
-- Not clear to me if a `boolean` is represented as true/false, yes/no.
--->
 
 ### Structured text (text only)
 
@@ -285,12 +258,6 @@ experimental_factor:
 > [!WARNING]
 > This slot example includes a `string_serialization:` attribute, which is discouraged as standard practice for a basic `pattern:` slot!
 
-<!--
-JFY comment: I don't like this so much as:
-
-- single example
-- Using a string_serialisation...
--->
 
 ### Structured text (numeric with unit, measurement)
 
@@ -318,17 +285,11 @@ The value is a float, however the particular unit can be defined by the user (or
 In this example the measurement is made as a range of values, however the value itself could also be a single value such as `{float} {unit}`.
 In this particular case, the `string_serialization:` attribute is used to define the format of the string in a different way to the `structured_pattern:` attribute.
 
-<!--
-JFY comment: someone else will need to explain why the string_serialization is used here rather than a structured_pattern
--->
+> [!NOTE]
+> This term uses `string_serialization` rather than `structured_pattern`. New terms
+> should use `structured_pattern`; `string_serialization` is retained on older terms
+> and is being retired.
 
-<!--
-JFY comment: I don't like this so much as:
-
-- single example
-- is a value range not a single value
-- missing range? (but possibly assumed default)
--->
 
 ### Structured text (ontology term)
 
@@ -364,11 +325,6 @@ This example shows a specific type of structured text slot that is commonly used
 This particular pattern has the pattern of an ontology term label (a string) plus a unique identifier (a string) in square brackets.
 Implementers of the schema will often use such slots to perform API lookups to the ontology term against the ontology database, thus the pattern structure is critical when defining an ontology term-based metadata slot
 
-<!--
-JFY comment: I don't like this so much as:
-
-- Why pattern AND structured_pattern?
--->
 
 ### URL
 
@@ -401,11 +357,6 @@ isol_growth_condt:
 This example shows another common type of structured pattern for terms that refer to a URL-like or web address.
 The pattern in the example, allow a PubMed ID (`PMID:`), a digital object identifier (`doi:`), or a URL (uniform resource locator, `https:`), each with a specific prefix indicating the type of link address.
 
-<!--
-JFY comment: I don't like this so much as:
-
-- Single example, even though multiple URL types
--->
 
 ### Mixed type
 
@@ -437,8 +388,3 @@ microb_cult_med:
 This is an example of a slot that can accept _either_ a free text value or a particular structured text pattern.
 While these types of slots are discouraged, they are sometimes necessary to allow flexibility in the data entry such as when a particular metadata term may describe a very diverse or complex set of information that cannot be easily captured within ontology terms.
 
-<!--
-JFY comment: I don't like this so much as:
-
-- Single example, even though it can be an ontology term OR a free text
--->
