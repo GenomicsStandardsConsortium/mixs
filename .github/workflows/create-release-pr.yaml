@@ -49,9 +49,17 @@ jobs:
 
     steps:
       - name: Validate version format
+        env:
+          # Pass through the environment, not template interpolation, so the
+          # value cannot be read as shell syntax before this guard runs.
+          VERSION: ${{ inputs.version }}
         run: |
-          if ! [[ "${{ inputs.version }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "Error: Version must be in format X.Y.Z (e.g., 6.2.1 or 7.0.0)"
+          # X.Y.Z, optionally followed by a semver pre-release identifier, so a
+          # rehearsal can run as 7.0.0-rc1 without publishing a real release.
+          # Semver build metadata (+build) is deliberately not accepted: the
+          # value becomes a git branch name and a tag.
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z]+([.-][0-9A-Za-z]+)*)?$ ]]; then
+            echo "Error: Version must be X.Y.Z or X.Y.Z-prerelease (e.g., 6.2.1, 7.0.0, 7.0.0-rc1, 7.0.0-alpha.2)"
             exit 1
           fi
 
@@ -94,10 +102,12 @@ jobs:
 
       - name: Update version references in documentation
         run: |
-          # Update release/README.md - update the "Current version" link
-          # Use precise regex to match X.Y.Z version format
-          sed -i 's|Current version: \[MIxS v[0-9]\+\.[0-9]\+\.[0-9]\+\]|Current version: [MIxS v${{ inputs.version }}]|g' release/README.md
-          sed -i 's|releases/tag/v[0-9]\+\.[0-9]\+\.[0-9]\+)|releases/tag/v${{ inputs.version }})|g' release/README.md
+          # Update the "Current version" link in release/README.md. The pattern
+          # has to match a pre-release suffix too, otherwise the substitution
+          # silently stops matching after the first X.Y.Z-rc1 release and the
+          # file keeps showing a stale version.
+          sed -i 's|Current version: \[MIxS v[0-9]\+\.[0-9]\+\.[0-9]\+\(-[0-9A-Za-z.-]\+\)\?\]|Current version: [MIxS v${{ inputs.version }}]|g' release/README.md
+          sed -i 's|releases/tag/v[0-9]\+\.[0-9]\+\.[0-9]\+\(-[0-9A-Za-z.-]\+\)\?)|releases/tag/v${{ inputs.version }})|g' release/README.md
 
       - name: Run build and tests
         if: ${{ !inputs.skip_tests }}
@@ -110,14 +120,34 @@ jobs:
       - name: Generate schema diff report
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Pass the workflow inputs through the environment rather than
+          # templating them into the script, so their values cannot be
+          # interpreted as shell syntax or path segments.
+          DIFF_OLD: ${{ inputs.diff_old }}
+          DIFF_NEW: ${{ inputs.diff_new }}
         run: |
-          mkdir -p assets/diff_results
+          # Guard against path traversal / nesting: these refs become a directory
+          # name, so reject anything but a simple ref token (tags, main, etc.).
+          for ref in "$DIFF_OLD" "$DIFF_NEW"; do
+            if ! [[ "$ref" =~ ^[A-Za-z0-9._-]+$ ]]; then
+              echo "Error: diff ref '$ref' must contain only letters, digits, '.', '_', or '-' (no '/' or '..')"
+              exit 1
+            fi
+          done
+          out_dir="assets/diff_results/${DIFF_OLD}_to_${DIFF_NEW}"
+          mkdir -p "$out_dir"
           poetry run diff-releases \
-            --old "GenomicsStandardsConsortium/mixs@${{ inputs.diff_old }}:src/mixs/schema/mixs.yaml" \
-            --new "GenomicsStandardsConsortium/mixs@${{ inputs.diff_new }}:src/mixs/schema/mixs.yaml" \
-            --output-dir assets/diff_results \
-            --mappings-dir assets/between_diff_mappings/6_to_pre_7 \
-            || echo "Diff generation encountered issues - check logs"
+            --old "GenomicsStandardsConsortium/mixs@${DIFF_OLD}:src/mixs/schema/mixs.yaml" \
+            --new "GenomicsStandardsConsortium/mixs@${DIFF_NEW}:src/mixs/schema/mixs.yaml" \
+            --output-dir "$out_dir" \
+            --mappings-dir assets/between_diff_mappings/6_to_pre_7
+
+          # The release pull request body claims a diff was generated, so a
+          # silent failure here would publish a release that says so untruthfully.
+          if [ ! -s "$out_dir/schema_comparison_results.yaml" ]; then
+            echo "::error::diff-releases produced no $out_dir/schema_comparison_results.yaml"
+            exit 1
+          fi
 
       - name: Commit changes
         run: |
@@ -146,19 +176,26 @@ jobs:
 
           ### Changes
           - Version bumped to ${{ inputs.version }} in:
-            - `pyproject.toml`
             - `CITATION.cff`
             - `.zenodo.json`
             - `release/README.md`
+
+            `pyproject.toml` is not listed: the Python package version is derived
+            from the git tag by poetry-dynamic-versioning. The schema version in
+            `src/mixs/schema/mixs.yaml` is bumped by hand before this workflow runs.
           - Schema diff generated: `${{ inputs.diff_old }}` vs `${{ inputs.diff_new }}`
           - Full build and test suite executed
 
           ### Schema Diff
-          See `assets/diff_results/schema_comparison_results.yaml` for the structured diff.
+          The structured diff is in `assets/diff_results/${{ inputs.diff_old }}_to_${{ inputs.diff_new }}/schema_comparison_results.yaml`.
+          Before review, add a readable summary to this branch by running the
+          diff-summary skill on that file and committing the result (see
+          `src/docs/edit_workflow.md`, "Adding the schema-diff summaries and publishing them").
 
           ### Pre-merge Checklist
           - [ ] Review version numbers are correct
-          - [ ] Review schema diff for unexpected changes
+          - [ ] Generate and commit the schema-diff summary on this branch
+          - [ ] Review schema diff summary for unexpected changes
           - [ ] Verify all tests passed
           - [ ] TWG approval
           - [ ] CIG approval (for major releases)
