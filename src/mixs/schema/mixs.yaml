@@ -10919,9 +10919,11 @@ slots:
     description: Specification of the media for growing the plants or tissue cultured
       samples, e.g. soil, aeroponic, hydroponic, in vitro solid culture medium, in
       vitro liquid culture medium. Recommended value is a specific value from PECO:plant
-      growth medium (follow this link for terms http://purl.obolibrary.org/obo/PECO_0007147)
+      growth medium exposure (follow this link for terms http://purl.obolibrary.org/obo/PECO_0007147)
       or other controlled vocabulary
     title: plant growth medium
+    examples:
+      - value: hydroponic plant culture media exposure [PECO:0007067]
     keywords:
       - growth
       - plant
@@ -18005,7 +18007,7 @@ classes:
         recommended: true
       plant_growth_med:
         examples:
-          - value: hydroponic plant culture media [EO:0007067]
+          - value: hydroponic plant culture media exposure [PECO:0007067]
       plant_product:
         recommended: true
       plant_struc:
@@ -20413,7 +20415,7 @@ classes:
         string_serialization: '{float};{Rn/start_time/end_time/duration}'
       plant_growth_med:
         examples:
-          - value: hydroponic plant culture media [EO:0007067]
+          - value: hydroponic plant culture media exposure [PECO:0007067]
       salt_regm:
         string_serialization: '{text};{float} {unit};{Rn/start_time/end_time/duration}'
       season_environment:
