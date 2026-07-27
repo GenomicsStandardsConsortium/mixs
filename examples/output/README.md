@@ -1,113 +1,3 @@
-## MixsCompliantData-MimsSoil-example2
-### Input
-```yaml
-mims_soil_data:
-- collection_date: '2013-03-25T12:42:31+01:00'
-  depth: 1.234 units
-  elev: 1.234 units
-  env_broad_scale: term [ONTOLOGY:123]
-  env_local_scale: term [ONTOLOGY:123]
-  env_medium: term [ONTOLOGY:123]
-  geo_loc_name: 'text: text, text'
-  lat_lon: 45.1 45.9
-  project_name: absolutely any text
-  samp_name: msd1
-  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
-  seq_meth: absolutely any text
-- collection_date: '2013-03-25T12:42:31+01:00'
-  depth: 1.234 units
-  elev: 1.234 units
-  env_broad_scale: term [ONTOLOGY:123]
-  env_local_scale: term [ONTOLOGY:123]
-  env_medium: term [ONTOLOGY:123]
-  geo_loc_name: 'text: text, text'
-  lat_lon: 45.1 45.9
-  project_name: absolutely any text
-  samp_name: msd2
-  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
-  seq_meth: absolutely any text
-
-```
-## MixsCompliantData-MimsSoil-pattern-fixes
-### Input
-```yaml
-mims_soil_data:
-- al_sat_meth: PMID:12345678
-  collection_date: '2024-05-20T09:15:00-05:00'
-  depth: 0.5 m
-  elev: 200 m
-  env_broad_scale: agricultural ecosystem [ENVO:01001245]
-  env_local_scale: agricultural soil [ENVO:00002259]
-  env_medium: soil [ENVO:00001998]
-  geo_loc_name: 'USA: Iowa, Ames'
-  lat_lon: 41.9 -93.6
-  previous_land_use: corn cultivation;2020-09-15T10:00:00Z
-  project_name: Soil pattern validation test
-  samp_name: soil-pattern-test-1
-  samp_taxon_id: soil metagenome [NCBITaxon:410658]
-  seq_meth: PMID:98765432
-- al_sat_meth: doi:10.1016/j.soilbio.2020.107890
-  collection_date: '2024-04-10T00:00:00Z'
-  depth: 1.0 m
-  elev: 150 m
-  env_broad_scale: grassland ecosystem [ENVO:01001206]
-  env_local_scale: grassland soil [ENVO:00005750]
-  env_medium: soil [ENVO:00001998]
-  geo_loc_name: 'USA: Kansas, Topeka'
-  lat_lon: 38.5 -98.8
-  previous_land_use: wheat farming;2019-06-20
-  project_name: Soil timestamp test
-  samp_name: soil-pattern-test-2
-  samp_taxon_id: soil metagenome [NCBITaxon:410658]
-  seq_meth: doi:10.1126/science.abc1234
-- al_sat_meth: https://www.sciencedirect.com/science/article/pii/S0038071720301234
-  collection_date: '2024-03-01T08:00:00+01:00'
-  depth: 0.3 m
-  elev: 180 m
-  env_broad_scale: forest ecosystem [ENVO:01001179]
-  env_local_scale: forest soil [ENVO:00002261]
-  env_medium: soil [ENVO:00001998]
-  geo_loc_name: 'Germany: Bavaria, Munich'
-  lat_lon: 48.1 11.6
-  previous_land_use: fallow;2018-05-11T14:30Z
-  project_name: Soil minimal timestamp test
-  samp_name: soil-pattern-test-3
-  samp_taxon_id: soil metagenome [NCBITaxon:410658]
-  seq_meth: https://www.ebi.ac.uk/ena/browser/view/PRJEB12345
-
-```
-## MixsCompliantData-MimsSoil-example
-### Input
-```yaml
-mims_soil_data:
-- agrochem_addition:
-  - roundup;5 milligram per liter;2018-06-21
-  collection_date: '2013-03-25T12:42:31+01:00'
-  depth: 1.234 units
-  elev: 1.234 units
-  env_broad_scale: term [ONTOLOGY:123]
-  env_local_scale: term [ONTOLOGY:123]
-  env_medium: term [ONTOLOGY:123]
-  geo_loc_name: 'text: text, text'
-  lat_lon: 45.1 45.9
-  project_name: absolutely any text
-  samp_name: msd1
-  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
-  seq_meth: absolutely any text
-- collection_date: '2013-03-25T12:42:31+01:00'
-  depth: 1.234 units
-  elev: 1.234 units
-  env_broad_scale: term [ONTOLOGY:123]
-  env_local_scale: term [ONTOLOGY:123]
-  env_medium: term [ONTOLOGY:123]
-  geo_loc_name: 'text: text, text'
-  lat_lon: 45.1 45.9
-  project_name: absolutely any text
-  samp_name: msd2
-  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
-  seq_meth: absolutely any text
-
-```
 ## MixsCompliantData-MimsMisipSoil-example
 ### Input
 ```yaml
@@ -144,37 +34,6 @@ mimsmisip_soil_data:
   samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
   seq_meth: absolutely any text
   sip_method: https://doi.org/10.1038/s41396-018-0279-6
-
-```
-## MixsCompliantData-MIMS-HCRFS-example
-### Input
-```yaml
-mims_hydrocarbon_resources_fluids_swabs_data:
-- add_recov_method: Dump Flood;2011-11-11T11:11:11.11Z
-  api: 1.234 - 9.999 units
-  basin: term [ONTOLOGY:123]
-  collection_date: '2013-03-25T12:42:31+01:00'
-  depth: 1.234 units
-  elev: 1.234 units
-  env_broad_scale: term [ONTOLOGY:123]
-  env_local_scale: term [ONTOLOGY:123]
-  env_medium: term [ONTOLOGY:123]
-  geo_loc_name: 'text: text, text'
-  hc_produced: Bitumen
-  hcr: Coalbed
-  iwf: 1.234
-  lat_lon: 45.1 45.9
-  nitrate: 1.234 units
-  project_name: absolutely any text
-  samp_collect_point: other
-  samp_name: msd1
-  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
-  samp_type: term [ONTOLOGY:123]
-  seq_meth: absolutely any text
-  sulfate: 1.234 units
-  sulfide: 1.234 units
-  temp: 1.234 units
-  water_cut: 1.234 units
 
 ```
 ## MixsCompliantData-MIMS-HCRFS-pattern-fixes
@@ -258,11 +117,22 @@ mims_hydrocarbon_resources_fluids_swabs_data:
   water_cut: 25 percent
 
 ```
-## MixsCompliantData-MimsSoil-invalid-al_sat_meth-pmid-trailing
+## Soil-alone-season_temp
+### Input
+```yaml
+depth: 1 m
+elev: 100 m
+project_name: project_1
+samp_name: sample_1
+season: winter [NCIT:C94730]
+season_temp: 18 degree Celsius
+
+```
+## MixsCompliantData-MimsSoil-pattern-fixes
 ### Input
 ```yaml
 mims_soil_data:
-- al_sat_meth: PMID:12345678 - see methods section
+- al_sat_meth: PMID:12345678
   collection_date: '2024-05-20T09:15:00-05:00'
   depth: 0.5 m
   elev: 200 m
@@ -271,16 +141,115 @@ mims_soil_data:
   env_medium: soil [ENVO:00001998]
   geo_loc_name: 'USA: Iowa, Ames'
   lat_lon: 41.9 -93.6
-  project_name: PMID at start with trailing text
-  samp_name: soil-invalid-pmid-trailing
+  previous_land_use: corn cultivation;2020-09-15T10:00:00Z
+  project_name: Soil pattern validation test
+  samp_name: soil-pattern-test-1
   samp_taxon_id: soil metagenome [NCBITaxon:410658]
   seq_meth: PMID:98765432
+- al_sat_meth: doi:10.1016/j.soilbio.2020.107890
+  collection_date: '2024-04-10T00:00:00Z'
+  depth: 1.0 m
+  elev: 150 m
+  env_broad_scale: grassland ecosystem [ENVO:01001206]
+  env_local_scale: grassland soil [ENVO:00005750]
+  env_medium: soil [ENVO:00001998]
+  geo_loc_name: 'USA: Kansas, Topeka'
+  lat_lon: 38.5 -98.8
+  previous_land_use: wheat farming;2019-06-20
+  project_name: Soil timestamp test
+  samp_name: soil-pattern-test-2
+  samp_taxon_id: soil metagenome [NCBITaxon:410658]
+  seq_meth: doi:10.1126/science.abc1234
+- al_sat_meth: https://www.sciencedirect.com/science/article/pii/S0038071720301234
+  collection_date: '2024-03-01T08:00:00+01:00'
+  depth: 0.3 m
+  elev: 180 m
+  env_broad_scale: forest ecosystem [ENVO:01001179]
+  env_local_scale: forest soil [ENVO:00002261]
+  env_medium: soil [ENVO:00001998]
+  geo_loc_name: 'Germany: Bavaria, Munich'
+  lat_lon: 48.1 11.6
+  previous_land_use: fallow;2018-05-11T14:30Z
+  project_name: Soil minimal timestamp test
+  samp_name: soil-pattern-test-3
+  samp_taxon_id: soil metagenome [NCBITaxon:410658]
+  seq_meth: https://www.ebi.ac.uk/ena/browser/view/PRJEB12345
 
 ```
-## MimsMisipSoil-isotopolog_atom_frac
+## MixsCompliantData-MIMS-HCRFS-example
 ### Input
 ```yaml
-mimsmisip_soil_data:
+mims_hydrocarbon_resources_fluids_swabs_data:
+- add_recov_method: Dump Flood;2011-11-11T11:11:11.11Z
+  api: 1.234 - 9.999 units
+  basin: term [ONTOLOGY:123]
+  collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  hc_produced: Bitumen
+  hcr: Coalbed
+  iwf: 1.234
+  lat_lon: 45.1 45.9
+  nitrate: 1.234 units
+  project_name: absolutely any text
+  samp_collect_point: other
+  samp_name: msd1
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  samp_type: term [ONTOLOGY:123]
+  seq_meth: absolutely any text
+  sulfate: 1.234 units
+  sulfide: 1.234 units
+  temp: 1.234 units
+  water_cut: 1.234 units
+
+```
+## Soil-alone-minimal
+### Input
+```yaml
+depth: 1 m
+elev: 100 m
+project_name: project_1
+samp_name: sample_1
+
+```
+## MixsCompliantData-MimsSoil-example2
+### Input
+```yaml
+mims_soil_data:
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  lat_lon: 45.1 45.9
+  project_name: absolutely any text
+  samp_name: msd1
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  lat_lon: 45.1 45.9
+  project_name: absolutely any text
+  samp_name: msd2
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+
+```
+## MixsCompliantData-MimarksCMisipSoil-example
+### Input
+```yaml
+mimarks_c_misip_soil_data:
 - collection_date: '2013-03-25T12:42:31+01:00'
   depth: 1.234 units
   elev: 1.234 units
@@ -292,10 +261,15 @@ mimsmisip_soil_data:
   gradient_pos_rel_am: 0.1
   gradient_position: 1
   internal_standard: https://doi.org/10.1101/2022.12.20.521340
-  isotope: 13C | 15N
-  isotopolog: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
+  isol_growth_condt: doi:10.1016/j.syapm.2018.01.009
+  isotope:
+  - 13C
+  - 15N
+  isotopolog:
+  - toluene [pubchem.compound:1140]
+  - water [pubchem.compound:962]
   isotopolog_approach: multiple
-  isotopolog_atom_frac: 95
+  isotopolog_atom_frac: 0.95 | 0.98
   isotopolog_atom_pos: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1
     | 1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h1,3-6,8-12H,2H2/t3-,4+,5+,6+/m0/s1
   isotopolog_dose: 10 ppm
@@ -304,17 +278,21 @@ mimsmisip_soil_data:
   lat_lon: 45.1 45.9
   nucleobase_atom_frac: 0.25
   project_name: absolutely any text
+  samp_dna_conc: "12.34 ng/\xB5L"
   samp_name: msd1
   samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
   seq_meth: absolutely any text
   sip_method: https://doi.org/10.1038/s41396-018-0279-6
+  target_gene: nif
 
 ```
-## MixsCompliantData-MimsSoil-example-undefined-slot
+## MixsCompliantData-MimsSoil-example
 ### Input
 ```yaml
-undefined_slot:
-- collection_date: '2013-03-25T12:42:31+01:00'
+mims_soil_data:
+- agrochem_addition:
+  - roundup;5 milligram per liter;2018-06-21
+  collection_date: '2013-03-25T12:42:31+01:00'
   depth: 1.234 units
   elev: 1.234 units
   env_broad_scale: term [ONTOLOGY:123]
@@ -373,23 +351,34 @@ mimsmisip_soil_data:
   sip_method: https://doi.org/10.1038/s41396-018-0279-6
 
 ```
-## MixsCompliantData-MimsSoil-invalid-al_sat_meth-url-leading
+## MixsCompliantData-MimsSoil-example-undefined-slot
 ### Input
 ```yaml
-mims_soil_data:
-- al_sat_meth: 'see link: https://example.com/method'
-  collection_date: '2024-03-01T08:00:00+01:00'
-  depth: 0.3 m
-  elev: 180 m
-  env_broad_scale: forest ecosystem [ENVO:01001179]
-  env_local_scale: forest soil [ENVO:00002261]
-  env_medium: soil [ENVO:00001998]
-  geo_loc_name: 'Germany: Bavaria, Munich'
-  lat_lon: 48.1 11.6
-  project_name: URL at end with leading text
-  samp_name: soil-invalid-url-leading
-  samp_taxon_id: soil metagenome [NCBITaxon:410658]
-  seq_meth: https://www.ebi.ac.uk/ena/browser/view/PRJEB12345
+undefined_slot:
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  lat_lon: 45.1 45.9
+  project_name: absolutely any text
+  samp_name: msd1
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  lat_lon: 45.1 45.9
+  project_name: absolutely any text
+  samp_name: msd2
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
 
 ```
 ## MixsCompliantData-MimsSoil-invalid-al_sat_meth-doi-leading
@@ -409,6 +398,110 @@ mims_soil_data:
   samp_name: soil-invalid-doi-leading
   samp_taxon_id: soil metagenome [NCBITaxon:410658]
   seq_meth: doi:10.1126/science.abc1234
+
+```
+## MimsMisipSoil-isotopolog_atom_frac
+### Input
+```yaml
+mimsmisip_soil_data:
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  gradient_pos_density: 1.725 g/mL
+  gradient_pos_rel_am: 0.1
+  gradient_position: 1
+  internal_standard: https://doi.org/10.1101/2022.12.20.521340
+  isotope: 13C | 15N
+  isotopolog: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
+  isotopolog_approach: multiple
+  isotopolog_atom_frac: 95
+  isotopolog_atom_pos: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1
+    | 1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h1,3-6,8-12H,2H2/t3-,4+,5+,6+/m0/s1
+  isotopolog_dose: 10 ppm
+  isotopolog_incu_time: 12 hour
+  isotopolog_label: natural abundance
+  lat_lon: 45.1 45.9
+  nucleobase_atom_frac: 0.25
+  project_name: absolutely any text
+  samp_name: msd1
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+  sip_method: https://doi.org/10.1038/s41396-018-0279-6
+
+```
+## MixsCompliantData-MimsSoil-invalid-al_sat_meth-url-leading
+### Input
+```yaml
+mims_soil_data:
+- al_sat_meth: 'see link: https://example.com/method'
+  collection_date: '2024-03-01T08:00:00+01:00'
+  depth: 0.3 m
+  elev: 180 m
+  env_broad_scale: forest ecosystem [ENVO:01001179]
+  env_local_scale: forest soil [ENVO:00002261]
+  env_medium: soil [ENVO:00001998]
+  geo_loc_name: 'Germany: Bavaria, Munich'
+  lat_lon: 48.1 11.6
+  project_name: URL at end with leading text
+  samp_name: soil-invalid-url-leading
+  samp_taxon_id: soil metagenome [NCBITaxon:410658]
+  seq_meth: https://www.ebi.ac.uk/ena/browser/view/PRJEB12345
+
+```
+## MixsCompliantData-MimsSoil-invalid-al_sat_meth-pmid-trailing
+### Input
+```yaml
+mims_soil_data:
+- al_sat_meth: PMID:12345678 - see methods section
+  collection_date: '2024-05-20T09:15:00-05:00'
+  depth: 0.5 m
+  elev: 200 m
+  env_broad_scale: agricultural ecosystem [ENVO:01001245]
+  env_local_scale: agricultural soil [ENVO:00002259]
+  env_medium: soil [ENVO:00001998]
+  geo_loc_name: 'USA: Iowa, Ames'
+  lat_lon: 41.9 -93.6
+  project_name: PMID at start with trailing text
+  samp_name: soil-invalid-pmid-trailing
+  samp_taxon_id: soil metagenome [NCBITaxon:410658]
+  seq_meth: PMID:98765432
+
+```
+## MimarksCMisipSoil-isotopolog_atom_frac
+### Input
+```yaml
+mimarks_c_misip_soil_data:
+- collection_date: '2013-03-25T12:42:31+01:00'
+  depth: 1.234 units
+  elev: 1.234 units
+  env_broad_scale: term [ONTOLOGY:123]
+  env_local_scale: term [ONTOLOGY:123]
+  env_medium: term [ONTOLOGY:123]
+  geo_loc_name: 'text: text, text'
+  gradient_pos_density: 1.725 g/mL
+  gradient_pos_rel_am: 0.1
+  gradient_position: 1
+  internal_standard: https://doi.org/10.1101/2022.12.20.521340
+  isotope: 13C | 15N
+  isotopolog: toluene [pubchem.compound:1140] | water [pubchem.compound:962]
+  isotopolog_approach: multiple
+  isotopolog_atom_frac: 95
+  isotopolog_atom_pos: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1
+    | 1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h1,3-6,8-12H,2H2/t3-,4+,5+,6+/m0/s1
+  isotopolog_dose: 10 ppm
+  isotopolog_incu_time: 12 hour
+  isotopolog_label: natural abundance
+  lat_lon: 45.1 45.9
+  nucleobase_atom_frac: 0.25
+  project_name: absolutely any text
+  samp_name: msd1
+  samp_taxon_id: Gut Metagenome [NCBITaxon:749906]
+  seq_meth: absolutely any text
+  sip_method: https://doi.org/10.1038/s41396-018-0279-6
 
 ```
 ## MimsMisipSoil-nucleobase_atom_frac
