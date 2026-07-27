@@ -255,13 +255,15 @@ If a term allows multiple occurrences ('multivalued'), the examples MUST include
 > What a section means, and which sections exist, is still under discussion in
 > [Define "in_subset"](https://github.com/GenomicsStandardsConsortium/mixs/issues/931).
 
-### 8.1 All core terms must be assigned a subset
+A section is recorded with the term's `in_subset` attribute, which refers to a subset defined under the schema's top-level `subsets:` block. There is no `subset` attribute on a term.
 
-All core checklist terms (slot) MUST be assigned to a section (subset).
+### 8.1 All core terms must be assigned a section
 
-### 8.2 All extension terms must be assigned the environment subset
+All core checklist terms MUST name a section in `in_subset`.
 
-A term defined in an extension (rather than a core checklist term) MUST be assigned to the 'Environment' section (subset).
+### 8.2 All extension terms must be assigned the environment section
+
+A term defined in an extension, rather than in a core checklist, MUST include the Environment section in `in_subset`.
 
 ## 9. Term MIxS ID attribute
 
@@ -428,10 +430,10 @@ When a term is updated, the person making the update SHOULD be recorded using th
 
 Additional contributors to the update can be appended to the [`contributors`](https://linkml.io/linkml-model/latest/docs/contributors/) attribute.
 
-Original author or contributors SHOULD be referred to by a stable ID such as an [ORCID](https://orcid.org/), with the persons name included as a comment.
+The person SHOULD be referred to by a stable ID such as an [ORCID](https://orcid.org/), with their name included as a comment.
 
 ```yaml
-created_by: orcid:0000-1234-1234-1234 # Erika Mustermann
+modified_by: orcid:0000-1234-1234-1234 # Erika Mustermann
 ```
 
 ### 14.5 Term modification date should be recorded
