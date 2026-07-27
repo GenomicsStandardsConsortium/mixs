@@ -1,5 +1,5 @@
 This Python script processes a TSV file containing schema information, performing multiple data cleaning steps to refine
-the dataset according to specified criteria. It's used by the `assets/mixs-schemasheets-concise-global-slots.tsv`
+the dataset according to specified criteria. It's used by the `contrib/mixs-schemasheets-concise-global-slots.tsv`
 Makefile target.
 
 Here’s a detailed breakdown:

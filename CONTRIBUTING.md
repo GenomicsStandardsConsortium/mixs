@@ -40,9 +40,9 @@ This section will be update or deleted after the release of MIxS 7.
 <a id="contributions"></a>
 ## Guidelines for Contributions and Requests
 
-Please review the [MIxS editing policies](policy.md) before making contributions to this repo.
+Please review the [MIxS editing policies](src/docs/policy.md) before making contributions to this repo.
 
-For guidance on how to request a new checklist or package, request a new term or update to an existing term, or report an issue with the MIxS code, please see [the workflows document](worklow.md).
+For guidance on how to request a new checklist or package, request a new term or update to an existing term, or report an issue with the MIxS code, please see [the workflows document](src/docs/edit_workflow.md).
 
 For guidance on how to use LinkML or contribute to the core LinkML code, please see [the LinkML documentation](https://linkml.io/linkml/).
 
@@ -60,6 +60,8 @@ Please review GitHub's overview article,
 
 Please review GitHub's article, ["About Pull Requests"][about-pulls],
 and make your changes on a [new branch][about-branches].
+
+If your pull request comes from a fork, the LinkML Linting check still runs the linter on your schema, but it reports the result in the workflow's Actions log rather than as a pull request comment. A fork pull request has a read-only token and cannot post the comment, so only the comment is skipped, not the lint. A green check means the lint ran; open the "LinkML Linting" job to read the details.
 
 [about-branches]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches
 [about-issues]: https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues
