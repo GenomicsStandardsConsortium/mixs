@@ -2317,7 +2317,9 @@ def main(old: str, new: str, no_cache: bool, output_dir: Path, mappings_dir: Pat
     if output_dir is None:
         def _ref(spec: str) -> str:
             ref = spec.split("@", 1)[1].split(":", 1)[0] if ("@" in spec and ":" in spec) else spec
-            return ref.replace("/", "-")
+            # Both separators, so a ref cannot nest directories or escape
+            # assets/diff_results on any platform.
+            return re.sub(r"[^A-Za-z0-9._-]", "-", ref)
         output_dir = Path(__file__).parent.parent.parent / "assets" / "diff_results" / f"{_ref(old)}_to_{_ref(new)}"
         logger.info(f"No --output-dir given; using {output_dir}")
 

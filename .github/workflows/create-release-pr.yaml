@@ -140,8 +140,14 @@ jobs:
             --old "GenomicsStandardsConsortium/mixs@${DIFF_OLD}:src/mixs/schema/mixs.yaml" \
             --new "GenomicsStandardsConsortium/mixs@${DIFF_NEW}:src/mixs/schema/mixs.yaml" \
             --output-dir "$out_dir" \
-            --mappings-dir assets/between_diff_mappings/6_to_pre_7 \
-            || echo "Diff generation encountered issues - check logs"
+            --mappings-dir assets/between_diff_mappings/6_to_pre_7
+
+          # The release pull request body claims a diff was generated, so a
+          # silent failure here would publish a release that says so untruthfully.
+          if [ ! -s "$out_dir/schema_comparison_results.yaml" ]; then
+            echo "::error::diff-releases produced no $out_dir/schema_comparison_results.yaml"
+            exit 1
+          fi
 
       - name: Commit changes
         run: |
