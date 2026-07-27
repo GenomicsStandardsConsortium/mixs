@@ -35,11 +35,16 @@ and promote into the tool's rename map. Do not silently treat them as removals.
 ## Step 2: separate real change from cosmetic mass-edits
 
 For each entry in a collection's `definition_changes`, compare the old and new
-definition field by field. If the only differing fields are text fields
-(`description`, `title`) and they are equal after lowercasing and collapsing
-whitespace, treat the change as cosmetic. When many entries in one collection
-share the same cosmetic change, report them as a single grouped line with a count
-and one example, never one line per entry.
+definition field by field. If the only differing field is `description` and the
+two are equal after lowercasing and collapsing whitespace, treat the change as
+cosmetic. When many entries in one collection share the same cosmetic change,
+report them as a single grouped line with a count and one example, never one line
+per entry.
+
+`title` is not cosmetic, even when the only difference is case or whitespace.
+Downstream archives key on it: ENA uses the MIxS title as its controlled
+nomenclature, so a change there is a change to an identifier its users see.
+Report `title` changes individually under their own section.
 
 ## Step 3: write the summary
 
@@ -56,8 +61,12 @@ Emit these sections, in order, omitting any that are empty:
    v5-to-v6.0.0 diff has no such fields, so omit this section for it.)
 7. **Pattern changes**: changes to `pattern` or `structured_pattern`, summarized
    (do not paste every regex).
-8. **Cosmetic changes (grouped)**: one line per shared mass-edit, with a count.
-9. **Notes**: anything that needed a judgment call.
+8. **Title changes**: listed individually, old to new. ENA treats the title as
+   controlled nomenclature, so these matter to consumers even when the edit looks
+   like tidying.
+9. **Cosmetic changes (grouped)**: one line per shared mass-edit, with a count.
+   `description` only.
+10. **Notes**: anything that needed a judgment call.
 
 ## What makes a good summary
 

@@ -158,6 +158,18 @@ release branch, and a maintainer runs this skill on that branch to add the
 summary before review. See [edit_workflow.md](edit_workflow.md), section
 "Releases". The summary step is deliberately not run in CI, so it needs no API keys.
 
+### Which comparisons are published
+
+The `Version changes` section of the site nav in `mkdocs.yml` lists one pair of
+pages per generated comparison, and it currently holds only `v5 to v6.0.0`,
+because that is the only comparison generated so far. It is not a complete
+history: the v6 point releases (v6.0.0 to v6.1.0, v6.1.0 to v6.2.0, v6.2.0 to
+v6.3.0) predate this tooling and have no published diff. Each future release adds
+its own pair of entries as part of cutting the release. Any of the missing pairs
+can be backfilled by running `diff-releases` against the two tags and following
+the same publishing steps; nothing about the tool restricts it to adjacent
+releases.
+
 ### Cost, model, and portability
 
 The summary is one small model call: it reads the structured diff (tens of
