@@ -38,6 +38,26 @@ Below are descriptions for the various user-facing directories in this repositor
       * [src/mixs/schema/mixs.yaml](src/mixs/schema/mixs.yaml) - LinkML YAML schema representing the MIxS standard
   * [src/docs](src/docs) - markdown files that can be converted to HTML and included in the web documentation pages
 
+## Local setup
+
+To build and work with the schema locally:
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/GenomicsStandardsConsortium/mixs.git
+   cd mixs
+   ```
+2. Use Python 3.13. That is the version CI runs and the one MIxS is developed against. Older versions back to 3.10 still satisfy the dependency constraints, but they are not tested; 3.10 reaches end of life in October 2026. Some dependencies do not yet resolve on 3.14. If you do not have 3.13 installed, install it first (for example with pyenv or Homebrew), then point Poetry at it:
+   ```bash
+   poetry env use python3.13
+   ```
+3. Install the project and its dependencies:
+   ```bash
+   poetry install
+   ```
+
+That gives you the environment used by the `make` targets and the scripts in [src/scripts/](src/scripts/). For comparing two versions of the schema, see [src/docs/SCHEMA_DIFFING.md](src/docs/SCHEMA_DIFFING.md).
+
 ## Developer Documentation
 Note: Developer documention is specifically included here for the use of members of the GSC's CIG and TWG committees.
 
@@ -45,7 +65,7 @@ Note: Developer documention is specifically included here for the use of members
 
 Building and testing MIxS locally requires these tools on your `PATH`:
 
-* **Python 3.10+** and **[Poetry](https://python-poetry.org/)** for the Python dependencies. `make install` runs `poetry install --all-extras`.
+* **Python 3.13** and **[Poetry](https://python-poetry.org/)** for the Python dependencies. `make install` runs `poetry install --all-extras`.
 * **[yq](https://github.com/mikefarah/yq) v4, the Go implementation by mikefarah.** The build uses `yq` extensively to transform the schema (the `contrib/` pipeline and the TSV round-trip test). This is **not** the Python `yq` (`pip install yq`, the kislyuk wrapper); the two have incompatible syntax, and the Python one causes build errors. Install with `brew install yq` (macOS) or see the [yq install docs](https://github.com/mikefarah/yq#install).
 * **make** and **bash**.
 

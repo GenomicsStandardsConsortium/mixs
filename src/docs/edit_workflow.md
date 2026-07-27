@@ -21,6 +21,8 @@ Define what they are
 
 # Releases
 
+The GSC creates releases using semantic versioning (major.minor.patch).
+
 ## Version strings
 
 MIxS carries two version numbers, managed differently. Both use bare `X.Y.Z` values (no `v`); the `v` is a git tag label only.
@@ -32,14 +34,52 @@ MIxS carries two version numbers, managed differently. Both use bare `X.Y.Z` val
 
 1. Bump the schema version by editing the `version:` field near the top of `src/mixs/schema/mixs.yaml` to the new release number (bare `X.Y.Z`). Commit it to `main` via the normal PR process. Pushing this to `main` triggers the "Regenerate and verify generated artifacts" workflow, which regenerates the OWL and other `project/` artifacts so they carry the new version.
 2. Run the "Create Release PR" GitHub Action (manual dispatch) with the same version. It bumps `CITATION.cff`, `.zenodo.json`, and `release/README.md`, generates the schema diff, and opens a `release/vX.Y.Z` PR. It does not touch `pyproject.toml` (dynamic) or `mixs.yaml` (already bumped in step 1).
-3. Review and merge the release PR.
-4. Create a GitHub Release with tag `vX.Y.Z` and generate release notes.
+3. Add the schema-diff summaries to the release branch (see below).
+4. Review and merge the release PR.
+5. Create a GitHub Release with tag `vX.Y.Z` and generate release notes.
+
+The structured diff in step 2 is produced by the reusable `diff-releases` tool; see [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md).
+
+## Adding the schema-diff summaries and publishing them
+
+The structured diff is complete but large. Before the release PR is reviewed, add
+readable summaries to the release branch and put them on the docs site:
+
+1. Check out the `release/vX.Y.Z` branch.
+2. The release action already wrote the diff into a per-release folder,
+   `assets/diff_results/<old>_to_<new>/` (for example `v6.2.0_to_v6.3.0/`). Work
+   in that folder. (The docs build publishes summaries only from these
+   per-release folders.)
+3. Run the `mixs-diff-summary` skill on the structured diff, for example
+   `/mixs-diff-summary assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`.
+   It writes `agent_summary.md` next to the structured diff.
+4. Commit both `agent_summary.md` (the readable summary) and `tool_summary.md`
+   (the counts) in that folder.
+5. Add the two pages to the site nav. In `mkdocs.yml`, under the `Version changes`
+   group, add two lines for this release:
+   ```yaml
+     - <old> to <new>: version-changes/<old>_to_<new>.md
+     - <old> to <new> (counts): version-changes/<old>_to_<new>-counts.md
+   ```
+   The `gendoc` build step copies the two summaries out of
+   `assets/diff_results/<old>_to_<new>/` into `docs/version-changes/`
+   automatically, so no other change is needed.
+
+This runs on the branch, done by a maintainer or an agent, not in CI. It needs no
+API keys, and everything is reviewed like any other change before merge.
+
+## Reviewing and publishing
+
+- A TWG member other than the PR author reviews the version bumps and the schema
+  diff summary. The pre-merge checklist is in the PR body.
+- After merge, create the GitHub Release with tag `vX.Y.Z` and publish.
 
 ## Keeping generated artifacts current
 
 The committed artifacts under `project/`, `src/mixs/datamodel/`, and `contrib/` are generated from the schema. The "Regenerate and verify generated artifacts" workflow keeps them in sync. On a push to `main` that changes the schema or its build inputs, it regenerates everything and commits the refreshed artifacts. On a pull request it regenerates and fails if the committed artifacts are stale.
 
 The check uses `project/jsonschema/mixs.schema.json` as its signal, because that file regenerates deterministically. The OWL (`project/owl/mixs.owl.ttl`) is not byte-reproducible: RDF/Turtle serialization reorders triples and blank nodes on every run, so it is regenerated and committed but not compared by diff. Do not hand-edit generated artifacts.
+
 
 # LinkML Updates 
 

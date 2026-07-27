@@ -1,0 +1,26 @@
+name: actionlint
+
+# Lints the GitHub Actions workflow files themselves. actionlint also runs
+# shellcheck on every `run:` block, which catches shell bugs in workflows
+# (unquoted command substitutions, word splitting, etc.). Pinned to the official
+# image by version. Modeled on berkeleybop/metpo.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Run actionlint
+        run: docker run --rm -v "${{ github.workspace }}":/repo:ro --workdir /repo rhysd/actionlint:1.7.12 -color

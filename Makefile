@@ -57,8 +57,9 @@ help: status
 	@echo ""
 	@echo "Quality checks:"
 	@echo "  qc            -- dependency validation with deptry (called by all, test; can fail)"
-	@echo "  linkml-lint   -- schema validation warnings (called by all, test; non-failing; has GH Action)"
-	@echo "  yaml-lint     -- YAML format warnings (called by all, test; non-failing; has GH Action)"
+	@echo "  linkml-lint   -- schema validation (called by all, test; fails on problems; has GH Action)"
+	@echo "  yaml-lint     -- YAML format checks (called by all, test; fails on problems; has GH Action)"
+	@echo "  fix-whitespace -- strip trailing whitespace from src/mixs/schema (fixes a common yaml-lint failure)"
 	@echo ""
 	@echo "Individual tests:"
 	@echo "  test-schema   -- schema validation tests (called by test)"
@@ -76,7 +77,7 @@ help: status
 	@echo "  create-data-harmonizer -- experimental npm tool"
 	@echo ""
 
-.PHONY: all all-contrib clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib
+.PHONY: all all-contrib clean install help status linkml-lint yaml-lint fix-whitespace yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib
 
 ensure-dirs:
 	mkdir -p contrib
@@ -131,11 +132,15 @@ test-python:
 	$(RUN) python -m unittest discover
 
 linkml-lint: # was previously just "lint"
-	$(RUN) linkml lint $(SOURCE_SCHEMA_PATH) || true
+	$(RUN) linkml lint $(SOURCE_SCHEMA_PATH)
 
 yaml-lint: # Run yamllint on schema files
 	@echo "Running yamllint on src/mixs/schema..."
-	$(RUN) yamllint -c .yamllint src/mixs/schema || true
+	$(RUN) yamllint -c .yamllint src/mixs/schema
+
+fix-whitespace: # Strip trailing whitespace from the schema sources
+	@echo "Stripping trailing whitespace from src/mixs/schema..."
+	@find src/mixs/schema -name '*.yaml' -exec sed -i.bak -e 's/[[:space:]]*$$//' {} \; -exec rm -f {}.bak \;
 
 test-examples: examples/output
 
@@ -247,6 +252,14 @@ gendoc: ensure-dirs $(DOCDIR)
 	$(RUN) generate-enumerations --output-file $(ENUMERATIONS_FILE)
 	mkdir -p $(DOCDIR)/javascripts
 	$(RUN) cp $(SRC)/scripts/javascripts/* $(DOCDIR)/javascripts/
+	# Publish each committed version-diff's summaries (agent + tool) as site pages.
+	mkdir -p $(DOCDIR)/version-changes
+	@for d in assets/diff_results/*/; do \
+	  [ -d "$$d" ] || continue; \
+	  name=$$(basename "$$d"); \
+	  if [ -f "$$d/agent_summary.md" ]; then cp "$$d/agent_summary.md" "$(DOCDIR)/version-changes/$$name.md"; fi; \
+	  if [ -f "$$d/tool_summary.md" ]; then cp "$$d/tool_summary.md" "$(DOCDIR)/version-changes/$$name-counts.md"; fi; \
+	done
 
 testdoc: gendoc serve
 
@@ -281,6 +294,18 @@ clean-contrib:
 	       contrib/extensions-dendrogram.pdf \
 	       contrib/soil-vs-water-slot-usage.yaml
 
+# Purge one diff's output folder. You must name which diff, so a purge can never
+# remove more than you asked for. Example:
+#   make purge-diff DIFF=v5_to_v6.0.0
+# The outputs are committed, so if you purge one by mistake, get it back with:
+#   git restore assets/diff_results/<name>
+DIFF ?=
+.PHONY: purge-diff
+purge-diff:
+	@test -n "$(DIFF)" || { echo "Say which diff to purge, for example:  make purge-diff DIFF=v5_to_v6.0.0"; echo "Diffs you can purge:"; find assets/diff_results -mindepth 1 -maxdepth 1 -type d -exec basename {} \; ; exit 1; }
+	@test -d "assets/diff_results/$(DIFF)" || { echo "No diff folder assets/diff_results/$(DIFF). Diffs you can purge:"; find assets/diff_results -mindepth 1 -maxdepth 1 -type d -exec basename {} \; ; exit 1; }
+	rm -rf "assets/diff_results/$(DIFF)"
+	@echo "Purged assets/diff_results/$(DIFF).  Undo with:  git restore assets/diff_results/$(DIFF)"
 # =============================================================================
 # Multivalued TSV round-trip (demonstration + equivalence test)
 # =============================================================================
