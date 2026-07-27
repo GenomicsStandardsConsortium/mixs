@@ -1082,20 +1082,17 @@ use a different mapping set (see
 <pre><code class="language-bash">poetry run diff-releases \
   --old &quot;GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml&quot; \
   --new &quot;GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml&quot; \
-  --mappings-dir assets/between_diff_mappings/6_to_pre_7 \
   --output-dir /tmp/mixs_diff
 </code></pre>
 <p><strong>Two tagged releases:</strong></p>
 <pre><code class="language-bash">poetry run diff-releases \
   --old &quot;GenomicsStandardsConsortium/mixs@v6.1.0:src/mixs/schema/mixs.yaml&quot; \
-  --new &quot;GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml&quot; \
-  --mappings-dir assets/between_diff_mappings/6_to_pre_7
+  --new &quot;GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml&quot;
 </code></pre>
 <p><strong>Your fork against upstream</strong> (review a branch before opening a PR):</p>
 <pre><code class="language-bash">poetry run diff-releases \
   --old &quot;GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml&quot; \
-  --new &quot;your-handle/mixs@your-branch:src/mixs/schema/mixs.yaml&quot; \
-  --mappings-dir assets/between_diff_mappings/6_to_pre_7
+  --new &quot;your-handle/mixs@your-branch:src/mixs/schema/mixs.yaml&quot;
 </code></pre>
 <h3 id="what-it-writes">What it writes</h3>
 <p>Into the output directory (default <code>assets/diff_results/&lt;old_ref&gt;_to_&lt;new_ref&gt;/</code>, a
