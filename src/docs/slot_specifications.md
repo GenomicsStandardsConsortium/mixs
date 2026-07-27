@@ -181,7 +181,7 @@ A term that has some level of 'requirement' (mandatory, conditional mandatory, o
 
 The definition (description) SHOULD aim to be precise enough for a user to understand the data the term is intended to hold, how it should be filled, and used.
 
-Links to external resources (e.g. ontologies, databases, or other documentation) SHOULD be included in the definition (description) when relevant.
+Links to external resources MUST NOT be written into the definition (description). A link that asserts the term is equivalent or related to a term in another vocabulary belongs in a mapping attribute (`exact_mappings`, `close_mappings`, `related_mappings`, `narrow_mappings`, `broad_mappings`). Any other link, such as a definition source or background reading, belongs in [`see_also`](https://linkml.io/linkml-model/latest/docs/see_also/).
 
 ### 5.2 Definition length
 
@@ -197,11 +197,9 @@ The definition (description) MAY include examples when the information for the t
 
 ### 5.4 Definition external resources
 
-Links or URLs used in the definition (description) to point a reader to an external resource MUST be valid and generally accessible via the public world wide web.
+An external resource MUST be valid and generally accessible over the public web, and SHOULD be a stable and established resource rather than a personal site or one that is not widely used.
 
-External resources SHOULD only be referred to when from a stable and established resource (i.e., not a personal or website, or a resource that is not widely used).
-
-URLs in external resources specified within descriptions SHOULD also be defined within a LinkML [`see_also` slot attribute](https://linkml.io/linkml-model/latest/docs/see_also/).
+Put it in a mapping attribute if it asserts a relationship to a term in another vocabulary, and in [`see_also`](https://linkml.io/linkml-model/latest/docs/see_also/) otherwise. Keeping links out of the prose means a consumer reading the definition gets the definition, and a consumer that wants the reference can find it in a field it can parse.
 
 ## 6. Term item title attribute
 
@@ -251,8 +249,9 @@ If a term allows multiple occurrences ('multivalued'), the examples MUST include
 
 ## 8. Term section attribute
 
-> [!WARNING]
-> The guidance in this section regarding `subset`s may be replaced with the use of `slot-group` in the future.
+> [!NOTE]
+> What a section means, and which sections exist, is still under discussion in
+> [Define "in_subset"](https://github.com/GenomicsStandardsConsortium/mixs/issues/931).
 
 ### 8.1 All core terms must be assigned a subset
 
@@ -303,7 +302,9 @@ See section [3](#3-term-expected-value-types).
 
 ### 11.2 Structured or formatted text should use a structured pattern
 
-A term that requires a specific format or a structured string layout SHOULD use the `structured_pattern` slot attribute, where the pattern components SHOULD be predefined in the `settings:` section of the schema when theoretically could be used more than once.
+A term that requires a specific format or a structured string layout MUST use the `structured_pattern` attribute, with the pattern components predefined in the schema's `settings:` block where a component could be used more than once.
+
+New terms MUST NOT use `string_serialization`. It appears on terms that predate this guidance, it is not checked by any validator, and it is being retired.
 
 
 ### 11.3 Structured or formatted text components should be reused
@@ -325,7 +326,9 @@ structured_pattern:
 
 ### 11.5 Preferred units
 
-Terms (slots) that record a measurement SHOULD specify the preferred unit of measurement for the term within a LinkmL `annotation` slot sub-attribute called `Preferred_unit:`.
+Terms that record a measurement SHOULD specify the preferred unit of measurement in the `Preferred_unit` annotation.
+
+`Preferred_unit` is the only annotation a new term may use. Anything else a term needs to say belongs in a LinkML attribute, not in `annotations:`, which no validator checks and no generator reads.
 
 Example:
 
