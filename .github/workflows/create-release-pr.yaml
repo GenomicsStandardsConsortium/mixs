@@ -54,8 +54,12 @@ jobs:
           # value cannot be read as shell syntax before this guard runs.
           VERSION: ${{ inputs.version }}
         run: |
-          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "Error: Version must be in format X.Y.Z (e.g., 6.2.1 or 7.0.0)"
+          # X.Y.Z, optionally followed by a semver pre-release identifier, so a
+          # rehearsal can run as 7.0.0-rc1 without publishing a real release.
+          # Semver build metadata (+build) is deliberately not accepted: the
+          # value becomes a git branch name and a tag.
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z]+([.-][0-9A-Za-z]+)*)?$ ]]; then
+            echo "Error: Version must be X.Y.Z or X.Y.Z-prerelease (e.g., 6.2.1, 7.0.0, 7.0.0-rc1, 7.0.0-alpha.2)"
             exit 1
           fi
 
@@ -98,10 +102,12 @@ jobs:
 
       - name: Update version references in documentation
         run: |
-          # Update release/README.md - update the "Current version" link
-          # Use precise regex to match X.Y.Z version format
-          sed -i 's|Current version: \[MIxS v[0-9]\+\.[0-9]\+\.[0-9]\+\]|Current version: [MIxS v${{ inputs.version }}]|g' release/README.md
-          sed -i 's|releases/tag/v[0-9]\+\.[0-9]\+\.[0-9]\+)|releases/tag/v${{ inputs.version }})|g' release/README.md
+          # Update the "Current version" link in release/README.md. The pattern
+          # has to match a pre-release suffix too, otherwise the substitution
+          # silently stops matching after the first X.Y.Z-rc1 release and the
+          # file keeps showing a stale version.
+          sed -i 's|Current version: \[MIxS v[0-9]\+\.[0-9]\+\.[0-9]\+\(-[0-9A-Za-z.-]\+\)\?\]|Current version: [MIxS v${{ inputs.version }}]|g' release/README.md
+          sed -i 's|releases/tag/v[0-9]\+\.[0-9]\+\.[0-9]\+\(-[0-9A-Za-z.-]\+\)\?)|releases/tag/v${{ inputs.version }})|g' release/README.md
 
       - name: Run build and tests
         if: ${{ !inputs.skip_tests }}
