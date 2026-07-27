@@ -150,7 +150,7 @@ The type of data specified in the expected value (`range`) of a term MUST be in 
 - `integer`
 - `float`
 - `boolean`
-- An '[enumeration](#145-enumerations)' (i.e., controlled vocabulary') predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L28)).
+- An '[enumeration](#135-enumerations)' (i.e., controlled vocabulary') predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L28)).
 
 Refer to LinkML documentation for more information on [range types](https://linkml.io/linkml-model/latest/docs/range/).
 
@@ -240,7 +240,7 @@ Ideally, there SHOULD be a minimum of 3 examples for a term.
 
 Examples SHOULD cover the full range of possible values, string formats, or any other way that information can be given to the term.
 
-For example if a term accepts either an [ontology](#14-ontology-and-value-sets) term _or_ a free text string, there should be at least one example for each type.
+For example if a term accepts either an [ontology](#13-ontology-and-value-sets) term _or_ a free text string, there should be at least one example for each type.
 If a term accepts different unit types, there should be at least two examples of different units to demonstrate multiple units are accepted.
 
 ### 7.3 Examples for terms that allow more than one entry
@@ -261,31 +261,13 @@ All core checklist terms (slot) MUST be assigned to a section (subset).
 
 A term defined in an extension (rather than a core checklist term) MUST be assigned to the 'Environment' section (subset).
 
-## 9. Term keywords attribute
+## 9. Term MIxS ID attribute
 
-### 9.1 Number of keywords
-
-All terms MUST have at least one keyword.
-
-### 9.2 Keywords should be re-used
-
-Re-using existing keywords SHOULD be preferred, but new keywords MAY be created if needed.
-
-### 9.3 Keyword types
-
-Keywords SHOULD be descriptive of the data the term is intended to hold in a way it can be grouped with with other terms (slots).
-
-This can correspond to stage of project, domain of research, or the sample type (or extension) the term is intended to be used with.
-
-It MAY ALSO include each descriptive part of the title (item) in full words (e.g. `air_temp` could have keywords `air` and `temperature`).
-
-## 10. Term MIxS ID attribute
-
-### 10.1 MIxS ID requirement
+### 9.1 MIxS ID requirement
 
 The term MUST have a MIxS ID (slot_uri) that is unique within the MIxS ID space.
 
-### 10.2 MIxS ID format
+### 9.2 MIxS ID format
 
 The MIxS ID (slot_uri) must begin with the string `MIXS`, a colon, and followed by a 7 digit number.
 
@@ -294,28 +276,28 @@ Example: `MIXS:0000010`.
 > [!NOTE]
 > MIxS IDs are only able to be assigned by the GSC's Compliance and Integration Working Group (CIG).
 
-## 11. Slot range attribute
+## 10. Slot range attribute
 
-### 11.1 Range options should be valid LinkML types
+### 10.1 Range options should be valid LinkML types
 
 See section [3](#3-term-expected-value-types).
 
-### 11.2 Structured or formatted text should use a structured pattern
+### 10.2 Structured or formatted text should use a structured pattern
 
 A term that requires a specific format or a structured string layout MUST use the `structured_pattern` attribute, with the pattern components predefined in the schema's `settings:` block where a component could be used more than once.
 
 New terms MUST NOT use `string_serialization`. It appears on terms that predate this guidance, it is not checked by any validator, and it is being retired.
 
 
-### 11.3 Structured or formatted text components should be reused
+### 10.3 Structured or formatted text components should be reused
 
 A structured pattern SHOULD re-use existing pattern components when as far as possible.
 
 Additional pattern components MAY be created when needed after consultation with the GSC's Compliance and Integration Working Group (CIG).
 
-### 11.4 Specifying units
+### 10.4 Specifying units
 
-Terms that record a measurement SHOULD use a [structured pattern](#112-structured-or-formatted-text-should-use-a-structured-pattern) that includes a component for the unit of measurement.
+Terms that record a measurement SHOULD use a [structured pattern](#102-structured-or-formatted-text-should-use-a-structured-pattern) that includes a component for the unit of measurement.
 
 Example:
 
@@ -324,7 +306,7 @@ structured_pattern:
   syntax: ^{particulate_matter_name};{float} {unit}$
 ```
 
-### 11.5 Preferred units
+### 10.5 Preferred units
 
 Terms that record a measurement SHOULD specify the preferred unit of measurement in the `Preferred_unit` annotation.
 
@@ -337,41 +319,41 @@ annotations:
   Preferred_unit: degree Celsius
 ```
 
-## 12. Multiple occurrence
+## 11. Multiple occurrence
 
 A term that allows multiple values for a single sample SHOULD be specified by setting the LinkML `multivalued` boolean to `true`.
 
-## 13. Level of requirement
+## 12. Level of requirement
 
-### 13.1 Mandatory terms
+### 12.1 Mandatory terms
 
 A term that is required to be filled in for a sample MUST have the `required` attribute set to `true`.
 
-### 13.2 Conditional mandatory terms
+### 12.2 Conditional mandatory terms
 
 A conditional term SHOULD NOT be specified as `required` as a LinkML slot attribute.
 
 A conditional term SHOULD be specified within the `slot_usage` attribute of a LinkML class attribute for a given extension.
 
-### 13.3 Environment dependent terms
+### 12.3 Environment dependent terms
 
 An environment dependent term SHOULD NOT be specified as `required` as a LinkML slot attribute.
 
 An environment dependent term SHOULD be specified within the `slot_usage` attribute of a LinkML class attribute for a given extension.
 
-### 13.4 Optional terms
+### 12.4 Optional terms
 
 A term that is not required for a given sample MUST NOT have either the `recommended` and `required` LinkML attributes specified.
 By default LinkML attributes are assumed `false` unless specified.
 
-## 14. Ontology and Value sets
+## 13. Ontology and Value sets
 
-### 14.1 Ontology and controlled values recommended
+### 13.1 Ontology and controlled values recommended
 
 Where possible, terms (slots) with controlled vocabularies SHOULD use standardised terms from ontologies.
 When not possible, controlled vocabulary terms (value sets) MAY be used to specify the value of the term.
 
-### 14.2 Recommended ontologies
+### 13.2 Recommended ontologies
 
 Ontologies SHOULD be from established and widely used ontologies, such as those found in the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols4/), [Open Biological and Biomedical Ontology Foundry (OBO)](https://obofoundry.org/), or [BioPortal](https://bioportal.bioontology.org/).
 
@@ -385,7 +367,7 @@ Common ontologies used in MIxS include:
 - [Phenotypic Quality Ontology (PATO)](https://pato-ontology.github.io/pato/)
 - [Plant Ontology (PO)](https://browser.planteome.org/amigo)
 
-### 14.3 Ontology term value format
+### 13.3 Ontology term value format
 
 A term using an ontology term value MUST be written in the `termLabel [termID]` syntax, where the label is followed by the identifier code in square brackets.
 
@@ -396,13 +378,13 @@ Example of ontology terms:
 - `Rabies [DOID:11260]`
 - `454 Genome Sequencer FLX [OBI:0000702]`
 
-### 14.4 Value sets
+### 13.4 Value sets
 
 For terms (slots) that only allow a small number fixed set of values, and otherwise no standardised ontology exists, an enumeration SHOULD be used be used to define the allowed values.
 
 The set of allowed values
 
-### 14.5 Enumerations
+### 13.5 Enumerations
 
 Value sets (enumerations) MUST be defined within the `enums:` section of the LinkML schema.
 
@@ -410,9 +392,9 @@ The name of the enumeration MUST be formatted in [Pascal Case](https://en.wikipe
 
 For example, the value set for the term `assembly_qual` is named `AssemblyQualEnum`.
 
-## 15 Term provenance tracking
+## 14 Term provenance tracking
 
-### 15.1 Terms should record provenance of term creation and updates
+### 14.1 Terms should record provenance of term creation and updates
 
 Where possible, terms (slots) SHOULD include provenance information using relevant LinkML attributes:
 
@@ -422,7 +404,7 @@ Where possible, terms (slots) SHOULD include provenance information using releva
 - [`modified_by`](https://linkml.io/linkml-model/latest/docs/modified_by/)
 - [`last_updated_on`](https://linkml.io/linkml-model/latest/docs/last_updated_on/)
 
-### 15.2 Terms should record original author
+### 14.2 Terms should record original author
 
 Terms (slots) SHOULD include the original author of the term using the LinkML [`created_by`](https://linkml.io/linkml-model/latest/docs/created_by/) attribute.
 
@@ -434,11 +416,11 @@ Original author or contributors SHOULD be referred to by a stable ID such as an 
 created_by: orcid:0000-1234-1234-1234 # Erika Mustermann
 ```
 
-### 15.3. Term creation date should be recorded
+### 14.3 Term creation date should be recorded
 
 The date in which the term was added to the schema SHOULD be recorded using the LinkML [`created_on`](https://linkml.io/linkml-model/latest/docs/created_on/) attribute.
 
-### 15.4 Terms should record modification author
+### 14.4 Terms should record modification author
 
 When a term is updated, the person making the update SHOULD be recorded using the LinkML [`modified_by`](https://linkml.io/linkml-model/latest/docs/modified_by/) attribute.
 
@@ -450,13 +432,13 @@ Original author or contributors SHOULD be referred to by a stable ID such as an 
 created_by: orcid:0000-1234-1234-1234 # Erika Mustermann
 ```
 
-### 15.5 Term modification date should be recorded
+### 14.5 Term modification date should be recorded
 
 The date in which the term was updated or modified SHOULD be recorded using the LinkML [`last_updated_on`](https://linkml.io/linkml-model/latest/docs/last_updated_on/) attribute.
 
-## 16 Importing terms from other standards
+## 15 Importing terms from other standards
 
-### 16.1 Existing terms in other standards should be re-used if equivalent
+### 15.1 Existing terms in other standards should be re-used if equivalent
 
 Terms (slots) SHOULD be re-used from other established standards if they serve the same purpose and meaning as a proposed new MIxS term.
 
@@ -464,13 +446,13 @@ Examples of established standards include:
 
 - [Darwin Core (DwC)](https://dwc.tdwg.org/)
 
-### 16.2 Imported external standards terms requirements
+### 15.2 Imported external standards terms requirements
 
 Terms that are imported from another standard MUST be re-used in full, i.e. all attributes of the term MUST be re-used as far as they can be mapped to LinkML attributes.
 
 Terms imported from another standard MUST refer to the original source of the term by specifying the relevant CURIE ([Compact URI](https://en.wikipedia.org/wiki/CURIE)) using the LinkML [mappings](https://linkml.io/linkml-model/latest/docs/mappings/) (`exact_mappings`, `close_mappings`, `related_mappings`, `narrow_mappings`, `broad_mappings`) attribute.
 
-### 16.3 Imported structured comment term name format
+### 15.3 Imported structured comment term name format
 
 Terms structured comment (name) of external terms (slots) MUST be converted to [snake_case](https://en.wikipedia.org/wiki/Snake_case) and follow all other [MIxS naming conventions](#2-term-structured-naming) when re-used from another standard, if not already in this format.
 
