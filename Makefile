@@ -57,8 +57,9 @@ help: status
 	@echo ""
 	@echo "Quality checks:"
 	@echo "  qc            -- dependency validation with deptry (called by all, test; can fail)"
-	@echo "  linkml-lint   -- schema validation warnings (called by all, test; non-failing; has GH Action)"
-	@echo "  yaml-lint     -- YAML format warnings (called by all, test; non-failing; has GH Action)"
+	@echo "  linkml-lint   -- schema validation (called by all, test; fails on problems; has GH Action)"
+	@echo "  yaml-lint     -- YAML format checks (called by all, test; fails on problems; has GH Action)"
+	@echo "  fix-whitespace -- strip trailing whitespace from src/mixs/schema (fixes a common yaml-lint failure)"
 	@echo ""
 	@echo "Individual tests:"
 	@echo "  test-schema   -- schema validation tests (called by test)"
@@ -76,7 +77,7 @@ help: status
 	@echo "  create-data-harmonizer -- experimental npm tool"
 	@echo ""
 
-.PHONY: all all-contrib clean install help status linkml-lint yaml-lint yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib
+.PHONY: all all-contrib clean install help status linkml-lint yaml-lint fix-whitespace yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib
 
 ensure-dirs:
 	mkdir -p contrib
@@ -131,11 +132,15 @@ test-python:
 	$(RUN) python -m unittest discover
 
 linkml-lint: # was previously just "lint"
-	$(RUN) linkml lint $(SOURCE_SCHEMA_PATH) || true
+	$(RUN) linkml lint $(SOURCE_SCHEMA_PATH)
 
 yaml-lint: # Run yamllint on schema files
 	@echo "Running yamllint on src/mixs/schema..."
-	$(RUN) yamllint -c .yamllint src/mixs/schema || true
+	$(RUN) yamllint -c .yamllint src/mixs/schema
+
+fix-whitespace: # Strip trailing whitespace from the schema sources
+	@echo "Stripping trailing whitespace from src/mixs/schema..."
+	@find src/mixs/schema -name '*.yaml' -exec sed -i.bak -e 's/[[:space:]]*$$//' {} \; -exec rm -f {}.bak \;
 
 test-examples: examples/output
 

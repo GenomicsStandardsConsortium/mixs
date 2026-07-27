@@ -1,0 +1,46 @@
+name: Workflow security audit (zizmor)
+
+# Audits this repo's GitHub Actions workflows with zizmor (https://docs.zizmor.sh).
+# Non-blocking: findings are reported to GitHub code scanning (the Security tab),
+# not by failing CI. zizmor is pinned to a specific version so a tool upgrade
+# cannot turn this red on unchanged workflows; bump it deliberately.
+# Modeled on microbiomedata/nmdc-schema.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  zizmor:
+    name: zizmor
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write  # upload SARIF to code scanning
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Run zizmor
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pipx run zizmor==1.25.2 --format sarif .github/workflows/ > zizmor.sarif
+
+      - name: Upload zizmor findings to code scanning
+        if: always()
+        continue-on-error: true
+        uses: github/codeql-action/upload-sarif@4187e74d05793876e9989daffde9c3e66b4acd07 # v3
+        with:
+          sarif_file: zizmor.sarif
+          category: zizmor

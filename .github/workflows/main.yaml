@@ -4,9 +4,13 @@
 ---
 name: Build and test mixs
 
-on: 
+on:
   pull_request:
   workflow_dispatch:
+
+# Least privilege: this workflow only reads the repo to run tests.
+permissions:
+  contents: read
 
 jobs:
   test:
@@ -21,15 +25,15 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Install Poetry
-        uses: snok/install-poetry@v1
+        uses: snok/install-poetry@a783c322200f0519c7926aa6faa857c4e23e9263 # v1
 
       - name: Run release SOP
         run: make install clean all all-contrib test

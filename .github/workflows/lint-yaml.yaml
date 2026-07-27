@@ -5,19 +5,57 @@ on:
   pull_request:
   workflow_dispatch:
 
+# Read the repo, plus write the yamllint results as a pull request comment.
+# `issues: write` is here because a pull request comment is created through the
+# Issues API, so `pull-requests: write` alone may not be enough.
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
   yamllint:
     name: Yamllint
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+    - name: Set up Python
+      uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+      with:
+        python-version: '3.13'
+
+    # Runs the linter directly so the findings reach the job summary and the pull
+    # request diff as annotations. Neither needs a token, so a fork pull request
+    # sees exactly what a branch pull request sees. This step is what fails the
+    # check; the action below only adds the comment.
+    - name: Yamllint findings
+      run: |
+        python -m pip install --quiet yamllint
+        status=0
+        yamllint -c .yamllint -f github src/mixs/schema || status=$?
+        yamllint -c .yamllint -f standard src/mixs/schema > yamllint-results.txt || true
+        {
+          echo "## Yamllint results"
+          echo
+          if [ -s yamllint-results.txt ]; then
+            echo '```'
+            cat yamllint-results.txt
+            echo '```'
+          else
+            echo "No problems found in \`src/mixs/schema\`."
+          fi
+        } >> "$GITHUB_STEP_SUMMARY"
+        exit $status
+
     - name: Yamllint
-      uses: karancode/yamllint-github-action@master
+      if: always()
+      uses: karancode/yamllint-github-action@4052d365f09b8d34eb552c363d1141fd60e2aeb2 # master
       with:
         yamllint_file_or_dir: src/mixs/schema
         yamllint_config_filepath: .yamllint
-        yamllint_strict: false
+        yamllint_strict: true
         yamllint_comment: true
       env:
         GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}

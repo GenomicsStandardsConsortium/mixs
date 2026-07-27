@@ -17,7 +17,7 @@ rules:
     # ideally, we want this to be set to 'true'/'consistent'
     indent-sequences: whatever
 
-  # this rule can be used to allow/forbid trailing spaces 
-  # at the end of lines.
-  # ideally, we want this to be set to be enabled
-  trailing-spaces: disable
+  # Trailing whitespace is enforced. It is not only untidy: a trailing space on a
+  # continuation line inside a folded block becomes a double space in the rendered
+  # description, which then ships in the generated JSON Schema and OWL.
+  # `make fix-whitespace` strips it.
