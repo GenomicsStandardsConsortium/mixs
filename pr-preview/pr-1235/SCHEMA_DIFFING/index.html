@@ -804,6 +804,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#which-comparisons-are-published" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which comparisons are published
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cost-model-and-portability" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -944,6 +955,17 @@
   
     <nav class="md-nav" aria-label="Turning the YAML diff into a readable summary">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-comparisons-are-published" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which comparisons are published
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#cost-model-and-portability" class="md-nav__link">
@@ -1122,6 +1144,16 @@ hand.</p>
 release branch, and a maintainer runs this skill on that branch to add the
 summary before review. See <a href="../edit_workflow/">edit_workflow.md</a>, section
 "Releases". The summary step is deliberately not run in CI, so it needs no API keys.</p>
+<h3 id="which-comparisons-are-published">Which comparisons are published</h3>
+<p>The <code>Version changes</code> section of the site nav in <code>mkdocs.yml</code> lists one pair of
+pages per generated comparison, and it currently holds only <code>v5 to v6.0.0</code>,
+because that is the only comparison generated so far. It is not a complete
+history: the v6 point releases (v6.0.0 to v6.1.0, v6.1.0 to v6.2.0, v6.2.0 to
+v6.3.0) predate this tooling and have no published diff. Each future release adds
+its own pair of entries as part of cutting the release. Any of the missing pairs
+can be backfilled by running <code>diff-releases</code> against the two tags and following
+the same publishing steps; nothing about the tool restricts it to adjacent
+releases.</p>
 <h3 id="cost-model-and-portability">Cost, model, and portability</h3>
 <p>The summary is one small model call: it reads the structured diff (tens of
 thousands of input tokens, most of them cacheable) and writes about a page (a few
