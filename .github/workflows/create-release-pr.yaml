@@ -49,8 +49,12 @@ jobs:
 
     steps:
       - name: Validate version format
+        env:
+          # Pass through the environment, not template interpolation, so the
+          # value cannot be read as shell syntax before this guard runs.
+          VERSION: ${{ inputs.version }}
         run: |
-          if ! [[ "${{ inputs.version }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "Error: Version must be in format X.Y.Z (e.g., 6.2.1 or 7.0.0)"
             exit 1
           fi
@@ -160,10 +164,13 @@ jobs:
 
           ### Changes
           - Version bumped to ${{ inputs.version }} in:
-            - `pyproject.toml`
             - `CITATION.cff`
             - `.zenodo.json`
             - `release/README.md`
+
+            `pyproject.toml` is not listed: the Python package version is derived
+            from the git tag by poetry-dynamic-versioning. The schema version in
+            `src/mixs/schema/mixs.yaml` is bumped by hand before this workflow runs.
           - Schema diff generated: `${{ inputs.diff_old }}` vs `${{ inputs.diff_new }}`
           - Full build and test suite executed
 
@@ -171,7 +178,7 @@ jobs:
           The structured diff is in `assets/diff_results/${{ inputs.diff_old }}_to_${{ inputs.diff_new }}/schema_comparison_results.yaml`.
           Before review, add a readable summary to this branch by running the
           diff-summary skill on that file and committing the result (see
-          `src/docs/edit_workflow.md`, "Adding the human-readable schema-diff summary").
+          `src/docs/edit_workflow.md`, "Adding the schema-diff summaries and publishing them").
 
           ### Pre-merge Checklist
           - [ ] Review version numbers are correct

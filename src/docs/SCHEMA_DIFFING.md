@@ -106,7 +106,6 @@ use a different mapping set (see
 poetry run diff-releases \
   --old "GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml" \
   --new "GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml" \
-  --mappings-dir assets/between_diff_mappings/6_to_pre_7 \
   --output-dir /tmp/mixs_diff
 ```
 
@@ -115,8 +114,7 @@ poetry run diff-releases \
 ```bash
 poetry run diff-releases \
   --old "GenomicsStandardsConsortium/mixs@v6.1.0:src/mixs/schema/mixs.yaml" \
-  --new "GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml" \
-  --mappings-dir assets/between_diff_mappings/6_to_pre_7
+  --new "GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml"
 ```
 
 **Your fork against upstream** (review a branch before opening a PR):
@@ -124,8 +122,7 @@ poetry run diff-releases \
 ```bash
 poetry run diff-releases \
   --old "GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml" \
-  --new "your-handle/mixs@your-branch:src/mixs/schema/mixs.yaml" \
-  --mappings-dir assets/between_diff_mappings/6_to_pre_7
+  --new "your-handle/mixs@your-branch:src/mixs/schema/mixs.yaml"
 ```
 
 ### What it writes
