@@ -75,7 +75,9 @@ All words must be lower case and underscores (`_`) MUST be used to separate word
 
 ### 2.2 (Structured comment) name length
 
-The term structured comment name (`name`) must be a maximum of 20 characters in length as per INSDC guidelines ([https://www.insdc.org/submitting-standards/feature-table/#3.1](https://www.insdc.org/submitting-standards/feature-table/#3.1)).
+The term structured comment name (`name`) MUST be a maximum of 20 characters in length.
+
+The figure comes from the [INSDC feature table, section 3.1](https://www.insdc.org/submitting-standards/feature-table/#3.1): "Component names may be no more than 20 characters long (Feature keys 15, Feature qualifiers 20)". That sentence constrains feature keys and feature qualifiers rather than structured comment keys, so MIxS is holding itself to the same figure by convention rather than because INSDC requires it of these names.
 
 ### 2.3 (Structured comment) name uniqueness
 
