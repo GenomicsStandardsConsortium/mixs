@@ -1,0 +1,27 @@
+---
+name: Dependency Review
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+# Read-only. The action fails the check by itself when a pull request
+# introduces a vulnerable dependency, so it does not need write access.
+# Posting the summary as a pull request comment would require
+# pull-requests: write, and that write token is not granted to pull requests
+# from forks in any case, so the comment would be the first thing to break for
+# an external contributor. See
+# https://github.com/GenomicsStandardsConsortium/mixs/issues/1272.
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Dependency Review
+        uses: actions/dependency-review-action@2031cfc080254a8a887f58cffee85186f0e49e48 # v4
