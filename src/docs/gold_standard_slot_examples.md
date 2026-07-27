@@ -34,12 +34,12 @@ Every MIxS LinkML slot should have at a minimum the following attributes:
 
 - [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions): the description of what the metadata term is for
 - [`title`](https://linkml.io/linkml-model/latest/docs/title/): a short human readable 'title' for the slot
-- [`examples`](https://linkml.io/linkml-model/latest/docs/examples/): examples values demonstrating how the slot should be used
-- [`in_subset`](https://linkml.io/linkml-model/latest/docs/in_subset/): the section of the schema that the slot belongs based on a [fix list of MIxS categories](https://github.com/GenomicsStandardsConsortium/mixs/blob/609b0f567486f64cb7061246588d8006f87fa138/src/mixs/schema/mixs.yaml#L21-L26)
+- [`examples`](https://linkml.io/linkml-model/latest/docs/examples/): example values demonstrating how the slot should be used
+- [`in_subset`](https://linkml.io/linkml-model/latest/docs/in_subset/): the section of the schema that the slot belongs based on a [fixed list of MIxS categories](https://github.com/GenomicsStandardsConsortium/mixs/blob/609b0f567486f64cb7061246588d8006f87fa138/src/mixs/schema/mixs.yaml#L21-L26)
 - [`slot_uri`](https://linkml.io/linkml-model/latest/docs/slot_uri/): a unique ID assigned by MIxS
   - This likely only gets assigned upon acceptance and merging by the core GSC MIxS team
   - During development you can use a dummy value for this
-- [`range`](https://linkml.io/linkml/schemas/slots.html#ranges): specifying the type of 'object' that put in the slot (numeric, string, etc.)
+- [`range`](https://linkml.io/linkml/schemas/slots.html#ranges): specifying the type of 'object' that is put in the slot (numeric, string, etc.)
 
 And for some slots, the following attributes are also recommended:
 
@@ -96,7 +96,7 @@ ph:
   range: float
 ```
 
-This example slot allows a single bit of information in the form of a float value, i .e. allows decimal numbers.
+This example slot allows a single bit of information in the form of a float value, i.e. allows decimal numbers.
 
 
 ### String
@@ -301,9 +301,9 @@ env_medium:
     partial_match: true
 ```
 
-This example shows a specific type of structured text slot that is commonly used across in MIxS, where the value refers to a specific ontology term.
+This example shows a specific type of structured text slot that is commonly used across MIxS, where the value refers to a specific ontology term.
 This particular pattern has the pattern of an ontology term label (a string) plus a unique identifier (a string) in square brackets.
-Implementers of the schema will often use such slots to perform API lookups to the ontology term against the ontology database, thus the pattern structure is critical when defining an ontology term-based metadata slot
+Implementers of the schema will often use such slots to perform API lookups to the ontology term against the ontology database, thus the pattern structure is critical when defining an ontology term-based metadata slot.
 
 
 ### URL
@@ -331,7 +331,7 @@ isol_growth_condt:
 ```
 
 This example shows another common type of structured pattern for terms that refer to a URL-like or web address.
-The pattern in the example, allow a PubMed ID (`PMID:`), a digital object identifier (`doi:`), or a URL (uniform resource locator, `https:`), each with a specific prefix indicating the type of link address.
+The pattern in the example allows a PubMed ID (`PMID:`), a digital object identifier (`doi:`), or a URL (uniform resource locator, `https:`), each with a specific prefix indicating the type of link address.
 
 
 ### Mixed type
