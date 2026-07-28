@@ -74,10 +74,10 @@ help: status
 	@echo "  testdoc       -- build & serve docs locally (calls gendoc, serve)"
 	@echo "  serve         -- serve existing docs locally via mkdocs (called by testdoc)"
 	@echo "  yamlfmt-beta  -- experimental YAML formatter"
-	@echo "  create-data-harmonizer -- experimental npm tool"
+	@echo "  create-data-harmonizer -- experimental; currently broken, see issue 1244"
 	@echo ""
 
-.PHONY: all all-contrib clean install help status linkml-lint yaml-lint fix-whitespace yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib
+.PHONY: all all-contrib clean install help status linkml-lint yaml-lint fix-whitespace yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib project/class-model-tsvs-organized
 
 ensure-dirs:
 	mkdir -p contrib
@@ -95,7 +95,11 @@ status:
 install:
 	poetry install --all-extras
 
-# EXPERIMENTAL
+# EXPERIMENTAL, and currently broken. The upstream create-data-harmonizer npm
+# package is frozen at 0.0.3 (2023-03-23) and crashes in its own readline before
+# it produces anything, so this cannot succeed from a Make target regardless of
+# how it is invoked. Kept rather than deleted pending a decision: see issue 1244
+# for removal and issue 648 for generating a DataHarmonizer interface properly.
 create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 

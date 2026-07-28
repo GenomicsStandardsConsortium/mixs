@@ -10,7 +10,7 @@ For a more detailed guide to MIxS editing and contributing policies, see the [co
 
 * [Introduction](#introduction)
 * [Code of Conduct](#code-of-conduct)
-* [MIxS transition to LinkML ](linkml)
+* [MIxS transition to LinkML](#linkml)
 * [Guidelines for Contributions and Requests](#contributions)
 * [Best Practices](#best-practices)
   * [How to write a great issue](#great-issues)
