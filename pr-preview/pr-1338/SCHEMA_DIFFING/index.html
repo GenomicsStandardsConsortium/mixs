@@ -1143,9 +1143,13 @@ rest, and the tool resolves those imports itself:</p>
   --new &quot;GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml&quot;
 </code></pre>
 <h2 id="which-releases-can-be-compared">Which releases can be compared</h2>
-<p>The tool takes a path per side, so it can reach any release. The <strong>release
-workflow</strong> cannot: it hardcodes <code>src/mixs/schema/mixs.yaml</code> for both sides, so
-its oldest usable base is v6.2.0.</p>
+<p>The tool takes a path per side, so it can reach any release that has a LinkML
+schema, which means v6.0.0 onward. <code>MIxS5</code> predates LinkML entirely and cannot
+be compared with this tool at all; the v5 to v6.0.0 comparison was produced by a
+separate one-time script with an Excel reader.</p>
+<p>The <strong>release workflow</strong> is more limited still: it hardcodes
+<code>src/mixs/schema/mixs.yaml</code> for both sides, so its oldest usable base is
+v6.2.0.</p>
 <table>
 <thead>
 <tr>

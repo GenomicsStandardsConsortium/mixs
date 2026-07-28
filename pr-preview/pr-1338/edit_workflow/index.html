@@ -774,8 +774,9 @@ member with registry access will allocate it and record it there.</p>
 <code>class_uri</code> range. A CIG member will tell you which applies and what the next
 number is.</p>
 <p>The order matters. The ID is added after the term is approved and before the
-pull request is merged. Placeholder values such as <code>MIXS:XXXXXXXXX</code> must not
-reach <code>main</code>; 44 terms did in 2026 and had to be corrected afterwards.</p>
+pull request is merged. Placeholder values must not reach <code>main</code>. Nothing
+currently checks this, and terms carrying placeholders have been merged and
+corrected afterwards; see issue 1304.</p>
 <h2 id="requesting-and-implementing-a-term-update">Requesting and implementing a term update</h2>
 <h2 id="requesting-and-implementing-a-term-deprecation">Requesting and implementing a term deprecation</h2>
 <h1 id="checklists-extensions-and-combinations">Checklists, extensions, and combinations</h1>
@@ -805,7 +806,7 @@ reach <code>main</code>; 44 terms did in 2026 and had to be corrected afterwards
    against the previous release as the "Previous tag". For a release candidate,
    see <a href="#publishing-a-release-candidate">Publishing a release candidate</a> below.</li>
 </ol>
-<p>The structured diff in step 2 is produced by the reusable <code>diff-releases</code> tool; see <a href="../SCHEMA_DIFFING/">SCHEMA_DIFFING.md</a>. Note that it can only reach back to v6.2.0, because the workflow asks for <code>src/mixs/schema/mixs.yaml</code> on both sides and that path does not exist in earlier releases.</p>
+<p>The structured diff in step 2 is produced by the reusable <code>diff-releases</code> tool; see <a href="../SCHEMA_DIFFING/">SCHEMA_DIFFING.md</a>. The tool itself can compare any release that has a LinkML schema, but it needs the right path for each side, and releases before v6.2.0 keep the schema somewhere else. Check the table in SCHEMA_DIFFING.md before choosing a base older than v6.2.0.</p>
 <p>The release notes cover the span between two tags, which is not necessarily the span the schema comparisons cover. If they differ, say so in the release body, or a reader will assume the pull requests listed produced the schema changes reported.</p>
 <h2 id="publishing-a-release-candidate">Publishing a release candidate</h2>
 <p><code>policy.md</code> requires a release candidate before every major and minor release. A candidate goes through the same steps above, with three differences:</p>
