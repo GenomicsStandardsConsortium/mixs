@@ -59,11 +59,12 @@ A LinkML slot is the object that is used to describe a MIxS term - i.e. informat
 
 ### 1.3 Language
 
-All MIxS term attributes MUST be written in English.
+All MIxS term attributes SHOULD be written in English.
 
 > **Note**
-> This is currently only a convention.
-> If there is a community need for supporting other languages, please contact the CIG.
+> Every term in the schema is currently in English, and nothing in the build
+> checks this. Whether English is required has not been decided; if there is a
+> community need for other languages, raise it with the CIG.
 
 ## 2. Term structured naming
 
