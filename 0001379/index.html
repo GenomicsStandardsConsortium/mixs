@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/prod_label_claims/">
+        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/0001379/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Term: production labeling claims (prod_label_claims) - mixs</title>
+        <title>Term: chronometric age protocol (chrono_age_protocol) - mixs</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#term-production-labeling-claims-prod_label_claims" class="md-skip">
+        <a href="#term-chronometric-age-protocol-chrono_age_protocol" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Term: production labeling claims (prod_label_claims)
+              Term: chronometric age protocol (chrono_age_protocol)
             
           </span>
         </div>
@@ -768,13 +768,13 @@
   
 
 
-<h1 id="term-production-labeling-claims-prod_label_claims">Term: production labeling claims (prod_label_claims)</h1>
-<p><em>Labeling claims containing descriptors such as wild caught, free-range, organic, free-range, industrial, hormone-free, antibiotic free, cage free. Can include more than one term, separated by ";"</em></p>
-<p>URI: <a href="https://w3id.org/mixs/prod_label_claims">MIXS:prod_label_claims</a></p>
+<h1 id="term-chronometric-age-protocol-chrono_age_protocol">Term: chronometric age protocol (chrono_age_protocol)</h1>
+<p><em>A description of or reference to the methods used to determine the earliest_chrono_age and latest_chrono_age.</em></p>
+<p>URI: <a href="https://w3id.org/mixs/0001379">MIXS:0001379</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-checklists-and-extensions">Applicable <a href="../#checklists">Checklists</a> and <a href="../#extensions">Extensions</a></h2>
-<p><b>NOTE:</b> does not include <a href="../combinations/">Combinations</a> (of checklists and extensions) that use prod_label_claims.</p>
+<p><b>NOTE:</b> does not include <a href="../combinations/">Combinations</a> (of checklists and extensions) that use chrono_age_protocol.</p>
 <table>
 <thead>
 <tr>
@@ -785,21 +785,56 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../0016020/">FoodFarmEnvironment</a></td>
-<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
+<td><a href="../0016024/">Ancient</a></td>
+<td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
 <td>Extension</td>
 </tr>
 <tr>
-<td><a href="../0016021/">FoodFoodProductionFacility</a></td>
-<td>A collection of terms appropriate when collecting samples and performing sequ...</td>
-<td>Extension</td>
+<td><a href="../10007_16002_9999903/">MimsHostAssociatedAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and HostAssociated and Ancient...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16003_9999903/">MimsHumanAssociatedAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and HumanAssociated and Ancien...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16005_9999903/">MimsHumanOralAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and HumanOral and Ancient exte...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16004_9999903/">MimsHumanGutAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and HumanGut and Ancient exten...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16006_9999903/">MimsHumanSkinAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and HumanSkin and Ancient exte...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16011_9999903/">MimsSedimentAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and Sediment and Ancient exten...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16012_9999903/">MimsSoilAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and Soil and Ancient extension...</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../10007_16010_9999903/">MimsPlantAssociatedAncient</a></td>
+<td>MIxS Data that comply with the Mims checklist, and PlantAssociated and Ancien...</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
-<li>Cardinality: *</li>
+<li>Range: <a href="../ChronoAgeProtocolEnum/">ChronoAgeProtocolEnum</a></li>
+<li>Cardinality: * <em>recommended</em></li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -810,28 +845,50 @@
 </thead>
 <tbody>
 <tr>
-<td>free range</td>
+<td>radiocarbon dating</td>
+</tr>
+<tr>
+<td>optically stimulated infrared luminescence</td>
+</tr>
+<tr>
+<td>contextual dating</td>
+</tr>
+<tr>
+<td>historical records</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: prod_label_claims
-description: Labeling claims containing descriptors such as wild caught, free-range,
-  organic, free-range, industrial, hormone-free, antibiotic free, cage free. Can include
-  more than one term, separated by &quot;;&quot;
-title: production labeling claims
+<pre><code class="language-yaml">name: chrono_age_protocol
+description: A description of or reference to the methods used to determine the earliest_chrono_age
+  and latest_chrono_age.
+title: chronometric age protocol
 examples:
-- value: free range
+- value: radiocarbon dating
+- value: optically stimulated infrared luminescence
+- value: contextual dating
+- value: historical records
+in_subset:
+- nucleic acid sequence source
 from_schema: https://w3id.org/mixs
-keywords:
-- production
-slot_uri: MIXS:prod_label_claims
+broad_mappings:
+- chrono:chronometricAgeProtocol
+slot_uri: MIXS:0001379
 domain_of:
-- FoodFarmEnvironment
-- FoodFoodProductionFacility
-range: string
+- Ancient
+- MimsHostAssociatedAncient
+- MimsHumanAssociatedAncient
+- MimsHumanOralAncient
+- MimsHumanGutAncient
+- MimsHumanSkinAncient
+- MimsSedimentAncient
+- MimsSoilAncient
+- MimsPlantAssociatedAncient
+range: ChronoAgeProtocolEnum
+required: false
+recommended: true
 multivalued: true
 
 </code></pre>

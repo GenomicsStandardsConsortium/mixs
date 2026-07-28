@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/XXXXXXXXX/">
+        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/0001385/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Term: description of reads removal (reads_removed) - mixs</title>
+        <title>Term: damage treatment type (damage_treatment) - mixs</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#term-description-of-reads-removal-reads_removed" class="md-skip">
+        <a href="#term-damage-treatment-type-damage_treatment" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Term: description of reads removal (reads_removed)
+              Term: damage treatment type (damage_treatment)
             
           </span>
         </div>
@@ -785,13 +785,13 @@
   
 
 
-<h1 id="term-description-of-reads-removal-reads_removed">Term: description of reads removal (reads_removed)</h1>
-<p><em>Specify whether associated data was filtered in some form prior to upload, such as host reads removal. Detailed description of the the data filtering that was carried out should be described in term 'preprocessing of sequencing reads description'.</em></p>
-<p>URI: <a href="https://w3id.org/mixs/XXXXXXXXX">MIXS:XXXXXXXXX</a></p>
+<h1 id="term-damage-treatment-type-damage_treatment">Term: damage treatment type (damage_treatment)</h1>
+<p><em>Indication of whether characteristic ancient DNA damage has been altered or removed from a DNA extract in a laboratory. If damage has been removed, but whether it was fully or partially removed is unknown (e.g. with UDG treatment) - specify 'other', and describe known information in <code>sop_experimental</code> and related free text descriptive terms.</em></p>
+<p>URI: <a href="https://w3id.org/mixs/0001385">MIXS:0001385</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-checklists-and-extensions">Applicable <a href="../#checklists">Checklists</a> and <a href="../#extensions">Extensions</a></h2>
-<p><b>NOTE:</b> does not include <a href="../combinations/">Combinations</a> (of checklists and extensions) that use reads_removed.</p>
+<p><b>NOTE:</b> does not include <a href="../combinations/">Combinations</a> (of checklists and extensions) that use damage_treatment.</p>
 <table>
 <thead>
 <tr>
@@ -802,7 +802,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../9999903/">Ancient</a></td>
+<td><a href="../0016024/">Ancient</a></td>
 <td>A collection of terms appropriate when collecting samples and sequencing samp...</td>
 <td>Extension</td>
 </tr>
@@ -850,8 +850,8 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../Boolean/">Boolean</a></li>
-<li>Cardinality: 0..1 <em>recommended</em></li>
+<li>Range: <a href="../DamageTreatmentEnum/">DamageTreatmentEnum</a></li>
+<li>Cardinality: 1 <em>recommended</em></li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -862,38 +862,40 @@
 </thead>
 <tbody>
 <tr>
-<td>no</td>
+<td>none</td>
 </tr>
 <tr>
-<td>yes</td>
+<td>partial-removal</td>
 </tr>
 </tbody>
 </table>
 <h3 id="annotations">Annotations</h3>
 <ul>
-<li>Expected_value: Whether any sequencing reads were removed from the data files after sequencing</li>
+<li>Expected_value: enumeration</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: reads_removed
+<pre><code class="language-yaml">name: damage_treatment
 annotations:
   Expected_value:
     tag: Expected_value
-    value: Whether any sequencing reads were removed from the data files after sequencing
-description: Specify whether associated data was filtered in some form prior to upload,
-  such as host reads removal. Detailed description of the the data filtering that
-  was carried out should be described in term 'preprocessing of sequencing reads description'.
-title: description of reads removal
+    value: enumeration
+description: Indication of whether characteristic ancient DNA damage has been altered
+  or removed from a DNA extract in a laboratory. If damage has been removed, but whether
+  it was fully or partially removed is unknown (e.g. with UDG treatment) - specify
+  'other', and describe known information in `sop_experimental` and related free text
+  descriptive terms.
+title: damage treatment type
 examples:
-- value: 'no'
-- value: 'yes'
+- value: none
+- value: partial-removal
 in_subset:
 - sequencing
 from_schema: https://w3id.org/mixs
 keywords:
-- data analysis
-slot_uri: MIXS:XXXXXXXXX
+- ancient
+slot_uri: MIXS:0001385
 domain_of:
 - Ancient
 - MimsHostAssociatedAncient
@@ -904,8 +906,8 @@ domain_of:
 - MimsSedimentAncient
 - MimsSoilAncient
 - MimsPlantAssociatedAncient
-range: boolean
-required: false
+range: DamageTreatmentEnum
+required: true
 recommended: true
 multivalued: false
 
