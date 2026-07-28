@@ -1,50 +1,89 @@
 # MIxS Editing Workflows and Good Practices
 
-Please try to follow this document. First read the [policies](policy.md) document.
+This document is for members of the GSC Technical Working Group and anyone
+cutting a MIxS release. Read [the policies](policy.md) first: that document says
+what the rules are, this one says how to carry them out. Where the two disagree,
+`policy.md` wins.
 
 # Terms
 
-Every term carries a `description`. All 834 reporting terms in MIxS 7.0.0 have
-one, so this records what the schema already does rather than asking for
-anything new. A term proposed without a description is incomplete, and reviewers
-should ask for one before merging.
+A term is a LinkML slot. MIxS 7.0.0 has 834 of them.
+
+Reviewers check that a new or updated term carries a `description` before
+merging one.
 
 ## Requesting and creating a new term
 
-## Requesting a MIxS ID
-
-MIxS IDs are allocated by the CIG from a registry maintained outside this
-repository. **Do not assign one yourself, and do not reuse a number that looks
-free in the schema.** Request one on the GitHub issue for the term, and a CIG
-member with registry access will allocate it and record it there.
-
-Terms and structural elements come from different ranges: terms use the
-`slot_uri` range, and checklists, extensions and combinations use the
-`class_uri` range. A CIG member will tell you which applies and what the next
-number is.
-
-The order matters. The ID is added after the term is approved and before the
-pull request is merged. Placeholder values must not reach `main`. Nothing
-currently checks this, and terms carrying placeholders have been merged and
-corrected afterwards; see issue 1304.
-
+TBD.
 
 ## Requesting and implementing a term update
 
+TBD.
 
-## Requesting and implementing a term deprecation 
+## Requesting and implementing a term deprecation
+
+Terms are deprecated rather than deleted, over two release cycles, so that
+existing data and tooling keep working. The procedure is in
+[Deprecating schema elements](schema_element_deprecation_guide.md).
+
+# MIxS identifiers
+
+Every term and every checklist, extension and combination carries a permanent
+`MIXS:` identifier. They come from two separate ranges:
+
+| element | field | range in MIxS 7.0.0 |
+|---|---|---|
+| terms | `slot_uri` | `MIXS:0000001` to `MIXS:0001399` |
+| checklists, extensions, combinations | `class_uri` | blocks within `MIXS:0010002` to `MIXS:0016024` |
+
+The 344 container slots are the exception: they carry a name-based `slot_uri`
+such as `MIXS:migs_ba_data` rather than a number.
+
+Identifiers are allocated by the CIG from a registry kept outside this
+repository, in a spreadsheet only CIG members can edit. That is why you cannot
+allocate one yourself: the registry holds numbers already reserved for terms
+that have not been merged yet, so a number that looks unused in the schema may
+already belong to someone else. Ask on the GitHub issue for the term, and a CIG
+member will allocate the identifier and record it in the registry.
+
+Add the identifier after the term is approved and before its pull request is
+merged. Placeholder values such as `MIXS:XXXXXXXXX` must not reach `main`;
+44 of them did in July 2026 and had to be corrected afterwards. Nothing blocks
+that today, which is
+[issue 1304](https://github.com/GenomicsStandardsConsortium/mixs/issues/1304).
 
 # Checklists, extensions, and combinations
 
-Define what they are
+In MIxS terms, a **checklist** is the set of terms expected for a kind of
+sequence data, such as MIGS bacteria or MIMS. An **extension** adds the terms
+that matter for a particular sampling environment, such as soil or water.
+Extensions were called packages, or environmental packages, before MIxS 6. A
+**combination** is one checklist paired with one extension, which is what a
+submitter actually fills in.
 
-Checklists, extensions and combinations are LinkML classes, and every one of the
-347 classes in MIxS 7.0.0 carries a `description`. New ones are expected to do
-the same.
+In LinkML terms, all three are classes. A checklist is a class whose `is_a` is
+`Checklist`, and an extension is a class whose `is_a` is `Extension`. A
+combination inherits from its extension and mixes in its checklist, and is
+marked with `in_subset: combination_classes`. `MigsBaSoil`, for example, has
+`is_a: Soil` and `mixins: [MigsBa]`.
+
+MIxS 7.0.0 has 13 checklists, 24 extensions and 307 combinations. The
+combination classes are written out in `src/mixs/schema/mixs.yaml` like
+everything else, so adding one checklist or one extension means adding a
+combination for each partner it applies to. The grid is nearly but not quite
+complete: 23 of the 24 extensions pair with all 13 checklists, while `Ancient`
+pairs with 8. The `generate-combinations` script builds the `combinations.md`
+documentation page from them; it does not create the classes.
+
+Reviewers check that a new class carries a `description` before merging one.
 
 ## Requesting and creating a new checklist or extension
 
+TBD.
+
 ## Updating an existing checklist or extension
+
+TBD.
 
 # Releases
 
@@ -52,83 +91,129 @@ The GSC creates releases using semantic versioning (major.minor.patch).
 
 ## Version strings
 
-MIxS carries two version numbers, managed differently. Both use bare `X.Y.Z` values (no `v`); the `v` is a git tag label only.
+MIxS carries two version numbers, and they are set in different ways.
 
-- **Python package version** (`pyproject.toml`): derived from the git tag by `poetry-dynamic-versioning`. It is not edited by hand; `pyproject.toml` holds a `0.0.0` placeholder on `main`, and the real value is stamped from the tag at build time.
-- **Schema version** (`src/mixs/schema/mixs.yaml` `version:`): this is content. It flows into the generated OWL (`pav:version`), which EBI OLS reads, and into the JSON Schema and datamodel. It is bumped by hand as part of a release (see below), following the same pattern as `biolink-model`.
+A **git tag** marks one commit as a named point in the history. MIxS tags carry
+a `v` prefix, as in `v7.0.0`. The prefix belongs to the tag only, never to a
+version written inside a file. Publishing a GitHub Release is what creates the
+tag, so there is no separate tagging step.
+
+- **Python package version** (`pyproject.toml`): never edited by hand.
+  `poetry-dynamic-versioning` reads the git tag and stamps the version at build
+  time, so `pyproject.toml` holds a `0.0.0` placeholder on `main`.
+- **Schema version** (`version:` in `src/mixs/schema/mixs.yaml`): edited by hand
+  as part of a release. It is part of the schema itself, not build metadata, so
+  it travels into everything generated from the schema, including the OWL that
+  EBI OLS loads and the JSON Schema that validators use. Whatever you type here
+  is what downstream consumers will report as their MIxS version.
 
 ## Cutting a release
 
-1. Bump the schema version by editing the `version:` field near the top of `src/mixs/schema/mixs.yaml` to the new release number (bare `X.Y.Z`). Commit it to `main` via the normal PR process. Pushing this to `main` triggers the "Regenerate and verify generated artifacts" workflow. That workflow cannot currently commit its results, so do not assume the committed `project/` artifacts carry the new version at this point; see [issue 1303](https://github.com/GenomicsStandardsConsortium/mixs/issues/1303). Step 2 rebuilds them on the release branch regardless.
-2. Run the "Create Release PR" GitHub Action (manual dispatch) with the same version. It bumps `CITATION.cff`, `.zenodo.json`, and `release/README.md`, generates the schema diff, and opens a `release/vX.Y.Z` PR. It does not touch `pyproject.toml` (dynamic) or `mixs.yaml` (already bumped in step 1).
-3. Add the schema-diff summaries to the release branch (see below).
-4. **Approve the workflows on the release pull request.** It is opened by the
-   workflow itself, so GitHub does not run any checks on it until a maintainer
-   clicks "approve and run workflows". Until then the pull request has no checks
-   at all, rather than failing ones, which is easy to miss.
-5. Review and merge the release pull request.
-6. Create a GitHub Release. Tag `vX.Y.Z`, target `main` so the tag lands on the
-   merge commit rather than the release branch, and generate release notes
-   against the previous release as the "Previous tag". For a release candidate,
-   see [Publishing a release candidate](#publishing-a-release-candidate) below.
+1. Bump the schema version. Edit `version:` near the top of
+   `src/mixs/schema/mixs.yaml` to the new number, bare `X.Y.Z` with no `v`, and
+   merge it to `main` through a pull request like any other change (see
+   [CONTRIBUTING.md](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/CONTRIBUTING.md)).
+2. Run the "Create Release PR" action from the
+   [Actions tab](https://github.com/GenomicsStandardsConsortium/mixs/actions/workflows/create-release-pr.yaml),
+   using "Run workflow", with the same version. It bumps `CITATION.cff`,
+   `.zenodo.json` and `release/README.md`, generates the schema diff, and opens
+   a `release/vX.Y.Z` pull request. It does not touch `pyproject.toml`, which is
+   dynamic, or `mixs.yaml`, which you bumped in step 1.
+3. Add the schema-diff summaries to the release branch, as described in the next
+   section.
+4. Approve the workflows on the release pull request. The pull request was
+   opened by a workflow, so GitHub runs no checks on it until a maintainer
+   clicks "Approve and run workflows". Until someone does, the pull request
+   shows no checks at all rather than failing ones, which is easy to read as
+   passing.
+5. Review and merge the release pull request. A TWG member other than its
+   author reviews the version bumps and the schema-diff summary; the pre-merge
+   checklist is in the pull request body.
+6. Publish the release from the
+   [new release page](https://github.com/GenomicsStandardsConsortium/mixs/releases/new).
+   Create the tag `vX.Y.Z` there, set the target to `main` so the tag lands on
+   the merge commit rather than the release branch, and use "Generate release
+   notes" with the previous release as the "Previous tag". For a release
+   candidate see [Publishing a release candidate](#publishing-a-release-candidate).
 
-The structured diff in step 2 is produced by the reusable `diff-releases` tool; see [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md). The tool itself can compare any release that has a LinkML schema, but it needs the right path for each side, and releases before v6.2.0 keep the schema somewhere else. Check the table in SCHEMA_DIFFING.md before choosing a base older than v6.2.0.
+The structured diff in step 2 is produced by the reusable `diff-releases` tool;
+see [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md). It can compare any release that has
+a LinkML schema, but it needs the right path for each side, and releases before
+v6.2.0 keep the schema somewhere else. Check the table in SCHEMA_DIFFING.md
+before choosing a base older than v6.2.0.
 
-The release notes cover the span between two tags, which is not necessarily the span the schema comparisons cover. If they differ, say so in the release body, or a reader will assume the pull requests listed produced the schema changes reported.
+The generated release notes cover the span between two tags, which is not
+necessarily the span the schema comparisons cover. When they differ, say so in
+the release body, or a reader will assume the pull requests listed are what
+produced the schema changes reported.
 
 ## Publishing a release candidate
 
-`policy.md` requires a release candidate before every major and minor release. A candidate goes through the same steps above, with three differences:
+`policy.md` requires a release candidate before every major and minor release. A
+candidate follows the steps above with three differences:
 
-- Use a version of the form `X.Y.Z-rcN`, for example `7.0.0-rc1`. The workflow accepts a semver pre-release suffix, and the schema version in step 1 must match it.
-- Tick **Set as a pre-release** when creating the GitHub Release. This keeps the candidate off `/releases/latest`, so anything resolving "the current MIxS" continues to get the last full release.
-- Do not tick **Set as the latest release**.
+- Use a version of the form `X.Y.Z-rcN`, for example `7.0.0-rc1`. The workflow
+  accepts a semver pre-release suffix, and the schema version in step 1 must
+  match it.
+- Tick "Set as a pre-release" when publishing. This keeps the candidate off
+  `/releases/latest`, so anything resolving "the current MIxS" still gets the
+  last full release.
+- Do not tick "Set as the latest release".
 
-The schema version on `main` will read `X.Y.Z-rcN` for as long as the candidate stands. Before cutting the real release, bump it back to `X.Y.Z` and merge that first, or the release will ship a schema declaring itself a candidate.
+The schema version on `main` reads `X.Y.Z-rcN` for as long as the candidate
+stands. Before cutting the real release, bump it back to `X.Y.Z` and merge that
+first, or the release will ship a schema that declares itself a candidate.
 
 ## Adding the schema-diff summaries and publishing them
 
-The structured diff is complete but large. Before the release PR is reviewed, add
-readable summaries to the release branch and put them on the docs site:
+The structured diff is complete but large. Before the release pull request is
+reviewed, add a readable summary to the release branch and put it on the docs
+site:
 
 1. Check out the `release/vX.Y.Z` branch.
 2. The release action already wrote the diff into a per-release folder,
-   `assets/diff_results/<old>_to_<new>/` (for example `v6.2.0_to_v6.3.0/`). Work
-   in that folder. (The docs build publishes summaries only from these
-   per-release folders.)
-3. Run the `mixs-diff-summary` skill on the structured diff, for example
-   `/mixs-diff-summary assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`.
-   It writes `agent_summary.md` next to the structured diff.
-4. Commit `agent_summary.md` (the readable summary). Older comparisons also
-   carry a `tool_summary.md` with raw counts, but the reusable `diff-releases`
-   tool does not write one, so a new comparison will not have it. Do not write
-   one by hand: it would claim to be tool output that cannot be regenerated.
-   See issue 1318.
-5. Add the two pages to the site nav. In `mkdocs.yml`, under the `Version changes`
-   group, add two lines for this release:
+   `assets/diff_results/<old>_to_<new>/`, for example `v6.2.0_to_v6.3.0/`. Work
+   in that folder; the docs build publishes summaries only from these folders.
+3. Write `agent_summary.md` next to the structured diff. The repository carries
+   a Claude Code skill for this, invoked as
+   `/mixs-diff-summary assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`,
+   which reads the diff and writes the summary. The skill is a convenience, not
+   a requirement: it lives in `.claude/skills/mixs-diff-summary/SKILL.md`, and
+   anyone not using Claude Code can read that file and write the summary the
+   same way by hand, or with another assistant.
+4. Commit `agent_summary.md`. Comparisons made before mid-2026 also carry a
+   `tool_summary.md` of raw counts, but the reusable `diff-releases` tool does
+   not write one, so a new comparison will not have it. Do not write one by
+   hand: it would look like tool output that cannot be regenerated. See
+   [issue 1318](https://github.com/GenomicsStandardsConsortium/mixs/issues/1318).
+5. Add the page to the site nav. In `mkdocs.yml`, under the `Version changes`
+   group, add one line for this release:
    ```yaml
      - <old> to <new>: version-changes/<old>_to_<new>.md
-     - <old> to <new> (counts): version-changes/<old>_to_<new>-counts.md
    ```
-   The `gendoc` build step copies the two summaries out of
-   `assets/diff_results/<old>_to_<new>/` into `docs/version-changes/`
-   automatically, so no other change is needed.
+   Older releases have a second `(counts)` line pointing at a `-counts.md` page,
+   generated from `tool_summary.md`. Add one only if the comparison actually has
+   that file. The `gendoc` build step copies the summaries out of
+   `assets/diff_results/<old>_to_<new>/` into `docs/version-changes/`, so no
+   other change is needed.
 
-This runs on the branch, done by a maintainer or an agent, not in CI. It needs no
-API keys, and everything is reviewed like any other change before merge.
-
-## Reviewing and publishing
-
-- A TWG member other than the PR author reviews the version bumps and the schema
-  diff summary. The pre-merge checklist is in the PR body.
-- Publishing the GitHub Release after merge is step 6 of "Cutting a release" above.
+This is done on the branch by a maintainer, not in CI. It needs no API keys, and
+it is reviewed like any other change before merge.
 
 ## Keeping generated artifacts current
 
-The committed artifacts under `project/`, `src/mixs/datamodel/`, and `contrib/` are generated from the schema. The "Regenerate and verify generated artifacts" workflow keeps them in sync. On a push to `main` that changes the schema or its build inputs, it regenerates everything and commits the refreshed artifacts. On a pull request it regenerates and fails if the committed artifacts are stale.
+The committed artifacts under `project/`, `src/mixs/datamodel/` and `contrib/`
+are generated from the schema, and the "Regenerate and verify generated
+artifacts" workflow keeps them in sync. On a pull request it regenerates and
+fails if the committed artifacts are stale. On a push to `main` that changes the
+schema or its build inputs, it regenerates everything and commits the result.
 
-The check uses `project/jsonschema/mixs.schema.json` as its signal, because that file regenerates deterministically. The OWL (`project/owl/mixs.owl.ttl`) is not byte-reproducible: RDF/Turtle serialization reorders triples and blank nodes on every run, so it is regenerated and committed but not compared by diff. Do not hand-edit generated artifacts.
+The check uses `project/jsonschema/mixs.schema.json` as its signal, because that
+file regenerates deterministically. The OWL (`project/owl/mixs.owl.ttl`) is not
+byte-reproducible: RDF/Turtle serialization reorders triples and relabels blank
+nodes on every run, so it is regenerated and committed but not compared by diff.
 
+Do not hand-edit generated artifacts.
 
 # LinkML Updates
 
@@ -145,8 +230,29 @@ next.
 
 # Documentation
 
-Documentation is regenerated automatically for every pull request. The "Preview
-documentation build" workflow (`.github/workflows/test_pages_build.yaml`) builds
-the site on each pull request raised from this repository, so you can check what
-the published documentation will look like before merging. This matters most when
-the documentation technology itself changes.
+"Documentation" means several different things in this repository. They are
+built and published separately:
+
+- **The published site**, at
+  [genomicsstandardsconsortium.github.io/mixs](https://genomicsstandardsconsortium.github.io/mixs/).
+  Built from `main` by the "Deploy documentation to GitHub Pages" workflow. This is what to link when
+  pointing anyone outside the project at MIxS documentation.
+- **Term and class reference pages**, generated from the schema by the `gendoc`
+  build step into `docs/`. These are not written by hand and not committed;
+  editing a term's `description` in `src/mixs/schema/mixs.yaml` is what changes
+  them.
+- **Authored pages**, in `src/docs/`. This document, [policy.md](policy.md),
+  [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md) and the
+  [deprecation guide](schema_element_deprecation_guide.md) are all written by
+  hand and appear on the published site through `mkdocs.yml`.
+- **Repository-level files**, `README.md` and `CONTRIBUTING.md` at the root.
+  These are read on GitHub rather than on the site.
+- **The per-pull-request preview**, built by the "Preview documentation build"
+  workflow (`.github/workflows/test_pages_build.yaml`) on every pull request
+  raised from this repository. Use it to see what the published site will look
+  like before merging. It matters most when the documentation tooling changes,
+  since that is when a change can build locally and still break the site.
+
+Adding a new authored page means adding it to the `nav:` section of
+`mkdocs.yml`; a page in `src/docs/` that is not in the nav is copied to the site
+but linked from nowhere.
