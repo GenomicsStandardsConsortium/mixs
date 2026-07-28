@@ -89,7 +89,7 @@ Documentation about the contents of the developer-focussed folders/directories i
   * [src/doc-templates/](src/doc-templates/) - jinja2 files that are responsible for the customization of layout and content of web documentation pages
   * [src/scripts](src/scripts) - Python scripts for specific discovery/exploration/inference based on the MIxS YAML schema
 * [tests/](tests/) - test data files
-* [project-generator-config.yaml](project-generator-config.yaml) - config file to custom specify arguments for the LinkML project generator
+* [project-generator-config.yaml](project-generator-config.yaml) - configuration file specifying the arguments passed to the LinkML project generator
 * [Makefile](Makefile) - Makefile containing pre-defined linkml-project-cookiecutter targets/rules
 * [contrib.Makefile](contrib.Makefile) - file that can be modified to extend pre-defined rules in [Makefile](Makefile)
 
