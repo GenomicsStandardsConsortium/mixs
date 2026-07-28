@@ -1,6 +1,6 @@
 # MIxS term specifications in the LinkML framework
 
-> [!IMPORTANT]
+> **Important**
 > This specification governs **new and revised terms**. Existing terms are not
 > retrofitted to it, and many predate it: a requirement here being unmet by a term
 > already in MIxS is expected, not a defect to be fixed in bulk. Where a rule would
@@ -61,7 +61,7 @@ A LinkML slot is the object that is used to describe a MIxS term - i.e. informat
 
 All MIxS term attributes MUST be written in English.
 
-> [!NOTE]
+> **Note**
 > This is currently only a convention.
 > If there is a community need for supporting other languages, please contact the CIG.
 
@@ -172,10 +172,9 @@ A term MUST at a minimum include following attributes:
 
 ### 4.2. Recommended LinkML slot attributes
 
-A term that has some level of 'requirement' (mandatory, conditional mandatory, optional) SHOULD include the following LinkML attributes:
+A term that is mandatory for a sample sets [`required`](https://linkml.io/linkml/schemas/slots.html#required), and a term that is worth filling in when the information exists sets [`recommended`](https://linkml.io/linkml/schemas/slots.html#recommended). Both are MIxS Requirement.
 
-- [`recommended`](https://linkml.io/linkml/schemas/slots.html#recommended) (MIxS: Requirement).
-- [`required`](https://linkml.io/linkml/schemas/slots.html#required) (MIxS: Requirement).
+Conditional, environment dependent and optional terms do not set either on the term itself. See section [11](#11-level-of-requirement).
 
 ## 5. Term definition
 
@@ -207,7 +206,7 @@ Put it in a mapping attribute if it asserts a relationship to a term in another 
 
 ### 6.1 Title contents
 
-The item (title) should be a full sentence version of the term name, and MUST be descriptive of the data it is intended to hold.
+The item (title) should be the term name written out in full words, and MUST be descriptive of the data it is intended to hold.
 
 ### 6.2 Title length
 
@@ -251,7 +250,7 @@ If a term allows multiple occurrences ('multivalued'), the examples MUST include
 
 ## 8. Term section attribute
 
-> [!NOTE]
+> **Note**
 > What a section means, and which sections exist, is still under discussion in
 > [Define "in_subset"](https://github.com/GenomicsStandardsConsortium/mixs/issues/931).
 
@@ -277,7 +276,7 @@ The MIxS ID (slot_uri) must begin with the string `MIXS`, a colon, and followed 
 
 Example: `MIXS:0000010`.
 
-> [!NOTE]
+> **Note**
 > MIxS IDs are only able to be assigned by the GSC's Compliance and Integration Working Group (CIG).
 
 ## 10. Slot range attribute
