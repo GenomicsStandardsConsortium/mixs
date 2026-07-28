@@ -161,7 +161,7 @@ Refer to LinkML documentation for more information on [range types](https://link
 
 ### 4.1. Minimal required MIxS term (LinkML slot) attributes
 
-A term MUST at a minimum include following attributes:
+A term MUST at a minimum include the following attributes:
 
 - [`name`](https://linkml.io/linkml-model/latest/docs/name/) (MIxS: Structured comment name).
 - [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions) (MIxS: Definition).
@@ -175,7 +175,7 @@ A term MUST at a minimum include following attributes:
 
 A term that is mandatory for a sample sets [`required`](https://linkml.io/linkml/schemas/slots.html#required), and a term that is worth filling in when the information exists sets [`recommended`](https://linkml.io/linkml/schemas/slots.html#recommended). Both are MIxS Requirement.
 
-Conditional, environment dependent and optional terms do not set either on the term itself. See section [11](#11-level-of-requirement).
+Conditional, environment dependent and optional terms do not set either attribute on the term itself. See section [11](#11-level-of-requirement).
 
 ## 5. Term definition
 
@@ -222,7 +222,7 @@ The item (title) SHOULD be in most circumstances lower case, including first cha
   - `Library size` (capitalisation of first character).
   - `Library Size` (capitalisation of all words).
 
-Capitalisation MAY be used when it is an acronym or abbreviation that typically used capitalisation in the English language (e.g. `DNA`, `API`, `pH`).
+Capitalisation MAY be used when it is an acronym or abbreviation that typically uses capitalisation in the English language (e.g. `DNA`, `API`, `pH`).
 
 - Valid example: `MAG coverage software`.
 - Valid example: `API gravity`.
@@ -314,7 +314,7 @@ structured_pattern:
 
 Terms that record a measurement SHOULD specify the preferred unit of measurement in the `Preferred_unit` annotation.
 
-`Preferred_unit` is the only annotation a new term may use. Anything else a term needs to say belongs in a LinkML attribute, not in `annotations:`, which no validator checks and no generator reads.
+`Preferred_unit` is the only annotation a new term should use. Many existing terms also carry `Expected_value`; those stay as they are, but new terms do not add it. Anything else a term needs to say belongs in a LinkML attribute, not in `annotations:`, which no validator checks and no generator reads.
 
 Example:
 
