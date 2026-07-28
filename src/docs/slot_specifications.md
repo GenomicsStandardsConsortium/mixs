@@ -391,27 +391,25 @@ The name of the enumeration MUST be formatted in [Pascal Case](https://en.wikipe
 
 For example, the value set for the term `assembly_qual` is named `AssemblyQualEnum`.
 
-## 13 Importing terms from other standards
+## 13. Mapping terms to other standards
 
-### 13.1 Existing terms in other standards should be re-used if equivalent
+### 13.1 Align with an existing term where one exists
 
-Terms (slots) SHOULD be re-used from other established standards if they serve the same purpose and meaning as a proposed new MIxS term.
+Where an established standard already has a term with the same purpose and meaning as a proposed MIxS term, the MIxS term SHOULD align with it rather than define the concept differently.
 
 Examples of established standards include:
 
 - [Darwin Core (DwC)](https://dwc.tdwg.org/)
 
-### 13.2 Imported external standards terms requirements
+### 13.2 Record the correspondence as a mapping
 
-Terms that are imported from another standard MUST be re-used in full, i.e. all attributes of the term MUST be re-used as far as they can be mapped to LinkML attributes.
+A MIxS term that corresponds to a term in another standard SHOULD record that correspondence using the appropriate LinkML [mapping](https://linkml.io/linkml-model/latest/docs/mappings/) attribute (`exact_mappings`, `close_mappings`, `related_mappings`, `narrow_mappings`, `broad_mappings`), naming the other term by its CURIE ([Compact URI](https://en.wikipedia.org/wiki/CURIE)).
 
-Terms imported from another standard MUST refer to the original source of the term by specifying the relevant CURIE ([Compact URI](https://en.wikipedia.org/wiki/CURIE)) using the LinkML [mappings](https://linkml.io/linkml-model/latest/docs/mappings/) (`exact_mappings`, `close_mappings`, `related_mappings`, `narrow_mappings`, `broad_mappings`) attribute.
+MIxS has no mechanism for importing a term definition from another standard. The MIxS term is defined in MIxS; the mapping records what it corresponds to.
 
-### 13.3 Imported structured comment term name format
+### 13.3 The MIxS name follows MIxS conventions
 
-Terms structured comment (name) of external terms (slots) MUST be converted to [snake_case](https://en.wikipedia.org/wiki/Snake_case) and follow all other [MIxS naming conventions](#2-term-structured-naming) when re-used from another standard, if not already in this format.
-
-Minor modifications to the term structured comment (name) MAY be made to ensure compliance with MIxS naming conventions.
+The structured comment (name) of a MIxS term MUST follow the [MIxS naming conventions](#2-term-structured-naming), including [snake_case](https://en.wikipedia.org/wiki/Snake_case), regardless of how the corresponding term is named in the other standard.
 
 ## References
 
