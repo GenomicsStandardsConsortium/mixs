@@ -43,7 +43,7 @@ The following table can guide readers to how the terminology can be linked.
 
 [^2]: This title name is used by many implementers as a key e.g. ENA
 
-This document will generally use MIxS terminology, but where helpful more relevant use the LinkML equivalent, with the other form in parentheses afterwards.
+This document generally uses MIxS terminology, giving the LinkML equivalent in parentheses where that is more helpful.
 
 ## 1. General
 
@@ -71,7 +71,7 @@ All MIxS term attributes MUST be written in English.
 
 The term structured comment name (`name`) MUST be in [snake_case](https://en.wikipedia.org/wiki/Snake_case).
 
-All words must be lower case and underscores (`_`) MUST be used to separate words in the term name.
+All words MUST be lower case and underscores (`_`) MUST be used to separate words in the term name.
 
 ### 2.2 (Structured comment) name length
 
@@ -206,7 +206,7 @@ Put it in a mapping attribute if it asserts a relationship to a term in another 
 
 ### 6.1 Title contents
 
-The item (title) should be the term name written out in full words, and MUST be descriptive of the data it is intended to hold.
+The item (title) SHOULD be the term name written out in full words, and MUST be descriptive of the data it is intended to hold.
 
 ### 6.2 Title length
 
@@ -272,7 +272,7 @@ The term MUST have a MIxS ID (slot_uri) that is unique within the MIxS ID space.
 
 ### 9.2 MIxS ID format
 
-The MIxS ID (slot_uri) must begin with the string `MIXS`, a colon, and followed by a 7 digit number.
+The MIxS ID (`slot_uri`) MUST begin with the string `MIXS`, followed by a colon, followed by a 7 digit number.
 
 Example: `MIXS:0000010`.
 
@@ -411,7 +411,7 @@ Terms imported from another standard MUST refer to the original source of the te
 
 Terms structured comment (name) of external terms (slots) MUST be converted to [snake_case](https://en.wikipedia.org/wiki/Snake_case) and follow all other [MIxS naming conventions](#2-term-structured-naming) when re-used from another standard, if not already in this format.
 
-Minor modifications to the term structured comment (name) MAY BE made to ensure compliance with MIxS naming conventions.
+Minor modifications to the term structured comment (name) MAY be made to ensure compliance with MIxS naming conventions.
 
 ## References
 
