@@ -6,6 +6,23 @@ Please try to follow this document. First read the [policies](policy.md) documen
 
 ## Requesting and creating a new term
 
+## Requesting a MIxS ID
+
+MIxS IDs are allocated by the CIG from a registry maintained outside this
+repository. **Do not assign one yourself, and do not reuse a number that looks
+free in the schema.** Request one on the GitHub issue for the term, and a CIG
+member with registry access will allocate it and record it there.
+
+Terms and structural elements come from different ranges: terms use the
+`slot_uri` range, and checklists, extensions and combinations use the
+`class_uri` range. A CIG member will tell you which applies and what the next
+number is.
+
+The order matters. The ID is added after the term is approved and before the
+pull request is merged. Placeholder values such as `MIXS:XXXXXXXXX` must not
+reach `main`; 44 terms did in 2026 and had to be corrected afterwards.
+
+
 ## Requesting and implementing a term update
 
 
@@ -35,10 +52,29 @@ MIxS carries two version numbers, managed differently. Both use bare `X.Y.Z` val
 1. Bump the schema version by editing the `version:` field near the top of `src/mixs/schema/mixs.yaml` to the new release number (bare `X.Y.Z`). Commit it to `main` via the normal PR process. Pushing this to `main` triggers the "Regenerate and verify generated artifacts" workflow, which regenerates the OWL and other `project/` artifacts so they carry the new version.
 2. Run the "Create Release PR" GitHub Action (manual dispatch) with the same version. It bumps `CITATION.cff`, `.zenodo.json`, and `release/README.md`, generates the schema diff, and opens a `release/vX.Y.Z` PR. It does not touch `pyproject.toml` (dynamic) or `mixs.yaml` (already bumped in step 1).
 3. Add the schema-diff summaries to the release branch (see below).
-4. Review and merge the release PR.
-5. Create a GitHub Release with tag `vX.Y.Z` and generate release notes.
+4. **Approve the workflows on the release pull request.** It is opened by the
+   workflow itself, so GitHub does not run any checks on it until a maintainer
+   clicks "approve and run workflows". Until then the pull request has no checks
+   at all, rather than failing ones, which is easy to miss.
+5. Review and merge the release pull request.
+6. Create a GitHub Release. Tag `vX.Y.Z`, target `main` so the tag lands on the
+   merge commit rather than the release branch, and generate release notes
+   against the previous release as the "Previous tag". For a release candidate,
+   see [Publishing a release candidate](#publishing-a-release-candidate) below.
 
-The structured diff in step 2 is produced by the reusable `diff-releases` tool; see [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md).
+The structured diff in step 2 is produced by the reusable `diff-releases` tool; see [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md). Note that it can only reach back to v6.2.0, because the workflow asks for `src/mixs/schema/mixs.yaml` on both sides and that path does not exist in earlier releases.
+
+The release notes cover the span between two tags, which is not necessarily the span the schema comparisons cover. If they differ, say so in the release body, or a reader will assume the pull requests listed produced the schema changes reported.
+
+## Publishing a release candidate
+
+`policy.md` requires a release candidate before every major and minor release. A candidate goes through the same steps above, with three differences:
+
+- Use a version of the form `X.Y.Z-rcN`, for example `7.0.0-rc1`. The workflow accepts a semver pre-release suffix, and the schema version in step 1 must match it.
+- Tick **Set as a pre-release** when creating the GitHub Release. This keeps the candidate off `/releases/latest`, so anything resolving "the current MIxS" continues to get the last full release.
+- Do not tick **Set as the latest release**.
+
+The schema version on `main` will read `X.Y.Z-rcN` for as long as the candidate stands. Before cutting the real release, bump it back to `X.Y.Z` and merge that first, or the release will ship a schema declaring itself a candidate.
 
 ## Adding the schema-diff summaries and publishing them
 
@@ -53,8 +89,11 @@ readable summaries to the release branch and put them on the docs site:
 3. Run the `mixs-diff-summary` skill on the structured diff, for example
    `/mixs-diff-summary assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`.
    It writes `agent_summary.md` next to the structured diff.
-4. Commit both `agent_summary.md` (the readable summary) and `tool_summary.md`
-   (the counts) in that folder.
+4. Commit `agent_summary.md` (the readable summary). Older comparisons also
+   carry a `tool_summary.md` with raw counts, but the reusable `diff-releases`
+   tool does not write one, so a new comparison will not have it. Do not write
+   one by hand: it would claim to be tool output that cannot be regenerated.
+   See issue 1318.
 5. Add the two pages to the site nav. In `mkdocs.yml`, under the `Version changes`
    group, add two lines for this release:
    ```yaml
