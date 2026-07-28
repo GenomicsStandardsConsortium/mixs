@@ -772,7 +772,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Running a diff">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-releases-can-be-compared" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which releases can be compared
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Which releases can be compared">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -925,7 +936,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Running a diff">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-releases-can-be-compared" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which releases can be compared
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Which releases can be compared">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1109,9 +1131,93 @@ use a different mapping set (see
 </code></pre>
 <p><strong>Two tagged releases:</strong></p>
 <pre><code class="language-bash">poetry run diff-releases \
-  --old &quot;GenomicsStandardsConsortium/mixs@v6.1.0:src/mixs/schema/mixs.yaml&quot; \
-  --new &quot;GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml&quot;
+  --old &quot;GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml&quot; \
+  --new &quot;GenomicsStandardsConsortium/mixs@v6.3.1:src/mixs/schema/mixs.yaml&quot;
 </code></pre>
+<p><strong>A release from before v6.2.0.</strong> The path differs on the old side, because the
+single-file schema only exists from v6.2.0 onward. Earlier releases keep the
+schema under <code>model/schema/</code>, reached through a small root file that imports the
+rest, and the tool resolves those imports itself:</p>
+<pre><code class="language-bash">poetry run diff-releases \
+  --old &quot;GenomicsStandardsConsortium/mixs@mixs6.0.0:model/schema/mixs.yaml&quot; \
+  --new &quot;GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml&quot;
+</code></pre>
+<h2 id="which-releases-can-be-compared">Which releases can be compared</h2>
+<p>The tool takes a path per side, so it can reach any release that has a LinkML
+schema, which means v6.0.0 onward. <code>MIxS5</code> predates LinkML entirely and cannot
+be compared with this tool at all; the v5 to v6.0.0 comparison was produced by a
+separate one-time script with an Excel reader.</p>
+<p>The <strong>release workflow</strong> is more limited still: it hardcodes
+<code>src/mixs/schema/mixs.yaml</code> for both sides, so its oldest usable base is
+v6.2.0.</p>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>released</th>
+<th><code>src/mixs/schema/mixs.yaml</code></th>
+<th>usable in the release workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MIxS5</code></td>
+<td>2022-02-27</td>
+<td>absent (v5 was an Excel workbook)</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>mixs6.0.0</code></td>
+<td>2022-03-24</td>
+<td>absent, schema under <code>model/schema/</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>mixs6.1.0</code></td>
+<td>2022-07-05</td>
+<td>absent, schema under <code>model/schema/</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>mixs6.1.1</code></td>
+<td>2023-10-09</td>
+<td>absent, schema under <code>model/schema/</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>v6.2.0</code></td>
+<td>2023-10-18</td>
+<td>present</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>v6.2.2</code></td>
+<td>2025-12-15</td>
+<td>present</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>v6.2.3</code></td>
+<td>2026-01-21</td>
+<td>present</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>v6.3.0</code></td>
+<td>2026-02-06</td>
+<td>present</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>v6.3.1</code></td>
+<td>2026-07-14</td>
+<td>present</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p>Note the tag naming changes at v6.2.0: earlier releases are <code>mixs6.x</code> and <code>MIxS5</code>,
+not <code>v6.x</code>. There is no <code>v6.2.1</code>; the sequence skips from v6.2.0 to v6.2.2.</p>
 <p><strong>Your fork against upstream</strong> (review a branch before opening a PR):</p>
 <pre><code class="language-bash">poetry run diff-releases \
   --old &quot;GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml&quot; \

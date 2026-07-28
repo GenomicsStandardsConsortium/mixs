@@ -764,6 +764,19 @@
 <p>Please try to follow this document. First read the <a href="../policy/">policies</a> document.</p>
 <h1 id="terms">Terms</h1>
 <h2 id="requesting-and-creating-a-new-term">Requesting and creating a new term</h2>
+<h2 id="requesting-a-mixs-id">Requesting a MIxS ID</h2>
+<p>MIxS IDs are allocated by the CIG from a registry maintained outside this
+repository. <strong>Do not assign one yourself, and do not reuse a number that looks
+free in the schema.</strong> Request one on the GitHub issue for the term, and a CIG
+member with registry access will allocate it and record it there.</p>
+<p>Terms and structural elements come from different ranges: terms use the
+<code>slot_uri</code> range, and checklists, extensions and combinations use the
+<code>class_uri</code> range. A CIG member will tell you which applies and what the next
+number is.</p>
+<p>The order matters. The ID is added after the term is approved and before the
+pull request is merged. Placeholder values must not reach <code>main</code>. Nothing
+currently checks this, and terms carrying placeholders have been merged and
+corrected afterwards; see issue 1304.</p>
 <h2 id="requesting-and-implementing-a-term-update">Requesting and implementing a term update</h2>
 <h2 id="requesting-and-implementing-a-term-deprecation">Requesting and implementing a term deprecation</h2>
 <h1 id="checklists-extensions-and-combinations">Checklists, extensions, and combinations</h1>
@@ -783,10 +796,26 @@
 <li>Bump the schema version by editing the <code>version:</code> field near the top of <code>src/mixs/schema/mixs.yaml</code> to the new release number (bare <code>X.Y.Z</code>). Commit it to <code>main</code> via the normal PR process. Pushing this to <code>main</code> triggers the "Regenerate and verify generated artifacts" workflow, which regenerates the OWL and other <code>project/</code> artifacts so they carry the new version.</li>
 <li>Run the "Create Release PR" GitHub Action (manual dispatch) with the same version. It bumps <code>CITATION.cff</code>, <code>.zenodo.json</code>, and <code>release/README.md</code>, generates the schema diff, and opens a <code>release/vX.Y.Z</code> PR. It does not touch <code>pyproject.toml</code> (dynamic) or <code>mixs.yaml</code> (already bumped in step 1).</li>
 <li>Add the schema-diff summaries to the release branch (see below).</li>
-<li>Review and merge the release PR.</li>
-<li>Create a GitHub Release with tag <code>vX.Y.Z</code> and generate release notes.</li>
+<li><strong>Approve the workflows on the release pull request.</strong> It is opened by the
+   workflow itself, so GitHub does not run any checks on it until a maintainer
+   clicks "approve and run workflows". Until then the pull request has no checks
+   at all, rather than failing ones, which is easy to miss.</li>
+<li>Review and merge the release pull request.</li>
+<li>Create a GitHub Release. Tag <code>vX.Y.Z</code>, target <code>main</code> so the tag lands on the
+   merge commit rather than the release branch, and generate release notes
+   against the previous release as the "Previous tag". For a release candidate,
+   see <a href="#publishing-a-release-candidate">Publishing a release candidate</a> below.</li>
 </ol>
-<p>The structured diff in step 2 is produced by the reusable <code>diff-releases</code> tool; see <a href="../SCHEMA_DIFFING/">SCHEMA_DIFFING.md</a>.</p>
+<p>The structured diff in step 2 is produced by the reusable <code>diff-releases</code> tool; see <a href="../SCHEMA_DIFFING/">SCHEMA_DIFFING.md</a>. The tool itself can compare any release that has a LinkML schema, but it needs the right path for each side, and releases before v6.2.0 keep the schema somewhere else. Check the table in SCHEMA_DIFFING.md before choosing a base older than v6.2.0.</p>
+<p>The release notes cover the span between two tags, which is not necessarily the span the schema comparisons cover. If they differ, say so in the release body, or a reader will assume the pull requests listed produced the schema changes reported.</p>
+<h2 id="publishing-a-release-candidate">Publishing a release candidate</h2>
+<p><code>policy.md</code> requires a release candidate before every major and minor release. A candidate goes through the same steps above, with three differences:</p>
+<ul>
+<li>Use a version of the form <code>X.Y.Z-rcN</code>, for example <code>7.0.0-rc1</code>. The workflow accepts a semver pre-release suffix, and the schema version in step 1 must match it.</li>
+<li>Tick <strong>Set as a pre-release</strong> when creating the GitHub Release. This keeps the candidate off <code>/releases/latest</code>, so anything resolving "the current MIxS" continues to get the last full release.</li>
+<li>Do not tick <strong>Set as the latest release</strong>.</li>
+</ul>
+<p>The schema version on <code>main</code> will read <code>X.Y.Z-rcN</code> for as long as the candidate stands. Before cutting the real release, bump it back to <code>X.Y.Z</code> and merge that first, or the release will ship a schema declaring itself a candidate.</p>
 <h2 id="adding-the-schema-diff-summaries-and-publishing-them">Adding the schema-diff summaries and publishing them</h2>
 <p>The structured diff is complete but large. Before the release PR is reviewed, add
 readable summaries to the release branch and put them on the docs site:</p>
@@ -799,8 +828,11 @@ readable summaries to the release branch and put them on the docs site:</p>
 <li>Run the <code>mixs-diff-summary</code> skill on the structured diff, for example
    <code>/mixs-diff-summary assets/diff_results/&lt;old&gt;_to_&lt;new&gt;/schema_comparison_results.yaml</code>.
    It writes <code>agent_summary.md</code> next to the structured diff.</li>
-<li>Commit both <code>agent_summary.md</code> (the readable summary) and <code>tool_summary.md</code>
-   (the counts) in that folder.</li>
+<li>Commit <code>agent_summary.md</code> (the readable summary). Older comparisons also
+   carry a <code>tool_summary.md</code> with raw counts, but the reusable <code>diff-releases</code>
+   tool does not write one, so a new comparison will not have it. Do not write
+   one by hand: it would claim to be tool output that cannot be regenerated.
+   See issue 1318.</li>
 <li>Add the two pages to the site nav. In <code>mkdocs.yml</code>, under the <code>Version changes</code>
    group, add two lines for this release:
    ```yaml<ul>
