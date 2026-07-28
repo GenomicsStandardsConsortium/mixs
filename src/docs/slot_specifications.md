@@ -34,7 +34,7 @@ The following table can guide readers to how the terminology can be linked.
 | Expected format         | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                                         |
 | Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field could be filled in                                                                                 |
 | Section                 | `slot_group`         | A way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                       |
-| Section                 | `subset`             | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                 |
+| Section                 | `in_subset`          | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                 |
 | Requirement             | `recommended`        | Specifying that a metadata field is optional, but if the information is available, it is highly recommended to be filled in to increase the scientific usefulness of your data |
 | Requirement             | `required`           | Specifying whether a metadata field is mandatory to be filled in for a sample                                                                                                  |
 | Occurrence              | `multivalued`        | That a term can be recorded more than once for a single sample                                                                                                              |
@@ -133,13 +133,13 @@ Examples:
   | -------------------------------- | -------------------------------- |
   | sample storage temperature       | `samp_store_temp`                |
   | sample storage duration          | `samp_store_dur`                 |
-  | sample volume for DNA extraction | `samp_vol_we_dna_ext`            |
+  | sample volume or weight for DNA extraction | `samp_vol_we_dna_ext`  |
 
 - Terms related to assembly metadata terms should use the prefix `assembly_`.
 
   | Term Item / `title`          | Structured comment name / `name` |
   | ---------------------------- | -------------------------------- |
-  | name and version of assembly | `assembly_name`                  |
+  | assembly name                | `assembly_name`                  |
   | assembly software            | `assembly_software`              |
   | assembly quality             | `assembly_qual`                  |
 
@@ -153,7 +153,7 @@ The type of data specified in the expected value (`range`) of a term MUST be in 
 - `integer`
 - `float`
 - `boolean`
-- An [enumeration](#125-enumerations), that is a controlled vocabulary, predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L28)).
+- An [enumeration](#125-enumerations), that is a controlled vocabulary, predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L36)).
 
 Refer to LinkML documentation for more information on [range types](https://linkml.io/linkml-model/latest/docs/range/).
 
@@ -295,7 +295,7 @@ New terms MUST NOT use `string_serialization`. It appears on terms that predate 
 
 ### 10.3 Structured or formatted text components should be reused
 
-A structured pattern SHOULD re-use existing pattern components when as far as possible.
+A structured pattern SHOULD re-use existing pattern components as far as possible.
 
 Additional pattern components MAY be created when needed after consultation with the GSC's Compliance and Integration Working Group (CIG).
 
