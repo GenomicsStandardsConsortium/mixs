@@ -2278,7 +2278,10 @@ def build_tool_summary(comparison_dict: Dict[str, Any], old: str, new: str) -> s
         lines += [f"- schema-level attributes changed: {len(scalars)}"
                   f" ({', '.join(sorted(scalars))})", ""]
 
-    for kind, block in (comparison_dict.get('collection_differences') or {}).items():
+    # Sorted, not insertion order: this file is committed and regenerated, so a
+    # section order that varies between runs would add noise to release diffs and
+    # undermine the point of generating it rather than writing it by hand.
+    for kind, block in sorted((comparison_dict.get('collection_differences') or {}).items()):
         key_cmp = block.get('key_comparison') or {}
         lines.append(f"## {kind}")
         lines.append("")
@@ -2452,7 +2455,8 @@ def main(old: str, new: str, no_cache: bool, output_dir: Path, mappings_dir: Pat
         # written by the frozen one-time script, and edit_workflow.md asks for it
         # at release time, but this tool never wrote one.
         tool_summary_file = output_dir / "tool_summary.md"
-        tool_summary_file.write_text(build_tool_summary(comparison_dict, old, new))
+        tool_summary_file.write_text(
+            build_tool_summary(comparison_dict, old, new), encoding="utf-8")
         print(f"Saved counts summary to: {tool_summary_file}")
 
         # Optionally, print a summary report to the console
