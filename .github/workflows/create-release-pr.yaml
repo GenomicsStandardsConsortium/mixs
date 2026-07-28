@@ -25,14 +25,29 @@ on:
         required: true
         type: string
       diff_old:
+        # Must be v6.2.0 or later unless diff_old_path is also set: the
+        # single-file schema does not exist in earlier releases.
         description: 'Old version for diff comparison (tag or branch)'
         required: true
-        default: 'mixs6.0.0'
+        default: 'v6.3.1'
+        type: string
+      diff_old_path:
+        # Releases before v6.2.0 keep the schema under model/schema/, reached
+        # through a root file that imports the rest. The diff tool resolves
+        # those imports, so only this path needs changing.
+        description: 'Schema path in the old version (change only for releases before v6.2.0)'
+        required: false
+        default: 'src/mixs/schema/mixs.yaml'
         type: string
       diff_new:
         description: 'New version for diff comparison (tag or branch)'
         required: true
         default: 'main'
+        type: string
+      diff_new_path:
+        description: 'Schema path in the new version'
+        required: false
+        default: 'src/mixs/schema/mixs.yaml'
         type: string
       skip_tests:
         description: 'Skip running tests (for faster iteration during development)'
@@ -58,8 +73,19 @@ jobs:
           # rehearsal can run as 7.0.0-rc1 without publishing a real release.
           # Semver build metadata (+build) is deliberately not accepted: the
           # value becomes a git branch name and a tag.
+          #
+          # Whitespace is reported rather than stripped. Fourteen later
+          # references use inputs.version directly to build the branch name and
+          # the tag, so trimming here would leave those built from the
+          # untrimmed value.
+          if [[ "$VERSION" =~ [[:space:]] ]]; then
+            echo "Error: version contains whitespace: '$VERSION'"
+            echo "Retype the value rather than pasting it, then dispatch again."
+            exit 1
+          fi
           if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z]+([.-][0-9A-Za-z]+)*)?$ ]]; then
             echo "Error: Version must be X.Y.Z or X.Y.Z-prerelease (e.g., 6.2.1, 7.0.0, 7.0.0-rc1, 7.0.0-alpha.2)"
+            echo "Received: '$VERSION'"
             exit 1
           fi
 
@@ -125,6 +151,8 @@ jobs:
           # interpreted as shell syntax or path segments.
           DIFF_OLD: ${{ inputs.diff_old }}
           DIFF_NEW: ${{ inputs.diff_new }}
+          DIFF_OLD_PATH: ${{ inputs.diff_old_path }}
+          DIFF_NEW_PATH: ${{ inputs.diff_new_path }}
         run: |
           # Guard against path traversal / nesting: these refs become a directory
           # name, so reject anything but a simple ref token (tags, main, etc.).
@@ -134,11 +162,19 @@ jobs:
               exit 1
             fi
           done
+          # The paths are not refs and do contain slashes, so they get their
+          # own guard: relative only, no traversal.
+          for pth in "$DIFF_OLD_PATH" "$DIFF_NEW_PATH"; do
+            if ! [[ "$pth" =~ ^[A-Za-z0-9._/-]+$ ]] || [[ "$pth" == /* ]] || [[ "$pth" == *..* ]]; then
+              echo "Error: schema path '$pth' must be a relative path without '..'"
+              exit 1
+            fi
+          done
           out_dir="assets/diff_results/${DIFF_OLD}_to_${DIFF_NEW}"
           mkdir -p "$out_dir"
           poetry run diff-releases \
-            --old "GenomicsStandardsConsortium/mixs@${DIFF_OLD}:src/mixs/schema/mixs.yaml" \
-            --new "GenomicsStandardsConsortium/mixs@${DIFF_NEW}:src/mixs/schema/mixs.yaml" \
+            --old "GenomicsStandardsConsortium/mixs@${DIFF_OLD}:${DIFF_OLD_PATH}" \
+            --new "GenomicsStandardsConsortium/mixs@${DIFF_NEW}:${DIFF_NEW_PATH}" \
             --output-dir "$out_dir" \
             --mappings-dir assets/between_diff_mappings/6_to_pre_7
 
@@ -146,6 +182,7 @@ jobs:
           # silent failure here would publish a release that says so untruthfully.
           if [ ! -s "$out_dir/schema_comparison_results.yaml" ]; then
             echo "::error::diff-releases produced no $out_dir/schema_comparison_results.yaml"
+            echo "::error::Check that ${DIFF_OLD_PATH} exists at ${DIFF_OLD}: releases before v6.2.0 keep the schema at model/schema/mixs.yaml."
             exit 1
           fi
 
