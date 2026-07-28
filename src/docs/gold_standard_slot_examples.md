@@ -1,6 +1,6 @@
 # Gold Standard MIxS LinkML Slot Examples
 
-> [!IMPORTANT]
+> **Important**
 > These are worked examples for **writing a new or revised term**. They are not a
 > description of every term already in MIxS: many predate this guidance and do not
 > match it. The normative rules live in
@@ -245,7 +245,7 @@ experimental_factor:
   pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
 ```
 
-> [!WARNING]
+> **Warning**
 > This term carries `string_serialization`. A new term MUST NOT use it: see section
 > 10.2 of [MIxS term specifications](slot_specifications.md). Use `structured_pattern`
 > instead. It is shown here because it is still present on terms that predate that rule.
@@ -274,7 +274,7 @@ The value is a float, however the particular unit can be defined by the user (or
 In this example the measurement is made as a range of values, however the value itself could also be a single value such as `{float} {unit}`.
 In this particular case, the `string_serialization:` attribute is used to define the format of the string in a different way to the `structured_pattern:` attribute.
 
-> [!WARNING]
+> **Warning**
 > This term carries `string_serialization`. A new term MUST NOT use it: see section
 > 10.2 of [MIxS term specifications](slot_specifications.md). Use `structured_pattern`
 > instead. It is shown here because it is still present on terms that predate that rule.
