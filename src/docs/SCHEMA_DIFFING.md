@@ -115,9 +115,46 @@ poetry run diff-releases \
 
 ```bash
 poetry run diff-releases \
-  --old "GenomicsStandardsConsortium/mixs@v6.1.0:src/mixs/schema/mixs.yaml" \
-  --new "GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml"
+  --old "GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml" \
+  --new "GenomicsStandardsConsortium/mixs@v6.3.1:src/mixs/schema/mixs.yaml"
 ```
+
+**A release from before v6.2.0.** The path differs on the old side, because the
+single-file schema only exists from v6.2.0 onward. Earlier releases keep the
+schema under `model/schema/`, reached through a small root file that imports the
+rest, and the tool resolves those imports itself:
+
+```bash
+poetry run diff-releases \
+  --old "GenomicsStandardsConsortium/mixs@mixs6.0.0:model/schema/mixs.yaml" \
+  --new "GenomicsStandardsConsortium/mixs@main:src/mixs/schema/mixs.yaml"
+```
+
+## Which releases can be compared
+
+The tool takes a path per side, so it can reach any release that has a LinkML
+schema, which means v6.0.0 onward. `MIxS5` predates LinkML entirely and cannot
+be compared with this tool at all; the v5 to v6.0.0 comparison was produced by a
+separate one-time script with an Excel reader.
+
+The **release workflow** is more limited still: it hardcodes
+`src/mixs/schema/mixs.yaml` for both sides, so its oldest usable base is
+v6.2.0.
+
+| tag | released | `src/mixs/schema/mixs.yaml` | usable in the release workflow |
+| --- | --- | --- | --- |
+| `MIxS5` | 2022-02-27 | absent (v5 was an Excel workbook) | no |
+| `mixs6.0.0` | 2022-03-24 | absent, schema under `model/schema/` | no |
+| `mixs6.1.0` | 2022-07-05 | absent, schema under `model/schema/` | no |
+| `mixs6.1.1` | 2023-10-09 | absent, schema under `model/schema/` | no |
+| `v6.2.0` | 2023-10-18 | present | yes |
+| `v6.2.2` | 2025-12-15 | present | yes |
+| `v6.2.3` | 2026-01-21 | present | yes |
+| `v6.3.0` | 2026-02-06 | present | yes |
+| `v6.3.1` | 2026-07-14 | present | yes |
+
+Note the tag naming changes at v6.2.0: earlier releases are `mixs6.x` and `MIxS5`,
+not `v6.x`. There is no `v6.2.1`; the sequence skips from v6.2.0 to v6.2.2.
 
 **Your fork against upstream** (review a branch before opening a PR):
 
