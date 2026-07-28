@@ -298,8 +298,11 @@ class LinkMLComparator:
             for old_key, new_key in mappings.items():
                 if old_key in old_dict and new_key in new_dict:
                     mapped_key = f"{old_key} -> {new_key}"
+                    # The cascades look elements up by name in each SchemaView,
+                    # so they need the real names, not the composite label.
                     value_comparisons[mapped_key] = self._compare_values_with_cascading(
-                        old_dict[old_key], new_dict[new_key], element_type, mapped_key
+                        old_dict[old_key], new_dict[new_key], element_type, mapped_key,
+                        old_key=old_key, new_key=new_key
                     )
         
         return CollectionComparison(
@@ -458,40 +461,85 @@ class LinkMLComparator:
                 differences=["Unknown type"]
             )
 
-    def _compare_values_with_cascading(self, old_value: Any, new_value: Any, 
-                                     element_type: str = None, element_key: str = None) -> ValueComparison:
+    def _compare_values_with_cascading(self, old_value: Any, new_value: Any,
+                                     element_type: str = None, element_key: str = None,
+                                     old_key: str = None, new_key: str = None) -> ValueComparison:
         """Enhanced value comparison with cascading support for specific LinkML element types."""
         # First do standard comparison
         base_comparison = self._compare_values(old_value, new_value)
+
+        # For renamed elements element_key is a composite label ("old -> new"),
+        # which matches nothing in either schema. Fall back to it only when the
+        # caller did not supply the per-side names.
+        old_key = old_key if old_key is not None else element_key
+        new_key = new_key if new_key is not None else element_key
         
-        # If both values are LinkML instances, apply cascading comparisons
-        if (base_comparison.value_type == 'instance' and 
+        # Apply cascading comparisons to class and enum definitions. The values
+        # reaching here are plain dicts, not LinkML instances, because
+        # get_key_value cleans them on retrieval and that keeps only
+        # important_fields. Requiring 'instance' meant the cascade never ran.
+        # Both cascades look their element up in the SchemaView by name, so
+        # they do not depend on what survived cleaning.
+        if (base_comparison.value_type in ('instance', 'dict') and
             old_value is not None and new_value is not None):
             
             # Apply cascading based on element type
             if element_type == 'enums':
                 # Cascade to compare permissible_values
-                cascaded = self._cascade_enum_comparison(element_key, old_value, new_value)
+                cascaded = self._cascade_enum_comparison(old_key, new_key, old_value, new_value)
                 if cascaded:
                     # Merge cascading differences into base comparison
                     base_comparison.differences.extend([f"Cascaded: {diff}" for diff in cascaded])
             
             elif element_type == 'classes':
                 # Cascade to compare attributes using induced classes
-                cascaded = self._cascade_class_comparison(element_key, old_value, new_value)
+                cascaded = self._cascade_class_comparison(old_key, new_key, old_value, new_value)
                 if cascaded:
                     # Merge cascading differences into base comparison
                     base_comparison.differences.extend([f"Cascaded: {diff}" for diff in cascaded])
         
         return base_comparison
     
-    def _cascade_enum_comparison(self, enum_name: str, old_enum: Any, new_enum: Any) -> List[str]:
+    def _slot_field_changes(self, old_slots: Dict, new_slots: Dict, field: str) -> Dict[str, List[str]]:
+        """Slots whose boolean `field` was turned on or off, keyed by 'added'/'removed'.
+
+        Old slot names are aligned through slot_mappings first. A renamed slot
+        appears under a different key on each side, so intersecting the raw
+        names would silently skip any requirement change made to it.
+        """
+        aligned_old = {self.slot_mappings.get(name, name) if self.slot_mappings else name: slot
+                       for name, slot in old_slots.items()}
+        changes: Dict[str, List[str]] = {}
+        for name in set(aligned_old) & set(new_slots):
+            was = bool(getattr(aligned_old[name], field, False))
+            now = bool(getattr(new_slots[name], field, False))
+            if was == now:
+                continue
+            changes.setdefault('added' if now else 'removed', []).append(str(name))
+        return changes
+
+    @staticmethod
+    def _enum_permissible_values(schema_view: SchemaView, enum_name: str, fallback: Any) -> Dict:
+        """Permissible values for an enum, preferring the SchemaView over the cleaned value."""
+        try:
+            enum_def = schema_view.get_enum(enum_name)
+            if enum_def is not None and enum_def.permissible_values:
+                return enum_def.permissible_values
+        except Exception:
+            pass
+        if isinstance(fallback, dict):
+            return fallback.get('permissible_values') or {}
+        return getattr(fallback, 'permissible_values', None) or {}
+
+    def _cascade_enum_comparison(self, old_enum_name: str, new_enum_name: str, old_enum: Any, new_enum: Any) -> List[str]:
         """Cascade down to compare enum permissible_values following the same pattern."""
         differences = []
         
-        # Check if enums have permissible_values to compare
-        old_pv = getattr(old_enum, 'permissible_values', None) or {}
-        new_pv = getattr(new_enum, 'permissible_values', None) or {}
+        # Read permissible values from the SchemaView by name. The values passed
+        # in have already been through _clean_value_for_storage, which drops
+        # permissible_values, so reading them off the argument finds nothing.
+        old_pv = self._enum_permissible_values(self.old_schema, old_enum_name, old_enum)
+        new_pv = self._enum_permissible_values(self.new_schema, new_enum_name, new_enum)
         
         if old_pv or new_pv:
             pv_comparison = self._compare_dict_values(old_pv, new_pv, element_type='permissible_values')
@@ -499,9 +547,11 @@ class LinkMLComparator:
                 # Extract key difference summary
                 key_comp = pv_comparison.key_comparison
                 if key_comp.only_in_old:
-                    differences.append(f"permissible_values only in old: {len(key_comp.only_in_old)} values")
+                    removed = ", ".join(sorted(_show_pv(k) for k in key_comp.only_in_old))
+                    differences.append(f"permissible_values removed: {removed}")
                 if key_comp.only_in_new:
-                    differences.append(f"permissible_values only in new: {len(key_comp.only_in_new)} values")
+                    added = ", ".join(sorted(_show_pv(k) for k in key_comp.only_in_new))
+                    differences.append(f"permissible_values added: {added}")
                 
                 # Value differences
                 value_diffs = sum(1 for v in pv_comparison.value_comparisons.values() if v.has_differences())
@@ -510,14 +560,14 @@ class LinkMLComparator:
         
         return differences
     
-    def _cascade_class_comparison(self, class_name: str, old_class: Any, new_class: Any) -> List[str]:
+    def _cascade_class_comparison(self, old_class_name: str, new_class_name: str, old_class: Any, new_class: Any) -> List[str]:
         """Cascade down to compare class attributes following the same pattern using induced classes with enhanced SchemaView methods."""
         differences = []
         
         # Always use induced classes to get .attributes instead of .slots
         try:
-            old_induced = self.old_schema.induced_class(class_name) if class_name in self.old_schema.all_classes() else old_class
-            new_induced = self.new_schema.induced_class(class_name) if class_name in self.new_schema.all_classes() else new_class
+            old_induced = self.old_schema.induced_class(old_class_name) if old_class_name in self.old_schema.all_classes() else old_class
+            new_induced = self.new_schema.induced_class(new_class_name) if new_class_name in self.new_schema.all_classes() else new_class
             
             # Use SchemaView's class_slots method for more comprehensive slot analysis
             old_class_slots = {}
@@ -525,18 +575,18 @@ class LinkMLComparator:
             
             # Get slots using SchemaView methods if available
             try:
-                if class_name in self.old_schema.all_classes():
-                    old_slot_names = self.old_schema.class_slots(class_name)
-                    old_class_slots = {slot_name: self.old_schema.induced_slot(slot_name, class_name) 
+                if old_class_name in self.old_schema.all_classes():
+                    old_slot_names = self.old_schema.class_slots(old_class_name)
+                    old_class_slots = {slot_name: self.old_schema.induced_slot(slot_name, old_class_name) 
                                      for slot_name in old_slot_names}
             except Exception:
                 # Fall back to direct attributes if class_slots fails
                 old_class_slots = getattr(old_induced, 'attributes', {}) or {}
             
             try:
-                if class_name in self.new_schema.all_classes():
-                    new_slot_names = self.new_schema.class_slots(class_name)
-                    new_class_slots = {slot_name: self.new_schema.induced_slot(slot_name, class_name)
+                if new_class_name in self.new_schema.all_classes():
+                    new_slot_names = self.new_schema.class_slots(new_class_name)
+                    new_class_slots = {slot_name: self.new_schema.induced_slot(slot_name, new_class_name)
                                      for slot_name in new_slot_names}
             except Exception:
                 # Fall back to direct attributes if class_slots fails
@@ -550,36 +600,43 @@ class LinkMLComparator:
                     # Extract key difference summary
                     key_comp = attrs_comparison.key_comparison
                     if key_comp.only_in_old:
-                        differences.append(f"slots only in old: {len(key_comp.only_in_old)} slots")
+                        removed = ", ".join(sorted(str(k) for k in key_comp.only_in_old))
+                        differences.append(f"slots removed from class: {removed}")
                     if key_comp.only_in_new:
-                        differences.append(f"slots only in new: {len(key_comp.only_in_new)} slots")
-                    if key_comp.expected_mappings:
-                        differences.append(f"expected slot mappings: {len(key_comp.expected_mappings)} mappings")
-                    
-                    # Value differences
-                    value_diffs = sum(1 for v in attrs_comparison.value_comparisons.values() if v.has_differences())
-                    if value_diffs > 0:
-                        differences.append(f"slot definition changes: {value_diffs} slots")
-            
-            # Also compare inheritance hierarchies if available
+                        added = ", ".join(sorted(str(k) for k in key_comp.only_in_new))
+                        differences.append(f"slots added to class: {added}")
+            # Per-slot requirement changes, named. Comparing every field of the
+            # induced slots reports a change on nearly every slot of every
+            # class, because rank and slot_group are set on 1146 slot_usage
+            # entries and shift whenever terms are reordered. Restricting to
+            # the fields that change what a submitter must supply keeps the
+            # requirement rules visible instead of burying them.
+            for field in ('required', 'recommended'):
+                changed = self._slot_field_changes(old_class_slots, new_class_slots, field)
+                for state, names in sorted(changed.items()):
+                    differences.append(f"{field} {state}: {', '.join(sorted(names))}")
+
+            # Inheritance changes, named rather than counted. A count of
+            # ancestors says nothing about which parent a checklist gained.
             try:
-                old_ancestors = set(self.old_schema.class_ancestors(class_name)) if class_name in self.old_schema.all_classes() else set()
-                new_ancestors = set(self.new_schema.class_ancestors(class_name)) if class_name in self.new_schema.all_classes() else set()
-                
-                if old_ancestors != new_ancestors:
-                    ancestor_only_old = old_ancestors - new_ancestors
-                    ancestor_only_new = new_ancestors - old_ancestors
-                    if ancestor_only_old:
-                        differences.append(f"ancestors only in old: {len(ancestor_only_old)} ancestors")
-                    if ancestor_only_new:
-                        differences.append(f"ancestors only in new: {len(ancestor_only_new)} ancestors")
-                        
+                old_ancestors = set(self.old_schema.class_ancestors(old_class_name)) if old_class_name in self.old_schema.all_classes() else set()
+                new_ancestors = set(self.new_schema.class_ancestors(new_class_name)) if new_class_name in self.new_schema.all_classes() else set()
+                # A renamed class is not an inheritance change, so compare the
+                # ancestor sets through the class mappings.
+                mapped_old = {self.class_mappings.get(a, a) for a in old_ancestors} if self.class_mappings else old_ancestors
+                if mapped_old != new_ancestors:
+                    only_old = mapped_old - new_ancestors
+                    only_new = new_ancestors - mapped_old
+                    if only_old:
+                        differences.append(f"ancestors removed: {', '.join(sorted(str(a) for a in only_old))}")
+                    if only_new:
+                        differences.append(f"ancestors added: {', '.join(sorted(str(a) for a in only_new))}")
             except Exception:
                 # Ancestor comparison is optional, don't fail if not available
                 pass
-            
+
         except Exception as e:
-            differences.append(f"Error cascading class comparison for {class_name}: {e}")
+            differences.append(f"Error cascading class comparison for {new_class_name}: {e}")
         
         return differences
     
@@ -739,16 +796,28 @@ def schema_comparison_to_dict(comparison: SchemaComparison) -> dict:
             clean_old = clean_value(value_comp.old_value)
             clean_new = clean_value(value_comp.new_value)
             
+            # Findings from the enum and class cascades live in .differences and
+            # were previously computed and then discarded, so permissible-value
+            # changes and per-class slot changes never reached the output.
+            # They must be collected before the equality check below: cleaning a
+            # ClassDefinition or EnumDefinition keeps only the important_fields,
+            # dropping slots, slot_usage and permissible_values, so two versions
+            # that differ only in those clean to equal values.
+            cascaded = sorted(d[len("Cascaded: "):] for d in value_comp.differences
+                              if d.startswith("Cascaded: "))
+
             # If both values are the same, don't include them in the output
             if clean_old == clean_new:
-                return {}
-            
+                return {'cascaded': cascaded} if cascaded else {}
+
             # Only show differing values
             result = {}
             if clean_old is not None:
                 result[old_tag] = clean_old
             if clean_new is not None:
                 result[new_tag] = clean_new
+            if cascaded:
+                result['cascaded'] = cascaded
             return result
 
     def key_comparison_to_dict(key_comp: KeyComparison) -> dict:
@@ -2249,6 +2318,16 @@ def build_release_info_dict(repositories: List[Tuple[str, str]] = None) -> Dict[
     # Return the simplified dict (without commit_sha for backward compatibility)
     return {k: {key: val for key, val in v.items() if key != 'commit_sha'}
             for k, v in release_info.items()}
+
+
+def _show_pv(value: Any) -> str:
+    """Render a permissible value name, quoting it when it is empty or padded.
+
+    MIxS 6.0.0 wall_texture_enum carries an empty-string permissible value, which
+    would otherwise print as nothing at all.
+    """
+    text = str(value)
+    return repr(text) if text != text.strip() or not text else text
 
 
 def _ref(spec: str) -> str:
