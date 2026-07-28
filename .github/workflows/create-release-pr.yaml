@@ -25,8 +25,9 @@ on:
         required: true
         type: string
       diff_old:
-        # Must be v6.2.0 or later unless diff_old_path is also set: the
-        # single-file schema does not exist in earlier releases.
+        # For a base earlier than v6.2.0, diff_old_path must be changed from its
+        # default as well: that path does not exist in those releases, and
+        # leaving it unchanged fails at the diff step rather than here.
         description: 'Old version for diff comparison (tag or branch)'
         required: true
         default: 'v6.3.1'
