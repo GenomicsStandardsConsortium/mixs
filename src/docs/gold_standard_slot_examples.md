@@ -37,6 +37,7 @@ You can use these as templates on how to construct your own new slot to the high
 
 Every MIxS LinkML slot should have at a minimum the following attributes:
 
+- [`name`](https://linkml.io/linkml-model/latest/docs/name/): the term's structured comment name, written as the YAML key of the slot itself
 - [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions): the description of what the metadata term is for
 - [`title`](https://linkml.io/linkml-model/latest/docs/title/): a short human readable 'title' for the slot
 - [`examples`](https://linkml.io/linkml-model/latest/docs/examples/): example values demonstrating how the slot should be used
@@ -92,7 +93,7 @@ An example of a close-to gold standard _float_ slot is [`ph`](https://genomicsst
 ```yaml
 ph:
   description:
-    Ph measurement of the sample, or liquid portion of sample, or aqueous
+    pH measurement of the sample, or liquid portion of sample, or aqueous
     phase of the fluid
   title: pH
   examples:
@@ -204,7 +205,7 @@ adapters:
   in_subset:
     - sequencing
   structured_pattern:
-    syntax: ^{adapter_A_DNA_sequence};{adapter_B_DNA_sequence}$
+    syntax: ^{dna_bases};{dna_bases}$
     interpolated: true
     partial_match: true
   slot_uri: MIXS:0000048
@@ -301,7 +302,6 @@ env_medium:
   slot_uri: MIXS:0000014
   range: string
   required: true
-  pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$
   structured_pattern:
     syntax: ^{termLabel} \[{termID}\]$
     interpolated: true
@@ -330,9 +330,8 @@ isol_growth_condt:
     - nucleic acid sequence source
   slot_uri: MIXS:0000003
   range: string
-  pattern: ^^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$$
   structured_pattern:
-    syntax: ^{PMID}|{DOI}|{URL}$
+    syntax: ^({PMID}|{DOI}|{URL})$
     interpolated: true
     partial_match: true
 ```
@@ -358,7 +357,6 @@ microb_cult_med:
     - value: brain heart infusion agar [MICRO:0000566]
   slot_uri: MIXS:0001216
   range: string
-  pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+)|(([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\])$
   structured_pattern:
     syntax: ^{text}|({termLabel} \[{termID}\])$
     interpolated: true
