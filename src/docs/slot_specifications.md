@@ -59,7 +59,7 @@ A LinkML slot is the object that is used to describe a MIxS term - i.e. informat
 
 ### 1.3 Language
 
-All MIxS terms attributes MUST be written in English.
+All MIxS term attributes MUST be written in English.
 
 > [!NOTE]
 > This is currently only a convention.
@@ -343,7 +343,7 @@ An environment dependent term SHOULD be specified within the `slot_usage` attrib
 
 ### 11.4 Optional terms
 
-A term that is not required for a given sample MUST NOT have either the `recommended` and `required` LinkML attributes specified.
+A term that is not required for a given sample MUST NOT have either the `recommended` or the `required` LinkML attribute specified.
 By default LinkML attributes are assumed `false` unless specified.
 
 ## 12. Ontology and Value sets
@@ -382,7 +382,7 @@ Example of ontology terms:
 
 For a term that allows only a small fixed set of values, and for which no suitable standardised ontology exists, an enumeration SHOULD be used to define the allowed values.
 
-The set of allowed values is defined in the `enums:` section of the schema, as described in 13.5.
+The set of allowed values is defined in the `enums:` section of the schema, as described in 12.5.
 
 ### 12.5 Enumerations
 
