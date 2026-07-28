@@ -18167,56 +18167,58 @@ classes:
       use_cases: bioaerosol samples, pathogen load in urban air, aerosols
   Ancient:
     description: A collection of terms appropriate when collecting samples and sequencing samples  of data containing ancient nucleic acids, i.e., degraded molecules not from living organisms.
+    aliases:
+      - minas
     comments:
-    - This extension that is intended to be used in very specific cases but almost always in conjunction with other MIxS checklists and extensions. It does not therefore (currently) include additional common terms from checklists.
+      - This extension that is intended to be used in very specific cases but almost always in conjunction with other MIxS checklists and extensions. It does not therefore (currently) include additional common terms from checklists.
     title: ancient
     is_a: Extension
     slots:
-    - orig_site_name
-    - orig_site_loc
-    - orig_site_lat
-    - orig_site_lon
-    - past_env_broad
-    - past_env_local
-    - stratigraph_context
-    - context_retrieval_date
-    - permit_id
-    - permit_authority
-    - permit_date
-    - permit_scope
-    - biocultural_label
-    - samp_alt_lab_ids
-    - prev_pubs
-    - host_preserv_state
-    - store_cond
-    - samp_preserv_treatm
-    - cultural_era
-    - geological_epoch
-    - earliest_chrono_age
-    - earliest_chrono_sys
-    - latest_chrono_age
-    - latest_chrono_sys
-    - chrono_age_protocol
-    - chrono_age_remarks
-    - palaeopath_status
-    - batch_ids
-    - samp_category
-    - samp_decont_pretreat
-    - damage_treatment
-    - nucl_acid_extr_date
-    - sop_experimental
-    - lib_mid_desc
-    - library_name
-    - lib_polymerase
-    - lib_strandedness
-    - lib_gener_technique
-    - sop_lib_preparation
-    - reamp_pcr_cyc_tot
-    - capt_pcr_cyc_tot
-    - capt_probe_src_taxid
-    - capt_probe_desc
-    - data_preproc_desc
-    - reads_removed
+      - orig_site_name
+      - orig_site_loc
+      - orig_site_lat
+      - orig_site_lon
+      - past_env_broad
+      - past_env_local
+      - stratigraph_context
+      - context_retrieval_date
+      - permit_id
+      - permit_authority
+      - permit_date
+      - permit_scope
+      - biocultural_label
+      - samp_alt_lab_ids
+      - prev_pubs
+      - host_preserv_state
+      - store_cond
+      - samp_preserv_treatm
+      - cultural_era
+      - geological_epoch
+      - earliest_chrono_age
+      - earliest_chrono_sys
+      - latest_chrono_age
+      - latest_chrono_sys
+      - chrono_age_protocol
+      - chrono_age_remarks
+      - palaeopath_status
+      - batch_ids
+      - samp_category
+      - samp_decont_pretreat
+      - damage_treatment
+      - nucl_acid_extr_date
+      - sop_experimental
+      - lib_mid_desc
+      - library_name
+      - lib_polymerase
+      - lib_strandedness
+      - lib_gener_technique
+      - sop_lib_preparation
+      - reamp_pcr_cyc_tot
+      - capt_pcr_cyc_tot
+      - capt_probe_src_taxid
+      - capt_probe_desc
+      - data_preproc_desc
+      - reads_removed
     slot_usage:
       orig_site_name:
         slot_group: Environment
@@ -18353,7 +18355,7 @@ classes:
       reads_removed:
         slot_group: Data analysis
         rank: 45
-    class_uri: "MIXS:0010016"
+    class_uri: MIXS:0016024
     annotations:
       use_cases: ancient dna samples
   BuiltEnvironment:
