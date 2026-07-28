@@ -10,6 +10,8 @@
          "@id": "http://purl.obolibrary.org/obo/SO_",
          "@prefix": true
       },
+      "chrono": "http://rs.tdwg.org/chrono/terms/",
+      "dc": "http://purl.org/dc/elements/1.1/",
       "linkml": "https://w3id.org/linkml/",
       "schema": "http://schema.org/",
       "shex": "http://www.w3.org/ns/shex#",
@@ -99,6 +101,10 @@
       },
       "ances_data": {
          "@id": "0000247"
+      },
+      "ancient_data": {
+         "@type": "@id",
+         "@id": "ancient_data"
       },
       "anim_water_method": {
          "@id": "0001115"
@@ -234,6 +240,9 @@
       "basin": {
          "@id": "0000290"
       },
+      "batch_ids": {
+         "@id": "0001382"
+      },
       "bathroom_count": {
          "@type": "xsd:integer",
          "@id": "0000776"
@@ -267,6 +276,14 @@
       },
       "biocide_used": {
          "@id": "0001258"
+      },
+      "biocultural_label": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "0001368"
       },
       "biol_stat": {
          "@context": {
@@ -352,6 +369,17 @@
       },
       "calcium": {
          "@id": "0000432"
+      },
+      "capt_pcr_cyc_tot": {
+         "@type": "xsd:integer",
+         "@id": "0001395"
+      },
+      "capt_probe_desc": {
+         "@id": "0001397"
+      },
+      "capt_probe_src_taxid": {
+         "@type": "xsd:integer",
+         "@id": "0001396"
       },
       "carb_dioxide": {
          "@id": "0000097"
@@ -441,6 +469,17 @@
       "chlorophyll": {
          "@id": "0000177"
       },
+      "chrono_age_protocol": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "0001379"
+      },
+      "chrono_age_remarks": {
+         "@id": "0001380"
+      },
       "climate_environment": {
          "@id": "0001040"
       },
@@ -496,6 +535,10 @@
       "contam_screen_param": {
          "@id": "0000073"
       },
+      "context_retrieval_date": {
+         "@type": "xsd:dateTime",
+         "@id": "0001363"
+      },
       "cool_syst_id": {
          "@type": "xsd:integer",
          "@id": "0000785"
@@ -527,6 +570,9 @@
       "cult_target": {
          "@id": "0001119"
       },
+      "cultural_era": {
+         "@id": "0001373"
+      },
       "cur_land_use": {
          "@id": "0001080"
       },
@@ -535,6 +581,17 @@
       },
       "cur_vegetation_meth": {
          "@id": "0000314"
+      },
+      "damage_treatment": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "0001385"
+      },
+      "data_preproc_desc": {
+         "@id": "0001398"
       },
       "date_extr_weath": {
          "@type": "xsd:dateTime",
@@ -720,6 +777,18 @@
       },
       "drug_usage": {
          "@id": "0000894"
+      },
+      "earliest_chrono_age": {
+         "@type": "xsd:integer",
+         "@id": "0001375"
+      },
+      "earliest_chrono_sys": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "0001376"
       },
       "efficiency_percent": {
          "@id": "0000657"
@@ -1120,6 +1189,14 @@
       "geo_loc_name": {
          "@id": "0000010"
       },
+      "geological_epoch": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "0001374"
+      },
       "gestation_state": {
          "@id": "0000272"
       },
@@ -1399,6 +1476,9 @@
       "host_pred_est_acc": {
          "@id": "0000089"
       },
+      "host_preserv_state": {
+         "@id": "0001371"
+      },
       "host_pulse": {
          "@id": "0000333"
       },
@@ -1591,6 +1671,26 @@
       "lat_lon": {
          "@id": "0000009"
       },
+      "latest_chrono_age": {
+         "@type": "xsd:integer",
+         "@id": "0001377"
+      },
+      "latest_chrono_sys": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "0001378"
+      },
+      "lib_gener_technique": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "0001392"
+      },
       "lib_layout": {
          "@context": {
             "text": "skos:notation",
@@ -1598,6 +1698,12 @@
             "meaning": "@id"
          },
          "@id": "0000041"
+      },
+      "lib_mid_desc": {
+         "@id": "0001388"
+      },
+      "lib_polymerase": {
+         "@id": "0001390"
       },
       "lib_reads_seqd": {
          "@type": "xsd:integer",
@@ -1610,8 +1716,19 @@
          "@type": "xsd:integer",
          "@id": "0000039"
       },
+      "lib_strandedness": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "0001391"
+      },
       "lib_vector": {
          "@id": "0000042"
+      },
+      "library_name": {
+         "@id": "0001389"
       },
       "library_prep_kit": {
          "@id": "0001145"
@@ -2649,6 +2766,10 @@
          "@type": "@id",
          "@id": "mims_host_associated_data"
       },
+      "mims_hostassociated_ancient_data": {
+         "@type": "@id",
+         "@id": "mims_hostassociated_ancient_data"
+      },
       "mims_human_associated_data": {
          "@type": "@id",
          "@id": "mims_human_associated_data"
@@ -2668,6 +2789,22 @@
       "mims_human_vaginal_data": {
          "@type": "@id",
          "@id": "mims_human_vaginal_data"
+      },
+      "mims_humanassociated_ancient_data": {
+         "@type": "@id",
+         "@id": "mims_humanassociated_ancient_data"
+      },
+      "mims_humangut_ancient_data": {
+         "@type": "@id",
+         "@id": "mims_humangut_ancient_data"
+      },
+      "mims_humanoral_ancient_data": {
+         "@type": "@id",
+         "@id": "mims_humanoral_ancient_data"
+      },
+      "mims_humanskin_ancient_data": {
+         "@type": "@id",
+         "@id": "mims_humanskin_ancient_data"
       },
       "mims_hydrocarbon_resources_cores_data": {
          "@type": "@id",
@@ -2689,9 +2826,21 @@
          "@type": "@id",
          "@id": "mims_plant_associated_data"
       },
+      "mims_plantassociated_ancient_data": {
+         "@type": "@id",
+         "@id": "mims_plantassociated_ancient_data"
+      },
+      "mims_sediment_ancient_data": {
+         "@type": "@id",
+         "@id": "mims_sediment_ancient_data"
+      },
       "mims_sediment_data": {
          "@type": "@id",
          "@id": "mims_sediment_data"
+      },
+      "mims_soil_ancient_data": {
+         "@type": "@id",
+         "@id": "mims_soil_ancient_data"
       },
       "mims_soil_data": {
          "@type": "@id",
@@ -3053,6 +3202,10 @@
       "nucl_acid_ext_kit": {
          "@id": "0001223"
       },
+      "nucl_acid_extr_date": {
+         "@type": "xsd:dateTime",
+         "@id": "0001386"
+      },
       "nucleic_acid_elution_vol": {
          "@id": "0001353"
       },
@@ -3114,6 +3267,18 @@
       "organism_count": {
          "@id": "0000103"
       },
+      "orig_site_lat": {
+         "@id": "0001358"
+      },
+      "orig_site_loc": {
+         "@id": "0001357"
+      },
+      "orig_site_lon": {
+         "@id": "0001359"
+      },
+      "orig_site_name": {
+         "@id": "0001356"
+      },
       "otu_class_appr": {
          "@id": "0000085"
       },
@@ -3137,6 +3302,9 @@
       "oxygen": {
          "@id": "0000104"
       },
+      "palaeopath_status": {
+         "@id": "0001381"
+      },
       "part_org_carb": {
          "@id": "0000515"
       },
@@ -3149,6 +3317,12 @@
       "particle_class": {
          "@id": "0000206"
       },
+      "past_env_broad": {
+         "@id": "0001360"
+      },
+      "past_env_local": {
+         "@id": "0001361"
+      },
       "pathogenicity": {
          "@id": "0000027"
       },
@@ -3160,6 +3334,19 @@
       },
       "permeability": {
          "@id": "0000404"
+      },
+      "permit_authority": {
+         "@id": "0001365"
+      },
+      "permit_date": {
+         "@type": "xsd:dateTime",
+         "@id": "0001366"
+      },
+      "permit_id": {
+         "@id": "0001364"
+      },
+      "permit_scope": {
+         "@id": "0001367"
       },
       "perturbation": {
          "@id": "0000754"
@@ -3289,6 +3476,9 @@
       "prev_land_use_meth": {
          "@id": "0000316"
       },
+      "prev_pubs": {
+         "@id": "0001370"
+      },
       "previous_land_use": {
          "@id": "0000315"
       },
@@ -3299,7 +3489,7 @@
          "@id": "0000349"
       },
       "prod_label_claims": {
-         "@id": "prod_label_claims"
+         "@id": "0001337"
       },
       "prod_rate": {
          "@id": "0000452"
@@ -3341,6 +3531,14 @@
       },
       "reactor_type": {
          "@id": "0000350"
+      },
+      "reads_removed": {
+         "@type": "xsd:boolean",
+         "@id": "0001399"
+      },
+      "reamp_pcr_cyc_tot": {
+         "@type": "xsd:integer",
+         "@id": "0001394"
       },
       "reassembly_bin": {
          "@type": "xsd:boolean",
@@ -3506,6 +3704,9 @@
       "salt_regm": {
          "@id": "0000582"
       },
+      "samp_alt_lab_ids": {
+         "@id": "0001369"
+      },
       "samp_capt_status": {
          "@context": {
             "text": "skos:notation",
@@ -3513,6 +3714,14 @@
             "meaning": "@id"
          },
          "@id": "0000860"
+      },
+      "samp_category": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "0001383"
       },
       "samp_collect_device": {
          "@id": "0000002"
@@ -3527,6 +3736,9 @@
             "meaning": "@id"
          },
          "@id": "0001015"
+      },
+      "samp_decont_pretreat": {
+         "@id": "0001384"
       },
       "samp_dis_stage": {
          "@context": {
@@ -3567,6 +3779,9 @@
       },
       "samp_preserv": {
          "@id": "0000463"
+      },
+      "samp_preserv_treatm": {
+         "@id": "0001372"
       },
       "samp_purpose": {
          "@id": "0001151"
@@ -3886,6 +4101,12 @@
       "sop": {
          "@id": "0000090"
       },
+      "sop_experimental": {
+         "@id": "0001387"
+      },
+      "sop_lib_preparation": {
+         "@id": "0001393"
+      },
       "sort_tech": {
          "@context": {
             "text": "skos:notation",
@@ -3992,6 +4213,9 @@
       },
       "store_cond": {
          "@id": "0000327"
+      },
+      "stratigraph_context": {
+         "@id": "0001362"
       },
       "study_complt_stat": {
          "@id": "0000898"
@@ -4547,6 +4771,9 @@
       },
       "Air": {
          "@id": "0016000"
+      },
+      "Ancient": {
+         "@id": "0016024"
       },
       "BuiltEnvironment": {
          "@id": "0016001"
@@ -5271,17 +5498,32 @@
       "MimsHostAssociated": {
          "@id": "0010007_0016002"
       },
+      "MimsHostAssociatedAncient": {
+         "@id": "10007_16002_9999903"
+      },
       "MimsHumanAssociated": {
          "@id": "0010007_0016003"
+      },
+      "MimsHumanAssociatedAncient": {
+         "@id": "10007_16003_9999903"
       },
       "MimsHumanGut": {
          "@id": "0010007_0016004"
       },
+      "MimsHumanGutAncient": {
+         "@id": "10007_16004_9999903"
+      },
       "MimsHumanOral": {
          "@id": "0010007_0016005"
       },
+      "MimsHumanOralAncient": {
+         "@id": "10007_16005_9999903"
+      },
       "MimsHumanSkin": {
          "@id": "0010007_0016006"
+      },
+      "MimsHumanSkinAncient": {
+         "@id": "10007_16006_9999903"
       },
       "MimsHumanVaginal": {
          "@id": "0010007_0016007"
@@ -5373,11 +5615,20 @@
       "MimsPlantAssociated": {
          "@id": "0010007_0016010"
       },
+      "MimsPlantAssociatedAncient": {
+         "@id": "10007_16010_9999903"
+      },
       "MimsSediment": {
          "@id": "0010007_0016011"
       },
+      "MimsSedimentAncient": {
+         "@id": "10007_16011_9999903"
+      },
       "MimsSoil": {
          "@id": "0010007_0016012"
+      },
+      "MimsSoilAncient": {
+         "@id": "10007_16012_9999903"
       },
       "MimsSymbiontAssociated": {
          "@id": "0010007_0016023"
