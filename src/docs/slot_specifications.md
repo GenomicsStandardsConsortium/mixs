@@ -33,8 +33,6 @@ The following table can guide readers to how the terminology can be linked.
 | Expected value          | `range`              | The category of metadata the metadata field will hold (text, numbers, etc.)                                                                                                    |
 | Expected format         | `structured_pattern` | A way of defining how the metadata field should be filled in, e.g. with a specific format or structure                                                                         |
 | Example                 | `examples`           | Examples of values for an item, i.e., different examples how metadata field could be filled in                                                                                 |
-| Section                 | `slot_group`         | A way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                       |
-| Section                 | `in_subset`          | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                 |
 | Requirement             | `recommended`        | Specifying that a metadata field is optional, but if the information is available, it is highly recommended to be filled in to increase the scientific usefulness of your data |
 | Requirement             | `required`           | Specifying whether a metadata field is mandatory to be filled in for a sample                                                                                                  |
 | Occurrence              | `multivalued`        | That a term can be recorded more than once for a single sample                                                                                                              |
@@ -153,7 +151,7 @@ The type of data specified in the expected value (`range`) of a term MUST be in 
 - `integer`
 - `float`
 - `boolean`
-- An [enumeration](#125-enumerations), that is a controlled vocabulary, predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L36)).
+- An [enumeration](#115-enumerations), that is a controlled vocabulary, predefined by MIxS (see top of the [schema](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml#L36)).
 
 Refer to LinkML documentation for more information on [range types](https://linkml.io/linkml-model/latest/docs/range/).
 
@@ -167,7 +165,6 @@ A term MUST at a minimum include the following attributes:
 - [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions) (MIxS: Definition).
 - [`title`](https://linkml.io/linkml-model/latest/docs/title/) (MIxS: Item).
 - [`examples`](https://linkml.io/linkml-model/latest/docs/examples/) (MIxS: Example).
-- [`in_subset`](https://linkml.io/linkml-model/latest/docs/in_subset/) (MIxS: Section).
 - [`slot_uri`](https://linkml.io/linkml-model/latest/docs/slot_uri/) (MIxS: MIxS ID).
 - [`range`](https://linkml.io/linkml/schemas/slots.html#ranges) (MIxS: Expected value).
 
@@ -175,7 +172,7 @@ A term MUST at a minimum include the following attributes:
 
 A term that is mandatory for a sample sets [`required`](https://linkml.io/linkml/schemas/slots.html#required), and a term that is worth filling in when the information exists sets [`recommended`](https://linkml.io/linkml/schemas/slots.html#recommended). Both are MIxS Requirement.
 
-Conditional, environment dependent and optional terms do not set either attribute on the term itself. See section [11](#11-level-of-requirement).
+A term that is mandatory only in some checklists does not set `required` on the term itself; it is set in the `slot_usage` of each class where it applies. A term that is never mandatory sets neither attribute anywhere. See section [10](#10-level-of-requirement).
 
 ## 5. Term definition
 
@@ -242,36 +239,20 @@ Ideally, there SHOULD be a minimum of 3 examples for a term.
 
 Examples SHOULD cover the full range of possible values, string formats, or any other way that information can be given to the term.
 
-For example if a term accepts either an [ontology](#12-ontology-and-value-sets) term _or_ a free text string, there should be at least one example for each type.
+For example if a term accepts either an [ontology](#11-ontology-and-value-sets) term _or_ a free text string, there should be at least one example for each type.
 If a term accepts different unit types, there should be at least two examples of different units to demonstrate multiple units are accepted.
 
 ### 7.3 Examples for terms that allow more than one entry
 
 If a term allows multiple occurrences ('multivalued'), the examples MUST include at a minimum two examples, one to show inputting a single value, and another to show how to fill the term with multiple values.
 
-## 8. Term section attribute
+## 8. Term MIxS ID attribute
 
-> **Note**
-> What a section means, and which sections exist, is still under discussion in
-> [Define "in_subset"](https://github.com/GenomicsStandardsConsortium/mixs/issues/931).
-
-A section is recorded with the term's `in_subset` attribute, which refers to a subset defined under the schema's top-level `subsets:` block. There is no `subset` attribute on a term.
-
-### 8.1 All checklist terms must be assigned a section
-
-All terms defined in a checklist MUST name a section in `in_subset`.
-
-### 8.2 All extension terms must be assigned the environment section
-
-A term defined in an extension, rather than in a core checklist, MUST include the Environment section in `in_subset`.
-
-## 9. Term MIxS ID attribute
-
-### 9.1 MIxS ID requirement
+### 8.1 MIxS ID requirement
 
 The term MUST have a MIxS ID (slot_uri) that is unique within the MIxS ID space.
 
-### 9.2 MIxS ID format
+### 8.2 MIxS ID format
 
 The MIxS ID (`slot_uri`) MUST begin with the string `MIXS`, followed by a colon, followed by a 7 digit number.
 
@@ -280,28 +261,28 @@ Example: `MIXS:0000010`.
 > **Note**
 > MIxS IDs are only able to be assigned by the GSC's Compliance and Integration Working Group (CIG).
 
-## 10. Slot range attribute
+## 9. Slot range attribute
 
-### 10.1 Range options should be valid LinkML types
+### 9.1 Range options should be valid LinkML types
 
 See section [3](#3-term-expected-value-types).
 
-### 10.2 Structured or formatted text should use a structured pattern
+### 9.2 Structured or formatted text should use a structured pattern
 
 A term that requires a specific format or a structured string layout MUST use the `structured_pattern` attribute, with the pattern components predefined in the schema's `settings:` block where a component could be used more than once.
 
 New terms MUST NOT use `string_serialization`. It appears on terms that predate this guidance, it is not checked by any validator, and it is being retired.
 
 
-### 10.3 Structured or formatted text components should be reused
+### 9.3 Structured or formatted text components should be reused
 
 A structured pattern SHOULD re-use existing pattern components as far as possible.
 
 Additional pattern components MAY be created when needed after consultation with the GSC's Compliance and Integration Working Group (CIG).
 
-### 10.4 Specifying units
+### 9.4 Specifying units
 
-Terms that record a measurement SHOULD use a [structured pattern](#102-structured-or-formatted-text-should-use-a-structured-pattern) that includes a component for the unit of measurement.
+Terms that record a measurement SHOULD use a [structured pattern](#92-structured-or-formatted-text-should-use-a-structured-pattern) that includes a component for the unit of measurement.
 
 Example:
 
@@ -310,7 +291,7 @@ structured_pattern:
   syntax: ^{particulate_matter_name};{float} {unit}$
 ```
 
-### 10.5 Preferred units
+### 9.5 Preferred units
 
 Terms that record a measurement SHOULD specify the preferred unit of measurement in the `Preferred_unit` annotation.
 
@@ -323,37 +304,29 @@ annotations:
   Preferred_unit: degree Celsius
 ```
 
-## 11. Level of requirement
+## 10. Level of requirement
 
-### 11.1 Mandatory terms
+### 10.1 Mandatory terms
 
 A term that is required to be filled in for a sample MUST have the `required` attribute set to `true`.
 
-### 11.2 Conditional mandatory terms
+### 10.2 Terms that are mandatory only in some checklists
 
-A conditional term SHOULD NOT be specified as `required` as a LinkML slot attribute.
+A term that is mandatory in some checklists but not others MUST NOT set `required` on the term itself. It is set in the [`slot_usage`](https://linkml.io/linkml/schemas/slots.html#slot-usage) of each class where it applies.
 
-A conditional term SHOULD be specified within the `slot_usage` attribute of a LinkML class attribute for a given extension.
-
-### 11.3 Environment dependent terms
-
-An environment dependent term SHOULD NOT be specified as `required` as a LinkML slot attribute.
-
-An environment dependent term SHOULD be specified within the `slot_usage` attribute of a LinkML class attribute for a given extension.
-
-### 11.4 Optional terms
+### 10.3 Optional terms
 
 A term that is not required for a given sample MUST NOT have either the `recommended` or the `required` LinkML attribute specified.
 By default LinkML attributes are assumed `false` unless specified.
 
-## 12. Ontology and Value sets
+## 11. Ontology and Value sets
 
-### 12.1 Ontology and controlled values recommended
+### 11.1 Ontology and controlled values recommended
 
 Where possible, terms (slots) with controlled vocabularies SHOULD use standardised terms from ontologies.
 When not possible, controlled vocabulary terms (value sets) MAY be used to specify the value of the term.
 
-### 12.2 Recommended ontologies
+### 11.2 Recommended ontologies
 
 Ontologies SHOULD be from established and widely used ontologies, such as those found in the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols4/), [Open Biological and Biomedical Ontology Foundry (OBO)](https://obofoundry.org/), or [BioPortal](https://bioportal.bioontology.org/).
 
@@ -367,7 +340,7 @@ Common ontologies used in MIxS include:
 - [Phenotypic Quality Ontology (PATO)](https://pato-ontology.github.io/pato/)
 - [Plant Ontology (PO)](https://browser.planteome.org/amigo)
 
-### 12.3 Ontology term value format
+### 11.3 Ontology term value format
 
 A term using an ontology term value MUST be written in the `termLabel [termID]` syntax, where the label is followed by the identifier code in square brackets.
 
@@ -378,13 +351,13 @@ Example of ontology terms:
 - `Rabies [DOID:11260]`
 - `454 Genome Sequencer FLX [OBI:0000702]`
 
-### 12.4 Value sets
+### 11.4 Value sets
 
 For a term that allows only a small fixed set of values, and for which no suitable standardised ontology exists, an enumeration SHOULD be used to define the allowed values.
 
 The set of allowed values is defined in the `enums:` section of the schema, as described in 12.5.
 
-### 12.5 Enumerations
+### 11.5 Enumerations
 
 Value sets (enumerations) MUST be defined within the `enums:` section of the LinkML schema.
 
@@ -392,9 +365,9 @@ The name of the enumeration MUST be formatted in [Pascal Case](https://en.wikipe
 
 For example, the value set for the term `assembly_qual` is named `AssemblyQualEnum`.
 
-## 13. Mapping terms to other standards
+## 12. Mapping terms to other standards
 
-### 13.1 Align with an existing term where one exists
+### 12.1 Align with an existing term where one exists
 
 Where an established standard already has a term with the same purpose and meaning as a proposed MIxS term, the MIxS term SHOULD align with it rather than define the concept differently.
 
@@ -402,13 +375,13 @@ Examples of established standards include:
 
 - [Darwin Core (DwC)](https://dwc.tdwg.org/)
 
-### 13.2 Record the correspondence as a mapping
+### 12.2 Record the correspondence as a mapping
 
 A MIxS term that corresponds to a term in another standard SHOULD record that correspondence using the appropriate LinkML [mapping](https://linkml.io/linkml-model/latest/docs/mappings/) attribute (`exact_mappings`, `close_mappings`, `related_mappings`, `narrow_mappings`, `broad_mappings`), naming the other term by its CURIE ([Compact URI](https://en.wikipedia.org/wiki/CURIE)).
 
 MIxS has no mechanism for importing a term definition from another standard. The MIxS term is defined in MIxS; the mapping records what it corresponds to.
 
-### 13.3 The MIxS name follows MIxS conventions
+### 12.3 The MIxS name follows MIxS conventions
 
 The structured comment (name) of a MIxS term MUST follow the [MIxS naming conventions](#2-term-structured-naming), including [snake_case](https://en.wikipedia.org/wiki/Snake_case), regardless of how the corresponding term is named in the other standard.
 
