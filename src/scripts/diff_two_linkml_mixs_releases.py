@@ -500,12 +500,18 @@ class LinkMLComparator:
         
         return base_comparison
     
-    @staticmethod
-    def _slot_field_changes(old_slots: Dict, new_slots: Dict, field: str) -> Dict[str, List[str]]:
-        """Slots whose boolean `field` was turned on or off, keyed by 'added'/'removed'."""
+    def _slot_field_changes(self, old_slots: Dict, new_slots: Dict, field: str) -> Dict[str, List[str]]:
+        """Slots whose boolean `field` was turned on or off, keyed by 'added'/'removed'.
+
+        Old slot names are aligned through slot_mappings first. A renamed slot
+        appears under a different key on each side, so intersecting the raw
+        names would silently skip any requirement change made to it.
+        """
+        aligned_old = {self.slot_mappings.get(name, name) if self.slot_mappings else name: slot
+                       for name, slot in old_slots.items()}
         changes: Dict[str, List[str]] = {}
-        for name in set(old_slots) & set(new_slots):
-            was = bool(getattr(old_slots[name], field, False))
+        for name in set(aligned_old) & set(new_slots):
+            was = bool(getattr(aligned_old[name], field, False))
             now = bool(getattr(new_slots[name], field, False))
             if was == now:
                 continue
