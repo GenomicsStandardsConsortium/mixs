@@ -41,7 +41,6 @@ Every MIxS LinkML slot should have at a minimum the following attributes:
 - [`description`](https://linkml.io/linkml/schemas/metadata.html#providing-descriptions): the description of what the metadata term is for
 - [`title`](https://linkml.io/linkml-model/latest/docs/title/): a short human readable 'title' for the slot
 - [`examples`](https://linkml.io/linkml-model/latest/docs/examples/): example values demonstrating how the slot should be used
-- [`in_subset`](https://linkml.io/linkml-model/latest/docs/in_subset/): the section of the schema that the slot belongs based on a [fixed list of MIxS categories](https://github.com/GenomicsStandardsConsortium/mixs/blob/609b0f567486f64cb7061246588d8006f87fa138/src/mixs/schema/mixs.yaml#L21-L26)
 - [`slot_uri`](https://linkml.io/linkml-model/latest/docs/slot_uri/): a unique ID assigned by MIxS
   - This likely only gets assigned upon acceptance and merging by the core GSC MIxS team
   - During development you can use a dummy value for this
@@ -248,7 +247,7 @@ experimental_factor:
 
 > **Warning**
 > This term carries `string_serialization`. A new term MUST NOT use it: see section
-> 10.2 of [MIxS term specifications](slot_specifications.md). Use `structured_pattern`
+> 9.2 of [MIxS term specifications](slot_specifications.md). Use `structured_pattern`
 > instead. It is shown here because it is still present on terms that predate that rule.
 
 
@@ -277,7 +276,7 @@ In this particular case, the `string_serialization:` attribute is used to define
 
 > **Warning**
 > This term carries `string_serialization`. A new term MUST NOT use it: see section
-> 10.2 of [MIxS term specifications](slot_specifications.md). Use `structured_pattern`
+> 9.2 of [MIxS term specifications](slot_specifications.md). Use `structured_pattern`
 > instead. It is shown here because it is still present on terms that predate that rule.
 
 
