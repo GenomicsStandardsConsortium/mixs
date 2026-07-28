@@ -19,8 +19,9 @@ Terms and structural elements come from different ranges: terms use the
 number is.
 
 The order matters. The ID is added after the term is approved and before the
-pull request is merged. Placeholder values such as `MIXS:XXXXXXXXX` must not
-reach `main`; 44 terms did in 2026 and had to be corrected afterwards.
+pull request is merged. Placeholder values must not reach `main`. Nothing
+currently checks this, and terms carrying placeholders have been merged and
+corrected afterwards; see issue 1304.
 
 
 ## Requesting and implementing a term update
@@ -62,7 +63,7 @@ MIxS carries two version numbers, managed differently. Both use bare `X.Y.Z` val
    against the previous release as the "Previous tag". For a release candidate,
    see [Publishing a release candidate](#publishing-a-release-candidate) below.
 
-The structured diff in step 2 is produced by the reusable `diff-releases` tool; see [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md). Note that it can only reach back to v6.2.0, because the workflow asks for `src/mixs/schema/mixs.yaml` on both sides and that path does not exist in earlier releases.
+The structured diff in step 2 is produced by the reusable `diff-releases` tool; see [SCHEMA_DIFFING.md](SCHEMA_DIFFING.md). The tool itself can compare any release that has a LinkML schema, but it needs the right path for each side, and releases before v6.2.0 keep the schema somewhere else. Check the table in SCHEMA_DIFFING.md before choosing a base older than v6.2.0.
 
 The release notes cover the span between two tags, which is not necessarily the span the schema comparisons cover. If they differ, say so in the release body, or a reader will assume the pull requests listed produced the schema changes reported.
 

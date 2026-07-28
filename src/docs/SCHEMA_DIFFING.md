@@ -132,9 +132,14 @@ poetry run diff-releases \
 
 ## Which releases can be compared
 
-The tool takes a path per side, so it can reach any release. The **release
-workflow** cannot: it hardcodes `src/mixs/schema/mixs.yaml` for both sides, so
-its oldest usable base is v6.2.0.
+The tool takes a path per side, so it can reach any release that has a LinkML
+schema, which means v6.0.0 onward. `MIxS5` predates LinkML entirely and cannot
+be compared with this tool at all; the v5 to v6.0.0 comparison was produced by a
+separate one-time script with an Excel reader.
+
+The **release workflow** is more limited still: it hardcodes
+`src/mixs/schema/mixs.yaml` for both sides, so its oldest usable base is
+v6.2.0.
 
 | tag | released | `src/mixs/schema/mixs.yaml` | usable in the release workflow |
 | --- | --- | --- | --- |
