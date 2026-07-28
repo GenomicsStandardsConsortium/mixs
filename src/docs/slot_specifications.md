@@ -9,7 +9,7 @@
 | Metadata         | Value                                                                                                                                          |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version          | 0.0.1                                                                                                                                          |
-| Last updated     | 2025-05-05                                                                                                                                     |
+| Last updated     | 2026-07-27                                                                                                                                     |
 | Document Authors | James Fellows Yates (@jfy133), Mark Miller (@turbomam), Chris Hunter (@only1chunts), Peter Woollard (@Woolly-at-EBI), Lynn Schriml (@lschriml) |
 
 ## Preamble
@@ -37,7 +37,7 @@ The following table can guide readers to how the terminology can be linked.
 | Section                 | `subset`             | Another way of grouping similar or related metadata fields together to assist users in filling metadata tables following a logical progression                                 |
 | Requirement             | `recommended`        | Specifying that a metadata field is optional, but if the information is available, it is highly recommended to be filled in to increase the scientific usefulness of your data |
 | Requirement             | `required`           | Specifying whether a metadata field is mandatory to be filled in for a sample                                                                                                  |
-| Occurrence              | `multivalued`        | That a term can be specified more than one time for a single term                                                                                                              |
+| Occurrence              | `multivalued`        | That a term can be recorded more than once for a single sample                                                                                                              |
 
 [^1]: This structured name is used by many implementers as a key e.g. NCBI and DDBJ
 
