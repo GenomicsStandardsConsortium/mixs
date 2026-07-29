@@ -185,9 +185,10 @@ site:
 
 1. Check out the `release/vX.Y.Z` branch.
 2. The release action already wrote the diff into a folder under
-   `assets/diff_results/`, named from the two refs you gave it rather than from
-   the release. Dispatching with `diff_old` `mixs6.0.0` and `diff_new` `main`
-   produces `mixs6.0.0_to_main/`. Rename it to the versions it compares, such as
+   `assets/diff_results/`, named from the two refs you gave it. If both were
+   release refs the name is already what you want. If either was a moving ref,
+   the name follows it: dispatching with `diff_new` `main` produces
+   `mixs6.0.0_to_main/`, which should be renamed to the versions it compares,
    `v6.0.0_to_v7.0.0/`, so the published page is named for releases rather than
    for a branch that keeps moving. Work in that folder; the docs build publishes
    summaries only from folders under `assets/diff_results/`.
