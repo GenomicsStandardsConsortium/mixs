@@ -1,32 +1,36 @@
 name: Regenerate and verify generated artifacts
 
-# The generated artifacts committed under project/, src/mixs/datamodel/, and contrib/ are
-# consumed by downstream tools; EBI OLS loads project/owl/mixs.owl.ttl from raw main, so the
-# committed artifacts must not lag src/mixs/schema/mixs.yaml (#1240).
+# The generated files committed under project/, src/mixs/datamodel/, and contrib/ are read
+# directly by downstream consumers; EBI OLS loads project/owl/mixs.owl.ttl from raw main.
+# Keeping them matching src/mixs/schema/mixs.yaml is the intent (#1240). This workflow does
+# not achieve that, and #1303 tracks what to do about it.
 #
 # The OWL is not byte-reproducible: RDF/Turtle serialization reorders triples and relabels
 # blank nodes on every run (same 46k triples, different text), so it cannot be verified by a
 # text diff. project/jsonschema/mixs.schema.json IS fully deterministic and carries no
-# generation timestamp, and it is a complete representation of the schema, so it is used as the
-# canary for whether the schema content actually changed:
+# generation timestamp, so it is compared to decide whether the schema content changed:
 #   - pull_request / manual dispatch: regenerate and FAIL if the committed JSON Schema differs.
-#   - push to main: regenerate everything and, only when the JSON Schema changed, commit the
-#     refreshed artifacts (including the reordered OWL) so the committed OWL stays current.
+#   - push to main: regenerate everything and commit only when the JSON Schema differs.
+#
+# That comparison does not detect every change. The JSON Schema carries no class_uri values,
+# so a change confined to identifiers leaves it identical, the commit step is skipped, and the
+# committed OWL keeps the previous identifiers. Observed on the merge of #1347.
 
+# The push-to-main trigger is disabled as an interim measure, pending the decision
+# on #1303. The regenerate job below runs only on push, so it no longer runs.
+#
+# It never succeeded in committing anything: pushing to main is refused because the
+# branch requires a pull request, and when the JSON Schema comparison finds no
+# difference the job exits without attempting a push at all. Disabling it changes no
+# outcome, and stops it failing on every schema merge. Restore by putting the push
+# trigger back.
+#
+# This is not a decision to stop regenerating artifacts. #1303 has the options.
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'src/mixs/schema/mixs.yaml'
-      - 'src/sparql/**'
-      - 'project-generator-config.yaml'
-      - 'Makefile'
   pull_request:
-    # Deliberately narrower than the push trigger: a pull request that only edits
-    # the schema is not checked, because the push job below regenerates and commits
-    # the artifacts as soon as it merges. Failing such a pull request would put a
-    # local build and a large generated diff on a contributor for no gain. Build
-    # inputs are still checked here, where regenerating catches a real regression.
+    # Deliberately narrower than the push trigger was: a pull request that only edits
+    # the schema is not checked here. Build inputs are still checked, where
+    # regenerating catches a real regression.
     paths:
       - 'src/sparql/**'
       - 'project-generator-config.yaml'
@@ -63,7 +67,7 @@ jobs:
       - name: Install dependencies
         run: make install
 
-      - name: Regenerate the JSON Schema (the deterministic canary)
+      - name: Regenerate the JSON Schema, which is deterministic
         run: make gen-project
 
       - name: Fail if the committed JSON Schema is out of sync
