@@ -19,11 +19,11 @@ name: Regenerate and verify generated artifacts
 # The push-to-main trigger is disabled as an interim measure, pending the decision
 # on #1303. The regenerate job below runs only on push, so it no longer runs.
 #
-# It never succeeded in committing anything: pushing to main is refused because the
-# branch requires a pull request, and when the JSON Schema comparison finds no
-# difference the job exits without attempting a push at all. Disabling it changes no
-# outcome, and stops it failing on every schema merge. Restore by putting the push
-# trigger back.
+# It never succeeded in committing anything. Its pushes to main were rejected by
+# branch protection, which is configured outside this file and can change, and when
+# the JSON Schema comparison finds no difference the job exits without attempting a
+# push at all. Disabling it changes no outcome, and stops it failing on every schema
+# merge. Restore by putting the push trigger back.
 #
 # This is not a decision to stop regenerating artifacts. #1303 has the options.
 on:
