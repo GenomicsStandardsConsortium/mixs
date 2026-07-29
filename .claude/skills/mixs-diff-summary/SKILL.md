@@ -7,6 +7,38 @@ allowed-tools: Read, Write, Bash
 
 # Summarize a MIxS schema diff
 
+## Why a change was made, not just what changed
+
+The structured diff describes the schema and nothing else, so on its own it can
+say that 409 slots were added but never that 44 of them are the MInAS ancient DNA
+extension. The release history says that, and you can read it.
+
+Use it to attribute changes and to explain removals, and cite rather than assert.
+A pull request title is written by whoever opened it and is sometimes wrong or
+vague, so link the pull request and let a reader judge. Where a title does not
+support a claim, leave the claim out rather than inferring intent.
+
+The pull requests merged between the two refs being compared:
+
+```bash
+gh pr list --state merged --search "merged:<old date>..<new date>" \
+   --limit 200 --json number,title,author,labels,url
+```
+
+That is 50 for v6.3.1 to v7.0.0 and around 200 for a comparison reaching back to
+v6.0.0, which is small enough to read.
+
+Two other sources already at hand:
+
+- **`deprecated:` strings in the schema itself**, which carry the reason a term
+  was retired and often an issue link. They explain a removal better than a diff
+  can infer, and they are in the file you are already reading.
+- **Labels on the pull requests**, such as `2-NewTerm` and `3-CIG`, which show
+  whether a change went through term review.
+
+Attribution will sometimes be wrong. Prefer "added by" with a link over "in order
+to", and do not describe motivation the history does not state.
+
 ## Working in this repository
 
 Run Python with `poetry run python`. This is a poetry project, and `uv run`

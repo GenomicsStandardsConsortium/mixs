@@ -64,6 +64,12 @@ a LinkML schema, but it needs the right path for each side, and releases before
 v6.2.0 keep the schema somewhere else. Check the table in SCHEMA_DIFFING.md
 before choosing a base older than v6.2.0.
 
+Leave the action's `diff_old` input empty and it compares against the most
+recent full release, so there is no default to keep up to date. Fill it in for a
+major release, where the useful baseline is the previous major rather than the
+last patch: v7.0.0 was compared against v6.0.0, not v6.3.1. A base older than
+v6.2.0 needs `diff_old_path` changed too.
+
 The generated release notes cover the span between two tags, which is not
 necessarily the span the schema comparisons cover. When they differ, say so in
 the release body, or a reader will assume the pull requests listed are what
