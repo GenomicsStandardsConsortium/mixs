@@ -115,8 +115,8 @@ poetry run diff-releases \
 
 ```bash
 poetry run diff-releases \
-  --old "GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml" \
-  --new "GenomicsStandardsConsortium/mixs@v6.3.1:src/mixs/schema/mixs.yaml"
+  --old "GenomicsStandardsConsortium/mixs@v6.3.1:src/mixs/schema/mixs.yaml" \
+  --new "GenomicsStandardsConsortium/mixs@v7.0.0:src/mixs/schema/mixs.yaml"
 ```
 
 **A release from before v6.2.0.** The path differs on the old side, because the
@@ -139,7 +139,10 @@ separate one-time script with an Excel reader.
 
 The **release workflow** is more limited still: it hardcodes
 `src/mixs/schema/mixs.yaml` for both sides, so its oldest usable base is
-v6.2.0.
+v6.2.0. Leaving its `diff_old` input empty compares against the most recent
+full release, skipping pre-releases and anything before v6.2.0. Fill it in only
+to compare against something else, and set `diff_old_path` as well if that is a
+release older than v6.2.0.
 
 | tag | released | `src/mixs/schema/mixs.yaml` | usable in the release workflow |
 | --- | --- | --- | --- |
@@ -152,6 +155,7 @@ v6.2.0.
 | `v6.2.3` | 2026-01-21 | present | yes |
 | `v6.3.0` | 2026-02-06 | present | yes |
 | `v6.3.1` | 2026-07-14 | present | yes |
+| `v7.0.0` | 2026-07-29 | present | yes |
 
 Note the tag naming changes at v6.2.0: earlier releases are `mixs6.x` and `MIxS5`,
 not `v6.x`. There is no `v6.2.1`; the sequence skips from v6.2.0 to v6.2.2.

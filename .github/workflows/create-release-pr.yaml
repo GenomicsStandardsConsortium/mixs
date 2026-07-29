@@ -25,12 +25,16 @@ on:
         required: true
         type: string
       diff_old:
+        # Left empty on purpose. A hardcoded default has to be bumped after every
+        # release and was stale within a day of the last one, so it is resolved
+        # below instead. See #1326.
+        #
         # For a base earlier than v6.2.0, diff_old_path must be changed from its
         # default as well: that path does not exist in those releases, and
         # leaving it unchanged fails at the diff step rather than here.
-        description: 'Old version for diff comparison (tag or branch)'
-        required: true
-        default: 'v6.3.1'
+        description: 'Old version: a tag, or a branch whose name has no "/". Leave empty for the most recent full release.'
+        required: false
+        default: ''
         type: string
       diff_old_path:
         # Releases before v6.2.0 keep the schema under model/schema/, reached
@@ -41,7 +45,7 @@ on:
         default: 'src/mixs/schema/mixs.yaml'
         type: string
       diff_new:
-        description: 'New version for diff comparison (tag or branch)'
+        description: 'New version: a tag, or a branch whose name has no "/"'
         required: true
         default: 'main'
         type: string
@@ -152,13 +156,48 @@ jobs:
         if: ${{ inputs.skip_tests }}
         run: make install clean all
 
+      - name: Resolve the diff baseline
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          DIFF_OLD_INPUT: ${{ inputs.diff_old }}
+        run: |
+          set -euo pipefail
+          # This value reaches $GITHUB_ENV, so it is checked here rather than at
+          # the diff step: anything written there takes effect before that step
+          # runs, and a newline in it could set a second variable that the guard
+          # there would then see as clean.
+          if [ -n "$DIFF_OLD_INPUT" ]; then
+            if ! [[ "$DIFF_OLD_INPUT" =~ ^[A-Za-z0-9._-]+$ ]]; then
+              echo "::error::diff_old '$DIFF_OLD_INPUT' must contain only letters, digits, '.', '_', or '-'."
+              exit 1
+            fi
+            printf 'DIFF_OLD=%s\n' "$DIFF_OLD_INPUT" >> "$GITHUB_ENV"
+            echo "Using the baseline given: $DIFF_OLD_INPUT"
+            exit 0
+          fi
+
+          # The most recent full release, excluding pre-releases and anything
+          # before v6.2.0. Earlier tags keep the schema at model/schema/mixs.yaml,
+          # so they need diff_old_path changed as well and cannot be a default.
+          baseline=$(gh release list --limit 100 --exclude-pre-releases \
+                       --json tagName --jq '.[].tagName' \
+                     | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' \
+                     | sort -V | tail -1 || true)
+
+          if [ -z "$baseline" ]; then
+            echo "::error::Could not resolve a baseline release. Pass diff_old explicitly."
+            exit 1
+          fi
+          printf 'DIFF_OLD=%s\n' "$baseline" >> "$GITHUB_ENV"
+          echo "Resolved the baseline to the most recent full release: $baseline"
+
       - name: Generate schema diff report
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Pass the workflow inputs through the environment rather than
           # templating them into the script, so their values cannot be
           # interpreted as shell syntax or path segments.
-          DIFF_OLD: ${{ inputs.diff_old }}
           DIFF_NEW: ${{ inputs.diff_new }}
           DIFF_OLD_PATH: ${{ inputs.diff_old_path }}
           DIFF_NEW_PATH: ${{ inputs.diff_new_path }}
@@ -198,7 +237,6 @@ jobs:
       - name: Commit changes
         env:
           VERSION: ${{ inputs.version }}
-          DIFF_OLD: ${{ inputs.diff_old }}
           DIFF_NEW: ${{ inputs.diff_new }}
         run: |
           git add -A
@@ -219,7 +257,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ inputs.version }}
-          DIFF_OLD: ${{ inputs.diff_old }}
           DIFF_NEW: ${{ inputs.diff_new }}
           REPOSITORY: ${{ github.repository }}
         run: |
