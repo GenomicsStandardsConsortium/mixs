@@ -965,9 +965,13 @@ reviewed, add a readable summary to the release branch and put it on the docs
 site:</p>
 <ol>
 <li>Check out the <code>release/vX.Y.Z</code> branch.</li>
-<li>The release action already wrote the diff into a per-release folder,
-   <code>assets/diff_results/&lt;old&gt;_to_&lt;new&gt;/</code>, for example <code>v6.2.0_to_v6.3.0/</code>. Work
-   in that folder; the docs build publishes summaries only from these folders.</li>
+<li>The release action already wrote the diff into a folder under
+   <code>assets/diff_results/</code>, named from the two refs you gave it rather than from
+   the release. Dispatching with <code>diff_old</code> <code>mixs6.0.0</code> and <code>diff_new</code> <code>main</code>
+   produces <code>mixs6.0.0_to_main/</code>. Rename it to the versions it compares, such as
+   <code>v6.0.0_to_v7.0.0/</code>, so the published page is named for releases rather than
+   for a branch that keeps moving. Work in that folder; the docs build publishes
+   summaries only from folders under <code>assets/diff_results/</code>.</li>
 <li>Write <code>agent_summary.md</code> next to the structured diff. The repository carries
    a Claude Code skill for this, invoked as
    <code>/mixs-diff-summary assets/diff_results/&lt;old&gt;_to_&lt;new&gt;/schema_comparison_results.yaml</code>,
@@ -975,19 +979,16 @@ site:</p>
    a requirement: it lives in <code>.claude/skills/mixs-diff-summary/SKILL.md</code>, and
    anyone not using Claude Code can read that file and write the summary the
    same way by hand, or with another assistant.</li>
-<li>Commit <code>agent_summary.md</code>. Comparisons made before mid-2026 also carry a
-   <code>tool_summary.md</code> of raw counts, but the reusable <code>diff-releases</code> tool does
-   not write one, so a new comparison will not have it. Do not write one by
-   hand: it would look like tool output that cannot be regenerated. See
-   <a href="https://github.com/GenomicsStandardsConsortium/mixs/issues/1318">issue 1318</a>.</li>
-<li>Add the page to the site nav. In <code>mkdocs.yml</code>, under the <code>Version changes</code>
-   group, add one line for this release:
+<li>Commit both <code>agent_summary.md</code>, the readable summary you just wrote, and
+   <code>tool_summary.md</code>, the counts the tool wrote alongside the structured diff.
+   Do not write <code>tool_summary.md</code> by hand; if it is missing, rerun the tool.</li>
+<li>Add both pages to the site nav. In <code>mkdocs.yml</code>, under the <code>Version changes</code>
+   group, add two lines for this release:
    ```yaml<ul>
-<li><old> to <new>: version-changes/<old><em>to</em><new>.md
+<li><old> to <new>: version-changes/<old><em>to</em><new>.md</li>
+<li><old> to <new> (counts): version-changes/<old><em>to</em><new>-counts.md
    <code>``
-   Older releases have a second</code>(counts)<code>line pointing at a</code>-counts.md<code>page,
-   generated from</code>tool_summary.md<code>. Add one only if the comparison actually has
-   that file. The</code>gendoc<code>build step copies the summaries out of</code>assets/diff_results/<old><em>to</em><new>/<code>into</code>docs/version-changes/`, so no
+   The</code>gendoc<code>build step copies the summaries out of</code>assets/diff_results/<old><em>to</em><new>/<code>into</code>docs/version-changes/`, so no
    other change is needed.</li>
 </ul>
 </li>
