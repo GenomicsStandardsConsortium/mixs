@@ -9,9 +9,6 @@ what the rules are, this one says how to carry them out. Where the two disagree,
 
 A term is a LinkML slot.
 
-Reviewers check that a new or updated term carries a `description` before
-merging one.
-
 ## Requesting and creating a new term
 
 TBD.
@@ -74,8 +71,6 @@ combination for each partner it applies to. The grid is nearly but not quite
 complete: 23 of the 24 extensions pair with all 13 checklists, while `Ancient`
 pairs with 8. The `generate-combinations` script builds the `combinations.md`
 documentation page from them; it does not create the classes.
-
-Reviewers check that a new class carries a `description` before merging one.
 
 ## Requesting and creating a new checklist or extension
 
