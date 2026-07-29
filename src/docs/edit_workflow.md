@@ -254,12 +254,16 @@ committed files on `main` are not guaranteed to match
 This matters because consumers read those files rather than building the schema
 themselves, so a stale file is what they get.
 
-If you merge a schema change and the published files need to match it, one of
-these has to happen:
+Cutting a release is what brings them back into agreement, because the release
+action rebuilds everything from the schema and commits the result.
 
-- cut a release, which rebuilds everything from the schema, or
-- build locally with `make install clean all` and commit the result in a pull
-  request, which also lets a reviewer see the generated diff.
+Do not commit generated files built on your own machine. Building locally to
+check something is fine, and `make install clean all` is how, but the output is
+not identical to what the release action produces: a local build of an unchanged
+schema still differs from the committed copy in the JSON-LD context and in
+generation timestamps. Committing that replaces files built by the release with
+files built somewhere else, in a diff of several hundred files that no reviewer
+can meaningfully read.
 
 Do not assume the committed files match `main`. Check the file you care about.
 
