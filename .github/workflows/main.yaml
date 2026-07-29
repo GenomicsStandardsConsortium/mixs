@@ -14,11 +14,16 @@ permissions:
 
 jobs:
   test:
-    # Skip release pull requests. "Create Release PR" builds the release branch
-    # with `make install clean all test` before opening the pull request, so it
-    # only exists if that build passed. Re-running the slowest job in the repo on
-    # identical content proves nothing. See #1332.
-    if: "!startsWith(github.head_ref, 'release/')"
+    # Skip release pull requests, which "Create Release PR" has already built and
+    # tested with `make install clean all test`. Re-running the slowest job in the
+    # repository on identical content proves nothing. See #1332.
+    #
+    # Unless that workflow was dispatched with skip_tests, in which case it built
+    # without testing and labels the pull request `tests-skipped`. Skipping here
+    # too would publish a release nothing had tested.
+    if: >-
+      !startsWith(github.head_ref, 'release/')
+      || contains(github.event.pull_request.labels.*.name, 'tests-skipped')
 
     runs-on: ubuntu-latest
     strategy:

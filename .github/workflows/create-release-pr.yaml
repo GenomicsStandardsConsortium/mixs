@@ -62,6 +62,10 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      # Labels are managed through the Issues API, so adding one to a pull
+      # request needs this as well as pull-requests: write. Same reason as
+      # lint-yaml.yaml.
+      issues: write
 
     steps:
       - name: Validate version format
@@ -222,6 +226,7 @@ jobs:
           DIFF_OLD: ${{ inputs.diff_old }}
           DIFF_NEW: ${{ inputs.diff_new }}
           REPOSITORY: ${{ github.repository }}
+          SKIP_TESTS: ${{ inputs.skip_tests }}
         run: |
           # The body is written with placeholders inside a quoted heredoc, then
           # filled in by python. A quoted heredoc does not expand $VAR, and an
@@ -283,3 +288,13 @@ jobs:
             --body-file /tmp/release-pr-body.md \
             --base main \
             --head "release/v${VERSION}"
+
+          # "Build and test mixs" skips release pull requests because this
+          # workflow has already built and tested the branch. With skip_tests it
+          # has not, so label the pull request and let that job run instead.
+          if [ "${SKIP_TESTS}" = "true" ]; then
+            gh label create tests-skipped \
+              --description "Release pull request created without running tests" \
+              --color D93F0B 2>/dev/null || true
+            gh pr edit "release/v${VERSION}" --add-label tests-skipped
+          fi
