@@ -5,6 +5,12 @@
 # Categories are matched in order, and an entry appears in the first category
 # whose labels it matches. The catch-all at the end means nothing is dropped
 # silently.
+#
+# Dependency updates must stay above Build, tooling and CI. Dependabot labels its
+# pull requests with both `dependencies` and an ecosystem label, `github_actions`
+# or `python`, so with the other order every version bump matched Build first.
+# That is what happened in v7.0.0: eight bumps under Build, and the category
+# meant for them empty.
 changelog:
   categories:
     - title: Schema changes
@@ -16,15 +22,15 @@ changelog:
       labels:
         - documentation-external
         - documentation-internal
+    - title: Dependency updates
+      labels:
+        - dependencies
     - title: Build, tooling and CI
       labels:
         - 5-TechnicalUpdates
         - github_actions
         - python
         - python package inc. PyPI
-    - title: Dependency updates
-      labels:
-        - dependencies
     - title: Other changes
       labels:
         - "*"
