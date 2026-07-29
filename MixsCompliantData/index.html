@@ -2853,6 +2853,60 @@
 <td>* <br/> <a href="../0010012_0016014/">MiuvigWater</a></td>
 <td>Data that comply with Miuvig combined with Water</td>
 </tr>
+<tr>
+<td><a href="https://w3id.org/mixs/ancient_data">MIXS:ancient_data</a></td>
+<td><a href="../ancient_data/">ancient_data</a></td>
+<td>* <br/> <a href="../0016024/">Ancient</a></td>
+<td>Data that comply with Extension Ancient</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/mims_hostassociated_ancient_data">MIXS:mims_hostassociated_ancient_data</a></td>
+<td><a href="../mims_hostassociated_ancient_data/">mims_hostassociated_ancient_data</a></td>
+<td>* <br/> <a href="../0010007_0016002_0016024/">MimsHostAssociatedAncient</a></td>
+<td>Data that comply with Ancient combined with MimsHostAssociated</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/mims_humanassociated_ancient_data">MIXS:mims_humanassociated_ancient_data</a></td>
+<td><a href="../mims_humanassociated_ancient_data/">mims_humanassociated_ancient_data</a></td>
+<td>* <br/> <a href="../0010007_0016003_0016024/">MimsHumanAssociatedAncient</a></td>
+<td>Data that comply with Ancient combined with MimsHumanAssociated</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/mims_humangut_ancient_data">MIXS:mims_humangut_ancient_data</a></td>
+<td><a href="../mims_humangut_ancient_data/">mims_humangut_ancient_data</a></td>
+<td>* <br/> <a href="../0010007_0016004_0016024/">MimsHumanGutAncient</a></td>
+<td>Data that comply with Ancient combined with MimsHumanGut</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/mims_humanoral_ancient_data">MIXS:mims_humanoral_ancient_data</a></td>
+<td><a href="../mims_humanoral_ancient_data/">mims_humanoral_ancient_data</a></td>
+<td>* <br/> <a href="../0010007_0016005_0016024/">MimsHumanOralAncient</a></td>
+<td>Data that comply with Ancient combined with MimsHumanOral</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/mims_humanskin_ancient_data">MIXS:mims_humanskin_ancient_data</a></td>
+<td><a href="../mims_humanskin_ancient_data/">mims_humanskin_ancient_data</a></td>
+<td>* <br/> <a href="../0010007_0016006_0016024/">MimsHumanSkinAncient</a></td>
+<td>Data that comply with Ancient combined with MimsHumanSkin</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/mims_plantassociated_ancient_data">MIXS:mims_plantassociated_ancient_data</a></td>
+<td><a href="../mims_plantassociated_ancient_data/">mims_plantassociated_ancient_data</a></td>
+<td>* <br/> <a href="../0010007_0016010_0016024/">MimsPlantAssociatedAncient</a></td>
+<td>Data that comply with Ancient combined with MimsPlantAssociated</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/mims_sediment_ancient_data">MIXS:mims_sediment_ancient_data</a></td>
+<td><a href="../mims_sediment_ancient_data/">mims_sediment_ancient_data</a></td>
+<td>* <br/> <a href="../0010007_0016011_0016024/">MimsSedimentAncient</a></td>
+<td>Data that comply with Ancient combined with MimsSediment</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/mims_soil_ancient_data">MIXS:mims_soil_ancient_data</a></td>
+<td><a href="../mims_soil_ancient_data/">mims_soil_ancient_data</a></td>
+<td>* <br/> <a href="../0010007_0016012_0016024/">MimsSoilAncient</a></td>
+<td>Data that comply with Ancient combined with MimsSoil</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -3202,6 +3256,15 @@ slots:
 - miuvig_symbiont_associated_data
 - miuvig_wastewater_sludge_data
 - miuvig_water_data
+- ancient_data
+- mims_hostassociated_ancient_data
+- mims_humanassociated_ancient_data
+- mims_humangut_ancient_data
+- mims_humanoral_ancient_data
+- mims_humanskin_ancient_data
+- mims_plantassociated_ancient_data
+- mims_sediment_ancient_data
+- mims_soil_ancient_data
 tree_root: true
 
 </code></pre>
@@ -7912,6 +7975,132 @@ attributes:
     domain_of:
     - MixsCompliantData
     range: MiuvigWater
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  ancient_data:
+    name: ancient_data
+    description: Data that comply with Extension Ancient
+    title: ancient data
+    from_schema: https://w3id.org/mixs
+    domain: MixsCompliantData
+    slot_uri: MIXS:ancient_data
+    owner: MixsCompliantData
+    domain_of:
+    - MixsCompliantData
+    range: Ancient
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  mims_hostassociated_ancient_data:
+    name: mims_hostassociated_ancient_data
+    description: Data that comply with Ancient combined with MimsHostAssociated
+    title: MimsHostAssociatedAncient Data
+    from_schema: https://w3id.org/mixs
+    domain: MixsCompliantData
+    slot_uri: MIXS:mims_hostassociated_ancient_data
+    owner: MixsCompliantData
+    domain_of:
+    - MixsCompliantData
+    range: MimsHostAssociatedAncient
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  mims_humanassociated_ancient_data:
+    name: mims_humanassociated_ancient_data
+    description: Data that comply with Ancient combined with MimsHumanAssociated
+    title: MimsHumanAssociatedAncient Data
+    from_schema: https://w3id.org/mixs
+    domain: MixsCompliantData
+    slot_uri: MIXS:mims_humanassociated_ancient_data
+    owner: MixsCompliantData
+    domain_of:
+    - MixsCompliantData
+    range: MimsHumanAssociatedAncient
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  mims_humangut_ancient_data:
+    name: mims_humangut_ancient_data
+    description: Data that comply with Ancient combined with MimsHumanGut
+    title: MimsHumanGutAncient Data
+    from_schema: https://w3id.org/mixs
+    domain: MixsCompliantData
+    slot_uri: MIXS:mims_humangut_ancient_data
+    owner: MixsCompliantData
+    domain_of:
+    - MixsCompliantData
+    range: MimsHumanGutAncient
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  mims_humanoral_ancient_data:
+    name: mims_humanoral_ancient_data
+    description: Data that comply with Ancient combined with MimsHumanOral
+    title: MimsHumanOralAncient Data
+    from_schema: https://w3id.org/mixs
+    domain: MixsCompliantData
+    slot_uri: MIXS:mims_humanoral_ancient_data
+    owner: MixsCompliantData
+    domain_of:
+    - MixsCompliantData
+    range: MimsHumanOralAncient
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  mims_humanskin_ancient_data:
+    name: mims_humanskin_ancient_data
+    description: Data that comply with Ancient combined with MimsHumanSkin
+    title: MimsHumanSkinAncient Data
+    from_schema: https://w3id.org/mixs
+    domain: MixsCompliantData
+    slot_uri: MIXS:mims_humanskin_ancient_data
+    owner: MixsCompliantData
+    domain_of:
+    - MixsCompliantData
+    range: MimsHumanSkinAncient
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  mims_plantassociated_ancient_data:
+    name: mims_plantassociated_ancient_data
+    description: Data that comply with Ancient combined with MimsPlantAssociated
+    title: MimsPlantAssociatedAncient Data
+    from_schema: https://w3id.org/mixs
+    domain: MixsCompliantData
+    slot_uri: MIXS:mims_plantassociated_ancient_data
+    owner: MixsCompliantData
+    domain_of:
+    - MixsCompliantData
+    range: MimsPlantAssociatedAncient
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  mims_sediment_ancient_data:
+    name: mims_sediment_ancient_data
+    description: Data that comply with Ancient combined with MimsSediment
+    title: MimsSedimentAncient Data
+    from_schema: https://w3id.org/mixs
+    domain: MixsCompliantData
+    slot_uri: MIXS:mims_sediment_ancient_data
+    owner: MixsCompliantData
+    domain_of:
+    - MixsCompliantData
+    range: MimsSedimentAncient
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  mims_soil_ancient_data:
+    name: mims_soil_ancient_data
+    description: Data that comply with Ancient combined with MimsSoil
+    title: MimsSoilAncient Data
+    from_schema: https://w3id.org/mixs
+    domain: MixsCompliantData
+    slot_uri: MIXS:mims_soil_ancient_data
+    owner: MixsCompliantData
+    domain_of:
+    - MixsCompliantData
+    range: MimsSoilAncient
     multivalued: true
     inlined: true
     inlined_as_list: true

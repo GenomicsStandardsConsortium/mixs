@@ -885,7 +885,28 @@ which is why its own combinations carry three-part identifiers. The
 <code>generate-combinations</code> script builds the <code>combinations.md</code> documentation page
 from them; it does not create the classes.</p>
 <h2 id="requesting-and-creating-a-new-checklist-or-extension">Requesting and creating a new checklist or extension</h2>
-<p>TBD.</p>
+<p>TBD, except for one step that is easy to miss.</p>
+<h3 id="give-it-a-way-into-a-mixs-document">Give it a way into a MIxS document</h3>
+<p>A checklist, extension or combination is not usable until something can hold its
+records. <code>MixsCompliantData</code> is the root of a MIxS file, and each class reaches a
+document through one container slot listed on it. Adding a class means adding
+that slot too, in two places:</p>
+<ol>
+<li>Define the slot in the <code>slots</code> section, named after the class with a <code>_data</code>
+   suffix. Copy an existing one, such as <code>soil_data</code>, which sets <code>domain:
+   MixsCompliantData</code>, <code>range</code> to the class, <code>multivalued: true</code>, a
+   <code>slot_uri</code> of <code>MIXS:&lt;slot name&gt;</code>, a description and a title.</li>
+<li><strong>Add the slot name to the <code>slots:</code> list on the <code>MixsCompliantData</code> class.</strong>
+   This is the step that attaches it. Setting <code>domain: MixsCompliantData</code> on the
+   slot does not.</li>
+</ol>
+<p>Miss the second step and nothing complains: the schema builds, the class is
+generated, and it simply cannot appear in a file. That is what happened to the
+nine ancient-DNA classes in v7.0.0, found only after release
+(<a href="https://github.com/GenomicsStandardsConsortium/mixs/issues/1365">issue 1365</a>).</p>
+<p><code>tests/test_schema_constraints.py</code> now checks both directions, that every slot
+declaring the container domain is attached, and that every class is reachable
+from a document, so the same omission fails the build rather than shipping.</p>
 <h2 id="updating-an-existing-checklist-or-extension">Updating an existing checklist or extension</h2>
 <p>TBD.</p>
 <h1 id="releases">Releases</h1>
