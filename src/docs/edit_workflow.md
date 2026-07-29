@@ -7,7 +7,7 @@ what the rules are, this one says how to carry them out. Where the two disagree,
 
 # Terms
 
-A term is a LinkML slot. MIxS 7.0.0 has 834 of them.
+A term is a LinkML slot.
 
 Reviewers check that a new or updated term carries a `description` before
 merging one.
