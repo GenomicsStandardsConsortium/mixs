@@ -213,18 +213,62 @@ site:
 This is done on the branch by a maintainer, not in CI. It needs no API keys, and
 it is reviewed like any other change before merge.
 
-## Keeping generated artifacts current
+## Generated files, and when they are refreshed
 
-The committed artifacts under `project/`, `src/mixs/datamodel/` and `contrib/`
-are generated from the schema, and the "Regenerate and verify generated
-artifacts" workflow keeps them in sync. On a pull request it regenerates and
-fails if the committed artifacts are stale. On a push to `main` that changes the
-schema or its build inputs, it regenerates everything and commits the result.
+The files under `project/`, `src/mixs/datamodel/` and `contrib/` are generated
+from `src/mixs/schema/mixs.yaml` by `make`, and they are committed because
+downstream consumers fetch them directly. EBI OLS reads
+`project/owl/mixs.owl.ttl` from raw `main`.
 
-The check uses `project/jsonschema/mixs.schema.json` as its signal, because that
-file regenerates deterministically. The OWL (`project/owl/mixs.owl.ttl`) is not
-byte-reproducible: RDF/Turtle serialization reorders triples and relabels blank
-nodes on every run, so it is regenerated and committed but not compared by diff.
+Four things can update them, and it is worth knowing which is which:
+
+- **A pull request that edits only the schema** does neither. The "Regenerate
+  and verify generated artifacts" workflow does not run on it, so the generated
+  files in such a pull request are whatever its author put there, which is
+  usually nothing. This is deliberate: it keeps a local build and a diff of
+  several hundred generated files off contributors.
+- **A pull request that edits a build input** (`Makefile`, `src/sparql/**`,
+  `project-generator-config.yaml`) runs the workflow, which runs `make
+  gen-project` and fails if `project/jsonschema/` no longer matches what is
+  committed. That is the whole check: it does not regenerate or compare the OWL,
+  `contrib/`, or the Python datamodel, so a build-input change that affects only
+  those passes.
+- **A push to `main`** runs nothing. The workflow's push trigger is disabled
+  while [issue 1303](https://github.com/GenomicsStandardsConsortium/mixs/issues/1303)
+  is open, so merging a schema change refreshes no generated files.
+- **The "Create Release PR" action** runs `make install clean all` on the branch
+  it creates and commits everything that produces, so a release cut this way
+  carries generated files built from the schema it ships. This is the action
+  doing it, not the branch: a release branch assembled by hand gets no rebuild,
+  and would carry whatever `main` had at the time.
+
+### What this means if you merge a schema change
+
+Merging a pull request that changes only the schema leaves the committed
+generated files describing the state before your change. Nothing refreshes them
+on merge, and nothing warns you either way. The
+committed files on `main` are not guaranteed to match
+`src/mixs/schema/mixs.yaml` at any given moment.
+
+This matters because consumers read those files rather than building the schema
+themselves, so a stale file is what they get.
+
+Cutting a release is what brings them back into agreement, because the release
+action rebuilds everything from the schema and commits the result.
+
+Do not commit generated files built on your own machine. Building locally to
+check something is fine, and `make install clean all` is how, but the output is
+not identical to what the release action produces: a local build of an unchanged
+schema still differs from the committed copy in the JSON-LD context and in
+generation timestamps. Committing that replaces files built by the release with
+files built somewhere else, in a diff of several hundred files that no reviewer
+can meaningfully read.
+
+Do not assume the committed files match `main`. Check the file you care about.
+
+Whether this should stay as it is, and what to do instead, is open in
+[issue 1303](https://github.com/GenomicsStandardsConsortium/mixs/issues/1303).
+Nothing here describes a settled decision.
 
 Do not hand-edit generated artifacts.
 
