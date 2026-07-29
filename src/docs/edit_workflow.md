@@ -83,10 +83,12 @@ another combination, which is how a sample gets two extensions:
 MIxS 7.0.0 has 13 checklists, 24 extensions and 307 combinations. The
 combination classes are written out in `src/mixs/schema/mixs.yaml` like
 everything else, so adding one checklist or one extension means adding a
-combination for each partner it applies to. The grid is nearly but not quite
-complete: 23 of the 24 extensions pair with all 13 checklists, while `Ancient`
-pairs with 8. The `generate-combinations` script builds the `combinations.md`
-documentation page from them; it does not create the classes.
+combination for each partner it applies to. 23 of the 24 extensions pair with
+all 13 checklists. `Ancient` is the exception and pairs with no checklist at
+all: it applies to 8 combinations that are already `Mims` plus an environment,
+which is why its own combinations carry three-part identifiers. The
+`generate-combinations` script builds the `combinations.md` documentation page
+from them; it does not create the classes.
 
 ## Requesting and creating a new checklist or extension
 
