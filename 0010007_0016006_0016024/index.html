@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/10007_16004_9999903/">
+        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/0010007_0016006_0016024/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Combination: MimsHumanGut combined with Ancient (MimsHumanGutAncient) - mixs</title>
+        <title>Combination: MimsHumanSkin combined with Ancient (MimsHumanSkinAncient) - mixs</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#combination-mimshumangut-combined-with-ancient-mimshumangutancient" class="md-skip">
+        <a href="#combination-mimshumanskin-combined-with-ancient-mimshumanskinancient" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Combination: MimsHumanGut combined with Ancient (MimsHumanGutAncient)
+              Combination: MimsHumanSkin combined with Ancient (MimsHumanSkinAncient)
             
           </span>
         </div>
@@ -813,10 +813,10 @@
   
 
 
-<h1 id="combination-mimshumangut-combined-with-ancient-mimshumangutancient">Combination: MimsHumanGut combined with Ancient (MimsHumanGutAncient)</h1>
-<p><em>MIxS Data that comply with the Mims checklist, and HumanGut and Ancient extensions.</em></p>
+<h1 id="combination-mimshumanskin-combined-with-ancient-mimshumanskinancient">Combination: MimsHumanSkin combined with Ancient (MimsHumanSkinAncient)</h1>
+<p><em>MIxS Data that comply with the Mims checklist, and HumanSkin and Ancient extensions.</em></p>
 <h2 id="composition">Composition</h2>
-<p><a href="../0010007_0016004/">MimsHumanGut</a> [Checklist] + <a href="../0016024/">Ancient</a> [Extension]</p>
+<p><a href="../0010007_0016006/">MimsHumanSkin</a> [Checklist] + <a href="../0016024/">Ancient</a> [Extension]</p>
 <h2 id="terms">Terms</h2>
 <table>
 <thead>
@@ -1117,6 +1117,12 @@
 <td>Phenotype of human or other host</td>
 </tr>
 <tr>
+<td><a href="https://w3id.org/mixs/0000944">MIXS:0000944</a></td>
+<td><a href="../0000944/">dominant_hand</a></td>
+<td>0..1 <br/> <a href="../DominantHandEnum/">DominantHandEnum</a></td>
+<td>Dominant hand of the subject</td>
+</tr>
+<tr>
 <td><a href="https://w3id.org/mixs/0000333">MIXS:0000333</a></td>
 <td><a href="../0000333/">host_pulse</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
@@ -1145,12 +1151,6 @@
 <td><a href="../0000870/">host_last_meal</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>Content of last meal and time since feeding; can include multiple values</td>
-</tr>
-<tr>
-<td><a href="https://w3id.org/mixs/0000905">MIXS:0000905</a></td>
-<td><a href="../0000905/">special_diet</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Specification of special diet; can include multiple special diets</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/0000867">MIXS:0000867</a></td>
@@ -1201,16 +1201,16 @@
 <td>Describe briefly any relevant palaeopathological or health-related observatio...</td>
 </tr>
 <tr>
-<td><a href="https://w3id.org/mixs/0000282">MIXS:0000282</a></td>
-<td><a href="../0000282/">liver_disord</a></td>
+<td><a href="https://w3id.org/mixs/0000284">MIXS:0000284</a></td>
+<td><a href="../0000284/">dermatology_disord</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
-<td>History of liver disorders; can include multiple disorders</td>
+<td>History of dermatology disorders; can include multiple disorders</td>
 </tr>
 <tr>
-<td><a href="https://w3id.org/mixs/0000280">MIXS:0000280</a></td>
-<td><a href="../0000280/">gastrointest_disord</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>History of gastrointestinal tract disorders; can include multiple disorders</td>
+<td><a href="https://w3id.org/mixs/0000943">MIXS:0000943</a></td>
+<td><a href="../0000943/">time_since_last_wash</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Specification of the time since last wash</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/0000897">MIXS:0000897</a></td>
@@ -1580,16 +1580,16 @@
 <h3 id="direct">Direct</h3>
 <details>
 
-<pre><code class="language-yaml">name: MimsHumanGutAncient
-description: MIxS Data that comply with the Mims checklist, and HumanGut and Ancient
+<pre><code class="language-yaml">name: MimsHumanSkinAncient
+description: MIxS Data that comply with the Mims checklist, and HumanSkin and Ancient
   extensions.
-title: MimsHumanGut combined with Ancient
+title: MimsHumanSkin combined with Ancient
 in_subset:
 - combination_classes
 from_schema: https://w3id.org/mixs
 is_a: Ancient
 mixins:
-- MimsHumanGut
+- MimsHumanSkin
 slots:
 - project_name
 - associated_resource
@@ -1639,12 +1639,12 @@ slots:
 - host_sex
 - host_height
 - host_phenotype
+- dominant_hand
 - host_pulse
 - host_tot_mass
 - host_body_temp
 - host_diet
 - host_last_meal
-- special_diet
 - host_body_site
 - host_body_product
 - host_fam_rel
@@ -1653,8 +1653,8 @@ slots:
 - host_symbiont
 - host_disease_stat
 - palaeopath_status
-- liver_disord
-- gastrointest_disord
+- dermatology_disord
+- time_since_last_wash
 - medic_hist_perform
 - ihmc_medication_code
 - chem_administration
@@ -1908,28 +1908,28 @@ slot_usage:
     name: host_phenotype
     rank: 48
     slot_group: Environment
+  dominant_hand:
+    name: dominant_hand
+    rank: 49
+    slot_group: Environment
   host_pulse:
     name: host_pulse
-    rank: 49
+    rank: 50
     slot_group: Environment
   host_tot_mass:
     name: host_tot_mass
-    rank: 50
+    rank: 51
     slot_group: Environment
   host_body_temp:
     name: host_body_temp
-    rank: 51
+    rank: 52
     slot_group: Environment
   host_diet:
     name: host_diet
-    rank: 52
+    rank: 53
     slot_group: Environment
   host_last_meal:
     name: host_last_meal
-    rank: 53
-    slot_group: Environment
-  special_diet:
-    name: special_diet
     rank: 54
     slot_group: Environment
   host_body_site:
@@ -1964,12 +1964,12 @@ slot_usage:
     name: palaeopath_status
     rank: 62
     slot_group: Environment
-  liver_disord:
-    name: liver_disord
+  dermatology_disord:
+    name: dermatology_disord
     rank: 63
     slot_group: Environment
-  gastrointest_disord:
-    name: gastrointest_disord
+  time_since_last_wash:
+    name: time_since_last_wash
     rank: 64
     slot_group: Environment
   medic_hist_perform:
@@ -2212,7 +2212,7 @@ slot_usage:
     name: sop
     rank: 124
     slot_group: Data analysis
-class_uri: MIXS:10007_16004_9999903
+class_uri: MIXS:0010007_0016006_0016024
 
 </code></pre>
 
@@ -2221,16 +2221,16 @@ class_uri: MIXS:10007_16004_9999903
 <h3 id="induced">Induced</h3>
 <details>
 
-<pre><code class="language-yaml">name: MimsHumanGutAncient
-description: MIxS Data that comply with the Mims checklist, and HumanGut and Ancient
+<pre><code class="language-yaml">name: MimsHumanSkinAncient
+description: MIxS Data that comply with the Mims checklist, and HumanSkin and Ancient
   extensions.
-title: MimsHumanGut combined with Ancient
+title: MimsHumanSkin combined with Ancient
 in_subset:
 - combination_classes
 from_schema: https://w3id.org/mixs
 is_a: Ancient
 mixins:
-- MimsHumanGut
+- MimsHumanSkin
 slot_usage:
   project_name:
     name: project_name
@@ -2424,28 +2424,28 @@ slot_usage:
     name: host_phenotype
     rank: 48
     slot_group: Environment
+  dominant_hand:
+    name: dominant_hand
+    rank: 49
+    slot_group: Environment
   host_pulse:
     name: host_pulse
-    rank: 49
+    rank: 50
     slot_group: Environment
   host_tot_mass:
     name: host_tot_mass
-    rank: 50
+    rank: 51
     slot_group: Environment
   host_body_temp:
     name: host_body_temp
-    rank: 51
+    rank: 52
     slot_group: Environment
   host_diet:
     name: host_diet
-    rank: 52
+    rank: 53
     slot_group: Environment
   host_last_meal:
     name: host_last_meal
-    rank: 53
-    slot_group: Environment
-  special_diet:
-    name: special_diet
     rank: 54
     slot_group: Environment
   host_body_site:
@@ -2480,12 +2480,12 @@ slot_usage:
     name: palaeopath_status
     rank: 62
     slot_group: Environment
-  liver_disord:
-    name: liver_disord
+  dermatology_disord:
+    name: dermatology_disord
     rank: 63
     slot_group: Environment
-  gastrointest_disord:
-    name: gastrointest_disord
+  time_since_last_wash:
+    name: time_since_last_wash
     rank: 64
     slot_group: Environment
   medic_hist_perform:
@@ -2742,7 +2742,7 @@ attributes:
     keywords:
     - project
     slot_uri: MIXS:0000092
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -2808,7 +2808,7 @@ attributes:
     keywords:
     - resource
     slot_uri: MIXS:0000091
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -2868,7 +2868,7 @@ attributes:
     - environment
     - sample
     slot_uri: MIXS:0001356
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -2908,7 +2908,7 @@ attributes:
     - location
     - site
     slot_uri: MIXS:0001357
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -2947,7 +2947,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 5
     slot_uri: MIXS:0001358
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -2988,7 +2988,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 6
     slot_uri: MIXS:0001359
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3032,7 +3032,7 @@ attributes:
     - environmental
     - ancient
     slot_uri: MIXS:0001360
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3084,7 +3084,7 @@ attributes:
     - ancient
     string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0001361
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3120,7 +3120,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 9
     slot_uri: MIXS:0001363
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3165,7 +3165,7 @@ attributes:
     - identifiers
     - excavation
     slot_uri: MIXS:0001362
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3198,7 +3198,7 @@ attributes:
     - geographic
     - location
     slot_uri: MIXS:0000010
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3249,7 +3249,7 @@ attributes:
     - geographic
     - location
     slot_uri: MIXS:0000009
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3302,7 +3302,7 @@ attributes:
     - context
     - environmental
     slot_uri: MIXS:0000012
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3357,7 +3357,7 @@ attributes:
     - context
     - environmental
     slot_uri: MIXS:0000013
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3406,7 +3406,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 15
     slot_uri: MIXS:0000094
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3459,7 +3459,7 @@ attributes:
     keywords:
     - depth
     slot_uri: MIXS:0000018
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3520,7 +3520,7 @@ attributes:
     keywords:
     - elevation
     slot_uri: MIXS:0000093
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3578,7 +3578,7 @@ attributes:
     keywords:
     - temperature
     slot_uri: MIXS:0000113
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3649,7 +3649,7 @@ attributes:
     keywords:
     - salinity
     slot_uri: MIXS:0000183
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Air
     - FoodFarmEnvironment
@@ -3700,7 +3700,7 @@ attributes:
     - perturbation
     string_serialization: '{text};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000754
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - Air
@@ -3752,7 +3752,7 @@ attributes:
     - factor
     string_serialization: '{termLabel} [{termID}]|{text}'
     slot_uri: MIXS:0000008
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3814,7 +3814,7 @@ attributes:
     - material
     - source
     slot_uri: MIXS:0000026
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3866,7 +3866,7 @@ attributes:
     keywords:
     - sample
     slot_uri: MIXS:0001107
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3933,7 +3933,7 @@ attributes:
     rank: 24
     string_serialization: '{text}'
     slot_uri: MIXS:0001369
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3974,7 +3974,7 @@ attributes:
     - ethics
     - location
     slot_uri: MIXS:0001365
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4005,7 +4005,7 @@ attributes:
     keywords:
     - ethics
     slot_uri: MIXS:0001364
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4034,7 +4034,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 27
     slot_uri: MIXS:0001366
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4076,7 +4076,7 @@ attributes:
     - ethics
     string_serialization: '{text}'
     slot_uri: MIXS:0001367
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4114,7 +4114,7 @@ attributes:
     keywords:
     - ethics
     slot_uri: MIXS:0001368
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4153,7 +4153,7 @@ attributes:
     - chrono:earliestChronometricAge
     rank: 30
     slot_uri: MIXS:0001375
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4185,7 +4185,7 @@ attributes:
     - chrono:earliestChronometricAgeReferenceSystem
     rank: 31
     slot_uri: MIXS:0001376
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4224,7 +4224,7 @@ attributes:
     - chrono:latestChronometricAge
     rank: 32
     slot_uri: MIXS:0001377
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4256,7 +4256,7 @@ attributes:
     - chrono:latestChronometricAgeReferenceSystem
     rank: 33
     slot_uri: MIXS:0001378
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4289,7 +4289,7 @@ attributes:
     - chrono:chronometricAgeProtocol
     rank: 34
     slot_uri: MIXS:0001379
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4326,7 +4326,7 @@ attributes:
     - chrono:chronometricAgeRemarks
     rank: 35
     slot_uri: MIXS:0001380
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4365,7 +4365,7 @@ attributes:
     - ancient
     - age
     slot_uri: MIXS:0001374
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4404,7 +4404,7 @@ attributes:
     - age
     string_serialization: '{termLabel} [{termID}]|{text}'
     slot_uri: MIXS:0001373
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4438,7 +4438,7 @@ attributes:
     - sample
     - taxon
     slot_uri: MIXS:0001320
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -4484,7 +4484,7 @@ attributes:
     keywords:
     - date
     slot_uri: MIXS:0000011
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -4534,7 +4534,7 @@ attributes:
     - condition
     - storage
     slot_uri: MIXS:0000327
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - Ancient
@@ -4570,7 +4570,7 @@ attributes:
     - ancient
     string_serialization: '{text}'
     slot_uri: MIXS:0001372
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4599,7 +4599,7 @@ attributes:
     - host.
     - identifier
     slot_uri: MIXS:0000861
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -4630,7 +4630,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 43
     slot_uri: MIXS:0000895
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -4662,7 +4662,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000255
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - FoodFarmEnvironment
@@ -4702,7 +4702,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000317
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -4738,7 +4738,7 @@ attributes:
     string_serialization: '[female|hermaphrodite|non-binary|male|transgender|transgender
       (female to male)|transgender (male to female) |undeclared]'
     slot_uri: MIXS:0000811
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -4770,7 +4770,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000264
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - FoodFarmEnvironment
@@ -4812,7 +4812,7 @@ attributes:
     - host.
     string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000874
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - FoodFarmEnvironment
@@ -4832,6 +4832,21 @@ attributes:
     - MimsPlantAssociatedAncient
     slot_group: Environment
     range: string
+  dominant_hand:
+    name: dominant_hand
+    description: Dominant hand of the subject
+    title: dominant hand
+    examples:
+    - value: right
+    from_schema: https://w3id.org/mixs
+    rank: 49
+    slot_uri: MIXS:0000944
+    owner: MimsHumanSkinAncient
+    domain_of:
+    - HumanSkin
+    - MimsHumanSkinAncient
+    slot_group: Environment
+    range: DominantHandEnum
   host_pulse:
     name: host_pulse
     annotations:
@@ -4843,12 +4858,12 @@ attributes:
     examples:
     - value: 65 beats per minute
     from_schema: https://w3id.org/mixs
-    rank: 49
+    rank: 50
     keywords:
     - host
     - host.
     slot_uri: MIXS:0000333
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -4876,14 +4891,14 @@ attributes:
     examples:
     - value: 65 kilogram
     from_schema: https://w3id.org/mixs
-    rank: 50
+    rank: 51
     keywords:
     - host
     - host.
     - mass
     - total
     slot_uri: MIXS:0000263
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - FoodFarmEnvironment
@@ -4918,14 +4933,14 @@ attributes:
     examples:
     - value: 36.5 degree Celsius
     from_schema: https://w3id.org/mixs
-    rank: 51
+    rank: 52
     keywords:
     - body
     - host
     - host.
     - temperature
     slot_uri: MIXS:0000274
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -4952,13 +4967,13 @@ attributes:
     examples:
     - value: high-fat
     from_schema: https://w3id.org/mixs
-    rank: 52
+    rank: 53
     keywords:
     - diet
     - host
     - host.
     slot_uri: MIXS:0000869
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -4986,13 +5001,13 @@ attributes:
     examples:
     - value: french fries;P5H30M
     from_schema: https://w3id.org/mixs
-    rank: 53
+    rank: 54
     keywords:
     - host
     - host.
     string_serialization: '{text};{duration}'
     slot_uri: MIXS:0000870
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -5008,29 +5023,6 @@ attributes:
     slot_group: Environment
     range: string
     multivalued: true
-  special_diet:
-    name: special_diet
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: enumeration
-    description: Specification of special diet; can include multiple special diets
-    title: special diet
-    examples:
-    - value: other:vegan
-    from_schema: https://w3id.org/mixs
-    rank: 54
-    keywords:
-    - diet
-    string_serialization: '[low carb|reduced calorie|vegetarian|other(to be specified)]'
-    slot_uri: MIXS:0000905
-    owner: MimsHumanGutAncient
-    domain_of:
-    - HumanGut
-    - MimsHumanGutAncient
-    slot_group: Environment
-    range: string
-    multivalued: true
   host_body_site:
     name: host_body_site
     annotations:
@@ -5042,7 +5034,7 @@ attributes:
       of anatomy ontology (fma) or the Uber-anatomy ontology (UBERON)
     title: host body site
     examples:
-    - value: Wall of gut [fma45653]
+    - value: Skin of palm of left hand [fma38303]
     from_schema: https://w3id.org/mixs
     rank: 55
     keywords:
@@ -5051,7 +5043,7 @@ attributes:
     - site
     string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000867
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -5088,7 +5080,7 @@ attributes:
     - product
     string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000888
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -5124,7 +5116,7 @@ attributes:
     - relationship
     string_serialization: '{text};{text}'
     slot_uri: MIXS:0000872
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -5157,7 +5149,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000896
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -5182,7 +5174,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000365
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - FoodFarmEnvironment
@@ -5223,7 +5215,7 @@ attributes:
     - observed
     - symbiosis
     slot_uri: MIXS:0001298
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - HostAssociated
@@ -5267,7 +5259,7 @@ attributes:
     - status
     string_serialization: '{termLabel} [{termID}]|{text}'
     slot_uri: MIXS:0000031
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MigsBa
     - MigsEu
@@ -5313,7 +5305,7 @@ attributes:
     - ancient
     string_serialization: '{text}'
     slot_uri: MIXS:0001381
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -5329,43 +5321,45 @@ attributes:
     required: false
     recommended: false
     multivalued: false
-  liver_disord:
-    name: liver_disord
-    description: History of liver disorders; can include multiple disorders. The terms
-      should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
-      liver disease (https://disease-ontology.org/?id=DOID:409)
-    title: liver disorder
+  dermatology_disord:
+    name: dermatology_disord
+    description: History of dermatology disorders; can include multiple disorders.
+      The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
+      skin disease (https://disease-ontology.org/?id=DOID:37)
+    title: dermatology disorder
     from_schema: https://w3id.org/mixs
     rank: 63
     keywords:
     - disorder
-    slot_uri: MIXS:0000282
-    owner: MimsHumanGutAncient
+    slot_uri: MIXS:0000284
+    owner: MimsHumanSkinAncient
     domain_of:
-    - HumanGut
-    - MimsHumanGutAncient
+    - HumanSkin
+    - MimsHumanSkinAncient
     slot_group: Environment
     range: string
     multivalued: true
-  gastrointest_disord:
-    name: gastrointest_disord
-    description: History of gastrointestinal tract disorders; can include multiple
-      disorders. History of blood disorders; can include multiple disorders.  The
-      terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
-      gastrointestinal system disease (https://disease-ontology.org/?id=DOID:77)
-    title: gastrointestinal tract disorder
+  time_since_last_wash:
+    name: time_since_last_wash
+    description: Specification of the time since last wash
+    title: time since last wash
+    examples:
+    - value: P1D
     from_schema: https://w3id.org/mixs
     rank: 64
     keywords:
-    - disorder
-    slot_uri: MIXS:0000280
-    owner: MimsHumanGutAncient
+    - time
+    slot_uri: MIXS:0000943
+    owner: MimsHumanSkinAncient
     domain_of:
-    - HumanGut
-    - MimsHumanGutAncient
+    - HumanSkin
+    - MimsHumanSkinAncient
     slot_group: Environment
     range: string
-    multivalued: true
+    structured_pattern:
+      syntax: ^{duration}$
+      interpolated: true
+      partial_match: true
   medic_hist_perform:
     name: medic_hist_perform
     description: Whether full medical history was collected
@@ -5377,7 +5371,7 @@ attributes:
     keywords:
     - history
     slot_uri: MIXS:0000897
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -5401,7 +5395,7 @@ attributes:
     keywords:
     - code
     slot_uri: MIXS:0000884
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -5434,7 +5428,7 @@ attributes:
     - administration
     string_serialization: '{termLabel} [{termID}];{timestamp}'
     slot_uri: MIXS:0000751
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - Air
@@ -5474,7 +5468,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 68
     slot_uri: MIXS:0001370
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -5507,7 +5501,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 69
     slot_uri: MIXS:0000025
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -5553,7 +5547,7 @@ attributes:
     - organism
     string_serialization: '{text};{float} {unit};[ATP|MPN|qPCR|other]'
     slot_uri: MIXS:0000103
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - Air
@@ -5602,7 +5596,7 @@ attributes:
     - oxygen
     - relationship
     slot_uri: MIXS:0000015
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -5646,7 +5640,7 @@ attributes:
     - ancient
     string_serialization: '{text}'
     slot_uri: MIXS:0001371
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -5675,7 +5669,7 @@ attributes:
     - sample
     - status
     slot_uri: MIXS:0000753
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - Air
@@ -5720,7 +5714,7 @@ attributes:
     - parameter
     string_serialization: '{text};{float} {unit}'
     slot_uri: MIXS:0000752
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - Air
@@ -5781,7 +5775,7 @@ attributes:
     keywords:
     - identifiers
     slot_uri: MIXS:0001382
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -5813,7 +5807,7 @@ attributes:
     keywords:
     - control
     slot_uri: MIXS:0001383
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -5843,7 +5837,7 @@ attributes:
     keywords:
     - type
     slot_uri: MIXS:0001321
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -5882,7 +5876,7 @@ attributes:
     - type
     string_serialization: '{term} or {text}'
     slot_uri: MIXS:0001322
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -5927,7 +5921,7 @@ attributes:
     keywords:
     - environmental
     slot_uri: MIXS:0000014
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -5972,7 +5966,7 @@ attributes:
     - method
     - sample
     slot_uri: MIXS:0001225
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6027,7 +6021,7 @@ attributes:
     - sample
     string_serialization: '{termLabel} [{termID}]|{text}'
     slot_uri: MIXS:0000002
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6075,7 +6069,7 @@ attributes:
     - process
     - sample
     slot_uri: MIXS:0000016
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6117,7 +6111,7 @@ attributes:
     - sample
     - size
     slot_uri: MIXS:0000001
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6169,7 +6163,7 @@ attributes:
     - sample
     - storage
     slot_uri: MIXS:0000755
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - Air
@@ -6215,7 +6209,7 @@ attributes:
     - sample
     - storage
     slot_uri: MIXS:0000116
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - Air
@@ -6268,7 +6262,7 @@ attributes:
     - storage
     - temperature
     slot_uri: MIXS:0000110
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Agriculture
     - Air
@@ -6318,7 +6312,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 87
     slot_uri: MIXS:0001384
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6356,7 +6350,7 @@ attributes:
     - size
     string_serialization: '{float}-{float} {unit}'
     slot_uri: MIXS:0000017
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - Mimag
@@ -6396,7 +6390,7 @@ attributes:
     - volume
     - weight
     slot_uri: MIXS:0000111
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6461,7 +6455,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 90
     slot_uri: MIXS:0001386
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6489,7 +6483,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 91
     slot_uri: MIXS:0000037
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6537,7 +6531,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 92
     slot_uri: MIXS:0001387
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6578,7 +6572,7 @@ attributes:
     keywords:
     - sequencing
     slot_uri: MIXS:0001389
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6616,7 +6610,7 @@ attributes:
     keywords:
     - ancient
     slot_uri: MIXS:0001385
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6652,7 +6646,7 @@ attributes:
     - library
     - preparation
     slot_uri: MIXS:0001391
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6681,7 +6675,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 96
     slot_uri: MIXS:0000048
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -6725,7 +6719,7 @@ attributes:
     keywords:
     - identifier
     slot_uri: MIXS:0000047
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - Mimag
@@ -6772,7 +6766,7 @@ attributes:
     - preparation
     string_serialization: '{text}'
     slot_uri: MIXS:0001388
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6811,7 +6805,7 @@ attributes:
     - library
     - preparation
     slot_uri: MIXS:0001392
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6844,7 +6838,7 @@ attributes:
     keywords:
     - library
     slot_uri: MIXS:0000043
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -6886,7 +6880,7 @@ attributes:
     keywords:
     - library
     slot_uri: MIXS:0000042
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -6925,7 +6919,7 @@ attributes:
     - library
     - size
     slot_uri: MIXS:0000039
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -6973,7 +6967,7 @@ attributes:
     - preparation
     string_serialization: '{text}'
     slot_uri: MIXS:0001390
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7015,7 +7009,7 @@ attributes:
     - enrichment
     - capture
     slot_uri: MIXS:0001396
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7057,7 +7051,7 @@ attributes:
     - enrichment
     string_serialization: '{text}'
     slot_uri: MIXS:0001397
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7085,7 +7079,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 106
     slot_uri: MIXS:0001395
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7113,7 +7107,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 107
     slot_uri: MIXS:0001394
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7139,7 +7133,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 108
     slot_uri: MIXS:0000038
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -7184,7 +7178,7 @@ attributes:
     keywords:
     - method
     slot_uri: MIXS:0000050
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -7233,7 +7227,7 @@ attributes:
     keywords:
     - library
     slot_uri: MIXS:0000041
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7271,7 +7265,7 @@ attributes:
     keywords:
     - library
     slot_uri: MIXS:0000040
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7307,7 +7301,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 112
     slot_uri: MIXS:0001393
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7355,7 +7349,7 @@ attributes:
     - data analysis
     - data
     slot_uri: MIXS:0001398
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7393,7 +7387,7 @@ attributes:
     keywords:
     - data analysis
     slot_uri: MIXS:0001399
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7426,7 +7420,7 @@ attributes:
     rank: 115
     string_serialization: '{text} {text}'
     slot_uri: MIXS:0000057
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7463,7 +7457,7 @@ attributes:
     keywords:
     - software
     slot_uri: MIXS:0000058
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7506,7 +7500,7 @@ attributes:
     keywords:
     - number
     slot_uri: MIXS:0000060
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7559,7 +7553,7 @@ attributes:
     keywords:
     - quality
     slot_uri: MIXS:0000056
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7599,7 +7593,7 @@ attributes:
     - classification
     - taxon
     slot_uri: MIXS:0000064
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7638,7 +7632,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 120
     slot_uri: MIXS:0000059
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7677,7 +7671,7 @@ attributes:
     - feature
     - predict
     slot_uri: MIXS:0000061
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7717,7 +7711,7 @@ attributes:
     keywords:
     - method
     slot_uri: MIXS:0000063
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7763,7 +7757,7 @@ attributes:
     - database
     string_serialization: '{database};{version};{reference}'
     slot_uri: MIXS:0000062
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7803,7 +7797,7 @@ attributes:
     keywords:
     - procedures
     slot_uri: MIXS:0000090
-    owner: MimsHumanGutAncient
+    owner: MimsHumanSkinAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -7834,7 +7828,7 @@ attributes:
     structured_pattern:
       syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
-class_uri: MIXS:10007_16004_9999903
+class_uri: MIXS:0010007_0016006_0016024
 
 </code></pre>
 

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/10007_16005_9999903/">
+        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/0010007_0016004_0016024/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Combination: MimsHumanOral combined with Ancient (MimsHumanOralAncient) - mixs</title>
+        <title>Combination: MimsHumanGut combined with Ancient (MimsHumanGutAncient) - mixs</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#combination-mimshumanoral-combined-with-ancient-mimshumanoralancient" class="md-skip">
+        <a href="#combination-mimshumangut-combined-with-ancient-mimshumangutancient" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Combination: MimsHumanOral combined with Ancient (MimsHumanOralAncient)
+              Combination: MimsHumanGut combined with Ancient (MimsHumanGutAncient)
             
           </span>
         </div>
@@ -813,10 +813,10 @@
   
 
 
-<h1 id="combination-mimshumanoral-combined-with-ancient-mimshumanoralancient">Combination: MimsHumanOral combined with Ancient (MimsHumanOralAncient)</h1>
-<p><em>MIxS Data that comply with the Mims checklist, and HumanOral and Ancient extensions.</em></p>
+<h1 id="combination-mimshumangut-combined-with-ancient-mimshumangutancient">Combination: MimsHumanGut combined with Ancient (MimsHumanGutAncient)</h1>
+<p><em>MIxS Data that comply with the Mims checklist, and HumanGut and Ancient extensions.</em></p>
 <h2 id="composition">Composition</h2>
-<p><a href="../0010007_0016005/">MimsHumanOral</a> [Checklist] + <a href="../0016024/">Ancient</a> [Extension]</p>
+<p><a href="../0010007_0016004/">MimsHumanGut</a> [Checklist] + <a href="../0016024/">Ancient</a> [Extension]</p>
 <h2 id="terms">Terms</h2>
 <table>
 <thead>
@@ -1147,6 +1147,12 @@
 <td>Content of last meal and time since feeding; can include multiple values</td>
 </tr>
 <tr>
+<td><a href="https://w3id.org/mixs/0000905">MIXS:0000905</a></td>
+<td><a href="../0000905/">special_diet</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Specification of special diet; can include multiple special diets</td>
+</tr>
+<tr>
 <td><a href="https://w3id.org/mixs/0000867">MIXS:0000867</a></td>
 <td><a href="../0000867/">host_body_site</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
@@ -1169,12 +1175,6 @@
 <td><a href="../0000896/">host_occupation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Most frequent job performed by subject</td>
-</tr>
-<tr>
-<td><a href="https://w3id.org/mixs/0000924">MIXS:0000924</a></td>
-<td><a href="../0000924/">time_last_toothbrush</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Specification of the time since last toothbrushing</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/0000365">MIXS:0000365</a></td>
@@ -1201,10 +1201,16 @@
 <td>Describe briefly any relevant palaeopathological or health-related observatio...</td>
 </tr>
 <tr>
-<td><a href="https://w3id.org/mixs/0000283">MIXS:0000283</a></td>
-<td><a href="../0000283/">nose_mouth_teeth_throat_disord</a></td>
+<td><a href="https://w3id.org/mixs/0000282">MIXS:0000282</a></td>
+<td><a href="../0000282/">liver_disord</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
-<td>History of nose/mouth/teeth/throat disorders; can include multiple disorders</td>
+<td>History of liver disorders; can include multiple disorders</td>
+</tr>
+<tr>
+<td><a href="https://w3id.org/mixs/0000280">MIXS:0000280</a></td>
+<td><a href="../0000280/">gastrointest_disord</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>History of gastrointestinal tract disorders; can include multiple disorders</td>
 </tr>
 <tr>
 <td><a href="https://w3id.org/mixs/0000897">MIXS:0000897</a></td>
@@ -1574,16 +1580,16 @@
 <h3 id="direct">Direct</h3>
 <details>
 
-<pre><code class="language-yaml">name: MimsHumanOralAncient
-description: MIxS Data that comply with the Mims checklist, and HumanOral and Ancient
+<pre><code class="language-yaml">name: MimsHumanGutAncient
+description: MIxS Data that comply with the Mims checklist, and HumanGut and Ancient
   extensions.
-title: MimsHumanOral combined with Ancient
+title: MimsHumanGut combined with Ancient
 in_subset:
 - combination_classes
 from_schema: https://w3id.org/mixs
 is_a: Ancient
 mixins:
-- MimsHumanOral
+- MimsHumanGut
 slots:
 - project_name
 - associated_resource
@@ -1638,16 +1644,17 @@ slots:
 - host_body_temp
 - host_diet
 - host_last_meal
+- special_diet
 - host_body_site
 - host_body_product
 - host_fam_rel
 - host_occupation
-- time_last_toothbrush
 - host_genotype
 - host_symbiont
 - host_disease_stat
 - palaeopath_status
-- nose_mouth_teeth_throat_disord
+- liver_disord
+- gastrointest_disord
 - medic_hist_perform
 - ihmc_medication_code
 - chem_administration
@@ -1921,24 +1928,24 @@ slot_usage:
     name: host_last_meal
     rank: 53
     slot_group: Environment
+  special_diet:
+    name: special_diet
+    rank: 54
+    slot_group: Environment
   host_body_site:
     name: host_body_site
-    rank: 54
+    rank: 55
     slot_group: Environment
   host_body_product:
     name: host_body_product
-    rank: 55
+    rank: 56
     slot_group: Environment
   host_fam_rel:
     name: host_fam_rel
-    rank: 56
+    rank: 57
     slot_group: Environment
   host_occupation:
     name: host_occupation
-    rank: 57
-    slot_group: Environment
-  time_last_toothbrush:
-    name: time_last_toothbrush
     rank: 58
     slot_group: Environment
   host_genotype:
@@ -1957,251 +1964,255 @@ slot_usage:
     name: palaeopath_status
     rank: 62
     slot_group: Environment
-  nose_mouth_teeth_throat_disord:
-    name: nose_mouth_teeth_throat_disord
+  liver_disord:
+    name: liver_disord
     rank: 63
+    slot_group: Environment
+  gastrointest_disord:
+    name: gastrointest_disord
+    rank: 64
     slot_group: Environment
   medic_hist_perform:
     name: medic_hist_perform
-    rank: 64
+    rank: 65
     slot_group: Environment
   ihmc_medication_code:
     name: ihmc_medication_code
-    rank: 65
+    rank: 66
     slot_group: Environment
   chem_administration:
     name: chem_administration
-    rank: 66
+    rank: 67
     slot_group: Environment
   prev_pubs:
     name: prev_pubs
-    rank: 67
+    rank: 68
     slot_group: Environment
   ref_biomaterial:
     name: ref_biomaterial
-    rank: 68
+    rank: 69
     slot_group: Environment
   organism_count:
     name: organism_count
-    rank: 69
+    rank: 70
     slot_group: Environment
   rel_to_oxygen:
     name: rel_to_oxygen
-    rank: 70
+    rank: 71
     slot_group: Environment
   host_preserv_state:
     name: host_preserv_state
-    rank: 71
+    rank: 72
     slot_group: Environment
   oxy_stat_samp:
     name: oxy_stat_samp
-    rank: 72
+    rank: 73
     slot_group: Environment
   misc_param:
     name: misc_param
-    rank: 73
+    rank: 74
     slot_group: Environment
   batch_ids:
     name: batch_ids
-    rank: 74
+    rank: 75
     slot_group: Nucleic acid source
   samp_category:
     name: samp_category
-    rank: 75
+    rank: 76
     slot_group: Nucleic acid source
   neg_cont_type:
     name: neg_cont_type
-    rank: 76
+    rank: 77
     slot_group: Nucleic acid source
   pos_cont_type:
     name: pos_cont_type
-    rank: 77
+    rank: 78
     slot_group: Nucleic acid source
   env_medium:
     name: env_medium
-    rank: 78
+    rank: 79
     slot_group: Nucleic acid source
   samp_collect_method:
     name: samp_collect_method
-    rank: 79
+    rank: 80
     slot_group: Nucleic acid source
   samp_collect_device:
     name: samp_collect_device
-    rank: 80
+    rank: 81
     slot_group: Nucleic acid source
   samp_mat_process:
     name: samp_mat_process
-    rank: 81
+    rank: 82
     slot_group: Nucleic acid source
   samp_size:
     name: samp_size
-    rank: 82
+    rank: 83
     slot_group: Nucleic acid source
   samp_store_loc:
     name: samp_store_loc
-    rank: 83
+    rank: 84
     slot_group: Nucleic acid source
   samp_store_dur:
     name: samp_store_dur
-    rank: 84
+    rank: 85
     slot_group: Nucleic acid source
   samp_store_temp:
     name: samp_store_temp
-    rank: 85
+    rank: 86
     slot_group: Nucleic acid source
   samp_decont_pretreat:
     name: samp_decont_pretreat
-    rank: 86
+    rank: 87
     slot_group: Nucleic acid source
   size_frac:
     name: size_frac
-    rank: 87
+    rank: 88
     slot_group: Nucleic acid source
   samp_vol_we_dna_ext:
     name: samp_vol_we_dna_ext
-    rank: 88
+    rank: 89
     slot_group: Nucleic acid source
   nucl_acid_extr_date:
     name: nucl_acid_extr_date
-    rank: 89
+    rank: 90
     slot_group: Nucleic acid source
   nucl_acid_ext:
     name: nucl_acid_ext
-    rank: 90
+    rank: 91
     slot_group: Nucleic acid source
   sop_experimental:
     name: sop_experimental
-    rank: 91
+    rank: 92
     slot_group: Nucleic acid source
   library_name:
     name: library_name
-    rank: 92
+    rank: 93
     slot_group: Sequencing
   damage_treatment:
     name: damage_treatment
-    rank: 93
+    rank: 94
     slot_group: Sequencing
   lib_strandedness:
     name: lib_strandedness
-    rank: 94
+    rank: 95
     slot_group: Sequencing
   adapters:
     name: adapters
-    rank: 95
+    rank: 96
     slot_group: Sequencing
   mid:
     name: mid
-    rank: 96
+    rank: 97
     slot_group: Sequencing
   lib_mid_desc:
     name: lib_mid_desc
-    rank: 97
+    rank: 98
     slot_group: Sequencing
   lib_gener_technique:
     name: lib_gener_technique
-    rank: 98
+    rank: 99
     slot_group: Sequencing
   lib_screen:
     name: lib_screen
-    rank: 99
+    rank: 100
     slot_group: Sequencing
   lib_vector:
     name: lib_vector
-    rank: 100
+    rank: 101
     slot_group: Sequencing
   lib_size:
     name: lib_size
-    rank: 101
+    rank: 102
     slot_group: Sequencing
   lib_polymerase:
     name: lib_polymerase
-    rank: 102
+    rank: 103
     slot_group: Sequencing
   capt_probe_src_taxid:
     name: capt_probe_src_taxid
-    rank: 103
+    rank: 104
     slot_group: Sequencing
   capt_probe_desc:
     name: capt_probe_desc
-    rank: 104
+    rank: 105
     slot_group: Sequencing
   capt_pcr_cyc_tot:
     name: capt_pcr_cyc_tot
-    rank: 105
+    rank: 106
     slot_group: Sequencing
   reamp_pcr_cyc_tot:
     name: reamp_pcr_cyc_tot
-    rank: 106
+    rank: 107
     slot_group: Sequencing
   nucl_acid_amp:
     name: nucl_acid_amp
-    rank: 107
+    rank: 108
     slot_group: Sequencing
   seq_meth:
     name: seq_meth
-    rank: 108
+    rank: 109
     slot_group: Sequencing
   lib_layout:
     name: lib_layout
-    rank: 109
+    rank: 110
     slot_group: Sequencing
   lib_reads_seqd:
     name: lib_reads_seqd
-    rank: 110
+    rank: 111
     slot_group: Sequencing
   sop_lib_preparation:
     name: sop_lib_preparation
-    rank: 111
+    rank: 112
     slot_group: Sequencing
   data_preproc_desc:
     name: data_preproc_desc
-    rank: 112
+    rank: 113
     slot_group: Data analysis
   reads_removed:
     name: reads_removed
-    rank: 113
+    rank: 114
     slot_group: Data analysis
   assembly_name:
     name: assembly_name
-    rank: 114
+    rank: 115
     slot_group: Data analysis
   assembly_software:
     name: assembly_software
-    rank: 115
+    rank: 116
     slot_group: Data analysis
   number_contig:
     name: number_contig
-    rank: 116
+    rank: 117
     slot_group: Data analysis
   assembly_qual:
     name: assembly_qual
-    rank: 117
+    rank: 118
     slot_group: Data analysis
   tax_class:
     name: tax_class
-    rank: 118
+    rank: 119
     slot_group: Data analysis
   annot:
     name: annot
-    rank: 119
+    rank: 120
     slot_group: Data analysis
   feat_pred:
     name: feat_pred
-    rank: 120
+    rank: 121
     slot_group: Data analysis
   sim_search_meth:
     name: sim_search_meth
-    rank: 121
+    rank: 122
     slot_group: Data analysis
   ref_db:
     name: ref_db
-    rank: 122
+    rank: 123
     slot_group: Data analysis
   sop:
     name: sop
-    rank: 123
+    rank: 124
     slot_group: Data analysis
-class_uri: MIXS:10007_16005_9999903
+class_uri: MIXS:0010007_0016004_0016024
 
 </code></pre>
 
@@ -2210,16 +2221,16 @@ class_uri: MIXS:10007_16005_9999903
 <h3 id="induced">Induced</h3>
 <details>
 
-<pre><code class="language-yaml">name: MimsHumanOralAncient
-description: MIxS Data that comply with the Mims checklist, and HumanOral and Ancient
+<pre><code class="language-yaml">name: MimsHumanGutAncient
+description: MIxS Data that comply with the Mims checklist, and HumanGut and Ancient
   extensions.
-title: MimsHumanOral combined with Ancient
+title: MimsHumanGut combined with Ancient
 in_subset:
 - combination_classes
 from_schema: https://w3id.org/mixs
 is_a: Ancient
 mixins:
-- MimsHumanOral
+- MimsHumanGut
 slot_usage:
   project_name:
     name: project_name
@@ -2433,24 +2444,24 @@ slot_usage:
     name: host_last_meal
     rank: 53
     slot_group: Environment
+  special_diet:
+    name: special_diet
+    rank: 54
+    slot_group: Environment
   host_body_site:
     name: host_body_site
-    rank: 54
+    rank: 55
     slot_group: Environment
   host_body_product:
     name: host_body_product
-    rank: 55
+    rank: 56
     slot_group: Environment
   host_fam_rel:
     name: host_fam_rel
-    rank: 56
+    rank: 57
     slot_group: Environment
   host_occupation:
     name: host_occupation
-    rank: 57
-    slot_group: Environment
-  time_last_toothbrush:
-    name: time_last_toothbrush
     rank: 58
     slot_group: Environment
   host_genotype:
@@ -2469,249 +2480,253 @@ slot_usage:
     name: palaeopath_status
     rank: 62
     slot_group: Environment
-  nose_mouth_teeth_throat_disord:
-    name: nose_mouth_teeth_throat_disord
+  liver_disord:
+    name: liver_disord
     rank: 63
+    slot_group: Environment
+  gastrointest_disord:
+    name: gastrointest_disord
+    rank: 64
     slot_group: Environment
   medic_hist_perform:
     name: medic_hist_perform
-    rank: 64
+    rank: 65
     slot_group: Environment
   ihmc_medication_code:
     name: ihmc_medication_code
-    rank: 65
+    rank: 66
     slot_group: Environment
   chem_administration:
     name: chem_administration
-    rank: 66
+    rank: 67
     slot_group: Environment
   prev_pubs:
     name: prev_pubs
-    rank: 67
+    rank: 68
     slot_group: Environment
   ref_biomaterial:
     name: ref_biomaterial
-    rank: 68
+    rank: 69
     slot_group: Environment
   organism_count:
     name: organism_count
-    rank: 69
+    rank: 70
     slot_group: Environment
   rel_to_oxygen:
     name: rel_to_oxygen
-    rank: 70
+    rank: 71
     slot_group: Environment
   host_preserv_state:
     name: host_preserv_state
-    rank: 71
+    rank: 72
     slot_group: Environment
   oxy_stat_samp:
     name: oxy_stat_samp
-    rank: 72
+    rank: 73
     slot_group: Environment
   misc_param:
     name: misc_param
-    rank: 73
+    rank: 74
     slot_group: Environment
   batch_ids:
     name: batch_ids
-    rank: 74
+    rank: 75
     slot_group: Nucleic acid source
   samp_category:
     name: samp_category
-    rank: 75
+    rank: 76
     slot_group: Nucleic acid source
   neg_cont_type:
     name: neg_cont_type
-    rank: 76
+    rank: 77
     slot_group: Nucleic acid source
   pos_cont_type:
     name: pos_cont_type
-    rank: 77
+    rank: 78
     slot_group: Nucleic acid source
   env_medium:
     name: env_medium
-    rank: 78
+    rank: 79
     slot_group: Nucleic acid source
   samp_collect_method:
     name: samp_collect_method
-    rank: 79
+    rank: 80
     slot_group: Nucleic acid source
   samp_collect_device:
     name: samp_collect_device
-    rank: 80
+    rank: 81
     slot_group: Nucleic acid source
   samp_mat_process:
     name: samp_mat_process
-    rank: 81
+    rank: 82
     slot_group: Nucleic acid source
   samp_size:
     name: samp_size
-    rank: 82
+    rank: 83
     slot_group: Nucleic acid source
   samp_store_loc:
     name: samp_store_loc
-    rank: 83
+    rank: 84
     slot_group: Nucleic acid source
   samp_store_dur:
     name: samp_store_dur
-    rank: 84
+    rank: 85
     slot_group: Nucleic acid source
   samp_store_temp:
     name: samp_store_temp
-    rank: 85
+    rank: 86
     slot_group: Nucleic acid source
   samp_decont_pretreat:
     name: samp_decont_pretreat
-    rank: 86
+    rank: 87
     slot_group: Nucleic acid source
   size_frac:
     name: size_frac
-    rank: 87
+    rank: 88
     slot_group: Nucleic acid source
   samp_vol_we_dna_ext:
     name: samp_vol_we_dna_ext
-    rank: 88
+    rank: 89
     slot_group: Nucleic acid source
   nucl_acid_extr_date:
     name: nucl_acid_extr_date
-    rank: 89
+    rank: 90
     slot_group: Nucleic acid source
   nucl_acid_ext:
     name: nucl_acid_ext
-    rank: 90
+    rank: 91
     slot_group: Nucleic acid source
   sop_experimental:
     name: sop_experimental
-    rank: 91
+    rank: 92
     slot_group: Nucleic acid source
   library_name:
     name: library_name
-    rank: 92
+    rank: 93
     slot_group: Sequencing
   damage_treatment:
     name: damage_treatment
-    rank: 93
+    rank: 94
     slot_group: Sequencing
   lib_strandedness:
     name: lib_strandedness
-    rank: 94
+    rank: 95
     slot_group: Sequencing
   adapters:
     name: adapters
-    rank: 95
+    rank: 96
     slot_group: Sequencing
   mid:
     name: mid
-    rank: 96
+    rank: 97
     slot_group: Sequencing
   lib_mid_desc:
     name: lib_mid_desc
-    rank: 97
+    rank: 98
     slot_group: Sequencing
   lib_gener_technique:
     name: lib_gener_technique
-    rank: 98
+    rank: 99
     slot_group: Sequencing
   lib_screen:
     name: lib_screen
-    rank: 99
+    rank: 100
     slot_group: Sequencing
   lib_vector:
     name: lib_vector
-    rank: 100
+    rank: 101
     slot_group: Sequencing
   lib_size:
     name: lib_size
-    rank: 101
+    rank: 102
     slot_group: Sequencing
   lib_polymerase:
     name: lib_polymerase
-    rank: 102
+    rank: 103
     slot_group: Sequencing
   capt_probe_src_taxid:
     name: capt_probe_src_taxid
-    rank: 103
+    rank: 104
     slot_group: Sequencing
   capt_probe_desc:
     name: capt_probe_desc
-    rank: 104
+    rank: 105
     slot_group: Sequencing
   capt_pcr_cyc_tot:
     name: capt_pcr_cyc_tot
-    rank: 105
+    rank: 106
     slot_group: Sequencing
   reamp_pcr_cyc_tot:
     name: reamp_pcr_cyc_tot
-    rank: 106
+    rank: 107
     slot_group: Sequencing
   nucl_acid_amp:
     name: nucl_acid_amp
-    rank: 107
+    rank: 108
     slot_group: Sequencing
   seq_meth:
     name: seq_meth
-    rank: 108
+    rank: 109
     slot_group: Sequencing
   lib_layout:
     name: lib_layout
-    rank: 109
+    rank: 110
     slot_group: Sequencing
   lib_reads_seqd:
     name: lib_reads_seqd
-    rank: 110
+    rank: 111
     slot_group: Sequencing
   sop_lib_preparation:
     name: sop_lib_preparation
-    rank: 111
+    rank: 112
     slot_group: Sequencing
   data_preproc_desc:
     name: data_preproc_desc
-    rank: 112
+    rank: 113
     slot_group: Data analysis
   reads_removed:
     name: reads_removed
-    rank: 113
+    rank: 114
     slot_group: Data analysis
   assembly_name:
     name: assembly_name
-    rank: 114
+    rank: 115
     slot_group: Data analysis
   assembly_software:
     name: assembly_software
-    rank: 115
+    rank: 116
     slot_group: Data analysis
   number_contig:
     name: number_contig
-    rank: 116
+    rank: 117
     slot_group: Data analysis
   assembly_qual:
     name: assembly_qual
-    rank: 117
+    rank: 118
     slot_group: Data analysis
   tax_class:
     name: tax_class
-    rank: 118
+    rank: 119
     slot_group: Data analysis
   annot:
     name: annot
-    rank: 119
+    rank: 120
     slot_group: Data analysis
   feat_pred:
     name: feat_pred
-    rank: 120
+    rank: 121
     slot_group: Data analysis
   sim_search_meth:
     name: sim_search_meth
-    rank: 121
+    rank: 122
     slot_group: Data analysis
   ref_db:
     name: ref_db
-    rank: 122
+    rank: 123
     slot_group: Data analysis
   sop:
     name: sop
-    rank: 123
+    rank: 124
     slot_group: Data analysis
 attributes:
   project_name:
@@ -2727,7 +2742,7 @@ attributes:
     keywords:
     - project
     slot_uri: MIXS:0000092
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -2793,7 +2808,7 @@ attributes:
     keywords:
     - resource
     slot_uri: MIXS:0000091
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -2853,7 +2868,7 @@ attributes:
     - environment
     - sample
     slot_uri: MIXS:0001356
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -2893,7 +2908,7 @@ attributes:
     - location
     - site
     slot_uri: MIXS:0001357
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -2932,7 +2947,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 5
     slot_uri: MIXS:0001358
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -2973,7 +2988,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 6
     slot_uri: MIXS:0001359
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3017,7 +3032,7 @@ attributes:
     - environmental
     - ancient
     slot_uri: MIXS:0001360
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3069,7 +3084,7 @@ attributes:
     - ancient
     string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0001361
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3105,7 +3120,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 9
     slot_uri: MIXS:0001363
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3150,7 +3165,7 @@ attributes:
     - identifiers
     - excavation
     slot_uri: MIXS:0001362
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3183,7 +3198,7 @@ attributes:
     - geographic
     - location
     slot_uri: MIXS:0000010
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3234,7 +3249,7 @@ attributes:
     - geographic
     - location
     slot_uri: MIXS:0000009
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3287,7 +3302,7 @@ attributes:
     - context
     - environmental
     slot_uri: MIXS:0000012
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3342,7 +3357,7 @@ attributes:
     - context
     - environmental
     slot_uri: MIXS:0000013
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3391,7 +3406,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 15
     slot_uri: MIXS:0000094
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3444,7 +3459,7 @@ attributes:
     keywords:
     - depth
     slot_uri: MIXS:0000018
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3505,7 +3520,7 @@ attributes:
     keywords:
     - elevation
     slot_uri: MIXS:0000093
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3563,7 +3578,7 @@ attributes:
     keywords:
     - temperature
     slot_uri: MIXS:0000113
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3634,7 +3649,7 @@ attributes:
     keywords:
     - salinity
     slot_uri: MIXS:0000183
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Air
     - FoodFarmEnvironment
@@ -3685,7 +3700,7 @@ attributes:
     - perturbation
     string_serialization: '{text};{Rn/start_time/end_time/duration}'
     slot_uri: MIXS:0000754
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - Air
@@ -3737,7 +3752,7 @@ attributes:
     - factor
     string_serialization: '{termLabel} [{termID}]|{text}'
     slot_uri: MIXS:0000008
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3799,7 +3814,7 @@ attributes:
     - material
     - source
     slot_uri: MIXS:0000026
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3851,7 +3866,7 @@ attributes:
     keywords:
     - sample
     slot_uri: MIXS:0001107
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -3918,7 +3933,7 @@ attributes:
     rank: 24
     string_serialization: '{text}'
     slot_uri: MIXS:0001369
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3959,7 +3974,7 @@ attributes:
     - ethics
     - location
     slot_uri: MIXS:0001365
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -3990,7 +4005,7 @@ attributes:
     keywords:
     - ethics
     slot_uri: MIXS:0001364
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4019,7 +4034,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 27
     slot_uri: MIXS:0001366
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4061,7 +4076,7 @@ attributes:
     - ethics
     string_serialization: '{text}'
     slot_uri: MIXS:0001367
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4099,7 +4114,7 @@ attributes:
     keywords:
     - ethics
     slot_uri: MIXS:0001368
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4138,7 +4153,7 @@ attributes:
     - chrono:earliestChronometricAge
     rank: 30
     slot_uri: MIXS:0001375
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4170,7 +4185,7 @@ attributes:
     - chrono:earliestChronometricAgeReferenceSystem
     rank: 31
     slot_uri: MIXS:0001376
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4209,7 +4224,7 @@ attributes:
     - chrono:latestChronometricAge
     rank: 32
     slot_uri: MIXS:0001377
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4241,7 +4256,7 @@ attributes:
     - chrono:latestChronometricAgeReferenceSystem
     rank: 33
     slot_uri: MIXS:0001378
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4274,7 +4289,7 @@ attributes:
     - chrono:chronometricAgeProtocol
     rank: 34
     slot_uri: MIXS:0001379
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4311,7 +4326,7 @@ attributes:
     - chrono:chronometricAgeRemarks
     rank: 35
     slot_uri: MIXS:0001380
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4350,7 +4365,7 @@ attributes:
     - ancient
     - age
     slot_uri: MIXS:0001374
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4389,7 +4404,7 @@ attributes:
     - age
     string_serialization: '{termLabel} [{termID}]|{text}'
     slot_uri: MIXS:0001373
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4423,7 +4438,7 @@ attributes:
     - sample
     - taxon
     slot_uri: MIXS:0001320
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -4469,7 +4484,7 @@ attributes:
     keywords:
     - date
     slot_uri: MIXS:0000011
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -4519,7 +4534,7 @@ attributes:
     - condition
     - storage
     slot_uri: MIXS:0000327
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - Ancient
@@ -4555,7 +4570,7 @@ attributes:
     - ancient
     string_serialization: '{text}'
     slot_uri: MIXS:0001372
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -4584,7 +4599,7 @@ attributes:
     - host.
     - identifier
     slot_uri: MIXS:0000861
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -4615,7 +4630,7 @@ attributes:
     from_schema: https://w3id.org/mixs
     rank: 43
     slot_uri: MIXS:0000895
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -4647,7 +4662,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000255
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - FoodFarmEnvironment
@@ -4687,7 +4702,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000317
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -4723,7 +4738,7 @@ attributes:
     string_serialization: '[female|hermaphrodite|non-binary|male|transgender|transgender
       (female to male)|transgender (male to female) |undeclared]'
     slot_uri: MIXS:0000811
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -4755,7 +4770,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000264
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - FoodFarmEnvironment
@@ -4797,7 +4812,7 @@ attributes:
     - host.
     string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000874
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - FoodFarmEnvironment
@@ -4833,7 +4848,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000333
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -4868,7 +4883,7 @@ attributes:
     - mass
     - total
     slot_uri: MIXS:0000263
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - FoodFarmEnvironment
@@ -4910,7 +4925,7 @@ attributes:
     - host.
     - temperature
     slot_uri: MIXS:0000274
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -4943,7 +4958,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000869
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -4977,7 +4992,7 @@ attributes:
     - host.
     string_serialization: '{text};{duration}'
     slot_uri: MIXS:0000870
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -4993,6 +5008,29 @@ attributes:
     slot_group: Environment
     range: string
     multivalued: true
+  special_diet:
+    name: special_diet
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: enumeration
+    description: Specification of special diet; can include multiple special diets
+    title: special diet
+    examples:
+    - value: other:vegan
+    from_schema: https://w3id.org/mixs
+    rank: 54
+    keywords:
+    - diet
+    string_serialization: '[low carb|reduced calorie|vegetarian|other(to be specified)]'
+    slot_uri: MIXS:0000905
+    owner: MimsHumanGutAncient
+    domain_of:
+    - HumanGut
+    - MimsHumanGutAncient
+    slot_group: Environment
+    range: string
+    multivalued: true
   host_body_site:
     name: host_body_site
     annotations:
@@ -5004,16 +5042,16 @@ attributes:
       of anatomy ontology (fma) or the Uber-anatomy ontology (UBERON)
     title: host body site
     examples:
-    - value: Epithelium of tongue [fma284658]
+    - value: Wall of gut [fma45653]
     from_schema: https://w3id.org/mixs
-    rank: 54
+    rank: 55
     keywords:
     - body
     - host
     - site
     string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000867
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -5042,7 +5080,7 @@ attributes:
     examples:
     - value: mucus [FMA:66938]
     from_schema: https://w3id.org/mixs
-    rank: 55
+    rank: 56
     keywords:
     - body
     - host
@@ -5050,7 +5088,7 @@ attributes:
     - product
     string_serialization: '{termLabel} [{termID}]'
     slot_uri: MIXS:0000888
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -5078,7 +5116,7 @@ attributes:
     examples:
     - value: mother;ID298
     from_schema: https://w3id.org/mixs
-    rank: 56
+    rank: 57
     keywords:
     - family
     - host
@@ -5086,7 +5124,7 @@ attributes:
     - relationship
     string_serialization: '{text};{text}'
     slot_uri: MIXS:0000872
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HostAssociated
     - HumanAssociated
@@ -5114,12 +5152,12 @@ attributes:
     examples:
     - value: veterinary
     from_schema: https://w3id.org/mixs
-    rank: 57
+    rank: 58
     keywords:
     - host
     - host.
     slot_uri: MIXS:0000896
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -5132,30 +5170,6 @@ attributes:
     - MimsHumanSkinAncient
     slot_group: Environment
     range: string
-  time_last_toothbrush:
-    name: time_last_toothbrush
-    description: Specification of the time since last toothbrushing
-    title: time since last toothbrushing
-    comments:
-    - P2H45M does not match ^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d+[HMS])(\\d+H)?(\\d+M)?(\\d+S)?)?$
-    - problematic ISO 8601 period validation
-    examples:
-    - value: PT2H45M
-    from_schema: https://w3id.org/mixs
-    rank: 58
-    keywords:
-    - time
-    slot_uri: MIXS:0000924
-    owner: MimsHumanOralAncient
-    domain_of:
-    - HumanOral
-    - MimsHumanOralAncient
-    slot_group: Environment
-    range: string
-    structured_pattern:
-      syntax: ^{duration}$
-      interpolated: true
-      partial_match: true
   host_genotype:
     name: host_genotype
     description: Observed genotype
@@ -5168,7 +5182,7 @@ attributes:
     - host
     - host.
     slot_uri: MIXS:0000365
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - FoodFarmEnvironment
@@ -5209,7 +5223,7 @@ attributes:
     - observed
     - symbiosis
     slot_uri: MIXS:0001298
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - HostAssociated
@@ -5253,7 +5267,7 @@ attributes:
     - status
     string_serialization: '{termLabel} [{termID}]|{text}'
     slot_uri: MIXS:0000031
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MigsBa
     - MigsEu
@@ -5299,7 +5313,7 @@ attributes:
     - ancient
     string_serialization: '{text}'
     slot_uri: MIXS:0001381
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -5315,26 +5329,40 @@ attributes:
     required: false
     recommended: false
     multivalued: false
-  nose_mouth_teeth_throat_disord:
-    name: nose_mouth_teeth_throat_disord
-    description: 'History of nose/mouth/teeth/throat disorders; can include multiple
-      disorders. The terms should be chosen from the DO (Human Disease Ontology) at
-      http://www.disease-ontology.org, nose disease (https://disease-ontology.org/?id=DOID:2825),
-      mouth disease (https://disease-ontology.org/?id=DOID:403), tooth disease (https://disease-ontology.org/?id=DOID:1091),
-      or upper respiratory tract disease (https://disease-ontology.org/?id=DOID:974)
-
-      '
-    title: nose/mouth/teeth/throat disorder
-    deprecated: true, replace with MIXS:0000270 https://github.com/GenomicsStandardsConsortium/mixs/issues/743
+  liver_disord:
+    name: liver_disord
+    description: History of liver disorders; can include multiple disorders. The terms
+      should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
+      liver disease (https://disease-ontology.org/?id=DOID:409)
+    title: liver disorder
     from_schema: https://w3id.org/mixs
     rank: 63
     keywords:
     - disorder
-    slot_uri: MIXS:0000283
-    owner: MimsHumanOralAncient
+    slot_uri: MIXS:0000282
+    owner: MimsHumanGutAncient
     domain_of:
-    - HumanOral
-    - MimsHumanOralAncient
+    - HumanGut
+    - MimsHumanGutAncient
+    slot_group: Environment
+    range: string
+    multivalued: true
+  gastrointest_disord:
+    name: gastrointest_disord
+    description: History of gastrointestinal tract disorders; can include multiple
+      disorders. History of blood disorders; can include multiple disorders.  The
+      terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org,
+      gastrointestinal system disease (https://disease-ontology.org/?id=DOID:77)
+    title: gastrointestinal tract disorder
+    from_schema: https://w3id.org/mixs
+    rank: 64
+    keywords:
+    - disorder
+    slot_uri: MIXS:0000280
+    owner: MimsHumanGutAncient
+    domain_of:
+    - HumanGut
+    - MimsHumanGutAncient
     slot_group: Environment
     range: string
     multivalued: true
@@ -5345,11 +5373,11 @@ attributes:
     examples:
     - value: '1'
     from_schema: https://w3id.org/mixs
-    rank: 64
+    rank: 65
     keywords:
     - history
     slot_uri: MIXS:0000897
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -5369,11 +5397,11 @@ attributes:
     examples:
     - value: '810'
     from_schema: https://w3id.org/mixs
-    rank: 65
+    rank: 66
     keywords:
     - code
     slot_uri: MIXS:0000884
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - HumanAssociated
     - HumanGut
@@ -5401,12 +5429,12 @@ attributes:
     examples:
     - value: agar [CHEBI:2509];2018-05-11T20:00Z
     from_schema: https://w3id.org/mixs
-    rank: 66
+    rank: 67
     keywords:
     - administration
     string_serialization: '{termLabel} [{termID}];{timestamp}'
     slot_uri: MIXS:0000751
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - Air
@@ -5444,9 +5472,9 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 67
+    rank: 68
     slot_uri: MIXS:0001370
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -5477,9 +5505,9 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 68
+    rank: 69
     slot_uri: MIXS:0000025
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -5519,13 +5547,13 @@ attributes:
     examples:
     - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
     from_schema: https://w3id.org/mixs
-    rank: 69
+    rank: 70
     keywords:
     - count
     - organism
     string_serialization: '{text};{float} {unit};[ATP|MPN|qPCR|other]'
     slot_uri: MIXS:0000103
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - Air
@@ -5569,12 +5597,12 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 70
+    rank: 71
     keywords:
     - oxygen
     - relationship
     slot_uri: MIXS:0000015
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -5613,12 +5641,12 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 71
+    rank: 72
     keywords:
     - ancient
     string_serialization: '{text}'
     slot_uri: MIXS:0001371
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -5641,13 +5669,13 @@ attributes:
     examples:
     - value: aerobic
     from_schema: https://w3id.org/mixs
-    rank: 72
+    rank: 73
     keywords:
     - oxygen
     - sample
     - status
     slot_uri: MIXS:0000753
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - Air
@@ -5687,12 +5715,12 @@ attributes:
     examples:
     - value: Bicarbonate ion concentration;2075 micromole per kilogram
     from_schema: https://w3id.org/mixs
-    rank: 73
+    rank: 74
     keywords:
     - parameter
     string_serialization: '{text};{float} {unit}'
     slot_uri: MIXS:0000752
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - Air
@@ -5749,11 +5777,11 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 74
+    rank: 75
     keywords:
     - identifiers
     slot_uri: MIXS:0001382
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -5781,11 +5809,11 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 75
+    rank: 76
     keywords:
     - control
     slot_uri: MIXS:0001383
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -5811,11 +5839,11 @@ attributes:
     in_subset:
     - investigation
     from_schema: https://w3id.org/mixs
-    rank: 76
+    rank: 77
     keywords:
     - type
     slot_uri: MIXS:0001321
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -5849,12 +5877,12 @@ attributes:
     in_subset:
     - investigation
     from_schema: https://w3id.org/mixs
-    rank: 77
+    rank: 78
     keywords:
     - type
     string_serialization: '{term} or {text}'
     slot_uri: MIXS:0001322
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -5895,11 +5923,11 @@ attributes:
     in_subset:
     - environment
     from_schema: https://w3id.org/mixs
-    rank: 78
+    rank: 79
     keywords:
     - environmental
     slot_uri: MIXS:0000014
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -5939,12 +5967,12 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 79
+    rank: 80
     keywords:
     - method
     - sample
     slot_uri: MIXS:0001225
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -5993,13 +6021,13 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 80
+    rank: 81
     keywords:
     - device
     - sample
     string_serialization: '{termLabel} [{termID}]|{text}'
     slot_uri: MIXS:0000002
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6041,13 +6069,13 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 81
+    rank: 82
     keywords:
     - material
     - process
     - sample
     slot_uri: MIXS:0000016
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6084,12 +6112,12 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 82
+    rank: 83
     keywords:
     - sample
     - size
     slot_uri: MIXS:0000001
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6135,13 +6163,13 @@ attributes:
     examples:
     - value: Freezer no:5
     from_schema: https://w3id.org/mixs
-    rank: 83
+    rank: 84
     keywords:
     - location
     - sample
     - storage
     slot_uri: MIXS:0000755
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - Air
@@ -6180,14 +6208,14 @@ attributes:
     examples:
     - value: P1Y6M
     from_schema: https://w3id.org/mixs
-    rank: 84
+    rank: 85
     keywords:
     - duration
     - period
     - sample
     - storage
     slot_uri: MIXS:0000116
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - Air
@@ -6234,13 +6262,13 @@ attributes:
     examples:
     - value: -80 degree Celsius
     from_schema: https://w3id.org/mixs
-    rank: 85
+    rank: 86
     keywords:
     - sample
     - storage
     - temperature
     slot_uri: MIXS:0000110
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Agriculture
     - Air
@@ -6288,9 +6316,9 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 86
+    rank: 87
     slot_uri: MIXS:0001384
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6322,13 +6350,13 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 87
+    rank: 88
     keywords:
     - fraction
     - size
     string_serialization: '{float}-{float} {unit}'
     slot_uri: MIXS:0000017
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - Mimag
@@ -6361,14 +6389,14 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 88
+    rank: 89
     keywords:
     - dna
     - sample
     - volume
     - weight
     slot_uri: MIXS:0000111
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6431,9 +6459,9 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 89
+    rank: 90
     slot_uri: MIXS:0001386
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6459,9 +6487,9 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 90
+    rank: 91
     slot_uri: MIXS:0000037
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -6507,9 +6535,9 @@ attributes:
     in_subset:
     - nucleic acid sequence source
     from_schema: https://w3id.org/mixs
-    rank: 91
+    rank: 92
     slot_uri: MIXS:0001387
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6546,11 +6574,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 92
+    rank: 93
     keywords:
     - sequencing
     slot_uri: MIXS:0001389
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6584,11 +6612,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 93
+    rank: 94
     keywords:
     - ancient
     slot_uri: MIXS:0001385
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6619,12 +6647,12 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 94
+    rank: 95
     keywords:
     - library
     - preparation
     slot_uri: MIXS:0001391
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6651,9 +6679,9 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 95
+    rank: 96
     slot_uri: MIXS:0000048
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -6693,11 +6721,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 96
+    rank: 97
     keywords:
     - identifier
     slot_uri: MIXS:0000047
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - Mimag
@@ -6738,13 +6766,13 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 97
+    rank: 98
     keywords:
     - library
     - preparation
     string_serialization: '{text}'
     slot_uri: MIXS:0001388
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6778,12 +6806,12 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 98
+    rank: 99
     keywords:
     - library
     - preparation
     slot_uri: MIXS:0001392
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6812,11 +6840,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 99
+    rank: 100
     keywords:
     - library
     slot_uri: MIXS:0000043
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -6854,11 +6882,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 100
+    rank: 101
     keywords:
     - library
     slot_uri: MIXS:0000042
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -6892,12 +6920,12 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 101
+    rank: 102
     keywords:
     - library
     - size
     slot_uri: MIXS:0000039
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -6938,14 +6966,14 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 102
+    rank: 103
     keywords:
     - polymerase
     - library
     - preparation
     string_serialization: '{text}'
     slot_uri: MIXS:0001390
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -6980,14 +7008,14 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 103
+    rank: 104
     keywords:
     - sequencing
     - library
     - enrichment
     - capture
     slot_uri: MIXS:0001396
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7023,13 +7051,13 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 104
+    rank: 105
     keywords:
     - library
     - enrichment
     string_serialization: '{text}'
     slot_uri: MIXS:0001397
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7055,9 +7083,9 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 105
+    rank: 106
     slot_uri: MIXS:0001395
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7083,9 +7111,9 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 106
+    rank: 107
     slot_uri: MIXS:0001394
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7109,9 +7137,9 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 107
+    rank: 108
     slot_uri: MIXS:0000038
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -7152,11 +7180,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 108
+    rank: 109
     keywords:
     - method
     slot_uri: MIXS:0000050
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -7201,11 +7229,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 109
+    rank: 110
     keywords:
     - library
     slot_uri: MIXS:0000041
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7239,11 +7267,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 110
+    rank: 111
     keywords:
     - library
     slot_uri: MIXS:0000040
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7277,9 +7305,9 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 111
+    rank: 112
     slot_uri: MIXS:0001393
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7322,12 +7350,12 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 112
+    rank: 113
     keywords:
     - data analysis
     - data
     slot_uri: MIXS:0001398
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7361,11 +7389,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 113
+    rank: 114
     keywords:
     - data analysis
     slot_uri: MIXS:0001399
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - Ancient
     - MimsHostAssociatedAncient
@@ -7395,10 +7423,10 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 114
+    rank: 115
     string_serialization: '{text} {text}'
     slot_uri: MIXS:0000057
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7431,11 +7459,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 115
+    rank: 116
     keywords:
     - software
     slot_uri: MIXS:0000058
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7474,11 +7502,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 116
+    rank: 117
     keywords:
     - number
     slot_uri: MIXS:0000060
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7527,11 +7555,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 117
+    rank: 118
     keywords:
     - quality
     slot_uri: MIXS:0000056
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7566,12 +7594,12 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 118
+    rank: 119
     keywords:
     - classification
     - taxon
     slot_uri: MIXS:0000064
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7608,9 +7636,9 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 119
+    rank: 120
     slot_uri: MIXS:0000059
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7644,12 +7672,12 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 120
+    rank: 121
     keywords:
     - feature
     - predict
     slot_uri: MIXS:0000061
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7685,11 +7713,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 121
+    rank: 122
     keywords:
     - method
     slot_uri: MIXS:0000063
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7730,12 +7758,12 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 122
+    rank: 123
     keywords:
     - database
     string_serialization: '{database};{version};{reference}'
     slot_uri: MIXS:0000062
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MigsBa
@@ -7771,11 +7799,11 @@ attributes:
     in_subset:
     - sequencing
     from_schema: https://w3id.org/mixs
-    rank: 123
+    rank: 124
     keywords:
     - procedures
     slot_uri: MIXS:0000090
-    owner: MimsHumanOralAncient
+    owner: MimsHumanGutAncient
     domain_of:
     - MimsMisip
     - MimarksCMisip
@@ -7806,7 +7834,7 @@ attributes:
     structured_pattern:
       syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
-class_uri: MIXS:10007_16005_9999903
+class_uri: MIXS:0010007_0016004_0016024
 
 </code></pre>
 
