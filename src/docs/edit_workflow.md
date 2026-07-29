@@ -92,7 +92,31 @@ from them; it does not create the classes.
 
 ## Requesting and creating a new checklist or extension
 
-TBD.
+TBD, except for one step that is easy to miss.
+
+### Give it a way into a MIxS document
+
+A checklist, extension or combination is not usable until something can hold its
+records. `MixsCompliantData` is the root of a MIxS file, and each class reaches a
+document through one container slot listed on it. Adding a class means adding
+that slot too, in two places:
+
+1. Define the slot in the `slots` section, named after the class with a `_data`
+   suffix. Copy an existing one, such as `soil_data`, which sets `domain:
+   MixsCompliantData`, `range` to the class, `multivalued: true`, a
+   `slot_uri` of `MIXS:<slot name>`, a description and a title.
+2. **Add the slot name to the `slots:` list on the `MixsCompliantData` class.**
+   This is the step that attaches it. Setting `domain: MixsCompliantData` on the
+   slot does not.
+
+Miss the second step and nothing complains: the schema builds, the class is
+generated, and it simply cannot appear in a file. That is what happened to the
+nine ancient-DNA classes in v7.0.0, found only after release
+([issue 1365](https://github.com/GenomicsStandardsConsortium/mixs/issues/1365)).
+
+`tests/test_schema_constraints.py` now checks both directions, that every slot
+declaring the container domain is attached, and that every class is reachable
+from a document, so the same omission fails the build rather than shipping.
 
 ## Updating an existing checklist or extension
 

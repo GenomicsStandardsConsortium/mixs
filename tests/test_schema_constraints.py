@@ -196,6 +196,45 @@ class TestCombinationUri(unittest.TestCase):
             f"<mixed-in class>_<extended class>: {wrong}")
 
 
+class TestContainerSlots(unittest.TestCase):
+    """A class that no container slot points at cannot appear in a MIxS document.
+
+    ``MixsCompliantData`` is the root of a MIxS file, and each checklist,
+    extension and combination reaches a document through one ``*_data`` slot
+    listed on that class. Declaring ``domain: MixsCompliantData`` on the slot is
+    not enough; a slot missing from the class's own list is silently
+    unreachable, which is how the nine ancient-DNA slots shipped in v7.0.0
+    without anywhere to put ancient data. See issue 1365.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        view = SchemaView(SCHEMA_PATH)
+        cls.view = view
+        cls.attached = set(view.class_slots(CONTAINER_DOMAIN))
+
+    def test_every_container_slot_is_attached_to_the_class(self):
+        declared = {name for name, slot in self.view.all_slots().items()
+                    if slot.domain == CONTAINER_DOMAIN}
+        orphaned = sorted(declared - self.attached)
+        self.assertEqual(
+            orphaned, [],
+            f"{len(orphaned)} slots declare domain {CONTAINER_DOMAIN} but are not "
+            f"listed on it, so nothing can reach their classes: {orphaned}")
+
+    def test_every_class_is_reachable_from_a_document(self):
+        """Every checklist, extension and combination has a way into a file."""
+        reachable = {str(self.view.get_slot(s).range)
+                     for s in self.attached if self.view.get_slot(s)}
+        unreachable = sorted(
+            name for name in self.view.all_classes()
+            if name not in UNIDENTIFIED_CLASSES and name not in reachable)
+        self.assertEqual(
+            unreachable, [],
+            f"{len(unreachable)} classes cannot appear in a MIxS document because "
+            f"no container slot has them as its range: {unreachable}")
+
+
 class TestDescriptions(unittest.TestCase):
     """Descriptions are universal in the schema, so a missing one is a regression.
 
