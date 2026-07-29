@@ -113,6 +113,83 @@ class TestClassUri(unittest.TestCase):
             f"{len(shared)} class_uri values are used more than once: {dict(shared)}")
 
 
+class TestCombinationUri(unittest.TestCase):
+    """A combination identifier is built from the identifiers it combines.
+
+    ``MigsBaAgriculture`` is ``MigsBa`` (``MIXS:0010003``) applied to
+    ``Agriculture`` (``MIXS:0016018``), and its identifier is
+    ``MIXS:0010003_0016018``. The parts are not free text: each one is the
+    identifier of a class in this schema, so a wrong or invented part points at
+    a checklist or extension that does not exist.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        view = SchemaView(SCHEMA_PATH)
+        cls.classes = view.all_classes()
+        cls.combinations = {
+            name: c for name, c in cls.classes.items()
+            if COMBINATION_SUBSET in (c.in_subset or [])}
+        cls.known_numbers = {
+            str(c.class_uri).split(":", 1)[1]
+            for c in cls.classes.values()
+            if c.class_uri and "_" not in str(c.class_uri)}
+
+    def test_combination_uri_is_well_formed(self):
+        """Each part is MIXS: plus seven digits, underscore separated.
+
+        Unpadded parts break sorting and string matching against the checklist
+        and extension identifiers they are supposed to be built from.
+        """
+        malformed = {name: str(c.class_uri)
+                     for name, c in self.combinations.items()
+                     if not COMBINATION_URI_PATTERN.match(str(c.class_uri or ""))}
+        self.assertEqual(
+            malformed, {},
+            f"{len(malformed)} combination class_uri values are not "
+            f"underscore-joined seven-digit MIXS numbers: {malformed}")
+
+    def test_combination_uri_parts_identify_real_classes(self):
+        """Every part of a combination identifier belongs to some class."""
+        unknown = {}
+        for name, c in self.combinations.items():
+            uri = str(c.class_uri or "")
+            if ":" not in uri:
+                unknown[name] = uri
+                continue
+            parts = uri.split(":", 1)[1].split("_")
+            stray = [p for p in parts if p not in self.known_numbers]
+            if stray:
+                unknown[name] = f"{uri} (no class has {', '.join(stray)})"
+        self.assertEqual(
+            unknown, {},
+            f"{len(unknown)} combination class_uri values contain a number that "
+            f"identifies no class: {unknown}")
+
+    def test_combination_uri_matches_its_parents(self):
+        """The identifier composes the checklist it mixes in and the class it extends."""
+        def number(class_name):
+            c = self.classes.get(class_name)
+            if c is None or not c.class_uri:
+                return None
+            return str(c.class_uri).split(":", 1)[1]
+
+        wrong = {}
+        for name, c in self.combinations.items():
+            checklist = list(c.mixins)[0] if c.mixins else None
+            parent, mixed = number(c.is_a), number(checklist)
+            if parent is None or mixed is None:
+                continue
+            expected = f"MIXS:{mixed}_{parent}"
+            actual = str(c.class_uri)
+            if actual != expected:
+                wrong[name] = f"{actual}, expected {expected}"
+        self.assertEqual(
+            wrong, {},
+            f"{len(wrong)} combination identifiers do not compose "
+            f"<checklist>_<extension>: {wrong}")
+
+
 class TestDescriptions(unittest.TestCase):
     """Descriptions are universal in the schema, so a missing one is a regression.
 

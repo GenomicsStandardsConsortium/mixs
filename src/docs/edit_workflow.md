@@ -26,15 +26,23 @@ existing data and tooling keep working. The procedure is in
 # MIxS identifiers
 
 Every term and every checklist, extension and combination carries a permanent
-`MIXS:` identifier. They come from two separate ranges:
+`MIXS:` identifier, in one of these forms:
 
-| element | field | range in MIxS 7.0.0 |
+| element | field | form, as of MIxS 7.0.0 |
 |---|---|---|
-| terms | `slot_uri` | `MIXS:0000001` to `MIXS:0001399` |
-| checklists, extensions, combinations | `class_uri` | blocks within `MIXS:0010002` to `MIXS:0016024` |
+| terms | `slot_uri` | one number, `MIXS:0000001` to `MIXS:0001399` |
+| checklists and extensions | `class_uri` | one number, in blocks between `MIXS:0010002` and `MIXS:0016024` |
+| combinations | `class_uri` | the numbers they combine, joined by underscores |
+| container slots | `slot_uri` | a name, such as `MIXS:migs_ba_data` |
 
-The 344 container slots are the exception: they carry a name-based `slot_uri`
-such as `MIXS:migs_ba_data` rather than a number.
+A combination does not get an identifier of its own. It composes the ones it is
+built from: `MigsBaAgriculture` combines `MigsBa` (`MIXS:0010003`) with
+`Agriculture` (`MIXS:0016018`), so it is `MIXS:0010003_0016018`. A combination
+built on another combination extends the chain, as
+`MimsSoilAncient` does with `MIXS:0010007_0016012_0016024`. Each part keeps its
+seven digits, because unpadded parts no longer match the identifiers they are
+supposed to refer to. So adding a combination needs no request; adding the
+checklist or extension it is built from does.
 
 Identifiers are allocated by the CIG from a registry kept outside this
 repository, in a spreadsheet only CIG members can edit. That is why you cannot
@@ -44,10 +52,11 @@ already belong to someone else. Ask on the GitHub issue for the term, and a CIG
 member will allocate the identifier and record it in the registry.
 
 Add the identifier after the term is approved and before its pull request is
-merged. Placeholder values such as `MIXS:XXXXXXXXX` must not reach `main`;
-44 of them did in July 2026 and had to be corrected afterwards. Nothing blocks
-that today, which is
-[issue 1304](https://github.com/GenomicsStandardsConsortium/mixs/issues/1304).
+merged. Placeholder and malformed values must not reach `main`, and both have:
+44 terms carrying `MIXS:XXXXXXXXX` were merged in July 2026, and 8 combinations
+carried a number identifying no class until this was written. `tests/test_schema_constraints.py`
+now checks both, so a pull request introducing one fails rather than being
+caught later by a reader.
 
 # Checklists, extensions, and combinations
 
