@@ -26,7 +26,8 @@ gh pr list --state merged --search "merged:<old date>..<new date>" \
 ```
 
 That is 50 for v6.3.1 to v7.0.0 and around 200 for a comparison reaching back to
-v6.0.0, which is small enough to read.
+MIxS 6.0.0, whose tag is `mixs6.0.0` rather than `v6.0.0`. Either is small enough
+to read.
 
 Two other sources already at hand:
 
