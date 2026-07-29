@@ -228,15 +228,14 @@ Four things can update them, and it is worth knowing which is which:
   usually nothing. This is deliberate: it keeps a local build and a diff of
   several hundred generated files off contributors.
 - **A pull request that edits a build input** (`Makefile`, `src/sparql/**`,
-  `project-generator-config.yaml`) does run the workflow, which regenerates and
-  fails if the committed files no longer match.
-- **A push to `main`** runs the workflow, which regenerates and then commits only
-  when `project/jsonschema/mixs.schema.json` differs from what is committed.
-  That file is used to decide because it regenerates deterministically, while
-  RDF/Turtle reorders triples and relabels blank nodes on every run, so the OWL
-  differs textually even when the schema has not changed. Anything the JSON
-  Schema does not represent, including `class_uri` values, does not register as
-  a change.
+  `project-generator-config.yaml`) runs the workflow, which runs `make
+  gen-project` and fails if `project/jsonschema/` no longer matches what is
+  committed. That is the whole check: it does not regenerate or compare the OWL,
+  `contrib/`, or the Python datamodel, so a build-input change that affects only
+  those passes.
+- **A push to `main`** runs nothing. The workflow's push trigger is disabled
+  while [issue 1303](https://github.com/GenomicsStandardsConsortium/mixs/issues/1303)
+  is open, so merging a schema change refreshes no generated files.
 - **The "Create Release PR" action** runs `make install clean all` on the branch
   it creates and commits everything that produces, so a release cut this way
   carries generated files built from the schema it ships. This is the action
@@ -247,7 +246,7 @@ Four things can update them, and it is worth knowing which is which:
 
 Merging a pull request that changes only the schema leaves the committed
 generated files describing the state before your change. Nothing refreshes them
-on merge unless the JSON Schema differs, and nothing warns you either way. The
+on merge, and nothing warns you either way. The
 committed files on `main` are not guaranteed to match
 `src/mixs/schema/mixs.yaml` at any given moment.
 
