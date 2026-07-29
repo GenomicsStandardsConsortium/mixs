@@ -4114,7 +4114,7 @@ slots:
     description: Data that comply with Extension Ancient
     title: ancient data
     domain: MixsCompliantData
-    slot_uri: "MIXS:ancient_data"
+    slot_uri: MIXS:ancient_data
     multivalued: true
     range: Ancient
     inlined: true
@@ -4123,7 +4123,7 @@ slots:
     description: Data that comply with Ancient combined with MimsHostAssociated
     title: MimsHostAssociatedAncient Data
     domain: MixsCompliantData
-    slot_uri: "MIXS:mims_hostassociated_ancient_data"
+    slot_uri: MIXS:mims_hostassociated_ancient_data
     multivalued: true
     range: MimsHostAssociatedAncient
     inlined: true
@@ -4132,7 +4132,7 @@ slots:
     description: Data that comply with Ancient combined with MimsHumanAssociated
     title: MimsHumanAssociatedAncient Data
     domain: MixsCompliantData
-    slot_uri: "MIXS:mims_humanassociated_ancient_data"
+    slot_uri: MIXS:mims_humanassociated_ancient_data
     multivalued: true
     range: MimsHumanAssociatedAncient
     inlined: true
@@ -4141,7 +4141,7 @@ slots:
     description: Data that comply with Ancient combined with MimsHumanOral
     title: MimsHumanOralAncient Data
     domain: MixsCompliantData
-    slot_uri: "MIXS:mims_humanoral_ancient_data"
+    slot_uri: MIXS:mims_humanoral_ancient_data
     multivalued: true
     range: MimsHumanOralAncient
     inlined: true
@@ -4150,7 +4150,7 @@ slots:
     description: Data that comply with Ancient combined with MimsHumanGut
     title: MimsHumanGutAncient Data
     domain: MixsCompliantData
-    slot_uri: "MIXS:mims_humangut_ancient_data"
+    slot_uri: MIXS:mims_humangut_ancient_data
     multivalued: true
     range: MimsHumanGutAncient
     inlined: true
@@ -4159,7 +4159,7 @@ slots:
     description: Data that comply with Ancient combined with MimsHumanSkin
     title: MimsHumanSkinAncient Data
     domain: MixsCompliantData
-    slot_uri: "MIXS:mims_humanskin_ancient_data"
+    slot_uri: MIXS:mims_humanskin_ancient_data
     multivalued: true
     range: MimsHumanSkinAncient
     inlined: true
@@ -4168,7 +4168,7 @@ slots:
     description: Data that comply with Ancient combined with MimsSediment
     title: MimsSedimentAncient Data
     domain: MixsCompliantData
-    slot_uri: "MIXS:mims_sediment_ancient_data"
+    slot_uri: MIXS:mims_sediment_ancient_data
     multivalued: true
     range: MimsSedimentAncient
     inlined: true
@@ -4177,7 +4177,7 @@ slots:
     description: Data that comply with Ancient combined with MimsSoil
     title: MimsSoilAncient Data
     domain: MixsCompliantData
-    slot_uri: "MIXS:mims_soil_ancient_data"
+    slot_uri: MIXS:mims_soil_ancient_data
     multivalued: true
     range: MimsSoilAncient
     inlined: true
@@ -4186,7 +4186,7 @@ slots:
     description: Data that comply with Ancient combined with MimsPlantAssociated
     title: MimsPlantAssociatedAncient Data
     domain: MixsCompliantData
-    slot_uri: "MIXS:mims_plantassociated_ancient_data"
+    slot_uri: MIXS:mims_plantassociated_ancient_data
     multivalued: true
     range: MimsPlantAssociatedAncient
     inlined: true
@@ -14398,7 +14398,7 @@ slots:
     annotations:
       Expected_value: sex of the symbiotic organism (host of the samples); enumeration
     description: Physical sex of the host
-    title: host sex
+    title: urobiome sex
     keywords:
       - host
       - host.
@@ -23752,7 +23752,7 @@ classes:
     is_a: Ancient
     mixins:
     - MimsHostAssociated
-    class_uri: "MIXS:10007_16002_9999903"
+    class_uri: MIXS:0010007_0016002_0016024
     slots:
     - project_name
     - associated_resource
@@ -24299,7 +24299,7 @@ classes:
     is_a: Ancient
     mixins:
     - MimsHumanAssociated
-    class_uri: "MIXS:10007_16003_9999903"
+    class_uri: MIXS:0010007_0016003_0016024
     slots:
     - project_name
     - associated_resource
@@ -24870,7 +24870,7 @@ classes:
     is_a: Ancient
     mixins:
     - MimsHumanOral
-    class_uri: "MIXS:10007_16005_9999903"
+    class_uri: MIXS:0010007_0016005_0016024
     slots:
     - project_name
     - associated_resource
@@ -25373,7 +25373,7 @@ classes:
     is_a: Ancient
     mixins:
     - MimsHumanGut
-    class_uri: "MIXS:10007_16004_9999903"
+    class_uri: MIXS:0010007_0016004_0016024
     slots:
     - project_name
     - associated_resource
@@ -25880,7 +25880,7 @@ classes:
     is_a: Ancient
     mixins:
     - MimsHumanSkin
-    class_uri: "MIXS:10007_16006_9999903"
+    class_uri: MIXS:0010007_0016006_0016024
     slots:
     - project_name
     - associated_resource
@@ -26387,7 +26387,7 @@ classes:
     is_a: Ancient
     mixins:
     - MimsSediment
-    class_uri: "MIXS:10007_16011_9999903"
+    class_uri: MIXS:0010007_0016011_0016024
     slots:
     - project_name
     - associated_resource
@@ -27018,7 +27018,7 @@ classes:
     is_a: Ancient
     mixins:
     - MimsSoil
-    class_uri: "MIXS:10007_16012_9999903"
+    class_uri: MIXS:0010007_0016012_0016024
     slots:
     - project_name
     - associated_resource
@@ -27593,7 +27593,7 @@ classes:
     is_a: Ancient
     mixins:
     - MimsPlantAssociated
-    class_uri: "MIXS:10007_16010_9999903"
+    class_uri: MIXS:0010007_0016010_0016024
     slots:
     - project_name
     - associated_resource
