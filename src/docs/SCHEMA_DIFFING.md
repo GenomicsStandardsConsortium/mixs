@@ -174,6 +174,8 @@ per-release folder; pass `--output-dir` to override):
   classes, enums, prefixes, settings) splits into `key_comparison` (added or
   removed names) and `definition_changes` (same name, changed body, field by
   field).
+- `tool_summary.md`: a short Markdown page of counts (added, removed, changed)
+  for each collection.
 
 The structured output reports every change equally, including cosmetic ones. For
 example, a one-line edit to a templated description can show as a change on every
