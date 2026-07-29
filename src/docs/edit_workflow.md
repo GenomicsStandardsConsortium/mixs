@@ -215,16 +215,36 @@ it is reviewed like any other change before merge.
 
 ## Keeping generated artifacts current
 
-The committed artifacts under `project/`, `src/mixs/datamodel/` and `contrib/`
-are generated from the schema, and the "Regenerate and verify generated
-artifacts" workflow keeps them in sync. On a pull request it regenerates and
-fails if the committed artifacts are stale. On a push to `main` that changes the
-schema or its build inputs, it regenerates everything and commits the result.
+The files under `project/`, `src/mixs/datamodel/` and `contrib/` are generated
+from `src/mixs/schema/mixs.yaml` by `make`, and they are committed because
+downstream consumers fetch them directly. EBI OLS reads
+`project/owl/mixs.owl.ttl` from raw `main`.
 
-The check uses `project/jsonschema/mixs.schema.json` as its signal, because that
-file regenerates deterministically. The OWL (`project/owl/mixs.owl.ttl`) is not
-byte-reproducible: RDF/Turtle serialization reorders triples and relabels blank
-nodes on every run, so it is regenerated and committed but not compared by diff.
+Four things can update them, and it is worth knowing which is which:
+
+- **A pull request that edits only the schema** does neither. The "Regenerate
+  and verify generated artifacts" workflow does not run on it, so the generated
+  files in such a pull request are whatever its author put there, which is
+  usually nothing. This is deliberate: it keeps a local build and a diff of
+  several hundred generated files off contributors.
+- **A pull request that edits a build input** (`Makefile`, `src/sparql/**`,
+  `project-generator-config.yaml`) does run the workflow, which regenerates and
+  fails if the committed files no longer match.
+- **A push to `main`** runs the workflow, which regenerates and then commits only
+  when `project/jsonschema/mixs.schema.json` differs from what is committed.
+  That file is used to decide because it regenerates deterministically, while
+  RDF/Turtle reorders triples and relabels blank nodes on every run, so the OWL
+  differs textually even when the schema has not changed. Anything the JSON
+  Schema does not represent, including `class_uri` values, does not register as
+  a change.
+- **The "Create Release PR" action** runs `make install clean all` on the branch
+  it creates and commits everything that produces, so a release cut this way
+  carries generated files built from the schema it ships. This is the action
+  doing it, not the branch: a release branch assembled by hand gets no rebuild,
+  and would carry whatever `main` had at the time.
+
+Building locally and committing the result in your own pull request is
+supported, and is the only way to see the generated diff before merge.
 
 Do not hand-edit generated artifacts.
 
