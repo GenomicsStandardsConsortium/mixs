@@ -1,0 +1,1912 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://GenomicsStandardsConsortium.github.io/mixs/version-changes/v6.0.0_to_v7.0.0/">
+      
+      
+        <link rel="prev" href="../v5_to_v6.0.0-counts/">
+      
+      
+        <link rel="next" href="../v6.0.0_to_v7.0.0-counts/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>v6.0.0 to v7.0.0 - mixs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mixs-600-to-700-schema-diff-summary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="mixs" class="md-header__button md-logo" aria-label="mixs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mixs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              v6.0.0 to v7.0.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GenomicsStandardsConsortium/mixs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="mixs" class="md-nav__button md-logo" aria-label="mixs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    mixs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GenomicsStandardsConsortium/mixs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../term_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full term table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../combinations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enumerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enumerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editing policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../edit_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editing workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema_element_deprecation_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deprecating schema elements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Version changes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Version changes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v5_to_v6.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v5 to v6.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v5_to_v6.0.0-counts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v5 to v6.0.0 (counts)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v6.0.0 to v7.0.0
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v6.0.0 to v7.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#read-the-headline-numbers-with-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read the headline numbers with care
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Added">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes-60" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes (60)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slots-344-combination-containers-65-real-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slots: 344 combination containers + 65 real terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums-27-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enums (27 new)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefixes-7-new-settings-33-new-subsets-4-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefixes (7 new), settings (33 new), subsets (4 new)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renamed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renamed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#possible-missed-renames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Possible missed renames
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cardinality-and-range-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cardinality and range changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cardinality and range changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-quantity-value-class-is-gone-173-slots-the-largest-single-change-in-the-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The quantity value class is gone: 173 slots, the largest single change in the diff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-range-changes-worth-listing-individually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other range changes worth listing individually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multivalued" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multivalued
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#title-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Title changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosmetic-changes-grouped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosmetic changes (grouped)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v6.0.0_to_v7.0.0-counts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v6.0.0 to v7.0.0 (counts)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SCHEMA_DIFFING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparing schema versions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#read-the-headline-numbers-with-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read the headline numbers with care
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Added">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes-60" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes (60)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slots-344-combination-containers-65-real-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slots: 344 combination containers + 65 real terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums-27-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enums (27 new)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefixes-7-new-settings-33-new-subsets-4-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefixes (7 new), settings (33 new), subsets (4 new)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renamed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renamed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#possible-missed-renames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Possible missed renames
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cardinality-and-range-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cardinality and range changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cardinality and range changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-quantity-value-class-is-gone-173-slots-the-largest-single-change-in-the-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The quantity value class is gone: 173 slots, the largest single change in the diff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-range-changes-worth-listing-individually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other range changes worth listing individually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multivalued" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multivalued
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#title-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Title changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosmetic-changes-grouped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosmetic changes (grouped)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mixs-600-to-700-schema-diff-summary">MIxS 6.0.0 to 7.0.0: schema diff summary</h1>
+<p>Compares <code>mixs6.0.0</code> (2022-03-24, <code>74744ee</code>) to <code>main</code> (2026-07-29, <code>60b48ef</code>), whose
+<code>version</code> is <code>7.0.0</code>. Source: <code>schema_comparison_results.yaml</code> in this folder.</p>
+<h2 id="read-the-headline-numbers-with-care">Read the headline numbers with care</h2>
+<p>The tool counts 409 new slots, 60 new classes, 770 slot definition changes and 287 class
+definition changes. Almost all of that is one refactor, not new metadata content:</p>
+<ul>
+<li><strong>344 of the 409 "new" slots (84%) are <code>*_data</code> container slots</strong>, one per
+  checklist-by-extension combination class (<code>migs_ba_soil_data</code>, <code>mimarks_c_misip_water_data</code>,
+  and so on). Each has <code>domain: MixsCompliantData</code>, <code>range: &lt;the combination class&gt;</code>,
+  <code>multivalued: true</code>, <code>inlined: true</code>. They are the machinery for a new top-level
+  <code>MixsCompliantData</code> holder class. Only <strong>65 new slots are actual metadata terms</strong>.</li>
+<li><strong>All 287 class definition changes are renames.</strong> Every one has an entry in
+  <code>expected_mappings</code>, and the only fields that differ are <code>name</code>, <code>class_uri</code> (287 classes
+  gained one), <code>title</code> (287 gained one) and <code>description</code> (281).</li>
+<li><strong>All 125 enum definition changes are renames too</strong> (<code>snake_case_enum</code> to <code>CamelCaseEnum</code>).
+  Only one has any other change: <code>pred_genome_type_enum -&gt; ViralGenomeTypeEnum</code> also changed
+  its description.</li>
+<li><strong>628 of the 644 <code>multivalued</code> changes and 158 of the 553 <code>range</code> changes are the diff
+  seeing a dropped-but-unchanged default.</strong> v7 sets <code>default_range: string</code> at the schema
+  level and stops writing <code>multivalued: false</code> explicitly, so <code>range: string -&gt; (absent)</code> and
+  <code>multivalued: false -&gt; (absent)</code> mean nothing changed.</li>
+</ul>
+<p>What the numbers understate: the 26 confirmed slot renames plus at least two unmapped ones
+(below) would otherwise read as removals of terms that in fact survived.</p>
+<h2 id="added">Added</h2>
+<h3 id="classes-60">Classes (60)</h3>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Count</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MimsMisip*</code></td>
+<td>24</td>
+<td>New MIMS-MISIP checklist ("Metagenome or Environmental with SIP") plus its 23 extension combinations</td>
+</tr>
+<tr>
+<td><code>MimarksCMisip*</code></td>
+<td>24</td>
+<td>New MIMARKS specimen-MISIP checklist plus its 23 extension combinations</td>
+</tr>
+<tr>
+<td><code>Mims*Ancient</code></td>
+<td>8</td>
+<td>The new <code>Ancient</code> extension combined with MIMS host-associated, human-associated, human-gut, human-oral, human-skin, plant-associated, sediment, soil</td>
+</tr>
+<tr>
+<td><code>Ancient</code></td>
+<td>1</td>
+<td>New extension for degraded/ancient nucleic acids (alias <code>minas</code>)</td>
+</tr>
+<tr>
+<td><code>Checklist</code>, <code>Extension</code>, <code>MixsCompliantData</code></td>
+<td>3</td>
+<td>Structural classes with no v6 counterpart. <code>Extension</code> carries alias <code>EnvironmentalPackage</code></td>
+</tr>
+</tbody>
+</table>
+<p>So the substantive additions are two checklists (MIMS-MISIP, MIMARKS-specimen-MISIP) and one
+extension (Ancient); the other 56 classes are combinations and scaffolding.</p>
+<h3 id="slots-344-combination-containers-65-real-terms">Slots: 344 combination containers + 65 real terms</h3>
+<p>The 65 real terms fall into four coherent themes, each arriving with its own enums:</p>
+<p><strong>Ancient DNA and palaeogenomics (16 terms)</strong> — matches the new <code>Ancient</code> extension:
+<code>biocultural_label</code>, <code>chrono_age_protocol</code>, <code>chrono_age_remarks</code>, <code>context_retrieval_date</code>,
+<code>cultural_era</code>, <code>damage_treatment</code>, <code>earliest_chrono_age</code>, <code>earliest_chrono_sys</code>,
+<code>geological_epoch</code>, <code>host_preserv_state</code>, <code>latest_chrono_age</code>, <code>latest_chrono_sys</code>,
+<code>palaeopath_status</code>, <code>past_env_broad</code>, <code>past_env_local</code>, <code>stratigraph_context</code>.
+New enums: <code>BioCulturalLabelEnum</code>, <code>ChronoAgeProtocolEnum</code>, <code>ChronoAgeSysEnum</code>,
+<code>DamageTreatmentEnum</code>, <code>GeolEpochEnum</code>. New prefix <code>chrono:</code> (TDWG chronometric-age terms).</p>
+<p><strong>Stable isotope probing (14 terms)</strong> — matches the new MISIP checklists:
+<code>gradient_position</code>, <code>gradient_pos_density</code>, <code>gradient_pos_rel_am</code>, <code>internal_standard</code>,
+<code>isotope</code>, <code>isotopolog</code>, <code>isotopolog_approach</code>, <code>isotopolog_atom_frac</code>,
+<code>isotopolog_atom_pos</code>, <code>isotopolog_dose</code>, <code>isotopolog_incu_time</code>, <code>isotopolog_label</code>,
+<code>nucleobase_atom_frac</code>, <code>sip_method</code>.
+New enums: <code>IsotopeEnum</code>, <code>IsotopologApproachEnum</code>, <code>IsotopologLabelEnum</code>.</p>
+<p><strong>Library prep, capture enrichment and read processing (14 terms)</strong>:
+<code>capt_pcr_cyc_tot</code>, <code>capt_probe_desc</code>, <code>capt_probe_src_taxid</code>, <code>reamp_pcr_cyc_tot</code>,
+<code>lib_gener_technique</code>, <code>lib_mid_desc</code>, <code>lib_polymerase</code>, <code>lib_strandedness</code>, <code>library_name</code>,
+<code>sop_lib_preparation</code>, <code>reads_removed</code>, <code>data_preproc_desc</code>, <code>marker_gene_recov</code>,
+<code>marker_gene_recov_sw</code>. New enums: <code>LibStrandEnum</code>, <code>LibTypeEnum</code>.</p>
+<p><strong>Sample provenance, permits and identifiers (18 terms)</strong>:
+<code>permit_authority</code>, <code>permit_date</code>, <code>permit_id</code>, <code>permit_scope</code>, <code>orig_site_lat</code>,
+<code>orig_site_lon</code>, <code>orig_site_loc</code>, <code>orig_site_name</code>, <code>batch_ids</code>, <code>samp_alt_lab_ids</code>,
+<code>samp_category</code>, <code>samp_decont_pretreat</code>, <code>samp_dna_conc</code>, <code>samp_preserv_treatm</code>,
+<code>nucl_acid_extr_date</code>, <code>nucleic_acid_elution_vol</code>, <code>prev_pubs</code>, <code>sop_experimental</code>.
+New enum: <code>SampCategoryEnum</code>.</p>
+<p>The remaining three: <code>estimated_genome_size</code> (see missed renames), plus
+<code>nose_mouth_teeth_throat_disord</code> and <code>urobiom_sex</code>.</p>
+<h3 id="enums-27-new">Enums (27 new)</h3>
+<p>The four theme clusters above account for 12. The rest are enumerations replacing free text
+on existing slots (see "range changes"), plus <code>InsdcMissingValueEnum</code> (INSDC missing-value
+vocabulary) and consolidations such as <code>MoldVisibilityEnum</code>, reused by five mold slots.</p>
+<h3 id="prefixes-7-new-settings-33-new-subsets-4-new">Prefixes (7 new), settings (33 new), subsets (4 new)</h3>
+<p>New prefixes: <code>NCIT</code>, <code>SO</code>, <code>chrono</code>, <code>dc</code>, <code>schema</code>, <code>shex</code>, <code>xsd</code>.
+The 33 new <code>settings</code> (<code>float</code>, <code>unit</code>, <code>termID</code>, <code>termLabel</code>, <code>software</code>, <code>version</code>,
+<code>duration</code>, <code>timestamp</code>, ...) are interpolation variables for LinkML <code>structured_pattern</code>,
+which v7 uses 307 times. This is the mechanism behind the 296 added <code>pattern</code> values.</p>
+<p>New subsets: <code>environment</code>, <code>investigation</code>, <code>nucleic acid sequence source</code>, <code>sequencing</code>.</p>
+<h2 id="removed">Removed</h2>
+<p><strong>Classes (2):</strong> <code>core</code>, <code>quantity value</code>. The removal of <code>quantity value</code> is the single
+largest driver in the whole diff (173 range changes, 178 added patterns) and is discussed
+below.</p>
+<p><strong>Slots (18), in four groups:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Slots</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grouping slots turned into subsets</td>
+<td><code>environment field</code>, <code>investigation field</code>, <code>nucleic acid sequence source field</code>, <code>sequencing field</code></td>
+<td>Recorded in <code>assets/between_diff_mappings/6_to_pre_7/inter_type_refactoring.tsv</code> as slot-to-subset conversions</td>
+</tr>
+<tr>
+<td>Grouping slots with no recorded fate</td>
+<td><code>core field</code>, <code>mixs extension field</code></td>
+<td>Same shape as the four above but absent from <code>inter_type_refactoring.tsv</code></td>
+</tr>
+<tr>
+<td>Attributes of the removed <code>quantity value</code> class</td>
+<td><code>has numeric value</code>, <code>has raw value</code>, <code>has unit</code></td>
+<td>Gone with the class</td>
+</tr>
+<tr>
+<td>Recorded deletions</td>
+<td><code>soil_text_measure</code>, <code>texture_meth</code>, <code>tot_n_meth</code>, <code>tot_phos</code>, <code>url</code></td>
+<td>Listed in <code>slot_name_mappings.tsv</code> with an empty target</td>
+</tr>
+<tr>
+<td>Not recorded anywhere</td>
+<td><code>estimated_size</code>, <code>soil_depth</code>, <code>samp_salinity</code>, <code>salinity_meth</code></td>
+<td>See missed renames</td>
+</tr>
+</tbody>
+</table>
+<p>The five "recorded deletions" are not really deletions: <strong>each was a v6 duplicate sharing a
+MIXS URI with another v6 slot, and v7 kept one of the pair.</strong> Verified from the v6
+<code>terms.yaml</code> and v7 <code>src/mixs/schema/mixs.yaml</code>:</p>
+<table>
+<thead>
+<tr>
+<th>v6 duplicate pair</th>
+<th>Shared URI</th>
+<th>v7 survivor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>soil_text_measure</code>, <code>texture</code></td>
+<td>MIXS:0000335</td>
+<td><code>soil_texture</code></td>
+</tr>
+<tr>
+<td><code>texture_meth</code>, <code>soil_texture_meth</code></td>
+<td>MIXS:0000336</td>
+<td><code>soil_texture_meth</code></td>
+</tr>
+<tr>
+<td><code>tot_n_meth</code>, <code>tot_nitro_cont_meth</code></td>
+<td>MIXS:0000338</td>
+<td><code>tot_nitro_cont_meth</code></td>
+</tr>
+<tr>
+<td><code>tot_phos</code>, <code>tot_phosphate</code></td>
+<td>MIXS:0000689</td>
+<td><code>tot_phosphate</code></td>
+</tr>
+<tr>
+<td><code>url</code>, <code>associated resource</code></td>
+<td>MIXS:0000091</td>
+<td><code>associated_resource</code></td>
+</tr>
+</tbody>
+</table>
+<p>In each case the mapping file records the surviving name as a rename target for one member of
+the pair and blanks the other. That is defensible, but a consumer reading the diff alone sees
+five term deletions where the identifier actually survived under a different label.</p>
+<p><strong>Enums (27 removed).</strong> 18 belong to slots that dropped their enumerated range entirely (see
+range changes); the other 9 (<code>add_recov_method_enum</code>, <code>assembly_software_enum</code>,
+<code>compl_score_enum</code>, <code>door_loc_enum</code>, <code>food_quality_date_enum</code>, <code>pres_animal_insect_enum</code>,
+<code>samp_purpose_enum</code>, <code>wall_loc_enum</code>, <code>window_loc_enum</code>) belong to slots that moved to
+pattern-constrained strings.</p>
+<p><strong>Subsets (2):</strong> <code>checklist</code>, <code>package</code> (<code>package</code> is now expressed as the <code>Extension</code> class,
+which carries the alias <code>EnvironmentalPackage</code>).</p>
+<h2 id="renamed">Renamed</h2>
+<p><strong>Classes: 287 renames, all following one convention</strong> — space-separated lowercase names
+become CamelCase, with the checklist abbreviated:
+<code>MIGS bacteria -&gt; MigsBa</code>, <code>MIGS eukaryote -&gt; MigsEu</code>, <code>MIGS org -&gt; MigsOrg</code>,
+<code>MIGS plant -&gt; MigsPl</code>, <code>MIGS virus -&gt; MigsVi</code>, <code>MIMARKS specimen -&gt; MimarksC</code>,
+<code>MIMARKS survey -&gt; MimarksS</code>, <code>MIMS -&gt; Mims</code>, <code>MIMAG -&gt; Mimag</code>, <code>MISAG -&gt; Misag</code>,
+<code>MIUVIG -&gt; Miuvig</code>. Combination classes concatenate the two:
+<code>agriculture MIGS bacteria -&gt; MigsBaAgriculture</code>, with the checklist moving to the front.</p>
+<p><strong>Enums: 125 renames</strong>, all <code>snake_case_enum</code> to <code>CamelCaseEnum</code>. Six of the new names absorb
+more than one old enum: <code>CeilingWallTextureEnum</code> (2), <code>SoilHorizonEnum</code> (2), <code>GeolAgeEnum</code> (2),
+<code>CompassDirections8Enum</code> (2, from <code>ext_wall_orient_enum</code> + <code>ext_window_orient_enum</code>),
+<code>DamagedEnum</code> (3), <code>DamagedRupturedEnum</code> (3). So 125 old enums map onto 117 new ones.</p>
+<p><strong>Subsets: 1</strong> — <code>checklist_package_combination -&gt; combination_classes</code>.</p>
+<p><strong>Slots: 26 confirmed renames</strong>, driven by three consistent conventions rather than ad hoc
+edits:</p>
+<ol>
+<li><em>Abbreviate to the established MIxS style</em>: <code>assembly_quality -&gt; assembly_qual</code>,
+   <code>microbial_biomass_meth -&gt; micro_biomass_meth</code>, <code>previous_land_use_meth -&gt; prev_land_use_meth</code>,
+   <code>non_mineral_nutr_regm -&gt; non_min_nutr_regm</code>, <code>host_infra_specific_name -&gt; host_infra_spec_name</code>,
+   <code>host_infra_specific_rank -&gt; host_infra_spec_rank</code>, <code>host_family_relation -&gt; host_fam_rel</code>,
+   <code>single_cell_lysis_appr -&gt; sc_lysis_approach</code>, <code>single_cell_lysis_prot -&gt; sc_lysis_method</code>,
+   <code>air particulate matter concentration -&gt; air_PM_concen</code>, <code>tot_car -&gt; tot_carb</code>.</li>
+<li><em>Normalize the <code>samp_</code> family</em>, expanding truncated stems and standardizing on <code>samp_</code>:
+   <code>samp_collec_device -&gt; samp_collect_device</code>, <code>samp_collec_method -&gt; samp_collect_method</code>,
+   <code>sample_collec_method -&gt; samp_collect_method</code>, <code>sample_name -&gt; samp_name</code>,
+   <code>samp_stor_dur -&gt; samp_store_dur</code>, <code>samp_stor_loc -&gt; samp_store_loc</code>,
+   <code>samp_stor_temp -&gt; samp_store_temp</code>.</li>
+<li><em>Disambiguate generic names with a domain prefix</em>: <code>horizon -&gt; soil_horizon</code>,
+   <code>texture -&gt; soil_texture</code>.</li>
+</ol>
+<p>Plus mechanical identifier fixes: <code>x_16s_recover -&gt; x16s_recover</code>,
+<code>x_16s_recover_software -&gt; x16s_recover_software</code>, <code>Food_Product_type -&gt; food_product_type</code>,
+<code>Food_source -&gt; food_source</code>, <code>associated resource -&gt; associated_resource</code>.</p>
+<p>Two old names collapse into one new one in each of two cases: <code>host_family_relation</code> and
+<code>host_family_relationship</code> both to <code>host_fam_rel</code>; <code>samp_collec_method</code> and
+<code>sample_collec_method</code> both to <code>samp_collect_method</code>.</p>
+<p>One rename also moved its identifier: <code>assembly_quality -&gt; assembly_qual</code> changed
+<code>slot_uri</code> from <code>MIXS:0000058</code> to <code>MIXS:0000056</code>. That is the only slot_uri change on a
+renamed slot, and it deserves a maintainer's eye. Separately, <code>prod_label_claims</code> gained
+<code>slot_uri: MIXS:0001337</code> where it previously had none.</p>
+<h2 id="possible-missed-renames">Possible missed renames</h2>
+<p>This diff has no <code>rename_candidates</code> section, so the following are my own findings, each
+confirmed by MIXS URI identity between the v6 and v7 schema sources. <strong>A maintainer should
+confirm these and add the real ones to <code>assets/between_diff_mappings/6_to_pre_7/</code>.</strong></p>
+<table>
+<thead>
+<tr>
+<th>v6 slot (reported as removed)</th>
+<th>Shared URI</th>
+<th>v7 slot (reported as added or shared)</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>estimated_size</code></td>
+<td>MIXS:0000024</td>
+<td><code>estimated_genome_size</code></td>
+<td>Same URI. The class <code>cascaded</code> entries show <code>estimated_size</code> removed from exactly 144 classes and <code>estimated_genome_size</code> added to exactly 144. Not in <code>slot_name_mappings.tsv</code> at all.</td>
+</tr>
+<tr>
+<td><code>soil_depth</code></td>
+<td>MIXS:0000018</td>
+<td><code>depth</code></td>
+<td>Same URI. <code>soil_depth</code> was a v6 duplicate of <code>depth</code>; v7 kept <code>depth</code>. Not in <code>slot_name_mappings.tsv</code> at all, not even as a blank-target deletion like the other four duplicate cleanups.</td>
+</tr>
+</tbody>
+</table>
+<p><code>estimated_size -&gt; estimated_genome_size</code> is the more consequential of the two: it is a real
+rename of a live term across 144 classes, currently presented as one deletion plus one
+addition.</p>
+<p>Two further v6 slots have no v7 successor carrying their URI and appear to be genuine
+retirements, but they are absent from the mapping files entirely, so nothing records the
+decision: <code>samp_salinity</code> (MIXS:0000109) and <code>salinity_meth</code> (MIXS:0000341). Both were
+dropped from 24 classes each. <code>salinity</code> (MIXS:0000183) survives, so a reader may reasonably
+wonder whether these were meant to merge into it.</p>
+<p>Finally, <code>core field</code> and <code>mixs extension field</code> look like the same slot-to-subset conversion
+recorded for the other four grouping slots, but no target subset exists for either. Worth a
+line in <code>inter_type_refactoring.tsv</code> even if the answer is "dropped".</p>
+<h2 id="cardinality-and-range-changes">Cardinality and range changes</h2>
+<h3 id="the-quantity-value-class-is-gone-173-slots-the-largest-single-change-in-the-diff">The <code>quantity value</code> class is gone: 173 slots, the largest single change in the diff</h3>
+<p>v6 modeled measurements as a <code>quantity value</code> class with <code>has numeric value</code>, <code>has raw value</code>
+and <code>has unit</code>. v7 removes the class and replaces it with pattern-constrained strings.
+Concretely, <strong>173 slots changed <code>range: quantity value -&gt; string</code></strong> and 178 slots that
+previously had <code>range: quantity value</code> gained the pattern
+<code>^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$</code>
+(a number, or a numeric range, optionally followed by a unit). This covers the chemistry,
+physical-measurement and morphometric terms: <code>temp</code>, <code>depth</code>, <code>alt</code>, <code>elev</code>, <code>salinity</code>,
+<code>nitrate</code>, <code>phosphate</code>, <code>diss_oxygen</code>, <code>host_age</code>, <code>wind_speed</code>, <code>samp_size</code> and so on.</p>
+<p><strong>This is a validation loosening, not a tightening.</strong> A structured object with a typed numeric
+field and a unit field became a free-text string checked by a regex that ends in <code>.*</code>. Anyone
+who parsed <code>quantity value</code> structurally must change their code, and the new form cannot
+enforce that the unit is meaningful.</p>
+<p>A minority of former <code>quantity value</code> slots went to a real numeric type instead:
+<code>rel_air_humidity</code>, <code>carb_nitro_ratio</code>, <code>surf_humidity</code>, <code>season_humidity</code>, <code>iwf</code>,
+<code>animal_am_freq</code> (6 slots to <code>float</code>). <code>ferm_ch</code>-style percent slots and a few others moved
+<code>string -&gt; float</code>: <code>contam_score</code>, <code>ferm_headspace_oxy</code>, <code>ferm_chem_add_perc</code>.</p>
+<h3 id="other-range-changes-worth-listing-individually">Other range changes worth listing individually</h3>
+<ul>
+<li><strong>127 enum-range renames</strong> (<code>window_cond_enum -&gt; DamagedRupturedEnum</code> and similar). No
+  semantic change; they follow the enum renames above.</li>
+<li><strong>21 slots gained an enumerated range where they previously accepted any string.</strong> This is a
+  genuine tightening: <code>aero_struc</code>, <code>assembly_qual</code>, <code>built_struc_set</code>, <code>ceil_struc</code>,
+  <code>ceil_water_mold</code>, <code>contam_screen_input</code>, <code>door_water_mold</code>, <code>fireplace_type</code>,
+  <code>heat_sys_deliv_meth</code>, <code>host_dependence</code>, <code>season</code>, <code>seq_quality_check</code>,
+  <code>shad_dev_water_mold</code>, <code>shading_device_loc</code>, <code>space_typ_state</code>, <code>sym_life_cycle_type</code>,
+  <code>urine_collect_meth</code>, <code>wall_water_mold</code>, <code>wga_amp_appr</code>, <code>window_status</code>,
+  <code>window_water_mold</code>. Five of them (<code>ceil_water_mold</code>, <code>door_water_mold</code>,
+  <code>shad_dev_water_mold</code>, <code>wall_water_mold</code>, <code>window_water_mold</code>) share one new
+  <code>MoldVisibilityEnum</code>.</li>
+<li><strong>18 slots lost their enumerated range entirely</strong> and now accept any string. This is a
+  genuine loosening: <code>cur_land_use</code>, <code>decontam_software</code>, <code>door_type_wood</code>, <code>drug_usage</code>,
+  <code>floor_finish_mat</code>, <code>host_sex</code>, <code>microb_start_count</code>, <code>organism_count</code>, <code>plant_growth_med</code>,
+  <code>room_type</code>, <code>samp_floor</code>, <code>samp_md</code>, <code>source_uvig</code>, <code>special_diet</code>, <code>spikein_count</code>,
+  <code>study_complt_stat</code>, <code>vis_media</code>, <code>water_source_shared</code>.</li>
+<li><strong>17 date slots became <code>datetime</code></strong>: <code>collection_date</code>, <code>cult_isol_date</code>, <code>pregnancy</code>,
+  <code>menarche</code>, <code>menopause</code>, <code>hrt</code>, <code>douche</code>, <code>flooding</code>, <code>fire</code>, <code>extreme_event</code>,
+  <code>last_clean</code>, <code>date_last_rain</code>, <code>date_extr_weath</code>, <code>fertilizer_date</code>, <code>cons_purch_date</code>,
+  <code>prod_start_date</code>, <code>iw_bt_date_well</code>. Existing date-only values remain valid ISO 8601, so
+  this widens what is accepted.</li>
+<li><strong>9 <code>double -&gt; float</code></strong> (<code>soil_pH</code>, <code>water_pH</code>, <code>root_med_ph</code>, <code>ferm_pH</code>,
+  <code>surf_moisture_ph</code>, <code>ph</code>, <code>avg_occup</code>, <code>typ_occup_density</code>, <code>occup_density_samp</code>) plus one
+  <code>integer -&gt; float</code> (<code>occup_samp</code>).</li>
+<li><strong>8 <code>integer -&gt; string</code></strong> (a loosening on counts):
+  <code>number_plants</code>, <code>max_occup</code>, <code>number_pets</code>, <code>room_occup</code>, <code>exp_pipe</code>, <code>freq_cook</code>,
+  <code>host_occupation</code>, <code>number_resident</code>.</li>
+<li><strong>6 <code>string -&gt; boolean</code></strong> (a tightening): <code>reassembly_bin</code>, <code>hysterectomy</code>, <code>smoker</code>,
+  <code>twin_sibling</code>, <code>medic_hist_perform</code>, <code>x16s_recover</code>.</li>
+<li><strong><code>timepoint</code>: <code>double -&gt; string</code></strong>, and <code>samp_time_out</code>: <code>double -&gt; (absent)</code>.</li>
+<li><strong>Ranges dropped without a replacement type</strong>, so they fall back to the new
+  <code>default_range: string</code>: <code>trnas</code> (was <code>integer</code>), <code>host_spec_range</code> (was <code>integer</code>),
+  <code>host_of_host_taxid</code> (was <code>integer</code>), <code>ferm_chem_add</code> (was <code>quantity value</code>). <code>trnas</code> and
+  <code>host_of_host_taxid</code> losing <code>integer</code> looks like an oversight worth checking.</li>
+</ul>
+<h3 id="multivalued">Multivalued</h3>
+<p>Of 644 flagged changes, 628 are <code>false -&gt; (absent)</code> (no change). The 16 real ones:</p>
+<ul>
+<li><strong>Became multivalued (11)</strong>: <code>source_mat_id</code>, <code>experimental_factor</code>, <code>host_spec_range</code>,
+  <code>ventilation_type</code>, <code>biotic_regm</code>, <code>env_medium</code>, <code>food_dis_point_city</code>, <code>sop</code>,
+  <code>solar_irradiance</code>, <code>associated_resource</code> (renamed), <code>host_fam_rel</code> (renamed).
+  <code>env_medium</code> becoming multivalued is notable: it is a required core term that many archives
+  treat as single-valued.</li>
+<li><strong>Stopped being multivalued (5)</strong>: <code>farm_water_source</code>, <code>food_clean_proc</code>,
+  <code>photosynt_activ</code>, <code>food_product_type</code>, <code>soil_temp</code>. These four-plus-one are a narrowing;
+  any existing record with multiple values is no longer valid.</li>
+</ul>
+<h3 id="required">Required</h3>
+<p>36 slots gained <code>required: true</code> on the global slot definition. <strong>This is largely a relocation,
+not 36 new obligations.</strong> v6 never set <code>required</code> on a global slot (zero occurrences in the v6
+<code>terms.yaml</code>); it set requiredness per class in <code>slot_usage</code>. For example <code>env_broad_scale</code> was
+<code>required: true</code> in 11 v6 checklist classes and is now declared required once on the slot.</p>
+<p>The slots: <code>abs_air_humidity</code>, <code>add_recov_method</code>, <code>api</code>, <code>basin</code>, <code>build_occup_type</code>,
+<code>building_setting</code>, <code>coll_site_geo_feat</code>, <code>collection_date</code>, <code>env_broad_scale</code>,
+<code>env_local_scale</code>, <code>env_medium</code>, <code>filter_type</code>, <code>geo_loc_name</code>, <code>hc_produced</code>, <code>hcr</code>,
+<code>heat_cool_type</code>, <code>host_dependence</code>, <code>IFSAC_category</code>, <code>indoor_space</code>, <code>iwf</code>, <code>lat_lon</code>,
+<code>light_type</code>, <code>occup_density_samp</code>, <code>occup_samp</code>, <code>project_name</code>, <code>rel_air_humidity</code>,
+<code>samp_collect_point</code>,
+<code>samp_name</code>, <code>samp_taxon_id</code>, <code>samp_type</code>, <code>seq_meth</code>, <code>space_typ_state</code>,
+<code>sym_life_cycle_type</code>, <code>typ_occup_density</code>, <code>water_cut</code>, plus <code>sample_name -&gt; samp_name</code>.</p>
+<p>Where the diff reports a class-level requiredness change, it is confined to 23 classes and one
+removal, concentrated in two extensions: <code>indoor_surf</code> and <code>surf_material</code> became required in
+all 12 BuiltEnvironment classes, and <code>samp_vol_we_dna_ext</code> (11), <code>samp_size</code> (6),
+<code>assembly_qual</code> (5), <code>lib_reads_seqd</code> (5), <code>lib_screen</code> (5), <code>lib_vector</code> (5),
+<code>samp_mat_process</code> (5), <code>host_spec_range</code> (4), <code>specific_host</code> (2), <code>pathogenicity</code> (1) in
+Agriculture classes. <code>isol_growth_condt</code> stopped being required in <code>MimarksSAgriculture</code>.
+See the caveat in Notes before acting on these.</p>
+<h2 id="pattern-changes">Pattern changes</h2>
+<p>301 slots changed a <code>pattern</code>: 296 added, 4 removed, 1 modified. The additions are not
+hand-written; they are materialized from 307 <code>structured_pattern</code> declarations that use the 33
+new <code>settings</code> as interpolation variables. Only 27 distinct regexes cover all 296 slots:</p>
+<table>
+<thead>
+<tr>
+<th>Slots</th>
+<th>What it constrains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>178</td>
+<td>Number or numeric range, optional trailing unit (the <code>quantity value</code> replacement)</td>
+</tr>
+<tr>
+<td>32</td>
+<td><code>PMID:</code>, <code>doi:</code>, or an http(s) URL (two near-identical variants; the citation/reference terms)</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>term label [PREFIX:id]</code> (the ontology-term style used by <code>env_broad_scale</code> and similar)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Positive integer plus free text</td>
+</tr>
+<tr>
+<td>9</td>
+<td>ISO 8601 duration</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>text;number unit</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Three semicolon-separated fields</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Either an ontology term or a positive integer</td>
+</tr>
+<tr>
+<td>4 each</td>
+<td>Free text or ontology term; <code>text;positive integer</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Numeric range plus unit</td>
+</tr>
+<tr>
+<td>the rest</td>
+<td>One-off shapes such as <code>95% ANI; 85% AF; ...</code> for <code>otu_class_appr</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Four slots lost their pattern</strong>, which is a loosening on already-structured fields:
+<code>food_quality_date</code> (was <code>^(best by|best if used by|freeze by||use by);YYYY-MM-DD$</code>),
+<code>contam_screen_param</code> (was <code>^(ref db|kmer|coverage|combination);.+</code>),
+<code>compl_score</code> (was <code>^(high|med|low);(0|[0-9]{1,2}|100)%$</code>),
+<code>pres_animal_insect</code> (was <code>^(cat|dog|rodent|snake|other);\d+$</code>).
+All four also lost their enum in the same release, so these terms went from doubly constrained
+to free text in one step. That may be intentional, but it is the sharpest validation
+regression in the diff and is easy to miss among 296 additions.</p>
+<p><strong>One pattern modified</strong>: <code>add_recov_method</code>. The old regex embedded a sprawling inline ISO
+8601 datetime; the new one is a readable equivalent. The accepted-value list is unchanged, but
+the two regexes are not exactly equivalent at the edges (the old one accepted week dates like
+<code>W05</code> and ordinal dates; the new one does not).</p>
+<h2 id="title-changes">Title changes</h2>
+<p>ENA uses the MIxS <code>title</code> as its controlled nomenclature, so these are identifier changes for
+downstream consumers even where the edit looks like tidying. Eleven titles changed:</p>
+<p><strong>Meaning changed:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Old title</th>
+<th>New title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nose_throat_disord</code></td>
+<td>lung/nose-throat disorder</td>
+<td>nose throat disorder</td>
+</tr>
+<tr>
+<td><code>horizon_meth</code></td>
+<td>soil horizon method</td>
+<td>horizon method</td>
+</tr>
+<tr>
+<td><code>sieving</code></td>
+<td>composite design/sieving</td>
+<td>sieving</td>
+</tr>
+<tr>
+<td><code>horizon -&gt; soil_horizon</code></td>
+<td>horizon</td>
+<td>soil horizon</td>
+</tr>
+<tr>
+<td><code>texture -&gt; soil_texture</code></td>
+<td>texture</td>
+<td>soil texture</td>
+</tr>
+<tr>
+<td><code>air particulate matter concentration -&gt; air_PM_concen</code></td>
+<td>air_PM_concen</td>
+<td>air particulate matter concentration</td>
+</tr>
+</tbody>
+</table>
+<p>Note that <code>horizon_meth</code> moves the other way from <code>horizon -&gt; soil_horizon</code>: the slot renamed
+toward <code>soil_</code>, its method partner renamed away from it. Worth checking that this is deliberate.</p>
+<p><strong>Case, spacing or spelling only</strong> (still visible to ENA users):</p>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Old title</th>
+<th>New title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>food_trav_vehic</code></td>
+<td>Food shipping transportation vehicle</td>
+<td>food shipping transportation vehicle</td>
+</tr>
+<tr>
+<td><code>samp_taxon_id</code></td>
+<td>Taxonomy ID of DNA sample</td>
+<td>taxonomy ID of DNA sample</td>
+</tr>
+<tr>
+<td><code>Food_Product_type -&gt; food_product_type</code></td>
+<td>Foodon product type</td>
+<td>food product type</td>
+</tr>
+<tr>
+<td><code>Food_source -&gt; food_source</code></td>
+<td>Food source</td>
+<td>food source</td>
+</tr>
+<tr>
+<td><code>samp_transport_cont</code></td>
+<td>sample transport  container (double space)</td>
+<td>sample transport container</td>
+</tr>
+<tr>
+<td><code>host_of_host_env_med</code></td>
+<td>host of the symbiotic host environemental medium</td>
+<td>host of the symbiotic host environmental medium</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cosmetic-changes-grouped">Cosmetic changes (grouped)</h2>
+<p>293 slot descriptions changed. Only 60 carry any information:</p>
+<ul>
+<li><strong>233: trailing period removed.</strong> A single mass edit stripping the final <code>.</code> from
+  descriptions. Example: <code>heavy_metals</code>, <code>... add multiple copies of this field.</code> to
+  <code>... add multiple copies of this field</code>.</li>
+<li><strong>3: whitespace or case only.</strong> <code>wind_speed</code> ("Speed" to "speed"), <code>ph_meth</code> ("ph" to "pH"),
+  <code>ph</code> (whitespace).</li>
+<li><strong>13 of the 57 remaining changes are mojibake repair</strong>, not editorial: v6 had UTF-8 read as
+  Latin-1 (<code>¬∞</code> for <code>°</code>, <code>¬†</code> for a non-breaking space) in <code>api</code>, <code>aromatics_pc</code>,
+  <code>asphaltenes_pc</code>, <code>pour_point</code>, <code>resins_pc</code>, <code>root_med_macronutr</code>, <code>root_med_micronutr</code>,
+  <code>root_med_regl</code>, <code>root_med_suppl</code>, <code>samp_transport_cond</code>, <code>saturates_pc</code>, <code>tan</code>,
+  <code>viscosity</code>. All 13 are clean in v7. The repair replaced the corrupted degree signs with
+  spaces rather than <code>°</code>, so <code>api</code> now reads <code>e.g. 31.1   API</code>.</li>
+<li><strong>44 substantive rewrites.</strong> Two drivers dominate. First, <strong>de-soiling</strong>: definitions written
+  for the soil package were generalized, e.g. <code>tot_org_carb</code> from "Definition for soil: total
+  organic carbon content of the soil, definition otherwise: total organic carbon content" to
+  "Total organic carbon content"; <code>store_cond</code> from "how and for how long the soil sample was
+  stored" to "how and for how long the sample was stored", with added guidance. Second,
+  <strong>typo and reference fixes</strong>: <code>hall_count</code> (cooridors to corridors), <code>samp_transport_cont</code>
+  (Conatiner to Container), <code>plant_growth_med</code> (EO to PECO), <code>otu_class_appr</code> (OTUS to OTUs),
+  <code>lat_lon</code> (added "limited to 8 decimal points"). One rewrite reverses a stated meaning:
+  <code>size_frac_up</code> went from "Materials smaller than the size threshold are excluded" to
+  "Materials larger than the size threshold are excluded" — worth confirming which is correct.</li>
+</ul>
+<p>281 class descriptions also changed, but 253 of them are one template swap for the combination
+classes: "Combinatorial checklist <long checklist name> with environmental package <package>"
+became "MIxS Data that comply with the <Checklist> checklist and the <Extension> Extension".
+Buried among them are four real corrections that the template swap hides:</p>
+<ul>
+<li><code>MIGS org</code>: "Minimal Information about a Genome Sequence: org" to "... organelle"</li>
+<li><code>MIGS plant</code>: "... plant" to "... plasmid"</li>
+<li><code>MIGS virus</code>: was "... cultured bacteria/archaea" (a copy-paste error in v6), now "... virus"</li>
+<li><code>MIMARKS specimen</code> and <code>MIMARKS survey</code>: "Minimal Information about a Marker <strong>Specimen</strong>"
+  to "... Marker <strong>Sequence</strong>"</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<p><strong>The <code>MIXS:</code> prefix now expands to a different IRI.</strong> v6 had
+<code>MIXS: https://w3id.org/mixs/terms/</code> with <code>default_prefix: mixs.vocab</code>; v7 has
+<code>MIXS: https://w3id.org/mixs/</code> with <code>default_prefix: MIXS</code>. Every <code>slot_uri</code> and <code>class_uri</code>
+in the schema therefore resolves to a different absolute IRI than it did in v6
+(<code>MIXS:0000018</code> was <code>https://w3id.org/mixs/terms/0000018</code>, now <code>https://w3id.org/mixs/0000018</code>).
+The diff reports this as one line in <code>prefixes.definition_changes</code> and it is easy to overlook,
+but it affects every RDF consumer. The schema <code>id</code> also changed from <code>http://w3id.org/mixs</code>
+to <code>https://w3id.org/mixs</code> (scheme only). Confirm this is intended and that the old IRIs
+still resolve.</p>
+<p><strong>The class-level <code>cascaded</code> entries are not trustworthy as content changes.</strong> The tool reports
+<code>required added: assembly_qual</code> for <code>agriculture MIGS bacteria -&gt; MigsBaAgriculture</code>, but in
+v6 that class declared no slots at all: it got them via <code>is_a: agriculture</code> plus
+<code>mixins: [MIGS bacteria]</code>, and <code>MIGS bacteria</code> already declared <code>assembly_qual</code> as required.
+The <code>ancestors added: Extension</code> (276) and <code>ancestors added: Checklist</code> (264) counts confirm
+the tool tracks <code>is_a</code> ancestry. I could not determine from the diff whether it resolves
+<code>mixins</code>, and the evidence above suggests it does not, or does so inconsistently. That would
+explain why the same slots appear as both added (<code>adapters</code> 25 times) and removed
+(<code>adapters</code> 23 times) across classes. <strong>Treat every <code>cascaded</code> entry, including the
+class-level required and recommended lists above, as a pointer to check against the schema
+rather than as a finding.</strong> The one cascade I did verify independently is
+<code>estimated_size</code> / <code>estimated_genome_size</code> (144 removals, 144 additions, same MIXS URI).</p>
+<p><strong><code>recommended</code> shifted almost everywhere.</strong> <code>elev</code> (261 classes), <code>depth</code> (260), <code>alt</code> (256)
+and <code>temp</code> (253) became recommended nearly across the board. Same caveat as above.</p>
+<p><strong>No <code>rename_candidates</code> section.</strong> This tool does not emit one, so the "Possible missed
+renames" section is my own URI-identity analysis rather than the tool's. A <code>rename_candidates</code>
+pass in <code>diff-releases</code> would have caught <code>estimated_size</code> and <code>soil_depth</code> automatically.</p>
+<p><strong>Version label.</strong> The new side is tagged <code>main</code>, not <code>v7.0.0</code>; the <code>version</code> scalar reads
+<code>7.0.0</code> and the commit is <code>60b48ef</code>. The comparison was generated from
+<code>assets/releases_for_diffing/main_60b48ef</code>, which is not among the two <code>main_*</code> snapshots
+currently in that folder (<code>main_07b5360</code>, <code>main_1591e32</code>). URI checks in this summary were run
+against the repository's working <code>src/mixs/schema/mixs.yaml</code> on branch <code>release-v7.0.0-local</code>,
+not against <code>60b48ef</code> directly.</p>
+<p><strong>Left unclassified.</strong> Both <code>nose_throat_disord</code> and the new
+<code>nose_mouth_teeth_throat_disord</code> exist in v7, and their content crossed over:
+<code>nose_mouth_teeth_throat_disord</code> carries essentially v6's <code>nose_throat_disord</code> description
+(the Human Disease Ontology guidance), while <code>nose_throat_disord</code>'s description was replaced
+with the shorter "Report any history of nose, mouth, teeth and/or throat disorders". That
+looks like a rename that left the old slot in place rather than a deliberate split, but
+nothing in the mapping files records it and I could not tell from the diff alone.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.tabs.link", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
