@@ -166,8 +166,14 @@ class TestCombinationUri(unittest.TestCase):
             f"{len(unknown)} combination class_uri values contain a number that "
             f"identifies no class: {unknown}")
 
-    def test_combination_uri_matches_its_parents(self):
-        """The identifier composes the checklist it mixes in and the class it extends."""
+    def test_combination_uri_matches_what_it_combines(self):
+        """The identifier is the mixed-in class's, then the extended class's.
+
+        What a combination mixes in is usually a checklist, but it can be
+        another combination: MimsHostAssociatedAncient mixes in
+        MimsHostAssociated and extends Ancient, which is why its identifier has
+        three parts rather than two.
+        """
         def number(class_name):
             c = self.classes.get(class_name)
             if c is None or not c.class_uri:
@@ -176,18 +182,18 @@ class TestCombinationUri(unittest.TestCase):
 
         wrong = {}
         for name, c in self.combinations.items():
-            checklist = list(c.mixins)[0] if c.mixins else None
-            parent, mixed = number(c.is_a), number(checklist)
-            if parent is None or mixed is None:
+            mixed_in = list(c.mixins)[0] if c.mixins else None
+            extended_number, mixed_in_number = number(c.is_a), number(mixed_in)
+            if extended_number is None or mixed_in_number is None:
                 continue
-            expected = f"MIXS:{mixed}_{parent}"
+            expected = f"MIXS:{mixed_in_number}_{extended_number}"
             actual = str(c.class_uri)
             if actual != expected:
                 wrong[name] = f"{actual}, expected {expected}"
         self.assertEqual(
             wrong, {},
             f"{len(wrong)} combination identifiers do not compose "
-            f"<checklist>_<extension>: {wrong}")
+            f"<mixed-in class>_<extended class>: {wrong}")
 
 
 class TestDescriptions(unittest.TestCase):

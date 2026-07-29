@@ -64,14 +64,21 @@ In MIxS terms, a **checklist** is the set of terms expected for a kind of
 sequence data, such as MIGS bacteria or MIMS. An **extension** adds the terms
 that matter for a particular sampling environment, such as soil or water.
 Extensions were called packages, or environmental packages, before MIxS 6. A
-**combination** is one checklist paired with one extension, which is what a
-submitter actually fills in.
+**combination** is a checklist paired with an extension, which is what a
+submitter actually fills in. A few combinations carry two extensions.
 
 In LinkML terms, all three are classes. A checklist is a class whose `is_a` is
 `Checklist`, and an extension is a class whose `is_a` is `Extension`. A
-combination inherits from its extension and mixes in its checklist, and is
-marked with `in_subset: combination_classes`. `MigsBaSoil`, for example, has
-`is_a: Soil` and `mixins: [MigsBa]`.
+combination inherits from the extension it applies and mixes in what it applies
+it to, and is marked with `in_subset: combination_classes`. `MigsBaSoil` has
+`is_a: Soil` and `mixins: [MigsBa]`, so it applies the `Soil` extension to the
+`MigsBa` checklist.
+
+What it mixes in is not always a checklist. A combination can be built on
+another combination, which is how a sample gets two extensions:
+`MimsHostAssociatedAncient` has `is_a: Ancient` and
+`mixins: [MimsHostAssociated]`, applying `Ancient` to a class that is itself
+`Mims` plus `HostAssociated`.
 
 MIxS 7.0.0 has 13 checklists, 24 extensions and 307 combinations. The
 combination classes are written out in `src/mixs/schema/mixs.yaml` like
