@@ -14,7 +14,6 @@ permissions:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
     strategy:
       # 3.13 is the version MIxS uses and recommends everywhere. 3.10 is only
@@ -38,4 +37,22 @@ jobs:
         uses: snok/install-poetry@a783c322200f0519c7926aa6faa857c4e23e9263 # v1
 
       - name: Run release SOP
-        run: make install clean all all-contrib test
+        # On a release branch the artifacts were just built by "Create Release
+        # PR", and they are committed, so `test` finds them up to date. Rebuilding
+        # them is the duplicate work in #1332. The tests themselves always run,
+        # including when that workflow was dispatched with skip_tests.
+        #
+        # Restricted to branches in this repository. A branch name is chosen by
+        # whoever opens the pull request, so without this a fork could call its
+        # branch release/anything and get the shorter build. Release branches are
+        # only ever created here, by that workflow.
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          THIS_REPO: ${{ github.repository }}
+        run: |
+          if [[ "$HEAD_REF" == release/* && "$HEAD_REPO" == "$THIS_REPO" ]]; then
+            make install test
+          else
+            make install clean all test
+          fi
