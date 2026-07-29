@@ -966,16 +966,54 @@ site:</p>
 </ol>
 <p>This is done on the branch by a maintainer, not in CI. It needs no API keys, and
 it is reviewed like any other change before merge.</p>
-<h2 id="keeping-generated-artifacts-current">Keeping generated artifacts current</h2>
-<p>The committed artifacts under <code>project/</code>, <code>src/mixs/datamodel/</code> and <code>contrib/</code>
-are generated from the schema, and the "Regenerate and verify generated
-artifacts" workflow keeps them in sync. On a pull request it regenerates and
-fails if the committed artifacts are stale. On a push to <code>main</code> that changes the
-schema or its build inputs, it regenerates everything and commits the result.</p>
-<p>The check uses <code>project/jsonschema/mixs.schema.json</code> as its signal, because that
-file regenerates deterministically. The OWL (<code>project/owl/mixs.owl.ttl</code>) is not
-byte-reproducible: RDF/Turtle serialization reorders triples and relabels blank
-nodes on every run, so it is regenerated and committed but not compared by diff.</p>
+<h2 id="generated-files-and-when-they-are-refreshed">Generated files, and when they are refreshed</h2>
+<p>The files under <code>project/</code>, <code>src/mixs/datamodel/</code> and <code>contrib/</code> are generated
+from <code>src/mixs/schema/mixs.yaml</code> by <code>make</code>, and they are committed because
+downstream consumers fetch them directly. EBI OLS reads
+<code>project/owl/mixs.owl.ttl</code> from raw <code>main</code>.</p>
+<p>Four things can update them, and it is worth knowing which is which:</p>
+<ul>
+<li><strong>A pull request that edits only the schema</strong> does neither. The "Regenerate
+  and verify generated artifacts" workflow does not run on it, so the generated
+  files in such a pull request are whatever its author put there, which is
+  usually nothing. This is deliberate: it keeps a local build and a diff of
+  several hundred generated files off contributors.</li>
+<li><strong>A pull request that edits a build input</strong> (<code>Makefile</code>, <code>src/sparql/**</code>,
+  <code>project-generator-config.yaml</code>) runs the workflow, which runs <code>make
+  gen-project</code> and fails if <code>project/jsonschema/</code> no longer matches what is
+  committed. That is the whole check: it does not regenerate or compare the OWL,
+  <code>contrib/</code>, or the Python datamodel, so a build-input change that affects only
+  those passes.</li>
+<li><strong>A push to <code>main</code></strong> runs nothing. The workflow's push trigger is disabled
+  while <a href="https://github.com/GenomicsStandardsConsortium/mixs/issues/1303">issue 1303</a>
+  is open, so merging a schema change refreshes no generated files.</li>
+<li><strong>The "Create Release PR" action</strong> runs <code>make install clean all</code> on the branch
+  it creates and commits everything that produces, so a release cut this way
+  carries generated files built from the schema it ships. This is the action
+  doing it, not the branch: a release branch assembled by hand gets no rebuild,
+  and would carry whatever <code>main</code> had at the time.</li>
+</ul>
+<h3 id="what-this-means-if-you-merge-a-schema-change">What this means if you merge a schema change</h3>
+<p>Merging a pull request that changes only the schema leaves the committed
+generated files describing the state before your change. Nothing refreshes them
+on merge, and nothing warns you either way. The
+committed files on <code>main</code> are not guaranteed to match
+<code>src/mixs/schema/mixs.yaml</code> at any given moment.</p>
+<p>This matters because consumers read those files rather than building the schema
+themselves, so a stale file is what they get.</p>
+<p>Cutting a release is what brings them back into agreement, because the release
+action rebuilds everything from the schema and commits the result.</p>
+<p>Do not commit generated files built on your own machine. Building locally to
+check something is fine, and <code>make install clean all</code> is how, but the output is
+not identical to what the release action produces: a local build of an unchanged
+schema still differs from the committed copy in the JSON-LD context and in
+generation timestamps. Committing that replaces files built by the release with
+files built somewhere else, in a diff of several hundred files that no reviewer
+can meaningfully read.</p>
+<p>Do not assume the committed files match <code>main</code>. Check the file you care about.</p>
+<p>Whether this should stay as it is, and what to do instead, is open in
+<a href="https://github.com/GenomicsStandardsConsortium/mixs/issues/1303">issue 1303</a>.
+Nothing here describes a settled decision.</p>
 <p>Do not hand-edit generated artifacts.</p>
 <h1 id="linkml-updates">LinkML Updates</h1>
 <p>MIxS is built with <a href="https://linkml.io/">LinkML</a>, and the technical managers are
