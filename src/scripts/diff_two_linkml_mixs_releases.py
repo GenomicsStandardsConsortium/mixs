@@ -312,12 +312,21 @@ class LinkMLComparator:
             if key:
                 new_by_identifier.setdefault(key, []).append(name)
 
+        old_by_identifier = {}
+        for name in only_in_old:
+            key = identifier(self.old_schema, name)
+            if key:
+                old_by_identifier.setdefault(key, []).append(name)
+
+        # Report only a one-to-one match. Two old names sharing an identifier is
+        # not hypothetical: v6.0.0 carried both texture_meth and
+        # soil_texture_meth on MIXS:0000336. Pairing either with a single new
+        # name would be a guess, so ambiguity on either side is left alone.
         candidates = {}
-        for old_name in sorted(only_in_old):
-            key = identifier(self.old_schema, old_name)
-            # Ambiguous matches are left alone; a maintainer should look.
-            if key and len(new_by_identifier.get(key, [])) == 1:
-                candidates[old_name] = new_by_identifier[key][0]
+        for key, old_names in sorted(old_by_identifier.items()):
+            new_names = new_by_identifier.get(key, [])
+            if len(old_names) == 1 and len(new_names) == 1:
+                candidates[old_names[0]] = new_names[0]
         return candidates
 
     def _compare_dict_values(self, old_dict: Dict, new_dict: Dict,

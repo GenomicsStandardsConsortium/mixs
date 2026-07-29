@@ -65,6 +65,19 @@ class TestRenameCandidates(unittest.TestCase):
         self.assertEqual(
             c._find_rename_candidates({"old_name"}, {"new_a", "new_b"}, "slots"), {})
 
+    def test_two_old_names_on_one_identifier_are_left_alone(self):
+        """v6.0.0 carried texture_meth and soil_texture_meth on MIXS:0000336.
+
+        If a single new name arrived carrying that identifier, pairing it with
+        either old name would be a guess.
+        """
+        c = comparator({"texture_meth": "MIXS:0000336",
+                        "soil_texture_meth": "MIXS:0000336"},
+                       {"soil_texture_method": "MIXS:0000336"})
+        self.assertEqual(
+            c._find_rename_candidates({"texture_meth", "soil_texture_meth"},
+                                      {"soil_texture_method"}, "slots"), {})
+
     def test_name_based_identifiers_are_ignored(self):
         """Container slots carry a name-based identifier, useless for matching."""
         c = comparator({"soil_data": "MIXS:soil_data"},
