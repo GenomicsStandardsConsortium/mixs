@@ -218,5 +218,36 @@ class TestDescriptions(unittest.TestCase):
             f"{len(missing)} slots have no description: {missing}")
 
 
+class TestTitles(unittest.TestCase):
+    """The title is the human-readable name a submitter sees.
+
+    Presence is guarded here. Uniqueness is not: two slots still share the
+    title "host sex", which is issue 1223 and needs a curation decision rather
+    than a mechanical fix.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        view = SchemaView(SCHEMA_PATH)
+        cls.classes = view.all_classes()
+        cls.slots = view.all_slots()
+
+    def test_every_slot_has_a_title(self):
+        missing = sorted(name for name, slot in self.slots.items()
+                         if not (slot.title or "").strip())
+        self.assertEqual(
+            missing, [],
+            f"{len(missing)} slots have no title: {missing}")
+
+    def test_every_identified_class_has_a_title(self):
+        """Every class except the structural roots carries a title."""
+        missing = sorted(name for name, cls in self.classes.items()
+                         if not (cls.title or "").strip()
+                         and name not in UNIDENTIFIED_CLASSES)
+        self.assertEqual(
+            missing, [],
+            f"{len(missing)} classes have no title: {missing}")
+
+
 if __name__ == "__main__":
     unittest.main()
