@@ -14,7 +14,7 @@
         <link rel="prev" href="../policy/">
       
       
-        <link rel="next" href="../schema_element_deprecation_guide/">
+        <link rel="next" href="../releasing/">
       
       
         
@@ -474,6 +474,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../releasing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releasing MIxS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../schema_element_deprecation_guide/" class="md-nav__link">
         
   
@@ -910,164 +938,7 @@ from a document, so the same omission fails the build rather than shipping.</p>
 <h2 id="updating-an-existing-checklist-or-extension">Updating an existing checklist or extension</h2>
 <p>TBD.</p>
 <h1 id="releases">Releases</h1>
-<p>The GSC creates releases using semantic versioning (major.minor.patch).</p>
-<h2 id="version-strings">Version strings</h2>
-<p>MIxS carries two version numbers, and they are set in different ways.</p>
-<p>A <strong>git tag</strong> marks one commit as a named point in the history. MIxS tags carry
-a <code>v</code> prefix, as in <code>v7.0.0</code>. The prefix belongs to the tag only, never to a
-version written inside a file. Publishing a GitHub Release is what creates the
-tag, so there is no separate tagging step.</p>
-<ul>
-<li><strong>Python package version</strong> (<code>pyproject.toml</code>): never edited by hand.
-  <code>poetry-dynamic-versioning</code> reads the git tag and stamps the version at build
-  time, so <code>pyproject.toml</code> holds a <code>0.0.0</code> placeholder on <code>main</code>.</li>
-<li><strong>Schema version</strong> (<code>version:</code> in <code>src/mixs/schema/mixs.yaml</code>): edited by hand
-  as part of a release. It is part of the schema itself, not build metadata, so
-  it travels into everything generated from the schema, including the OWL that
-  EBI OLS loads and the JSON Schema that validators use. Whatever you type here
-  is what downstream consumers will report as their MIxS version.</li>
-</ul>
-<h2 id="cutting-a-release">Cutting a release</h2>
-<ol>
-<li>Bump the schema version. Edit <code>version:</code> near the top of
-   <code>src/mixs/schema/mixs.yaml</code> to the new number, bare <code>X.Y.Z</code> with no <code>v</code>, and
-   merge it to <code>main</code> through a pull request like any other change (see
-   <a href="https://github.com/GenomicsStandardsConsortium/mixs/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>).</li>
-<li>Run the "Create Release PR" action from the
-   <a href="https://github.com/GenomicsStandardsConsortium/mixs/actions/workflows/create-release-pr.yaml">Actions tab</a>,
-   using "Run workflow", with the same version. It bumps <code>CITATION.cff</code>,
-   <code>.zenodo.json</code> and <code>release/README.md</code>, generates the schema diff, and opens
-   a <code>release/vX.Y.Z</code> pull request. It does not touch <code>pyproject.toml</code>, which is
-   dynamic, or <code>mixs.yaml</code>, which you bumped in step 1.</li>
-<li>Add the schema-diff summaries to the release branch, as described in the next
-   section.</li>
-<li>Approve the workflows on the release pull request. The pull request was
-   opened by a workflow, so GitHub runs no checks on it until a maintainer
-   clicks "Approve and run workflows". Until someone does, the pull request
-   shows no checks at all rather than failing ones, which is easy to read as
-   passing.</li>
-<li>Review and merge the release pull request. A TWG member other than its
-   author reviews the version bumps and the schema-diff summary; the pre-merge
-   checklist is in the pull request body.</li>
-<li>Publish the release from the
-   <a href="https://github.com/GenomicsStandardsConsortium/mixs/releases/new">new release page</a>.
-   Create the tag <code>vX.Y.Z</code> there, set the target to <code>main</code> so the tag lands on
-   the merge commit rather than the release branch, and use "Generate release
-   notes" with the previous release as the "Previous tag". For a release
-   candidate see <a href="#publishing-a-release-candidate">Publishing a release candidate</a>.</li>
-</ol>
-<p>The structured diff in step 2 is produced by the reusable <code>diff-releases</code> tool;
-see <a href="../SCHEMA_DIFFING/">SCHEMA_DIFFING.md</a>. It can compare any release that has
-a LinkML schema, but it needs the right path for each side, and releases before
-v6.2.0 keep the schema somewhere else. Check the table in SCHEMA_DIFFING.md
-before choosing a base older than v6.2.0.</p>
-<p>The generated release notes cover the span between two tags, which is not
-necessarily the span the schema comparisons cover. When they differ, say so in
-the release body, or a reader will assume the pull requests listed are what
-produced the schema changes reported.</p>
-<h2 id="publishing-a-release-candidate">Publishing a release candidate</h2>
-<p><code>policy.md</code> requires a release candidate before every major and minor release. A
-candidate follows the steps above with three differences:</p>
-<ul>
-<li>Use a version of the form <code>X.Y.Z-rcN</code>, for example <code>7.0.0-rc1</code>. The workflow
-  accepts a semver pre-release suffix, and the schema version in step 1 must
-  match it.</li>
-<li>Tick "Set as a pre-release" when publishing. This keeps the candidate off
-  <code>/releases/latest</code>, so anything resolving "the current MIxS" still gets the
-  last full release.</li>
-<li>Do not tick "Set as the latest release".</li>
-</ul>
-<p>The schema version on <code>main</code> reads <code>X.Y.Z-rcN</code> for as long as the candidate
-stands. Before cutting the real release, bump it back to <code>X.Y.Z</code> and merge that
-first, or the release will ship a schema that declares itself a candidate.</p>
-<h2 id="adding-the-schema-diff-summaries-and-publishing-them">Adding the schema-diff summaries and publishing them</h2>
-<p>The structured diff is complete but large. Before the release pull request is
-reviewed, add a readable summary to the release branch and put it on the docs
-site:</p>
-<ol>
-<li>Check out the <code>release/vX.Y.Z</code> branch.</li>
-<li>The release action already wrote the diff into a folder under
-   <code>assets/diff_results/</code>, named from the two refs you gave it. If both were
-   release refs the name is already what you want. If either was a moving ref,
-   the name follows it: dispatching with <code>diff_new</code> <code>main</code> produces
-   <code>mixs6.0.0_to_main/</code>, which should be renamed to the versions it compares,
-   <code>v6.0.0_to_v7.0.0/</code>, so the published page is named for releases rather than
-   for a branch that keeps moving. Work in that folder; the docs build publishes
-   summaries only from folders under <code>assets/diff_results/</code>.</li>
-<li>Write <code>agent_summary.md</code> next to the structured diff. The repository carries
-   a Claude Code skill for this, invoked as
-   <code>/mixs-diff-summary assets/diff_results/&lt;old&gt;_to_&lt;new&gt;/schema_comparison_results.yaml</code>,
-   which reads the diff and writes the summary. The skill is a convenience, not
-   a requirement: it lives in <code>.claude/skills/mixs-diff-summary/SKILL.md</code>, and
-   anyone not using Claude Code can read that file and write the summary the
-   same way by hand, or with another assistant.</li>
-<li>Commit both <code>agent_summary.md</code>, the readable summary you just wrote, and
-   <code>tool_summary.md</code>, the counts the tool wrote alongside the structured diff.
-   Do not write <code>tool_summary.md</code> by hand; if it is missing, rerun the tool.</li>
-<li>Add both pages to the site nav. In <code>mkdocs.yml</code>, under the <code>Version changes</code>
-   group, add two lines for this release:
-   ```yaml<ul>
-<li><old> to <new>: version-changes/<old><em>to</em><new>.md</li>
-<li><old> to <new> (counts): version-changes/<old><em>to</em><new>-counts.md
-   <code>``
-   Older releases have a second</code>(counts)<code>line pointing at a</code>-counts.md<code>page,
-   generated from</code>tool_summary.md<code>. Add one only if the comparison actually has
-   that file. The</code>gendoc<code>build step copies the summaries out of</code>assets/diff_results/<old><em>to</em><new>/<code>into</code>docs/version-changes/`, so no
-   other change is needed.</li>
-</ul>
-</li>
-</ol>
-<p>This is done on the branch by a maintainer, not in CI. It needs no API keys, and
-it is reviewed like any other change before merge.</p>
-<h2 id="generated-files-and-when-they-are-refreshed">Generated files, and when they are refreshed</h2>
-<p>The files under <code>project/</code>, <code>src/mixs/datamodel/</code> and <code>contrib/</code> are generated
-from <code>src/mixs/schema/mixs.yaml</code> by <code>make</code>, and they are committed because
-downstream consumers fetch them directly. EBI OLS reads
-<code>project/owl/mixs.owl.ttl</code> from raw <code>main</code>.</p>
-<p>Four things can update them, and it is worth knowing which is which:</p>
-<ul>
-<li><strong>A pull request that edits only the schema</strong> does neither. The "Regenerate
-  and verify generated artifacts" workflow does not run on it, so the generated
-  files in such a pull request are whatever its author put there, which is
-  usually nothing. This is deliberate: it keeps a local build and a diff of
-  several hundred generated files off contributors.</li>
-<li><strong>A pull request that edits a build input</strong> (<code>Makefile</code>, <code>src/sparql/**</code>,
-  <code>project-generator-config.yaml</code>) runs the workflow, which runs <code>make
-  gen-project</code> and fails if <code>project/jsonschema/</code> no longer matches what is
-  committed. That is the whole check: it does not regenerate or compare the OWL,
-  <code>contrib/</code>, or the Python datamodel, so a build-input change that affects only
-  those passes.</li>
-<li><strong>A push to <code>main</code></strong> runs nothing. The workflow's push trigger is disabled
-  while <a href="https://github.com/GenomicsStandardsConsortium/mixs/issues/1303">issue 1303</a>
-  is open, so merging a schema change refreshes no generated files.</li>
-<li><strong>The "Create Release PR" action</strong> runs <code>make install clean all</code> on the branch
-  it creates and commits everything that produces, so a release cut this way
-  carries generated files built from the schema it ships. This is the action
-  doing it, not the branch: a release branch assembled by hand gets no rebuild,
-  and would carry whatever <code>main</code> had at the time.</li>
-</ul>
-<h3 id="what-this-means-if-you-merge-a-schema-change">What this means if you merge a schema change</h3>
-<p>Merging a pull request that changes only the schema leaves the committed
-generated files describing the state before your change. Nothing refreshes them
-on merge, and nothing warns you either way. The
-committed files on <code>main</code> are not guaranteed to match
-<code>src/mixs/schema/mixs.yaml</code> at any given moment.</p>
-<p>This matters because consumers read those files rather than building the schema
-themselves, so a stale file is what they get.</p>
-<p>Cutting a release is what brings them back into agreement, because the release
-action rebuilds everything from the schema and commits the result.</p>
-<p>Do not commit generated files built on your own machine. Building locally to
-check something is fine, and <code>make install clean all</code> is how, but the output is
-not identical to what the release action produces: a local build of an unchanged
-schema still differs from the committed copy in the JSON-LD context and in
-generation timestamps. Committing that replaces files built by the release with
-files built somewhere else, in a diff of several hundred files that no reviewer
-can meaningfully read.</p>
-<p>Do not assume the committed files match <code>main</code>. Check the file you care about.</p>
-<p>Whether this should stay as it is, and what to do instead, is open in
-<a href="https://github.com/GenomicsStandardsConsortium/mixs/issues/1303">issue 1303</a>.
-Nothing here describes a settled decision.</p>
-<p>Do not hand-edit generated artifacts.</p>
+<p>Cutting a release is described in <a href="../releasing/">Releasing MIxS</a>.</p>
 <h1 id="linkml-updates">LinkML Updates</h1>
 <p>MIxS is built with <a href="https://linkml.io/">LinkML</a>, and the technical managers are
 expected to keep it current with LinkML releases rather than pinning to an old
