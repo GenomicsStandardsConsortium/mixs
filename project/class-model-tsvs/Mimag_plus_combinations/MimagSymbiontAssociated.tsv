@@ -118,6 +118,6 @@ temp	temperature	MIXS:0000113		Temperature of the sample at the time of sampling
 trna_ext_software	tRNA extraction software	MIXS:0000068		Tools used for tRNA identification	{'value': 'infernal;v2;default parameters'}	sequencing	software			string				{'syntax': '^{software};{version};{parameters}$', 'interpolated': True, 'partial_match': True}		
 trnas	number of standard tRNAs extracted	MIXS:0000067		The total number of tRNAs identified from the SAG or MAG	{'value': '18'}	sequencing	number			string			{integer}		value from 0-21	
 type_of_symbiosis	type of symbiosis	MIXS:0001307		Type of biological interaction established between the symbiotic host organism being sampled and its respective host	{'value': 'parasitic'}		symbiosis|type			TypeOfSymbiosisEnum	True					
-urobiom_sex	host sex	MIXS:0000862		Physical sex of the host			host|host.			UrobiomSexEnum					sex of the symbiotic organism (host of the samples); enumeration	
+urobiom_sex	urobiome sex	MIXS:0000862		Physical sex of the host			host|host.			UrobiomSexEnum					sex of the symbiotic organism (host of the samples); enumeration	
 x16s_recover	16S recovered	MIXS:0000065		Can a 16S gene be recovered from the submitted SAG or MAG?	{'value': 'yes'}	sequencing	recover			boolean						
 x16s_recover_software	16S recovery software	MIXS:0000066		Tools used for 16S rRNA gene extraction	{'value': 'rambl;v2;default parameters'}	sequencing	recover|software			string				{'syntax': '^{software};{version};{parameters}$', 'interpolated': True, 'partial_match': True}		
