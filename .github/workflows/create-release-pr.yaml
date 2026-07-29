@@ -32,7 +32,7 @@ on:
         # For a base earlier than v6.2.0, diff_old_path must be changed from its
         # default as well: that path does not exist in those releases, and
         # leaving it unchanged fails at the diff step rather than here.
-        description: 'Old version for diff comparison. Leave empty for the most recent full release.'
+        description: 'Old version: a tag, or a branch whose name has no "/". Leave empty for the most recent full release.'
         required: false
         default: ''
         type: string
@@ -45,7 +45,7 @@ on:
         default: 'src/mixs/schema/mixs.yaml'
         type: string
       diff_new:
-        description: 'New version for diff comparison (tag or branch)'
+        description: 'New version: a tag, or a branch whose name has no "/"'
         required: true
         default: 'main'
         type: string
@@ -163,8 +163,16 @@ jobs:
           DIFF_OLD_INPUT: ${{ inputs.diff_old }}
         run: |
           set -euo pipefail
+          # This value reaches $GITHUB_ENV, so it is checked here rather than at
+          # the diff step: anything written there takes effect before that step
+          # runs, and a newline in it could set a second variable that the guard
+          # there would then see as clean.
           if [ -n "$DIFF_OLD_INPUT" ]; then
-            echo "DIFF_OLD=$DIFF_OLD_INPUT" >> "$GITHUB_ENV"
+            if ! [[ "$DIFF_OLD_INPUT" =~ ^[A-Za-z0-9._-]+$ ]]; then
+              echo "::error::diff_old '$DIFF_OLD_INPUT' must contain only letters, digits, '.', '_', or '-'."
+              exit 1
+            fi
+            printf 'DIFF_OLD=%s\n' "$DIFF_OLD_INPUT" >> "$GITHUB_ENV"
             echo "Using the baseline given: $DIFF_OLD_INPUT"
             exit 0
           fi
@@ -181,7 +189,7 @@ jobs:
             echo "::error::Could not resolve a baseline release. Pass diff_old explicitly."
             exit 1
           fi
-          echo "DIFF_OLD=$baseline" >> "$GITHUB_ENV"
+          printf 'DIFF_OLD=%s\n' "$baseline" >> "$GITHUB_ENV"
           echo "Resolved the baseline to the most recent full release: $baseline"
 
       - name: Generate schema diff report
