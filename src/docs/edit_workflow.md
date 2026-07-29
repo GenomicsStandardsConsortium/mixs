@@ -184,9 +184,13 @@ reviewed, add a readable summary to the release branch and put it on the docs
 site:
 
 1. Check out the `release/vX.Y.Z` branch.
-2. The release action already wrote the diff into a per-release folder,
-   `assets/diff_results/<old>_to_<new>/`, for example `v6.2.0_to_v6.3.0/`. Work
-   in that folder; the docs build publishes summaries only from these folders.
+2. The release action already wrote the diff into a folder under
+   `assets/diff_results/`, named from the two refs you gave it rather than from
+   the release. Dispatching with `diff_old` `mixs6.0.0` and `diff_new` `main`
+   produces `mixs6.0.0_to_main/`. Rename it to the versions it compares, such as
+   `v6.0.0_to_v7.0.0/`, so the published page is named for releases rather than
+   for a branch that keeps moving. Work in that folder; the docs build publishes
+   summaries only from folders under `assets/diff_results/`.
 3. Write `agent_summary.md` next to the structured diff. The repository carries
    a Claude Code skill for this, invoked as
    `/mixs-diff-summary assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`,
@@ -194,15 +198,14 @@ site:
    a requirement: it lives in `.claude/skills/mixs-diff-summary/SKILL.md`, and
    anyone not using Claude Code can read that file and write the summary the
    same way by hand, or with another assistant.
-4. Commit `agent_summary.md`. Comparisons made before mid-2026 also carry a
-   `tool_summary.md` of raw counts, but the reusable `diff-releases` tool does
-   not write one, so a new comparison will not have it. Do not write one by
-   hand: it would look like tool output that cannot be regenerated. See
-   [issue 1318](https://github.com/GenomicsStandardsConsortium/mixs/issues/1318).
-5. Add the page to the site nav. In `mkdocs.yml`, under the `Version changes`
-   group, add one line for this release:
+4. Commit both `agent_summary.md`, the readable summary you just wrote, and
+   `tool_summary.md`, the counts the tool wrote alongside the structured diff.
+   Do not write `tool_summary.md` by hand; if it is missing, rerun the tool.
+5. Add both pages to the site nav. In `mkdocs.yml`, under the `Version changes`
+   group, add two lines for this release:
    ```yaml
      - <old> to <new>: version-changes/<old>_to_<new>.md
+     - <old> to <new> (counts): version-changes/<old>_to_<new>-counts.md
    ```
    Older releases have a second `(counts)` line pointing at a `-counts.md` page,
    generated from `tool_summary.md`. Add one only if the comparison actually has
