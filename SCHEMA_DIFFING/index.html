@@ -1187,8 +1187,8 @@ use a different mapping set (see
 </code></pre>
 <p><strong>Two tagged releases:</strong></p>
 <pre><code class="language-bash">poetry run diff-releases \
-  --old &quot;GenomicsStandardsConsortium/mixs@v6.2.0:src/mixs/schema/mixs.yaml&quot; \
-  --new &quot;GenomicsStandardsConsortium/mixs@v6.3.1:src/mixs/schema/mixs.yaml&quot;
+  --old &quot;GenomicsStandardsConsortium/mixs@v6.3.1:src/mixs/schema/mixs.yaml&quot; \
+  --new &quot;GenomicsStandardsConsortium/mixs@v7.0.0:src/mixs/schema/mixs.yaml&quot;
 </code></pre>
 <p><strong>A release from before v6.2.0.</strong> The path differs on the old side, because the
 single-file schema only exists from v6.2.0 onward. Earlier releases keep the
@@ -1205,7 +1205,10 @@ be compared with this tool at all; the v5 to v6.0.0 comparison was produced by a
 separate one-time script with an Excel reader.</p>
 <p>The <strong>release workflow</strong> is more limited still: it hardcodes
 <code>src/mixs/schema/mixs.yaml</code> for both sides, so its oldest usable base is
-v6.2.0.</p>
+v6.2.0. Leaving its <code>diff_old</code> input empty compares against the most recent
+full release, skipping pre-releases and anything before v6.2.0. Fill it in only
+to compare against something else, and set <code>diff_old_path</code> as well if that is a
+release older than v6.2.0.</p>
 <table>
 <thead>
 <tr>
@@ -1267,6 +1270,12 @@ v6.2.0.</p>
 <tr>
 <td><code>v6.3.1</code></td>
 <td>2026-07-14</td>
+<td>present</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>v7.0.0</code></td>
+<td>2026-07-29</td>
 <td>present</td>
 <td>yes</td>
 </tr>
