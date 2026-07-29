@@ -71,6 +71,11 @@ class KeyComparison:
     shared: Set[str]
     expected_mappings: Set[str] = None
     inter_type_refactoring: Set[str] = None
+    #: Old name to new name, for elements that kept their MIxS identifier but
+    #: changed name and are not in the mapping files. These are renames the
+    #: mapping files have missed, reported so they are not read as one element
+    #: removed and another added.
+    rename_candidates: Dict[str, str] = None
 
 
 @dataclass
@@ -273,6 +278,48 @@ class LinkMLComparator:
             expected_mappings=expected_mappings
         )
     
+    def _find_rename_candidates(self, only_in_old: Set[str], only_in_new: Set[str],
+                                element_type: str) -> Dict[str, str]:
+        """Pair a removed element with an added one that carries the same MIxS identifier.
+
+        A rename keeps the identifier and changes the name. Without this, the
+        comparison reports the old name as removed and the new one as added, so
+        a term that survived reads as a term that was dropped.
+
+        Only slots and classes carry an identifier to match on. Elements whose
+        rename is already recorded in the mapping files never reach here,
+        because they are filtered out of only_in_old and only_in_new first.
+        """
+        field = {'slots': 'slot_uri', 'classes': 'class_uri'}.get(element_type)
+        if not field or not only_in_old or not only_in_new:
+            return {}
+
+        def identifier(view, name):
+            getter = view.get_slot if field == 'slot_uri' else view.get_class
+            try:
+                element = getter(name)
+            except Exception:
+                return None
+            value = getattr(element, field, None) if element is not None else None
+            # Container slots carry a name-based identifier, which cannot
+            # distinguish one element from another after a rename.
+            text = str(value) if value else ''
+            return text if re.match(r'^MIXS:[0-9]', text) else None
+
+        new_by_identifier = {}
+        for name in only_in_new:
+            key = identifier(self.new_schema, name)
+            if key:
+                new_by_identifier.setdefault(key, []).append(name)
+
+        candidates = {}
+        for old_name in sorted(only_in_old):
+            key = identifier(self.old_schema, old_name)
+            # Ambiguous matches are left alone; a maintainer should look.
+            if key and len(new_by_identifier.get(key, [])) == 1:
+                candidates[old_name] = new_by_identifier[key][0]
+        return candidates
+
     def _compare_dict_values(self, old_dict: Dict, new_dict: Dict,
                            mappings: Dict[str, str] = None, 
                            element_type: str = None) -> CollectionComparison:
@@ -282,6 +329,9 @@ class LinkMLComparator:
         
         # First compare keys
         key_comparison = self._compare_keys(old_keys, new_keys, mappings)
+        key_comparison.rename_candidates = self._find_rename_candidates(
+            key_comparison.only_in_old, key_comparison.only_in_new, element_type
+        )
         
         # Then compare values for shared keys with cascading
         value_comparisons = {}
@@ -832,7 +882,11 @@ def schema_comparison_to_dict(comparison: SchemaComparison) -> dict:
             result['shared'] = sorted([clean_key(k) for k in key_comp.shared])
         if key_comp.expected_mappings:
             result['expected_mappings'] = sorted(list(key_comp.expected_mappings))
-            
+        if key_comp.rename_candidates:
+            result['rename_candidates'] = {
+                clean_key(old): clean_key(new)
+                for old, new in sorted(key_comp.rename_candidates.items())}
+
         return result
 
     def collection_comparison_to_dict(coll_comp: CollectionComparison) -> dict:
