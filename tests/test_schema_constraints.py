@@ -221,9 +221,9 @@ class TestDescriptions(unittest.TestCase):
 class TestTitles(unittest.TestCase):
     """The title is the human-readable name a submitter sees.
 
-    Presence is guarded here. Uniqueness is not: two slots still share the
-    title "host sex", which is issue 1223 and needs a curation decision rather
-    than a mechanical fix.
+    Two slots shared the title "host sex" until issue 1223 was settled, so a
+    submitter comparing two checklists saw the same label on two different
+    terms. Uniqueness is guarded here to keep that from recurring.
     """
 
     @classmethod
@@ -238,6 +238,19 @@ class TestTitles(unittest.TestCase):
         self.assertEqual(
             missing, [],
             f"{len(missing)} slots have no title: {missing}")
+
+    def test_slot_titles_are_unique(self):
+        """No two slots present themselves under the same human-readable name."""
+        counts = Counter((slot.title or "").strip()
+                         for slot in self.slots.values() if (slot.title or "").strip())
+        shared = defaultdict(list)
+        for name, slot in self.slots.items():
+            title = (slot.title or "").strip()
+            if title and counts[title] > 1:
+                shared[title].append(name)
+        self.assertEqual(
+            dict(shared), {},
+            f"{len(shared)} titles are used by more than one slot: {dict(shared)}")
 
     def test_every_identified_class_has_a_title(self):
         """Every class except the structural roots carries a title."""
