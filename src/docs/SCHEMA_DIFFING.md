@@ -75,7 +75,7 @@ poetry run python src/scripts/v5_to_v6_onetime_diff.py
 ```
 
 Step 4 writes `assets/diff_results/v5_to_v6.0.0/schema_comparison_results.yaml`
-(the structured diff) and `tool_summary.md` (a short summary). Then, in Claude
+(the structured diff) and `tool_summary.md` (a short summary of the counts). Then, in Claude
 Code, write the readable summary with the skill:
 
 ```
@@ -174,6 +174,8 @@ per-release folder; pass `--output-dir` to override):
   classes, enums, prefixes, settings) splits into `key_comparison` (added or
   removed names) and `definition_changes` (same name, changed body, field by
   field).
+- `tool_summary.md`: a short summary of the counts, how many elements were added,
+  removed and changed in each collection, derived from the structured diff.
 
 The structured output reports every change equally, including cosmetic ones. For
 example, a one-line edit to a templated description can show as a change on every
