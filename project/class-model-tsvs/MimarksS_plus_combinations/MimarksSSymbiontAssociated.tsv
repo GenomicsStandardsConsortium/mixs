@@ -99,4 +99,4 @@ target_gene	target gene	MIXS:0000044		Targeted gene or locus name for marker gen
 target_subfragment	target subfragment	MIXS:0000045		Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on 16S rRNA	{'value': 'V6, V9, ITS'}	sequencing	target			string	True					
 temp	temperature	MIXS:0000113		Temperature of the sample at the time of sampling	{'value': '25 degree Celsius'}	environment	temperature			string	True			{'syntax': '^{scientific_float}( *- *{scientific_float})? *{text}$', 'interpolated': True, 'partial_match': True}		degree Celsius
 type_of_symbiosis	type of symbiosis	MIXS:0001307		Type of biological interaction established between the symbiotic host organism being sampled and its respective host	{'value': 'parasitic'}		symbiosis|type			TypeOfSymbiosisEnum	True					
-urobiom_sex	host sex	MIXS:0000862		Physical sex of the host			host|host.			UrobiomSexEnum					sex of the symbiotic organism (host of the samples); enumeration	
+urobiom_sex	urobiome sex	MIXS:0000862		Physical sex of the host			host|host.			UrobiomSexEnum					sex of the symbiotic organism (host of the samples); enumeration	

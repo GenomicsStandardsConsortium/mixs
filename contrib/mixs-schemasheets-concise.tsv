@@ -1067,7 +1067,7 @@ twin_sibling		yes									Specification of twin sibling presence		HumanAssociate
 typ_occup_density		25									Customary or normal density of occupants		BuiltEnvironment	https://w3id.org/mixs					density						float			true			MIXS:0000771		typical occupant density		
 type_of_symbiosis		parasitic									Type of biological interaction established between the symbiotic host organism being sampled and its respective host		SymbiontAssociated	https://w3id.org/mixs					symbiosis|type						TypeOfSymbiosisEnum		true				MIXS:0001307		type of symbiosis		
 urine_collect_meth		catheter									Specification of urine collection method		HumanAssociated|MimsHumanAssociatedAncient	https://w3id.org/mixs					method						UrineCollectMethEnum						MIXS:0000899		urine/collection method		
-urobiom_sex				sex of the symbiotic organism (host of the samples); enumeration							Physical sex of the host		SymbiontAssociated	https://w3id.org/mixs					host|host.						UrobiomSexEnum						MIXS:0000862		host sex		
+urobiom_sex				sex of the symbiotic organism (host of the samples); enumeration							Physical sex of the host		SymbiontAssociated	https://w3id.org/mixs					host|host.						UrobiomSexEnum						MIXS:0000862		urobiome sex		
 urogenit_disord											History of urogenital disorders, can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, reproductive system disease (https://disease-ontology.org/?id=DOID:15) or urinary system disease (https://disease-ontology.org/?id=DOID:18)		HumanVaginal	https://w3id.org/mixs					disorder			true			string						MIXS:0000289		urogenital disorder		
 urogenit_tract_disor											History of urogenital tract disorders; can include multiple disorders. The terms should be chosen from the DO (Human Disease Ontology) at http://www.disease-ontology.org, urinary system disease (https://disease-ontology.org/?id=DOID:18)		HumanAssociated|MimsHumanAssociatedAncient	https://w3id.org/mixs					disorder			true			string						MIXS:0000278		urine/urogenital tract disorder		
 ventilation_rate		750 cubic meter per minute	^{scientific_float}( *- *{scientific_float})? *{text}$		cubic meter per minute, liters per second						Ventilation rate of the system in the sampled premises		Air|FoodFarmEnvironment	https://w3id.org/mixs					rate						string						MIXS:0000114		ventilation rate		
@@ -2222,7 +2222,7 @@ organism_count	Water	total prokaryotes;3.5e7 cells per milliliter;qPCR
 	MimsMisipSymbiontAssociated							MIXS:0010014_0016023			MIxS Data that comply with the MimsMisip checklist and the SymbiontAssociated Extension			https://w3id.org/mixs	combination_classes			SymbiontAssociated			MimsMisip												MimsMisip combined with SymbiontAssociated		
 	MimsMisipWastewaterSludge							MIXS:0010014_0016013			MIxS Data that comply with the MimsMisip checklist and the WastewaterSludge Extension			https://w3id.org/mixs	combination_classes			WastewaterSludge			MimsMisip												MimsMisip combined with WastewaterSludge		
 	MimsMisipWater							MIXS:0010014_0016014			MIxS Data that comply with the MimsMisip checklist and the Water Extension			https://w3id.org/mixs	combination_classes			Water			MimsMisip												MimsMisip combined with Water		
-	MimsHostAssociatedAncient							MIXS:10007_16002_9999903			MIxS Data that comply with the Mims checklist, and HostAssociated and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsHostAssociated												MimsHostAssociated combined with Ancient		
+	MimsHostAssociatedAncient							MIXS:0010007_0016002_0016024			MIxS Data that comply with the Mims checklist, and HostAssociated and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsHostAssociated												MimsHostAssociated combined with Ancient		
 project_name	MimsHostAssociatedAncient																									1				Investigation					
 associated_resource	MimsHostAssociatedAncient																									2				Investigation					
 orig_site_name	MimsHostAssociatedAncient																									3				Environment					
@@ -2357,7 +2357,7 @@ feat_pred	MimsHostAssociatedAncient																									131				Data analysis
 sim_search_meth	MimsHostAssociatedAncient																									132				Data analysis					
 ref_db	MimsHostAssociatedAncient																									133				Data analysis					
 sop	MimsHostAssociatedAncient																									134				Data analysis					
-	MimsHumanAssociatedAncient							MIXS:10007_16003_9999903			MIxS Data that comply with the Mims checklist, and HumanAssociated and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsHumanAssociated												MimsHumanAssociated combined with Ancient		
+	MimsHumanAssociatedAncient							MIXS:0010007_0016003_0016024			MIxS Data that comply with the Mims checklist, and HumanAssociated and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsHumanAssociated												MimsHumanAssociated combined with Ancient		
 project_name	MimsHumanAssociatedAncient																									1				Investigation					
 associated_resource	MimsHumanAssociatedAncient																									2				Investigation					
 orig_site_name	MimsHumanAssociatedAncient																									3				Environment					
@@ -2498,7 +2498,7 @@ feat_pred	MimsHumanAssociatedAncient																									137				Data analysi
 sim_search_meth	MimsHumanAssociatedAncient																									138				Data analysis					
 ref_db	MimsHumanAssociatedAncient																									139				Data analysis					
 sop	MimsHumanAssociatedAncient																									140				Data analysis					
-	MimsHumanOralAncient							MIXS:10007_16005_9999903			MIxS Data that comply with the Mims checklist, and HumanOral and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsHumanOral												MimsHumanOral combined with Ancient		
+	MimsHumanOralAncient							MIXS:0010007_0016005_0016024			MIxS Data that comply with the Mims checklist, and HumanOral and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsHumanOral												MimsHumanOral combined with Ancient		
 project_name	MimsHumanOralAncient																									1				Investigation					
 associated_resource	MimsHumanOralAncient																									2				Investigation					
 orig_site_name	MimsHumanOralAncient																									3				Environment					
@@ -2622,7 +2622,7 @@ feat_pred	MimsHumanOralAncient																									120				Data analysis
 sim_search_meth	MimsHumanOralAncient																									121				Data analysis					
 ref_db	MimsHumanOralAncient																									122				Data analysis					
 sop	MimsHumanOralAncient																									123				Data analysis					
-	MimsHumanGutAncient							MIXS:10007_16004_9999903			MIxS Data that comply with the Mims checklist, and HumanGut and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsHumanGut												MimsHumanGut combined with Ancient		
+	MimsHumanGutAncient							MIXS:0010007_0016004_0016024			MIxS Data that comply with the Mims checklist, and HumanGut and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsHumanGut												MimsHumanGut combined with Ancient		
 project_name	MimsHumanGutAncient																									1				Investigation					
 associated_resource	MimsHumanGutAncient																									2				Investigation					
 orig_site_name	MimsHumanGutAncient																									3				Environment					
@@ -2747,7 +2747,7 @@ feat_pred	MimsHumanGutAncient																									121				Data analysis
 sim_search_meth	MimsHumanGutAncient																									122				Data analysis					
 ref_db	MimsHumanGutAncient																									123				Data analysis					
 sop	MimsHumanGutAncient																									124				Data analysis					
-	MimsHumanSkinAncient							MIXS:10007_16006_9999903			MIxS Data that comply with the Mims checklist, and HumanSkin and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsHumanSkin												MimsHumanSkin combined with Ancient		
+	MimsHumanSkinAncient							MIXS:0010007_0016006_0016024			MIxS Data that comply with the Mims checklist, and HumanSkin and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsHumanSkin												MimsHumanSkin combined with Ancient		
 project_name	MimsHumanSkinAncient																									1				Investigation					
 associated_resource	MimsHumanSkinAncient																									2				Investigation					
 orig_site_name	MimsHumanSkinAncient																									3				Environment					
@@ -2872,7 +2872,7 @@ feat_pred	MimsHumanSkinAncient																									121				Data analysis
 sim_search_meth	MimsHumanSkinAncient																									122				Data analysis					
 ref_db	MimsHumanSkinAncient																									123				Data analysis					
 sop	MimsHumanSkinAncient																									124				Data analysis					
-	MimsSedimentAncient							MIXS:10007_16011_9999903			MIxS Data that comply with the Mims checklist, and Sediment and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsSediment												MimsSediment combined with Ancient		
+	MimsSedimentAncient							MIXS:0010007_0016011_0016024			MIxS Data that comply with the Mims checklist, and Sediment and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsSediment												MimsSediment combined with Ancient		
 project_name	MimsSedimentAncient																									1				Investigation					
 associated_resource	MimsSedimentAncient																									2				Investigation					
 orig_site_name	MimsSedimentAncient																									3				Environment					
@@ -3028,7 +3028,7 @@ feat_pred	MimsSedimentAncient																									152				Data analysis
 sim_search_meth	MimsSedimentAncient																									153				Data analysis					
 ref_db	MimsSedimentAncient																									154				Data analysis					
 sop	MimsSedimentAncient																									155				Data analysis					
-	MimsSoilAncient							MIXS:10007_16012_9999903			MIxS Data that comply with the Mims checklist, and Soil and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsSoil												MimsSoil combined with Ancient		
+	MimsSoilAncient							MIXS:0010007_0016012_0016024			MIxS Data that comply with the Mims checklist, and Soil and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsSoil												MimsSoil combined with Ancient		
 project_name	MimsSoilAncient																									1				Investigation					
 associated_resource	MimsSoilAncient																									2				Investigation					
 orig_site_name	MimsSoilAncient																									3				Environment					
@@ -3170,7 +3170,7 @@ feat_pred	MimsSoilAncient																									138				Data analysis
 sim_search_meth	MimsSoilAncient																									139				Data analysis					
 ref_db	MimsSoilAncient																									140				Data analysis					
 sop	MimsSoilAncient																									141				Data analysis					
-	MimsPlantAssociatedAncient							MIXS:10007_16010_9999903			MIxS Data that comply with the Mims checklist, and PlantAssociated and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsPlantAssociated												MimsPlantAssociated combined with Ancient		
+	MimsPlantAssociatedAncient							MIXS:0010007_0016010_0016024			MIxS Data that comply with the Mims checklist, and PlantAssociated and Ancient extensions.			https://w3id.org/mixs	combination_classes			Ancient			MimsPlantAssociated												MimsPlantAssociated combined with Ancient		
 project_name	MimsPlantAssociatedAncient																									1				Investigation					
 associated_resource	MimsPlantAssociatedAncient																									2				Investigation					
 orig_site_name	MimsPlantAssociatedAncient																									3				Environment					
