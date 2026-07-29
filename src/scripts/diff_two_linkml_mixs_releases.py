@@ -2594,7 +2594,7 @@ def main(old: str, new: str, no_cache: bool, output_dir: Path, mappings_dir: Pat
         print(f"  • Total schema elements compared: {summary.get('total_schema_elements_compared', 0)}")
 
         # The counts summary. The v5-to-v6.0.0 folder has always carried one,
-        # written by the frozen one-time script, and edit_workflow.md asks for it
+        # written by the frozen one-time script, and releasing.md asks for it
         # at release time, but this tool never wrote one.
         tool_summary_file = output_dir / "tool_summary.md"
         tool_summary_file.write_text(

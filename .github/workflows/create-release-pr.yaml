@@ -6,7 +6,7 @@
 # 1. Bumping the version in CITATION.cff, .zenodo.json, and release/README.md.
 #    The Python package version is derived from the git tag by poetry-dynamic-versioning,
 #    and the schema version in src/mixs/schema/mixs.yaml is bumped by hand before running
-#    this workflow (see src/docs/edit_workflow.md), so neither is set here.
+#    this workflow (see src/docs/releasing.md), so neither is set here.
 # 2. Running the full build and test suite (which regenerates the OWL and other artifacts)
 # 3. Generating a schema diff report
 # 4. Creating a release PR with all changes
@@ -248,7 +248,7 @@ jobs:
           The structured diff is in `assets/diff_results/@@DIFF_OLD@@_to_@@DIFF_NEW@@/schema_comparison_results.yaml`.
           Before review, add a readable summary to this branch by running the
           diff-summary skill on that file and committing the result (see
-          `src/docs/edit_workflow.md`, "Adding the schema-diff summaries and publishing them").
+          `src/docs/releasing.md`, "Adding the schema-diff summaries and publishing them").
 
           ### Pre-merge Checklist
           - [ ] Review version numbers are correct
