@@ -1132,7 +1132,7 @@ make purge-diff DIFF=v5_to_v6.0.0
 poetry run python src/scripts/v5_to_v6_onetime_diff.py
 </code></pre>
 <p>Step 4 writes <code>assets/diff_results/v5_to_v6.0.0/schema_comparison_results.yaml</code>
-(the structured diff) and <code>tool_summary.md</code> (a short summary). Then, in Claude
+(the structured diff) and <code>tool_summary.md</code> (a short summary of the counts). Then, in Claude
 Code, write the readable summary with the skill:</p>
 <pre><code>/mixs-diff-summary assets/diff_results/v5_to_v6.0.0/schema_comparison_results.yaml
 </code></pre>
@@ -1260,6 +1260,8 @@ per-release folder; pass <code>--output-dir</code> to override):</p>
   classes, enums, prefixes, settings) splits into <code>key_comparison</code> (added or
   removed names) and <code>definition_changes</code> (same name, changed body, field by
   field).</li>
+<li><code>tool_summary.md</code>: a short summary of the counts, how many elements were added,
+  removed and changed in each collection, derived from the structured diff.</li>
 </ul>
 <p>The structured output reports every change equally, including cosmetic ones. For
 example, a one-line edit to a templated description can show as a change on every
