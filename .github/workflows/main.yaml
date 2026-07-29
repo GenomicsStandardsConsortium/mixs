@@ -14,17 +14,6 @@ permissions:
 
 jobs:
   test:
-    # Skip release pull requests, which "Create Release PR" has already built and
-    # tested with `make install clean all test`. Re-running the slowest job in the
-    # repository on identical content proves nothing. See #1332.
-    #
-    # Unless that workflow was dispatched with skip_tests, in which case it built
-    # without testing and labels the pull request `tests-skipped`. Skipping here
-    # too would publish a release nothing had tested.
-    if: >-
-      !startsWith(github.head_ref, 'release/')
-      || contains(github.event.pull_request.labels.*.name, 'tests-skipped')
-
     runs-on: ubuntu-latest
     strategy:
       # 3.13 is the version MIxS uses and recommends everywhere. 3.10 is only
@@ -48,4 +37,15 @@ jobs:
         uses: snok/install-poetry@a783c322200f0519c7926aa6faa857c4e23e9263 # v1
 
       - name: Run release SOP
-        run: make install clean all test
+        # On a release branch the artifacts were just built by "Create Release
+        # PR", and they are committed, so `test` finds them up to date. Rebuilding
+        # them is the duplicate work in #1332. The tests themselves always run,
+        # including when that workflow was dispatched with skip_tests.
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          if [[ "$HEAD_REF" == release/* ]]; then
+            make install test
+          else
+            make install clean all test
+          fi
