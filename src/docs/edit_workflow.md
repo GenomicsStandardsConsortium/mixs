@@ -213,7 +213,7 @@ site:
 This is done on the branch by a maintainer, not in CI. It needs no API keys, and
 it is reviewed like any other change before merge.
 
-## Keeping generated artifacts current
+## Generated files, and when they are refreshed
 
 The files under `project/`, `src/mixs/datamodel/` and `contrib/` are generated
 from `src/mixs/schema/mixs.yaml` by `make`, and they are committed because
@@ -243,8 +243,29 @@ Four things can update them, and it is worth knowing which is which:
   doing it, not the branch: a release branch assembled by hand gets no rebuild,
   and would carry whatever `main` had at the time.
 
-Building locally and committing the result in your own pull request is
-supported, and is the only way to see the generated diff before merge.
+### What this means if you merge a schema change
+
+Merging a pull request that changes only the schema leaves the committed
+generated files describing the state before your change. Nothing refreshes them
+on merge unless the JSON Schema differs, and nothing warns you either way. The
+committed files on `main` are not guaranteed to match
+`src/mixs/schema/mixs.yaml` at any given moment.
+
+This matters because consumers read those files rather than building the schema
+themselves, so a stale file is what they get.
+
+If you merge a schema change and the published files need to match it, one of
+these has to happen:
+
+- cut a release, which rebuilds everything from the schema, or
+- build locally with `make install clean all` and commit the result in a pull
+  request, which also lets a reviewer see the generated diff.
+
+Do not assume the committed files match `main`. Check the file you care about.
+
+Whether this should stay as it is, and what to do instead, is open in
+[issue 1303](https://github.com/GenomicsStandardsConsortium/mixs/issues/1303).
+Nothing here describes a settled decision.
 
 Do not hand-edit generated artifacts.
 
