@@ -7,6 +7,18 @@ allowed-tools: Read, Write, Bash
 
 # Summarize a MIxS schema diff
 
+## Working in this repository
+
+Run Python with `poetry run python`. This is a poetry project, and `uv run`
+creates a `.venv` and a `uv.lock` inside it that then have to be cleaned up.
+
+The two schemas being compared are cached under `assets/releases_for_diffing/`,
+one directory per ref, if you need to check something the diff does not record.
+
+Read the diff once into a script rather than shelling out repeatedly; it is
+around a megabyte of YAML and reparsing it per question is slow.
+
+
 Produce a short, readable Markdown summary of a MIxS schema-diff YAML.
 
 The input file is `$ARGUMENTS`. If that is empty, ask which diff file to
