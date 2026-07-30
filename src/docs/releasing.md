@@ -148,14 +148,17 @@ Four things can update them, and it is worth knowing which is which:
   usually nothing. This is deliberate: it keeps a local build and a diff of
   several hundred generated files off contributors.
 - **A pull request that edits a build input** (`Makefile`, `src/sparql/**`,
-  `project-generator-config.yaml`) runs the workflow, which runs `make
-  gen-project` and fails if `project/jsonschema/` no longer matches what is
-  committed. That is the whole check: it does not regenerate or compare the OWL,
-  `contrib/`, or the Python datamodel, so a build-input change that affects only
-  those passes.
-- **A push to `main`** runs nothing. The workflow's push trigger is disabled
-  while [issue 1303](https://github.com/GenomicsStandardsConsortium/mixs/issues/1303)
-  is open, so merging a schema change refreshes no generated files.
+  `project-generator-config.yaml`) runs the "Verify generated artifacts"
+  workflow, which runs `make gen-project` and fails if the committed
+  `project/jsonschema/mixs.schema.json` or `project/jsonld/mixs.jsonld` no longer
+  matches. The JSON-LD is compared with its `generation_date` and
+  `source_file_date` lines filtered out, because git does not preserve file times
+  and those two differ on every clone. It does not compare the OWL, which
+  reorders its triples on every run, nor `contrib/` or the Python datamodel.
+- **A push to `main`** runs nothing, and that is now the design rather than a
+  temporary state. The job that regenerated and pushed has been removed: it
+  pushed straight to `main`, which branch protection refuses, so it never
+  committed anything here.
 - **The "Create Release PR" action** runs `make install clean all` on the branch
   it creates and commits everything that produces, so a release cut this way
   carries generated files built from the schema it ships. This is the action
@@ -171,7 +174,20 @@ committed files on `main` are not guaranteed to match
 `src/mixs/schema/mixs.yaml` at any given moment.
 
 This matters because consumers read those files rather than building the schema
-themselves, so a stale file is what they get.
+themselves, so a stale file is what they get. EBI OLS loads
+`project/owl/mixs.owl.ttl` from raw `main`, so between releases it serves the OWL
+built for the previous release. That is the accepted cost of keeping a
+several-hundred-file rebuild off contributors, and it is why a term merged today
+does not reach OLS until a release is cut.
+
+Two gaps in the check, so nobody reads it as stronger than it is. It runs only on
+the build-input paths above, so a pull request that edits only the schema is never
+checked. And the JSON Schema carries no `class_uri` values, so a change confined to
+identifiers leaves it identical; that is how eight malformed combination
+identifiers reached a release
+([pull request 1347](https://github.com/GenomicsStandardsConsortium/mixs/pull/1347)).
+Comparing the JSON-LD closes the second gap, since it carries all 347 `class_uri`
+values.
 
 Cutting a release is what brings them back into agreement, because the release
 action rebuilds everything from the schema and commits the result.
