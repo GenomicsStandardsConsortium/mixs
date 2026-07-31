@@ -307,8 +307,6 @@ class TestTitles(unittest.TestCase):
             f"{len(missing)} classes have no title: {missing}")
 
 
-if __name__ == "__main__":
-    unittest.main()
 
 
 class TestPatterns(unittest.TestCase):
@@ -321,10 +319,11 @@ class TestPatterns(unittest.TestCase):
     Python.
     """
 
-    def setUp(self):
-        self.patterns = {name: slot.pattern
-                         for name, slot in reporting_terms().items()
-                         if slot.pattern}
+    @classmethod
+    def setUpClass(cls):
+        cls.patterns = {name: slot.pattern
+                        for name, slot in reporting_terms().items()
+                        if slot.pattern}
 
     def test_every_pattern_compiles(self):
         for name, pattern in self.patterns.items():
@@ -347,3 +346,6 @@ class TestPatterns(unittest.TestCase):
                     pattern.endswith("$$"),
                     f"{name} ends with a doubled dollar, which does nothing.",
                 )
+
+if __name__ == "__main__":
+    unittest.main()
