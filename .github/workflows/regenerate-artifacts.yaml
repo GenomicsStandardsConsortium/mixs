@@ -36,14 +36,14 @@ on:
       - 'Makefile'
   workflow_dispatch:
 
-# Least privilege by default; only the push-to-main job that commits needs write.
+# Read-only: nothing here writes to the repository.
 permissions:
   contents: read
 
 jobs:
   verify:
-    # Runs on pull requests and manual dispatch with a read-only token, so untrusted PR code
-    # executed via `make` cannot push to the repo.
+    # Read-only token, so untrusted pull request code executed via `make` cannot
+    # write to the repository.
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -89,12 +89,17 @@ jobs:
           # both differ on every clone and a whole-file diff would always fail.
           # Those two lines are filtered out of the comparison only; nothing on disk
           # is rewritten, so the committed file keeps its timestamps.
-          VOLATILE='"(generation_date|source_file_date)"'
+          # Anchored to the start of the line and the key, so a value that happens to
+          # contain the word is not filtered out along with the metadata lines.
+          VOLATILE='^[[:space:]]*"(generation_date|source_file_date)":'
           if diff -q <(git show HEAD:project/jsonld/mixs.jsonld | grep -vE "$VOLATILE") \
                      <(grep -vE "$VOLATILE" project/jsonld/mixs.jsonld) > /dev/null; then
             echo "project/jsonld/mixs.jsonld is in sync with the schema."
           else
             echo "::error::project/jsonld/mixs.jsonld is out of sync with src/mixs/schema/mixs.yaml, ignoring its generation timestamps."
+            echo "First 40 differing lines (committed <, regenerated >):"
+            diff <(git show HEAD:project/jsonld/mixs.jsonld | grep -vE "$VOLATILE") \
+                 <(grep -vE "$VOLATILE" project/jsonld/mixs.jsonld) | head -40 || true
             status=1
           fi
 
