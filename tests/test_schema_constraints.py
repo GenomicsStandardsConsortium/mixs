@@ -401,5 +401,42 @@ class TestStructuredPatterns(unittest.TestCase):
                     f"{{[termID]}}.",
                 )
 
+
+    def test_anchored_alternations_are_grouped(self):
+        """``^A|B$`` anchors only the first and last branch, not the whole thing.
+
+        ``|`` has the lowest precedence, so ``^A|B$`` reads as "starts with A" or
+        "ends with B". Values with text either side then validate. 17 slots were
+        written that way, and nothing in the build noticed, because a pattern that
+        is too permissive never fails anything.
+        """
+        for name, slot in (self.schema.get("slots") or {}).items():
+            if not isinstance(slot, dict):
+                continue
+            structured = slot.get("structured_pattern")
+            if not isinstance(structured, dict):
+                continue
+            syntax = structured.get("syntax") or ""
+            if not (syntax.startswith("^") and syntax.endswith("$")):
+                continue
+            inner = syntax[1:-1]
+            depth = 0
+            top_level_pipe = False
+            for char in inner:
+                if char == "(":
+                    depth += 1
+                elif char == ")":
+                    depth -= 1
+                elif char == "|" and depth == 0:
+                    top_level_pipe = True
+                    break
+            with self.subTest(slot=name):
+                self.assertFalse(
+                    top_level_pipe,
+                    f"{name} has an alternation that is not grouped: {syntax}. The "
+                    f"anchors bind to the first and last branch only, so a value with "
+                    f"text either side validates. Wrap it: ^(A|B)$ rather than ^A|B$.",
+                )
+
 if __name__ == "__main__":
     unittest.main()
