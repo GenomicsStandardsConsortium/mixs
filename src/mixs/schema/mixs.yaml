@@ -9166,6 +9166,7 @@ slots:
       - identifier
       - symbiosis
       - taxon
+    range: integer
     string_serialization: '{integer}'
     slot_uri: MIXS:0001306
   host_of_host_totmass:
@@ -9277,6 +9278,7 @@ slots:
       - host
       - host.
       - range
+    range: integer
     string_serialization: '{integer}'
     slot_uri: MIXS:0000030
     multivalued: true
@@ -12319,6 +12321,7 @@ slots:
     title: sampling time outside
     keywords:
       - time
+    range: float
     string_serialization: '{float}'
     slot_uri: MIXS:0000196
   samp_transport_cond:
@@ -14294,6 +14297,7 @@ slots:
       - sequencing
     keywords:
       - number
+    range: integer
     string_serialization: '{integer}'
     slot_uri: MIXS:0000067
   trophic_level:

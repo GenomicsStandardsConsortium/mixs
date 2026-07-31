@@ -13,6 +13,7 @@ import re
 import unittest
 from collections import Counter, defaultdict
 
+import yaml
 from linkml_runtime import SchemaView
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
@@ -345,6 +346,43 @@ class TestPatterns(unittest.TestCase):
                 self.assertFalse(
                     pattern.endswith("$$"),
                     f"{name} ends with a doubled dollar, which does nothing.",
+                )
+
+
+
+class TestNumericRanges(unittest.TestCase):
+    """A term whose declared shape is a bare number must have a numeric range.
+
+    Declaring the shape in a form the build does not check leaves the term
+    accepting any string, because the schema-level default range is string.
+    Four terms were in that state: trnas, host_of_host_taxid, host_spec_range
+    and samp_time_out. Nothing failed, because a term that accepts everything
+    cannot.
+    """
+
+    EXPECTED = {"{integer}": "integer", "{float}": "float"}
+
+    @classmethod
+    def setUpClass(cls):
+        with open(SCHEMA_PATH) as handle:
+            cls.slots = (yaml.safe_load(handle).get("slots") or {})
+
+    def test_declared_numeric_shape_has_a_matching_range(self):
+        for name, slot in self.slots.items():
+            if not isinstance(slot, dict):
+                continue
+            declared = slot.get("string_serialization")
+            if not isinstance(declared, str):
+                continue
+            expected = self.EXPECTED.get(declared.strip())
+            if expected is None:
+                continue
+            with self.subTest(slot=name):
+                self.assertEqual(
+                    slot.get("range"), expected,
+                    f"{name} declares its values are {expected}, but has no "
+                    f"range, so it falls back to the schema default and accepts "
+                    f"any string. Add `range: {expected}`.",
                 )
 
 if __name__ == "__main__":
