@@ -23,35 +23,40 @@ tag, so there is no separate tagging step.
 - **Python package version** (`pyproject.toml`): never edited by hand.
   `poetry-dynamic-versioning` reads the git tag and stamps the version at build
   time, so `pyproject.toml` holds a `0.0.0` placeholder on `main`.
-- **Schema version** (`version:` in `src/mixs/schema/mixs.yaml`): edited by hand
-  as part of a release. It is part of the schema itself, not build metadata, so
-  it travels into everything generated from the schema, including the OWL that
-  EBI OLS loads and the JSON Schema that validators use. Whatever you type here
-  is what downstream consumers will report as their MIxS version.
+- **Schema version** (`version:` in `src/mixs/schema/mixs.yaml`): written by the
+  release action from the version you give it, not edited by hand. It is part of
+  the schema itself, not build metadata, so it travels into everything generated
+  from the schema, including the OWL that EBI OLS loads and the JSON Schema that
+  validators use. This is what downstream consumers report as their MIxS version,
+  and `tests/test_version_consistency.py` fails the build if any file disagrees
+  with it.
 
 ## Cutting a release
 
-1. Bump the schema version. Edit `version:` near the top of
-   `src/mixs/schema/mixs.yaml` to the new number, bare `X.Y.Z` with no `v`, and
-   merge it to `main` through a pull request like any other change (see
-   [CONTRIBUTING.md](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/CONTRIBUTING.md)).
-2. Run the "Create Release PR" action from the
+1. Run the "Create Release PR" action from the
    [Actions tab](https://github.com/GenomicsStandardsConsortium/mixs/actions/workflows/create-release-pr.yaml),
-   using "Run workflow", with the same version. It bumps `CITATION.cff`,
-   `.zenodo.json` and `release/README.md`, generates the schema diff, and opens
-   a `release/vX.Y.Z` pull request. It does not touch `pyproject.toml`, which is
-   dynamic, or `mixs.yaml`, which you bumped in step 1.
-3. Add the schema-diff summaries to the release branch, as described in the next
+   using "Run workflow", with the new version as a bare `X.Y.Z` and no `v`. The
+   version you type there is the only place it is entered. The action writes it
+   into `src/mixs/schema/mixs.yaml` first, so everything built from the schema
+   inherits it, then into `CITATION.cff`, `.zenodo.json` and `release/README.md`.
+   It generates the schema diff and opens a `release/vX.Y.Z` pull request. It does
+   not touch `pyproject.toml`, which holds a `0.0.0` placeholder because the Python
+   package version comes from the git tag at build time.
+
+   Nothing is bumped by hand. `tests/test_version_consistency.py` fails the build
+   if any of these disagree, which also catches the case where one of the files is
+   reformatted and the action's `sed` silently stops matching it.
+2. Add the schema-diff summaries to the release branch, as described in the next
    section.
-4. Approve the workflows on the release pull request. The pull request was
+3. Approve the workflows on the release pull request. The pull request was
    opened by a workflow, so GitHub runs no checks on it until a maintainer
    clicks "Approve and run workflows". Until someone does, the pull request
    shows no checks at all rather than failing ones, which is easy to read as
    passing.
-5. Review and merge the release pull request. A TWG member other than its
+4. Review and merge the release pull request. A TWG member other than its
    author reviews the version bumps and the schema-diff summary; the pre-merge
    checklist is in the pull request body.
-6. Publish the release from the
+5. Publish the release from the
    [new release page](https://github.com/GenomicsStandardsConsortium/mixs/releases/new).
    Create the tag `vX.Y.Z` there, set the target to `main` so the tag lands on
    the merge commit rather than the release branch, and use "Generate release

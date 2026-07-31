@@ -36,6 +36,9 @@ jobs:
   build-n-publish:
     name: Build and publish Python distributions to PyPI
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write  # required for trusted publishing
     # DISABLED: This job is intentionally disabled by the '&& false' clause below.
     # The MIxS package has never been published to PyPI.
     # To re-enable in the future, remove '&& false' from the condition.
@@ -63,8 +66,9 @@ jobs:
       - name: Build source and wheel archives
         run: poetry build
 
+      # Trusted publishing: PyPI verifies this workflow's OIDC identity instead of a
+      # stored API token, so there is no long-lived secret to leak or rotate. It needs
+      # a matching publisher configured on the PyPI project before it will work, which
+      # is moot while this job is disabled.
       - name: Publish distribution to PyPI
         uses: pypa/gh-action-pypi-publish@ba38be9e461d3875417946c167d0b5f3d385a247 # v1.14.1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_PASSWORD }}
