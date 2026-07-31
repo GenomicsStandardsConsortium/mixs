@@ -585,6 +585,9 @@ class LinkMLComparator:
             if enum_def is not None and enum_def.permissible_values:
                 return enum_def.permissible_values
         except Exception:
+            # Deliberate: any failure to read the enum from the SchemaView falls
+            # through to the caller-supplied value below, which is the whole point
+            # of taking a fallback. Nothing here should abort a comparison.
             pass
         if isinstance(fallback, dict):
             return fallback.get('permissible_values') or {}

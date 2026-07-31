@@ -1,5 +1,3 @@
-import pprint
-
 import click
 
 from linkml_runtime import SchemaView
