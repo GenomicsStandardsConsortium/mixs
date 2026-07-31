@@ -1127,7 +1127,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000250">MIXS:0000250</a></td>
 <td><a href="../0000250/">host_taxid</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>NCBI taxon id of the host, e</td>
 </tr>
 <tr>
@@ -5153,7 +5153,6 @@ attributes:
     - host
     - host.
     - taxon
-    string_serialization: '{NCBI taxid}'
     slot_uri: MIXS:0000250
     owner: MimsPlantAssociatedAncient
     domain_of:
@@ -5165,7 +5164,7 @@ attributes:
     - MimsHostAssociatedAncient
     - MimsPlantAssociatedAncient
     slot_group: Environment
-    range: string
+    range: integer
   store_cond:
     name: store_cond
     description: Explain how and for how long the sample was stored before DNA extraction

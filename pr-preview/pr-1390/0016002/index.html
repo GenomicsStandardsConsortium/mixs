@@ -968,7 +968,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000250">MIXS:0000250</a></td>
 <td><a href="../0000250/">host_taxid</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>NCBI taxon id of the host, e</td>
 </tr>
 <tr>
@@ -1365,7 +1365,6 @@ slot_usage:
     name: host_taxid
     examples:
     - value: '7955'
-    string_serialization: '{NCBI taxid}'
   host_tot_mass:
     name: host_tot_mass
     examples:
@@ -1482,7 +1481,6 @@ slot_usage:
     name: host_taxid
     examples:
     - value: '7955'
-    string_serialization: '{NCBI taxid}'
   host_tot_mass:
     name: host_tot_mass
     examples:
@@ -1925,7 +1923,6 @@ attributes:
     - host
     - host.
     - taxon
-    string_serialization: '{NCBI taxid}'
     slot_uri: MIXS:0000250
     owner: HostAssociated
     domain_of:
@@ -1936,7 +1933,7 @@ attributes:
     - SymbiontAssociated
     - MimsHostAssociatedAncient
     - MimsPlantAssociatedAncient
-    range: string
+    range: integer
   host_subject_id:
     name: host_subject_id
     description: A unique identifier by which each subject can be referred to, de-identified

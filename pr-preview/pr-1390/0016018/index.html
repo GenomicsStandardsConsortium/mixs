@@ -1424,7 +1424,7 @@
 <tr>
 <td><a href="https://w3id.org/mixs/0000250">MIXS:0000250</a></td>
 <td><a href="../0000250/">host_taxid</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>NCBI taxon id of the host, e</td>
 </tr>
 <tr>
@@ -2175,7 +2175,6 @@ slot_usage:
     name: host_taxid
     examples:
     - value: '9606'
-    string_serialization: '{integer}'
     required: true
   host_tot_mass:
     name: host_tot_mass
@@ -2542,7 +2541,6 @@ slot_usage:
     name: host_taxid
     examples:
     - value: '9606'
-    string_serialization: '{integer}'
     required: true
   host_tot_mass:
     name: host_tot_mass
@@ -5313,7 +5311,6 @@ attributes:
     - host
     - host.
     - taxon
-    string_serialization: '{integer}'
     slot_uri: MIXS:0000250
     owner: Agriculture
     domain_of:
@@ -5324,7 +5321,7 @@ attributes:
     - SymbiontAssociated
     - MimsHostAssociatedAncient
     - MimsPlantAssociatedAncient
-    range: string
+    range: integer
     required: true
   host_tot_mass:
     name: host_tot_mass
