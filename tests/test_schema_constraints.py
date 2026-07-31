@@ -37,6 +37,37 @@ COMBINATION_SUBSET = "combination_classes"
 UNIDENTIFIED_CLASSES = {"Checklist", "Extension", "MixsCompliantData"}
 
 
+
+def has_top_level_alternation(pattern):
+    """True if ``pattern`` contains a ``|`` that splits the whole expression.
+
+    Only an unescaped pipe outside any group and outside any character class is
+    an alternation at the top level. ``\\|`` is a literal pipe, ``[a|b]`` is a
+    character class containing one, and ``\\(`` is a literal parenthesis that must
+    not be counted as opening a group.
+    """
+    depth = 0
+    in_class = False
+    escaped = False
+    for char in pattern:
+        if escaped:
+            escaped = False
+        elif char == "\\":
+            escaped = True
+        elif in_class:
+            if char == "]":
+                in_class = False
+        elif char == "[":
+            in_class = True
+        elif char == "(":
+            depth += 1
+        elif char == ")":
+            depth -= 1
+        elif char == "|" and depth == 0:
+            return True
+    return False
+
+
 def reporting_terms():
     """Every slot a submitter fills in, excluding generated containers."""
     view = SchemaView(SCHEMA_PATH)
@@ -418,17 +449,7 @@ class TestStructuredPatterns(unittest.TestCase):
             syntax = structured.get("syntax") or ""
             if not (syntax.startswith("^") and syntax.endswith("$")):
                 continue
-            inner = syntax[1:-1]
-            depth = 0
-            top_level_pipe = False
-            for char in inner:
-                if char == "(":
-                    depth += 1
-                elif char == ")":
-                    depth -= 1
-                elif char == "|" and depth == 0:
-                    top_level_pipe = True
-                    break
+            top_level_pipe = has_top_level_alternation(syntax[1:-1])
             with self.subTest(slot=name):
                 self.assertFalse(
                     top_level_pipe,
