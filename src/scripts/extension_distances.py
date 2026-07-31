@@ -1,6 +1,6 @@
 import click
 import pandas as pd
-from scipy.spatial.distance import pdist, squareform
+from scipy.spatial.distance import pdist
 from scipy.cluster import hierarchy
 import matplotlib.pyplot as plt
 
@@ -40,12 +40,11 @@ def generate_dendrogram(schema, output):
     pivot_df = df.pivot(index='extension', columns='slot', values='slot').notna()
 
     dist_matrix = pdist(pivot_df.values, metric='euclidean')
-    dist_matrix_square = squareform(dist_matrix)
 
     linkage_matrix = hierarchy.linkage(dist_matrix, method='complete')
 
     plt.figure(figsize=(14, 8))
-    dendrogram = hierarchy.dendrogram(linkage_matrix, labels=pivot_df.index.values, orientation='top')
+    hierarchy.dendrogram(linkage_matrix, labels=pivot_df.index.values, orientation='top')
     plt.title('Similarity of MIxS Extensions by Term Usage')
     plt.ylabel('Distance')
     plt.xlabel('Extensions')
