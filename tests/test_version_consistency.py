@@ -27,11 +27,19 @@ def schema_version():
 
 
 def from_yaml_key(path, key="version"):
-    return str(yaml.safe_load(path.read_text())[key])
+    # None rather than an exception on a missing key or a parse failure, so the
+    # assertion below reports what to do instead of a bare KeyError.
+    try:
+        return str(yaml.safe_load(path.read_text())[key])
+    except (KeyError, TypeError, yaml.YAMLError):
+        return None
 
 
 def from_json_key(path, key="version"):
-    return str(json.loads(path.read_text())[key])
+    try:
+        return str(json.loads(path.read_text())[key])
+    except (KeyError, TypeError, json.JSONDecodeError):
+        return None
 
 
 def from_regex(path, pattern):
@@ -94,8 +102,14 @@ class TestVersionConsistency(unittest.TestCase):
         for relative_path, read_version, origin in CASES:
             with self.subTest(path=relative_path):
                 path = ROOT / relative_path
-                if not path.exists():
-                    self.skipTest(f"{relative_path} is not present in this checkout")
+                # Failing rather than skipping: a missing file here means a generated
+                # artifact was deleted or a build did not run, and skipping would let
+                # that pass CI silently, which is the thing this test exists to stop.
+                self.assertTrue(
+                    path.exists(),
+                    f"{relative_path} is missing. It should be committed. If it is a "
+                    f"generated file, run `make all`. Origin: {origin}.",
+                )
 
                 found = read_version(path)
 

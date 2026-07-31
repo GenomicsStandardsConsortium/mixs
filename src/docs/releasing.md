@@ -23,11 +23,13 @@ tag, so there is no separate tagging step.
 - **Python package version** (`pyproject.toml`): never edited by hand.
   `poetry-dynamic-versioning` reads the git tag and stamps the version at build
   time, so `pyproject.toml` holds a `0.0.0` placeholder on `main`.
-- **Schema version** (`version:` in `src/mixs/schema/mixs.yaml`): edited by hand
-  as part of a release. It is part of the schema itself, not build metadata, so
-  it travels into everything generated from the schema, including the OWL that
-  EBI OLS loads and the JSON Schema that validators use. Whatever you type here
-  is what downstream consumers will report as their MIxS version.
+- **Schema version** (`version:` in `src/mixs/schema/mixs.yaml`): written by the
+  release action from the version you give it, not edited by hand. It is part of
+  the schema itself, not build metadata, so it travels into everything generated
+  from the schema, including the OWL that EBI OLS loads and the JSON Schema that
+  validators use. This is what downstream consumers report as their MIxS version,
+  and `tests/test_version_consistency.py` fails the build if any file disagrees
+  with it.
 
 ## Cutting a release
 
