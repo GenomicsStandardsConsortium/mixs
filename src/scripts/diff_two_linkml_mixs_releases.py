@@ -1809,24 +1809,24 @@ def diff_top_keys(schema1_view: SchemaView, schema2_view: SchemaView) -> Tuple[S
 
 
 def validate_github_token(token: str) -> bool:
-    """Validate GitHub token format.
-    
-    Args:
-        token: GitHub token to validate.
-        
-    Returns:
-        True if token format is valid, False otherwise.
-    """
-    # GitHub personal access tokens patterns
-    patterns = [
-        r'^ghp_[a-zA-Z0-9]{36}$',  # Personal access token (classic)
-        r'^gho_[a-zA-Z0-9]{36}$',  # OAuth token
-        r'^ghu_[a-zA-Z0-9]{36}$',  # User token
-        r'^ghs_[a-zA-Z0-9]{36}$',  # Server token
-        r'^github_pat_[a-zA-Z0-9_]{22,}$',  # Fine-grained personal access token (variable length)
-    ]
+    """Reject a token that is obviously unusable, without judging its format.
 
-    return any(re.match(pattern, token) for pattern in patterns)
+    Args:
+        token: GitHub token to check.
+
+    Returns:
+        True unless the token is empty or contains whitespace.
+    """
+    # Deliberately not a format check against a list of known prefixes and exact
+    # lengths. A token is opaque, GitHub changes these formats, and the previous
+    # version required ghs_ plus exactly 36 characters, which the token GitHub
+    # Actions issues no longer matches. The result was that CI threw away a valid
+    # token, fell back to the unauthenticated API at 60 requests per hour shared
+    # across runner IP addresses, and the release diff failed on a rate limit.
+    #
+    # Only obvious junk is rejected here. If a token is wrong, the API says so,
+    # and that is a clearer error than being silently unauthenticated.
+    return bool(token) and not re.search(r"\s", token)
 
 
 def get_github_headers() -> Dict[str, str]:
@@ -1848,21 +1848,26 @@ def get_github_headers() -> Dict[str, str]:
             token = os.getenv('GITHUB_TOKEN')
 
     headers = {}
-    if token:
-        if validate_github_token(token):
-            headers['Authorization'] = f'token {token}'
-            if VERBOSE_AUTH or not AUTH_MESSAGE_PRINTED:
-                logger.info("Using authenticated GitHub API")
-                AUTH_MESSAGE_PRINTED = True
+    if token and validate_github_token(token):
+        headers['Authorization'] = f'token {token}'
+
+    # This function is called from several places, so the message is emitted once
+    # per run unless VERBOSE_AUTH is set.
+    if VERBOSE_AUTH or not AUTH_MESSAGE_PRINTED:
+        if headers:
+            logger.info("Using authenticated GitHub API")
+        elif os.getenv("GITHUB_ACTIONS") == "true":
+            # Unauthenticated means 60 requests per hour shared across GitHub's
+            # runner IP addresses. In CI that is not a degraded mode, it is a run
+            # that fails as soon as someone else has used the budget.
+            logger.error(
+                "No usable GITHUB_TOKEN in GitHub Actions. GitHub API calls will "
+                "be unauthenticated and are likely to fail on a rate limit."
+            )
         else:
-            if VERBOSE_AUTH or not AUTH_MESSAGE_PRINTED:
-                logger.warning("Invalid GitHub token format detected, using unauthenticated API")
-                logger.warning("Using unauthenticated GitHub API (rate limited)")
-                AUTH_MESSAGE_PRINTED = True
-    else:
-        if VERBOSE_AUTH or not AUTH_MESSAGE_PRINTED:
             logger.warning("Using unauthenticated GitHub API (rate limited)")
-            AUTH_MESSAGE_PRINTED = True
+        AUTH_MESSAGE_PRINTED = True
+
     return headers
 
 
