@@ -1,0 +1,68 @@
+---
+name: Check published artifact consistency
+
+# Checks the artifacts served at w3id.org against each other. Those URLs are what
+# EBI OLS, BioPortal and other consumers follow, and three separate redirects serve
+# them, so nothing otherwise guarantees they describe the same schema.
+#
+# On 2026-07-30 they did not: w3id.org/mixs/mixs.yaml and
+# w3id.org/mixs/mixs.schema.json both declared version 7.0.0 while describing 344
+# and 335 container slots. See #1331 and #1006 for how the redirects came to differ.
+#
+# Deliberately manual for now. The mixs.yaml redirect points at main's working copy
+# while the other two point at the release copy, so the two are designed to diverge
+# after every schema merge and a scheduled run would sit red. Once that redirect
+# points at a released schema, add a schedule here and the check becomes meaningful
+# unattended. Nothing else needs to change.
+#
+# Run it after publishing a release, and use the ref input beforehand to confirm a
+# release is self-consistent before anything is pointed at it.
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: >-
+          Git tag to check instead of the published w3id URLs, for example v7.0.0.
+          Leave empty to check what consumers are being served right now.
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Compare the published artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Compare the published artifacts
+        env:
+          # Passed through the environment rather than interpolated into the run
+          # block, so the input cannot be read as shell.
+          REF_INPUT: ${{ inputs.ref }}
+        run: |
+          set -euo pipefail
+          if [ -n "$REF_INPUT" ]; then
+            if ! [[ "$REF_INPUT" =~ ^[A-Za-z0-9._-]+$ ]]; then
+              echo "::error::ref '$REF_INPUT' must contain only letters, digits, '.', '_', or '-'."
+              exit 1
+            fi
+            make check-published REF="$REF_INPUT"
+          else
+            make check-published
+          fi
