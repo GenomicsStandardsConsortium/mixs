@@ -74,7 +74,11 @@ def read_json_schema(text):
 
 def read_owl(text):
     match = re.search(r'pav:version\s+"([^"]+)"', text)
-    subjects = set(re.findall(r"^MIXS:(\S+) a owl:Class", text, flags=re.MULTILINE))
+    # Turtle permits any whitespace between subject, predicate and object, so this
+    # does not assume the single spacing the current serializer happens to emit.
+    subjects = set(
+        re.findall(r"^MIXS:(\S+)\s+a\s+owl:Class", text, flags=re.MULTILINE)
+    )
     return {
         "version": match.group(1) if match else None,
         "containers": None,  # the OWL does not model the container class
@@ -96,6 +100,16 @@ def main():
         help="check a git ref's raw URLs instead of the published w3id URLs",
     )
     args = parser.parse_args()
+
+    # The workflow validates this too, but running the script directly or through
+    # `make check-published REF=...` does not go through the workflow, so the check
+    # belongs here as well. The value is interpolated into a URL.
+    if args.ref and not re.fullmatch(r"[A-Za-z0-9._-]+", args.ref):
+        print(
+            f"FAIL: --ref {args.ref!r} must contain only letters, digits, '.', '_' "
+            f"or '-'. It is a git tag name, and it goes into a URL."
+        )
+        return 2
 
     urls = (
         {name: RAW.format(ref=args.ref, path=path) for name, path in RAW_PATHS.items()}

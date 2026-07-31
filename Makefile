@@ -310,7 +310,7 @@ DIFF ?=
 # otherwise guarantees they describe the same schema. Pass REF to check a tag's
 # raw URLs instead: make check-published REF=v7.0.0
 check-published:
-	$(RUN) python src/scripts/check_published_consistency.py $(if $(REF),--ref $(REF),)
+	$(RUN) python src/scripts/check_published_consistency.py $(if $(REF),--ref '$(REF)',)
 
 .PHONY: purge-diff
 purge-diff:
