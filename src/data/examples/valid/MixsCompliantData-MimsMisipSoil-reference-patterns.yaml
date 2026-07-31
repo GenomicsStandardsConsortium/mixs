@@ -1,4 +1,6 @@
-# sip_method and internal_standard accept a PMID, a DOI or an http(s) URL.
+# sip_method and internal_standard accept a prefixed reference: PMID:<digits>,
+# doi:10.<registrant>/<suffix>, or an http(s):// URL. A bare identifier with no
+# prefix is not accepted.
 # One record per accepted form, so a regression names the form that broke.
 # The other fields are the required ones, copied from
 # MixsCompliantData-MimsMisipSoil-example.yaml.
