@@ -153,15 +153,6 @@ a pull request that edits a build input does not either, and a push to `main` ru
 nothing. That is deliberate: it keeps a local build and a diff of several hundred
 generated files off contributors.
 
-There used to be a workflow here that tried to do more. One of its jobs regenerated
-on every push to `main` and committed the result, which branch protection refuses,
-so it never committed anything. The other rebuilt the schema on pull requests that
-touched a build input and failed if the committed
-`project/jsonschema/mixs.schema.json` differed from the rebuild. That comparison was
-wrong: between releases the committed copies match the last release rather than the
-current `src/mixs/schema/mixs.yaml`, so it failed on correct work whenever anyone
-edited the `Makefile`. Both jobs are gone.
-
 ### What this means if you merge a schema change
 
 Merging a pull request that changes only the schema leaves the committed
