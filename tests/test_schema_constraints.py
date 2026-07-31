@@ -351,38 +351,53 @@ class TestPatterns(unittest.TestCase):
 
 
 class TestNumericRanges(unittest.TestCase):
-    """A term whose declared shape is a bare number must have a numeric range.
+    """A numeric shape must be declared as a range, not as unenforceable text.
 
-    Declaring the shape in a form the build does not check leaves the term
-    accepting any string, because the schema-level default range is string.
-    Four terms were in that state: trnas, host_of_host_taxid, host_spec_range
-    and samp_time_out. Nothing failed, because a term that accepts everything
-    cannot.
+    ``range: integer`` is checked by every validator. A bare ``{integer}`` written
+    into ``string_serialization`` is not checked by anything, so a term carrying
+    only that falls back to the schema-level ``default_range: string`` and accepts
+    any value. Four terms were in that state and nothing failed, because a term
+    that accepts everything cannot.
+
+    Where both were present the text one was redundant, so this asserts the
+    absence rather than the agreement: when a working constraint exists, the
+    unenforceable duplicate goes.
     """
 
-    EXPECTED = {"{integer}": "integer", "{float}": "float"}
+    NUMERIC_SHAPES = {"{integer}": "integer", "{float}": "float"}
 
     @classmethod
     def setUpClass(cls):
         with open(SCHEMA_PATH) as handle:
             cls.slots = (yaml.safe_load(handle).get("slots") or {})
 
-    def test_declared_numeric_shape_has_a_matching_range(self):
+    def test_no_slot_declares_a_bare_numeric_shape_as_text(self):
         for name, slot in self.slots.items():
             if not isinstance(slot, dict):
                 continue
             declared = slot.get("string_serialization")
             if not isinstance(declared, str):
                 continue
-            expected = self.EXPECTED.get(declared.strip())
+            expected = self.NUMERIC_SHAPES.get(declared.strip())
             if expected is None:
                 continue
             with self.subTest(slot=name):
+                self.fail(
+                    f"{name} declares its values are {expected} in a field nothing "
+                    f"checks. Use `range: {expected}`, which validators enforce, and "
+                    f"remove the declaration rather than keeping both."
+                )
+
+    def test_numeric_terms_kept_their_range(self):
+        """The four terms this was found through, plus the one that was already right."""
+        for name, expected in [("trnas", "integer"), ("host_of_host_taxid", "integer"),
+                               ("host_spec_range", "integer"), ("samp_time_out", "float"),
+                               ("num_replicons", "integer")]:
+            with self.subTest(slot=name):
                 self.assertEqual(
-                    slot.get("range"), expected,
-                    f"{name} declares its values are {expected}, but has no "
-                    f"range, so it falls back to the schema default and accepts "
-                    f"any string. Add `range: {expected}`.",
+                    self.slots[name].get("range"), expected,
+                    f"{name} holds {expected} values and needs `range: {expected}`. "
+                    f"Without it the schema default applies and any string is accepted.",
                 )
 
 if __name__ == "__main__":

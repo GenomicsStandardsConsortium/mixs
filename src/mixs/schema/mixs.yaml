@@ -9167,7 +9167,6 @@ slots:
       - symbiosis
       - taxon
     range: integer
-    string_serialization: '{integer}'
     slot_uri: MIXS:0001306
   host_of_host_totmass:
     description: Total mass of the host of the symbiotic host organism at collection,
@@ -9279,7 +9278,6 @@ slots:
       - host.
       - range
     range: integer
-    string_serialization: '{integer}'
     slot_uri: MIXS:0000030
     multivalued: true
   host_specificity:
@@ -10348,7 +10346,6 @@ slots:
       - nucleic acid sequence source
     keywords:
       - number
-    string_serialization: '{integer}'
     slot_uri: MIXS:0000022
     range: integer
   num_samp_collect:
@@ -12322,7 +12319,6 @@ slots:
     keywords:
       - time
     range: float
-    string_serialization: '{float}'
     slot_uri: MIXS:0000196
   samp_transport_cond:
     annotations:
@@ -14298,7 +14294,6 @@ slots:
     keywords:
       - number
     range: integer
-    string_serialization: '{integer}'
     slot_uri: MIXS:0000067
   trophic_level:
     description: Trophic levels are the feeding position in a food chain. Microbes
