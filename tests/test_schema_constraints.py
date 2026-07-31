@@ -458,5 +458,43 @@ class TestStructuredPatterns(unittest.TestCase):
                     f"text either side validates. Wrap it: ^(A|B)$ rather than ^A|B$.",
                 )
 
+
+
+class TestAlternationDetector(unittest.TestCase):
+    """The detector used by TestStructuredPatterns, checked against regex semantics.
+
+    Each expectation is cross-checked against Python's own parser: where the pipe
+    is inside a character class, ``re`` matches a literal ``|``; where it is an
+    alternation, it does not.
+    """
+
+    CASES = [
+        ("A|B", True, "a plain top-level alternation"),
+        ("(A|B)", False, "grouped"),
+        ("(?:A|B)", False, "a non-capturing group"),
+        (r"A\|B", False, "an escaped pipe is a literal"),
+        ("[a|b]", False, "a pipe inside a character class"),
+        (r"\(A|B\)", True, "escaped parentheses, so the pipe is top level"),
+        (r"[\]|a]", False, "an escaped ] does not close the class"),
+        (r"[\]]|B", True, "the escaped ], then the real ], then a top-level pipe"),
+        (r"[a\]b|c]d", False, "the pipe stays inside the class"),
+        (r"[\\]|B", True, "an escaped backslash ends the class"),
+        ("(A)|B", True, "a group closes, then a top-level pipe"),
+    ]
+
+    def test_detector_matches_regex_semantics(self):
+        for pattern, expected, description in self.CASES:
+            with self.subTest(pattern=pattern):
+                self.assertEqual(
+                    has_top_level_alternation(pattern), expected,
+                    f"{pattern!r}: {description}",
+                )
+
+    def test_every_case_is_a_valid_regex(self):
+        """A case that does not compile would be testing nothing."""
+        for pattern, _, _ in self.CASES:
+            with self.subTest(pattern=pattern):
+                re.compile(pattern)
+
 if __name__ == "__main__":
     unittest.main()
