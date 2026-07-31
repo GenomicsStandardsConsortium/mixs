@@ -1,11 +1,7 @@
 import csv
-import pprint
-
 import click
 from linkml_runtime import SchemaView
 import logging
-
-from linkml_runtime.dumpers import yaml_dumper
 
 logging.basicConfig(level=logging.INFO)
 
