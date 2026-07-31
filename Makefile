@@ -304,6 +304,14 @@ clean-contrib:
 # The outputs are committed, so if you purge one by mistake, get it back with:
 #   git restore assets/diff_results/<name>
 DIFF ?=
+.PHONY: check-published
+# Checks the artifacts served at w3id.org against each other. These are the URLs
+# EBI OLS and BioPortal follow, and separate redirects serve them, so nothing
+# otherwise guarantees they describe the same schema. Pass REF to check a tag's
+# raw URLs instead: make check-published REF=v7.0.0
+check-published:
+	$(RUN) python src/scripts/check_published_consistency.py $(if $(REF),--ref $(REF),)
+
 .PHONY: purge-diff
 purge-diff:
 	@test -n "$(DIFF)" || { echo "Say which diff to purge, for example:  make purge-diff DIFF=v5_to_v6.0.0"; echo "Diffs you can purge:"; find assets/diff_results -mindepth 1 -maxdepth 1 -type d -exec basename {} \; ; exit 1; }
