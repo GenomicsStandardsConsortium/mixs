@@ -113,6 +113,12 @@ site: gen-project owl gendoc
 # generates all project files
 gen-project: ensure-dirs $(PYMODEL)
 	$(RUN) linkml generate project --log_level WARNING --config-file project-generator-config.yaml $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
+# The source schema is copied in beside the artifacts generated from it, so every
+# file a consumer can fetch under project/ comes from the same build. Without this,
+# https://w3id.org/mixs/mixs.yaml has to resolve to the working copy on main while
+# the other w3id URLs resolve to project/, which is how they came to report the same
+# version while describing different schemas.
+	cp $(SOURCE_SCHEMA_PATH) $(DEST)/mixs.yaml
 
 OLS_SPARQL_DIR = src/sparql/ols
 

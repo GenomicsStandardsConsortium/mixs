@@ -124,6 +124,24 @@ jobs:
         run: |
           git checkout -b "release/v${VERSION}"
 
+      # Must run before the build below, because every generated artifact inherits
+      # its version from this file. It used to be bumped by hand in a separate pull
+      # request merged beforehand, which is what allowed the schema and the generated
+      # files to carry different versions.
+      - name: Bump the schema version
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          sed -i "s/^version: .*/version: ${VERSION}/" src/mixs/schema/mixs.yaml
+          # sed -i exits 0 whether or not it matched, so confirm it took effect.
+          found=$(grep -m1 '^version:' src/mixs/schema/mixs.yaml | sed 's/^version:[[:space:]]*//')
+          if [ "$found" != "$VERSION" ]; then
+            echo "::error::Failed to set the schema version. src/mixs/schema/mixs.yaml reads '$found', expected '$VERSION'."
+            exit 1
+          fi
+          echo "src/mixs/schema/mixs.yaml is now $found."
+
       - name: Bump version in CITATION.cff
         env:
           VERSION: ${{ inputs.version }}
