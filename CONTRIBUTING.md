@@ -82,6 +82,31 @@ Name things for what changed, so a reviewer can tell without opening the diff.
   issue. The diff already shows what changed, so keep any itemised list as
   supporting detail rather than the whole description.
 
+#### Reading a Copilot review
+
+Copilot splits its output in two, and the halves are not equally visible. Inline
+comments appear against the diff. Everything else goes into a collapsed block
+headed "Suppressed comments", which you have to click to open.
+
+**Open it before approving.** On this repository that block is where most of the
+substantive findings arrive, and a review can say "generated no comments" while
+holding a real one. Examples from a single day of work:
+
+- a new test file that never ran, because it was written for `pytest` while
+  `make test-python` runs `python -m unittest discover`
+- generated files under `contrib/` committed by accident, carrying unrelated
+  schema changes into a pull request about something else
+- a script that produced a stack trace on a network failure instead of naming
+  the artifact it could not fetch
+
+Suppressed comments have no reply thread, so answer them in a normal pull request
+comment saying what you changed or why you disagree. Inline comments should be
+answered inline.
+
+Treat both halves as a reviewer's opinion rather than a verdict. Some findings
+are wrong, and a wrong one is worth a short reply explaining why, so the next
+reader does not have to work it out again.
+
 #### Linting checks
 
 Two checks lint the schema on every pull request that touches it, and **both fail
