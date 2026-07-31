@@ -4,7 +4,7 @@
 
 The following is a set of general guidelines for contributing to MIxS.
 
-For a more detailed guide to MIxS editing and contributing policies, see the [contributing documentation](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/docs).
+For a more detailed guide to MIxS editing and contributing policies, see the [contributing documentation](https://github.com/GenomicsStandardsConsortium/mixs/tree/main/src/docs).
 
 ## Table Of Contents
 
