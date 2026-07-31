@@ -11,10 +11,9 @@ an identical placeholder identifier as a result.
 import os
 import re
 import unittest
-
-import yaml
 from collections import Counter, defaultdict
 
+import yaml
 from linkml_runtime import SchemaView
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
