@@ -1809,13 +1809,13 @@ def diff_top_keys(schema1_view: SchemaView, schema2_view: SchemaView) -> Tuple[S
 
 
 def validate_github_token(token: str) -> bool:
-    """Validate GitHub token format.
-    
+    """Reject a token that is obviously unusable, without judging its format.
+
     Args:
-        token: GitHub token to validate.
-        
+        token: GitHub token to check.
+
     Returns:
-        True if token format is valid, False otherwise.
+        True unless the token is empty or contains whitespace.
     """
     # Deliberately not a format check against a list of known prefixes and exact
     # lengths. A token is opaque, GitHub changes these formats, and the previous
@@ -1848,30 +1848,26 @@ def get_github_headers() -> Dict[str, str]:
             token = os.getenv('GITHUB_TOKEN')
 
     headers = {}
-    if token:
-        if validate_github_token(token):
-            headers['Authorization'] = f'token {token}'
-            if VERBOSE_AUTH or not AUTH_MESSAGE_PRINTED:
-                logger.info("Using authenticated GitHub API")
-                AUTH_MESSAGE_PRINTED = True
-        else:
-            if VERBOSE_AUTH or not AUTH_MESSAGE_PRINTED:
-                logger.warning("Invalid GitHub token format detected, using unauthenticated API")
-                logger.warning("Using unauthenticated GitHub API (rate limited)")
-                AUTH_MESSAGE_PRINTED = True
-    else:
-        if VERBOSE_AUTH or not AUTH_MESSAGE_PRINTED:
-            logger.warning("Using unauthenticated GitHub API (rate limited)")
-            AUTH_MESSAGE_PRINTED = True
+    if token and validate_github_token(token):
+        headers['Authorization'] = f'token {token}'
 
-    # Unauthenticated is 60 requests per hour shared across GitHub's runner IP
-    # addresses, so in CI it is not a degraded mode, it is a run that fails when
-    # someone else has used the budget. Say so where it will be read.
-    if not headers and os.getenv("GITHUB_ACTIONS") == "true":
-        logger.error(
-            "No usable GITHUB_TOKEN in GitHub Actions. The GitHub API calls below "
-            "will be unauthenticated and are likely to fail on a rate limit."
-        )
+    # This function is called from several places, so the message is emitted once
+    # per run unless VERBOSE_AUTH is set.
+    if VERBOSE_AUTH or not AUTH_MESSAGE_PRINTED:
+        if headers:
+            logger.info("Using authenticated GitHub API")
+        elif os.getenv("GITHUB_ACTIONS") == "true":
+            # Unauthenticated means 60 requests per hour shared across GitHub's
+            # runner IP addresses. In CI that is not a degraded mode, it is a run
+            # that fails as soon as someone else has used the budget.
+            logger.error(
+                "No usable GITHUB_TOKEN in GitHub Actions. GitHub API calls will "
+                "be unauthenticated and are likely to fail on a rate limit."
+            )
+        else:
+            logger.warning("Using unauthenticated GitHub API (rate limited)")
+        AUTH_MESSAGE_PRINTED = True
+
     return headers
 
 
