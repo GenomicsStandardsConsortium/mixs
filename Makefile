@@ -81,7 +81,7 @@ help: status
 	@echo "  create-data-harmonizer -- experimental; currently broken, see issue 1244"
 	@echo ""
 
-.PHONY: all all-contrib clean install help status linkml-lint yaml-lint fix-whitespace yamlfmt-beta test testdoc serve gen-project gendoc test-python test-examples ensure-dirs clean-contrib project/class-model-tsvs-organized
+.PHONY: all all-contrib clean install help status linkml-lint yaml-lint fix-whitespace yamlfmt-beta test testdoc serve gen-project gendoc site owl test-python test-examples ensure-dirs clean-contrib project/class-model-tsvs-organized
 
 ensure-dirs:
 	mkdir -p contrib
