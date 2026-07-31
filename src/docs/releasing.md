@@ -140,30 +140,27 @@ from `src/mixs/schema/mixs.yaml` by `make`, and they are committed because
 downstream consumers fetch them directly. EBI OLS reads
 `project/owl/mixs.owl.ttl` from raw `main`.
 
-Four things can update them, and it is worth knowing which is which:
+Only one thing updates them:
 
-- **A pull request that edits only the schema** does neither. The "Regenerate
-  and verify generated artifacts" workflow does not run on it, so the generated
-  files in such a pull request are whatever its author put there, which is
-  usually nothing. This is deliberate: it keeps a local build and a diff of
-  several hundred generated files off contributors.
-- **A pull request that edits a build input** (`Makefile`, `src/sparql/**`,
-  `project-generator-config.yaml`) runs the "Verify generated artifacts"
-  workflow, which runs `make gen-project` and fails if the committed
-  `project/jsonschema/mixs.schema.json` or `project/jsonld/mixs.jsonld` no longer
-  matches. The JSON-LD is compared with its `generation_date` and
-  `source_file_date` lines filtered out, because git does not preserve file times
-  and those two differ on every clone. It does not compare the OWL, which
-  reorders its triples on every run, nor `contrib/` or the Python datamodel.
-- **A push to `main`** runs nothing, and that is now the design rather than a
-  temporary state. The job that regenerated and pushed has been removed: it
-  pushed straight to `main`, which branch protection refuses, so it never
-  committed anything here.
 - **The "Create Release PR" action** runs `make install clean all` on the branch
   it creates and commits everything that produces, so a release cut this way
   carries generated files built from the schema it ships. This is the action
   doing it, not the branch: a release branch assembled by hand gets no rebuild,
   and would carry whatever `main` had at the time.
+
+Nothing else does. A pull request that edits the schema does not regenerate them,
+a pull request that edits a build input does not either, and a push to `main` runs
+nothing. That is deliberate: it keeps a local build and a diff of several hundred
+generated files off contributors.
+
+There used to be a workflow here that tried to do more. One of its jobs regenerated
+on every push to `main` and committed the result, which branch protection refuses,
+so it never committed anything. The other rebuilt the schema on pull requests that
+touched a build input and failed if the committed
+`project/jsonschema/mixs.schema.json` differed from the rebuild. That comparison was
+wrong: between releases the committed copies match the last release rather than the
+current `src/mixs/schema/mixs.yaml`, so it failed on correct work whenever anyone
+edited the `Makefile`. Both jobs are gone.
 
 ### What this means if you merge a schema change
 
