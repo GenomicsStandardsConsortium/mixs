@@ -1024,41 +1024,45 @@ tag, so there is no separate tagging step.</p>
 <li><strong>Python package version</strong> (<code>pyproject.toml</code>): never edited by hand.
   <code>poetry-dynamic-versioning</code> reads the git tag and stamps the version at build
   time, so <code>pyproject.toml</code> holds a <code>0.0.0</code> placeholder on <code>main</code>.</li>
-<li><strong>Schema version</strong> (<code>version:</code> in <code>src/mixs/schema/mixs.yaml</code>): edited by hand
-  as part of a release. It is part of the schema itself, not build metadata, so
-  it travels into everything generated from the schema, including the OWL that
-  EBI OLS loads and the JSON Schema that validators use. Whatever you type here
-  is what downstream consumers will report as their MIxS version.</li>
+<li><strong>Schema version</strong> (<code>version:</code> in <code>src/mixs/schema/mixs.yaml</code>): written by the
+  release action from the version you give it, not edited by hand. It is part of
+  the schema itself, not build metadata, so it travels into everything generated
+  from the schema, including the OWL that EBI OLS loads and the JSON Schema that
+  validators use. This is what downstream consumers report as their MIxS version,
+  and <code>tests/test_version_consistency.py</code> fails the build if any file disagrees
+  with it.</li>
 </ul>
 <h2 id="cutting-a-release">Cutting a release</h2>
 <ol>
-<li>Bump the schema version. Edit <code>version:</code> near the top of
-   <code>src/mixs/schema/mixs.yaml</code> to the new number, bare <code>X.Y.Z</code> with no <code>v</code>, and
-   merge it to <code>main</code> through a pull request like any other change (see
-   <a href="https://github.com/GenomicsStandardsConsortium/mixs/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>).</li>
 <li>Run the "Create Release PR" action from the
    <a href="https://github.com/GenomicsStandardsConsortium/mixs/actions/workflows/create-release-pr.yaml">Actions tab</a>,
-   using "Run workflow", with the same version. It bumps <code>CITATION.cff</code>,
-   <code>.zenodo.json</code> and <code>release/README.md</code>, generates the schema diff, and opens
-   a <code>release/vX.Y.Z</code> pull request. It does not touch <code>pyproject.toml</code>, which is
-   dynamic, or <code>mixs.yaml</code>, which you bumped in step 1.</li>
-<li>Add the schema-diff summaries to the release branch, as described in the next
-   section.</li>
-<li>Approve the workflows on the release pull request. The pull request was
+   using "Run workflow", with the new version as a bare <code>X.Y.Z</code> and no <code>v</code>. The
+   version you type there is the only place it is entered. The action writes it
+   into <code>src/mixs/schema/mixs.yaml</code> first, so everything built from the schema
+   inherits it, then into <code>CITATION.cff</code>, <code>.zenodo.json</code> and <code>release/README.md</code>.
+   It generates the schema diff and opens a <code>release/vX.Y.Z</code> pull request. It does
+   not touch <code>pyproject.toml</code>, which holds a <code>0.0.0</code> placeholder because the Python
+   package version comes from the git tag at build time.</li>
+</ol>
+<p>Nothing is bumped by hand. <code>tests/test_version_consistency.py</code> fails the build
+   if any of these disagree, which also catches the case where one of the files is
+   reformatted and the action's <code>sed</code> silently stops matching it.
+2. Add the schema-diff summaries to the release branch, as described in the next
+   section.
+3. Approve the workflows on the release pull request. The pull request was
    opened by a workflow, so GitHub runs no checks on it until a maintainer
    clicks "Approve and run workflows". Until someone does, the pull request
    shows no checks at all rather than failing ones, which is easy to read as
-   passing.</li>
-<li>Review and merge the release pull request. A TWG member other than its
+   passing.
+4. Review and merge the release pull request. A TWG member other than its
    author reviews the version bumps and the schema-diff summary; the pre-merge
-   checklist is in the pull request body.</li>
-<li>Publish the release from the
+   checklist is in the pull request body.
+5. Publish the release from the
    <a href="https://github.com/GenomicsStandardsConsortium/mixs/releases/new">new release page</a>.
    Create the tag <code>vX.Y.Z</code> there, set the target to <code>main</code> so the tag lands on
    the merge commit rather than the release branch, and use "Generate release
    notes" with the previous release as the "Previous tag". For a release
-   candidate see <a href="#publishing-a-release-candidate">Publishing a release candidate</a>.</li>
-</ol>
+   candidate see <a href="#publishing-a-release-candidate">Publishing a release candidate</a>.</p>
 <p>The structured diff in step 2 is produced by the reusable <code>diff-releases</code> tool;
 see <a href="../SCHEMA_DIFFING/">SCHEMA_DIFFING.md</a>. It can compare any release that has
 a LinkML schema, but it needs the right path for each side, and releases before
