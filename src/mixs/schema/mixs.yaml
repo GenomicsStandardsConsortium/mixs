@@ -9350,6 +9350,7 @@ slots:
     annotations:
       Expected_value: NCBI taxon identifier
     description: NCBI taxon id of the host, e.g. 9606
+    range: integer
     title: host taxid
     keywords:
       - host
@@ -17948,7 +17949,6 @@ classes:
       host_taxid:
         examples:
           - value: '9606'
-        string_serialization: '{integer}'
         required: true
       host_tot_mass:
         required: true
@@ -18897,7 +18897,6 @@ classes:
       host_taxid:
         examples:
           - value: '4530'
-        string_serialization: '{NCBI taxid}'
       host_tot_mass:
         examples:
           - value: 2500 gram
@@ -19364,7 +19363,6 @@ classes:
       host_taxid:
         examples:
           - value: '7955'
-        string_serialization: '{NCBI taxid}'
       host_tot_mass:
         examples:
           - value: 2500 gram
@@ -20400,7 +20398,6 @@ classes:
       host_taxid:
         examples:
           - value: '4530'
-        string_serialization: '{NCBI taxid}'
       host_tot_mass:
         examples:
           - value: 2500 gram
@@ -20612,7 +20609,6 @@ classes:
       soil_type:
         string_serialization: '{termLabel} [{termID}]'
       water_content:
-        string_serialization: '{float}'
     class_uri: MIXS:0016012
     aliases:
       - MIxS-soil
@@ -20731,7 +20727,6 @@ classes:
       host_taxid:
         examples:
           - value: '395013'
-        string_serialization: '{integer}'
       organism_count:
         examples:
           - value: total prokaryotes;3.5e7 cells per milliliter;qPCR

@@ -500,6 +500,10 @@ class TestAlternationDetector(unittest.TestCase):
 class TestNumericRanges(unittest.TestCase):
     """A numeric shape must be declared as a range, not as unenforceable text.
 
+    Covers both places a slot can carry one: the top-level ``slots`` block and a
+    class's ``slot_usage``. The second was missed at first, which hid host_taxid,
+    whose numeric intent lived only in five class usages and so bound nothing.
+
     ``range: integer`` is checked by every validator. A bare ``{integer}`` written
     into ``string_serialization`` is not checked by anything, so a term carrying
     only that falls back to the schema-level ``default_range: string`` and accepts
@@ -516,23 +520,33 @@ class TestNumericRanges(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         with open(SCHEMA_PATH) as handle:
-            cls.slots = (yaml.safe_load(handle).get("slots") or {})
+            schema = yaml.safe_load(handle)
+        cls.slots = schema.get("slots") or {}
+        cls.classes = schema.get("classes") or {}
+
+    def declarations(self):
+        """Yield (where, slot name, declared shape) for every place one appears."""
+        for name, slot in self.slots.items():
+            if isinstance(slot, dict) and isinstance(slot.get("string_serialization"), str):
+                yield "slots", name, slot["string_serialization"]
+        for class_name, definition in self.classes.items():
+            if not isinstance(definition, dict):
+                continue
+            for name, usage in (definition.get("slot_usage") or {}).items():
+                if isinstance(usage, dict) and isinstance(usage.get("string_serialization"), str):
+                    yield f"{class_name}.slot_usage", name, usage["string_serialization"]
 
     def test_no_slot_declares_a_bare_numeric_shape_as_text(self):
-        for name, slot in self.slots.items():
-            if not isinstance(slot, dict):
-                continue
-            declared = slot.get("string_serialization")
-            if not isinstance(declared, str):
-                continue
+        for where, name, declared in self.declarations():
             expected = self.NUMERIC_SHAPES.get(declared.strip())
             if expected is None:
                 continue
-            with self.subTest(slot=name):
+            with self.subTest(slot=name, where=where):
                 self.fail(
-                    f"{name} declares its values are {expected} in a field nothing "
-                    f"checks. Use `range: {expected}`, which validators enforce, and "
-                    f"remove the declaration rather than keeping both."
+                    f"{name} declares its values are {expected} in {where}, a field "
+                    f"nothing checks. Use `range: {expected}` on the slot, which "
+                    f"validators enforce, and remove the declaration rather than "
+                    f"keeping both."
                 )
 
     def test_numeric_terms_kept_their_range(self):
