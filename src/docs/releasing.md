@@ -143,27 +143,18 @@ from `src/mixs/schema/mixs.yaml` by `make`, and they are committed because
 downstream consumers fetch them directly. EBI OLS reads
 `project/owl/mixs.owl.ttl` from raw `main`.
 
-Four things can update them, and it is worth knowing which is which:
+Only one thing updates them:
 
-- **A pull request that edits only the schema** does neither. The "Regenerate
-  and verify generated artifacts" workflow does not run on it, so the generated
-  files in such a pull request are whatever its author put there, which is
-  usually nothing. This is deliberate: it keeps a local build and a diff of
-  several hundred generated files off contributors.
-- **A pull request that edits a build input** (`Makefile`, `src/sparql/**`,
-  `project-generator-config.yaml`) runs the workflow, which runs `make
-  gen-project` and fails if `project/jsonschema/` no longer matches what is
-  committed. That is the whole check: it does not regenerate or compare the OWL,
-  `contrib/`, or the Python datamodel, so a build-input change that affects only
-  those passes.
-- **A push to `main`** runs nothing. The workflow's push trigger is disabled
-  while [issue 1303](https://github.com/GenomicsStandardsConsortium/mixs/issues/1303)
-  is open, so merging a schema change refreshes no generated files.
 - **The "Create Release PR" action** runs `make install clean all` on the branch
   it creates and commits everything that produces, so a release cut this way
   carries generated files built from the schema it ships. This is the action
   doing it, not the branch: a release branch assembled by hand gets no rebuild,
   and would carry whatever `main` had at the time.
+
+Nothing else does. A pull request that edits the schema does not regenerate them,
+a pull request that edits a build input does not either, and a push to `main` runs
+nothing. That is deliberate: it keeps a local build and a diff of several hundred
+generated files off contributors.
 
 ### What this means if you merge a schema change
 
@@ -174,7 +165,11 @@ committed files on `main` are not guaranteed to match
 `src/mixs/schema/mixs.yaml` at any given moment.
 
 This matters because consumers read those files rather than building the schema
-themselves, so a stale file is what they get.
+themselves, so a stale file is what they get. EBI OLS loads
+`project/owl/mixs.owl.ttl` from raw `main`, so between releases it serves the OWL
+built for the previous release. That is the accepted cost of keeping a
+several-hundred-file rebuild off contributors, and it is why a term merged today
+does not reach OLS until a release is cut.
 
 Cutting a release is what brings them back into agreement, because the release
 action rebuilds everything from the schema and commits the result.
