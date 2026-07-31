@@ -904,7 +904,7 @@
 <p>Cardinality: 0..1 <em>recommended</em></p>
 </li>
 <li>
-<p>Structured pattern: <code>^{float}-{float} {unit}|{float} {unit}$</code></p>
+<p>Structured pattern: <code>^({float}-{float} {unit}|{float} {unit})$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -948,7 +948,7 @@ domain_of:
 range: string
 recommended: true
 structured_pattern:
-  syntax: ^{float}-{float} {unit}|{float} {unit}$
+  syntax: ^({float}-{float} {unit}|{float} {unit})$
   interpolated: true
 
 </code></pre>

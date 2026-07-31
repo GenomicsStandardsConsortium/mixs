@@ -1007,7 +1007,7 @@
 <p>Cardinality: 1</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{text}|({termLabel} \[{termID}\])$</code></p>
+<p>Structured pattern: <code>^({text}|({termLabel} \[{termID}\]))$</code></p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -1068,7 +1068,7 @@ domain_of:
 range: string
 required: true
 structured_pattern:
-  syntax: ^{text}|({termLabel} \[{termID}\])$
+  syntax: ^({text}|({termLabel} \[{termID}\]))$
   interpolated: true
   partial_match: true
 

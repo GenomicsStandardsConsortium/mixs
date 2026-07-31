@@ -922,7 +922,7 @@
 <p>Cardinality: *</p>
 </li>
 <li>
-<p>Structured pattern: <code>^{PMID}|{DOI}|{URL}$</code></p>
+<p>Structured pattern: <code>^({PMID}|{DOI}|{URL})$</code></p>
 </li>
 <li>
 <p>Regex pattern: <code>^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$</code></p>
@@ -969,7 +969,7 @@ recommended: false
 multivalued: true
 pattern: ^PMID:\d+$|^doi:10.\d{2,9}/.*$|^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$
 structured_pattern:
-  syntax: ^{PMID}|{DOI}|{URL}$
+  syntax: ^({PMID}|{DOI}|{URL})$
   interpolated: true
   partial_match: true
 

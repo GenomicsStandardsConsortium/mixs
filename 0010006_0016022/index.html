@@ -3649,7 +3649,7 @@ attributes:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   lat_lon:
@@ -4771,7 +4771,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   cult_target:
@@ -5572,7 +5572,7 @@ attributes:
     - FoodHumanFoods
     range: string
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   microb_start:
@@ -5697,7 +5697,7 @@ attributes:
     - FoodHumanFoods
     range: string
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   nucl_acid_ext_kit:
@@ -5928,7 +5928,7 @@ attributes:
     - FoodHumanFoods
     range: string
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   samp_transport_cont:
@@ -6093,7 +6093,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   spikein_AMR:
@@ -6172,7 +6172,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   spikein_metal:
@@ -6222,7 +6222,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   spikein_serovar:

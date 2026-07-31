@@ -3903,7 +3903,7 @@ attributes:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   lat_lon:
@@ -4748,7 +4748,7 @@ attributes:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   samp_stor_device:
@@ -5307,7 +5307,7 @@ attributes:
     - FoodHumanFoods
     range: string
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   timepoint:
@@ -5422,7 +5422,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   samp_pooling:

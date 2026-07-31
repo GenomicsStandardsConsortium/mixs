@@ -3601,7 +3601,7 @@ attributes:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   lat_lon:
@@ -4893,7 +4893,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   cult_target:
@@ -5574,7 +5574,7 @@ attributes:
     - FoodHumanFoods
     range: string
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   part_plant_animal:
@@ -5764,7 +5764,7 @@ attributes:
     - FoodHumanFoods
     range: string
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   samp_transport_dur:
@@ -5885,7 +5885,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   spikein_AMR:
@@ -5964,7 +5964,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   spikein_metal:
@@ -6014,7 +6014,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   spikein_serovar:

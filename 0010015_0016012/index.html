@@ -2927,7 +2927,7 @@ attributes:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   lat_lon:
@@ -3359,7 +3359,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{float}-{float} {unit}|{float} {unit}$
+      syntax: ^({float}-{float} {unit}|{float} {unit})$
       interpolated: true
   gradient_pos_rel_am:
     name: gradient_pos_rel_am
@@ -3395,7 +3395,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
   isotopolog_atom_frac:
     name: isotopolog_atom_frac
     description: The fraction of heavy-labelled atoms out of all atoms of a given
@@ -3436,7 +3436,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{termLabel} {[termID]}|{text}$
+      syntax: ^({termLabel} \[{termID}\]|{text})$
   isotopolog_dose:
     name: isotopolog_dose
     annotations:
@@ -3513,7 +3513,7 @@ attributes:
     range: string
     recommended: true
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
   samp_dna_conc:
     name: samp_dna_conc
     annotations:

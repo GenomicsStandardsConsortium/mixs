@@ -3729,7 +3729,7 @@ attributes:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   lat_lon:
@@ -5656,7 +5656,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   anim_water_method:
@@ -5745,7 +5745,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   cult_target:
@@ -6726,7 +6726,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   soil_conductivity:
@@ -6949,7 +6949,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   spikein_serovar:
@@ -7004,7 +7004,7 @@ attributes:
     range: string
     multivalued: true
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   spikein_strain:
