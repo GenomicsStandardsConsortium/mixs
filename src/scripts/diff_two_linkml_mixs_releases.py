@@ -1817,16 +1817,16 @@ def validate_github_token(token: str) -> bool:
     Returns:
         True if token format is valid, False otherwise.
     """
-    # GitHub personal access tokens patterns
-    patterns = [
-        r'^ghp_[a-zA-Z0-9]{36}$',  # Personal access token (classic)
-        r'^gho_[a-zA-Z0-9]{36}$',  # OAuth token
-        r'^ghu_[a-zA-Z0-9]{36}$',  # User token
-        r'^ghs_[a-zA-Z0-9]{36}$',  # Server token
-        r'^github_pat_[a-zA-Z0-9_]{22,}$',  # Fine-grained personal access token (variable length)
-    ]
-
-    return any(re.match(pattern, token) for pattern in patterns)
+    # Deliberately not a format check against a list of known prefixes and exact
+    # lengths. A token is opaque, GitHub changes these formats, and the previous
+    # version required ghs_ plus exactly 36 characters, which the token GitHub
+    # Actions issues no longer matches. The result was that CI threw away a valid
+    # token, fell back to the unauthenticated API at 60 requests per hour shared
+    # across runner IP addresses, and the release diff failed on a rate limit.
+    #
+    # Only obvious junk is rejected here. If a token is wrong, the API says so,
+    # and that is a clearer error than being silently unauthenticated.
+    return bool(token) and not re.search(r"\s", token)
 
 
 def get_github_headers() -> Dict[str, str]:
@@ -1863,6 +1863,15 @@ def get_github_headers() -> Dict[str, str]:
         if VERBOSE_AUTH or not AUTH_MESSAGE_PRINTED:
             logger.warning("Using unauthenticated GitHub API (rate limited)")
             AUTH_MESSAGE_PRINTED = True
+
+    # Unauthenticated is 60 requests per hour shared across GitHub's runner IP
+    # addresses, so in CI it is not a degraded mode, it is a run that fails when
+    # someone else has used the budget. Say so where it will be read.
+    if not headers and os.getenv("GITHUB_ACTIONS") == "true":
+        logger.error(
+            "No usable GITHUB_TOKEN in GitHub Actions. The GitHub API calls below "
+            "will be unauthenticated and are likely to fail on a rate limit."
+        )
     return headers
 
 
