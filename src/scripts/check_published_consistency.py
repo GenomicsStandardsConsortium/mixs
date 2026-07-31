@@ -106,7 +106,19 @@ def main():
     read = {}
     for name, url in urls.items():
         print(f"fetching {url}")
-        read[name] = READERS[name](fetch(url))
+        # A traceback here says nothing useful about which artifact failed, and a
+        # transient network error is the most likely reason this ever fails.
+        try:
+            read[name] = READERS[name](fetch(url))
+        except Exception as error:
+            print(f"\nFAIL: could not read {name} from {url}")
+            print(f"      {type(error).__name__}: {error}")
+            print(
+                "\nThis is inconclusive rather than a disagreement between the "
+                "artifacts. If it is a network error, try again; if the content "
+                "could not be parsed, the published file itself is malformed."
+            )
+            return 2
 
     print()
     print(f"{'artifact':20} {'version':10} {'container slots':>16} {'class_uris':>11}")
