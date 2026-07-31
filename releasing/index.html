@@ -1133,28 +1133,18 @@ it is reviewed like any other change before merge.</p>
 from <code>src/mixs/schema/mixs.yaml</code> by <code>make</code>, and they are committed because
 downstream consumers fetch them directly. EBI OLS reads
 <code>project/owl/mixs.owl.ttl</code> from raw <code>main</code>.</p>
-<p>Four things can update them, and it is worth knowing which is which:</p>
+<p>Only one thing updates them:</p>
 <ul>
-<li><strong>A pull request that edits only the schema</strong> does neither. The "Regenerate
-  and verify generated artifacts" workflow does not run on it, so the generated
-  files in such a pull request are whatever its author put there, which is
-  usually nothing. This is deliberate: it keeps a local build and a diff of
-  several hundred generated files off contributors.</li>
-<li><strong>A pull request that edits a build input</strong> (<code>Makefile</code>, <code>src/sparql/**</code>,
-  <code>project-generator-config.yaml</code>) runs the workflow, which runs <code>make
-  gen-project</code> and fails if <code>project/jsonschema/</code> no longer matches what is
-  committed. That is the whole check: it does not regenerate or compare the OWL,
-  <code>contrib/</code>, or the Python datamodel, so a build-input change that affects only
-  those passes.</li>
-<li><strong>A push to <code>main</code></strong> runs nothing. The workflow's push trigger is disabled
-  while <a href="https://github.com/GenomicsStandardsConsortium/mixs/issues/1303">issue 1303</a>
-  is open, so merging a schema change refreshes no generated files.</li>
 <li><strong>The "Create Release PR" action</strong> runs <code>make install clean all</code> on the branch
   it creates and commits everything that produces, so a release cut this way
   carries generated files built from the schema it ships. This is the action
   doing it, not the branch: a release branch assembled by hand gets no rebuild,
   and would carry whatever <code>main</code> had at the time.</li>
 </ul>
+<p>Nothing else does. A pull request that edits the schema does not regenerate them,
+a pull request that edits a build input does not either, and a push to <code>main</code> runs
+nothing. That is deliberate: it keeps a local build and a diff of several hundred
+generated files off contributors.</p>
 <h3 id="what-this-means-if-you-merge-a-schema-change">What this means if you merge a schema change</h3>
 <p>Merging a pull request that changes only the schema leaves the committed
 generated files describing the state before your change. Nothing refreshes them
@@ -1162,7 +1152,11 @@ on merge, and nothing warns you either way. The
 committed files on <code>main</code> are not guaranteed to match
 <code>src/mixs/schema/mixs.yaml</code> at any given moment.</p>
 <p>This matters because consumers read those files rather than building the schema
-themselves, so a stale file is what they get.</p>
+themselves, so a stale file is what they get. EBI OLS loads
+<code>project/owl/mixs.owl.ttl</code> from raw <code>main</code>, so between releases it serves the OWL
+built for the previous release. That is the accepted cost of keeping a
+several-hundred-file rebuild off contributors, and it is why a term merged today
+does not reach OLS until a release is cut.</p>
 <p>Cutting a release is what brings them back into agreement, because the release
 action rebuilds everything from the schema and commits the result.</p>
 <p>Do not commit generated files built on your own machine. Building locally to
