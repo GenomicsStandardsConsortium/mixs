@@ -13,6 +13,7 @@ import re
 import unittest
 from collections import Counter, defaultdict
 
+import yaml
 from linkml_runtime import SchemaView
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
@@ -34,6 +35,37 @@ COMBINATION_SUBSET = "combination_classes"
 #: The three root classes carry no ``class_uri``; they are structural, not
 #: identified elements of the standard.
 UNIDENTIFIED_CLASSES = {"Checklist", "Extension", "MixsCompliantData"}
+
+
+
+def has_top_level_alternation(pattern):
+    """True if ``pattern`` contains a ``|`` that splits the whole expression.
+
+    Only an unescaped pipe outside any group and outside any character class is
+    an alternation at the top level. ``\\|`` is a literal pipe, ``[a|b]`` is a
+    character class containing one, and ``\\(`` is a literal parenthesis that must
+    not be counted as opening a group.
+    """
+    depth = 0
+    in_class = False
+    escaped = False
+    for char in pattern:
+        if escaped:
+            escaped = False
+        elif char == "\\":
+            escaped = True
+        elif in_class:
+            if char == "]":
+                in_class = False
+        elif char == "[":
+            in_class = True
+        elif char == "(":
+            depth += 1
+        elif char == ")":
+            depth -= 1
+        elif char == "|" and depth == 0:
+            return True
+    return False
 
 
 def reporting_terms():
@@ -346,6 +378,123 @@ class TestPatterns(unittest.TestCase):
                     pattern.endswith("$$"),
                     f"{name} ends with a doubled dollar, which does nothing.",
                 )
+
+
+
+class TestStructuredPatterns(unittest.TestCase):
+    """Every placeholder in a ``structured_pattern`` must resolve to a setting.
+
+    A misspelled or misplaced placeholder is not an error anywhere in the build.
+    It survives interpolation as a literal, so ``{[termID]}`` became a regex
+    matching a brace, one character, and a closing brace. Nothing complained,
+    because the slot carrying it also allowed free text, so every value validated
+    through the other branch and the broken one was never exercised.
+
+    Example data cannot catch this: where a slot permits free text, a file with a
+    correct ontology term passes whether the term branch works or not.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        with open(SCHEMA_PATH) as handle:
+            cls.schema = yaml.safe_load(handle)
+        cls.settings = cls.schema.get("settings") or {}
+
+    def expand(self, syntax):
+        for _ in range(5):
+            for key, value in self.settings.items():
+                syntax = syntax.replace("{" + key + "}", str(value))
+        return syntax
+
+    def test_every_placeholder_resolves(self):
+        # Any brace group left after interpolation, except a regex quantifier
+        # such as {1,2} or {2,9}. Deliberately broad: the real defect was
+        # {[termID]}, which a name-shaped pattern would not have caught.
+        brace_group = re.compile(r"\{[^{}]*\}")
+        quantifier = re.compile(r"^\{\d+(,\d*)?\}$")
+        for name, slot in (self.schema.get("slots") or {}).items():
+            if not isinstance(slot, dict):
+                continue
+            structured = slot.get("structured_pattern")
+            if not isinstance(structured, dict) or not structured.get("syntax"):
+                continue
+            with self.subTest(slot=name):
+                leftover = [g for g in brace_group.findall(self.expand(structured["syntax"]))
+                            if not quantifier.match(g)]
+                self.assertEqual(
+                    leftover, [],
+                    f"{name} has placeholders that no setting resolves: {leftover}. "
+                    f"They survive into the generated patterns as literal text, so "
+                    f"that branch of the regex matches braces rather than what it "
+                    f"was meant to match. Check the spelling against the settings "
+                    f"block, and the form: the convention is \\[{{termID}}\\], not "
+                    f"{{[termID]}}.",
+                )
+
+
+    def test_anchored_alternations_are_grouped(self):
+        """``^A|B$`` anchors only the first and last branch, not the whole thing.
+
+        ``|`` has the lowest precedence, so ``^A|B$`` reads as "starts with A" or
+        "ends with B". Values with text either side then validate. 17 slots were
+        written that way, and nothing in the build noticed, because a pattern that
+        is too permissive never fails anything.
+        """
+        for name, slot in (self.schema.get("slots") or {}).items():
+            if not isinstance(slot, dict):
+                continue
+            structured = slot.get("structured_pattern")
+            if not isinstance(structured, dict):
+                continue
+            syntax = structured.get("syntax") or ""
+            if not (syntax.startswith("^") and syntax.endswith("$")):
+                continue
+            top_level_pipe = has_top_level_alternation(syntax[1:-1])
+            with self.subTest(slot=name):
+                self.assertFalse(
+                    top_level_pipe,
+                    f"{name} has an alternation that is not grouped: {syntax}. The "
+                    f"anchors bind to the first and last branch only, so a value with "
+                    f"text either side validates. Wrap it: ^(A|B)$ rather than ^A|B$.",
+                )
+
+
+
+class TestAlternationDetector(unittest.TestCase):
+    """The detector used by TestStructuredPatterns, checked against regex semantics.
+
+    Each expectation is cross-checked against Python's own parser: where the pipe
+    is inside a character class, ``re`` matches a literal ``|``; where it is an
+    alternation, it does not.
+    """
+
+    CASES = [
+        ("A|B", True, "a plain top-level alternation"),
+        ("(A|B)", False, "grouped"),
+        ("(?:A|B)", False, "a non-capturing group"),
+        (r"A\|B", False, "an escaped pipe is a literal"),
+        ("[a|b]", False, "a pipe inside a character class"),
+        (r"\(A|B\)", True, "escaped parentheses, so the pipe is top level"),
+        (r"[\]|a]", False, "an escaped ] does not close the class"),
+        (r"[\]]|B", True, "the escaped ], then the real ], then a top-level pipe"),
+        (r"[a\]b|c]d", False, "the pipe stays inside the class"),
+        (r"[\\]|B", True, "an escaped backslash ends the class"),
+        ("(A)|B", True, "a group closes, then a top-level pipe"),
+    ]
+
+    def test_detector_matches_regex_semantics(self):
+        for pattern, expected, description in self.CASES:
+            with self.subTest(pattern=pattern):
+                self.assertEqual(
+                    has_top_level_alternation(pattern), expected,
+                    f"{pattern!r}: {description}",
+                )
+
+    def test_every_case_is_a_valid_regex(self):
+        """A case that does not compile would be testing nothing."""
+        for pattern, _, _ in self.CASES:
+            with self.subTest(pattern=pattern):
+                re.compile(pattern)
 
 if __name__ == "__main__":
     unittest.main()

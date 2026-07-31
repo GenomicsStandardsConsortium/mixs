@@ -40,11 +40,12 @@ help: status
 	@echo "  install       -- install Python dependencies (used by all GH Actions)"
 	@echo "  clean         -- remove all generated files (calls clean-contrib; used by main & docs GH Actions)"
 	@echo "  all           -- complete build (calls site, qc, gen-excel, project/class-model-tsvs-organized, all-contrib, linkml-lint, yaml-lint; used by main GH Action)"
-	@echo "  test          -- validation & tests (calls qc, test-schema, test-python, test-examples, linkml-lint, yaml-lint; used by main GH Action)"
+	@echo "  test          -- validation & tests (calls qc, test-python, test-examples, linkml-lint, yaml-lint, tsv-roundtrip-test; used by main GH Action)"
 	@echo ""
 	@echo "Output to directories:"
 	@echo "  site          -- build website (called by all; calls gen-project, gendoc)"
-	@echo "  gen-project   -- generate project/ artifacts (called by all via site)"
+	@echo "  gen-project   -- generate project/ artifacts, plus project/mixs.yaml (called by all via site)"
+	@echo "  owl           -- generate project/owl/mixs.owl.ttl with OLS-oriented options (called by all via site)"
 	@echo "  gendoc        -- generate docs/ website files (called by all via site, testdoc; used by docs GH Actions)"
 	@echo "  gen-excel     -- generate mixs-templates/ Excel files (called by all)"
 	@echo "  project/class-model-tsvs-organized -- generate organized TSV files (called by all)"
@@ -62,8 +63,8 @@ help: status
 	@echo "  fix-whitespace -- strip trailing whitespace from src/mixs/schema (fixes a common yaml-lint failure)"
 	@echo ""
 	@echo "Individual tests:"
-	@echo "  test-schema   -- schema validation tests (called by test)"
 	@echo "  test-python   -- Python unit tests (called by test)"
+	@echo "  tsv-roundtrip-test -- check a record survives YAML to TSV and back (called by test)"
 	@echo ""
 	@echo "Cleanup:"
 	@echo "  clean-contrib -- remove contrib/ files (called by clean)"
@@ -73,11 +74,14 @@ help: status
 	@echo "  status        -- show project info (called by help)"
 	@echo "  testdoc       -- build & serve docs locally (calls gendoc, serve)"
 	@echo "  serve         -- serve existing docs locally via mkdocs (called by testdoc)"
+	@echo "  check-published -- compare the three artifacts served at w3id.org; REF=<tag> checks a tag instead"
+	@echo "  purge-diff    -- remove a generated comparison; DIFF=<old>_to_<new>"
+	@echo "  tsv-roundtrip -- write the YAML to TSV and back, leaving both for inspection"
 	@echo "  yamlfmt-beta  -- experimental YAML formatter"
 	@echo "  create-data-harmonizer -- experimental; currently broken, see issue 1244"
 	@echo ""
 
-.PHONY: all all-contrib clean install help status linkml-lint yaml-lint fix-whitespace yamlfmt-beta test testdoc serve gen-project gendoc test-schema test-python test-examples ensure-dirs clean-contrib project/class-model-tsvs-organized
+.PHONY: all all-contrib clean install help status linkml-lint yaml-lint fix-whitespace yamlfmt-beta test testdoc serve gen-project gendoc site owl test-python test-examples ensure-dirs clean-contrib project/class-model-tsvs-organized
 
 ensure-dirs:
 	mkdir -p contrib
@@ -133,10 +137,7 @@ project/owl/mixs.owl.ttl: $(SOURCE_SCHEMA_PATH) $(wildcard $(OLS_SPARQL_DIR)/*.r
 	$(RUN) gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions --no-use-native-uris --metadata-profile ols --ontology-uri-suffix /mixs.owl.ttl $(SOURCE_SCHEMA_PATH) > project/owl/mixs.owl.ttl
 	$(RUN) apply-sparql-updates --owl project/owl/mixs.owl.ttl --sparql-dir $(OLS_SPARQL_DIR)
 
-test: qc test-schema test-python test-examples linkml-lint yaml-lint tsv-roundtrip-test
-
-test-schema:
-	@echo "Schema re-generation in test phase eliminated due to long run time"
+test: qc test-python test-examples linkml-lint yaml-lint tsv-roundtrip-test
 
 test-python:
 	$(RUN) python -m unittest discover
