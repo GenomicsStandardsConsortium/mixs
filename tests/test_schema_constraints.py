@@ -11,6 +11,8 @@ an identical placeholder identifier as a result.
 import os
 import re
 import unittest
+
+import yaml
 from collections import Counter, defaultdict
 
 from linkml_runtime import SchemaView
@@ -345,6 +347,58 @@ class TestPatterns(unittest.TestCase):
                 self.assertFalse(
                     pattern.endswith("$$"),
                     f"{name} ends with a doubled dollar, which does nothing.",
+                )
+
+
+
+class TestStructuredPatterns(unittest.TestCase):
+    """Every placeholder in a ``structured_pattern`` must resolve to a setting.
+
+    A misspelled or misplaced placeholder is not an error anywhere in the build.
+    It survives interpolation as a literal, so ``{[termID]}`` became a regex
+    matching a brace, one character, and a closing brace. Nothing complained,
+    because the slot carrying it also allowed free text, so every value validated
+    through the other branch and the broken one was never exercised.
+
+    Example data cannot catch this: where a slot permits free text, a file with a
+    correct ontology term passes whether the term branch works or not.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        with open(SCHEMA_PATH) as handle:
+            cls.schema = yaml.safe_load(handle)
+        cls.settings = cls.schema.get("settings") or {}
+
+    def expand(self, syntax):
+        for _ in range(5):
+            for key, value in self.settings.items():
+                syntax = syntax.replace("{" + key + "}", str(value))
+        return syntax
+
+    def test_every_placeholder_resolves(self):
+        # Any brace group left after interpolation, except a regex quantifier
+        # such as {1,2} or {2,9}. Deliberately broad: the real defect was
+        # {[termID]}, which a name-shaped pattern would not have caught.
+        brace_group = re.compile(r"\{[^{}]*\}")
+        quantifier = re.compile(r"^\{\d+(,\d*)?\}$")
+        for name, slot in (self.schema.get("slots") or {}).items():
+            if not isinstance(slot, dict):
+                continue
+            structured = slot.get("structured_pattern")
+            if not isinstance(structured, dict) or not structured.get("syntax"):
+                continue
+            with self.subTest(slot=name):
+                leftover = [g for g in brace_group.findall(self.expand(structured["syntax"]))
+                            if not quantifier.match(g)]
+                self.assertEqual(
+                    leftover, [],
+                    f"{name} has placeholders that no setting resolves: {leftover}. "
+                    f"They survive into the generated patterns as literal text, so "
+                    f"that branch of the regex matches braces rather than what it "
+                    f"was meant to match. Check the spelling against the settings "
+                    f"block, and the form: the convention is \\[{{termID}}\\], not "
+                    f"{{[termID]}}.",
                 )
 
 if __name__ == "__main__":
