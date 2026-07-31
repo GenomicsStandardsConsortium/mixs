@@ -1,10 +1,13 @@
 name: Workflow security audit (zizmor)
 
 # Audits this repo's GitHub Actions workflows with zizmor (https://docs.zizmor.sh).
-# Non-blocking: findings are reported to GitHub code scanning (the Security tab),
-# not by failing CI. zizmor is pinned to a specific version so a tool upgrade
-# cannot turn this red on unchanged workflows; bump it deliberately.
-# Modeled on microbiomedata/nmdc-schema.
+# A finding fails the check, which is required to merge into main. zizmor is
+# pinned to a specific version so a tool upgrade cannot turn this red on
+# unchanged workflows; bump it deliberately and fix what it reports.
+#
+# Uploading to code scanning stays non-blocking: the findings have already failed
+# the job by then, and an outage in the upload should not fail a build on top of
+# that.
 
 on:
   push:
@@ -31,8 +34,10 @@ jobs:
         with:
           persist-credentials: false
 
+      # Fails the job on a finding. The version is pinned just below, so a tool
+      # upgrade cannot turn this red on unchanged workflows; bump it deliberately
+      # and fix what it reports.
       - name: Run zizmor
-        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pipx run zizmor==1.25.2 --format sarif .github/workflows/ > zizmor.sarif
