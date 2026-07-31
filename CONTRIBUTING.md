@@ -2,9 +2,9 @@
 
 :+1: First of all: Thank you for taking the time to contribute!
 
-The following is a set of general guidelines for contributing to MIxS. 
+The following is a set of general guidelines for contributing to MIxS.
 
-For a more detailed guide to MIxS editing and contributing policies, see the [contributing documentation](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/docs).
+For a more detailed guide to MIxS editing and contributing policies, see the [contributing documentation](https://github.com/GenomicsStandardsConsortium/mixs/tree/main/src/docs).
 
 ## Table Of Contents
 
@@ -31,11 +31,11 @@ The mixs team strives to create a welcoming environment for editors, users and o
 Please carefully read our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 <a id="linkml"></a>
-## MIxS transition to LinkML 
+## MIxS transition to LinkML
 
-With the release of MIxS 6.0, management of MIxS switched to fully using GitHub for edits and releases and to using [Linkml](https://linkml.io/) to define the MIxS schema. The release of MIxS 6.2.0 made the switch to using "out of the box" LinkML code rather than customizations. The biggest change was to remove any dependencies on an external spreadsheet for generating LinkML YAML files. The source of truth (SOT) for editing MIxS is now [the YAML file](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml). However, since this was a minor release, most repositories implementing MIxS will continue to use the generated artifacts from MIxS 6.1 until MIxS 7 is released.
+MIxS is defined with [LinkML](https://linkml.io/), and is edited and released through GitHub. [`src/mixs/schema/mixs.yaml`](https://github.com/GenomicsStandardsConsortium/mixs/blob/main/src/mixs/schema/mixs.yaml) is the source of truth; everything else is generated from it.
 
-This section will be update or deleted after the release of MIxS 7.
+That has been true since MIxS 6.0 moved management to GitHub and 6.2.0 dropped the last dependency on an external spreadsheet. MIxS 7.0.0 was released on 2026-07-29, so implementing repositories should now be working from the 7.x artifacts rather than 6.1.
 
 <a id="contributions"></a>
 ## Guidelines for Contributions and Requests
@@ -82,6 +82,31 @@ Name things for what changed, so a reviewer can tell without opening the diff.
   issue. The diff already shows what changed, so keep any itemised list as
   supporting detail rather than the whole description.
 
+#### Reading a Copilot review
+
+Copilot splits its output in two, and the halves are not equally visible. Inline
+comments appear against the diff. Everything else goes into a collapsed block
+headed "Suppressed comments", which you have to click to open.
+
+**Open it before approving.** On this repository that block is where most of the
+substantive findings arrive, and a review can say "generated no comments" while
+holding a real one. Examples from a single day of work:
+
+- a new test file that never ran, because it was written for `pytest` while
+  `make test-python` runs `python -m unittest discover`
+- generated files under `contrib/` committed by accident, carrying unrelated
+  schema changes into a pull request about something else
+- a script that produced a stack trace on a network failure instead of naming
+  the artifact it could not fetch
+
+Suppressed comments have no reply thread, so answer them in a normal pull request
+comment saying what you changed or why you disagree. Inline comments should be
+answered inline.
+
+Treat both halves as a reviewer's opinion rather than a verdict. Some findings
+are wrong, and a wrong one is worth a short reply explaining why, so the next
+reader does not have to work it out again.
+
 #### Linting checks
 
 Two checks lint the schema on every pull request that touches it, and **both fail
@@ -126,15 +151,15 @@ make yaml-lint
 
 ## Guidelines for GSC developers
 
-If you're a GSC developer with editing rights, the advice and guidelines above still hold. You should always create an issue for each proposed change (keeping them atomic: one issue per logical change), create a branch from that issue, and - once you've made your changes on the branch - create a pull request for review and validation. 
+If you're a GSC developer with editing rights, the advice and guidelines above still hold. You should always create an issue for each proposed change (keeping them atomic: one issue per logical change), create a branch from that issue, and - once you've made your changes on the branch - create a pull request for review and validation.
 
 However, here are some guidelines on where and what to edit for a few routine tasks.
 
-### Editing the MIxS specification 
+### Editing the MIxS specification
 
 To edit the MIxS terms, you'll need to edit the YAML file that drives the creation of the MIxS specification in its various serialisations.
 This file is located in:
 `/src/mixs/schema/`
 
-Once you've created an issue, branch, and done some editing on that branch, create a PR to have your proposed changes reviewed by the Technical WG. 
+Once you've created an issue, branch, and done some editing on that branch, create a PR to have your proposed changes reviewed by the Technical WG.
 Minor edits (e.g. fixing typos, clarifying edits of descriptions, etc) can be included in a patch, while any new terms or consequential edits to terms or their properties should be coordinated with minor / major release processes.
