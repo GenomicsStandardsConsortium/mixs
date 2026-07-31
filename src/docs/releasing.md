@@ -168,15 +168,6 @@ built for the previous release. That is the accepted cost of keeping a
 several-hundred-file rebuild off contributors, and it is why a term merged today
 does not reach OLS until a release is cut.
 
-Two gaps in the check, so nobody reads it as stronger than it is. It runs only on
-the build-input paths above, so a pull request that edits only the schema is never
-checked. And the JSON Schema carries no `class_uri` values, so a change confined to
-identifiers leaves it identical; that is how eight malformed combination
-identifiers reached a release
-([pull request 1347](https://github.com/GenomicsStandardsConsortium/mixs/pull/1347)).
-Comparing the JSON-LD closes the second gap, since it carries all 347 `class_uri`
-values.
-
 Cutting a release is what brings them back into agreement, because the release
 action rebuilds everything from the schema and commits the result.
 
