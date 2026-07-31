@@ -309,3 +309,41 @@ class TestTitles(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestPatterns(unittest.TestCase):
+    """Every ``pattern`` must compile, and must not repeat an anchor.
+
+    A doubled anchor is not a syntax error: ``^^`` is two zero-width assertions at
+    the same position, so Python and ECMAScript accept it and behave as if there
+    were one. Nothing in the build looks at pattern values, so it reached four
+    slots and stayed there until CodeQL reported 80 findings against the generated
+    Python.
+    """
+
+    def setUp(self):
+        self.patterns = {name: slot.pattern
+                         for name, slot in reporting_terms().items()
+                         if slot.pattern}
+
+    def test_every_pattern_compiles(self):
+        for name, pattern in self.patterns.items():
+            with self.subTest(slot=name):
+                try:
+                    re.compile(pattern)
+                except re.error as error:
+                    self.fail(f"{name} has a pattern that does not compile: {error}")
+
+    def test_no_repeated_anchors(self):
+        for name, pattern in self.patterns.items():
+            with self.subTest(slot=name):
+                self.assertFalse(
+                    pattern.startswith("^^"),
+                    f"{name} starts with a doubled caret. The second asserts the same "
+                    f"position as the first, so it does nothing, and CodeQL reports it "
+                    f"as an unmatchable caret.",
+                )
+                self.assertFalse(
+                    pattern.endswith("$$"),
+                    f"{name} ends with a doubled dollar, which does nothing.",
+                )
