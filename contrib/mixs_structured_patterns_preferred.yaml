@@ -7,7 +7,7 @@ comments:
 id: https://w3id.org/mixs
 see_also:
   - https://doi.org/10.1038/nbt.1823
-version: 7.0.0
+version: 7.0.1
 imports:
   - linkml:types
 prefixes:
@@ -5104,7 +5104,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   animal_sex:
@@ -6190,7 +6190,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   cult_root_med:
@@ -9450,7 +9450,7 @@ slots:
     slot_uri: MIXS:0001216
     range: string
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   microb_start:
@@ -9526,7 +9526,7 @@ slots:
     slot_uri: MIXS:0001222
     range: string
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   microbial_biomass:
@@ -11422,7 +11422,7 @@ slots:
     slot_uri: MIXS:0001229
     range: string
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   samp_store_dur:
@@ -11810,7 +11810,7 @@ slots:
     range: string
     required: true
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   seq_quality_check:
@@ -11855,7 +11855,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   sewage_type:
@@ -12435,7 +12435,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: ^{text}|({termLabel} \[{termID}\])$
+      syntax: ^({text}|({termLabel} \[{termID}\]))$
       interpolated: true
       partial_match: true
   spikein_metal:
@@ -12463,7 +12463,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: ^({termLabel} \[{termID}\])|{integer}$
+      syntax: ^(({termLabel} \[{termID}\])|{integer})$
       interpolated: true
       partial_match: true
   spikein_serovar:
@@ -14143,7 +14143,7 @@ slots:
     title: density of gradient position
     description: Buoyant density of this fraction
     structured_pattern:
-      syntax: ^{float}-{float} {unit}|{float} {unit}$
+      syntax: ^({float}-{float} {unit}|{float} {unit})$
       interpolated: true
     annotations:
       Preferred_unit: g/mL
@@ -14169,7 +14169,7 @@ slots:
     examples:
       - value: https://doi.org/10.1038/s41396-018-0279-6
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
     recommended: true
     slot_uri: MIXS:0001345
   isotopolog_atom_frac:
@@ -14192,7 +14192,7 @@ slots:
       - value: 1S/C7H8/c1-7-5-3-2-4-6-7/h2-6H,1H3/i1+1,2+1,3+1,4+1,5+1,6+1,7+1 | 1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h1,3-6,8-12H,2H2/t3-,4+,5+,6+/m0/s1
       - value: undefined
     structured_pattern:
-      syntax: ^{termLabel} {[termID]}|{text}$
+      syntax: ^({termLabel} \[{termID}\]|{text})$
     recommended: true
     slot_uri: MIXS:0001347
   isotopolog_dose:
@@ -14238,7 +14238,7 @@ slots:
     examples:
       - value: https://doi.org/10.1101/2022.12.20.521340
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
     recommended: true
     slot_uri: MIXS:0001351
   samp_dna_conc:
@@ -14536,7 +14536,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
     required: false
@@ -14785,7 +14785,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
   damage_treatment:
@@ -14827,7 +14827,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
     required: false
@@ -14935,7 +14935,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: ^{PMID}|{DOI}|{URL}$
+      syntax: ^({PMID}|{DOI}|{URL})$
       interpolated: true
       partial_match: true
     required: false
@@ -20199,6 +20199,15 @@ classes:
       - miuvig_symbiont_associated_data
       - miuvig_wastewater_sludge_data
       - miuvig_water_data
+      - ancient_data
+      - mims_hostassociated_ancient_data
+      - mims_humanassociated_ancient_data
+      - mims_humangut_ancient_data
+      - mims_humanoral_ancient_data
+      - mims_humanskin_ancient_data
+      - mims_plantassociated_ancient_data
+      - mims_sediment_ancient_data
+      - mims_soil_ancient_data
     tree_root: true
   MigsBaAgriculture:
     description: MIxS Data that comply with the MigsBa checklist and the Agriculture Extension
