@@ -15,6 +15,7 @@ plugins:
 markdown_extensions:
   - tables
   - pymdownx.magiclink
+  - footnotes
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/tablesort.js
@@ -30,6 +31,8 @@ nav:
     - Editing workflows: edit_workflow.md
     - Releasing MIxS: releasing.md
     - Deprecating schema elements: schema_element_deprecation_guide.md
+  - Writing terms:
+    - Term specifications: slot_specifications.md
   - Version changes:
     - v5 to v6.0.0: version-changes/v5_to_v6.0.0.md
     - v5 to v6.0.0 (counts): version-changes/v5_to_v6.0.0-counts.md
@@ -43,7 +46,6 @@ site_url: https://GenomicsStandardsConsortium.github.io/mixs
 repo_url: https://github.com/GenomicsStandardsConsortium/mixs
 
 docs_dir: docs
-
 # Uncomment this block to enable use of Google Analytics.
 # Replace the property value with your own ID.
 # extra:
