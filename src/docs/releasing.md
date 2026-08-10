@@ -106,13 +106,12 @@ site:
 
 1. Check out the `release/vX.Y.Z` branch.
 2. The release action already wrote the diff into a folder under
-   `assets/diff_results/`, named from the two refs you gave it. If both were
-   release refs the name is already what you want. If either was a moving ref,
-   the name follows it: dispatching with `diff_new` `main` produces
-   `mixs6.0.0_to_main/`, which should be renamed to the versions it compares,
-   `v6.0.0_to_v7.0.0/`, so the published page is named for releases rather than
-   for a branch that keeps moving. Work in that folder; the docs build publishes
-   summaries only from folders under `assets/diff_results/`.
+   `assets/diff_results/`. When `diff_new` is a branch, the action names the
+   folder for the release being cut rather than for the branch, so dispatching
+   with `diff_new` `main` for version `7.0.1` produces `v7.0.0_to_v7.0.1/`. A tag
+   given as `diff_new` is used as-is. Nothing needs renaming. Work in that
+   folder; the docs build publishes summaries only from folders under
+   `assets/diff_results/`.
 3. Write `agent_summary.md` next to the structured diff. The repository carries
    a Claude Code skill for this, invoked as
    `/mixs-diff-summary assets/diff_results/<old>_to_<new>/schema_comparison_results.yaml`,
