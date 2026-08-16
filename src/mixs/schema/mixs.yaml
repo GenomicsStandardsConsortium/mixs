@@ -9166,7 +9166,7 @@ slots:
       - identifier
       - symbiosis
       - taxon
-    string_serialization: '{integer}'
+    range: integer
     slot_uri: MIXS:0001306
   host_of_host_totmass:
     description: Total mass of the host of the symbiotic host organism at collection,
@@ -9277,7 +9277,7 @@ slots:
       - host
       - host.
       - range
-    string_serialization: '{integer}'
+    range: integer
     slot_uri: MIXS:0000030
     multivalued: true
   host_specificity:
@@ -9350,6 +9350,7 @@ slots:
     annotations:
       Expected_value: NCBI taxon identifier
     description: NCBI taxon id of the host, e.g. 9606
+    range: integer
     title: host taxid
     keywords:
       - host
@@ -10346,7 +10347,6 @@ slots:
       - nucleic acid sequence source
     keywords:
       - number
-    string_serialization: '{integer}'
     slot_uri: MIXS:0000022
     range: integer
   num_samp_collect:
@@ -12319,7 +12319,7 @@ slots:
     title: sampling time outside
     keywords:
       - time
-    string_serialization: '{float}'
+    range: float
     slot_uri: MIXS:0000196
   samp_transport_cond:
     annotations:
@@ -14294,7 +14294,7 @@ slots:
       - sequencing
     keywords:
       - number
-    string_serialization: '{integer}'
+    range: integer
     slot_uri: MIXS:0000067
   trophic_level:
     description: Trophic levels are the feeding position in a food chain. Microbes
@@ -17949,7 +17949,6 @@ classes:
       host_taxid:
         examples:
           - value: '9606'
-        string_serialization: '{integer}'
         required: true
       host_tot_mass:
         required: true
@@ -18898,7 +18897,6 @@ classes:
       host_taxid:
         examples:
           - value: '4530'
-        string_serialization: '{NCBI taxid}'
       host_tot_mass:
         examples:
           - value: 2500 gram
@@ -19365,7 +19363,6 @@ classes:
       host_taxid:
         examples:
           - value: '7955'
-        string_serialization: '{NCBI taxid}'
       host_tot_mass:
         examples:
           - value: 2500 gram
@@ -20401,7 +20398,6 @@ classes:
       host_taxid:
         examples:
           - value: '4530'
-        string_serialization: '{NCBI taxid}'
       host_tot_mass:
         examples:
           - value: 2500 gram
@@ -20613,7 +20609,6 @@ classes:
       soil_type:
         string_serialization: '{termLabel} [{termID}]'
       water_content:
-        string_serialization: '{float}'
     class_uri: MIXS:0016012
     aliases:
       - MIxS-soil
@@ -20732,7 +20727,6 @@ classes:
       host_taxid:
         examples:
           - value: '395013'
-        string_serialization: '{integer}'
       organism_count:
         examples:
           - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
