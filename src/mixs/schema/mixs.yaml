@@ -596,18 +596,23 @@ enums:
     permissible_values:
       bathroom:
       bedroom:
+      cleanroom:
       elevator:
       foyer:
       hallway:
       kitchen:
       locker room:
       office:
+      space analog:
+      space habitat:
+      space station:
   IndoorSurfEnum:
     permissible_values:
       cabinet:
       ceiling:
       counter top:
       door:
+      floor:
       shelving:
       vent cover:
       wall:
@@ -794,6 +799,45 @@ enums:
       southeast corner:
       southwest corner:
       west corner:
+  RoomTypeEnum:
+    title: room type
+    description: Controlled values for the main purpose or activity of a sampling
+      room in the built environment.
+    permissible_values:
+      attic:
+      auditorium:
+      bathroom:
+      cafe:
+      # KNOWN MODELING ISSUE: "cleanroom ISO N" is an ISO 14644 air-cleanliness
+      # class, not a room type. These are included so ESA cleanroom submissions
+      # validate, but the cleanliness class is a separate dimension and should
+      # move to a dedicated slot. Tracked in
+      # https://github.com/GenomicsStandardsConsortium/mixs/issues/1282
+      cleanroom ISO 1:
+      cleanroom ISO 5:
+      cleanroom ISO 7:
+      cleanroom ISO 8:
+      closet:
+      conference room:
+      data center:
+      elevator:
+      examining room:
+      gymnasium:
+      hallway:
+      kitchen:
+      laboratory_dry:
+      laboratory_wet:
+      lobby:
+      lockers:
+      mail room:
+      mechanical or electrical room:
+      natatorium:
+      open office:
+      private office:
+      restroom:
+      stairwell:
+      vestibule:
+      warehouse:
   RouteTransmissionEnum:
     permissible_values:
       environmental:faecal-oral:
@@ -1064,6 +1108,7 @@ enums:
       carpet:
       cinder blocks:
       concrete:
+      epoxy resin:
       glass:
       hay bales:
       metal:
@@ -11691,20 +11736,23 @@ slots:
     slot_uri: MIXS:0000824
     range: RoomSampPosEnum
   room_type:
-    annotations:
-      Expected_value: enumeration
     description: The main purpose or activity of the sampling room. A room is any
       distinguishable space within a structure
     title: room type
+    todos:
+      - 'RoomTypeEnum includes cleanroom ISO 1/5/7/8 so ESA cleanroom submissions
+        validate, but an ISO 14644 cleanliness class is not a room type. It is a
+        separate dimension (air-cleanliness grade) and should move to its own slot
+        rather than stay a room_type value. A cleanroom as a space is already
+        recorded via indoor_space. Tracked in
+        https://github.com/GenomicsStandardsConsortium/mixs/issues/1282'
     examples:
       - value: bathroom
     keywords:
       - room
       - type
-    string_serialization: '[attic|bathroom|closet|conference room|elevator|examining
-      room|hallway|kitchen|mail room|private office|open office|stairwell|,restroom|lobby|vestibule|mechanical
-      or electrical room|data center|laboratory_wet|laboratory_dry|gymnasium|natatorium|auditorium|lockers|cafe|warehouse]'
     slot_uri: MIXS:0000825
+    range: RoomTypeEnum
   room_vol:
     annotations:
       Preferred_unit: cubic feet, cubic meter
@@ -18532,12 +18580,12 @@ classes:
       air_temp:
         examples:
           - value: 20 degree Celsius
-        required: true
+        recommended: true
       avg_occup:
         examples:
           - value: '2'
       carb_dioxide:
-        required: true
+        recommended: true
       freq_clean:
         string_serialization: '[ Daily| Weekly| Monthly| Quarterly | Annually| other]'
       indoor_surf:
@@ -18546,7 +18594,7 @@ classes:
       organism_count:
         examples:
           - value: total prokaryotes;3.5e7 cells per milliliter;qPCR
-        required: true
+        recommended: true
       surf_material:
         required: true
         recommended: true
@@ -18556,7 +18604,7 @@ classes:
     aliases:
       - MIxS-BE (built environment)
     annotations:
-      use_cases: microbiology studies of the built environment, NASA space station sampling, MetaSUB transit system sampling, home, hospitals, office buildings
+      use_cases: microbiology studies of the built environment, NASA space station sampling, European Space Agency(ESA) cleanrooms, MetaSUB transit system sampling, home, hospitals, office buildings
   FoodAnimalAndAnimalFeed:
     description: >-
       A collection of terms appropriate when collecting samples and performing sequencing of samples
