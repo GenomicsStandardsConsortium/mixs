@@ -15708,7 +15708,7 @@ slots:
     required: false
     recommended: true
   chrono_age_remarks:
-    description: Notes or comments about the  earliest_chrono_age and latest_chrono_age. For more detail use Chronometric Age Protocol to point to original publication describing method. Useful to specify confidence and/or accuracy of reported date.
+    description: Notes or comments about the earliest_chrono_age and latest_chrono_age. Can be used to give additional information about how date(s) were obtained, and/or point to original publication(s) describing specific protocol specified in chrono_age_protocol. For example, it can be useful to specify confidence and/or accuracy of reported date, radiocarbon ID or lab code(s), etc.
     title: chronometric age remarks
     examples:
     - value: radiocarbon dating, calibrated with OxCal v4.3 with 95% confidence interval
