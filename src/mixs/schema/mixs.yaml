@@ -15691,7 +15691,7 @@ slots:
     required: true
     recommended: true
   chrono_age_protocol:
-    description: A description of or reference to the methods used to determine the earliest_chrono_age and latest_chrono_age.
+    description: The methods used to determine the earliest_chrono_age and latest_chrono_age.
     title: chronometric age protocol
     examples:
     - value: radiocarbon dating
@@ -15708,7 +15708,7 @@ slots:
     required: false
     recommended: true
   chrono_age_remarks:
-    description: Notes or comments about the  earliest_chrono_age and latest_chrono_age. For more detail use Chronometric Age Protocol to point to original publication describing method. Useful to specify confidence and/or accuracy of reported date.
+    description: Notes or comments about the earliest_chrono_age and latest_chrono_age. Can be used to give additional information about how date(s) were obtained, and/or point to original publication(s) describing specific protocol specified in chrono_age_protocol. For example, it can be useful to specify confidence and/or accuracy of reported date, radiocarbon ID or lab code(s), etc.
     title: chronometric age remarks
     examples:
     - value: radiocarbon dating, calibrated with OxCal v4.3 with 95% confidence interval
@@ -16036,8 +16036,8 @@ slots:
   reads_removed:
     annotations:
       Expected_value: Whether any sequencing reads were removed from the data files after sequencing
-    description: Specify whether associated data was filtered in some form prior to upload, such as host reads removal. Detailed description of the the data filtering that was carried out should be described in term 'preprocessing of sequencing reads description'.
-    title: description of reads removal
+    description: Specify whether associated data was filtered in some form prior to upload, such as host reads removal. Detailed description of the data filtering that was carried out should be described in term 'description of sequencing reads preprocessing'.
+    title: reads removed
     examples:
     - value: 'no'
     - value: 'yes'
